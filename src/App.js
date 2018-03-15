@@ -1,7 +1,13 @@
-import React from 'react'
 import { hot } from 'react-hot-loader'
+import React from 'react'
+import styled from 'styled-components'
 import { api } from 'services'
+import { Loading } from 'components'
 
+const Container = styled.div`
+  width: 100%;
+  margin: 20px;
+`
 
 class App extends React.Component {
   state = {
@@ -13,23 +19,24 @@ class App extends React.Component {
       const { data } = await api.get('me')
       this.setState({
         loaded: true,
-        user: data
+        user: data,
       })
-    } catch(e) {
+    } catch (e) {
       this.setState({
         loaded: true,
-        user: null
+        user: null,
       })
     }
   }
 
   render() {
-    console.log('user', this.state.user)
-    return (
-      <div>
-        App
-      </div>
-    )
+    if (!this.state.loaded) {
+      return <Loading />
+    }
+
+    const { user } = this.state
+    console.log('user', user)
+    return <Container>App</Container>
   }
 }
 
