@@ -1,22 +1,15 @@
 import axios from 'axios'
 import { apiConfig } from 'config'
 
+const { server, version } = apiConfig
+const config = {
+  baseURL: `${server}/api/${version}/`,
+  withCredentials: true,
+  maxRedirects: 0,
+}
+
 export default class API {
-  constructor() {
-    this.config = apiConfig
-  }
-
-  getBaseURL() {
-    const { server, version } = this.config
-    return `${server}/api/${version}/`
-  }
-
   get(url) {
-    return axios.request({
-      url,
-      method: 'get',
-      baseURL: this.getBaseURL(),
-      withCredentials: true,
-    })
+    return axios.get(url, config)
   }
 }
