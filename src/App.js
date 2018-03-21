@@ -16,11 +16,19 @@ class App extends React.Component {
 
   async componentDidMount() {
     try {
-      const { data } = await api.get('me')
-      this.setState({
-        loaded: true,
-        user: data,
-      })
+      const { data, status } = await api.get('me')
+
+      if (status === 200) {
+        this.setState({
+          loaded: true,
+          user: data,
+        })
+      } else {
+        this.setState({
+          loaded: true,
+          user: null,
+        })
+      }
     } catch (e) {
       this.setState({
         loaded: true,
