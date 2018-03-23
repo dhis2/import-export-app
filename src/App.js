@@ -7,7 +7,7 @@ import { Loading } from 'components'
 import { setUser, clearUser } from 'reducers'
 
 import * as pages from './pages'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 
 const Container = styled.div`
   width: 100%;
@@ -16,6 +16,7 @@ const Container = styled.div`
   flex-wrap: nowrap;
 `
 
+@withRouter
 @connect(({ user }) => ({ user }), { setUser, clearUser })
 class App extends React.Component {
   state = {
