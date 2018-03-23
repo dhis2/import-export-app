@@ -5,5 +5,35 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-22T12:49:02.945Z\n"
-"PO-Revision-Date: 2018-03-22T12:49:02.945Z\n"
+"POT-Creation-Date: 2018-03-23T13:29:19.316Z\n"
+"PO-Revision-Date: 2018-03-23T13:29:19.316Z\n"
+
+msgid "Metadata Import"
+msgstr ""
+
+msgid "Data Import"
+msgstr ""
+
+msgid "GML Import"
+msgstr ""
+
+msgid "Event Import"
+msgstr ""
+
+msgid "Metadata Export"
+msgstr ""
+
+msgid "Metadata Dependency Export"
+msgstr ""
+
+msgid "Data Export"
+msgstr ""
+
+msgid "Event Export"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Export"
+msgstr ""

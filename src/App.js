@@ -6,9 +6,14 @@ import { api } from 'services'
 import { Loading } from 'components'
 import { setUser, clearUser } from 'reducers'
 
+import * as pages from './pages'
+import { Route } from 'react-router-dom'
+
 const Container = styled.div`
   width: 100%;
-  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 `
 
 @connect(({ user }) => ({ user }), { setUser, clearUser })
@@ -43,8 +48,21 @@ class App extends React.Component {
       return <Loading />
     }
 
-    console.log('user', this.props.user)
-    return <Container>App</Container>
+    return (
+      <Container>
+        {Object.keys(pages).map(k => {
+          const page = pages[k]
+          return (
+            <Route
+              key={`page-${k}`}
+              path={page.path}
+              exact={true}
+              component={page}
+            />
+          )
+        })}
+      </Container>
+    )
   }
 }
 
