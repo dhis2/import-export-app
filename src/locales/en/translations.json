@@ -8,5 +8,21 @@
   "Data Export": "",
   "Event Export": "",
   "Import": "",
-  "Export": ""
+  "Export": "",
+  "Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.":
+    "",
+  "Export event data for programs, stages and tracked entities in the DXF 2 format.":
+    "",
+  "Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.":
+    "",
+  "Export metadata like data sets and programs including related metadata objects.":
+    "",
+  "Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is the standard exchange format for DHIS 2.":
+    "",
+  "Import events for programs, stages and tracked entities in the DXF 2 format.":
+    "",
+  "Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.":
+    "",
+  "Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.":
+    ""
 }
