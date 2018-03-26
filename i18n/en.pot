@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-23T13:29:19.316Z\n"
-"PO-Revision-Date: 2018-03-23T13:29:19.316Z\n"
+"POT-Creation-Date: 2018-03-26T13:21:59.265Z\n"
+"PO-Revision-Date: 2018-03-26T13:21:59.265Z\n"
 
 msgid "Metadata Import"
 msgstr ""
@@ -36,4 +36,42 @@ msgid "Import"
 msgstr ""
 
 msgid "Export"
+msgstr ""
+
+msgid ""
+"Export data values. This is the regular export function which exports data "
+"to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects."
+msgstr ""
+
+msgid ""
+"Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is "
+"the standard exchange format for DHIS 2."
+msgstr ""
+
+msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the "
+"standard DHIS 2 exchange format called DXF 2."
 msgstr ""
