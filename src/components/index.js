@@ -1,2 +1,2 @@
-export * from './Loading'
-export * from './SidePanel'
+export * from './Loading/index'
+export * from './SidePanel/index'

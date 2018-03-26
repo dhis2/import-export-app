@@ -1,17 +1,11 @@
 import React from 'react'
 import { CircularProgress } from 'material-ui'
-import styled from 'styled-components'
-
-const Container = styled.div`
-  width: 100%;
-  margin: 50px 0;
-  text-align: center;
-`
+import s from './styles.css'
 
 export function Loading({ size, thickness }) {
   return (
-    <Container>
+    <div className={s.container}>
       <CircularProgress size={size || 80} thickness={thickness || 1} />
-    </Container>
+    </div>
   )
 }
