@@ -1,2 +1,32 @@
 .container {
+  margin: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.item {
+  cursor: pointer;
+  margin-bottom: 30px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 3px 0 #999;
+  border-radius: 3px;
+}
+.item:hover {
+  background-color: #f3f6f9;
+}
+.title {
+  padding: 8px 0 8px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #e9ecef;
+}
+.description {
+  padding: 8px 15px;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 300;
+  min-height: 100px;
 }
