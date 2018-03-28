@@ -1,5 +1,5 @@
 import React from 'react'
-import { SidePanel } from 'components/index'
+import { SidePanel } from 'components'
 import s from './styles.css'
 
 export default class Template extends React.Component {

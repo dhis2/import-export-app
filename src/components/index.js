@@ -1,2 +1,3 @@
-export * from './Loading/index'
-export * from './SidePanel/index'
+export * from './Loading'
+export * from './SidePanel'
+export * from './Form'

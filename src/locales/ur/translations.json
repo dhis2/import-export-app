@@ -1,0 +1,28 @@
+{
+  "Metadata Import": "میٹا ڈیٹا اِیمپورٹ",
+  "Data Import": "ڈیٹا اِیمپورٹ",
+  "GML Import": "جی۔ایم۔ایل اِیمپورٹ",
+  "Event Import": "اِیونٹ اِیمپورٹ",
+  "Metadata Export": "میٹا ڈیٹا ایکسپورٹ",
+  "Metadata Dependency Export": "میٹا دیٹا ڈییپنڈسی ایکسپورٹ",
+  "Data Export": "ڈیٹا ایکسپورٹ",
+  "Event Export": "اِیونٹ ایکسپورٹ",
+  "Import": "اِیمپورٹ",
+  "Export": "ایکسپورٹ",
+  "Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.":
+    "ایکسپورٹ ڈیٹا ویلیوز۔ یہ ایک عموممی ایکسپورٹ فنکشن ہے جو ڈی۔آئی۔ایچ۔ایس کے فارمیٹ میں DXF 2 میں ڈیٹا کو ایکسپورٹ کرتا ہے۔",
+  "Export event data for programs, stages and tracked entities in the DXF 2 format.":
+    "پرواگرام، سٹیج اور ٹریک اینٹیٹیز کا ڈیٹا DXF 2 فارمیٹ میں ایکسپورٹ کریں۔",
+  "Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.":
+    " یٹا ایلمنٹس اور ارگنائزینشن یونٹ کی طرح میٹا دیٹا کو DHIS 2 ایکسچینج فارمیٹ میں ایکسپورٹ کریں",
+  "Export metadata like data sets and programs including related metadata objects.":
+    "میٹا ڈیٹا کو ڈیٹا سیٹ اور پروگرامز کی طرح ایکسپورٹ کریں۔",
+  "Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is the standard exchange format for DHIS 2.":
+    "ڈیٹا ویلیوز کو ایمپورٹ کے لیے DXF 2, CSV, JSON یا PDF فارمٹ کو استمال کریں۔ ڈی۔آئی۔ایچ۔ایس 2 میں DXF 2 ڈیٹا ایکسچینج کا معیار ہے",
+  "Import events for programs, stages and tracked entities in the DXF 2 format.":
+    "پروگرام، سٹیجیز اور ٹریک اینٹٹیز کو DXF 2 کے فارمیٹ میں ایمپورٹ کریں۔",
+  "Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.":
+    "تنظیمی یونٹ سے مطالق جغرافیایی ڈیٹا کو ایمپورٹ کریں۔ GML ایمپورٹ کا یہ فارمیٹ XML پر مبنی ہے جو جغرافیایی خصوصیات کی رونمائی کرتا ہے۔",
+  "Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.":
+    "۔DXF 2 کے فارمیٹ میں میٹا ڈیٹا کو ایمپورٹ کریں۔ مثلاً ڈیٹا ایلیمنٹ، تنظیمی یونٹ وغیرہ۔"
+}

@@ -1,0 +1,12 @@
+{
+  "Metadata Import": "Metadata import",
+  "Data Import": "Data import",
+  "GML Import": "GML import",
+  "Event Import": "Händelse import",
+  "Metadata Export": "Metadata export",
+  "Metadata Dependency Export": "Metadata beroenden export",
+  "Data Export": "Data export",
+  "Event Export": "Händelse export",
+  "Import": "Import",
+  "Export": "Export"
+}
