@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-04T10:38:51.386Z\n"
-"PO-Revision-Date: 2018-04-04T10:38:51.386Z\n"
+"POT-Creation-Date: 2018-04-04T11:34:33.329Z\n"
+"PO-Revision-Date: 2018-04-04T11:34:33.329Z\n"
 
 msgid "Metadata Import"
 msgstr ""
@@ -69,19 +69,6 @@ msgid ""
 "the standard exchange format for DHIS 2."
 msgstr ""
 
-msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
-msgstr ""
-
-msgid ""
-"Import geographic data for organisation units using GML format. GML is an "
-"XML grammar for expressing geographical features."
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the "
-"standard DHIS 2 exchange format called DXF 2."
-msgstr ""
-
 msgid "File"
 msgstr ""
 
@@ -94,7 +81,19 @@ msgstr ""
 msgid "Strategy"
 msgstr ""
 
-msgid "Reference mode"
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Org unit ID scheme"
+msgstr ""
+
+msgid "ID scheme (all objects)"
+msgstr ""
+
+msgid "Existing record check"
 msgstr ""
 
 msgid "JSON"
@@ -104,6 +103,12 @@ msgid "XML"
 msgstr ""
 
 msgid "CSV"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "ADX"
 msgstr ""
 
 msgid "No"
@@ -119,6 +124,49 @@ msgid "New only"
 msgstr ""
 
 msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr ""
+
+msgid "[ Select ]"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "HR identifier"
+msgstr ""
+
+msgid "Check (safe, recommended)"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr ""
+
+msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the "
+"standard DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "Reference mode"
 msgstr ""
 
 msgid "Allow invalid references"

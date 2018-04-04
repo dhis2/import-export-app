@@ -52,6 +52,7 @@ export class MetaDataImport extends React.Component {
       name: 'strategy',
       label: i18n.t('Strategy'),
     },
+
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_SELECT,
