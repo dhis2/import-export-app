@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-04T08:10:46.482Z\n"
-"PO-Revision-Date: 2018-04-04T08:10:46.482Z\n"
+"POT-Creation-Date: 2018-04-04T10:38:51.386Z\n"
+"PO-Revision-Date: 2018-04-04T10:38:51.386Z\n"
 
 msgid "Metadata Import"
 msgstr ""
@@ -82,7 +82,19 @@ msgid ""
 "standard DHIS 2 exchange format called DXF 2."
 msgstr ""
 
+msgid "File"
+msgstr ""
+
 msgid "Format"
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Reference mode"
 msgstr ""
 
 msgid "JSON"
@@ -94,32 +106,26 @@ msgstr ""
 msgid "CSV"
 msgstr ""
 
-msgid "Dry run"
-msgstr ""
-
 msgid "No"
 msgstr ""
 
 msgid "Yes"
 msgstr ""
 
-msgid "Strategy"
-msgstr ""
-
 msgid "New and Updates"
 msgstr ""
 
-msgid "New"
+msgid "New only"
 msgstr ""
 
 msgid "Updates only"
-msgstr ""
-
-msgid "Reference mode"
 msgstr ""
 
 msgid "Allow invalid references"
 msgstr ""
 
 msgid "Deny invalid references"
+msgstr ""
+
+msgid "New"
 msgstr ""
