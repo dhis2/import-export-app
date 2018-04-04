@@ -6,16 +6,16 @@ import {
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_FILE,
-  TYPE_SELECT,
+  TYPE_SELECT
 } from 'components'
 
 const attrs = {
   formControl: {
     fullWidth: true,
     style: {
-      marginBottom: 20,
-    },
-  },
+      marginBottom: 20
+    }
+  }
 }
 
 export class MetaDataImport extends React.Component {
@@ -24,7 +24,7 @@ export class MetaDataImport extends React.Component {
   static order = 1
   static title = i18n.t('Metadata Import')
   static description = i18n.t(
-    'Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.',
+    'Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.'
   )
 
   fields = [
@@ -32,33 +32,33 @@ export class MetaDataImport extends React.Component {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
       name: 'file',
-      label: i18n.t('File'),
+      label: i18n.t('File')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'importFormat',
-      label: i18n.t('Format'),
+      label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'dryRun',
-      label: i18n.t('Dry run'),
+      label: i18n.t('Dry run')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'strategy',
-      label: i18n.t('Strategy'),
+      label: i18n.t('Strategy')
     },
 
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_SELECT,
       name: 'atomicMode',
-      label: i18n.t('Reference mode'),
-    },
+      label: i18n.t('Reference mode')
+    }
   ]
 
   state = {
@@ -67,17 +67,17 @@ export class MetaDataImport extends React.Component {
       values: [
         {
           value: 'json',
-          label: i18n.t('JSON'),
+          label: i18n.t('JSON')
         },
         {
           value: 'xml',
-          label: i18n.t('XML'),
+          label: i18n.t('XML')
         },
         {
           value: 'csv',
-          label: i18n.t('CSV'),
-        },
-      ],
+          label: i18n.t('CSV')
+        }
+      ]
     },
 
     dryRun: {
@@ -85,13 +85,13 @@ export class MetaDataImport extends React.Component {
       values: [
         {
           value: 'false',
-          label: i18n.t('No'),
+          label: i18n.t('No')
         },
         {
           value: 'true',
-          label: i18n.t('Yes'),
-        },
-      ],
+          label: i18n.t('Yes')
+        }
+      ]
     },
 
     strategy: {
@@ -99,17 +99,17 @@ export class MetaDataImport extends React.Component {
       values: [
         {
           value: 'NEW_AND_UPDATES',
-          label: i18n.t('New and Updates'),
+          label: i18n.t('New and Updates')
         },
         {
           value: 'NEW',
-          label: i18n.t('New only'),
+          label: i18n.t('New only')
         },
         {
           value: 'UPDATES',
-          label: i18n.t('Updates only'),
-        },
-      ],
+          label: i18n.t('Updates only')
+        }
+      ]
     },
 
     atomicMode: {
@@ -117,14 +117,14 @@ export class MetaDataImport extends React.Component {
       values: [
         {
           value: 'NONE',
-          label: i18n.t('Allow invalid references'),
+          label: i18n.t('Allow invalid references')
         },
         {
           value: 'ALL',
-          label: i18n.t('Deny invalid references'),
-        },
-      ],
-    },
+          label: i18n.t('Deny invalid references')
+        }
+      ]
+    }
   }
 
   onSubmit = () => {
@@ -135,7 +135,7 @@ export class MetaDataImport extends React.Component {
 
   render() {
     const style = {
-      width: 500,
+      width: 500
     }
 
     return (

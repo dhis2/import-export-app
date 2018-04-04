@@ -7,7 +7,7 @@ export class MetaDataDependencyExport extends React.Component {
   static order = 6
   static title = i18n.t('Metadata Dependency Export')
   static description = i18n.t(
-    'Export metadata like data sets and programs including related metadata objects.',
+    'Export metadata like data sets and programs including related metadata objects.'
   )
 
   render() {

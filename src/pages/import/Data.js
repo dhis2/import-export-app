@@ -4,7 +4,7 @@ import {
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_FILE,
-  TYPE_SELECT,
+  TYPE_SELECT
 } from 'components'
 
 export class DataImport extends React.Component {
@@ -13,7 +13,7 @@ export class DataImport extends React.Component {
   static order = 2
   static title = i18n.t('Data Import')
   static description = i18n.t(
-    'Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is the standard exchange format for DHIS 2.',
+    'Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is the standard exchange format for DHIS 2.'
   )
 
   fields = [
@@ -21,57 +21,57 @@ export class DataImport extends React.Component {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
       name: 'file',
-      label: i18n.t('File'),
+      label: i18n.t('File')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'importFormat',
-      label: i18n.t('Format'),
+      label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'dryRun',
-      label: i18n.t('Dry run'),
+      label: i18n.t('Dry run')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'strategy',
-      label: i18n.t('Strategy'),
+      label: i18n.t('Strategy')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'preheatCache',
-      label: i18n.t('Preheat cache'),
+      label: i18n.t('Preheat cache')
     },
 
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_SELECT,
       name: 'dataElementIdScheme',
-      label: i18n.t('Data element ID scheme'),
+      label: i18n.t('Data element ID scheme')
     },
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_SELECT,
       name: 'orgUnitIdScheme',
-      label: i18n.t('Org unit ID scheme'),
+      label: i18n.t('Org unit ID scheme')
     },
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_SELECT,
       name: 'idScheme',
-      label: i18n.t('ID scheme (all objects)'),
+      label: i18n.t('ID scheme (all objects)')
     },
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_SELECT,
       name: 'skipExistingCheck',
-      label: i18n.t('Existing record check'),
-    },
+      label: i18n.t('Existing record check')
+    }
   ]
 
   state = {
@@ -80,25 +80,25 @@ export class DataImport extends React.Component {
       values: [
         {
           value: 'json',
-          label: i18n.t('JSON'),
+          label: i18n.t('JSON')
         },
         {
           value: 'xml',
-          label: i18n.t('XML'),
+          label: i18n.t('XML')
         },
         {
           value: 'csv',
-          label: i18n.t('CSV'),
+          label: i18n.t('CSV')
         },
         {
           value: 'pdf',
-          label: i18n.t('PDF'),
+          label: i18n.t('PDF')
         },
         {
           value: 'adx',
-          label: i18n.t('ADX'),
-        },
-      ],
+          label: i18n.t('ADX')
+        }
+      ]
     },
 
     dryRun: {
@@ -106,13 +106,13 @@ export class DataImport extends React.Component {
       values: [
         {
           value: 'false',
-          label: i18n.t('No'),
+          label: i18n.t('No')
         },
         {
           value: 'true',
-          label: i18n.t('Yes'),
-        },
-      ],
+          label: i18n.t('Yes')
+        }
+      ]
     },
 
     strategy: {
@@ -120,21 +120,21 @@ export class DataImport extends React.Component {
       values: [
         {
           value: 'NEW_AND_UPDATES',
-          label: i18n.t('New and Updates'),
+          label: i18n.t('New and Updates')
         },
         {
           value: 'NEW',
-          label: i18n.t('New only'),
+          label: i18n.t('New only')
         },
         {
           value: 'UPDATES',
-          label: i18n.t('Updates only'),
+          label: i18n.t('Updates only')
         },
         {
           value: 'DELETE',
-          label: i18n.t('Delete'),
-        },
-      ],
+          label: i18n.t('Delete')
+        }
+      ]
     },
 
     preheatCache: {
@@ -142,13 +142,13 @@ export class DataImport extends React.Component {
       values: [
         {
           value: 'false',
-          label: i18n.t('No'),
+          label: i18n.t('No')
         },
         {
           value: 'true',
-          label: i18n.t('Yes (faster for large imports)'),
-        },
-      ],
+          label: i18n.t('Yes (faster for large imports)')
+        }
+      ]
     },
 
     dataElementIdScheme: {
@@ -156,17 +156,17 @@ export class DataImport extends React.Component {
       values: [
         {
           value: '',
-          label: i18n.t('[ Select ]'),
+          label: i18n.t('[ Select ]')
         },
         {
           value: 'UID',
-          label: i18n.t('UID'),
+          label: i18n.t('UID')
         },
         {
           value: 'CODE',
-          label: i18n.t('Code'),
-        },
-      ],
+          label: i18n.t('Code')
+        }
+      ]
     },
 
     orgUnitIdScheme: {
@@ -174,25 +174,25 @@ export class DataImport extends React.Component {
       values: [
         {
           value: '',
-          label: i18n.t('[ Select ]'),
+          label: i18n.t('[ Select ]')
         },
         {
           value: 'UID',
-          label: i18n.t('UID'),
+          label: i18n.t('UID')
         },
         {
           value: 'CODE',
-          label: i18n.t('Code'),
+          label: i18n.t('Code')
         },
         {
           value: 'NAME',
-          label: i18n.t('Name'),
+          label: i18n.t('Name')
         },
         {
           value: 'ATTRIBUTE:UKNKz1H10EE',
-          label: i18n.t('HR identifier'),
-        },
-      ],
+          label: i18n.t('HR identifier')
+        }
+      ]
     },
 
     idScheme: {
@@ -200,17 +200,17 @@ export class DataImport extends React.Component {
       values: [
         {
           value: '',
-          label: i18n.t('[ Select ]'),
+          label: i18n.t('[ Select ]')
         },
         {
           value: 'UID',
-          label: i18n.t('UID'),
+          label: i18n.t('UID')
         },
         {
           value: 'CODE',
-          label: i18n.t('Code'),
-        },
-      ],
+          label: i18n.t('Code')
+        }
+      ]
     },
 
     skipExistingCheck: {
@@ -218,14 +218,14 @@ export class DataImport extends React.Component {
       values: [
         {
           value: 'false',
-          label: i18n.t('Check (safe, recommended)'),
+          label: i18n.t('Check (safe, recommended)')
         },
         {
           value: 'true',
-          label: i18n.t('Skip check (fast)'),
-        },
-      ],
-    },
+          label: i18n.t('Skip check (fast)')
+        }
+      ]
+    }
   }
 
   render() {

@@ -7,7 +7,7 @@ export class EventExport extends React.Component {
   static order = 8
   static title = i18n.t('Event Export')
   static description = i18n.t(
-    'Export event data for programs, stages and tracked entities in the DXF 2 format.',
+    'Export event data for programs, stages and tracked entities in the DXF 2 format.'
   )
 
   render() {

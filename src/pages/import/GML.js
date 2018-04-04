@@ -8,7 +8,7 @@ export class GMLImport extends React.Component {
   static order = 3
   static title = i18n.t('GML Import')
   static description = i18n.t(
-    'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.',
+    'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.'
   )
 
   fields = [
@@ -16,14 +16,14 @@ export class GMLImport extends React.Component {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
       name: 'file',
-      label: i18n.t('File'),
+      label: i18n.t('File')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_SELECT,
       name: 'dryRun',
-      label: i18n.t('Dry run'),
-    },
+      label: i18n.t('Dry run')
+    }
   ]
 
   state = {
@@ -32,14 +32,14 @@ export class GMLImport extends React.Component {
       values: [
         {
           value: 'false',
-          label: i18n.t('No'),
+          label: i18n.t('No')
         },
         {
           value: 'true',
-          label: i18n.t('Yes'),
-        },
-      ],
-    },
+          label: i18n.t('Yes')
+        }
+      ]
+    }
   }
 
   render() {

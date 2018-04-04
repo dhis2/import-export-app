@@ -13,7 +13,7 @@ import { Route, withRouter } from 'react-router-dom'
 @connect(({ user }) => ({ user }), { setUser, clearUser })
 class App extends React.Component {
   state = {
-    loaded: false,
+    loaded: false
   }
 
   setLoaded = loaded => this.setState({ loaded })

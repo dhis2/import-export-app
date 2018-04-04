@@ -13,7 +13,7 @@ function addToList(key, pages) {
     path: p.path,
     order: p.order,
     title: p.title,
-    description: p.description,
+    description: p.description
   })
 }
 
