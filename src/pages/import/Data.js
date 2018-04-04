@@ -75,7 +75,7 @@ export class DataImport extends React.Component {
   ]
 
   state = {
-    format: {
+    importFormat: {
       selected: 'json',
       values: [
         {

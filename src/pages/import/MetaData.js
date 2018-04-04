@@ -62,7 +62,7 @@ export class MetaDataImport extends React.Component {
   ]
 
   state = {
-    format: {
+    importFormat: {
       selected: 'json',
       values: [
         {
