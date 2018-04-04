@@ -1,4 +1,5 @@
 import React from 'react'
+import i18n from 'd2-i18n'
 import { withRouter } from 'react-router-dom'
 import s from './styles.css'
 
@@ -37,9 +38,15 @@ export class Home extends React.Component {
   render() {
     return (
       <div className={s.container}>
-        {list.map((item, index) => (
-          <Item key={`page-item-${index}`} {...item} onClick={this.onClick} />
-        ))}
+        <h2 className={s.heading}>{i18n.t('Import / Export')}</h2>
+        <div className={s.purpose}>
+          {i18n.t('Import or Export DHIS2 data.')}
+        </div>
+        <div className={s.list}>
+          {list.map((item, index) => (
+            <Item key={`page-item-${index}`} {...item} onClick={this.onClick} />
+          ))}
+        </div>
       </div>
     )
   }

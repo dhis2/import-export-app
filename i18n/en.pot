@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-28T16:30:59.605Z\n"
-"PO-Revision-Date: 2018-03-28T16:30:59.605Z\n"
+"POT-Creation-Date: 2018-04-04T08:10:46.482Z\n"
+"PO-Revision-Date: 2018-04-04T08:10:46.482Z\n"
 
 msgid "Metadata Import"
 msgstr ""
@@ -56,6 +56,12 @@ msgstr ""
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
+msgstr ""
+
+msgid "Import / Export"
+msgstr ""
+
+msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid ""

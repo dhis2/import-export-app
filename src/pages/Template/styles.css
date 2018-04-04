@@ -5,5 +5,5 @@
 }
 
 .content {
-  width: 80vw;
+  width: calc(100vw - 300px);
 }

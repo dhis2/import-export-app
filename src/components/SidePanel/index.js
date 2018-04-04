@@ -68,7 +68,7 @@ export class SidePanel extends React.Component {
               to={to}
               key={`export-${to}`}
               className={s.link}
-              activeClassName="active"
+              activeClassName={s.active}
             >
               <div className={s.item}>
                 <div className={s.text}>{text}</div>
