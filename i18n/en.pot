@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-05T11:12:25.253Z\n"
-"PO-Revision-Date: 2018-04-05T11:12:25.253Z\n"
+"POT-Creation-Date: 2018-04-05T11:38:43.777Z\n"
+"PO-Revision-Date: 2018-04-05T11:38:43.777Z\n"
 
 msgid "Metadata Import"
 msgstr ""
@@ -43,12 +43,57 @@ msgid ""
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
 
+msgid "Organisation unit"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Org unit ID scheme"
+msgstr ""
+
+msgid "Category ID scheme"
+msgstr ""
+
+msgid "JSON"
+msgstr ""
+
+msgid "XML"
+msgstr ""
+
+msgid "CSV"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "HR identifier"
+msgstr ""
+
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
-msgstr ""
-
-msgid "Organisation unit"
 msgstr ""
 
 msgid "Programs"
@@ -60,28 +105,10 @@ msgstr ""
 msgid "ID scheme"
 msgstr ""
 
-msgid "Start date"
-msgstr ""
-
-msgid "End date"
-msgstr ""
-
 msgid "Inclusion"
 msgstr ""
 
-msgid "Format"
-msgstr ""
-
-msgid "Compression"
-msgstr ""
-
 msgid "[ All program stages]"
-msgstr ""
-
-msgid "UID"
-msgstr ""
-
-msgid "Code"
 msgstr ""
 
 msgid "Selected organisation unit"
@@ -91,18 +118,6 @@ msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "XML"
-msgstr ""
-
-msgid "JSON"
-msgstr ""
-
-msgid "CSV"
-msgstr ""
-
-msgid "Zip"
 msgstr ""
 
 msgid "Gzip"
@@ -171,12 +186,6 @@ msgstr ""
 msgid "Preheat cache"
 msgstr ""
 
-msgid "Data element ID scheme"
-msgstr ""
-
-msgid "Org unit ID scheme"
-msgstr ""
-
 msgid "ID scheme (all objects)"
 msgstr ""
 
@@ -211,12 +220,6 @@ msgid "Yes (faster for large imports)"
 msgstr ""
 
 msgid "[ Select ]"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "HR identifier"
 msgstr ""
 
 msgid "Check (safe, recommended)"

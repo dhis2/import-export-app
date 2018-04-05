@@ -1,12 +1,7 @@
 import React from 'react'
 import i18n from 'd2-i18n'
+import { today } from 'helpers'
 import { CTX_DEFAULT, TYPE_SELECT, TYPE_DATE, TYPE_ORG_UNIT } from 'components'
-
-const d = new Date()
-
-const mm = (d.getMonth() + 1).toString()
-const dd = d.getDate().toString()
-const today = `${d.getFullYear()}-${mm.padStart(2, '0')}-${dd.padStart(2, '0')}`
 
 export class EventExport extends React.Component {
   static path = '/export/event'
@@ -102,8 +97,8 @@ export class EventExport extends React.Component {
         }
       ]
     },
-    startDate: today,
-    endDate: today,
+    startDate: today(),
+    endDate: today(),
 
     inclusion: {
       selected: 'selected',
