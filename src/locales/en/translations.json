@@ -51,6 +51,7 @@
   "Skip check (fast)": "",
   "Import events for programs, stages and tracked entities in the DXF 2 format.":
     "",
+  "Event ID Scheme": "",
   "Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.":
     "",
   "Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.":

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-04T12:46:34.389Z\n"
-"PO-Revision-Date: 2018-04-04T12:46:34.389Z\n"
+"POT-Creation-Date: 2018-04-05T09:05:33.787Z\n"
+"PO-Revision-Date: 2018-04-05T09:05:33.787Z\n"
 
 msgid "Metadata Import"
 msgstr ""
@@ -53,6 +53,36 @@ msgid ""
 "DHIS 2 exchange format."
 msgstr ""
 
+msgid "Format"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Sharing"
+msgstr ""
+
+msgid "JSON"
+msgstr ""
+
+msgid "XML"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "Gzip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
@@ -70,9 +100,6 @@ msgid ""
 msgstr ""
 
 msgid "File"
-msgstr ""
-
-msgid "Format"
 msgstr ""
 
 msgid "Dry run"
@@ -94,12 +121,6 @@ msgid "ID scheme (all objects)"
 msgstr ""
 
 msgid "Existing record check"
-msgstr ""
-
-msgid "JSON"
-msgstr ""
-
-msgid "XML"
 msgstr ""
 
 msgid "CSV"
