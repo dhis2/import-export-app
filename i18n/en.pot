@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-05T09:19:37.889Z\n"
-"PO-Revision-Date: 2018-04-05T09:19:37.889Z\n"
+"POT-Creation-Date: 2018-04-05T11:12:25.253Z\n"
+"PO-Revision-Date: 2018-04-05T11:12:25.253Z\n"
 
 msgid "Metadata Import"
 msgstr ""
@@ -48,9 +48,25 @@ msgid ""
 "format."
 msgstr ""
 
-msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
+msgid "Organisation unit"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Program Stages"
+msgstr ""
+
+msgid "ID scheme"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
+
+msgid "Inclusion"
 msgstr ""
 
 msgid "Format"
@@ -59,19 +75,45 @@ msgstr ""
 msgid "Compression"
 msgstr ""
 
-msgid "Sharing"
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "XML"
 msgstr ""
 
 msgid "JSON"
 msgstr ""
 
-msgid "XML"
+msgid "CSV"
 msgstr ""
 
 msgid "Zip"
 msgstr ""
 
 msgid "Gzip"
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+
+msgid "Sharing"
 msgstr ""
 
 msgid "Uncompressed"
@@ -95,9 +137,6 @@ msgid "Object"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
-
-msgid "Programs"
 msgstr ""
 
 msgid "Category combination"
@@ -144,9 +183,6 @@ msgstr ""
 msgid "Existing record check"
 msgstr ""
 
-msgid "CSV"
-msgstr ""
-
 msgid "PDF"
 msgstr ""
 
@@ -175,12 +211,6 @@ msgid "Yes (faster for large imports)"
 msgstr ""
 
 msgid "[ Select ]"
-msgstr ""
-
-msgid "UID"
-msgstr ""
-
-msgid "Code"
 msgstr ""
 
 msgid "Name"

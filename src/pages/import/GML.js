@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from 'd2-i18n'
-import { CTX_DEFAULT, TYPE_FILE, TYPE_SELECT } from '../../components'
+import { CTX_DEFAULT, TYPE_FILE, TYPE_SELECT } from 'components'
 
 export class GMLImport extends React.Component {
   static path = '/import/gml'

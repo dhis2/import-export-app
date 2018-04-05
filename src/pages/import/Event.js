@@ -1,11 +1,6 @@
 import React from 'react'
 import i18n from 'd2-i18n'
-import {
-  CTX_DEFAULT,
-  CTX_MORE_OPTIONS,
-  TYPE_FILE,
-  TYPE_SELECT
-} from '../../components'
+import { CTX_DEFAULT, TYPE_FILE, TYPE_SELECT } from 'components'
 
 export class EventImport extends React.Component {
   static path = '/import/event'

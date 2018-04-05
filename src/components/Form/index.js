@@ -3,7 +3,9 @@ import s from './styles.css'
 
 export const TYPE_FILE = 'fieldType/FILE'
 export const TYPE_TEXT = 'fieldType/TEXT'
+export const TYPE_DATE = 'fieldType/DATE'
 export const TYPE_SELECT = 'fieldType/SELECT'
+export const TYPE_ORG_UNIT = 'fieldType/ORG_UNIT'
 
 export const CTX_DEFAULT = 'ctx/DEFAULT'
 export const CTX_MORE_OPTIONS = 'ctx/MORE_OPTIONS'
