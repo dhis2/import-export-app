@@ -7,10 +7,10 @@
 }
 .title {
   padding: 10px 0 6px 15px;
-  font-size: 21px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   border-bottom: 1px solid #e9ecef;
 }
-.content {
-  padding: 10px 15px;
+.fields {
+  padding: 10px 0 6px 15px;
 }

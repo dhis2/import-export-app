@@ -1,0 +1,33 @@
+form .formControl {
+  margin-top: 16px;
+}
+
+form .formLabel {
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+form .radioGroup {
+  display: flex;
+  flex-direction: row;
+}
+
+form .formControlLabelRoot {
+}
+form .formControlLabelLabel {
+  user-select: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+form .radioDefault {
+  color: #afb2b5;
+}
+form .radioChecked {
+  color: #4c708c;
+}
+form .radioDisabled {
+  color: #e9ecef;
+}
