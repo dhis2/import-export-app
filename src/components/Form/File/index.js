@@ -2,6 +2,7 @@ import React from 'react'
 import { SvgIcon } from 'material-ui'
 import { FormControl, FormLabel } from 'material-ui'
 import s from './styles.css'
+import i18n from 'd2-i18n'
 
 function FileUploadIcon(props) {
   return (
@@ -34,7 +35,9 @@ export default class FileField extends React.Component {
           className={s.hiddenFileInput}
         />
         <FileUploadIcon className={s.button} />
-        <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
+        <FormLabel classes={{ root: s.formLabel }}>
+          {label || i18n.t('Choose a file to upload')}
+        </FormLabel>
       </FormControl>
     )
   }

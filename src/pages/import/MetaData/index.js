@@ -26,7 +26,7 @@ export class MetaDataImport extends FormBase {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
       name: 'file',
-      label: i18n.t('Choose a file to upload')
+      label: null
     },
     {
       context: CTX_DEFAULT,
