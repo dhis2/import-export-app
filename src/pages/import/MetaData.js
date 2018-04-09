@@ -2,6 +2,7 @@ import React from 'react'
 import i18n from 'd2-i18n'
 import {
   Form,
+  FormBase,
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_FILE,
@@ -9,7 +10,7 @@ import {
   TYPE_RADIO
 } from 'components'
 
-export class MetaDataImport extends React.Component {
+export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
 
   static order = 1
@@ -124,8 +125,6 @@ export class MetaDataImport extends React.Component {
     console.log('onSubmit')
   }
 
-  onChange = () => {}
-
   render() {
     const style = {
       width: '80%'
@@ -137,6 +136,7 @@ export class MetaDataImport extends React.Component {
         fields={this.fields}
         fieldValues={this.state}
         title={i18n.t('Metadata Import')}
+        onChange={this.onChange}
         onSubmit={this.onSubmit}
       />
     )

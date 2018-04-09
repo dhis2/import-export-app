@@ -9,8 +9,10 @@ import {
 import s from './styles.css'
 
 export default class RadioField extends React.Component {
+  onChange = (evt, value) => this.props.onChange(this.props.name, value)
+
   render() {
-    const { name, label, values, selected, onChange } = this.props
+    const { name, label, values, selected } = this.props
 
     return (
       <FormControl classes={{ root: s.formControl }}>
@@ -18,7 +20,7 @@ export default class RadioField extends React.Component {
         <RadioGroup
           classes={{ root: s.radioGroup }}
           value={selected}
-          onChange={onChange}
+          onChange={this.onChange}
         >
           {values.map(v => (
             <FormControlLabel

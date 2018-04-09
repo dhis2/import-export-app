@@ -14,10 +14,6 @@ export const CTX_DEFAULT = 'ctx/DEFAULT'
 export const CTX_MORE_OPTIONS = 'ctx/MORE_OPTIONS'
 
 export class Form extends React.Component {
-  onChange = () => {
-    console.log('onChange')
-  }
-
   fields() {
     const { fields, fieldValues } = this.props
     const { _context: context } = fieldValues
@@ -28,7 +24,6 @@ export class Form extends React.Component {
       }
 
       const { type, name, label } = field
-
       if (type === TYPE_RADIO) {
         const { selected, values } = fieldValues[name]
         return (
@@ -38,7 +33,7 @@ export class Form extends React.Component {
             label={label}
             values={values}
             selected={selected}
-            onChange={this.onChange}
+            onChange={this.props.onChange}
           />
         )
       }
