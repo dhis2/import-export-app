@@ -8,7 +8,9 @@ import {
   TYPE_FILE,
   TYPE_SELECT,
   TYPE_RADIO
-} from 'components'
+} from 'components/index'
+
+import s from './styles.css'
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
@@ -30,7 +32,8 @@ export class MetaDataImport extends FormBase {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
       name: 'importFormat',
-      label: i18n.t('Format')
+      label: i18n.t('Format'),
+      className: s.importFormat
     },
     {
       context: CTX_DEFAULT,
@@ -40,14 +43,14 @@ export class MetaDataImport extends FormBase {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'strategy',
       label: i18n.t('Strategy')
     },
 
     {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'atomicMode',
       label: i18n.t('Reference mode')
     }
@@ -61,15 +64,15 @@ export class MetaDataImport extends FormBase {
       values: [
         {
           value: 'json',
-          label: i18n.t('JSON')
+          label: i18n.t('json')
         },
         {
           value: 'xml',
-          label: i18n.t('XML')
+          label: i18n.t('xml')
         },
         {
           value: 'csv',
-          label: i18n.t('CSV')
+          label: i18n.t('csv')
         }
       ]
     },
@@ -126,13 +129,9 @@ export class MetaDataImport extends FormBase {
   }
 
   render() {
-    const style = {
-      width: '80%'
-    }
-
     return (
       <Form
-        style={style}
+        className={s.form}
         fields={this.fields}
         fieldValues={this.state}
         title={i18n.t('Metadata Import')}

@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 import {
   FormControl,
   FormControlLabel,
@@ -12,10 +13,10 @@ export default class RadioField extends React.Component {
   onChange = (evt, value) => this.props.onChange(this.props.name, value)
 
   render() {
-    const { name, label, values, selected } = this.props
+    const { name, label, values, selected, className } = this.props
 
     return (
-      <FormControl classes={{ root: s.formControl }}>
+      <FormControl classes={{ root: cx(s.formControl, className) }}>
         <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
         <RadioGroup
           classes={{ root: s.radioGroup }}

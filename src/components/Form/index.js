@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 import s from './styles.css'
 
 import Radio from './Radio'
@@ -23,7 +24,7 @@ export class Form extends React.Component {
         return null
       }
 
-      const { type, name, label } = field
+      const { type, name, label, className } = field
       if (type === TYPE_RADIO) {
         const { selected, values } = fieldValues[name]
         return (
@@ -33,6 +34,7 @@ export class Form extends React.Component {
             label={label}
             values={values}
             selected={selected}
+            className={className}
             onChange={this.props.onChange}
           />
         )
@@ -43,9 +45,9 @@ export class Form extends React.Component {
   }
 
   render() {
-    const { title, style } = this.props
+    const { title, className } = this.props
     return (
-      <form style={style} className={s.form} onSubmit={this.props.onSubmit}>
+      <form className={cx(className, s.form)} onSubmit={this.props.onSubmit}>
         <div className={s.title}>{title}</div>
         <div className={s.fields}>{this.fields()}</div>
       </form>
