@@ -137,6 +137,7 @@ export class MetaDataImport extends FormBase {
         title={i18n.t('Metadata Import')}
         onChange={this.onChange}
         changeContext={this.changeContext}
+        submitLabel={i18n.t('Import')}
         onSubmit={this.onSubmit}
       />
     )

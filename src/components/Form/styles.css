@@ -1,11 +1,12 @@
 .form {
-  margin: 24px 20px;
   cursor: default;
   background-color: #fff;
   box-shadow: 0 0 3px 0 #999;
   border-radius: 3px;
 }
+
 .title {
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,6 +16,21 @@
   font-weight: 400;
   border-bottom: 1px solid #e9ecef;
 }
+
 .fields {
   padding: 10px 0 6px 16px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 64px;
+  padding: 0 15px;
+  font-size: 18px;
+  font-weight: 400;
+  border-top: 1px solid #e9ecef;
+}
+.primary {
+  background-color: #4c708c;
 }

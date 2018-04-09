@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import s from './styles.css'
+import { Button } from 'material-ui'
 
 import Radio from './Radio'
 import MoreOptions from './MoreOptions'
@@ -47,6 +48,7 @@ export class Form extends React.Component {
 
   render() {
     const { title, className, fields, fieldValues } = this.props
+    const { onSubmit, submitLabel } = this.props
     const hasMoreOptions =
       fields.filter(f => f.context === CTX_MORE_OPTIONS).length > 0
 
@@ -62,6 +64,18 @@ export class Form extends React.Component {
           )}
         </div>
         <div className={s.fields}>{this.fields()}</div>
+        <div className={s.buttons}>
+          {onSubmit && (
+            <Button
+              color="primary"
+              variant="raised"
+              onClick={onSubmit}
+              classes={{ root: s.primary }}
+            >
+              {submitLabel}
+            </Button>
+          )}
+        </div>
       </form>
     )
   }

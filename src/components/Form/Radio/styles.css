@@ -3,6 +3,7 @@ form .formControl {
 }
 
 form .formLabel {
+  user-select: none;
   color: #000;
   font-size: 13px;
   font-weight: 500;
