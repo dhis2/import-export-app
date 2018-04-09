@@ -1,0 +1,25 @@
+form .formControl {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  cursor: pointer;
+  width: 100%;
+}
+
+form .formLabel {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  user-select: none;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.button {
+  margin-top: 10px;
+}
+.hiddenFileInput {
+  display: none;
+}

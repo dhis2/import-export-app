@@ -3,6 +3,7 @@ import cx from 'classnames'
 import s from './styles.css'
 import { Button } from 'material-ui'
 
+import File from './File'
 import Radio from './Radio'
 import MoreOptions from './MoreOptions'
 
@@ -40,6 +41,16 @@ export class Form extends React.Component {
             onChange={this.props.onChange}
           />
         )
+      } else if (type === TYPE_FILE) {
+        return (
+          <File
+            key={`radio-${name}`}
+            name={name}
+            label={label}
+            className={className}
+            onChange={this.props.onChange}
+          />
+        )
       }
 
       return null
@@ -63,7 +74,9 @@ export class Form extends React.Component {
             />
           )}
         </div>
+
         <div className={s.fields}>{this.fields()}</div>
+
         <div className={s.buttons}>
           {onSubmit && (
             <Button
