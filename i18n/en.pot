@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-09T13:01:08.584Z\n"
-"PO-Revision-Date: 2018-04-09T13:01:08.584Z\n"
+"POT-Creation-Date: 2018-04-09T13:24:59.219Z\n"
+"PO-Revision-Date: 2018-04-09T13:24:59.219Z\n"
+
+msgid "more options"
+msgstr ""
 
 msgid "Metadata Import"
 msgstr ""
@@ -245,15 +248,6 @@ msgid ""
 msgstr ""
 
 msgid "Reference mode"
-msgstr ""
-
-msgid "json"
-msgstr ""
-
-msgid "xml"
-msgstr ""
-
-msgid "csv"
 msgstr ""
 
 msgid "Allow invalid references"

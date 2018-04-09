@@ -6,3 +6,7 @@
 .importFormat {
   margin-right: 30px;
 }
+
+.importFormat label span {
+  font-style: italic;
+}

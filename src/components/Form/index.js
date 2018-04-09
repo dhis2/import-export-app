@@ -3,6 +3,7 @@ import cx from 'classnames'
 import s from './styles.css'
 
 import Radio from './Radio'
+import MoreOptions from './MoreOptions'
 
 export const TYPE_FILE = 'fieldType/FILE'
 export const TYPE_DATE = 'fieldType/DATE'
@@ -20,7 +21,7 @@ export class Form extends React.Component {
     const { _context: context } = fieldValues
 
     return fields.map(field => {
-      if (field.context !== context) {
+      if (field.context !== CTX_DEFAULT && field.context !== context) {
         return null
       }
 
@@ -45,10 +46,21 @@ export class Form extends React.Component {
   }
 
   render() {
-    const { title, className } = this.props
+    const { title, className, fields, fieldValues } = this.props
+    const hasMoreOptions =
+      fields.filter(f => f.context === CTX_MORE_OPTIONS).length > 0
+
     return (
       <form className={cx(className, s.form)} onSubmit={this.props.onSubmit}>
-        <div className={s.title}>{title}</div>
+        <div className={s.title}>
+          {title}
+          {hasMoreOptions && (
+            <MoreOptions
+              enabled={fieldValues._context === CTX_MORE_OPTIONS}
+              onClick={this.props.changeContext}
+            />
+          )}
+        </div>
         <div className={s.fields}>{this.fields()}</div>
       </form>
     )

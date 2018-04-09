@@ -64,15 +64,15 @@ export class MetaDataImport extends FormBase {
       values: [
         {
           value: 'json',
-          label: i18n.t('json')
+          label: i18n.t('JSON')
         },
         {
           value: 'xml',
-          label: i18n.t('xml')
+          label: i18n.t('XML')
         },
         {
           value: 'csv',
-          label: i18n.t('csv')
+          label: i18n.t('CSV')
         }
       ]
     },
@@ -136,6 +136,7 @@ export class MetaDataImport extends FormBase {
         fieldValues={this.state}
         title={i18n.t('Metadata Import')}
         onChange={this.onChange}
+        changeContext={this.changeContext}
         onSubmit={this.onSubmit}
       />
     )
