@@ -1,14 +1,16 @@
 .container {
   user-select: none;
   cursor: pointer;
-  display: block;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
   color: #000;
-  background-color: #efefef;
-  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 10px 0;
 }
 
-.container.enabled {
-  color: #fff;
-  background-color: #4c708c;
+.container svg {
+  margin-left: -3px;
+  margin-right: 5px;
 }

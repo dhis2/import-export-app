@@ -7,6 +7,7 @@ import {
   CTX_MORE_OPTIONS,
   TYPE_FILE,
   TYPE_SELECT,
+  TYPE_MORE_OPTIONS,
   TYPE_RADIO
 } from 'components/index'
 
@@ -46,6 +47,11 @@ export class MetaDataImport extends FormBase {
       type: TYPE_RADIO,
       name: 'strategy',
       label: i18n.t('Strategy')
+    },
+
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_MORE_OPTIONS
     },
 
     {

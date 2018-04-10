@@ -12,6 +12,7 @@ export const TYPE_DATE = 'fieldType/DATE'
 export const TYPE_RADIO = 'fieldType/RADIO'
 export const TYPE_SELECT = 'fieldType/SELECT'
 export const TYPE_ORG_UNIT = 'fieldType/ORG_UNIT'
+export const TYPE_MORE_OPTIONS = 'fieldType/MORE_OPTIONS'
 export const TYPE_SELECT_DATA_SETS = 'fieldType/SELECT_DATA_SETS'
 
 export const CTX_DEFAULT = 'ctx/DEFAULT'
@@ -51,6 +52,13 @@ export class Form extends React.Component {
             onChange={this.props.onChange}
           />
         )
+      } else if (type === TYPE_MORE_OPTIONS) {
+        return (
+          <MoreOptions
+            enabled={context === CTX_MORE_OPTIONS}
+            onClick={this.props.changeContext}
+          />
+        )
       }
 
       return null
@@ -60,20 +68,10 @@ export class Form extends React.Component {
   render() {
     const { title, className, fields, fieldValues } = this.props
     const { onSubmit, submitLabel } = this.props
-    const hasMoreOptions =
-      fields.filter(f => f.context === CTX_MORE_OPTIONS).length > 0
 
     return (
       <form className={cx(className, s.form)} onSubmit={this.props.onSubmit}>
-        <div className={s.title}>
-          {title}
-          {hasMoreOptions && (
-            <MoreOptions
-              enabled={fieldValues._context === CTX_MORE_OPTIONS}
-              onClick={this.props.changeContext}
-            />
-          )}
-        </div>
+        <div className={s.title}>{title}</div>
 
         <div className={s.fields}>{this.fields()}</div>
 
