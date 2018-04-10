@@ -1,9 +1,10 @@
 .form {
-  width: 80%;
-  margin: 17px auto;
+  width: 600px;
+  margin: 0 auto;
 }
 
-.importFormat {
+.importFormat,
+.dryRun {
   margin-right: 30px;
 }
 

@@ -6,10 +6,9 @@ import {
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_FILE,
-  TYPE_SELECT,
   TYPE_MORE_OPTIONS,
   TYPE_RADIO
-} from 'components/index'
+} from 'components'
 
 import s from './styles.css'
 
@@ -40,7 +39,8 @@ export class MetaDataImport extends FormBase {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
       name: 'dryRun',
-      label: i18n.t('Dry run')
+      label: i18n.t('Dry run'),
+      className: s.dryRun
     },
     {
       context: CTX_DEFAULT,
