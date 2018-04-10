@@ -162,7 +162,7 @@ export class DataImport extends FormBase {
     },
 
     dataElementIdScheme: {
-      selected: '',
+      selected: 'UID',
       values: [
         {
           value: 'UID',
@@ -176,7 +176,7 @@ export class DataImport extends FormBase {
     },
 
     orgUnitIdScheme: {
-      selected: '',
+      selected: 'UID',
       values: [
         {
           value: 'UID',
@@ -198,7 +198,7 @@ export class DataImport extends FormBase {
     },
 
     idScheme: {
-      selected: '',
+      selected: 'UID',
       values: [
         {
           value: 'UID',

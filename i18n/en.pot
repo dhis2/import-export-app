@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-10T08:50:43.377Z\n"
-"PO-Revision-Date: 2018-04-10T08:50:43.377Z\n"
+"POT-Creation-Date: 2018-04-10T09:03:19.728Z\n"
+"PO-Revision-Date: 2018-04-10T09:03:19.728Z\n"
 
 msgid "Choose a file to upload"
 msgstr ""
@@ -229,9 +229,6 @@ msgid "Skip check (fast)"
 msgstr ""
 
 msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
-msgstr ""
-
-msgid "File"
 msgstr ""
 
 msgid "Event ID Scheme"

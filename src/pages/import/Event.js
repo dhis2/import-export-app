@@ -1,8 +1,7 @@
-import React from 'react'
 import i18n from 'd2-i18n'
-import { CTX_DEFAULT, TYPE_FILE, TYPE_SELECT } from 'components'
+import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 
-export class EventImport extends React.Component {
+export class EventImport extends FormBase {
   static path = '/import/event'
 
   static order = 4
@@ -11,34 +10,38 @@ export class EventImport extends React.Component {
     'Import events for programs, stages and tracked entities in the DXF 2 format.'
   )
 
+  formWidth = 600
+  formTitle = i18n.t('Event Import')
+  submitLabel = i18n.t('Import')
+
   fields = [
     {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
       name: 'file',
-      label: i18n.t('File')
+      label: null
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'payloadFormat',
       label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'dryRun',
       label: i18n.t('Dry run')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'eventIdScheme',
       label: i18n.t('Event ID Scheme')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'orgUnitIdScheme',
       label: i18n.t('Org unit ID scheme')
     }
@@ -114,7 +117,7 @@ export class EventImport extends React.Component {
     }
   }
 
-  render() {
-    return <div>import event</div>
+  onSubmit = () => {
+    console.log('onSubmit Event Import')
   }
 }
