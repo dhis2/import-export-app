@@ -1,5 +1,4 @@
 import React from 'react'
-import cx from 'classnames'
 import { getFieldState } from 'helpers'
 import { Form } from 'components'
 
@@ -16,7 +15,10 @@ export class FormBase extends React.Component {
   render() {
     return (
       <Form
-        className={cx(s.form, this.formClassName)}
+        className={s.form}
+        style={{
+          width: this.formWidth
+        }}
         fields={this.fields}
         fieldValues={this.state}
         title={this.formTitle}

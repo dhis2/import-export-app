@@ -1,8 +1,8 @@
 import React from 'react'
 import i18n from 'd2-i18n'
-import { CTX_DEFAULT, TYPE_FILE, TYPE_SELECT } from 'components'
+import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 
-export class GMLImport extends React.Component {
+export class GMLImport extends FormBase {
   static path = '/import/gml'
 
   static order = 3
@@ -11,16 +11,20 @@ export class GMLImport extends React.Component {
     'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.'
   )
 
+  formWidth = 600
+  formTitle = i18n.t('GML Import')
+  submitLabel = i18n.t('Import')
+
   fields = [
     {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
       name: 'file',
-      label: i18n.t('File')
+      label: null
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'dryRun',
       label: i18n.t('Dry run')
     }
@@ -42,7 +46,7 @@ export class GMLImport extends React.Component {
     }
   }
 
-  render() {
-    return <div>import gml</div>
+  onSubmit = () => {
+    console.log('onSubmit GML Import')
   }
 }

@@ -6,9 +6,7 @@ import {
   TYPE_FILE,
   TYPE_RADIO,
   TYPE_MORE_OPTIONS
-} from 'components'
-
-import s from './styles.css'
+} from 'components/index'
 
 export class DataImport extends FormBase {
   static path = '/import/data'
@@ -19,8 +17,8 @@ export class DataImport extends FormBase {
     'Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is the standard exchange format for DHIS 2.'
   )
 
+  formWidth = 600
   formTitle = i18n.t('Data Import')
-  formClassName = s.form
   submitLabel = i18n.t('Import')
 
   fields = [
@@ -34,15 +32,13 @@ export class DataImport extends FormBase {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
       name: 'importFormat',
-      label: i18n.t('Format'),
-      className: s.importFormat
+      label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
       name: 'dryRun',
-      label: i18n.t('Dry run'),
-      className: s.dryRun
+      label: i18n.t('Dry run')
     },
     {
       context: CTX_DEFAULT,
@@ -231,6 +227,6 @@ export class DataImport extends FormBase {
   }
 
   onSubmit = () => {
-    console.log('onSubmit DataImport')
+    console.log('onSubmit Data Import')
   }
 }

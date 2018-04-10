@@ -67,11 +67,15 @@ export class Form extends React.Component {
   }
 
   render() {
-    const { title, className } = this.props
+    const { title, className, style } = this.props
     const { onSubmit, submitLabel } = this.props
 
     return (
-      <form className={cx(className, s.form)} onSubmit={this.props.onSubmit}>
+      <form
+        style={style}
+        className={cx(className, s.form)}
+        onSubmit={this.props.onSubmit}
+      >
         <div className={s.title}>{title}</div>
 
         <div className={s.fields}>{this.fields()}</div>

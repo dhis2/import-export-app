@@ -6,9 +6,7 @@ import {
   TYPE_FILE,
   TYPE_MORE_OPTIONS,
   TYPE_RADIO
-} from 'components'
-
-import s from './styles.css'
+} from 'components/index'
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
@@ -19,8 +17,8 @@ export class MetaDataImport extends FormBase {
     'Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.'
   )
 
+  formWidth = 600
   formTitle = i18n.t('Metadata Import')
-  formClassName = s.form
   submitLabel = i18n.t('Import')
 
   fields = [
@@ -131,6 +129,6 @@ export class MetaDataImport extends FormBase {
   }
 
   onSubmit = () => {
-    console.log('onSubmit')
+    console.log('onSubmit MetaData Import')
   }
 }
