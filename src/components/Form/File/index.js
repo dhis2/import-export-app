@@ -4,9 +4,9 @@ import { FormControl, FormLabel } from 'material-ui'
 import s from './styles.css'
 import i18n from 'd2-i18n'
 
-function FileUploadIcon(props) {
+function FileUploadIcon() {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon>
       <path d="M0 0h24v24H0z" fill="none" />
       <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
     </SvgIcon>

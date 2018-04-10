@@ -55,6 +55,7 @@ export class Form extends React.Component {
       } else if (type === TYPE_MORE_OPTIONS) {
         return (
           <MoreOptions
+            key="moreOptions"
             enabled={context === CTX_MORE_OPTIONS}
             onClick={this.props.changeContext}
           />
