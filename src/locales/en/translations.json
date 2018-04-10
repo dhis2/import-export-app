@@ -1,4 +1,6 @@
 {
+  "Choose a file to upload": "",
+  "more options": "",
   "Metadata Import": "",
   "Data Import": "",
   "GML Import": "",
@@ -71,7 +73,6 @@
   "Updates only": "",
   "Delete": "",
   "Yes (faster for large imports)": "",
-  "[ Select ]": "",
   "Check (safe, recommended)": "",
   "Skip check (fast)": "",
   "Import events for programs, stages and tracked entities in the DXF 2 format.":

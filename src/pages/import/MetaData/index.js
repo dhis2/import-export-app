@@ -1,7 +1,5 @@
-import React from 'react'
 import i18n from 'd2-i18n'
 import {
-  Form,
   FormBase,
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
@@ -21,6 +19,10 @@ export class MetaDataImport extends FormBase {
     'Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.'
   )
 
+  formTitle = i18n.t('Metadata Import')
+  formClassName = s.form
+  submitLabel = i18n.t('Import')
+
   fields = [
     {
       context: CTX_DEFAULT,
@@ -32,15 +34,13 @@ export class MetaDataImport extends FormBase {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
       name: 'importFormat',
-      label: i18n.t('Format'),
-      className: s.importFormat
+      label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
       name: 'dryRun',
-      label: i18n.t('Dry run'),
-      className: s.dryRun
+      label: i18n.t('Dry run')
     },
     {
       context: CTX_DEFAULT,
@@ -132,20 +132,5 @@ export class MetaDataImport extends FormBase {
 
   onSubmit = () => {
     console.log('onSubmit')
-  }
-
-  render() {
-    return (
-      <Form
-        className={s.form}
-        fields={this.fields}
-        fieldValues={this.state}
-        title={i18n.t('Metadata Import')}
-        onChange={this.onChange}
-        changeContext={this.changeContext}
-        submitLabel={i18n.t('Import')}
-        onSubmit={this.onSubmit}
-      />
-    )
   }
 }

@@ -67,7 +67,7 @@ export class Form extends React.Component {
   }
 
   render() {
-    const { title, className, fields, fieldValues } = this.props
+    const { title, className } = this.props
     const { onSubmit, submitLabel } = this.props
 
     return (

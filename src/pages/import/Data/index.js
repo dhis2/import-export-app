@@ -1,13 +1,16 @@
-import React from 'react'
 import i18n from 'd2-i18n'
 import {
+  FormBase,
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_FILE,
-  TYPE_SELECT
+  TYPE_RADIO,
+  TYPE_MORE_OPTIONS
 } from 'components'
 
-export class DataImport extends React.Component {
+import s from './styles.css'
+
+export class DataImport extends FormBase {
   static path = '/import/data'
 
   static order = 2
@@ -16,59 +19,70 @@ export class DataImport extends React.Component {
     'Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is the standard exchange format for DHIS 2.'
   )
 
+  formTitle = i18n.t('Data Import')
+  formClassName = s.form
+  submitLabel = i18n.t('Import')
+
   fields = [
     {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
       name: 'file',
-      label: i18n.t('File')
+      label: null
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'importFormat',
-      label: i18n.t('Format')
+      label: i18n.t('Format'),
+      className: s.importFormat
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'dryRun',
-      label: i18n.t('Dry run')
+      label: i18n.t('Dry run'),
+      className: s.dryRun
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'strategy',
       label: i18n.t('Strategy')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'preheatCache',
       label: i18n.t('Preheat cache')
     },
 
     {
+      context: CTX_DEFAULT,
+      type: TYPE_MORE_OPTIONS
+    },
+
+    {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'dataElementIdScheme',
       label: i18n.t('Data element ID scheme')
     },
     {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'orgUnitIdScheme',
       label: i18n.t('Org unit ID scheme')
     },
     {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'idScheme',
       label: i18n.t('ID scheme (all objects)')
     },
     {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'skipExistingCheck',
       label: i18n.t('Existing record check')
     }
@@ -155,10 +169,6 @@ export class DataImport extends React.Component {
       selected: '',
       values: [
         {
-          value: '',
-          label: i18n.t('[ Select ]')
-        },
-        {
           value: 'UID',
           label: i18n.t('UID')
         },
@@ -172,10 +182,6 @@ export class DataImport extends React.Component {
     orgUnitIdScheme: {
       selected: '',
       values: [
-        {
-          value: '',
-          label: i18n.t('[ Select ]')
-        },
         {
           value: 'UID',
           label: i18n.t('UID')
@@ -198,10 +204,6 @@ export class DataImport extends React.Component {
     idScheme: {
       selected: '',
       values: [
-        {
-          value: '',
-          label: i18n.t('[ Select ]')
-        },
         {
           value: 'UID',
           label: i18n.t('UID')
@@ -228,7 +230,7 @@ export class DataImport extends React.Component {
     }
   }
 
-  render() {
-    return <div>import data</div>
+  onSubmit = () => {
+    console.log('onSubmit DataImport')
   }
 }

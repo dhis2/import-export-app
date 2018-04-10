@@ -20,6 +20,8 @@
 
 .fields {
   padding: 10px 0 6px 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .buttons {
