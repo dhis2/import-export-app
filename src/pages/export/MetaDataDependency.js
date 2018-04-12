@@ -1,8 +1,8 @@
 import React from 'react'
 import i18n from 'd2-i18n'
-import { CTX_DEFAULT, TYPE_SELECT } from 'components'
+import { FormBase, CTX_DEFAULT, TYPE_RADIO } from 'components'
 
-export class MetaDataDependencyExport extends React.Component {
+export class MetaDataDependencyExport extends FormBase {
   static path = '/export/metadata-dependency'
 
   static order = 6
@@ -11,28 +11,32 @@ export class MetaDataDependencyExport extends React.Component {
     'Export metadata like data sets and programs including related metadata objects.'
   )
 
+  formWidth = 600
+  formTitle = i18n.t('Metadata Export with Dependencies')
+  submitLabel = i18n.t('Export')
+
   fields = [
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'objectType',
       label: i18n.t('Object type')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'objectList',
       label: i18n.t('Object')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'format',
       label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'compression',
       label: i18n.t('Compression')
     }
@@ -100,7 +104,7 @@ export class MetaDataDependencyExport extends React.Component {
     }
   }
 
-  render() {
-    return <div>export MetaData dependency</div>
+  onSubmit = () => {
+    console.log('onSubmit Meta Data Dependency Export')
   }
 }

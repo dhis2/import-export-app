@@ -1,4 +1,3 @@
-import React from 'react'
 import i18n from 'd2-i18n'
 import { FormBase, CTX_DEFAULT, TYPE_RADIO } from 'components'
 
