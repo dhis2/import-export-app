@@ -1,16 +1,17 @@
-import React from 'react'
 import i18n from 'd2-i18n'
 import {
+  FormBase,
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_DATE,
-  TYPE_SELECT,
+  TYPE_RADIO,
   TYPE_ORG_UNIT,
+  TYPE_MORE_OPTIONS,
   TYPE_SELECT_DATA_SETS
 } from 'components'
 import { today } from 'helpers'
 
-export class DataExport extends React.Component {
+export class DataExport extends FormBase {
   static path = '/export/data'
 
   static order = 7
@@ -18,6 +19,10 @@ export class DataExport extends React.Component {
   static description = i18n.t(
     'Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.'
   )
+
+  formWidth = 600
+  formTitle = i18n.t('Data Export')
+  submitLabel = i18n.t('Export')
 
   fields = [
     {
@@ -46,31 +51,35 @@ export class DataExport extends React.Component {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'exportFormat',
       label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'compression',
       label: i18n.t('Compression')
     },
     {
+      context: CTX_DEFAULT,
+      type: TYPE_MORE_OPTIONS
+    },
+    {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'dataElementIdScheme',
       label: i18n.t('Data element ID scheme')
     },
     {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'orgUnitIdScheme',
       label: i18n.t('Org unit ID scheme')
     },
     {
       context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'categoryOptionComboIdScheme',
       label: i18n.t('Category ID scheme')
     }
@@ -164,7 +173,7 @@ export class DataExport extends React.Component {
     }
   }
 
-  render() {
-    return <div>export data</div>
+  onSubmit = () => {
+    console.log('onSubmit Data Export')
   }
 }
