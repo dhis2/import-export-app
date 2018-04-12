@@ -10,7 +10,7 @@ export class MetaDataDependencyExport extends FormBase {
     'Export metadata like data sets and programs including related metadata objects.'
   )
 
-  formWidth = 600
+  formWidth = 800
   formTitle = i18n.t('Metadata Export with Dependencies')
   submitLabel = i18n.t('Export')
 
