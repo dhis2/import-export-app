@@ -1,9 +1,16 @@
 import React from 'react'
 import i18n from 'd2-i18n'
 import { today } from 'helpers'
-import { CTX_DEFAULT, TYPE_SELECT, TYPE_DATE, TYPE_ORG_UNIT } from 'components'
+import {
+  FormBase,
+  CTX_DEFAULT,
+  TYPE_SELECT,
+  TYPE_RADIO,
+  TYPE_DATE,
+  TYPE_ORG_UNIT
+} from 'components'
 
-export class EventExport extends React.Component {
+export class EventExport extends FormBase {
   static path = '/export/event'
 
   static order = 8
@@ -11,6 +18,10 @@ export class EventExport extends React.Component {
   static description = i18n.t(
     'Export event data for programs, stages and tracked entities in the DXF 2 format.'
   )
+
+  formWidth = 600
+  formTitle = i18n.t('Event Export')
+  submitLabel = i18n.t('Export')
 
   fields = [
     {
@@ -21,7 +32,7 @@ export class EventExport extends React.Component {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'programs',
       label: i18n.t('Programs')
     },
@@ -33,7 +44,7 @@ export class EventExport extends React.Component {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'idscheme',
       label: i18n.t('ID scheme')
     },
@@ -51,19 +62,19 @@ export class EventExport extends React.Component {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'inclusion',
       label: i18n.t('Inclusion')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'format',
       label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'compression',
       label: i18n.t('Compression')
     }
@@ -153,7 +164,7 @@ export class EventExport extends React.Component {
     }
   }
 
-  render() {
-    return <div>export event</div>
+  onSubmit = () => {
+    console.log('onSubmit Event Export')
   }
 }
