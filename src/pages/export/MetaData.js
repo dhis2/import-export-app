@@ -1,8 +1,8 @@
 import React from 'react'
 import i18n from 'd2-i18n'
-import { CTX_DEFAULT, TYPE_SELECT } from 'components'
+import { FormBase, CTX_DEFAULT, TYPE_RADIO } from 'components'
 
-export class MetaDataExport extends React.Component {
+export class MetaDataExport extends FormBase {
   static path = '/export/metadata'
 
   static order = 5
@@ -11,22 +11,26 @@ export class MetaDataExport extends React.Component {
     'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.'
   )
 
+  formWidth = 600
+  formTitle = i18n.t('Meta Data Export')
+  submitLabel = i18n.t('Export')
+
   fields = [
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'format',
       label: i18n.t('Format')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'compression',
       label: i18n.t('Compression')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT,
+      type: TYPE_RADIO,
       name: 'sharing',
       label: i18n.t('Sharing')
     }
@@ -78,7 +82,7 @@ export class MetaDataExport extends React.Component {
     }
   }
 
-  render() {
-    return <div>export metadata</div>
+  onSubmit = () => {
+    console.log('onSubmit Meta Data Export')
   }
 }

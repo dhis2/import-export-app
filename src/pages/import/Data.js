@@ -6,7 +6,7 @@ import {
   TYPE_FILE,
   TYPE_RADIO,
   TYPE_MORE_OPTIONS
-} from 'components/index'
+} from 'components'
 
 export class DataImport extends FormBase {
   static path = '/import/data'
