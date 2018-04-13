@@ -1,10 +1,8 @@
-import React from 'react'
 import i18n from 'd2-i18n'
 import { today } from 'helpers'
 import {
   FormBase,
   CTX_DEFAULT,
-  TYPE_SELECT,
   TYPE_RADIO,
   TYPE_DATE,
   TYPE_ORG_UNIT

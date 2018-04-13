@@ -1,0 +1,17 @@
+form .formControl {
+  margin-top: 16px;
+  width: 150px;
+}
+
+form .formLabel {
+  user-select: none;
+  margin-bottom: 3px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form .dateField {
+  margin-bottom: 3px;
+}

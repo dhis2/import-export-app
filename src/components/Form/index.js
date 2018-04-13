@@ -4,6 +4,7 @@ import s from './styles.css'
 import { Button } from 'material-ui'
 
 import File from './File'
+import Date from './Date'
 import Radio from './Radio'
 import MoreOptions from './MoreOptions'
 
@@ -48,6 +49,18 @@ export class Form extends React.Component {
             key={`radio-${name}`}
             name={name}
             label={label}
+            className={className}
+            onChange={this.props.onChange}
+          />
+        )
+      } else if (type === TYPE_DATE) {
+        const value = fieldValues[name]
+        return (
+          <Date
+            key={`radio-${name}`}
+            name={name}
+            label={label}
+            value={value}
             className={className}
             onChange={this.props.onChange}
           />

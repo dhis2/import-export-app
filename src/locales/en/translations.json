@@ -42,12 +42,14 @@
   "Gzip": "",
   "Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.":
     "",
+  "Meta Data Export": "",
   "Sharing": "",
   "Uncompressed": "",
   "With sharing": "",
   "Without sharing": "",
   "Export metadata like data sets and programs including related metadata objects.":
     "",
+  "Metadata Export with Dependencies": "",
   "Object type": "",
   "Object": "",
   "Data sets": "",
