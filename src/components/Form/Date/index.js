@@ -6,25 +6,19 @@ import s from './styles.css'
 import moment from 'moment'
 
 export default class DateField extends React.Component {
-  getFormat = () => this.props.format || moment.localeData().longDateFormat('L')
-
   onChange = date => this.props.onChange(this.props.name, date.toDate())
 
   render() {
     const { name, label, value, className } = this.props
+    const format = this.props.format || moment.localeData().longDateFormat('L')
 
     return (
       <FormControl classes={{ root: cx(s.formControl, className) }}>
         <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
         <DatePicker
           name={name}
-          format={this.getFormat()}
-          value={moment(
-            value,
-            moment()
-              .localeData()
-              .longDateFormat('L')
-          )}
+          format={format}
+          value={moment(value, format)}
           onChange={this.onChange}
           autoOk={true}
           animateYearScrolling={false}
