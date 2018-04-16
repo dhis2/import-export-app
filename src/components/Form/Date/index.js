@@ -1,11 +1,14 @@
 import React from 'react'
 import cx from 'classnames'
-import { FormControl, FormLabel, TextField } from 'material-ui'
+import { FormControl, FormLabel } from 'material-ui'
+import { DatePicker } from 'material-ui-pickers'
 import s from './styles.css'
+import moment from 'moment'
 
 export default class DateField extends React.Component {
-  onChange = (evt, value) =>
-    this.props.onChange(this.props.name, evt.target.value)
+  getFormat = () => this.props.format || moment.localeData().longDateFormat('L')
+
+  onChange = date => this.props.onChange(this.props.name, date.toDate())
 
   render() {
     const { name, label, value, className } = this.props
@@ -13,14 +16,18 @@ export default class DateField extends React.Component {
     return (
       <FormControl classes={{ root: cx(s.formControl, className) }}>
         <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
-        <TextField
-          id={name}
+        <DatePicker
           name={name}
-          type="date"
-          classes={{ root: s.dateField }}
-          defaultValue={value}
-          fullWidth={false}
+          format={this.getFormat()}
+          value={moment(
+            value,
+            moment()
+              .localeData()
+              .longDateFormat('L')
+          )}
           onChange={this.onChange}
+          autoOk={true}
+          animateYearScrolling={false}
         />
       </FormControl>
     )

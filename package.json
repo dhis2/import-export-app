@@ -39,6 +39,8 @@
     "jest-cli": "^22.4.3",
     "lint-staged": "^7.0.0",
     "material-ui": "^1.0.0-beta.40",
+    "material-ui-pickers": "^1.0.0-rc.6",
+    "moment": "^2.22.1",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
