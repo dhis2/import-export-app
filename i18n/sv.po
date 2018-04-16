@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-26 07:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 2.2.5\n"
+"X-Pootle-Path: /sv/import-export-app/sv.po\n"
+"X-Pootle-Revision: 29559\n"
+
+msgid "Metadata Import"
+msgstr "Metadata import"
+
+msgid "Data Import"
+msgstr "Data import"
+
+msgid "GML Import"
+msgstr "GML import"
+
+msgid "Event Import"
+msgstr "Händelse import"
+
+msgid "Metadata Export"
+msgstr "Metadata export"
+
+msgid "Metadata Dependency Export"
+msgstr "Metadata beroenden export"
+
+msgid "Data Export"
+msgstr "Data export"
+
+msgid "Event Export"
+msgstr "Händelse export"
+
+msgid "Import"
+msgstr "Import"
+
+msgid "Export"
+msgstr "Export"
