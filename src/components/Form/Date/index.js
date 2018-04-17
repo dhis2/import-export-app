@@ -9,7 +9,7 @@ export default class DateField extends React.Component {
   onChange = date => this.props.onChange(this.props.name, date.toDate())
 
   render() {
-    const { name, label, value, className } = this.props
+    const { name, label, value, className, minDate } = this.props
     const format = this.props.format || moment.localeData().longDateFormat('L')
 
     return (
@@ -18,6 +18,7 @@ export default class DateField extends React.Component {
         <DatePicker
           name={name}
           format={format}
+          minDate={minDate}
           value={moment(value, format)}
           onChange={this.onChange}
           autoOk={true}

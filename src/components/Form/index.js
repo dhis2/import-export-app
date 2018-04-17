@@ -55,8 +55,14 @@ export class Form extends React.Component {
         )
       } else if (type === TYPE_DATE) {
         const value = fieldValues[name]
+        const props = {}
+        if (name === 'endDate') {
+          props['minDate'] = fieldValues['startDate']
+        }
+
         return (
           <Date
+            {...props}
             key={`radio-${name}`}
             name={name}
             label={label}
