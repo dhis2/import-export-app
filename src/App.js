@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
 import { connect } from 'react-redux'
+import moment from 'moment'
 import { api } from 'services'
 import { Loading } from 'components'
 import { setUser, clearUser } from 'reducers'
@@ -26,11 +27,14 @@ class App extends React.Component {
         contentType.startsWith('application/json') &&
         Object.keys(res.data).length > 0
       ) {
+        const lang = res.data.settings.keyUiLocale
+        moment.locale(lang)
         this.props.setUser(res.data)
       } else {
         this.props.clearUser()
       }
     } catch (e) {
+      console.log(e)
       this.props.clearUser()
     }
 

@@ -35,7 +35,7 @@ export default class RadioField extends React.Component {
               control={
                 <Radio
                   classes={{
-                    default: s.radioDefault,
+                    colorSecondary: s.radioDefault,
                     checked: s.radioChecked,
                     disabled: s.radioDisabled
                   }}

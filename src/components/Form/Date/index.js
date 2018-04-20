@@ -1,9 +1,9 @@
 import React from 'react'
 import cx from 'classnames'
+import moment from 'moment'
 import { FormControl, FormLabel } from 'material-ui'
 import { DatePicker } from 'material-ui-pickers'
 import s from './styles.css'
-import moment from 'moment'
 
 export default class DateField extends React.Component {
   onChange = date => this.props.onChange(this.props.name, date.toDate())
