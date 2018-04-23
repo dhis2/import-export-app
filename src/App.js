@@ -22,18 +22,11 @@ class App extends React.Component {
   async componentDidMount() {
     try {
       const res = await api.get('me')
-      const contentType = res.headers['content-type']
-      if (
-        contentType.startsWith('application/json') &&
-        Object.keys(res.data).length > 0
-      ) {
-        const lang = res.data.settings.keyUiLocale
-        moment.locale(lang)
-        this.props.setUser(res.data)
-      } else {
-        this.props.clearUser()
-      }
+      const lang = res.data.settings.keyUiLocale
+      moment.locale(lang)
+      this.props.setUser(res.data)
     } catch (e) {
+      console.log('/api/me error')
       console.log(e)
       this.props.clearUser()
     }
