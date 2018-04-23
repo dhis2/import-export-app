@@ -22,13 +22,3 @@ form .formControlLabelLabel {
   font-size: 14px;
   font-weight: 500;
 }
-
-form .radioDefault {
-  color: #afb2b5;
-}
-form .radioChecked {
-  color: #4c708c;
-}
-form .radioDisabled {
-  color: #e9ecef;
-}

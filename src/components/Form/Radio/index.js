@@ -32,15 +32,7 @@ export default class RadioField extends React.Component {
               }}
               value={v.value}
               label={v.label}
-              control={
-                <Radio
-                  classes={{
-                    colorSecondary: s.radioDefault,
-                    checked: s.radioChecked,
-                    disabled: s.radioDisabled
-                  }}
-                />
-              }
+              control={<Radio color="primary" />}
             />
           ))}
         </RadioGroup>

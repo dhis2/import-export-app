@@ -101,12 +101,7 @@ export class Form extends React.Component {
 
         <div className={s.buttons}>
           {onSubmit && (
-            <Button
-              color="primary"
-              variant="raised"
-              onClick={onSubmit}
-              classes={{ root: s.primary }}
-            >
+            <Button color="primary" variant="raised" onClick={onSubmit}>
               {submitLabel}
             </Button>
           )}
