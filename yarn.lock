@@ -3798,9 +3798,9 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
-husky@^0.15.0-rc.13:
-  version "0.15.0-rc.13"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-0.15.0-rc.13.tgz#a27550b7b51d2f472e284b48fc9257a6d6b3f681"
+husky@^1.0.0-rc.2:
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-1.0.0-rc.2.tgz#a105a26927f7b95aef7d21a305f3cb30a9387fde"
   dependencies:
     cosmiconfig "^4.0.0"
     execa "^0.9.0"
@@ -3808,8 +3808,8 @@ husky@^0.15.0-rc.13:
     pkg-dir "^2.0.0"
     pupa "^1.0.0"
     read-pkg "^3.0.0"
-    run-node "^0.2.0"
-    slash "^1.0.0"
+    run-node "^1.0.0"
+    slash "^2.0.0"
 
 hyphenate-style-name@^1.0.2:
   version "1.0.2"
@@ -7430,9 +7430,9 @@ run-async@^2.2.0:
   dependencies:
     is-promise "^2.1.0"
 
-run-node@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/run-node/-/run-node-0.2.0.tgz#b26e942e94205dedbe532cddf0fd1dbd56649af6"
+run-node@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/run-node/-/run-node-1.0.0.tgz#46b50b946a2aa2d4947ae1d886e9856fd9cabe5e"
 
 rx-lite-aggregates@^4.0.8:
   version "4.0.8"
@@ -7656,6 +7656,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
+
+slash@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
 
 slice-ansi@0.0.4:
   version "0.0.4"
