@@ -2,6 +2,7 @@ import { hot } from 'react-hot-loader'
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import i18n from 'd2-i18n'
 import { api } from 'services'
 import { Loading } from 'components'
 import { setUser, clearUser } from 'reducers'
@@ -37,6 +38,11 @@ class App extends React.Component {
   render() {
     if (!this.state.loaded) {
       return <Loading />
+    }
+
+    const { user } = this.props
+    if (!user) {
+      return <div>{i18n.t('user is not logged in')}</div>
     }
 
     return (
