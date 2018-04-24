@@ -1,5 +1,5 @@
 import i18n from 'd2-i18n'
-import { FormBase, CTX_DEFAULT, TYPE_RADIO } from 'components'
+import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SCHEMAS } from 'components'
 
 export class MetaDataExport extends FormBase {
   static path = '/export/metadata'
@@ -15,6 +15,12 @@ export class MetaDataExport extends FormBase {
   submitLabel = i18n.t('Export')
 
   fields = [
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_SCHEMAS,
+      name: 'schemas',
+      label: null
+    },
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,

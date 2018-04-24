@@ -6,12 +6,14 @@ import { Button } from 'material-ui'
 import File from './File'
 import Date from './Date'
 import Radio from './Radio'
+import Schemas from './Schemas'
 import MoreOptions from './MoreOptions'
 
 export const TYPE_FILE = 'fieldType/FILE'
 export const TYPE_DATE = 'fieldType/DATE'
 export const TYPE_RADIO = 'fieldType/RADIO'
 export const TYPE_SELECT = 'fieldType/SELECT'
+export const TYPE_SCHEMAS = 'fieldType/SCHEMAS'
 export const TYPE_ORG_UNIT = 'fieldType/ORG_UNIT'
 export const TYPE_MORE_OPTIONS = 'fieldType/MORE_OPTIONS'
 export const TYPE_SELECT_DATA_SETS = 'fieldType/SELECT_DATA_SETS'
@@ -79,6 +81,8 @@ export class Form extends React.Component {
             onClick={this.props.changeContext}
           />
         )
+      } else if (type === TYPE_SCHEMAS) {
+        return <Schemas key="schemas" onChange={this.props.onChange} />
       }
 
       return null
