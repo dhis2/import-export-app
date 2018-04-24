@@ -16,7 +16,7 @@ function groupName(klass) {
 function schemaGroups(schemas) {
   const groups = {}
 
-  schemas.map(s => {
+  schemas.forEach(s => {
     if (!groups[s.group]) {
       groups[s.group] = []
     }
@@ -25,6 +25,27 @@ function schemaGroups(schemas) {
   })
 
   return groups
+}
+
+function groupLabel(name, schemas) {
+  const nameLC = name.toLowerCase()
+  for (let i = 0; i < schemas.length; i += 1) {
+    if (nameLC === schemas[i]['name'].toLowerCase()) {
+      return schemas[i]['displayName']
+    }
+  }
+
+  for (let i = 0; i < schemas.length; i += 1) {
+    const schemaName = schemas[i]['name'].toLowerCase()
+    if (schemaName.includes(nameLC) && schemaName.indexOf(nameLC) === 0) {
+      let temp = schemas[i]['name']
+        .substr(0, name.length)
+        .replace(/([A-Z]+)/g, ' $1')
+      return temp[0].toUpperCase() + temp.substr(1)
+    }
+  }
+
+  return name[0].toUpperCase() + name.substr(1)
 }
 
 export default class Schemas extends React.Component {
@@ -59,6 +80,10 @@ export default class Schemas extends React.Component {
 
   render() {
     const { schemas } = this.state
+    if (schemas.length === 0) {
+      return null
+    }
+
     const groups = schemaGroups(schemas)
 
     return <div className={s.container}>schemas</div>
