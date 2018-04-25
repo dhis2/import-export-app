@@ -32,7 +32,7 @@ export default class RadioField extends React.Component {
               }}
               value={v.value}
               label={v.label}
-              control={<Radio color="primary" />}
+              control={<Radio disableRipple={true} color="primary" />}
             />
           ))}
         </RadioGroup>

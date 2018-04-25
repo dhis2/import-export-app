@@ -82,7 +82,14 @@ export class Form extends React.Component {
           />
         )
       } else if (type === TYPE_SCHEMAS) {
-        return <Schemas key="schemas" onChange={this.props.onChange} />
+        return (
+          <Schemas
+            key={`schemas-${name}`}
+            name={name}
+            label={label}
+            onChange={this.props.onChange}
+          />
+        )
       }
 
       return null

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-24T09:34:45.812Z\n"
-"PO-Revision-Date: 2018-04-24T09:34:45.812Z\n"
+"POT-Creation-Date: 2018-04-24T13:30:03.755Z\n"
+"PO-Revision-Date: 2018-04-24T13:30:03.755Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -138,6 +138,9 @@ msgid ""
 msgstr ""
 
 msgid "Meta Data Export"
+msgstr ""
+
+msgid "Schemas"
 msgstr ""
 
 msgid "Sharing"

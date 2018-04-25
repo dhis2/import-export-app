@@ -10,7 +10,7 @@ export class MetaDataExport extends FormBase {
     'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.'
   )
 
-  formWidth = 600
+  formWidth = '85%'
   formTitle = i18n.t('Meta Data Export')
   submitLabel = i18n.t('Export')
 
@@ -19,7 +19,7 @@ export class MetaDataExport extends FormBase {
       context: CTX_DEFAULT,
       type: TYPE_SCHEMAS,
       name: 'schemas',
-      label: null
+      label: i18n.t('Schemas')
     },
     {
       context: CTX_DEFAULT,
