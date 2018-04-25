@@ -7,6 +7,7 @@ import {
   FormLabel,
   Checkbox
 } from 'material-ui'
+import { Loading } from 'components'
 
 import s from './styles.css'
 
@@ -114,6 +115,7 @@ function Group({ label, schemas, checked, onClick }) {
 
 export default class Schemas extends React.Component {
   state = {
+    loaded: false,
     checked: {},
     schemas: []
   }
@@ -146,6 +148,7 @@ export default class Schemas extends React.Component {
 
       this.setState({
         checked,
+        loaded: true,
         schemas: schemas
           .map(item => ({
             name: item.name,
@@ -162,7 +165,11 @@ export default class Schemas extends React.Component {
   }
 
   render() {
-    const { checked, schemas } = this.state
+    const { loaded, checked, schemas } = this.state
+    if (!loaded) {
+      return <Loading />
+    }
+
     if (schemas.length === 0) {
       return null
     }
