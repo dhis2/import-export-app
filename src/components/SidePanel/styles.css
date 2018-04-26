@@ -1,6 +1,9 @@
 .container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 300px;
-  height: 100vh;
   background-color: #fff;
   border-right: 1px solid #cfd0d2;
   box-shadow: 0 0 3px 0 #999;
