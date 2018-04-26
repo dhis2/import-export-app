@@ -1,5 +1,5 @@
 import i18n from 'd2-i18n'
-import { FormBase, CTX_DEFAULT, TYPE_RADIO } from 'components'
+import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SELECT } from 'components'
 import { api } from 'services'
 
 export class MetaDataDependencyExport extends FormBase {
@@ -24,7 +24,7 @@ export class MetaDataDependencyExport extends FormBase {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_RADIO,
+      type: TYPE_SELECT,
       name: 'objectList',
       label: i18n.t('Object')
     },

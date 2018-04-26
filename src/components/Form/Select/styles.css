@@ -1,0 +1,20 @@
+form .formControl {
+  margin-top: 4px;
+}
+
+form .formLabel {
+  user-select: none;
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form .formLabel + div {
+  margin-top: 6px;
+  width: auto !important;
+}
+
+.select {
+  width: auto !important;
+}

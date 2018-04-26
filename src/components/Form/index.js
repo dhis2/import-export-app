@@ -6,6 +6,7 @@ import { Button } from 'material-ui'
 import File from './File'
 import Date from './Date'
 import Radio from './Radio'
+import Select from './Select'
 import Schemas from './Schemas'
 import MoreOptions from './MoreOptions'
 
@@ -42,6 +43,18 @@ export class Form extends React.Component {
             values={values}
             selected={selected}
             className={className}
+            onChange={this.props.onChange}
+          />
+        )
+      } else if (type === TYPE_SELECT) {
+        const { selected, values } = fieldValues[name]
+        return (
+          <Select
+            key={`select-${name}`}
+            name={name}
+            label={label}
+            values={values}
+            selected={selected}
             onChange={this.props.onChange}
           />
         )
