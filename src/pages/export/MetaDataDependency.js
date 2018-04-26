@@ -1,5 +1,6 @@
 import i18n from 'd2-i18n'
 import { FormBase, CTX_DEFAULT, TYPE_RADIO } from 'components'
+import { api } from 'services'
 
 export class MetaDataDependencyExport extends FormBase {
   static path = '/export/metadata-dependency'
@@ -100,6 +101,39 @@ export class MetaDataDependencyExport extends FormBase {
           label: i18n.t('Uncompressed')
         }
       ]
+    }
+  }
+
+  async componentDidMount() {
+    await this.fetch()
+  }
+
+  async fetch() {
+    try {
+      const objectType = this.state.objectType.selected
+      const { data } = await api.get(
+        `${objectType}?fields=id,displayName&paging=false`
+      )
+      const values = data[objectType].map(({ id, displayName }) => ({
+        value: id,
+        label: displayName
+      }))
+
+      this.setState({
+        objectList: {
+          values,
+          selected: values[0]['value']
+        }
+      })
+    } catch (e) {
+      console.log('fetch Schemas failed')
+      console.log(e)
+    }
+  }
+
+  onFormUpdate = (name, value) => {
+    if (name === 'objectType') {
+      this.fetch()
     }
   }
 
