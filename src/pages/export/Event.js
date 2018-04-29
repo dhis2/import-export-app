@@ -87,10 +87,10 @@ export class EventExport extends FormBase {
       values: []
     },
     programStages: {
-      selected: '',
+      selected: -1,
       values: [
         {
-          value: '',
+          value: -1,
           label: i18n.t('[ All program stages]')
         }
       ]
@@ -179,15 +179,48 @@ export class EventExport extends FormBase {
         label: displayName
       }))
 
-      this.setState({
-        programs: {
-          values,
-          selected: values[0]['value']
+      const selected = values[0]['value']
+      this.setState(
+        {
+          programs: { values, selected }
+        },
+        () => {
+          this.fetchProgramStages(selected)
         }
+      )
+    } catch (e) {
+      console.log('fetch Programs failed')
+      console.log(e)
+    }
+  }
+
+  async fetchProgramStages(id) {
+    try {
+      const { data: { programStages } } = await api.get(
+        `programs/${id}.json?fields=id,displayName,programStages[id,displayName]`
+      )
+      const values = programStages.map(({ id, displayName }) => ({
+        value: id,
+        label: displayName
+      }))
+
+      values.unshift({
+        value: -1,
+        label: i18n.t('[ All program stages]')
+      })
+      const selected = values[0]['value']
+      this.setState({
+        programStages: { values, selected }
       })
     } catch (e) {
-      console.log('fetch Schemas failed')
+      console.log('fetch ProgramStages failed', id)
       console.log(e)
+    }
+  }
+
+  onFormUpdate = (name, value) => {
+    if (name === 'programs') {
+      this.fetchProgramStages(value)
     }
   }
 
