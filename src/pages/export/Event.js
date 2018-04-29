@@ -5,8 +5,10 @@ import {
   CTX_DEFAULT,
   TYPE_RADIO,
   TYPE_DATE,
+  TYPE_SELECT,
   TYPE_ORG_UNIT
 } from 'components'
+import { api } from 'services'
 
 export class EventExport extends FormBase {
   static path = '/export/event'
@@ -30,13 +32,13 @@ export class EventExport extends FormBase {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_RADIO,
+      type: TYPE_SELECT,
       name: 'programs',
       label: i18n.t('Programs')
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_ORG_UNIT,
+      type: TYPE_SELECT,
       name: 'programStages',
       label: i18n.t('Program Stages')
     },
@@ -159,6 +161,33 @@ export class EventExport extends FormBase {
           label: 'Uncompressed'
         }
       ]
+    }
+  }
+
+  async componentDidMount() {
+    await this.fetchPrograms()
+  }
+
+  async fetchPrograms() {
+    try {
+      const objectType = 'programs'
+      const { data } = await api.get(
+        `${objectType}?fields=id,displayName&paging=false`
+      )
+      const values = data[objectType].map(({ id, displayName }) => ({
+        value: id,
+        label: displayName
+      }))
+
+      this.setState({
+        programs: {
+          values,
+          selected: values[0]['value']
+        }
+      })
+    } catch (e) {
+      console.log('fetch Schemas failed')
+      console.log(e)
     }
   }
 

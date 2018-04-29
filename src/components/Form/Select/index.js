@@ -1,5 +1,4 @@
 import React from 'react'
-import cx from 'classnames'
 import { FormControl, FormLabel, Select, MenuItem } from 'material-ui'
 import s from './styles.css'
 
