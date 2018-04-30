@@ -2,7 +2,7 @@ import React from 'react'
 import { SvgIcon } from 'material-ui'
 import { FormControl, FormLabel } from 'material-ui'
 import s from './styles.css'
-import i18n from 'd2-i18n'
+import i18n from '@dhis2/d2-i18n'
 
 function FileUploadIcon() {
   return (

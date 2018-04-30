@@ -1,4 +1,4 @@
-import i18n from 'd2-i18n'
+import i18n from '@dhis2/d2-i18n'
 import { today } from 'helpers'
 import {
   FormBase,
@@ -196,7 +196,9 @@ export class EventExport extends FormBase {
 
   async fetchProgramStages(id) {
     try {
-      const { data: { programStages } } = await api.get(
+      const {
+        data: { programStages }
+      } = await api.get(
         `programs/${id}.json?fields=id,displayName,programStages[id,displayName]`
       )
       const values = programStages.map(({ id, displayName }) => ({

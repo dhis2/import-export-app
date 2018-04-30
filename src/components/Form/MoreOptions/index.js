@@ -1,6 +1,6 @@
 import React from 'react'
 import { SvgIcon } from 'material-ui'
-import i18n from 'd2-i18n'
+import i18n from '@dhis2/d2-i18n'
 import s from './styles.css'
 
 import { CTX_DEFAULT, CTX_MORE_OPTIONS } from 'components/Form'

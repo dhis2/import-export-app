@@ -139,7 +139,9 @@ export default class Schemas extends React.Component {
 
   async fetch() {
     try {
-      const { data: { schemas } } = await api.get('schemas.json')
+      const {
+        data: { schemas }
+      } = await api.get('schemas.json')
 
       const checked = {}
       schemas.map(s => (checked[s.klass] = true))
