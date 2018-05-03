@@ -14,6 +14,16 @@ import App from './App'
 
 import { store } from './store'
 
+import { apiConfig } from 'config'
+import { init } from 'd2/lib/d2'
+const { server, version } = apiConfig
+init({
+  baseUrl: `${server}/api/${version}`,
+  headers: {
+    'X-Requested-With': 'XMLHttpRequest'
+  }
+})
+
 const theme = createMuiTheme({
   palette: {
     primary: {

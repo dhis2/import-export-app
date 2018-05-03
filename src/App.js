@@ -2,8 +2,8 @@ import { hot } from 'react-hot-loader'
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import { getInstance } from 'd2/lib/d2'
 import i18n from '@dhis2/d2-i18n'
-import { api } from 'services'
 import { Loading } from 'components'
 import { setUser, clearUser } from 'reducers'
 import Template from 'pages/Template'
@@ -22,8 +22,8 @@ class App extends React.Component {
 
   async componentDidMount() {
     try {
-      const res = await api.get('me')
-      const lang = res.data.settings.keyUiLocale
+      const res = await getInstance()
+      const lang = res.currentUser.userSettings.settings.keyUiLocale
       moment.locale(lang)
       this.props.setUser(res.data)
     } catch (e) {

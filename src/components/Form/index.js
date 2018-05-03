@@ -1,7 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
-import s from './styles.css'
 import { Button } from 'material-ui'
+// import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
+import s from './styles.css'
 
 import File from './File'
 import Date from './Date'
@@ -103,7 +104,14 @@ export class Form extends React.Component {
             onChange={this.props.onChange}
           />
         )
-      }
+      } /* else if (type === TYPE_ORG_UNIT) {
+        return (
+          <OrgUnitTree
+            rootUnit={() => null}
+            onSelectClick={this.props.onChange}
+          />
+        )
+      }*/
 
       return null
     })

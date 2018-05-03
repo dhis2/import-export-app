@@ -119,6 +119,15 @@ export class MetaDataDependencyExport extends FormBase {
         label: displayName
       }))
 
+      // const orgUnitResult = await d2.models.organisationUnits
+      // .list({
+      //   paging: false,
+      //   level: 1,
+      //   fields: 'id,path,displayName,children::isNotEmpty'
+      // })
+      // console.log('orgUnitResult')
+      // console.log(orgUnitResult)
+
       this.setState({
         objectList: {
           values,
