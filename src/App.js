@@ -1,5 +1,6 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { getInstance } from 'd2/lib/d2'
@@ -14,25 +15,39 @@ import { Route, withRouter } from 'react-router-dom'
 @withRouter
 @connect(({ user }) => ({ user }), { setUser, clearUser })
 class App extends React.Component {
+  static childContextTypes = {
+    d2: PropTypes.object
+  }
+
   state = {
+    d2: null,
     loaded: false
   }
 
-  setLoaded = loaded => this.setState({ loaded })
-
   async componentDidMount() {
     try {
-      const res = await getInstance()
-      const lang = res.currentUser.userSettings.settings.keyUiLocale
+      const d2 = await getInstance()
+      const lang = d2.currentUser.userSettings.settings.keyUiLocale
       moment.locale(lang)
-      this.props.setUser(res.data)
+      this.props.setUser(d2.currentUser)
+      this.setState({
+        d2,
+        loaded: true
+      })
     } catch (e) {
       console.log('/api/me error')
       console.log(e)
       this.props.clearUser()
+      this.setState({
+        loaded: true
+      })
     }
+  }
 
-    this.setLoaded(true)
+  getChildContext() {
+    return {
+      d2: this.state.d2 || null
+    }
   }
 
   render() {
