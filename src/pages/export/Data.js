@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import PropTypes from 'prop-types'
 import {
   FormBase,
   CTX_DEFAULT,
@@ -7,7 +8,7 @@ import {
   TYPE_RADIO,
   TYPE_ORG_UNIT,
   TYPE_MORE_OPTIONS,
-  TYPE_SELECT_DATA_SETS
+  TYPE_ORG_UNIT_SELECT
 } from 'components'
 import { today } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
@@ -20,6 +21,10 @@ export class DataExport extends FormBase {
   static description = i18n.t(
     'Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.'
   )
+
+  static contextTypes = {
+    d2: PropTypes.object
+  }
 
   formWidth = 600
   formTitle = i18n.t('Data Export')
@@ -34,9 +39,9 @@ export class DataExport extends FormBase {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_SELECT_DATA_SETS,
-      name: 'dataSets',
-      label: i18n.t('')
+      type: TYPE_ORG_UNIT_SELECT,
+      name: 'availableDataSets',
+      label: i18n.t('Data Sets')
     },
     {
       context: CTX_DEFAULT,
@@ -91,7 +96,10 @@ export class DataExport extends FormBase {
       selected: [],
       value: null
     },
-    dataSets: [],
+    availableDataSets: {
+      selected: [],
+      value: null
+    },
     startDate: today(),
     endDate: today(),
     exportFormat: {
@@ -184,7 +192,7 @@ export class DataExport extends FormBase {
   async fetch() {
     try {
       const d2 = await getInstance()
-      const value = await d2.models.organisationUnits
+      const orgUnitTree = await d2.models.organisationUnits
         .list({
           level: 1,
           paging: false,
@@ -192,10 +200,22 @@ export class DataExport extends FormBase {
         })
         .then(root => root.toArray()[0])
 
+      const orgUnitSelect = await d2.models.organisationUnitLevels
+        .list({
+          paging: false,
+          fields: 'id,level,displayName',
+          order: 'level:asc'
+        })
+        .then(root => root.toArray()[0])
+
       this.setState({
         orgUnit: {
-          value,
-          selected: []
+          selected: [],
+          value: orgUnitTree
+        },
+        availableDataSets: {
+          selected: [],
+          value: orgUnitSelect
         }
       })
     } catch (e) {

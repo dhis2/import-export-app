@@ -2,6 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import { Button, FormLabel, FormControl } from 'material-ui'
 import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
+import { OrgUnitSelectAll } from '@dhis2/d2-ui-org-unit-select'
 import s from './styles.css'
 
 import File from './File'
@@ -18,7 +19,7 @@ export const TYPE_SELECT = 'fieldType/SELECT'
 export const TYPE_SCHEMAS = 'fieldType/SCHEMAS'
 export const TYPE_ORG_UNIT = 'fieldType/ORG_UNIT'
 export const TYPE_MORE_OPTIONS = 'fieldType/MORE_OPTIONS'
-export const TYPE_SELECT_DATA_SETS = 'fieldType/SELECT_DATA_SETS'
+export const TYPE_ORG_UNIT_SELECT = 'fieldType/ORG_UNIT_SELECT'
 
 export const CTX_DEFAULT = 'ctx/DEFAULT'
 export const CTX_MORE_OPTIONS = 'ctx/MORE_OPTIONS'
@@ -117,6 +118,25 @@ export class Form extends React.Component {
           >
             <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
             <OrgUnitTree root={value} onSelectClick={this.props.onChange} />
+          </FormControl>
+        )
+      } else if (type === TYPE_ORG_UNIT_SELECT) {
+        const { selected, value } = fieldValues[name]
+        if (value === null) {
+          return null
+        }
+
+        return (
+          <FormControl
+            key={`orgUnitSelect-${name}`}
+            classes={{ root: s.formControl }}
+          >
+            <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
+            <OrgUnitSelectAll
+              root={value}
+              selected={[]}
+              onUpdateSelection={this.props.onChange}
+            />
           </FormControl>
         )
       }
