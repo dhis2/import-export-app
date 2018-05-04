@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
-import { Button } from 'material-ui'
-// import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
+import { Button, FormLabel, FormControl } from 'material-ui'
+import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
 import s from './styles.css'
 
 import File from './File'
@@ -104,14 +104,22 @@ export class Form extends React.Component {
             onChange={this.props.onChange}
           />
         )
-      } /* else if (type === TYPE_ORG_UNIT) {
+      } else if (type === TYPE_ORG_UNIT) {
+        const { selected, value } = fieldValues[name]
+        if (value === null) {
+          return
+        }
+
         return (
-          <OrgUnitTree
-            rootUnit={() => null}
-            onSelectClick={this.props.onChange}
-          />
+          <FormControl
+            key={`orgUnitTree-${name}`}
+            classes={{ root: s.formControl }}
+          >
+            <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
+            <OrgUnitTree root={value} onSelectClick={this.props.onChange} />
+          </FormControl>
         )
-      }*/
+      }
 
       return null
     })

@@ -9,6 +9,7 @@ import {
   TYPE_ORG_UNIT
 } from 'components'
 import { api } from 'services'
+import { getInstance } from 'd2/lib/d2'
 
 export class EventExport extends FormBase {
   static path = '/export/event'
@@ -81,7 +82,10 @@ export class EventExport extends FormBase {
   ]
 
   state = {
-    orgUnit: '',
+    orgUnit: {
+      selected: [],
+      value: null
+    },
     programs: {
       selected: '',
       values: []
@@ -188,6 +192,22 @@ export class EventExport extends FormBase {
           this.fetchProgramStages(selected)
         }
       )
+
+      const d2 = await getInstance()
+      const value = await d2.models.organisationUnits
+        .list({
+          level: 1,
+          paging: false,
+          fields: 'id,path,displayName,children::isNotEmpty'
+        })
+        .then(root => root.toArray()[0])
+
+      this.setState({
+        orgUnit: {
+          value,
+          selected: []
+        }
+      })
     } catch (e) {
       console.log('fetch Programs failed')
       console.log(e)

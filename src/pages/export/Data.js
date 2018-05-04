@@ -10,6 +10,7 @@ import {
   TYPE_SELECT_DATA_SETS
 } from 'components'
 import { today } from 'helpers'
+import { getInstance } from 'd2/lib/d2'
 
 export class DataExport extends FormBase {
   static path = '/export/data'
@@ -86,7 +87,10 @@ export class DataExport extends FormBase {
   ]
 
   state = {
-    orgUnit: '',
+    orgUnit: {
+      selected: [],
+      value: null
+    },
     dataSets: [],
     startDate: today(),
     endDate: today(),
@@ -170,6 +174,32 @@ export class DataExport extends FormBase {
           label: i18n.t('Code')
         }
       ]
+    }
+  }
+
+  async componentDidMount() {
+    await this.fetch()
+  }
+
+  async fetch() {
+    try {
+      const d2 = await getInstance()
+      const value = await d2.models.organisationUnits
+        .list({
+          level: 1,
+          paging: false,
+          fields: 'id,path,displayName,children::isNotEmpty'
+        })
+        .then(root => root.toArray()[0])
+
+      this.setState({
+        orgUnit: {
+          value,
+          selected: []
+        }
+      })
+    } catch (e) {
+      console.log(e)
     }
   }
 
