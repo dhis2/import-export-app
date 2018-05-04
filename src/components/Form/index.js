@@ -107,7 +107,7 @@ export class Form extends React.Component {
       } else if (type === TYPE_ORG_UNIT) {
         const { selected, value } = fieldValues[name]
         if (value === null) {
-          return
+          return null
         }
 
         return (
