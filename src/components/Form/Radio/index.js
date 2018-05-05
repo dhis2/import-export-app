@@ -14,11 +14,18 @@ export default class RadioField extends React.Component {
       <FormControl classes={{ root: cx(s.formControl, className) }}>
         <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
         <RadioButtonGroup
+          name={`radioGroup-${name}`}
           classes={{ root: s.radioGroup }}
           value={selected}
           onChange={this.onChange}
         >
-          {values.map(v => <RadioButton value={v.value} label={v.label} />)}
+          {values.map(v => (
+            <RadioButton
+              key={`radio-${v.value}`}
+              value={v.value}
+              label={v.label}
+            />
+          ))}
         </RadioButtonGroup>
       </FormControl>
     )

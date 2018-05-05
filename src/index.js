@@ -27,14 +27,7 @@ init({
   }
 })
 
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: {
-//       main: '#4c708c'
-//     }
-//   }
-// })
-
+lightBaseTheme.palette.primary1Color = '#4c708c'
 const muiTheme = getMuiTheme(lightBaseTheme)
 
 ReactDOM.render(
