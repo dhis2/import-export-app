@@ -3,29 +3,41 @@ import { SelectField as Select, MenuItem } from 'material-ui'
 import { FormControl, FormLabel } from 'components/material-ui'
 import s from './styles.css'
 
+const styles = {
+  style: {
+  },
+  labelStyle: {
+    fontSize: 14,
+    fontWeight: 500,
+  },
+  menuItemStyle: {
+    fontSize: 14,
+    fontWeight: 500,
+  },
+  underlineStyle: {
+    borderBottom: 0
+  }
+}
+
 export default class SelectField extends React.Component {
-  onChange = evt => this.props.onChange(this.props.name, evt.target.value)
+  onChange = (evt, index, value) => this.props.onChange(this.props.name, value)
 
   render() {
     const { name, label, values, selected } = this.props
 
     return (
-      <FormControl classes={{ root: s.formControl }}>
-        <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
+      <FormControl className={s.formControl}>
+        <FormLabel className={s.formLabel}>{label}</FormLabel>
         <Select
+          {...styles}
           autoWidth={true}
           value={selected}
           onChange={this.onChange}
-          classes={{
-            root: s.select
-          }}
+          className={s.select}
           fullWidth={false}
-          disableUnderline={true}
         >
           {values.map(v => (
-            <MenuItem key={`mi-${name}-${v.value}`} value={v.value}>
-              {v.label}
-            </MenuItem>
+            <MenuItem key={`mi-${name}-${v.value}`} value={v.value} primaryText={v.label}/>
           ))}
         </Select>
       </FormControl>

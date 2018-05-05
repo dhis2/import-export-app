@@ -1,5 +1,5 @@
 form .formControl {
-  margin-top: 4px;
+  margin-top: 15px;
 }
 
 form .formLabel {
@@ -11,7 +11,6 @@ form .formLabel {
 }
 
 form .formLabel + div {
-  margin-top: 6px;
   width: auto !important;
 }
 
