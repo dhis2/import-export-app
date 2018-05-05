@@ -1,5 +1,5 @@
 import React from 'react'
 
-export function FormGroup({ classes: { root }, children }) {
-  return <div className={root}>{children}</div>
+export function FormGroup({ className, children }) {
+  return <div className={className}>{children}</div>
 }

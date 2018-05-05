@@ -1,4 +1,8 @@
 form .formControl {
+  display: flex;
+  flex-direction: column;
+  height: 1100px;
+  flex-wrap: wrap;
 }
 
 form .formLabel {
@@ -12,11 +16,11 @@ form .formLabel {
 }
 
 .group {
+  width: 30%;
   margin-bottom: 10px;
 }
 
-.group .label {
-  margin: 8px 0 5px 0;
+.group label {
   font-size: 14px;
 }
 
@@ -32,16 +36,15 @@ form .formLabel {
   width: 33%;
   margin-right: 0;
   align-items: flex-start;
+  white-space: nowrap;
 }
-
-.group .schema label span {
+.group .schema > div {
   width: auto;
-  margin-left: 6px;
   font-size: 14px;
   align-items: flex-start;
   line-height: inherit;
 }
 
-.group .schema label > span:last-child {
-  margin-top: 4px;
+.group .schema > div label {
+  margin-left: 4px;
 }

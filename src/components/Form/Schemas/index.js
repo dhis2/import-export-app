@@ -5,7 +5,6 @@ import { Loading } from 'components'
 import {
   FormGroup,
   FormControl,
-  FormControlLabel,
   FormLabel
 } from 'components/material-ui'
 
@@ -52,11 +51,11 @@ function schemaGroups(schemas) {
   })
 
   // sort group items by length desc
-  Object.entries(groups).forEach(([k, v]) => {
-    groups[k] = groups[k].sort(
-      (a, b) => a.displayName.length - b.displayName.length
-    )
-  })
+  // Object.entries(groups).forEach(([k, v]) => {
+  //   groups[k] = groups[k].sort(
+  //     (a, b) => a.displayName.length - b.displayName.length
+  //   )
+  // })
 
   return groups
 }
@@ -88,24 +87,25 @@ function groupLabel(name, schemas) {
   return name[0].toUpperCase() + name.substr(1)
 }
 
+const styles = {
+  iconStyle: {
+    marginRight: 0
+  }
+}
+
 function Group({ label, schemas, checked, onClick }) {
   return (
     <div className={s.group}>
-      <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
-      <FormGroup classes={{ root: s.schema }}>
+      <FormLabel className={s.formLabel}>{label}</FormLabel>
+      <FormGroup className={s.schema}>
         {schemas.map(s => (
-          <FormControlLabel
-            key={`chk-${s.klass}`}
-            control={
-              <Checkbox
-                disableRipple={true}
-                checked={checked[s.klass]}
-                onChange={() => onClick(s.klass, !checked[s.klass])}
-                value={s.name}
-                color="primary"
-              />
-            }
+          <Checkbox
+            {...styles}
+            key={`chk-${s.name}`}
+            value={s.name}
             label={s.displayName}
+            checked={checked[s.klass]}
+            onChange={() => onClick(s.klass, !checked[s.klass])}
           />
         ))}
       </FormGroup>
@@ -178,7 +178,7 @@ export default class Schemas extends React.Component {
     const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
 
     return (
-      <FormControl classes={{ root: s.formControl }}>
+      <FormControl className={s.formControl}>
         {list.map(k => (
           <Group
             key={`group-${k}`}
