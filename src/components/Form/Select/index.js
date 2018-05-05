@@ -1,5 +1,6 @@
 import React from 'react'
-import { FormControl, FormLabel, Select, MenuItem } from 'material-ui'
+import { SelectField as Select, MenuItem } from 'material-ui'
+import { FormControl, FormLabel } from 'components/material-ui'
 import s from './styles.css'
 
 export default class SelectField extends React.Component {

@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
 import moment from 'moment'
-import { FormControl, FormLabel } from 'material-ui'
-import { DatePicker } from 'material-ui-pickers'
+import { FormControl, FormLabel } from 'components/material-ui'
+// import { DatePicker } from 'material-ui-pickers'
 import s from './styles.css'
 
 export default class DateField extends React.Component {
@@ -15,7 +15,7 @@ export default class DateField extends React.Component {
     return (
       <FormControl classes={{ root: cx(s.formControl, className) }}>
         <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
-        <DatePicker
+        {/*<DatePicker
           name={name}
           format={format}
           minDate={minDate}
@@ -23,7 +23,7 @@ export default class DateField extends React.Component {
           onChange={this.onChange}
           autoOk={true}
           animateYearScrolling={false}
-        />
+        />*/}
       </FormControl>
     )
   }

@@ -2,7 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
-import { MuiThemeProvider, createMuiTheme } from 'material-ui'
+
+import { MuiThemeProvider } from 'material-ui'
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import './locales'
 import moment from 'moment'
@@ -24,21 +27,21 @@ init({
   }
 })
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#4c708c'
-    }
-  }
-})
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: {
+//       main: '#4c708c'
+//     }
+//   }
+// })
+
+const muiTheme = getMuiTheme(lightBaseTheme)
 
 ReactDOM.render(
   <Provider store={store}>
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider muiTheme={muiTheme}>
       <HashRouter>
-        <MuiPickersUtilsProvider utils={MomentUtils} moment={moment}>
-          <App />
-        </MuiPickersUtilsProvider>
+        <App />
       </HashRouter>
     </MuiThemeProvider>
   </Provider>,

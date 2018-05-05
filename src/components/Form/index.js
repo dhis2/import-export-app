@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
-import { Button, FormLabel, FormControl } from 'material-ui'
+import { RaisedButton } from 'material-ui'
+import { FormLabel, FormControl } from 'components/material-ui'
 import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
 import { OrgUnitSelectAll } from '@dhis2/d2-ui-org-unit-select'
 import s from './styles.css'
@@ -161,9 +162,11 @@ export class Form extends React.Component {
 
         <div className={s.buttons}>
           {onSubmit && (
-            <Button color="primary" variant="raised" onClick={onSubmit}>
-              {submitLabel}
-            </Button>
+            <RaisedButton
+              label={submitLabel}
+              primary={true}
+              onClick={onSubmit}
+            />
           )}
         </div>
       </form>
