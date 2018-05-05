@@ -28,7 +28,7 @@ export default class RadioField extends React.Component {
           {...styles.radioButtonGroup}
           name={`radioGroup-${name}`}
           className={s.radioGroup}
-          value={selected}
+          valueSelected={selected}
           onChange={this.onChange}
         >
           {values.map(v => (
