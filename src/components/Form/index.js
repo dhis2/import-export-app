@@ -115,9 +115,9 @@ export class Form extends React.Component {
         return (
           <FormControl
             key={`orgUnitTree-${name}`}
-            classes={{ root: s.formControl }}
+            className={s.formControl}
           >
-            <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
+            <FormLabel className={s.formLabel}>{label}</FormLabel>
             <OrgUnitTree root={value} onSelectClick={this.props.onChange} />
           </FormControl>
         )
@@ -130,9 +130,9 @@ export class Form extends React.Component {
         return (
           <FormControl
             key={`orgUnitSelect-${name}`}
-            classes={{ root: s.formControl }}
+            className={s.formControl}
           >
-            <FormLabel classes={{ root: s.formLabel }}>{label}</FormLabel>
+            <FormLabel className={s.formLabel}>{label}</FormLabel>
             <OrgUnitSelectAll
               root={value}
               selected={[]}
