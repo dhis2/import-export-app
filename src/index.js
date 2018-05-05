@@ -24,6 +24,14 @@ init({
 })
 
 lightBaseTheme.palette.primary1Color = '#4c708c'
+lightBaseTheme.palette.primary2Color = '#4c708c'
+lightBaseTheme.palette.primary3Color = '#4c708c'
+lightBaseTheme.palette.pickerHeaderColor = '#4c708c'
+
+
+console.log('lightBaseTheme')
+console.log(lightBaseTheme.palette)
+
 const muiTheme = getMuiTheme(lightBaseTheme)
 
 ReactDOM.render(
