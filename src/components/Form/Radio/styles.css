@@ -3,6 +3,7 @@ form .formControl {
 }
 
 form .formLabel {
+  margin-bottom: 10px;
   user-select: none;
   color: #000;
   font-size: 13px;
@@ -14,11 +15,16 @@ form .radioGroup {
   display: flex;
   flex-direction: row;
 }
-
-form .formControlLabelRoot {
+form .radioGroup > div {
+  margin-right: 15px;
 }
-form .formControlLabelLabel {
+form .radioGroup > div:last-child {
+  margin-right: 0;
+}
+form .radioGroup > div label {
+  margin-left: 10px;
   user-select: none;
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
 }

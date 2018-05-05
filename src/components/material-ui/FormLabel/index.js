@@ -1,5 +1,5 @@
 import React from 'react'
 
-export function FormLabel({ classes: { root }, children }) {
-  return <div className={root}>{children}</div>
+export function FormLabel({ className, children }) {
+  return <div className={className}>{children}</div>
 }
