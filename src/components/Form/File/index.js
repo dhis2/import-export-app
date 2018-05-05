@@ -27,7 +27,7 @@ export default class FileField extends React.Component {
     const { label } = this.props
 
     return (
-      <FormControl classes={{ root: s.formControl }} onClick={this.onClick}>
+      <FormControl className={s.formControl} onClick={this.onClick}>
         <input
           type="file"
           onChange={this.onChange}
@@ -35,7 +35,7 @@ export default class FileField extends React.Component {
           className={s.hiddenFileInput}
         />
         <FileUploadIcon className={s.button} />
-        <FormLabel classes={{ root: s.formLabel }}>
+        <FormLabel className={s.formLabel}>
           {label || i18n.t('Choose a file to upload')}
         </FormLabel>
       </FormControl>

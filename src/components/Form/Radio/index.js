@@ -4,9 +4,7 @@ import { FormLabel, FormControl } from 'components/material-ui'
 import s from './styles.css'
 
 const styles = {
-  radioButtonGroup: {
-
-  },
+  radioButtonGroup: {},
   radioButton: {
     iconStyle: {
       marginRight: 0
@@ -16,7 +14,6 @@ const styles = {
     }
   }
 }
-
 
 export default class RadioField extends React.Component {
   onChange = (evt, value) => this.props.onChange(this.props.name, value)
