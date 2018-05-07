@@ -118,7 +118,11 @@ export class Form extends React.Component {
             className={s.formControl}
           >
             <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnitTree root={value} onSelectClick={this.props.onChange} />
+            <OrgUnitTree
+              root={value}
+              selected={selected}
+              onSelectClick={(evt, orgUnit) => this.props.onChange(name, orgUnit.path)}
+            />
           </FormControl>
         )
       } else if (type === TYPE_ORG_UNIT_SELECT) {
