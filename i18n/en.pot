@@ -5,13 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-08T11:41:13.484Z\n"
-"PO-Revision-Date: 2018-05-08T11:41:13.484Z\n"
+"POT-Creation-Date: 2018-05-08T13:11:26.951Z\n"
+"PO-Revision-Date: 2018-05-08T13:11:26.951Z\n"
 
 msgid "user is not logged in"
 msgstr ""
 
 msgid "filter data sets by name"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Clear All"
 msgstr ""
 
 msgid "Data sets"

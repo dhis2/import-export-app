@@ -38,3 +38,24 @@ form .formLabel {
 .body span[role='menuitem'] div div div {
   padding-left: 32px;
 }
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 5px 0;
+}
+.action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.action .actionLabel {
+  user-select: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-left: 5px;
+  margin-right: 20px;
+}

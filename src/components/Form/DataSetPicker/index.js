@@ -2,7 +2,8 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormLabel } from 'components/material-ui'
 import { TextField, MenuItem } from 'material-ui'
-import CheckIcon from 'material-ui/svg-icons/navigation/check'
+import CheckedIcon from 'material-ui/svg-icons/toggle/check-box'
+import UnCheckedIcon from 'material-ui/svg-icons/toggle/check-box-outline-blank'
 
 import s from './styles.css'
 
@@ -18,6 +19,13 @@ const styles = {
     }
   }
 }
+
+const Action = ({ label, children, onClick }) => (
+  <div className={s.action} onClick={onClick}>
+    {children}
+    <div className={s.actionLabel}>{label}</div>
+  </div>
+)
 
 export default class DataSetPicker extends React.Component {
   state = {
@@ -50,6 +58,26 @@ export default class DataSetPicker extends React.Component {
     )
   }
 
+  onSelectAll = () =>
+    this.props.onChange(
+      this.props.name,
+      this.props.value.map(({ value }) => value)
+    )
+  onClearAll = () => this.props.onChange(this.props.name, [])
+
+  actions() {
+    return (
+      <div className={s.actions}>
+        <Action onClick={this.onSelectAll} label={i18n.t('Select All')}>
+          <CheckedIcon />
+        </Action>
+        <Action onClick={this.onClearAll} label={i18n.t('Clear All')}>
+          <UnCheckedIcon />
+        </Action>
+      </div>
+    )
+  }
+
   render() {
     const { value, selected } = this.props
     const filter = this.state.filter.toLowerCase()
@@ -64,6 +92,7 @@ export default class DataSetPicker extends React.Component {
           <FormLabel className={s.formLabel}>{i18n.t('Data sets')}</FormLabel>
         </div>
         {this.filter()}
+        {this.actions()}
         <div className={s.body}>
           {values.map(({ value, label }) => (
             <MenuItem
@@ -73,7 +102,9 @@ export default class DataSetPicker extends React.Component {
               primaryText={label}
               insetChildren={true}
               onClick={() => this.onChange(value)}
-              leftIcon={selected.includes(value) ? <CheckIcon /> : null}
+              leftIcon={
+                selected.includes(value) ? <CheckedIcon /> : <UnCheckedIcon />
+              }
             />
           ))}
         </div>
