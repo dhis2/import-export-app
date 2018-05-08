@@ -1,8 +1,8 @@
 import React from 'react'
 
-export function FormControl({ className, onClick, children }) {
+export function FormControl({ className, style, onClick, children }) {
   return (
-    <div className={className} onClick={onClick}>
+    <div style={style} className={className} onClick={onClick}>
       {children}
     </div>
   )

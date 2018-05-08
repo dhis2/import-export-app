@@ -2,11 +2,7 @@ import React from 'react'
 import { api } from 'services'
 import { Checkbox } from 'material-ui'
 import { Loading } from 'components'
-import {
-  FormGroup,
-  FormControl,
-  FormLabel
-} from 'components/material-ui'
+import { FormGroup, FormControl, FormLabel } from 'components/material-ui'
 
 import s from './styles.css'
 

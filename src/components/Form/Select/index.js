@@ -4,15 +4,14 @@ import { FormControl, FormLabel } from 'components/material-ui'
 import s from './styles.css'
 
 const styles = {
-  style: {
-  },
+  style: {},
   labelStyle: {
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: 500
   },
   menuItemStyle: {
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: 500
   },
   underlineStyle: {
     borderBottom: 0
@@ -37,7 +36,11 @@ export default class SelectField extends React.Component {
           fullWidth={false}
         >
           {values.map(v => (
-            <MenuItem key={`mi-${name}-${v.value}`} value={v.value} primaryText={v.label}/>
+            <MenuItem
+              key={`mi-${name}-${v.value}`}
+              value={v.value}
+              primaryText={v.label}
+            />
           ))}
         </Select>
       </FormControl>

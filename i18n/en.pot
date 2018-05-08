@@ -5,10 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-04T10:39:03.792Z\n"
-"PO-Revision-Date: 2018-05-04T10:39:03.792Z\n"
+"POT-Creation-Date: 2018-05-08T11:41:13.484Z\n"
+"PO-Revision-Date: 2018-05-08T11:41:13.484Z\n"
 
 msgid "user is not logged in"
+msgstr ""
+
+msgid "filter data sets by name"
+msgstr ""
+
+msgid "Data sets"
 msgstr ""
 
 msgid "Choose a file to upload"
@@ -170,9 +176,6 @@ msgid "Object type"
 msgstr ""
 
 msgid "Object"
-msgstr ""
-
-msgid "Data sets"
 msgstr ""
 
 msgid "Category combination"

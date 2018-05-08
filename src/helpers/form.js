@@ -1,4 +1,10 @@
-import { TYPE_RADIO, TYPE_SELECT, TYPE_DATE, TYPE_ORG_UNIT } from 'components/Form'
+import {
+  TYPE_RADIO,
+  TYPE_SELECT,
+  TYPE_DATE,
+  TYPE_ORG_UNIT,
+  TYPE_DATASET_PICKER
+} from 'components/Form'
 
 export function getField(name, fields) {
   return fields.filter(f => f.name === name)[0]
@@ -11,10 +17,10 @@ export function getFieldType(name, fields) {
 export function getFieldState(name, value, fields, state) {
   const f = getField(name, fields)
 
-  if (f.type === TYPE_RADIO || f.type === TYPE_SELECT) {
+  if (
+    [TYPE_RADIO, TYPE_SELECT, TYPE_DATE, TYPE_DATASET_PICKER].includes(f.type)
+  ) {
     state[name]['selected'] = value
-  } else if (f.type === TYPE_DATE) {
-    state[name] = value
   } else if (f.type === TYPE_ORG_UNIT) {
     let list = state[name]['selected']
     if (!list.includes(value)) {

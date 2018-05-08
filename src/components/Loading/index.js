@@ -5,7 +5,7 @@ import s from './styles.css'
 export function Loading({ size, thickness }) {
   return (
     <div className={s.container}>
-      <CircularProgress size={size || 80} thickness={thickness || 1} />
+      <CircularProgress size={size || 80} thickness={thickness || 3} />
     </div>
   )
 }

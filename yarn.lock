@@ -47,11 +47,18 @@
     lodash "^4.17.10"
     material-ui "^0.20.0"
 
-"@dhis2/d2-ui-org-unit-select@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-select/-/d2-ui-org-unit-select-1.0.3.tgz#563df73eebd6452f0a467731fd72720ca1fa47be"
+"@dhis2/d2-ui-core@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-1.0.4.tgz#bba522ba3c6e93102c963dd94af548a3e19beb30"
   dependencies:
-    "@dhis2/d2-ui-core" "^1.0.3"
+    lodash "^4.17.10"
+    material-ui "^0.20.0"
+
+"@dhis2/d2-ui-group-editor@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-group-editor/-/d2-ui-group-editor-1.0.4.tgz#2afaf13d84f05e10a40e40fd81cd10fba0be7afb"
+  dependencies:
+    "@dhis2/d2-ui-core" "^1.0.4"
     material-ui "^0.19.3"
     prop-types "^15.5.10"
     recompose "^0.26.0"

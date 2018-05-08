@@ -1,0 +1,40 @@
+.container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+form .formLabel {
+  white-space: nowrap;
+  user-select: none;
+  margin-bottom: 3px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.filter {
+  width: 95%;
+}
+
+.body {
+  width: 95%;
+  height: 250px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.body svg {
+  margin: 0 !important;
+  left: 0 !important;
+}
+.body span[role='menuitem'] div div div {
+  padding-left: 32px;
+}

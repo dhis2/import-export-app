@@ -112,8 +112,12 @@ export class EventExport extends FormBase {
         }
       ]
     },
-    startDate: today(),
-    endDate: today(),
+    startDate: {
+      selected: today()
+    },
+    endDate: {
+      selected: today()
+    },
 
     inclusion: {
       selected: 'selected',

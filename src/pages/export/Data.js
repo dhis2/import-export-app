@@ -8,7 +8,7 @@ import {
   TYPE_RADIO,
   TYPE_ORG_UNIT,
   TYPE_MORE_OPTIONS,
-  TYPE_ORG_UNIT_SELECT
+  TYPE_DATASET_PICKER
 } from 'components'
 import { today } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
@@ -39,7 +39,7 @@ export class DataExport extends FormBase {
     },
     {
       context: CTX_DEFAULT,
-      type: TYPE_ORG_UNIT_SELECT,
+      type: TYPE_DATASET_PICKER,
       name: 'availableDataSets',
       label: i18n.t('Data Sets')
     },
@@ -100,8 +100,12 @@ export class DataExport extends FormBase {
       selected: [],
       value: null
     },
-    startDate: today(),
-    endDate: today(),
+    startDate: {
+      selected: today()
+    },
+    endDate: {
+      selected: today()
+    },
     exportFormat: {
       selected: 'json',
       values: [
@@ -200,13 +204,15 @@ export class DataExport extends FormBase {
         })
         .then(root => root.toArray()[0])
 
-      const orgUnitSelect = await d2.models.organisationUnitLevels
-        .list({
-          paging: false,
-          fields: 'id,level,displayName',
-          order: 'level:asc'
-        })
-        .then(root => root.toArray()[0])
+      const dataSets = await d2.models.dataSet
+        .list({ paging: false, fields: 'id,displayName' })
+        .then(collection => collection.toArray())
+        .then(sets =>
+          sets.map(dataSet => ({
+            value: dataSet.id,
+            label: dataSet.displayName
+          }))
+        )
 
       this.setState({
         orgUnit: {
@@ -215,7 +221,7 @@ export class DataExport extends FormBase {
         },
         availableDataSets: {
           selected: [],
-          value: orgUnitSelect
+          value: dataSets
         }
       })
     } catch (e) {

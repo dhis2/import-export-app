@@ -3,7 +3,6 @@ import cx from 'classnames'
 import { RaisedButton } from 'material-ui'
 import { FormLabel, FormControl } from 'components/material-ui'
 import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
-import { OrgUnitSelectAll } from '@dhis2/d2-ui-org-unit-select'
 import s from './styles.css'
 
 import File from './File'
@@ -12,6 +11,7 @@ import Radio from './Radio'
 import Select from './Select'
 import Schemas from './Schemas'
 import MoreOptions from './MoreOptions'
+import DataSetPicker from './DataSetPicker'
 
 export const TYPE_FILE = 'fieldType/FILE'
 export const TYPE_DATE = 'fieldType/DATE'
@@ -20,7 +20,7 @@ export const TYPE_SELECT = 'fieldType/SELECT'
 export const TYPE_SCHEMAS = 'fieldType/SCHEMAS'
 export const TYPE_ORG_UNIT = 'fieldType/ORG_UNIT'
 export const TYPE_MORE_OPTIONS = 'fieldType/MORE_OPTIONS'
-export const TYPE_ORG_UNIT_SELECT = 'fieldType/ORG_UNIT_SELECT'
+export const TYPE_DATASET_PICKER = 'fieldType/DATASET_PICKER'
 
 export const CTX_DEFAULT = 'ctx/DEFAULT'
 export const CTX_MORE_OPTIONS = 'ctx/MORE_OPTIONS'
@@ -72,10 +72,10 @@ export class Form extends React.Component {
           />
         )
       } else if (type === TYPE_DATE) {
-        const value = fieldValues[name]
+        const value = fieldValues[name]['selected']
         const props = {}
         if (name === 'endDate') {
-          props['minDate'] = fieldValues['startDate']
+          props['minDate'] = fieldValues['startDate']['selected']
         }
 
         return (
@@ -113,34 +113,30 @@ export class Form extends React.Component {
         }
 
         return (
-          <FormControl
-            key={`orgUnitTree-${name}`}
-            className={s.formControl}
-          >
+          <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
             <FormLabel className={s.formLabel}>{label}</FormLabel>
             <OrgUnitTree
               root={value}
               selected={selected}
-              onSelectClick={(evt, orgUnit) => this.props.onChange(name, orgUnit.path)}
+              onSelectClick={(evt, orgUnit) =>
+                this.props.onChange(name, orgUnit.path)
+              }
             />
           </FormControl>
         )
-      } else if (type === TYPE_ORG_UNIT_SELECT) {
+      } else if (type === TYPE_DATASET_PICKER) {
         const { selected, value } = fieldValues[name]
         if (value === null) {
           return null
         }
 
         return (
-          <FormControl
-            key={`orgUnitSelect-${name}`}
-            className={s.formControl}
-          >
-            <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnitSelectAll
-              root={value}
-              selected={[]}
-              onUpdateSelection={this.props.onChange}
+          <FormControl key={`dataSetPicker-${name}`}>
+            <DataSetPicker
+              name={name}
+              value={value}
+              selected={selected}
+              onChange={this.props.onChange}
             />
           </FormControl>
         )
