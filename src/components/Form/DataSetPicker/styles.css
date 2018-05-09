@@ -46,6 +46,7 @@ form .formLabel {
   margin: 5px 0;
 }
 .action {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;

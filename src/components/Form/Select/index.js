@@ -15,6 +15,9 @@ const styles = {
   },
   underlineStyle: {
     borderBottom: 0
+  },
+  selectedMenuItemStyle: {
+    top: 0
   }
 }
 
@@ -40,6 +43,7 @@ export default class SelectField extends React.Component {
               key={`mi-${name}-${v.value}`}
               value={v.value}
               primaryText={v.label}
+              className={s.menuItem}
             />
           ))}
         </Select>
