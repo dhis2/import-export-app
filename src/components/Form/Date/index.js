@@ -9,7 +9,9 @@ const styles = {
     height: 36
   },
   textFieldStyle: {
-    height: 36
+    height: 36,
+    fontSize: 15,
+    fontWeight: 400
   }
 }
 
