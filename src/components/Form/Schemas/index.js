@@ -97,11 +97,11 @@ function Group({ label, schemas, checked, onClick }) {
         {schemas.map(s => (
           <Checkbox
             {...styles}
-            key={`chk-${s.name}`}
+            key={`chk-${s.klass}`}
             value={s.name}
             label={s.displayName}
-            checked={checked[s.klass]}
-            onChange={() => onClick(s.klass, !checked[s.klass])}
+            checked={checked.includes(s.klass)}
+            onCheck={(evt, status) => onClick(s.klass, status)}
           />
         ))}
       </FormGroup>
@@ -112,7 +112,7 @@ function Group({ label, schemas, checked, onClick }) {
 export default class Schemas extends React.Component {
   state = {
     loaded: false,
-    checked: {},
+    checked: [],
     schemas: []
   }
 
@@ -122,15 +122,15 @@ export default class Schemas extends React.Component {
 
   onClick = (klass, status) => {
     const { checked } = this.state
-    checked[klass] = status
-    this.setState(
-      {
-        checked: {
-          ...checked
-        }
-      },
-      () => this.props.onChange(this.props.name, checked)
-    )
+
+    let updated
+    if (status) {
+      updated = checked.slice(0).push(klass)
+    } else {
+      updated = checked.filter(k => k !== klass)
+    }
+
+    this.setState({ checked: updated }, () => this.props.onChange(this.props.name, updated))
   }
 
   async fetch() {
@@ -139,12 +139,9 @@ export default class Schemas extends React.Component {
         data: { schemas }
       } = await api.get('schemas.json')
 
-      const checked = {}
-      schemas.map(s => (checked[s.klass] = true))
-
       this.setState({
-        checked,
         loaded: true,
+        checked: schemas.map(s => s.klass),
         schemas: schemas
           .map(item => ({
             name: item.name,
@@ -153,6 +150,8 @@ export default class Schemas extends React.Component {
             group: groupName(item.klass)
           }))
           .sort((a, b) => a.displayName.localeCompare(b.displayName))
+      }, () => {
+        this.props.onChange(this.props.name, this.state.checked)
       })
     } catch (e) {
       console.log('fetch Schemas failed')

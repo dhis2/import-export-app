@@ -42,6 +42,9 @@ export class MetaDataExport extends FormBase {
   ]
 
   state = {
+    schemas: {
+      selected: []
+    },
     format: {
       selected: 'json',
       values: [
@@ -89,5 +92,6 @@ export class MetaDataExport extends FormBase {
 
   onSubmit = () => {
     console.log('onSubmit Meta Data Export')
+    console.log(this.getFormState())
   }
 }
