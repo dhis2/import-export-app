@@ -15,7 +15,13 @@ export function getFieldState(name, value, fields, state) {
   const f = getField(name, fields)
 
   if (
-    [TYPE_RADIO, TYPE_SELECT, TYPE_DATE, TYPE_SCHEMAS, TYPE_DATASET_PICKER].includes(f.type)
+    [
+      TYPE_RADIO,
+      TYPE_SELECT,
+      TYPE_DATE,
+      TYPE_SCHEMAS,
+      TYPE_DATASET_PICKER
+    ].includes(f.type)
   ) {
     state[name]['selected'] = value
   } else if (f.type === TYPE_ORG_UNIT) {

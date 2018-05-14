@@ -130,7 +130,9 @@ export default class Schemas extends React.Component {
       updated = checked.filter(k => k !== klass)
     }
 
-    this.setState({ checked: updated }, () => this.props.onChange(this.props.name, updated))
+    this.setState({ checked: updated }, () =>
+      this.props.onChange(this.props.name, updated)
+    )
   }
 
   async fetch() {
@@ -139,20 +141,23 @@ export default class Schemas extends React.Component {
         data: { schemas }
       } = await api.get('schemas.json')
 
-      this.setState({
-        loaded: true,
-        checked: schemas.map(s => s.klass),
-        schemas: schemas
-          .map(item => ({
-            name: item.name,
-            klass: item.klass,
-            displayName: item.displayName,
-            group: groupName(item.klass)
-          }))
-          .sort((a, b) => a.displayName.localeCompare(b.displayName))
-      }, () => {
-        this.props.onChange(this.props.name, this.state.checked)
-      })
+      this.setState(
+        {
+          loaded: true,
+          checked: schemas.map(s => s.klass),
+          schemas: schemas
+            .map(item => ({
+              name: item.name,
+              klass: item.klass,
+              displayName: item.displayName,
+              group: groupName(item.klass)
+            }))
+            .sort((a, b) => a.displayName.localeCompare(b.displayName))
+        },
+        () => {
+          this.props.onChange(this.props.name, this.state.checked)
+        }
+      )
     } catch (e) {
       console.log('fetch Schemas failed')
       console.log(e)

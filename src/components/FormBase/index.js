@@ -1,5 +1,5 @@
 import React from 'react'
-import { getFieldState } from 'helpers'
+import { getFieldState, getFieldValue } from 'helpers'
 import { Form } from 'components'
 
 import s from './styles.css'
@@ -16,6 +16,14 @@ export class FormBase extends React.Component {
     )
 
   changeContext = _context => this.setState({ _context })
+
+  getFormState() {
+    const values = {}
+    this.fields.map(f => f.name).forEach(name => {
+      values[name] = getFieldValue(this.state[name])
+    })
+    return values
+  }
 
   render() {
     return (
