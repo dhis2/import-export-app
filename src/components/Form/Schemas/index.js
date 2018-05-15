@@ -97,11 +97,11 @@ function Group({ label, schemas, checked, onClick }) {
         {schemas.map(s => (
           <Checkbox
             {...styles}
-            key={`chk-${s.klass}`}
+            key={`chk-${s.collectionName}`}
             value={s.name}
             label={s.displayName}
-            checked={checked.includes(s.klass)}
-            onCheck={(evt, status) => onClick(s.klass, status)}
+            checked={checked.includes(s.collectionName)}
+            onCheck={(evt, status) => onClick(s.collectionName, status)}
           />
         ))}
       </FormGroup>
@@ -120,14 +120,14 @@ export default class Schemas extends React.Component {
     this.fetch()
   }
 
-  onClick = (klass, status) => {
+  onClick = (collectionName, status) => {
     const { checked } = this.state
 
     let updated
     if (status) {
-      updated = checked.slice(0).push(klass)
+      updated = checked.slice(0).push(collectionName)
     } else {
-      updated = checked.filter(k => k !== klass)
+      updated = checked.filter(k => k !== collectionName)
     }
 
     this.setState({ checked: updated }, () =>
@@ -144,12 +144,13 @@ export default class Schemas extends React.Component {
       this.setState(
         {
           loaded: true,
-          checked: schemas.map(s => s.klass),
+          checked: schemas.map(item => item.collectionName),
           schemas: schemas
             .map(item => ({
               name: item.name,
               klass: item.klass,
               displayName: item.displayName,
+              collectionName: item.collectionName,
               group: groupName(item.klass)
             }))
             .sort((a, b) => a.displayName.localeCompare(b.displayName))
