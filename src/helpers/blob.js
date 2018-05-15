@@ -1,8 +1,8 @@
 export function blobType(format, compression) {
   if (compression === 'gzip') {
-    return 'application/json'
+    return `application/${format}+gzip`
   } else if (compression === 'zip') {
-    return 'application/zip'
+    return `application/${format}+zip`
   }
 
   if (format === 'xml') {
