@@ -125,7 +125,8 @@ export default class Schemas extends React.Component {
 
     let updated
     if (status) {
-      updated = checked.slice(0).push(collectionName)
+      updated = checked.slice(0)
+      updated.push(collectionName)
     } else {
       updated = checked.filter(k => k !== collectionName)
     }
