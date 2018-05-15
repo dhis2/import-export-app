@@ -13,7 +13,9 @@ export function blobType(format, compression) {
 }
 
 export function createBlob(contents, format, compression) {
-  return URL.createObjectURL(new Blob([contents], { type: blobType(format, compression) }))
+  return URL.createObjectURL(
+    new Blob([contents], { type: blobType(format, compression) })
+  )
 }
 
 export function downloadBlob(url, filename) {

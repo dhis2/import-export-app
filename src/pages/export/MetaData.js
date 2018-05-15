@@ -1,4 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
+import { api } from 'services'
+import { createBlob, downloadBlob } from 'helpers'
 import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SCHEMAS } from 'components'
 
 export class MetaDataExport extends FormBase {
@@ -90,8 +92,40 @@ export class MetaDataExport extends FormBase {
     }
   }
 
-  onSubmit = () => {
-    console.log('onSubmit Meta Data Export')
-    console.log(this.getFormState())
+  onSubmit = async () => {
+    try {
+      const { schemas, format, compression, sharing } = this.getFormState()
+
+      const params = []
+      params.push('assumeTrue=false')
+      params.push(
+        schemas
+          .map(name => name)
+          .sort()
+          .map(name => `${name}=true`)
+          .join('&')
+      )
+
+      if (sharing !== 'true') {
+        params.push('fields=:owner,!user,!publicAccess,!userGroupAccesses')
+      }
+
+      let endpoint = `metadata.${format}`
+      if (compression !== 'uncompressed') {
+        endpoint += `.${compression}`
+        window.location = api.url(`${endpoint}?${params.join('&')}`)
+        return
+      }
+
+      const { data } = await api.get(`${endpoint}?${params.join('&')}`)
+      let contents = data
+      if (format === 'json') {
+        contents = JSON.stringify(data)
+      }
+
+      downloadBlob(createBlob(contents, format, compression), endpoint)
+    } catch (e) {
+      console.log('MetaData Export error', e, '\n')
+    }
   }
 }

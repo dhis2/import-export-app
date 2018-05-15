@@ -15,4 +15,8 @@ export default class API {
   get(url) {
     return axios.get(url, config)
   }
+
+  url(path) {
+    return `${config.baseURL}${path}`
+  }
 }
