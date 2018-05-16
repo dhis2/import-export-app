@@ -64,7 +64,7 @@ export class Form extends React.Component {
       } else if (type === TYPE_FILE) {
         return (
           <File
-            key={`radio-${name}`}
+            key={`file-${name}`}
             name={name}
             label={label}
             className={className}

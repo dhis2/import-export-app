@@ -18,10 +18,7 @@ export default class FileField extends React.Component {
     this.fileRef && this.fileRef.click()
   }
 
-  onChange = evt => {
-    console.log('onChange')
-    console.log('evt', evt)
-  }
+  onChange = evt => this.props.onChange(this.props.name, this.fileRef.files[0])
 
   render() {
     const { label } = this.props

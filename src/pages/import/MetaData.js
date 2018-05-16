@@ -25,7 +25,7 @@ export class MetaDataImport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
-      name: 'file',
+      name: 'upload',
       label: null
     },
     {
@@ -62,6 +62,10 @@ export class MetaDataImport extends FormBase {
 
   state = {
     _context: CTX_DEFAULT,
+
+    upload: {
+      selected: null
+    },
 
     importFormat: {
       selected: 'json',

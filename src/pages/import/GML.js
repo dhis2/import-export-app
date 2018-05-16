@@ -18,7 +18,7 @@ export class GMLImport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
-      name: 'file',
+      name: 'upload',
       label: null
     },
     {
@@ -30,6 +30,10 @@ export class GMLImport extends FormBase {
   ]
 
   state = {
+    upload: {
+      selected: null
+    },
+
     dryRun: {
       selected: 'false',
       values: [

@@ -1,9 +1,10 @@
 import {
+  TYPE_FILE,
+  TYPE_DATE,
   TYPE_RADIO,
   TYPE_SELECT,
-  TYPE_DATE,
-  TYPE_ORG_UNIT,
   TYPE_SCHEMAS,
+  TYPE_ORG_UNIT,
   TYPE_DATASET_PICKER
 } from 'components/Form'
 
@@ -16,9 +17,10 @@ export function getFieldState(name, value, fields, state) {
 
   if (
     [
+      TYPE_FILE,
+      TYPE_DATE,
       TYPE_RADIO,
       TYPE_SELECT,
-      TYPE_DATE,
       TYPE_SCHEMAS,
       TYPE_DATASET_PICKER
     ].includes(f.type)

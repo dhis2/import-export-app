@@ -18,7 +18,7 @@ export class EventImport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_FILE,
-      name: 'file',
+      name: 'upload',
       label: null
     },
     {
@@ -48,6 +48,10 @@ export class EventImport extends FormBase {
   ]
 
   state = {
+    upload: {
+      selected: null
+    },
+
     payloadFormat: {
       selected: 'json',
       values: [
