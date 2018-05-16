@@ -1,4 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container > div:nth-child(1) > div {
+  margin-right: 15px;
+}
 form .formControl {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   height: 1100px;
@@ -47,4 +55,11 @@ form .formLabel {
 
 .group .schema > div label {
   margin-left: 4px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+  width: 100%;
 }

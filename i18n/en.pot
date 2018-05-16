@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-08T13:11:26.951Z\n"
-"PO-Revision-Date: 2018-05-08T13:11:26.951Z\n"
+"POT-Creation-Date: 2018-05-16T15:23:48.584Z\n"
+"PO-Revision-Date: 2018-05-16T15:23:48.584Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -27,6 +27,9 @@ msgid "Choose a file to upload"
 msgstr ""
 
 msgid "more options"
+msgstr ""
+
+msgid "Select None"
 msgstr ""
 
 msgid "Metadata Import"

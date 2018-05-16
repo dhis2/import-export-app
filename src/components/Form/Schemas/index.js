@@ -1,7 +1,8 @@
 import React from 'react'
 import { api } from 'services'
-import { Checkbox } from 'material-ui'
+import i18n from '@dhis2/d2-i18n'
 import { Loading } from 'components'
+import { Checkbox, RaisedButton } from 'material-ui'
 import { FormGroup, FormControl, FormLabel } from 'components/material-ui'
 
 import s from './styles.css'
@@ -109,6 +110,15 @@ function Group({ label, schemas, checked, onClick }) {
   )
 }
 
+function Controls({ onSelectAll, onSelectNone }) {
+  return (
+    <div className={s.controls}>
+      <RaisedButton label={i18n.t('Select All')} onClick={onSelectAll} />
+      <RaisedButton label={i18n.t('Select None')} onClick={onSelectNone} />
+    </div>
+  )
+}
+
 export default class Schemas extends React.Component {
   state = {
     loaded: false,
@@ -166,6 +176,22 @@ export default class Schemas extends React.Component {
     }
   }
 
+  onSelectNone = () => {
+    this.setState({ checked: [] }, () =>
+      this.props.onChange(this.props.name, [])
+    )
+  }
+
+  onSelectAll = () => {
+    const { schemas } = this.state
+    this.setState(
+      {
+        checked: schemas.map(item => item.collectionName)
+      },
+      () => this.props.onChange(this.props.name, this.state.checked)
+    )
+  }
+
   render() {
     const { loaded, checked, schemas } = this.state
     if (!loaded) {
@@ -180,17 +206,23 @@ export default class Schemas extends React.Component {
     const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
 
     return (
-      <FormControl className={s.formControl}>
-        {list.map(k => (
-          <Group
-            key={`group-${k}`}
-            label={groupLabel(k, groups[k])}
-            schemas={groups[k]}
-            checked={checked}
-            onClick={this.onClick}
-          />
-        ))}
-      </FormControl>
+      <div className={s.container}>
+        <Controls
+          onSelectAll={this.onSelectAll}
+          onSelectNone={this.onSelectNone}
+        />
+        <FormControl className={s.formControl}>
+          {list.map(k => (
+            <Group
+              key={`group-${k}`}
+              label={groupLabel(k, groups[k])}
+              schemas={groups[k]}
+              checked={checked}
+              onClick={this.onClick}
+            />
+          ))}
+        </FormControl>
+      </div>
     )
   }
 }
