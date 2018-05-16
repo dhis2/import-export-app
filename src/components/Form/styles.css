@@ -25,11 +25,12 @@
 }
 
 .buttons {
+  margin-top: 15px;
+  padding: 0 15px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   height: 64px;
-  padding: 0 15px;
   font-size: 18px;
   font-weight: 400;
   border-top: 1px solid #e9ecef;
