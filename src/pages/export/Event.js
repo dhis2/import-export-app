@@ -6,7 +6,7 @@ import {
   TYPE_RADIO,
   TYPE_DATE,
   TYPE_SELECT,
-  TYPE_ORG_UNIT
+  TYPE_ORG_UNIT_SINGLE_SELECT
 } from 'components'
 import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
@@ -28,7 +28,7 @@ export class EventExport extends FormBase {
   fields = [
     {
       context: CTX_DEFAULT,
-      type: TYPE_ORG_UNIT,
+      type: TYPE_ORG_UNIT_SINGLE_SELECT,
       name: 'orgUnit',
       label: i18n.t('Organisation unit')
     },
@@ -217,25 +217,9 @@ export class EventExport extends FormBase {
           }))
         )
 
-      const selectedPaths = []
-      const {
-        data: { selectedUnits }
-      } = await api.get('../../dhis-web-commons/oust/addorgunit.action')
-      if (selectedUnits.length > 0) {
-        for (let i = 0; i < selectedUnits.length; i += 1) {
-          const url = `organisationUnits/${
-            selectedUnits[i]['id']
-          }?paging=false&fields=id,path`
-          const {
-            data: { path }
-          } = await api.get(url)
-          selectedPaths.push(path)
-        }
-      }
-
       this.setState({
         orgUnit: {
-          selected: selectedPaths,
+          selected: [],
           value: orgUnitTree
         }
       })
@@ -279,6 +263,7 @@ export class EventExport extends FormBase {
 
   onSubmit = () => {
     const {
+      orgUnit,
       startDate,
       endDate,
       programs,
@@ -302,7 +287,12 @@ export class EventExport extends FormBase {
       params.push(`programStage=${programStages}`)
     }
 
-    // TODO params.push(`orgUnit=${?}`)
+    if (orgUnit.length > 0) {
+      const path = orgUnit[0]
+      const orgUnitId = path.substr(path.lastIndexOf('/') + 1)
+      params.push(`orgUnit=${orgUnitId}`)
+    }
+
     params.push('startDate=' + moment(startDate).format('YYYY-MM-DD'))
     params.push('endDate=' + moment(endDate).format('YYYY-MM-DD'))
 
