@@ -20,7 +20,9 @@ export class FormBase extends React.Component {
   getFormState() {
     const values = {}
     this.fields.map(f => f.name).forEach(name => {
-      values[name] = getFieldValue(this.state[name])
+      if (name) {
+        values[name] = getFieldValue(this.state[name])
+      }
     })
     return values
   }
