@@ -12,11 +12,15 @@ const config = {
 }
 
 export default class API {
+  url(path) {
+    return `${config.baseURL}${path}`
+  }
+
   get(url) {
     return axios.get(url, config)
   }
 
-  url(path) {
-    return `${config.baseURL}${path}`
+  post(url, data) {
+    return axios.post(url, data, config)
   }
 }
