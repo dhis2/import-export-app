@@ -10,6 +10,7 @@ import {
 } from 'components'
 import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
+import moment from 'moment/moment'
 
 export class EventExport extends FormBase {
   static path = '/export/event'
@@ -46,7 +47,7 @@ export class EventExport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'idscheme',
+      name: 'idScheme',
       label: i18n.t('ID scheme')
     },
     {
@@ -99,7 +100,7 @@ export class EventExport extends FormBase {
         }
       ]
     },
-    idscheme: {
+    idScheme: {
       selected: 'UID',
       values: [
         {
@@ -277,6 +278,40 @@ export class EventExport extends FormBase {
   }
 
   onSubmit = () => {
-    console.log('onSubmit Event Export')
+    const {
+      startDate,
+      endDate,
+      programs,
+      programStages,
+      idScheme,
+      inclusion,
+      format,
+      compression
+    } = this.getFormState()
+
+    let attachment = `events${format}`
+    if (compression !== 'none') {
+      attachment += compression
+    }
+
+    const params = []
+    params.push(`attachment=${attachment}`)
+    params.push(`program=${programs}`)
+
+    if (programStages !== -1) {
+      params.push(`programStage=${programStages}`)
+    }
+
+    // TODO params.push(`orgUnit=${?}`)
+    params.push('startDate=' + moment(startDate).format('YYYY-MM-DD'))
+    params.push('endDate=' + moment(endDate).format('YYYY-MM-DD'))
+
+    params.push(`ouMode=${inclusion.toUpperCase()}`)
+    params.push('links=false')
+    params.push('skipPaging=true')
+    params.push('includeDeleted=false')
+    params.push(`idScheme=${idScheme}`)
+
+    window.location = api.url('events') + '?' + params.join('&')
   }
 }

@@ -72,7 +72,7 @@ export class MetaDataExport extends FormBase {
           label: i18n.t('Gzip')
         },
         {
-          value: 'uncompressed',
+          value: 'none',
           label: i18n.t('Uncompressed')
         }
       ]
@@ -111,7 +111,7 @@ export class MetaDataExport extends FormBase {
       }
 
       let endpoint = `metadata.${format}`
-      if (compression !== 'uncompressed') {
+      if (compression !== 'none') {
         endpoint += `.${compression}`
         window.location = api.url(`${endpoint}?${params.join('&')}`)
         return
