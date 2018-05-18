@@ -152,9 +152,8 @@ export class MetaDataDependencyExport extends FormBase {
         endpoint += compression
       }
 
-      const url = `${api.url(
-        ''
-      )}${objectType}/${objectList}/${endpoint}?attachment=${endpoint}`
+      const baseURL = api.url('')
+      const url = `${baseURL}${objectType}/${objectList}/${endpoint}?attachment=${endpoint}`
       if (compression !== 'none') {
         window.location = url
         return
