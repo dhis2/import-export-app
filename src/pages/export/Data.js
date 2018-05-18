@@ -10,6 +10,8 @@ import {
   TYPE_MORE_OPTIONS,
   TYPE_DATASET_PICKER
 } from 'components'
+import moment from 'moment'
+import { api } from 'services'
 import { today } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
 
@@ -214,9 +216,25 @@ export class DataExport extends FormBase {
           }))
         )
 
+      const selectedPaths = []
+      const {
+        data: { selectedUnits }
+      } = await api.get('../../dhis-web-commons/oust/addorgunit.action')
+      if (selectedUnits.length > 0) {
+        for (let i = 0; i < selectedUnits.length; i += 1) {
+          const url = `organisationUnits/${
+            selectedUnits[i]['id']
+          }?paging=false&fields=id,path`
+          const {
+            data: { path }
+          } = await api.get(url)
+          selectedPaths.push(path)
+        }
+      }
+
       this.setState({
         orgUnit: {
-          selected: [],
+          selected: selectedPaths,
           value: orgUnitTree
         },
         selectedDataSets: {
