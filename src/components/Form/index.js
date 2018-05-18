@@ -119,7 +119,7 @@ export class Form extends React.Component {
               root={value}
               selected={selected}
               onSelectClick={(evt, orgUnit) =>
-                this.props.onChange(name, orgUnit.path)
+                this.props.onChange(name, orgUnit)
               }
             />
           </FormControl>
