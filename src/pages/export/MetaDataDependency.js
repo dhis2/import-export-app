@@ -1,6 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SELECT } from 'components'
 import { api } from 'services'
+import { createBlob, downloadBlob } from 'helpers'
 
 export class MetaDataDependencyExport extends FormBase {
   static path = '/export/metadata-dependency'
@@ -86,7 +87,7 @@ export class MetaDataDependencyExport extends FormBase {
       ]
     },
     compression: {
-      selected: '',
+      selected: '.zip',
       values: [
         {
           value: '.zip',
@@ -97,7 +98,7 @@ export class MetaDataDependencyExport extends FormBase {
           label: i18n.t('Gzip')
         },
         {
-          value: '',
+          value: 'none',
           label: i18n.t('Uncompressed')
         }
       ]
@@ -137,7 +138,37 @@ export class MetaDataDependencyExport extends FormBase {
     }
   }
 
-  onSubmit = () => {
-    console.log('onSubmit Meta Data Dependency Export')
+  onSubmit = async () => {
+    try {
+      const {
+        objectType,
+        objectList,
+        format,
+        compression
+      } = this.getFormState()
+
+      let endpoint = `metadata${format}`
+      if (compression !== 'none') {
+        endpoint += compression
+      }
+
+      const url = `${api.url(
+        ''
+      )}${objectType}/${objectList}/${endpoint}?attachment=${endpoint}`
+      if (compression !== 'none') {
+        window.location = url
+        return
+      }
+
+      const { data } = await api.get(url)
+      let contents = data
+      if (format === '.json') {
+        contents = JSON.stringify(data)
+      }
+
+      downloadBlob(createBlob(contents, format, compression), endpoint)
+    } catch (e) {
+      console.log('MetaDataDependency Export error', e, '\n')
+    }
   }
 }
