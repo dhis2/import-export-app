@@ -12,7 +12,7 @@ import {
 } from 'components'
 import moment from 'moment'
 import { api } from 'services'
-import { today } from 'helpers'
+import { today, createBlob, downloadBlob } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
 
 export class DataExport extends FormBase {
@@ -260,18 +260,38 @@ export class DataExport extends FormBase {
         selectedDataSets
       } = this.getFormState()
 
-      console.log('this.getFormState()')
-      console.log(this.getFormState())
+      const formData = new FormData()
 
-      const params = {}
-      params['selectedDataSets'] = selectedDataSets
-      params['startDate'] = startDate
-      params['endDate'] = endDate
-      params['exportFormat'] = exportFormat
-      params['compression'] = compression
-      params['dataElementIdScheme'] = dataElementIdScheme
-      params['orgUnitIdScheme'] = orgUnitIdScheme
-      params['categoryOptionComboIdScheme'] = categoryOptionComboIdScheme
+      formData.set('startDate', moment(startDate).format('YYYY-MM-DD'))
+      formData.set('endDate', moment(endDate).format('YYYY-MM-DD'))
+      formData.set('exportFormat', exportFormat)
+      formData.set('compression', compression)
+      formData.set('dataElementIdScheme', dataElementIdScheme)
+      formData.set('orgUnitIdScheme', orgUnitIdScheme)
+      formData.set('categoryOptionComboIdScheme', categoryOptionComboIdScheme)
+
+      selectedDataSets.forEach(v => {
+        formData.append('selectedDataSets', v)
+      })
+
+      let filename = `data.${exportFormat}`
+      const endpoint = '../../dhis-web-importexport/exportDataValue.action'
+      const { data } = await api.post(endpoint, formData)
+      let contents = data
+      if (exportFormat === 'json') {
+        contents = JSON.stringify(data)
+      }
+
+      const blobURL = createBlob(contents, exportFormat, compression)
+
+      if (compression === 'none') {
+        downloadBlob(blobURL, filename)
+        return
+      }
+
+      filename += `.${compression}`
+
+      // TODO: download zipped blob
     } catch (e) {
       console.log('Data Export error', e, '\n')
     }
