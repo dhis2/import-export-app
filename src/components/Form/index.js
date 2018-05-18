@@ -19,6 +19,7 @@ export const TYPE_RADIO = 'fieldType/RADIO'
 export const TYPE_SELECT = 'fieldType/SELECT'
 export const TYPE_SCHEMAS = 'fieldType/SCHEMAS'
 export const TYPE_ORG_UNIT = 'fieldType/ORG_UNIT'
+export const TYPE_ORG_UNIT_SINGLE_SELECT = 'fieldType/ORG_UNIT_SINGLE_SELECT'
 export const TYPE_MORE_OPTIONS = 'fieldType/MORE_OPTIONS'
 export const TYPE_DATASET_PICKER = 'fieldType/DATASET_PICKER'
 
@@ -121,6 +122,25 @@ export class Form extends React.Component {
               onSelectClick={(evt, orgUnit) =>
                 this.props.onChange(name, orgUnit)
               }
+            />
+          </FormControl>
+        )
+      } else if (type === TYPE_ORG_UNIT_SINGLE_SELECT) {
+        const { selected, value } = fieldValues[name]
+        if (value === null) {
+          return null
+        }
+
+        return (
+          <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
+            <FormLabel className={s.formLabel}>{label}</FormLabel>
+            <OrgUnitTree
+              root={value}
+              selected={selected}
+              onSelectClick={(evt, orgUnit) =>
+                this.props.onChange(name, orgUnit)
+              }
+              hideCheckboxes={true}
             />
           </FormControl>
         )
