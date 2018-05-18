@@ -12,6 +12,7 @@ import {
 } from 'components'
 import moment from 'moment'
 import { api } from 'services'
+import { apiConfig } from 'config'
 import { today, createBlob, downloadBlob } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
 
@@ -274,24 +275,28 @@ export class DataExport extends FormBase {
         formData.append('selectedDataSets', v)
       })
 
-      let filename = `data.${exportFormat}`
-      const endpoint = '../../dhis-web-importexport/exportDataValue.action'
-      const { data } = await api.post(endpoint, formData)
-      let contents = data
-      if (exportFormat === 'json') {
-        contents = JSON.stringify(data)
-      }
+      window
+        .fetch(
+          `${apiConfig.server}/dhis-web-importexport/exportDataValue.action`,
+          {
+            body: formData,
+            cache: 'no-cache',
+            credentials: 'include',
+            method: 'POST',
+            mode: 'cors',
+            redirect: 'follow'
+          }
+        )
+        .then(response => response.blob())
+        .then(blob => {
+          let filename = `data.${exportFormat}`
+          if (compression !== 'none') {
+            filename += `.${compression}`
+          }
 
-      const blobURL = createBlob(contents, exportFormat, compression)
-
-      if (compression === 'none') {
-        downloadBlob(blobURL, filename)
-        return
-      }
-
-      filename += `.${compression}`
-
-      // TODO: download zipped blob
+          const url = window.URL.createObjectURL(blob)
+          downloadBlob(url, filename)
+        })
     } catch (e) {
       console.log('Data Export error', e, '\n')
     }
