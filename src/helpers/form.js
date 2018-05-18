@@ -31,12 +31,15 @@ export function getFieldState(name, value, fields, state) {
     let list = state[name]['selected']
     const { id, path } = value
 
+    const formData = new FormData()
+    formData.set('id', id)
+
     if (!list.includes(path)) {
       list.push(path)
-      api.post('../../dhis-web-commons/oust/addorgunit.action', { id })
+      api.post('../../dhis-web-commons/oust/addorgunit.action', formData)
     } else {
       list = list.filter(p => p !== path)
-      api.post('../../dhis-web-commons/oust/removeorgunit.action', { id })
+      api.post('../../dhis-web-commons/oust/removeorgunit.action', formData)
     }
 
     state[name]['selected'] = list
