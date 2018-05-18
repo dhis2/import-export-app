@@ -165,7 +165,7 @@ export class EventExport extends FormBase {
           label: i18n.t('Gzip')
         },
         {
-          value: '',
+          value: 'none',
           label: 'Uncompressed'
         }
       ]

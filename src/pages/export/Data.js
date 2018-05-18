@@ -40,7 +40,7 @@ export class DataExport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_DATASET_PICKER,
-      name: 'availableDataSets',
+      name: 'selectedDataSets',
       label: i18n.t('Data Sets')
     },
     {
@@ -96,7 +96,7 @@ export class DataExport extends FormBase {
       selected: [],
       value: null
     },
-    availableDataSets: {
+    selectedDataSets: {
       selected: [],
       value: null
     },
@@ -131,7 +131,7 @@ export class DataExport extends FormBase {
           label: i18n.t('Zip')
         },
         {
-          value: '',
+          value: 'none',
           label: 'Uncompressed'
         }
       ]
@@ -219,7 +219,7 @@ export class DataExport extends FormBase {
           selected: [],
           value: orgUnitTree
         },
-        availableDataSets: {
+        selectedDataSets: {
           selected: [],
           value: dataSets
         }
@@ -229,7 +229,33 @@ export class DataExport extends FormBase {
     }
   }
 
-  onSubmit = () => {
-    console.log('onSubmit Data Export')
+  onSubmit = async () => {
+    try {
+      const {
+        startDate,
+        endDate,
+        exportFormat,
+        compression,
+        dataElementIdScheme,
+        orgUnitIdScheme,
+        categoryOptionComboIdScheme,
+        selectedDataSets
+      } = this.getFormState()
+
+      console.log('this.getFormState()')
+      console.log(this.getFormState())
+
+      const params = {}
+      params['selectedDataSets'] = selectedDataSets
+      params['startDate'] = startDate
+      params['endDate'] = endDate
+      params['exportFormat'] = exportFormat
+      params['compression'] = compression
+      params['dataElementIdScheme'] = dataElementIdScheme
+      params['orgUnitIdScheme'] = orgUnitIdScheme
+      params['categoryOptionComboIdScheme'] = categoryOptionComboIdScheme
+    } catch (e) {
+      console.log('Data Export error', e, '\n')
+    }
   }
 }
