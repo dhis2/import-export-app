@@ -198,7 +198,7 @@ export class EventExport extends FormBase {
       )
 
       const d2 = await getInstance()
-      const value = await d2.models.organisationUnits
+      const orgUnitTree = await d2.models.organisationUnits
         .list({
           level: 1,
           paging: false,
@@ -206,10 +206,36 @@ export class EventExport extends FormBase {
         })
         .then(root => root.toArray()[0])
 
+      const dataSets = await d2.models.dataSet
+        .list({ paging: false, fields: 'id,displayName' })
+        .then(collection => collection.toArray())
+        .then(sets =>
+          sets.map(dataSet => ({
+            value: dataSet.id,
+            label: dataSet.displayName
+          }))
+        )
+
+      const selectedPaths = []
+      const {
+        data: { selectedUnits }
+      } = await api.get('../../dhis-web-commons/oust/addorgunit.action')
+      if (selectedUnits.length > 0) {
+        for (let i = 0; i < selectedUnits.length; i += 1) {
+          const url = `organisationUnits/${
+            selectedUnits[i]['id']
+          }?paging=false&fields=id,path`
+          const {
+            data: { path }
+          } = await api.get(url)
+          selectedPaths.push(path)
+        }
+      }
+
       this.setState({
         orgUnit: {
-          value,
-          selected: []
+          selected: selectedPaths,
+          value: orgUnitTree
         }
       })
     } catch (e) {
