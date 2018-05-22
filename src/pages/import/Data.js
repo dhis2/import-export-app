@@ -85,6 +85,8 @@ export class DataImport extends FormBase {
   ]
 
   state = {
+    processing: false,
+
     upload: {
       selected: null
     },

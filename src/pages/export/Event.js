@@ -83,6 +83,7 @@ export class EventExport extends FormBase {
   ]
 
   state = {
+    processing: false,
     orgUnit: {
       selected: [],
       value: null

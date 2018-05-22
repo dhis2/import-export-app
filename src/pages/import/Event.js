@@ -48,6 +48,8 @@ export class EventImport extends FormBase {
   ]
 
   state = {
+    processing: false,
+
     upload: {
       selected: null
     },

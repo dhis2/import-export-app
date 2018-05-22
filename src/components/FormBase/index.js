@@ -1,6 +1,6 @@
 import React from 'react'
 import { getFieldState, getFieldValue } from 'helpers'
-import { Form } from 'components'
+import { Form, Loading } from 'components'
 
 import s from './styles.css'
 
@@ -28,6 +28,10 @@ export class FormBase extends React.Component {
   }
 
   render() {
+    if (this.state.processing) {
+      return <Loading />
+    }
+
     return (
       <Form
         className={s.form}

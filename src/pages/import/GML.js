@@ -30,6 +30,8 @@ export class GMLImport extends FormBase {
   ]
 
   state = {
+    processing: false,
+
     upload: {
       selected: null
     },

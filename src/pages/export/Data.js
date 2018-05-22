@@ -95,6 +95,7 @@ export class DataExport extends FormBase {
   ]
 
   state = {
+    processing: false,
     orgUnit: {
       selected: [],
       value: null
@@ -275,28 +276,31 @@ export class DataExport extends FormBase {
         formData.append('selectedDataSets', v)
       })
 
-      window
-        .fetch(
-          `${apiConfig.server}/dhis-web-importexport/exportDataValue.action`,
-          {
-            body: formData,
-            cache: 'no-cache',
-            credentials: 'include',
-            method: 'POST',
-            mode: 'cors',
-            redirect: 'follow'
-          }
-        )
-        .then(response => response.blob())
-        .then(blob => {
-          let filename = `data.${exportFormat}`
-          if (compression !== 'none') {
-            filename += `.${compression}`
-          }
+      this.setState({ processing: true }, () => {
+        window
+          .fetch(
+            `${apiConfig.server}/dhis-web-importexport/exportDataValue.action`,
+            {
+              body: formData,
+              cache: 'no-cache',
+              credentials: 'include',
+              method: 'POST',
+              mode: 'cors',
+              redirect: 'follow'
+            }
+          )
+          .then(response => response.blob())
+          .then(blob => {
+            let filename = `data.${exportFormat}`
+            if (compression !== 'none') {
+              filename += `.${compression}`
+            }
 
-          const url = window.URL.createObjectURL(blob)
-          downloadBlob(url, filename)
-        })
+            const url = window.URL.createObjectURL(blob)
+            downloadBlob(url, filename)
+          })
+        this.setState({ processing: false })
+      })
     } catch (e) {
       console.log('Data Export error', e, '\n')
     }

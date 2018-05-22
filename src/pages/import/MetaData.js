@@ -62,6 +62,7 @@ export class MetaDataImport extends FormBase {
 
   state = {
     _context: CTX_DEFAULT,
+    processing: false,
 
     upload: {
       selected: null

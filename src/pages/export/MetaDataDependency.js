@@ -44,6 +44,7 @@ export class MetaDataDependencyExport extends FormBase {
   ]
 
   state = {
+    processing: false,
     objectType: {
       selected: 'dataSets',
       values: [
@@ -159,13 +160,16 @@ export class MetaDataDependencyExport extends FormBase {
         return
       }
 
-      const { data } = await api.get(url)
-      let contents = data
-      if (format === '.json') {
-        contents = JSON.stringify(data)
-      }
+      this.setState({ processing: true }, async () => {
+        const { data } = await api.get(url)
+        let contents = data
+        if (format === '.json') {
+          contents = JSON.stringify(data)
+        }
 
-      downloadBlob(createBlob(contents, format, compression), endpoint)
+        downloadBlob(createBlob(contents, format, compression), endpoint)
+        this.setState({ processing: false })
+      })
     } catch (e) {
       console.log('MetaDataDependency Export error', e, '\n')
     }
