@@ -208,16 +208,6 @@ export class EventExport extends FormBase {
         })
         .then(root => root.toArray()[0])
 
-      const dataSets = await d2.models.dataSet
-        .list({ paging: false, fields: 'id,displayName' })
-        .then(collection => collection.toArray())
-        .then(sets =>
-          sets.map(dataSet => ({
-            value: dataSet.id,
-            label: dataSet.displayName
-          }))
-        )
-
       this.setState({
         orgUnit: {
           selected: [],

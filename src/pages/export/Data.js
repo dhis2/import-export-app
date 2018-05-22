@@ -13,7 +13,7 @@ import {
 import moment from 'moment'
 import { api } from 'services'
 import { apiConfig } from 'config'
-import { today, createBlob, downloadBlob } from 'helpers'
+import { today, downloadBlob } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
 
 export class DataExport extends FormBase {
