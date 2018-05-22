@@ -18,10 +18,14 @@ export default class FileField extends React.Component {
     this.fileRef && this.fileRef.click()
   }
 
-  onChange = evt => this.props.onChange(this.props.name, this.fileRef.files[0])
+  onChange = () => this.props.onChange(this.props.name, this.fileRef.files[0])
 
   render() {
-    const { label } = this.props
+    const { selected } = this.props
+    let label = this.props.label
+    if (selected) {
+      label = selected.name
+    }
 
     return (
       <FormControl className={s.formControl} onClick={this.onClick}>

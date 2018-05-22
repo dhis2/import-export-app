@@ -63,11 +63,13 @@ export class Form extends React.Component {
           />
         )
       } else if (type === TYPE_FILE) {
+        const { selected } = fieldValues[name]
         return (
           <File
             key={`file-${name}`}
             name={name}
             label={label}
+            selected={selected}
             className={className}
             onChange={this.props.onChange}
           />
