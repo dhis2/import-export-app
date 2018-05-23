@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
+import { apiConfig } from 'config'
 
 export class EventImport extends FormBase {
   static path = '/import/event'
@@ -124,6 +125,41 @@ export class EventImport extends FormBase {
   }
 
   onSubmit = () => {
-    console.log('onSubmit Event Import')
+    try {
+      const {
+        upload,
+        payloadFormat,
+        dryRun,
+        eventIdScheme,
+        orgUnitIdScheme
+      } = this.getFormState()
+
+      const formData = new FormData()
+      formData.set('upload', upload)
+      formData.set('payloadFormat', payloadFormat)
+      formData.set('dryRun', dryRun)
+      formData.set('skipFirst', 'true')
+      formData.set('eventIdScheme', eventIdScheme)
+      formData.set('orgUnitIdScheme', orgUnitIdScheme)
+
+      this.setState({ processing: true })
+      window
+        .fetch(
+          `${apiConfig.server}/dhis-web-importexport/importEvents.action`,
+          {
+            body: formData,
+            cache: 'no-cache',
+            credentials: 'include',
+            method: 'POST',
+            mode: 'cors',
+            redirect: 'follow'
+          }
+        )
+        .then(async () => {
+          this.setState({ processing: false })
+        })
+    } catch (e) {
+      console.log('Event Import error', e, '\n')
+    }
   }
 }
