@@ -99,6 +99,7 @@ export class MetaDataExport extends FormBase {
 
       const params = []
       params.push('assumeTrue=false')
+      params.push(`format=${format}`)
       params.push(
         schemas
           .map(name => name)

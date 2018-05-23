@@ -139,15 +139,15 @@ export class EventExport extends FormBase {
       ]
     },
     format: {
-      selected: '.xml',
+      selected: '.json',
       values: [
-        {
-          value: '.xml',
-          label: i18n.t('XML')
-        },
         {
           value: '.json',
           label: i18n.t('JSON')
+        },
+        {
+          value: '.xml',
+          label: i18n.t('XML')
         },
         {
           value: '.csv',
@@ -292,6 +292,7 @@ export class EventExport extends FormBase {
     params.push('skipPaging=true')
     params.push('includeDeleted=false')
     params.push(`idScheme=${idScheme}`)
+    params.push(`format=${format.substr(1)}`)
 
     window.location = api.url('events') + '?' + params.join('&')
   }
