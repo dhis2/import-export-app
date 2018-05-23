@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { apiConfig } from 'config'
 import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 
 export class GMLImport extends FormBase {
@@ -52,6 +53,28 @@ export class GMLImport extends FormBase {
   }
 
   onSubmit = () => {
-    console.log('onSubmit GML Import')
+    try {
+      const { upload, dryRun } = this.getFormState()
+
+      const formData = new FormData()
+      formData.set('upload', upload)
+      formData.set('dryRun', dryRun)
+
+      this.setState({ processing: true })
+      window
+        .fetch(`${apiConfig.server}/dhis-web-importexport/importGml.action`, {
+          body: formData,
+          cache: 'no-cache',
+          credentials: 'include',
+          method: 'POST',
+          mode: 'cors',
+          redirect: 'follow'
+        })
+        .then(async () => {
+          this.setState({ processing: false })
+        })
+    } catch (e) {
+      console.log('GML Import error', e, '\n')
+    }
   }
 }

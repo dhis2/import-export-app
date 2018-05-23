@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 import { apiConfig } from 'config'
+import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 
 export class EventImport extends FormBase {
   static path = '/import/event'

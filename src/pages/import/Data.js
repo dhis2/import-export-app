@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { apiConfig } from 'config'
 import {
   FormBase,
   CTX_DEFAULT,
@@ -7,7 +8,6 @@ import {
   TYPE_RADIO,
   TYPE_MORE_OPTIONS
 } from 'components'
-import { apiConfig } from 'config'
 
 export class DataImport extends FormBase {
   static path = '/import/data'

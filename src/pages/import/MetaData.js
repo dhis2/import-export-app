@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { apiConfig } from 'config'
 import {
   FormBase,
   CTX_DEFAULT,
@@ -8,7 +9,6 @@ import {
   CTX_MORE_OPTIONS,
   TYPE_MORE_OPTIONS
 } from 'components/index'
-import { apiConfig } from 'config'
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
