@@ -7,6 +7,7 @@ import {
   TYPE_RADIO,
   TYPE_MORE_OPTIONS
 } from 'components'
+import { apiConfig } from 'config'
 
 export class DataImport extends FormBase {
   static path = '/import/data'
@@ -14,7 +15,7 @@ export class DataImport extends FormBase {
   static order = 2
   static title = i18n.t('Data Import')
   static description = i18n.t(
-    'Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is the standard exchange format for DHIS 2.'
+    'Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 is the standard exchange format for DHIS 2.'
   )
 
   formWidth = 600
@@ -233,6 +234,48 @@ export class DataImport extends FormBase {
   }
 
   onSubmit = () => {
-    console.log('onSubmit Data Import')
+    try {
+      const {
+        upload,
+        importFormat,
+        dryRun,
+        strategy,
+        preheatCache,
+        dataElementIdScheme,
+        orgUnitIdScheme,
+        idScheme,
+        skipExistingCheck
+      } = this.getFormState()
+
+      const formData = new FormData()
+      formData.set('upload', upload)
+      formData.set('importFormat', importFormat)
+      formData.set('dryRun', dryRun)
+      formData.set('strategy', strategy)
+      formData.set('preheatCache', preheatCache)
+      formData.set('dataElementIdScheme', dataElementIdScheme)
+      formData.set('orgUnitIdScheme', orgUnitIdScheme)
+      formData.set('idScheme', idScheme)
+      formData.set('skipExistingCheck', skipExistingCheck)
+
+      this.setState({ processing: true })
+      window
+        .fetch(
+          `${apiConfig.server}/dhis-web-importexport/importDataValue.action`,
+          {
+            body: formData,
+            cache: 'no-cache',
+            credentials: 'include',
+            method: 'POST',
+            mode: 'cors',
+            redirect: 'follow'
+          }
+        )
+        .then(async () => {
+          this.setState({ processing: false })
+        })
+    } catch (e) {
+      console.log('Data Import error', e, '\n')
+    }
   }
 }
