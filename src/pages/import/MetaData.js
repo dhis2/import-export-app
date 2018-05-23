@@ -2,11 +2,13 @@ import i18n from '@dhis2/d2-i18n'
 import {
   FormBase,
   CTX_DEFAULT,
-  CTX_MORE_OPTIONS,
   TYPE_FILE,
-  TYPE_MORE_OPTIONS,
-  TYPE_RADIO
+  TYPE_RADIO,
+  TYPE_SELECT,
+  CTX_MORE_OPTIONS,
+  TYPE_MORE_OPTIONS
 } from 'components/index'
+import { apiConfig } from 'config'
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
@@ -57,6 +59,12 @@ export class MetaDataImport extends FormBase {
       type: TYPE_RADIO,
       name: 'atomicMode',
       label: i18n.t('Reference mode')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_SELECT,
+      name: 'classKey',
+      label: i18n.t('Object type')
     }
   ]
 
@@ -82,6 +90,60 @@ export class MetaDataImport extends FormBase {
         {
           value: 'csv',
           label: i18n.t('CSV')
+        }
+      ]
+    },
+
+    classKey: {
+      selected: 'ORGANISATION_UNIT_GROUP_MEMBERSHIP',
+      values: [
+        {
+          label: i18n.t('Organisation unit group membership'),
+          value: 'ORGANISATION_UNIT_GROUP_MEMBERSHIP'
+        },
+        {
+          label: i18n.t('Data element group membership'),
+          value: 'DATA_ELEMENT_GROUP_MEMBERSHIP'
+        },
+        {
+          label: i18n.t('Indicator group membership'),
+          value: 'INDICATOR_GROUP_MEMBERSHIP'
+        },
+        {
+          label: i18n.t('Data element'),
+          value: 'DATA_ELEMENT'
+        },
+        {
+          label: i18n.t('Data element group'),
+          value: 'DATA_ELEMENT_GROUP'
+        },
+        {
+          label: i18n.t('Category option'),
+          value: 'CATEGORY_OPTION'
+        },
+        {
+          label: i18n.t('Category option group'),
+          value: 'CATEGORY_OPTION_GROUP'
+        },
+        {
+          label: i18n.t('Organisation unit'),
+          value: 'ORGANISATION_UNIT'
+        },
+        {
+          label: i18n.t('Organisation unit group'),
+          value: 'ORGANISATION_UNIT_GROUP'
+        },
+        {
+          label: i18n.t('Validation rule'),
+          value: 'VALIDATION_RULE'
+        },
+        {
+          label: i18n.t('Option set'),
+          value: 'OPTION_SET'
+        },
+        {
+          label: i18n.t('Translation'),
+          value: 'TRANSLATION'
         }
       ]
     },
@@ -134,6 +196,42 @@ export class MetaDataImport extends FormBase {
   }
 
   onSubmit = () => {
-    console.log('onSubmit MetaData Import')
+    try {
+      const {
+        upload,
+        importFormat,
+        classKey,
+        dryRun,
+        strategy,
+        atomicMode
+      } = this.getFormState()
+
+      const formData = new FormData()
+      formData.set('upload', upload)
+      formData.set('importFormat', importFormat)
+      formData.set('classKey', classKey)
+      formData.set('dryRun', dryRun)
+      formData.set('strategy', strategy)
+      formData.set('atomicMode', atomicMode)
+
+      this.setState({ processing: true })
+      window
+        .fetch(
+          `${apiConfig.server}/dhis-web-importexport/importMetaData.action`,
+          {
+            body: formData,
+            cache: 'no-cache',
+            credentials: 'include',
+            method: 'POST',
+            mode: 'cors',
+            redirect: 'follow'
+          }
+        )
+        .then(async () => {
+          this.setState({ processing: false })
+        })
+    } catch (e) {
+      console.log('MetaData Import error', e, '\n')
+    }
   }
 }

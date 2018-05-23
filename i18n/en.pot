@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-16T15:23:48.584Z\n"
-"PO-Revision-Date: 2018-05-16T15:23:48.584Z\n"
+"POT-Creation-Date: 2018-05-23T09:26:51.935Z\n"
+"PO-Revision-Date: 2018-05-23T09:26:51.935Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -272,6 +272,39 @@ msgid ""
 msgstr ""
 
 msgid "Reference mode"
+msgstr ""
+
+msgid "Organisation unit group membership"
+msgstr ""
+
+msgid "Data element group membership"
+msgstr ""
+
+msgid "Indicator group membership"
+msgstr ""
+
+msgid "Data element"
+msgstr ""
+
+msgid "Data element group"
+msgstr ""
+
+msgid "Category option"
+msgstr ""
+
+msgid "Category option group"
+msgstr ""
+
+msgid "Organisation unit group"
+msgstr ""
+
+msgid "Validation rule"
+msgstr ""
+
+msgid "Option set"
+msgstr ""
+
+msgid "Translation"
 msgstr ""
 
 msgid "Allow invalid references"
