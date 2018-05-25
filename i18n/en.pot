@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-23T11:03:49.017Z\n"
-"PO-Revision-Date: 2018-05-23T11:03:49.017Z\n"
+"POT-Creation-Date: 2018-05-25T03:14:31.823Z\n"
+"PO-Revision-Date: 2018-05-25T03:14:31.823Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -30,6 +30,12 @@ msgid "more options"
 msgstr ""
 
 msgid "Select None"
+msgstr ""
+
+msgid "Logger"
+msgstr ""
+
+msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Metadata Import"
