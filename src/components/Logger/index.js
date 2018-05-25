@@ -70,6 +70,7 @@ export class Logger extends React.Component {
   onClose = () => this.setState({ open: false })
 
   render() {
+    // TODO auto-scroll to bottom on receiving new messages inside the logger
     const { open, list } = this.state
 
     return (
@@ -81,11 +82,13 @@ export class Logger extends React.Component {
               {i18n.t('view messages received on using import/export forms.')}
             </span>
           </div>
-          {open ? (
-            <ArrowDownIcon onClick={this.onClose} />
-          ) : (
-            <ArrowUpIcon onClick={this.onOpen} />
-          )}
+          <div className={s.actions}>
+            {open ? (
+              <ArrowDownIcon onClick={this.onClose} />
+            ) : (
+              <ArrowUpIcon onClick={this.onOpen} />
+            )}
+          </div>
         </div>
         <div className={s.messages}>
           {open &&
