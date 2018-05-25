@@ -41,7 +41,7 @@
 .messages {
   padding: 10px 15px;
   width: 100%;
-  height: 130px;
+  height: 160px;
   min-height: 130px;
   overflow: scroll;
   color: #fff;
@@ -51,6 +51,32 @@
   display: none;
 }
 
+.messages .message {
+  border-bottom: 1px solid #4c4c4c;
+}
+.messages .message:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 .message {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   width: 97%;
+}
+.date {
+  font-style: italic;
+  width: 150px;
+}
+.subject {
+  margin-bottom: 3px;
+}
+.contents {
+  display: flex;
+  flex-direction: column;
+}
+.text {
+  white-space: pre-wrap;
 }

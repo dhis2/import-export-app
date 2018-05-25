@@ -3,6 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { SvgIcon } from 'material-ui'
 import { eventEmitter } from 'services'
 import s from './styles.css'
+import moment from 'moment/moment'
 
 const iconProps = {
   style: {
@@ -42,8 +43,16 @@ function ArrowDownIcon({ onClick }) {
   )
 }
 
-function Message({ text }) {
-  return <div className={s.message}>{text}</div>
+function Message({ d, subject, text }) {
+  return (
+    <div className={s.message}>
+      <div className={s.date}>{moment(d).format('YYYY-MM-DD HH:mm:ss')}</div>
+      <div className={s.contents}>
+        <div className={s.subject}>{subject}</div>
+        <div className={s.text}>{text}</div>
+      </div>
+    </div>
+  )
 }
 
 export class Logger extends React.Component {
@@ -54,23 +63,38 @@ export class Logger extends React.Component {
 
   componentDidMount() {
     eventEmitter.on('log', this.onMessage)
+    eventEmitter.on('log.open', this.onOpen)
+    eventEmitter.on('log.close', this.onClose)
   }
 
   componentWillUnmount() {
     eventEmitter.off('log', this.onMessage)
+    eventEmitter.off('log.open', this.onOpen)
+    eventEmitter.off('log.close', this.onClose)
   }
 
   onMessage = msg => {
     const list = this.state.list.slice(0)
     list.push(msg)
-    this.setState({ list })
+    this.setState({ list }, this.scrollToBottom)
+  }
+
+  scrollToBottom() {
+    if (!this.elmMessages) {
+      return
+    }
+
+    this.elmMessages.scrollTop = this.elmMessages.scrollHeight
   }
 
   onOpen = () => this.setState({ open: true })
   onClose = () => this.setState({ open: false })
 
   render() {
+    // TODO toggle logger visible on receiving messages
     // TODO auto-scroll to bottom on receiving new messages inside the logger
+    // TODO show the number of messages inside the logger
+    // TODO show time on which event is received
     const { open, list } = this.state
 
     return (
@@ -90,10 +114,10 @@ export class Logger extends React.Component {
             )}
           </div>
         </div>
-        <div className={s.messages}>
+        <div className={s.messages} ref={c => this.elmMessages = c}>
           {open &&
-            list.map(({ text }, index) => (
-              <Message key={`msg-${index}`} text={text} />
+            list.map((props , index) => (
+              <Message key={`msg-${index}`} {...props} />
             ))}
         </div>
       </div>
