@@ -173,25 +173,27 @@ export class Form extends React.Component {
     const { onSubmit, submitLabel } = this.props
 
     return (
-      <form
-        style={style}
-        className={cx(className, s.form)}
-        onSubmit={this.props.onSubmit}
-      >
-        <div className={s.title}>{title}</div>
+      <div className={s.wrapper}>
+        <form
+          style={style}
+          className={cx(className, s.form)}
+          onSubmit={this.props.onSubmit}
+        >
+          <div className={s.title}>{title}</div>
 
-        <div className={s.fields}>{this.fields()}</div>
+          <div className={s.fields}>{this.fields()}</div>
 
-        <div className={s.buttons}>
-          {onSubmit && (
-            <RaisedButton
-              label={submitLabel}
-              primary={true}
-              onClick={onSubmit}
-            />
-          )}
-        </div>
-      </form>
+          <div className={s.buttons}>
+            {onSubmit && (
+              <RaisedButton
+                label={submitLabel}
+                primary={true}
+                onClick={onSubmit}
+              />
+            )}
+          </div>
+        </form>
+      </div>
     )
   }
 }
