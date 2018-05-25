@@ -11,7 +11,7 @@ import {
   TYPE_DATASET_PICKER
 } from 'components'
 import moment from 'moment'
-import { api } from 'services'
+import { api, eventEmitter } from 'services'
 import { apiConfig } from 'config'
 import { today, downloadBlob } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
@@ -300,6 +300,20 @@ export class DataExport extends FormBase {
             downloadBlob(url, filename)
           })
         this.setState({ processing: false })
+
+        eventEmitter.emit('log', {
+          d: new Date(),
+          subject: 'Data Export',
+          text: `Start Date: ${moment(startDate).format('YYYY-MM-DD')}
+End Date: ${moment(endDate).format('YYYY-MM-DD')}
+Format: ${exportFormat}
+Compression: ${compression}
+Data Element Id Scheme: ${dataElementIdScheme}
+Org. Unit Id Scheme: ${orgUnitIdScheme}
+Category Option Combo Id Scheme: ${categoryOptionComboIdScheme}
+Selected Datasets: ${selectedDataSets.join(', ')}`
+        })
+        eventEmitter.emit('log.open')
       })
     } catch (e) {
       console.log('Data Export error', e, '\n')

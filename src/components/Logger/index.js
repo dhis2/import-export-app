@@ -114,9 +114,9 @@ export class Logger extends React.Component {
             )}
           </div>
         </div>
-        <div className={s.messages} ref={c => this.elmMessages = c}>
+        <div className={s.messages} ref={c => (this.elmMessages = c)}>
           {open &&
-            list.map((props , index) => (
+            list.map((props, index) => (
               <Message key={`msg-${index}`} {...props} />
             ))}
         </div>
