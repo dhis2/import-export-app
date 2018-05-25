@@ -1,7 +1,8 @@
 import React from 'react'
-import { SvgIcon } from 'material-ui'
-import s from './styles.css'
 import i18n from '@dhis2/d2-i18n'
+import { SvgIcon } from 'material-ui'
+import { eventEmitter } from 'services'
+import s from './styles.css'
 
 const iconProps = {
   style: {
@@ -48,33 +49,27 @@ function Message({ text }) {
 export class Logger extends React.Component {
   state = {
     open: false,
-    list: [
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' },
-      { text: 'some message contents' }
-    ]
+    list: []
+  }
+
+  componentDidMount() {
+    eventEmitter.on('log', this.onMessage)
+  }
+
+  componentWillUnmount() {
+    eventEmitter.off('log', this.onMessage)
+  }
+
+  onMessage = msg => {
+    const list = this.state.list.slice(0)
+    list.push(msg)
+    this.setState({ list })
   }
 
   onOpen = () => this.setState({ open: true })
   onClose = () => this.setState({ open: false })
 
   render() {
-    // TODO event emitter to capture logging events
-    // TODO maintain list of log inside the state
-    // TODO show the list of event log's inside the logger
     const { open, list } = this.state
 
     return (
