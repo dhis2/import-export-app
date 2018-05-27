@@ -8,7 +8,7 @@ import {
   TYPE_SELECT,
   TYPE_ORG_UNIT_SINGLE_SELECT
 } from 'components'
-import { api } from 'services'
+import { api, eventEmitter } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
 
@@ -293,6 +293,21 @@ export class EventExport extends FormBase {
     params.push('includeDeleted=false')
     params.push(`idScheme=${idScheme}`)
     params.push(`format=${format.substr(1)}`)
+
+    eventEmitter.emit('log', {
+      d: new Date(),
+      subject: 'Event Export',
+      text: `Start Date: ${moment(startDate).format('YYYY-MM-DD')}
+End Date: ${moment(endDate).format('YYYY-MM-DD')}
+Org Unit: ${orgUnit.join(', ')}
+Inclusion: ${inclusion.toUpperCase()}
+Links: false
+Skip paging: false
+Include deleted: false
+Id Scheme: ${idScheme}
+Format: ${format.substr(1)}`
+    })
+    eventEmitter.emit('log.open')
 
     window.location = api.url('events') + '?' + params.join('&')
   }
