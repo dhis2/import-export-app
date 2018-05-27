@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { api } from 'services'
+import { api, eventEmitter } from 'services'
 import { createBlob, downloadBlob } from 'helpers'
 import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SCHEMAS } from 'components'
 
@@ -111,6 +111,16 @@ export class MetaDataExport extends FormBase {
       if (sharing !== 'true') {
         params.push('fields=:owner,!user,!publicAccess,!userGroupAccesses')
       }
+
+      eventEmitter.emit('log', {
+        d: new Date(),
+        subject: 'MetaData Export',
+        text: `Schemas: ${schemas.map(name => name).join(', ')}
+Format: ${format}
+Compression: ${compression}
+Sharing: ${sharing}`
+      })
+      eventEmitter.emit('log.open')
 
       let endpoint = `metadata.${format}`
       if (compression !== 'none') {
