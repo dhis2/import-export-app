@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SELECT } from 'components'
-import { api } from 'services'
+import { api, eventEmitter } from 'services'
 import { createBlob, downloadBlob } from 'helpers'
 
 export class MetaDataDependencyExport extends FormBase {
@@ -152,6 +152,16 @@ export class MetaDataDependencyExport extends FormBase {
       if (compression !== 'none') {
         endpoint += compression
       }
+
+      eventEmitter.emit('log', {
+        d: new Date(),
+        subject: 'MetaData Dependency Export',
+        text: `Object Type: ${objectType}
+Object List: ${objectList}
+Format: ${format.substr(1)}
+Compression: ${compression.substr(1)}`
+      })
+      eventEmitter.emit('log.open')
 
       const baseURL = api.url('')
       const url = `${baseURL}${objectType}/${objectList}/${endpoint}?attachment=${endpoint}&format=${format.substr(
