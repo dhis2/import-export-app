@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
+import { eventEmitter } from 'services'
 import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 
 export class GMLImport extends FormBase {
@@ -59,6 +60,13 @@ export class GMLImport extends FormBase {
       const formData = new FormData()
       formData.set('upload', upload)
       formData.set('dryRun', dryRun)
+
+      eventEmitter.emit('log', {
+        d: new Date(),
+        subject: 'GML Import',
+        text: `Dry run: ${dryRun}`
+      })
+      eventEmitter.emit('log.open')
 
       this.setState({ processing: true })
       window
