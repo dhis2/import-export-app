@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
+import { eventEmitter } from 'services'
 import {
   FormBase,
   CTX_DEFAULT,
@@ -213,6 +214,17 @@ export class MetaDataImport extends FormBase {
       formData.set('dryRun', dryRun)
       formData.set('strategy', strategy)
       formData.set('atomicMode', atomicMode)
+
+      eventEmitter.emit('log', {
+        d: new Date(),
+        subject: 'MetaData Import',
+        text: `Format: ${importFormat}
+Dry Run: ${dryRun}
+Strategy: ${strategy}
+Reference Mode: ${atomicMode}
+Object Type: ${classKey}`
+      })
+      eventEmitter.emit('log.open')
 
       this.setState({ processing: true })
       window
