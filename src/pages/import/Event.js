@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
+import { eventEmitter } from 'services'
 import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 
 export class EventImport extends FormBase {
@@ -141,6 +142,17 @@ export class EventImport extends FormBase {
       formData.set('skipFirst', 'true')
       formData.set('eventIdScheme', eventIdScheme)
       formData.set('orgUnitIdScheme', orgUnitIdScheme)
+
+      eventEmitter.emit('log', {
+        d: new Date(),
+        subject: 'Event Import',
+        text: `Format: ${payloadFormat}
+Dry run: ${dryRun}
+Skip first: true
+Event ID scheme: ${eventIdScheme}
+Org. unit ID scheme: ${orgUnitIdScheme}`
+      })
+      eventEmitter.emit('log.open')
 
       this.setState({ processing: true })
       window
