@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
+import { eventEmitter } from 'services'
 import {
   FormBase,
   CTX_DEFAULT,
@@ -257,6 +258,20 @@ export class DataImport extends FormBase {
       formData.set('orgUnitIdScheme', orgUnitIdScheme)
       formData.set('idScheme', idScheme)
       formData.set('skipExistingCheck', skipExistingCheck)
+
+      eventEmitter.emit('log', {
+        d: new Date(),
+        subject: 'Data Import',
+        text: `Format: ${importFormat}
+Dry Run: ${dryRun}
+Strategy: ${strategy}
+Preheat cache: ${preheatCache}
+Data element ID scheme: ${dataElementIdScheme}
+Org. unit ID scheme: ${orgUnitIdScheme}
+ID scheme: ${idScheme}
+Skip existing record check: ${skipExistingCheck}`
+      })
+      eventEmitter.emit('log.open')
 
       this.setState({ processing: true })
       window
