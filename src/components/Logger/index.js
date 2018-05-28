@@ -91,11 +91,11 @@ export class Logger extends React.Component {
   onClose = () => this.setState({ open: false })
 
   render() {
-    // TODO toggle logger visible on receiving messages
-    // TODO auto-scroll to bottom on receiving new messages inside the logger
-    // TODO show the number of messages inside the logger
-    // TODO show time on which event is received
     const { open, list } = this.state
+
+    if (list.length === 0) {
+      return null
+    }
 
     return (
       <div className={s.container}>
