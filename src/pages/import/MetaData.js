@@ -216,6 +216,7 @@ export class MetaDataImport extends FormBase {
       formData.set('atomicMode', atomicMode)
 
       eventEmitter.emit('log', {
+        id: new Date().getTime(),
         d: new Date(),
         subject: 'MetaData Import',
         text: `Format: ${importFormat}

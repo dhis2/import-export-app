@@ -295,6 +295,7 @@ export class EventExport extends FormBase {
     params.push(`format=${format.substr(1)}`)
 
     eventEmitter.emit('log', {
+      id: new Date().getTime(),
       d: new Date(),
       subject: 'Event Export',
       text: `Start Date: ${moment(startDate).format('YYYY-MM-DD')}

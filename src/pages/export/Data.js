@@ -302,6 +302,7 @@ export class DataExport extends FormBase {
         this.setState({ processing: false })
 
         eventEmitter.emit('log', {
+          id: new Date().getTime(),
           d: new Date(),
           subject: 'Data Export',
           text: `Start Date: ${moment(startDate).format('YYYY-MM-DD')}

@@ -74,9 +74,14 @@ export class Logger extends React.Component {
   }
 
   onMessage = msg => {
-    const list = this.state.list.slice(0)
-    list.push(msg)
-    this.setState({ list }, this.scrollToBottom)
+    const { list } = this.state
+    if (list.filter(m => m.id === msg.id).length > 0) {
+      return
+    }
+
+    const updated = list.slice(0)
+    updated.push(msg)
+    this.setState({ list: updated }, this.scrollToBottom)
   }
 
   scrollToBottom() {
@@ -116,9 +121,7 @@ export class Logger extends React.Component {
         </div>
         <div className={s.messages} ref={c => (this.elmMessages = c)}>
           {open &&
-            list.map((props, index) => (
-              <Message key={`msg-${index}`} {...props} />
-            ))}
+            list.map(props => <Message key={`msg-${props.id}`} {...props} />)}
         </div>
       </div>
     )

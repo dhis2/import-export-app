@@ -144,6 +144,7 @@ export class EventImport extends FormBase {
       formData.set('orgUnitIdScheme', orgUnitIdScheme)
 
       eventEmitter.emit('log', {
+        id: new Date().getTime(),
         d: new Date(),
         subject: 'Event Import',
         text: `Format: ${payloadFormat}

@@ -113,6 +113,7 @@ export class MetaDataExport extends FormBase {
       }
 
       eventEmitter.emit('log', {
+        id: new Date().getTime(),
         d: new Date(),
         subject: 'MetaData Export',
         text: `Schemas: ${schemas.map(name => name).join(', ')}

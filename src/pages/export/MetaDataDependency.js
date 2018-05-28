@@ -154,6 +154,7 @@ export class MetaDataDependencyExport extends FormBase {
       }
 
       eventEmitter.emit('log', {
+        id: new Date().getTime(),
         d: new Date(),
         subject: 'MetaData Dependency Export',
         text: `Object Type: ${objectType}

@@ -260,6 +260,7 @@ export class DataImport extends FormBase {
       formData.set('skipExistingCheck', skipExistingCheck)
 
       eventEmitter.emit('log', {
+        id: new Date().getTime(),
         d: new Date(),
         subject: 'Data Import',
         text: `Format: ${importFormat}
