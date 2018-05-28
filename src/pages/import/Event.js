@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { eventEmitter } from 'services'
+import { api, eventEmitter } from 'services'
 import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 
 export class EventImport extends FormBase {
@@ -125,6 +125,46 @@ export class EventImport extends FormBase {
     }
   }
 
+  componentDidMount() {
+    this.fetchLog()
+  }
+
+  lastId = null
+  fetchLog = async () => {
+    try {
+      let url = '../system/tasks/EVENT_IMPORT'
+      if (this.lastId) {
+        url += `?lastId=${this.lastId}`
+      }
+      const { data } = await api.get(url)
+
+      if (data.length > 0) {
+        this.lastId = data[0]['uid']
+
+        for (let i = data.length - 1; i >= 0; i -= 1) {
+          const { category, completed, level, message, time, uid } = data[i]
+          eventEmitter.emit('log', {
+            id: uid,
+            d: new Date(time),
+            subject: 'Event Import',
+            text: `Completed: ${completed}
+Level: ${level}
+Category: ${category}
+Message:
+${message}`
+          })
+        }
+        eventEmitter.emit('log.open')
+
+        if (data.filter(item => item.completed).length > 0) {
+          clearInterval(this.interval)
+        }
+      }
+    } catch (e) {
+      console.log('Error fetching EVENT_IMPORT')
+    }
+  }
+
   onSubmit = () => {
     try {
       const {
@@ -156,6 +196,8 @@ Org. unit ID scheme: ${orgUnitIdScheme}`
       eventEmitter.emit('log.open')
 
       this.setState({ processing: true })
+      this.interval = setInterval(this.fetchLog, 2000)
+
       window
         .fetch(
           `${apiConfig.server}/dhis-web-importexport/importEvents.action`,
