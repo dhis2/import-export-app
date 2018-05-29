@@ -2,7 +2,6 @@ import React from 'react'
 import cx from 'classnames'
 import { RaisedButton } from 'material-ui'
 import { FormLabel, FormControl } from 'components/material-ui'
-import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
 import s from './styles.css'
 
 import File from './File'
@@ -10,6 +9,7 @@ import Date from './Date'
 import Radio from './Radio'
 import Select from './Select'
 import Schemas from './Schemas'
+import OrgUnits from './OrgUnits'
 import MoreOptions from './MoreOptions'
 import DataSetPicker from './DataSetPicker'
 
@@ -118,12 +118,12 @@ export class Form extends React.Component {
         return (
           <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
             <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnitTree
+            <OrgUnits
               root={value}
               selected={selected}
-              onSelectClick={(evt, orgUnit) =>
+              onChange={(evt, orgUnit) => {
                 this.props.onChange(name, orgUnit)
-              }
+              }}
             />
           </FormControl>
         )
@@ -136,13 +136,13 @@ export class Form extends React.Component {
         return (
           <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
             <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnitTree
+            <OrgUnits
               root={value}
               selected={selected}
-              onSelectClick={(evt, orgUnit) =>
-                this.props.onChange(name, orgUnit)
-              }
               hideCheckboxes={true}
+              onChange={(evt, orgUnit) => {
+                this.props.onChange(name, orgUnit)
+              }}
             />
           </FormControl>
         )
