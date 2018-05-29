@@ -41,6 +41,7 @@ export class FormBase extends React.Component {
         fields={this.fields}
         fieldValues={this.state}
         title={this.formTitle}
+        description={this.formDescription || ''}
         onChange={this.onChange}
         changeContext={this.changeContext}
         submitLabel={this.submitLabel}

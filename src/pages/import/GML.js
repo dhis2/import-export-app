@@ -14,6 +14,9 @@ export class GMLImport extends FormBase {
 
   formWidth = 600
   formTitle = i18n.t('GML Import')
+  formDescription = i18n.t(
+    'Only import of GML data for existing organisation units is supported.'
+  )
   submitLabel = i18n.t('Import')
 
   fields = [

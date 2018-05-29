@@ -169,7 +169,7 @@ export class Form extends React.Component {
   }
 
   render() {
-    const { title, className, style } = this.props
+    const { title, description, className, style } = this.props
     const { onSubmit, submitLabel } = this.props
 
     return (
@@ -180,6 +180,7 @@ export class Form extends React.Component {
           onSubmit={this.props.onSubmit}
         >
           <div className={s.title}>{title}</div>
+          {description && <div className={s.desc}>{description}</div>}
 
           <div className={s.fields}>{this.fields()}</div>
 

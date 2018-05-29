@@ -21,6 +21,12 @@
   border-bottom: 1px solid #e9ecef;
 }
 
+.desc {
+  padding: 15px;
+  font-size: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
 .fields {
   padding: 10px 0 6px 16px;
   display: flex;
