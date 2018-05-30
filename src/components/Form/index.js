@@ -9,7 +9,7 @@ import Date from './Date'
 import Radio from './Radio'
 import Select from './Select'
 import Schemas from './Schemas'
-import OrgUnits from './OrgUnits'
+import OrgUnitTree from './OrgUnitTree'
 import MoreOptions from './MoreOptions'
 import DataSetPicker from './DataSetPicker'
 
@@ -118,7 +118,7 @@ export class Form extends React.Component {
         return (
           <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
             <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnits
+            <OrgUnitTree
               root={value}
               selected={selected}
               onChange={(evt, orgUnit) => {
@@ -136,7 +136,7 @@ export class Form extends React.Component {
         return (
           <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
             <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnits
+            <OrgUnitTree
               root={value}
               selected={selected}
               hideCheckboxes={true}

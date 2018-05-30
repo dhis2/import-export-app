@@ -12,7 +12,7 @@ function Node({
   onClick,
   onIconClick
 }) {
-  const hasChildren = children && children.length > 0
+  const hasChildren = children && Array.isArray(children)
   return (
     <div className={s.node} style={{ marginLeft: depth * 16 }}>
       <div
