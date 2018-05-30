@@ -1,6 +1,5 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { SvgIcon } from 'material-ui'
 import { eventEmitter } from 'services'
 import s from './styles.css'
 import moment from 'moment/moment'
