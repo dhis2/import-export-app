@@ -1,6 +1,6 @@
 import React from 'react'
 import { SelectField as Select, MenuItem } from 'material-ui'
-import { FormControl, FormLabel } from 'components/material-ui'
+import { FormControl, FormLabel } from '../material-ui'
 import s from './styles.css'
 
 const styles = {

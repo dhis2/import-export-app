@@ -1,6 +1,6 @@
 import React from 'react'
 import { RadioButtonGroup, RadioButton } from 'material-ui'
-import { FormLabel, FormControl } from 'components/material-ui'
+import { FormLabel, FormControl } from '../material-ui'
 import s from './styles.css'
 
 const styles = {

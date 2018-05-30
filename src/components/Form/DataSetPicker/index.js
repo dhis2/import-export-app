@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { FormLabel } from 'components/material-ui'
+import { FormLabel } from '../material-ui'
 import { TextField, MenuItem } from 'material-ui'
 import CheckedIcon from 'material-ui/svg-icons/toggle/check-box'
 import UnCheckedIcon from 'material-ui/svg-icons/toggle/check-box-outline-blank'

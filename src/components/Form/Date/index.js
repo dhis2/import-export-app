@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import DatePicker from 'material-ui/DatePicker'
-import { FormControl, FormLabel } from 'components/material-ui'
+import { FormControl, FormLabel } from '../material-ui'
 import s from './styles.css'
 
 const styles = {

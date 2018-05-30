@@ -1,18 +1,8 @@
-import { mount } from 'enzyme'
 import MoreOptions from '../'
-
-import { MuiThemeProvider } from 'material-ui'
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-const muiTheme = getMuiTheme(lightBaseTheme)
 
 let wrapper
 beforeAll(() => {
-  wrapper = mount(
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <MoreOptions />
-    </MuiThemeProvider>
-  )
+  wrapper = shallow(<MoreOptions />)
 })
 
 describe('FormBase', () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import { RaisedButton } from 'material-ui'
-import { FormLabel, FormControl } from 'components/material-ui'
+import { FormLabel, FormControl } from './material-ui'
 import s from './styles.css'
 
 import File from './File'

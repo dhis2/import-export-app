@@ -3,7 +3,7 @@ import { api } from 'services'
 import i18n from '@dhis2/d2-i18n'
 import { Loading } from 'components'
 import { Checkbox, RaisedButton } from 'material-ui'
-import { FormGroup, FormControl, FormLabel } from 'components/material-ui'
+import { FormGroup, FormControl, FormLabel } from '../material-ui'
 
 import s from './styles.css'
 
