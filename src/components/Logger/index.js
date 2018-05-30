@@ -62,12 +62,14 @@ export class Logger extends React.Component {
   }
 
   componentDidMount() {
+    this.appContent = document.getElementById('import-export-app-content')
     eventEmitter.on('log', this.onMessage)
     eventEmitter.on('log.open', this.onOpen)
     eventEmitter.on('log.close', this.onClose)
   }
 
   componentWillUnmount() {
+    this.appContent = null
     eventEmitter.off('log', this.onMessage)
     eventEmitter.off('log.open', this.onOpen)
     eventEmitter.off('log.close', this.onClose)
@@ -92,8 +94,15 @@ export class Logger extends React.Component {
     this.elmMessages.scrollTop = this.elmMessages.scrollHeight
   }
 
-  onOpen = () => this.setState({ open: true })
-  onClose = () => this.setState({ open: false })
+  onOpen = () => {
+    this.setState({ open: true })
+    this.appContent.style.height = 'calc(100vh - 216px)'
+  }
+
+  onClose = () => {
+    this.setState({ open: false })
+    this.appContent.style.height = '100vh'
+  }
 
   render() {
     const { open, list } = this.state

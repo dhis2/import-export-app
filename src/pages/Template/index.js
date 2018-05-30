@@ -14,7 +14,7 @@ export default class Template extends React.Component {
       <div className={s.container}>
         <HeaderBar d2={this.context.d2} />
         <SidePanel />
-        <div className={s.content}>{this.props.children}</div>
+        <div id="import-export-app-content" className={s.content}>{this.props.children}</div>
         <Logger />
       </div>
     )
