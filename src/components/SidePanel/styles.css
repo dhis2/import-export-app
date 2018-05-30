@@ -4,9 +4,6 @@
   top: 44px;
   bottom: 0;
   width: 300px;
-  background-color: #fff;
-  border-right: 1px solid #cfd0d2;
-  box-shadow: 0 0 3px 0 #999;
 }
 
 .heading {
@@ -14,7 +11,6 @@
   font-weight: 500;
   margin: 30px 0 10px 0;
   padding: 0 0 10px 20px;
-  border-bottom: 1px solid #e9ecef;
 }
 
 .list {
@@ -37,12 +33,14 @@
 }
 
 .link {
-  text-decoration: none;
   color: #000;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .link.active .item {
-  background-color: #d0d0d0;
+  color: rgb(33, 150, 243);
+  background-color: #e9ecef;
 }
 
 .text {
