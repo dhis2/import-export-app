@@ -14,12 +14,7 @@ function Node({
 }) {
   const hasChildren = children && children.length > 0
   return (
-    <div
-      className={s.node}
-      style={{
-        marginLeft: depth * 16
-      }}
-    >
+    <div className={s.node} style={{ marginLeft: depth * 16 }}>
       <div
         className={cx(s.label, {
           [s.selected]: isSelected
@@ -44,60 +39,6 @@ function Node({
 }
 
 export class Tree extends React.Component {
-  state = {
-    list: [
-      {
-        open: false,
-        label: 'Item A',
-        value: '/item-a',
-        children: [
-          {
-            open: false,
-            label: 'Item B',
-            value: '/item-b',
-            children: [
-              {
-                open: false,
-                label: 'Item D',
-                value: '/item-d'
-              }
-            ]
-          },
-          {
-            open: false,
-            label: 'Item C',
-            value: 'item-c'
-          }
-        ]
-      },
-      {
-        open: false,
-        label: 'Item 1',
-        value: '/item-1',
-        children: [
-          {
-            open: false,
-            label: 'Item 2',
-            value: '/item-2',
-            children: [
-              {
-                open: false,
-                label: 'Item 3',
-                value: '/item-3'
-              }
-            ]
-          },
-          {
-            open: false,
-            label: 'Item 5',
-            value: 'item-5'
-          }
-        ]
-      }
-    ],
-    selected: ['/item-b']
-  }
-
   updateState(list, open, value) {
     let found = false
     for (let i = 0; i < list.length; i += 1) {
@@ -116,13 +57,8 @@ export class Tree extends React.Component {
 
   onIconClick = (evt, open, value) => {
     evt.stopPropagation()
-    const list = this.updateState(this.state.list, open, value)
-    this.setState({
-      list: [...list]
-    })
-    if (open) {
-      // this.props.onOpen(value)
-    }
+    const list = this.updateState(this.props.list, open, value)
+    this.props.onIconClick(value, open, [...list])
   }
 
   onClick = value => {
@@ -131,12 +67,9 @@ export class Tree extends React.Component {
       return
     }
 
-    let { selected } = this.state
+    let { selected } = this.props
     if (typeof multiple === 'undefined' || !multiple) {
-      this.setState({
-        selected: selected.includes(value) ? [] : [value]
-      })
-      return
+      this.props.setSelected(selected.includes(value) ? [] : [value])
     }
 
     if (selected.includes(value)) {
@@ -145,7 +78,7 @@ export class Tree extends React.Component {
       selected = selected.slice(0)
       selected.push(value)
     }
-    this.setState({ selected })
+    this.props.setSelected(selected)
   }
 
   node(list, depth = 0) {
@@ -159,7 +92,7 @@ export class Tree extends React.Component {
           value={value}
           onClick={this.onClick}
           onIconClick={this.onIconClick}
-          isSelected={this.state.selected.includes(value)}
+          isSelected={this.props.selected.includes(value)}
         >
           {children ? this.node(children, depth + 1) : null}
         </Node>
@@ -168,11 +101,11 @@ export class Tree extends React.Component {
   }
 
   view() {
-    return this.node(this.state.list)
+    return this.node(this.props.list)
   }
 
   render() {
-    if (this.state.list.length === 0) {
+    if (this.props.list.length === 0) {
       return null
     }
 
