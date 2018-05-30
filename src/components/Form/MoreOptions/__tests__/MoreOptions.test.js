@@ -1,9 +1,7 @@
+import React from 'react'
 import MoreOptions from '../'
 
-let wrapper
-beforeAll(() => {
-  wrapper = shallow(<MoreOptions />)
-})
+const wrapper = shallow(<MoreOptions />)
 
 describe('FormBase', () => {
   it('contains <div/>', () => {
