@@ -1,5 +1,6 @@
 export * from './Loading'
 export * from './SidePanel'
+export * from './Tree'
 export * from './Form'
 export * from './FormBase'
 export * from './Logger'

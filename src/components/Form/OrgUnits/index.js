@@ -1,8 +1,12 @@
 import React from 'react'
-import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
+import { Tree } from 'components'
+// import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree'
 
 function OrgUnits(props) {
-  return <OrgUnitTree {...props} onSelectClick={props.onChange} />
+  return <Tree multiple={false} selectable={true} />
+  // console.log('OrgUnits')
+  // console.log(props)
+  // return <OrgUnitTree {...props} onSelectClick={props.onChange} />
 }
 
 export default OrgUnits

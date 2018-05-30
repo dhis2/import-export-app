@@ -49,13 +49,6 @@
     lodash "^4.17.10"
     material-ui "^0.20.0"
 
-"@dhis2/d2-ui-core@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-1.0.3.tgz#1c797a42f98b5e56a0df54661bf5f2fd5e909173"
-  dependencies:
-    lodash "^4.17.10"
-    material-ui "^0.20.0"
-
 "@dhis2/d2-ui-core@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-1.0.4.tgz#bba522ba3c6e93102c963dd94af548a3e19beb30"
@@ -95,11 +88,12 @@
     material-ui-icons "^1.0.0-beta.36"
     rxjs "^5.5.7"
 
-"@dhis2/d2-ui-org-unit-tree@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-1.0.3.tgz#362bb6b5ccedfb84d018251ce7dbf7190890cf1b"
+"@dhis2/d2-ui-org-unit-tree@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-1.0.9.tgz#7a3864736dc983c6bfbc4d8503335045cbbd62b4"
   dependencies:
-    "@dhis2/d2-ui-core" "^1.0.3"
+    "@dhis2/d2-ui-core" "^1.1.4"
+    babel-runtime "^6.26.0"
     material-ui "^0.19.3"
     prop-types "^15.5.10"
     recompose "^0.26.0"
