@@ -42,6 +42,7 @@
     "i18next": "^10.6.0",
     "jest": "22.4.3",
     "jest-cli": "^22.4.3",
+    "jest-enzyme": "^6.0.1",
     "lint-staged": "^7.0.0",
     "material-ui": "^0.20.0",
     "moment": "^2.22.1",
@@ -92,6 +93,7 @@
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/testSetup.js",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
