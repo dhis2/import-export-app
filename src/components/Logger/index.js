@@ -6,16 +6,14 @@ import s from './styles.css'
 import moment from 'moment/moment'
 
 const iconProps = {
-  style: {
-    width: 32,
-    height: 32
-  },
-  color: '#fff'
+  width: 32,
+  height: 32,
+  fill: '#fff'
 }
 
 function ArrowUpIcon({ onClick }) {
   return (
-    <SvgIcon {...iconProps} onClick={onClick}>
+    <svg viewBox="0 0 24 24" {...iconProps} onClick={onClick}>
       <g id="Bounding_Boxes">
         <g id="ui_x5F_spec_x5F_header_copy_3" />
         <path fill="none" d="M0,0h24v24H0V0z" />
@@ -24,13 +22,13 @@ function ArrowUpIcon({ onClick }) {
         <g id="ui_x5F_spec_x5F_header" />
         <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
       </g>
-    </SvgIcon>
+    </svg>
   )
 }
 
 function ArrowDownIcon({ onClick }) {
   return (
-    <SvgIcon {...iconProps} onClick={onClick}>
+    <svg viewBox="0 0 24 24" {...iconProps} onClick={onClick}>
       <g id="Bounding_Boxes">
         <g id="ui_x5F_spec_x5F_header_copy_3" />
         <path fill="none" d="M0,0h24v24H0V0z" />
@@ -39,7 +37,7 @@ function ArrowDownIcon({ onClick }) {
         <g id="ui_x5F_spec_x5F_header" />
         <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
       </g>
-    </SvgIcon>
+    </svg>
   )
 }
 
