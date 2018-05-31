@@ -17,7 +17,10 @@ export default class OrgUnitTree extends React.Component {
     }
   }
 
-  setSelected = selected => this.setState({ selected })
+  setSelected = (selected, isSelected, value) => {
+    this.setState({ selected })
+    this.props.updateSelected(selected, isSelected, value)
+  }
 
   componentWillMount() {
     this.fetchRoot()
@@ -36,12 +39,11 @@ export default class OrgUnitTree extends React.Component {
           const list = root.toArray()
           this.setState({
             list: list.map(item => {
-              const { id, path, displayName } = item
+              const { path, displayName } = item
               return {
                 open: false,
+                value: path,
                 label: displayName,
-                value: id,
-                path: path,
                 children: []
               }
             })
@@ -52,9 +54,10 @@ export default class OrgUnitTree extends React.Component {
     }
   }
 
-  fetchNode = async (id) => {
+  fetchNode = async path => {
     try {
       const params = []
+      const id = path.substr(path.lastIndexOf('/') + 1)
       params.push('filter=' + encodeURIComponent(`id:in:[${id}]`))
       params.push('fields=' + encodeURIComponent(':all,displayName,path,children[id,displayName,path,children::isNotEmpty]'))
       params.push('paging=false')
@@ -65,15 +68,14 @@ export default class OrgUnitTree extends React.Component {
 
       const items = children.map(({ id, path, displayName, children }) => ({
         open: false,
+        value: path,
         label: displayName,
-        value: id,
-        path: path,
         children: children ? [] : null
       }))
       items.sort((a, b) => a.label.localeCompare(b.label))
 
       const { list } = this.state
-      this.setChildren(id, items, list)
+      this.setChildren(path, items, list)
       this.setState({
         list: [...list]
       })
@@ -83,15 +85,15 @@ export default class OrgUnitTree extends React.Component {
     }
   }
 
-  setChildren(value, children, list) {
+  setChildren(path, children, list) {
     for (let i = 0; i < list.length; i += 1) {
-      if (list[i]['value'] === value) {
+      if (list[i]['value'] === path) {
         list[i]['children'] = children.slice(0)
         return
       }
 
       if (list[i]['children'].length > 0) {
-        this.setChildren(value, children, list[i]['children'])
+        this.setChildren(path, children, list[i]['children'])
       }
     }
   }
@@ -101,8 +103,8 @@ export default class OrgUnitTree extends React.Component {
     const { list, selected } = this.state
     return (
       <Tree
-        multiple={multiple ? multiple : false}
-        selectable={selectable ? selectable : true}
+        multiple={typeof multiple !== 'undefined' ? multiple : false}
+        selectable={typeof selectable !== 'undefined' ? selectable : true}
         list={list}
         selected={selected}
         onIconClick={this.onIconClick}

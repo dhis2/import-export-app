@@ -119,30 +119,36 @@ export class Form extends React.Component {
           <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
             <FormLabel className={s.formLabel}>{label}</FormLabel>
             <OrgUnitTree
-              root={value}
+              multiple={true}
+              selectable={true}
               selected={selected}
-              onChange={(evt, orgUnit) => {
-                this.props.onChange(name, orgUnit)
-              }}
+              updateSelected={(selected, isSelected, value) =>
+                this.props.onChange(name, {
+                  selected,
+                  isSelected,
+                  value
+                })
+              }
             />
           </FormControl>
         )
       } else if (type === TYPE_ORG_UNIT_SINGLE_SELECT) {
-        const { selected, value } = fieldValues[name]
-        if (value === null) {
-          return null
-        }
+        const { selected } = fieldValues[name]
 
         return (
           <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
             <FormLabel className={s.formLabel}>{label}</FormLabel>
             <OrgUnitTree
-              root={value}
+              multiple={false}
+              selectable={true}
               selected={selected}
-              hideCheckboxes={true}
-              onChange={(evt, orgUnit) => {
-                this.props.onChange(name, orgUnit)
-              }}
+              updateSelected={(selected, isSelected, value) =>
+                this.props.onChange(name, {
+                  selected,
+                  isSelected,
+                  value
+                })
+              }
             />
           </FormControl>
         )

@@ -68,18 +68,20 @@ export class Tree extends React.Component {
     }
 
     let { selected } = this.props
+    const isSelected = selected.includes(value)
     if (typeof multiple === 'undefined' || !multiple) {
-      this.props.setSelected(selected.includes(value) ? [] : [value])
+      this.props.setSelected(isSelected ? [] : [value], !isSelected, value)
       return
     }
 
-    if (selected.includes(value)) {
+    if (isSelected) {
       selected = selected.filter(v => v !== value)
     } else {
       selected = selected.slice(0)
       selected.push(value)
     }
-    this.props.setSelected(selected)
+
+    this.props.setSelected(selected, !isSelected, value)
   }
 
   node(list, depth = 0) {

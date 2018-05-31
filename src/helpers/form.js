@@ -29,25 +29,21 @@ export function getFieldState(name, value, fields, state) {
   ) {
     state[name]['selected'] = value
   } else if (f.type === TYPE_ORG_UNIT) {
-    let list = state[name]['selected']
-    const { id, path } = value
+    const { selected, isSelected, value: path } = value
 
     const formData = new FormData()
-    formData.set('id', id)
+    formData.set('id', path.substr(path.lastIndexOf('/') + 1))
 
-    if (!list.includes(path)) {
-      list.push(path)
+    if (isSelected) {
       api.post('../../dhis-web-commons/oust/addorgunit.action', formData)
     } else {
-      list = list.filter(p => p !== path)
       api.post('../../dhis-web-commons/oust/removeorgunit.action', formData)
     }
 
-    state[name]['selected'] = list
+    state[name]['selected'] = selected.slice(0)
   } else if (f.type === TYPE_ORG_UNIT_SINGLE_SELECT) {
-    let list = state[name]['selected']
-    console.log('id', value.id, 'path', value.path)
-    state[name]['selected'] = list.includes(value.path) ? [] : [value.path]
+    const { selected } = value
+    state[name]['selected'] = selected.slice(0)
   }
 
   return state
