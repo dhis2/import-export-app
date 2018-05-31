@@ -6,7 +6,7 @@ import { getInstance } from 'd2/lib/d2'
 export default class OrgUnitTree extends React.Component {
   state = {
     list: [],
-    selected: []
+    selected: this.props.selected || []
   }
 
   onIconClick = (value, open, list) => {
@@ -24,6 +24,10 @@ export default class OrgUnitTree extends React.Component {
 
   componentWillMount() {
     this.fetchRoot()
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({ selected: newProps.selected })
   }
 
   fetchRoot = async () => {
@@ -59,11 +63,18 @@ export default class OrgUnitTree extends React.Component {
       const params = []
       const id = path.substr(path.lastIndexOf('/') + 1)
       params.push('filter=' + encodeURIComponent(`id:in:[${id}]`))
-      params.push('fields=' + encodeURIComponent(':all,displayName,path,children[id,displayName,path,children::isNotEmpty]'))
+      params.push(
+        'fields=' +
+          encodeURIComponent(
+            ':all,displayName,path,children[id,displayName,path,children::isNotEmpty]'
+          )
+      )
       params.push('paging=false')
       params.push('format=json')
 
-      const { data: { organisationUnits } } = await api.get(`organisationUnits?${params.join('&')}`)
+      const {
+        data: { organisationUnits }
+      } = await api.get(`organisationUnits?${params.join('&')}`)
       const { children } = organisationUnits[0]
 
       const items = children.map(({ id, path, displayName, children }) => ({
