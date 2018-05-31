@@ -19,8 +19,12 @@
   min-width: 27px;
   text-align: center;
 }
+.icon:empty {
+  display: none;
+}
 
 .text {
+  white-space: nowrap;
 }
 
 .label.selected {
