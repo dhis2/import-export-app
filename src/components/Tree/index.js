@@ -70,6 +70,7 @@ export class Tree extends React.Component {
     let { selected } = this.props
     if (typeof multiple === 'undefined' || !multiple) {
       this.props.setSelected(selected.includes(value) ? [] : [value])
+      return
     }
 
     if (selected.includes(value)) {
