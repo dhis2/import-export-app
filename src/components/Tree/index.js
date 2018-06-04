@@ -13,14 +13,20 @@ function Node({
   onIconClick
 }) {
   const hasChildren = children && Array.isArray(children)
+  let minWidth = depth * 20
+  if (!hasChildren) {
+    minWidth += 20
+  }
+
   return (
-    <div className={s.node} style={{ marginLeft: depth * 16 }}>
+    <div>
       <div
         className={cx(s.label, {
           [s.selected]: isSelected
         })}
         onClick={() => onClick(value)}
       >
+        <div style={{ minWidth }} />
         {hasChildren ? (
           <div
             className={s.icon}

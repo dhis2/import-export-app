@@ -1,9 +1,6 @@
 .container {
 }
 
-.node {
-}
-
 .label {
   display: flex;
   flex-direction: row;
