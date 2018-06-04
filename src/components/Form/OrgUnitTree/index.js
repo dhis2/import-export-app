@@ -77,7 +77,7 @@ export default class OrgUnitTree extends React.Component {
       } = await api.get(`organisationUnits?${params.join('&')}`)
       const { children } = organisationUnits[0]
 
-      const items = children.map(({ id, path, displayName, children }) => ({
+      const items = children.map(({ path, displayName, children }) => ({
         open: false,
         value: path,
         label: displayName,
@@ -91,19 +91,23 @@ export default class OrgUnitTree extends React.Component {
         list: [...list]
       })
     } catch (e) {
-      console.log('OrgUnitTree root fetch failed')
+      console.log('OrgUnitTree fetchNode failed')
       console.log(e)
     }
   }
 
   setChildren(path, children, list) {
+    if (!Array.isArray(list)) {
+      return
+    }
+
     for (let i = 0; i < list.length; i += 1) {
       if (list[i]['value'] === path) {
         list[i]['children'] = children.slice(0)
         return
       }
 
-      if (list[i]['children'].length > 0) {
+      if (list[i]['children'] && list[i]['children'].length > 0) {
         this.setChildren(path, children, list[i]['children'])
       }
     }

@@ -40,6 +40,10 @@ function Node({
 
 export class Tree extends React.Component {
   updateState(list, open, value) {
+    if (!Array.isArray(list)) {
+      return
+    }
+
     let found = false
     for (let i = 0; i < list.length; i += 1) {
       if (list[i]['value'] === value) {
@@ -85,6 +89,10 @@ export class Tree extends React.Component {
   }
 
   node(list, depth = 0) {
+    if (!Array.isArray(list)) {
+      return null
+    }
+
     return list.map(({ open, label, value, children }) => {
       return (
         <Node
