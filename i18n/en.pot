@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-29T17:58:38.746Z\n"
-"PO-Revision-Date: 2018-05-29T17:58:38.746Z\n"
+"POT-Creation-Date: 2018-06-04T09:21:10.346Z\n"
+"PO-Revision-Date: 2018-06-04T09:21:10.346Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -27,6 +27,15 @@ msgid "Choose a file to upload"
 msgstr ""
 
 msgid "more options"
+msgstr ""
+
+msgid "JSON"
+msgstr ""
+
+msgid "XML"
+msgstr ""
+
+msgid "CSV"
 msgstr ""
 
 msgid "Select None"
@@ -98,15 +107,6 @@ msgid "Org unit ID scheme"
 msgstr ""
 
 msgid "Category ID scheme"
-msgstr ""
-
-msgid "JSON"
-msgstr ""
-
-msgid "XML"
-msgstr ""
-
-msgid "CSV"
 msgstr ""
 
 msgid "Zip"
