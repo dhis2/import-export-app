@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Radio from '../'
+import Select from '../'
 
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
@@ -9,7 +9,7 @@ import i18n from '@dhis2/d2-i18n/index'
 
 const muiTheme = getMuiTheme(lightBaseTheme)
 
-describe('Radio', () => {
+describe('Select', () => {
   it('renders', () => {
     const selected = 'json'
     const values = [
@@ -26,9 +26,10 @@ describe('Radio', () => {
         label: i18n.t('CSV')
       }
     ]
+
     const wrapper = mount(
       <MuiThemeProvider muiTheme={muiTheme}>
-        <Radio values={values} selected={selected} />
+        <Select label="Test" values={values} selected={selected} />
       </MuiThemeProvider>
     )
     expect(wrapper.find('div').length > 0).toEqual(true)
