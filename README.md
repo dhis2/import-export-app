@@ -1,4 +1,8 @@
 # Import / Export
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/7be71dadfa65e6a4ac4f/maintainability)](https://codeclimate.com/github/dhis2/import-export-app/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7be71dadfa65e6a4ac4f/test_coverage)](https://codeclimate.com/github/dhis2/import-export-app/test_coverage)
+
 Import / Export entities from DHIS2 system
 
 ## Documentation
