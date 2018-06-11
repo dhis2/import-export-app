@@ -15,7 +15,7 @@ function Node({
   const hasChildren = children && Array.isArray(children)
   let minWidth = depth * 20
   if (!hasChildren) {
-    minWidth += 20
+    minWidth += 7
   }
 
   return (
