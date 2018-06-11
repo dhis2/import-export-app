@@ -1,5 +1,6 @@
 # Import / Export
 
+[![Build Status](https://travis-ci.org/dhis2/import-export-app.svg?branch=master)](https://travis-ci.org/dhis2/import-export-app)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7be71dadfa65e6a4ac4f/maintainability)](https://codeclimate.com/github/dhis2/import-export-app/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7be71dadfa65e6a4ac4f/test_coverage)](https://codeclimate.com/github/dhis2/import-export-app/test_coverage)
 
