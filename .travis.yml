@@ -4,8 +4,8 @@ node_js:
 env:
   global:
   - CC_TEST_REPORTER_ID=b5a1d0f16f3e13f021ec67a70d745c24615a027745dea04e5a603af230fa4fef
-  - secure: IPGdNVlukydAQHyyGfIUfs5RCedWGn87Bs82Ewt0uBC7I8ddrEZ1yp63VPLX6ViCQih409ymmerOtqGMHM+SOcGB1WkQSsBAWT21IfwoDtyyGa41cOpTGupBXZWOP1/6S1ZwG7jRJn3z/dR7t4t/poFvdzDUrIMPRjSUqXyYI45nOzUZxce18xznYuNeqCM13/SSSR43lHWpRqieMHEqV8LoIP2U3GGVFxRV+8OiMWN7egByQE3vp6QXTsay+RC1ORO8d1aTLYUU7q0UQyWvBcMLcD2hJcB4EUFDE5iOO5hyzYHlLSY7n6097mZJ2S97cgFu48uQrRDoETchS1WM69OupR5qLY/JabM95yDB0pq/v78x79ryIccqufVAVRk7X1GDVDBJc7UYcA9jPZCcEduGTI1+QxLDV+fOZqyfK/crkJeTw2A+JepFqDX+ZGcgOFLROiGF9CuOePUTjThWEbzlsvfPrilRzYi0nhsssI6iBYEHJXzk8Z/x3a9/Jbl3QrNAGRcMngINKYfndU6/EXMAlWDNzMxK8LzeQn+nv70etOned4WF3QkU8qF7uBJtShPAefqV7UzPJdnk7NQgssptfPjoAYItM126pITXOcVsVc2JJKoqn3AaHfa5v757WGC2TLMXBooX3xfsZhBH4pVhAF/lzleI7F9Fu50MA3w=
-  - secure: aFncKHRXjYWzshkF9WvLRuLm/h5//l3paDX87vedtRNPjd5dkdyw+nkG31yRBi9Xy/270jQsLs1JMBzBby8aS/sPXq2wo/N3dQwtZjuQpRVVV+eKszulvkH735ZdGA7Yt+a6CIn4OA7TLs8IYmmbaWEOPSOKhFo3sTw/dcLd9trqjXwpUSQFtnRZBgY4nBaMwwOTSIQapvmwm9agkeTCTcTDY1ZG9Zo8AGBpcUV0EMX3JVPHMQpWE7OidrsM1057c9tmwvH3ZV0oaBtVlHEOZNdbVPFDWZYV2MbciBk31dgFv7g5Nl3CiBHCcIIj5OkzZW8Ea8PY3NvRbH7tLIPhdoYNhyL19Y/hPIPU66tzihsoFpACm5DVCwh2a07vNzhNzpecjvqomYcp36dZT8TeE+NyAGqGGrwoC1637HTYDHh3/RoA7EjLIv39hwI8B4oRdb/WJzJJ2Z6zMjucxDg6Z+/7wV+YJi3jYlmVoml3l811xgYSr6Ip3+XtNquh3Ov9ZUyN75dNoBuYAluVKqTeD4z3NgXAYaRJ2NC9Xdo3DGTcwpZjCJ5fGk4VNJaFV+nw3K2wmXLLDdlFdKJ2lRkLm9YPV/Q+vR0ohVUrihrrZVkD8IFjwgiL2Y38zBhwAkKrmiNbnDqaADqn6mGrTzkKSfeMxpc38f9Iz0z+mHuP4IA=
+  - secure: aA0N5EtcixJtwHQOk4i9BbGQmdr/g0QoQ57hZWdDZWNrgJThK7cSHlVR0+nuot2z5zqJiIqz3qRETQVt1RQMOm+TUT9vvtiwHTjhOCHUK/UekjRh3SP8CtuCfgcGiuESDUuqLMPiWtYF1X+af5GmEziA0YtdXBx4acxBh6M3cP+s6wsW0QUn7dQBPTSxYBvoaWIHZTj3vykfeuzk2DsjbtLEd6UkeY7JT3M7P9U56Iej/lfFmpT8yKbatHJlMCn6n6tTgDwttT+RAfluDsDderXz2XvmOLkF3kq/MuX54F3dGhEH7HhTFCWZV5A1XkvxdFkTuyd51Jhrp6HOlDDCfqVI9SV2f1B+FOoyD4R5QcHsdeuNZwk/g6r+hBqFd+tsi+41vhXTqn/pHvPwpGDcLl6tJIVIDkOhUo6akI2QdtwWxFkvIzULxXI/JuVy5V+o0e5+IHK8sJguAOcvwiyThYSQ3i82Z1EEmCH6H/iQmH4kZy8sNZ6rig+s0+bZnlLtHgUfZWXxZArcAidTwTzCPY0rE5wfa2pK4q4oFGRKmZlx1BI38l93NS1LnoEyhAp0t95QeYWp7FFkfTvyjDAhuICg9cRZILMdxbIBuNvjP4BI0dNGL9rzuRuMSHDbD2Iy3774Ax1KRkybphV6v0BrYfuIEqhePGH93uONE5fRHSg=
+  - secure: Oqn2wHGQ6InG5hsisqr9B9TX8Gq8Ie3/l6QPsQztyVeJh2gipPMMKxlODriP2jz1EKoEiS31N1c7IPBqxh5kGmF9EmxkEVxVbW5eWgaVtkCHYFyxRw/104iwI9qFM7qhew8cA1gIYD45wgVjs6J2/xxzJAKuyMKEO5UHsPDK1Nr44CW4sEiPghsbuUAxZN+3H2onS6WvF0Dl7neDlacE5SXy/PK4AP85fHqi1rwPziiZl9XLlL7j+LcJtgyuf7MQQrIe23llnWFGH3N15PTYwG3s4veQh0g6iP/4oYTt8vLKia/dvTUwNasU/ljAUMnI+fqLwtASOFf9aSqg8yqe/uHjOtRXQJmCRVh3xXabGvhJfsujrx5htN+PrPChmeKLTlmfJwcy9nLBFUKuIgPx/7UQRg9crxIn5WI5pMWLQf8hOsbFtqlzUmMhuQETViebgxcMEwWXd8TgCqgF5cfL9o6AhsZTlrAFQWiJ5EyPHN86VjsRIjGv6ma6hzBFKxewmhrxBOljdLdkiEruj598DxUPQvaZWojxLFV/cMWuCg4wAawx1JMy3NuwxeSVJDSYlYoIK1cPr4+Nw/8V058BPO+iEuiXJINQsxXb8ajCYY3rXrU0o0bRQRXHO60iBDJjNpJ59oaznqUNCP5n+cK3tAcH9d3yFa12IMb8CeAXWYk=
 before_script:
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
   > ./cc-test-reporter
@@ -19,5 +19,5 @@ after_script:
 - "./cc-test-reporter after-build -d --exit-code $TRAVIS_TEST_RESULT"
 after_success:
 - if ( [ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ] ) && [ "$TRAVIS_REPO_SLUG"
-  == "dhis2/import-export-app" ]  &&  [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then mvn clean
-  deploy --settings deploy/settings.xml && exit 0; fi
+  == "dhis2/import-export-app" ]  &&  [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
+  mvn clean deploy --settings deploy/settings.xml && exit 0; fi
