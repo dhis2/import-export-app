@@ -84,6 +84,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "prestart": "npm run localize && d2-manifest package.json ./public/manifest.webapp",
+    "prebuild": "rm -rf build && mkdir build && npm run manifest",
+    "postbuild": "cp -r public/i18n build",
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "start": "PORT=3000 node scripts/start.js",
     "build": "npm run localize && npm run manifest && node scripts/build.js",
