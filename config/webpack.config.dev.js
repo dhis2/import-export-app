@@ -1,6 +1,7 @@
 'use strict'
 
 const autoprefixer = require('autoprefixer')
+const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -11,6 +12,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const getClientEnvironment = require('./env')
 const paths = require('./paths')
+const parse = require('url-parse')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -21,6 +23,37 @@ const publicPath = '/'
 const publicUrl = ''
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl)
+
+const dhisConfigPath =
+  process.env.DHIS2_HOME && `${process.env.DHIS2_HOME}/config`
+
+let dhisConfig
+try {
+  dhisConfig = require(dhisConfigPath)
+} catch (e) {
+  // Failed to load config file - use default config
+  console.warn(`\nWARNING! Failed to load DHIS config:`, e.message)
+  dhisConfig = {
+    baseUrl: 'http://localhost:8080',
+    authorization: 'Basic YWRtaW46ZGlzdHJpY3Q=' // admin:district
+  }
+}
+
+const manifest = JSON.parse(
+  fs.readFileSync(`${paths.appPublic}/manifest.webapp`, 'utf8')
+)
+
+const globals = Object.assign(
+  {},
+  {
+    DHIS_CONFIG: JSON.stringify(dhisConfig),
+    manifest: JSON.stringify(manifest)
+  },
+  env.stringified
+)
+
+const scriptPrefix = dhisConfig.baseUrl
+const pathnamePrefix = parse(scriptPrefix).pathname
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -218,12 +251,33 @@ module.exports = {
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
-      template: paths.appHtml
+      template: paths.appHtml,
+      vendorScripts: [
+        `.${pathnamePrefix}/dhis-web-core-resource/material-design-icons/material-icons.css`,
+        `.${pathnamePrefix}/dhis-web-core-resource/fonts/roboto.css`,
+        `${scriptPrefix}/dhis-web-core-resource/babel-polyfill/6.20.0/dist/polyfill.js`,
+        `${scriptPrefix}/dhis-web-core-resource/react/16.2.0/umd/react.development.js`,
+        `${scriptPrefix}/dhis-web-core-resource/react-dom/16.2.0/umd/react-dom.development.js`,
+        `${scriptPrefix}/dhis-web-core-resource/jquery/3.2.1/dist/jquery.js`,
+        `${scriptPrefix}/dhis-web-core-resource/jquery-migrate/3.0.1/dist/jquery-migrate.js`,
+        `${scriptPrefix}/dhis-web-pivot/reporttable.js`,
+        `${scriptPrefix}/dhis-web-visualizer/chart.js`,
+        `${scriptPrefix}/dhis-web-maps/map.js`,
+        `${scriptPrefix}/dhis-web-event-reports/eventreport.js`,
+        `${scriptPrefix}/dhis-web-event-visualizer/eventchart.js`
+      ]
+        .map(asset => {
+          return /\.js$/.test(asset)
+            ? `<script src="${asset}"></script>`
+            : `<link type="text/css" rel="stylesheet" href="${asset}">`
+        })
+        .join('\n')
     }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
+    new webpack.DefinePlugin(globals),
     new webpack.DefinePlugin(env.stringified),
     // This is necessary to emit hot updates (currently CSS only):
     new webpack.HotModuleReplacementPlugin(),
