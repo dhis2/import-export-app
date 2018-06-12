@@ -1,6 +1,7 @@
 'use strict'
 
 const autoprefixer = require('autoprefixer')
+const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -27,6 +28,17 @@ const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false'
 const publicUrl = publicPath.slice(0, -1)
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl)
+const manifest = JSON.parse(
+  fs.readFileSync(`${paths.appBuild}/manifest.webapp`, 'utf8')
+);
+const globals = Object.assign(
+  {},
+  {
+    manifest: JSON.stringify(manifest),
+  },
+  env.stringified
+);
+
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
@@ -46,6 +58,7 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {}
 
+const scriptPrefix = '..';
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -241,23 +254,44 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      vendorScripts: [
+        `${scriptPrefix}/dhis-web-core-resource/fonts/roboto.css`,
+        `${scriptPrefix}/dhis-web-core-resource/material-design-icons/material-icons.css`,
+        `${scriptPrefix}/dhis-web-core-resource/babel-polyfill/6.20.0/dist/polyfill.min.js`,
+        `${scriptPrefix}/dhis-web-core-resource/react/16.2.0/umd/react.production.min.js`,
+        `${scriptPrefix}/dhis-web-core-resource/react-dom/16.2.0/umd/react-dom.production.min.js`,
+        `${scriptPrefix}/dhis-web-core-resource/jquery/3.2.1/dist/jquery.min.js`,
+        `${scriptPrefix}/dhis-web-core-resource/jquery-migrate/3.0.1/dist/jquery-migrate.min.js`,
+        `${scriptPrefix}/dhis-web-pivot/reporttable.js`,
+        `${scriptPrefix}/dhis-web-visualizer/chart.js`,
+        `${scriptPrefix}/dhis-web-maps/map.js`,
+        `${scriptPrefix}/dhis-web-event-reports/eventreport.js`,
+        `${scriptPrefix}/dhis-web-event-visualizer/eventchart.js`,
+      ]
+        .map(asset => {
+          return /\.js$/.test(asset)
+            ? `<script src="${asset}"></script>`
+            : `<link type="text/css" rel="stylesheet" href="${asset}">`;
+        })
+        .join('\n'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
         removeRedundantAttributes: true,
         useShortDoctype: true,
         removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
+        removeStyleLinkTypeAttributes: false,
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
+        minifyURLs: true,
+      },
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
+    new webpack.DefinePlugin(globals),
     new webpack.DefinePlugin(env.stringified),
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({

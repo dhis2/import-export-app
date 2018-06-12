@@ -22,3 +22,4 @@ yarn-error.log*
 
 .idea
 src/locales
+manifest.webapp
