@@ -3,7 +3,7 @@
   "description": "Import/Export DHIS2 data",
   "version": "0.1.0",
   "private": true,
-  "homepage": "..",
+  "homepage": ".",
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.3",
     "@dhis2/d2-i18n-extract": "^1.0.6",
