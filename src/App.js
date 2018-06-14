@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { getInstance } from 'd2/lib/d2'
+import { getInstance, config } from 'd2/lib/d2'
 import i18n from '@dhis2/d2-i18n'
 import { Loading } from 'components'
 import { setUser, clearUser } from 'reducers'
@@ -11,6 +11,18 @@ import Template from 'pages/Template'
 
 import * as pages from './pages'
 import { Route, withRouter } from 'react-router-dom'
+
+config.i18n.strings.add('settings')
+config.i18n.strings.add('profile')
+config.i18n.strings.add('account')
+config.i18n.strings.add('help')
+config.i18n.strings.add('log_out')
+config.i18n.strings.add('about_dhis2')
+config.i18n.strings.add('manage_my_apps')
+config.i18n.strings.add('app_search_placeholder')
+config.i18n.strings.add('no_results_found')
+config.i18n.strings.add('interpretations')
+config.i18n.strings.add('messages')
 
 @withRouter
 @connect(({ user }) => ({ user }), { setUser, clearUser })
