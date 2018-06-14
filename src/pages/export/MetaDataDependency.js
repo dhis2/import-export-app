@@ -6,7 +6,7 @@ import { createBlob, downloadBlob } from 'helpers'
 export class MetaDataDependencyExport extends FormBase {
   static path = '/export/metadata-dependency'
 
-  static order = 6
+  static order = 9
   static title = i18n.t('Metadata Dependency Export')
   static description = i18n.t(
     'Export metadata like data sets and programs including related metadata objects.'

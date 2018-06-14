@@ -41,6 +41,7 @@ class App extends React.Component {
       const d2 = await getInstance()
       const lang = d2.currentUser.userSettings.settings.keyUiLocale
       moment.locale(lang)
+      i18n.changeLanguage(lang)
       this.props.setUser(d2.currentUser)
       this.setState({
         d2,

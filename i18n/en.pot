@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-04T09:21:10.346Z\n"
-"PO-Revision-Date: 2018-06-04T09:21:10.346Z\n"
+"POT-Creation-Date: 2018-06-14T13:33:35.071Z\n"
+"PO-Revision-Date: 2018-06-14T13:33:35.071Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -53,22 +53,22 @@ msgstr ""
 msgid "Data Import"
 msgstr ""
 
-msgid "GML Import"
-msgstr ""
-
 msgid "Event Import"
 msgstr ""
 
-msgid "Metadata Export"
+msgid "GML Import"
 msgstr ""
 
-msgid "Metadata Dependency Export"
+msgid "Metadata Export"
 msgstr ""
 
 msgid "Data Export"
 msgstr ""
 
 msgid "Event Export"
+msgstr ""
+
+msgid "Metadata Dependency Export"
 msgstr ""
 
 msgid "Import"

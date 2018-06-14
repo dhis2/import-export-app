@@ -6,7 +6,7 @@ import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
 export class EventImport extends FormBase {
   static path = '/import/event'
 
-  static order = 4
+  static order = 3
   static title = i18n.t('Event Import')
   static description = i18n.t(
     'Import events for programs, stages and tracked entities in the DXF 2 format.'

@@ -13,12 +13,12 @@ const importLinks = [
     text: i18n.t('Data Import')
   },
   {
-    to: '/import/gml',
-    text: i18n.t('GML Import')
-  },
-  {
     to: '/import/event',
     text: i18n.t('Event Import')
+  },
+  {
+    to: '/import/gml',
+    text: i18n.t('GML Import')
   }
 ]
 
@@ -28,16 +28,16 @@ const exportLinks = [
     text: i18n.t('Metadata Export')
   },
   {
-    to: '/export/metadata-dependency',
-    text: i18n.t('Metadata Dependency Export')
-  },
-  {
     to: '/export/data',
     text: i18n.t('Data Export')
   },
   {
     to: '/export/event',
     text: i18n.t('Event Export')
+  },
+  {
+    to: '/export/metadata-dependency',
+    text: i18n.t('Metadata Dependency Export')
   }
 ]
 
