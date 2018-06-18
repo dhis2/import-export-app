@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { withRouter } from 'react-router-dom'
-import { SvgIcon } from 'material-ui'
+import { LogoIcon } from 'components/Icon'
 import s from './styles.css'
 
 import * as importPages from 'pages/import'
@@ -23,20 +23,6 @@ Object.keys(exportPages).forEach(k => addToList(k, exportPages))
 
 list = list.sort((a, b) => a.order > b.order)
 
-function LogoIcon() {
-  return (
-    <SvgIcon
-      style={{
-        width: 48,
-        height: 48
-      }}
-    >
-      <path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z" />
-      <path d="M0 0h24v24H0z" fill="none" />
-    </SvgIcon>
-  )
-}
-
 const Item = ({ path, title, description, onClick }) => (
   <div className={s.item} onClick={() => onClick(path)}>
     <div className={s.title}>{title}</div>
@@ -54,7 +40,7 @@ export class Home extends React.Component {
     return (
       <div className={s.container}>
         <div className={s.logo}>
-          <LogoIcon />
+          <LogoIcon width="48" height="48" />
         </div>
         <h2 className={s.heading}>{i18n.t('Import / Export')}</h2>
         <div className={s.purpose}>
