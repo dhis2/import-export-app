@@ -1,7 +1,10 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { api, eventEmitter } from 'services'
 import { createBlob, downloadBlob } from 'helpers'
-import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SCHEMAS } from 'components'
+import { FormBase } from 'components/FormBase'
+import { CTX_DEFAULT, TYPE_RADIO, TYPE_SCHEMAS } from 'components/Form'
+import { MetadataExportIcon } from 'components/Icon'
 
 export class MetaDataExport extends FormBase {
   static path = '/export/metadata'
@@ -11,6 +14,7 @@ export class MetaDataExport extends FormBase {
   static description = i18n.t(
     'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.'
   )
+  static menuIcon = <MetadataExportIcon />
 
   formWidth = '85%'
   formTitle = i18n.t('Meta Data Export')

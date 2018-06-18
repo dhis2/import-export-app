@@ -1,7 +1,10 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { FormBase, CTX_DEFAULT, TYPE_RADIO, TYPE_SELECT } from 'components'
+import { FormBase } from 'components/FormBase'
+import { CTX_DEFAULT, TYPE_RADIO, TYPE_SELECT } from 'components/Form'
 import { api, eventEmitter } from 'services'
 import { createBlob, downloadBlob } from 'helpers'
+import { MetadataDependencyExportIcon } from 'components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
   static path = '/export/metadata-dependency'
@@ -11,6 +14,7 @@ export class MetaDataDependencyExport extends FormBase {
   static description = i18n.t(
     'Export metadata like data sets and programs including related metadata objects.'
   )
+  static menuIcon = <MetadataDependencyExportIcon />
 
   formWidth = 800
   formTitle = i18n.t('Metadata Export with Dependencies')

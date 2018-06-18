@@ -1,7 +1,8 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
+import { FormBase } from 'components/FormBase'
 import {
-  FormBase,
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_DATE,
@@ -9,12 +10,13 @@ import {
   TYPE_ORG_UNIT,
   TYPE_MORE_OPTIONS,
   TYPE_DATASET_PICKER
-} from 'components'
+} from 'components/Form'
 import moment from 'moment'
 import { api, eventEmitter } from 'services'
 import { apiConfig } from 'config'
 import { today, downloadBlob } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
+import { DataIcon } from 'components/Icon'
 
 export class DataExport extends FormBase {
   static path = '/export/data'
@@ -24,6 +26,7 @@ export class DataExport extends FormBase {
   static description = i18n.t(
     'Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.'
   )
+  static menuIcon = <DataIcon />
 
   static contextTypes = {
     d2: PropTypes.object

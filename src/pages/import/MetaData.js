@@ -1,15 +1,17 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { api, eventEmitter } from 'services'
+import { FormBase } from 'components/FormBase'
 import {
-  FormBase,
   CTX_DEFAULT,
   TYPE_FILE,
   TYPE_RADIO,
   TYPE_SELECT,
   CTX_MORE_OPTIONS,
   TYPE_MORE_OPTIONS
-} from 'components/index'
+} from 'components/Form'
+import { MetadataImportIcon } from 'components/Icon'
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
@@ -19,6 +21,7 @@ export class MetaDataImport extends FormBase {
   static description = i18n.t(
     'Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.'
   )
+  static menuIcon = <MetadataImportIcon />
 
   formWidth = 600
   formTitle = i18n.t('Metadata Import')

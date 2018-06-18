@@ -14,7 +14,7 @@ export class SidePanel extends React.Component {
           <span>{i18n.t('Import')}</span>
         </div>
         <div className={s.list}>
-          {importLinks.map(({ to, text, svg }) => (
+          {importLinks.map(({ to, text, icon }) => (
             <NavLink
               to={to}
               key={`import-${to}`}
@@ -22,7 +22,7 @@ export class SidePanel extends React.Component {
               activeClassName={s.active}
             >
               <div className={s.item}>
-                {typeof svg !== 'undefined' && svg}
+                {icon}
                 <div className={s.text}>{text}</div>
               </div>
             </NavLink>
@@ -34,7 +34,7 @@ export class SidePanel extends React.Component {
           <span>{i18n.t('Export')}</span>
         </div>
         <div className={s.list}>
-          {exportLinks.map(({ to, text, svg }) => (
+          {exportLinks.map(({ to, text, icon }) => (
             <NavLink
               to={to}
               key={`export-${to}`}
@@ -42,7 +42,7 @@ export class SidePanel extends React.Component {
               activeClassName={s.active}
             >
               <div className={s.item}>
-                {typeof svg !== 'undefined' && svg}
+                {icon}
                 <div className={s.text}>{text}</div>
               </div>
             </NavLink>

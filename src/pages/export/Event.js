@@ -1,16 +1,18 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { today } from 'helpers'
+import { FormBase } from 'components/FormBase'
 import {
-  FormBase,
   CTX_DEFAULT,
   TYPE_RADIO,
   TYPE_DATE,
   TYPE_SELECT,
   TYPE_ORG_UNIT_SINGLE_SELECT
-} from 'components'
+} from 'components/Form'
 import { api, eventEmitter } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
+import { EventIcon } from 'components/Icon'
 
 export class EventExport extends FormBase {
   static path = '/export/event'
@@ -20,6 +22,7 @@ export class EventExport extends FormBase {
   static description = i18n.t(
     'Export event data for programs, stages and tracked entities in the DXF 2 format.'
   )
+  static menuIcon = <EventIcon />
 
   formWidth = 900
   formTitle = i18n.t('Event Export')

@@ -1,7 +1,10 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { api, eventEmitter } from 'services'
-import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
+import { FormBase } from 'components/FormBase'
+import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
+import { EventIcon } from 'components/Icon'
 
 export class EventImport extends FormBase {
   static path = '/import/event'
@@ -11,6 +14,7 @@ export class EventImport extends FormBase {
   static description = i18n.t(
     'Import events for programs, stages and tracked entities in the DXF 2 format.'
   )
+  static menuIcon = <EventIcon />
 
   formWidth = 600
   formTitle = i18n.t('Event Import')

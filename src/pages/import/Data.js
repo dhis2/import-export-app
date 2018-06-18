@@ -1,14 +1,16 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { api, eventEmitter } from 'services'
+import { FormBase } from 'components/FormBase'
 import {
-  FormBase,
   CTX_DEFAULT,
   CTX_MORE_OPTIONS,
   TYPE_FILE,
   TYPE_RADIO,
   TYPE_MORE_OPTIONS
-} from 'components'
+} from 'components/Form'
+import { DataIcon } from 'components/Icon'
 
 export class DataImport extends FormBase {
   static path = '/import/data'
@@ -18,6 +20,7 @@ export class DataImport extends FormBase {
   static description = i18n.t(
     'Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 is the standard exchange format for DHIS 2.'
   )
+  static menuIcon = <DataIcon />
 
   formWidth = 600
   formTitle = i18n.t('Data Import')

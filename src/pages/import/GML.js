@@ -1,7 +1,10 @@
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { api, eventEmitter } from 'services'
-import { FormBase, CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components'
+import { FormBase } from 'components/FormBase'
+import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
+import { GMLIcon } from 'components/Icon'
 
 export class GMLImport extends FormBase {
   static path = '/import/gml'
@@ -11,6 +14,7 @@ export class GMLImport extends FormBase {
   static description = i18n.t(
     'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.'
   )
+  static menuIcon = <GMLIcon />
 
   formWidth = 600
   formTitle = i18n.t('GML Import')

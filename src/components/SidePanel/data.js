@@ -1,34 +1,35 @@
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import {
-  MetadataImportIcon,
-  MetadataExportIcon,
-  MetadataDependencyExportIcon,
-  DataIcon,
-  EventIcon,
-  GMLIcon
-} from 'components/Icon'
+  MetaDataImport,
+  MetaDataExport,
+  DataImport,
+  DataExport,
+  GMLImport,
+  EventImport,
+  EventExport,
+  MetaDataDependencyExport
+} from 'pages'
 
 export const importLinks = [
   {
     to: '/import/metadata',
     text: i18n.t('Metadata Import'),
-    svg: <MetadataImportIcon />
+    icon: MetaDataImport.menuIcon
   },
   {
     to: '/import/data',
     text: i18n.t('Data Import'),
-    svg: <DataIcon />
+    icon: DataImport.menuIcon
   },
   {
     to: '/import/event',
     text: i18n.t('Event Import'),
-    svg: <EventIcon />
+    icon: EventImport.menuIcon
   },
   {
     to: '/import/gml',
     text: i18n.t('GML Import'),
-    svg: <GMLIcon />
+    icon: GMLImport.menuIcon
   }
 ]
 
@@ -36,21 +37,21 @@ export const exportLinks = [
   {
     to: '/export/metadata',
     text: i18n.t('Metadata Export'),
-    svg: <MetadataExportIcon />
+    icon: MetaDataExport.menuIcon
   },
   {
     to: '/export/data',
     text: i18n.t('Data Export'),
-    svg: <DataIcon />
+    icon: DataExport.menuIcon
   },
   {
     to: '/export/event',
     text: i18n.t('Event Export'),
-    svg: <EventIcon />
+    icon: EventExport.menuIcon
   },
   {
     to: '/export/metadata-dependency',
     text: i18n.t('Metadata Dependency Export'),
-    svg: <MetadataDependencyExportIcon />
+    icon: MetaDataDependencyExport.menuIcon
   }
 ]
