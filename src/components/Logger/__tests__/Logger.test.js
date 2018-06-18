@@ -31,12 +31,4 @@ describe('Logger', () => {
     expect(wrapper.containsMatchingElement(<div>Subject</div>)).toBe(true)
     expect(wrapper.containsMatchingElement(<div>some message</div>)).toBe(true)
   })
-
-  it('Log is empty', () => {
-    wrapper.setState({
-      open: false,
-      list: []
-    })
-    expect(wrapper.html()).toBe(null)
-  })
 })

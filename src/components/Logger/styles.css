@@ -13,6 +13,8 @@
 }
 
 .nav {
+  user-select: all;
+  cursor: row-resize;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,7 +27,7 @@
   margin-top: 5px;
 }
 .title {
-  user-select: none;
+  user-select: element;
   color: #fff;
   font-size: 15px;
 }
@@ -39,21 +41,15 @@
 }
 
 .messages {
-  padding: 10px 15px;
   width: 100%;
-  height: 160px;
-  min-height: 130px;
   overflow: scroll;
   overflow-x: hidden;
   color: #fff;
   background-color: #000;
 }
-.messages:empty {
-  display: none;
-}
 
 .messages .message {
-  border-bottom: 1px solid #4c4c4c;
+  border-bottom: 1px solid #2e2e2e;
 }
 .messages .message:last-child {
   border-bottom: 0;
@@ -63,8 +59,7 @@
 .message {
   display: flex;
   flex-direction: row;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding: 20px 10px;
   width: 97%;
 }
 .date {

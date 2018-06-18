@@ -55,6 +55,7 @@ function Message({ d, subject, text }) {
 export class Logger extends React.Component {
   state = {
     open: false,
+    height: 250,
     list: []
   }
 
@@ -67,6 +68,7 @@ export class Logger extends React.Component {
 
   componentWillUnmount() {
     this.appContent = null
+    this.elmMessages = null
     eventEmitter.off('log', this.onMessage)
     eventEmitter.off('log.open', this.onOpen)
     eventEmitter.off('log.close', this.onClose)
@@ -92,8 +94,13 @@ export class Logger extends React.Component {
   }
 
   onOpen = () => {
-    this.setState({ open: true })
-    this.appContent.style.height = 'calc(100vh - 216px)'
+    this.clearSelection()
+    const { height } = this.state
+    this.setState({ open: true, height: height > 0 ? height : 250 }, () => {
+      let { height } = this.state
+      this.elmMessages.style.height = `${height}px`
+      this.appContent.style.height = `calc(100vh - ${height}px)`
+    })
   }
 
   onClose = () => {
@@ -101,16 +108,58 @@ export class Logger extends React.Component {
     this.appContent.style.height = '100vh'
   }
 
+  clearSelection = () => {
+    if (document.selection) {
+      document.selection.empty()
+    } else {
+      window.getSelection().removeAllRanges()
+    }
+  }
+
+  onDragStart = () => this.clearSelection()
+  onDragEnd = () => this.clearSelection()
+  onClick = () => this.clearSelection()
+
+  onDrag = evt => {
+    const { screenY } = evt
+
+    if (screenY > 0) {
+      let height = window.innerHeight - screenY + 80
+      this.elmMessages.style.height = `${height}px`
+      this.appContent.style.height = `calc(100vh - ${height}px)`
+
+      if (!this.state.open) {
+        this.setState({
+          height,
+          open: true
+        })
+        return
+      }
+
+      this.setState({ height })
+    }
+  }
+
+  onDoubleClick = () => {
+    if (!this.state.open) {
+      this.onOpen()
+    } else {
+      this.setState({ open: false })
+    }
+  }
+
   render() {
     const { open, list } = this.state
-
-    if (list.length === 0) {
-      return null
-    }
-
     return (
-      <div className={s.container}>
-        <div className={s.nav}>
+      <div id="import-export-logger" className={s.container}>
+        <div
+          className={s.nav}
+          onClick={this.onClick}
+          onDrag={this.onDrag}
+          onDragStart={this.onDragStart}
+          onDragEnd={this.onDragEnd}
+          onDoubleClick={this.onDoubleClick}
+        >
           <div className={s.title}>
             <span className={s.upper}>{i18n.t('Logger')}</span>
             <span>
@@ -125,7 +174,13 @@ export class Logger extends React.Component {
             )}
           </div>
         </div>
-        <div className={s.messages} ref={c => (this.elmMessages = c)}>
+        <div
+          className={s.messages}
+          ref={c => (this.elmMessages = c)}
+          style={{
+            display: open ? 'block' : 'none'
+          }}
+        >
           {open &&
             list.map(props => <Message key={`msg-${props.id}`} {...props} />)}
         </div>
