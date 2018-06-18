@@ -4,13 +4,20 @@
   top: 44px;
   bottom: 0;
   width: 300px;
+  padding-top: 40px;
+  padding-left: 30px;
 }
 
 .heading {
+  display: flex;
+  align-content: center;
   font-size: 18px;
   font-weight: 500;
-  margin: 30px 0 10px 0;
-  padding: 0 0 10px 20px;
+  margin: 30px 0 15px 0;
+  padding: 0 0 10px 10px;
+}
+.heading span {
+  margin-left: 14px;
 }
 
 .list {
@@ -24,12 +31,14 @@
   flex-direction: row;
   flex-wrap: nowrap;
   font-size: 15px;
-  font-weight: 400;
-  padding: 8px 0 8px 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
-
-.item:hover {
-  background-color: #e9ecef;
+.item svg {
+  margin: 0 8px 0 8px;
+}
+.item:hover .text {
+  color: rgb(33, 150, 243);
 }
 
 .link {
@@ -40,8 +49,8 @@
 
 .link.active .item {
   color: rgb(33, 150, 243);
-  background-color: #e9ecef;
 }
 
 .text {
+  margin: 4px 0 0 4px;
 }

@@ -4,13 +4,16 @@
   align-items: center;
 }
 
+.logo {
+  margin-top: 60px;
+}
 .heading {
-  margin: 50px 0 0 0;
+  margin: 20px 0 0 0;
   font-size: 21px;
   font-weight: 500;
 }
 .purpose {
-  margin: 30px 0;
+  margin: 20px 0 30px 0;
 }
 
 .list {
@@ -23,26 +26,27 @@
 .item {
   cursor: pointer;
   margin: 15px;
+  padding-bottom: 1rem;
   width: 300px;
   height: 140px;
   background-color: #fff;
-  box-shadow: 0 0 3px 0 #999;
-  border-radius: 3px;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
 }
 .item:hover {
   background-color: #f3f6f9;
 }
 
 .title {
-  padding: 10px 0 6px 15px;
-  font-size: 16px;
-  font-weight: 400;
-  border-bottom: 1px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(221, 221, 221);
 }
 .description {
-  padding: 8px 15px;
+  padding: 0.75rem 1rem 0 1rem;
   font-size: 14px;
   line-height: 150%;
-  font-weight: 300;
-  min-height: 100px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
 }
