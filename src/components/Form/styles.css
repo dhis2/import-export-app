@@ -9,16 +9,23 @@
   margin-top: 60px;
 }
 
-.title {
+.head {
   user-select: none;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  height: 44px;
-  padding: 0 15px;
+  justify-content: flex-start;
+  height: 34px;
+  padding: 8px 15px 3px 15px;
   font-size: 18px;
   font-weight: 500;
   border-bottom: 1px solid #e9ecef;
+}
+.icon {
+  margin-right: 10px;
+}
+.title {
+  margin-bottom: 3px;
 }
 
 .desc {

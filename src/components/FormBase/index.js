@@ -38,6 +38,7 @@ export class FormBase extends React.Component {
         style={{
           width: this.formWidth
         }}
+        icon={this.icon}
         fields={this.fields}
         fieldValues={this.state}
         title={this.formTitle}

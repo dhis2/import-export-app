@@ -15,6 +15,7 @@ export class MetaDataDependencyExport extends FormBase {
     'Export metadata like data sets and programs including related metadata objects.'
   )
   static menuIcon = <MetadataDependencyExportIcon />
+  icon = <MetadataDependencyExportIcon />
 
   formWidth = 800
   formTitle = i18n.t('Metadata Export with Dependencies')

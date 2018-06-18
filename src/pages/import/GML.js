@@ -15,6 +15,7 @@ export class GMLImport extends FormBase {
     'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.'
   )
   static menuIcon = <GMLIcon />
+  icon = <GMLIcon />
 
   formWidth = 600
   formTitle = i18n.t('GML Import')

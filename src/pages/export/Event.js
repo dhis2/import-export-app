@@ -23,6 +23,7 @@ export class EventExport extends FormBase {
     'Export event data for programs, stages and tracked entities in the DXF 2 format.'
   )
   static menuIcon = <EventIcon />
+  icon = <EventIcon />
 
   formWidth = 900
   formTitle = i18n.t('Event Export')

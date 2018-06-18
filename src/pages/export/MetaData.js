@@ -15,6 +15,7 @@ export class MetaDataExport extends FormBase {
     'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.'
   )
   static menuIcon = <MetadataExportIcon />
+  icon = <MetadataExportIcon />
 
   formWidth = '85%'
   formTitle = i18n.t('Meta Data Export')

@@ -21,6 +21,7 @@ export class DataImport extends FormBase {
     'Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 is the standard exchange format for DHIS 2.'
   )
   static menuIcon = <DataIcon />
+  icon = <DataIcon />
 
   formWidth = 600
   formTitle = i18n.t('Data Import')

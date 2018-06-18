@@ -15,6 +15,7 @@ export class EventImport extends FormBase {
     'Import events for programs, stages and tracked entities in the DXF 2 format.'
   )
   static menuIcon = <EventIcon />
+  icon = <EventIcon />
 
   formWidth = 600
   formTitle = i18n.t('Event Import')

@@ -27,6 +27,7 @@ export class DataExport extends FormBase {
     'Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.'
   )
   static menuIcon = <DataIcon />
+  icon = <DataIcon />
 
   static contextTypes = {
     d2: PropTypes.object
