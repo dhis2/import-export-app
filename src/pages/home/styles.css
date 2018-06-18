@@ -24,9 +24,12 @@
   justify-content: center;
 }
 .item {
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
   cursor: pointer;
   margin: 15px;
-  padding-bottom: 1rem;
+  padding: 0.75rem 1rem 0 1.5rem;
   width: 300px;
   height: 140px;
   background-color: #fff;
@@ -37,14 +40,21 @@
   background-color: #f3f6f9;
 }
 
+.head {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.icon {
+  margin-right: 10px;
+}
 .title {
-  padding: 0.75rem 1rem;
+  padding: 1rem 0;
   font-size: 15px;
   font-weight: 500;
-  border-bottom: 1px solid rgb(221, 221, 221);
 }
 .description {
-  padding: 0.75rem 1rem 0 1rem;
   font-size: 14px;
   line-height: 150%;
   font-weight: 400;

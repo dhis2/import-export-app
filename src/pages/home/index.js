@@ -14,6 +14,7 @@ function addToList(key, pages) {
     path: p.path,
     order: p.order,
     title: p.title,
+    menuIcon: p.menuIcon,
     description: p.description
   })
 }
@@ -23,9 +24,12 @@ Object.keys(exportPages).forEach(k => addToList(k, exportPages))
 
 list = list.sort((a, b) => a.order > b.order)
 
-const Item = ({ path, title, description, onClick }) => (
+const Item = ({ path, title, description, menuIcon, onClick }) => (
   <div className={s.item} onClick={() => onClick(path)}>
-    <div className={s.title}>{title}</div>
+    <div className={s.head}>
+      <div className={s.icon}>{menuIcon}</div>
+      <div className={s.title}>{title}</div>
+    </div>
     <div className={s.description}>{description}</div>
   </div>
 )
