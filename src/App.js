@@ -24,6 +24,20 @@ config.i18n.strings.add('no_results_found')
 config.i18n.strings.add('interpretations')
 config.i18n.strings.add('messages')
 
+function isLangRTL(code) {
+  const langs = ['ar', 'fa', 'ur']
+  const prefixed = langs.map(c => `${c}-`)
+  return (
+    langs.includes(code) || prefixed.filter(c => code.startsWith(c)).length > 0
+  )
+}
+
+function changeLocale(locale) {
+  moment.locale(locale)
+  i18n.changeLanguage(locale)
+  document.body.setAttribute('dir', isLangRTL(locale) ? 'rtl' : 'ltr')
+}
+
 @withRouter
 @connect(({ user }) => ({ user }), { setUser, clearUser })
 class App extends React.Component {
@@ -39,9 +53,10 @@ class App extends React.Component {
   async componentDidMount() {
     try {
       const d2 = await getInstance()
+
       const lang = d2.currentUser.userSettings.settings.keyUiLocale
-      moment.locale(lang)
-      i18n.changeLanguage(lang)
+      // const lang = 'ur'
+      changeLocale(lang)
       this.props.setUser(d2.currentUser)
       this.setState({
         d2,
