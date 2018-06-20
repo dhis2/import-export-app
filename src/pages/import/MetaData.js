@@ -8,6 +8,7 @@ import {
   TYPE_FILE,
   TYPE_RADIO,
   TYPE_SELECT,
+  CTX_CSV_OPTION,
   CTX_MORE_OPTIONS,
   TYPE_MORE_OPTIONS
 } from 'components/Form'
@@ -52,6 +53,13 @@ export class MetaDataImport extends FormBase {
     },
 
     {
+      context: CTX_CSV_OPTION,
+      type: TYPE_SELECT,
+      name: 'classKey',
+      label: i18n.t('Object type')
+    },
+
+    {
       context: CTX_DEFAULT,
       type: TYPE_MORE_OPTIONS
     },
@@ -61,12 +69,6 @@ export class MetaDataImport extends FormBase {
       type: TYPE_RADIO,
       name: 'atomicMode',
       label: i18n.t('Reference mode')
-    },
-    {
-      context: CTX_MORE_OPTIONS,
-      type: TYPE_SELECT,
-      name: 'classKey',
-      label: i18n.t('Object type')
     }
   ]
 
@@ -234,6 +236,18 @@ ${message}`
       }
     } catch (e) {
       console.log('Error fetching METADATA_IMPORT')
+    }
+  }
+
+  onFormUpdate = (name, value) => {
+    if (name === 'importFormat') {
+      const { _context } = this.state
+
+      if (value === 'csv' && _context !== CTX_CSV_OPTION) {
+        this.changeContext(CTX_CSV_OPTION)
+      } else {
+        this.changeContext(CTX_DEFAULT)
+      }
     }
   }
 

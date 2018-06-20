@@ -25,6 +25,7 @@ export const TYPE_DATASET_PICKER = 'fieldType/DATASET_PICKER'
 
 export const CTX_DEFAULT = 'ctx/DEFAULT'
 export const CTX_MORE_OPTIONS = 'ctx/MORE_OPTIONS'
+export const CTX_CSV_OPTION = 'ctx/CSV_OPTION'
 
 export class Form extends React.Component {
   fields() {
