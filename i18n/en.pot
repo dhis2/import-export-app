@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-19T10:10:38.468Z\n"
-"PO-Revision-Date: 2018-06-19T10:10:38.468Z\n"
+"POT-Creation-Date: 2018-06-20T08:20:47.069Z\n"
+"PO-Revision-Date: 2018-06-20T08:20:47.069Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -77,11 +77,6 @@ msgstr ""
 msgid "Export"
 msgstr ""
 
-msgid ""
-"Export data values. This is the regular export function which exports data "
-"to the DHIS 2 exchange format called DXF 2."
-msgstr ""
-
 msgid "Organisation unit"
 msgstr ""
 
@@ -124,11 +119,6 @@ msgstr ""
 msgid "HR identifier"
 msgstr ""
 
-msgid ""
-"Export event data for programs, stages and tracked entities in the DXF 2 "
-"format."
-msgstr ""
-
 msgid "Programs"
 msgstr ""
 
@@ -156,11 +146,6 @@ msgstr ""
 msgid "Gzip"
 msgstr ""
 
-msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
-msgstr ""
-
 msgid "Meta Data Export"
 msgstr ""
 
@@ -177,11 +162,6 @@ msgid "With sharing"
 msgstr ""
 
 msgid "Without sharing"
-msgstr ""
-
-msgid ""
-"Export metadata like data sets and programs including related metadata "
-"objects."
 msgstr ""
 
 msgid "Metadata Export with Dependencies"
@@ -218,6 +198,26 @@ msgstr ""
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+
+msgid ""
+"Export data values. This is the regular export function which exports data "
+"to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects."
 msgstr ""
 
 msgid "Import / Export"

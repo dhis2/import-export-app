@@ -74,7 +74,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run extract-pot && npm run prettify && CI=true npm run test && git add -A ."
+      "pre-commit": "npm run extract-pot && npm run prettify && CI=true npm run test && git add ./i18n/"
     }
   },
   "scripts": {
