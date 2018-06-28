@@ -42,7 +42,10 @@ function changeLocale(locale) {
 }
 
 @withRouter
-@connect(({ user }) => ({ user }), { setUser, clearUser })
+@connect(
+  ({ user }) => ({ user }),
+  { setUser, clearUser }
+)
 class App extends React.Component {
   static childContextTypes = {
     d2: PropTypes.object
