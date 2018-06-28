@@ -17,6 +17,6 @@ body {
   background-color: #f3f3f3;
 }
 
-[dir=rtl] body {
+[dir='rtl'] body {
   font-family: 'Noto Naskh Arabic', sans-serif;
 }

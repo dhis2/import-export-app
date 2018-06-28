@@ -35,7 +35,10 @@ function isLangRTL(code) {
 function changeLocale(locale) {
   moment.locale(locale)
   i18n.changeLanguage(locale)
-  document.documentElement.setAttribute('dir', isLangRTL(locale) ? 'rtl' : 'ltr')
+  document.documentElement.setAttribute(
+    'dir',
+    isLangRTL(locale) ? 'rtl' : 'ltr'
+  )
 }
 
 @withRouter

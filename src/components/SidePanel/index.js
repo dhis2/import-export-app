@@ -65,7 +65,7 @@ export class SidePanel extends React.Component {
     return (
       <div className={s.container}>
         <div className={s.heading}>
-          <ArrowDownIcon width="20" height="20" />
+          <ArrowDownIcon width={20} height={20} />
           <span>{i18n.t('Import')}</span>
         </div>
         <div className={s.list}>
@@ -85,7 +85,7 @@ export class SidePanel extends React.Component {
         </div>
 
         <div className={s.heading}>
-          <ArrowUpIcon width="20" height="20" />
+          <ArrowUpIcon width={20} height={20} />
           <span>{i18n.t('Export')}</span>
         </div>
         <div className={s.list}>

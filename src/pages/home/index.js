@@ -111,7 +111,7 @@ export class Home extends React.Component {
     return (
       <div className={s.container}>
         <div className={s.logo}>
-          <LogoIcon width="48" height="48" />
+          <LogoIcon width={48} height={48} />
         </div>
         <h2 className={s.heading}>{i18n.t('Import / Export')}</h2>
         <div className={s.purpose}>
