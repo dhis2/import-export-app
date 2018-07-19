@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-20T08:20:47.069Z\n"
-"PO-Revision-Date: 2018-06-20T08:20:47.069Z\n"
+"POT-Creation-Date: 2018-07-19T22:25:27.649Z\n"
+"PO-Revision-Date: 2018-07-19T22:25:27.649Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -280,44 +280,95 @@ msgstr ""
 msgid "Only import of GML data for existing organisation units is supported."
 msgstr ""
 
-msgid "Reference mode"
+msgid "Import Mode"
 msgstr ""
 
-msgid "Organisation unit group membership"
+msgid "Identifier"
 msgstr ""
 
-msgid "Data element group membership"
+msgid "Report Mode"
 msgstr ""
 
-msgid "Indicator group membership"
+msgid "Preheat Mode"
 msgstr ""
 
-msgid "Data element"
+msgid "Import Strategy"
 msgstr ""
 
-msgid "Data element group"
+msgid "Atomic Mode"
 msgstr ""
 
-msgid "Category option"
+msgid "Merge Mode"
 msgstr ""
 
-msgid "Category option group"
+msgid "Flush Mode"
 msgstr ""
 
-msgid "Organisation unit group"
+msgid "Skip Sharing"
 msgstr ""
 
-msgid "Validation rule"
+msgid "Skip Validation"
 msgstr ""
 
-msgid "Option set"
+msgid "Async"
 msgstr ""
 
-msgid "Translation"
+msgid "Inclusion Strategy"
 msgstr ""
 
-msgid "Allow invalid references"
+msgid "Commit"
 msgstr ""
 
-msgid "Deny invalid references"
+msgid "Validate"
+msgstr ""
+
+msgid "CODE"
+msgstr ""
+
+msgid "AUTO"
+msgstr ""
+
+msgid "Errors"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Create and Update"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""

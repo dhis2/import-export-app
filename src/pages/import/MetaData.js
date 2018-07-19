@@ -7,7 +7,6 @@ import {
   CTX_DEFAULT,
   TYPE_FILE,
   TYPE_RADIO,
-  TYPE_SELECT,
   CTX_CSV_OPTION,
   CTX_MORE_OPTIONS,
   TYPE_MORE_OPTIONS
@@ -36,39 +35,78 @@ export class MetaDataImport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'importFormat',
-      label: i18n.t('Format')
+      name: 'importMode',
+      label: i18n.t('Import Mode')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'dryRun',
-      label: i18n.t('Dry run')
+      name: 'identifier',
+      label: i18n.t('Identifier')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'strategy',
-      label: i18n.t('Strategy')
+      name: 'importReportMode',
+      label: i18n.t('Report Mode')
     },
-
     {
-      context: CTX_CSV_OPTION,
-      type: TYPE_SELECT,
-      name: 'classKey',
-      label: i18n.t('Object type')
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'preheatMode',
+      label: i18n.t('Preheat Mode')
     },
-
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'importStrategy',
+      label: i18n.t('Import Strategy')
+    },
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'atomicMode',
+      label: i18n.t('Atomic Mode')
+    },
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'mergeMode',
+      label: i18n.t('Merge Mode')
+    },
     {
       context: CTX_DEFAULT,
       type: TYPE_MORE_OPTIONS
     },
-
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_RADIO,
-      name: 'atomicMode',
-      label: i18n.t('Reference mode')
+      name: 'flushMode',
+      label: i18n.t('Flush Mode')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'skipSharing',
+      label: i18n.t('Skip Sharing')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'skipValidation',
+      label: i18n.t('Skip Validation')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'async',
+      label: i18n.t('Async')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'inclusionStrategy',
+      label: i18n.t('Inclusion Strategy')
     }
   ]
 
@@ -80,79 +118,131 @@ export class MetaDataImport extends FormBase {
       selected: null
     },
 
-    importFormat: {
-      selected: 'json',
+    importMode: {
+      selected: 'COMMIT',
       values: [
         {
-          value: 'json',
-          label: i18n.t('JSON')
+          value: 'COMMIT',
+          label: i18n.t('Commit')
         },
         {
-          value: 'xml',
-          label: i18n.t('XML')
-        },
-        {
-          value: 'csv',
-          label: i18n.t('CSV')
+          value: 'VALIDATE',
+          label: i18n.t('Validate')
         }
       ]
     },
-
-    classKey: {
-      selected: 'ORGANISATION_UNIT_GROUP_MEMBERSHIP',
+    identifier: {
+      selected: 'UID',
       values: [
         {
-          label: i18n.t('Organisation unit group membership'),
-          value: 'ORGANISATION_UNIT_GROUP_MEMBERSHIP'
+          value: 'UID',
+          label: i18n.t('UID')
         },
         {
-          label: i18n.t('Data element group membership'),
-          value: 'DATA_ELEMENT_GROUP_MEMBERSHIP'
+          value: 'CODE',
+          label: i18n.t('CODE')
         },
         {
-          label: i18n.t('Indicator group membership'),
-          value: 'INDICATOR_GROUP_MEMBERSHIP'
-        },
-        {
-          label: i18n.t('Data element'),
-          value: 'DATA_ELEMENT'
-        },
-        {
-          label: i18n.t('Data element group'),
-          value: 'DATA_ELEMENT_GROUP'
-        },
-        {
-          label: i18n.t('Category option'),
-          value: 'CATEGORY_OPTION'
-        },
-        {
-          label: i18n.t('Category option group'),
-          value: 'CATEGORY_OPTION_GROUP'
-        },
-        {
-          label: i18n.t('Organisation unit'),
-          value: 'ORGANISATION_UNIT'
-        },
-        {
-          label: i18n.t('Organisation unit group'),
-          value: 'ORGANISATION_UNIT_GROUP'
-        },
-        {
-          label: i18n.t('Validation rule'),
-          value: 'VALIDATION_RULE'
-        },
-        {
-          label: i18n.t('Option set'),
-          value: 'OPTION_SET'
-        },
-        {
-          label: i18n.t('Translation'),
-          value: 'TRANSLATION'
+          value: 'AUTO',
+          label: i18n.t('AUTO')
         }
       ]
     },
-
-    dryRun: {
+    importReportMode: {
+      selected: 'ERRORS',
+      values: [
+        {
+          value: 'ERRORS',
+          label: i18n.t('Errors')
+        },
+        {
+          value: 'FULL',
+          label: i18n.t('Full')
+        },
+        {
+          value: 'DEBUG',
+          label: i18n.t('Debug')
+        }
+      ]
+    },
+    preheatMode: {
+      selected: 'REFERENCE',
+      values: [
+        {
+          value: 'REFERENCE',
+          label: i18n.t('Reference')
+        },
+        {
+          value: 'ALL',
+          label: i18n.t('All')
+        },
+        {
+          value: 'NONE',
+          label: i18n.t('None')
+        }
+      ]
+    },
+    importStrategy: {
+      selected: 'CREATE_AND_UPDATE',
+      values: [
+        {
+          value: 'CREATE_AND_UPDATE',
+          label: i18n.t('Create and Update')
+        },
+        {
+          value: 'CREATE',
+          label: i18n.t('Create')
+        },
+        {
+          value: 'UPDATE',
+          label: i18n.t('Update')
+        },
+        {
+          value: 'DELETE',
+          label: i18n.t('Delete')
+        }
+      ]
+    },
+    atomicMode: {
+      selected: 'ALL',
+      values: [
+        {
+          value: 'ALL',
+          label: i18n.t('All')
+        },
+        {
+          value: 'NONE',
+          label: i18n.t('None')
+        }
+      ]
+    },
+    mergeMode: {
+      selected: 'MERGE',
+      values: [
+        {
+          value: 'MERGE',
+          label: i18n.t('Merge')
+        },
+        {
+          value: 'REPLACE',
+          label: i18n.t('Replace')
+        }
+      ]
+    },
+    flushMode: {
+      selected: 'AUTO',
+      values: [
+        {
+          value: 'AUTO',
+          label: i18n.t('Auto')
+        },
+        {
+          value: 'OBJECT',
+          label: i18n.t('Object')
+        }
+      ]
+    },
+    skipSharing: {
       selected: 'false',
       values: [
         {
@@ -165,42 +255,53 @@ export class MetaDataImport extends FormBase {
         }
       ]
     },
-
-    strategy: {
-      selected: 'NEW_AND_UPDATES',
+    skipValidation: {
+      selected: 'false',
       values: [
         {
-          value: 'NEW_AND_UPDATES',
-          label: i18n.t('New and Updates')
+          value: 'false',
+          label: i18n.t('No')
         },
         {
-          value: 'NEW',
-          label: i18n.t('New only')
-        },
-        {
-          value: 'UPDATES',
-          label: i18n.t('Updates only')
+          value: 'true',
+          label: i18n.t('Yes')
         }
       ]
     },
-
-    atomicMode: {
-      selected: 'NONE',
+    async: {
+      selected: 'false',
       values: [
         {
-          value: 'NONE',
-          label: i18n.t('Allow invalid references')
+          value: 'false',
+          label: i18n.t('No')
         },
         {
-          value: 'ALL',
-          label: i18n.t('Deny invalid references')
+          value: 'true',
+          label: i18n.t('Yes')
+        }
+      ]
+    },
+    inclusionStrategy: {
+      selected: 'NON_NULL',
+      values: [
+        {
+          value: 'NON_NULL',
+          label: i18n.t('Non Null')
+        },
+        {
+          value: 'ALWAYS',
+          label: i18n.t('Always')
+        },
+        {
+          value: 'NON_EMPTY',
+          label: i18n.t('Non Empty')
         }
       ]
     }
   }
 
-  componentDidMount() {
-    this.fetchLog()
+  async componentDidMount() {
+    await this.fetchLog()
   }
 
   lastId = null
