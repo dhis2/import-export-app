@@ -356,30 +356,62 @@ ${message}`
     try {
       const {
         upload,
-        importFormat,
-        classKey,
-        dryRun,
-        strategy,
-        atomicMode
+        importMode,
+        identifier,
+        importReportMode,
+        preheatMode,
+        importStrategy,
+        atomicMode,
+        mergeMode,
+        flushMode,
+        skipSharing,
+        skipValidation,
+        async,
+        inclusionStrategy
       } = this.getFormState()
 
       const formData = new FormData()
+
+      let contentType = null
+      if (upload.name.endsWith('.json')) {
+        contentType = 'application/json'
+      } else if (upload.name.endsWith('.xml')) {
+        contentType = 'text/xml'
+      }
+
       formData.set('upload', upload)
-      formData.set('importFormat', importFormat)
-      formData.set('classKey', classKey)
-      formData.set('dryRun', dryRun)
-      formData.set('strategy', strategy)
+      formData.set('importMode', importMode)
+      formData.set('identifier', identifier)
+      formData.set('importReportMode', importReportMode)
+      formData.set('preheatMode', preheatMode)
+      formData.set('importStrategy', importStrategy)
       formData.set('atomicMode', atomicMode)
+      formData.set('mergeMode', mergeMode)
+      formData.set('flushMode', flushMode)
+      formData.set('skipSharing', skipSharing)
+      formData.set('skipValidation', skipValidation)
+      formData.set('async', async)
+      formData.set('inclusionStrategy', inclusionStrategy)
+      formData.set('userOverrideMode', 'None')
+      formData.set('overrideUser', '')
 
       eventEmitter.emit('log', {
         id: new Date().getTime(),
         d: new Date(),
         subject: 'MetaData Import',
-        text: `Format: ${importFormat}
-Dry Run: ${dryRun}
-Strategy: ${strategy}
-Reference Mode: ${atomicMode}
-Object Type: ${classKey}`
+        text: `Content-Type: ${contentType}
+Import mode: ${importMode}
+Identifier: ${identifier}
+Import report mode: ${importReportMode}
+Preheat mode: ${preheatMode}
+Import strategy: ${importStrategy}
+Atomic mode: ${atomicMode}
+Merge mode: ${mergeMode}
+Flush mode: ${flushMode}
+Skip sharing: ${skipSharing}
+Skip validation: ${skipValidation}
+Async: ${async}
+Inclusion strategy: ${inclusionStrategy}`
       })
       eventEmitter.emit('log.open')
 
@@ -387,22 +419,24 @@ Object Type: ${classKey}`
       this.interval = setInterval(this.fetchLog, 2000)
 
       window
-        .fetch(
-          `${apiConfig.server}/dhis-web-importexport/importMetaData.action`,
-          {
-            body: formData,
-            cache: 'no-cache',
-            credentials: 'include',
-            method: 'POST',
-            mode: 'cors',
-            redirect: 'follow'
+        .fetch(`${apiConfig.server}/api/${apiConfig.version}/metadata`, {
+          body: formData,
+          cache: 'no-cache',
+          credentials: 'include',
+          method: 'POST',
+          mode: 'cors',
+          redirect: 'follow',
+          headers: {
+            'Content-Type': contentType
           }
-        )
+        })
         .then(async () => {
           this.setState({ processing: false })
         })
     } catch (e) {
       console.log('MetaData Import error', e, '\n')
+    } finally {
+
     }
   }
 }
