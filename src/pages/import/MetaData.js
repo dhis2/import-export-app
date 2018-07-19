@@ -392,7 +392,7 @@ ${message}`
       formData.set('skipValidation', skipValidation)
       formData.set('async', async)
       formData.set('inclusionStrategy', inclusionStrategy)
-      formData.set('userOverrideMode', 'None')
+      formData.set('userOverrideMode', 'NONE')
       formData.set('overrideUser', '')
 
       eventEmitter.emit('log', {
@@ -436,7 +436,6 @@ Inclusion strategy: ${inclusionStrategy}`
     } catch (e) {
       console.log('MetaData Import error', e, '\n')
     } finally {
-
     }
   }
 }
