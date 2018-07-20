@@ -7,12 +7,48 @@ import {
   CTX_DEFAULT,
   TYPE_FILE,
   TYPE_RADIO,
-  TYPE_SELECT,
   CTX_CSV_OPTION,
   CTX_MORE_OPTIONS,
   TYPE_MORE_OPTIONS
 } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
+
+function parseLog(title, v) {
+  const list = []
+
+  list.push(title)
+  if (!Array.isArray(v.value)) {
+    list.push(`\tpath: ${v.path}, value: ${v.value}`)
+  } else {
+    if (v.path === 'translations') {
+      list.push('\tTranslations')
+      list.push(
+        v.value.map(vi => `\t${vi.locale}\tproperty: ${vi.property}, value: ${vi.value}`).join('\n')
+      )
+    } else if (typeof v.value[0]['name'] === 'string') {
+      list.push(
+        v.value.map(vi => `\t${vi.name}`).join('\n')
+      )
+    } else if (typeof v.value[0]['dataElement'] === 'object') {
+      list.push('\tDataSet/DataElement')
+      v.value.forEach(({ dataSet, dataElement }) => {
+        list.push(`\t${dataElement.name}: ${dataSet.displayName}`)
+      })
+    } else {
+      console.warn('un-parsed log', v)
+    }
+  }
+
+  return list.join('\n')
+}
+
+function operationAddition(v) {
+  return parseLog('Addition', v)
+}
+
+function operationDeletion(v) {
+  return parseLog('Deletion', v)
+}
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
@@ -36,39 +72,78 @@ export class MetaDataImport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'importFormat',
-      label: i18n.t('Format')
+      name: 'importMode',
+      label: i18n.t('Import Mode')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'dryRun',
-      label: i18n.t('Dry run')
+      name: 'identifier',
+      label: i18n.t('Identifier')
     },
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'strategy',
-      label: i18n.t('Strategy')
+      name: 'importReportMode',
+      label: i18n.t('Report Mode')
     },
-
     {
-      context: CTX_CSV_OPTION,
-      type: TYPE_SELECT,
-      name: 'classKey',
-      label: i18n.t('Object type')
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'preheatMode',
+      label: i18n.t('Preheat Mode')
     },
-
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'importStrategy',
+      label: i18n.t('Import Strategy')
+    },
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'atomicMode',
+      label: i18n.t('Atomic Mode')
+    },
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_RADIO,
+      name: 'mergeMode',
+      label: i18n.t('Merge Mode')
+    },
     {
       context: CTX_DEFAULT,
       type: TYPE_MORE_OPTIONS
     },
-
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_RADIO,
-      name: 'atomicMode',
-      label: i18n.t('Reference mode')
+      name: 'flushMode',
+      label: i18n.t('Flush Mode')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'skipSharing',
+      label: i18n.t('Skip Sharing')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'skipValidation',
+      label: i18n.t('Skip Validation')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'async',
+      label: i18n.t('Async')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'inclusionStrategy',
+      label: i18n.t('Inclusion Strategy')
     }
   ]
 
@@ -80,79 +155,131 @@ export class MetaDataImport extends FormBase {
       selected: null
     },
 
-    importFormat: {
-      selected: 'json',
+    importMode: {
+      selected: 'COMMIT',
       values: [
         {
-          value: 'json',
-          label: i18n.t('JSON')
+          value: 'COMMIT',
+          label: i18n.t('Commit')
         },
         {
-          value: 'xml',
-          label: i18n.t('XML')
-        },
-        {
-          value: 'csv',
-          label: i18n.t('CSV')
+          value: 'VALIDATE',
+          label: i18n.t('Validate')
         }
       ]
     },
-
-    classKey: {
-      selected: 'ORGANISATION_UNIT_GROUP_MEMBERSHIP',
+    identifier: {
+      selected: 'UID',
       values: [
         {
-          label: i18n.t('Organisation unit group membership'),
-          value: 'ORGANISATION_UNIT_GROUP_MEMBERSHIP'
+          value: 'UID',
+          label: i18n.t('UID')
         },
         {
-          label: i18n.t('Data element group membership'),
-          value: 'DATA_ELEMENT_GROUP_MEMBERSHIP'
+          value: 'CODE',
+          label: i18n.t('CODE')
         },
         {
-          label: i18n.t('Indicator group membership'),
-          value: 'INDICATOR_GROUP_MEMBERSHIP'
-        },
-        {
-          label: i18n.t('Data element'),
-          value: 'DATA_ELEMENT'
-        },
-        {
-          label: i18n.t('Data element group'),
-          value: 'DATA_ELEMENT_GROUP'
-        },
-        {
-          label: i18n.t('Category option'),
-          value: 'CATEGORY_OPTION'
-        },
-        {
-          label: i18n.t('Category option group'),
-          value: 'CATEGORY_OPTION_GROUP'
-        },
-        {
-          label: i18n.t('Organisation unit'),
-          value: 'ORGANISATION_UNIT'
-        },
-        {
-          label: i18n.t('Organisation unit group'),
-          value: 'ORGANISATION_UNIT_GROUP'
-        },
-        {
-          label: i18n.t('Validation rule'),
-          value: 'VALIDATION_RULE'
-        },
-        {
-          label: i18n.t('Option set'),
-          value: 'OPTION_SET'
-        },
-        {
-          label: i18n.t('Translation'),
-          value: 'TRANSLATION'
+          value: 'AUTO',
+          label: i18n.t('AUTO')
         }
       ]
     },
-
-    dryRun: {
+    importReportMode: {
+      selected: 'ERRORS',
+      values: [
+        {
+          value: 'ERRORS',
+          label: i18n.t('Errors')
+        },
+        {
+          value: 'FULL',
+          label: i18n.t('Full')
+        },
+        {
+          value: 'DEBUG',
+          label: i18n.t('Debug')
+        }
+      ]
+    },
+    preheatMode: {
+      selected: 'REFERENCE',
+      values: [
+        {
+          value: 'REFERENCE',
+          label: i18n.t('Reference')
+        },
+        {
+          value: 'ALL',
+          label: i18n.t('All')
+        },
+        {
+          value: 'NONE',
+          label: i18n.t('None')
+        }
+      ]
+    },
+    importStrategy: {
+      selected: 'CREATE_AND_UPDATE',
+      values: [
+        {
+          value: 'CREATE_AND_UPDATE',
+          label: i18n.t('Create and Update')
+        },
+        {
+          value: 'CREATE',
+          label: i18n.t('Create')
+        },
+        {
+          value: 'UPDATE',
+          label: i18n.t('Update')
+        },
+        {
+          value: 'DELETE',
+          label: i18n.t('Delete')
+        }
+      ]
+    },
+    atomicMode: {
+      selected: 'ALL',
+      values: [
+        {
+          value: 'ALL',
+          label: i18n.t('All')
+        },
+        {
+          value: 'NONE',
+          label: i18n.t('None')
+        }
+      ]
+    },
+    mergeMode: {
+      selected: 'MERGE',
+      values: [
+        {
+          value: 'MERGE',
+          label: i18n.t('Merge')
+        },
+        {
+          value: 'REPLACE',
+          label: i18n.t('Replace')
+        }
+      ]
+    },
+    flushMode: {
+      selected: 'AUTO',
+      values: [
+        {
+          value: 'AUTO',
+          label: i18n.t('Auto')
+        },
+        {
+          value: 'OBJECT',
+          label: i18n.t('Object')
+        }
+      ]
+    },
+    skipSharing: {
       selected: 'false',
       values: [
         {
@@ -165,73 +292,105 @@ export class MetaDataImport extends FormBase {
         }
       ]
     },
-
-    strategy: {
-      selected: 'NEW_AND_UPDATES',
+    skipValidation: {
+      selected: 'false',
       values: [
         {
-          value: 'NEW_AND_UPDATES',
-          label: i18n.t('New and Updates')
+          value: 'false',
+          label: i18n.t('No')
         },
         {
-          value: 'NEW',
-          label: i18n.t('New only')
-        },
-        {
-          value: 'UPDATES',
-          label: i18n.t('Updates only')
+          value: 'true',
+          label: i18n.t('Yes')
         }
       ]
     },
-
-    atomicMode: {
-      selected: 'NONE',
+    async: {
+      selected: 'false',
       values: [
         {
-          value: 'NONE',
-          label: i18n.t('Allow invalid references')
+          value: 'false',
+          label: i18n.t('No')
         },
         {
-          value: 'ALL',
-          label: i18n.t('Deny invalid references')
+          value: 'true',
+          label: i18n.t('Yes')
+        }
+      ]
+    },
+    inclusionStrategy: {
+      selected: 'NON_NULL',
+      values: [
+        {
+          value: 'NON_NULL',
+          label: i18n.t('Non Null')
+        },
+        {
+          value: 'ALWAYS',
+          label: i18n.t('Always')
+        },
+        {
+          value: 'NON_EMPTY',
+          label: i18n.t('Non Empty')
         }
       ]
     }
   }
 
-  componentDidMount() {
-    this.fetchLog()
+  async componentDidMount() {
+    await this.fetchLog(0)
   }
 
-  lastId = null
-  fetchLog = async () => {
+  fetchLog = async pageNumber => {
     try {
-      let url = '../system/tasks/METADATA_IMPORT'
-      if (this.lastId) {
-        url += `?lastId=${this.lastId}`
+      let url = 'metadataAudits'
+      if (pageNumber) {
+        url += `?page=${pageNumber}`
       }
-      const { data } = await api.get(url)
+      const {
+        data: { pager, metadataAudits }
+      } = await api.get(url)
 
-      if (data.length > 0) {
-        this.lastId = data[0]['uid']
+      if (metadataAudits.length > 0) {
+        for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
+          const {
+            createdAt,
+            createdBy,
+            klass,
+            type,
+            uid,
+            value
+          } = metadataAudits[i]
+          const jsonOfValue = JSON.parse(value)
 
-        for (let i = data.length - 1; i >= 0; i -= 1) {
-          const { category, completed, level, message, time, uid } = data[i]
+          const mutations = []
+          for (const m of jsonOfValue['mutations']) {
+            if (m.operation === 'ADDITION') {
+              mutations.push(operationAddition(m))
+            } else if (m.operation === 'DELETION') {
+              mutations.push(operationDeletion(m))
+            } else {
+              console.warn('MISSING OPERATION', m.operation)
+            }
+          }
+
           eventEmitter.emit('log', {
             id: uid,
-            d: new Date(time),
+            d: new Date(createdAt),
             subject: 'MetaData Import',
-            text: `Completed: ${completed}
-Level: ${level}
-Category: ${category}
-Message:
-${message}`
+            text: `Created By: ${createdBy}
+Klass: ${klass}
+Type: ${type}
+UID: ${uid}
+
+Mutations:
+${mutations.join('\n')}`
           })
         }
         eventEmitter.emit('log.open')
 
-        if (data.filter(item => item.completed).length > 0) {
-          clearInterval(this.interval)
+        if (pager.page < pager.pageCount) {
+          await this.fetchLog(pageNumber + 1)
         }
       }
     } catch (e) {
@@ -251,57 +410,93 @@ ${message}`
     }
   }
 
-  onSubmit = () => {
+  onSubmit = async () => {
     try {
       const {
         upload,
-        importFormat,
-        classKey,
-        dryRun,
-        strategy,
-        atomicMode
+        importMode,
+        identifier,
+        importReportMode,
+        preheatMode,
+        importStrategy,
+        atomicMode,
+        mergeMode,
+        flushMode,
+        skipSharing,
+        skipValidation,
+        async,
+        inclusionStrategy
       } = this.getFormState()
 
       const formData = new FormData()
       formData.set('upload', upload)
-      formData.set('importFormat', importFormat)
-      formData.set('classKey', classKey)
-      formData.set('dryRun', dryRun)
-      formData.set('strategy', strategy)
-      formData.set('atomicMode', atomicMode)
+
+      let contentType = null
+      if (upload.name.endsWith('.json')) {
+        contentType = 'application/json'
+      } else if (upload.name.endsWith('.xml')) {
+        contentType = 'text/xml'
+      }
+
+      const params = []
+      params.push(`importMode=${encodeURI(importMode)}`)
+      params.push(`identifier=${encodeURI(identifier)}`)
+      params.push(`importReportMode=${encodeURI(importReportMode)}`)
+      params.push(`preheatMode=${encodeURI(preheatMode)}`)
+      params.push(`importStrategy=${encodeURI(importStrategy)}`)
+      params.push(`atomicMode=${encodeURI(atomicMode)}`)
+      params.push(`mergeMode=${encodeURI(mergeMode)}`)
+      params.push(`flushMode=${encodeURI(flushMode)}`)
+      params.push(`skipSharing=${encodeURI(skipSharing)}`)
+      params.push(`skipValidation=${encodeURI(skipValidation)}`)
+      params.push(`async=${encodeURI(async)}`)
+      params.push(`inclusionStrategy=${encodeURI(inclusionStrategy)}`)
+      // params.push(`userOverrideMode=NONE`)
+      // params.push(`overrideUser=`)
 
       eventEmitter.emit('log', {
         id: new Date().getTime(),
         d: new Date(),
         subject: 'MetaData Import',
-        text: `Format: ${importFormat}
-Dry Run: ${dryRun}
-Strategy: ${strategy}
-Reference Mode: ${atomicMode}
-Object Type: ${classKey}`
+        text: `Content-Type: ${contentType}
+Import mode: ${importMode}
+Identifier: ${identifier}
+Import report mode: ${importReportMode}
+Preheat mode: ${preheatMode}
+Import strategy: ${importStrategy}
+Atomic mode: ${atomicMode}
+Merge mode: ${mergeMode}
+Flush mode: ${flushMode}
+Skip sharing: ${skipSharing}
+Skip validation: ${skipValidation}
+Async: ${async}
+Inclusion strategy: ${inclusionStrategy}`
       })
       eventEmitter.emit('log.open')
-
       this.setState({ processing: true })
-      this.interval = setInterval(this.fetchLog, 2000)
 
-      window
-        .fetch(
-          `${apiConfig.server}/dhis-web-importexport/importMetaData.action`,
-          {
-            body: formData,
-            cache: 'no-cache',
-            credentials: 'include',
-            method: 'POST',
-            mode: 'cors',
-            redirect: 'follow'
-          }
-        )
-        .then(async () => {
+      const xhr = new XMLHttpRequest()
+      xhr.withCredentials = true
+      xhr.open(
+        'POST',
+        `${apiConfig.server}/api/metadata?${params.join('&')}`,
+        true
+      )
+      xhr.setRequestHeader('Content-Type', contentType)
+      xhr.setRequestHeader(
+        'Content-Disposition',
+        'attachment filename="' + upload.name + '"'
+      )
+      xhr.onreadystatechange = async () => {
+        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
           this.setState({ processing: false })
-        })
+          await this.fetchLog(0)
+        }
+      }
+      xhr.send(upload)
     } catch (e) {
       console.log('MetaData Import error', e, '\n')
+    } finally {
     }
   }
 }

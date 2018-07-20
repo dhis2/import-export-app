@@ -1,7 +1,7 @@
 /* global DHIS_CONFIG, manifest */
 import { config } from 'd2/lib/d2'
 
-let version = '29'
+let version = '30'
 let url = 'http://localhost:8080'
 
 if (typeof manifest !== 'undefined') {
