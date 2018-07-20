@@ -13,6 +13,43 @@ import {
 } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
 
+function parseLog(title, v) {
+  const list = []
+
+  list.push(title)
+  if (!Array.isArray(v.value)) {
+    list.push(`\tpath: ${v.path}, value: ${v.value}`)
+  } else {
+    if (v.path === 'translations') {
+      list.push('\tTranslations')
+      list.push(
+        v.value.map(vi => `\t${vi.locale}\tproperty: ${vi.property}, value: ${vi.value}`).join('\n')
+      )
+    } else if (typeof v.value[0]['name'] === 'string') {
+      list.push(
+        v.value.map(vi => `\t${vi.name}`).join('\n')
+      )
+    } else if (typeof v.value[0]['dataElement'] === 'object') {
+      list.push('\tDataSet/DataElement')
+      v.value.forEach(({ dataSet, dataElement }) => {
+        list.push(`\t${dataElement.name}: ${dataSet.displayName}`)
+      })
+    } else {
+      console.warn('un-parsed log', v)
+    }
+  }
+
+  return list.join('\n')
+}
+
+function operationAddition(v) {
+  return parseLog('Addition', v)
+}
+
+function operationDeletion(v) {
+  return parseLog('Deletion', v)
+}
+
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
 
@@ -317,22 +354,37 @@ export class MetaDataImport extends FormBase {
       if (metadataAudits.length > 0) {
         for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
           const {
-            category,
-            completed,
-            level,
-            message,
-            time,
-            uid
+            createdAt,
+            createdBy,
+            klass,
+            type,
+            uid,
+            value
           } = metadataAudits[i]
+          const jsonOfValue = JSON.parse(value)
+
+          const mutations = []
+          for (const m of jsonOfValue['mutations']) {
+            if (m.operation === 'ADDITION') {
+              mutations.push(operationAddition(m))
+            } else if (m.operation === 'DELETION') {
+              mutations.push(operationDeletion(m))
+            } else {
+              console.warn('MISSING OPERATION', m.operation)
+            }
+          }
+
           eventEmitter.emit('log', {
             id: uid,
-            d: new Date(time),
+            d: new Date(createdAt),
             subject: 'MetaData Import',
-            text: `Completed: ${completed}
-Level: ${level}
-Category: ${category}
-Message:
-${message}`
+            text: `Created By: ${createdBy}
+Klass: ${klass}
+Type: ${type}
+UID: ${uid}
+
+Mutations:
+${mutations.join('\n')}`
           })
         }
         eventEmitter.emit('log.open')
@@ -424,6 +476,7 @@ Inclusion strategy: ${inclusionStrategy}`
       this.setState({ processing: true })
 
       const xhr = new XMLHttpRequest()
+      xhr.withCredentials = true
       xhr.open(
         'POST',
         `${apiConfig.server}/api/metadata?${params.join('&')}`,
