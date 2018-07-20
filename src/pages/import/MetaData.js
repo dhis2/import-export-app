@@ -304,20 +304,26 @@ export class MetaDataImport extends FormBase {
     await this.fetchLog(0)
   }
 
-  fetchLog = async (pageNumber) => {
+  fetchLog = async pageNumber => {
     try {
       let url = 'metadataAudits'
       if (pageNumber) {
         url += `?page=${pageNumber}`
       }
-      const { data: {
-        pager,
-        metadataAudits
-      } } = await api.get(url)
+      const {
+        data: { pager, metadataAudits }
+      } = await api.get(url)
 
       if (metadataAudits.length > 0) {
         for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
-          const { category, completed, level, message, time, uid } = metadataAudits[i]
+          const {
+            category,
+            completed,
+            level,
+            message,
+            time,
+            uid
+          } = metadataAudits[i]
           eventEmitter.emit('log', {
             id: uid,
             d: new Date(time),
@@ -415,25 +421,26 @@ Async: ${async}
 Inclusion strategy: ${inclusionStrategy}`
       })
       eventEmitter.emit('log.open')
-
       this.setState({ processing: true })
-      await this.fetchLog(0)
 
-      window
-        .fetch(`${apiConfig.server}/api/metadata?${params.join('&')}`, {
-          body: formData,
-          cache: 'no-cache',
-          credentials: 'include',
-          method: 'POST',
-          mode: 'cors',
-          redirect: 'follow',
-          headers: {
-            'Content-Type': contentType
-          }
-        })
-        .then(async () => {
+      const xhr = new XMLHttpRequest()
+      xhr.open(
+        'POST',
+        `${apiConfig.server}/api/metadata?${params.join('&')}`,
+        true
+      )
+      xhr.setRequestHeader('Content-Type', contentType)
+      xhr.setRequestHeader(
+        'Content-Disposition',
+        'attachment filename="' + upload.name + '"'
+      )
+      xhr.onreadystatechange = async () => {
+        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
           this.setState({ processing: false })
-        })
+          await this.fetchLog(0)
+        }
+      }
+      xhr.send(upload)
     } catch (e) {
       console.log('MetaData Import error', e, '\n')
     } finally {
