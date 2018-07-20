@@ -371,6 +371,7 @@ ${message}`
       } = this.getFormState()
 
       const formData = new FormData()
+      formData.set('upload', upload)
 
       let contentType = null
       if (upload.name.endsWith('.json')) {
@@ -379,21 +380,21 @@ ${message}`
         contentType = 'text/xml'
       }
 
-      formData.set('upload', upload)
-      formData.set('importMode', importMode)
-      formData.set('identifier', identifier)
-      formData.set('importReportMode', importReportMode)
-      formData.set('preheatMode', preheatMode)
-      formData.set('importStrategy', importStrategy)
-      formData.set('atomicMode', atomicMode)
-      formData.set('mergeMode', mergeMode)
-      formData.set('flushMode', flushMode)
-      formData.set('skipSharing', skipSharing)
-      formData.set('skipValidation', skipValidation)
-      formData.set('async', async)
-      formData.set('inclusionStrategy', inclusionStrategy)
-      formData.set('userOverrideMode', 'NONE')
-      formData.set('overrideUser', '')
+      const params = []
+      params.push(`importMode=${encodeURI(importMode)}`)
+      params.push(`identifier=${encodeURI(identifier)}`)
+      params.push(`importReportMode=${encodeURI(importReportMode)}`)
+      params.push(`preheatMode=${encodeURI(preheatMode)}`)
+      params.push(`importStrategy=${encodeURI(importStrategy)}`)
+      params.push(`atomicMode=${encodeURI(atomicMode)}`)
+      params.push(`mergeMode=${encodeURI(mergeMode)}`)
+      params.push(`flushMode=${encodeURI(flushMode)}`)
+      params.push(`skipSharing=${encodeURI(skipSharing)}`)
+      params.push(`skipValidation=${encodeURI(skipValidation)}`)
+      params.push(`async=${encodeURI(async)}`)
+      params.push(`inclusionStrategy=${encodeURI(inclusionStrategy)}`)
+      // params.push(`userOverrideMode=NONE`)
+      // params.push(`overrideUser=`)
 
       eventEmitter.emit('log', {
         id: new Date().getTime(),
@@ -419,7 +420,7 @@ Inclusion strategy: ${inclusionStrategy}`
       this.interval = setInterval(this.fetchLog, 2000)
 
       window
-        .fetch(`${apiConfig.server}/api/${apiConfig.version}/metadata`, {
+        .fetch(`${apiConfig.server}/api/metadata?${params.join('&')}`, {
           body: formData,
           cache: 'no-cache',
           credentials: 'include',
