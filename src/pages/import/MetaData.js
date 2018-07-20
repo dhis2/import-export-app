@@ -301,23 +301,23 @@ export class MetaDataImport extends FormBase {
   }
 
   async componentDidMount() {
-    await this.fetchLog()
+    await this.fetchLog(0)
   }
 
-  lastId = null
-  fetchLog = async () => {
+  fetchLog = async (pageNumber) => {
     try {
-      let url = '../system/tasks/METADATA_IMPORT'
-      if (this.lastId) {
-        url += `?lastId=${this.lastId}`
+      let url = 'metadataAudits'
+      if (pageNumber) {
+        url += `?page=${pageNumber}`
       }
-      const { data } = await api.get(url)
+      const { data: {
+        pager,
+        metadataAudits
+      } } = await api.get(url)
 
-      if (data.length > 0) {
-        this.lastId = data[0]['uid']
-
-        for (let i = data.length - 1; i >= 0; i -= 1) {
-          const { category, completed, level, message, time, uid } = data[i]
+      if (metadataAudits.length > 0) {
+        for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
+          const { category, completed, level, message, time, uid } = metadataAudits[i]
           eventEmitter.emit('log', {
             id: uid,
             d: new Date(time),
@@ -331,8 +331,8 @@ ${message}`
         }
         eventEmitter.emit('log.open')
 
-        if (data.filter(item => item.completed).length > 0) {
-          clearInterval(this.interval)
+        if (pager.page < pager.pageCount) {
+          await this.fetchLog(pageNumber + 1)
         }
       }
     } catch (e) {
@@ -352,7 +352,7 @@ ${message}`
     }
   }
 
-  onSubmit = () => {
+  onSubmit = async () => {
     try {
       const {
         upload,
@@ -417,7 +417,7 @@ Inclusion strategy: ${inclusionStrategy}`
       eventEmitter.emit('log.open')
 
       this.setState({ processing: true })
-      this.interval = setInterval(this.fetchLog, 2000)
+      await this.fetchLog(0)
 
       window
         .fetch(`${apiConfig.server}/api/metadata?${params.join('&')}`, {
