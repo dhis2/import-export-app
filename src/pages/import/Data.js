@@ -267,6 +267,7 @@ export class DataImport extends FormBase {
       params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
       params.push(`idScheme=${idScheme}`)
       params.push(`skipExistingCheck=${skipExistingCheck}`)
+      params.push('async=true')
 
       const contentType = getMimeType(upload.name)
 

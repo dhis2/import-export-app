@@ -149,6 +149,7 @@ export class EventImport extends FormBase {
       formData.set('skipFirst', 'true')
       formData.set('eventIdScheme', eventIdScheme)
       formData.set('orgUnitIdScheme', orgUnitIdScheme)
+      formData.set('async', 'true')
 
       eventEmitter.emit('log', {
         id: new Date().getTime(),
