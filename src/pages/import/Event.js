@@ -142,14 +142,21 @@ export class EventImport extends FormBase {
         orgUnitIdScheme
       } = this.getFormState()
 
-      const formData = new FormData()
-      formData.set('upload', upload)
-      formData.set('payloadFormat', payloadFormat)
-      formData.set('dryRun', dryRun)
-      formData.set('skipFirst', 'true')
-      formData.set('eventIdScheme', eventIdScheme)
-      formData.set('orgUnitIdScheme', orgUnitIdScheme)
-      formData.set('async', 'true')
+      let contentType = null
+      const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
+      if (upload.name.endsWith('.json')) {
+        contentType = 'application/json'
+      } else if (upload.name.endsWith('.xml')) {
+        contentType = 'text/xml'
+      }
+
+      const params = []
+      params.push(`payloadFormat=${payloadFormat}`)
+      params.push(`dryRun=${dryRun}`)
+      params.push('skipFirst=true')
+      params.push(`eventIdScheme=${eventIdScheme}`)
+      params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
+      params.push('async=true')
 
       eventEmitter.emit('log', {
         id: new Date().getTime(),
@@ -161,26 +168,30 @@ Skip first: true
 Event ID scheme: ${eventIdScheme}
 Org. unit ID scheme: ${orgUnitIdScheme}`
       })
+
       eventEmitter.emit('log.open')
-
       this.setState({ processing: true })
-      await fetchLog('EVENT_IMPORT')
 
-      window
-        .fetch(
-          `${apiConfig.server}/dhis-web-importexport/importEvents.action`,
-          {
-            body: formData,
-            cache: 'no-cache',
-            credentials: 'include',
-            method: 'POST',
-            mode: 'cors',
-            redirect: 'follow'
-          }
-        )
-        .then(async () => {
+      const xhr = new XMLHttpRequest()
+      xhr.withCredentials = true
+      xhr.open(
+        'POST',
+        `${apiConfig.server}/api/events.${extension}?${params.join('&')}`,
+        true
+      )
+      xhr.setRequestHeader('Content-Type', contentType)
+      xhr.setRequestHeader(
+        'Content-Disposition',
+        'attachment filename="' + upload.name + '"'
+      )
+      xhr.onreadystatechange = async () => {
+        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
+          console.log(xhr.response)
           this.setState({ processing: false })
-        })
+          await fetchLog('EVENT_IMPORT')
+        }
+      }
+      xhr.send(upload)
     } catch (e) {
       console.log('Event Import error', e, '\n')
     }
