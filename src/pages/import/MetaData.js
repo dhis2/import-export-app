@@ -12,7 +12,7 @@ import {
   TYPE_MORE_OPTIONS
 } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
-import { fetchLog } from './helpers'
+import { fetchLog, getMimeType } from './helpers'
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
@@ -338,13 +338,8 @@ export class MetaDataImport extends FormBase {
       const formData = new FormData()
       formData.set('upload', upload)
 
-      let contentType = null
       const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
-      if (upload.name.endsWith('.json')) {
-        contentType = 'application/json'
-      } else if (upload.name.endsWith('.xml')) {
-        contentType = 'text/xml'
-      }
+      const contentType = getMimeType(upload.name)
 
       const params = []
       params.push(`importMode=${encodeURI(importMode)}`)

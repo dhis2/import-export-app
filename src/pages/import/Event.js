@@ -5,7 +5,7 @@ import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
 import { EventIcon } from 'components/Icon'
-import {fetchLog, getMimeType} from './helpers'
+import { fetchLog, getMimeType } from './helpers'
 
 export class EventImport extends FormBase {
   static path = '/import/event'
