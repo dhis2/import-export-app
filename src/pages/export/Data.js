@@ -1,6 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
+import JSZip from 'jszip'
 import { FormBase } from 'components/FormBase'
 import {
   CTX_DEFAULT,
@@ -260,9 +261,9 @@ export class DataExport extends FormBase {
       this.setState({ processing: true })
 
       let extension = `.${exportFormat}`
-      if (compression !== 'none') {
-        extension += `.${compression}`
-      }
+      // if (compression !== 'none') {
+      //   extension += `.${compression}`
+      // }
 
       const xhr = new XMLHttpRequest()
       xhr.withCredentials = true
@@ -278,13 +279,18 @@ export class DataExport extends FormBase {
 
           let filename = `data.${exportFormat}`
           if (compression !== 'none') {
-            filename += `.${compression}`
-          }
 
-          console.log('xhr.responseText')
-          console.log(xhr.responseText)
-          const url = createBlob(xhr.responseText, exportFormat, compression)
-          downloadBlob(url, filename)
+            const zip = new JSZip()
+            zip.file(filename, xhr.responseText)
+            zip.generateAsync({type:"blob"}).then(content => {
+              const url = URL.createObjectURL(content)
+              downloadBlob(url, `${filename}.${compression}`)
+            })
+
+          } else {
+            const url = createBlob(xhr.responseText, exportFormat, compression)
+            downloadBlob(url, filename)
+          }
         }
       }
       xhr.send()
