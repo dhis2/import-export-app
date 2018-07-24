@@ -15,7 +15,6 @@ import moment from 'moment'
 import { eventEmitter } from 'services'
 import { apiConfig } from 'config'
 import { today, downloadBlob, createBlob } from 'helpers'
-import { getMimeTypeFromName } from '../import/helpers'
 import { getInstance } from 'd2/lib/d2'
 import { DataIcon } from 'components/Icon'
 
@@ -242,8 +241,6 @@ export class DataExport extends FormBase {
         return
       }
 
-      const contentType = getMimeTypeFromName(exportFormat)
-
       const params = []
       params.push(`startDate=${moment(startDate).format('YYYY-MM-DD')}`)
       params.push(`endDate=${moment(endDate).format('YYYY-MM-DD')}`)
@@ -271,7 +268,6 @@ export class DataExport extends FormBase {
         `${apiConfig.server}/api/dataValueSets?${params.join('&')}`,
         true
       )
-      xhr.setRequestHeader('Content-Type', contentType)
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
           this.setState({ processing: false })
@@ -282,7 +278,11 @@ export class DataExport extends FormBase {
             filename += `.${compression}`
           }
 
-          const url = createBlob(xhr.responseText, contentType, compression)
+          const url = createBlob(
+            xhr.responseText,
+            exportFormat,
+            compression
+          )
           downloadBlob(url, filename)
         }
       }
