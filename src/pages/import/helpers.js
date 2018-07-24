@@ -15,7 +15,7 @@ export async function getMetadataAuditsAuditLog(pageNumber = 0) {
   if (pageNumber) {
     url += `?page=${pageNumber}`
   }
-  
+
   const {
     data: { pager, metadataAudits }
   } = await api.get(url)

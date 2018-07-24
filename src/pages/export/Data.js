@@ -202,13 +202,6 @@ export class DataExport extends FormBase {
   async fetch() {
     try {
       const d2 = await getInstance()
-      const orgUnitTree = await d2.models.organisationUnits
-        .list({
-          level: 1,
-          paging: false,
-          fields: 'id,path,displayName,children::isNotEmpty'
-        })
-        .then(root => root.toArray()[0])
 
       const dataSets = await d2.models.dataSet
         .list({ paging: false, fields: 'id,displayName' })
