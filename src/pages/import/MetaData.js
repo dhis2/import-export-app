@@ -14,45 +14,6 @@ import {
 import { MetadataImportIcon } from 'components/Icon'
 import { fetchLog } from './helpers'
 
-function parseLog(title, v) {
-  const list = []
-
-  list.push(title)
-  if (!Array.isArray(v.value)) {
-    list.push(`\tpath: ${v.path}, value: ${v.value}`)
-  } else {
-    if (v.path === 'translations') {
-      list.push('\tTranslations')
-      list.push(
-        v.value
-          .map(
-            vi => `\t${vi.locale}\tproperty: ${vi.property}, value: ${vi.value}`
-          )
-          .join('\n')
-      )
-    } else if (typeof v.value[0]['name'] === 'string') {
-      list.push(v.value.map(vi => `\t${vi.name}`).join('\n'))
-    } else if (typeof v.value[0]['dataElement'] === 'object') {
-      list.push('\tDataSet/DataElement')
-      v.value.forEach(({ dataSet, dataElement }) => {
-        list.push(`\t${dataElement.name}: ${dataSet.displayName}`)
-      })
-    } else {
-      console.warn('un-parsed log', v)
-    }
-  }
-
-  return list.join('\n')
-}
-
-function operationAddition(v) {
-  return parseLog('Addition', v)
-}
-
-function operationDeletion(v) {
-  return parseLog('Deletion', v)
-}
-
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
 
