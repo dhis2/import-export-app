@@ -13,10 +13,8 @@ import {
   TYPE_DATASET_PICKER
 } from 'components/Form'
 import moment from 'moment'
-import { eventEmitter } from 'services'
 import { apiConfig } from 'config'
 import { today, downloadBlob, createBlob } from 'helpers'
-import { getInstance } from 'd2/lib/d2'
 import { DataIcon } from 'components/Icon'
 
 export class DataExport extends FormBase {
