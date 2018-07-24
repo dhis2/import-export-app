@@ -23,12 +23,14 @@ function parseLog(title, v) {
     if (v.path === 'translations') {
       list.push('\tTranslations')
       list.push(
-        v.value.map(vi => `\t${vi.locale}\tproperty: ${vi.property}, value: ${vi.value}`).join('\n')
+        v.value
+          .map(
+            vi => `\t${vi.locale}\tproperty: ${vi.property}, value: ${vi.value}`
+          )
+          .join('\n')
       )
     } else if (typeof v.value[0]['name'] === 'string') {
-      list.push(
-        v.value.map(vi => `\t${vi.name}`).join('\n')
-      )
+      list.push(v.value.map(vi => `\t${vi.name}`).join('\n'))
     } else if (typeof v.value[0]['dataElement'] === 'object') {
       list.push('\tDataSet/DataElement')
       v.value.forEach(({ dataSet, dataElement }) => {

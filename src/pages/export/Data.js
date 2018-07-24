@@ -1,6 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
+import JSZip from 'jszip'
 import { FormBase } from 'components/FormBase'
 import {
   CTX_DEFAULT,
@@ -12,9 +13,9 @@ import {
   TYPE_DATASET_PICKER
 } from 'components/Form'
 import moment from 'moment'
-import { api, eventEmitter } from 'services'
+import { eventEmitter } from 'services'
 import { apiConfig } from 'config'
-import { today, downloadBlob } from 'helpers'
+import { today, downloadBlob, createBlob } from 'helpers'
 import { getInstance } from 'd2/lib/d2'
 import { DataIcon } from 'components/Icon'
 
@@ -201,13 +202,6 @@ export class DataExport extends FormBase {
   async fetch() {
     try {
       const d2 = await getInstance()
-      const orgUnitTree = await d2.models.organisationUnits
-        .list({
-          level: 1,
-          paging: false,
-          fields: 'id,path,displayName,children::isNotEmpty'
-        })
-        .then(root => root.toArray()[0])
 
       const dataSets = await d2.models.dataSet
         .list({ paging: false, fields: 'id,displayName' })
@@ -219,27 +213,7 @@ export class DataExport extends FormBase {
           }))
         )
 
-      const selectedPaths = []
-      const {
-        data: { selectedUnits }
-      } = await api.get('../../dhis-web-commons/oust/addorgunit.action')
-      if (selectedUnits.length > 0) {
-        for (let i = 0; i < selectedUnits.length; i += 1) {
-          const url = `organisationUnits/${
-            selectedUnits[i]['id']
-          }?paging=false&fields=id,path`
-          const {
-            data: { path }
-          } = await api.get(url)
-          selectedPaths.push(path)
-        }
-      }
-
       this.setState({
-        orgUnit: {
-          selected: selectedPaths,
-          value: orgUnitTree
-        },
         selectedDataSets: {
           selected: [],
           value: dataSets
@@ -253,6 +227,7 @@ export class DataExport extends FormBase {
   onSubmit = async () => {
     try {
       const {
+        orgUnit,
         startDate,
         endDate,
         exportFormat,
@@ -263,60 +238,60 @@ export class DataExport extends FormBase {
         selectedDataSets
       } = this.getFormState()
 
-      const formData = new FormData()
+      if (orgUnit.length === 0 || selectedDataSets.length === 0) {
+        return
+      }
 
-      formData.set('startDate', moment(startDate).format('YYYY-MM-DD'))
-      formData.set('endDate', moment(endDate).format('YYYY-MM-DD'))
-      formData.set('exportFormat', exportFormat)
-      formData.set('compression', compression)
-      formData.set('dataElementIdScheme', dataElementIdScheme)
-      formData.set('orgUnitIdScheme', orgUnitIdScheme)
-      formData.set('categoryOptionComboIdScheme', categoryOptionComboIdScheme)
+      const params = []
+      params.push(`startDate=${moment(startDate).format('YYYY-MM-DD')}`)
+      params.push(`endDate=${moment(endDate).format('YYYY-MM-DD')}`)
+      params.push(`dataElementIdScheme=${dataElementIdScheme}`)
+      params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
+      params.push(`categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`)
+
+      orgUnit.forEach(v => {
+        params.push(`orgUnit=${v.substr(v.lastIndexOf('/') + 1)}`)
+      })
 
       selectedDataSets.forEach(v => {
-        formData.append('selectedDataSets', v)
+        params.push(`dataSet=${v}`)
       })
 
-      this.setState({ processing: true }, () => {
-        window
-          .fetch(
-            `${apiConfig.server}/dhis-web-importexport/exportDataValue.action`,
-            {
-              body: formData,
-              cache: 'no-cache',
-              credentials: 'include',
-              method: 'POST',
-              mode: 'cors',
-              redirect: 'follow'
-            }
-          )
-          .then(response => response.blob())
-          .then(blob => {
-            let filename = `data.${exportFormat}`
-            if (compression !== 'none') {
-              filename += `.${compression}`
-            }
+      eventEmitter.emit('log.open')
+      this.setState({ processing: true })
 
-            const url = window.URL.createObjectURL(blob)
+      let extension = `.${exportFormat}`
+      // if (compression !== 'none') {
+      //   extension += `.${compression}`
+      // }
+
+      const xhr = new XMLHttpRequest()
+      xhr.withCredentials = true
+      xhr.open(
+        'GET',
+        `${apiConfig.server}/api/dataValueSets${extension}?${params.join('&')}`,
+        true
+      )
+      xhr.onreadystatechange = async () => {
+        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
+          this.setState({ processing: false })
+          // TODO await this.fetchLog(0)
+
+          let filename = `data.${exportFormat}`
+          if (compression !== 'none') {
+            const zip = new JSZip()
+            zip.file(filename, xhr.responseText)
+            zip.generateAsync({ type: 'blob' }).then(content => {
+              const url = URL.createObjectURL(content)
+              downloadBlob(url, `${filename}.${compression}`)
+            })
+          } else {
+            const url = createBlob(xhr.responseText, exportFormat, compression)
             downloadBlob(url, filename)
-          })
-        this.setState({ processing: false })
-
-        eventEmitter.emit('log', {
-          id: new Date().getTime(),
-          d: new Date(),
-          subject: 'Data Export',
-          text: `Start Date: ${moment(startDate).format('YYYY-MM-DD')}
-End Date: ${moment(endDate).format('YYYY-MM-DD')}
-Format: ${exportFormat}
-Compression: ${compression}
-Data Element Id Scheme: ${dataElementIdScheme}
-Org. Unit Id Scheme: ${orgUnitIdScheme}
-Category Option Combo Id Scheme: ${categoryOptionComboIdScheme}
-Selected Datasets: ${selectedDataSets.join(', ')}`
-        })
-        eventEmitter.emit('log.open')
-      })
+          }
+        }
+      }
+      xhr.send()
     } catch (e) {
       console.log('Data Export error', e, '\n')
     }
