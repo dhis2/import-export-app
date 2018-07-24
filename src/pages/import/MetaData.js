@@ -12,7 +12,7 @@ import {
   TYPE_MORE_OPTIONS
 } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
-import { getMetadataAuditsAuditLog } from './helpers'
+import { fetchLog } from './helpers'
 
 function parseLog(title, v) {
   const list = []
@@ -309,7 +309,7 @@ export class MetaDataImport extends FormBase {
       ]
     },
     async: {
-      selected: 'false',
+      selected: 'true',
       values: [
         {
           value: 'false',
@@ -341,59 +341,7 @@ export class MetaDataImport extends FormBase {
   }
 
   async componentDidMount() {
-    await this.fetchLog(0)
-  }
-
-  fetchLog = async pageNumber => {
-    try {
-      const { pager, metadataAudits } = await getMetadataAuditsAuditLog(
-        pageNumber
-      )
-      if (metadataAudits.length > 0) {
-        for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
-          const {
-            createdAt,
-            createdBy,
-            klass,
-            type,
-            uid,
-            value
-          } = metadataAudits[i]
-          const jsonOfValue = JSON.parse(value)
-
-          const mutations = []
-          for (const m of jsonOfValue['mutations']) {
-            if (m.operation === 'ADDITION') {
-              mutations.push(operationAddition(m))
-            } else if (m.operation === 'DELETION') {
-              mutations.push(operationDeletion(m))
-            } else {
-              console.warn('MISSING OPERATION', m.operation)
-            }
-          }
-
-          eventEmitter.emit('log', {
-            id: uid,
-            d: new Date(createdAt),
-            subject: 'MetaData Import',
-            text: `Created By: ${createdBy}
-Klass: ${klass}
-Type: ${type}
-UID: ${uid}
-
-Mutations:
-${mutations.join('\n')}`
-          })
-        }
-        eventEmitter.emit('log.open')
-
-        if (pager.page < pager.pageCount) {
-          await this.fetchLog(pageNumber + 1)
-        }
-      }
-    } catch (e) {
-      console.log('Error fetching METADATA_IMPORT')
-    }
+    await fetchLog('METADATA_IMPORT')
   }
 
   onFormUpdate = (name, value) => {
@@ -430,6 +378,7 @@ ${mutations.join('\n')}`
       formData.set('upload', upload)
 
       let contentType = null
+      const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
       if (upload.name.endsWith('.json')) {
         contentType = 'application/json'
       } else if (upload.name.endsWith('.xml')) {
@@ -477,7 +426,7 @@ Inclusion strategy: ${inclusionStrategy}`
       xhr.withCredentials = true
       xhr.open(
         'POST',
-        `${apiConfig.server}/api/metadata?${params.join('&')}`,
+        `${apiConfig.server}/api/metadata.${extension}?${params.join('&')}`,
         true
       )
       xhr.setRequestHeader('Content-Type', contentType)
@@ -487,8 +436,9 @@ Inclusion strategy: ${inclusionStrategy}`
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
+          console.log(xhr.response)
           this.setState({ processing: false })
-          await this.fetchLog(0)
+          await fetchLog('METADATA_IMPORT')
         }
       }
       xhr.send(upload)

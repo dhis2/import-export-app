@@ -1,4 +1,6 @@
 import { api } from 'services'
+import { apiConfig } from 'config'
+import { eventEmitter } from 'services'
 
 export function getMimeType(filename) {
   if (filename.endsWith('.json')) {
@@ -10,15 +12,44 @@ export function getMimeType(filename) {
   return null
 }
 
-export async function getMetadataAuditsAuditLog(pageNumber = 0) {
-  let url = 'metadataAudits'
-  if (pageNumber) {
-    url += `?page=${pageNumber}`
+const lastIds = {}
+const typeLabel = {
+  METADATA_IMPORT: 'Metadata Import',
+  DATAVALUE_IMPORT: 'Data Import',
+  EVENT_IMPORT: 'Event Import',
+  GML_IMPORT: 'GML Import'
+}
+export async function fetchLog(type) {
+  try {
+    let url = `${apiConfig.server}/api/system/tasks/${type}`
+    if (lastIds[type]) {
+      url += `?lastId=${lastIds[type]}`
+    }
+    const { data } = await api.get(url)
+
+    if (data.length > 0) {
+      lastIds[type] = data[0]['uid']
+
+      for (let i = data.length - 1; i >= 0; i -= 1) {
+        const { category, completed, level, message, time, uid } = data[i]
+        eventEmitter.emit('log', {
+          id: uid,
+          d: new Date(time),
+          subject: typeLabel[type],
+          text: `Completed: ${completed}
+Level: ${level}
+Category: ${category}
+Message:
+${message}`
+        })
+      }
+      eventEmitter.emit('log.open')
+
+      if (data.filter(item => item.completed).length === 0) {
+        setTimeout(() => fetchLog(type), 2000)
+      }
+    }
+  } catch (e) {
+    console.log('Error fetching EVENT_IMPORT')
   }
-
-  const {
-    data: { pager, metadataAudits }
-  } = await api.get(url)
-
-  return { pager, metadataAudits }
 }
