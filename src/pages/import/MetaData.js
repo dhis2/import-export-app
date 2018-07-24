@@ -346,7 +346,9 @@ export class MetaDataImport extends FormBase {
 
   fetchLog = async pageNumber => {
     try {
-      const { pager, metadataAudits } = await getMetadataAuditsAuditLog(pageNumber)
+      const { pager, metadataAudits } = await getMetadataAuditsAuditLog(
+        pageNumber
+      )
       if (metadataAudits.length > 0) {
         for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
           const {
