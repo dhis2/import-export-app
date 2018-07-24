@@ -100,6 +100,7 @@ export class Logger extends React.Component {
       let { height } = this.state
       this.elmMessages.style.height = `${height}px`
       this.appContent.style.height = `calc(100vh - ${height}px)`
+      this.scrollToBottom()
     })
   }
 

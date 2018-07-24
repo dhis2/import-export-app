@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { api, eventEmitter } from 'services'
+import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import {
   CTX_DEFAULT,
@@ -12,6 +12,7 @@ import {
   TYPE_MORE_OPTIONS
 } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
+import { getMetadataAuditsAuditLog } from './helpers'
 
 function parseLog(title, v) {
   const list = []
@@ -345,14 +346,7 @@ export class MetaDataImport extends FormBase {
 
   fetchLog = async pageNumber => {
     try {
-      let url = 'metadataAudits'
-      if (pageNumber) {
-        url += `?page=${pageNumber}`
-      }
-      const {
-        data: { pager, metadataAudits }
-      } = await api.get(url)
-
+      const { pager, metadataAudits } = await getMetadataAuditsAuditLog(pageNumber)
       if (metadataAudits.length > 0) {
         for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
           const {

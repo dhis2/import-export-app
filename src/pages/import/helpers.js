@@ -22,13 +22,3 @@ export async function getMetadataAuditsAuditLog(pageNumber = 0) {
 
   return { pager, metadataAudits }
 }
-
-export function getMimeTypeFromName(name) {
-  const mimeTypes = {
-    json: 'application/json',
-    xml: 'text/xml',
-    csv: 'text/csv'
-  }
-
-  return mimeTypes[name]
-}
