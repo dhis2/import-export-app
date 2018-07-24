@@ -195,35 +195,6 @@ export class DataExport extends FormBase {
     }
   }
 
-  async componentDidMount() {
-    await this.fetch()
-  }
-
-  async fetch() {
-    try {
-      const d2 = await getInstance()
-
-      const dataSets = await d2.models.dataSet
-        .list({ paging: false, fields: 'id,displayName' })
-        .then(collection => collection.toArray())
-        .then(sets =>
-          sets.map(dataSet => ({
-            value: dataSet.id,
-            label: dataSet.displayName
-          }))
-        )
-
-      this.setState({
-        selectedDataSets: {
-          selected: [],
-          value: dataSets
-        }
-      })
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
   onSubmit = async () => {
     try {
       const {
@@ -274,7 +245,6 @@ export class DataExport extends FormBase {
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
           this.setState({ processing: false })
-          // TODO await this.fetchLog(0)
 
           let filename = `data.${exportFormat}`
           if (compression !== 'none') {
