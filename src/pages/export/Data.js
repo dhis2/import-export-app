@@ -14,7 +14,8 @@ import {
 import moment from 'moment'
 import { api, eventEmitter } from 'services'
 import { apiConfig } from 'config'
-import { today, downloadBlob } from 'helpers'
+import { today } from 'helpers'
+import { getMimeTypeFromName } from '../import/helpers'
 import { getInstance } from 'd2/lib/d2'
 import { DataIcon } from 'components/Icon'
 
@@ -219,27 +220,7 @@ export class DataExport extends FormBase {
           }))
         )
 
-      const selectedPaths = []
-      const {
-        data: { selectedUnits }
-      } = await api.get('../../dhis-web-commons/oust/addorgunit.action')
-      if (selectedUnits.length > 0) {
-        for (let i = 0; i < selectedUnits.length; i += 1) {
-          const url = `organisationUnits/${
-            selectedUnits[i]['id']
-          }?paging=false&fields=id,path`
-          const {
-            data: { path }
-          } = await api.get(url)
-          selectedPaths.push(path)
-        }
-      }
-
       this.setState({
-        orgUnit: {
-          selected: selectedPaths,
-          value: orgUnitTree
-        },
         selectedDataSets: {
           selected: [],
           value: dataSets
@@ -253,6 +234,7 @@ export class DataExport extends FormBase {
   onSubmit = async () => {
     try {
       const {
+        orgUnit,
         startDate,
         endDate,
         exportFormat,
@@ -264,28 +246,53 @@ export class DataExport extends FormBase {
       } = this.getFormState()
 
       const formData = new FormData()
+      const contentType = getMimeTypeFromName(exportFormat)
 
-      formData.set('startDate', moment(startDate).format('YYYY-MM-DD'))
-      formData.set('endDate', moment(endDate).format('YYYY-MM-DD'))
-      formData.set('exportFormat', exportFormat)
-      formData.set('compression', compression)
-      formData.set('dataElementIdScheme', dataElementIdScheme)
-      formData.set('orgUnitIdScheme', orgUnitIdScheme)
-      formData.set('categoryOptionComboIdScheme', categoryOptionComboIdScheme)
+      const params = []
+      params.push(`startDate=${moment(startDate).format('YYYY-MM-DD')}`)
+      params.push(`endDate=${moment(endDate).format('YYYY-MM-DD')}`)
+      params.push(`exportFormat=${exportFormat}`)
+      params.push(`compression=${compression}`)
+      params.push(`dataElementIdScheme=${dataElementIdScheme}`)
+      params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
+      params.push(`categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`)
 
-      selectedDataSets.forEach(v => {
-        formData.append('selectedDataSets', v)
+      orgUnit.forEach(v => {
+        params.push(`orgUnit=${v}`)
       })
 
-      this.setState({ processing: true }, () => {
+      selectedDataSets.forEach(v => {
+        formData.append('dataSet', v)
+      })
+
+      eventEmitter.emit('log.open')
+      this.setState({ processing: true })
+
+      const xhr = new XMLHttpRequest()
+      xhr.withCredentials = true
+      xhr.open(
+        'GET',
+        `${apiConfig.server}/api/dataValueSets?${params.join('&')}`,
+        true
+      )
+      xhr.setRequestHeader('Content-Type', contentType)
+      xhr.onreadystatechange = async () => {
+        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
+          this.setState({ processing: false })
+          // await this.fetchLog(0)
+        }
+      }
+      xhr.send()
+
+      /*this.setState({ processing: true }, () => {
         window
           .fetch(
-            `${apiConfig.server}/dhis-web-importexport/exportDataValue.action`,
+            `${apiConfig.server}/api/dataValueSets`,
             {
               body: formData,
               cache: 'no-cache',
               credentials: 'include',
-              method: 'POST',
+              method: 'GET',
               mode: 'cors',
               redirect: 'follow'
             }
@@ -316,7 +323,7 @@ Category Option Combo Id Scheme: ${categoryOptionComboIdScheme}
 Selected Datasets: ${selectedDataSets.join(', ')}`
         })
         eventEmitter.emit('log.open')
-      })
+      })*/
     } catch (e) {
       console.log('Data Export error', e, '\n')
     }

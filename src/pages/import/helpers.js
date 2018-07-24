@@ -15,9 +15,20 @@ export async function getMetadataAuditsAuditLog(pageNumber = 0) {
   if (pageNumber) {
     url += `?page=${pageNumber}`
   }
+  
   const {
     data: { pager, metadataAudits }
   } = await api.get(url)
 
   return { pager, metadataAudits }
+}
+
+export function getMimeTypeFromName(name) {
+  const mimeTypes = {
+    json: 'application/json',
+    xml: 'text/xml',
+    csv: 'text/csv'
+  }
+
+  return mimeTypes[name]
 }
