@@ -2,6 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { api, eventEmitter } from 'services'
+import { getMimeType, getMetadataAuditsAuditLog } from './helpers'
 import { FormBase } from 'components/FormBase'
 import {
   CTX_DEFAULT,
@@ -345,13 +346,7 @@ export class MetaDataImport extends FormBase {
 
   fetchLog = async pageNumber => {
     try {
-      let url = 'metadataAudits'
-      if (pageNumber) {
-        url += `?page=${pageNumber}`
-      }
-      const {
-        data: { pager, metadataAudits }
-      } = await api.get(url)
+      const { pager, metadataAudits } = getMetadataAuditsAuditLog(pageNumber)
 
       if (metadataAudits.length > 0) {
         for (let i = metadataAudits.length - 1; i >= 0; i -= 1) {
@@ -433,13 +428,6 @@ ${mutations.join('\n')}`
       const formData = new FormData()
       formData.set('upload', upload)
 
-      let contentType = null
-      if (upload.name.endsWith('.json')) {
-        contentType = 'application/json'
-      } else if (upload.name.endsWith('.xml')) {
-        contentType = 'text/xml'
-      }
-
       const params = []
       params.push(`importMode=${encodeURI(importMode)}`)
       params.push(`identifier=${encodeURI(identifier)}`)
@@ -455,6 +443,8 @@ ${mutations.join('\n')}`
       params.push(`inclusionStrategy=${encodeURI(inclusionStrategy)}`)
       // params.push(`userOverrideMode=NONE`)
       // params.push(`overrideUser=`)
+
+      const contentType = getMimeType(upload.name)
 
       eventEmitter.emit('log', {
         id: new Date().getTime(),
