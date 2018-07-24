@@ -244,8 +244,6 @@ export class DataExport extends FormBase {
       const params = []
       params.push(`startDate=${moment(startDate).format('YYYY-MM-DD')}`)
       params.push(`endDate=${moment(endDate).format('YYYY-MM-DD')}`)
-      params.push(`exportFormat=${exportFormat}`)
-      params.push(`compression=${compression}`)
       params.push(`dataElementIdScheme=${dataElementIdScheme}`)
       params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
       params.push(`categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`)
@@ -261,11 +259,16 @@ export class DataExport extends FormBase {
       eventEmitter.emit('log.open')
       this.setState({ processing: true })
 
+      let extension = `.${exportFormat}`
+      if (compression !== 'none') {
+        extension += `.${compression}`
+      }
+
       const xhr = new XMLHttpRequest()
       xhr.withCredentials = true
       xhr.open(
         'GET',
-        `${apiConfig.server}/api/dataValueSets?${params.join('&')}`,
+        `${apiConfig.server}/api/dataValueSets${extension}?${params.join('&')}`,
         true
       )
       xhr.onreadystatechange = async () => {
@@ -278,6 +281,8 @@ export class DataExport extends FormBase {
             filename += `.${compression}`
           }
 
+          console.log('xhr.responseText')
+          console.log(xhr.responseText)
           const url = createBlob(xhr.responseText, exportFormat, compression)
           downloadBlob(url, filename)
         }
