@@ -278,11 +278,7 @@ export class DataExport extends FormBase {
             filename += `.${compression}`
           }
 
-          const url = createBlob(
-            xhr.responseText,
-            exportFormat,
-            compression
-          )
+          const url = createBlob(xhr.responseText, exportFormat, compression)
           downloadBlob(url, filename)
         }
       }
