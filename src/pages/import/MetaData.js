@@ -430,6 +430,7 @@ ${mutations.join('\n')}`
       formData.set('upload', upload)
 
       let contentType = null
+      const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
       if (upload.name.endsWith('.json')) {
         contentType = 'application/json'
       } else if (upload.name.endsWith('.xml')) {
@@ -477,7 +478,7 @@ Inclusion strategy: ${inclusionStrategy}`
       xhr.withCredentials = true
       xhr.open(
         'POST',
-        `${apiConfig.server}/api/metadata?${params.join('&')}`,
+        `${apiConfig.server}/api/metadata.${extension}?${params.join('&')}`,
         true
       )
       xhr.setRequestHeader('Content-Type', contentType)
