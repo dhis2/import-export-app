@@ -12,6 +12,7 @@ import {
 } from 'components/Form'
 import { DataIcon } from 'components/Icon'
 import { getMimeType } from './helpers'
+import { fetchLog } from './helpers'
 
 export class DataImport extends FormBase {
   static path = '/import/data'
@@ -236,14 +237,10 @@ export class DataImport extends FormBase {
     }
   }
 
-  async componentDidMount() {
-    await this.fetchLog()
-  }
 
-  lastId = null
-  fetchLog = async () => {
-    // TODO fetch log using the new audit log endpoint
-    console.log('TODO: DataImport fetchLog')
+
+  async componentDidMount() {
+    await fetchLog('DATAVALUE_IMPORT')
   }
 
   onSubmit = () => {
@@ -307,7 +304,7 @@ Skip existing record check: ${skipExistingCheck}`
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
           this.setState({ processing: false })
-          await this.fetchLog(0)
+          await fetchLog('DATAVALUE_IMPORT')
         }
       }
       xhr.send(upload)
