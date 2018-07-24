@@ -3,10 +3,12 @@ import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 
 export function getMimeType(filename) {
-  if (filename.endsWith('.json')) {
+  if (filename.endsWith('json')) {
     return 'application/json'
-  } else if (filename.endsWith('.xml')) {
+  } else if (filename.endsWith('xml')) {
     return 'text/xml'
+  } else if (filename.endsWith('csv')) {
+    return 'text/csv'
   }
 
   return null

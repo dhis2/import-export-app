@@ -5,7 +5,7 @@ import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
 import { EventIcon } from 'components/Icon'
-import { fetchLog } from './helpers'
+import {fetchLog, getMimeType} from './helpers'
 
 export class EventImport extends FormBase {
   static path = '/import/event'
@@ -142,13 +142,8 @@ export class EventImport extends FormBase {
         orgUnitIdScheme
       } = this.getFormState()
 
-      let contentType = null
       const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
-      if (upload.name.endsWith('.json')) {
-        contentType = 'application/json'
-      } else if (upload.name.endsWith('.xml')) {
-        contentType = 'text/xml'
-      }
+      const contentType = getMimeType(upload.name)
 
       const params = []
       params.push(`payloadFormat=${payloadFormat}`)
