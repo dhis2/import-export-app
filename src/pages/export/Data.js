@@ -257,7 +257,6 @@ export class DataExport extends FormBase {
         params.push(`dataSet=${v}`)
       })
 
-      eventEmitter.emit('log.open')
       this.setState({ processing: true })
 
       let extension = `.${exportFormat}`
