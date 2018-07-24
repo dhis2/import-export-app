@@ -311,6 +311,10 @@ Format: ${format.substr(1)}`
     })
     eventEmitter.emit('log.open')
 
-    window.location = api.url('events') + '?' + params.join('&')
+    let path = `events${format}`
+    if (compression !== 'none') {
+      path += `${compression}`
+    }
+    window.location = api.url(path) + '?' + params.join('&')
   }
 }
