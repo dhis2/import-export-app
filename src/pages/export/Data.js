@@ -12,9 +12,9 @@ import {
   TYPE_DATASET_PICKER
 } from 'components/Form'
 import moment from 'moment'
-import { api, eventEmitter } from 'services'
+import { eventEmitter } from 'services'
 import { apiConfig } from 'config'
-import { today } from 'helpers'
+import { today, downloadBlob, createBlob } from 'helpers'
 import { getMimeTypeFromName } from '../import/helpers'
 import { getInstance } from 'd2/lib/d2'
 import { DataIcon } from 'components/Icon'
@@ -245,7 +245,10 @@ export class DataExport extends FormBase {
         selectedDataSets
       } = this.getFormState()
 
-      const formData = new FormData()
+      if (orgUnit.length === 0 || selectedDataSets.length === 0) {
+        return
+      }
+
       const contentType = getMimeTypeFromName(exportFormat)
 
       const params = []
@@ -258,11 +261,11 @@ export class DataExport extends FormBase {
       params.push(`categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`)
 
       orgUnit.forEach(v => {
-        params.push(`orgUnit=${v}`)
+        params.push(`orgUnit=${v.substr(v.lastIndexOf('/') + 1)}`)
       })
 
       selectedDataSets.forEach(v => {
-        formData.append('dataSet', v)
+        params.push(`dataSet=${v}`)
       })
 
       eventEmitter.emit('log.open')
@@ -279,51 +282,18 @@ export class DataExport extends FormBase {
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
           this.setState({ processing: false })
-          // await this.fetchLog(0)
+          // TODO await this.fetchLog(0)
+
+          let filename = `data.${exportFormat}`
+          if (compression !== 'none') {
+            filename += `.${compression}`
+          }
+
+          const url = createBlob(xhr.responseText, contentType, compression)
+          downloadBlob(url, filename)
         }
       }
       xhr.send()
-
-      /*this.setState({ processing: true }, () => {
-        window
-          .fetch(
-            `${apiConfig.server}/api/dataValueSets`,
-            {
-              body: formData,
-              cache: 'no-cache',
-              credentials: 'include',
-              method: 'GET',
-              mode: 'cors',
-              redirect: 'follow'
-            }
-          )
-          .then(response => response.blob())
-          .then(blob => {
-            let filename = `data.${exportFormat}`
-            if (compression !== 'none') {
-              filename += `.${compression}`
-            }
-
-            const url = window.URL.createObjectURL(blob)
-            downloadBlob(url, filename)
-          })
-        this.setState({ processing: false })
-
-        eventEmitter.emit('log', {
-          id: new Date().getTime(),
-          d: new Date(),
-          subject: 'Data Export',
-          text: `Start Date: ${moment(startDate).format('YYYY-MM-DD')}
-End Date: ${moment(endDate).format('YYYY-MM-DD')}
-Format: ${exportFormat}
-Compression: ${compression}
-Data Element Id Scheme: ${dataElementIdScheme}
-Org. Unit Id Scheme: ${orgUnitIdScheme}
-Category Option Combo Id Scheme: ${categoryOptionComboIdScheme}
-Selected Datasets: ${selectedDataSets.join(', ')}`
-        })
-        eventEmitter.emit('log.open')
-      })*/
     } catch (e) {
       console.log('Data Export error', e, '\n')
     }
