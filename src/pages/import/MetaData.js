@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { api, eventEmitter } from 'services'
+import { eventEmitter } from 'services'
 import { getMimeType, getMetadataAuditsAuditLog } from './helpers'
 import { FormBase } from 'components/FormBase'
 import {

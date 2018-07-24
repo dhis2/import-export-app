@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { api, eventEmitter } from 'services'
+import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import {
   CTX_DEFAULT,
@@ -11,7 +11,7 @@ import {
   TYPE_MORE_OPTIONS
 } from 'components/Form'
 import { DataIcon } from 'components/Icon'
-import {getMimeType} from './helpers'
+import { getMimeType } from './helpers'
 
 export class DataImport extends FormBase {
   static path = '/import/data'
