@@ -6,9 +6,9 @@ export function getMimeType(filename) {
   if (filename.endsWith('json')) {
     return 'application/json'
   } else if (filename.endsWith('xml')) {
-    return 'text/xml'
+    return 'application/xml'
   } else if (filename.endsWith('csv')) {
-    return 'text/csv'
+    return 'application/csv'
   }
 
   return null
