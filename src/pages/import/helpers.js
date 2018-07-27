@@ -1,5 +1,4 @@
 import { api } from 'services'
-import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 
 export function getMimeType(filename) {
@@ -23,7 +22,7 @@ const typeLabel = {
 }
 export async function fetchLog(type) {
   try {
-    let url = `${apiConfig.server}/api/system/tasks/${type}`
+    let url = `system/tasks/${type}`
     if (lastIds[type]) {
       url += `?lastId=${lastIds[type]}`
     }
