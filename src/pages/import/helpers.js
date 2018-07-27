@@ -22,11 +22,11 @@ const typeLabel = {
 }
 export async function fetchLog(type) {
   try {
-    let url = `system/tasks/${type}`
+    let path = `system/tasks/${type}`
     if (lastIds[type]) {
-      url += `?lastId=${lastIds[type]}`
+      path += `?lastId=${lastIds[type]}`
     }
-    const { data } = await api.get(url)
+    const { data } = await api.get(path)
 
     if (data.length > 0) {
       lastIds[type] = data[0]['uid']
