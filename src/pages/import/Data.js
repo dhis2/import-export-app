@@ -271,20 +271,6 @@ export class DataImport extends FormBase {
 
       const contentType = getMimeType(upload.name)
 
-      eventEmitter.emit('log', {
-        id: new Date().getTime(),
-        d: new Date(),
-        subject: 'Data Import',
-        text: `Content-Type: ${contentType}
-Format: ${importFormat}
-Dry Run: ${dryRun}
-Strategy: ${strategy}
-Preheat cache: ${preheatCache}
-Data element ID scheme: ${dataElementIdScheme}
-Org. unit ID scheme: ${orgUnitIdScheme}
-ID scheme: ${idScheme}
-Skip existing record check: ${skipExistingCheck}`
-      })
       eventEmitter.emit('log.open')
       this.setState({ processing: true })
 

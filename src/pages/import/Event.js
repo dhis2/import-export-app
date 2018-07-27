@@ -153,17 +153,6 @@ export class EventImport extends FormBase {
       params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
       params.push('async=true')
 
-      eventEmitter.emit('log', {
-        id: new Date().getTime(),
-        d: new Date(),
-        subject: 'Event Import',
-        text: `Format: ${payloadFormat}
-Dry run: ${dryRun}
-Skip first: true
-Event ID scheme: ${eventIdScheme}
-Org. unit ID scheme: ${orgUnitIdScheme}`
-      })
-
       eventEmitter.emit('log.open')
       this.setState({ processing: true })
 

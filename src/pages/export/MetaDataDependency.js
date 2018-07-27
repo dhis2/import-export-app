@@ -155,15 +155,6 @@ export class MetaDataDependencyExport extends FormBase {
         endpoint += compression
       }
 
-      eventEmitter.emit('log', {
-        id: new Date().getTime(),
-        d: new Date(),
-        subject: 'MetaData Dependency Export',
-        text: `Object Type: ${objectType}
-Object List: ${objectList}
-Format: ${format.substr(1)}
-Compression: ${compression.substr(1)}`
-      })
       eventEmitter.emit('log.open')
 
       const baseURL = api.url('')

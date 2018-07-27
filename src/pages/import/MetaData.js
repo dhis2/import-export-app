@@ -357,24 +357,6 @@ export class MetaDataImport extends FormBase {
       // params.push(`userOverrideMode=NONE`)
       // params.push(`overrideUser=`)
 
-      eventEmitter.emit('log', {
-        id: new Date().getTime(),
-        d: new Date(),
-        subject: 'MetaData Import',
-        text: `Content-Type: ${contentType}
-Import mode: ${importMode}
-Identifier: ${identifier}
-Import report mode: ${importReportMode}
-Preheat mode: ${preheatMode}
-Import strategy: ${importStrategy}
-Atomic mode: ${atomicMode}
-Merge mode: ${mergeMode}
-Flush mode: ${flushMode}
-Skip sharing: ${skipSharing}
-Skip validation: ${skipValidation}
-Async: ${async}
-Inclusion strategy: ${inclusionStrategy}`
-      })
       eventEmitter.emit('log.open')
       this.setState({ processing: true })
 

@@ -114,15 +114,6 @@ export class MetaDataExport extends FormBase {
         params.push('fields=:owner,!user,!publicAccess,!userGroupAccesses')
       }
 
-      eventEmitter.emit('log', {
-        id: new Date().getTime(),
-        d: new Date(),
-        subject: 'MetaData Export',
-        text: `Schemas: ${schemas.map(name => name).join(', ')}
-Format: ${format}
-Compression: ${compression}
-Sharing: ${sharing}`
-      })
       eventEmitter.emit('log.open')
 
       let endpoint = `metadata.${format}`

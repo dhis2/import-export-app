@@ -66,12 +66,6 @@ export class GMLImport extends FormBase {
       formData.set('upload', upload)
       formData.set('dryRun', dryRun)
 
-      eventEmitter.emit('log', {
-        id: new Date().getTime(),
-        d: new Date(),
-        subject: 'GML Import',
-        text: `Dry run: ${dryRun}`
-      })
       eventEmitter.emit('log.open')
 
       this.setState({ processing: true })

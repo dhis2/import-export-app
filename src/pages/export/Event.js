@@ -295,20 +295,6 @@ export class EventExport extends FormBase {
     params.push(`idScheme=${idScheme}`)
     params.push(`format=${format.substr(1)}`)
 
-    eventEmitter.emit('log', {
-      id: new Date().getTime(),
-      d: new Date(),
-      subject: 'Event Export',
-      text: `Start Date: ${moment(startDate).format('YYYY-MM-DD')}
-End Date: ${moment(endDate).format('YYYY-MM-DD')}
-Org Unit: ${orgUnit.join(', ')}
-Inclusion: ${inclusion.toUpperCase()}
-Links: false
-Skip paging: false
-Include deleted: false
-Id Scheme: ${idScheme}
-Format: ${format.substr(1)}`
-    })
     eventEmitter.emit('log.open')
 
     let path = `events${format}`
