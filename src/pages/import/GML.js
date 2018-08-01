@@ -5,6 +5,7 @@ import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
 import { GMLIcon } from 'components/Icon'
+import { fetchLog, getMimeType } from './helpers'
 
 export class GMLImport extends FormBase {
   static path = '/import/gml'
@@ -64,24 +65,32 @@ export class GMLImport extends FormBase {
 
       const formData = new FormData()
       formData.set('upload', upload)
-      formData.set('dryRun', dryRun)
+
+      // const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
+      const contentType = getMimeType(upload.name)
+
+      const params = []
+      params.push(`dryRun=${dryRun}`)
 
       eventEmitter.emit('log.open')
-
       this.setState({ processing: true })
 
-      window
-        .fetch(`${apiConfig.server}/dhis-web-importexport/importGml.action`, {
-          body: formData,
-          cache: 'no-cache',
-          credentials: 'include',
-          method: 'POST',
-          mode: 'cors',
-          redirect: 'follow'
-        })
-        .then(async () => {
+      const xhr = new XMLHttpRequest()
+      xhr.withCredentials = true
+      xhr.open('POST', `${apiConfig.server}/api/gml?${params.join('&')}`, true)
+      xhr.setRequestHeader('Content-Type', contentType)
+      xhr.setRequestHeader(
+        'Content-Disposition',
+        'attachment filename="' + upload.name + '"'
+      )
+      xhr.onreadystatechange = async () => {
+        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
+          console.log(xhr.response)
           this.setState({ processing: false })
-        })
+          await fetchLog('GML_IMPORT')
+        }
+      }
+      xhr.send(upload)
     } catch (e) {
       console.log('GML Import error', e, '\n')
     }
