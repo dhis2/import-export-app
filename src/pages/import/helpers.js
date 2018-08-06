@@ -68,6 +68,6 @@ export async function fetchLog(type) {
       }
     }
   } catch (e) {
-    console.log('Error fetching EVENT_IMPORT')
+    console.log(`Error fetching ${type}`)
   }
 }
