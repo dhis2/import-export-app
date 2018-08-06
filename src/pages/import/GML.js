@@ -77,7 +77,11 @@ export class GMLImport extends FormBase {
 
       const xhr = new XMLHttpRequest()
       xhr.withCredentials = true
-      xhr.open('POST', `${apiConfig.server}/api/gml?${params.join('&')}`, true)
+      xhr.open(
+        'POST',
+        `${apiConfig.server}/api/metadata/gml?${params.join('&')}`,
+        true
+      )
       xhr.setRequestHeader('Content-Type', contentType)
       xhr.setRequestHeader(
         'Content-Disposition',

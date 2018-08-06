@@ -8,6 +8,8 @@ export function getMimeType(filename) {
     return 'application/xml'
   } else if (filename.endsWith('csv')) {
     return 'application/csv'
+  } else if (filename.endsWith('gml')) {
+    return 'application/xml'
   }
 
   return null
