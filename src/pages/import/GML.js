@@ -3,11 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
-import {
-  CTX_DEFAULT,
-  TYPE_FILE,
-  TYPE_RADIO,
-} from 'components/Form'
+import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
 import { GMLIcon } from 'components/Icon'
 import { fetchLog, getMimeType } from './helpers'
 

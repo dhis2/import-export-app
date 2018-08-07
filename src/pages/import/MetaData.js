@@ -38,7 +38,7 @@ export class MetaDataImport extends FormBase {
       context: CTX_CSV_OPTION,
       type: TYPE_SELECT,
       name: 'classKey',
-      label: i18n.t('Class Key')
+      label: i18n.t('Object type')
     },
     {
       context: CTX_DEFAULT,

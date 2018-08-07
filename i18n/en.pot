@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-08-06T12:29:37.838Z\n"
-"PO-Revision-Date: 2018-08-06T12:29:37.838Z\n"
+"POT-Creation-Date: 2018-08-07T18:03:30.849Z\n"
+"PO-Revision-Date: 2018-08-07T18:03:30.849Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -278,9 +278,6 @@ msgid "Event ID Scheme"
 msgstr ""
 
 msgid "Only import of GML data for existing organisation units is supported."
-msgstr ""
-
-msgid "Class Key"
 msgstr ""
 
 msgid "Import Mode"
