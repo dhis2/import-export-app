@@ -1,12 +1,13 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { eventEmitter } from 'services'
+import { api, eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import {
   CTX_DEFAULT,
   TYPE_FILE,
   TYPE_RADIO,
+  TYPE_SELECT,
   CTX_CSV_OPTION,
   CTX_MORE_OPTIONS,
   TYPE_MORE_OPTIONS
@@ -32,6 +33,12 @@ export class MetaDataImport extends FormBase {
       type: TYPE_FILE,
       name: 'upload',
       label: null
+    },
+    {
+      context: CTX_CSV_OPTION,
+      type: TYPE_SELECT,
+      name: 'classKey',
+      label: i18n.t('Class Key')
     },
     {
       context: CTX_DEFAULT,
@@ -117,6 +124,11 @@ export class MetaDataImport extends FormBase {
 
     upload: {
       selected: null
+    },
+
+    classKey: {
+      selected: '',
+      values: []
     },
 
     importMode: {
@@ -303,13 +315,35 @@ export class MetaDataImport extends FormBase {
 
   async componentDidMount() {
     await fetchLog('METADATA_IMPORT')
+    await this.fetch()
+  }
+
+  async fetch() {
+    try {
+      const { data } = await api.get('metadata/csvImportClasses')
+      const values = data.map(v => ({
+        value: v,
+        label: v.split('_').join(' ')
+      }))
+
+      this.setState({
+        classKey: {
+          values,
+          selected: values[0]['value']
+        }
+      })
+    } catch (e) {
+      console.log('fetch csvImportClasses failed')
+      console.log(e)
+    }
   }
 
   onFormUpdate = (name, value) => {
-    if (name === 'importFormat') {
+    if (name === 'upload') {
       const { _context } = this.state
+      const { type } = value
 
-      if (value === 'csv' && _context !== CTX_CSV_OPTION) {
+      if (type.endsWith('/csv') && _context !== CTX_CSV_OPTION) {
         this.changeContext(CTX_CSV_OPTION)
       } else {
         this.changeContext(CTX_DEFAULT)
@@ -332,7 +366,8 @@ export class MetaDataImport extends FormBase {
         skipSharing,
         skipValidation,
         async,
-        inclusionStrategy
+        inclusionStrategy,
+        classKey
       } = this.getFormState()
 
       const formData = new FormData()
@@ -356,6 +391,10 @@ export class MetaDataImport extends FormBase {
       params.push(`inclusionStrategy=${encodeURI(inclusionStrategy)}`)
       // params.push(`userOverrideMode=NONE`)
       // params.push(`overrideUser=`)
+
+      if (contentType.endsWith('/csv')) {
+        params.push(`classKey=${classKey}`)
+      }
 
       eventEmitter.emit('log.open')
       this.setState({ processing: true })
