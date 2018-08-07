@@ -2,6 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import JSZip from 'jszip'
+import { getInstance } from 'd2/lib/d2'
 import { FormBase } from 'components/FormBase'
 import {
   CTX_DEFAULT,
@@ -190,6 +191,33 @@ export class DataExport extends FormBase {
           label: i18n.t('Code')
         }
       ]
+    }
+  }
+
+  async componentDidMount() {
+    await this.fetch()
+  }
+
+  async fetch() {
+    try {
+      const d2 = await getInstance()
+      const dataSets = await d2.models.dataSet
+        .list({ paging: false, fields: 'id,displayName' })
+        .then(collection => collection.toArray())
+        .then(sets =>
+          sets.map(dataSet => ({
+            value: dataSet.id,
+            label: dataSet.displayName
+          }))
+        )
+      this.setState({
+        selectedDataSets: {
+          selected: [],
+          value: dataSets
+        }
+      })
+    } catch (e) {
+      console.log(e)
     }
   }
 
