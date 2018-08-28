@@ -1,5 +1,5 @@
 {
-  "name": "import-export-app",
+  "name": "importexport-app",
   "description": "Import/Export DHIS2 data",
   "version": "0.1.0",
   "private": true,
