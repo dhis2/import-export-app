@@ -7,6 +7,8 @@ import {
   TYPE_RADIO,
   TYPE_DATE,
   TYPE_SELECT,
+  CTX_MORE_OPTIONS,
+  TYPE_MORE_OPTIONS,
   TYPE_ORG_UNIT_SINGLE_SELECT
 } from 'components/Form'
 import { api, eventEmitter } from 'services'
@@ -66,12 +68,6 @@ export class EventExport extends FormBase {
     {
       context: CTX_DEFAULT,
       type: TYPE_RADIO,
-      name: 'inclusion',
-      label: i18n.t('Inclusion')
-    },
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_RADIO,
       name: 'format',
       label: i18n.t('Format')
     },
@@ -80,6 +76,22 @@ export class EventExport extends FormBase {
       type: TYPE_RADIO,
       name: 'compression',
       label: i18n.t('Compression')
+    },
+    {
+      context: CTX_DEFAULT,
+      type: TYPE_MORE_OPTIONS
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'includeDeleted',
+      label: i18n.t('Include deleted')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
+      name: 'inclusion',
+      label: i18n.t('Inclusion')
     }
   ]
 
@@ -170,6 +182,19 @@ export class EventExport extends FormBase {
         {
           value: 'none',
           label: 'Uncompressed'
+        }
+      ]
+    },
+    includeDeleted: {
+      selected: 'false',
+      values: [
+        {
+          value: 'true',
+          label: i18n.t('Yes')
+        },
+        {
+          value: 'false',
+          label: i18n.t('No')
         }
       ]
     }
@@ -263,6 +288,7 @@ export class EventExport extends FormBase {
       idScheme,
       inclusion,
       format,
+      includeDeleted,
       compression
     } = this.getFormState()
 
@@ -291,7 +317,7 @@ export class EventExport extends FormBase {
     params.push(`ouMode=${inclusion.toUpperCase()}`)
     params.push('links=false')
     params.push('skipPaging=true')
-    params.push('includeDeleted=false')
+    params.push(`includeDeleted=${includeDeleted}`)
     params.push(`idScheme=${idScheme}`)
     params.push(`format=${format.substr(1)}`)
 

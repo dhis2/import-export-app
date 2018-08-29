@@ -56,7 +56,6 @@ class App extends React.Component {
   async componentDidMount() {
     try {
       const d2 = await getInstance()
-
       const lang = d2.currentUser.userSettings.settings.keyUiLocale
       // const lang = 'ur'
       changeLocale(lang)

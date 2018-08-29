@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-08-07T18:03:30.849Z\n"
-"PO-Revision-Date: 2018-08-07T18:03:30.849Z\n"
+"POT-Creation-Date: 2018-08-29T10:26:21.503Z\n"
+"PO-Revision-Date: 2018-08-29T10:26:21.503Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -95,6 +95,9 @@ msgstr ""
 msgid "Compression"
 msgstr ""
 
+msgid "Include deleted"
+msgstr ""
+
 msgid "Data element ID scheme"
 msgstr ""
 
@@ -105,6 +108,12 @@ msgid "Category ID scheme"
 msgstr ""
 
 msgid "Zip"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
 msgstr ""
 
 msgid "UID"
@@ -245,12 +254,6 @@ msgid "PDF"
 msgstr ""
 
 msgid "ADX"
-msgstr ""
-
-msgid "No"
-msgstr ""
-
-msgid "Yes"
 msgstr ""
 
 msgid "New and Updates"

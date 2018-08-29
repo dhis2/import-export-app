@@ -78,6 +78,12 @@ export class DataExport extends FormBase {
     {
       context: CTX_MORE_OPTIONS,
       type: TYPE_RADIO,
+      name: 'includeDeleted',
+      label: i18n.t('Include deleted')
+    },
+    {
+      context: CTX_MORE_OPTIONS,
+      type: TYPE_RADIO,
       name: 'dataElementIdScheme',
       label: i18n.t('Data element ID scheme')
     },
@@ -138,6 +144,19 @@ export class DataExport extends FormBase {
         {
           value: 'none',
           label: 'Uncompressed'
+        }
+      ]
+    },
+    includeDeleted: {
+      selected: 'false',
+      values: [
+        {
+          value: 'true',
+          label: i18n.t('Yes')
+        },
+        {
+          value: 'false',
+          label: i18n.t('No')
         }
       ]
     },
@@ -232,7 +251,8 @@ export class DataExport extends FormBase {
         dataElementIdScheme,
         orgUnitIdScheme,
         categoryOptionComboIdScheme,
-        selectedDataSets
+        selectedDataSets,
+        includeDeleted
       } = this.getFormState()
 
       if (orgUnit.length === 0 || selectedDataSets.length === 0) {
@@ -244,6 +264,7 @@ export class DataExport extends FormBase {
       params.push(`endDate=${moment(endDate).format('YYYY-MM-DD')}`)
       params.push(`dataElementIdScheme=${dataElementIdScheme}`)
       params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
+      params.push(`includeDeleted=${includeDeleted}`)
       params.push(`categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`)
 
       orgUnit.forEach(v => {
