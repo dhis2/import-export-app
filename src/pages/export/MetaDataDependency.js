@@ -2,7 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, TYPE_RADIO, TYPE_SELECT } from 'components/Form'
-import { api, eventEmitter } from 'services'
+import { api } from 'services'
 import { createBlob, downloadBlob } from 'helpers'
 import { MetadataDependencyExportIcon } from 'components/Icon'
 
@@ -154,8 +154,6 @@ export class MetaDataDependencyExport extends FormBase {
       if (compression !== 'none') {
         endpoint += compression
       }
-
-      eventEmitter.emit('log.open')
 
       const baseURL = api.url('')
       const url = `${baseURL}${objectType}/${objectList}/${endpoint}?attachment=${endpoint}&format=${format.substr(

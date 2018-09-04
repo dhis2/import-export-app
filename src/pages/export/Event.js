@@ -11,7 +11,7 @@ import {
   TYPE_MORE_OPTIONS,
   TYPE_ORG_UNIT_SINGLE_SELECT
 } from 'components/Form'
-import { api, eventEmitter } from 'services'
+import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
 import { EventIcon } from 'components/Icon'
@@ -320,8 +320,6 @@ export class EventExport extends FormBase {
     params.push(`includeDeleted=${includeDeleted}`)
     params.push(`idScheme=${idScheme}`)
     params.push(`format=${format.substr(1)}`)
-
-    eventEmitter.emit('log.open')
 
     let path = `events${format}`
     if (compression !== 'none') {

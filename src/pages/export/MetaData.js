@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { api, eventEmitter } from 'services'
+import { api } from 'services'
 import { createBlob, downloadBlob } from 'helpers'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, TYPE_RADIO, TYPE_SCHEMAS } from 'components/Form'
@@ -113,8 +113,6 @@ export class MetaDataExport extends FormBase {
       if (sharing !== 'true') {
         params.push('fields=:owner,!user,!publicAccess,!userGroupAccesses')
       }
-
-      eventEmitter.emit('log.open')
 
       let endpoint = `metadata.${format}`
       if (compression !== 'none') {
