@@ -5,7 +5,7 @@ import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
 import { EventIcon } from 'components/Icon'
-import { fetchLog, getMimeType } from './helpers'
+import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class EventImport extends FormBase {
   static path = '/import/event'
@@ -170,7 +170,7 @@ export class EventImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          console.log(xhr.response)
+          emitLogOnFirstResponse(xhr)
           this.setState({ processing: false })
           await fetchLog('EVENT_IMPORT')
         }

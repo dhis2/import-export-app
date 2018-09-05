@@ -11,7 +11,7 @@ import {
   TYPE_MORE_OPTIONS
 } from 'components/Form'
 import { DataIcon } from 'components/Icon'
-import { getMimeType } from './helpers'
+import { emitLogOnFirstResponse, getMimeType } from './helpers'
 import { fetchLog } from './helpers'
 
 export class DataImport extends FormBase {
@@ -288,6 +288,7 @@ export class DataImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
+          emitLogOnFirstResponse(xhr)
           this.setState({ processing: false })
           await fetchLog('DATAVALUE_IMPORT')
         }

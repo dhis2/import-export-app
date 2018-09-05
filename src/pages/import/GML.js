@@ -5,7 +5,7 @@ import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
 import { GMLIcon } from 'components/Icon'
-import { fetchLog, getMimeType } from './helpers'
+import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class GMLImport extends FormBase {
   static path = '/import/gml'
@@ -92,7 +92,7 @@ export class GMLImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          console.log(xhr.response)
+          emitLogOnFirstResponse(xhr)
           this.setState({ processing: false })
           await fetchLog('GML_IMPORT')
         }
