@@ -28,7 +28,6 @@ describe('Logger', () => {
   })
 
   it('Log message contents', () => {
-    expect(wrapper.containsMatchingElement(<div>Subject</div>)).toBe(true)
     expect(wrapper.containsMatchingElement(<div>some message</div>)).toBe(true)
   })
 })

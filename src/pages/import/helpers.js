@@ -16,27 +16,28 @@ export function getMimeType(filename) {
 }
 
 const lastIds = {}
-const typeLabel = {
-  METADATA_IMPORT: 'Metadata Import',
-  DATAVALUE_IMPORT: 'Data Import',
-  EVENT_IMPORT: 'Event Import',
-  GML_IMPORT: 'GML Import'
-}
 
 function emitLog(data, type) {
   for (let i = data.length - 1; i >= 0; i -= 1) {
-    const { category, completed, level, message, time, uid } = data[i]
+    const { category, level, message, time, uid } = data[i]
     eventEmitter.emit('log', {
       id: uid,
       d: new Date(time),
-      subject: typeLabel[type],
-      text: `Completed: ${completed}
-Level: ${level}
-Category: ${category}
-Message:
-${message}`
+      text: `${message}
+${category} - ${level}`
     })
   }
+}
+
+export function emitLogOnFirstResponse(xhr) {
+  const { message, response } = JSON.parse(xhr.responseText)
+  eventEmitter.emit('log', {
+    id: new Date().getTime(),
+    d: new Date(response.created),
+    text: message
+  })
+
+  return response.id
 }
 
 export async function fetchLog(type) {

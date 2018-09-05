@@ -13,7 +13,7 @@ import {
   TYPE_MORE_OPTIONS
 } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
-import { fetchLog, getMimeType } from './helpers'
+import { fetchLog, getMimeType, emitLogOnFirstResponse } from './helpers'
 
 export class MetaDataImport extends FormBase {
   static path = '/import/metadata'
@@ -413,7 +413,7 @@ export class MetaDataImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          console.log(xhr.response)
+          emitLogOnFirstResponse(xhr)
           this.setState({ processing: false })
           await fetchLog('METADATA_IMPORT')
         }

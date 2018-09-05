@@ -45,7 +45,6 @@ function Message({ d, subject, text }) {
     <div className={s.message}>
       <div className={s.date}>{moment(d).format('YYYY-MM-DD HH:mm:ss')}</div>
       <div className={s.contents}>
-        <div className={s.subject}>{subject}</div>
         <div className={s.text}>{text}</div>
       </div>
     </div>
