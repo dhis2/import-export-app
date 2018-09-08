@@ -1,6 +1,13 @@
 import { api } from 'services'
 import { eventEmitter } from 'services'
 
+const CATEGORY_2_LABEL = {
+  METADATA_IMPORT: 'Metadata import',
+  DATAVALUE_IMPORT: 'Data import',
+  GML_IMPORT: 'GML import',
+  EVENT_IMPORT: 'Event import',
+}
+
 export function getMimeType(filename) {
   if (filename.endsWith('json')) {
     return 'application/json'
@@ -23,7 +30,7 @@ function emitLog(data) {
     eventEmitter.emit('log', {
       id: uid,
       d: new Date(time),
-      type: `${category} ${level}`,
+      type: `${level} - ${CATEGORY_2_LABEL[category]}`,
       text: message
     })
   }
@@ -34,7 +41,7 @@ export function emitLogOnFirstResponse(xhr, importType) {
   eventEmitter.emit('log', {
     id: new Date().getTime(),
     d: new Date(response.created),
-    type: importType,
+    type: `INFO - ${CATEGORY_2_LABEL[importType]}`,
     text: message
   })
 
