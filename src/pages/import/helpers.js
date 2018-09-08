@@ -17,23 +17,24 @@ export function getMimeType(filename) {
 
 const lastIds = {}
 
-function emitLog(data, type) {
+function emitLog(data) {
   for (let i = data.length - 1; i >= 0; i -= 1) {
     const { category, level, message, time, uid } = data[i]
     eventEmitter.emit('log', {
       id: uid,
       d: new Date(time),
-      text: `${message}
-${category} - ${level}`
+      type: `${category} ${level}`,
+      text: message
     })
   }
 }
 
-export function emitLogOnFirstResponse(xhr) {
+export function emitLogOnFirstResponse(xhr, importType) {
   const { message, response } = JSON.parse(xhr.responseText)
   eventEmitter.emit('log', {
     id: new Date().getTime(),
     d: new Date(response.created),
+    type: importType,
     text: message
   })
 

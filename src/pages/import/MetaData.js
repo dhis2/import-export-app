@@ -413,7 +413,7 @@ export class MetaDataImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          emitLogOnFirstResponse(xhr)
+          emitLogOnFirstResponse(xhr, 'METADATA_IMPORT')
           this.setState({ processing: false })
           await fetchLog('METADATA_IMPORT')
         }

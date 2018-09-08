@@ -170,7 +170,7 @@ export class EventImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          emitLogOnFirstResponse(xhr)
+          emitLogOnFirstResponse(xhr, 'EVENT_IMPORT')
           this.setState({ processing: false })
           await fetchLog('EVENT_IMPORT')
         }

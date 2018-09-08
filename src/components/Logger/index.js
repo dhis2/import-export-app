@@ -40,10 +40,11 @@ function ArrowDownIcon({ onClick }) {
   )
 }
 
-function Message({ d, subject, text }) {
+function Message({ d, type, text }) {
   return (
     <div className={s.message}>
       <div className={s.date}>{moment(d).format('YYYY-MM-DD HH:mm:ss')}</div>
+      <div className={s.type}>{type}</div>
       <div className={s.contents}>
         <div className={s.text}>{text}</div>
       </div>

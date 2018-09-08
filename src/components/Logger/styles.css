@@ -41,6 +41,7 @@
 }
 
 .messages {
+  padding: 10px 0;
   width: 100%;
   overflow: scroll;
   overflow-x: hidden;
@@ -51,12 +52,17 @@
 .message {
   display: flex;
   flex-direction: row;
-  padding: 0 0 5px 0;
+  padding-top: 5px;
   width: 97%;
+  font-weight: 300;
 }
 .date {
-  font-style: italic;
-  width: 150px;
+  width: 135px;
+  padding-left: 15px;
+}
+.type {
+  width: 170px;
+  padding: 0 15px;
 }
 .contents {
   display: flex;
