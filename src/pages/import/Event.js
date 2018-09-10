@@ -129,7 +129,7 @@ export class EventImport extends FormBase {
   }
 
   async componentDidMount() {
-    await fetchLog('EVENT_IMPORT')
+    await fetchLog('', 'EVENT_IMPORT')
   }
 
   onSubmit = async () => {

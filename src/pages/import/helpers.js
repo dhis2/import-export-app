@@ -74,7 +74,7 @@ export async function fetchLog(jobId, type) {
 
       if (records.filter(item => item.completed).length === 0) {
         setTimeout(() => fetchLog(jobId, type), 2000)
-      } else {
+      } else if (jobId.length > 0) {
         await fetchTaskSummary(jobId, type)
       }
     }

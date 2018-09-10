@@ -238,7 +238,7 @@ export class DataImport extends FormBase {
   }
 
   async componentDidMount() {
-    await fetchLog('DATAVALUE_IMPORT')
+    await fetchLog('', 'DATAVALUE_IMPORT')
   }
 
   onSubmit = () => {

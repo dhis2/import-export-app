@@ -60,7 +60,7 @@ export class GMLImport extends FormBase {
   }
 
   async componentDidMount() {
-    await fetchLog('GML_IMPORT')
+    await fetchLog('', 'GML_IMPORT')
   }
 
   onSubmit = async () => {

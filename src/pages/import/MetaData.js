@@ -314,7 +314,7 @@ export class MetaDataImport extends FormBase {
   }
 
   async componentDidMount() {
-    await fetchLog('METADATA_IMPORT')
+    await fetchLog('', 'METADATA_IMPORT')
     await this.fetch()
   }
 
