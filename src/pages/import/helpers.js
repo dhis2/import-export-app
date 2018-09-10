@@ -87,17 +87,55 @@ export async function fetchTaskSummary(jobId, type) {
   try {
     const path = `system/taskSummaries/${type}/${jobId}.json`
     const { data } = await api.get(path)
-    const {
-      stats: { created, updated, deleted, ignored, total }
-    } = data
 
+    logStats(data.stats, type)
+    logImportCount(data.importCount, type)
+    logConflicts(data.conflicts, type)
+  } catch (e) {
+    console.log(`Task Summaries: Error fetching ${type}`)
+  }
+}
+
+function logStats(stats, type) {
+  if (!stats) {
+    return
+  }
+
+  const { created, updated, deleted, ignored, total } = stats
+  eventEmitter.emit('log', {
+    id: new Date().getTime(),
+    d: new Date(),
+    type: `INFO - ${CATEGORY_2_LABEL[type]}`,
+    text: `Created: ${created}, Updated: ${updated}, Deleted: ${deleted}, Ignored: ${ignored}, Total: ${total}`
+  })
+}
+
+function logImportCount(importCount, type) {
+  if (!importCount) {
+    return
+  }
+
+  const { deleted, ignored, imported, updated } = importCount
+  eventEmitter.emit('log', {
+    id: new Date().getTime(),
+    d: new Date(),
+    type: `INFO - ${CATEGORY_2_LABEL[type]}`,
+    text: `Imported: ${imported}, Updated: ${updated}, Deleted: ${deleted}, Ignored: ${ignored}`
+  })
+}
+
+function logConflicts(conflicts, type) {
+  if (!conflicts) {
+    return;
+  }
+
+  for (let i = 0; i < conflicts.length; i += 1) {
+    const { object, value } = conflicts[i]
     eventEmitter.emit('log', {
       id: new Date().getTime(),
       d: new Date(),
-      type: `INFO - ${CATEGORY_2_LABEL[type]}`,
-      text: `Created: ${created}, Updated: ${updated}, Deleted: ${deleted}, Ignored: ${ignored}, Total: ${total}`
+      type: `CONFLICT - ${object}`,
+      text: value
     })
-  } catch (e) {
-    console.log(`Task Summaries: Error fetching ${type}`)
   }
 }
