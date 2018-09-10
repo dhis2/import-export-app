@@ -92,9 +92,9 @@ export class GMLImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          emitLogOnFirstResponse(xhr, 'GML_IMPORT')
+          const jobId = emitLogOnFirstResponse(xhr, 'GML_IMPORT')
           this.setState({ processing: false })
-          await fetchLog('GML_IMPORT')
+          await fetchLog(jobId, 'GML_IMPORT')
         }
       }
       xhr.send(upload)

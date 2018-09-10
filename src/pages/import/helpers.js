@@ -5,7 +5,7 @@ const CATEGORY_2_LABEL = {
   METADATA_IMPORT: 'Metadata import',
   DATAVALUE_IMPORT: 'Data import',
   GML_IMPORT: 'GML import',
-  EVENT_IMPORT: 'Event import',
+  EVENT_IMPORT: 'Event import'
 }
 
 export function getMimeType(filename) {
@@ -48,7 +48,7 @@ export function emitLogOnFirstResponse(xhr, importType) {
   return response.id
 }
 
-export async function fetchLog(type) {
+export async function fetchLog(jobId, type) {
   try {
     let path = `system/tasks/${type}`
     if (lastIds[type]) {
@@ -62,7 +62,7 @@ export async function fetchLog(type) {
       eventEmitter.emit('log.open')
 
       if (data.filter(item => item.completed).length === 0) {
-        setTimeout(() => fetchLog(type), 2000)
+        setTimeout(() => fetchLog(jobId, type), 2000)
       }
     } else if (typeof data === 'object') {
       let records = null
@@ -73,10 +73,31 @@ export async function fetchLog(type) {
       })
 
       if (records.filter(item => item.completed).length === 0) {
-        setTimeout(() => fetchLog(type), 2000)
+        setTimeout(() => fetchLog(jobId, type), 2000)
+      } else {
+        await fetchTaskSummary(jobId, type)
       }
     }
   } catch (e) {
     console.log(`Error fetching ${type}`)
+  }
+}
+
+export async function fetchTaskSummary(jobId, type) {
+  try {
+    const path = `system/taskSummaries/${type}/${jobId}.json`
+    const { data } = await api.get(path)
+    const {
+      stats: { created, updated, deleted, ignored, total }
+    } = data
+
+    eventEmitter.emit('log', {
+      id: new Date().getTime(),
+      d: new Date(),
+      type: `INFO - ${CATEGORY_2_LABEL[type]}`,
+      text: `Created: ${created}, Updated: ${updated}, Deleted: ${deleted}, Ignored: ${ignored}, Total: ${total}`
+    })
+  } catch (e) {
+    console.log(`Task Summaries: Error fetching ${type}`)
   }
 }

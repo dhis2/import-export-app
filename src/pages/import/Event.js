@@ -170,9 +170,9 @@ export class EventImport extends FormBase {
       )
       xhr.onreadystatechange = async () => {
         if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          emitLogOnFirstResponse(xhr, 'EVENT_IMPORT')
+          const jobId = emitLogOnFirstResponse(xhr, 'EVENT_IMPORT')
           this.setState({ processing: false })
-          await fetchLog('EVENT_IMPORT')
+          await fetchLog(jobId, 'EVENT_IMPORT')
         }
       }
       xhr.send(upload)
