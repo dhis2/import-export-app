@@ -40,10 +40,10 @@ function ArrowDownIcon({ onClick }) {
   )
 }
 
-function Message({ d, type, text }) {
+function Message({ date, type, text }) {
   return (
     <div className={s.message}>
-      <div className={s.date}>{moment(d).format('YYYY-MM-DD HH:mm:ss')}</div>
+      <div className={s.date}>{date}</div>
       <div className={s.type}>{type}</div>
       <div className={s.contents}>
         <div className={s.text}>{text}</div>
@@ -151,7 +151,9 @@ export class Logger extends React.Component {
 
   render() {
     const { open, list } = this.state
-    let lastType = ''
+    let prevType = ''
+    let prevDate = ''
+    let prevDateHH = ''
     return (
       <div id="import-export-logger" className={s.container}>
         <div
@@ -184,10 +186,27 @@ export class Logger extends React.Component {
           }}
         >
           {open &&
-            list.map(props => {
-              const type = props.type === lastType ? '' : props.type
-              lastType = props.type
-              return <Message key={`msg-${props.id}`} {...props} type={type} />
+            list.map(p => {
+              const type = p.type === prevType ? '' : p.type
+              let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
+
+              if (moment(p.d).format('YYYY-MM-DD HH') === prevDateHH) {
+                date = moment(p.d).format('mm:ss')
+              } else if (moment(p.d).format('YYYY-MM-DD') === prevDate) {
+                date = moment(p.d).format('HH:mm:ss')
+              }
+
+              prevType = p.type
+              prevDate = moment(p.d).format('YYYY-MM-DD')
+              prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
+              return (
+                <Message
+                  key={`msg-${p.id}`}
+                  date={date}
+                  type={type}
+                  text={p.text}
+                />
+              )
             })}
         </div>
       </div>

@@ -57,8 +57,8 @@
   font-weight: 400;
 }
 .date {
-  width: 135px;
-  padding-left: 15px;
+  width: 130px;
+  text-align: right;
 }
 .type {
   width: 170px;
