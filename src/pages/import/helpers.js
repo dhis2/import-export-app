@@ -126,7 +126,7 @@ function logImportCount(importCount, type) {
 
 function logConflicts(conflicts, type) {
   if (!conflicts) {
-    return;
+    return
   }
 
   for (let i = 0; i < conflicts.length; i += 1) {
