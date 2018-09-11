@@ -151,6 +151,7 @@ export class Logger extends React.Component {
 
   render() {
     const { open, list } = this.state
+    let lastType = ''
     return (
       <div id="import-export-logger" className={s.container}>
         <div
@@ -183,7 +184,11 @@ export class Logger extends React.Component {
           }}
         >
           {open &&
-            list.map(props => <Message key={`msg-${props.id}`} {...props} />)}
+            list.map(props => {
+              const type = props.type === lastType ? '' : props.type
+              lastType = props.type
+              return <Message key={`msg-${props.id}`} {...props} type={type} />
+            })}
         </div>
       </div>
     )
