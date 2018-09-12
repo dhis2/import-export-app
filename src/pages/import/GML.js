@@ -82,7 +82,7 @@ export class GMLImport extends FormBase {
       xhr.withCredentials = true
       xhr.open(
         'POST',
-        `${apiConfig.server}/api/metadata/gml?${params.join('&')}`,
+        `${apiConfig.server}/api/metadata/gml.json?${params.join('&')}`,
         true
       )
       xhr.setRequestHeader('Content-Type', contentType)

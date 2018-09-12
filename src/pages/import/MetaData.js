@@ -373,7 +373,6 @@ export class MetaDataImport extends FormBase {
       const formData = new FormData()
       formData.set('upload', upload)
 
-      const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
       const contentType = getMimeType(upload.name)
 
       const params = []
@@ -403,7 +402,7 @@ export class MetaDataImport extends FormBase {
       xhr.withCredentials = true
       xhr.open(
         'POST',
-        `${apiConfig.server}/api/metadata.${extension}?${params.join('&')}`,
+        `${apiConfig.server}/api/metadata.json?${params.join('&')}`,
         true
       )
       xhr.setRequestHeader('Content-Type', contentType)

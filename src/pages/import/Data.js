@@ -278,7 +278,7 @@ export class DataImport extends FormBase {
       xhr.withCredentials = true
       xhr.open(
         'POST',
-        `${apiConfig.server}/api/dataValueSets?${params.join('&')}`,
+        `${apiConfig.server}/api/dataValueSets.json?${params.join('&')}`,
         true
       )
       xhr.setRequestHeader('Content-Type', contentType)

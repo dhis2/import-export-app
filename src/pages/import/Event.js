@@ -142,7 +142,6 @@ export class EventImport extends FormBase {
         orgUnitIdScheme
       } = this.getFormState()
 
-      const extension = upload.name.substr(upload.name.lastIndexOf('.') + 1)
       const contentType = getMimeType(upload.name)
 
       const params = []
@@ -160,7 +159,7 @@ export class EventImport extends FormBase {
       xhr.withCredentials = true
       xhr.open(
         'POST',
-        `${apiConfig.server}/api/events.${extension}?${params.join('&')}`,
+        `${apiConfig.server}/api/events.json?${params.join('&')}`,
         true
       )
       xhr.setRequestHeader('Content-Type', contentType)
