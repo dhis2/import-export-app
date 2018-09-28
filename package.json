@@ -87,8 +87,7 @@
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "start": "PORT=3000 node scripts/start.js",
     "build": "npm run localize && npm run manifest && node scripts/build.js && cp ./package.json ./build/package.json",
-    "test": "node scripts/test.js --env=jsdom",
-    "deploy": "deploy-build"
+    "test": "node scripts/test.js --env=jsdom"
   },
   "manifest.webapp": {
     "name": "Import/Export app",
@@ -155,7 +154,6 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "@dhis2/deploy-build": "^1.0.4",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1"
