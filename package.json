@@ -1,5 +1,5 @@
 {
-  "name": "d2-import-export",
+  "name": "importexport-app",
   "description": "Import/Export DHIS2 data",
   "version": "0.1.0",
   "private": true,
@@ -86,7 +86,7 @@
     "prebuild": "rm -rf build && mkdir build && npm run manifest",
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "start": "PORT=3000 node scripts/start.js",
-    "build": "npm run localize && npm run manifest && node scripts/build.js",
+    "build": "npm run localize && npm run manifest && node scripts/build.js && cp ./package.json ./build/package.json",
     "test": "node scripts/test.js --env=jsdom"
   },
   "manifest.webapp": {
