@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-19T09:02:38.293Z\n"
-"PO-Revision-Date: 2018-06-19T09:02:38.293Z\n"
+"POT-Creation-Date: 2018-10-09T08:40:30.188Z\n"
+"PO-Revision-Date: 2018-10-09T08:40:30.188Z\n"
 
 msgid "Metadata Import"
 msgstr "میٹا ڈیٹا اِیمپورٹ"
@@ -338,3 +338,9 @@ msgstr "غلط ریفرنسیز کی اجازت دو"
 
 msgid "Deny invalid references"
 msgstr "غلط ریفرنسیز کا انکار کرو"
+
+msgid "Commit"
+msgstr "کمیٹ"
+
+msgid "CODE"
+msgstr "کوڈ"
