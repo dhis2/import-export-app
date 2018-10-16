@@ -1,37 +1,37 @@
 form .formControl {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 form .formLabel {
-  user-select: none;
-  margin-bottom: 5px;
-  color: #000;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
+    user-select: none;
+    margin-bottom: 5px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .select {
-  width: auto !important;
-  height: auto !important;
+    width: auto !important;
+    height: auto !important;
 }
 
 .select div {
-  height: auto !important;
-  line-height: inherit !important;
-  padding: 0 !important;
+    height: auto !important;
+    line-height: inherit !important;
+    padding: 0 !important;
 }
 
 .select button {
-  padding: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  right: -26px !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    right: -26px !important;
 }
 
 .menuItem {
 }
 
 .select > div > div:nth-child(1) > div:nth-child(2) {
-  top: 0 !important;
+    top: 0 !important;
 }

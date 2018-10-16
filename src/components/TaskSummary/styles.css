@@ -1,0 +1,113 @@
+.container {
+    cursor: default;
+    margin: 60px auto 100px auto;
+    width: 70%;
+    background-color: #fff;
+    box-shadow: 0 0 3px 0 #999;
+    border-radius: 3px;
+}
+
+.head {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 34px;
+    padding: 8px 15px 3px 15px;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #e9ecef;
+}
+.title {
+    margin-bottom: 3px;
+}
+
+.content {
+    padding: 10px 0 40px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-top: 20px;
+    user-select: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.table {
+    margin-top: 10px;
+}
+.table thead td {
+    user-select: none;
+    padding: 0 0 3px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+.table tbody td {
+    font-size: 13px;
+}
+
+.table.totals td {
+    width: 75px;
+}
+
+.table.typeCount tr > td:first-of-type {
+    width: 300px;
+}
+.table.typeCount td {
+    width: 75px;
+}
+
+.table.paginatedTable {
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination .nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 15px;
+    font-size: 13px;
+}
+.action {
+    user-select: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.action:first-of-type {
+    margin-left: 0;
+}
+.action:last-of-type {
+    margin-right: 0;
+}
+
+.pagination .pages {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.pages .page {
+    cursor: pointer;
+    margin-right: 5px;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+.page.current {
+    color: #fff;
+    background-color: #000;
+}

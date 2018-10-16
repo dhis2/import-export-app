@@ -1,65 +1,65 @@
 .container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .container > div:nth-child(1) > div {
-  margin-right: 15px;
+    margin-right: 15px;
 }
 form .formControl {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  height: 1100px;
-  flex-wrap: wrap;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 1100px;
+    flex-wrap: wrap;
 }
 
 form .formLabel {
-  margin-bottom: 5px;
-  width: 100%;
-  user-select: none;
-  color: #000;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
+    margin-bottom: 5px;
+    width: 100%;
+    user-select: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .group {
-  width: 30%;
-  margin-bottom: 10px;
+    width: 30%;
+    margin-bottom: 10px;
 }
 
 .group label {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 .group .schema {
-  margin-top: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .group .schema label {
-  height: 24px;
-  width: 33%;
-  margin-right: 0;
-  align-items: flex-start;
-  white-space: nowrap;
+    height: 24px;
+    width: 33%;
+    margin-right: 0;
+    align-items: flex-start;
+    white-space: nowrap;
 }
 .group .schema > div {
-  width: auto;
-  font-size: 14px;
-  align-items: flex-start;
-  line-height: inherit;
+    width: auto;
+    font-size: 14px;
+    align-items: flex-start;
+    line-height: inherit;
 }
 
 .group .schema > div label {
-  margin-left: 4px;
+    margin-left: 4px;
 }
 
 .controls {
-  display: flex;
-  flex-direction: row;
-  margin: 15px 0;
-  width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+    width: 100%;
 }
