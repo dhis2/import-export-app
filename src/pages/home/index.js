@@ -26,7 +26,7 @@ const Item = ({ path, title, description, menuIcon, onClick }) => (
 )
 
 @withRouter
-export class Home extends React.Component {
+class Home extends React.Component {
     static path = '/'
 
     onClick = path => this.props.history.push(path)
@@ -130,3 +130,5 @@ export class Home extends React.Component {
         )
     }
 }
+
+export { Home }
