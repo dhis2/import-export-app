@@ -1,7 +1,7 @@
 {
   "name": "importexport-app",
   "description": "Import/Export DHIS2 data",
-  "version": "0.1.0",
+  "version": "30.0.0",
   "private": true,
   "homepage": ".",
   "dependencies": {
