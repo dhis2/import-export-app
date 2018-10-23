@@ -86,7 +86,7 @@
     "prebuild": "rm -rf build && mkdir build && npm run manifest",
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "start": "PORT=3000 node scripts/start.js",
-    "build": "npm run localize && npm run manifest && node scripts/build.js && cp ./package.json ./build/package.json",
+    "build": "npm run localize && npm run manifest && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "manifest.webapp": {
