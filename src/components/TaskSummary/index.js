@@ -2,10 +2,13 @@ import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
 
 import { eventEmitter } from 'services'
+import { Loading } from 'components'
 import { Totals, TypeStats, Messages } from './helpers'
 import s from './styles.css'
 
 const initialState = {
+    loading: false,
+
     stats: {
         created: 0,
         deleted: 0,
@@ -29,16 +32,25 @@ export class TaskSummary extends React.Component {
     }
 
     componentDidMount() {
+        eventEmitter.on('summary.loading', this.onLoading)
+        eventEmitter.on('summary.loaded', this.onLoaded)
+
         eventEmitter.on('summary.clear', this.onClear)
         eventEmitter.on('summary.totals', this.onTotals)
         eventEmitter.on('summary.typeReports', this.onTypeReports)
     }
 
     componentWillUnmount() {
+        eventEmitter.off('summary.loading', this.onLoading)
+        eventEmitter.off('summary.loaded', this.onLoaded)
+
         eventEmitter.off('summary.clear', this.onClear)
         eventEmitter.off('summary.totals', this.onTotals)
         eventEmitter.off('summary.typeReports', this.onTypeReports)
     }
+
+    onLoaded = () => this.setState({ loading: false })
+    onLoading = () => this.setState({ loading: true })
 
     onClear = () => this.setState({ ...initialState })
 
@@ -76,6 +88,10 @@ export class TaskSummary extends React.Component {
     }
 
     render() {
+        if (this.state.loading) {
+            return <Loading />
+        }
+
         const { stats, typeStats, messages } = this.state
         if (
             stats.total === 0 &&

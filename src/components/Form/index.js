@@ -185,6 +185,8 @@ export class Form extends React.Component {
 
         return (
             <div className={s.wrapper}>
+                <TaskSummary />
+
                 <form
                     style={style}
                     className={cx(className, s.form)}
@@ -208,8 +210,6 @@ export class Form extends React.Component {
                         )}
                     </div>
                 </form>
-
-                <TaskSummary />
             </div>
         )
     }

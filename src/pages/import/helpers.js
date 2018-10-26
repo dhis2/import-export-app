@@ -73,7 +73,7 @@ export async function fetchLog(jobId, type) {
 
             if (records.filter(item => item.completed).length === 0) {
                 setTimeout(() => fetchLog(jobId, type), 2000)
-            } else if (jobId.length > 0) {
+            } else {
                 await fetchTaskSummary(jobId, type)
             }
         }
@@ -95,6 +95,8 @@ export async function fetchTaskSummary(jobId, type) {
             eventEmitter.emit('summary.totals', data.stats)
             eventEmitter.emit('summary.typeReports', data.typeReports)
         }
+
+        eventEmitter.emit('summary.loaded')
     } catch (e) {
         console.log(`Task Summaries: Error fetching ${type}`)
         console.log(e)
