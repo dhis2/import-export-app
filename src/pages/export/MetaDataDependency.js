@@ -156,16 +156,17 @@ export class MetaDataDependencyExport extends FormBase {
             }
 
             const baseURL = api.url('')
-            const url = `${baseURL}${objectType}/${objectList}/${endpoint}?attachment=${endpoint}&format=${format.substr(
-                1
-            )}`
+            const params = `attachment=${endpoint}&format=${format.substr(1)}`
+            const urlPath = `${objectType}/${objectList}/${endpoint}?${params}`
+
+            const url = `${baseURL}${urlPath}`
             if (compression !== 'none') {
                 window.location = url
                 return
             }
 
             this.setState({ processing: true }, async () => {
-                const { data } = await api.get(url)
+                const { data } = await api.get(urlPath)
                 let contents = data
                 if (format === '.json') {
                     contents = JSON.stringify(data)
