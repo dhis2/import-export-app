@@ -92,6 +92,10 @@ export default class PaginatedTable extends React.Component {
     onClick = start => this.setState({ start })
 
     render() {
+        if (this.props.list.length === 0) {
+            return null
+        }
+
         const { fields } = this.props
 
         return (

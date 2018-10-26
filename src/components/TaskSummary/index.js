@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
 
 import { eventEmitter } from 'services'
@@ -51,23 +51,25 @@ export class TaskSummary extends React.Component {
         Object.keys(report).forEach(i => {
             const { klass, objectReports, stats } = report[i]
 
-            typeStats.push({
-                ...stats,
-                type: getClassName(klass),
-            })
+            typeStats &&
+                typeStats.push({
+                    ...stats,
+                    type: getClassName(klass),
+                })
 
-            objectReports.forEach(r => {
-                const { uid, errorReports } = r
+            objectReports &&
+                objectReports.forEach(r => {
+                    const { uid, errorReports } = r
 
-                errorReports.forEach(e => {
-                    messages.push({
-                        uid,
-                        type: getClassName(e.mainKlass),
-                        property: e.errorProperty,
-                        message: e.message,
+                    errorReports.forEach(e => {
+                        messages.push({
+                            uid,
+                            type: getClassName(e.mainKlass),
+                            property: e.errorProperty,
+                            message: e.message,
+                        })
                     })
                 })
-            })
         })
 
         this.setState({ typeStats, messages })
@@ -97,10 +99,14 @@ export class TaskSummary extends React.Component {
                     </div>
                     <TypeStats list={this.state.typeStats} />
 
-                    <div className={`${s.label} ${s.marginTop}`}>
-                        {i18n.t('Messages')}
-                    </div>
-                    <Messages list={this.state.messages} />
+                    {this.state.messages.length > 0 && (
+                        <Fragment>
+                            <div className={`${s.label} ${s.marginTop}`}>
+                                {i18n.t('Messages')}
+                            </div>
+                            <Messages list={this.state.messages} />
+                        </Fragment>
+                    )}
                 </div>
             </div>
         )
