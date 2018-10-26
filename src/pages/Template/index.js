@@ -12,7 +12,7 @@ export default class Template extends React.Component {
     render() {
         return (
             <div className={s.container}>
-                <HeaderBar d2={this.context.d2} />
+                {/*<HeaderBar d2={this.context.d2} />*/}
                 <SidePanel />
                 <div id="import-export-app-content" className={s.content}>
                     {this.props.children}

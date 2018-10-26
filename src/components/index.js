@@ -1,4 +1,5 @@
 export * from './Loading'
+export * from './Error'
 export * from './SidePanel'
 export * from './Tree'
 export * from './Form'

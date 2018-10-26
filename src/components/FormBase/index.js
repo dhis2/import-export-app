@@ -1,6 +1,6 @@
 import React from 'react'
 import { getFieldState, getFieldValue } from 'helpers'
-import { Form, Loading } from 'components'
+import { Form, Loading, Error } from 'components'
 
 import s from './styles.css'
 
@@ -27,7 +27,21 @@ export class FormBase extends React.Component {
         return values
     }
 
+    onClearError = () => this.setState({ error: null })
+    assertOnError = evt => {
+        try {
+            const { message: error } = JSON.parse(evt.target.response)
+            this.setState({ error, processing: false })
+        } catch (err) {}
+    }
+
     render() {
+        if (this.state.error) {
+            return (
+                <Error message={this.state.error} onClear={this.onClearError} />
+            )
+        }
+
         if (this.state.processing) {
             return <Loading />
         }

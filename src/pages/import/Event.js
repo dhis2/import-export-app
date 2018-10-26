@@ -166,16 +166,16 @@ export class EventImport extends FormBase {
                 'Content-Disposition',
                 'attachment filename="' + upload.name + '"'
             )
-            xhr.onreadystatechange = async () => {
-                if (
-                    xhr.readyState === 4 &&
-                    Math.floor(xhr.status / 100) === 2
-                ) {
+            xhr.onreadystatechange = async e => {
+                const status = Math.floor(xhr.status / 100)
+                if (xhr.readyState === 4 && status === 2) {
                     eventEmitter.emit('summary.clear')
 
                     const jobId = emitLogOnFirstResponse(xhr, 'EVENT_IMPORT')
                     this.setState({ processing: false })
                     await fetchLog(jobId, 'EVENT_IMPORT')
+                } else if ([3, 4, 5].includes(status)) {
+                    this.assertOnError(e)
                 }
             }
             xhr.send(upload)
