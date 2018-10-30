@@ -2,6 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import { RaisedButton } from 'material-ui'
 import { FormLabel, FormControl } from './material-ui'
+import { TaskSummary } from '../TaskSummary'
 import s from './styles.css'
 
 import File from './File'
@@ -184,6 +185,8 @@ export class Form extends React.Component {
 
         return (
             <div className={s.wrapper}>
+                <TaskSummary />
+
                 <form
                     style={style}
                     className={cx(className, s.form)}
