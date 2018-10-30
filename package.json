@@ -8,7 +8,6 @@
         "@dhis2/d2-i18n": "^1.0.3",
         "@dhis2/d2-i18n-extract": "^1.0.6",
         "@dhis2/d2-i18n-generate": "^1.0.18",
-        "@dhis2/d2-ui-group-editor": "^1.0.4",
         "@dhis2/d2-ui-header-bar": "^1.0.11",
         "autoprefixer": "7.1.6",
         "axios": "^0.18.0",
@@ -112,12 +111,8 @@
         }
     },
     "jest": {
-        "collectCoverageFrom": [
-            "src/**/*.{js,jsx,mjs}"
-        ],
-        "setupFiles": [
-            "<rootDir>/config/polyfills.js"
-        ],
+        "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+        "setupFiles": ["<rootDir>/config/polyfills.js"],
         "setupTestFrameworkScriptFile": "<rootDir>/config/setupTests.js",
         "testMatch": [
             "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -147,12 +142,8 @@
         ]
     },
     "babel": {
-        "presets": [
-            "react-app"
-        ],
-        "plugins": [
-            "transform-decorators-legacy"
-        ]
+        "presets": ["react-app"],
+        "plugins": ["transform-decorators-legacy"]
     },
     "eslintConfig": {
         "extends": "react-app"
