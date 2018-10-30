@@ -17,10 +17,10 @@ import { apiConfig } from 'config'
 import { init } from 'd2/lib/d2'
 const { server, version } = apiConfig
 init({
-  baseUrl: `${server}/api/${version}`,
-  headers: {
-    'X-Requested-With': 'XMLHttpRequest'
-  }
+    baseUrl: `${server}/api/${version}`,
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+    },
 })
 
 lightBaseTheme.palette.primary1Color = '#4c708c'
@@ -31,12 +31,12 @@ lightBaseTheme.palette.pickerHeaderColor = '#4c708c'
 const muiTheme = getMuiTheme(lightBaseTheme)
 
 ReactDOM.render(
-  <Provider store={store}>
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </MuiThemeProvider>
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <HashRouter>
+                <App />
+            </HashRouter>
+        </MuiThemeProvider>
+    </Provider>,
+    document.getElementById('root')
 )

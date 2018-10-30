@@ -5,20 +5,20 @@ import { SidePanel, Logger } from 'components'
 import s from './styles.css'
 
 export default class Template extends React.Component {
-  static contextTypes = {
-    d2: PropTypes.object
-  }
+    static contextTypes = {
+        d2: PropTypes.object,
+    }
 
-  render() {
-    return (
-      <div className={s.container}>
-        <HeaderBar d2={this.context.d2} />
-        <SidePanel />
-        <div id="import-export-app-content" className={s.content}>
-          {this.props.children}
-        </div>
-        <Logger />
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className={s.container}>
+                <HeaderBar d2={this.context.d2} />
+                <SidePanel />
+                <div id="import-export-app-content" className={s.content}>
+                    {this.props.children}
+                </div>
+                <Logger />
+            </div>
+        )
+    }
 }

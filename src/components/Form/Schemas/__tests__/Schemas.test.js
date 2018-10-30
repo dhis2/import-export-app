@@ -10,13 +10,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 const muiTheme = getMuiTheme(lightBaseTheme)
 
 describe('Schemas', () => {
-  it('empty render', () => {
-    const wrapper = mount(
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <Schemas name="schema" label="Schema" />
-      </MuiThemeProvider>
-    )
+    it('empty render', () => {
+        const wrapper = mount(
+            <MuiThemeProvider muiTheme={muiTheme}>
+                <Schemas name="schema" label="Schema" />
+            </MuiThemeProvider>
+        )
 
-    expect(wrapper.containsAllMatchingElements([<Loading />])).toEqual(true)
-  })
+        expect(wrapper.containsAllMatchingElements([<Loading />])).toEqual(true)
+    })
 })

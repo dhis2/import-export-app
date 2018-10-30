@@ -8,175 +8,178 @@ import { EventIcon } from 'components/Icon'
 import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class EventImport extends FormBase {
-  static path = '/import/event'
+    static path = '/import/event'
 
-  static order = 3
-  static title = i18n.t('Event Import')
-  static menuIcon = <EventIcon />
-  icon = <EventIcon />
+    static order = 3
+    static title = i18n.t('Event Import')
+    static menuIcon = <EventIcon />
+    icon = <EventIcon />
 
-  formWidth = 600
-  formTitle = i18n.t('Event Import')
-  submitLabel = i18n.t('Import')
+    formWidth = 600
+    formTitle = i18n.t('Event Import')
+    submitLabel = i18n.t('Import')
 
-  fields = [
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_FILE,
-      name: 'upload',
-      label: null
-    },
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_RADIO,
-      name: 'payloadFormat',
-      label: i18n.t('Format')
-    },
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_RADIO,
-      name: 'dryRun',
-      label: i18n.t('Dry run')
-    },
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_RADIO,
-      name: 'eventIdScheme',
-      label: i18n.t('Event ID Scheme')
-    },
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_RADIO,
-      name: 'orgUnitIdScheme',
-      label: i18n.t('Org unit ID scheme')
+    fields = [
+        {
+            context: CTX_DEFAULT,
+            type: TYPE_FILE,
+            name: 'upload',
+            label: null,
+        },
+        {
+            context: CTX_DEFAULT,
+            type: TYPE_RADIO,
+            name: 'payloadFormat',
+            label: i18n.t('Format'),
+        },
+        {
+            context: CTX_DEFAULT,
+            type: TYPE_RADIO,
+            name: 'dryRun',
+            label: i18n.t('Dry run'),
+        },
+        {
+            context: CTX_DEFAULT,
+            type: TYPE_RADIO,
+            name: 'eventIdScheme',
+            label: i18n.t('Event ID Scheme'),
+        },
+        {
+            context: CTX_DEFAULT,
+            type: TYPE_RADIO,
+            name: 'orgUnitIdScheme',
+            label: i18n.t('Org unit ID scheme'),
+        },
+    ]
+
+    state = {
+        processing: false,
+
+        upload: {
+            selected: null,
+        },
+
+        payloadFormat: {
+            selected: 'json',
+            values: [
+                {
+                    value: 'json',
+                    label: i18n.t('JSON'),
+                },
+                {
+                    value: 'xml',
+                    label: i18n.t('XML'),
+                },
+                {
+                    value: 'csv',
+                    label: i18n.t('CSV'),
+                },
+            ],
+        },
+
+        dryRun: {
+            selected: 'false',
+            values: [
+                {
+                    value: 'false',
+                    label: i18n.t('No'),
+                },
+                {
+                    value: 'true',
+                    label: i18n.t('Yes'),
+                },
+            ],
+        },
+
+        eventIdScheme: {
+            selected: 'UID',
+            values: [
+                {
+                    value: 'UID',
+                    label: i18n.t('UID'),
+                },
+                {
+                    value: 'CODE',
+                    label: i18n.t('Code'),
+                },
+            ],
+        },
+
+        orgUnitIdScheme: {
+            selected: 'UID',
+            values: [
+                {
+                    value: 'UID',
+                    label: i18n.t('UID'),
+                },
+                {
+                    value: 'CODE',
+                    label: i18n.t('Code'),
+                },
+                {
+                    value: 'NAME',
+                    label: i18n.t('Name'),
+                },
+                {
+                    value: 'ATTRIBUTE:UKNKz1H10EE',
+                    label: i18n.t('HR identifier'),
+                },
+            ],
+        },
     }
-  ]
 
-  state = {
-    processing: false,
-
-    upload: {
-      selected: null
-    },
-
-    payloadFormat: {
-      selected: 'json',
-      values: [
-        {
-          value: 'json',
-          label: i18n.t('JSON')
-        },
-        {
-          value: 'xml',
-          label: i18n.t('XML')
-        },
-        {
-          value: 'csv',
-          label: i18n.t('CSV')
-        }
-      ]
-    },
-
-    dryRun: {
-      selected: 'false',
-      values: [
-        {
-          value: 'false',
-          label: i18n.t('No')
-        },
-        {
-          value: 'true',
-          label: i18n.t('Yes')
-        }
-      ]
-    },
-
-    eventIdScheme: {
-      selected: 'UID',
-      values: [
-        {
-          value: 'UID',
-          label: i18n.t('UID')
-        },
-        {
-          value: 'CODE',
-          label: i18n.t('Code')
-        }
-      ]
-    },
-
-    orgUnitIdScheme: {
-      selected: 'UID',
-      values: [
-        {
-          value: 'UID',
-          label: i18n.t('UID')
-        },
-        {
-          value: 'CODE',
-          label: i18n.t('Code')
-        },
-        {
-          value: 'NAME',
-          label: i18n.t('Name')
-        },
-        {
-          value: 'ATTRIBUTE:UKNKz1H10EE',
-          label: i18n.t('HR identifier')
-        }
-      ]
+    async componentDidMount() {
+        await fetchLog('', 'EVENT_IMPORT')
     }
-  }
 
-  async componentDidMount() {
-    await fetchLog('', 'EVENT_IMPORT')
-  }
+    onSubmit = async () => {
+        try {
+            const {
+                upload,
+                payloadFormat,
+                dryRun,
+                eventIdScheme,
+                orgUnitIdScheme,
+            } = this.getFormState()
 
-  onSubmit = async () => {
-    try {
-      const {
-        upload,
-        payloadFormat,
-        dryRun,
-        eventIdScheme,
-        orgUnitIdScheme
-      } = this.getFormState()
+            const contentType = getMimeType(upload.name)
 
-      const contentType = getMimeType(upload.name)
+            const params = []
+            params.push(`payloadFormat=${payloadFormat}`)
+            params.push(`dryRun=${dryRun}`)
+            params.push('skipFirst=true')
+            params.push(`eventIdScheme=${eventIdScheme}`)
+            params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
+            params.push('async=true')
 
-      const params = []
-      params.push(`payloadFormat=${payloadFormat}`)
-      params.push(`dryRun=${dryRun}`)
-      params.push('skipFirst=true')
-      params.push(`eventIdScheme=${eventIdScheme}`)
-      params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
-      params.push('async=true')
+            eventEmitter.emit('log.open')
+            this.setState({ processing: true })
 
-      eventEmitter.emit('log.open')
-      this.setState({ processing: true })
-
-      const xhr = new XMLHttpRequest()
-      xhr.withCredentials = true
-      xhr.open(
-        'POST',
-        `${apiConfig.server}/api/events.json?${params.join('&')}`,
-        true
-      )
-      xhr.setRequestHeader('Content-Type', contentType)
-      xhr.setRequestHeader(
-        'Content-Disposition',
-        'attachment filename="' + upload.name + '"'
-      )
-      xhr.onreadystatechange = async () => {
-        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          const jobId = emitLogOnFirstResponse(xhr, 'EVENT_IMPORT')
-          this.setState({ processing: false })
-          await fetchLog(jobId, 'EVENT_IMPORT')
+            const xhr = new XMLHttpRequest()
+            xhr.withCredentials = true
+            xhr.open(
+                'POST',
+                `${apiConfig.server}/api/events.json?${params.join('&')}`,
+                true
+            )
+            xhr.setRequestHeader('Content-Type', contentType)
+            xhr.setRequestHeader(
+                'Content-Disposition',
+                'attachment filename="' + upload.name + '"'
+            )
+            xhr.onreadystatechange = async () => {
+                if (
+                    xhr.readyState === 4 &&
+                    Math.floor(xhr.status / 100) === 2
+                ) {
+                    const jobId = emitLogOnFirstResponse(xhr, 'EVENT_IMPORT')
+                    this.setState({ processing: false })
+                    await fetchLog(jobId, 'EVENT_IMPORT')
+                }
+            }
+            xhr.send(upload)
+        } catch (e) {
+            console.log('Event Import error', e, '\n')
         }
-      }
-      xhr.send(upload)
-    } catch (e) {
-      console.log('Event Import error', e, '\n')
     }
-  }
 }

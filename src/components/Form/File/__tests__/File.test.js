@@ -9,12 +9,12 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 const muiTheme = getMuiTheme(lightBaseTheme)
 
 describe('File', () => {
-  it('render', () => {
-    const wrapper = mount(
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <File name="test" label="Test File" />
-      </MuiThemeProvider>
-    )
-    expect(wrapper.find('input').length === 1).toEqual(true)
-  })
+    it('render', () => {
+        const wrapper = mount(
+            <MuiThemeProvider muiTheme={muiTheme}>
+                <File name="test" label="Test File" />
+            </MuiThemeProvider>
+        )
+        expect(wrapper.find('input').length === 1).toEqual(true)
+    })
 })

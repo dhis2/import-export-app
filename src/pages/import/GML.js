@@ -8,98 +8,101 @@ import { GMLIcon } from 'components/Icon'
 import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class GMLImport extends FormBase {
-  static path = '/import/gml'
+    static path = '/import/gml'
 
-  static order = 4
-  static title = i18n.t('GML Import')
-  static menuIcon = <GMLIcon />
-  icon = <GMLIcon />
+    static order = 4
+    static title = i18n.t('GML Import')
+    static menuIcon = <GMLIcon />
+    icon = <GMLIcon />
 
-  formWidth = 600
-  formTitle = i18n.t('GML Import')
-  formDescription = i18n.t(
-    'Only import of GML data for existing organisation units is supported.'
-  )
-  submitLabel = i18n.t('Import')
+    formWidth = 600
+    formTitle = i18n.t('GML Import')
+    formDescription = i18n.t(
+        'Only import of GML data for existing organisation units is supported.'
+    )
+    submitLabel = i18n.t('Import')
 
-  fields = [
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_FILE,
-      name: 'upload',
-      label: null
-    },
-    {
-      context: CTX_DEFAULT,
-      type: TYPE_RADIO,
-      name: 'dryRun',
-      label: i18n.t('Dry run')
-    }
-  ]
-
-  state = {
-    processing: false,
-
-    upload: {
-      selected: null
-    },
-
-    dryRun: {
-      selected: 'false',
-      values: [
+    fields = [
         {
-          value: 'false',
-          label: i18n.t('No')
+            context: CTX_DEFAULT,
+            type: TYPE_FILE,
+            name: 'upload',
+            label: null,
         },
         {
-          value: 'true',
-          label: i18n.t('Yes')
-        }
-      ]
+            context: CTX_DEFAULT,
+            type: TYPE_RADIO,
+            name: 'dryRun',
+            label: i18n.t('Dry run'),
+        },
+    ]
+
+    state = {
+        processing: false,
+
+        upload: {
+            selected: null,
+        },
+
+        dryRun: {
+            selected: 'false',
+            values: [
+                {
+                    value: 'false',
+                    label: i18n.t('No'),
+                },
+                {
+                    value: 'true',
+                    label: i18n.t('Yes'),
+                },
+            ],
+        },
     }
-  }
 
-  async componentDidMount() {
-    await fetchLog('', 'GML_IMPORT')
-  }
-
-  onSubmit = async () => {
-    try {
-      const { upload, dryRun } = this.getFormState()
-
-      const formData = new FormData()
-      formData.set('upload', upload)
-
-      const contentType = getMimeType(upload.name)
-
-      const params = []
-      params.push(`dryRun=${dryRun}`)
-
-      eventEmitter.emit('log.open')
-      this.setState({ processing: true })
-
-      const xhr = new XMLHttpRequest()
-      xhr.withCredentials = true
-      xhr.open(
-        'POST',
-        `${apiConfig.server}/api/metadata/gml.json?${params.join('&')}`,
-        true
-      )
-      xhr.setRequestHeader('Content-Type', contentType)
-      xhr.setRequestHeader(
-        'Content-Disposition',
-        'attachment filename="' + upload.name + '"'
-      )
-      xhr.onreadystatechange = async () => {
-        if (xhr.readyState === 4 && Math.floor(xhr.status / 100) === 2) {
-          const jobId = emitLogOnFirstResponse(xhr, 'GML_IMPORT')
-          this.setState({ processing: false })
-          await fetchLog(jobId, 'GML_IMPORT')
-        }
-      }
-      xhr.send(upload)
-    } catch (e) {
-      console.log('GML Import error', e, '\n')
+    async componentDidMount() {
+        await fetchLog('', 'GML_IMPORT')
     }
-  }
+
+    onSubmit = async () => {
+        try {
+            const { upload, dryRun } = this.getFormState()
+
+            const formData = new FormData()
+            formData.set('upload', upload)
+
+            const contentType = getMimeType(upload.name)
+
+            const params = []
+            params.push(`dryRun=${dryRun}`)
+
+            eventEmitter.emit('log.open')
+            this.setState({ processing: true })
+
+            const xhr = new XMLHttpRequest()
+            xhr.withCredentials = true
+            xhr.open(
+                'POST',
+                `${apiConfig.server}/api/metadata/gml.json?${params.join('&')}`,
+                true
+            )
+            xhr.setRequestHeader('Content-Type', contentType)
+            xhr.setRequestHeader(
+                'Content-Disposition',
+                'attachment filename="' + upload.name + '"'
+            )
+            xhr.onreadystatechange = async () => {
+                if (
+                    xhr.readyState === 4 &&
+                    Math.floor(xhr.status / 100) === 2
+                ) {
+                    const jobId = emitLogOnFirstResponse(xhr, 'GML_IMPORT')
+                    this.setState({ processing: false })
+                    await fetchLog(jobId, 'GML_IMPORT')
+                }
+            }
+            xhr.send(upload)
+        } catch (e) {
+            console.log('GML Import error', e, '\n')
+        }
+    }
 }

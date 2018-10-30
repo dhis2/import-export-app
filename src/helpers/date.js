@@ -1,3 +1,3 @@
 export function today() {
-  return new Date()
+    return new Date()
 }

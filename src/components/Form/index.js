@@ -28,180 +28,186 @@ export const CTX_MORE_OPTIONS = 'ctx/MORE_OPTIONS'
 export const CTX_CSV_OPTION = 'ctx/CSV_OPTION'
 
 export class Form extends React.Component {
-  fields() {
-    const { fields, fieldValues } = this.props
-    const { _context: context } = fieldValues
+    fields() {
+        const { fields, fieldValues } = this.props
+        const { _context: context } = fieldValues
 
-    return fields.map(field => {
-      if (field.context !== CTX_DEFAULT && field.context !== context) {
-        return null
-      }
+        return fields.map(field => {
+            if (field.context !== CTX_DEFAULT && field.context !== context) {
+                return null
+            }
 
-      const { type, name, label, className } = field
-      if (type === TYPE_RADIO) {
-        const { selected, values } = fieldValues[name]
+            const { type, name, label, className } = field
+            if (type === TYPE_RADIO) {
+                const { selected, values } = fieldValues[name]
+                return (
+                    <Radio
+                        key={`radio-${name}`}
+                        name={name}
+                        label={label}
+                        values={values}
+                        selected={selected}
+                        className={className}
+                        onChange={this.props.onChange}
+                    />
+                )
+            } else if (type === TYPE_SELECT) {
+                const { selected, values } = fieldValues[name]
+                return (
+                    <Select
+                        key={`select-${name}`}
+                        name={name}
+                        label={label}
+                        values={values}
+                        selected={selected}
+                        onChange={this.props.onChange}
+                    />
+                )
+            } else if (type === TYPE_FILE) {
+                const { selected } = fieldValues[name]
+                return (
+                    <File
+                        key={`file-${name}`}
+                        name={name}
+                        label={label}
+                        selected={selected}
+                        className={className}
+                        onChange={this.props.onChange}
+                    />
+                )
+            } else if (type === TYPE_DATE) {
+                const value = fieldValues[name]['selected']
+                const props = {}
+                if (name === 'endDate') {
+                    props['minDate'] = fieldValues['startDate']['selected']
+                }
+
+                return (
+                    <Date
+                        {...props}
+                        key={`radio-${name}`}
+                        name={name}
+                        label={label}
+                        value={value}
+                        className={className}
+                        onChange={this.props.onChange}
+                    />
+                )
+            } else if (type === TYPE_MORE_OPTIONS) {
+                return (
+                    <MoreOptions
+                        key="moreOptions"
+                        enabled={context === CTX_MORE_OPTIONS}
+                        onClick={this.props.changeContext}
+                    />
+                )
+            } else if (type === TYPE_SCHEMAS) {
+                return (
+                    <Schemas
+                        key={`schemas-${name}`}
+                        name={name}
+                        label={label}
+                        onChange={this.props.onChange}
+                    />
+                )
+            } else if (type === TYPE_ORG_UNIT) {
+                const { selected } = fieldValues[name]
+
+                return (
+                    <FormControl
+                        key={`orgUnitTree-${name}`}
+                        className={s.formControl}
+                    >
+                        <FormLabel className={s.formLabel}>{label}</FormLabel>
+                        <OrgUnitTree
+                            multiple={true}
+                            selectable={true}
+                            selected={selected}
+                            updateSelected={(selected, isSelected, value) =>
+                                this.props.onChange(name, {
+                                    selected,
+                                    isSelected,
+                                    value,
+                                })
+                            }
+                        />
+                    </FormControl>
+                )
+            } else if (type === TYPE_ORG_UNIT_SINGLE_SELECT) {
+                const { selected } = fieldValues[name]
+
+                return (
+                    <FormControl
+                        key={`orgUnitTree-${name}`}
+                        className={s.formControl}
+                    >
+                        <FormLabel className={s.formLabel}>{label}</FormLabel>
+                        <OrgUnitTree
+                            multiple={false}
+                            selectable={true}
+                            selected={selected}
+                            updateSelected={(selected, isSelected, value) =>
+                                this.props.onChange(name, {
+                                    selected,
+                                    isSelected,
+                                    value,
+                                })
+                            }
+                        />
+                    </FormControl>
+                )
+            } else if (type === TYPE_DATASET_PICKER) {
+                const { selected, value } = fieldValues[name]
+                if (value === null) {
+                    return null
+                }
+
+                return (
+                    <FormControl key={`dataSetPicker-${name}`}>
+                        <DataSetPicker
+                            name={name}
+                            value={value}
+                            selected={selected}
+                            onChange={this.props.onChange}
+                        />
+                    </FormControl>
+                )
+            }
+
+            return null
+        })
+    }
+
+    render() {
+        const { icon, title, description, className, style } = this.props
+        const { onSubmit, submitLabel } = this.props
+
         return (
-          <Radio
-            key={`radio-${name}`}
-            name={name}
-            label={label}
-            values={values}
-            selected={selected}
-            className={className}
-            onChange={this.props.onChange}
-          />
-        )
-      } else if (type === TYPE_SELECT) {
-        const { selected, values } = fieldValues[name]
-        return (
-          <Select
-            key={`select-${name}`}
-            name={name}
-            label={label}
-            values={values}
-            selected={selected}
-            onChange={this.props.onChange}
-          />
-        )
-      } else if (type === TYPE_FILE) {
-        const { selected } = fieldValues[name]
-        return (
-          <File
-            key={`file-${name}`}
-            name={name}
-            label={label}
-            selected={selected}
-            className={className}
-            onChange={this.props.onChange}
-          />
-        )
-      } else if (type === TYPE_DATE) {
-        const value = fieldValues[name]['selected']
-        const props = {}
-        if (name === 'endDate') {
-          props['minDate'] = fieldValues['startDate']['selected']
-        }
+            <div className={s.wrapper}>
+                <form
+                    style={style}
+                    className={cx(className, s.form)}
+                    onSubmit={this.props.onSubmit}
+                >
+                    <div className={s.head}>
+                        <div className={s.icon}>{icon}</div>
+                        <div className={s.title}>{title}</div>
+                    </div>
+                    {description && <div className={s.desc}>{description}</div>}
 
-        return (
-          <Date
-            {...props}
-            key={`radio-${name}`}
-            name={name}
-            label={label}
-            value={value}
-            className={className}
-            onChange={this.props.onChange}
-          />
+                    <div className={s.fields}>{this.fields()}</div>
+
+                    <div className={s.buttons}>
+                        {onSubmit && (
+                            <RaisedButton
+                                label={submitLabel}
+                                primary={true}
+                                onClick={onSubmit}
+                            />
+                        )}
+                    </div>
+                </form>
+            </div>
         )
-      } else if (type === TYPE_MORE_OPTIONS) {
-        return (
-          <MoreOptions
-            key="moreOptions"
-            enabled={context === CTX_MORE_OPTIONS}
-            onClick={this.props.changeContext}
-          />
-        )
-      } else if (type === TYPE_SCHEMAS) {
-        return (
-          <Schemas
-            key={`schemas-${name}`}
-            name={name}
-            label={label}
-            onChange={this.props.onChange}
-          />
-        )
-      } else if (type === TYPE_ORG_UNIT) {
-        const { selected } = fieldValues[name]
-
-        return (
-          <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
-            <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnitTree
-              multiple={true}
-              selectable={true}
-              selected={selected}
-              updateSelected={(selected, isSelected, value) =>
-                this.props.onChange(name, {
-                  selected,
-                  isSelected,
-                  value
-                })
-              }
-            />
-          </FormControl>
-        )
-      } else if (type === TYPE_ORG_UNIT_SINGLE_SELECT) {
-        const { selected } = fieldValues[name]
-
-        return (
-          <FormControl key={`orgUnitTree-${name}`} className={s.formControl}>
-            <FormLabel className={s.formLabel}>{label}</FormLabel>
-            <OrgUnitTree
-              multiple={false}
-              selectable={true}
-              selected={selected}
-              updateSelected={(selected, isSelected, value) =>
-                this.props.onChange(name, {
-                  selected,
-                  isSelected,
-                  value
-                })
-              }
-            />
-          </FormControl>
-        )
-      } else if (type === TYPE_DATASET_PICKER) {
-        const { selected, value } = fieldValues[name]
-        if (value === null) {
-          return null
-        }
-
-        return (
-          <FormControl key={`dataSetPicker-${name}`}>
-            <DataSetPicker
-              name={name}
-              value={value}
-              selected={selected}
-              onChange={this.props.onChange}
-            />
-          </FormControl>
-        )
-      }
-
-      return null
-    })
-  }
-
-  render() {
-    const { icon, title, description, className, style } = this.props
-    const { onSubmit, submitLabel } = this.props
-
-    return (
-      <div className={s.wrapper}>
-        <form
-          style={style}
-          className={cx(className, s.form)}
-          onSubmit={this.props.onSubmit}
-        >
-          <div className={s.head}>
-            <div className={s.icon}>{icon}</div>
-            <div className={s.title}>{title}</div>
-          </div>
-          {description && <div className={s.desc}>{description}</div>}
-
-          <div className={s.fields}>{this.fields()}</div>
-
-          <div className={s.buttons}>
-            {onSubmit && (
-              <RaisedButton
-                label={submitLabel}
-                primary={true}
-                onClick={onSubmit}
-              />
-            )}
-          </div>
-        </form>
-      </div>
-    )
-  }
+    }
 }
