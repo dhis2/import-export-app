@@ -9,4 +9,9 @@ module.exports = {
     env: {
         jest: true,
     },
+    parserOptions: {
+        ecmaFeatures: {
+            legacyDecorators: true,
+        },
+    },
 }
