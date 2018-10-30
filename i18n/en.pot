@@ -5,10 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-10-16T12:21:47.054Z\n"
-"PO-Revision-Date: 2018-10-16T12:21:47.054Z\n"
+"POT-Creation-Date: 2018-10-30T10:01:38.305Z\n"
+"PO-Revision-Date: 2018-10-30T10:01:38.305Z\n"
 
 msgid "user is not logged in"
+msgstr ""
+
+msgid "Import Error"
+msgstr ""
+
+msgid "Go Back"
 msgstr ""
 
 msgid "filter data sets by name"
