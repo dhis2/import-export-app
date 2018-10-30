@@ -259,26 +259,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: true,
             template: paths.appHtml,
-            vendorScripts: [
-                `${scriptPrefix}/dhis-web-core-resource/fonts/roboto.css`,
-                `${scriptPrefix}/dhis-web-core-resource/material-design-icons/material-icons.css`,
-                `${scriptPrefix}/dhis-web-core-resource/babel-polyfill/6.20.0/dist/polyfill.min.js`,
-                `${scriptPrefix}/dhis-web-core-resource/react/16.2.0/umd/react.production.min.js`,
-                `${scriptPrefix}/dhis-web-core-resource/react-dom/16.2.0/umd/react-dom.production.min.js`,
-                `${scriptPrefix}/dhis-web-core-resource/jquery/3.2.1/dist/jquery.min.js`,
-                `${scriptPrefix}/dhis-web-core-resource/jquery-migrate/3.0.1/dist/jquery-migrate.min.js`,
-                `${scriptPrefix}/dhis-web-pivot/reporttable.js`,
-                `${scriptPrefix}/dhis-web-visualizer/chart.js`,
-                `${scriptPrefix}/dhis-web-maps/map.js`,
-                `${scriptPrefix}/dhis-web-event-reports/eventreport.js`,
-                `${scriptPrefix}/dhis-web-event-visualizer/eventchart.js`,
-            ]
-                .map(asset => {
-                    return /\.js$/.test(asset)
-                        ? `<script src="${asset}"></script>`
-                        : `<link type="text/css" rel="stylesheet" href="${asset}">`
-                })
-                .join('\n'),
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

@@ -254,13 +254,6 @@
     lodash "^4.17.10"
     material-ui "^0.20.0"
 
-"@dhis2/d2-ui-core@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-1.0.4.tgz#bba522ba3c6e93102c963dd94af548a3e19beb30"
-  dependencies:
-    lodash "^4.17.10"
-    material-ui "^0.20.0"
-
 "@dhis2/d2-ui-core@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-1.2.0.tgz#e3b712fab9e5677fc54ef0488d1ecf8cc62302c6"
@@ -268,16 +261,6 @@
     babel-runtime "^6.26.0"
     lodash "^4.17.10"
     material-ui "^0.20.0"
-
-"@dhis2/d2-ui-group-editor@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-group-editor/-/d2-ui-group-editor-1.0.4.tgz#2afaf13d84f05e10a40e40fd81cd10fba0be7afb"
-  dependencies:
-    "@dhis2/d2-ui-core" "^1.0.4"
-    material-ui "^0.19.3"
-    prop-types "^15.5.10"
-    recompose "^0.26.0"
-    rxjs "^5.5.7"
 
 "@dhis2/d2-ui-header-bar@^1.0.11":
   version "1.1.1"
@@ -4930,7 +4913,7 @@ init-package-json@^1.10.3:
     validate-npm-package-license "^3.0.1"
     validate-npm-package-name "^3.0.0"
 
-inline-style-prefixer@^3.0.2, inline-style-prefixer@^3.0.8:
+inline-style-prefixer@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-3.0.8.tgz#8551b8e5b4d573244e66a34b04f7d32076a2b534"
   dependencies:
@@ -6682,22 +6665,6 @@ material-ui@1.0.0-beta.45:
     scroll "^2.0.3"
     warning "^3.0.0"
 
-material-ui@^0.19.3:
-  version "0.19.4"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.19.4.tgz#ca9cdca8aa8bb594dfac5db38ec9ff045a323587"
-  dependencies:
-    babel-runtime "^6.23.0"
-    inline-style-prefixer "^3.0.2"
-    keycode "^2.1.8"
-    lodash.merge "^4.6.0"
-    lodash.throttle "^4.1.1"
-    prop-types "^15.5.7"
-    react-event-listener "^0.5.1"
-    react-transition-group "^1.2.1"
-    recompose "^0.26.0"
-    simple-assign "^0.1.0"
-    warning "^3.0.0"
-
 material-ui@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.20.0.tgz#85411bb59c916c9c7703f29dcffc44e3a67d5111"
@@ -8393,7 +8360,7 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
+prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
