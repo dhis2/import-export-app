@@ -415,9 +415,12 @@ export class MetaDataImport extends FormBase {
                 if (xhr.readyState === 4 && status === 2) {
                     eventEmitter.emit('summary.clear')
 
-                    const jobId = emitLogOnFirstResponse(xhr, 'METADATA_IMPORT')
+                    const type = 'METADATA_IMPORT'
+                    const jobId = emitLogOnFirstResponse(xhr, type)
                     this.setState({ processing: false })
-                    await fetchLog(jobId, 'METADATA_IMPORT')
+
+                    eventEmitter.emit('summary.loading')
+                    await fetchLog(jobId, type)
                 } else if ([3, 4, 5].includes(status)) {
                     this.assertOnError(e)
                 }

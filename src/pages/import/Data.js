@@ -298,6 +298,8 @@ export class DataImport extends FormBase {
                         'DATAVALUE_IMPORT'
                     )
                     this.setState({ processing: false })
+
+                    eventEmitter.emit('summary.loading')
                     await fetchLog(jobId, 'DATAVALUE_IMPORT')
                 } else if ([3, 4, 5].includes(status)) {
                     this.assertOnError(e)

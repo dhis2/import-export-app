@@ -91,6 +91,8 @@ export async function fetchTaskSummary(jobId, type) {
         logStats(data.stats, type)
         logImportCount(data.importCount, type)
         logConflicts(data.conflicts, type)
+
+        eventEmitter.emit('summary.loaded')
     } catch (e) {
         console.log(`Task Summaries: Error fetching ${type}`)
     }

@@ -174,6 +174,8 @@ export class EventImport extends FormBase {
 
                     const jobId = emitLogOnFirstResponse(xhr, 'EVENT_IMPORT')
                     this.setState({ processing: false })
+
+                    eventEmitter.emit('summary.loading')
                     await fetchLog(jobId, 'EVENT_IMPORT')
                 } else if ([3, 4, 5].includes(status)) {
                     this.assertOnError(e)

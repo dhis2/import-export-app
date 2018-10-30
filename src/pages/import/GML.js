@@ -97,6 +97,8 @@ export class GMLImport extends FormBase {
 
                     const jobId = emitLogOnFirstResponse(xhr, 'GML_IMPORT')
                     this.setState({ processing: false })
+
+                    eventEmitter.emit('summary.loading')
                     await fetchLog(jobId, 'GML_IMPORT')
                 } else if ([3, 4, 5].includes(status)) {
                     this.assertOnError(e)
