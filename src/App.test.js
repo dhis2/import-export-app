@@ -13,16 +13,16 @@ import { store } from './store'
 const muiTheme = getMuiTheme(lightBaseTheme)
 
 it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(
-    <Provider store={store}>
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <HashRouter>
-          <App />
-        </HashRouter>
-      </MuiThemeProvider>
-    </Provider>,
-    div
-  )
-  ReactDOM.unmountComponentAtNode(div)
+    const div = document.createElement('div')
+    ReactDOM.render(
+        <Provider store={store}>
+            <MuiThemeProvider muiTheme={muiTheme}>
+                <HashRouter>
+                    <App />
+                </HashRouter>
+            </MuiThemeProvider>
+        </Provider>,
+        div
+    )
+    ReactDOM.unmountComponentAtNode(div)
 })

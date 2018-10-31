@@ -10,15 +10,15 @@ const muiTheme = getMuiTheme(lightBaseTheme)
 
 let wrapper
 beforeAll(() => {
-  wrapper = mount(
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <Loading />
-    </MuiThemeProvider>
-  )
+    wrapper = mount(
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <Loading />
+        </MuiThemeProvider>
+    )
 })
 
 describe('Loading', () => {
-  it('contains svg elm. <circle />', () => {
-    expect(wrapper.find('circle').exists()).toBe(true)
-  })
+    it('contains svg elm. <circle />', () => {
+        expect(wrapper.find('circle').exists()).toBe(true)
+    })
 })
