@@ -3,8 +3,9 @@ import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
-import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
+import { CTX_DEFAULT } from 'components/Form'
 import { EventIcon } from 'components/Icon'
+import { getFormField } from 'helpers'
 import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class EventImport extends FormBase {
@@ -20,36 +21,11 @@ export class EventImport extends FormBase {
     submitLabel = i18n.t('Import')
 
     fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_FILE,
-            name: 'upload',
-            label: null,
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'payloadFormat',
-            label: i18n.t('Format'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'dryRun',
-            label: i18n.t('Dry run'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'eventIdScheme',
-            label: i18n.t('Event ID Scheme'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'orgUnitIdScheme',
-            label: i18n.t('Org unit ID scheme'),
-        },
+        getFormField('upload'),
+        getFormField('payloadFormat'),
+        getFormField('dryRun'),
+        getFormField('eventIdScheme'),
+        getFormField('orgUnitIdScheme', { context: CTX_DEFAULT }),
     ]
 
     state = {

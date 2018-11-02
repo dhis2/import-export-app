@@ -1,9 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormBase } from 'components/FormBase'
-import { CTX_DEFAULT, TYPE_RADIO, TYPE_SELECT } from 'components/Form'
 import { api } from 'services'
-import { createBlob, downloadBlob } from 'helpers'
+import { createBlob, downloadBlob, getFormField } from 'helpers'
 import { MetadataDependencyExportIcon } from 'components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
@@ -19,30 +18,10 @@ export class MetaDataDependencyExport extends FormBase {
     submitLabel = i18n.t('Export')
 
     fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'objectType',
-            label: i18n.t('Object type'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_SELECT,
-            name: 'objectList',
-            label: i18n.t('Object'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'format',
-            label: i18n.t('Format'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'compression',
-            label: i18n.t('Compression'),
-        },
+        getFormField('objectType'),
+        getFormField('objectList'),
+        getFormField('format'),
+        getFormField('compression'),
     ]
 
     state = {
