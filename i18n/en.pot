@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-10-30T10:01:38.305Z\n"
-"PO-Revision-Date: 2018-10-30T10:01:38.305Z\n"
+"POT-Creation-Date: 2018-11-02T11:10:29.438Z\n"
+"PO-Revision-Date: 2018-11-02T11:10:29.438Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -113,16 +113,7 @@ msgstr ""
 msgid "Messages"
 msgstr ""
 
-msgid "Organisation unit"
-msgstr ""
-
-msgid "Data Sets"
-msgstr ""
-
-msgid "Start date"
-msgstr ""
-
-msgid "End date"
+msgid "Schemas"
 msgstr ""
 
 msgid "Format"
@@ -131,7 +122,40 @@ msgstr ""
 msgid "Compression"
 msgstr ""
 
+msgid "Sharing"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
+
+msgid "ID scheme"
+msgstr ""
+
 msgid "Include deleted"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr ""
+
+msgid "Data Sets"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Program Stages"
+msgstr ""
+
+msgid "Inclusion"
 msgstr ""
 
 msgid "Data element ID scheme"
@@ -141,6 +165,57 @@ msgid "Org unit ID scheme"
 msgstr ""
 
 msgid "Category ID scheme"
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "Event ID Scheme"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Existing record check"
+msgstr ""
+
+msgid "Flush Mode"
+msgstr ""
+
+msgid "Skip Sharing"
+msgstr ""
+
+msgid "Skip Validation"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Inclusion Strategy"
+msgstr ""
+
+msgid "Import Mode"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Report Mode"
+msgstr ""
+
+msgid "Preheat Mode"
+msgstr ""
+
+msgid "Import Strategy"
+msgstr ""
+
+msgid "Atomic Mode"
+msgstr ""
+
+msgid "Merge Mode"
 msgstr ""
 
 msgid "Zip"
@@ -164,18 +239,6 @@ msgstr ""
 msgid "HR identifier"
 msgstr ""
 
-msgid "Programs"
-msgstr ""
-
-msgid "Program Stages"
-msgstr ""
-
-msgid "ID scheme"
-msgstr ""
-
-msgid "Inclusion"
-msgstr ""
-
 msgid "[ All program stages]"
 msgstr ""
 
@@ -194,12 +257,6 @@ msgstr ""
 msgid "Meta Data Export"
 msgstr ""
 
-msgid "Schemas"
-msgstr ""
-
-msgid "Sharing"
-msgstr ""
-
 msgid "Uncompressed"
 msgstr ""
 
@@ -210,12 +267,6 @@ msgid "Without sharing"
 msgstr ""
 
 msgid "Metadata Export with Dependencies"
-msgstr ""
-
-msgid "Object type"
-msgstr ""
-
-msgid "Object"
 msgstr ""
 
 msgid "Category combination"
@@ -271,21 +322,6 @@ msgstr ""
 msgid "Import or Export DHIS2 data."
 msgstr ""
 
-msgid "Dry run"
-msgstr ""
-
-msgid "Strategy"
-msgstr ""
-
-msgid "Preheat cache"
-msgstr ""
-
-msgid "ID scheme (all objects)"
-msgstr ""
-
-msgid "Existing record check"
-msgstr ""
-
 msgid "PDF"
 msgstr ""
 
@@ -313,46 +349,7 @@ msgstr ""
 msgid "Skip check (fast)"
 msgstr ""
 
-msgid "Event ID Scheme"
-msgstr ""
-
 msgid "Only import of GML data for existing organisation units is supported."
-msgstr ""
-
-msgid "Import Mode"
-msgstr ""
-
-msgid "Identifier"
-msgstr ""
-
-msgid "Report Mode"
-msgstr ""
-
-msgid "Preheat Mode"
-msgstr ""
-
-msgid "Import Strategy"
-msgstr ""
-
-msgid "Atomic Mode"
-msgstr ""
-
-msgid "Merge Mode"
-msgstr ""
-
-msgid "Flush Mode"
-msgstr ""
-
-msgid "Skip Sharing"
-msgstr ""
-
-msgid "Skip Validation"
-msgstr ""
-
-msgid "Async"
-msgstr ""
-
-msgid "Inclusion Strategy"
 msgstr ""
 
 msgid "Commit"

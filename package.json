@@ -99,8 +99,12 @@
         }
     },
     "jest": {
-        "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
-        "setupFiles": ["<rootDir>/config/polyfills.js"],
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx,mjs}"
+        ],
+        "setupFiles": [
+            "<rootDir>/config/polyfills.js"
+        ],
         "setupTestFrameworkScriptFile": "<rootDir>/config/setupTests.js",
         "testMatch": [
             "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -130,8 +134,12 @@
         ]
     },
     "babel": {
-        "presets": ["react-app"],
-        "plugins": ["transform-decorators-legacy"]
+        "presets": [
+            "react-app"
+        ],
+        "plugins": [
+            "transform-decorators-legacy"
+        ]
     },
     "devDependencies": {
         "@dhis2/code-style": "^1.4.0",
