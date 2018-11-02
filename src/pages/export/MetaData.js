@@ -1,9 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { api } from 'services'
-import { createBlob, downloadBlob } from 'helpers'
+import { createBlob, downloadBlob, getFormField } from 'helpers'
 import { FormBase } from 'components/FormBase'
-import { CTX_DEFAULT, TYPE_RADIO, TYPE_SCHEMAS } from 'components/Form'
 import { MetadataExportIcon } from 'components/Icon'
 
 export class MetaDataExport extends FormBase {
@@ -19,30 +18,10 @@ export class MetaDataExport extends FormBase {
     submitLabel = i18n.t('Export')
 
     fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_SCHEMAS,
-            name: 'schemas',
-            label: i18n.t('Schemas'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'format',
-            label: i18n.t('Format'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'compression',
-            label: i18n.t('Compression'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'sharing',
-            label: i18n.t('Sharing'),
-        },
+        getFormField('schemas'),
+        getFormField('format'),
+        getFormField('compression'),
+        getFormField('sharing'),
     ]
 
     state = {

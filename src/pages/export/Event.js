@@ -1,20 +1,11 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { today } from 'helpers'
 import { FormBase } from 'components/FormBase'
-import {
-    CTX_DEFAULT,
-    TYPE_RADIO,
-    TYPE_DATE,
-    TYPE_SELECT,
-    CTX_MORE_OPTIONS,
-    TYPE_MORE_OPTIONS,
-    TYPE_ORG_UNIT_SINGLE_SELECT,
-} from 'components/Form'
 import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
 import { EventIcon } from 'components/Icon'
+import { today, getFormField, getFormFieldMoreOptions } from 'helpers'
 
 export class EventExport extends FormBase {
     static path = '/export/event'
@@ -29,70 +20,19 @@ export class EventExport extends FormBase {
     submitLabel = i18n.t('Export')
 
     fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_ORG_UNIT_SINGLE_SELECT,
-            name: 'orgUnit',
-            label: i18n.t('Organisation unit'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_SELECT,
-            name: 'programs',
-            label: i18n.t('Programs'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_SELECT,
-            name: 'programStages',
-            label: i18n.t('Program Stages'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'idScheme',
-            label: i18n.t('ID scheme'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_DATE,
-            name: 'startDate',
-            label: i18n.t('Start date'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_DATE,
-            name: 'endDate',
-            label: i18n.t('End date'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'format',
-            label: i18n.t('Format'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'compression',
-            label: i18n.t('Compression'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_MORE_OPTIONS,
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'includeDeleted',
-            label: i18n.t('Include deleted'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'inclusion',
-            label: i18n.t('Inclusion'),
-        },
+        getFormField('orgUnit_SingleSelect'),
+        getFormField('programs'),
+        getFormField('programStages'),
+        getFormField('idScheme'),
+        getFormField('startDate'),
+        getFormField('endDate'),
+        getFormField('format'),
+        getFormField('compression'),
+
+        getFormFieldMoreOptions(),
+
+        getFormField('includeDeleted'),
+        getFormField('inclusion'),
     ]
 
     state = {

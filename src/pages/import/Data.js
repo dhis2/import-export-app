@@ -3,14 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
-import {
-    CTX_DEFAULT,
-    CTX_MORE_OPTIONS,
-    TYPE_FILE,
-    TYPE_RADIO,
-    TYPE_MORE_OPTIONS,
-} from 'components/Form'
 import { DataIcon } from 'components/Icon'
+import { getFormField, getFormFieldMoreOptions } from 'helpers'
 import { emitLogOnFirstResponse, getMimeType } from './helpers'
 import { fetchLog } from './helpers'
 
@@ -27,66 +21,18 @@ export class DataImport extends FormBase {
     submitLabel = i18n.t('Import')
 
     fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_FILE,
-            name: 'upload',
-            label: null,
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'importFormat',
-            label: i18n.t('Format'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'dryRun',
-            label: i18n.t('Dry run'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'strategy',
-            label: i18n.t('Strategy'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'preheatCache',
-            label: i18n.t('Preheat cache'),
-        },
+        getFormField('upload'),
+        getFormField('importFormat'),
+        getFormField('dryRun'),
+        getFormField('strategy'),
+        getFormField('preheatCache'),
 
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_MORE_OPTIONS,
-        },
+        getFormFieldMoreOptions(),
 
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'dataElementIdScheme',
-            label: i18n.t('Data element ID scheme'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'orgUnitIdScheme',
-            label: i18n.t('Org unit ID scheme'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'idScheme',
-            label: i18n.t('ID scheme (all objects)'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'skipExistingCheck',
-            label: i18n.t('Existing record check'),
-        },
+        getFormField('dataElementIdScheme'),
+        getFormField('orgUnitIdScheme'),
+        getFormField('idScheme'),
+        getFormField('skipExistingCheck'),
     ]
 
     state = {

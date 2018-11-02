@@ -12,7 +12,6 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const getClientEnvironment = require('./env')
 const paths = require('./paths')
-const parse = require('url-parse')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -51,9 +50,6 @@ const globals = Object.assign(
     },
     env.stringified
 )
-
-const scriptPrefix = dhisConfig.baseUrl
-const pathnamePrefix = parse(scriptPrefix).pathname
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
