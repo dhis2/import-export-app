@@ -3,8 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
-import { CTX_DEFAULT, TYPE_FILE, TYPE_RADIO } from 'components/Form'
 import { GMLIcon } from 'components/Icon'
+import { getFormField } from 'helpers'
 import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class GMLImport extends FormBase {
@@ -22,20 +22,7 @@ export class GMLImport extends FormBase {
     )
     submitLabel = i18n.t('Import')
 
-    fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_FILE,
-            name: 'upload',
-            label: null,
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'dryRun',
-            label: i18n.t('Dry run'),
-        },
-    ]
+    fields = [getFormField('upload'), getFormField('dryRun')]
 
     state = {
         processing: false,

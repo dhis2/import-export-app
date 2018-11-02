@@ -4,18 +4,15 @@ import PropTypes from 'prop-types'
 import JSZip from 'jszip'
 import { getInstance } from 'd2/lib/d2'
 import { FormBase } from 'components/FormBase'
-import {
-    CTX_DEFAULT,
-    CTX_MORE_OPTIONS,
-    TYPE_DATE,
-    TYPE_RADIO,
-    TYPE_ORG_UNIT,
-    TYPE_MORE_OPTIONS,
-    TYPE_DATASET_PICKER,
-} from 'components/Form'
 import moment from 'moment'
 import { apiConfig } from 'config'
-import { today, downloadBlob, createBlob } from 'helpers'
+import {
+    today,
+    downloadBlob,
+    createBlob,
+    getFormField,
+    getFormFieldMoreOptions,
+} from 'helpers'
 import { DataIcon } from 'components/Icon'
 
 export class DataExport extends FormBase {
@@ -35,70 +32,19 @@ export class DataExport extends FormBase {
     submitLabel = i18n.t('Export')
 
     fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_ORG_UNIT,
-            name: 'orgUnit',
-            label: i18n.t('Organisation unit'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_DATASET_PICKER,
-            name: 'selectedDataSets',
-            label: i18n.t('Data Sets'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_DATE,
-            name: 'startDate',
-            label: i18n.t('Start date'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_DATE,
-            name: 'endDate',
-            label: i18n.t('End date'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'exportFormat',
-            label: i18n.t('Format'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'compression',
-            label: i18n.t('Compression'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_MORE_OPTIONS,
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'includeDeleted',
-            label: i18n.t('Include deleted'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'dataElementIdScheme',
-            label: i18n.t('Data element ID scheme'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'orgUnitIdScheme',
-            label: i18n.t('Org unit ID scheme'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'categoryOptionComboIdScheme',
-            label: i18n.t('Category ID scheme'),
-        },
+        getFormField('orgUnit'),
+        getFormField('selectedDataSets'),
+        getFormField('startDate'),
+        getFormField('endDate'),
+        getFormField('exportFormat'),
+        getFormField('compression'),
+
+        getFormFieldMoreOptions(),
+
+        getFormField('includeDeleted'),
+        getFormField('dataElementIdScheme'),
+        getFormField('orgUnitIdScheme'),
+        getFormField('categoryOptionComboIdScheme'),
     ]
 
     state = {

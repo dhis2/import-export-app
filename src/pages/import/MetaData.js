@@ -3,16 +3,9 @@ import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { api, eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
-import {
-    CTX_DEFAULT,
-    TYPE_FILE,
-    TYPE_RADIO,
-    TYPE_SELECT,
-    CTX_CSV_OPTION,
-    CTX_MORE_OPTIONS,
-    TYPE_MORE_OPTIONS,
-} from 'components/Form'
+import { CTX_DEFAULT, CTX_CSV_OPTION } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
+import { getFormField, getFormFieldMoreOptions } from 'helpers'
 import { fetchLog, getMimeType, emitLogOnFirstResponse } from './helpers'
 
 export class MetaDataImport extends FormBase {
@@ -28,94 +21,23 @@ export class MetaDataImport extends FormBase {
     submitLabel = i18n.t('Import')
 
     fields = [
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_FILE,
-            name: 'upload',
-            label: null,
-        },
-        {
-            context: CTX_CSV_OPTION,
-            type: TYPE_SELECT,
-            name: 'classKey',
-            label: i18n.t('Object type'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'importMode',
-            label: i18n.t('Import Mode'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'identifier',
-            label: i18n.t('Identifier'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'importReportMode',
-            label: i18n.t('Report Mode'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'preheatMode',
-            label: i18n.t('Preheat Mode'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'importStrategy',
-            label: i18n.t('Import Strategy'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'atomicMode',
-            label: i18n.t('Atomic Mode'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_RADIO,
-            name: 'mergeMode',
-            label: i18n.t('Merge Mode'),
-        },
-        {
-            context: CTX_DEFAULT,
-            type: TYPE_MORE_OPTIONS,
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'flushMode',
-            label: i18n.t('Flush Mode'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'skipSharing',
-            label: i18n.t('Skip Sharing'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'skipValidation',
-            label: i18n.t('Skip Validation'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'async',
-            label: i18n.t('Async'),
-        },
-        {
-            context: CTX_MORE_OPTIONS,
-            type: TYPE_RADIO,
-            name: 'inclusionStrategy',
-            label: i18n.t('Inclusion Strategy'),
-        },
+        getFormField('upload'),
+        getFormField('classKey'),
+        getFormField('importMode'),
+        getFormField('identifier'),
+        getFormField('importReportMode'),
+        getFormField('preheatMode'),
+        getFormField('importStrategy'),
+        getFormField('atomicMode'),
+        getFormField('mergeMode'),
+
+        getFormFieldMoreOptions(),
+
+        getFormField('flushMode'),
+        getFormField('skipSharing'),
+        getFormField('skipValidation'),
+        getFormField('async'),
+        getFormField('inclusionStrategy'),
     ]
 
     state = {
