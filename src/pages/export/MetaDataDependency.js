@@ -96,7 +96,7 @@ export class MetaDataDependencyExport extends FormBase {
                     contents = JSON.stringify(data)
                 }
 
-                downloadBlob(createBlob(contents, ext, compression), endpoint)
+                downloadBlob(createBlob(contents, ext), endpoint)
                 this.setState({ processing: false })
             })
         } catch (e) {

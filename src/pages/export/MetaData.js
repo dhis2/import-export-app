@@ -61,7 +61,7 @@ export class MetaDataExport extends FormBase {
 
             let endpoint = `metadata${format}`
             if (compression !== 'none') {
-                endpoint += `.${compression}`
+                endpoint += compression
                 window.location = api.url(`${endpoint}?${params.join('&')}`)
                 return
             }
@@ -75,7 +75,7 @@ export class MetaDataExport extends FormBase {
                     contents = JSON.stringify(data)
                 }
 
-                downloadBlob(createBlob(contents, ext, compression), endpoint)
+                downloadBlob(createBlob(contents, ext), endpoint)
                 this.setState({ processing: false })
             })
         } catch (e) {

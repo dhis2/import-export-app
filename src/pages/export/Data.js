@@ -148,13 +148,12 @@ export class DataExport extends FormBase {
                         zip.file(filename, xhr.responseText)
                         zip.generateAsync({ type: 'blob' }).then(content => {
                             const url = URL.createObjectURL(content)
-                            downloadBlob(url, `${filename}.${compression}`)
+                            downloadBlob(url, `${filename}${compression}`)
                         })
                     } else {
                         const url = createBlob(
                             xhr.responseText,
-                            format.substr(1),
-                            compression
+                            format.substr(1)
                         )
                         downloadBlob(url, filename)
                     }
