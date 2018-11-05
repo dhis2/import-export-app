@@ -279,7 +279,7 @@ export function getFormValues(list) {
     }
 
     list.forEach(k => {
-        if (typeof values[k] === 'undefined') {
+        if (typeof values[k] === 'undefined' && !k.includes(':')) {
             console.error('value', k, 'not found in values')
         }
 
