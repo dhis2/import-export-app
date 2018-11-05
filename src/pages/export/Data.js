@@ -7,11 +7,11 @@ import { FormBase } from 'components/FormBase'
 import moment from 'moment'
 import { apiConfig } from 'config'
 import {
-    today,
     downloadBlob,
     createBlob,
     getFormField,
     getFormFieldMoreOptions,
+    getFormValues,
 } from 'helpers'
 import { DataIcon } from 'components/Icon'
 
@@ -36,7 +36,7 @@ export class DataExport extends FormBase {
         getFormField('selectedDataSets'),
         getFormField('startDate'),
         getFormField('endDate'),
-        getFormField('exportFormat'),
+        getFormField('format'),
         getFormField('compression'),
 
         getFormFieldMoreOptions(),
@@ -47,117 +47,18 @@ export class DataExport extends FormBase {
         getFormField('categoryOptionComboIdScheme'),
     ]
 
-    state = {
-        processing: false,
-        orgUnit: {
-            selected: [],
-            value: null,
-        },
-        selectedDataSets: {
-            selected: [],
-            value: null,
-        },
-        startDate: {
-            selected: today(),
-        },
-        endDate: {
-            selected: today(),
-        },
-        exportFormat: {
-            selected: 'json',
-            values: [
-                {
-                    value: 'json',
-                    label: i18n.t('JSON'),
-                },
-                {
-                    value: 'xml',
-                    label: i18n.t('XML'),
-                },
-                {
-                    value: 'csv',
-                    label: i18n.t('CSV'),
-                },
-            ],
-        },
-        compression: {
-            selected: 'zip',
-            values: [
-                {
-                    value: 'zip',
-                    label: i18n.t('Zip'),
-                },
-                {
-                    value: 'none',
-                    label: 'Uncompressed',
-                },
-            ],
-        },
-        includeDeleted: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-            ],
-        },
-        dataElementIdScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-                {
-                    value: 'NAME',
-                    label: i18n.t('Name'),
-                },
-            ],
-        },
-        orgUnitIdScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-                {
-                    value: 'NAME',
-                    label: i18n.t('Name'),
-                },
-                {
-                    value: 'ATTRIBUTE:UKNKz1H10EE',
-                    label: i18n.t('HR identifier'),
-                },
-            ],
-        },
-        categoryOptionComboIdScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-            ],
-        },
-    }
+    state = getFormValues([
+        'orgUnit',
+        'selectedDataSets',
+        'startDate',
+        'endDate',
+        'format:.json:json,xml,csv',
+        'compression',
+        'includeDeleted',
+        'dataElementIdScheme',
+        'orgUnitIdScheme',
+        'categoryOptionComboIdScheme',
+    ])
 
     async componentDidMount() {
         await this.fetch()
@@ -192,7 +93,7 @@ export class DataExport extends FormBase {
                 orgUnit,
                 startDate,
                 endDate,
-                exportFormat,
+                format,
                 compression,
                 dataElementIdScheme,
                 orgUnitIdScheme,
@@ -225,18 +126,13 @@ export class DataExport extends FormBase {
 
             this.setState({ processing: true })
 
-            let extension = `.${exportFormat}`
-            // if (compression !== 'none') {
-            //   extension += `.${compression}`
-            // }
-
             const xhr = new XMLHttpRequest()
             xhr.withCredentials = true
             xhr.open(
                 'GET',
-                `${
-                    apiConfig.server
-                }/api/dataValueSets${extension}?${params.join('&')}`,
+                `${apiConfig.server}/api/dataValueSets${format}?${params.join(
+                    '&'
+                )}`,
                 true
             )
             xhr.onreadystatechange = async () => {
@@ -246,19 +142,18 @@ export class DataExport extends FormBase {
                 ) {
                     this.setState({ processing: false })
 
-                    let filename = `data.${exportFormat}`
+                    let filename = `data${format}`
                     if (compression !== 'none') {
                         const zip = new JSZip()
                         zip.file(filename, xhr.responseText)
                         zip.generateAsync({ type: 'blob' }).then(content => {
                             const url = URL.createObjectURL(content)
-                            downloadBlob(url, `${filename}.${compression}`)
+                            downloadBlob(url, `${filename}${compression}`)
                         })
                     } else {
                         const url = createBlob(
                             xhr.responseText,
-                            exportFormat,
-                            compression
+                            format.substr(1)
                         )
                         downloadBlob(url, filename)
                     }

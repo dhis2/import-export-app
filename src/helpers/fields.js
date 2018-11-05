@@ -11,253 +11,134 @@ import {
 } from 'components/Form'
 import { TYPE_RADIO, TYPE_SCHEMAS } from 'components/Form'
 
+function getField(name, label, type, context = CTX_DEFAULT) {
+    return {
+        context,
+        type,
+        name,
+        label,
+    }
+}
+
 const fields = {
-    async: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'async',
-        label: i18n.t('Async'),
-    },
-    atomicMode: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'atomicMode',
-        label: i18n.t('Atomic Mode'),
-    },
-    categoryOptionComboIdScheme: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'categoryOptionComboIdScheme',
-        label: i18n.t('Category ID scheme'),
-    },
-    classKey: {
-        context: CTX_CSV_OPTION,
-        type: TYPE_SELECT,
-        name: 'classKey',
-        label: i18n.t('Object type'),
-    },
-    compression: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'compression',
-        label: i18n.t('Compression'),
-    },
-    dataElementIdScheme: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'dataElementIdScheme',
-        label: i18n.t('Data element ID scheme'),
-    },
-    dryRun: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'dryRun',
-        label: i18n.t('Dry run'),
-    },
-    endDate: {
-        context: CTX_DEFAULT,
-        type: TYPE_DATE,
-        name: 'endDate',
-        label: i18n.t('End date'),
-    },
-    eventIdScheme: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'eventIdScheme',
-        label: i18n.t('Event ID Scheme'),
-    },
-    exportFormat: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'exportFormat',
-        label: i18n.t('Format'),
-    },
-    flushMode: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'flushMode',
-        label: i18n.t('Flush Mode'),
-    },
-    format: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'format',
-        label: i18n.t('Format'),
-    },
-    idScheme: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'idScheme',
-        label: i18n.t('ID scheme'),
-    },
-    identifier: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'identifier',
-        label: i18n.t('Identifier'),
-    },
-    importFormat: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'importFormat',
-        label: i18n.t('Format'),
-    },
-    importMode: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'importMode',
-        label: i18n.t('Import Mode'),
-    },
-    importReportMode: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'importReportMode',
-        label: i18n.t('Report Mode'),
-    },
-    importStrategy: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'importStrategy',
-        label: i18n.t('Import Strategy'),
-    },
-    includeDeleted: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'includeDeleted',
-        label: i18n.t('Include deleted'),
-    },
-    inclusion: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'inclusion',
-        label: i18n.t('Inclusion'),
-    },
-    inclusionStrategy: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'inclusionStrategy',
-        label: i18n.t('Inclusion Strategy'),
-    },
-    mergeMode: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'mergeMode',
-        label: i18n.t('Merge Mode'),
-    },
-    objectList: {
-        context: CTX_DEFAULT,
-        type: TYPE_SELECT,
-        name: 'objectList',
-        label: i18n.t('Object'),
-    },
-    objectType: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'objectType',
-        label: i18n.t('Object type'),
-    },
-    orgUnit: {
-        context: CTX_DEFAULT,
-        type: TYPE_ORG_UNIT,
-        name: 'orgUnit',
-        label: i18n.t('Organisation unit'),
-    },
-    orgUnitIdScheme: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'orgUnitIdScheme',
-        label: i18n.t('Org unit ID scheme'),
-    },
-    orgUnit_SingleSelect: {
-        context: CTX_DEFAULT,
-        type: TYPE_ORG_UNIT_SINGLE_SELECT,
-        name: 'orgUnit',
-        label: i18n.t('Organisation unit'),
-    },
-    payloadFormat: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'payloadFormat',
-        label: i18n.t('Format'),
-    },
-    preheatCache: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'preheatCache',
-        label: i18n.t('Preheat cache'),
-    },
-    preheatMode: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'preheatMode',
-        label: i18n.t('Preheat Mode'),
-    },
-    programStages: {
-        context: CTX_DEFAULT,
-        type: TYPE_SELECT,
-        name: 'programStages',
-        label: i18n.t('Program Stages'),
-    },
-    programs: {
-        context: CTX_DEFAULT,
-        type: TYPE_SELECT,
-        name: 'programs',
-        label: i18n.t('Programs'),
-    },
-    schemas: {
-        context: CTX_DEFAULT,
-        type: TYPE_SCHEMAS,
-        name: 'schemas',
-        label: i18n.t('Schemas'),
-    },
-    selectedDataSets: {
-        context: CTX_DEFAULT,
-        type: TYPE_DATASET_PICKER,
-        name: 'selectedDataSets',
-        label: i18n.t('Data Sets'),
-    },
-    sharing: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'sharing',
-        label: i18n.t('Sharing'),
-    },
-    skipExistingCheck: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'skipExistingCheck',
-        label: i18n.t('Existing record check'),
-    },
-    skipSharing: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'skipSharing',
-        label: i18n.t('Skip Sharing'),
-    },
-    skipValidation: {
-        context: CTX_MORE_OPTIONS,
-        type: TYPE_RADIO,
-        name: 'skipValidation',
-        label: i18n.t('Skip Validation'),
-    },
-    startDate: {
-        context: CTX_DEFAULT,
-        type: TYPE_DATE,
-        name: 'startDate',
-        label: i18n.t('Start date'),
-    },
-    strategy: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'strategy',
-        label: i18n.t('Strategy'),
-    },
-    upload: {
-        context: CTX_DEFAULT,
-        type: TYPE_FILE,
-        name: 'upload',
-        label: null,
-    },
+    async: getField('async', i18n.t('Async'), TYPE_RADIO, CTX_MORE_OPTIONS),
+    atomicMode: getField('atomicMode', i18n.t('Atomic Mode'), TYPE_RADIO),
+
+    categoryOptionComboIdScheme: getField(
+        'categoryOptionComboIdScheme',
+        i18n.t('Category ID scheme'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    classKey: getField(
+        'classKey',
+        i18n.t('Object type'),
+        TYPE_SELECT,
+        CTX_CSV_OPTION
+    ),
+    compression: getField('compression', i18n.t('Compression'), TYPE_RADIO),
+    dataElementIdScheme: getField(
+        'dataElementIdScheme',
+        i18n.t('Data element ID scheme'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    dryRun: getField('dryRun', i18n.t('Dry run'), TYPE_RADIO),
+    endDate: getField('endDate', i18n.t('End date'), TYPE_DATE),
+    eventIdScheme: getField(
+        'eventIdScheme',
+        i18n.t('Event ID Scheme'),
+        TYPE_RADIO
+    ),
+    flushMode: getField(
+        'flushMode',
+        i18n.t('Flush Mode'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    format: getField('format', i18n.t('Format'), TYPE_RADIO),
+    idScheme: getField('idScheme', i18n.t('ID scheme'), TYPE_RADIO),
+    identifier: getField('identifier', i18n.t('Identifier'), TYPE_RADIO),
+    importMode: getField('importMode', i18n.t('Import Mode'), TYPE_RADIO),
+    importReportMode: getField(
+        'importReportMode',
+        i18n.t('Report Mode'),
+        TYPE_RADIO
+    ),
+    importStrategy: getField(
+        'importStrategy',
+        i18n.t('Import Strategy'),
+        TYPE_RADIO
+    ),
+    includeDeleted: getField(
+        'includeDeleted',
+        i18n.t('Include deleted'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    inclusion: getField(
+        'inclusion',
+        i18n.t('Inclusion'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    inclusionStrategy: getField(
+        'inclusionStrategy',
+        i18n.t('Inclusion Strategy'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    mergeMode: getField('mergeMode', i18n.t('Merge Mode'), TYPE_RADIO),
+    objectList: getField('objectList', i18n.t('Object'), TYPE_SELECT),
+    objectType: getField('objectType', i18n.t('Object type'), TYPE_RADIO),
+    orgUnit: getField('orgUnit', i18n.t('Organisation unit'), TYPE_ORG_UNIT),
+    orgUnitIdScheme: getField(
+        'orgUnitIdScheme',
+        i18n.t('Org unit ID scheme'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    orgUnit_SingleSelect: getField(
+        'orgUnit',
+        i18n.t('Organisation unit'),
+        TYPE_ORG_UNIT_SINGLE_SELECT
+    ),
+    preheatCache: getField('preheatCache', i18n.t('Preheat cache'), TYPE_RADIO),
+    preheatMode: getField('preheatMode', i18n.t('Preheat Mode'), TYPE_RADIO),
+    programStages: getField(
+        'programStages',
+        i18n.t('Program Stages'),
+        TYPE_SELECT
+    ),
+    programs: getField('programs', i18n.t('Programs'), TYPE_SELECT),
+    schemas: getField('schemas', i18n.t('Schemas'), TYPE_SCHEMAS),
+    selectedDataSets: getField(
+        'selectedDataSets',
+        i18n.t('Data Sets'),
+        TYPE_DATASET_PICKER
+    ),
+    sharing: getField('sharing', i18n.t('Sharing'), TYPE_RADIO),
+    skipExistingCheck: getField(
+        'skipExistingCheck',
+        i18n.t('Existing record check'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    skipSharing: getField(
+        'skipSharing',
+        i18n.t('Skip Sharing'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    skipValidation: getField(
+        'skipValidation',
+        i18n.t('Skip Validation'),
+        TYPE_RADIO,
+        CTX_MORE_OPTIONS
+    ),
+    startDate: getField('startDate', i18n.t('Start date'), TYPE_DATE),
+    strategy: getField('strategy', i18n.t('Strategy'), TYPE_RADIO),
+    upload: getField('upload', null, TYPE_FILE),
 }
 
 export function getFormField(name, options = {}) {

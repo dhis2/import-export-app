@@ -5,7 +5,7 @@ import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
 import { EventIcon } from 'components/Icon'
-import { today, getFormField, getFormFieldMoreOptions } from 'helpers'
+import { getFormField, getFormFieldMoreOptions, getFormValues } from 'helpers'
 
 export class EventExport extends FormBase {
     static path = '/export/event'
@@ -35,110 +35,18 @@ export class EventExport extends FormBase {
         getFormField('inclusion'),
     ]
 
-    state = {
-        processing: false,
-        orgUnit: {
-            selected: [],
-            value: null,
-        },
-        programs: {
-            selected: '',
-            values: [],
-        },
-        programStages: {
-            selected: -1,
-            values: [
-                {
-                    value: -1,
-                    label: i18n.t('[ All program stages]'),
-                },
-            ],
-        },
-        idScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-            ],
-        },
-        startDate: {
-            selected: today(),
-        },
-        endDate: {
-            selected: today(),
-        },
-
-        inclusion: {
-            selected: 'selected',
-            values: [
-                {
-                    value: 'selected',
-                    label: i18n.t('Selected organisation unit'),
-                },
-                {
-                    value: 'children',
-                    label: i18n.t('Include children of organisation unit'),
-                },
-                {
-                    value: 'descendants',
-                    label: i18n.t('Include descendants of organisation unit'),
-                },
-            ],
-        },
-        format: {
-            selected: '.json',
-            values: [
-                {
-                    value: '.json',
-                    label: i18n.t('JSON'),
-                },
-                {
-                    value: '.xml',
-                    label: i18n.t('XML'),
-                },
-                {
-                    value: '.csv',
-                    label: i18n.t('CSV'),
-                },
-            ],
-        },
-        compression: {
-            selected: '.zip',
-            values: [
-                {
-                    value: '.zip',
-                    label: i18n.t('Zip'),
-                },
-                {
-                    value: '.gz',
-                    label: i18n.t('Gzip'),
-                },
-                {
-                    value: 'none',
-                    label: 'Uncompressed',
-                },
-            ],
-        },
-        includeDeleted: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-            ],
-        },
-    }
+    state = getFormValues([
+        'orgUnit',
+        'programs',
+        'programStages',
+        'idScheme',
+        'startDate',
+        'endDate',
+        'format:.json:json,xml,csv',
+        'compression',
+        'includeDeleted',
+        'inclusion',
+    ])
 
     async componentDidMount() {
         await this.fetchPrograms()

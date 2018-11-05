@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { api } from 'services'
-import { createBlob, downloadBlob, getFormField } from 'helpers'
+import { createBlob, downloadBlob, getFormField, getFormValues } from 'helpers'
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
 
@@ -24,55 +24,12 @@ export class MetaDataExport extends FormBase {
         getFormField('sharing'),
     ]
 
-    state = {
-        processing: false,
-        schemas: {
-            selected: [],
-        },
-        format: {
-            selected: 'json',
-            values: [
-                {
-                    value: 'json',
-                    label: i18n.t('JSON'),
-                },
-                {
-                    value: 'xml',
-                    label: i18n.t('XML'),
-                },
-            ],
-        },
-        compression: {
-            selected: 'zip',
-            values: [
-                {
-                    value: 'zip',
-                    label: i18n.t('Zip'),
-                },
-                {
-                    value: 'gz',
-                    label: i18n.t('Gzip'),
-                },
-                {
-                    value: 'none',
-                    label: i18n.t('Uncompressed'),
-                },
-            ],
-        },
-        sharing: {
-            selected: 'true',
-            values: [
-                {
-                    value: 'true',
-                    label: i18n.t('With sharing'),
-                },
-                {
-                    value: 'false',
-                    label: i18n.t('Without sharing'),
-                },
-            ],
-        },
-    }
+    state = getFormValues([
+        'schemas',
+        'format:.json:json,xml',
+        'compression',
+        'sharing',
+    ])
 
     onSubmit = async () => {
         try {
@@ -83,9 +40,11 @@ export class MetaDataExport extends FormBase {
                 sharing,
             } = this.getFormState()
 
+            const ext = format.substr(1)
+
             const params = []
             params.push('assumeTrue=false')
-            params.push(`format=${format}`)
+            params.push(`format=${ext}`)
             params.push(
                 schemas
                     .map(name => name)
@@ -100,9 +59,9 @@ export class MetaDataExport extends FormBase {
                 )
             }
 
-            let endpoint = `metadata.${format}`
+            let endpoint = `metadata${format}`
             if (compression !== 'none') {
-                endpoint += `.${compression}`
+                endpoint += compression
                 window.location = api.url(`${endpoint}?${params.join('&')}`)
                 return
             }
@@ -112,14 +71,11 @@ export class MetaDataExport extends FormBase {
                     `${endpoint}?${params.join('&')}`
                 )
                 let contents = data
-                if (format === 'json') {
+                if (ext === 'json') {
                     contents = JSON.stringify(data)
                 }
 
-                downloadBlob(
-                    createBlob(contents, format, compression),
-                    endpoint
-                )
+                downloadBlob(createBlob(contents, ext), endpoint)
                 this.setState({ processing: false })
             })
         } catch (e) {

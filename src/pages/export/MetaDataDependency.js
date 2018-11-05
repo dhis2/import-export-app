@@ -2,7 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormBase } from 'components/FormBase'
 import { api } from 'services'
-import { createBlob, downloadBlob, getFormField } from 'helpers'
+import { createBlob, downloadBlob, getFormField, getFormValues } from 'helpers'
 import { MetadataDependencyExportIcon } from 'components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
@@ -24,68 +24,12 @@ export class MetaDataDependencyExport extends FormBase {
         getFormField('compression'),
     ]
 
-    state = {
-        processing: false,
-        objectType: {
-            selected: 'dataSets',
-            values: [
-                {
-                    value: 'dataSets',
-                    label: i18n.t('Data sets'),
-                },
-                {
-                    value: 'programs',
-                    label: i18n.t('Programs'),
-                },
-                {
-                    value: 'categoryCombos',
-                    label: i18n.t('Category combination'),
-                },
-                {
-                    value: 'dashboards',
-                    label: i18n.t('Dashboard'),
-                },
-                {
-                    value: 'dataElementGroups',
-                    label: i18n.t('Data element groups'),
-                },
-            ],
-        },
-        objectList: {
-            selected: '',
-            values: [],
-        },
-        format: {
-            selected: '.json',
-            values: [
-                {
-                    value: '.json',
-                    label: i18n.t('JSON'),
-                },
-                {
-                    value: '.xml',
-                    label: i18n.t('XML'),
-                },
-            ],
-        },
-        compression: {
-            selected: '.zip',
-            values: [
-                {
-                    value: '.zip',
-                    label: i18n.t('Zip'),
-                },
-                {
-                    value: '.gz',
-                    label: i18n.t('Gzip'),
-                },
-                {
-                    value: 'none',
-                    label: i18n.t('Uncompressed'),
-                },
-            ],
-        },
-    }
+    state = getFormValues([
+        'objectType',
+        'objectList',
+        'format:.json:json,xml',
+        'compression',
+    ])
 
     async componentDidMount() {
         await this.fetch()
@@ -128,6 +72,7 @@ export class MetaDataDependencyExport extends FormBase {
                 format,
                 compression,
             } = this.getFormState()
+            const ext = format.substr(1)
 
             let endpoint = `metadata${format}`
             if (compression !== 'none') {
@@ -135,7 +80,7 @@ export class MetaDataDependencyExport extends FormBase {
             }
 
             const baseURL = api.url('')
-            const params = `attachment=${endpoint}&format=${format.substr(1)}`
+            const params = `attachment=${endpoint}&format=${ext}`
             const urlPath = `${objectType}/${objectList}/${endpoint}?${params}`
 
             const url = `${baseURL}${urlPath}`
@@ -151,10 +96,7 @@ export class MetaDataDependencyExport extends FormBase {
                     contents = JSON.stringify(data)
                 }
 
-                downloadBlob(
-                    createBlob(contents, format, compression),
-                    endpoint
-                )
+                downloadBlob(createBlob(contents, ext), endpoint)
                 this.setState({ processing: false })
             })
         } catch (e) {

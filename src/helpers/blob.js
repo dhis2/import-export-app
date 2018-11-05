@@ -12,7 +12,7 @@ export function blobType(format, compression) {
     }
 }
 
-export function createBlob(contents, format, compression) {
+export function createBlob(contents, format, compression = 'none') {
     return URL.createObjectURL(
         new Blob([contents], { type: blobType(format, compression) })
     )

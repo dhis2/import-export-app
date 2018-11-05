@@ -4,7 +4,7 @@ import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { GMLIcon } from 'components/Icon'
-import { getFormField } from 'helpers'
+import { getFormField, getFormValues } from 'helpers'
 import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class GMLImport extends FormBase {
@@ -23,28 +23,7 @@ export class GMLImport extends FormBase {
     submitLabel = i18n.t('Import')
 
     fields = [getFormField('upload'), getFormField('dryRun')]
-
-    state = {
-        processing: false,
-
-        upload: {
-            selected: null,
-        },
-
-        dryRun: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-            ],
-        },
-    }
+    state = getFormValues(['upload', 'dryRun'])
 
     async componentDidMount() {
         await fetchLog('', 'GML_IMPORT')
@@ -57,12 +36,11 @@ export class GMLImport extends FormBase {
             const formData = new FormData()
             formData.set('upload', upload)
 
-            const contentType = getMimeType(upload.name)
+            const contentType = getMimeType(upload.name.toLowerCase())
 
             const params = []
             params.push(`dryRun=${dryRun}`)
 
-            eventEmitter.emit('log.open')
             this.setState({ processing: true })
 
             const xhr = new XMLHttpRequest()
