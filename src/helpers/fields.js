@@ -66,12 +66,6 @@ const fields = {
         name: 'eventIdScheme',
         label: i18n.t('Event ID Scheme'),
     },
-    exportFormat: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'exportFormat',
-        label: i18n.t('Format'),
-    },
     flushMode: {
         context: CTX_MORE_OPTIONS,
         type: TYPE_RADIO,
@@ -95,12 +89,6 @@ const fields = {
         type: TYPE_RADIO,
         name: 'identifier',
         label: i18n.t('Identifier'),
-    },
-    importFormat: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'importFormat',
-        label: i18n.t('Format'),
     },
     importMode: {
         context: CTX_DEFAULT,
@@ -173,12 +161,6 @@ const fields = {
         type: TYPE_ORG_UNIT_SINGLE_SELECT,
         name: 'orgUnit',
         label: i18n.t('Organisation unit'),
-    },
-    payloadFormat: {
-        context: CTX_DEFAULT,
-        type: TYPE_RADIO,
-        name: 'payloadFormat',
-        label: i18n.t('Format'),
     },
     preheatCache: {
         context: CTX_DEFAULT,

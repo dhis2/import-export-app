@@ -5,7 +5,7 @@ import { api, eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, CTX_CSV_OPTION } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
-import { getFormField, getFormFieldMoreOptions } from 'helpers'
+import { getFormField, getFormFieldMoreOptions, getFormValues } from 'helpers'
 import { fetchLog, getMimeType, emitLogOnFirstResponse } from './helpers'
 
 export class MetaDataImport extends FormBase {
@@ -40,200 +40,23 @@ export class MetaDataImport extends FormBase {
         getFormField('inclusionStrategy'),
     ]
 
-    state = {
-        _context: CTX_DEFAULT,
-        processing: false,
-
-        upload: {
-            selected: null,
-        },
-
-        classKey: {
-            selected: '',
-            values: [],
-        },
-
-        importMode: {
-            selected: 'COMMIT',
-            values: [
-                {
-                    value: 'COMMIT',
-                    label: i18n.t('Commit'),
-                },
-                {
-                    value: 'VALIDATE',
-                    label: i18n.t('Validate'),
-                },
-            ],
-        },
-        identifier: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('CODE'),
-                },
-                {
-                    value: 'AUTO',
-                    label: i18n.t('AUTO'),
-                },
-            ],
-        },
-        importReportMode: {
-            selected: 'ERRORS',
-            values: [
-                {
-                    value: 'ERRORS',
-                    label: i18n.t('Errors'),
-                },
-                {
-                    value: 'FULL',
-                    label: i18n.t('Full'),
-                },
-                {
-                    value: 'DEBUG',
-                    label: i18n.t('Debug'),
-                },
-            ],
-        },
-        preheatMode: {
-            selected: 'REFERENCE',
-            values: [
-                {
-                    value: 'REFERENCE',
-                    label: i18n.t('Reference'),
-                },
-                {
-                    value: 'ALL',
-                    label: i18n.t('All'),
-                },
-                {
-                    value: 'NONE',
-                    label: i18n.t('None'),
-                },
-            ],
-        },
-        importStrategy: {
-            selected: 'CREATE_AND_UPDATE',
-            values: [
-                {
-                    value: 'CREATE_AND_UPDATE',
-                    label: i18n.t('Create and Update'),
-                },
-                {
-                    value: 'CREATE',
-                    label: i18n.t('Create'),
-                },
-                {
-                    value: 'UPDATE',
-                    label: i18n.t('Update'),
-                },
-                {
-                    value: 'DELETE',
-                    label: i18n.t('Delete'),
-                },
-            ],
-        },
-        atomicMode: {
-            selected: 'ALL',
-            values: [
-                {
-                    value: 'ALL',
-                    label: i18n.t('All'),
-                },
-                {
-                    value: 'NONE',
-                    label: i18n.t('None'),
-                },
-            ],
-        },
-        mergeMode: {
-            selected: 'MERGE',
-            values: [
-                {
-                    value: 'MERGE',
-                    label: i18n.t('Merge'),
-                },
-                {
-                    value: 'REPLACE',
-                    label: i18n.t('Replace'),
-                },
-            ],
-        },
-        flushMode: {
-            selected: 'AUTO',
-            values: [
-                {
-                    value: 'AUTO',
-                    label: i18n.t('Auto'),
-                },
-                {
-                    value: 'OBJECT',
-                    label: i18n.t('Object'),
-                },
-            ],
-        },
-        skipSharing: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-            ],
-        },
-        skipValidation: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-            ],
-        },
-        async: {
-            selected: 'true',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-            ],
-        },
-        inclusionStrategy: {
-            selected: 'NON_NULL',
-            values: [
-                {
-                    value: 'NON_NULL',
-                    label: i18n.t('Non Null'),
-                },
-                {
-                    value: 'ALWAYS',
-                    label: i18n.t('Always'),
-                },
-                {
-                    value: 'NON_EMPTY',
-                    label: i18n.t('Non Empty'),
-                },
-            ],
-        },
-    }
+    state = getFormValues([
+        '_context',
+        'upload',
+        'classKey',
+        'importMode',
+        'identifier',
+        'importReportMode',
+        'preheatMode',
+        'importStrategy',
+        'atomicMode',
+        'mergeMode',
+        'flushMode',
+        'skipSharing',
+        'skipValidation',
+        'async',
+        'inclusionStrategy',
+    ])
 
     async componentDidMount() {
         await fetchLog('', 'METADATA_IMPORT')
@@ -296,7 +119,7 @@ export class MetaDataImport extends FormBase {
             const formData = new FormData()
             formData.set('upload', upload)
 
-            const contentType = getMimeType(upload.name)
+            const contentType = getMimeType(upload.name.toLowerCase())
 
             const params = []
             params.push(`importMode=${encodeURI(importMode)}`)

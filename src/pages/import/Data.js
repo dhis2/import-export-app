@@ -4,7 +4,7 @@ import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { DataIcon } from 'components/Icon'
-import { getFormField, getFormFieldMoreOptions } from 'helpers'
+import { getFormField, getFormFieldMoreOptions, getFormValues } from 'helpers'
 import { emitLogOnFirstResponse, getMimeType } from './helpers'
 import { fetchLog } from './helpers'
 
@@ -22,7 +22,7 @@ export class DataImport extends FormBase {
 
     fields = [
         getFormField('upload'),
-        getFormField('importFormat'),
+        getFormField('format'),
         getFormField('dryRun'),
         getFormField('strategy'),
         getFormField('preheatCache'),
@@ -35,153 +35,17 @@ export class DataImport extends FormBase {
         getFormField('skipExistingCheck'),
     ]
 
-    state = {
-        processing: false,
-
-        upload: {
-            selected: null,
-        },
-
-        importFormat: {
-            selected: 'json',
-            values: [
-                {
-                    value: 'json',
-                    label: i18n.t('JSON'),
-                },
-                {
-                    value: 'xml',
-                    label: i18n.t('XML'),
-                },
-                {
-                    value: 'csv',
-                    label: i18n.t('CSV'),
-                },
-                {
-                    value: 'pdf',
-                    label: i18n.t('PDF'),
-                },
-                {
-                    value: 'adx',
-                    label: i18n.t('ADX'),
-                },
-            ],
-        },
-
-        dryRun: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-            ],
-        },
-
-        strategy: {
-            selected: 'NEW_AND_UPDATES',
-            values: [
-                {
-                    value: 'NEW_AND_UPDATES',
-                    label: i18n.t('New and Updates'),
-                },
-                {
-                    value: 'NEW',
-                    label: i18n.t('New only'),
-                },
-                {
-                    value: 'UPDATES',
-                    label: i18n.t('Updates only'),
-                },
-                {
-                    value: 'DELETE',
-                    label: i18n.t('Delete'),
-                },
-            ],
-        },
-
-        preheatCache: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Yes (faster for large imports)'),
-                },
-            ],
-        },
-
-        dataElementIdScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-            ],
-        },
-
-        orgUnitIdScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-                {
-                    value: 'NAME',
-                    label: i18n.t('Name'),
-                },
-                {
-                    value: 'ATTRIBUTE:UKNKz1H10EE',
-                    label: i18n.t('HR identifier'),
-                },
-            ],
-        },
-
-        idScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-            ],
-        },
-
-        skipExistingCheck: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('Check (safe, recommended)'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Skip check (fast)'),
-                },
-            ],
-        },
-    }
+    state = getFormValues([
+        'upload',
+        'format:.json:json,xml,csv,pdf,adx',
+        'dryRun',
+        'strategy',
+        'preheatCache',
+        'dataElementIdScheme',
+        'orgUnitIdScheme',
+        'idScheme',
+        'skipExistingCheck',
+    ])
 
     async componentDidMount() {
         await fetchLog('', 'DATAVALUE_IMPORT')
@@ -191,7 +55,7 @@ export class DataImport extends FormBase {
         try {
             const {
                 upload,
-                importFormat,
+                format,
                 dryRun,
                 strategy,
                 preheatCache,
@@ -201,11 +65,13 @@ export class DataImport extends FormBase {
                 skipExistingCheck,
             } = this.getFormState()
 
+            const ext = format.substr(1)
+
             const formData = new FormData()
             formData.set('upload', upload)
 
             const params = []
-            params.push(`importFormat=${importFormat}`)
+            params.push(`format=${ext}`)
             params.push(`dryRun=${dryRun}`)
             params.push(`strategy=${strategy}`)
             params.push(`preheatCache=${preheatCache}`)

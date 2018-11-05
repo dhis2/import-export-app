@@ -5,7 +5,7 @@ import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT } from 'components/Form'
 import { EventIcon } from 'components/Icon'
-import { getFormField } from 'helpers'
+import { getFormField, getFormValues } from 'helpers'
 import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
 
 export class EventImport extends FormBase {
@@ -22,87 +22,19 @@ export class EventImport extends FormBase {
 
     fields = [
         getFormField('upload'),
-        getFormField('payloadFormat'),
+        getFormField('format'),
         getFormField('dryRun'),
         getFormField('eventIdScheme'),
         getFormField('orgUnitIdScheme', { context: CTX_DEFAULT }),
     ]
 
-    state = {
-        processing: false,
-
-        upload: {
-            selected: null,
-        },
-
-        payloadFormat: {
-            selected: 'json',
-            values: [
-                {
-                    value: 'json',
-                    label: i18n.t('JSON'),
-                },
-                {
-                    value: 'xml',
-                    label: i18n.t('XML'),
-                },
-                {
-                    value: 'csv',
-                    label: i18n.t('CSV'),
-                },
-            ],
-        },
-
-        dryRun: {
-            selected: 'false',
-            values: [
-                {
-                    value: 'false',
-                    label: i18n.t('No'),
-                },
-                {
-                    value: 'true',
-                    label: i18n.t('Yes'),
-                },
-            ],
-        },
-
-        eventIdScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-            ],
-        },
-
-        orgUnitIdScheme: {
-            selected: 'UID',
-            values: [
-                {
-                    value: 'UID',
-                    label: i18n.t('UID'),
-                },
-                {
-                    value: 'CODE',
-                    label: i18n.t('Code'),
-                },
-                {
-                    value: 'NAME',
-                    label: i18n.t('Name'),
-                },
-                {
-                    value: 'ATTRIBUTE:UKNKz1H10EE',
-                    label: i18n.t('HR identifier'),
-                },
-            ],
-        },
-    }
+    state = getFormValues([
+        'upload',
+        'format:.json:json,xml,csv',
+        'dryRun',
+        'eventIdScheme',
+        'orgUnitIdScheme',
+    ])
 
     async componentDidMount() {
         await fetchLog('', 'EVENT_IMPORT')
@@ -112,16 +44,17 @@ export class EventImport extends FormBase {
         try {
             const {
                 upload,
-                payloadFormat,
+                format,
                 dryRun,
                 eventIdScheme,
                 orgUnitIdScheme,
             } = this.getFormState()
 
             const contentType = getMimeType(upload.name)
+            const ext = format.slice(1)
 
             const params = []
-            params.push(`payloadFormat=${payloadFormat}`)
+            params.push(`payloadFormat=${ext}`)
             params.push(`dryRun=${dryRun}`)
             params.push('skipFirst=true')
             params.push(`eventIdScheme=${eventIdScheme}`)
