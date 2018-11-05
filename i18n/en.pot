@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-05T14:48:07.878Z\n"
-"PO-Revision-Date: 2018-11-05T14:48:07.878Z\n"
+"POT-Creation-Date: 2018-11-05T15:19:26.238Z\n"
+"PO-Revision-Date: 2018-11-05T15:19:26.238Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -224,10 +224,10 @@ msgstr ""
 msgid "PDF"
 msgstr ""
 
-msgid "No"
+msgid "Yes"
 msgstr ""
 
-msgid "Yes"
+msgid "No"
 msgstr ""
 
 msgid "UID"
@@ -257,19 +257,16 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-msgid "Check (safe, recommended)"
+msgid "Skip check (fast)"
 msgstr ""
 
-msgid "Skip check (fast)"
+msgid "Check (safe, recommended)"
 msgstr ""
 
 msgid "Commit"
 msgstr ""
 
 msgid "Validate"
-msgstr ""
-
-msgid "CODE"
 msgstr ""
 
 msgid "AUTO"

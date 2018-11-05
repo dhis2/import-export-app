@@ -285,8 +285,6 @@ export function getFormValues(list) {
 
         if (k.includes(':')) {
             const [name, selected, list] = k.split(':')
-            console.log('name', name, 'selected', selected, 'list', list)
-
             o[name] = calculated[name](selected, list)
         } else {
             o[k] = values[k]

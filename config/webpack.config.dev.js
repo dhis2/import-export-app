@@ -52,9 +52,6 @@ const globals = Object.assign(
     env.stringified
 )
 
-const scriptPrefix = dhisConfig.baseUrl
-const pathnamePrefix = parse(scriptPrefix).pathname
-
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
