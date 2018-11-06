@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { eventEmitter } from 'services'
 import { Loading } from 'components'
-import { Totals, TypeStats, Messages } from './helpers'
+import { Totals, TypeStats, Conflicts, Messages } from './helpers'
 import s from './styles.css'
 
 const initialState = {
@@ -18,7 +18,7 @@ const initialState = {
     },
 
     typeStats: [],
-
+    conflicts: [],
     messages: [],
 }
 
@@ -38,6 +38,8 @@ export class TaskSummary extends React.Component {
         eventEmitter.on('summary.clear', this.onClear)
         eventEmitter.on('summary.totals', this.onTotals)
         eventEmitter.on('summary.typeReports', this.onTypeReports)
+        eventEmitter.on('summary.importCount', this.onImportCount)
+        eventEmitter.on('summary.conflicts', this.onConflicts)
     }
 
     componentWillUnmount() {
@@ -47,6 +49,8 @@ export class TaskSummary extends React.Component {
         eventEmitter.off('summary.clear', this.onClear)
         eventEmitter.off('summary.totals', this.onTotals)
         eventEmitter.off('summary.typeReports', this.onTypeReports)
+        eventEmitter.off('summary.importCount', this.onImportCount)
+        eventEmitter.off('summary.conflicts', this.onConflicts)
     }
 
     onLoaded = () => this.setState({ loading: false })
@@ -87,10 +91,71 @@ export class TaskSummary extends React.Component {
         this.setState({ typeStats, messages })
     }
 
+    onImportCount = ({ deleted, ignored, updated, imported }) =>
+        this.setState({
+            stats: {
+                deleted,
+                ignored,
+                updated,
+                created: imported,
+                total: deleted + ignored + updated + imported,
+            },
+        })
+
+    onConflicts = conflicts => this.setState({ conflicts })
+
+    viewTypeStats() {
+        if (this.state.typeStats.length === 0) {
+            return null
+        }
+
+        return (
+            <Fragment>
+                <div className={`${s.label} ${s.marginTop}`}>
+                    {i18n.t('Type Count')}
+                </div>
+
+                <TypeStats list={this.state.typeStats} />
+            </Fragment>
+        )
+    }
+
+    viewMessages() {
+        if (this.state.messages.length === 0) {
+            return null
+        }
+
+        return (
+            <Fragment>
+                <div className={`${s.label} ${s.marginTop}`}>
+                    {i18n.t('Messages')}
+                </div>
+                <Messages list={this.state.messages} />
+            </Fragment>
+        )
+    }
+
+    viewConflicts() {
+        if (this.state.conflicts === 0) {
+            return null
+        }
+
+        return (
+            <Fragment>
+                <div className={`${s.label} ${s.marginTop}`}>
+                    {i18n.t('Conflicts')}
+                </div>
+                <Conflicts list={this.state.conflicts} />
+            </Fragment>
+        )
+    }
+
     render() {
         if (this.state.loading) {
             return <Loading />
         }
+
+        console.log('this.state', this.state)
 
         const { stats, typeStats, messages } = this.state
         if (
@@ -110,19 +175,9 @@ export class TaskSummary extends React.Component {
                     <div className={s.label}>{i18n.t('Summary')}</div>
                     <Totals {...this.state.stats} />
 
-                    <div className={`${s.label} ${s.marginTop}`}>
-                        {i18n.t('Type Count')}
-                    </div>
-                    <TypeStats list={this.state.typeStats} />
-
-                    {this.state.messages.length > 0 && (
-                        <Fragment>
-                            <div className={`${s.label} ${s.marginTop}`}>
-                                {i18n.t('Messages')}
-                            </div>
-                            <Messages list={this.state.messages} />
-                        </Fragment>
-                    )}
+                    {this.viewTypeStats()}
+                    {this.viewConflicts()}
+                    {this.viewMessages()}
                 </div>
             </div>
         )

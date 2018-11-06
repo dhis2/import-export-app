@@ -23,6 +23,10 @@ function Pagination({ total, start, limit, onClick }) {
         }
     }
 
+    if (last === 1) {
+        return null
+    }
+
     const pages = []
     for (let i = first; i <= last; i += 1) {
         const className = i === currentPage ? `${s.page} ${s.current}` : s.page

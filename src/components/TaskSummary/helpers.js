@@ -62,29 +62,48 @@ export function TypeStats({ list }) {
     )
 }
 
-const titles = ['uid', 'Type', 'Property', 'Message']
-const fields = [
-    {
-        key: 'uid',
-        title: 'UID',
-        width: '10%',
-    },
-    {
-        key: 'type',
-        title: 'Type',
-        width: '15%',
-    },
-    {
-        key: 'property',
-        title: 'Property',
-        width: '15%',
-    },
-    {
-        key: 'message',
-        title: 'Message',
-        width: '60%',
-    },
-]
 export function Messages({ list }) {
+    const fields = [
+        {
+            key: 'uid',
+            title: 'UID',
+            width: '10%',
+        },
+        {
+            key: 'type',
+            title: 'Type',
+            width: '15%',
+        },
+        {
+            key: 'property',
+            title: 'Property',
+            width: '15%',
+        },
+        {
+            key: 'message',
+            title: 'Message',
+            width: '60%',
+        },
+    ]
+    const titles = ['uid', 'Type', 'Property', 'Message']
+
+    return <PaginatedTable fields={fields} titles={titles} list={list} />
+}
+
+export function Conflicts({ list }) {
+    const fields = [
+        {
+            key: 'object',
+            title: 'Object',
+            width: '40%',
+        },
+        {
+            key: 'value',
+            title: 'Value',
+            width: '60%',
+        },
+    ]
+    const titles = ['Object', 'Value']
+
     return <PaginatedTable fields={fields} titles={titles} list={list} />
 }
