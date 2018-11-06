@@ -155,8 +155,6 @@ export class TaskSummary extends React.Component {
             return <Loading />
         }
 
-        console.log('this.state', this.state)
-
         const { stats, typeStats, messages } = this.state
         if (
             stats.total === 0 &&
