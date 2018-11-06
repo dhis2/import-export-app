@@ -30,11 +30,14 @@ function getFormat(selected, list) {
 function getBoolean(
     selected,
     labelTrue = i18n.t('Yes'),
-    labelFalse = i18n.t('No')
+    labelFalse = i18n.t('No'),
+    reverseOrder = false
 ) {
     return {
         selected,
-        values: [getValue('true', labelTrue), getValue('false', labelFalse)],
+        values: reverseOrder
+            ? [getValue('false', labelFalse), getValue('true', labelTrue)]
+            : [getValue('true', labelTrue), getValue('false', labelFalse)],
     }
 }
 
@@ -71,6 +74,13 @@ const values = {
             getValue('ATTRIBUTE:UKNKz1H10EE', i18n.t('HR identifier')),
         ],
     },
+
+    children: getBoolean(
+        'false',
+        i18n.t('Include descendant of organisation unit'),
+        i18n.t('Selected organisation unit'),
+        true
+    ),
 
     preheatCache: getBoolean('false', i18n.t('Yes (faster for large imports)')),
 
