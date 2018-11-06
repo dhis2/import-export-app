@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-06T11:11:20.768Z\n"
-"PO-Revision-Date: 2018-11-06T11:11:20.768Z\n"
+"POT-Creation-Date: 2018-11-06T17:44:37.688Z\n"
+"PO-Revision-Date: 2018-11-06T17:44:37.688Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -101,16 +101,19 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-msgid "Import Summary"
-msgstr ""
-
-msgid "Summary"
-msgstr ""
-
 msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Import Summary"
+msgstr ""
+
+msgid "Summary"
 msgstr ""
 
 msgid "Async"
