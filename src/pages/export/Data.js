@@ -33,6 +33,7 @@ export class DataExport extends FormBase {
 
     fields = [
         getFormField('orgUnit'),
+        getFormField('children'),
         getFormField('selectedDataSets'),
         getFormField('startDate'),
         getFormField('endDate'),
@@ -49,6 +50,7 @@ export class DataExport extends FormBase {
 
     state = getFormValues([
         'orgUnit',
+        'children',
         'selectedDataSets',
         'startDate',
         'endDate',
@@ -91,6 +93,7 @@ export class DataExport extends FormBase {
         try {
             const {
                 orgUnit,
+                children,
                 startDate,
                 endDate,
                 format,
@@ -112,6 +115,7 @@ export class DataExport extends FormBase {
             params.push(`dataElementIdScheme=${dataElementIdScheme}`)
             params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
             params.push(`includeDeleted=${includeDeleted}`)
+            params.push(`children=${children}`)
             params.push(
                 `categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`
             )

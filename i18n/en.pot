@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-05T15:38:52.939Z\n"
-"PO-Revision-Date: 2018-11-05T15:38:52.940Z\n"
+"POT-Creation-Date: 2018-11-06T11:17:57.753Z\n"
+"PO-Revision-Date: 2018-11-06T11:17:57.753Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -120,6 +120,9 @@ msgid "Atomic Mode"
 msgstr ""
 
 msgid "Category ID scheme"
+msgstr ""
+
+msgid "Children"
 msgstr ""
 
 msgid "Object type"
@@ -242,6 +245,12 @@ msgstr ""
 msgid "HR identifier"
 msgstr ""
 
+msgid "Include descendant of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
 msgid "Yes (faster for large imports)"
 msgstr ""
 
@@ -321,9 +330,6 @@ msgid "Always"
 msgstr ""
 
 msgid "Non Empty"
-msgstr ""
-
-msgid "Selected organisation unit"
 msgstr ""
 
 msgid "Include children of organisation unit"

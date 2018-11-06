@@ -30,6 +30,7 @@ const fields = {
         TYPE_RADIO,
         CTX_MORE_OPTIONS
     ),
+    children: getField('children', i18n.t('Children'), TYPE_RADIO),
     classKey: getField(
         'classKey',
         i18n.t('Object type'),
