@@ -76,10 +76,9 @@ const values = {
     },
 
     children: getBoolean(
-        'false',
+        'true',
         i18n.t('Include descendant of organisation unit'),
-        i18n.t('Selected organisation unit'),
-        true
+        i18n.t('Selected organisation unit')
     ),
 
     preheatCache: getBoolean('false', i18n.t('Yes (faster for large imports)')),
