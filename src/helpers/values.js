@@ -77,7 +77,7 @@ const values = {
 
     children: getBoolean(
         'true',
-        i18n.t('Include descendant of organisation unit'),
+        i18n.t('Include descendants of organisation unit'),
         i18n.t('Selected organisation unit')
     ),
 
