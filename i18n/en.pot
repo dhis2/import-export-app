@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-06T17:50:45.317Z\n"
-"PO-Revision-Date: 2018-11-06T17:50:45.317Z\n"
+"POT-Creation-Date: 2018-11-07T11:56:34.680Z\n"
+"PO-Revision-Date: 2018-11-07T11:56:34.680Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -248,7 +248,7 @@ msgstr ""
 msgid "HR identifier"
 msgstr ""
 
-msgid "Include descendant of organisation unit"
+msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
@@ -336,9 +336,6 @@ msgid "Non Empty"
 msgstr ""
 
 msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Zip"
