@@ -76,6 +76,8 @@ export class DataImport extends FormBase {
                 [`format=${format.substr(1)}`, 'async=true']
             )
 
+            console.log('params', params)
+
             const contentType = getMimeType(upload.name)
 
             this.setState({ processing: true })
