@@ -38,16 +38,13 @@ export class GMLImport extends FormBase {
 
             const contentType = getMimeType(upload.name.toLowerCase())
 
-            const params = []
-            params.push(`dryRun=${dryRun}`)
-
             this.setState({ processing: true })
 
             const xhr = new XMLHttpRequest()
             xhr.withCredentials = true
             xhr.open(
                 'POST',
-                `${apiConfig.server}/api/metadata/gml.json?${params.join('&')}`,
+                `${apiConfig.server}/api/metadata/gml.json?dryRun=${dryRun}`,
                 true
             )
             xhr.setRequestHeader('Content-Type', contentType)
