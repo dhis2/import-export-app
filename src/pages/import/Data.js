@@ -4,7 +4,12 @@ import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { DataIcon } from 'components/Icon'
-import { getFormField, getFormFieldMoreOptions, getFormValues } from 'helpers'
+import {
+    getFormField,
+    getFormFieldMoreOptions,
+    getFormValues,
+    getParamsFromFormState,
+} from 'helpers'
 import { emitLogOnFirstResponse, getMimeType } from './helpers'
 import { fetchLog } from './helpers'
 
@@ -53,33 +58,23 @@ export class DataImport extends FormBase {
 
     onSubmit = () => {
         try {
-            const {
-                upload,
-                format,
-                dryRun,
-                strategy,
-                preheatCache,
-                dataElementIdScheme,
-                orgUnitIdScheme,
-                idScheme,
-                skipExistingCheck,
-            } = this.getFormState()
-
-            const ext = format.substr(1)
-
+            const { upload, format } = this.getFormState()
             const formData = new FormData()
             formData.set('upload', upload)
 
-            const params = []
-            params.push(`format=${ext}`)
-            params.push(`dryRun=${dryRun}`)
-            params.push(`strategy=${strategy}`)
-            params.push(`preheatCache=${preheatCache}`)
-            params.push(`dataElementIdScheme=${dataElementIdScheme}`)
-            params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
-            params.push(`idScheme=${idScheme}`)
-            params.push(`skipExistingCheck=${skipExistingCheck}`)
-            params.push('async=true')
+            const params = getParamsFromFormState(
+                this.getFormState(),
+                [
+                    'dataElementIdScheme',
+                    'dryRun',
+                    'idScheme',
+                    'orgUnitIdScheme',
+                    'preheatCache',
+                    'skipExistingCheck',
+                    'strategy',
+                ],
+                [`format=${format.substr(1)}`, 'async=true']
+            )
 
             const contentType = getMimeType(upload.name)
 
@@ -89,9 +84,7 @@ export class DataImport extends FormBase {
             xhr.withCredentials = true
             xhr.open(
                 'POST',
-                `${apiConfig.server}/api/dataValueSets.json?${params.join(
-                    '&'
-                )}`,
+                `${apiConfig.server}/api/dataValueSets.json?${params}`,
                 true
             )
             xhr.setRequestHeader('Content-Type', contentType)

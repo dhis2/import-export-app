@@ -45,3 +45,10 @@ export function getFieldState(name, value, fields, state) {
 export function getFieldValue(field) {
     return field.selected
 }
+
+export function getParamsFromFormState(state, list, append = []) {
+    const params = list.forEach(k => `${k}=${state[k]}`)
+    append.forEach(v => params.push(v))
+
+    return params.join('&')
+}
