@@ -6,7 +6,12 @@ import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT } from 'components/Form'
 import { EventIcon } from 'components/Icon'
 import { getFormField, getFormValues } from 'helpers'
-import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
+import {
+    emitLogOnFirstResponse,
+    fetchLog,
+    getMimeType,
+    getParamsFromFormState,
+} from './helpers'
 
 export class EventImport extends FormBase {
     static path = '/import/event'
@@ -42,32 +47,25 @@ export class EventImport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const {
-                upload,
-                format,
-                dryRun,
-                eventIdScheme,
-                orgUnitIdScheme,
-            } = this.getFormState()
+            const { upload, format } = this.getFormState()
 
             const contentType = getMimeType(upload.name)
-            const ext = format.slice(1)
-
-            const params = []
-            params.push(`payloadFormat=${ext}`)
-            params.push(`dryRun=${dryRun}`)
-            params.push('skipFirst=true')
-            params.push(`eventIdScheme=${eventIdScheme}`)
-            params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
-            params.push('async=true')
-
+            const params = getParamsFromFormState(
+                this.getFormState(),
+                ['dryRun', 'eventIdScheme', 'orgUnitIdScheme'],
+                [
+                    'async=true',
+                    'skipFirst=true',
+                    `payloadFormat=${format.slice(1)}`,
+                ]
+            )
             this.setState({ processing: true })
 
             const xhr = new XMLHttpRequest()
             xhr.withCredentials = true
             xhr.open(
                 'POST',
-                `${apiConfig.server}/api/events.json?${params.join('&')}`,
+                `${apiConfig.server}/api/events.json?${params}`,
                 true
             )
             xhr.setRequestHeader('Content-Type', contentType)
