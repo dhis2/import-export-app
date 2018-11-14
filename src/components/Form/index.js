@@ -14,19 +14,20 @@ import OrgUnitTree from './OrgUnitTree'
 import MoreOptions from './MoreOptions'
 import DataSetPicker from './DataSetPicker'
 
-export const TYPE_FILE = 'fieldType/FILE'
-export const TYPE_DATE = 'fieldType/DATE'
-export const TYPE_RADIO = 'fieldType/RADIO'
-export const TYPE_SELECT = 'fieldType/SELECT'
-export const TYPE_SCHEMAS = 'fieldType/SCHEMAS'
-export const TYPE_ORG_UNIT = 'fieldType/ORG_UNIT'
-export const TYPE_ORG_UNIT_SINGLE_SELECT = 'fieldType/ORG_UNIT_SINGLE_SELECT'
-export const TYPE_MORE_OPTIONS = 'fieldType/MORE_OPTIONS'
-export const TYPE_DATASET_PICKER = 'fieldType/DATASET_PICKER'
+import {
+    TYPE_FILE,
+    TYPE_DATE,
+    TYPE_RADIO,
+    TYPE_SELECT,
+    TYPE_SCHEMAS,
+    TYPE_ORG_UNIT,
+    TYPE_ORG_UNIT_SINGLE_SELECT,
+    TYPE_MORE_OPTIONS,
+    TYPE_DATASET_PICKER,
+} from './constants'
+import { CTX_DEFAULT, CTX_MORE_OPTIONS } from './constants'
 
-export const CTX_DEFAULT = 'ctx/DEFAULT'
-export const CTX_MORE_OPTIONS = 'ctx/MORE_OPTIONS'
-export const CTX_CSV_OPTION = 'ctx/CSV_OPTION'
+export * from './constants'
 
 export class Form extends React.Component {
     fields() {
@@ -39,46 +40,42 @@ export class Form extends React.Component {
             }
 
             const { type, name, label, className } = field
+            const props = { name, label, className }
+
             if (type === TYPE_RADIO) {
-                const { selected, values } = fieldValues[name]
+                props['values'] = fieldValues[name]['values']
+                props['selected'] = fieldValues[name]['selected']
+
                 return (
                     <Radio
+                        {...props}
                         key={`radio-${name}`}
-                        name={name}
-                        label={label}
-                        values={values}
-                        selected={selected}
-                        className={className}
                         onChange={this.props.onChange}
                     />
                 )
             } else if (type === TYPE_SELECT) {
-                const { selected, values } = fieldValues[name]
+                props['values'] = fieldValues[name]['values']
+                props['selected'] = fieldValues[name]['selected']
+
                 return (
                     <Select
+                        {...props}
                         key={`select-${name}`}
-                        name={name}
-                        label={label}
-                        values={values}
-                        selected={selected}
                         onChange={this.props.onChange}
                     />
                 )
             } else if (type === TYPE_FILE) {
-                const { selected } = fieldValues[name]
+                props['selected'] = fieldValues[name]['selected']
+
                 return (
                     <File
+                        {...props}
                         key={`file-${name}`}
-                        name={name}
-                        label={label}
-                        selected={selected}
-                        className={className}
                         onChange={this.props.onChange}
                     />
                 )
             } else if (type === TYPE_DATE) {
-                const value = fieldValues[name]['selected']
-                const props = {}
+                props['value'] = fieldValues[name]['selected']
                 if (name === 'endDate') {
                     props['minDate'] = fieldValues['startDate']['selected']
                 }
@@ -87,10 +84,6 @@ export class Form extends React.Component {
                     <Date
                         {...props}
                         key={`radio-${name}`}
-                        name={name}
-                        label={label}
-                        value={value}
-                        className={className}
                         onChange={this.props.onChange}
                     />
                 )
@@ -105,9 +98,8 @@ export class Form extends React.Component {
             } else if (type === TYPE_SCHEMAS) {
                 return (
                     <Schemas
+                        {...props}
                         key={`schemas-${name}`}
-                        name={name}
-                        label={label}
                         onChange={this.props.onChange}
                     />
                 )
@@ -158,17 +150,17 @@ export class Form extends React.Component {
                     </FormControl>
                 )
             } else if (type === TYPE_DATASET_PICKER) {
-                const { selected, value } = fieldValues[name]
-                if (value === null) {
+                if (fieldValues[name]['value'] === null) {
                     return null
                 }
+
+                props['value'] = fieldValues[name]['value']
+                props['selected'] = fieldValues[name]['selected']
 
                 return (
                     <FormControl key={`dataSetPicker-${name}`}>
                         <DataSetPicker
-                            name={name}
-                            value={value}
-                            selected={selected}
+                            {...props}
                             onChange={this.props.onChange}
                         />
                     </FormControl>
@@ -199,7 +191,6 @@ export class Form extends React.Component {
                     {description && <div className={s.desc}>{description}</div>}
 
                     <div className={s.fields}>{this.fields()}</div>
-
                     <div className={s.buttons}>
                         {onSubmit && (
                             <RaisedButton
