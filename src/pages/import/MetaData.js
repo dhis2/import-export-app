@@ -5,7 +5,12 @@ import { api, eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, CTX_CSV_OPTION } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
-import { getFormField, getFormFieldMoreOptions, getFormValues } from 'helpers'
+import {
+    getFormField,
+    getFormFieldMoreOptions,
+    getFormValues,
+    getParamsFromFormState,
+} from 'helpers'
 import { fetchLog, getMimeType, emitLogOnFirstResponse } from './helpers'
 
 export class MetaDataImport extends FormBase {
@@ -99,47 +104,33 @@ export class MetaDataImport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const {
-                upload,
-                importMode,
-                identifier,
-                importReportMode,
-                preheatMode,
-                importStrategy,
-                atomicMode,
-                mergeMode,
-                flushMode,
-                skipSharing,
-                skipValidation,
-                async,
-                inclusionStrategy,
-                classKey,
-            } = this.getFormState()
+            const { upload, classKey } = this.getFormState()
 
             const formData = new FormData()
             formData.set('upload', upload)
 
             const contentType = getMimeType(upload.name.toLowerCase())
-
-            const params = []
-            params.push(`importMode=${encodeURI(importMode)}`)
-            params.push(`identifier=${encodeURI(identifier)}`)
-            params.push(`importReportMode=${encodeURI(importReportMode)}`)
-            params.push(`preheatMode=${encodeURI(preheatMode)}`)
-            params.push(`importStrategy=${encodeURI(importStrategy)}`)
-            params.push(`atomicMode=${encodeURI(atomicMode)}`)
-            params.push(`mergeMode=${encodeURI(mergeMode)}`)
-            params.push(`flushMode=${encodeURI(flushMode)}`)
-            params.push(`skipSharing=${encodeURI(skipSharing)}`)
-            params.push(`skipValidation=${encodeURI(skipValidation)}`)
-            params.push(`async=${encodeURI(async)}`)
-            params.push(`inclusionStrategy=${encodeURI(inclusionStrategy)}`)
-            // params.push(`userOverrideMode=NONE`)
-            // params.push(`overrideUser=`)
-
-            if (contentType.endsWith('/csv')) {
-                params.push(`classKey=${classKey}`)
-            }
+            const append = contentType.endsWith('/csv')
+                ? [`classKey=${classKey}`]
+                : []
+            const params = getParamsFromFormState(
+                this.getFormState(),
+                [
+                    'importMode',
+                    'identifier',
+                    'importReportMode',
+                    'preheatMode',
+                    'importStrategy',
+                    'atomicMode',
+                    'mergeMode',
+                    'flushMode',
+                    'skipSharing',
+                    'skipValidation',
+                    'async',
+                    'inclusionStrategy',
+                ],
+                append
+            )
 
             this.setState({ processing: true })
 
@@ -147,7 +138,7 @@ export class MetaDataImport extends FormBase {
             xhr.withCredentials = true
             xhr.open(
                 'POST',
-                `${apiConfig.server}/api/metadata.json?${params.join('&')}`,
+                `${apiConfig.server}/api/metadata.json?${params}`,
                 true
             )
             xhr.setRequestHeader('Content-Type', contentType)
