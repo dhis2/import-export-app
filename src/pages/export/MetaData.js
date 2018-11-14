@@ -57,6 +57,7 @@ export class MetaDataExport extends FormBase {
                 params.push(
                     'fields=:owner,!user,!publicAccess,!userGroupAccesses'
                 )
+                params.push('skipSharing=true')
             }
 
             let endpoint = `metadata${format}`
