@@ -5,7 +5,12 @@ import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
 import { EventIcon } from 'components/Icon'
-import { getFormField, getFormFieldMoreOptions, getFormValues } from 'helpers'
+import {
+    getFormField,
+    getFormFieldMoreOptions,
+    getFormValues,
+    getParamsFromFormState,
+} from 'helpers'
 
 export class EventExport extends FormBase {
     static path = '/export/event'
@@ -131,12 +136,9 @@ export class EventExport extends FormBase {
             orgUnit,
             startDate,
             endDate,
-            programs,
             programStages,
-            idScheme,
             inclusion,
             format,
-            includeDeleted,
             compression,
         } = this.getFormState()
 
@@ -145,34 +147,37 @@ export class EventExport extends FormBase {
             attachment += compression
         }
 
-        const params = []
-        params.push(`attachment=${attachment}`)
-        params.push(`program=${programs}`)
+        const append = []
 
         if (programStages !== -1) {
-            params.push(`programStage=${programStages}`)
+            append.push(`programStage=${programStages}`)
         }
 
         if (orgUnit.length > 0) {
             const path = orgUnit[0]
             const orgUnitId = path.substr(path.lastIndexOf('/') + 1)
-            params.push(`orgUnit=${orgUnitId}`)
+            append.push(`orgUnit=${orgUnitId}`)
         }
 
-        params.push('startDate=' + moment(startDate).format('YYYY-MM-DD'))
-        params.push('endDate=' + moment(endDate).format('YYYY-MM-DD'))
-
-        params.push(`ouMode=${inclusion.toUpperCase()}`)
-        params.push('links=false')
-        params.push('skipPaging=true')
-        params.push(`includeDeleted=${includeDeleted}`)
-        params.push(`idScheme=${idScheme}`)
-        params.push(`format=${format.substr(1)}`)
+        append.push('links=false')
+        append.push('skipPaging=true')
+        append.push(`attachment=${attachment}`)
+        append.push('startDate=' + moment(startDate).format('YYYY-MM-DD'))
+        append.push('endDate=' + moment(endDate).format('YYYY-MM-DD'))
+        append.push(`ouMode=${inclusion.toUpperCase()}`)
+        append.push(`format=${format.substr(1)}`)
 
         let path = `events${format}`
         if (compression !== 'none') {
             path += `${compression}`
         }
-        window.location = api.url(path) + '?' + params.join('&')
+
+        const params = getParamsFromFormState(
+            this.getFormState(),
+            ['programs', 'includeDeleted', 'idScheme'],
+            append
+        )
+
+        window.location = api.url(path) + '?' + params
     }
 }
