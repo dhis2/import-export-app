@@ -12,6 +12,7 @@ import {
     getFormField,
     getFormFieldMoreOptions,
     getFormValues,
+    getParamsFromFormState,
 } from 'helpers'
 import { DataIcon } from 'components/Icon'
 
@@ -93,40 +94,40 @@ export class DataExport extends FormBase {
         try {
             const {
                 orgUnit,
-                children,
                 startDate,
                 endDate,
                 format,
                 compression,
-                dataElementIdScheme,
-                orgUnitIdScheme,
-                categoryOptionComboIdScheme,
                 selectedDataSets,
-                includeDeleted,
             } = this.getFormState()
 
             if (orgUnit.length === 0 || selectedDataSets.length === 0) {
                 return
             }
 
-            const params = []
-            params.push(`startDate=${moment(startDate).format('YYYY-MM-DD')}`)
-            params.push(`endDate=${moment(endDate).format('YYYY-MM-DD')}`)
-            params.push(`dataElementIdScheme=${dataElementIdScheme}`)
-            params.push(`orgUnitIdScheme=${orgUnitIdScheme}`)
-            params.push(`includeDeleted=${includeDeleted}`)
-            params.push(`children=${children}`)
-            params.push(
-                `categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`
-            )
+            const append = []
+            append.push(`startDate=${moment(startDate).format('YYYY-MM-DD')}`)
+            append.push(`endDate=${moment(endDate).format('YYYY-MM-DD')}`)
 
             orgUnit.forEach(v => {
-                params.push(`orgUnit=${v.substr(v.lastIndexOf('/') + 1)}`)
+                append.push(`orgUnit=${v.substr(v.lastIndexOf('/') + 1)}`)
             })
 
             selectedDataSets.forEach(v => {
-                params.push(`dataSet=${v}`)
+                append.push(`dataSet=${v}`)
             })
+
+            const params = getParamsFromFormState(
+                this.getFormState(),
+                [
+                    'dataElementIdScheme',
+                    'orgUnitIdScheme',
+                    'includeDeleted',
+                    'children',
+                    'categoryOptionComboIdScheme',
+                ],
+                append
+            )
 
             this.setState({ processing: true })
 
@@ -134,9 +135,7 @@ export class DataExport extends FormBase {
             xhr.withCredentials = true
             xhr.open(
                 'GET',
-                `${apiConfig.server}/api/dataValueSets${format}?${params.join(
-                    '&'
-                )}`,
+                `${apiConfig.server}/api/dataValueSets${format}?${params}`,
                 true
             )
             xhr.onreadystatechange = async () => {
