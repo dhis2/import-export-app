@@ -5,48 +5,44 @@ import { ArrowUpIcon, ArrowDownIcon } from 'components/Icon'
 import { importLinks, exportLinks } from './links'
 import s from './styles.css'
 
+function Heading({ children }) {
+    return <div className={s.heading}>{children}</div>
+}
+
+function Contents({ type, list }) {
+    return (
+        <div className={s.list}>
+            {list.map(({ to, text, icon }) => (
+                <NavLink
+                    to={to}
+                    key={`${type}-${to}`}
+                    className={s.link}
+                    activeClassName={s.active}
+                >
+                    <div className={s.item}>
+                        {icon}
+                        <div className={s.text}>{text}</div>
+                    </div>
+                </NavLink>
+            ))}
+        </div>
+    )
+}
+
 export function SidePanel() {
     return (
         <div className={s.container}>
-            <div className={s.heading}>
+            <Heading>
                 <ArrowDownIcon width={20} height={20} />
                 <span>{i18n.t('Import')}</span>
-            </div>
-            <div className={s.list}>
-                {importLinks.map(({ to, text, icon }) => (
-                    <NavLink
-                        to={to}
-                        key={`import-${to}`}
-                        className={s.link}
-                        activeClassName={s.active}
-                    >
-                        <div className={s.item}>
-                            {icon}
-                            <div className={s.text}>{text}</div>
-                        </div>
-                    </NavLink>
-                ))}
-            </div>
+            </Heading>
+            <Contents type="import" list={importLinks} />
 
-            <div className={s.heading}>
+            <Heading>
                 <ArrowUpIcon width={20} height={20} />
                 <span>{i18n.t('Export')}</span>
-            </div>
-            <div className={s.list}>
-                {exportLinks.map(({ to, text, icon }) => (
-                    <NavLink
-                        to={to}
-                        key={`export-${to}`}
-                        className={s.link}
-                        activeClassName={s.active}
-                    >
-                        <div className={s.item}>
-                            {icon}
-                            <div className={s.text}>{text}</div>
-                        </div>
-                    </NavLink>
-                ))}
-            </div>
+            </Heading>
+            <Contents type="export" list={exportLinks} />
         </div>
     )
 }
