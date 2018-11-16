@@ -4,7 +4,7 @@ import { apiConfig } from 'config'
 import { FormBase } from 'components/FormBase'
 import { DataIcon } from 'components/Icon'
 import {
-    getFormField,
+    getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
@@ -29,18 +29,22 @@ export class DataImport extends FormBase {
     submitLabel = i18n.t('Import')
 
     fields = [
-        getFormField('upload'),
-        getFormField('format'),
-        getFormField('dryRun'),
-        getFormField('strategy'),
-        getFormField('preheatCache'),
+        ...getFormFields([
+            'upload',
+            'format',
+            'dryRun',
+            'strategy',
+            'preheatCache',
+        ]),
 
         getFormFieldMoreOptions(),
 
-        getFormField('dataElementIdScheme'),
-        getFormField('orgUnitIdScheme'),
-        getFormField('idScheme'),
-        getFormField('skipExistingCheck'),
+        ...getFormFields([
+            'dataElementIdScheme',
+            'orgUnitIdScheme',
+            'idScheme',
+            'skipExistingCheck',
+        ]),
     ]
 
     state = getFormValues([

@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
 import { FormBase } from 'components/FormBase'
 import { GMLIcon } from 'components/Icon'
-import { getFormField, getFormValues, getUploadXHR } from 'helpers'
+import { getFormFields, getFormValues, getUploadXHR } from 'helpers'
 import { fetchLog } from './helpers'
 
 export class GMLImport extends FormBase {
@@ -25,7 +25,7 @@ export class GMLImport extends FormBase {
     )
     submitLabel = i18n.t('Import')
 
-    fields = [getFormField('upload'), getFormField('dryRun')]
+    fields = getFormFields(['upload', 'dryRun'])
     state = getFormValues(['upload', 'dryRun'])
 
     async componentDidMount() {

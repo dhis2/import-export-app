@@ -9,7 +9,7 @@ import { apiConfig } from 'config'
 import {
     downloadBlob,
     createBlob,
-    getFormField,
+    getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
@@ -37,20 +37,24 @@ export class DataExport extends FormBase {
     submitLabel = i18n.t('Export')
 
     fields = [
-        getFormField('orgUnit'),
-        getFormField('children'),
-        getFormField('selectedDataSets'),
-        getFormField('startDate'),
-        getFormField('endDate'),
-        getFormField('format'),
-        getFormField('compression'),
+        ...getFormFields([
+            'orgUnit',
+            'children',
+            'selectedDataSets',
+            'startDate',
+            'endDate',
+            'format',
+            'compression',
+        ]),
 
         getFormFieldMoreOptions(),
 
-        getFormField('includeDeleted'),
-        getFormField('dataElementIdScheme'),
-        getFormField('orgUnitIdScheme'),
-        getFormField('categoryOptionComboIdScheme'),
+        ...getFormFields([
+            'includeDeleted',
+            'dataElementIdScheme',
+            'orgUnitIdScheme',
+            'categoryOptionComboIdScheme',
+        ]),
     ]
 
     state = getFormValues([

@@ -6,7 +6,7 @@ import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT, CTX_CSV_OPTION } from 'components/Form'
 import { MetadataImportIcon } from 'components/Icon'
 import {
-    getFormField,
+    getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getMimeType,
@@ -32,23 +32,27 @@ export class MetaDataImport extends FormBase {
     submitLabel = i18n.t('Import')
 
     fields = [
-        getFormField('upload'),
-        getFormField('classKey'),
-        getFormField('importMode'),
-        getFormField('identifier'),
-        getFormField('importReportMode'),
-        getFormField('preheatMode'),
-        getFormField('importStrategy'),
-        getFormField('atomicMode'),
-        getFormField('mergeMode'),
+        ...getFormFields([
+            'upload',
+            'classKey',
+            'importMode',
+            'identifier',
+            'importReportMode',
+            'preheatMode',
+            'importStrategy',
+            'atomicMode',
+            'mergeMode',
+        ]),
 
         getFormFieldMoreOptions(),
 
-        getFormField('flushMode'),
-        getFormField('skipSharing'),
-        getFormField('skipValidation'),
-        getFormField('async'),
-        getFormField('inclusionStrategy'),
+        ...getFormFields([
+            'flushMode',
+            'skipSharing',
+            'skipValidation',
+            'async',
+            'inclusionStrategy',
+        ]),
     ]
 
     state = getFormValues([

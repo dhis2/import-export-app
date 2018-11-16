@@ -6,6 +6,7 @@ import { CTX_DEFAULT } from 'components/Form'
 import { EventIcon } from 'components/Icon'
 import {
     getFormField,
+    getFormFields,
     getFormValues,
     getParamsFromFormState,
     getUploadXHR,
@@ -29,10 +30,7 @@ export class EventImport extends FormBase {
     submitLabel = i18n.t('Import')
 
     fields = [
-        getFormField('upload'),
-        getFormField('format'),
-        getFormField('dryRun'),
-        getFormField('eventIdScheme'),
+        ...getFormFields(['upload', 'format', 'dryRun', 'eventIdScheme']),
         getFormField('orgUnitIdScheme', { context: CTX_DEFAULT }),
     ]
 

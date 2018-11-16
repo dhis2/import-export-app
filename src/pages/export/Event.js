@@ -6,7 +6,7 @@ import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
 import { EventIcon } from 'components/Icon'
 import {
-    getFormField,
+    getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
@@ -29,19 +29,20 @@ export class EventExport extends FormBase {
     submitLabel = i18n.t('Export')
 
     fields = [
-        getFormField('orgUnit_SingleSelect'),
-        getFormField('programs'),
-        getFormField('programStages'),
-        getFormField('idScheme'),
-        getFormField('startDate'),
-        getFormField('endDate'),
-        getFormField('format'),
-        getFormField('compression'),
+        ...getFormFields([
+            'orgUnit_SingleSelect',
+            'programs',
+            'programStages',
+            'idScheme',
+            'startDate',
+            'endDate',
+            'format',
+            'compression',
+        ]),
 
         getFormFieldMoreOptions(),
 
-        getFormField('includeDeleted'),
-        getFormField('inclusion'),
+        ...getFormFields(['includeDeleted', 'inclusion']),
     ]
 
     state = getFormValues([
