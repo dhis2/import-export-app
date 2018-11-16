@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-16T04:10:16.026Z\n"
-"PO-Revision-Date: 2018-11-16T04:10:16.026Z\n"
+"POT-Creation-Date: 2018-11-16T05:20:30.148Z\n"
+"PO-Revision-Date: 2018-11-16T05:20:30.148Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -198,12 +198,6 @@ msgid "Start date"
 msgstr ""
 
 msgid "Strategy"
-msgstr ""
-
-msgid "ADX"
-msgstr ""
-
-msgid "PDF"
 msgstr ""
 
 msgid "Yes"
