@@ -178,32 +178,36 @@ export class Logger extends React.Component {
         )
     }
 
+    getDate(p, prevDateHH, prevDate) {
+        let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
+
+        if (moment(p.d).format('YYYY-MM-DD HH') === prevDateHH) {
+            date = moment(p.d).format('mm:ss')
+        } else if (moment(p.d).format('YYYY-MM-DD') === prevDate) {
+            date = moment(p.d).format('HH:mm:ss')
+        }
+
+        return date
+    }
+
     contents() {
+        const style = {
+            display: this.state.open ? 'block' : 'none',
+        }
         let prevType = ''
         let prevDate = ''
         let prevDateHH = ''
+
         return (
             <div
                 className={s.messages}
                 ref={c => (this.elmMessages = c)}
-                style={{
-                    display: this.state.open ? 'block' : 'none',
-                }}
+                style={style}
             >
                 {this.state.open &&
                     this.state.list.map(p => {
                         const type = p.type === prevType ? '' : p.type
-                        let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
-
-                        if (
-                            moment(p.d).format('YYYY-MM-DD HH') === prevDateHH
-                        ) {
-                            date = moment(p.d).format('mm:ss')
-                        } else if (
-                            moment(p.d).format('YYYY-MM-DD') === prevDate
-                        ) {
-                            date = moment(p.d).format('HH:mm:ss')
-                        }
+                        const date = this.getDate(p, prevDateHH, prevDate)
 
                         prevType = p.type
                         prevDate = moment(p.d).format('YYYY-MM-DD')
