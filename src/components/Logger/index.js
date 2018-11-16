@@ -149,73 +149,83 @@ export class Logger extends React.Component {
         }
     }
 
-    render() {
-        const { open, list } = this.state
+    header() {
+        return (
+            <div
+                className={s.nav}
+                onClick={this.onClick}
+                onDrag={this.onDrag}
+                onDragStart={this.onDragStart}
+                onDragEnd={this.onDragEnd}
+                onDoubleClick={this.onDoubleClick}
+            >
+                <div className={s.title}>
+                    <span className={s.upper}>{i18n.t('Logger')}</span>
+                    <span>
+                        {i18n.t(
+                            'view messages received on using import/export forms.'
+                        )}
+                    </span>
+                </div>
+                <div className={s.actions}>
+                    {this.state.open ? (
+                        <ArrowDownIcon onClick={this.onClose} />
+                    ) : (
+                        <ArrowUpIcon onClick={this.onOpen} />
+                    )}
+                </div>
+            </div>
+        )
+    }
+
+    contents() {
         let prevType = ''
         let prevDate = ''
         let prevDateHH = ''
         return (
+            <div
+                className={s.messages}
+                ref={c => (this.elmMessages = c)}
+                style={{
+                    display: this.state.open ? 'block' : 'none',
+                }}
+            >
+                {this.state.open &&
+                    this.state.list.map(p => {
+                        const type = p.type === prevType ? '' : p.type
+                        let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
+
+                        if (
+                            moment(p.d).format('YYYY-MM-DD HH') === prevDateHH
+                        ) {
+                            date = moment(p.d).format('mm:ss')
+                        } else if (
+                            moment(p.d).format('YYYY-MM-DD') === prevDate
+                        ) {
+                            date = moment(p.d).format('HH:mm:ss')
+                        }
+
+                        prevType = p.type
+                        prevDate = moment(p.d).format('YYYY-MM-DD')
+                        prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
+                        return (
+                            <Message
+                                key={`msg-${p.id}`}
+                                date={date}
+                                type={type}
+                                text={p.text}
+                            />
+                        )
+                    })}
+            </div>
+        )
+    }
+
+    render() {
+        return (
             <div id="import-export-logger" className={s.container}>
-                <div
-                    className={s.nav}
-                    onClick={this.onClick}
-                    onDrag={this.onDrag}
-                    onDragStart={this.onDragStart}
-                    onDragEnd={this.onDragEnd}
-                    onDoubleClick={this.onDoubleClick}
-                >
-                    <div className={s.title}>
-                        <span className={s.upper}>{i18n.t('Logger')}</span>
-                        <span>
-                            {i18n.t(
-                                'view messages received on using import/export forms.'
-                            )}
-                        </span>
-                    </div>
-                    <div className={s.actions}>
-                        {open ? (
-                            <ArrowDownIcon onClick={this.onClose} />
-                        ) : (
-                            <ArrowUpIcon onClick={this.onOpen} />
-                        )}
-                    </div>
-                </div>
-                <div
-                    className={s.messages}
-                    ref={c => (this.elmMessages = c)}
-                    style={{
-                        display: open ? 'block' : 'none',
-                    }}
-                >
-                    {open &&
-                        list.map(p => {
-                            const type = p.type === prevType ? '' : p.type
-                            let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
-
-                            if (
-                                moment(p.d).format('YYYY-MM-DD HH') ===
-                                prevDateHH
-                            ) {
-                                date = moment(p.d).format('mm:ss')
-                            } else if (
-                                moment(p.d).format('YYYY-MM-DD') === prevDate
-                            ) {
-                                date = moment(p.d).format('HH:mm:ss')
-                            }
-
-                            prevType = p.type
-                            prevDate = moment(p.d).format('YYYY-MM-DD')
-                            prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
-                            return (
-                                <Message
-                                    key={`msg-${p.id}`}
-                                    date={date}
-                                    type={type}
-                                    text={p.text}
-                                />
-                            )
-                        })}
-                </div>
+                {this.header()}
+                {this.contents()}
             </div>
         )
     }
