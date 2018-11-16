@@ -8,50 +8,25 @@ import {
     EventExport,
     MetaDataDependencyExport,
 } from 'pages'
-import i18n from '@dhis2/d2-i18n'
 
-export const importLinks = [
-    {
-        to: '/import/metadata',
-        text: i18n.t('Metadata Import'),
-        icon: MetaDataImport.menuIcon,
-    },
-    {
-        to: '/import/data',
-        text: i18n.t('Data Import'),
-        icon: DataImport.menuIcon,
-    },
-    {
-        to: '/import/event',
-        text: i18n.t('Event Import'),
-        icon: EventImport.menuIcon,
-    },
-    {
-        to: '/import/gml',
-        text: i18n.t('GML Import'),
-        icon: GMLImport.menuIcon,
-    },
-]
+function menu(list) {
+    return list.map(i => ({
+        to: i.path,
+        text: i.title,
+        icon: i.menuIcon,
+    }))
+}
 
-export const exportLinks = [
-    {
-        to: '/export/metadata',
-        text: i18n.t('Metadata Export'),
-        icon: MetaDataExport.menuIcon,
-    },
-    {
-        to: '/export/data',
-        text: i18n.t('Data Export'),
-        icon: DataExport.menuIcon,
-    },
-    {
-        to: '/export/event',
-        text: i18n.t('Event Export'),
-        icon: EventExport.menuIcon,
-    },
-    {
-        to: '/export/metadata-dependency',
-        text: i18n.t('Metadata Dependency Export'),
-        icon: MetaDataDependencyExport.menuIcon,
-    },
-]
+export const importLinks = menu([
+    MetaDataImport,
+    DataImport,
+    EventImport,
+    GMLImport,
+])
+
+export const exportLinks = menu([
+    MetaDataExport,
+    DataExport,
+    EventExport,
+    MetaDataDependencyExport,
+])
