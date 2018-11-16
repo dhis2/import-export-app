@@ -21,6 +21,10 @@ export class DataExport extends FormBase {
 
     static order = 7
     static title = i18n.t('Data Export')
+    static desc = i18n.t(
+        'Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.'
+    )
+
     static menuIcon = <DataIcon />
     icon = <DataIcon />
 

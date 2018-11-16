@@ -19,8 +19,12 @@ export class MetaDataImport extends FormBase {
     static path = '/import/metadata'
 
     static order = 1
-    static menuIcon = <MetadataImportIcon />
     static title = i18n.t('Metadata Import')
+    static desc = i18n.t(
+        'Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.'
+    )
+
+    static menuIcon = <MetadataImportIcon />
     icon = <MetadataImportIcon />
 
     formWidth = 600
