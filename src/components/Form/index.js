@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cx from 'classnames'
 import { RaisedButton } from 'material-ui'
 import { FormLabel, FormControl } from './material-ui'
@@ -171,35 +171,52 @@ export class Form extends React.Component {
         })
     }
 
-    render() {
-        const { icon, title, description, className, style } = this.props
-        const { onSubmit, submitLabel } = this.props
+    description() {
+        return (
+            this.props.description && (
+                <div className={s.desc}>{this.props.description}</div>
+            )
+        )
+    }
 
+    header() {
+        return (
+            <div className={s.head}>
+                <div className={s.icon}>{this.props.icon}</div>
+                <div className={s.title}>{this.props.title}</div>
+            </div>
+        )
+    }
+
+    buttons() {
+        return (
+            <div className={s.buttons}>
+                {this.props.onSubmit && (
+                    <RaisedButton
+                        primary={true}
+                        label={this.props.submitLabel}
+                        onClick={this.props.onSubmit}
+                    />
+                )}
+            </div>
+        )
+    }
+
+    render() {
         return (
             <div className={s.wrapper}>
                 <TaskSummary />
 
                 <form
-                    style={style}
-                    className={cx(className, s.form)}
+                    style={this.props.style}
+                    className={cx(this.props.className, s.form)}
                     onSubmit={this.props.onSubmit}
                 >
-                    <div className={s.head}>
-                        <div className={s.icon}>{icon}</div>
-                        <div className={s.title}>{title}</div>
-                    </div>
-                    {description && <div className={s.desc}>{description}</div>}
+                    {this.header()}
+                    {this.description()}
 
                     <div className={s.fields}>{this.fields()}</div>
-                    <div className={s.buttons}>
-                        {onSubmit && (
-                            <RaisedButton
-                                label={submitLabel}
-                                primary={true}
-                                onClick={onSubmit}
-                            />
-                        )}
-                    </div>
+                    {this.buttons()}
                 </form>
             </div>
         )
