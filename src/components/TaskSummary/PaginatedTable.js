@@ -95,42 +95,60 @@ export default class PaginatedTable extends React.Component {
 
     onClick = start => this.setState({ start })
 
+    colgroup() {
+        return (
+            <colgroup>
+                {this.props.fields.map(({ width }, i) => (
+                    <col key={`col-${i}`} width={width} />
+                ))}
+            </colgroup>
+        )
+    }
+
+    thead() {
+        return (
+            <thead>
+                <tr>
+                    {this.props.fields.map(({ title }) => (
+                        <td key={`title-${title}`}>{title}</td>
+                    ))}
+                </tr>
+            </thead>
+        )
+    }
+
+    tfoot() {
+        return (
+            <tfoot>
+                <tr>
+                    <td colSpan={this.props.fields.length}>
+                        <Pagination
+                            start={this.state.start}
+                            limit={this.state.limit}
+                            total={this.props.list.length}
+                            onClick={this.onClick}
+                        />
+                    </td>
+                </tr>
+            </tfoot>
+        )
+    }
+
+    tbody() {
+        return <tbody>{this.rows()}</tbody>
+    }
+
     render() {
         if (this.props.list.length === 0) {
             return null
         }
 
-        const { fields } = this.props
-
         return (
             <table className={`${s.table} ${s.paginatedTable}`}>
-                <colgroup>
-                    {fields.map(({ width }, i) => (
-                        <col key={`col-${i}`} width={width} />
-                    ))}
-                </colgroup>
-
-                <thead>
-                    <tr>
-                        {fields.map(({ title }) => (
-                            <td key={`title-${title}`}>{title}</td>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>{this.rows()}</tbody>
-
-                <tfoot>
-                    <tr>
-                        <td colSpan={fields.length}>
-                            <Pagination
-                                start={this.state.start}
-                                limit={this.state.limit}
-                                total={this.props.list.length}
-                                onClick={this.onClick}
-                            />
-                        </td>
-                    </tr>
-                </tfoot>
+                {this.colgroup()}
+                {this.thead()}
+                {this.tbody()}
+                {this.tfoot()}
             </table>
         )
     }
