@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-16T03:47:02.119Z\n"
-"PO-Revision-Date: 2018-11-16T03:47:02.119Z\n"
+"POT-Creation-Date: 2018-11-16T03:49:22.335Z\n"
+"PO-Revision-Date: 2018-11-16T03:49:22.335Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -53,6 +53,12 @@ msgstr ""
 msgid "view messages received on using import/export forms."
 msgstr ""
 
+msgid "Import"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
 msgid "Metadata Import"
 msgstr ""
 
@@ -75,12 +81,6 @@ msgid "Event Export"
 msgstr ""
 
 msgid "Metadata Dependency Export"
-msgstr ""
-
-msgid "Import"
-msgstr ""
-
-msgid "Export"
 msgstr ""
 
 msgid "Created"
