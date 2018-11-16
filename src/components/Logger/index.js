@@ -191,21 +191,21 @@ export class Logger extends React.Component {
     }
 
     contents() {
+        const { open, list } = this.state
         const style = {
-            display: this.state.open ? 'block' : 'none',
+            display: open ? 'block' : 'none',
         }
-        let prevType = ''
-        let prevDate = ''
-        let prevDateHH = ''
+        let prevType, prevDate, prevDateHH
+        prevType = prevDate = prevDateHH = ''
 
         return (
             <div
+                style={style}
                 className={s.messages}
                 ref={c => (this.elmMessages = c)}
-                style={style}
             >
-                {this.state.open &&
-                    this.state.list.map(p => {
+                {open &&
+                    list.map(p => {
                         const type = p.type === prevType ? '' : p.type
                         const date = this.getDate(p, prevDateHH, prevDate)
 

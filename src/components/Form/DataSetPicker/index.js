@@ -88,33 +88,35 @@ export default class DataSetPicker extends React.Component {
         )
     }
 
-    contents() {
-        const { value, selected } = this.props
+    values() {
+        const { value } = this.props
         const filter = this.state.filter.toLowerCase()
-        let values =
-            filter.length === 0
-                ? value
-                : value.filter(({ label }) =>
-                      label.toLowerCase().includes(filter)
-                  )
+        return filter.length === 0
+            ? value
+            : value.filter(({ label }) => label.toLowerCase().includes(filter))
+    }
 
+    leftIcon(value) {
+        return this.props.selected.includes(value) ? (
+            <CheckedIcon />
+        ) : (
+            <UnCheckedIcon />
+        )
+    }
+
+    contents() {
+        let values = this.values()
         return (
             <div className={s.body}>
                 {values.map(({ value, label }) => (
                     <MenuItem
-                        {...styles.menuItem}
                         key={`dateSetPicker-mi-${value}`}
+                        {...styles.menuItem}
                         value={value}
                         primaryText={label}
                         insetChildren={true}
+                        leftIcon={this.leftIcon(value)}
                         onClick={() => this.onChange(value)}
-                        leftIcon={
-                            selected.includes(value) ? (
-                                <CheckedIcon />
-                            ) : (
-                                <UnCheckedIcon />
-                            )
-                        }
                     />
                 ))}
             </div>
