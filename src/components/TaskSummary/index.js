@@ -150,19 +150,25 @@ export class TaskSummary extends React.Component {
         )
     }
 
-    render() {
-        if (this.state.loading) {
-            return <Loading />
-        }
-
-        console.log('this.state', this.state)
-
+    isEmpty() {
         const { stats, typeStats, messages } = this.state
         if (
             stats.total === 0 &&
             typeStats.length === 0 &&
             messages.length === 0
         ) {
+            return true
+        }
+
+        return false
+    }
+
+    render() {
+        if (this.state.loading) {
+            return <Loading />
+        }
+
+        if (this.isEmpty()) {
             return null
         }
 
