@@ -4,8 +4,8 @@ import { apiConfig } from 'config'
 import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { GMLIcon } from 'components/Icon'
-import { getFormField, getFormValues } from 'helpers'
-import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
+import { getFormField, getFormValues, getUploadXHR } from 'helpers'
+import { emitLogOnFirstResponse, fetchLog } from './helpers'
 
 export class GMLImport extends FormBase {
     static path = '/import/gml'
@@ -36,22 +36,12 @@ export class GMLImport extends FormBase {
             const formData = new FormData()
             formData.set('upload', upload)
 
-            const contentType = getMimeType(upload.name.toLowerCase())
-
             this.setState({ processing: true })
 
-            const xhr = new XMLHttpRequest()
-            xhr.withCredentials = true
-            xhr.open(
-                'POST',
-                `${apiConfig.server}/api/metadata/gml.json?dryRun=${dryRun}`,
-                true
-            )
-            xhr.setRequestHeader('Content-Type', contentType)
-            xhr.setRequestHeader(
-                'Content-Disposition',
-                'attachment filename="' + upload.name + '"'
-            )
+            const params = `dryRun=${dryRun}`
+            const url = `${apiConfig.server}/api/metadata/gml.json?${params}`
+            const xhr = getUploadXHR(url, upload)
+
             xhr.onreadystatechange = async e => {
                 const status = Math.floor(xhr.status / 100)
                 if (xhr.readyState === 4 && status === 2) {

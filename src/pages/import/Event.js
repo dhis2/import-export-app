@@ -5,8 +5,13 @@ import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { CTX_DEFAULT } from 'components/Form'
 import { EventIcon } from 'components/Icon'
-import { getFormField, getFormValues, getParamsFromFormState } from 'helpers'
-import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
+import {
+    getFormField,
+    getFormValues,
+    getParamsFromFormState,
+    getUploadXHR,
+} from 'helpers'
+import { emitLogOnFirstResponse, fetchLog } from './helpers'
 
 export class EventImport extends FormBase {
     static path = '/import/event'
@@ -44,7 +49,6 @@ export class EventImport extends FormBase {
         try {
             const { upload, format } = this.getFormState()
 
-            const contentType = getMimeType(upload.name)
             const params = getParamsFromFormState(
                 this.getFormState(),
                 ['dryRun', 'eventIdScheme', 'orgUnitIdScheme'],
@@ -56,18 +60,9 @@ export class EventImport extends FormBase {
             )
             this.setState({ processing: true })
 
-            const xhr = new XMLHttpRequest()
-            xhr.withCredentials = true
-            xhr.open(
-                'POST',
-                `${apiConfig.server}/api/events.json?${params}`,
-                true
-            )
-            xhr.setRequestHeader('Content-Type', contentType)
-            xhr.setRequestHeader(
-                'Content-Disposition',
-                'attachment filename="' + upload.name + '"'
-            )
+            const url = `${apiConfig.server}/api/events.json?${params}`
+            const xhr = getUploadXHR(url, upload)
+
             xhr.onreadystatechange = async e => {
                 const status = Math.floor(xhr.status / 100)
                 if (xhr.readyState === 4 && status === 2) {

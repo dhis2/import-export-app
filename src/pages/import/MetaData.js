@@ -9,9 +9,11 @@ import {
     getFormField,
     getFormFieldMoreOptions,
     getFormValues,
+    getMimeType,
+    getUploadXHR,
     getParamsFromFormState,
 } from 'helpers'
-import { fetchLog, getMimeType, emitLogOnFirstResponse } from './helpers'
+import { fetchLog, emitLogOnFirstResponse } from './helpers'
 
 export class MetaDataImport extends FormBase {
     static path = '/import/metadata'
@@ -134,18 +136,9 @@ export class MetaDataImport extends FormBase {
 
             this.setState({ processing: true })
 
-            const xhr = new XMLHttpRequest()
-            xhr.withCredentials = true
-            xhr.open(
-                'POST',
-                `${apiConfig.server}/api/metadata.json?${params}`,
-                true
-            )
-            xhr.setRequestHeader('Content-Type', contentType)
-            xhr.setRequestHeader(
-                'Content-Disposition',
-                'attachment filename="' + upload.name + '"'
-            )
+            const url = `${apiConfig.server}/api/metadata.json?${params}`
+            const xhr = getUploadXHR(url, upload)
+
             xhr.onreadystatechange = async e => {
                 const status = Math.floor(xhr.status / 100)
                 if (xhr.readyState === 4 && status === 2) {

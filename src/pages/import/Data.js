@@ -9,8 +9,9 @@ import {
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
+    getUploadXHR,
 } from 'helpers'
-import { emitLogOnFirstResponse, getMimeType } from './helpers'
+import { emitLogOnFirstResponse } from './helpers'
 import { fetchLog } from './helpers'
 
 export class DataImport extends FormBase {
@@ -76,22 +77,11 @@ export class DataImport extends FormBase {
                 [`format=${format.substr(1)}`, 'async=true']
             )
 
-            const contentType = getMimeType(upload.name)
-
             this.setState({ processing: true })
 
-            const xhr = new XMLHttpRequest()
-            xhr.withCredentials = true
-            xhr.open(
-                'POST',
-                `${apiConfig.server}/api/dataValueSets.json?${params}`,
-                true
-            )
-            xhr.setRequestHeader('Content-Type', contentType)
-            xhr.setRequestHeader(
-                'Content-Disposition',
-                'attachment filename="' + upload.name + '"'
-            )
+            const url = `${apiConfig.server}/api/dataValueSets.json?${params}`
+            const xhr = getUploadXHR(url, upload)
+
             xhr.onreadystatechange = async e => {
                 const status = Math.floor(xhr.status / 100)
                 if (xhr.readyState === 4 && status === 2) {
