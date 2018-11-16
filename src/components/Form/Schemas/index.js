@@ -151,27 +151,26 @@ export default class Schemas extends React.Component {
         )
     }
 
+    getSchemas(schemas) {
+        return schemas
+            .map(i => ({
+                name: i.name,
+                klass: i.klass,
+                displayName: i.displayName,
+                collectionName: i.collectionName,
+                group: groupName(i.klass),
+            }))
+            .sort((a, b) => a.displayName.localeCompare(b.displayName))
+    }
+
     async fetch() {
         try {
-            const {
-                data: { schemas },
-            } = await api.get('schemas.json')
-
+            const { data } = await api.get('schemas.json')
             this.setState(
                 {
                     loaded: true,
-                    checked: schemas.map(item => item.collectionName),
-                    schemas: schemas
-                        .map(item => ({
-                            name: item.name,
-                            klass: item.klass,
-                            displayName: item.displayName,
-                            collectionName: item.collectionName,
-                            group: groupName(item.klass),
-                        }))
-                        .sort((a, b) =>
-                            a.displayName.localeCompare(b.displayName)
-                        ),
+                    schemas: this.getSchemas(data.schemas),
+                    checked: data.schemas.map(item => item.collectionName),
                 },
                 () => {
                     this.props.onChange(this.props.name, this.state.checked)
