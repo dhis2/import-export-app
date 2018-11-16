@@ -1,11 +1,10 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { GMLIcon } from 'components/Icon'
 import { getFormField, getFormValues, getUploadXHR } from 'helpers'
-import { emitLogOnFirstResponse, fetchLog } from './helpers'
+import { fetchLog } from './helpers'
 
 export class GMLImport extends FormBase {
     static path = '/import/gml'
@@ -36,26 +35,17 @@ export class GMLImport extends FormBase {
             const formData = new FormData()
             formData.set('upload', upload)
 
-            this.setState({ processing: true })
+            this.setProcessing()
 
             const params = `dryRun=${dryRun}`
             const url = `${apiConfig.server}/api/metadata/gml.json?${params}`
-            const xhr = getUploadXHR(url, upload)
-
-            xhr.onreadystatechange = async e => {
-                const status = Math.floor(xhr.status / 100)
-                if (xhr.readyState === 4 && status === 2) {
-                    eventEmitter.emit('summary.clear')
-
-                    const jobId = emitLogOnFirstResponse(xhr, 'GML_IMPORT')
-                    this.setState({ processing: false })
-
-                    eventEmitter.emit('summary.loading')
-                    await fetchLog(jobId, 'GML_IMPORT')
-                } else if ([3, 4, 5].includes(status)) {
-                    this.assertOnError(e)
-                }
-            }
+            const xhr = getUploadXHR(
+                url,
+                upload,
+                'GML_IMPORT',
+                this.clearProcessing,
+                this.assertOnError
+            )
             xhr.send(upload)
         } catch (e) {
             console.log('GML Import error', e, '\n')

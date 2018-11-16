@@ -13,7 +13,7 @@ import {
     getUploadXHR,
     getParamsFromFormState,
 } from 'helpers'
-import { fetchLog, emitLogOnFirstResponse } from './helpers'
+import { fetchLog } from './helpers'
 
 export class MetaDataImport extends FormBase {
     static path = '/import/metadata'
@@ -134,26 +134,16 @@ export class MetaDataImport extends FormBase {
                 append
             )
 
-            this.setState({ processing: true })
+            this.setProcessing()
 
             const url = `${apiConfig.server}/api/metadata.json?${params}`
-            const xhr = getUploadXHR(url, upload)
-
-            xhr.onreadystatechange = async e => {
-                const status = Math.floor(xhr.status / 100)
-                if (xhr.readyState === 4 && status === 2) {
-                    eventEmitter.emit('summary.clear')
-
-                    const type = 'METADATA_IMPORT'
-                    const jobId = emitLogOnFirstResponse(xhr, type)
-                    this.setState({ processing: false })
-
-                    eventEmitter.emit('summary.loading')
-                    await fetchLog(jobId, type)
-                } else if ([3, 4, 5].includes(status)) {
-                    this.assertOnError(e)
-                }
-            }
+            const xhr = getUploadXHR(
+                url,
+                upload,
+                'METADATA_IMPORT',
+                this.clearProcessing,
+                this.assertOnError
+            )
             xhr.send(upload)
         } catch (e) {
             console.log('MetaData Import error', e, '\n')

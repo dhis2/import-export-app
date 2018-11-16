@@ -1,7 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { DataIcon } from 'components/Icon'
 import {
@@ -11,7 +10,6 @@ import {
     getParamsFromFormState,
     getUploadXHR,
 } from 'helpers'
-import { emitLogOnFirstResponse } from './helpers'
 import { fetchLog } from './helpers'
 
 export class DataImport extends FormBase {
@@ -77,28 +75,17 @@ export class DataImport extends FormBase {
                 [`format=${format.substr(1)}`, 'async=true']
             )
 
-            this.setState({ processing: true })
+            this.setProcessing()
 
             const url = `${apiConfig.server}/api/dataValueSets.json?${params}`
-            const xhr = getUploadXHR(url, upload)
+            const xhr = getUploadXHR(
+                url,
+                upload,
+                'DATAVALUE_IMPORT',
+                this.clearProcessing,
+                this.assertOnError
+            )
 
-            xhr.onreadystatechange = async e => {
-                const status = Math.floor(xhr.status / 100)
-                if (xhr.readyState === 4 && status === 2) {
-                    eventEmitter.emit('summary.clear')
-
-                    const jobId = emitLogOnFirstResponse(
-                        xhr,
-                        'DATAVALUE_IMPORT'
-                    )
-                    this.setState({ processing: false })
-
-                    eventEmitter.emit('summary.loading')
-                    await fetchLog(jobId, 'DATAVALUE_IMPORT')
-                } else if ([3, 4, 5].includes(status)) {
-                    this.assertOnError(e)
-                }
-            }
             xhr.send(upload)
         } catch (e) {
             console.log('Data Import error', e, '\n')
