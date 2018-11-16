@@ -199,18 +199,16 @@ export default class Schemas extends React.Component {
     }
 
     render() {
-        const { loaded, checked, schemas } = this.state
-        if (!loaded) {
+        if (!this.state.loaded) {
             return <Loading />
         }
 
-        if (schemas.length === 0) {
+        if (this.state.schemas.length === 0) {
             return null
         }
 
-        const groups = schemaGroups(schemas)
+        const groups = schemaGroups(this.state.schemas)
         const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
-
         return (
             <div className={s.container}>
                 <Controls
@@ -223,7 +221,7 @@ export default class Schemas extends React.Component {
                             key={`group-${k}`}
                             label={groupLabel(k, groups[k])}
                             schemas={groups[k]}
-                            checked={checked}
+                            checked={this.state.checked}
                             onClick={this.onClick}
                         />
                     ))}
