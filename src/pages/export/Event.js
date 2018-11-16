@@ -60,17 +60,17 @@ export class EventExport extends FormBase {
 
     async componentDidMount() {
         await this.fetchPrograms()
+        await this.fetchOrgUnits()
     }
 
     async fetchPrograms() {
         try {
             const objectType = 'programs'
-            const { data } = await api.get(
-                `${objectType}?fields=id,displayName&paging=false`
-            )
-            const values = data[objectType].map(({ id, displayName }) => ({
-                value: id,
-                label: displayName,
+            const params = 'fields=id,displayName&paging=false'
+            const { data } = await api.get(`${objectType}?${params}`)
+            const values = data[objectType].map(o => ({
+                value: o.id,
+                label: o.displayName,
             }))
 
             const selected = values[0]['value']
@@ -78,11 +78,16 @@ export class EventExport extends FormBase {
                 {
                     programs: { values, selected },
                 },
-                () => {
-                    this.fetchProgramStages(selected)
-                }
+                () => this.fetchProgramStages(selected)
             )
+        } catch (e) {
+            console.log('fetch Programs failed')
+            console.log(e)
+        }
+    }
 
+    async fetchOrgUnits() {
+        try {
             const d2 = await getInstance()
             const orgUnitTree = await d2.models.organisationUnits
                 .list({
