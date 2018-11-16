@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-07T11:53:28.876Z\n"
-"PO-Revision-Date: 2018-11-07T11:53:28.876Z\n"
+"POT-Creation-Date: 2018-11-16T03:47:02.119Z\n"
+"PO-Revision-Date: 2018-11-16T03:47:02.119Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -365,6 +365,12 @@ msgstr ""
 msgid "Metadata Export with Dependencies"
 msgstr ""
 
+msgid "Import / Export"
+msgstr ""
+
+msgid "Import or Export DHIS2 data."
+msgstr ""
+
 msgid ""
 "Import metadata like data elements and organisation units using the "
 "standard DHIS 2 exchange format called DXF 2."
@@ -401,12 +407,6 @@ msgstr ""
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
-msgstr ""
-
-msgid "Import / Export"
-msgstr ""
-
-msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "Only import of GML data for existing organisation units is supported."
