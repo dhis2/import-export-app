@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import cx from 'classnames'
 import { RaisedButton } from 'material-ui'
 import { FormLabel, FormControl } from './material-ui'
