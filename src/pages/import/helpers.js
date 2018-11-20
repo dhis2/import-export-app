@@ -34,22 +34,43 @@ export function emitLogOnFirstResponse(xhr, importType) {
     return response.id
 }
 
+function getFetchLogPath(jobId, type) {
+    let path = `system/tasks/${type}`
+    if (lastIds[type]) {
+        path += `?lastId=${lastIds[type]}`
+    }
+
+    return path
+}
+
+function fetchResponseIsArray(data) {
+    return Array.isArray(data) && data.length > 0
+}
+
+function fetchResponseIsObject(data) {
+    return typeof data === 'object'
+}
+
+function isFetchLogComplete(data) {
+    return data.filter(item => item.completed).length === 0
+}
+
+function fetchLogAfter(jobId, type, time = 2000) {
+    setTimeout(() => fetchLog(jobId, type), time)
+}
+
 export async function fetchLog(jobId, type) {
     try {
-        let path = `system/tasks/${type}`
-        if (lastIds[type]) {
-            path += `?lastId=${lastIds[type]}`
-        }
-        const { data } = await api.get(path)
+        const { data } = await api.get(getFetchLogPath(jobId, type))
 
-        if (Array.isArray(data) && data.length > 0) {
+        if (fetchResponseIsArray(data)) {
             lastIds[type] = data[0]['uid']
             emitLog(data, type)
 
-            if (data.filter(item => item.completed).length === 0) {
-                setTimeout(() => fetchLog(jobId, type), 2000)
+            if (isFetchLogComplete(data)) {
+                fetchLogAfter(jobId, type)
             }
-        } else if (typeof data === 'object') {
+        } else if (fetchResponseIsObject(data)) {
             let records = null
             Object.keys(data).forEach(k => {
                 lastIds[type] = data[k][0]['uid']
@@ -57,8 +78,8 @@ export async function fetchLog(jobId, type) {
                 emitLog(data[k], type)
             })
 
-            if (records.filter(item => item.completed).length === 0) {
-                setTimeout(() => fetchLog(jobId, type), 2000)
+            if (isFetchLogComplete(records)) {
+                fetchLogAfter(jobId, type)
             } else {
                 await fetchTaskSummary(jobId, type)
             }
