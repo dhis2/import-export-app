@@ -202,37 +202,42 @@ export class Logger extends React.Component {
         return date
     }
 
-    contents() {
-        const { open, list } = this.state
-        const style = {
-            display: open ? 'block' : 'none',
+    contentsStyle() {
+        return {
+            display: this.state.open ? 'block' : 'none',
         }
+    }
+
+    messages() {
         let prevType, prevDate, prevDateHH
         prevType = prevDate = prevDateHH = ''
 
+        return this.state.list.map(p => {
+            const type = p.type === prevType ? '' : p.type
+            const date = this.getDate(p, prevDateHH, prevDate)
+
+            prevType = p.type
+            prevDate = moment(p.d).format('YYYY-MM-DD')
+            prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
+            return (
+                <Message
+                    key={`msg-${p.id}`}
+                    date={date}
+                    type={type}
+                    text={p.text}
+                />
+            )
+        })
+    }
+
+    contents() {
         return (
             <div
-                style={style}
                 className={s.messages}
+                style={this.contentsStyle()}
                 ref={c => (this.elmMessages = c)}
             >
-                {open &&
-                    list.map(p => {
-                        const type = p.type === prevType ? '' : p.type
-                        const date = this.getDate(p, prevDateHH, prevDate)
-
-                        prevType = p.type
-                        prevDate = moment(p.d).format('YYYY-MM-DD')
-                        prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
-                        return (
-                            <Message
-                                key={`msg-${p.id}`}
-                                date={date}
-                                type={type}
-                                text={p.text}
-                            />
-                        )
-                    })}
+                {this.state.open && this.messages()}
             </div>
         )
     }
