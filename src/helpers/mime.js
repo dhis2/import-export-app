@@ -1,11 +1,16 @@
 export function getMimeType(filename) {
-    if (filename.endsWith('json') || filename.includes('.json')) {
+    const isJSON = filename.endsWith('json') || filename.includes('.json')
+    const isXML = filename.endsWith('xml') || filename.includes('.xml')
+    const isCSV = filename.endsWith('csv') || filename.includes('.csv')
+    const isGML = filename.endsWith('gml') || filename.includes('.gml')
+
+    if (isJSON()) {
         return 'application/json'
-    } else if (filename.endsWith('xml') || filename.includes('.xml')) {
+    } else if (isXML) {
         return 'application/xml'
-    } else if (filename.endsWith('csv') || filename.includes('.csv')) {
+    } else if (isCSV) {
         return 'application/csv'
-    } else if (filename.endsWith('gml') || filename.includes('.gml')) {
+    } else if (isGML) {
         return 'application/xml'
     }
 
