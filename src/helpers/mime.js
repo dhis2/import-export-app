@@ -4,7 +4,7 @@ export function getMimeType(filename) {
     const isCSV = filename.endsWith('csv') || filename.includes('.csv')
     const isGML = filename.endsWith('gml') || filename.includes('.gml')
 
-    if (isJSON()) {
+    if (isJSON) {
         return 'application/json'
     } else if (isXML) {
         return 'application/xml'
