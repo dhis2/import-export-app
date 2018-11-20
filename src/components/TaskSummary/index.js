@@ -105,7 +105,8 @@ export class TaskSummary extends React.Component {
     onConflicts = conflicts => this.setState({ conflicts })
 
     viewTypeStats() {
-        if (this.state.typeStats.length === 0) {
+        const { typeStats } = this.state
+        if (typeStats.length === 0) {
             return null
         }
 
@@ -115,13 +116,14 @@ export class TaskSummary extends React.Component {
                     {i18n.t('Type Count')}
                 </div>
 
-                <TypeStats list={this.state.typeStats} />
+                <TypeStats list={typeStats} />
             </Fragment>
         )
     }
 
     viewMessages() {
-        if (this.state.messages.length === 0) {
+        const { messages } = this.state
+        if (messages.length === 0) {
             return null
         }
 
@@ -130,13 +132,14 @@ export class TaskSummary extends React.Component {
                 <div className={`${s.label} ${s.marginTop}`}>
                     {i18n.t('Messages')}
                 </div>
-                <Messages list={this.state.messages} />
+                <Messages list={messages} />
             </Fragment>
         )
     }
 
     viewConflicts() {
-        if (this.state.conflicts === 0) {
+        const { conflicts } = this.state
+        if (conflicts === 0) {
             return null
         }
 
@@ -145,7 +148,7 @@ export class TaskSummary extends React.Component {
                 <div className={`${s.label} ${s.marginTop}`}>
                     {i18n.t('Conflicts')}
                 </div>
-                <Conflicts list={this.state.conflicts} />
+                <Conflicts list={conflicts} />
             </Fragment>
         )
     }
