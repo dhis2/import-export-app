@@ -62,23 +62,43 @@ function breakOnCamelCase(schemaName, name) {
     return temp[0].toUpperCase() + temp.substr(1)
 }
 
+function groupLabelLowerCase(name, schemas) {
+    const validate = n => name === n.toLowerCase()
+    for (let i = 0; i < schemas.length; i += 1) {
+        if (validate(schemas[i]['name'])) {
+            return [true, schemas[i]['displayName']]
+        }
+    }
+
+    return [false, null]
+}
+
+function groupLabelCamelCase(name, schemas) {
+    const validate = n => n.includes(name) && n.indexOf(name) === 0
+    for (let i = 0; i < schemas.length; i += 1) {
+        const schemaName = schemas[i]['name'].toLowerCase()
+        if (validate(schemaName)) {
+            return [true, breakOnCamelCase(schemas[i]['name'], name)]
+        }
+    }
+
+    return [false, null]
+}
+
 function groupLabel(name, schemas) {
     const nameLC = name.toLowerCase()
     if (nameLC === 'oauth2' || nameLC === 'other') {
         return name
     }
 
-    for (let i = 0; i < schemas.length; i += 1) {
-        if (nameLC === schemas[i]['name'].toLowerCase()) {
-            return schemas[i]['displayName']
-        }
+    const [isLower, displayName] = groupLabelLowerCase(nameLC, schemas)
+    if (isLower) {
+        return displayName
     }
 
-    for (let i = 0; i < schemas.length; i += 1) {
-        const schemaName = schemas[i]['name'].toLowerCase()
-        if (schemaName.includes(nameLC) && schemaName.indexOf(nameLC) === 0) {
-            return breakOnCamelCase(schemas[i]['name'], name)
-        }
+    const [isCamelCase, ccName] = groupLabelCamelCase(nameLC, schemas)
+    if (isCamelCase) {
+        return ccName
     }
 
     return name[0].toUpperCase() + name.substr(1)

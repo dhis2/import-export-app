@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import s from './styles.css'
 
 const TOTAL_PAGES_IN_NAV = 10
