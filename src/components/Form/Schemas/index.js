@@ -198,6 +198,25 @@ export default class Schemas extends React.Component {
         )
     }
 
+    viewSchemas() {
+        const groups = schemaGroups(this.state.schemas)
+        const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
+
+        return (
+            <FormControl className={s.formControl}>
+                {list.map(k => (
+                    <Group
+                        key={`group-${k}`}
+                        label={groupLabel(k, groups[k])}
+                        schemas={groups[k]}
+                        checked={this.state.checked}
+                        onClick={this.onClick}
+                    />
+                ))}
+            </FormControl>
+        )
+    }
+
     render() {
         if (!this.state.loaded) {
             return <Loading />
@@ -207,25 +226,13 @@ export default class Schemas extends React.Component {
             return null
         }
 
-        const groups = schemaGroups(this.state.schemas)
-        const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
         return (
             <div className={s.container}>
                 <Controls
                     onSelectAll={this.onSelectAll}
                     onSelectNone={this.onSelectNone}
                 />
-                <FormControl className={s.formControl}>
-                    {list.map(k => (
-                        <Group
-                            key={`group-${k}`}
-                            label={groupLabel(k, groups[k])}
-                            schemas={groups[k]}
-                            checked={this.state.checked}
-                            onClick={this.onClick}
-                        />
-                    ))}
-                </FormControl>
+                {this.viewSchemas()}
             </div>
         )
     }
