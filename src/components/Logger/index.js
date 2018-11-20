@@ -10,7 +10,7 @@ const iconProps = {
     fill: '#fff',
 }
 
-function ArrowUpIcon({ onClick }) {
+function ArrowIcon({ children, onClick }) {
     return (
         <svg viewBox="0 0 24 24" {...iconProps} onClick={onClick}>
             <g id="Bounding_Boxes">
@@ -19,24 +19,24 @@ function ArrowUpIcon({ onClick }) {
             </g>
             <g id="Outline">
                 <g id="ui_x5F_spec_x5F_header" />
-                <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
+                {children}
             </g>
         </svg>
     )
 }
 
+function ArrowUpIcon({ onClick }) {
+    return (
+        <ArrowIcon onClick={onClick}>
+            <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
+        </ArrowIcon>
+    )
+}
 function ArrowDownIcon({ onClick }) {
     return (
-        <svg viewBox="0 0 24 24" {...iconProps} onClick={onClick}>
-            <g id="Bounding_Boxes">
-                <g id="ui_x5F_spec_x5F_header_copy_3" />
-                <path fill="none" d="M0,0h24v24H0V0z" />
-            </g>
-            <g id="Outline">
-                <g id="ui_x5F_spec_x5F_header" />
-                <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
-            </g>
-        </svg>
+        <ArrowIcon onClick={onClick}>
+            <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
+        </ArrowIcon>
     )
 }
 
