@@ -33,13 +33,13 @@ export function SidePanel() {
     return (
         <div className={s.container}>
             <Heading>
-                <ArrowDownIcon width={20} height={20} />
+                <ArrowDownIcon />
                 <span>{i18n.t('Import')}</span>
             </Heading>
             <Contents type="import" list={importLinks} />
 
             <Heading>
-                <ArrowUpIcon width={20} height={20} />
+                <ArrowUpIcon />
                 <span>{i18n.t('Export')}</span>
             </Heading>
             <Contents type="export" list={exportLinks} />
