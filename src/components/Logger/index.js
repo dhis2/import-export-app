@@ -202,12 +202,6 @@ export class Logger extends React.Component {
         return date
     }
 
-    contentsStyle() {
-        return {
-            display: this.state.open ? 'block' : 'none',
-        }
-    }
-
     messages() {
         let prevType, prevDate, prevDateHH
         prevType = prevDate = prevDateHH = ''
@@ -234,8 +228,10 @@ export class Logger extends React.Component {
         return (
             <div
                 className={s.messages}
-                style={this.contentsStyle()}
                 ref={c => (this.elmMessages = c)}
+                style={{
+                    display: this.state.open ? 'block' : 'none',
+                }}
             >
                 {this.state.open && this.messages()}
             </div>
