@@ -149,6 +149,31 @@ export class Logger extends React.Component {
         }
     }
 
+    headerTitle() {
+        return (
+            <div className={s.title}>
+                <span className={s.upper}>{i18n.t('Logger')}</span>
+                <span>
+                    {i18n.t(
+                        'view messages received on using import/export forms.'
+                    )}
+                </span>
+            </div>
+        )
+    }
+
+    headerActions() {
+        return (
+            <div className={s.actions}>
+                {this.state.open ? (
+                    <ArrowDownIcon onClick={this.onClose} />
+                ) : (
+                    <ArrowUpIcon onClick={this.onOpen} />
+                )}
+            </div>
+        )
+    }
+
     header() {
         return (
             <div
@@ -159,21 +184,8 @@ export class Logger extends React.Component {
                 onDragEnd={this.onDragEnd}
                 onDoubleClick={this.onDoubleClick}
             >
-                <div className={s.title}>
-                    <span className={s.upper}>{i18n.t('Logger')}</span>
-                    <span>
-                        {i18n.t(
-                            'view messages received on using import/export forms.'
-                        )}
-                    </span>
-                </div>
-                <div className={s.actions}>
-                    {this.state.open ? (
-                        <ArrowDownIcon onClick={this.onClose} />
-                    ) : (
-                        <ArrowUpIcon onClick={this.onOpen} />
-                    )}
-                </div>
+                {this.headerTitle()}
+                {this.headerActions()}
             </div>
         )
     }
