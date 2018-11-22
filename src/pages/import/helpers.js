@@ -94,9 +94,11 @@ export async function fetchTaskSummary(jobId, type) {
         const path = `system/taskSummaries/${type}/${jobId}.json`
         const { data } = await api.get(path)
 
-        logStats(data.stats, type)
-        logImportCount(data.importCount, type)
-        logConflicts(data.conflicts, type)
+        if (data) {
+            data.stats && logStats(data.stats, type)
+            data.importCount && logImportCount(data.importCount, type)
+            data.conflicts && logConflicts(data.conflicts, type)
+        }
 
         if (data.typeReports) {
             eventEmitter.emit('summary.totals', data.stats)
