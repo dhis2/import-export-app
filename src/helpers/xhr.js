@@ -7,13 +7,13 @@ export function getUploadXHR(url, upload, type, onResponse, onError) {
     const contentType = getMimeType(upload.name.toLowerCase())
 
     xhr.withCredentials = true
+    xhr.open('POST', url, true)
     xhr.setRequestHeader('Content-Type', contentType)
     xhr.setRequestHeader(
         'Content-Disposition',
         'attachment filename="' + upload.name + '"'
     )
 
-    xhr.open('POST', url, true)
     xhr.onreadystatechange = onReadyStateChange(xhr, type, onResponse, onError)
 
     return xhr

@@ -98,14 +98,14 @@ export async function fetchTaskSummary(jobId, type) {
             data.stats && logStats(data.stats, type)
             data.importCount && logImportCount(data.importCount, type)
             data.conflicts && logConflicts(data.conflicts, type)
-        }
 
-        if (data.typeReports) {
-            eventEmitter.emit('summary.totals', data.stats)
-            eventEmitter.emit('summary.typeReports', data.typeReports)
-        } else if (data.conflicts) {
-            eventEmitter.emit('summary.importCount', data.importCount)
-            eventEmitter.emit('summary.conflicts', data.conflicts)
+            if (data.typeReports) {
+                eventEmitter.emit('summary.totals', data.stats)
+                eventEmitter.emit('summary.typeReports', data.typeReports)
+            } else if (data.conflicts) {
+                eventEmitter.emit('summary.importCount', data.importCount)
+                eventEmitter.emit('summary.conflicts', data.conflicts)
+            }
         }
 
         eventEmitter.emit('summary.loaded')
