@@ -5,13 +5,22 @@ import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
 import { EventIcon } from 'components/Icon'
-import { getFormField, getFormFieldMoreOptions, getFormValues } from 'helpers'
+import {
+    getFormFields,
+    getFormFieldMoreOptions,
+    getFormValues,
+    getParamsFromFormState,
+} from 'helpers'
 
 export class EventExport extends FormBase {
     static path = '/export/event'
 
     static order = 8
     static title = i18n.t('Event Export')
+    static desc = i18n.t(
+        'Export event data for programs, stages and tracked entities in the DXF 2 format.'
+    )
+
     static menuIcon = <EventIcon />
     icon = <EventIcon />
 
@@ -20,19 +29,20 @@ export class EventExport extends FormBase {
     submitLabel = i18n.t('Export')
 
     fields = [
-        getFormField('orgUnit_SingleSelect'),
-        getFormField('programs'),
-        getFormField('programStages'),
-        getFormField('idScheme'),
-        getFormField('startDate'),
-        getFormField('endDate'),
-        getFormField('format'),
-        getFormField('compression'),
+        ...getFormFields([
+            'orgUnit_SingleSelect',
+            'programs',
+            'programStages',
+            'idScheme',
+            'startDate',
+            'endDate',
+            'format',
+            'compression',
+        ]),
 
         getFormFieldMoreOptions(),
 
-        getFormField('includeDeleted'),
-        getFormField('inclusion'),
+        ...getFormFields(['includeDeleted', 'inclusion']),
     ]
 
     state = getFormValues([
@@ -50,17 +60,17 @@ export class EventExport extends FormBase {
 
     async componentDidMount() {
         await this.fetchPrograms()
+        await this.fetchOrgUnits()
     }
 
     async fetchPrograms() {
         try {
             const objectType = 'programs'
-            const { data } = await api.get(
-                `${objectType}?fields=id,displayName&paging=false`
-            )
-            const values = data[objectType].map(({ id, displayName }) => ({
-                value: id,
-                label: displayName,
+            const params = 'fields=id,displayName&paging=false'
+            const { data } = await api.get(`${objectType}?${params}`)
+            const values = data[objectType].map(o => ({
+                value: o.id,
+                label: o.displayName,
             }))
 
             const selected = values[0]['value']
@@ -68,11 +78,16 @@ export class EventExport extends FormBase {
                 {
                     programs: { values, selected },
                 },
-                () => {
-                    this.fetchProgramStages(selected)
-                }
+                () => this.fetchProgramStages(selected)
             )
+        } catch (e) {
+            console.log('fetch Programs failed')
+            console.log(e)
+        }
+    }
 
+    async fetchOrgUnits() {
+        try {
             const d2 = await getInstance()
             const orgUnitTree = await d2.models.organisationUnits
                 .list({
@@ -131,12 +146,9 @@ export class EventExport extends FormBase {
             orgUnit,
             startDate,
             endDate,
-            programs,
             programStages,
-            idScheme,
             inclusion,
             format,
-            includeDeleted,
             compression,
         } = this.getFormState()
 
@@ -145,34 +157,37 @@ export class EventExport extends FormBase {
             attachment += compression
         }
 
-        const params = []
-        params.push(`attachment=${attachment}`)
-        params.push(`program=${programs}`)
+        const append = []
 
         if (programStages !== -1) {
-            params.push(`programStage=${programStages}`)
+            append.push(`programStage=${programStages}`)
         }
 
         if (orgUnit.length > 0) {
             const path = orgUnit[0]
             const orgUnitId = path.substr(path.lastIndexOf('/') + 1)
-            params.push(`orgUnit=${orgUnitId}`)
+            append.push(`orgUnit=${orgUnitId}`)
         }
 
-        params.push('startDate=' + moment(startDate).format('YYYY-MM-DD'))
-        params.push('endDate=' + moment(endDate).format('YYYY-MM-DD'))
-
-        params.push(`ouMode=${inclusion.toUpperCase()}`)
-        params.push('links=false')
-        params.push('skipPaging=true')
-        params.push(`includeDeleted=${includeDeleted}`)
-        params.push(`idScheme=${idScheme}`)
-        params.push(`format=${format.substr(1)}`)
+        append.push('links=false')
+        append.push('skipPaging=true')
+        append.push(`attachment=${attachment}`)
+        append.push('startDate=' + moment(startDate).format('YYYY-MM-DD'))
+        append.push('endDate=' + moment(endDate).format('YYYY-MM-DD'))
+        append.push(`ouMode=${inclusion.toUpperCase()}`)
+        append.push(`format=${format.substr(1)}`)
 
         let path = `events${format}`
         if (compression !== 'none') {
             path += `${compression}`
         }
-        window.location = api.url(path) + '?' + params.join('&')
+
+        const params = getParamsFromFormState(
+            this.getFormState(),
+            ['programs', 'includeDeleted', 'idScheme'],
+            append
+        )
+
+        window.location = api.url(path) + '?' + params
     }
 }

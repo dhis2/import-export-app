@@ -1,17 +1,20 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { apiConfig } from 'config'
-import { eventEmitter } from 'services'
 import { FormBase } from 'components/FormBase'
 import { GMLIcon } from 'components/Icon'
-import { getFormField, getFormValues } from 'helpers'
-import { emitLogOnFirstResponse, fetchLog, getMimeType } from './helpers'
+import { getFormFields, getFormValues, getUploadXHR } from 'helpers'
+import { fetchLog } from './helpers'
 
 export class GMLImport extends FormBase {
     static path = '/import/gml'
 
     static order = 4
     static title = i18n.t('GML Import')
+    static desc = i18n.t(
+        'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.'
+    )
+
     static menuIcon = <GMLIcon />
     icon = <GMLIcon />
 
@@ -22,7 +25,7 @@ export class GMLImport extends FormBase {
     )
     submitLabel = i18n.t('Import')
 
-    fields = [getFormField('upload'), getFormField('dryRun')]
+    fields = getFormFields(['upload', 'dryRun'])
     state = getFormValues(['upload', 'dryRun'])
 
     async componentDidMount() {
@@ -36,39 +39,17 @@ export class GMLImport extends FormBase {
             const formData = new FormData()
             formData.set('upload', upload)
 
-            const contentType = getMimeType(upload.name.toLowerCase())
+            this.setProcessing()
 
-            const params = []
-            params.push(`dryRun=${dryRun}`)
-
-            this.setState({ processing: true })
-
-            const xhr = new XMLHttpRequest()
-            xhr.withCredentials = true
-            xhr.open(
-                'POST',
-                `${apiConfig.server}/api/metadata/gml.json?${params.join('&')}`,
-                true
+            const params = `dryRun=${dryRun}`
+            const url = `${apiConfig.server}/api/metadata/gml.json?${params}`
+            const xhr = getUploadXHR(
+                url,
+                upload,
+                'GML_IMPORT',
+                this.clearProcessing,
+                this.assertOnError
             )
-            xhr.setRequestHeader('Content-Type', contentType)
-            xhr.setRequestHeader(
-                'Content-Disposition',
-                'attachment filename="' + upload.name + '"'
-            )
-            xhr.onreadystatechange = async e => {
-                const status = Math.floor(xhr.status / 100)
-                if (xhr.readyState === 4 && status === 2) {
-                    eventEmitter.emit('summary.clear')
-
-                    const jobId = emitLogOnFirstResponse(xhr, 'GML_IMPORT')
-                    this.setState({ processing: false })
-
-                    eventEmitter.emit('summary.loading')
-                    await fetchLog(jobId, 'GML_IMPORT')
-                } else if ([3, 4, 5].includes(status)) {
-                    this.assertOnError(e)
-                }
-            }
             xhr.send(upload)
         } catch (e) {
             console.log('GML Import error', e, '\n')

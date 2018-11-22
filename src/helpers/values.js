@@ -9,14 +9,17 @@ function getValue(value, label) {
     }
 }
 
+function getValues(list) {
+    return list.map(([value, label]) => getValue(value, label))
+}
+
+const supportedFormats = ['adx', 'csv', 'json', 'pdf', 'xml']
+
 function getFormat(selected, list) {
-    const extensions = {
-        adx: getValue('.adx', i18n.t('ADX')),
-        csv: getValue('.csv', i18n.t('CSV')),
-        json: getValue('.json', i18n.t('JSON')),
-        pdf: getValue('.pdf', i18n.t('PDF')),
-        xml: getValue('.xml', i18n.t('XML')),
-    }
+    const extensions = {}
+    supportedFormats.forEach(ext => {
+        extensions[ext] = getValue(`.${ext}`, ext.toUpperCase())
+    })
 
     const values = []
     list.split(',').forEach(k => values.push(extensions[k]))
@@ -36,18 +39,15 @@ function getBoolean(
     return {
         selected,
         values: reverseOrder
-            ? [getValue('false', labelFalse), getValue('true', labelTrue)]
-            : [getValue('true', labelTrue), getValue('false', labelFalse)],
+            ? getValues([['false', labelFalse], ['true', labelTrue]])
+            : getValues([['true', labelTrue], ['false', labelFalse]]),
     }
 }
 
 function getScheme(selected) {
     return {
         selected,
-        values: [
-            getValue('UID', i18n.t('UID')),
-            getValue('CODE', i18n.t('Code')),
-        ],
+        values: getValues([['UID', i18n.t('UID')], ['CODE', i18n.t('Code')]]),
     }
 }
 
@@ -67,12 +67,12 @@ const values = {
 
     orgUnitIdScheme: {
         selected: 'UID',
-        values: [
-            getValue('UID', i18n.t('UID')),
-            getValue('CODE', i18n.t('Code')),
-            getValue('NAME', i18n.t('Name')),
-            getValue('ATTRIBUTE:UKNKz1H10EE', i18n.t('HR identifier')),
-        ],
+        values: getValues([
+            ['UID', i18n.t('UID')],
+            ['CODE', i18n.t('Code')],
+            ['NAME', i18n.t('Name')],
+            ['ATTRIBUTE:UKNKz1H10EE', i18n.t('HR identifier')],
+        ]),
     },
 
     children: getBoolean(
@@ -85,12 +85,12 @@ const values = {
 
     strategy: {
         selected: 'NEW_AND_UPDATES',
-        values: [
-            getValue('NEW_AND_UPDATES', i18n.t('New and Updates')),
-            getValue('NEW', i18n.t('New only')),
-            getValue('UPDATES', i18n.t('Updates only')),
-            getValue('DELETE', i18n.t('Delete')),
-        ],
+        values: getValues([
+            ['NEW_AND_UPDATES', i18n.t('New and Updates')],
+            ['NEW', i18n.t('New only')],
+            ['UPDATES', i18n.t('Updates only')],
+            ['DELETE', i18n.t('Delete')],
+        ]),
     },
 
     skipExistingCheck: getBoolean(
@@ -101,11 +101,11 @@ const values = {
 
     dataElementIdScheme: {
         selected: 'UID',
-        values: [
-            getValue('UID', i18n.t('UID')),
-            getValue('CODE', i18n.t('Code')),
-            getValue('NAME', i18n.t('Name')),
-        ],
+        values: getValues([
+            ['UID', i18n.t('UID')],
+            ['CODE', i18n.t('Code')],
+            ['NAME', i18n.t('Name')],
+        ]),
     },
 
     classKey: {
@@ -117,71 +117,68 @@ const values = {
 
     importMode: {
         selected: 'COMMIT',
-        values: [
-            getValue('COMMIT', i18n.t('Commit')),
-            getValue('VALIDATE', i18n.t('Validate')),
-        ],
+        values: getValues([
+            ['COMMIT', i18n.t('Commit')],
+            ['VALIDATE', i18n.t('Validate')],
+        ]),
     },
 
     identifier: {
         selected: 'UID',
-        values: [
-            getValue('UID', i18n.t('UID')),
-            getValue('CODE', i18n.t('Code')),
-            getValue('AUTO', i18n.t('AUTO')),
-        ],
+        values: getValues([
+            ['UID', i18n.t('UID')],
+            ['CODE', i18n.t('Code')],
+            ['AUTO', i18n.t('AUTO')],
+        ]),
     },
 
     importReportMode: {
         selected: 'ERRORS',
-        values: [
-            getValue('ERRORS', i18n.t('Errors')),
-            getValue('FULL', i18n.t('Full')),
-            getValue('DEBUG', i18n.t('Debug')),
-        ],
+        values: getValues([
+            ['ERRORS', i18n.t('Errors')],
+            ['FULL', i18n.t('Full')],
+            ['DEBUG', i18n.t('Debug')],
+        ]),
     },
 
     preheatMode: {
         selected: 'REFERENCE',
-        values: [
-            getValue('REFERENCE', i18n.t('Reference')),
-            getValue('ALL', i18n.t('All')),
-            getValue('NONE', i18n.t('None')),
-        ],
+        values: getValues([
+            ['REFERENCE', i18n.t('Reference')],
+            ['ALL', i18n.t('All')],
+            ['NONE', i18n.t('None')],
+        ]),
     },
 
     importStrategy: {
         selected: 'CREATE_AND_UPDATE',
-        values: [
-            getValue('CREATE_AND_UPDATE', i18n.t('Create and Update')),
-            getValue('CREATE', i18n.t('Create')),
-            getValue('UPDATE', i18n.t('Update')),
-            getValue('DELETE', i18n.t('Delete')),
-        ],
+        values: getValues([
+            ['CREATE_AND_UPDATE', i18n.t('Create and Update')],
+            ['CREATE', i18n.t('Create')],
+            ['UPDATE', i18n.t('Update')],
+            ['DELETE', i18n.t('Delete')],
+        ]),
     },
 
     atomicMode: {
         selected: 'ALL',
-        values: [
-            getValue('ALL', i18n.t('All')),
-            getValue('NONE', i18n.t('None')),
-        ],
+        values: getValues([['ALL', i18n.t('All')], ['NONE', i18n.t('None')]]),
     },
 
     mergeMode: {
         selected: 'MERGE',
-        values: [
-            getValue('MERGE', i18n.t('Merge')),
-            getValue('REPLACE', i18n.t('Replace')),
-        ],
+        values: getValues([
+            ['MERGE', i18n.t('Merge')],
+            ['REPLACE', i18n.t('Replace')],
+        ]),
     },
 
     flushMode: {
         selected: 'AUTO',
-        values: [
-            getValue('AUTO', i18n.t('Auto')),
-            getValue('OBJECT', i18n.t('Object')),
-        ],
+        values: getValues([
+            ['AUTO', i18n.t('Auto')],
+            ['OBJECT', i18n.t('Object')],
+        ]),
     },
 
     sharing: getBoolean(
@@ -198,26 +195,20 @@ const values = {
 
     inclusionStrategy: {
         selected: 'NON_NULL',
-        values: [
-            getValue('NON_NULL', i18n.t('Non Null')),
-            getValue('ALWAYS', i18n.t('Always')),
-            getValue('NON_EMPTY', i18n.t('Non Empty')),
-        ],
+        values: getValues([
+            ['NON_NULL', i18n.t('Non Null')],
+            ['ALWAYS', i18n.t('Always')],
+            ['NON_EMPTY', i18n.t('Non Empty')],
+        ]),
     },
 
     inclusion: {
         selected: 'selected',
-        values: [
-            getValue('selected', i18n.t('Selected organisation unit')),
-            getValue(
-                'children',
-                i18n.t('Include children of organisation unit')
-            ),
-            getValue(
-                'descendants',
-                i18n.t('Include descendants of organisation unit')
-            ),
-        ],
+        values: getValues([
+            ['selected', i18n.t('Selected organisation unit')],
+            ['children', i18n.t('Include children of organisation unit')],
+            ['descendants', i18n.t('Include descendants of organisation unit')],
+        ]),
     },
 
     orgUnit: {
@@ -240,11 +231,11 @@ const values = {
 
     compression: {
         selected: '.zip',
-        values: [
-            getValue('.zip', i18n.t('Zip')),
-            getValue('.gz', i18n.t('Gzip')),
-            getValue('none', i18n.t('Uncompressed')),
-        ],
+        values: getValues([
+            ['.zip', i18n.t('Zip')],
+            ['.gz', i18n.t('Gzip')],
+            ['none', i18n.t('Uncompressed')],
+        ]),
     },
 
     includeDeleted: getBoolean('false'),
@@ -257,13 +248,13 @@ const values = {
 
     objectType: {
         selected: 'dataSets',
-        values: [
-            getValue('dataSets', i18n.t('Data sets')),
-            getValue('programs', i18n.t('Programs')),
-            getValue('categoryCombos', i18n.t('Category combination')),
-            getValue('dashboards', i18n.t('Dashboard')),
-            getValue('dataElementGroups', i18n.t('Data element groups')),
-        ],
+        values: getValues([
+            ['dataSets', i18n.t('Data sets')],
+            ['programs', i18n.t('Programs')],
+            ['categoryCombos', i18n.t('Category combination')],
+            ['dashboards', i18n.t('Dashboard')],
+            ['dataElementGroups', i18n.t('Data element groups')],
+        ]),
     },
 
     objectList: {
@@ -278,7 +269,7 @@ const values = {
 
     programStages: {
         selected: -1,
-        values: [getValue(-1, i18n.t('[ All program stages]'))],
+        values: getValues([[-1, i18n.t('[ All program stages]')]]),
     },
 }
 

@@ -32,30 +32,20 @@ export class TaskSummary extends React.Component {
     }
 
     componentDidMount() {
-        eventEmitter.on('summary.loading', this.onLoading)
-        eventEmitter.on('summary.loaded', this.onLoaded)
-
-        eventEmitter.on('summary.clear', this.onClear)
-        eventEmitter.on('summary.totals', this.onTotals)
-        eventEmitter.on('summary.typeReports', this.onTypeReports)
-        eventEmitter.on('summary.importCount', this.onImportCount)
-        eventEmitter.on('summary.conflicts', this.onConflicts)
+        Object.entries(this.events).forEach(([evt, fn]) =>
+            eventEmitter.on(evt, fn)
+        )
     }
 
     componentWillUnmount() {
-        eventEmitter.off('summary.loading', this.onLoading)
-        eventEmitter.off('summary.loaded', this.onLoaded)
-
-        eventEmitter.off('summary.clear', this.onClear)
-        eventEmitter.off('summary.totals', this.onTotals)
-        eventEmitter.off('summary.typeReports', this.onTypeReports)
-        eventEmitter.off('summary.importCount', this.onImportCount)
-        eventEmitter.off('summary.conflicts', this.onConflicts)
+        Object.entries(this.events).forEach(([evt, fn]) =>
+            eventEmitter.off(evt, fn)
+        )
     }
 
     onLoaded = () => this.setState({ loading: false })
-    onLoading = () => this.setState({ loading: true })
 
+    onLoading = () => this.setState({ loading: true })
     onClear = () => this.setState({ ...initialState })
 
     onTotals = stats => this.setState({ stats })
@@ -104,8 +94,19 @@ export class TaskSummary extends React.Component {
 
     onConflicts = conflicts => this.setState({ conflicts })
 
+    events = {
+        'summary.loading': this.onLoading,
+        'summary.loaded': this.onLoaded,
+        'summary.clear': this.onClear,
+        'summary.totals': this.onTotals,
+        'summary.typeReports': this.onTypeReports,
+        'summary.importCount': this.onImportCount,
+        'summary.conflicts': this.onConflicts,
+    }
+
     viewTypeStats() {
-        if (this.state.typeStats.length === 0) {
+        const { typeStats } = this.state
+        if (typeStats.length === 0) {
             return null
         }
 
@@ -115,13 +116,14 @@ export class TaskSummary extends React.Component {
                     {i18n.t('Type Count')}
                 </div>
 
-                <TypeStats list={this.state.typeStats} />
+                <TypeStats list={typeStats} />
             </Fragment>
         )
     }
 
     viewMessages() {
-        if (this.state.messages.length === 0) {
+        const { messages } = this.state
+        if (messages.length === 0) {
             return null
         }
 
@@ -130,13 +132,14 @@ export class TaskSummary extends React.Component {
                 <div className={`${s.label} ${s.marginTop}`}>
                     {i18n.t('Messages')}
                 </div>
-                <Messages list={this.state.messages} />
+                <Messages list={messages} />
             </Fragment>
         )
     }
 
     viewConflicts() {
-        if (this.state.conflicts === 0) {
+        const { conflicts } = this.state
+        if (conflicts === 0) {
             return null
         }
 
@@ -145,9 +148,22 @@ export class TaskSummary extends React.Component {
                 <div className={`${s.label} ${s.marginTop}`}>
                     {i18n.t('Conflicts')}
                 </div>
-                <Conflicts list={this.state.conflicts} />
+                <Conflicts list={conflicts} />
             </Fragment>
         )
+    }
+
+    isEmpty() {
+        const { stats, typeStats, messages } = this.state
+        if (
+            stats.total === 0 &&
+            typeStats.length === 0 &&
+            messages.length === 0
+        ) {
+            return true
+        }
+
+        return false
     }
 
     render() {
@@ -155,14 +171,7 @@ export class TaskSummary extends React.Component {
             return <Loading />
         }
 
-        console.log('this.state', this.state)
-
-        const { stats, typeStats, messages } = this.state
-        if (
-            stats.total === 0 &&
-            typeStats.length === 0 &&
-            messages.length === 0
-        ) {
+        if (this.isEmpty()) {
             return null
         }
 

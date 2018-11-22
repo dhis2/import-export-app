@@ -78,44 +78,58 @@ export default class DataSetPicker extends React.Component {
         )
     }
 
-    render() {
-        const { value, selected } = this.props
-        const filter = this.state.filter.toLowerCase()
-        let values =
-            filter.length === 0
-                ? value
-                : value.filter(({ label }) =>
-                      label.toLowerCase().includes(filter)
-                  )
+    header() {
+        return (
+            <div className={s.header}>
+                <FormLabel className={s.formLabel}>
+                    {i18n.t('Data sets')}
+                </FormLabel>
+            </div>
+        )
+    }
 
+    values() {
+        const { value } = this.props
+        const filter = this.state.filter.toLowerCase()
+        return filter.length === 0
+            ? value
+            : value.filter(({ label }) => label.toLowerCase().includes(filter))
+    }
+
+    leftIcon(value) {
+        return this.props.selected.includes(value) ? (
+            <CheckedIcon />
+        ) : (
+            <UnCheckedIcon />
+        )
+    }
+
+    contents() {
+        let values = this.values()
+        return (
+            <div className={s.body}>
+                {values.map(({ value, label }) => (
+                    <MenuItem
+                        key={`dateSetPicker-mi-${value}`}
+                        {...styles.menuItem}
+                        value={value}
+                        primaryText={label}
+                        insetChildren={true}
+                        leftIcon={this.leftIcon(value)}
+                        onClick={() => this.onChange(value)}
+                    />
+                ))}
+            </div>
+        )
+    }
+
+    render() {
         return (
             <div className={s.container}>
-                <div className={s.header}>
-                    <FormLabel className={s.formLabel}>
-                        {i18n.t('Data sets')}
-                    </FormLabel>
-                </div>
+                {this.header()}
                 {this.filter()}
                 {this.actions()}
-                <div className={s.body}>
-                    {values.map(({ value, label }) => (
-                        <MenuItem
-                            {...styles.menuItem}
-                            key={`dateSetPicker-mi-${value}`}
-                            value={value}
-                            primaryText={label}
-                            insetChildren={true}
-                            onClick={() => this.onChange(value)}
-                            leftIcon={
-                                selected.includes(value) ? (
-                                    <CheckedIcon />
-                                ) : (
-                                    <UnCheckedIcon />
-                                )
-                            }
-                        />
-                    ))}
-                </div>
+                {this.contents()}
             </div>
         )
     }

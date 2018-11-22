@@ -10,7 +10,7 @@ const iconProps = {
     fill: '#fff',
 }
 
-function ArrowUpIcon({ onClick }) {
+function ArrowIcon({ children, onClick }) {
     return (
         <svg viewBox="0 0 24 24" {...iconProps} onClick={onClick}>
             <g id="Bounding_Boxes">
@@ -19,24 +19,24 @@ function ArrowUpIcon({ onClick }) {
             </g>
             <g id="Outline">
                 <g id="ui_x5F_spec_x5F_header" />
-                <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
+                {children}
             </g>
         </svg>
     )
 }
 
+function ArrowUpIcon({ onClick }) {
+    return (
+        <ArrowIcon onClick={onClick}>
+            <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
+        </ArrowIcon>
+    )
+}
 function ArrowDownIcon({ onClick }) {
     return (
-        <svg viewBox="0 0 24 24" {...iconProps} onClick={onClick}>
-            <g id="Bounding_Boxes">
-                <g id="ui_x5F_spec_x5F_header_copy_3" />
-                <path fill="none" d="M0,0h24v24H0V0z" />
-            </g>
-            <g id="Outline">
-                <g id="ui_x5F_spec_x5F_header" />
-                <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
-            </g>
-        </svg>
+        <ArrowIcon onClick={onClick}>
+            <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
+        </ArrowIcon>
     )
 }
 
@@ -149,73 +149,100 @@ export class Logger extends React.Component {
         }
     }
 
+    headerTitle() {
+        return (
+            <div className={s.title}>
+                <span className={s.upper}>{i18n.t('Logger')}</span>
+                <span>
+                    {i18n.t(
+                        'view messages received on using import/export forms.'
+                    )}
+                </span>
+            </div>
+        )
+    }
+
+    headerActions() {
+        return (
+            <div className={s.actions}>
+                {this.state.open ? (
+                    <ArrowDownIcon onClick={this.onClose} />
+                ) : (
+                    <ArrowUpIcon onClick={this.onOpen} />
+                )}
+            </div>
+        )
+    }
+
+    header() {
+        return (
+            <div
+                className={s.nav}
+                onClick={this.onClick}
+                onDrag={this.onDrag}
+                onDragStart={this.onDragStart}
+                onDragEnd={this.onDragEnd}
+                onDoubleClick={this.onDoubleClick}
+            >
+                {this.headerTitle()}
+                {this.headerActions()}
+            </div>
+        )
+    }
+
+    getDate(p, prevDateHH, prevDate) {
+        let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
+
+        if (moment(p.d).format('YYYY-MM-DD HH') === prevDateHH) {
+            date = moment(p.d).format('mm:ss')
+        } else if (moment(p.d).format('YYYY-MM-DD') === prevDate) {
+            date = moment(p.d).format('HH:mm:ss')
+        }
+
+        return date
+    }
+
+    messages() {
+        let prevType, prevDate, prevDateHH
+        prevType = prevDate = prevDateHH = ''
+
+        return this.state.list.map(p => {
+            const type = p.type === prevType ? '' : p.type
+            const date = this.getDate(p, prevDateHH, prevDate)
+
+            prevType = p.type
+            prevDate = moment(p.d).format('YYYY-MM-DD')
+            prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
+            return (
+                <Message
+                    key={`msg-${p.id}`}
+                    date={date}
+                    type={type}
+                    text={p.text}
+                />
+            )
+        })
+    }
+
+    contents() {
+        return (
+            <div
+                className={s.messages}
+                ref={c => (this.elmMessages = c)}
+                style={{
+                    display: this.state.open ? 'block' : 'none',
+                }}
+            >
+                {this.state.open && this.messages()}
+            </div>
+        )
+    }
+
     render() {
-        const { open, list } = this.state
-        let prevType = ''
-        let prevDate = ''
-        let prevDateHH = ''
         return (
             <div id="import-export-logger" className={s.container}>
-                <div
-                    className={s.nav}
-                    onClick={this.onClick}
-                    onDrag={this.onDrag}
-                    onDragStart={this.onDragStart}
-                    onDragEnd={this.onDragEnd}
-                    onDoubleClick={this.onDoubleClick}
-                >
-                    <div className={s.title}>
-                        <span className={s.upper}>{i18n.t('Logger')}</span>
-                        <span>
-                            {i18n.t(
-                                'view messages received on using import/export forms.'
-                            )}
-                        </span>
-                    </div>
-                    <div className={s.actions}>
-                        {open ? (
-                            <ArrowDownIcon onClick={this.onClose} />
-                        ) : (
-                            <ArrowUpIcon onClick={this.onOpen} />
-                        )}
-                    </div>
-                </div>
-                <div
-                    className={s.messages}
-                    ref={c => (this.elmMessages = c)}
-                    style={{
-                        display: open ? 'block' : 'none',
-                    }}
-                >
-                    {open &&
-                        list.map(p => {
-                            const type = p.type === prevType ? '' : p.type
-                            let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
-
-                            if (
-                                moment(p.d).format('YYYY-MM-DD HH') ===
-                                prevDateHH
-                            ) {
-                                date = moment(p.d).format('mm:ss')
-                            } else if (
-                                moment(p.d).format('YYYY-MM-DD') === prevDate
-                            ) {
-                                date = moment(p.d).format('HH:mm:ss')
-                            }
-
-                            prevType = p.type
-                            prevDate = moment(p.d).format('YYYY-MM-DD')
-                            prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
-                            return (
-                                <Message
-                                    key={`msg-${p.id}`}
-                                    date={date}
-                                    type={type}
-                                    text={p.text}
-                                />
-                            )
-                        })}
-                </div>
+                {this.header()}
+                {this.contents()}
             </div>
         )
     }

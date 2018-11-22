@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { api } from 'services'
-import { createBlob, downloadBlob, getFormField, getFormValues } from 'helpers'
+import { createBlob, downloadBlob, getFormFields, getFormValues } from 'helpers'
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
 
@@ -10,6 +10,10 @@ export class MetaDataExport extends FormBase {
 
     static order = 5
     static title = i18n.t('Metadata Export')
+    static desc = i18n.t(
+        'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.'
+    )
+
     static menuIcon = <MetadataExportIcon />
     icon = <MetadataExportIcon />
 
@@ -17,12 +21,7 @@ export class MetaDataExport extends FormBase {
     formTitle = i18n.t('Meta Data Export')
     submitLabel = i18n.t('Export')
 
-    fields = [
-        getFormField('schemas'),
-        getFormField('format'),
-        getFormField('compression'),
-        getFormField('sharing'),
-    ]
+    fields = getFormFields(['schemas', 'format', 'compression', 'sharing'])
 
     state = getFormValues([
         'schemas',
@@ -57,6 +56,7 @@ export class MetaDataExport extends FormBase {
                 params.push(
                     'fields=:owner,!user,!publicAccess,!userGroupAccesses'
                 )
+                params.push('skipSharing=true')
             }
 
             let endpoint = `metadata${format}`

@@ -2,7 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormBase } from 'components/FormBase'
 import { api } from 'services'
-import { createBlob, downloadBlob, getFormField, getFormValues } from 'helpers'
+import { createBlob, downloadBlob, getFormFields, getFormValues } from 'helpers'
 import { MetadataDependencyExportIcon } from 'components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
@@ -10,6 +10,10 @@ export class MetaDataDependencyExport extends FormBase {
 
     static order = 9
     static title = i18n.t('Metadata Dependency Export')
+    static desc = i18n.t(
+        'Export metadata like data sets and programs including related metadata objects.'
+    )
+
     static menuIcon = <MetadataDependencyExportIcon />
     icon = <MetadataDependencyExportIcon />
 
@@ -17,12 +21,12 @@ export class MetaDataDependencyExport extends FormBase {
     formTitle = i18n.t('Metadata Export with Dependencies')
     submitLabel = i18n.t('Export')
 
-    fields = [
-        getFormField('objectType'),
-        getFormField('objectList'),
-        getFormField('format'),
-        getFormField('compression'),
-    ]
+    fields = getFormFields([
+        'objectType',
+        'objectList',
+        'format',
+        'compression',
+    ])
 
     state = getFormValues([
         'objectType',

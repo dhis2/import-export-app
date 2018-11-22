@@ -54,14 +54,14 @@ export const GMLIcon = props => (
     </Icon>
 )
 
-export const ArrowUpIcon = props => (
-    <Icon {...props}>
+export const ArrowUpIcon = () => (
+    <Icon width={20} height={20}>
         <path d="M12 0l8 9h-6v15h-4v-15h-6z" />
     </Icon>
 )
 
-export const ArrowDownIcon = props => (
-    <Icon {...props}>
+export const ArrowDownIcon = () => (
+    <Icon width={20} height={20}>
         <path d="M12 24l-8-9h6v-15h4v15h6z" />
     </Icon>
 )

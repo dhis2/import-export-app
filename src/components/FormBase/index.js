@@ -27,6 +27,9 @@ export class FormBase extends React.Component {
         return values
     }
 
+    setProcessing = () => this.setState({ processing: true })
+    clearProcessing = () => this.setState({ processing: false })
+
     onClearError = () => this.setState({ error: null })
     assertOnError = evt => {
         try {
