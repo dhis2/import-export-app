@@ -105,6 +105,12 @@ export async function fetchTaskSummary(jobId, type) {
             } else if (data.conflicts) {
                 eventEmitter.emit('summary.importCount', data.importCount)
                 eventEmitter.emit('summary.conflicts', data.conflicts)
+            } else if (data.importSummaries) {
+                eventEmitter.emit('summary.importCount', data)
+                eventEmitter.emit(
+                    'summary.importSummaries',
+                    data.importSummaries
+                )
             }
         }
 
