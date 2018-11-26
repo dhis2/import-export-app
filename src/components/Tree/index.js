@@ -2,6 +2,31 @@ import React from 'react'
 import cx from 'classnames'
 import s from './styles.css'
 
+function NodeIcon({ hasChildren, open, value, onClick }) {
+    if (hasChildren) {
+        return (
+            <div className={s.icon} onClick={evt => onClick(evt, !open, value)}>
+                {open ? '\u2212' : '\u002B'}
+            </div>
+        )
+    }
+
+    return <div className={s.icon} />
+}
+
+function NodeSpacer({ depth, hasChildren }) {
+    let minWidth = depth * 20
+    if (!hasChildren) {
+        minWidth += 7
+    }
+
+    return <div style={{ minWidth }} />
+}
+
+function NodeLabel({ label }) {
+    return <div className={s.text}>{label}</div>
+}
+
 function Node({
     label,
     value,
@@ -13,11 +38,6 @@ function Node({
     onIconClick,
 }) {
     const hasChildren = children && Array.isArray(children)
-    let minWidth = depth * 20
-    if (!hasChildren) {
-        minWidth += 7
-    }
-
     return (
         <div>
             <div
@@ -26,18 +46,14 @@ function Node({
                 })}
                 onClick={() => onClick(value)}
             >
-                <div style={{ minWidth }} />
-                {hasChildren ? (
-                    <div
-                        className={s.icon}
-                        onClick={evt => onIconClick(evt, !open, value)}
-                    >
-                        {open ? '\u2212' : '\u002B'}
-                    </div>
-                ) : (
-                    <div className={s.icon} />
-                )}
-                <div className={s.text}>{label}</div>
+                <NodeSpacer depth={depth} />
+                <NodeIcon
+                    hasChildren={hasChildren}
+                    open={open}
+                    value={value}
+                    onClick={onIconClick}
+                />
+                <NodeLabel label={label} />
             </div>
             {open && children && <div className={s.children}>{children}</div>}
         </div>

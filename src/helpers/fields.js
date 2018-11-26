@@ -153,6 +153,10 @@ export function getFormField(name, options = {}) {
     }
 }
 
+export function getFormFields(list) {
+    return list.map(i => getFormField(i))
+}
+
 export function getFormFieldMoreOptions() {
     return {
         context: CTX_DEFAULT,

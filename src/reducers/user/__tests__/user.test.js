@@ -1,3 +1,4 @@
+import React from 'react'
 import userReducer from '../'
 import { USER_SET, USER_CLEAR } from '../actions'
 

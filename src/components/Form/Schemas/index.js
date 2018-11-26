@@ -62,23 +62,43 @@ function breakOnCamelCase(schemaName, name) {
     return temp[0].toUpperCase() + temp.substr(1)
 }
 
+function groupLabelLowerCase(name, schemas) {
+    const validate = n => name === n.toLowerCase()
+    for (let i = 0; i < schemas.length; i += 1) {
+        if (validate(schemas[i]['name'])) {
+            return [true, schemas[i]['displayName']]
+        }
+    }
+
+    return [false, null]
+}
+
+function groupLabelCamelCase(name, schemas) {
+    const validate = n => n.includes(name) && n.indexOf(name) === 0
+    for (let i = 0; i < schemas.length; i += 1) {
+        const schemaName = schemas[i]['name'].toLowerCase()
+        if (validate(schemaName)) {
+            return [true, breakOnCamelCase(schemas[i]['name'], name)]
+        }
+    }
+
+    return [false, null]
+}
+
 function groupLabel(name, schemas) {
     const nameLC = name.toLowerCase()
     if (nameLC === 'oauth2' || nameLC === 'other') {
         return name
     }
 
-    for (let i = 0; i < schemas.length; i += 1) {
-        if (nameLC === schemas[i]['name'].toLowerCase()) {
-            return schemas[i]['displayName']
-        }
+    const [isLower, displayName] = groupLabelLowerCase(nameLC, schemas)
+    if (isLower) {
+        return displayName
     }
 
-    for (let i = 0; i < schemas.length; i += 1) {
-        const schemaName = schemas[i]['name'].toLowerCase()
-        if (schemaName.includes(nameLC) && schemaName.indexOf(nameLC) === 0) {
-            return breakOnCamelCase(schemas[i]['name'], name)
-        }
+    const [isCamelCase, ccName] = groupLabelCamelCase(nameLC, schemas)
+    if (isCamelCase) {
+        return ccName
     }
 
     return name[0].toUpperCase() + name.substr(1)
@@ -151,27 +171,26 @@ export default class Schemas extends React.Component {
         )
     }
 
+    getSchemas(schemas) {
+        return schemas
+            .map(i => ({
+                name: i.name,
+                klass: i.klass,
+                displayName: i.displayName,
+                collectionName: i.collectionName,
+                group: groupName(i.klass),
+            }))
+            .sort((a, b) => a.displayName.localeCompare(b.displayName))
+    }
+
     async fetch() {
         try {
-            const {
-                data: { schemas },
-            } = await api.get('schemas.json')
-
+            const { data } = await api.get('schemas.json')
             this.setState(
                 {
                     loaded: true,
-                    checked: schemas.map(item => item.collectionName),
-                    schemas: schemas
-                        .map(item => ({
-                            name: item.name,
-                            klass: item.klass,
-                            displayName: item.displayName,
-                            collectionName: item.collectionName,
-                            group: groupName(item.klass),
-                        }))
-                        .sort((a, b) =>
-                            a.displayName.localeCompare(b.displayName)
-                        ),
+                    schemas: this.getSchemas(data.schemas),
+                    checked: data.schemas.map(item => item.collectionName),
                 },
                 () => {
                     this.props.onChange(this.props.name, this.state.checked)
@@ -199,18 +218,33 @@ export default class Schemas extends React.Component {
         )
     }
 
+    viewSchemas() {
+        const groups = schemaGroups(this.state.schemas)
+        const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
+
+        return (
+            <FormControl className={s.formControl}>
+                {list.map(k => (
+                    <Group
+                        key={`group-${k}`}
+                        label={groupLabel(k, groups[k])}
+                        schemas={groups[k]}
+                        checked={this.state.checked}
+                        onClick={this.onClick}
+                    />
+                ))}
+            </FormControl>
+        )
+    }
+
     render() {
-        const { loaded, checked, schemas } = this.state
-        if (!loaded) {
+        if (!this.state.loaded) {
             return <Loading />
         }
 
-        if (schemas.length === 0) {
+        if (this.state.schemas.length === 0) {
             return null
         }
-
-        const groups = schemaGroups(schemas)
-        const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
 
         return (
             <div className={s.container}>
@@ -218,17 +252,7 @@ export default class Schemas extends React.Component {
                     onSelectAll={this.onSelectAll}
                     onSelectNone={this.onSelectNone}
                 />
-                <FormControl className={s.formControl}>
-                    {list.map(k => (
-                        <Group
-                            key={`group-${k}`}
-                            label={groupLabel(k, groups[k])}
-                            schemas={groups[k]}
-                            checked={checked}
-                            onClick={this.onClick}
-                        />
-                    ))}
-                </FormControl>
+                {this.viewSchemas()}
             </div>
         )
     }

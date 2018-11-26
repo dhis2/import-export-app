@@ -2,108 +2,47 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { NavLink } from 'react-router-dom'
 import { ArrowUpIcon, ArrowDownIcon } from 'components/Icon'
+import { importLinks, exportLinks } from './links'
 import s from './styles.css'
-import {
-    MetaDataImport,
-    MetaDataExport,
-    DataImport,
-    DataExport,
-    GMLImport,
-    EventImport,
-    EventExport,
-    MetaDataDependencyExport,
-} from 'pages'
 
-export class SidePanel extends React.Component {
-    render() {
-        const importLinks = [
-            {
-                to: '/import/metadata',
-                text: i18n.t('Metadata Import'),
-                icon: MetaDataImport.menuIcon,
-            },
-            {
-                to: '/import/data',
-                text: i18n.t('Data Import'),
-                icon: DataImport.menuIcon,
-            },
-            {
-                to: '/import/event',
-                text: i18n.t('Event Import'),
-                icon: EventImport.menuIcon,
-            },
-            {
-                to: '/import/gml',
-                text: i18n.t('GML Import'),
-                icon: GMLImport.menuIcon,
-            },
-        ]
+function Heading({ children }) {
+    return <div className={s.heading}>{children}</div>
+}
 
-        const exportLinks = [
-            {
-                to: '/export/metadata',
-                text: i18n.t('Metadata Export'),
-                icon: MetaDataExport.menuIcon,
-            },
-            {
-                to: '/export/data',
-                text: i18n.t('Data Export'),
-                icon: DataExport.menuIcon,
-            },
-            {
-                to: '/export/event',
-                text: i18n.t('Event Export'),
-                icon: EventExport.menuIcon,
-            },
-            {
-                to: '/export/metadata-dependency',
-                text: i18n.t('Metadata Dependency Export'),
-                icon: MetaDataDependencyExport.menuIcon,
-            },
-        ]
+function Contents({ type, list }) {
+    return (
+        <div className={s.list}>
+            {list.map(({ to, text, icon }) => (
+                <NavLink
+                    to={to}
+                    key={`${type}-${to}`}
+                    className={s.link}
+                    activeClassName={s.active}
+                >
+                    <div className={s.item}>
+                        {icon}
+                        <div className={s.text}>{text}</div>
+                    </div>
+                </NavLink>
+            ))}
+        </div>
+    )
+}
 
-        return (
-            <div className={s.container}>
-                <div className={s.heading}>
-                    <ArrowDownIcon width={20} height={20} />
-                    <span>{i18n.t('Import')}</span>
-                </div>
-                <div className={s.list}>
-                    {importLinks.map(({ to, text, icon }) => (
-                        <NavLink
-                            to={to}
-                            key={`import-${to}`}
-                            className={s.link}
-                            activeClassName={s.active}
-                        >
-                            <div className={s.item}>
-                                {icon}
-                                <div className={s.text}>{text}</div>
-                            </div>
-                        </NavLink>
-                    ))}
-                </div>
+export function SidePanel() {
+    return (
+        <div className={s.container}>
+            <Heading>
+                <ArrowDownIcon />
+                <span>{i18n.t('Import')}</span>
+            </Heading>
+            <Contents type="import" list={importLinks} />
 
-                <div className={s.heading}>
-                    <ArrowUpIcon width={20} height={20} />
-                    <span>{i18n.t('Export')}</span>
-                </div>
-                <div className={s.list}>
-                    {exportLinks.map(({ to, text, icon }) => (
-                        <NavLink
-                            to={to}
-                            key={`export-${to}`}
-                            className={s.link}
-                            activeClassName={s.active}
-                        >
-                            <div className={s.item}>
-                                {icon}
-                                <div className={s.text}>{text}</div>
-                            </div>
-                        </NavLink>
-                    ))}
-                </div>
-            </div>
-        )
-    }
+            <Heading>
+                <ArrowUpIcon />
+                <span>{i18n.t('Export')}</span>
+            </Heading>
+            <Contents type="export" list={exportLinks} />
+        </div>
+    )
 }

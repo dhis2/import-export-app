@@ -3,19 +3,15 @@ import s from './styles.css'
 
 const TOTAL_PAGES_IN_NAV = 10
 
-function Pagination({ total, start, limit, onClick }) {
-    const totalPages = Math.ceil(total / limit)
-    const currentPage = Math.ceil((start + limit) / limit)
-
-    // numerical pagination
-    let first = currentPage - TOTAL_PAGES_IN_NAV / 2
+function getPaginationRange(current, total) {
+    let first = current - TOTAL_PAGES_IN_NAV / 2
     if (first <= 0) {
         first = 1
     }
 
     let last = first + TOTAL_PAGES_IN_NAV - 1
-    if (last > totalPages) {
-        last = totalPages
+    if (last > total) {
+        last = total
         first = last - TOTAL_PAGES_IN_NAV
 
         if (first < 0) {
@@ -23,13 +19,13 @@ function Pagination({ total, start, limit, onClick }) {
         }
     }
 
-    if (last === 1) {
-        return null
-    }
+    return [first, last]
+}
 
+function getPages(current, first, last, limit, onClick) {
     const pages = []
     for (let i = first; i <= last; i += 1) {
-        const className = i === currentPage ? `${s.page} ${s.current}` : s.page
+        const className = i === current ? `${s.page} ${s.current}` : s.page
         pages.push(
             <div
                 key={`pi-${i}`}
@@ -40,27 +36,38 @@ function Pagination({ total, start, limit, onClick }) {
             </div>
         )
     }
+    return <div className={s.pages}>{pages}</div>
+}
+
+function getPaginationStats(current, start, limit, total, onClick) {
+    return (
+        <div className={s.nav}>
+            <div className={s.action} onClick={() => onClick(start - limit)}>
+                &#60;
+            </div>
+            <div className={s.text}>
+                Page {current} of {total}
+            </div>
+            <div className={s.action} onClick={() => onClick(start + limit)}>
+                &#62;
+            </div>
+        </div>
+    )
+}
+
+function Pagination({ total: _total, start, limit, onClick }) {
+    const total = Math.ceil(_total / limit)
+    const current = Math.ceil((start + limit) / limit)
+    const [first, last] = getPaginationRange(current, total)
+
+    if (last === 1) {
+        return null
+    }
 
     return (
         <div className={s.pagination}>
-            <div className={s.nav}>
-                <div
-                    className={s.action}
-                    onClick={() => onClick(start - limit)}
-                >
-                    &#60;
-                </div>
-                <div className={s.text}>
-                    Page {currentPage} of {totalPages}
-                </div>
-                <div
-                    className={s.action}
-                    onClick={() => onClick(start + limit)}
-                >
-                    &#62;
-                </div>
-            </div>
-            <div className={s.pages}>{pages}</div>
+            {getPaginationStats(current, start, limit, total, onClick)}
+            {getPages(current, first, last, limit, onClick)}
         </div>
     )
 }
@@ -95,42 +102,60 @@ export default class PaginatedTable extends React.Component {
 
     onClick = start => this.setState({ start })
 
+    colgroup() {
+        return (
+            <colgroup>
+                {this.props.fields.map(({ width }, i) => (
+                    <col key={`col-${i}`} width={width} />
+                ))}
+            </colgroup>
+        )
+    }
+
+    thead() {
+        return (
+            <thead>
+                <tr>
+                    {this.props.fields.map(({ title }) => (
+                        <td key={`title-${title}`}>{title}</td>
+                    ))}
+                </tr>
+            </thead>
+        )
+    }
+
+    tfoot() {
+        return (
+            <tfoot>
+                <tr>
+                    <td colSpan={this.props.fields.length}>
+                        <Pagination
+                            start={this.state.start}
+                            limit={this.state.limit}
+                            total={this.props.list.length}
+                            onClick={this.onClick}
+                        />
+                    </td>
+                </tr>
+            </tfoot>
+        )
+    }
+
+    tbody() {
+        return <tbody>{this.rows()}</tbody>
+    }
+
     render() {
         if (this.props.list.length === 0) {
             return null
         }
 
-        const { fields } = this.props
-
         return (
             <table className={`${s.table} ${s.paginatedTable}`}>
-                <colgroup>
-                    {fields.map(({ width }, i) => (
-                        <col key={`col-${i}`} width={width} />
-                    ))}
-                </colgroup>
-
-                <thead>
-                    <tr>
-                        {fields.map(({ title }) => (
-                            <td key={`title-${title}`}>{title}</td>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>{this.rows()}</tbody>
-
-                <tfoot>
-                    <tr>
-                        <td colSpan={fields.length}>
-                            <Pagination
-                                start={this.state.start}
-                                limit={this.state.limit}
-                                total={this.props.list.length}
-                                onClick={this.onClick}
-                            />
-                        </td>
-                    </tr>
-                </tfoot>
+                {this.colgroup()}
+                {this.thead()}
+                {this.tbody()}
+                {this.tfoot()}
             </table>
         )
     }

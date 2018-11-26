@@ -8,20 +8,6 @@ const CATEGORY_2_LABEL = {
     EVENT_IMPORT: 'Event import',
 }
 
-export function getMimeType(filename) {
-    if (filename.endsWith('json') || filename.includes('.json')) {
-        return 'application/json'
-    } else if (filename.endsWith('xml') || filename.includes('.xml')) {
-        return 'application/xml'
-    } else if (filename.endsWith('csv') || filename.includes('.csv')) {
-        return 'application/csv'
-    } else if (filename.endsWith('gml') || filename.includes('.gml')) {
-        return 'application/xml'
-    }
-
-    return null
-}
-
 const lastIds = {}
 
 function emitLog(data) {
@@ -48,22 +34,43 @@ export function emitLogOnFirstResponse(xhr, importType) {
     return response.id
 }
 
+function getFetchLogPath(jobId, type) {
+    let path = `system/tasks/${type}`
+    if (lastIds[type]) {
+        path += `?lastId=${lastIds[type]}`
+    }
+
+    return path
+}
+
+function fetchResponseIsArray(data) {
+    return Array.isArray(data) && data.length > 0
+}
+
+function fetchResponseIsObject(data) {
+    return typeof data === 'object'
+}
+
+function isFetchLogComplete(data) {
+    return data.filter(item => item.completed).length === 0
+}
+
+function fetchLogAfter(jobId, type, time = 2000) {
+    setTimeout(() => fetchLog(jobId, type), time)
+}
+
 export async function fetchLog(jobId, type) {
     try {
-        let path = `system/tasks/${type}`
-        if (lastIds[type]) {
-            path += `?lastId=${lastIds[type]}`
-        }
-        const { data } = await api.get(path)
+        const { data } = await api.get(getFetchLogPath(jobId, type))
 
-        if (Array.isArray(data) && data.length > 0) {
+        if (fetchResponseIsArray(data)) {
             lastIds[type] = data[0]['uid']
             emitLog(data, type)
 
-            if (data.filter(item => item.completed).length === 0) {
-                setTimeout(() => fetchLog(jobId, type), 2000)
+            if (isFetchLogComplete(data)) {
+                fetchLogAfter(jobId, type)
             }
-        } else if (typeof data === 'object') {
+        } else if (fetchResponseIsObject(data)) {
             let records = null
             Object.keys(data).forEach(k => {
                 lastIds[type] = data[k][0]['uid']
@@ -71,8 +78,8 @@ export async function fetchLog(jobId, type) {
                 emitLog(data[k], type)
             })
 
-            if (records.filter(item => item.completed).length === 0) {
-                setTimeout(() => fetchLog(jobId, type), 2000)
+            if (isFetchLogComplete(records)) {
+                fetchLogAfter(jobId, type)
             } else {
                 await fetchTaskSummary(jobId, type)
             }
@@ -87,16 +94,24 @@ export async function fetchTaskSummary(jobId, type) {
         const path = `system/taskSummaries/${type}/${jobId}.json`
         const { data } = await api.get(path)
 
-        logStats(data.stats, type)
-        logImportCount(data.importCount, type)
-        logConflicts(data.conflicts, type)
+        if (data) {
+            data.stats && logStats(data.stats, type)
+            data.importCount && logImportCount(data.importCount, type)
+            data.conflicts && logConflicts(data.conflicts, type)
 
-        if (data.typeReports) {
-            eventEmitter.emit('summary.totals', data.stats)
-            eventEmitter.emit('summary.typeReports', data.typeReports)
-        } else if (data.conflicts) {
-            eventEmitter.emit('summary.importCount', data.importCount)
-            eventEmitter.emit('summary.conflicts', data.conflicts)
+            if (data.typeReports) {
+                eventEmitter.emit('summary.totals', data.stats)
+                eventEmitter.emit('summary.typeReports', data.typeReports)
+            } else if (data.conflicts) {
+                eventEmitter.emit('summary.importCount', data.importCount)
+                eventEmitter.emit('summary.conflicts', data.conflicts)
+            } else if (data.importSummaries) {
+                eventEmitter.emit('summary.importCount', data)
+                eventEmitter.emit(
+                    'summary.importSummaries',
+                    data.importSummaries
+                )
+            }
         }
 
         eventEmitter.emit('summary.loaded')

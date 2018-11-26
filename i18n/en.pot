@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-07T11:56:34.680Z\n"
-"PO-Revision-Date: 2018-11-07T11:56:34.680Z\n"
+"POT-Creation-Date: 2018-11-26T10:04:03.259Z\n"
+"PO-Revision-Date: 2018-11-26T10:04:03.259Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -53,30 +53,6 @@ msgstr ""
 msgid "view messages received on using import/export forms."
 msgstr ""
 
-msgid "Metadata Import"
-msgstr ""
-
-msgid "Data Import"
-msgstr ""
-
-msgid "Event Import"
-msgstr ""
-
-msgid "GML Import"
-msgstr ""
-
-msgid "Metadata Export"
-msgstr ""
-
-msgid "Data Export"
-msgstr ""
-
-msgid "Event Export"
-msgstr ""
-
-msgid "Metadata Dependency Export"
-msgstr ""
-
 msgid "Import"
 msgstr ""
 
@@ -105,6 +81,9 @@ msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
+msgstr ""
+
+msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
@@ -222,12 +201,6 @@ msgid "Start date"
 msgstr ""
 
 msgid "Strategy"
-msgstr ""
-
-msgid "ADX"
-msgstr ""
-
-msgid "PDF"
 msgstr ""
 
 msgid "Yes"
@@ -359,33 +332,7 @@ msgstr ""
 msgid "[ All program stages]"
 msgstr ""
 
-msgid "Meta Data Export"
-msgstr ""
-
-msgid "Metadata Export with Dependencies"
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the "
-"standard DHIS 2 exchange format called DXF 2."
-msgstr ""
-
-msgid ""
-"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
-"is the standard exchange format for DHIS 2."
-msgstr ""
-
-msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
-msgstr ""
-
-msgid ""
-"Import geographic data for organisation units using GML format. GML is an "
-"XML grammar for expressing geographical features."
-msgstr ""
-
-msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
+msgid "Data Export"
 msgstr ""
 
 msgid ""
@@ -393,14 +340,34 @@ msgid ""
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
 
+msgid "Event Export"
+msgstr ""
+
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
 
+msgid "Metadata Export"
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+
+msgid "Meta Data Export"
+msgstr ""
+
+msgid "Metadata Dependency Export"
+msgstr ""
+
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
+msgstr ""
+
+msgid "Metadata Export with Dependencies"
 msgstr ""
 
 msgid "Import / Export"
@@ -409,5 +376,35 @@ msgstr ""
 msgid "Import or Export DHIS2 data."
 msgstr ""
 
+msgid "Data Import"
+msgstr ""
+
+msgid ""
+"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
+"is the standard exchange format for DHIS 2."
+msgstr ""
+
+msgid "Event Import"
+msgstr ""
+
+msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr ""
+
+msgid "GML Import"
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+
 msgid "Only import of GML data for existing organisation units is supported."
+msgstr ""
+
+msgid "Metadata Import"
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the "
+"standard DHIS 2 exchange format called DXF 2."
 msgstr ""

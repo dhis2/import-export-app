@@ -22,7 +22,7 @@ export default class OrgUnitTree extends React.Component {
         this.props.updateSelected(selected, isSelected, value)
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.fetchRoot()
     }
 
