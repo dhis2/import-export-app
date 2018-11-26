@@ -62,6 +62,33 @@ export function TypeStats({ list }) {
     )
 }
 
+export function Summaries({ list }) {
+    const fields = [
+        {
+            key: 'reference',
+            title: 'Reference',
+            width: '15%',
+        },
+        {
+            key: 'status',
+            title: 'Status',
+            width: '10%',
+        },
+        {
+            key: 'responseType',
+            title: 'Type',
+            width: '15%',
+        },
+        {
+            key: 'description',
+            title: 'Description',
+            width: '60%',
+        },
+    ]
+    const titles = ['reference', 'status', 'Type', 'Description']
+    return <PaginatedTable fields={fields} titles={titles} list={list} />
+}
+
 export function Messages({ list }) {
     const fields = [
         {

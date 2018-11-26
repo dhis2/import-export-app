@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { eventEmitter } from 'services'
 import { Loading } from 'components'
-import { Totals, TypeStats, Conflicts, Messages } from './helpers'
+import { Totals, TypeStats, Conflicts, Messages, Summaries } from './helpers'
 import s from './styles.css'
 
 const initialState = {
@@ -19,6 +19,7 @@ const initialState = {
 
     typeStats: [],
     conflicts: [],
+    summaries: [],
     messages: [],
 }
 
@@ -94,6 +95,12 @@ export class TaskSummary extends React.Component {
 
     onConflicts = conflicts => this.setState({ conflicts })
 
+    onImportSummaries = rows => {
+        this.setState({
+            summaries: rows.slice(0),
+        })
+    }
+
     events = {
         'summary.loading': this.onLoading,
         'summary.loaded': this.onLoaded,
@@ -102,6 +109,7 @@ export class TaskSummary extends React.Component {
         'summary.typeReports': this.onTypeReports,
         'summary.importCount': this.onImportCount,
         'summary.conflicts': this.onConflicts,
+        'summary.importSummaries': this.onImportSummaries,
     }
 
     viewTypeStats() {
@@ -137,6 +145,22 @@ export class TaskSummary extends React.Component {
         )
     }
 
+    viewImportSummaries() {
+        const { summaries } = this.state
+        if (summaries.length === 0) {
+            return null
+        }
+
+        return (
+            <Fragment>
+                <div className={`${s.label} ${s.marginTop}`}>
+                    {i18n.t('Summaries')}
+                </div>
+                <Summaries list={summaries} />
+            </Fragment>
+        )
+    }
+
     viewConflicts() {
         const { conflicts } = this.state
         if (conflicts === 0) {
@@ -154,10 +178,11 @@ export class TaskSummary extends React.Component {
     }
 
     isEmpty() {
-        const { stats, typeStats, messages } = this.state
+        const { stats, typeStats, messages, summaries } = this.state
         if (
             stats.total === 0 &&
             typeStats.length === 0 &&
+            summaries.length === 0 &&
             messages.length === 0
         ) {
             return true
@@ -187,6 +212,7 @@ export class TaskSummary extends React.Component {
                     {this.viewTypeStats()}
                     {this.viewConflicts()}
                     {this.viewMessages()}
+                    {this.viewImportSummaries()}
                 </div>
             </div>
         )
