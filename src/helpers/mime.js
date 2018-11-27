@@ -1,4 +1,8 @@
 export function getMimeType(filename) {
+    if (!filename) {
+        return null
+    }
+
     const isJSON = filename.endsWith('json') || filename.includes('.json')
     const isXML = filename.endsWith('xml') || filename.includes('.xml')
     const isCSV = filename.endsWith('csv') || filename.includes('.csv')
