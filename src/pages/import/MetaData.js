@@ -34,6 +34,7 @@ export class MetaDataImport extends FormBase {
     fields = [
         ...getFormFields([
             'upload',
+            'format',
             'classKey',
             'importMode',
             'identifier',
@@ -58,6 +59,7 @@ export class MetaDataImport extends FormBase {
     state = getFormValues([
         '_context',
         'upload',
+        'format:.json:json,xml',
         'classKey',
         'importMode',
         'identifier',
@@ -114,8 +116,7 @@ export class MetaDataImport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const { upload, classKey } = this.getFormState()
-
+            const { upload, format, classKey } = this.getFormState()
             const formData = new FormData()
             formData.set('upload', upload)
 
@@ -144,7 +145,7 @@ export class MetaDataImport extends FormBase {
 
             this.setProcessing()
 
-            const url = `${apiConfig.server}/api/metadata.json?${params}`
+            const url = `${apiConfig.server}/api/metadata${format}?${params}`
             const xhr = getUploadXHR(
                 url,
                 upload,
