@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { CTX_DEFAULT } from 'components/Form'
-import { today } from 'helpers'
+import { today, endDateDefault } from 'helpers'
 
 function getValue(value, label) {
     return {
@@ -222,7 +222,7 @@ const values = {
     },
 
     startDate: {
-        selected: today(),
+        selected: endDateDefault(),
     },
 
     endDate: {
