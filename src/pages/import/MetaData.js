@@ -26,7 +26,7 @@ export class MetaDataImport extends FormBase {
     static menuIcon = <MetadataImportIcon />
     icon = <MetadataImportIcon />
 
-    formWidth = 600
+    formWidth = 800
     formTitle = i18n.t('Metadata Import')
     submitLabel = i18n.t('Import')
 
