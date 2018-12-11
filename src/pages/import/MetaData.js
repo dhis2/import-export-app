@@ -121,10 +121,10 @@ export class MetaDataImport extends FormBase {
             const formData = new FormData()
             formData.set('upload', upload)
 
-            const contentType = getMimeType(upload.name.toLowerCase())
-            const append = contentType.endsWith('/csv')
-                ? [`classKey=${classKey}&objectType=${objectType}`]
-                : []
+            const append =
+                format === '.csv'
+                    ? [`classKey=${classKey}&objectType=${objectType}`]
+                    : []
             const params = getParamsFromFormState(
                 this.getFormState(),
                 [
