@@ -20,7 +20,7 @@
     "chalk": "^2.4.1",
     "classnames": "^2.2.5",
     "css-loader": "0.28.7",
-    "d2": "^30.0.0",
+    "d2": "^30.0.4",
     "d2-manifest": "^1.0.0",
     "dotenv": "4.0.0",
     "dotenv-expand": "^4.2.0",

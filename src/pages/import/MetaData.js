@@ -27,7 +27,7 @@ export class MetaDataImport extends FormBase {
     static menuIcon = <MetadataImportIcon />
     icon = <MetadataImportIcon />
 
-    formWidth = 600
+    formWidth = 800
     formTitle = i18n.t('Metadata Import')
     submitLabel = i18n.t('Import')
 
@@ -35,6 +35,7 @@ export class MetaDataImport extends FormBase {
         ...getFormFields([
             'upload',
             'format',
+            'objectType',
             'classKey',
             'importMode',
             'identifier',
@@ -59,7 +60,8 @@ export class MetaDataImport extends FormBase {
     state = getFormValues([
         '_context',
         'upload',
-        'format:.json:json,xml',
+        'format:.json:json,xml,csv',
+        'objectType',
         'classKey',
         'importMode',
         'identifier',
@@ -102,11 +104,11 @@ export class MetaDataImport extends FormBase {
     }
 
     onFormUpdate = (name, value) => {
-        if (name === 'upload') {
+        if (name === 'format') {
             const { _context } = this.state
             const { type } = value
 
-            if (type.endsWith('/csv') && _context !== CTX_CSV_OPTION) {
+            if (value === '.csv' && _context !== CTX_CSV_OPTION) {
                 this.changeContext(CTX_CSV_OPTION)
             } else {
                 this.changeContext(CTX_DEFAULT)
@@ -116,13 +118,13 @@ export class MetaDataImport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const { upload, format, classKey } = this.getFormState()
+            const { upload, format, objectType, classKey } = this.getFormState()
             const formData = new FormData()
             formData.set('upload', upload)
 
             const contentType = getMimeType(upload.name.toLowerCase())
             const append = contentType.endsWith('/csv')
-                ? [`classKey=${classKey}`]
+                ? [`classKey=${classKey}&objectType=${objectType}`]
                 : []
             const params = getParamsFromFormState(
                 this.getFormState(),
