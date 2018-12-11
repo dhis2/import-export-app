@@ -9,7 +9,6 @@ import {
     getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
-    getMimeType,
     getUploadXHR,
     getParamsFromFormState,
 } from 'helpers'
@@ -123,7 +122,9 @@ export class MetaDataImport extends FormBase {
 
             const append =
                 format === '.csv'
-                    ? [`classKey=${classKey}&objectType=${objectType}`]
+                    ? [
+                          `classKey=${classKey}&objectgetMimeTypeType=${objectType}`,
+                      ]
                     : []
             const params = getParamsFromFormState(
                 this.getFormState(),
