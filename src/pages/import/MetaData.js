@@ -106,7 +106,6 @@ export class MetaDataImport extends FormBase {
     onFormUpdate = (name, value) => {
         if (name === 'format') {
             const { _context } = this.state
-            const { type } = value
 
             if (value === '.csv' && _context !== CTX_CSV_OPTION) {
                 this.changeContext(CTX_CSV_OPTION)
