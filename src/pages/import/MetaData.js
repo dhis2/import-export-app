@@ -9,7 +9,6 @@ import {
     getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
-    getMimeType,
     getUploadXHR,
     getParamsFromFormState,
 } from 'helpers'
