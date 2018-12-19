@@ -84,7 +84,7 @@ export class MetaDataDependencyExport extends FormBase {
             }
 
             const baseURL = api.url('')
-            const params = `attachment=${endpoint}&format=${ext}`
+            const params = `attachment=${endpoint}&format=json`
             const urlPath = `${objectType}/${objectList}/${endpoint}?${params}`
 
             const url = `${baseURL}${urlPath}`

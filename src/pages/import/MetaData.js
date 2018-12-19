@@ -126,6 +126,8 @@ export class MetaDataImport extends FormBase {
                           `classKey=${classKey}&objectgetMimeTypeType=${objectType}`,
                       ]
                     : []
+            append.push('format=json')
+
             const params = getParamsFromFormState(
                 this.getFormState(),
                 [

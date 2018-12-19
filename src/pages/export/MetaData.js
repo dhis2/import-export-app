@@ -43,7 +43,7 @@ export class MetaDataExport extends FormBase {
 
             const params = []
             params.push('assumeTrue=false')
-            params.push(`format=${ext}`)
+            params.push(`format=json`)
             params.push(
                 schemas
                     .map(name => name)
