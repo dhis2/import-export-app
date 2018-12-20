@@ -34,7 +34,7 @@ export class MetaDataImport extends FormBase {
         ...getFormFields([
             'upload',
             'format',
-            'objectType',
+            'dryRun',
             'classKey',
             'importMode',
             'identifier',
@@ -60,7 +60,7 @@ export class MetaDataImport extends FormBase {
         '_context',
         'upload',
         'format:.json:json,xml,csv',
-        'objectType',
+        'dryRun',
         'classKey',
         'importMode',
         'identifier',
@@ -116,22 +116,18 @@ export class MetaDataImport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const { upload, format, objectType, classKey } = this.getFormState()
+            const { upload, format, classKey } = this.getFormState()
             const formData = new FormData()
             formData.set('upload', upload)
 
-            const append =
-                format === '.csv'
-                    ? [
-                          `classKey=${classKey}&objectgetMimeTypeType=${objectType}`,
-                      ]
-                    : []
+            const append = format === '.csv' ? [`classKey=${classKey}`] : []
             append.push('format=json')
 
             const params = getParamsFromFormState(
                 this.getFormState(),
                 [
                     'importMode',
+                    'dryRun',
                     'identifier',
                     'importReportMode',
                     'preheatMode',
