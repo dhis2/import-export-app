@@ -124,6 +124,8 @@ export class MetaDataImport extends FormBase {
                 format === '.csv'
                     ? [`classKey=${classKey}&objectType=${objectType}`]
                     : []
+            append.push('format=json')
+            
             const params = getParamsFromFormState(
                 this.getFormState(),
                 [
