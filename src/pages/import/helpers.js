@@ -23,15 +23,44 @@ function emitLog(data) {
 }
 
 export function emitLogOnFirstResponse(xhr, importType) {
-    const { message, response } = JSON.parse(xhr.responseText)
-    eventEmitter.emit('log', {
-        id: new Date().getTime(),
-        d: new Date(response.created),
-        type: `INFO - ${CATEGORY_2_LABEL[importType]}`,
-        text: message,
-    })
+    const data = JSON.parse(xhr.responseText)
+    const { message, status, typeReports, response } = data
 
-    return response.id
+    if (status && status === 'ERROR') {
+        if (
+            Array.isArray(typeReports) &&
+            Array.isArray(typeReports[0].objectReports) &&
+            Array.isArray(typeReports[0].objectReports[0].errorReports)
+        ) {
+            eventEmitter.emit('log', {
+                id: new Date().getTime(),
+                d: new Date(),
+                type: `ERROR - ${CATEGORY_2_LABEL[importType]}`,
+                text: typeReports[0].objectReports[0].errorReports[0].message,
+            })
+
+            setTimeout(() => {
+                eventEmitter.emit('summary.loading')
+                eventEmitter.emit('summary.typeReports', typeReports)
+                eventEmitter.emit('summary.loaded')
+            }, 1000)
+
+            return -1
+        }
+    }
+
+    if (typeof response !== 'undefined') {
+        eventEmitter.emit('log', {
+            id: new Date().getTime(),
+            d: new Date(response.created),
+            type: `INFO - ${CATEGORY_2_LABEL[importType]}`,
+            text: message,
+        })
+
+        return response.id
+    }
+
+    return -1
 }
 
 function getFetchLogPath(jobId, type) {
@@ -52,6 +81,10 @@ function fetchResponseIsObject(data) {
 }
 
 function isFetchLogComplete(data) {
+    if (!data) {
+        return false
+    }
+
     return data.filter(item => item.completed).length === 0
 }
 
@@ -86,6 +119,7 @@ export async function fetchLog(jobId, type) {
         }
     } catch (e) {
         console.log(`Error fetching ${type}`)
+        console.log(e)
     }
 }
 

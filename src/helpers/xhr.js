@@ -26,6 +26,11 @@ export function onReadyStateChange(xhr, type, onResponse, onError) {
             eventEmitter.emit('summary.clear')
 
             const jobId = emitLogOnFirstResponse(xhr, type)
+            if (jobId === -1) {
+                onResponse()
+                return
+            }
+
             onResponse()
 
             eventEmitter.emit('summary.loading')

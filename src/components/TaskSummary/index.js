@@ -33,9 +33,9 @@ export class TaskSummary extends React.Component {
     }
 
     componentDidMount() {
-        Object.entries(this.events).forEach(([evt, fn]) =>
+        Object.entries(this.events).forEach(([evt, fn]) => {
             eventEmitter.on(evt, fn)
-        )
+        })
     }
 
     componentWillUnmount() {
