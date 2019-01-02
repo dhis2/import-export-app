@@ -41,8 +41,8 @@ export class GMLImport extends FormBase {
 
             this.setProcessing()
 
-            const params = `dryRun=${dryRun}`
-            const url = `${apiConfig.server}/api/metadata/gml.json?${params}`
+            const params = `dryRun=${dryRun}&format=json`
+            const url = `${apiConfig.server}/api/metadata/gml?${params}`
             const xhr = getUploadXHR(
                 url,
                 upload,
@@ -52,6 +52,7 @@ export class GMLImport extends FormBase {
             )
             xhr.send(upload)
         } catch (e) {
+            this.setProcessing(false)
             console.log('GML Import error', e, '\n')
         }
     }
