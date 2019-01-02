@@ -5,6 +5,36 @@ import { createBlob, downloadBlob, getFormFields, getFormValues } from 'helpers'
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
 
+const EXCLUDE_PARAMS = [
+    'analyticsTableHooks',
+    'charts',
+    'constants',
+    'dataElementDimensions',
+    'dataEntryForms',
+    'dataSetNotificationTemplates',
+    'dataStores',
+    'documents',
+    'eventCharts',
+    'eventReports',
+    'icons',
+    'jobConfigurations',
+    'messageConversations',
+    'metadataVersions',
+    'minMaxDataElements',
+    'oAuth2Clients',
+    'programDataElements',
+    'programNotificationTemplates',
+    'pushAnalysis',
+    'reportTables',
+    'reportingRates',
+    'reports',
+    'sections',
+    'smsCommands',
+    'sqlViews',
+    'trackedEntityInstanceFilters',
+    'validationNotificationTemplates',
+]
+
 export class MetaDataExport extends FormBase {
     static path = '/export/metadata'
 
@@ -51,6 +81,7 @@ export class MetaDataExport extends FormBase {
                     .map(name => `${name}=true`)
                     .join('&')
             )
+            params.push(EXCLUDE_PARAMS.map(name => `${name}=false`).join('&'))
 
             if (sharing !== 'true') {
                 params.push(
