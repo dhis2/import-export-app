@@ -145,7 +145,7 @@ export class MetaDataImport extends FormBase {
 
             this.setProcessing()
 
-            const url = `${apiConfig.server}/api/metadata${format}?${params}`
+            const url = `${apiConfig.server}/api/metadata.json?${params}`
             const xhr = getUploadXHR(
                 url,
                 upload,
