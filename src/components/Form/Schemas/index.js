@@ -173,6 +173,7 @@ export default class Schemas extends React.Component {
 
     getSchemas(schemas) {
         return schemas
+        	.filter(i => i.metadata)
             .map(i => ({
                 name: i.name,
                 klass: i.klass,
