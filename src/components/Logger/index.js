@@ -190,12 +190,17 @@ export class Logger extends React.Component {
         )
     }
 
-    getDate(p, prevDateHH, prevDate) {
+    getDate(p, prevDateHH, prevDate, truncate = false) {
         if (!p.d) {
             return null
         }
-
         let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
+
+        if (truncate && moment(p.d).format('YYYY-MM-DD HH') === prevDateHH) {
+            date = moment(p.d).format('mm:ss')
+        } else if (truncate && moment(p.d).format('YYYY-MM-DD') === prevDate) {
+            date = moment(p.d).format('HH:mm:ss')
+        }
 
         return date
     }
@@ -209,6 +214,8 @@ export class Logger extends React.Component {
             const date = this.getDate(p, prevDateHH, prevDate)
 
             prevType = p.type
+            prevDate = moment(p.d).format('YYYY-MM-DD')
+            prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
 
             return (
                 <Message
