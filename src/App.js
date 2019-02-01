@@ -11,6 +11,7 @@ import Template from 'pages/Template'
 
 import * as pages from './pages'
 import { Route, withRouter } from 'react-router-dom'
+import { Progress } from './components'
 
 config.i18n.strings.add('settings')
 config.i18n.strings.add('profile')
@@ -96,6 +97,7 @@ class App extends React.Component {
 
         return (
             <Template>
+                <Progress />
                 {Object.keys(pages).map(k => {
                     const page = pages[k]
                     return (

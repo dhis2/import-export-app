@@ -1,7 +1,6 @@
 import React from 'react'
 import { getFieldState, getFieldValue } from 'helpers'
-import { Form, Loading, Error } from 'components'
-
+import { Form, Loading, Error, Progress } from 'components'
 import s from './styles.css'
 
 export class FormBase extends React.Component {
@@ -19,11 +18,13 @@ export class FormBase extends React.Component {
 
     getFormState() {
         const values = {}
-        this.fields.map(f => f.name).forEach(name => {
-            if (name) {
-                values[name] = getFieldValue(this.state[name])
-            }
-        })
+        this.fields
+            .map(f => f.name)
+            .forEach(name => {
+                if (name) {
+                    values[name] = getFieldValue(this.state[name])
+                }
+            })
         return values
     }
 
@@ -46,7 +47,7 @@ export class FormBase extends React.Component {
         }
 
         if (this.state.processing) {
-            return <Loading />
+            return <Progress />
         }
 
         return (
