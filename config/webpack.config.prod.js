@@ -175,6 +175,36 @@ module.exports = {
                     // in the main CSS file.
                     {
                         test: /\.css$/,
+                        include: /node_modules/,
+                        loader: ExtractTextPlugin.extract(
+                            Object.assign(
+                                {
+                                    fallback: {
+                                        loader: require.resolve('style-loader'),
+                                        options: {
+                                            hmr: false,
+                                        },
+                                    },
+                                    use: [
+                                        {
+                                            loader: require.resolve(
+                                                'css-loader'
+                                            ),
+                                            options: {
+                                                minimize: true,
+                                                sourceMap: shouldUseSourceMap,
+                                            },
+                                        },
+                                    ],
+                                },
+                                extractTextPluginOptions
+                            )
+                        ),
+                        // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+                    },
+                    {
+                        test: /\.css$/,
+                        exclude: /node_modules/,
                         loader: ExtractTextPlugin.extract(
                             Object.assign(
                                 {

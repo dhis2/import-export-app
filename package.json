@@ -67,7 +67,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run extract-pot && npm run format && CI=true npm run test && git add ./i18n/"
+      "pre-commit": "npm run extract-pot && npm run format && git add ./i18n/"
     }
   },
   "scripts": {
