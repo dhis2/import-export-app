@@ -43,7 +43,7 @@ function ArrowDownIcon({ onClick }) {
 function Message({ date, type, text }) {
     return (
         <div className={s.message}>
-            <div className={s.date}>{date}</div>
+            <div className={s.date}>{date || '--:--'}</div>
             <div className={s.type}>{type}</div>
             <div className={s.contents}>
                 <div className={s.text}>{text}</div>
@@ -216,7 +216,6 @@ export class Logger extends React.Component {
             prevType = p.type
             prevDate = moment(p.d).format('YYYY-MM-DD')
             prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
-
             return (
                 <Message
                     key={`msg-${p.id}`}
