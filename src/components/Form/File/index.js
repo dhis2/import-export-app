@@ -23,8 +23,7 @@ export default class FileField extends React.Component {
 
     render() {
         const { selected, required, formMeta } = this.props
-        let label =
-            this.props.label || label || i18n.t('Choose a file to upload')
+        let label = this.props.label || i18n.t('Choose a file to upload')
         let helpText = this.props.helpText
         if (selected) {
             label = selected.name
@@ -46,9 +45,7 @@ export default class FileField extends React.Component {
                         className={s.hiddenFileInput}
                     />
                     <FileUploadIcon className={s.button} />
-                    <FormLabel className={s.formLabel}>
-                        {label || i18n.t('Choose a file to upload')}
-                    </FormLabel>
+                    <FormLabel className={s.formLabel}>{label}</FormLabel>
                 </FormControl>
                 {helpText && <p className={s.helpText}>{helpText}</p>}
             </React.Fragment>
