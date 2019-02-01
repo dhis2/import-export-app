@@ -15,6 +15,7 @@ export function getUploadXHR(url, upload, type, onResponse, onError) {
     )
 
     xhr.onreadystatechange = onReadyStateChange(xhr, type, onResponse, onError)
+    xhr.upload.onprogress = onProgress
 
     return xhr
 }
@@ -38,5 +39,13 @@ export function onReadyStateChange(xhr, type, onResponse, onError) {
         } else if ([3, 4, 5].includes(status)) {
             onError(e)
         }
+    }
+}
+
+export function onProgress(evt) {
+    if (evt.lengthComputable) {
+        const percentComplete = parseInt((evt.loaded / evt.total) * 100)
+        const stats = { ...evt, percentComplete }
+        eventEmitter.emit('upload.progress', stats)
     }
 }

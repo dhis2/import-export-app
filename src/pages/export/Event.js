@@ -24,7 +24,7 @@ export class EventExport extends FormBase {
     static menuIcon = <EventIcon />
     icon = <EventIcon />
 
-    formWidth = 900
+    formWidth = 800
     formTitle = i18n.t('Event Export')
     submitLabel = i18n.t('Export')
 

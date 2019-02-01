@@ -47,7 +47,7 @@ export class MetaDataExport extends FormBase {
     static menuIcon = <MetadataExportIcon />
     icon = <MetadataExportIcon />
 
-    formWidth = '85%'
+    formWidth = 800
     formTitle = i18n.t('Meta Data Export')
     submitLabel = i18n.t('Export')
 
@@ -97,7 +97,7 @@ export class MetaDataExport extends FormBase {
                 return
             }
 
-            this.setState({ processing: true }, async () => {
+            this.setMetaState({ processing: true }, async () => {
                 const { data } = await api.get(
                     `${endpoint}?${params.join('&')}`
                 )

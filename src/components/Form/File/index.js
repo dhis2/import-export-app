@@ -3,6 +3,7 @@ import { SvgIcon } from 'material-ui'
 import { FormControl, FormLabel } from '../material-ui'
 import s from './styles.css'
 import i18n from '@dhis2/d2-i18n'
+import { isValueNil } from 'helpers'
 
 function FileUploadIcon() {
     return (
@@ -21,25 +22,36 @@ export default class FileField extends React.Component {
     onChange = () => this.props.onChange(this.props.name, this.fileRef.files[0])
 
     render() {
-        const { selected } = this.props
-        let label = this.props.label
+        const { selected, required, formMeta } = this.props
+        let label =
+            this.props.label || label || i18n.t('Choose a file to upload')
+        let helpText = this.props.helpText
         if (selected) {
             label = selected.name
         }
+        if (required) {
+            label += ' *'
+            if (formMeta.submitted && isValueNil(selected)) {
+                helpText = i18n.t('Required')
+            }
+        }
 
         return (
-            <FormControl className={s.formControl} onClick={this.onClick}>
-                <input
-                    type="file"
-                    onChange={this.onChange}
-                    ref={c => (this.fileRef = c)}
-                    className={s.hiddenFileInput}
-                />
-                <FileUploadIcon className={s.button} />
-                <FormLabel className={s.formLabel}>
-                    {label || i18n.t('Choose a file to upload')}
-                </FormLabel>
-            </FormControl>
+            <React.Fragment>
+                <FormControl className={s.formControl} onClick={this.onClick}>
+                    <input
+                        type="file"
+                        onChange={this.onChange}
+                        ref={c => (this.fileRef = c)}
+                        className={s.hiddenFileInput}
+                    />
+                    <FileUploadIcon className={s.button} />
+                    <FormLabel className={s.formLabel}>
+                        {label || i18n.t('Choose a file to upload')}
+                    </FormLabel>
+                </FormControl>
+                {helpText && <p className={s.helpText}>{helpText}</p>}
+            </React.Fragment>
         )
     }
 }

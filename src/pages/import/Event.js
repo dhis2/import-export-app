@@ -25,7 +25,7 @@ export class EventImport extends FormBase {
     static menuIcon = <EventIcon />
     icon = <EventIcon />
 
-    formWidth = 600
+    formWidth = 800
     formTitle = i18n.t('Event Import')
     submitLabel = i18n.t('Import')
 

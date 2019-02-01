@@ -118,6 +118,15 @@ export class MetaDataImport extends FormBase {
         try {
             const { upload, format, classKey } = this.getFormState()
             const formData = new FormData()
+            if (!upload) {
+                this.assertOnError({
+                    target: {
+                        response: JSON.stringify({
+                            message: 'Upload field is required',
+                        }),
+                    },
+                })
+            }
             formData.set('upload', upload)
 
             const append = format === '.csv' ? [`classKey=${classKey}`] : []
@@ -156,6 +165,7 @@ export class MetaDataImport extends FormBase {
             xhr.send(upload)
         } catch (e) {
             console.log('MetaData Import error', e, '\n')
+            this.clearProcessing()
         } finally {
         }
     }
