@@ -162,7 +162,7 @@ function logStats(stats, type) {
     const { created, updated, deleted, ignored, total } = stats
     eventEmitter.emit('log', {
         id: new Date().getTime(),
-        d: new Date(),
+        d: null,
         type: `INFO - ${CATEGORY_2_LABEL[type]}`,
         text: `Created: ${created}, Updated: ${updated}, Deleted: ${deleted}, Ignored: ${ignored}, Total: ${total}`,
     })
