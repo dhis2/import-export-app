@@ -190,16 +190,27 @@ export class Logger extends React.Component {
         )
     }
 
-    getDate(p, prevDateHH, prevDate, truncate = false) {
-        if (!p.d) {
+    /**
+     *
+     * @param {*} msg the log message
+     * @param {*} prevDateHH previous message moment-date formatted with hrs (used to truncate)
+     * @param {*} prevDate previous message moment-date
+     * @param {*} truncate whether to truncate the timestamp, so that the returned
+     * date is formatted without the parts of previous date (upto mm:ss)
+     */
+    getDate(msg, prevDateHH, prevDate, truncate = false) {
+        if (!msg.d) {
             return null
         }
-        let date = moment(p.d).format('YYYY-MM-DD HH:mm:ss')
+        let date = moment(msg.d).format('YYYY-MM-DD HH:mm:ss')
 
-        if (truncate && moment(p.d).format('YYYY-MM-DD HH') === prevDateHH) {
-            date = moment(p.d).format('mm:ss')
-        } else if (truncate && moment(p.d).format('YYYY-MM-DD') === prevDate) {
-            date = moment(p.d).format('HH:mm:ss')
+        if (truncate && moment(msg.d).format('YYYY-MM-DD HH') === prevDateHH) {
+            date = moment(msg.d).format('mm:ss')
+        } else if (
+            truncate &&
+            moment(msg.d).format('YYYY-MM-DD') === prevDate
+        ) {
+            date = moment(msg.d).format('HH:mm:ss')
         }
 
         return date
@@ -209,19 +220,19 @@ export class Logger extends React.Component {
         let prevType, prevDate, prevDateHH
         prevType = prevDate = prevDateHH = ''
 
-        return this.state.list.map(p => {
-            const type = p.type === prevType ? '' : p.type
-            const date = this.getDate(p, prevDateHH, prevDate)
+        return this.state.list.map(msg => {
+            const type = msg.type === prevType ? '' : msg.type
+            const date = this.getDate(msg, prevDateHH, prevDate)
 
-            prevType = p.type
-            prevDate = moment(p.d).format('YYYY-MM-DD')
-            prevDateHH = moment(p.d).format('YYYY-MM-DD HH')
+            prevType = msg.type
+            prevDate = moment(msg.d).format('YYYY-MM-DD')
+            prevDateHH = moment(msg.d).format('YYYY-MM-DD HH')
             return (
                 <Message
-                    key={`msg-${p.id}`}
+                    key={`msg-${msg.id}`}
                     date={date}
                     type={type}
-                    text={p.text}
+                    text={msg.text}
                 />
             )
         })
