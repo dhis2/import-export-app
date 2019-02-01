@@ -45,7 +45,6 @@ export function onProgress(evt) {
     if (evt.lengthComputable) {
         const percentComplete = parseInt((evt.loaded / evt.total) * 100)
         const stats = { ...evt, percentComplete }
-        console.log('upload', stats)
         eventEmitter.emit('upload.progress', stats)
     }
 }

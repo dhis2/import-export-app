@@ -22,7 +22,11 @@ export class Progress extends Component {
         })
 
     render() {
-        return <LinearProgress amount={50} margin={'100px'} />
+        return (
+            <div className={s.container}>
+                <LinearProgress amount={this.state.progress} margin={'100px'} />
+            </div>
+        )
     }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { getFieldState, getFieldValue } from 'helpers'
-import { Form, Loading, Error, Progress } from 'components'
+import { Form, Error, Progress } from 'components'
 import s from './styles.css'
 
 export class FormBase extends React.Component {
