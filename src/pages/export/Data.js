@@ -32,7 +32,7 @@ export class DataExport extends FormBase {
         d2: PropTypes.object,
     }
 
-    formWidth = 600
+    formWidth = 800
     formTitle = i18n.t('Data Export')
     submitLabel = i18n.t('Export')
 
@@ -137,7 +137,7 @@ export class DataExport extends FormBase {
                 append
             )
 
-            this.setState({ processing: true })
+            this.setProcessing()
 
             const xhr = new XMLHttpRequest()
             xhr.withCredentials = true
@@ -151,7 +151,7 @@ export class DataExport extends FormBase {
                     xhr.readyState === 4 &&
                     Math.floor(xhr.status / 100) === 2
                 ) {
-                    this.setState({ processing: false })
+                    this.clearProcessing()
 
                     let filename = `data${format}`
                     if (compression !== 'none') {

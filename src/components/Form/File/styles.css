@@ -24,3 +24,14 @@ form .formLabel {
 .hiddenFileInput {
     display: none;
 }
+
+form .helpText {
+    height: 12px;
+    padding-left: 14px;
+    font-size: 12px;
+
+    line-height: 12px;
+
+    cursor: help;
+    color: #d32f2f;
+}

@@ -8,6 +8,7 @@ import {
     TYPE_ORG_UNIT_SINGLE_SELECT,
     TYPE_DATASET_PICKER,
 } from 'components/Form'
+import { isValueNil } from 'helpers'
 
 export function getField(name, fields) {
     return fields.filter(f => f.name === name)[0]
@@ -51,4 +52,18 @@ export function getParamsFromFormState(state, list, append = []) {
     append.forEach(v => params.push(v))
 
     return params.join('&')
+}
+
+export function getRequiredFields(fields) {
+    return fields.filter(f => !!f.required)
+}
+
+export function hasRequiredFieldsWithoutValue(fields, fieldValues) {
+    const requiredFields = getRequiredFields(fields)
+
+    return requiredFields.length === 0
+        ? false
+        : requiredFields.findIndex(
+              f => f.name && isValueNil(getFieldValue(fieldValues[f.name]))
+          ) > -1
 }
