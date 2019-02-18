@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { eventEmitter } from 'services'
-import { LinearProgress } from '@dhis2/ui/core'
+import LinearProgress from '@dhis2/ui/core/LinearProgress'
 import s from './styles.css'
 
 export class Progress extends Component {

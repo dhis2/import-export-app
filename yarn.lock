@@ -294,10 +294,10 @@
     material-ui-icons "^1.0.0-beta.36"
     rxjs "^5.5.7"
 
-"@dhis2/ui@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui/-/ui-1.0.0-beta.9.tgz#767ec6bde58ea3efabfe6d2c2136a8c593022116"
-  integrity sha512-HgXL44YZHaJbWjU5ppmdsm7m562pkQku6XpQsWq/oCBghDGPcFCDNkcRkEpb2ERpJdnujWKfTHzda7uD1ej+fw==
+"@dhis2/ui@^1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui/-/ui-1.0.0-beta.10.tgz#ad683f6823121cb8f1c8d81cde62fb4fd22bf015"
+  integrity sha512-kKsoG4zx6bCICYhwgbKz0g3FWlEtMVgpZaoJtQwD2Y86tPSxcUaSTYyDOVLUCepjyMj+B9xxCtt0nSvXV5rUBA==
   dependencies:
     classnames "^2.2.6"
     material-design-icons-iconfont "^4.0.2"
