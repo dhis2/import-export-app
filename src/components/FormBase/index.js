@@ -4,7 +4,7 @@ import {
     getFieldValue,
     hasRequiredFieldsWithoutValue,
 } from 'helpers'
-import { Form, Loading, Error } from 'components'
+import { Form, Progress, Error } from 'components'
 
 import s from './styles.css'
 
@@ -84,7 +84,7 @@ export class FormBase extends React.Component {
         }
 
         if (this.state._meta.processing) {
-            return <Loading />
+            return <Progress />
         }
 
         return (
