@@ -24,7 +24,7 @@ export class DataImport extends FormBase {
     static menuIcon = <DataIcon />
     icon = <DataIcon />
 
-    formWidth = 700
+    formWidth = 800
     formTitle = i18n.t('Data Import')
     submitLabel = i18n.t('Import')
 

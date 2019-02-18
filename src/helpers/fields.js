@@ -11,12 +11,13 @@ import {
 } from 'components/Form'
 import { TYPE_RADIO, TYPE_SCHEMAS } from 'components/Form'
 
-function getField(name, label, type, context = CTX_DEFAULT) {
+function getField(name, label, type, context = CTX_DEFAULT, required = false) {
     return {
         context,
         type,
         name,
         label,
+        required,
     }
 }
 
@@ -139,7 +140,7 @@ const fields = {
     ),
     startDate: getField('startDate', i18n.t('Start date'), TYPE_DATE),
     strategy: getField('strategy', i18n.t('Strategy'), TYPE_RADIO),
-    upload: getField('upload', null, TYPE_FILE),
+    upload: getField('upload', null, TYPE_FILE, undefined, true),
 }
 
 export function getFormField(name, options = {}) {

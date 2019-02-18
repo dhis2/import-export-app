@@ -18,7 +18,7 @@ export class GMLImport extends FormBase {
     static menuIcon = <GMLIcon />
     icon = <GMLIcon />
 
-    formWidth = 600
+    formWidth = 800
     formTitle = i18n.t('GML Import')
     formDescription = i18n.t(
         'Only import of GML data for existing organisation units is supported.'

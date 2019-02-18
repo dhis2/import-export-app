@@ -13,6 +13,10 @@ function getValues(list) {
     return list.map(([value, label]) => getValue(value, label))
 }
 
+export function isValueNil(val) {
+    return val == null || val === ''
+}
+
 const supportedFormats = ['adx', 'csv', 'json', 'pdf', 'xml']
 
 function getFormat(selected, list) {
@@ -275,7 +279,12 @@ const values = {
 
 export function getFormValues(list) {
     const o = {
-        processing: false,
+        _meta: {
+            submitted: false,
+            valid: false,
+            processing: false,
+            error: null,
+        },
     }
 
     list.forEach(k => {
