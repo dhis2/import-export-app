@@ -13,14 +13,16 @@ export default class Template extends React.Component {
 
     render() {
         return (
-            <div className={s.container}>
+            <React.Fragment>
                 <HeaderBar appName={i18n.t('Import/Export')} />
-                <SidePanel />
-                <div id="import-export-app-content" className={s.content}>
-                    {this.props.children}
+                <div className={s.container}>
+                    <SidePanel />
+                    <div id="import-export-app-content" className={s.content}>
+                        {this.props.children}
+                    </div>
+                    <Logger />
                 </div>
-                <Logger />
-            </div>
+            </React.Fragment>
         )
     }
 }
