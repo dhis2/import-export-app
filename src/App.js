@@ -1,3 +1,5 @@
+import '@babel/polyfill'
+
 import { hot } from 'react-hot-loader'
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -11,6 +13,8 @@ import Template from 'pages/Template'
 
 import * as pages from './pages'
 import { Route, withRouter } from 'react-router-dom'
+
+import 'typeface-roboto'
 
 config.i18n.strings.add('settings')
 config.i18n.strings.add('profile')
