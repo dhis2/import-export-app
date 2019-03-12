@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { api } from 'services'
-import { createBlob, downloadBlob, getFormFields, getFormValues } from 'helpers'
+import { getFormFields, getFormValues } from 'helpers'
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
 
