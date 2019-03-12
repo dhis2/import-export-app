@@ -2,7 +2,6 @@ import React from 'react'
 import { mount } from 'enzyme'
 import Schemas from '../'
 import { Loading } from '../../../Loading'
-
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'

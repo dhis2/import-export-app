@@ -5,7 +5,6 @@ import {
     hasRequiredFieldsWithoutValue,
 } from 'helpers'
 import { Form, Progress, Error } from 'components'
-
 import s from './styles.css'
 
 export class FormBase extends React.Component {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import HeaderBar from '@dhis2/ui/widgets/HeaderBar'
 import { SidePanel, Logger } from 'components'
 import s from './styles.css'
-
 import i18n from '@dhis2/d2-i18n'
 
 export default class Template extends React.Component {
