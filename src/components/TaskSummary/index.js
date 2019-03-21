@@ -48,28 +48,26 @@ export class TaskSummary extends React.Component {
 
     onLoading = () => this.setState({ loading: true })
     onClear = () => this.setState({ ...initialState })
-
     onTotals = stats => this.setState({ stats })
 
     onTypeReports = report => {
-        const typeStats = this.state.typeStats || []
-        const messages = this.state.messages || []
+        const newStats = []
+        const newMessages = []
 
         Object.keys(report).forEach(i => {
             const { klass, objectReports, stats } = report[i]
 
-            typeStats &&
-                typeStats.push({
-                    ...stats,
-                    type: getClassName(klass),
-                })
+            newStats.push({
+                ...stats,
+                type: getClassName(klass),
+            })
 
             objectReports &&
                 objectReports.forEach(r => {
                     const { uid, errorReports } = r
 
                     errorReports.forEach(e => {
-                        messages.push({
+                        newMessages.push({
                             uid,
                             type: getClassName(e.mainKlass),
                             property: e.errorProperty,
@@ -78,6 +76,8 @@ export class TaskSummary extends React.Component {
                     })
                 })
         })
+        const typeStats = this.state.typeStats.concat(newStats)
+        const messages = this.state.messages.concat(newMessages)
 
         this.setState({ typeStats, messages })
     }
