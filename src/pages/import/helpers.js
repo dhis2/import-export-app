@@ -145,6 +145,8 @@ export async function fetchTaskSummary(jobId, type) {
                     'summary.importSummaries',
                     data.importSummaries
                 )
+            } else if (data.importCount) {
+                eventEmitter.emit('summary.importCount', data.importCount)
             }
         }
 
