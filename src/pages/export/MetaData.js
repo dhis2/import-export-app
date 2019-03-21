@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { api } from 'services'
-import { createBlob, downloadBlob, getFormFields, getFormValues } from 'helpers'
+import { getFormFields, getFormValues } from 'helpers'
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
 
@@ -55,7 +55,7 @@ export class MetaDataExport extends FormBase {
 
     state = getFormValues([
         'schemas',
-        'format:.json:json,xml',
+        'format:.json:json,xml,csv',
         'compression',
         'sharing',
     ])
@@ -69,11 +69,10 @@ export class MetaDataExport extends FormBase {
                 sharing,
             } = this.getFormState()
 
-            const ext = format.substr(1)
-
             const params = []
             params.push('assumeTrue=false')
             params.push(`format=json`)
+            params.push('download=true')
             params.push(
                 schemas
                     .map(name => name)
@@ -90,25 +89,10 @@ export class MetaDataExport extends FormBase {
                 params.push('skipSharing=true')
             }
 
-            let endpoint = `metadata${format}`
-            if (compression !== 'none') {
-                endpoint += compression
-                window.location = api.url(`${endpoint}?${params.join('&')}`)
-                return
-            }
-
-            this.setMetaState({ processing: true }, async () => {
-                const { data } = await api.get(
-                    `${endpoint}?${params.join('&')}`
-                )
-                let contents = data
-                if (ext === 'json') {
-                    contents = JSON.stringify(data)
-                }
-
-                downloadBlob(createBlob(contents, ext), endpoint)
-                this.setState({ processing: false })
-            })
+            let endpoint = `metadata${format}${
+                compression !== 'none' ? compression : ''
+            }`
+            window.location = api.url(`${endpoint}?${params.join('&')}`)
         } catch (e) {
             console.log('MetaData Export error', e, '\n')
         }
