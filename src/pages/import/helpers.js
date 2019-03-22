@@ -147,6 +147,11 @@ export async function fetchTaskSummary(jobId, type) {
                 )
             } else if (data.importCount) {
                 eventEmitter.emit('summary.importCount', data.importCount)
+            } else {
+                console.error(
+                    'No summary generated. Receieved data not recognized: ',
+                    data
+                )
             }
         }
 
