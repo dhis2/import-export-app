@@ -21,7 +21,7 @@ describe('Tree', () => {
         wrapper.setProps({ list, selected })
         expect(
             wrapper.containsAllMatchingElements([
-                <div style={{ minWidth: 0 }} />,
+                <div style={{ minWidth: 7 }} />,
                 <div>+</div>,
                 <div>1</div>,
             ])
@@ -47,11 +47,11 @@ describe('Tree', () => {
         wrapper.setProps({ list, selected })
         expect(
             wrapper.containsAllMatchingElements([
-                <div style={{ minWidth: 0 }} />,
+                <div style={{ minWidth: 7 }} />,
                 <div>+</div>,
                 <div>1</div>,
 
-                <div style={{ minWidth: 0 }} />,
+                <div style={{ minWidth: 7 }} />,
                 <div>+</div>,
                 <div>2</div>,
             ])
