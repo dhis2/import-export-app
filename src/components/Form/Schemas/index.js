@@ -4,7 +4,7 @@ import i18n from '@dhis2/d2-i18n'
 import { Loading } from 'components'
 import { Checkbox, RaisedButton } from 'material-ui'
 import { FormGroup, FormControl, FormLabel } from '../material-ui'
-
+import { EXCLUDE_SCHEMAS } from 'helpers'
 import s from './styles.css'
 
 function groupName(klass) {
@@ -173,7 +173,9 @@ export default class Schemas extends React.Component {
 
     getSchemas(schemas) {
         return schemas
-            .filter(i => i.metadata)
+            .filter(
+                i => i.metadata && !EXCLUDE_SCHEMAS.includes(i.collectionName)
+            )
             .map(i => ({
                 name: i.name,
                 klass: i.klass,
@@ -187,11 +189,12 @@ export default class Schemas extends React.Component {
     async fetch() {
         try {
             const { data } = await api.get('schemas.json')
+            const schemas = this.getSchemas(data.schemas)
             this.setState(
                 {
                     loaded: true,
-                    schemas: this.getSchemas(data.schemas),
-                    checked: data.schemas.map(item => item.collectionName),
+                    schemas,
+                    checked: schemas.map(item => item.collectionName),
                 },
                 () => {
                     this.props.onChange(this.props.name, this.state.checked)
