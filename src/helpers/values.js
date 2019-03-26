@@ -304,7 +304,7 @@ export function getFormValues(list) {
     return o
 }
 
-export const EXCLUDE_SCHEMAS = [
+export const EXCLUDE_SCHEMAS = new Set([
     'analyticsTableHooks',
     'charts',
     'constants',
@@ -332,4 +332,4 @@ export const EXCLUDE_SCHEMAS = [
     'sqlViews',
     'trackedEntityInstanceFilters',
     'validationNotificationTemplates',
-]
+])
