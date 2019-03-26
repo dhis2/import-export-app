@@ -92,7 +92,7 @@ const fields = {
     ),
     mergeMode: getField('mergeMode', i18n.t('Merge Mode'), TYPE_RADIO),
     objectList: getField('objectList', i18n.t('Object'), TYPE_SELECT),
-    objectType: getField('objectType', i18n.t('Object type'), TYPE_SELECT),
+    objectType: getField('objectType', i18n.t('Object type'), TYPE_RADIO),
     orgUnit: getField('orgUnit', i18n.t('Organisation unit'), TYPE_ORG_UNIT),
     orgUnitIdScheme: getField(
         'orgUnitIdScheme',
