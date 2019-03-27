@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-11T16:52:23.664Z\n"
-"PO-Revision-Date: 2019-03-11T16:52:23.664Z\n"
+"POT-Creation-Date: 2019-03-27T13:40:17.614Z\n"
+"PO-Revision-Date: 2019-03-27T13:40:17.614Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -330,6 +330,9 @@ msgid "Dashboard"
 msgstr ""
 
 msgid "Data element groups"
+msgstr ""
+
+msgid "Option set"
 msgstr ""
 
 msgid "[ All program stages]"
