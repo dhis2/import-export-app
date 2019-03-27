@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { api } from 'services'
-import { getFormFields, getFormValues } from 'helpers'
+import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
 
@@ -69,30 +69,21 @@ export class MetaDataExport extends FormBase {
                 sharing,
             } = this.getFormState()
 
-            const params = []
-            params.push('assumeTrue=false')
-            params.push(`format=json`)
-            params.push('download=true')
-            params.push(
-                schemas
-                    .map(name => name)
-                    .sort()
-                    .map(name => `${name}=true`)
-                    .join('&')
-            )
-            params.push(EXCLUDE_PARAMS.map(name => `${name}=false`).join('&'))
+            let endpoint = `metadata`
+            const downloadUrl = getDownloadUrl({
+                format,
+                compression,
+                endpoint,
+                sharing,
+            })
+            const schemaParams = schemas
+                .map(name => name)
+                .sort()
+                .map(name => `${name}=true`)
+                .join('&')
 
-            if (sharing !== 'true') {
-                params.push(
-                    'fields=:owner,!user,!publicAccess,!userGroupAccesses'
-                )
-                params.push('skipSharing=true')
-            }
-
-            let endpoint = `metadata${format}${
-                compression !== 'none' ? compression : ''
-            }`
-            window.location = api.url(`${endpoint}?${params.join('&')}`)
+            const url = downloadUrl.concat(`&${schemaParams}`)
+            window.location = url
         } catch (e) {
             console.log('MetaData Export error', e, '\n')
         }

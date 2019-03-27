@@ -1,3 +1,5 @@
+import { api } from 'services'
+
 export function blobType(format, compression) {
     if (compression === 'gzip') {
         return `application/${format}+gzip`
@@ -24,4 +26,13 @@ export function downloadBlob(url, filename) {
     link.setAttribute('download', filename)
     document.body.appendChild(link)
     link.click()
+}
+
+export function getDownloadUrl({ format, compression, endpoint, sharing }) {
+    const params = [`skipSharing=${sharing !== 'true'}`, 'download=true']
+    const compressionStr =
+        compression === 'none' || !compression ? '' : compression
+
+    const url = `${endpoint}${format}${compressionStr}?${params.join('&')}`
+    return api.url(url)
 }
