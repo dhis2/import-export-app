@@ -4,8 +4,19 @@ import i18n from '@dhis2/d2-i18n'
 import { Loading } from 'components'
 import { Checkbox, RaisedButton } from 'material-ui'
 import { FormGroup, FormControl, FormLabel } from '../material-ui'
+<<<<<<< Updated upstream
 import { EXCLUDE_SCHEMAS } from 'helpers'
+=======
+import { setSchemas } from 'reducers/'
+import { connect } from 'react-redux'
+>>>>>>> Stashed changes
 import s from './styles.css'
+import {
+    getSortedSchemaGroups,
+    getSortedSchemas,
+    getSchemas,
+} from 'reducers/schemas/selectors'
+import { colors } from 'material-ui/styles'
 
 function groupName(klass) {
     let group = klass.split('.')
@@ -121,7 +132,7 @@ function Group({ label, schemas, checked, onClick }) {
                         key={`chk-${s.collectionName}`}
                         value={s.name}
                         label={s.displayName}
-                        checked={checked.includes(s.collectionName)}
+                        checked={checked[s.collectionName]}
                         onCheck={(evt, status) =>
                             onClick(s.collectionName, status)
                         }
@@ -143,28 +154,50 @@ function Controls({ onSelectAll, onSelectNone }) {
         </div>
     )
 }
-
+@connect(
+    state => ({
+        schemaGroups: getSortedSchemaGroups(state),
+        schemas: getSchemas(state),
+        loaded: state.schemas.loaded,
+    }),
+    { setSchemas }
+)
 export default class Schemas extends React.Component {
-    state = {
-        loaded: false,
-        checked: [],
-        schemas: [],
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            loaded: false,
+            checked:
+                props.schemas.length > 0 ? this.setChecked(null, true) : {},
+        }
+        console.log(this.setChecked(null, true))
     }
 
     async componentDidMount() {
         this.fetch()
     }
 
-    onClick = (collectionName, status) => {
-        const { checked } = this.state
-
-        let updated
-        if (status) {
-            updated = checked.slice(0)
-            updated.push(collectionName)
+    setChecked(collectionName, value, schemas = this.props.schemas) {
+        console.log(collectionName)
+        let ret
+        if (collectionName) {
+            ret = { ...this.state.checked, [collectionName]: value }
         } else {
-            updated = checked.filter(k => k !== collectionName)
+            ret = schemas.reduce(
+                (accum, { collectionName: colName }) => ({
+                    ...accum,
+                    [colName]: value,
+                }),
+                {}
+            )
         }
+        console.log(ret)
+        return ret
+    }
+
+    onClick = (collectionName, isChecked) => {
+        let updated = this.setChecked(collectionName, isChecked)
 
         this.setState({ checked: updated }, () =>
             this.props.onChange(this.props.name, updated)
@@ -188,11 +221,12 @@ export default class Schemas extends React.Component {
         try {
             const { data } = await api.get('schemas.json')
             const schemas = this.getSchemas(data.schemas)
-            this.setState(
+            this.props.setSchemas(schemas)
+            const checked = this.setState(
                 {
                     loaded: true,
                     schemas,
-                    checked: schemas.map(item => item.collectionName),
+                    checked: this.setChecked(null, true, schemas),
                 },
                 () => {
                     this.props.onChange(this.props.name, this.state.checked)
@@ -205,23 +239,26 @@ export default class Schemas extends React.Component {
     }
 
     onSelectNone = () => {
-        this.setState({ checked: [] }, () =>
-            this.props.onChange(this.props.name, [])
+        const { schemas } = this.props
+        this.setState(
+            {
+                checked: this.setChecked(null, false),
+            },
+            () => this.props.onChange(this.props.name, this.state.checked)
         )
     }
 
     onSelectAll = () => {
-        const { schemas } = this.state
         this.setState(
             {
-                checked: schemas.map(item => item.collectionName),
+                checked: this.setChecked(null, true),
             },
             () => this.props.onChange(this.props.name, this.state.checked)
         )
     }
 
     viewSchemas() {
-        const groups = schemaGroups(this.state.schemas)
+        const groups = this.props.schemaGroups
         const list = Object.keys(groups).sort((a, b) => a.localeCompare(b))
 
         return (
@@ -240,11 +277,10 @@ export default class Schemas extends React.Component {
     }
 
     render() {
-        if (!this.state.loaded) {
+        if (!this.props.loaded) {
             return <Loading />
         }
-
-        if (this.state.schemas.length === 0) {
+        if (this.props.schemas.length === 0) {
             return null
         }
 
