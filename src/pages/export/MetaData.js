@@ -77,12 +77,11 @@ export class MetaDataExport extends FormBase {
                 sharing,
             })
             const schemaParams = schemas
-                .map(name => name)
                 .sort()
                 .map(name => `${name}=true`)
                 .join('&')
 
-            const url = downloadUrl.concat(`&${schemaParams}`)
+            const url = `downloadUrl&${schemaParams}`
             window.location = url
         } catch (e) {
             console.log('MetaData Export error', e, '\n')

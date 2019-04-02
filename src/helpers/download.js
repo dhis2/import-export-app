@@ -26,6 +26,7 @@ export function downloadBlob(url, filename) {
     link.setAttribute('download', filename)
     document.body.appendChild(link)
     link.click()
+    link.remove()
 }
 
 export function getDownloadUrl({ format, compression, endpoint, sharing }) {
