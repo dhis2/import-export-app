@@ -45,8 +45,8 @@ export class MetaDataExport extends FormBase {
                 endpoint,
                 sharing,
             })
-            const schemaParams = schemas
-                .sort()
+            const schemaParams = Object.keys(schemas)
+                .filter(s => schemas[s])
                 .map(name => `${name}=true`)
                 .join('&')
 
