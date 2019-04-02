@@ -70,13 +70,12 @@ export class MetaDataExport extends FormBase {
             } = this.getFormState()
 
             const ext = format.substr(1)
-
+            const schemaNames = Object.keys(schemas)
             const params = []
             params.push('assumeTrue=false')
             params.push(`format=json`)
             params.push(
-                schemas
-                    .map(name => name)
+                schemaNames
                     .sort()
                     .map(name => `${name}=true`)
                     .join('&')
