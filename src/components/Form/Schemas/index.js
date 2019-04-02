@@ -8,11 +8,7 @@ import { EXCLUDE_SCHEMAS } from 'helpers'
 import { setSchemas } from 'reducers/'
 import { connect } from 'react-redux'
 import s from './styles.css'
-import {
-    getSortedSchemaGroups,
-    getSortedSchemas,
-    getSchemas,
-} from 'reducers/schemas/selectors'
+import { getSortedSchemaGroups, getSchemas } from 'reducers/schemas/selectors'
 import { colors } from 'material-ui/styles'
 import { EditorFormatAlignJustify } from 'material-ui/svg-icons'
 
@@ -25,45 +21,6 @@ function groupName(klass) {
     }
 
     return group[group.length - 1]
-}
-
-function schemaGroups(schemas) {
-    const groups = {}
-
-    schemas.forEach(s => {
-        if (!groups[s.group]) {
-            groups[s.group] = []
-        }
-
-        groups[s.group].push(s)
-    })
-
-    // check groups with 1 item and merge inside Other
-    const groupsWith1Item = []
-    const OTHER_GROUP_NAME = 'other'
-    let otherGroup = []
-
-    Object.entries(groups).forEach(([k, v]) => {
-        if (v.length === 1) {
-            groupsWith1Item.push(k)
-            v[0]['group'] = OTHER_GROUP_NAME
-            otherGroup = otherGroup.concat(v)
-        }
-    })
-    groups[OTHER_GROUP_NAME] = otherGroup
-
-    groupsWith1Item.forEach(k => {
-        delete groups[k]
-    })
-
-    // sort group items by length desc
-    // Object.entries(groups).forEach(([k, v]) => {
-    //   groups[k] = groups[k].sort(
-    //     (a, b) => a.displayName.length - b.displayName.length
-    //   )
-    // })
-
-    return groups
 }
 
 function breakOnCamelCase(schemaName, name) {
@@ -165,7 +122,6 @@ export default class Schemas extends React.Component {
         super(props)
 
         this.state = {
-            loaded: false,
             checked:
                 props.schemas.length > 0 ? this.setChecked(null, true) : {},
         }
@@ -226,8 +182,6 @@ export default class Schemas extends React.Component {
             this.props.setSchemas(schemas)
             this.setState(
                 {
-                    loaded: true,
-                    schemas,
                     checked: this.setChecked(null, true, schemas),
                 },
                 () => {
@@ -241,7 +195,6 @@ export default class Schemas extends React.Component {
     }
 
     onSelectNone = () => {
-        const { schemas } = this.props
         this.setState(
             {
                 checked: this.setChecked(null, false),
