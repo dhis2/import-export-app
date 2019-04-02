@@ -2,7 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormBase } from 'components/FormBase'
 import { api } from 'services'
-import { createBlob, downloadBlob, getFormFields, getFormValues } from 'helpers'
+import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
 import { MetadataDependencyExportIcon } from 'components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
@@ -26,6 +26,7 @@ export class MetaDataDependencyExport extends FormBase {
         'objectList',
         'format',
         'compression',
+        'sharing',
     ])
 
     state = getFormValues([
@@ -33,6 +34,7 @@ export class MetaDataDependencyExport extends FormBase {
         'objectList',
         'format:.json:json,xml',
         'compression',
+        'sharing',
     ])
 
     async componentDidMount() {
@@ -70,44 +72,16 @@ export class MetaDataDependencyExport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const {
-                objectType,
-                objectList,
+            const { format, compression, sharing } = this.getFormState()
+
+            let endpoint = `metadata`
+            const url = getDownloadUrl({
                 format,
                 compression,
-            } = this.getFormState()
-            const ext = format.substr(1)
-
-            let endpoint = `metadata${format}`
-            if (compression !== 'none') {
-                endpoint += compression
-            }
-
-            const baseURL = api.url('')
-            const params = `attachment=${endpoint}&format=json`
-            const urlPath = `${objectType}/${objectList}/${endpoint}?${params}`
-
-            const url = `${baseURL}${urlPath}`
-            if (compression !== 'none') {
-                window.location = url
-                return
-            }
-
-            this.setMetaState(
-                {
-                    processing: true,
-                },
-                async () => {
-                    const { data } = await api.get(urlPath)
-                    let contents = data
-                    if (format === '.json') {
-                        contents = JSON.stringify(data)
-                    }
-
-                    downloadBlob(createBlob(contents, ext), endpoint)
-                    this.clearProcessing()
-                }
-            )
+                endpoint,
+                sharing,
+            })
+            window.location = url
         } catch (e) {
             console.log('MetaDataDependency Export error', e, '\n')
         }
