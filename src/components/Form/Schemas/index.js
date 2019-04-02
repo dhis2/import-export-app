@@ -4,12 +4,9 @@ import i18n from '@dhis2/d2-i18n'
 import { Loading } from 'components'
 import { Checkbox, RaisedButton } from 'material-ui'
 import { FormGroup, FormControl, FormLabel } from '../material-ui'
-<<<<<<< Updated upstream
 import { EXCLUDE_SCHEMAS } from 'helpers'
-=======
 import { setSchemas } from 'reducers/'
 import { connect } from 'react-redux'
->>>>>>> Stashed changes
 import s from './styles.css'
 import {
     getSortedSchemaGroups,
@@ -17,6 +14,7 @@ import {
     getSchemas,
 } from 'reducers/schemas/selectors'
 import { colors } from 'material-ui/styles'
+import { EditorFormatAlignJustify } from 'material-ui/svg-icons'
 
 function groupName(klass) {
     let group = klass.split('.')
@@ -171,20 +169,26 @@ export default class Schemas extends React.Component {
             checked:
                 props.schemas.length > 0 ? this.setChecked(null, true) : {},
         }
-        console.log(this.setChecked(null, true))
     }
 
     async componentDidMount() {
-        this.fetch()
+        if (this.props.schemas.length < 1) {
+            this.fetch()
+        }
     }
 
+    /**
+     * Helper to handle setting checked-State. Note does not actually call setState,
+     * returns an object of the checked state.
+     * @param {f} collectionName if falsy, set all schemas to value - else, only update collectionName.
+     * @param {*} value value to set (true or false)
+     * @param {*} schemas schemas to use if collectionName is falsy
+     */
     setChecked(collectionName, value, schemas = this.props.schemas) {
-        console.log(collectionName)
-        let ret
         if (collectionName) {
-            ret = { ...this.state.checked, [collectionName]: value }
+            return { ...this.state.checked, [collectionName]: value }
         } else {
-            ret = schemas.reduce(
+            return schemas.reduce(
                 (accum, { collectionName: colName }) => ({
                     ...accum,
                     [colName]: value,
@@ -192,8 +196,6 @@ export default class Schemas extends React.Component {
                 {}
             )
         }
-        console.log(ret)
-        return ret
     }
 
     onClick = (collectionName, isChecked) => {
@@ -222,7 +224,7 @@ export default class Schemas extends React.Component {
             const { data } = await api.get('schemas.json')
             const schemas = this.getSchemas(data.schemas)
             this.props.setSchemas(schemas)
-            const checked = this.setState(
+            this.setState(
                 {
                     loaded: true,
                     schemas,
