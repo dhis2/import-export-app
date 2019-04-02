@@ -9,8 +9,6 @@ import { setSchemas } from 'reducers/'
 import { connect } from 'react-redux'
 import s from './styles.css'
 import { getSortedSchemaGroups, getSchemas } from 'reducers/schemas/selectors'
-import { colors } from 'material-ui/styles'
-import { EditorFormatAlignJustify } from 'material-ui/svg-icons'
 
 function groupName(klass) {
     let group = klass.split('.')
