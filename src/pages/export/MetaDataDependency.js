@@ -2,13 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormBase } from 'components/FormBase'
 import { api } from 'services'
-import {
-    createBlob,
-    downloadBlob,
-    getFormFields,
-    getFormValues,
-    getDownloadUrl,
-} from 'helpers'
+import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
 import { MetadataDependencyExportIcon } from 'components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
@@ -78,14 +72,7 @@ export class MetaDataDependencyExport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const {
-                objectType,
-                objectList,
-                format,
-                compression,
-                sharing,
-            } = this.getFormState()
-            const ext = format.substr(1)
+            const { format, compression, sharing } = this.getFormState()
 
             let endpoint = `metadata`
             const url = getDownloadUrl({
