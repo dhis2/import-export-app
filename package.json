@@ -77,11 +77,12 @@
     "localize": "npm run extract-pot && d2-i18n-generate -n import-export-app -p ./i18n/ -o ./src/locales/",
     "format": "d2-style js apply",
     "prestart": "npm run localize && d2-manifest package.json ./public/manifest.webapp",
-    "prebuild": "rm -rf build && mkdir build && npm run manifest",
+    "prebuild": "rm -rf build && mkdir build && npm run manifest && npm run coverage",
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "start": "PORT=3000 node scripts/start.js",
-    "build": "npm run localize && npm run manifest && node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "build": "npm run localize && node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "coverage": "npm run test -- --coverage"
   },
   "manifest.webapp": {
     "name": "Import/Export app",
