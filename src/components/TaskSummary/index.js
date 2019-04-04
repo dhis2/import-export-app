@@ -66,7 +66,7 @@ export class TaskSummary extends React.Component {
                 objectReports.forEach(r => {
                     const { uid, errorReports } = r
 
-                    errorReports.forEach(e => {
+                    errorReports && errorReports.forEach(e => {
                         newMessages.push({
                             uid,
                             type: getClassName(e.mainKlass),
