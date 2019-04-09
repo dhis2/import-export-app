@@ -69,7 +69,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run extract-pot && npm run format && git add ./i18n/ && d2-style commit check"
+      "commit-msg": "d2-style commit check",
+      "pre-commit": "npm run extract-pot && npm run format && git add ./i18n/"
     }
   },
   "scripts": {
