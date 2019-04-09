@@ -258,7 +258,7 @@ const values = {
             ['categoryCombos', i18n.t('Category combination')],
             ['dashboards', i18n.t('Dashboard')],
             ['dataElementGroups', i18n.t('Data element groups')],
-            ['optionSet', i18n.t('Option set')],
+            ['optionSets', i18n.t('Option sets')],
         ]),
     },
 
