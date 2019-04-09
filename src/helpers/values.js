@@ -293,3 +293,33 @@ export function getFormValues(list) {
 
     return o
 }
+
+export const EXCLUDE_SCHEMAS = [
+    'analyticsTableHooks',
+    'charts',
+    'constants',
+    'dataElementDimensions',
+    'dataEntryForms',
+    'dataSetNotificationTemplates',
+    'dataStores',
+    'documents',
+    'eventCharts',
+    'eventReports',
+    'icons',
+    'jobConfigurations',
+    'messageConversations',
+    'metadataVersions',
+    'minMaxDataElements',
+    'oAuth2Clients',
+    'programDataElements',
+    'programNotificationTemplates',
+    'pushAnalysis',
+    'reportTables',
+    'reportingRates',
+    'reports',
+    'sections',
+    'smsCommands',
+    'sqlViews',
+    'trackedEntityInstanceFilters',
+    'validationNotificationTemplates',
+]
