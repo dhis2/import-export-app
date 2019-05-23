@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import LinearProgress from '@dhis2/ui/core/LinearProgress'
 import { eventEmitter } from '../../services'
-import s from './styles.css'
+import s from './styles.module.css'
 
 export class Progress extends Component {
     state = {

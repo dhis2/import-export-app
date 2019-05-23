@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { NavLink } from 'react-router-dom'
 import { ArrowUpIcon, ArrowDownIcon } from '../Icon'
 import { importLinks, exportLinks } from './links'
-import s from './styles.css'
+import s from './styles.module.css'
 
 function Heading({ children }) {
     return <div className={s.heading}>{children}</div>
