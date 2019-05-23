@@ -1,7 +1,7 @@
 import React from 'react'
-import { Tree } from 'components'
-import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
+import { Tree } from '../../Tree'
+import { api } from '../../../services'
 
 export default class OrgUnitTree extends React.Component {
     state = {

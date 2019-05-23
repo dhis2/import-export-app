@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { apiConfig } from 'config'
+import { apiConfig } from '../config'
 
 const { server, version } = apiConfig
 const config = {

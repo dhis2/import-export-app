@@ -1,15 +1,15 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { apiConfig } from 'config'
-import { FormBase } from 'components/FormBase'
-import { DataIcon } from 'components/Icon'
+import { apiConfig } from '../../config'
+import { FormBase } from '../../components/FormBase'
+import { DataIcon } from '../../components/Icon'
 import {
     getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
-    getUploadXHR,
-} from 'helpers'
+    getUploadXHR
+} from '../../helpers'
 import { fetchLog } from './helpers'
 
 export class DataImport extends FormBase {

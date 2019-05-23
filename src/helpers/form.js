@@ -7,8 +7,8 @@ import {
     TYPE_ORG_UNIT,
     TYPE_ORG_UNIT_SINGLE_SELECT,
     TYPE_DATASET_PICKER,
-} from 'components/Form'
-import { isValueNil } from 'helpers'
+} from '../components/Form'
+import { isValueNil } from '../helpers'
 
 export function getField(name, fields) {
     return fields.filter(f => f.name === name)[0]

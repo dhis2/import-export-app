@@ -5,12 +5,12 @@ import { HashRouter } from 'react-router-dom'
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { init } from 'd2/lib/d2'
 import './locales'
 import './index.css'
 import App from './App'
 import { store } from './store'
-import { apiConfig } from 'config'
-import { init } from 'd2/lib/d2'
+import { apiConfig } from './config'
 import * as serviceWorker from './serviceWorker';
 
 /**

@@ -2,14 +2,14 @@ import 'typeface-roboto'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Route, withRouter } from 'react-router-dom'
 import moment from 'moment'
 import { getInstance, config } from 'd2/lib/d2'
 import i18n from '@dhis2/d2-i18n'
-import { Loading } from 'components'
-import { setUser, clearUser } from 'reducers'
-import Template from 'pages/Template'
+import { Loading } from './components'
+import { setUser, clearUser } from './reducers'
+import Template from './pages/Template'
 import * as pages from './pages'
-import { Route, withRouter } from 'react-router-dom'
 
 config.i18n.strings.add('settings')
 config.i18n.strings.add('profile')

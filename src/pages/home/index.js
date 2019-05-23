@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { withRouter } from 'react-router-dom'
-import { LogoIcon } from 'components/Icon'
+import { LogoIcon } from '../../components/Icon'
 import s from './styles.css'
 import list from './list'
 

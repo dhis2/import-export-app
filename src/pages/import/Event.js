@@ -1,16 +1,16 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { apiConfig } from 'config'
-import { FormBase } from 'components/FormBase'
-import { CTX_DEFAULT } from 'components/Form'
-import { EventIcon } from 'components/Icon'
+import { apiConfig } from '../../config'
+import { FormBase } from '../../components/FormBase'
+import { CTX_DEFAULT } from '../../components/Form'
+import { EventIcon } from '../../components/Icon'
 import {
     getFormField,
     getFormFields,
     getFormValues,
     getParamsFromFormState,
-    getUploadXHR,
-} from 'helpers'
+    getUploadXHR
+} from '../../helpers'
 import { fetchLog } from './helpers'
 
 export class EventImport extends FormBase {

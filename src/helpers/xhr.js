@@ -1,6 +1,6 @@
 import { getMimeType } from './mime'
-import { eventEmitter } from 'services'
-import { emitLogOnFirstResponse, fetchLog } from 'pages/import/helpers'
+import { eventEmitter } from '../services'
+import { emitLogOnFirstResponse, fetchLog } from '../pages/import/helpers'
 
 export function getUploadXHR(url, upload, type, onResponse, onError) {
     const xhr = new XMLHttpRequest()

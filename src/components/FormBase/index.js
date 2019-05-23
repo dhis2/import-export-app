@@ -3,8 +3,8 @@ import {
     getFieldState,
     getFieldValue,
     hasRequiredFieldsWithoutValue,
-} from 'helpers'
-import { Form, Progress, Error } from 'components'
+} from '../../helpers'
+import { Form, Progress, Error } from '../index'
 import s from './styles.css'
 
 export class FormBase extends React.Component {

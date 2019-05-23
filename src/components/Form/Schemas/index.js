@@ -1,14 +1,14 @@
 import React from 'react'
-import { api } from 'services'
 import i18n from '@dhis2/d2-i18n'
-import { Loading } from 'components'
 import { Checkbox, RaisedButton } from 'material-ui'
 import { FormGroup, FormControl, FormLabel } from '../material-ui'
-import { EXCLUDE_SCHEMAS } from 'helpers'
-import { setSchemas } from 'reducers/'
 import { connect } from 'react-redux'
 import s from './styles.css'
-import { getSortedSchemaGroups, getSchemas } from 'reducers/schemas/selectors'
+import { api } from '../../../services'
+import { EXCLUDE_SCHEMAS } from '../../../helpers'
+import { setSchemas } from '../../../reducers'
+import { getSortedSchemaGroups, getSchemas } from '../../../reducers/schemas/selectors'
+import { Loading } from '../../Loading'
 
 function groupName(klass) {
     let group = klass.split('.')

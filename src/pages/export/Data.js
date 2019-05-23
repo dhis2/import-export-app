@@ -3,9 +3,9 @@ import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import JSZip from 'jszip'
 import { getInstance } from 'd2/lib/d2'
-import { FormBase } from 'components/FormBase'
 import moment from 'moment'
-import { apiConfig } from 'config'
+import { FormBase } from '../../components/FormBase'
+import { apiConfig } from '../../config'
 import {
     downloadBlob,
     createBlob,
@@ -13,8 +13,8 @@ import {
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
-} from 'helpers'
-import { DataIcon } from 'components/Icon'
+} from '../../helpers'
+import { DataIcon } from '../../components/Icon'
 
 export class DataExport extends FormBase {
     static path = '/export/data'

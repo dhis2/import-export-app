@@ -1,8 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { eventEmitter } from 'services'
-import s from './styles.css'
 import moment from 'moment/moment'
+import { eventEmitter } from '../../services'
+import s from './styles.css'
 
 const iconProps = {
     width: 32,

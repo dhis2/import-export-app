@@ -1,9 +1,9 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { FormBase } from 'components/FormBase'
-import { api } from 'services'
-import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
-import { MetadataDependencyExportIcon } from 'components/Icon'
+import { FormBase } from '../../components/FormBase'
+import { api } from '../../services'
+import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
+import { MetadataDependencyExportIcon } from '../../components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
     static path = '/export/metadata-dependency'

@@ -7,7 +7,7 @@ import {
     EventImport,
     EventExport,
     MetaDataDependencyExport,
-} from 'pages'
+} from '../../pages'
 
 const pages = [
     MetaDataImport,

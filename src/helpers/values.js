@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import { CTX_DEFAULT } from 'components/Form'
-import { today, endDateDefault } from 'helpers'
+import { CTX_DEFAULT } from '../components/Form'
+import { today, endDateDefault } from '../helpers'
 
 function getValue(value, label) {
     return {

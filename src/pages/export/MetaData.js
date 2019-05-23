@@ -1,8 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
-import { FormBase } from 'components/FormBase'
-import { MetadataExportIcon } from 'components/Icon'
+import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
+import { FormBase } from '../../components/FormBase'
+import { MetadataExportIcon } from '../../components/Icon'
 
 export class MetaDataExport extends FormBase {
     static path = '/export/metadata'

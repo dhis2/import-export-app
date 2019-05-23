@@ -1,9 +1,9 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { apiConfig } from 'config'
-import { FormBase } from 'components/FormBase'
-import { GMLIcon } from 'components/Icon'
-import { getFormFields, getFormValues, getUploadXHR } from 'helpers'
+import { apiConfig } from '../../config'
+import { FormBase } from '../../components/FormBase'
+import { GMLIcon } from '../../components/Icon'
+import { getFormFields, getFormValues, getUploadXHR } from '../../helpers'
 import { fetchLog } from './helpers'
 
 export class GMLImport extends FormBase {

@@ -1,16 +1,16 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { FormBase } from 'components/FormBase'
-import { api } from 'services'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
-import { EventIcon } from 'components/Icon'
+import { FormBase } from '../../components/FormBase'
+import { api } from '../../services'
+import { EventIcon } from '../../components/Icon'
 import {
     getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
-} from 'helpers'
+} from '../../helpers'
 
 export class EventExport extends FormBase {
     static path = '/export/event'
