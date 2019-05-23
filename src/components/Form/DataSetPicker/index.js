@@ -4,7 +4,6 @@ import { FormLabel } from '../material-ui'
 import { TextField, MenuItem } from 'material-ui'
 import CheckedIcon from 'material-ui/svg-icons/toggle/check-box'
 import UnCheckedIcon from 'material-ui/svg-icons/toggle/check-box-outline-blank'
-
 import s from './styles.css'
 
 const styles = {

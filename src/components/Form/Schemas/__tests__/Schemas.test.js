@@ -3,11 +3,9 @@ import { mount } from 'enzyme'
 import { Provider } from 'react-redux'
 import Schemas from '../'
 import { Loading } from '../../../Loading'
-
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-
 import { store } from 'store'
 
 const muiTheme = getMuiTheme(lightBaseTheme)

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
-
 import { eventEmitter } from 'services'
 import { Loading } from 'components'
 import { Totals, TypeStats, Conflicts, Messages, Summaries } from './helpers'

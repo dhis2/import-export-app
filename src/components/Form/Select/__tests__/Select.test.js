@@ -1,7 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import Select from '../'
-
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'

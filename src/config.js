@@ -9,6 +9,7 @@ if (typeof manifest !== 'undefined') {
 }
 
 const IS_PROD = process.env.NODE_ENV === 'production'
+
 if (IS_PROD) {
     url = manifest.activities.dhis.href
 } else if (!IS_PROD && typeof DHIS_CONFIG === 'object') {

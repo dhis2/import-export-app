@@ -12,7 +12,7 @@ export class Progress extends Component {
         eventEmitter.on('upload.progress', this.onProgress)
     }
 
-    componentWillUnMount() {
+    componentWillUnmount() {
         eventEmitter.off('upload.progress', this.onProgress)
     }
 
