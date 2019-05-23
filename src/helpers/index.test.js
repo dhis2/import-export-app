@@ -1,10 +1,10 @@
-import { today } from '../date'
+import { today } from './date'
 import {
     getField,
     getRequiredFields,
     hasRequiredFieldsWithoutValue,
-} from '../form'
-import { isValueNil } from '../values'
+} from './form'
+import { isValueNil } from './values'
 
 describe('Date', () => {
     it('today() is not null', () => {

@@ -3,12 +3,12 @@ import i18n from '@dhis2/d2-i18n'
 import { Checkbox, RaisedButton } from 'material-ui'
 import { FormGroup, FormControl, FormLabel } from '../material-ui'
 import { connect } from 'react-redux'
-import s from './styles.module.css'
 import { api } from '../../../services'
 import { EXCLUDE_SCHEMAS } from '../../../helpers'
 import { setSchemas } from '../../../reducers'
 import { getSortedSchemaGroups, getSchemas } from '../../../reducers/schemas/selectors'
 import { Loading } from '../../Loading'
+import s from './styles.module.css'
 
 function groupName(klass) {
     let group = klass.split('.')

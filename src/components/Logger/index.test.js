@@ -1,5 +1,5 @@
 import React from 'react'
-import { Logger } from '../'
+import { Logger } from './'
 
 const wrapper = mount(<Logger />)
 wrapper.setState({

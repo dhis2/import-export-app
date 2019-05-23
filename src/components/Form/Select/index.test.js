@@ -1,10 +1,10 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Select from '../'
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import i18n from '@dhis2/d2-i18n/index'
+import Select from './'
 
 const muiTheme = getMuiTheme(lightBaseTheme)
 

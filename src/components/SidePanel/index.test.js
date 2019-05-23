@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
-import { SidePanel } from '../index'
+import { SidePanel } from './'
 
 const wrapper = mount(
     <HashRouter>

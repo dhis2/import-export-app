@@ -1,5 +1,5 @@
-import userReducer from '../'
-import { USER_SET, USER_CLEAR } from '../actions'
+import userReducer from './'
+import { USER_SET, USER_CLEAR } from './actions'
 
 describe('User Reducer', () => {
     it('USER_CLEAR removes existing user', () => {

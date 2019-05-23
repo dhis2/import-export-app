@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import OrgUnitTree from '../'
+import OrgUnitTree from './'
 
 describe('OrgUnitTree', () => {
     it('empty render', () => {

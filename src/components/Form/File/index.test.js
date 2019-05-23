@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import File from '../'
+import File from './'
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'

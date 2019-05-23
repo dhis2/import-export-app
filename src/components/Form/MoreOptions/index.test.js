@@ -1,5 +1,5 @@
 import React from 'react'
-import MoreOptions from '../'
+import MoreOptions from './'
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
