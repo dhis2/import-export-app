@@ -1,0 +1,32 @@
+.container {
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    position: relative;
+    line-height: 26px;
+}
+
+.icon {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 23px;
+    min-width: 27px;
+    text-align: center;
+}
+.icon:empty {
+    display: none;
+}
+
+.text {
+    white-space: nowrap;
+}
+
+.label.selected {
+    color: #2196f3;
+}
+
+.children {
+}

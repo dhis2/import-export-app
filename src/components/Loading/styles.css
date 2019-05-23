@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    margin: 60px auto;
+    text-align: center;
+}

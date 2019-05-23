@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: #225b8b;
+}
+
+.nav {
+    user-select: all;
+    cursor: row-resize;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    padding: 0 5px 0 15px;
+}
+.nav svg {
+    cursor: pointer;
+    margin-top: 5px;
+}
+.title {
+    user-select: element;
+    color: #fff;
+    font-size: 15px;
+}
+.upper {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-right: 6px;
+}
+.actions {
+}
+
+.messages {
+    padding: 10px 0;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    color: #fff;
+    background-color: #000;
+}
+
+.message {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    width: 97%;
+    font-weight: 400;
+}
+.date {
+    width: 130px;
+    text-align: right;
+}
+.type {
+    width: 170px;
+    padding: 0 15px;
+}
+.contents {
+    display: flex;
+    flex-direction: column;
+}
+.text {
+    white-space: pre-wrap;
+}

@@ -1,13 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-weight: 300;
+    font-family: 'Noto Naskh Arabic';
+    src: url('./fonts/NotoNaskhArabicUI-Regular.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+    font-weight: 500;
+    font-family: 'Noto Naskh Arabic';
+    src: url('./fonts/NotoNaskhArabicUI-Bold.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    background-color: #f3f3f3;
+}
+
+[dir='rtl'] body {
+    font-family: 'Noto Naskh Arabic', sans-serif;
 }
