@@ -24,7 +24,6 @@
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "d2": "^30.0.4",
-    "d2-manifest": "^1.0.0",
     "eventemitter2": "^5.0.1",
     "jszip": "^3.1.5",
     "material-ui": "^0.20.0",
@@ -35,7 +34,6 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "reselect": "^4.0.0",
-    "rxjs": "^5.5.7",
     "typeface-roboto": "^0.0.54"
   },
   "eslintConfig": {
