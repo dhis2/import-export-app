@@ -7,7 +7,7 @@ import {
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
-    getUploadXHR
+    getUploadXHR,
 } from '../../helpers'
 import { fetchLog } from './helpers'
 

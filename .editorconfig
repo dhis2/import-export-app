@@ -2,9 +2,9 @@
 # this file, please see the EditorConfig documentation:
 # https://editorconfig.org/
 
- root = true
+root = true
 
- [*]
+[*]
 charset = utf-8
 end_of_line = lf
 indent_size = 4
@@ -12,5 +12,5 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
- [*.md]
+[*.md]
 trim_trailing_whitespace = false

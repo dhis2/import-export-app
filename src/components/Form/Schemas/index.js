@@ -6,12 +6,15 @@ import { connect } from 'react-redux'
 import { api } from '../../../services'
 import { EXCLUDE_SCHEMAS } from '../../../helpers'
 import { setSchemas } from '../../../reducers'
-import { getSortedSchemaGroups, getSchemas } from '../../../reducers/schemas/selectors'
+import {
+    getSortedSchemaGroups,
+    getSchemas,
+} from '../../../reducers/schemas/selectors'
 import { Loading } from '../../Loading'
 import s from './styles.module.css'
 
 function groupName(klass) {
-    let group = klass.split('.')
+    const group = klass.split('.')
     group.pop()
 
     if (!klass.includes('.dhis')) {
@@ -22,7 +25,7 @@ function groupName(klass) {
 }
 
 function breakOnCamelCase(schemaName, name) {
-    let temp = schemaName.substr(0, name.length).replace(/([A-Z]+)/g, ' $1')
+    const temp = schemaName.substr(0, name.length).replace(/([A-Z]+)/g, ' $1')
     return temp[0].toUpperCase() + temp.substr(1)
 }
 
@@ -146,7 +149,7 @@ class Schemas extends React.Component {
     }
 
     onClick = (collectionName, isChecked) => {
-        let updated = this.setChecked(collectionName, isChecked)
+        const updated = this.setChecked(collectionName, isChecked)
 
         this.setState({ checked: updated }, () =>
             this.props.onChange(this.props.name, updated)

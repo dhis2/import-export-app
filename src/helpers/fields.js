@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import i18n from '@dhis2/d2-i18n'
 import {
     CTX_DEFAULT,
@@ -11,7 +13,7 @@ import {
     TYPE_ORG_UNIT_SINGLE_SELECT,
     TYPE_MORE_OPTIONS,
     TYPE_RADIO,
-    TYPE_SCHEMAS
+    TYPE_SCHEMAS,
 } from '../components/Form'
 
 function getField(name, label, type, context = CTX_DEFAULT, required = false) {

@@ -11,7 +11,8 @@
     "localize": "d2-i18n-generate -n import-export-app -p ./i18n/ -o ./src/locales/",
     "prestart": "npm run localize",
     "prebuild": "npm run localize",
-    "pretest": "npm run localize"
+    "pretest": "npm run localize",
+    "lint:style": "d2-style js check --all"
   },
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.3",
@@ -35,23 +36,16 @@
     "reselect": "^4.0.0",
     "typeface-roboto": "^0.0.54"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
+    "@dhis2/cli-style": "^3.2.2",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.2"
+    "enzyme-adapter-react-16": "^1.13.2",
+    "husky": "^2.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "d2-style commit check",
+      "pre-commit": "d2-style js apply"
+    }
   }
 }

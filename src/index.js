@@ -10,7 +10,7 @@ import './locales'
 import './index.css'
 import App from './App'
 import { store } from './store'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
 
 /**
  * Initialize d2
@@ -57,4 +57,4 @@ ReactDOM.render(
  * Learn more about service workers: https://bit.ly/CRA-PWA
  */
 
-serviceWorker.unregister();
+serviceWorker.unregister()

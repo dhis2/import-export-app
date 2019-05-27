@@ -74,7 +74,7 @@ export class MetaDataDependencyExport extends FormBase {
         try {
             const { format, compression, sharing } = this.getFormState()
 
-            let endpoint = `metadata`
+            const endpoint = `metadata`
             const url = getDownloadUrl({
                 format,
                 compression,

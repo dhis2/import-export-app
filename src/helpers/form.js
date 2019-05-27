@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import {
     TYPE_FILE,
     TYPE_DATE,

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { getMimeType } from './mime'
 import { eventEmitter } from '../services'
 import { emitLogOnFirstResponse, fetchLog } from '../pages/import/helpers'

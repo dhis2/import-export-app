@@ -154,7 +154,7 @@ export class DataExport extends FormBase {
                 ) {
                     this.clearProcessing()
 
-                    let filename = `data${format}`
+                    const filename = `data${format}`
                     if (compression !== 'none') {
                         const zip = new JSZip()
                         zip.file(filename, xhr.responseText)

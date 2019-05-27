@@ -104,7 +104,7 @@ export default class DataSetPicker extends React.Component {
     }
 
     contents() {
-        let values = this.values()
+        const values = this.values()
         return (
             <div className={s.body}>
                 {values.map(({ value, label }) => (
