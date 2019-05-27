@@ -1,5 +1,5 @@
 {
-  "name": "importexport-app",
+  "name": "import-export-app",
   "description": "Import/Export DHIS2 data",
   "version": "31.0.0",
   "private": true,
@@ -14,9 +14,6 @@
     "pretest": "npm run localize"
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
     "@dhis2/d2-i18n": "^1.0.3",
     "@dhis2/d2-i18n-extract": "^1.0.6",
     "@dhis2/d2-i18n-generate": "^1.0.18",
@@ -29,9 +26,12 @@
     "material-ui": "^0.20.0",
     "moment": "^2.22.1",
     "prop-types": "^15.6.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-scripts": "3.0.1",
     "redux": "^3.7.2",
     "reselect": "^4.0.0",
     "typeface-roboto": "^0.0.54"
@@ -50,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2"
   }
 }

@@ -1,8 +1,9 @@
 import React from 'react'
-import MoreOptions from './'
+import { mount } from 'enzyme'
 import { MuiThemeProvider } from 'material-ui'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import MoreOptions from './'
 
 lightBaseTheme.palette.primary1Color = '#4c708c'
 lightBaseTheme.palette.primary2Color = '#4c708c'

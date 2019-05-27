@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
+import { mount } from 'enzyme'
 import { SidePanel } from './'
 
 const wrapper = mount(

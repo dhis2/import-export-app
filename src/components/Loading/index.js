@@ -1,7 +1,6 @@
 import React from 'react'
 import { CircularProgress } from 'material-ui'
 import s from './styles.module.css'
-import Progress from './Progress'
 
 export function Loading({ size, thickness }) {
     return (
@@ -11,4 +10,4 @@ export function Loading({ size, thickness }) {
     )
 }
 
-export { Progress }
+export { Progress } from './Progress'

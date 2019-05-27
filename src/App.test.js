@@ -8,6 +8,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import App from './App'
 import { store } from './store'
 
+// Mock headerbar, as the current version requires REACT_APP_DHIS2_BASE_URL to be set
+jest.mock('@dhis2/ui/widgets/HeaderBar', () => <div />)
+
 const muiTheme = getMuiTheme(lightBaseTheme)
 
 it('renders without crashing', () => {
