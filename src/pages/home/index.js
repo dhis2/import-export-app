@@ -15,8 +15,7 @@ const Item = ({ path, title, description, menuIcon, onClick }) => (
     </div>
 )
 
-@withRouter
-class Home extends React.Component {
+class DumbHome extends React.Component {
     static path = '/'
 
     onClick = path => this.props.history.push(path)
@@ -45,4 +44,4 @@ class Home extends React.Component {
     }
 }
 
-export { Home }
+export const Home = withRouter(DumbHome)

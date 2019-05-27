@@ -7,7 +7,7 @@ import moment from 'moment'
 import { getInstance, config } from 'd2/lib/d2'
 import i18n from '@dhis2/d2-i18n'
 import { Loading } from './components'
-import { setUser, clearUser } from './reducers'
+import { setUser, clearUser } from './reducers/user/actions'
 import Template from './pages/Template'
 import * as pages from './pages'
 
@@ -41,11 +41,6 @@ function changeLocale(locale) {
     )
 }
 
-@withRouter
-@connect(
-    ({ user }) => ({ user }),
-    { setUser, clearUser }
-)
 class App extends React.Component {
     static childContextTypes = {
         d2: PropTypes.object,
@@ -111,4 +106,7 @@ class App extends React.Component {
     }
 }
 
-export default App
+export default withRouter(connect(
+    ({ user }) => ({ user }),
+    { setUser, clearUser }
+)(App))

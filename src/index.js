@@ -10,17 +10,16 @@ import './locales'
 import './index.css'
 import App from './App'
 import { store } from './store'
-import { apiConfig } from './config'
 import * as serviceWorker from './serviceWorker';
 
 /**
  * Initialize d2
  */
 
-const { server, version } = apiConfig
+const { REACT_APP_DHIS2_BASE_URL } = process.env
 
 init({
-    baseUrl: `${server}/api/${version}`,
+    baseUrl: `${REACT_APP_DHIS2_BASE_URL}/api/`,
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
     },

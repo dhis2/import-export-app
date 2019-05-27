@@ -107,15 +107,8 @@ function Controls({ onSelectAll, onSelectNone }) {
         </div>
     )
 }
-@connect(
-    state => ({
-        schemaGroups: getSortedSchemaGroups(state),
-        schemas: getSchemas(state),
-        loaded: state.schemas.loaded,
-    }),
-    { setSchemas }
-)
-export default class Schemas extends React.Component {
+
+class Schemas extends React.Component {
     constructor(props) {
         super(props)
 
@@ -248,3 +241,12 @@ export default class Schemas extends React.Component {
         )
     }
 }
+
+export default connect(
+    state => ({
+        schemaGroups: getSortedSchemaGroups(state),
+        schemas: getSchemas(state),
+        loaded: state.schemas.loaded,
+    }),
+    { setSchemas }
+)(Schemas)

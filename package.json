@@ -1,17 +1,42 @@
 {
-  "name": "new-import-export-app",
-  "version": "0.1.0",
+  "name": "importexport-app",
+  "description": "Import/Export DHIS2 data",
+  "version": "31.0.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "localize": "d2-i18n-generate -n import-export-app -p ./i18n/ -o ./src/locales/",
+    "prestart": "npm run localize",
+    "prebuild": "npm run localize",
+    "pretest": "npm run localize"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "@dhis2/d2-i18n": "^1.0.3",
+    "@dhis2/d2-i18n-extract": "^1.0.6",
+    "@dhis2/d2-i18n-generate": "^1.0.18",
+    "@dhis2/ui": "^1.0.0-beta.15",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.5",
+    "d2": "^30.0.4",
+    "d2-manifest": "^1.0.0",
+    "eventemitter2": "^5.0.1",
+    "jszip": "^3.1.5",
+    "material-ui": "^0.20.0",
+    "moment": "^2.22.1",
+    "prop-types": "^15.6.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "reselect": "^4.0.0",
+    "rxjs": "^5.5.7",
+    "typeface-roboto": "^0.0.54"
   },
   "eslintConfig": {
     "extends": "react-app"

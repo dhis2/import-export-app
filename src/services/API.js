@@ -1,9 +1,8 @@
 import axios from 'axios'
-import { apiConfig } from '../config'
 
-const { server, version } = apiConfig
+const { REACT_APP_DHIS2_BASE_URL } = process.env
 const config = {
-    baseURL: `${server}/api/${version}/`,
+    baseURL: `${REACT_APP_DHIS2_BASE_URL}/api/`,
     withCredentials: true,
     maxRedirects: 0,
     headers: {

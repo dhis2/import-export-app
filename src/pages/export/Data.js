@@ -5,7 +5,6 @@ import JSZip from 'jszip'
 import { getInstance } from 'd2/lib/d2'
 import moment from 'moment'
 import { FormBase } from '../../components/FormBase'
-import { apiConfig } from '../../config'
 import {
     downloadBlob,
     createBlob,
@@ -140,10 +139,12 @@ export class DataExport extends FormBase {
             this.setProcessing()
 
             const xhr = new XMLHttpRequest()
+            const { REACT_APP_DHIS2_BASE_URL } = process.env
+
             xhr.withCredentials = true
             xhr.open(
                 'GET',
-                `${apiConfig.server}/api/dataValueSets${format}?${params}`,
+                `${REACT_APP_DHIS2_BASE_URL}/api/dataValueSets${format}?${params}`,
                 true
             )
             xhr.onreadystatechange = async () => {

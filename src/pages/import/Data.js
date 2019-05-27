@@ -1,6 +1,5 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { apiConfig } from '../../config'
 import { FormBase } from '../../components/FormBase'
 import { DataIcon } from '../../components/Icon'
 import {
@@ -85,7 +84,8 @@ export class DataImport extends FormBase {
 
             this.setProcessing()
 
-            const url = `${apiConfig.server}/api/dataValueSets.json?${params}`
+            const { REACT_APP_DHIS2_BASE_URL } = process.env
+            const url = `${REACT_APP_DHIS2_BASE_URL}/api/dataValueSets.json?${params}`
             const xhr = getUploadXHR(
                 url,
                 upload,
