@@ -1,9 +1,8 @@
-/* eslint-disable */
-
 import { getMimeType } from './mime'
 import { eventEmitter } from '../services'
 import { emitLogOnFirstResponse, fetchLog } from '../pages/import/helpers'
 
+// eslint-disable-next-line max-params
 export function getUploadXHR(url, upload, type, onResponse, onError) {
     const xhr = new XMLHttpRequest()
     const contentType = getMimeType(upload.name.toLowerCase())
@@ -21,6 +20,7 @@ export function getUploadXHR(url, upload, type, onResponse, onError) {
     return xhr
 }
 
+// eslint-disable-next-line max-params
 export function onReadyStateChange(xhr, type, onResponse, onError) {
     return async function handleChange(e) {
         const status = Math.floor(xhr.status / 100)

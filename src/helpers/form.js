@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import {
     TYPE_FILE,
     TYPE_DATE,
@@ -16,6 +14,7 @@ export function getField(name, fields) {
     return fields.filter(f => f.name === name)[0]
 }
 
+// eslint-disable-next-line max-params
 export function getFieldState(name, value, fields, state) {
     const f = getField(name, fields)
 

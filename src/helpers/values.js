@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import i18n from '@dhis2/d2-i18n'
 import { CTX_DEFAULT } from '../components/Form'
 import { today, endDateDefault } from '../helpers'
@@ -36,6 +34,7 @@ function getFormat(selected, list) {
     }
 }
 
+// eslint-disable-next-line max-params
 function getBoolean(
     selected,
     labelTrue = i18n.t('Yes'),
