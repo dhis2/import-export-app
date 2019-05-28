@@ -29,10 +29,10 @@
     "prop-types": "^15.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
-    "redux": "^3.7.2",
+    "redux": "^4.0.1",
     "reselect": "^4.0.0",
     "typeface-roboto": "^0.0.54"
   },
@@ -47,5 +47,10 @@
       "commit-msg": "d2-style commit check",
       "pre-commit": "d2-style js apply"
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "d2"
+    ]
   }
 }
