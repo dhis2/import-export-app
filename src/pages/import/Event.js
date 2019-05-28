@@ -1,16 +1,15 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { apiConfig } from 'config'
-import { FormBase } from 'components/FormBase'
-import { CTX_DEFAULT } from 'components/Form'
-import { EventIcon } from 'components/Icon'
+import { FormBase } from '../../components/FormBase'
+import { CTX_DEFAULT } from '../../components/Form'
+import { EventIcon } from '../../components/Icon'
 import {
     getFormField,
     getFormFields,
     getFormValues,
     getParamsFromFormState,
     getUploadXHR,
-} from 'helpers'
+} from '../../helpers'
 import { fetchLog } from './helpers'
 
 export class EventImport extends FormBase {
@@ -61,7 +60,8 @@ export class EventImport extends FormBase {
             )
             this.setProcessing()
 
-            const url = `${apiConfig.server}/api/events.json?${params}`
+            const { REACT_APP_DHIS2_BASE_URL } = process.env
+            const url = `${REACT_APP_DHIS2_BASE_URL}/api/events.json?${params}`
             const xhr = getUploadXHR(
                 url,
                 upload,

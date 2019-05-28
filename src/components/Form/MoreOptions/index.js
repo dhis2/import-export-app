@@ -1,8 +1,7 @@
 import React from 'react'
 import { SvgIcon } from 'material-ui'
 import i18n from '@dhis2/d2-i18n'
-import s from './styles.css'
-
+import s from './styles.module.css'
 import { CTX_DEFAULT, CTX_MORE_OPTIONS } from '../'
 
 function PlusIcon() {

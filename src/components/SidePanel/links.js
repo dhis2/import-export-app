@@ -7,7 +7,7 @@ import {
     EventImport,
     EventExport,
     MetaDataDependencyExport,
-} from 'pages'
+} from '../../pages'
 
 function menu(list) {
     return list.map(i => ({

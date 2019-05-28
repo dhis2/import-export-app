@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
-
-import { eventEmitter } from 'services'
-import { Loading } from 'components'
+import { eventEmitter } from '../../services'
+import { Loading } from '../'
 import { Totals, TypeStats, Conflicts, Messages, Summaries } from './helpers'
-import s from './styles.css'
+import s from './styles.module.css'
 
 const initialState = {
     loading: false,

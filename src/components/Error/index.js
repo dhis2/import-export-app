@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { RaisedButton } from 'material-ui'
-import s from './styles.css'
+import s from './styles.module.css'
 
 export function Error({ message, onClear }) {
     return (

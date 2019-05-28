@@ -1,8 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { eventEmitter } from 'services'
-import s from './styles.css'
 import moment from 'moment/moment'
+import { eventEmitter } from '../../services'
+import s from './styles.module.css'
 
 const iconProps = {
     width: 32,
@@ -97,7 +97,7 @@ export class Logger extends React.Component {
         this.clearSelection()
         const { height } = this.state
         this.setState({ open: true, height: height > 0 ? height : 250 }, () => {
-            let { height } = this.state
+            const { height } = this.state
             this.elmMessages.style.height = `${height}px`
             this.appContent.style.height = `calc(100vh - ${height}px)`
             this.scrollToBottom()
@@ -125,7 +125,7 @@ export class Logger extends React.Component {
         const { screenY } = evt
 
         if (screenY > 0) {
-            let height = window.innerHeight - screenY + 80
+            const height = window.innerHeight - screenY + 80
             this.elmMessages.style.height = `${height}px`
             this.appContent.style.height = `calc(100vh - ${height}px)`
 
@@ -198,6 +198,8 @@ export class Logger extends React.Component {
      * @param {*} truncate whether to truncate the timestamp, so that the returned
      * date is formatted without the parts of previous date (upto mm:ss)
      */
+
+    // eslint-disable-next-line max-params
     getDate(msg, prevDateHH, prevDate, truncate = false) {
         if (!msg.d) {
             return null

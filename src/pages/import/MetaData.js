@@ -1,17 +1,16 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { apiConfig } from 'config'
-import { api, eventEmitter } from 'services'
-import { FormBase } from 'components/FormBase'
-import { CTX_DEFAULT, CTX_CSV_OPTION } from 'components/Form'
-import { MetadataImportIcon } from 'components/Icon'
+import { api, eventEmitter } from '../../services'
+import { FormBase } from '../../components/FormBase'
+import { CTX_DEFAULT, CTX_CSV_OPTION } from '../../components/Form'
+import { MetadataImportIcon } from '../../components/Icon'
 import {
     getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getUploadXHR,
     getParamsFromFormState,
-} from 'helpers'
+} from '../../helpers'
 import { fetchLog } from './helpers'
 
 export class MetaDataImport extends FormBase {
@@ -154,7 +153,8 @@ export class MetaDataImport extends FormBase {
 
             this.setProcessing()
 
-            const url = `${apiConfig.server}/api/metadata.json?${params}`
+            const { REACT_APP_DHIS2_BASE_URL } = process.env
+            const url = `${REACT_APP_DHIS2_BASE_URL}/api/metadata.json?${params}`
             const xhr = getUploadXHR(
                 url,
                 upload,

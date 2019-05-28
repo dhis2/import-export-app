@@ -1,9 +1,9 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { FormBase } from 'components/FormBase'
-import { api } from 'services'
-import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
-import { MetadataDependencyExportIcon } from 'components/Icon'
+import { FormBase } from '../../components/FormBase'
+import { api } from '../../services'
+import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
+import { MetadataDependencyExportIcon } from '../../components/Icon'
 
 export class MetaDataDependencyExport extends FormBase {
     static path = '/export/metadata-dependency'
@@ -74,7 +74,7 @@ export class MetaDataDependencyExport extends FormBase {
         try {
             const { format, compression, sharing } = this.getFormState()
 
-            let endpoint = `metadata`
+            const endpoint = `metadata`
             const url = getDownloadUrl({
                 format,
                 compression,

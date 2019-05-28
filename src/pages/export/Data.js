@@ -3,9 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import JSZip from 'jszip'
 import { getInstance } from 'd2/lib/d2'
-import { FormBase } from 'components/FormBase'
 import moment from 'moment'
-import { apiConfig } from 'config'
+import { FormBase } from '../../components/FormBase'
 import {
     downloadBlob,
     createBlob,
@@ -13,8 +12,8 @@ import {
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
-} from 'helpers'
-import { DataIcon } from 'components/Icon'
+} from '../../helpers'
+import { DataIcon } from '../../components/Icon'
 
 export class DataExport extends FormBase {
     static path = '/export/data'
@@ -140,10 +139,12 @@ export class DataExport extends FormBase {
             this.setProcessing()
 
             const xhr = new XMLHttpRequest()
+            const { REACT_APP_DHIS2_BASE_URL } = process.env
+
             xhr.withCredentials = true
             xhr.open(
                 'GET',
-                `${apiConfig.server}/api/dataValueSets${format}?${params}`,
+                `${REACT_APP_DHIS2_BASE_URL}/api/dataValueSets${format}?${params}`,
                 true
             )
             xhr.onreadystatechange = async () => {
@@ -153,7 +154,7 @@ export class DataExport extends FormBase {
                 ) {
                     this.clearProcessing()
 
-                    let filename = `data${format}`
+                    const filename = `data${format}`
                     if (compression !== 'none') {
                         const zip = new JSZip()
                         zip.file(filename, xhr.responseText)

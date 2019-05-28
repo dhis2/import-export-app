@@ -1,7 +1,7 @@
 import React from 'react'
 import { RadioButtonGroup, RadioButton } from 'material-ui'
 import { FormLabel, FormControl } from '../material-ui'
-import s from './styles.css'
+import s from './styles.module.css'
 
 const styles = {
     radioButtonGroup: {},

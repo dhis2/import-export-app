@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { eventEmitter } from 'services'
 import LinearProgress from '@dhis2/ui/core/LinearProgress'
-import s from './styles.css'
+import { eventEmitter } from '../../services'
+import s from './styles.module.css'
 
 export class Progress extends Component {
     state = {
@@ -12,7 +12,7 @@ export class Progress extends Component {
         eventEmitter.on('upload.progress', this.onProgress)
     }
 
-    componentWillUnMount() {
+    componentWillUnmount() {
         eventEmitter.off('upload.progress', this.onProgress)
     }
 

@@ -3,8 +3,7 @@ import cx from 'classnames'
 import { RaisedButton } from 'material-ui'
 import { FormLabel, FormControl } from './material-ui'
 import { TaskSummary } from '../TaskSummary'
-import s from './styles.css'
-
+import s from './styles.module.css'
 import File from './File'
 import Date from './Date'
 import Radio from './Radio'
@@ -13,7 +12,6 @@ import Schemas from './Schemas'
 import OrgUnitTree from './OrgUnitTree'
 import MoreOptions from './MoreOptions'
 import DataSetPicker from './DataSetPicker'
-
 import {
     TYPE_FILE,
     TYPE_DATE,

@@ -1,9 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { withRouter } from 'react-router-dom'
-import { LogoIcon } from 'components/Icon'
-import s from './styles.css'
-
+import { LogoIcon } from '../../components/Icon'
+import s from './styles.module.css'
 import list from './list'
 
 const Item = ({ path, title, description, menuIcon, onClick }) => (
@@ -16,8 +15,7 @@ const Item = ({ path, title, description, menuIcon, onClick }) => (
     </div>
 )
 
-@withRouter
-class Home extends React.Component {
+class DumbHome extends React.Component {
     static path = '/'
 
     onClick = path => this.props.history.push(path)
@@ -46,4 +44,4 @@ class Home extends React.Component {
     }
 }
 
-export { Home }
+export const Home = withRouter(DumbHome)

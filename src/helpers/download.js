@@ -1,4 +1,4 @@
-import { api } from 'services'
+import { api } from '../services'
 
 export function blobType(format, compression) {
     if (compression === 'gzip') {

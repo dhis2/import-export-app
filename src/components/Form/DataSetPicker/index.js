@@ -4,8 +4,7 @@ import { FormLabel } from '../material-ui'
 import { TextField, MenuItem } from 'material-ui'
 import CheckedIcon from 'material-ui/svg-icons/toggle/check-box'
 import UnCheckedIcon from 'material-ui/svg-icons/toggle/check-box-outline-blank'
-
-import s from './styles.css'
+import s from './styles.module.css'
 
 const styles = {
     menuItem: {
@@ -105,7 +104,7 @@ export default class DataSetPicker extends React.Component {
     }
 
     contents() {
-        let values = this.values()
+        const values = this.values()
         return (
             <div className={s.body}>
                 {values.map(({ value, label }) => (

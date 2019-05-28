@@ -1,9 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { apiConfig } from 'config'
-import { FormBase } from 'components/FormBase'
-import { GMLIcon } from 'components/Icon'
-import { getFormFields, getFormValues, getUploadXHR } from 'helpers'
+import { FormBase } from '../../components/FormBase'
+import { GMLIcon } from '../../components/Icon'
+import { getFormFields, getFormValues, getUploadXHR } from '../../helpers'
 import { fetchLog } from './helpers'
 
 export class GMLImport extends FormBase {
@@ -42,7 +41,8 @@ export class GMLImport extends FormBase {
             this.setProcessing()
 
             const params = `dryRun=${dryRun}&format=json`
-            const url = `${apiConfig.server}/api/metadata/gml?${params}`
+            const { REACT_APP_DHIS2_BASE_URL } = process.env
+            const url = `${REACT_APP_DHIS2_BASE_URL}/api/metadata/gml?${params}`
             const xhr = getUploadXHR(
                 url,
                 upload,

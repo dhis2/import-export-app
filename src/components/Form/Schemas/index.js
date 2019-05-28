@@ -1,17 +1,20 @@
 import React from 'react'
-import { api } from 'services'
 import i18n from '@dhis2/d2-i18n'
-import { Loading } from 'components'
 import { Checkbox, RaisedButton } from 'material-ui'
 import { FormGroup, FormControl, FormLabel } from '../material-ui'
-import { EXCLUDE_SCHEMAS } from 'helpers'
-import { setSchemas } from 'reducers/'
 import { connect } from 'react-redux'
-import s from './styles.css'
-import { getSortedSchemaGroups, getSchemas } from 'reducers/schemas/selectors'
+import { api } from '../../../services'
+import { EXCLUDE_SCHEMAS } from '../../../helpers'
+import { setSchemas } from '../../../reducers'
+import {
+    getSortedSchemaGroups,
+    getSchemas,
+} from '../../../reducers/schemas/selectors'
+import { Loading } from '../../Loading'
+import s from './styles.module.css'
 
 function groupName(klass) {
-    let group = klass.split('.')
+    const group = klass.split('.')
     group.pop()
 
     if (!klass.includes('.dhis')) {
@@ -22,7 +25,7 @@ function groupName(klass) {
 }
 
 function breakOnCamelCase(schemaName, name) {
-    let temp = schemaName.substr(0, name.length).replace(/([A-Z]+)/g, ' $1')
+    const temp = schemaName.substr(0, name.length).replace(/([A-Z]+)/g, ' $1')
     return temp[0].toUpperCase() + temp.substr(1)
 }
 
@@ -107,15 +110,8 @@ function Controls({ onSelectAll, onSelectNone }) {
         </div>
     )
 }
-@connect(
-    state => ({
-        schemaGroups: getSortedSchemaGroups(state),
-        schemas: getSchemas(state),
-        loaded: state.schemas.loaded,
-    }),
-    { setSchemas }
-)
-export default class Schemas extends React.Component {
+
+class Schemas extends React.Component {
     constructor(props) {
         super(props)
 
@@ -153,7 +149,7 @@ export default class Schemas extends React.Component {
     }
 
     onClick = (collectionName, isChecked) => {
-        let updated = this.setChecked(collectionName, isChecked)
+        const updated = this.setChecked(collectionName, isChecked)
 
         this.setState({ checked: updated }, () =>
             this.props.onChange(this.props.name, updated)
@@ -248,3 +244,12 @@ export default class Schemas extends React.Component {
         )
     }
 }
+
+export default connect(
+    state => ({
+        schemaGroups: getSortedSchemaGroups(state),
+        schemas: getSchemas(state),
+        loaded: state.schemas.loaded,
+    }),
+    { setSchemas }
+)(Schemas)

@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './styles.css'
+import s from './styles.module.css'
 
 const TOTAL_PAGES_IN_NAV = 10
 
@@ -22,6 +22,7 @@ function getPaginationRange(current, total) {
     return [first, last]
 }
 
+// eslint-disable-next-line max-params
 function getPages(current, first, last, limit, onClick) {
     const pages = []
     for (let i = first; i <= last; i += 1) {
@@ -39,6 +40,7 @@ function getPages(current, first, last, limit, onClick) {
     return <div className={s.pages}>{pages}</div>
 }
 
+// eslint-disable-next-line max-params
 function getPaginationStats(current, start, limit, total, onClick) {
     return (
         <div className={s.nav}>

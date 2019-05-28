@@ -1,6 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
-import { CTX_DEFAULT, CTX_MORE_OPTIONS, CTX_CSV_OPTION } from 'components/Form'
 import {
+    CTX_DEFAULT,
+    CTX_MORE_OPTIONS,
+    CTX_CSV_OPTION,
     TYPE_FILE,
     TYPE_DATE,
     TYPE_DATASET_PICKER,
@@ -8,9 +10,11 @@ import {
     TYPE_ORG_UNIT,
     TYPE_ORG_UNIT_SINGLE_SELECT,
     TYPE_MORE_OPTIONS,
-} from 'components/Form'
-import { TYPE_RADIO, TYPE_SCHEMAS } from 'components/Form'
+    TYPE_RADIO,
+    TYPE_SCHEMAS,
+} from '../components/Form'
 
+// eslint-disable-next-line max-params
 function getField(name, label, type, context = CTX_DEFAULT, required = false) {
     return {
         context,
@@ -24,7 +28,6 @@ function getField(name, label, type, context = CTX_DEFAULT, required = false) {
 const fields = {
     async: getField('async', i18n.t('Async'), TYPE_RADIO, CTX_MORE_OPTIONS),
     atomicMode: getField('atomicMode', i18n.t('Atomic Mode'), TYPE_RADIO),
-
     categoryOptionComboIdScheme: getField(
         'categoryOptionComboIdScheme',
         i18n.t('Category ID scheme'),

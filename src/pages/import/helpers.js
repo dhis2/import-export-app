@@ -1,5 +1,4 @@
-import { api } from 'services'
-import { eventEmitter } from 'services'
+import { api, eventEmitter } from '../../services'
 
 const CATEGORY_2_LABEL = {
     METADATA_IMPORT: 'Metadata import',

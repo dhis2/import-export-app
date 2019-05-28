@@ -1,6 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
-import s from './styles.css'
+import s from './styles.module.css'
 
 function NodeIcon({ hasChildren, open, value, onClick }) {
     if (hasChildren) {
