@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/dhis2/import-export-app.svg?branch=master)](https://travis-ci.com/dhis2/import-export-app)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fimport-export-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fimport-export-app?ref=badge_shield)
+[![Greenkeeper badge](https://badges.greenkeeper.io/dhis2/import-export-app.svg)](https://greenkeeper.io/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
