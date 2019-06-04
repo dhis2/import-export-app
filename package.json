@@ -39,7 +39,7 @@
   "devDependencies": {
     "@dhis2/cli-style": "^3.2.2",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.13.2",
+    "enzyme-adapter-react-16": "^1.14.0",
     "husky": "^2.3.0"
   },
   "husky": {
