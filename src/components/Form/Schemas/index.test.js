@@ -1,29 +1,12 @@
 import React from 'react'
-import { mount } from 'enzyme'
-import { Provider } from 'react-redux'
-import { MuiThemeProvider } from 'material-ui'
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { shallow } from 'enzyme'
 import { Loading } from '../../Loading'
-import { store } from '../../../store'
-import Schemas from './'
-
-const muiTheme = getMuiTheme(lightBaseTheme)
-
-const Wrapper = props => (
-    <Provider store={store}>
-        <MuiThemeProvider muiTheme={muiTheme}>
-            {props.children}
-        </MuiThemeProvider>
-    </Provider>
-)
+import { DumbSchemas as Schemas } from './'
 
 describe('Schemas', () => {
-    it('empty render', () => {
-        const wrapper = mount(
-            <Wrapper>
-                <Schemas name="schema" label="Schema" store={store} />
-            </Wrapper>
+    it('renders a loading element when loading', () => {
+        const wrapper = shallow(
+            <Schemas name="schema" label="Schema" schemas={['schema']} />
         )
 
         expect(wrapper.containsAllMatchingElements([<Loading />])).toEqual(true)
