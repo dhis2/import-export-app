@@ -111,7 +111,7 @@ function Controls({ onSelectAll, onSelectNone }) {
     )
 }
 
-class Schemas extends React.Component {
+export class DumbSchemas extends React.Component {
     constructor(props) {
         super(props)
 
@@ -252,4 +252,4 @@ export default connect(
         loaded: state.schemas.loaded,
     }),
     { setSchemas }
-)(Schemas)
+)(DumbSchemas)
