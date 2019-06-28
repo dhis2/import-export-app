@@ -10,7 +10,6 @@ deploy:
       script: npx --package @dhis2/deploy-build deploy-build
       skip_cleanup: true
       on:
-          tags: false
           all_branches: true
 env:
     global:
