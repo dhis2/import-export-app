@@ -66,6 +66,7 @@ const values = {
     },
 
     dryRun: getBoolean('false'),
+    firstRowIsHeader: getBoolean('false'),
 
     idScheme: getScheme('UID'),
     eventIdScheme: getScheme('UID'),
