@@ -117,8 +117,15 @@ export class MetaDataImport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const { upload, format, classKey } = this.getFormState()
+            let append = []
             const formData = new FormData()
+            const {
+                upload,
+                format,
+                classKey,
+                firstRowIsHeader,
+            } = this.getFormState()
+
             if (!upload) {
                 this.assertOnError({
                     target: {
@@ -128,9 +135,17 @@ export class MetaDataImport extends FormBase {
                     },
                 })
             }
+
             formData.set('upload', upload)
 
-            const append = format === '.csv' ? [`classKey=${classKey}`] : []
+            if (format === '.csv') {
+                append = [
+                    ...append,
+                    `classKey=${classKey}`,
+                    `firstRowIsHeader=${firstRowIsHeader}`,
+                ]
+            }
+
             append.push('format=json')
 
             const params = getParamsFromFormState(
