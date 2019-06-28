@@ -34,6 +34,7 @@ export class MetaDataImport extends FormBase {
             'upload',
             'format',
             'dryRun',
+            'firstRowIsHeader',
             'classKey',
             'importMode',
             'identifier',
@@ -73,6 +74,7 @@ export class MetaDataImport extends FormBase {
         'skipValidation',
         'async',
         'inclusionStrategy',
+        'firstRowIsHeader',
     ])
 
     async componentDidMount() {
