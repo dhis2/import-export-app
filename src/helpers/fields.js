@@ -55,6 +55,12 @@ const fields = {
         i18n.t('Event ID Scheme'),
         TYPE_RADIO
     ),
+    firstRowIsHeader: getField(
+        'firstRowIsHeader',
+        i18n.t('First row is header'),
+        TYPE_RADIO,
+        CTX_CSV_OPTION
+    ),
     flushMode: getField(
         'flushMode',
         i18n.t('Flush Mode'),
