@@ -1,6 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FormBase } from '../../components/FormBase'
+import { CTX_DEFAULT, CTX_CSV_OPTION } from '../../components/Form'
 import { DataIcon } from '../../components/Icon'
 import {
     getFormFields,
@@ -32,6 +33,7 @@ export class DataImport extends FormBase {
             'upload',
             'format',
             'dryRun',
+            'firstRowIsHeader',
             'strategy',
             'preheatCache',
         ]),
@@ -56,17 +58,33 @@ export class DataImport extends FormBase {
         'orgUnitIdScheme',
         'idScheme',
         'skipExistingCheck',
+        'firstRowIsHeader',
     ])
 
     async componentDidMount() {
         await fetchLog('', 'DATAVALUE_IMPORT')
     }
 
+    onFormUpdate = (name, value) => {
+        if (name === 'format') {
+            const { _context } = this.state
+
+            if (value === '.csv' && _context !== CTX_CSV_OPTION) {
+                this.changeContext(CTX_CSV_OPTION)
+            } else {
+                this.changeContext(CTX_DEFAULT)
+            }
+        }
+    }
+
     onSubmit = () => {
         try {
-            const { upload, format } = this.getFormState()
-            const formData = new FormData()
-            formData.set('upload', upload)
+            const { upload, format, firstRowIsHeader } = this.getFormState()
+            let append = [`format=${format.substr(1)}`, 'async=true']
+
+            if (format === '.csv') {
+                append = [...append, `firstRowIsHeader=${firstRowIsHeader}`]
+            }
 
             const params = getParamsFromFormState(
                 this.getFormState(),
@@ -79,7 +97,7 @@ export class DataImport extends FormBase {
                     'skipExistingCheck',
                     'strategy',
                 ],
-                [`format=${format.substr(1)}`, 'async=true']
+                append
             )
 
             this.setProcessing()
