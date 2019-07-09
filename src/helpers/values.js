@@ -118,8 +118,8 @@ const values = {
     importMode: {
         selected: 'COMMIT',
         values: getValues([
-            ['COMMIT', i18n.t('Commit')],
-            ['VALIDATE', i18n.t('Validate')],
+            ['VALIDATE', i18n.t('Yes')],
+            ['COMMIT', i18n.t('No')],
         ]),
     },
 
