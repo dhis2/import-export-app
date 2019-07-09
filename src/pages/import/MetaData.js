@@ -33,10 +33,9 @@ export class MetaDataImport extends FormBase {
         ...getFormFields([
             'upload',
             'format',
-            'dryRun',
+            'importMode',
             'firstRowIsHeader',
             'classKey',
-            'importMode',
             'identifier',
             'importReportMode',
             'preheatMode',
