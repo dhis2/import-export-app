@@ -60,7 +60,7 @@ const fields = {
     format: getField('format', i18n.t('Format'), TYPE_RADIO),
     idScheme: getField('idScheme', i18n.t('ID scheme'), TYPE_RADIO),
     identifier: getField('identifier', i18n.t('Identifier'), TYPE_RADIO),
-    importMode: getField('importMode', i18n.t('Import Mode'), TYPE_RADIO),
+    importMode: getField('importMode', i18n.t('Dry run'), TYPE_RADIO),
     importReportMode: getField(
         'importReportMode',
         i18n.t('Report Mode'),
