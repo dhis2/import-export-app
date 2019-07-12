@@ -150,7 +150,8 @@ export class MetaDataImport extends FormBase {
                 upload,
                 'METADATA_IMPORT',
                 this.clearProcessing,
-                this.assertOnError
+                this.assertOnError,
+                format.substr(1)
             )
             xhr.send(upload)
         } catch (e) {
