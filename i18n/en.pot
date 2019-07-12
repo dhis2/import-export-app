@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-26T10:04:03.259Z\n"
-"PO-Revision-Date: 2018-11-26T10:04:03.259Z\n"
+"POT-Creation-Date: 2019-07-12T10:21:05.448Z\n"
+"PO-Revision-Date: 2019-07-12T10:21:05.449Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -137,9 +137,6 @@ msgstr ""
 msgid "Identifier"
 msgstr ""
 
-msgid "Import Mode"
-msgstr ""
-
 msgid "Report Mode"
 msgstr ""
 
@@ -246,12 +243,6 @@ msgid "Skip check (fast)"
 msgstr ""
 
 msgid "Check (safe, recommended)"
-msgstr ""
-
-msgid "Commit"
-msgstr ""
-
-msgid "Validate"
 msgstr ""
 
 msgid "AUTO"
