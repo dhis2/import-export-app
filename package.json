@@ -37,7 +37,7 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
-    "@dhis2/cli-style": "^3.2.2",
+    "@dhis2/cli-style": "^4.1.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
     "husky": "^2.3.0"
