@@ -2,9 +2,10 @@ import { getMimeType } from './mime'
 import { eventEmitter } from 'services'
 import { emitLogOnFirstResponse, fetchLog } from 'pages/import/helpers'
 
-export function getUploadXHR(url, upload, type, onResponse, onError) {
+// eslint-disable-next-line max-params
+export function getUploadXHR(url, upload, type, onResponse, onError, format) {
     const xhr = new XMLHttpRequest()
-    const contentType = getMimeType(upload.name.toLowerCase())
+    const contentType = getMimeType(format)
 
     xhr.withCredentials = true
     xhr.open('POST', url, true)
