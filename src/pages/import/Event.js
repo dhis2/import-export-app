@@ -49,6 +49,7 @@ export class EventImport extends FormBase {
     onSubmit = async () => {
         try {
             const { upload, format } = this.getFormState()
+            const formattedFormat = format.slice(1)
 
             const params = getParamsFromFormState(
                 this.getFormState(),
@@ -56,7 +57,7 @@ export class EventImport extends FormBase {
                 [
                     'async=true',
                     'skipFirst=true',
-                    `payloadFormat=${format.slice(1)}`,
+                    `payloadFormat=${formattedFormat}`,
                 ]
             )
             this.setProcessing()
@@ -67,7 +68,8 @@ export class EventImport extends FormBase {
                 upload,
                 'EVENT_IMPORT',
                 this.clearProcessing,
-                this.assertOnError
+                this.assertOnError,
+                formattedFormat
             )
             xhr.send(upload)
         } catch (e) {
