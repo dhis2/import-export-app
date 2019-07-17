@@ -48,7 +48,8 @@ export class GMLImport extends FormBase {
                 upload,
                 'GML_IMPORT',
                 this.clearProcessing,
-                this.assertOnError
+                this.assertOnError,
+                'gml'
             )
             xhr.send(upload)
         } catch (e) {

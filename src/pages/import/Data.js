@@ -80,10 +80,11 @@ export class DataImport extends FormBase {
     onSubmit = () => {
         try {
             const { upload, format, firstRowIsHeader } = this.getFormState()
-            let append = [`format=${format.substr(1)}`, 'async=true']
+            const formattedFormat = format.substr(1)
+            const append = [`format=${formattedFormat}`, 'async=true']
 
             if (format === '.csv') {
-                append = [...append, `firstRowIsHeader=${firstRowIsHeader}`]
+                append.push(`firstRowIsHeader=${firstRowIsHeader}`)
             }
 
             const params = getParamsFromFormState(
@@ -109,7 +110,8 @@ export class DataImport extends FormBase {
                 upload,
                 'DATAVALUE_IMPORT',
                 this.clearProcessing,
-                this.assertOnError
+                this.assertOnError,
+                formattedFormat
             )
 
             xhr.send(upload)
