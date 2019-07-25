@@ -107,7 +107,9 @@ export const DataImport = () => {
                         </FormContent>
 
                         <FormFoot>
-                            <Button type="submit">{i18n.t('Import')}</Button>
+                            <Button primary type="submit">
+                                {i18n.t('Import')}
+                            </Button>
                         </FormFoot>
                     </form>
                 </div>

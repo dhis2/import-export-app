@@ -1,4 +1,5 @@
 import { useField } from 'react-final-form'
+import { Help } from '@dhis2/ui-core'
 import React, { Fragment, useRef, useCallback } from 'react'
 import propTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
@@ -16,23 +17,30 @@ export const File = ({ name }) => {
     const { input, meta } = useField(name, {
         type: 'file',
         parse: () => ref.current.files[0],
+        validate: value => (!!value ? undefined : i18n.t('Required')),
     })
     const onClick = useCallback(() => {
         ref.current.click()
     }, [ref])
 
     const { value, ...withoutValue } = input
-    const label = value ? value.name : i18n.t('Choose a file to upload')
+    const label = value ? value.name : i18n.t('Choose a file to upload') + ' *'
 
     return (
-        <Fragment>
+        <div className={styles.container}>
             <input {...withoutValue} ref={ref} className={styles.input} />
 
-            <button onClick={onClick} className={styles.container}>
+            <button onClick={onClick} className={styles.button}>
                 <FileUploadIcon />
                 <span className={styles.label}>{label}</span>
             </button>
-        </Fragment>
+
+            {meta.touched && meta.error && (
+                <div className={styles.error}>
+                    <Help error>{meta.error}</Help>
+                </div>
+            )}
+        </div>
     )
 }
 
