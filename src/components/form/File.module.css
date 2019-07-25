@@ -1,0 +1,32 @@
+.input {
+    display: none;
+}
+
+.svg {
+    height: 24px;
+    width: 24px;
+    display: block;
+    margin-right: 10px
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px 15px 0;
+    border: 0;
+    background: none;
+    outline: 0;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border: 2px solid transparent;
+}
+
+.container:focus {
+    border-color: #147cd7;
+    border-radius: 4px;
+}
+
+.label {
+    display: block;
+    line-height: 24px;
+}
