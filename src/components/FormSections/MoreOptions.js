@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useState } from 'react'
 import i18n from '@dhis2/d2-i18n'
 
-import { MinusIcon, PlusIcon } from './Form/MoreOptions'
+import { MinusIcon, PlusIcon } from '../Form/MoreOptions'
 import styles from './MoreOptions.module.css'
 
 export const MoreOptions = ({ children }) => {
