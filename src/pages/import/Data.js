@@ -1,90 +1,46 @@
 import { Button } from '@dhis2/ui-core'
-import React from 'react'
-import i18n from '@dhis2/d2-i18n'
+import React, { useState } from 'react'
 import cx from 'classnames'
-import { Form } from 'react-final-form'
+import i18n from '@dhis2/d2-i18n'
 
-import {
-    DATA_ELEMENT_ID_SCHEME_DEFAULT_VALUE,
-    DATA_ELEMENT_ID_SCHEME_KEY,
-    DataElementIdScheme,
-} from '../../components/Inputs/DataElementIdScheme'
-import {
-    DRY_RUN_DEFAULT_VALUE,
-    DRY_RUN_KEY,
-    DryRun,
-} from '../../components/Inputs/DryRun'
+import { Form, FormSpy } from 'react-final-form'
+
+import { DataElementIdScheme } from '../../components/Inputs/DataElementIdScheme'
 import { DataIcon } from '../../components/Icon'
-import {
-    FORMAT_DEFAULT_VALUE,
-    FORMAT_KEY,
-    Format,
-    OPTION_ADX,
-    OPTION_CSV,
-    OPTION_JSON,
-    OPTION_PDF,
-    OPTION_XML,
-} from '../../components/Inputs/Format'
+import { DryRun } from '../../components/Inputs/DryRun'
+import { Error } from '../../components/Error'
 import { File } from '../../components/form/File'
 import { FormContent } from '../../components/FormContent'
 import { FormFoot } from '../../components/FormFoot'
 import { FormHead } from '../../components/FormHead'
-import {
-    ID_SCHEME_DEFAULT_VALUE,
-    ID_SCHEME_KEY,
-    IdScheme,
-} from '../../components/Inputs/idScheme'
+import { Format } from '../../components/Inputs/Format'
+import { IdScheme } from '../../components/Inputs/idScheme'
 import { MoreOptions } from '../../components/MoreOptions'
-import {
-    ORG_UNIT_ID_SCHEME_DEFAULT_VALUE,
-    ORG_UNIT_ID_SCHEME_KEY,
-    OrgUnitIdScheme,
-} from '../../components/Inputs/OrgUnitIdScheme'
-import {
-    PREHEAT_CACHE_DEFAULT_VALUE,
-    PREHEAT_CACHE_KEY,
-    PreheatCache,
-} from '../../components/Inputs/PreheatCache'
-import {
-    SKIP_EXISTING_CHECK_DEFAULT_VALUE,
-    SKIP_EXISTING_CHECK_KEY,
-    SkipExistingCheck,
-} from '../../components/Inputs/SkipExistingCheck'
-import {
-    STRATEGY_DEFAULT_VALUE,
-    STRATEGY_KEY,
-    Strategy,
-} from '../../components/Inputs/Strategy'
+import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
+import { PreheatCache } from '../../components/Inputs/PreheatCache'
+import { Progress } from '../../components/Loading/Progress'
+import { SkipExistingCheck } from '../../components/Inputs/SkipExistingCheck'
+import { Strategy } from '../../components/Inputs/Strategy'
+import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
-const supportedFormats = [
-    OPTION_JSON,
-    OPTION_XML,
-    OPTION_ADX,
-    OPTION_PDF,
-    OPTION_CSV,
-]
-
-const defaultValues = {
-    [FORMAT_KEY]: FORMAT_DEFAULT_VALUE,
-    [DRY_RUN_KEY]: DRY_RUN_DEFAULT_VALUE,
-    [STRATEGY_KEY]: STRATEGY_DEFAULT_VALUE,
-    [PREHEAT_CACHE_KEY]: PREHEAT_CACHE_DEFAULT_VALUE,
-    [DATA_ELEMENT_ID_SCHEME_KEY]: DATA_ELEMENT_ID_SCHEME_DEFAULT_VALUE,
-    [ORG_UNIT_ID_SCHEME_KEY]: ORG_UNIT_ID_SCHEME_DEFAULT_VALUE,
-    [ID_SCHEME_KEY]: ID_SCHEME_DEFAULT_VALUE,
-    [SKIP_EXISTING_CHECK_KEY]: SKIP_EXISTING_CHECK_DEFAULT_VALUE,
-}
-
 export const DataImport = () => {
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
+    const onSubmitHandler = onSubmit(setLoading, setError)
+
+    if (loading) return <Progress />
+    if (error) return <Error message={error} onClear={() => setError('')} />
+
     return (
-        <Form onSubmit={console.log} initialValues={defaultValues}>
+        <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
             {({ handleSubmit }) => (
                 <div className={stylesForm.wrapper}>
                     <form
                         className={cx(stylesFormBase.form, stylesForm.form)}
                         onSubmit={handleSubmit}
+                        style={{ width: 800 }}
                     >
                         <FormHead
                             icon={DataImport.menuIcon}

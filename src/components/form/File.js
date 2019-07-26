@@ -1,6 +1,6 @@
 import { useField } from 'react-final-form'
 import { Help } from '@dhis2/ui-core'
-import React, { Fragment, useRef, useCallback } from 'react'
+import React, { useRef, useCallback } from 'react'
 import propTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import styles from './File.module.css'
