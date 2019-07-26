@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import { RadioGroup } from '../form/RadioGroup'
+import { RadioGroup } from '../FinalFormComponents/RadioGroup'
 
 export const OPTION_JSON = { value: 'json', label: i18n.t('json') }
 export const OPTION_XML = { value: 'xml', label: i18n.t('xml') }

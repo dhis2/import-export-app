@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import { RadioGroup } from '../form/RadioGroup'
+import { RadioGroup } from '../FinalFormComponents/RadioGroup'
 
 export const OPTION_SKIP = { value: 'true', label: i18n.t('Skip check (fast)') }
 export const OPTION_CHECK = {
