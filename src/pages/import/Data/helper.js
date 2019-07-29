@@ -59,8 +59,6 @@ export const defaultValues = {
 }
 
 export const onSubmit = (setLoading, setError) => (values, ...rest) => {
-    console.log('values', values)
-    console.log('rest', rest)
     try {
         const { upload, format, firstRowIsHeader } = values
         const append = [`format=${format}`, 'async=true']
@@ -92,7 +90,7 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
             upload,
             'DATAVALUE_IMPORT',
             () => setLoading(false),
-            error => console.log('ERROR', error) || setError(error),
+            error => setError(error),
             format
         )
 
