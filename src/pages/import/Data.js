@@ -1,9 +1,8 @@
 import { Button } from '@dhis2/ui-core'
+import { Form } from 'react-final-form'
 import React, { useState } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
-
-import { Form } from 'react-final-form'
 
 import { DataElementIdScheme } from '../../components/Inputs/DataElementIdScheme'
 import { DataIcon } from '../../components/Icon'
@@ -13,25 +12,34 @@ import { File } from '../../components/FinalFormComponents/File'
 import { FormContent } from '../../components/FormSections/FormContent'
 import { FormFoot } from '../../components/FormSections/FormFoot'
 import { FormHead } from '../../components/FormSections/FormHead'
-import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import { Format } from '../../components/Inputs/Format'
 import { IdScheme } from '../../components/Inputs/idScheme'
+import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
 import { PreheatCache } from '../../components/Inputs/PreheatCache'
 import { Progress } from '../../components/Loading/Progress'
 import { SkipExistingCheck } from '../../components/Inputs/SkipExistingCheck'
 import { Strategy } from '../../components/Inputs/Strategy'
 import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
+import { useErrorHandler } from '../../helpers/useErrorHandler'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
 export const DataImport = () => {
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
+    const [error, setError] = useErrorHandler()
     const onSubmitHandler = onSubmit(setLoading, setError)
 
     if (loading) return <Progress />
-    if (error) return <Error message={error} onClear={() => setError('')} />
+    if (error)
+        return (
+            <Error
+                message={error}
+                onClear={() =>
+                    setError({ target: { response: { message: '' } } })
+                }
+            />
+        )
 
     return (
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>

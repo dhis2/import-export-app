@@ -90,7 +90,7 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
             upload,
             'DATAVALUE_IMPORT',
             () => setLoading(false),
-            error => setError(error),
+            setError,
             format
         )
 
@@ -98,6 +98,14 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
     } catch (e) {
         console.error(e)
 
-        setError(i18n.t('An unknown error occurred. Please try again later'))
+        setError({
+            target: {
+                response: {
+                    message: i18n.t(
+                        'An unknown error occurred. Please try again later'
+                    ),
+                },
+            },
+        })
     }
 }
