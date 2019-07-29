@@ -1,5 +1,6 @@
 import React, { Fragment, useCallback, useState } from 'react'
 import i18n from '@dhis2/d2-i18n'
+import cx from 'classnames'
 
 import { MinusIcon, PlusIcon } from '../Form/MoreOptions'
 import styles from './MoreOptions.module.css'
@@ -24,7 +25,9 @@ export const MoreOptions = ({ children }) => {
                 <span className={styles.label}>{i18n.t('more options')}</span>
             </button>
 
-            {show && children}
+            <div className={cx(styles.content, { [styles.show]: show })}>
+                {children}
+            </div>
         </Fragment>
     )
 }
