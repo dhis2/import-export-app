@@ -1,15 +1,19 @@
 import { Button } from '@dhis2/ui-core'
 import { Form } from 'react-final-form'
 import React, { useState } from 'react'
-import i18n from '@dhis2/d2-i18n'
 import cx from 'classnames'
+import i18n from '@dhis2/d2-i18n'
 
 import { Async } from '../../components/Inputs/Async'
 import { AtomicMode } from '../../components/Inputs/AtomicMode'
 import { Error } from '../../components/Error'
+import {
+    FIRST_ROW_IS_HEADER_KEY,
+    FirstRowIsHeader,
+    OPTION_NO,
+} from '../../components/Inputs/FirstRowIsHeader'
 import { FORMAT_KEY, Format, OPTION_CSV } from '../../components/Inputs/Format'
 import { File } from '../../components/FinalFormComponents/File'
-import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
 import { FlushMode } from '../../components/Inputs/FlushMode'
 import { FormContent } from '../../components/FormSections/FormContent'
 import { FormFoot } from '../../components/FormSections/FormFoot'
@@ -26,7 +30,7 @@ import { ReportMode } from '../../components/Inputs/ReportMode'
 import { SkipSharing } from '../../components/Inputs/SkipSharing'
 import { SkipValidation } from '../../components/Inputs/SkipValidation'
 import { Strategy } from '../../components/Inputs/Strategy'
-import { supportedFormats, onSubmit } from './MetaData/helper'
+import { supportedFormats, defaultValues, onSubmit } from './MetaData/helper'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
@@ -40,7 +44,7 @@ export const MetaDataImport = () => {
     if (error) return <Error message={error} onClear={() => setError('')} />
 
     return (
-        <Form onSubmit={onSubmitHandler}>
+        <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
             {({ handleSubmit, values }) => (
                 <div className={stylesForm.wrapper}>
                     <form
@@ -58,9 +62,9 @@ export const MetaDataImport = () => {
                             <Format options={supportedFormats} />
                             <ImportMode />
 
-                            {values[FORMAT_KEY] === OPTION_CSV.value && (
-                                <FirstRowIsHeader />
-                            )}
+                            <FirstRowIsHeader
+                                show={values[FORMAT_KEY] === OPTION_CSV.value}
+                            />
 
                             <Identifier />
                             <ReportMode />
