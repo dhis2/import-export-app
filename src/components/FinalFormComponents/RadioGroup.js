@@ -1,19 +1,15 @@
 import { useField } from 'react-final-form'
 import { Radio } from '@dhis2/ui-core'
-import React, { useEffect } from 'react'
+import React, { PureComponent, Fragment, useEffect } from 'react'
 import propTypes from 'prop-types'
 import styles from './RadioGroup.module.css'
 
-const Resetter = ({ name, value }) => {
-    const { input } = useField(name, { type: 'radio', value: null })
-
-    useEffect(() => () => input.onChange(value), [input])
-
-    return <span />
-}
-
-const RadioComponent = ({ name, label, value }) => {
-    const { input, meta } = useField(name, { type: 'radio', value })
+const RadioComponent = ({ name, label, value, defaultValue }) => {
+    const { input, meta } = useField(name, {
+        type: 'radio',
+        value,
+        defaultValue: defaultValue,
+    })
 
     return (
         <Radio
@@ -27,7 +23,13 @@ const RadioComponent = ({ name, label, value }) => {
     )
 }
 
-export const RadioGroup = ({ label, name, options, resetOnUnmount }) => {
+export const RadioGroup = ({
+    label,
+    name,
+    options,
+    resetOnUnmount,
+    defaultValue,
+}) => {
     return (
         <div className={styles.container}>
             <span className={styles.label}>{label}</span>
@@ -39,11 +41,10 @@ export const RadioGroup = ({ label, name, options, resetOnUnmount }) => {
                         key={option.value}
                         value={option.value}
                         label={option.label}
+                        defaultValue={defaultValue}
                     />
                 ))}
             </div>
-
-            {resetOnUnmount && <Resetter name={name} />}
         </div>
     )
 }
@@ -56,7 +57,7 @@ RadioGroup.propTypes = {
             value: propTypes.string.isRequired,
             label: propTypes.string.isRequired,
         })
-    ),
+    ).isRequired,
 
-    resetOnUnmount: propTypes.bool,
+    defaultValue: propTypes.string,
 }
