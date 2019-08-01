@@ -1,20 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
+import { MuiThemeProvider } from 'material-ui'
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import { MoreOptions } from '../MoreOptions'
 
-jest.mock('react', () => ({
-    useState: initial => [initia, jest.fn()],
-}))
-
 describe('Input component - MoreOptions', () => {
+    const muiTheme = getMuiTheme(lightBaseTheme)
+
     it('should render correctly & hide content', () => {
         const file = renderer
             .create(
-                <MoreOptions>
-                    <span>Foo</span>
-                    <span>Bar</span>
-                    <span>Baz</span>
-                </MoreOptions>
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <MoreOptions>
+                        <span>Foo</span>
+                        <span>Bar</span>
+                        <span>Baz</span>
+                    </MoreOptions>
+                </MuiThemeProvider>
             )
             .toJSON()
 
@@ -22,15 +25,15 @@ describe('Input component - MoreOptions', () => {
     })
 
     it('should render correctly & show content', () => {
-        useState.mockImplementationOnce(() => [true, jest.fn()])
-
         const file = renderer
             .create(
-                <MoreOptions>
-                    <span>Foo</span>
-                    <span>Bar</span>
-                    <span>Baz</span>
-                </MoreOptions>
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <MoreOptions openInitially>
+                        <span>Foo</span>
+                        <span>Bar</span>
+                        <span>Baz</span>
+                    </MoreOptions>
+                </MuiThemeProvider>
             )
             .toJSON()
 

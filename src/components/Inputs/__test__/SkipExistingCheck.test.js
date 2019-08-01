@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { Strategy } from '../Strategy'
+import { SkipExistingCheck } from '../SkipExistingCheck'
 
 jest.mock('react-final-form', () => ({
     useField: jest.fn(() => ({
@@ -16,9 +16,9 @@ jest.mock('react-final-form', () => ({
     })),
 }))
 
-describe('Input component - Strategy', () => {
+describe('Input component - SkipExistingCheck', () => {
     it('should render correctly', () => {
-        const file = renderer.create(<Strategy />).toJSON()
+        const file = renderer.create(<SkipExistingCheck />).toJSON()
 
         expect(file).toMatchSnapshot()
     })
