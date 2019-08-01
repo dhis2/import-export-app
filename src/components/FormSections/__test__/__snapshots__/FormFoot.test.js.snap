@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - FormHead should render correctly 1`] = `
+<div
+  className="container"
+>
+  <span
+    className="icon"
+  >
+    <span />
+  </span>
+  <span
+    className="label"
+  >
+    Form head
+  </span>
+</div>
+`;

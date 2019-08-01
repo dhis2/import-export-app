@@ -5,8 +5,8 @@ import cx from 'classnames'
 import { MinusIcon, PlusIcon } from '../Form/MoreOptions'
 import styles from './MoreOptions.module.css'
 
-export const MoreOptions = ({ children }) => {
-    const [show, setShow] = useState(false)
+export const MoreOptions = ({ children, openInitially }) => {
+    const [show, setShow] = useState(openInitially)
     const toggleShow = useCallback(
         e => {
             e.preventDefault()
@@ -30,4 +30,8 @@ export const MoreOptions = ({ children }) => {
             </div>
         </Fragment>
     )
+}
+
+MoreOptions.defaultProps = {
+    openInitially: false,
 }
