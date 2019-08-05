@@ -12,7 +12,7 @@ import {
     TYPE_MORE_OPTIONS,
     TYPE_RADIO,
     TYPE_SCHEMAS,
-} from '../components/Form'
+} from '../components/Form/constants'
 
 // eslint-disable-next-line max-params
 function getField(name, label, type, context = CTX_DEFAULT, required = false) {
