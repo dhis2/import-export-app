@@ -1,5 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import toJson from 'enzyme-to-json'
+import { shallow } from 'enzyme'
 import { Strategy } from '../Strategy'
 
 jest.mock('react-final-form', () => ({
@@ -18,8 +19,8 @@ jest.mock('react-final-form', () => ({
 
 describe('Input component - Strategy', () => {
     it('should render correctly', () => {
-        const file = renderer.create(<Strategy />).toJSON()
+        const file = shallow(<Strategy />)
 
-        expect(file).toMatchSnapshot()
+        expect(toJson(file)).toMatchSnapshot()
     })
 })

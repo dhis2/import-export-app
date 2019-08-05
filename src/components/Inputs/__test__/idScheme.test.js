@@ -1,5 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import toJson from 'enzyme-to-json'
+import { shallow } from 'enzyme'
 import { IdScheme } from '../idScheme'
 
 jest.mock('react-final-form', () => ({
@@ -18,8 +19,8 @@ jest.mock('react-final-form', () => ({
 
 describe('Input component - IdScheme', () => {
     it('should render correctly', () => {
-        const file = renderer.create(<IdScheme />).toJSON()
+        const file = shallow(<IdScheme />)
 
-        expect(file).toMatchSnapshot()
+        expect(toJson(file)).toMatchSnapshot()
     })
 })

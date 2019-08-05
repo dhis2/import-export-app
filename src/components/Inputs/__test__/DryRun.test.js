@@ -1,5 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import toJson from 'enzyme-to-json'
+import { shallow } from 'enzyme'
 import { DryRun } from '../DryRun'
 
 jest.mock('react-final-form', () => ({
@@ -18,8 +19,8 @@ jest.mock('react-final-form', () => ({
 
 describe('Input component - DryRun', () => {
     it('should render correctly', () => {
-        const file = renderer.create(<DryRun />).toJSON()
+        const file = shallow(<DryRun />)
 
-        expect(file).toMatchSnapshot()
+        expect(toJson(file)).toMatchSnapshot()
     })
 })

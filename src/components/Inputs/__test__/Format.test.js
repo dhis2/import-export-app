@@ -1,5 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import toJson from 'enzyme-to-json'
+import { shallow } from 'enzyme'
 import { Format, OPTION_CSV, OPTION_JSON, OPTION_XML } from '../Format'
 
 jest.mock('react-final-form', () => ({
@@ -18,10 +19,9 @@ jest.mock('react-final-form', () => ({
 
 describe('Input component - Format', () => {
     it('should render correctly', () => {
-        const file = renderer
-            .create(<Format options={[OPTION_JSON, OPTION_XML, OPTION_CSV]} />)
-            .toJSON()
-
-        expect(file).toMatchSnapshot()
+        const file = shallow(
+            <Format options={[OPTION_JSON, OPTION_XML, OPTION_CSV]} />
+        )
+        expect(toJson(file)).toMatchSnapshot()
     })
 })

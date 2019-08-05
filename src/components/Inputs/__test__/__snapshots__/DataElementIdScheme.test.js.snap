@@ -1,131 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - DataElementIdScheme should render correctly 1`] = `
-<div
-  className="container"
->
-  <span
-    className="label"
-  >
-    Data element id scheme
-  </span>
-  <div
-    className="inputs"
-  >
-    <label
-      className="jsx-521922636 radio"
-    >
-      <div
-        className="jsx-1102028186"
-      >
-        <input
-          checked={false}
-          className="jsx-1102028186"
-          name="Name"
-          onBlur={[Function]}
-          onChange={[MockFunction]}
-          onFocus={[Function]}
-          type="radio"
-          value=""
-        />
-      </div>
-      <div
-        className="jsx-521922636 icon"
-      >
-        <svg
-          className="jsx-63432708"
-          height="48"
-          viewBox="0 0 48 48"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
-          />
-        </svg>
-      </div>
-      <span
-        className="jsx-521922636 "
-      >
-        Uid
-      </span>
-    </label>
-    <label
-      className="jsx-521922636 radio"
-    >
-      <div
-        className="jsx-1102028186"
-      >
-        <input
-          checked={false}
-          className="jsx-1102028186"
-          name="Name"
-          onBlur={[Function]}
-          onChange={[MockFunction]}
-          onFocus={[Function]}
-          type="radio"
-          value=""
-        />
-      </div>
-      <div
-        className="jsx-521922636 icon"
-      >
-        <svg
-          className="jsx-63432708"
-          height="48"
-          viewBox="0 0 48 48"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
-          />
-        </svg>
-      </div>
-      <span
-        className="jsx-521922636 "
-      >
-        Code
-      </span>
-    </label>
-    <label
-      className="jsx-521922636 radio"
-    >
-      <div
-        className="jsx-1102028186"
-      >
-        <input
-          checked={false}
-          className="jsx-1102028186"
-          name="Name"
-          onBlur={[Function]}
-          onChange={[MockFunction]}
-          onFocus={[Function]}
-          type="radio"
-          value=""
-        />
-      </div>
-      <div
-        className="jsx-521922636 icon"
-      >
-        <svg
-          className="jsx-63432708"
-          height="48"
-          viewBox="0 0 48 48"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
-          />
-        </svg>
-      </div>
-      <span
-        className="jsx-521922636 "
-      >
-        Name
-      </span>
-    </label>
-  </div>
-</div>
+<RadioGroup
+  label="Data element id scheme"
+  name="dataElementIdScheme"
+  options={
+    Array [
+      Object {
+        "label": "Uid",
+        "value": "UID",
+      },
+      Object {
+        "label": "Code",
+        "value": "CODE",
+      },
+      Object {
+        "label": "Name",
+        "value": "NAME",
+      },
+    ]
+  }
+/>
 `;
