@@ -4,10 +4,12 @@ export const useErrorHandler = () => {
     const [error, setError] = useState('')
     const errorHandler = useMemo(
         () => event => {
-            console.log('event', event)
             try {
                 setError(event.target.response.message)
-            } catch (e) {}
+            } catch (e) {
+                // copied mechanism from
+                // src/components/Formbase/index.js::assertOnError
+            }
         },
         [setError]
     )
