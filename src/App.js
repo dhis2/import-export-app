@@ -1,13 +1,16 @@
 import 'typeface-roboto'
-import React from 'react'
-import PropTypes from 'prop-types'
+
 import { CssReset } from '@dhis2/ui-core'
-import { connect } from 'react-redux'
 import { Route, withRouter } from 'react-router-dom'
-import moment from 'moment'
+import { connect } from 'react-redux'
 import { getInstance, config } from 'd2/lib/d2'
+import PropTypes from 'prop-types'
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import moment from 'moment'
+
 import { Loading } from './components'
+import { isProduction } from './helpers/env'
 import { setUser, clearUser } from './reducers'
 import Template from './pages/Template'
 import * as pages from './pages'
@@ -64,8 +67,8 @@ class App extends React.Component {
                 loaded: true,
             })
         } catch (e) {
-            console.log('/api/me error')
-            console.log(e)
+            isProduction() && console.log('/api/me error')
+            isProduction() && console.log(e)
             this.props.clearUser()
             this.setState({
                 loaded: true,

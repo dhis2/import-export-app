@@ -1,9 +1,11 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { api, eventEmitter } from '../../services'
-import { FormBase } from '../../components/FormBase'
+
 import { CTX_DEFAULT, CTX_CSV_OPTION } from '../../components/Form'
+import { FormBase } from '../../components/FormBase'
 import { MetadataImportIcon } from '../../components/Icon'
+import { api, eventEmitter } from '../../services'
+import { fetchLog } from './helpers'
 import {
     getFormFields,
     getFormFieldMoreOptions,
@@ -11,7 +13,7 @@ import {
     getUploadXHR,
     getParamsFromFormState,
 } from '../../helpers'
-import { fetchLog } from './helpers'
+import { isProduction } from '../../helpers/env'
 
 export class MetaDataImport extends FormBase {
     static path = '/import/metadata'
@@ -97,8 +99,8 @@ export class MetaDataImport extends FormBase {
                 },
             })
         } catch (e) {
-            console.log('fetch csvImportClasses failed')
-            console.log(e)
+            isProduction() && console.log('fetch csvImportClasses failed')
+            isProduction() && console.log(e)
         }
     }
 
@@ -181,7 +183,7 @@ export class MetaDataImport extends FormBase {
             )
             xhr.send(upload)
         } catch (e) {
-            console.log('MetaData Import error', e, '\n')
+            isProduction() && console.log('MetaData Import error', e, '\n')
             this.clearProcessing()
         } finally {
         }
