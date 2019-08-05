@@ -10,8 +10,8 @@ import { DryRun } from '../../components/Inputs/DryRun'
 import { Error } from '../../components/Error'
 import { File } from '../../components/FinalFormComponents/File'
 import { FormContent } from '../../components/FormSections/FormContent'
-import { FormFoot } from '../../components/FormSections/FormFoot'
-import { FormHead } from '../../components/FormSections/FormHead'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
 import { Format } from '../../components/Inputs/Format'
 import { IdScheme } from '../../components/Inputs/idScheme'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
@@ -50,7 +50,7 @@ export const DataImport = () => {
                         onSubmit={handleSubmit}
                         style={{ width: 800 }}
                     >
-                        <FormHead
+                        <FormHeader
                             icon={DataImport.menuIcon}
                             label={DataImport.title}
                         />
@@ -70,11 +70,11 @@ export const DataImport = () => {
                             </MoreOptions>
                         </FormContent>
 
-                        <FormFoot>
+                        <FormFooter>
                             <Button primary type="submit">
                                 {i18n.t('Import')}
                             </Button>
-                        </FormFoot>
+                        </FormFooter>
                     </form>
                 </div>
             )}
