@@ -1,4 +1,5 @@
 import { api, eventEmitter } from '../../services'
+import { isProduction } from '../../helpers/env'
 
 const CATEGORY_2_LABEL = {
     METADATA_IMPORT: 'Metadata import',
@@ -117,8 +118,8 @@ export async function fetchLog(jobId, type) {
             }
         }
     } catch (e) {
-        console.log(`Error fetching ${type}`)
-        console.log(e)
+        isProduction() && console.log(`Error fetching ${type}`)
+        isProduction() && console.log(e)
     }
 }
 
@@ -156,8 +157,8 @@ export async function fetchTaskSummary(jobId, type) {
 
         eventEmitter.emit('summary.loaded')
     } catch (e) {
-        console.log(`Task Summaries: Error fetching ${type}`)
-        console.log(e)
+        isProduction() && console.log(`Task Summaries: Error fetching ${type}`)
+        isProduction() && console.log(e)
     }
 }
 

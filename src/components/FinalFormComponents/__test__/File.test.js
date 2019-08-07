@@ -1,25 +1,14 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { File } from '../File'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
-jest.mock('react-final-form', () => ({
-    useField: jest.fn(() => ({
-        input: {
-            name: 'Name',
-            value: '',
-            onChange: jest.fn(),
-        },
-        meta: {
-            touched: false,
-            error: '',
-        },
-    })),
-}))
+jest.mock('react-final-form')
 
 describe('Form component - File', () => {
     it('should render correctly', () => {
-        const file = renderer.create(<File name="upload" />).toJSON()
+        const file = shallow(<File name="upload" />)
 
-        expect(file).toMatchSnapshot()
+        expect(toJson(file)).toMatchSnapshot()
     })
 })

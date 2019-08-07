@@ -13,17 +13,7 @@ exports[`Form component - File should render correctly 1`] = `
     className="button"
     onClick={[Function]}
   >
-    <svg
-      className="svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"
-      />
-    </svg>
+    <FileUploadIcon />
     <span
       className="label"
     >

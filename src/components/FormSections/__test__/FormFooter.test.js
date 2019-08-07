@@ -1,14 +1,11 @@
 import React from 'react'
 import toJson from 'enzyme-to-json'
 import { shallow } from 'enzyme'
-import { IdScheme } from '../idScheme'
+import { FormFooter } from '../FormFooter'
 
-jest.mock('react-final-form')
-
-describe('Input component - IdScheme', () => {
+describe('Input component - FormFooter', () => {
     it('should render correctly', () => {
-        const file = shallow(<IdScheme />)
-
+        const file = shallow(<FormFooter icon={<span />} label="Form head" />)
         expect(toJson(file)).toMatchSnapshot()
     })
 })

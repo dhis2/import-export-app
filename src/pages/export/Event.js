@@ -1,16 +1,18 @@
+import { getInstance } from 'd2/lib/d2'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { getInstance } from 'd2/lib/d2'
 import moment from 'moment/moment'
+
+import { EventIcon } from '../../components/Icon'
 import { FormBase } from '../../components/FormBase'
 import { api } from '../../services'
-import { EventIcon } from '../../components/Icon'
 import {
     getFormFields,
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
 } from '../../helpers'
+import { isProduction } from '../../helpers/env'
 
 export class EventExport extends FormBase {
     static path = '/export/event'
@@ -81,8 +83,8 @@ export class EventExport extends FormBase {
                 () => this.fetchProgramStages(selected)
             )
         } catch (e) {
-            console.log('fetch Programs failed')
-            console.log(e)
+            isProduction() && console.log('fetch Programs failed')
+            isProduction() && console.log(e)
         }
     }
 
@@ -104,8 +106,8 @@ export class EventExport extends FormBase {
                 },
             })
         } catch (e) {
-            console.log('fetch Programs failed')
-            console.log(e)
+            isProduction() && console.log('fetch Programs failed')
+            isProduction() && console.log(e)
         }
     }
 
@@ -130,8 +132,8 @@ export class EventExport extends FormBase {
                 programStages: { values, selected },
             })
         } catch (e) {
-            console.log('fetch ProgramStages failed', id)
-            console.log(e)
+            isProduction() && console.log('fetch ProgramStages failed', id)
+            isProduction() && console.log(e)
         }
     }
 

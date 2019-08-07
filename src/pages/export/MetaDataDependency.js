@@ -1,9 +1,11 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+
 import { FormBase } from '../../components/FormBase'
+import { MetadataDependencyExportIcon } from '../../components/Icon'
 import { api } from '../../services'
 import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
-import { MetadataDependencyExportIcon } from '../../components/Icon'
+import { isProduction } from '../../helpers/env'
 
 export class MetaDataDependencyExport extends FormBase {
     static path = '/export/metadata-dependency'
@@ -59,8 +61,8 @@ export class MetaDataDependencyExport extends FormBase {
                 },
             })
         } catch (e) {
-            console.log('fetch Schemas failed')
-            console.log(e)
+            isProduction() && console.log('fetch Schemas failed')
+            isProduction() && console.log(e)
         }
     }
 
@@ -83,7 +85,8 @@ export class MetaDataDependencyExport extends FormBase {
             })
             window.location = url
         } catch (e) {
-            console.log('MetaDataDependency Export error', e, '\n')
+            isProduction() &&
+                console.log('MetaDataDependency Export error', e, '\n')
         }
     }
 }

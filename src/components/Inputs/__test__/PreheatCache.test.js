@@ -1,25 +1,14 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import toJson from 'enzyme-to-json'
+import { shallow } from 'enzyme'
 import { PreheatCache } from '../PreheatCache'
 
-jest.mock('react-final-form', () => ({
-    useField: jest.fn(() => ({
-        input: {
-            name: 'Name',
-            value: '',
-            onChange: jest.fn(),
-        },
-        meta: {
-            touched: false,
-            error: '',
-        },
-    })),
-}))
+jest.mock('react-final-form')
 
 describe('Input component - PreheatCache', () => {
     it('should render correctly', () => {
-        const file = renderer.create(<PreheatCache />).toJSON()
+        const file = shallow(<PreheatCache />)
 
-        expect(file).toMatchSnapshot()
+        expect(toJson(file)).toMatchSnapshot()
     })
 })
