@@ -61,8 +61,8 @@ export class MetaDataDependencyExport extends FormBase {
                 },
             })
         } catch (e) {
-            isProduction() && console.log('fetch Schemas failed')
-            isProduction() && console.log(e)
+            !isProduction() && console.log('fetch Schemas failed')
+            !isProduction() && console.log(e)
         }
     }
 
@@ -85,7 +85,7 @@ export class MetaDataDependencyExport extends FormBase {
             })
             window.location = url
         } catch (e) {
-            isProduction() &&
+            !isProduction() &&
                 console.log('MetaDataDependency Export error', e, '\n')
         }
     }

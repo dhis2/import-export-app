@@ -99,8 +99,8 @@ export class MetaDataImport extends FormBase {
                 },
             })
         } catch (e) {
-            isProduction() && console.log('fetch csvImportClasses failed')
-            isProduction() && console.log(e)
+            !isProduction() && console.log('fetch csvImportClasses failed')
+            !isProduction() && console.log(e)
         }
     }
 
@@ -183,7 +183,7 @@ export class MetaDataImport extends FormBase {
             )
             xhr.send(upload)
         } catch (e) {
-            isProduction() && console.log('MetaData Import error', e, '\n')
+            !isProduction() && console.log('MetaData Import error', e, '\n')
             this.clearProcessing()
         } finally {
         }

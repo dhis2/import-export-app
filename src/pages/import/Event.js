@@ -75,7 +75,7 @@ export class EventImport extends FormBase {
             )
             xhr.send(upload)
         } catch (e) {
-            isProduction() && console.log('Event Import error', e, '\n')
+            !isProduction() && console.log('Event Import error', e, '\n')
         }
     }
 }
