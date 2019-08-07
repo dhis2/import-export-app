@@ -6,7 +6,7 @@ exports[`Form component - File should render correctly 1`] = `
 >
   <input
     className="input"
-    name="Name"
+    name="upload"
     onChange={[MockFunction]}
   />
   <button
