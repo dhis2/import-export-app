@@ -1,7 +1,6 @@
 import { FormSpy } from 'react-final-form'
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
-import propTypes from 'prop-types'
 
 import { FORMAT_KEY, OPTION_CSV } from './Format'
 import { RadioGroup } from '../FinalFormComponents/RadioGroup'

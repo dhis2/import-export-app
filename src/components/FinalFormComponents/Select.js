@@ -11,7 +11,7 @@ export const Select = ({
     resetOnUnmount,
     defaultValue,
 }) => {
-    const { input, meta } = useField(name, {
+    const { input } = useField(name, {
         type: 'select',
         defaultValue: defaultValue,
     })

@@ -1,17 +1,14 @@
 import { Button } from '@dhis2/ui-core'
 import { Form } from 'react-final-form'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
 import { Async } from '../../components/Inputs/Async'
 import { AtomicMode } from '../../components/Inputs/AtomicMode'
+import { ClassKey } from '../../components/Inputs/ClassKey'
 import { Error } from '../../components/Error'
-import {
-    FIRST_ROW_IS_HEADER_KEY,
-    FirstRowIsHeader,
-    OPTION_NO,
-} from '../../components/Inputs/FirstRowIsHeader'
+import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
 import { FORMAT_KEY, Format, OPTION_CSV } from '../../components/Inputs/Format'
 import { File } from '../../components/FinalFormComponents/File'
 import { FlushMode } from '../../components/Inputs/FlushMode'
@@ -24,21 +21,18 @@ import { InclusionStrategy } from '../../components/Inputs/InclusionStrategy'
 import { MergeMode } from '../../components/Inputs/MergeMode'
 import { MetadataImportIcon } from '../../components/Icon'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
-import { PreheatCache } from '../../components/Inputs/PreheatCache'
+import { PreheatMode } from '../../components/Inputs/PreheatMode'
 import { Progress } from '../../components/Loading/Progress'
-import { ReportMode } from '../../components/Inputs/ReportMode'
+import { ImportReportMode } from '../../components/Inputs/ImportReportMode'
 import { SkipSharing } from '../../components/Inputs/SkipSharing'
 import { SkipValidation } from '../../components/Inputs/SkipValidation'
-import { Strategy } from '../../components/Inputs/Strategy'
+import { ImportStrategy } from '../../components/Inputs/ImportStrategy'
 import {
     defaultValues,
-    fetchClassKeyOptions,
     onSubmit,
     supportedFormats,
     useLoadClassKeyOptions,
 } from './MetaData/helper'
-import { eventEmitter } from '../../services'
-import { fetchLog } from './helpers'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
@@ -47,7 +41,7 @@ export const MetaDataImport = () => {
     const [error, setError] = useState('')
     const onSubmitHandler = onSubmit(setLoading, setError)
     const {
-        error: classKeyError,
+        //error: classKeyError,
         options: classKeyOptions,
     } = useLoadClassKeyOptions()
 
@@ -77,10 +71,23 @@ export const MetaDataImport = () => {
                                 show={values[FORMAT_KEY] === OPTION_CSV.value}
                             />
 
+                            <ClassKey
+                                show={
+                                    values[FORMAT_KEY] === OPTION_CSV.value &&
+                                    !!classKeyOptions.length
+                                }
+                                options={classKeyOptions}
+                                defaultValue={
+                                    classKeyOptions.length
+                                        ? classKeyOptions[0].value
+                                        : ''
+                                }
+                            />
+
                             <Identifier />
-                            <ReportMode />
-                            <PreheatCache />
-                            <Strategy />
+                            <ImportReportMode />
+                            <PreheatMode />
+                            <ImportStrategy />
                             <AtomicMode />
                             <MergeMode />
 

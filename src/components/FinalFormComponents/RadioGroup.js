@@ -1,6 +1,6 @@
 import { useField } from 'react-final-form'
 import { Radio } from '@dhis2/ui-core'
-import React, { PureComponent, Fragment, useEffect } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import styles from './RadioGroup.module.css'
 

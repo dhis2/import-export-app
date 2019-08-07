@@ -1,8 +1,6 @@
-import i18n from '@dhis2/d2-i18n'
 import { useEffect, useState } from 'react'
+import i18n from '@dhis2/d2-i18n'
 
-import { fetchLog } from '../helpers'
-import { api, eventEmitter } from '../../../services'
 import {
     ASYNC_DEFAULT_VALUE,
     ASYNC_KEY,
@@ -11,10 +9,6 @@ import {
     ATOMIC_MODE_DEFAULT_VALUE,
     ATOMIC_MODE_KEY,
 } from '../../../components/Inputs/AtomicMode'
-import {
-    FIRST_ROW_IS_HEADER_DEFAULT_VALUE,
-    FIRST_ROW_IS_HEADER_KEY,
-} from '../../../components/Inputs/FirstRowIsHeader'
 import {
     FLUSH_MODE_DEFAULT_VALUE,
     FLUSH_MODE_KEY,
@@ -35,6 +29,14 @@ import {
     IMPORT_MODE_KEY,
 } from '../../../components/Inputs/ImportMode'
 import {
+    IMPORT_REPORT_MODE_DEFAULT_VALUE,
+    IMPORT_REPORT_MODE_KEY,
+} from '../../../components/Inputs/ImportReportMode'
+import {
+    IMPORT_STRATEGY_DEFAULT_VALUE,
+    IMPORT_STRATEGY_KEY,
+} from '../../../components/Inputs/ImportStrategy'
+import {
     INCLUSION_STRATEGY_DEFAULT_VALUE,
     INCLUSION_STRATEGY_KEY,
 } from '../../../components/Inputs/InclusionStrategy'
@@ -43,13 +45,9 @@ import {
     MERGE_MODE_KEY,
 } from '../../../components/Inputs/MergeMode'
 import {
-    PREHEAT_CACHE_DEFAULT_VALUE,
-    PREHEAT_CACHE_KEY,
-} from '../../../components/Inputs/PreheatCache'
-import {
-    REPORT_MODE_DEFAULT_VALUE,
-    REPORT_MODE_KEY,
-} from '../../../components/Inputs/ReportMode'
+    PREHEAT_MODE_DEFAULT_VALUE,
+    PREHEAT_MODE_KEY,
+} from '../../../components/Inputs/PreheatMode'
 import {
     SKIP_SHARING_DEFAULT_VALUE,
     SKIP_SHARING_KEY,
@@ -58,10 +56,8 @@ import {
     SKIP_VALIDATION_DEFAULT_VALUE,
     SKIP_VALIDATION_KEY,
 } from '../../../components/Inputs/SkipValidation'
-import {
-    STRATEGY_DEFAULT_VALUE,
-    STRATEGY_KEY,
-} from '../../../components/Inputs/Strategy'
+import { api, eventEmitter } from '../../../services'
+import { fetchLog } from '../helpers'
 import { getParamsFromFormState } from '../../../helpers/form'
 import { getUploadXHR } from '../../../helpers/xhr'
 import { isProduction } from '../../../helpers/env'
@@ -72,9 +68,9 @@ export const defaultValues = {
     [FORMAT_KEY]: FORMAT_DEFAULT_VALUE,
     [IMPORT_MODE_KEY]: IMPORT_MODE_DEFAULT_VALUE,
     [IDENTIFIER_KEY]: IDENTIFIER_DEFAULT_VALUE,
-    [REPORT_MODE_KEY]: REPORT_MODE_DEFAULT_VALUE,
-    [PREHEAT_CACHE_KEY]: PREHEAT_CACHE_DEFAULT_VALUE,
-    [STRATEGY_KEY]: STRATEGY_DEFAULT_VALUE,
+    [IMPORT_REPORT_MODE_KEY]: IMPORT_REPORT_MODE_DEFAULT_VALUE,
+    [PREHEAT_MODE_KEY]: PREHEAT_MODE_DEFAULT_VALUE,
+    [IMPORT_STRATEGY_KEY]: IMPORT_STRATEGY_DEFAULT_VALUE,
     [ATOMIC_MODE_KEY]: ATOMIC_MODE_DEFAULT_VALUE,
     [MERGE_MODE_KEY]: MERGE_MODE_DEFAULT_VALUE,
     [FLUSH_MODE_KEY]: FLUSH_MODE_DEFAULT_VALUE,
