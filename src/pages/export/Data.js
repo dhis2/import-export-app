@@ -95,7 +95,7 @@ export class DataExport extends FormBase {
                 },
             })
         } catch (e) {
-            !isProduction() && console.log(e)
+            !isProduction && console.log(e)
         }
     }
 
@@ -175,7 +175,7 @@ export class DataExport extends FormBase {
             }
             xhr.send()
         } catch (e) {
-            !isProduction() && console.log('Data Export error', e, '\n')
+            !isProduction && console.log('Data Export error', e, '\n')
         }
     }
 }

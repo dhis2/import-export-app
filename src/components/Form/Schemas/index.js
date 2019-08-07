@@ -185,8 +185,8 @@ export class DumbSchemas extends React.Component {
                 }
             )
         } catch (e) {
-            !isProduction() && console.log('fetch Schemas failed')
-            !isProduction() && console.log(e)
+            !isProduction && console.log('fetch Schemas failed')
+            !isProduction && console.log(e)
         }
     }
 
