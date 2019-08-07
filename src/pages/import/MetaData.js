@@ -16,8 +16,8 @@ import { FORMAT_KEY, Format, OPTION_CSV } from '../../components/Inputs/Format'
 import { File } from '../../components/FinalFormComponents/File'
 import { FlushMode } from '../../components/Inputs/FlushMode'
 import { FormContent } from '../../components/FormSections/FormContent'
-import { FormFoot } from '../../components/FormSections/FormFoot'
-import { FormHead } from '../../components/FormSections/FormHead'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
 import { Identifier } from '../../components/Inputs/Identifier'
 import { ImportMode } from '../../components/Inputs/ImportMode'
 import { InclusionStrategy } from '../../components/Inputs/InclusionStrategy'
@@ -52,7 +52,7 @@ export const MetaDataImport = () => {
                         onSubmit={handleSubmit}
                         style={{ width: 800 }}
                     >
-                        <FormHead
+                        <FormHeader
                             icon={MetaDataImport.menuIcon}
                             label={MetaDataImport.title}
                         />
@@ -82,11 +82,11 @@ export const MetaDataImport = () => {
                             </MoreOptions>
                         </FormContent>
 
-                        <FormFoot>
+                        <FormFooter>
                             <Button primary type="submit">
                                 {i18n.t('Import')}
                             </Button>
-                        </FormFoot>
+                        </FormFooter>
                     </form>
                 </div>
             )}

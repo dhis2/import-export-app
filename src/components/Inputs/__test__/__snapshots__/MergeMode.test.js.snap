@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - MergeMode should render correctly 1`] = `
+<RadioGroup
+  label="Merge mode"
+  name="mergeMode"
+  options={
+    Array [
+      Object {
+        "label": "Merge",
+        "value": "MERGE",
+      },
+      Object {
+        "label": "Replace",
+        "value": "REPLACE",
+      },
+    ]
+  }
+/>
+`;

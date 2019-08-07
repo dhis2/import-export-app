@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - AtomicMode should render correctly 1`] = `
+<RadioGroup
+  label="Atomic mode"
+  name="atomicMode"
+  options={
+    Array [
+      Object {
+        "label": "All",
+        "value": "ALL",
+      },
+      Object {
+        "label": "None",
+        "value": "NONE",
+      },
+    ]
+  }
+/>
+`;
