@@ -494,7 +494,9 @@ msgstr ""
 #~ msgstr "Периоды"
 
 #~ msgid "Importing..."
-#~ msgstr "импортированиеâd "Done"
+#~ msgstr "Импортированиеâ¦"
+
+#~ msgid "Done"
 #~ msgstr "Сделано"
 
 #~ msgid "Compare"
