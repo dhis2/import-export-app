@@ -96,7 +96,7 @@ export const onSubmit = (setLoading, setError) => values => {
 
         formData.set('upload', upload)
 
-        if (format === '.csv') {
+        if (format === 'csv') {
             append = [
                 ...append,
                 `classKey=${classKey}`,

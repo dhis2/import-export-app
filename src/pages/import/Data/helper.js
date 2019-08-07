@@ -64,7 +64,7 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
         const { upload, format, firstRowIsHeader } = values
         const append = [`format=${format}`, 'async=true']
 
-        if (format === '.csv') {
+        if (format === 'csv') {
             append.push(`firstRowIsHeader=${firstRowIsHeader}`)
         }
 
