@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - OrgUnitIdScheme should render correctly 1`] = `
+<RadioGroup
+  label="Org unit id scheme"
+  name="orgUnitIdScheme"
+  options={
+    Array [
+      Object {
+        "label": "Uid",
+        "value": "UID",
+      },
+      Object {
+        "label": "Code",
+        "value": "CODE",
+      },
+      Object {
+        "label": "Name",
+        "value": "NAME",
+      },
+    ]
+  }
+/>
+`;

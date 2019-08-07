@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - PreheatCache should render correctly 1`] = `
+<RadioGroup
+  label="Preheat cache"
+  name="preheatCache"
+  options={
+    Array [
+      Object {
+        "label": "Yes (faster for large imports)",
+        "value": "true",
+      },
+      Object {
+        "label": "No",
+        "value": "false",
+      },
+    ]
+  }
+/>
+`;

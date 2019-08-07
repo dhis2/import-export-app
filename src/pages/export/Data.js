@@ -1,9 +1,11 @@
+import { getInstance } from 'd2/lib/d2'
+import JSZip from 'jszip'
+import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import PropTypes from 'prop-types'
-import JSZip from 'jszip'
-import { getInstance } from 'd2/lib/d2'
 import moment from 'moment'
+
+import { DataIcon } from '../../components/Icon'
 import { FormBase } from '../../components/FormBase'
 import {
     downloadBlob,
@@ -13,7 +15,7 @@ import {
     getFormValues,
     getParamsFromFormState,
 } from '../../helpers'
-import { DataIcon } from '../../components/Icon'
+import { isProduction } from '../../helpers/env'
 
 export class DataExport extends FormBase {
     static path = '/export/data'
@@ -93,7 +95,7 @@ export class DataExport extends FormBase {
                 },
             })
         } catch (e) {
-            console.log(e)
+            !isProduction && console.log(e)
         }
     }
 
@@ -173,7 +175,7 @@ export class DataExport extends FormBase {
             }
             xhr.send()
         } catch (e) {
-            console.log('Data Export error', e, '\n')
+            !isProduction && console.log('Data Export error', e, '\n')
         }
     }
 }

@@ -1,8 +1,10 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { FormBase } from '../../components/FormBase'
+
 import { CTX_DEFAULT } from '../../components/Form'
 import { EventIcon } from '../../components/Icon'
+import { FormBase } from '../../components/FormBase'
+import { fetchLog } from './helpers'
 import {
     getFormField,
     getFormFields,
@@ -10,7 +12,7 @@ import {
     getParamsFromFormState,
     getUploadXHR,
 } from '../../helpers'
-import { fetchLog } from './helpers'
+import { isProduction } from '../../helpers/env'
 
 export class EventImport extends FormBase {
     static path = '/import/event'
@@ -73,7 +75,7 @@ export class EventImport extends FormBase {
             )
             xhr.send(upload)
         } catch (e) {
-            console.log('Event Import error', e, '\n')
+            !isProduction && console.log('Event Import error', e, '\n')
         }
     }
 }

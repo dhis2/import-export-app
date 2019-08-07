@@ -1,7 +1,9 @@
-import React from 'react'
 import { getInstance } from 'd2/lib/d2'
+import React from 'react'
+
 import { Tree } from '../../Tree'
 import { api } from '../../../services'
+import { isProduction } from '../../../helpers/env'
 
 export default class OrgUnitTree extends React.Component {
     state = {
@@ -54,7 +56,7 @@ export default class OrgUnitTree extends React.Component {
                     })
                 })
         } catch (e) {
-            console.log('OrgUnitTree root fetch failed')
+            !isProduction && console.log('OrgUnitTree root fetch failed')
         }
     }
 
@@ -91,8 +93,8 @@ export default class OrgUnitTree extends React.Component {
                 list: [...list],
             })
         } catch (e) {
-            console.log('OrgUnitTree fetchNode failed')
-            console.log(e)
+            !isProduction && console.log('OrgUnitTree fetchNode failed')
+            !isProduction && console.log(e)
         }
     }
 

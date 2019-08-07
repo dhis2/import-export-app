@@ -1,9 +1,11 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+
 import { FormBase } from '../../components/FormBase'
 import { GMLIcon } from '../../components/Icon'
-import { getFormFields, getFormValues, getUploadXHR } from '../../helpers'
 import { fetchLog } from './helpers'
+import { getFormFields, getFormValues, getUploadXHR } from '../../helpers'
+import { isProduction } from '../../helpers/env'
 
 export class GMLImport extends FormBase {
     static path = '/import/gml'
@@ -54,7 +56,7 @@ export class GMLImport extends FormBase {
             xhr.send(upload)
         } catch (e) {
             this.setProcessing(false)
-            console.log('GML Import error', e, '\n')
+            !isProduction && console.log('GML Import error', e, '\n')
         }
     }
 }

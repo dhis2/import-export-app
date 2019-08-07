@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component - File should render correctly 1`] = `
+<div
+  className="container"
+>
+  <input
+    className="input"
+    name="upload"
+    onChange={[MockFunction]}
+  />
+  <button
+    className="button"
+    onClick={[Function]}
+  >
+    <FileUploadIcon />
+    <span
+      className="label"
+    >
+      Choose a file to upload *
+    </span>
+  </button>
+</div>
+`;

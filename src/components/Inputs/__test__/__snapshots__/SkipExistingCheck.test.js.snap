@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - SkipExistingCheck should render correctly 1`] = `
+<RadioGroup
+  label="Skip existing check"
+  name="skipExistingCheck"
+  options={
+    Array [
+      Object {
+        "label": "Skip check (fast)",
+        "value": "true",
+      },
+      Object {
+        "label": "Check (safe, recommended)",
+        "value": "false",
+      },
+    ]
+  }
+/>
+`;

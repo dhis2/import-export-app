@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - DataElementIdScheme should render correctly 1`] = `
+<RadioGroup
+  label="Data element id scheme"
+  name="dataElementIdScheme"
+  options={
+    Array [
+      Object {
+        "label": "Uid",
+        "value": "UID",
+      },
+      Object {
+        "label": "Code",
+        "value": "CODE",
+      },
+      Object {
+        "label": "Name",
+        "value": "NAME",
+      },
+    ]
+  }
+/>
+`;

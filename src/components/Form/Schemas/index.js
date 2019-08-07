@@ -1,16 +1,18 @@
+import { Checkbox, RaisedButton } from 'material-ui'
+import { connect } from 'react-redux'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { Checkbox, RaisedButton } from 'material-ui'
-import { FormGroup, FormControl, FormLabel } from '../material-ui'
-import { connect } from 'react-redux'
-import { api } from '../../../services'
+
 import { EXCLUDE_SCHEMAS } from '../../../helpers'
-import { setSchemas } from '../../../reducers'
+import { FormGroup, FormControl, FormLabel } from '../material-ui'
+import { Loading } from '../../Loading'
+import { api } from '../../../services'
 import {
     getSortedSchemaGroups,
     getSchemas,
 } from '../../../reducers/schemas/selectors'
-import { Loading } from '../../Loading'
+import { isProduction } from '../../../helpers/env'
+import { setSchemas } from '../../../reducers'
 import s from './styles.module.css'
 
 function groupName(klass) {
@@ -183,8 +185,8 @@ export class DumbSchemas extends React.Component {
                 }
             )
         } catch (e) {
-            console.log('fetch Schemas failed')
-            console.log(e)
+            !isProduction && console.log('fetch Schemas failed')
+            !isProduction && console.log(e)
         }
     }
 
