@@ -1,6 +1,6 @@
 import { Button } from '@dhis2/ui-core'
 import { Form } from 'react-final-form'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
@@ -30,15 +30,26 @@ import { ReportMode } from '../../components/Inputs/ReportMode'
 import { SkipSharing } from '../../components/Inputs/SkipSharing'
 import { SkipValidation } from '../../components/Inputs/SkipValidation'
 import { Strategy } from '../../components/Inputs/Strategy'
-import { supportedFormats, defaultValues, onSubmit } from './MetaData/helper'
+import {
+    defaultValues,
+    fetchClassKeyOptions,
+    onSubmit,
+    supportedFormats,
+    useLoadClassKeyOptions,
+} from './MetaData/helper'
+import { eventEmitter } from '../../services'
+import { fetchLog } from './helpers'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
 export const MetaDataImport = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    //const onSubmitHandler = onSubmit(setLoading, setError)
-    const onSubmitHandler = values => console.log('values', values)
+    const onSubmitHandler = onSubmit(setLoading, setError)
+    const {
+        error: classKeyError,
+        options: classKeyOptions,
+    } = useLoadClassKeyOptions()
 
     if (loading) return <Progress />
     if (error) return <Error message={error} onClear={() => setError('')} />

@@ -1,3 +1,8 @@
+import i18n from '@dhis2/d2-i18n'
+import { useEffect, useState } from 'react'
+
+import { fetchLog } from '../helpers'
+import { api, eventEmitter } from '../../../services'
 import {
     ASYNC_DEFAULT_VALUE,
     ASYNC_KEY,
@@ -59,6 +64,7 @@ import {
 } from '../../../components/Inputs/Strategy'
 import { getParamsFromFormState } from '../../../helpers/form'
 import { getUploadXHR } from '../../../helpers/xhr'
+import { isProduction } from '../../../helpers/env'
 
 export const supportedFormats = [OPTION_JSON, OPTION_XML, OPTION_CSV]
 
@@ -149,4 +155,35 @@ export const onSubmit = (setLoading, setError) => values => {
         })
         setLoading(false)
     }
+}
+
+export const useLoadClassKeyOptions = () => {
+    const [options, setOptions] = useState([])
+    const [error, setError] = useState('')
+
+    useEffect(() => {
+        fetchLog('', 'METADATA_IMPORT').then(() => {
+            eventEmitter.emit('summary.clear')
+            fetchClassKeyOptions(setOptions, setError)
+        })
+    }, [])
+
+    return { error, options }
+}
+
+export const fetchClassKeyOptions = async (setOptions, setError) => {
+    try {
+        const { data } = await api.get('metadata/csvImportClasses')
+        const options = data.map(v => ({
+            value: v,
+            label: v.split('_').join(' '),
+        }))
+
+        setOptions(options)
+    } catch (e) {
+        !isProduction && console.log('fetch csvImportClasses failed')
+        !isProduction && console.log(e)
+    }
+
+    setError(i18n.t("Couldn't load classKey options"))
 }
