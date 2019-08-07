@@ -45,8 +45,8 @@ export const MetaDataImport = () => {
         options: classKeyOptions,
     } = useLoadClassKeyOptions()
 
-    if (loading) return <Progress />
     if (error) return <Error message={error} onClear={() => setError('')} />
+    if (loading) return <Progress />
 
     return (
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>

@@ -137,18 +137,22 @@ export const onSubmit = (setLoading, setError) => values => {
             upload,
             'METADATA_IMPORT',
             () => setLoading(false),
-            setError,
+            e => {
+                let message = i18n.t('An unknown error occurred')
+
+                try {
+                    const response = JSON.parse(e.target.response)
+                    message = response.message
+                } catch (e2) {}
+
+                setError(message)
+                setLoading(false)
+            },
             format
         )
         xhr.send(upload)
     } catch (e) {
-        setError({
-            target: {
-                response: JSON.stringify({
-                    message: 'MetaData Import error',
-                }),
-            },
-        })
+        setError('MetaData Import error')
         setLoading(false)
     }
 }
