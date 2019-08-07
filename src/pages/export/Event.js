@@ -83,8 +83,8 @@ export class EventExport extends FormBase {
                 () => this.fetchProgramStages(selected)
             )
         } catch (e) {
-            isProduction() && console.log('fetch Programs failed')
-            isProduction() && console.log(e)
+            !isProduction && console.log('fetch Programs failed')
+            !isProduction && console.log(e)
         }
     }
 
@@ -106,8 +106,8 @@ export class EventExport extends FormBase {
                 },
             })
         } catch (e) {
-            isProduction() && console.log('fetch Programs failed')
-            isProduction() && console.log(e)
+            !isProduction && console.log('fetch Programs failed')
+            !isProduction && console.log(e)
         }
     }
 
@@ -132,8 +132,8 @@ export class EventExport extends FormBase {
                 programStages: { values, selected },
             })
         } catch (e) {
-            isProduction() && console.log('fetch ProgramStages failed', id)
-            isProduction() && console.log(e)
+            !isProduction && console.log('fetch ProgramStages failed', id)
+            !isProduction && console.log(e)
         }
     }
 

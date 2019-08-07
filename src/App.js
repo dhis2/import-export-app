@@ -67,8 +67,8 @@ class App extends React.Component {
                 loaded: true,
             })
         } catch (e) {
-            isProduction() && console.log('/api/me error')
-            isProduction() && console.log(e)
+            !isProduction && console.log('/api/me error')
+            !isProduction && console.log(e)
             this.props.clearUser()
             this.setState({
                 loaded: true,

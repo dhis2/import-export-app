@@ -56,7 +56,7 @@ export class GMLImport extends FormBase {
             xhr.send(upload)
         } catch (e) {
             this.setProcessing(false)
-            isProduction() && console.log('GML Import error', e, '\n')
+            !isProduction && console.log('GML Import error', e, '\n')
         }
     }
 }

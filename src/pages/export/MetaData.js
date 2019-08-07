@@ -55,7 +55,7 @@ export class MetaDataExport extends FormBase {
             const url = `${downloadUrl}&${schemaParams}`
             window.location = url
         } catch (e) {
-            isProduction() && console.log('MetaData Export error', e, '\n')
+            !isProduction && console.log('MetaData Export error', e, '\n')
         }
     }
 }

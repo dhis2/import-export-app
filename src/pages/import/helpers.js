@@ -118,8 +118,8 @@ export async function fetchLog(jobId, type) {
             }
         }
     } catch (e) {
-        isProduction() && console.log(`Error fetching ${type}`)
-        isProduction() && console.log(e)
+        !isProduction && console.log(`Error fetching ${type}`)
+        !isProduction && console.log(e)
     }
 }
 
@@ -157,8 +157,8 @@ export async function fetchTaskSummary(jobId, type) {
 
         eventEmitter.emit('summary.loaded')
     } catch (e) {
-        isProduction() && console.log(`Task Summaries: Error fetching ${type}`)
-        isProduction() && console.log(e)
+        !isProduction && console.log(`Task Summaries: Error fetching ${type}`)
+        !isProduction && console.log(e)
     }
 }
 

@@ -56,7 +56,7 @@ export default class OrgUnitTree extends React.Component {
                     })
                 })
         } catch (e) {
-            isProduction() && console.log('OrgUnitTree root fetch failed')
+            !isProduction && console.log('OrgUnitTree root fetch failed')
         }
     }
 
@@ -93,8 +93,8 @@ export default class OrgUnitTree extends React.Component {
                 list: [...list],
             })
         } catch (e) {
-            isProduction() && console.log('OrgUnitTree fetchNode failed')
-            isProduction() && console.log(e)
+            !isProduction && console.log('OrgUnitTree fetchNode failed')
+            !isProduction && console.log(e)
         }
     }
 
