@@ -3,7 +3,6 @@ import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
 import propTypes from 'prop-types'
 
-import { FORMAT_KEY, OPTION_CSV } from './Format'
 import { RadioGroup } from '../FinalFormComponents/RadioGroup'
 import { Select } from '../FinalFormComponents/Select'
 
@@ -22,10 +21,7 @@ export const ClassKey = ({ show, options, defaultValue }) => (
 
         <FormSpy
             render={({ values, form }) => {
-                if (
-                    values[FORMAT_KEY] !== OPTION_CSV.value &&
-                    values[CLASS_KEY_KEY]
-                ) {
+                if (!show && values[CLASS_KEY_KEY]) {
                     form.change(CLASS_KEY_KEY, null)
                 }
 
