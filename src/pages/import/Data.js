@@ -18,8 +18,13 @@ import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
 import { PreheatCache } from '../../components/Inputs/PreheatCache'
 import { Progress } from '../../components/Loading/Progress'
+import {
+    SkipAudit,
+    hasAuthorityToSkipAudit,
+} from '../../components/Inputs/SkipAudit'
 import { SkipExistingCheck } from '../../components/Inputs/SkipExistingCheck'
 import { Strategy } from '../../components/Inputs/Strategy'
+import { WithAuthority } from '../../components/WithAuthority'
 import { Upload } from '../../components/Inputs/Upload'
 import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
 import { useErrorHandler } from '../../helpers/useErrorHandler'
@@ -67,6 +72,10 @@ export const DataImport = () => {
 
                             <Strategy />
                             <PreheatCache />
+
+                            <WithAuthority check={hasAuthorityToSkipAudit}>
+                                <SkipAudit />
+                            </WithAuthority>
 
                             <MoreOptions>
                                 <DataElementIdScheme />

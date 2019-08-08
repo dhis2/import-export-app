@@ -8,7 +8,7 @@ const RadioComponent = ({ name, label, value, defaultValue }) => {
     const { input, meta } = useField(name, {
         type: 'radio',
         value,
-        defaultValue: defaultValue,
+        defaultValue,
     })
 
     return (
