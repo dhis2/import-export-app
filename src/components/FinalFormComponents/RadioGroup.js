@@ -4,8 +4,12 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styles from './RadioGroup.module.css'
 
-const RadioComponent = ({ name, label, value }) => {
-    const { input, meta } = useField(name, { type: 'radio', value })
+const RadioComponent = ({ name, label, value, defaultValue }) => {
+    const { input, meta } = useField(name, {
+        type: 'radio',
+        value,
+        defaultValue,
+    })
 
     return (
         <Radio
@@ -19,7 +23,7 @@ const RadioComponent = ({ name, label, value }) => {
     )
 }
 
-export const RadioGroup = ({ label, name, options }) => {
+export const RadioGroup = ({ label, name, options, defaultValue }) => {
     return (
         <div className={styles.container}>
             <span className={styles.label}>{label}</span>
@@ -31,6 +35,7 @@ export const RadioGroup = ({ label, name, options }) => {
                         key={option.value}
                         value={option.value}
                         label={option.label}
+                        defaultValue={defaultValue}
                     />
                 ))}
             </div>

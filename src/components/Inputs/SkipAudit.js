@@ -12,5 +12,6 @@ export const SkipAudit = () => (
         name={SKIP_AUDIT_KEY}
         label={i18n.t('Skip audit')}
         options={[OPTION_YES, OPTION_NO]}
+        defaultValue={OPTION_NO.value}
     />
 )
