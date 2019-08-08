@@ -10,7 +10,6 @@ import { DryRun } from '../../components/Inputs/DryRun'
 import { Error } from '../../components/Error'
 import { FORMAT_KEY, Format, OPTION_CSV } from '../../components/Inputs/Format'
 import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
-import { File } from '../../components/FinalFormComponents/File'
 import { FormContent } from '../../components/FormSections/FormContent'
 import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
@@ -21,6 +20,7 @@ import { PreheatCache } from '../../components/Inputs/PreheatCache'
 import { Progress } from '../../components/Loading/Progress'
 import { SkipExistingCheck } from '../../components/Inputs/SkipExistingCheck'
 import { Strategy } from '../../components/Inputs/Strategy'
+import { Upload } from '../../components/Inputs/Upload'
 import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
 import { useErrorHandler } from '../../helpers/useErrorHandler'
 import stylesForm from '../../components/Form/styles.module.css'
@@ -57,7 +57,7 @@ export const DataImport = () => {
                         />
 
                         <FormContent>
-                            <File name="upload" />
+                            <Upload />
                             <Format options={supportedFormats} />
                             <DryRun />
 

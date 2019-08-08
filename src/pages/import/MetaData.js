@@ -8,25 +8,25 @@ import { Async } from '../../components/Inputs/Async'
 import { AtomicMode } from '../../components/Inputs/AtomicMode'
 import { ClassKey } from '../../components/Inputs/ClassKey'
 import { Error } from '../../components/Error'
-import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
 import { FORMAT_KEY, Format, OPTION_CSV } from '../../components/Inputs/Format'
-import { File } from '../../components/FinalFormComponents/File'
+import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
 import { FlushMode } from '../../components/Inputs/FlushMode'
 import { FormContent } from '../../components/FormSections/FormContent'
 import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
 import { Identifier } from '../../components/Inputs/Identifier'
 import { ImportMode } from '../../components/Inputs/ImportMode'
+import { ImportReportMode } from '../../components/Inputs/ImportReportMode'
+import { ImportStrategy } from '../../components/Inputs/ImportStrategy'
 import { InclusionStrategy } from '../../components/Inputs/InclusionStrategy'
 import { MergeMode } from '../../components/Inputs/MergeMode'
 import { MetadataImportIcon } from '../../components/Icon'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import { PreheatMode } from '../../components/Inputs/PreheatMode'
 import { Progress } from '../../components/Loading/Progress'
-import { ImportReportMode } from '../../components/Inputs/ImportReportMode'
 import { SkipSharing } from '../../components/Inputs/SkipSharing'
 import { SkipValidation } from '../../components/Inputs/SkipValidation'
-import { ImportStrategy } from '../../components/Inputs/ImportStrategy'
+import { Upload } from '../../components/Inputs/Upload'
 import {
     defaultValues,
     onSubmit,
@@ -63,7 +63,7 @@ export const MetaDataImport = () => {
                         />
 
                         <FormContent>
-                            <File name="upload" />
+                            <Upload />
                             <Format options={supportedFormats} />
                             <ImportMode />
 
