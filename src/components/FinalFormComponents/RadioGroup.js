@@ -23,13 +23,7 @@ const RadioComponent = ({ name, label, value, defaultValue }) => {
     )
 }
 
-export const RadioGroup = ({
-    label,
-    name,
-    options,
-    resetOnUnmount,
-    defaultValue,
-}) => {
+export const RadioGroup = ({ label, name, options, defaultValue }) => {
     return (
         <div className={styles.container}>
             <span className={styles.label}>{label}</span>
