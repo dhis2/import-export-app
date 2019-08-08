@@ -1,10 +1,9 @@
 import { connect } from 'react-redux'
-import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 export const WithAuthorityComponent = ({ check, children, user }) => {
     if (user && check(user.authorities)) {
-        return <Fragment>{children}</Fragment>
+        return children
     }
 
     return null
