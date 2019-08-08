@@ -64,7 +64,7 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
         const { upload, format, firstRowIsHeader } = values
         const append = [`format=${format}`, 'async=true']
 
-        if (format === '.csv') {
+        if (format === 'csv') {
             append.push(`firstRowIsHeader=${firstRowIsHeader}`)
         }
 
@@ -95,7 +95,17 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
             upload,
             'DATAVALUE_IMPORT',
             () => setLoading(false),
-            setError,
+            e => {
+                let message = i18n.t('An unknown error occurred')
+
+                try {
+                    const response = JSON.parse(e.target.response)
+                    message = response.message
+                } catch (e2) {}
+
+                setError(message)
+                setLoading(false)
+            },
             format
         )
 

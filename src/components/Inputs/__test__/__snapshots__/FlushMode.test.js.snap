@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - FlushMode should render correctly 1`] = `
+<RadioGroup
+  label="Flush mode"
+  name="flushMode"
+  options={
+    Array [
+      Object {
+        "label": "Auto",
+        "value": "AUTO",
+      },
+      Object {
+        "label": "Object",
+        "value": "OBJECT",
+      },
+    ]
+  }
+/>
+`;

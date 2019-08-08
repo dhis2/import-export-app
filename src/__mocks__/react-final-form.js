@@ -13,3 +13,11 @@ export const useField = jest.fn((name, { value }) => ({
         error: '',
     },
 }))
+
+const formSpyRenderPayload = {
+    values: {},
+    form: { change: jest.fn() },
+}
+export const FormSpy = ({ render }) => (
+    <Fragment>{render(formSpyRenderPayload)}</Fragment>
+)
