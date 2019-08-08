@@ -7,6 +7,9 @@ export const OPTION_NO = { value: 'false', label: i18n.t('No') }
 export const SKIP_AUDIT_KEY = 'skipAudit'
 export const SKIP_AUDIT_DEFAULT_VALUE = OPTION_NO.value
 
+export const hasAuthorityToSkipAudit = authorities =>
+    authorities.has('ALL') || authorities.has('F_SKIP_DATA_IMPORT_AUDIT')
+
 export const SkipAudit = () => (
     <RadioGroup
         name={SKIP_AUDIT_KEY}
