@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - Async should render correctly 1`] = `
+<RadioGroup
+  label="Async"
+  name="async"
+  options={
+    Array [
+      Object {
+        "label": "Yes",
+        "value": "true",
+      },
+      Object {
+        "label": "No",
+        "value": "false",
+      },
+    ]
+  }
+/>
+`;

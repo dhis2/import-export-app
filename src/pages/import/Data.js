@@ -8,11 +8,11 @@ import { DataElementIdScheme } from '../../components/Inputs/DataElementIdScheme
 import { DataIcon } from '../../components/Icon'
 import { DryRun } from '../../components/Inputs/DryRun'
 import { Error } from '../../components/Error'
-import { File } from '../../components/FinalFormComponents/File'
+import { FORMAT_KEY, Format, OPTION_CSV } from '../../components/Inputs/Format'
+import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
 import { FormContent } from '../../components/FormSections/FormContent'
 import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
-import { Format } from '../../components/Inputs/Format'
 import { IdScheme } from '../../components/Inputs/idScheme'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
@@ -25,6 +25,7 @@ import {
 import { SkipExistingCheck } from '../../components/Inputs/SkipExistingCheck'
 import { Strategy } from '../../components/Inputs/Strategy'
 import { WithAuthority } from '../../components/WithAuthority'
+import { Upload } from '../../components/Inputs/Upload'
 import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
 import { useErrorHandler } from '../../helpers/useErrorHandler'
 import stylesForm from '../../components/Form/styles.module.css'
@@ -48,7 +49,7 @@ export const DataImport = () => {
 
     return (
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
-            {({ handleSubmit }) => (
+            {({ handleSubmit, values }) => (
                 <div className={stylesForm.wrapper}>
                     <form
                         className={cx(stylesFormBase.form, stylesForm.form)}
@@ -61,9 +62,14 @@ export const DataImport = () => {
                         />
 
                         <FormContent>
-                            <File name="upload" />
+                            <Upload />
                             <Format options={supportedFormats} />
                             <DryRun />
+
+                            <FirstRowIsHeader
+                                show={values[FORMAT_KEY] === OPTION_CSV.value}
+                            />
+
                             <Strategy />
                             <PreheatCache />
 

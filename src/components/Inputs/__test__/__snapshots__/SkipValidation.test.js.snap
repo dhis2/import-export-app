@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - SkipValidation should render correctly 1`] = `
+<RadioGroup
+  label="Skip validation"
+  name="skipValidation"
+  options={
+    Array [
+      Object {
+        "label": "Yes",
+        "value": "true",
+      },
+      Object {
+        "label": "No",
+        "value": "false",
+      },
+    ]
+  }
+/>
+`;

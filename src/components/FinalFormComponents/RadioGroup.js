@@ -51,5 +51,7 @@ RadioGroup.propTypes = {
             value: propTypes.string.isRequired,
             label: propTypes.string.isRequired,
         })
-    ),
+    ).isRequired,
+
+    defaultValue: propTypes.string,
 }

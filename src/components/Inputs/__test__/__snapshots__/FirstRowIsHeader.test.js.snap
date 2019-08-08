@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - FirstRowIsHeader should render correctly 1`] = `
+<FirstRowIsHeader>
+  <FormSpy
+    render={[Function]}
+  />
+</FirstRowIsHeader>
+`;
