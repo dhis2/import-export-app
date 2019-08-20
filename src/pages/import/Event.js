@@ -1,81 +1,71 @@
-import React from 'react'
+import { Button } from '@dhis2/ui-core'
+import { Form } from 'react-final-form'
+import React, { useState } from 'react'
+import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
-import { CTX_DEFAULT } from '../../components/Form'
+import { TaskSummary } from '../../components/TaskSummary'
+import { DryRun } from '../../components/Inputs/DryRun'
+import { Error } from '../../components/Error'
 import { EventIcon } from '../../components/Icon'
-import { FormBase } from '../../components/FormBase'
-import { fetchLog } from './helpers'
-import {
-    getFormField,
-    getFormFields,
-    getFormValues,
-    getParamsFromFormState,
-    getUploadXHR,
-} from '../../helpers'
-import { isProduction } from '../../helpers/env'
+import { FormContent } from '../../components/FormSections/FormContent'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
+import { EventIdScheme } from '../../components/Inputs/EventIdScheme'
+import { Format } from '../../components/Inputs/Format'
+import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
+import { Progress } from '../../components/Loading/Progress'
+import { Upload } from '../../components/Inputs/Upload'
+import { supportedFormats, defaultValues, onSubmit } from './Event/helper'
+import stylesForm from '../../components/Form/styles.module.css'
+import stylesFormBase from '../../components/FormBase/styles.module.css'
 
-export class EventImport extends FormBase {
-    static path = '/import/event'
+export const EventImport = () => {
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
+    const onSubmitHandler = onSubmit(setLoading, setError)
 
-    static order = 3
-    static title = i18n.t('Event Import')
-    static desc = i18n.t(
-        'Import events for programs, stages and tracked entities in the DXF 2 format.'
+    if (error) return <Error message={error} onClear={() => setError('')} />
+    if (loading) return <Progress />
+
+    return (
+        <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
+            {({ handleSubmit, values }) => (
+                <div className={stylesForm.wrapper}>
+                    <TaskSummary />
+                    <form
+                        className={cx(stylesFormBase.form, stylesForm.form)}
+                        onSubmit={handleSubmit}
+                        style={{ width: 800 }}
+                    >
+                        <FormHeader
+                            icon={EventImport.menuIcon}
+                            label={EventImport.title}
+                        />
+
+                        <FormContent>
+                            <Upload />
+                            <Format options={supportedFormats} />
+                            <DryRun />
+                            <EventIdScheme />
+                            <OrgUnitIdScheme />
+                        </FormContent>
+
+                        <FormFooter>
+                            <Button primary type="submit">
+                                {i18n.t('Import')}
+                            </Button>
+                        </FormFooter>
+                    </form>
+                </div>
+            )}
+        </Form>
     )
-
-    static menuIcon = <EventIcon />
-    icon = <EventIcon />
-
-    formWidth = 800
-    formTitle = i18n.t('Event Import')
-    submitLabel = i18n.t('Import')
-
-    fields = [
-        ...getFormFields(['upload', 'format', 'dryRun', 'eventIdScheme']),
-        getFormField('orgUnitIdScheme', { context: CTX_DEFAULT }),
-    ]
-
-    state = getFormValues([
-        'upload',
-        'format:.json:json,xml,csv',
-        'dryRun',
-        'eventIdScheme',
-        'orgUnitIdScheme',
-    ])
-
-    async componentDidMount() {
-        await fetchLog('', 'EVENT_IMPORT')
-    }
-
-    onSubmit = async () => {
-        try {
-            const { upload, format } = this.getFormState()
-            const formattedFormat = format.slice(1)
-
-            const params = getParamsFromFormState(
-                this.getFormState(),
-                ['dryRun', 'eventIdScheme', 'orgUnitIdScheme'],
-                [
-                    'async=true',
-                    'skipFirst=true',
-                    `payloadFormat=${formattedFormat}`,
-                ]
-            )
-            this.setProcessing()
-
-            const { REACT_APP_DHIS2_BASE_URL } = process.env
-            const url = `${REACT_APP_DHIS2_BASE_URL}/api/events.json?${params}`
-            const xhr = getUploadXHR(
-                url,
-                upload,
-                'EVENT_IMPORT',
-                this.clearProcessing,
-                this.assertOnError,
-                formattedFormat
-            )
-            xhr.send(upload)
-        } catch (e) {
-            !isProduction && console.log('Event Import error', e, '\n')
-        }
-    }
 }
+EventImport.path = '/import/event'
+EventImport.title = i18n.t('Event Import')
+EventImport.desc = i18n.t(
+    'Import events for programs, stages and tracked entities in the DXF 2 format.'
+)
+
+EventImport.menuIcon = <EventIcon />

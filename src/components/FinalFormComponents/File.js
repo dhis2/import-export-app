@@ -30,7 +30,7 @@ export const File = ({ name }) => {
         <div className={styles.container}>
             <input {...withoutValue} ref={ref} className={styles.input} />
 
-            <button onClick={onClick} className={styles.button}>
+            <button type="button" onClick={onClick} className={styles.button}>
                 <FileUploadIcon />
                 <span className={styles.label}>{label}</span>
             </button>

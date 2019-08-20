@@ -12,6 +12,7 @@ exports[`Form component - File should render correctly 1`] = `
   <button
     className="button"
     onClick={[Function]}
+    type="button"
   >
     <FileUploadIcon />
     <span
