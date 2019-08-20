@@ -1,12 +1,7 @@
 import React, { useState } from 'react'
 import i18n from '@dhis2/d2-i18n'
 
-import { FormBase } from '../../components/FormBase'
 import { GMLIcon } from '../../components/Icon'
-import { fetchLog } from './helpers'
-import { getFormFields, getFormValues, getUploadXHR } from '../../helpers'
-import { isProduction } from '../../helpers/env'
-
 import { TaskSummary } from '../../components/TaskSummary'
 import { Error } from '../../components/Error'
 import { Progress } from '../../components/Loading/Progress'

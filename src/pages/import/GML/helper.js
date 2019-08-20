@@ -4,7 +4,7 @@ import {
     DRY_RUN_DEFAULT_VALUE,
     DRY_RUN_KEY,
 } from '../../../components/Inputs/DryRun'
-import { getParamsFromFormState, getUploadXHR } from '../../../helpers'
+import { getUploadXHR } from '../../../helpers'
 import { isProduction } from '../../../helpers/env'
 
 export const defaultValues = {

@@ -102,6 +102,8 @@ export async function fetchLog(jobId, type) {
 
             if (isFetchLogComplete(data)) {
                 fetchLogAfter(jobId, type)
+            } else {
+                await fetchTaskSummary(jobId, type)
             }
         } else if (fetchResponseIsObject(data)) {
             let records = null
