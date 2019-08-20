@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
+import { TaskSummary } from '../../components/TaskSummary'
 import { Async } from '../../components/Inputs/Async'
 import { AtomicMode } from '../../components/Inputs/AtomicMode'
 import { ClassKey } from '../../components/Inputs/ClassKey'
@@ -52,6 +53,7 @@ export const MetaDataImport = () => {
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
             {({ handleSubmit, values }) => (
                 <div className={stylesForm.wrapper}>
+                    <TaskSummary />
                     <form
                         className={cx(stylesFormBase.form, stylesForm.form)}
                         onSubmit={handleSubmit}

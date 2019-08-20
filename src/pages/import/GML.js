@@ -7,6 +7,7 @@ import { fetchLog } from './helpers'
 import { getFormFields, getFormValues, getUploadXHR } from '../../helpers'
 import { isProduction } from '../../helpers/env'
 
+import { TaskSummary } from '../../components/TaskSummary'
 import { Error } from '../../components/Error'
 import { Progress } from '../../components/Loading/Progress'
 import { Button } from '@dhis2/ui-core'
@@ -33,6 +34,7 @@ export const GMLImport = () => {
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
             {({ handleSubmit, values }) => (
                 <div className={stylesForm.wrapper}>
+                    <TaskSummary />
                     <form
                         className={cx(stylesFormBase.form, stylesForm.form)}
                         onSubmit={handleSubmit}

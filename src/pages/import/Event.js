@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
+import { TaskSummary } from '../../components/TaskSummary'
 import { DryRun } from '../../components/Inputs/DryRun'
 import { Error } from '../../components/Error'
 import { EventIcon } from '../../components/Icon'
@@ -31,6 +32,7 @@ export const EventImport = () => {
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
             {({ handleSubmit, values }) => (
                 <div className={stylesForm.wrapper}>
+                    <TaskSummary />
                     <form
                         className={cx(stylesFormBase.form, stylesForm.form)}
                         onSubmit={handleSubmit}
