@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import i18n from '@dhis2/d2-i18n'
 
 import { FormBase } from '../../components/FormBase'
@@ -7,56 +7,61 @@ import { fetchLog } from './helpers'
 import { getFormFields, getFormValues, getUploadXHR } from '../../helpers'
 import { isProduction } from '../../helpers/env'
 
-export class GMLImport extends FormBase {
-    static path = '/import/gml'
+import { Error } from '../../components/Error'
+import { Progress } from '../../components/Loading/Progress'
+import { Button } from '@dhis2/ui-core'
+import { Form } from 'react-final-form'
+import cx from 'classnames'
+import { FormContent } from '../../components/FormSections/FormContent'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
+import { DryRun } from '../../components/Inputs/DryRun'
+import { Upload } from '../../components/Inputs/Upload'
+import { defaultValues, onSubmit } from './GML/helper'
+import stylesForm from '../../components/Form/styles.module.css'
+import stylesFormBase from '../../components/FormBase/styles.module.css'
 
-    static order = 4
-    static title = i18n.t('GML Import')
-    static desc = i18n.t(
-        'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.'
+export const GMLImport = () => {
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
+    const onSubmitHandler = onSubmit(setLoading, setError)
+
+    if (error) return <Error message={error} onClear={() => setError('')} />
+    if (loading) return <Progress />
+
+    return (
+        <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
+            {({ handleSubmit, values }) => (
+                <div className={stylesForm.wrapper}>
+                    <form
+                        className={cx(stylesFormBase.form, stylesForm.form)}
+                        onSubmit={handleSubmit}
+                        style={{ width: 800 }}
+                    >
+                        <FormHeader
+                            icon={GMLImport.menuIcon}
+                            label={GMLImport.title}
+                        />
+
+                        <FormContent>
+                            <Upload />
+                            <DryRun />
+                        </FormContent>
+
+                        <FormFooter>
+                            <Button primary type="submit">
+                                {i18n.t('Import')}
+                            </Button>
+                        </FormFooter>
+                    </form>
+                </div>
+            )}
+        </Form>
     )
-
-    static menuIcon = <GMLIcon />
-    icon = <GMLIcon />
-
-    formWidth = 800
-    formTitle = i18n.t('GML Import')
-    formDescription = i18n.t(
-        'Only import of GML data for existing organisation units is supported.'
-    )
-    submitLabel = i18n.t('Import')
-
-    fields = getFormFields(['upload', 'dryRun'])
-    state = getFormValues(['upload', 'dryRun'])
-
-    async componentDidMount() {
-        await fetchLog('', 'GML_IMPORT')
-    }
-
-    onSubmit = async () => {
-        try {
-            const { upload, dryRun } = this.getFormState()
-
-            const formData = new FormData()
-            formData.set('upload', upload)
-
-            this.setProcessing()
-
-            const params = `dryRun=${dryRun}&format=json`
-            const { REACT_APP_DHIS2_BASE_URL } = process.env
-            const url = `${REACT_APP_DHIS2_BASE_URL}/api/metadata/gml?${params}`
-            const xhr = getUploadXHR(
-                url,
-                upload,
-                'GML_IMPORT',
-                this.clearProcessing,
-                this.assertOnError,
-                'gml'
-            )
-            xhr.send(upload)
-        } catch (e) {
-            this.setProcessing(false)
-            !isProduction && console.log('GML Import error', e, '\n')
-        }
-    }
 }
+GMLImport.path = '/import/gml'
+GMLImport.title = i18n.t('GML Import')
+GMLImport.desc = i18n.t(
+    'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.'
+)
+GMLImport.menuIcon = <GMLIcon />
