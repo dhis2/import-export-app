@@ -10,6 +10,8 @@ import {
 } from '../components/Form'
 import { isValueNil } from '../helpers'
 
+const identity = value => value
+
 export function getField(name, fields) {
     return fields.filter(f => f.name === name)[0]
 }
@@ -49,12 +51,15 @@ export function getFieldValue(field) {
 }
 
 export function getParamsFromFormState(state, list, append = []) {
-    const params = list.map(k =>
-        state[k] ? `${k}=${encodeURIComponent(state[k])}` : null
+    const params = list.map(parameterName =>
+        state[parameterName]
+            ? `${parameterName}=${encodeURIComponent(state[parameterName])}`
+            : null
     )
-    append.forEach(v => params.push(v))
 
-    return params.filter(v => v).join('&')
+    append.forEach(parameter => params.push(parameter))
+
+    return params.filter(identity).join('&')
 }
 
 export function getRequiredFields(fields) {
