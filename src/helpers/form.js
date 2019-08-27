@@ -49,10 +49,12 @@ export function getFieldValue(field) {
 }
 
 export function getParamsFromFormState(state, list, append = []) {
-    const params = list.map(k => `${k}=${encodeURIComponent(state[k])}`)
+    const params = list.map(k =>
+        state[k] ? `${k}=${encodeURIComponent(state[k])}` : null
+    )
     append.forEach(v => params.push(v))
 
-    return params.join('&')
+    return params.filter(v => v).join('&')
 }
 
 export function getRequiredFields(fields) {

@@ -78,6 +78,7 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
                 'preheatCache',
                 'skipExistingCheck',
                 'strategy',
+                'skipAudit',
             ],
             append
         )
