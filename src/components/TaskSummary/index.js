@@ -14,7 +14,7 @@ import s from './styles.module.css'
 
 const initialState = {
     loading: false,
-    errors: '',
+    errors: [],
 
     stats: {
         created: 0,
