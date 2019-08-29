@@ -53,7 +53,7 @@ export class TaskSummary extends React.Component {
 
     onLoaded = () => this.setState({ loading: false })
 
-    onLoading = () => this.setState({ loading: true, error: [] })
+    onLoading = () => this.setState({ loading: true, errors: [] })
     onClear = () => this.setState({ ...initialState })
     onTotals = stats => this.setState({ stats })
 
