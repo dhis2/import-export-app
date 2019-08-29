@@ -163,7 +163,7 @@ export class TaskSummary extends React.Component {
 
     viewConflicts() {
         const { conflicts } = this.state
-        if (conflicts === 0) {
+        if (conflicts.length === 0) {
             return null
         }
 
