@@ -3,6 +3,20 @@ import i18n from '@dhis2/d2-i18n'
 import PaginatedTable from './PaginatedTable'
 import s from './styles.module.css'
 
+export function Errors({ errors }) {
+    return (
+        <table className={`${s.table}`}>
+            <tbody>
+                {errors.map(error => (
+                    <tr key={error}>
+                        <td>{error}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    )
+}
+
 export function Totals({ created, deleted, ignored, updated, total }) {
     return (
         <table className={`${s.table} ${s.totals}`}>

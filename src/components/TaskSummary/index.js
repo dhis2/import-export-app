@@ -2,11 +2,19 @@ import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { eventEmitter } from '../../services'
 import { Loading } from '../'
-import { Totals, TypeStats, Conflicts, Messages, Summaries } from './helpers'
+import {
+    Errors,
+    Totals,
+    TypeStats,
+    Conflicts,
+    Messages,
+    Summaries,
+} from './helpers'
 import s from './styles.module.css'
 
 const initialState = {
     loading: false,
+    errors: '',
 
     stats: {
         created: 0,
@@ -45,7 +53,7 @@ export class TaskSummary extends React.Component {
 
     onLoaded = () => this.setState({ loading: false })
 
-    onLoading = () => this.setState({ loading: true })
+    onLoading = () => this.setState({ loading: true, error: [] })
     onClear = () => this.setState({ ...initialState })
     onTotals = stats => this.setState({ stats })
 
@@ -101,10 +109,14 @@ export class TaskSummary extends React.Component {
         })
     }
 
+    onError = message =>
+        this.setState({ errors: [...this.state.errors, message] })
+
     events = {
         'summary.loading': this.onLoading,
         'summary.loaded': this.onLoaded,
         'summary.clear': this.onClear,
+        'summary.error': this.onError,
         'summary.totals': this.onTotals,
         'summary.typeReports': this.onTypeReports,
         'summary.importCount': this.onImportCount,
@@ -177,9 +189,26 @@ export class TaskSummary extends React.Component {
         )
     }
 
+    viewErrors() {
+        const { errors } = this.state
+        if (errors.length === 0) {
+            return null
+        }
+
+        return (
+            <Fragment>
+                <div className={`${s.label} ${s.marginTop}`}>
+                    {i18n.t('Errors')}
+                </div>
+                <Errors errors={errors} />
+            </Fragment>
+        )
+    }
+
     isEmpty() {
-        const { stats, typeStats, messages, summaries } = this.state
+        const { errors, stats, typeStats, messages, summaries } = this.state
         if (
+            errors.length === 0 &&
             stats.total === 0 &&
             typeStats.length === 0 &&
             summaries.length === 0 &&
@@ -209,6 +238,7 @@ export class TaskSummary extends React.Component {
                     <div className={s.label}>{i18n.t('Summary')}</div>
                     <Totals {...this.state.stats} />
 
+                    {this.viewErrors()}
                     {this.viewTypeStats()}
                     {this.viewConflicts()}
                     {this.viewMessages()}
