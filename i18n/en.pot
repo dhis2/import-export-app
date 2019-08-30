@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
-"PO-Revision-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-08-30T08:44:31.946Z\n"
+"PO-Revision-Date: 2019-08-30T08:44:31.946Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -90,6 +90,9 @@ msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
+msgstr ""
+
+msgid "Errors"
 msgstr ""
 
 msgid "Import Summary"
@@ -251,9 +254,6 @@ msgstr ""
 msgid "AUTO"
 msgstr ""
 
-msgid "Errors"
-msgstr ""
-
 msgid "Full"
 msgstr ""
 
@@ -407,4 +407,7 @@ msgstr ""
 msgid ""
 "Import metadata like data elements and organisation units using the "
 "standard DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "It seems like there was no data in the uploaded file."
 msgstr ""
