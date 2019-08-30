@@ -145,7 +145,22 @@ export async function fetchTaskSummary(jobId, type) {
                     data.importSummaries
                 )
             } else if (data.importCount) {
+                const { imported, updated, deleted, ignored } = data.importCount
+
                 eventEmitter.emit('summary.importCount', data.importCount)
+                if (
+                    imported === 0 &&
+                    updated === 0 &&
+                    deleted === 0 &&
+                    ignored === 0
+                ) {
+                    eventEmitter.emit(
+                        'summary.error',
+                        i18n.t(
+                            'It seems like there was no data in the uploaded file.'
+                        )
+                    )
+                }
             } else if (data.total === 0) {
                 eventEmitter.emit('summary.importCount', data)
                 eventEmitter.emit(
