@@ -1,3 +1,4 @@
+import { connect } from 'react-redux'
 import { getInstance } from 'd2/lib/d2'
 import JSZip from 'jszip'
 import PropTypes from 'prop-types'
@@ -14,10 +15,16 @@ import {
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
+    values,
 } from '../../helpers'
+import {
+    fetchUniqueDataElementAttributes,
+    fetchUniqueOrgUnitAttributes,
+} from '../../reducers/attributes/thunks'
 import { isProduction } from '../../helpers/env'
+import s from '../../components/Form/styles.module.css'
 
-export class DataExport extends FormBase {
+class DataExport extends FormBase {
     static path = '/export/data'
 
     static order = 7
@@ -36,44 +43,99 @@ export class DataExport extends FormBase {
     formWidth = 800
     formTitle = i18n.t('Data Export')
     submitLabel = i18n.t('Export')
+    fields = []
+    state = {
+        _meta: {
+            submitted: false,
+            valid: false,
+            processing: false,
+            error: null,
+        },
+    }
 
-    fields = [
-        ...getFormFields([
-            'orgUnit',
-            'children',
-            'selectedDataSets',
-            'startDate',
-            'endDate',
-            'format',
-            'compression',
-        ]),
-
-        getFormFieldMoreOptions(),
-
-        ...getFormFields([
-            'includeDeleted',
-            'dataElementIdScheme',
-            'orgUnitIdScheme',
-            'categoryOptionComboIdScheme',
-        ]),
-    ]
-
-    state = getFormValues([
-        'orgUnit',
-        'children',
-        'selectedDataSets',
-        'startDate',
-        'endDate',
-        'format:.json:json,xml,csv',
-        'compression',
-        'includeDeleted',
-        'dataElementIdScheme',
-        'orgUnitIdScheme',
-        'categoryOptionComboIdScheme',
-    ])
+    setFormValues() {
+        this.setState({
+            ...getFormValues([
+                'orgUnit',
+                'children',
+                'selectedDataSets',
+                'startDate',
+                'endDate',
+                'format:.json:json,xml,csv',
+                'compression',
+                'includeDeleted',
+                'dataElementIdScheme',
+                'orgUnitIdScheme',
+                'categoryOptionComboIdScheme',
+            ]),
+        })
+    }
 
     async componentDidMount() {
+        this.props.fetchDataElementAttributes()
+        this.props.fetchOrganisationUnitAttributes()
         await this.fetch()
+    }
+
+    initializeFormValues(fieldValuesOverride) {
+        this.fieldValuesOverride = fieldValuesOverride
+
+        this.fields = [
+            ...getFormFields([
+                'orgUnit',
+                'children',
+                'selectedDataSets',
+                'startDate',
+                'endDate',
+                'format',
+                'compression',
+            ]),
+
+            getFormFieldMoreOptions(),
+
+            ...getFormFields([
+                'includeDeleted',
+                'dataElementIdScheme',
+                'orgUnitIdScheme',
+                'categoryOptionComboIdScheme',
+            ]),
+        ]
+
+        this.setFormValues()
+    }
+
+    componentDidUpdate(prevProps) {
+        if (
+            prevProps.dataElementAttributes.length !==
+                this.props.dataElementAttributes.length ||
+            prevProps.orgUnitAttributes.length !==
+                this.props.orgUnitAttributes.length
+        ) {
+            const dataElementIdScheme = [
+                ...values.dataElementIdScheme.values,
+                ...this.props.dataElementAttributes.map(
+                    ({ id, displayName: label }) => ({
+                        value: `ATTRIBUTE:${id}`,
+                        label,
+                    })
+                ),
+            ]
+
+            const orgUnitIdScheme = [
+                ...values.orgUnitIdScheme.values,
+                ...this.props.orgUnitAttributes.map(
+                    ({ id, displayName: label }) => ({
+                        value: `ATTRIBUTE:${id}`,
+                        label,
+                    })
+                ),
+            ]
+
+            this.initializeFormValues({
+                dataElementIdScheme,
+                orgUnitIdScheme,
+            })
+        }
     }
 
     async fetch() {
@@ -178,4 +240,44 @@ export class DataExport extends FormBase {
             !isProduction && console.log('Data Export error', e, '\n')
         }
     }
+
+    render() {
+        const form = super.render()
+
+        if (this.props.loadingAttributes) {
+            return (
+                <div className={s.wrapper}>
+                    <div
+                        className={s.form}
+                        style={{
+                            padding: '14px 20px',
+                            width: 800,
+                            boxSizing: 'border-box',
+                            margin: '60px auto',
+                        }}
+                    >
+                        {i18n.t('Loading options...')}
+                    </div>
+                </div>
+            )
+        }
+
+        return form
+    }
 }
+
+const ConnectedDataExport = connect(
+    state => ({
+        loadingAttributes: state.attributes.loading,
+        dataElementAttributes: state.attributes.dataElement,
+        orgUnitAttributes: state.attributes.organisationUnit,
+    }),
+    dispatch => ({
+        fetchDataElementAttributes: () =>
+            dispatch(fetchUniqueDataElementAttributes()),
+        fetchOrganisationUnitAttributes: () =>
+            dispatch(fetchUniqueOrgUnitAttributes()),
+    })
+)(DataExport)
+
+export { ConnectedDataExport as DataExport }
