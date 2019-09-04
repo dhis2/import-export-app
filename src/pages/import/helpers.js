@@ -1,5 +1,5 @@
-import { api } from 'services'
-import { eventEmitter } from 'services'
+import { api, eventEmitter } from 'services'
+import i18n from '@dhis2/d2-i18n'
 
 const CATEGORY_2_LABEL = {
     METADATA_IMPORT: 'Metadata import',
@@ -145,7 +145,30 @@ export async function fetchTaskSummary(jobId, type) {
                     data.importSummaries
                 )
             } else if (data.importCount) {
+                const { imported, updated, deleted, ignored } = data.importCount
+
                 eventEmitter.emit('summary.importCount', data.importCount)
+                if (
+                    imported === 0 &&
+                    updated === 0 &&
+                    deleted === 0 &&
+                    ignored === 0
+                ) {
+                    eventEmitter.emit(
+                        'summary.error',
+                        i18n.t(
+                            'It seems like there was no data in the uploaded file.'
+                        )
+                    )
+                }
+            } else if (data.total === 0) {
+                eventEmitter.emit('summary.importCount', data)
+                eventEmitter.emit(
+                    'summary.error',
+                    i18n.t(
+                        'It seems like there was no data in the uploaded file.'
+                    )
+                )
             } else {
                 console.error(
                     'No summary generated. Receieved data not recognized: ',
