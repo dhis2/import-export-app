@@ -46,16 +46,24 @@ import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
 const DataImport = ({
-    loadingAttributes,
     dataElementAttributes,
+    dataElementAttributesLoaded,
+    loadingDataElementAttributes,
     orgUnitAttributes,
+    orgUnitAttributesLoaded,
+    loadingOrgUnitAttributes,
     fetchDataElementAttributes,
     fetchOrganisationUnitAttributes,
 }) => {
     useEffect(
         () => {
-            fetchDataElementAttributes()
-            fetchOrganisationUnitAttributes()
+            if (!dataElementAttributesLoaded) {
+                fetchDataElementAttributes()
+            }
+
+            if (!orgUnitAttributesLoaded) {
+                fetchOrganisationUnitAttributes()
+            }
         },
 
         // load attributes on componentDidMount
@@ -125,7 +133,7 @@ const DataImport = ({
                             </WithAuthority>
 
                             <MoreOptions>
-                                {loadingAttributes ? (
+                                {loadingDataElementAttributes ? (
                                     <DataElementIdSchemeLoading />
                                 ) : (
                                     <DataElementIdScheme
@@ -133,7 +141,7 @@ const DataImport = ({
                                     />
                                 )}
 
-                                {loadingAttributes ? (
+                                {loadingOrgUnitAttributes ? (
                                     <OrgUnitIdSchemeLoading />
                                 ) : (
                                     <OrgUnitIdScheme
@@ -167,13 +175,18 @@ DataImport.desc = i18n.t(
 
 const ConnectedDataImport = connect(
     state => ({
-        loadingAttributes: state.attributes.loading,
-        dataElementAttributes: state.attributes.dataElement,
-        orgUnitAttributes: state.attributes.organisationUnit,
+        dataElementAttributes: state.attributes.dataElement.data,
+        dataElementAttributesLoaded: state.attributes.dataElement.loaded,
+        loadingDataElementAttributes: state.attributes.dataElement.loading,
+
+        orgUnitAttributes: state.attributes.organisationUnit.data,
+        orgUnitAttributesLoaded: state.attributes.organisationUnit.loaded,
+        loadingOrgUnitAttributes: state.attributes.organisationUnit.loading,
     }),
     dispatch => ({
         fetchDataElementAttributes: () =>
             dispatch(fetchUniqueDataElementAttributes()),
+
         fetchOrganisationUnitAttributes: () =>
             dispatch(fetchUniqueOrgUnitAttributes()),
     })

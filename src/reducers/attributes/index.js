@@ -5,11 +5,19 @@ import {
 } from './actions'
 
 const initialState = {
-    loading: false,
-    error: '',
+    dataElement: {
+        loading: false,
+        loaded: false,
+        error: '',
+        data: [],
+    },
 
-    dataElement: [],
-    organisationUnit: [],
+    organisationUnit: {
+        loading: false,
+        loaded: false,
+        error: '',
+        data: [],
+    },
 }
 
 export default function attributesReducer(
@@ -19,24 +27,35 @@ export default function attributesReducer(
     if (type === LOADING_ATTRIBUTES_START) {
         return {
             ...state,
-            loading: true,
-            error: '',
+            [type]: {
+                ...state[type],
+                loading: true,
+                loaded: false,
+                error: '',
+            },
         }
     }
 
     if (type === LOADING_ATTRIBUTES_ERROR) {
         return {
             ...state,
-            loading: false,
-            error: payload,
+            [payload.type]: {
+                ...state[payload.type],
+                loading: false,
+                error: payload.message,
+            },
         }
     }
 
     if (type === SET_ATTRIBUTES) {
         return {
             ...state,
-            loading: false,
-            [payload.type]: payload.attributes,
+            [payload.type]: {
+                ...state[payload.type],
+                data: payload.attributes,
+                loading: false,
+                loaded: true,
+            },
         }
     }
 
