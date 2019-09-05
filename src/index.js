@@ -10,6 +10,7 @@ import './locales'
 import './index.css'
 import App from './App'
 import { store } from './store'
+import { initApi } from './helpers/api'
 import * as serviceWorker from './serviceWorker'
 
 /**
@@ -20,36 +21,33 @@ const { REACT_APP_DHIS2_BASE_URL } = process.env
 
 init({
     baseUrl: `${REACT_APP_DHIS2_BASE_URL}/api/`,
-    headers: {
-        'X-Requested-With': 'XMLHttpRequest',
-    },
+    headers: { 'X-Requested-With': 'XMLHttpRequest' },
 })
+    .then(initApi)
+    .then(() => {
+        /**
+         * Initialize material ui theme
+         */
 
-/**
- * Initialize material ui theme
- */
+        lightBaseTheme.palette.primary1Color = '#4c708c'
+        lightBaseTheme.palette.primary2Color = '#4c708c'
+        lightBaseTheme.palette.primary3Color = '#4c708c'
+        lightBaseTheme.palette.pickerHeaderColor = '#4c708c'
 
-lightBaseTheme.palette.primary1Color = '#4c708c'
-lightBaseTheme.palette.primary2Color = '#4c708c'
-lightBaseTheme.palette.primary3Color = '#4c708c'
-lightBaseTheme.palette.pickerHeaderColor = '#4c708c'
-
-const muiTheme = getMuiTheme(lightBaseTheme)
-
-/**
- * Mount app
- */
-
-ReactDOM.render(
-    <Provider store={store}>
-        <MuiThemeProvider muiTheme={muiTheme}>
-            <HashRouter>
-                <App />
-            </HashRouter>
-        </MuiThemeProvider>
-    </Provider>,
-    document.getElementById('root')
-)
+        return getMuiTheme(lightBaseTheme)
+    })
+    .then(muiTheme => {
+        ReactDOM.render(
+            <Provider store={store}>
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <HashRouter>
+                        <App />
+                    </HashRouter>
+                </MuiThemeProvider>
+            </Provider>,
+            document.getElementById('root')
+        )
+    })
 
 /**
  * If you want your app to work offline and load faster, you can change
