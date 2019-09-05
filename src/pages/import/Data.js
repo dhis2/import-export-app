@@ -1,11 +1,15 @@
 import { Button } from '@dhis2/ui-core'
 import { Form } from 'react-final-form'
-import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
-import { TaskSummary } from '../../components/TaskSummary'
-import { DataElementIdScheme } from '../../components/Inputs/DataElementIdScheme'
+import {
+    DATA_ELEMENT_ID_SCHEME_DEFAULT_OPTIONS,
+    DataElementIdScheme,
+    DataElementIdSchemeLoading,
+} from '../../components/Inputs/DataElementIdScheme'
 import { DataIcon } from '../../components/Icon'
 import { DryRun } from '../../components/Inputs/DryRun'
 import { Error } from '../../components/Error'
@@ -16,7 +20,11 @@ import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
 import { IdScheme } from '../../components/Inputs/idScheme'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
-import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
+import {
+    ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
+    OrgUnitIdScheme,
+    OrgUnitIdSchemeLoading,
+} from '../../components/Inputs/OrgUnitIdScheme'
 import { PreheatCache } from '../../components/Inputs/PreheatCache'
 import { Progress } from '../../components/Loading/Progress'
 import {
@@ -25,14 +33,43 @@ import {
 } from '../../components/Inputs/SkipAudit'
 import { SkipExistingCheck } from '../../components/Inputs/SkipExistingCheck'
 import { Strategy } from '../../components/Inputs/Strategy'
-import { WithAuthority } from '../../components/WithAuthority'
+import { TaskSummary } from '../../components/TaskSummary'
 import { Upload } from '../../components/Inputs/Upload'
+import { WithAuthority } from '../../components/WithAuthority'
 import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
+import {
+    fetchUniqueDataElementAttributes,
+    fetchUniqueOrgUnitAttributes,
+} from '../../reducers/attributes/thunks'
 import { useErrorHandler } from '../../helpers/useErrorHandler'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
-export const DataImport = () => {
+const DataImport = ({
+    dataElementAttributes,
+    dataElementAttributesLoaded,
+    loadingDataElementAttributes,
+    orgUnitAttributes,
+    orgUnitAttributesLoaded,
+    loadingOrgUnitAttributes,
+    fetchDataElementAttributes,
+    fetchOrganisationUnitAttributes,
+}) => {
+    useEffect(
+        () => {
+            if (!dataElementAttributesLoaded) {
+                fetchDataElementAttributes()
+            }
+
+            if (!orgUnitAttributesLoaded) {
+                fetchOrganisationUnitAttributes()
+            }
+        },
+
+        // load attributes on componentDidMount
+        [] // eslint-disable-line react-hooks/exhaustive-deps
+    )
+
     const [loading, setLoading] = useState(false)
     const [error, setError] = useErrorHandler()
     const onSubmitHandler = onSubmit(setLoading, setError)
@@ -47,6 +84,22 @@ export const DataImport = () => {
                 }
             />
         )
+
+    const dataElementIdSchemeOptions = [
+        ...DATA_ELEMENT_ID_SCHEME_DEFAULT_OPTIONS,
+        ...dataElementAttributes.map(({ id, displayName: label }) => ({
+            value: `ATTRIBUTE:${id}`,
+            label,
+        })),
+    ]
+
+    const orgUnitIdSchemeOptions = [
+        ...ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
+        ...orgUnitAttributes.map(({ id, displayName: label }) => ({
+            value: `ATTRIBUTE:${id}`,
+            label,
+        })),
+    ]
 
     return (
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
@@ -80,8 +133,22 @@ export const DataImport = () => {
                             </WithAuthority>
 
                             <MoreOptions>
-                                <DataElementIdScheme />
-                                <OrgUnitIdScheme />
+                                {loadingDataElementAttributes ? (
+                                    <DataElementIdSchemeLoading />
+                                ) : (
+                                    <DataElementIdScheme
+                                        options={dataElementIdSchemeOptions}
+                                    />
+                                )}
+
+                                {loadingOrgUnitAttributes ? (
+                                    <OrgUnitIdSchemeLoading />
+                                ) : (
+                                    <OrgUnitIdScheme
+                                        options={orgUnitIdSchemeOptions}
+                                    />
+                                )}
+
                                 <IdScheme />
                                 <SkipExistingCheck />
                             </MoreOptions>
@@ -105,3 +172,24 @@ DataImport.menuIcon = <DataIcon />
 DataImport.desc = i18n.t(
     'Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 is the standard exchange format for DHIS 2.'
 )
+
+const ConnectedDataImport = connect(
+    state => ({
+        dataElementAttributes: state.attributes.dataElement.data,
+        dataElementAttributesLoaded: state.attributes.dataElement.loaded,
+        loadingDataElementAttributes: state.attributes.dataElement.loading,
+
+        orgUnitAttributes: state.attributes.organisationUnit.data,
+        orgUnitAttributesLoaded: state.attributes.organisationUnit.loaded,
+        loadingOrgUnitAttributes: state.attributes.organisationUnit.loading,
+    }),
+    dispatch => ({
+        fetchDataElementAttributes: () =>
+            dispatch(fetchUniqueDataElementAttributes()),
+
+        fetchOrganisationUnitAttributes: () =>
+            dispatch(fetchUniqueOrgUnitAttributes()),
+    })
+)(DataImport)
+
+export { ConnectedDataImport as DataImport }

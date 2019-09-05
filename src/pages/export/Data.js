@@ -253,9 +253,11 @@ class DataExport extends FormBase {
 
 const ConnectedDataExport = connect(
     state => ({
-        loadingAttributes: state.attributes.loading,
-        dataElementAttributes: state.attributes.dataElement,
-        orgUnitAttributes: state.attributes.organisationUnit,
+        loadingAttributes:
+            state.attributes.dataElement.loading ||
+            state.attributes.organisationUnit.loading,
+        dataElementAttributes: state.attributes.dataElement.data,
+        orgUnitAttributes: state.attributes.organisationUnit.data,
     }),
     dispatch => ({
         fetchDataElementAttributes: () =>
