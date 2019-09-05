@@ -9,25 +9,23 @@ import {
 } from './actions'
 
 export const fetchUniqueDataElementAttributes = () => dispatch => {
-    dispatch(loadingAttributesStart())
+    dispatch(loadingAttributesStart('dataElement'))
 
     getUniqueDataElementAttributes()
-        .then(attributes => {
-            dispatch(setAttribute('dataElement', attributes))
-        })
-        .catch(error => {
-            dispatch(loadingAttributesError(error.message))
-        })
+        .then(attributes => dispatch(setAttribute('dataElement', attributes)))
+        .catch(error =>
+            dispatch(loadingAttributesError('dataElement', error.message))
+        )
 }
 
 export const fetchUniqueOrgUnitAttributes = () => dispatch => {
-    dispatch(loadingAttributesStart)
+    dispatch(loadingAttributesStart('organisationUnit'))
 
     getUniqueOrganisationUnitAttributes()
-        .then(attributes => {
+        .then(attributes =>
             dispatch(setAttribute('organisationUnit', attributes))
-        })
-        .catch(error => {
-            dispatch(loadingAttributesError(error.message))
-        })
+        )
+        .catch(error =>
+            dispatch(loadingAttributesError('organisationUnit', error.message))
+        )
 }
