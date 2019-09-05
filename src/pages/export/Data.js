@@ -43,33 +43,39 @@ class DataExport extends FormBase {
     formWidth = 800
     formTitle = i18n.t('Data Export')
     submitLabel = i18n.t('Export')
-    fields = []
-    state = {
-        _meta: {
-            submitted: false,
-            valid: false,
-            processing: false,
-            error: null,
-        },
-    }
+    fields = [
+        ...getFormFields([
+            'orgUnit',
+            'children',
+            'selectedDataSets',
+            'startDate',
+            'endDate',
+            'format',
+            'compression',
+        ]),
 
-    setFormValues() {
-        this.setState({
-            ...getFormValues([
-                'orgUnit',
-                'children',
-                'selectedDataSets',
-                'startDate',
-                'endDate',
-                'format:.json:json,xml,csv',
-                'compression',
-                'includeDeleted',
-                'dataElementIdScheme',
-                'orgUnitIdScheme',
-                'categoryOptionComboIdScheme',
-            ]),
-        })
-    }
+        getFormFieldMoreOptions(),
+
+        ...getFormFields([
+            'includeDeleted',
+            'dataElementIdScheme',
+            'orgUnitIdScheme',
+            'categoryOptionComboIdScheme',
+        ]),
+    ]
+    state = getFormValues([
+        'orgUnit',
+        'children',
+        'selectedDataSets',
+        'startDate',
+        'endDate',
+        'format:.json:json,xml,csv',
+        'compression',
+        'includeDeleted',
+        'dataElementIdScheme',
+        'orgUnitIdScheme',
+        'categoryOptionComboIdScheme',
+    ])
 
     async componentDidMount() {
         this.props.fetchDataElementAttributes()
@@ -77,40 +83,16 @@ class DataExport extends FormBase {
         await this.fetch()
     }
 
-    initializeFormValues(fieldValuesOverride) {
-        this.fieldValuesOverride = fieldValuesOverride
-
-        this.fields = [
-            ...getFormFields([
-                'orgUnit',
-                'children',
-                'selectedDataSets',
-                'startDate',
-                'endDate',
-                'format',
-                'compression',
-            ]),
-
-            getFormFieldMoreOptions(),
-
-            ...getFormFields([
-                'includeDeleted',
-                'dataElementIdScheme',
-                'orgUnitIdScheme',
-                'categoryOptionComboIdScheme',
-            ]),
-        ]
-
-        this.setFormValues()
-    }
-
     componentDidUpdate(prevProps) {
+        // Only set field overrides if the amount of elements changed in the store
+        // These values will be loaded on page load only anyways
         if (
             prevProps.dataElementAttributes.length !==
                 this.props.dataElementAttributes.length ||
             prevProps.orgUnitAttributes.length !==
                 this.props.orgUnitAttributes.length
         ) {
+            // Collect default form options and add dynamic ones
             const dataElementIdScheme = [
                 ...values.dataElementIdScheme.values,
                 ...this.props.dataElementAttributes.map(
@@ -131,10 +113,13 @@ class DataExport extends FormBase {
                 ),
             ]
 
-            this.initializeFormValues({
+            // Set the override values
+            // These will be used by the Form copmonent
+            // to build the input components
+            this.fieldValuesOverride = {
                 dataElementIdScheme,
                 orgUnitIdScheme,
-            })
+            }
         }
     }
 

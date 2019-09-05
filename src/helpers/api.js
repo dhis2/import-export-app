@@ -11,26 +11,23 @@ export const initApi = d2Instance => {
     api = d2.Api.getApi()
 }
 
-export const getAttributes = ({
-    filter = [],
-    paging = false,
-    unique = true,
-}) => {
+export const getUniqueAttributes = ({ type }) => {
     const params = [
-        `paging=${paging}`,
+        `paging=false`,
         `fields=${['id', 'displayName'].join(',')}`,
-        ...[...filter, `unique:eq:${unique}`].map(f => `filter=${f}`),
+        `filter=unique:eq:true`,
+        `filter=${type}Attribute:eq:true`,
     ]
 
     return api.get(`${ATTRIBUTES_ENDPOINT}?${params.join('&')}`)
 }
 
 export const getUniqueDataElementAttributes = () =>
-    getAttributes({ filter: ['dataElementAttribute:eq:true'] })
+    getUniqueAttributes({ type: 'dataElement' })
         .then(({ attributes }) => attributes)
         .catch(() => [])
 
 export const getUniqueOrganisationUnitAttributes = () =>
-    getAttributes({ filter: ['organisationUnitAttribute:eq:true'] })
+    getUniqueAttributes({ type: 'organisationUnit' })
         .then(({ attributes }) => attributes)
         .catch(() => [])
