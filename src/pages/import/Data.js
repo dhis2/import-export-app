@@ -67,7 +67,7 @@ const DataImport = ({
         },
 
         // load attributes on componentDidMount
-        []
+        [] // eslint-disable-line react-hooks/exhaustive-deps
     )
 
     const [loading, setLoading] = useState(false)
