@@ -18,7 +18,11 @@ import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
 import { FormContent } from '../../components/FormSections/FormContent'
 import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
-import { IdScheme } from '../../components/Inputs/idScheme'
+import {
+    ID_SCHEME_DEFAULT_OPTIONS,
+    IdScheme,
+    IdSchemeLoading,
+} from '../../components/Inputs/idScheme'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import {
     ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
@@ -38,22 +42,45 @@ import { Upload } from '../../components/Inputs/Upload'
 import { WithAuthority } from '../../components/WithAuthority'
 import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
 import {
+    fetchUniqueCategoryAttributes,
     fetchUniqueDataElementAttributes,
     fetchUniqueOrgUnitAttributes,
 } from '../../reducers/attributes/thunks'
+import {
+    getDataElementAttributes,
+    getDataElementAttributesLoading,
+    getOrgUnitAttributes,
+    getOrgUnitAttributesLoading,
+    getSharedAttributes,
+    getSharedAttributesLoading,
+} from '../../reducers/attributes/selectors'
 import { useErrorHandler } from '../../helpers/useErrorHandler'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
 const DataImport = ({
+    // data element attributes
     dataElementAttributes,
     dataElementAttributesLoaded,
     loadingDataElementAttributes,
+
+    // org unit attributes
     orgUnitAttributes,
     orgUnitAttributesLoaded,
     loadingOrgUnitAttributes,
+
+    // category attributes
+    categoryAttributesLoaded,
+
+    // shared attributes
+    // Will be used for the id scheme field
+    sharedAttributes,
+    loadingSharedAttributes,
+
+    // action creators
     fetchDataElementAttributes,
     fetchOrganisationUnitAttributes,
+    fetchCategoryAttributes,
 }) => {
     useEffect(
         () => {
@@ -63,6 +90,10 @@ const DataImport = ({
 
             if (!orgUnitAttributesLoaded) {
                 fetchOrganisationUnitAttributes()
+            }
+
+            if (!categoryAttributesLoaded) {
+                fetchCategoryAttributes()
             }
         },
 
@@ -96,6 +127,14 @@ const DataImport = ({
     const orgUnitIdSchemeOptions = [
         ...ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
         ...orgUnitAttributes.map(({ id, displayName: label }) => ({
+            value: `ATTRIBUTE:${id}`,
+            label,
+        })),
+    ]
+
+    const idSchemeOptions = [
+        ...ID_SCHEME_DEFAULT_OPTIONS,
+        ...sharedAttributes.map(({ id, displayName: label }) => ({
             value: `ATTRIBUTE:${id}`,
             label,
         })),
@@ -149,7 +188,12 @@ const DataImport = ({
                                     />
                                 )}
 
-                                <IdScheme />
+                                {loadingSharedAttributes ? (
+                                    <IdSchemeLoading />
+                                ) : (
+                                    <IdScheme options={idSchemeOptions} />
+                                )}
+
                                 <SkipExistingCheck />
                             </MoreOptions>
                         </FormContent>
@@ -175,13 +219,18 @@ DataImport.desc = i18n.t(
 
 const ConnectedDataImport = connect(
     state => ({
-        dataElementAttributes: state.attributes.dataElement.data,
+        dataElementAttributes: getDataElementAttributes(state),
+        loadingDataElementAttributes: getDataElementAttributesLoading(state),
         dataElementAttributesLoaded: state.attributes.dataElement.loaded,
-        loadingDataElementAttributes: state.attributes.dataElement.loading,
 
-        orgUnitAttributes: state.attributes.organisationUnit.data,
+        orgUnitAttributes: getOrgUnitAttributes(state),
+        loadingOrgUnitAttributes: getOrgUnitAttributesLoading(state),
         orgUnitAttributesLoaded: state.attributes.organisationUnit.loaded,
-        loadingOrgUnitAttributes: state.attributes.organisationUnit.loading,
+
+        categoryAttributesLoaded: state.attributes.category.loaded,
+
+        sharedAttributes: getSharedAttributes(state),
+        loadingSharedAttributes: getSharedAttributesLoading(state),
     }),
     dispatch => ({
         fetchDataElementAttributes: () =>
@@ -189,6 +238,9 @@ const ConnectedDataImport = connect(
 
         fetchOrganisationUnitAttributes: () =>
             dispatch(fetchUniqueOrgUnitAttributes()),
+
+        fetchCategoryAttributes: () =>
+            dispatch(fetchUniqueCategoryAttributes()),
     })
 )(DataImport)
 

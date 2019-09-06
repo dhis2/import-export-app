@@ -1,6 +1,7 @@
 import {
     getUniqueDataElementAttributes,
     getUniqueOrganisationUnitAttributes,
+    getUniqueCategoryAttributes,
 } from '../../helpers/api'
 import {
     loadingAttributesError,
@@ -27,5 +28,15 @@ export const fetchUniqueOrgUnitAttributes = () => dispatch => {
         )
         .catch(error =>
             dispatch(loadingAttributesError('organisationUnit', error.message))
+        )
+}
+
+export const fetchUniqueCategoryAttributes = () => dispatch => {
+    dispatch(loadingAttributesStart('category'))
+
+    getUniqueCategoryAttributes()
+        .then(attributes => dispatch(setAttribute('category', attributes)))
+        .catch(error =>
+            dispatch(loadingAttributesError('category', error.message))
         )
 }
