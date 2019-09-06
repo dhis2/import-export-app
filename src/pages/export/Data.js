@@ -211,7 +211,7 @@ class DataExport extends FormBase {
                     'orgUnitIdScheme',
                     'includeDeleted',
                     'children',
-                    'categoryOptionComboIdScheme',
+                    'idScheme',
                 ],
                 append
             )
