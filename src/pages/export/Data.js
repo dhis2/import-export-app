@@ -141,7 +141,7 @@ class DataExport extends FormBase {
             // These will be used by the Form copmonent
             // to build the input components
             // NOTE: this.forceUpdate() wouldn't be needed
-            // if "isScheme" was hidden before clicking on "more options"
+            // if "idScheme" was hidden before clicking on "more options"
             // Due to that bug.. We have to force an update after this
             this.fieldValuesOverride = {
                 dataElementIdScheme,
