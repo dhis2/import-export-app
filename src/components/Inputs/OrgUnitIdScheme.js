@@ -1,10 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import {
-    RadioGroup,
     RadioGroupContainer,
     RadioGroupLabel,
 } from '../FinalFormComponents/RadioGroup'
+import { Select } from '../FinalFormComponents/Select'
 
 export const OPTION_UID = { value: 'UID', label: i18n.t('Uid') }
 export const OPTION_CODE = { value: 'CODE', label: i18n.t('Code') }
@@ -20,7 +20,7 @@ export const ORG_UNIT_ID_SCHEME_DEFAULT_VALUE = OPTION_UID.value
 
 const orgUnitIdSchemeLabel = i18n.t('Org unit id scheme')
 export const OrgUnitIdScheme = ({ options }) => (
-    <RadioGroup
+    <Select
         name={ORG_UNIT_ID_SCHEME_KEY}
         label={orgUnitIdSchemeLabel}
         options={options}
@@ -28,7 +28,7 @@ export const OrgUnitIdScheme = ({ options }) => (
 )
 
 OrgUnitIdScheme.propTypes = {
-    options: RadioGroup.propTypes.options,
+    options: Select.propTypes.options,
 }
 
 OrgUnitIdScheme.defaultProps = {

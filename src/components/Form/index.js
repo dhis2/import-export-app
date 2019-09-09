@@ -54,7 +54,9 @@ export class Form extends React.Component {
                     />
                 )
             } else if (type === TYPE_SELECT) {
-                props['values'] = fieldValues[name]['values']
+                props['values'] = fieldValuesOverride[name]
+                    ? fieldValuesOverride[name]
+                    : fieldValues[name]['values']
                 props['selected'] = fieldValues[name]['selected']
 
                 return (
