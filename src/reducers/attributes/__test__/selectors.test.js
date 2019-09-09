@@ -11,7 +11,7 @@ describe('Selector - Attributes - getSharedAttributes', () => {
         displayName: 'KE code',
     }
 
-    it('should return the hrIdentifier attribute when it is shared', () => {
+    it('should return the hrIdentifier attribute when it is found both in data elements and org unit attributes', () => {
         const state = {
             attributes: {
                 dataElement: { data: [hrIdentifier] },
@@ -27,7 +27,7 @@ describe('Selector - Attributes - getSharedAttributes', () => {
         ])
     })
 
-    it('should return an empty array when no attributes are shared', () => {
+    it('should return an empty array when no common attributes are found in both data elements and org unit attributes', () => {
         const state = {
             attributes: {
                 dataElement: { data: [] },
