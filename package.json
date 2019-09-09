@@ -47,7 +47,8 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
     "enzyme-to-json": "^3.4.0",
-    "husky": "^2.3.0"
+    "husky": "^2.3.0",
+    "redux-mock-store": "^1.5.3"
   },
   "husky": {
     "hooks": {

@@ -31,3 +31,8 @@ export const getUniqueOrganisationUnitAttributes = () =>
     getUniqueAttributes({ type: 'organisationUnit' })
         .then(({ attributes }) => attributes)
         .catch(() => [])
+
+export const getUniqueCategoryAttributes = () =>
+    getUniqueAttributes({ type: 'categoryOptionCombo' })
+        .then(({ attributes }) => attributes)
+        .catch(() => [])
