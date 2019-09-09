@@ -21,37 +21,20 @@ export const getCateboryAttributesLoading = state =>
     state.attributes.category.loading
 
 export const getSharedAttributes = createSelector(
-    [getDataElementAttributes, getOrgUnitAttributes, getCategoryAttributes],
-    (dataElementAttributes, orgUnitAttributes, categoryAttributes) =>
+    [getDataElementAttributes, getOrgUnitAttributes],
+    (dataElementAttributes, orgUnitAttributes) =>
         dataElementAttributes.reduce((shared, attribute) => {
             const foundInOrgUnits = attributeFoundIn(
                 attribute,
                 orgUnitAttributes
             )
 
-            const foundInCategories = attributeFoundIn(
-                attribute,
-                categoryAttributes
-            )
-
-            return foundInOrgUnits && foundInCategories
-                ? [...shared, attribute]
-                : shared
+            return foundInOrgUnits ? [...shared, attribute] : shared
         }, [])
 )
 
 export const getSharedAttributesLoading = createSelector(
-    [
-        getDataElementAttributesLoading,
-        getOrgUnitAttributesLoading,
-        getCateboryAttributesLoading,
-    ],
-    (
-        dataElementAttributesLoading,
-        orgUnitAttributesLoading,
-        categoryAttributesLoading
-    ) =>
-        dataElementAttributesLoading ||
-        orgUnitAttributesLoading ||
-        categoryAttributesLoading
+    [getDataElementAttributesLoading, getOrgUnitAttributesLoading],
+    (dataElementAttributesLoading, orgUnitAttributesLoading) =>
+        dataElementAttributesLoading || orgUnitAttributesLoading
 )

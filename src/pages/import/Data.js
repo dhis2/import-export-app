@@ -42,7 +42,6 @@ import { Upload } from '../../components/Inputs/Upload'
 import { WithAuthority } from '../../components/WithAuthority'
 import { defaultValues, supportedFormats, onSubmit } from './Data/helper'
 import {
-    fetchUniqueCategoryAttributes,
     fetchUniqueDataElementAttributes,
     fetchUniqueOrgUnitAttributes,
 } from '../../reducers/attributes/thunks'
@@ -69,9 +68,6 @@ const DataImport = ({
     orgUnitAttributesLoaded,
     loadingOrgUnitAttributes,
 
-    // category attributes
-    categoryAttributesLoaded,
-
     // shared attributes
     // Will be used for the id scheme field
     sharedAttributes,
@@ -80,7 +76,6 @@ const DataImport = ({
     // action creators
     fetchDataElementAttributes,
     fetchOrganisationUnitAttributes,
-    fetchCategoryAttributes,
 }) => {
     useEffect(
         () => {
@@ -90,10 +85,6 @@ const DataImport = ({
 
             if (!orgUnitAttributesLoaded) {
                 fetchOrganisationUnitAttributes()
-            }
-
-            if (!categoryAttributesLoaded) {
-                fetchCategoryAttributes()
             }
         },
 
@@ -227,8 +218,6 @@ const ConnectedDataImport = connect(
         loadingOrgUnitAttributes: getOrgUnitAttributesLoading(state),
         orgUnitAttributesLoaded: state.attributes.organisationUnit.loaded,
 
-        categoryAttributesLoaded: state.attributes.category.loaded,
-
         sharedAttributes: getSharedAttributes(state),
         loadingSharedAttributes: getSharedAttributesLoading(state),
     }),
@@ -238,9 +227,6 @@ const ConnectedDataImport = connect(
 
         fetchOrganisationUnitAttributes: () =>
             dispatch(fetchUniqueOrgUnitAttributes()),
-
-        fetchCategoryAttributes: () =>
-            dispatch(fetchUniqueCategoryAttributes()),
     })
 )(DataImport)
 

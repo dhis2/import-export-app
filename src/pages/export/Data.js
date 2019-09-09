@@ -18,7 +18,6 @@ import {
     values,
 } from '../../helpers'
 import {
-    fetchUniqueCategoryAttributes,
     fetchUniqueDataElementAttributes,
     fetchUniqueOrgUnitAttributes,
 } from '../../reducers/attributes/thunks'
@@ -91,7 +90,6 @@ class DataExport extends FormBase {
         })
         this.props.fetchDataElementAttributes()
         this.props.fetchOrganisationUnitAttributes()
-        this.props.fetchCategoryAttributes()
         await this.fetch()
     }
 
@@ -294,8 +292,6 @@ const ConnectedDataExport = connect(
             dispatch(fetchUniqueDataElementAttributes()),
         fetchOrganisationUnitAttributes: () =>
             dispatch(fetchUniqueOrgUnitAttributes()),
-        fetchCategoryAttributes: () =>
-            dispatch(fetchUniqueCategoryAttributes()),
     })
 )(DataExport)
 
