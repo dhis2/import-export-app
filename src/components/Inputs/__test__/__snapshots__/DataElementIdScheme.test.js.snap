@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - DataElementIdScheme should render correctly 1`] = `
-<RadioGroup
+<Select
   label="Data element id scheme"
   name="dataElementIdScheme"
   options={
