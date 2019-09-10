@@ -26,6 +26,7 @@ export class MetaDataDependencyExport extends FormBase {
         'objectList',
         'format',
         'compression',
+        'sharing',
     ])
 
     state = getFormValues([
@@ -33,6 +34,7 @@ export class MetaDataDependencyExport extends FormBase {
         'objectList',
         'format:.json:json,xml',
         'compression',
+        'sharing',
     ])
 
     async componentDidMount() {
@@ -75,6 +77,7 @@ export class MetaDataDependencyExport extends FormBase {
                 objectList,
                 format,
                 compression,
+                sharing,
             } = this.getFormState()
             const ext = format.substr(1)
 
@@ -82,9 +85,10 @@ export class MetaDataDependencyExport extends FormBase {
             if (compression !== 'none') {
                 endpoint += compression
             }
+            const sharingStr = `skipSharing=${sharing !== 'true'}`
 
             const baseURL = api.url('')
-            const params = `attachment=${endpoint}&format=json`
+            const params = `attachment=${endpoint}&format=json&${sharingStr}`
             const urlPath = `${objectType}/${objectList}/${endpoint}?${params}`
 
             const url = `${baseURL}${urlPath}`
