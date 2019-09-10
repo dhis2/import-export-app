@@ -80,12 +80,12 @@ export class MetaDataDependencyExport extends FormBase {
                 sharing,
             } = this.getFormState()
 
-            const endpoint = `metadata`
-            const endpointPath = `${objectType}/${objectList}/${endpoint}`
+            const endpointSuffix = 'metadata'
+            const endpoint = `${objectType}/${objectList}/${endpointSuffix}`
             const url = getDownloadUrl({
                 format,
                 compression,
-                endpoint: endpointPath,
+                endpoint,
                 sharing,
             })
             window.location = url
