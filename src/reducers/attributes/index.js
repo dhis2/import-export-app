@@ -18,6 +18,13 @@ const initialState = {
         error: '',
         data: [],
     },
+
+    category: {
+        loading: false,
+        loaded: false,
+        error: '',
+        data: [],
+    },
 }
 
 export default function attributesReducer(
@@ -27,8 +34,8 @@ export default function attributesReducer(
     if (type === LOADING_ATTRIBUTES_START) {
         return {
             ...state,
-            [type]: {
-                ...state[type],
+            [payload]: {
+                ...state[payload],
                 loading: true,
                 loaded: false,
                 error: '',

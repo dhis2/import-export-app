@@ -21,6 +21,10 @@ import {
     fetchUniqueDataElementAttributes,
     fetchUniqueOrgUnitAttributes,
 } from '../../reducers/attributes/thunks'
+import {
+    getSharedAttributes,
+    getSharedAttributesLoading,
+} from '../../reducers/attributes/selectors'
 import { isProduction } from '../../helpers/env'
 import s from '../../components/Form/styles.module.css'
 
@@ -60,7 +64,7 @@ class DataExport extends FormBase {
             'includeDeleted',
             'dataElementIdScheme',
             'orgUnitIdScheme',
-            'categoryOptionComboIdScheme',
+            'idScheme',
         ]),
     ]
     state = getFormValues([
@@ -74,16 +78,26 @@ class DataExport extends FormBase {
         'includeDeleted',
         'dataElementIdScheme',
         'orgUnitIdScheme',
-        'categoryOptionComboIdScheme',
+        'idScheme',
     ])
 
     async componentDidMount() {
+        // creating default props here because componentDidUpdate
+        // will not be called on initial render
+        this.computeFieldOverrideValues({
+            dataElementAttributes: [],
+            orgUnitAttributes: [],
+        })
         this.props.fetchDataElementAttributes()
         this.props.fetchOrganisationUnitAttributes()
         await this.fetch()
     }
 
     componentDidUpdate(prevProps) {
+        this.computeFieldOverrideValues(prevProps)
+    }
+
+    computeFieldOverrideValues(prevProps) {
         // Only set field overrides if the amount of elements changed in the store
         // These values will be loaded on page load only anyways
         if (
@@ -113,13 +127,28 @@ class DataExport extends FormBase {
                 ),
             ]
 
+            const idScheme = [
+                ...values.idScheme.values,
+                ...this.props.sharedAttributes.map(
+                    ({ id, displayName: label }) => ({
+                        value: `ATTRIBUTE:${id}`,
+                        label,
+                    })
+                ),
+            ]
+
             // Set the override values
             // These will be used by the Form copmonent
             // to build the input components
+            // NOTE: this.forceUpdate() wouldn't be needed
+            // if "idScheme" was hidden before clicking on "more options"
+            // Due to that bug.. We have to force an update after this
             this.fieldValuesOverride = {
                 dataElementIdScheme,
                 orgUnitIdScheme,
+                idScheme,
             }
+            this.forceUpdate()
         }
     }
 
@@ -180,7 +209,7 @@ class DataExport extends FormBase {
                     'orgUnitIdScheme',
                     'includeDeleted',
                     'children',
-                    'categoryOptionComboIdScheme',
+                    'idScheme',
                 ],
                 append
             )
@@ -253,11 +282,10 @@ class DataExport extends FormBase {
 
 const ConnectedDataExport = connect(
     state => ({
-        loadingAttributes:
-            state.attributes.dataElement.loading ||
-            state.attributes.organisationUnit.loading,
+        loadingAttributes: getSharedAttributesLoading(state),
         dataElementAttributes: state.attributes.dataElement.data,
         orgUnitAttributes: state.attributes.organisationUnit.data,
+        sharedAttributes: getSharedAttributes(state),
     }),
     dispatch => ({
         fetchDataElementAttributes: () =>

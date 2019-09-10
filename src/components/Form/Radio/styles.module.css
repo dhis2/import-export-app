@@ -14,9 +14,12 @@ form .formLabel {
 form .radioGroup {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -5px
 }
 form .radioGroup > div {
     margin-right: 15px;
+    margin-top: 5px;
 }
 form .radioGroup > div:last-child {
     margin-right: 0;
