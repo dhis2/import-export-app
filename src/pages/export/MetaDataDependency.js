@@ -74,9 +74,16 @@ export class MetaDataDependencyExport extends FormBase {
 
     onSubmit = async () => {
         try {
-            const { format, compression, sharing } = this.getFormState()
+            const {
+                objectType,
+                objectList,
+                format,
+                compression,
+                sharing,
+            } = this.getFormState()
 
-            const endpoint = `metadata`
+            const endpointSuffix = 'metadata'
+            const endpoint = `${objectType}/${objectList}/${endpointSuffix}`
             const url = getDownloadUrl({
                 format,
                 compression,
