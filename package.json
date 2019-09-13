@@ -12,7 +12,8 @@
     "prestart": "npm run localize",
     "prebuild": "npm run localize",
     "pretest": "npm run localize",
-    "lint:style": "d2-style js check --all"
+    "lint:style": "d2-style js check --all",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.3",
@@ -44,6 +45,8 @@
   },
   "devDependencies": {
     "@dhis2/cli-style": "^3.2.2",
+    "cypress": "^3.4.1",
+    "cypress-cucumber-preprocessor": "^1.16.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
     "enzyme-to-json": "^3.4.0",
@@ -65,5 +68,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "cypress-cucumber-preprocessor": {
+      "nonGlobalStepDefinitions": true
   }
 }
