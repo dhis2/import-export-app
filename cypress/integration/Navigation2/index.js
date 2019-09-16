@@ -1,32 +1,24 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const url = 'http://localhost:3000'
+const url = Cypress.env('APP_URL')
 
 Given('I am on the home page', () => {
     cy.visit(url)
-})
-
-Given('I am on the {string} {word} page', (name, type) => {
-    const capitalizedType = type === 'import' ? 'Import' : 'Export'
-    const textSelector = `${name} ${capitalizedType}`
-
-    cy.visit(url)
-        .get(`.styles_text__pVWFi:contains("${textSelector}")`)
-        .click()
 })
 
 Then('I should see a card menu with 8 cards', () => {
     cy.get('.styles_item__2Q7Za').should('have.length', 8)
 })
 
-Then(
-    'the sidebar should contain a link to the {string} {word} page',
-    (name, type) => {
-        const capitalizedType = type === 'import' ? 'Import' : 'Export'
-        const textSelector = `${name} ${capitalizedType}`
+Given('I am on the {string} page', name => {
+    name === 'home'
+        ? cy.visit(url)
+        : cy
+              .visit(url)
+              .get(`.styles_text__pVWFi:contains("${name}")`)
+              .click()
+})
 
-        cy.get(`.styles_text__pVWFi:contains("${textSelector}")`).should(
-            'exist'
-        )
-    }
-)
+Then('the sidebar should contain a link to the {string} page', name => {
+    cy.get(`.styles_text__pVWFi:contains("${name}")`).should('exist')
+})

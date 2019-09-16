@@ -1,4 +1,4 @@
-Feature: As a user I want to be able to naviate to all import and export options
+Feature: 3: As a user I want to be able to naviate to all import and export options
 
     Scenario: Displaying cards on home page
         Given I am on the home page

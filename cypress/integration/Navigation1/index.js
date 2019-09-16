@@ -34,11 +34,11 @@ Then('the sidebar should contain a link to the Metadata export page', () => {
     cy.get(`.styles_text__pVWFi:contains("Metadata Export")`).should('exist')
 })
 
-Then('the sidebar should contain a link to the Metadata export page', () => {
+Then('the sidebar should contain a link to the Data export page', () => {
     cy.get(`.styles_text__pVWFi:contains("Data Export")`).should('exist')
 })
 
-Then('the sidebar should contain a link to the Metadata export page', () => {
+Then('the sidebar should contain a link to the Event export page', () => {
     cy.get(`.styles_text__pVWFi:contains("Event Export")`).should('exist')
 })
 
