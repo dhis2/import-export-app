@@ -1,6 +1,6 @@
 Feature: Offer attributes as options in data element id scheme input
 
-    All unique attributes assiciated with data elements should
+    All unique attributes associated with data elements should
     be available as options in the data element id scheme input
 
     Scenario: An attribute is associated with data elements when importing data
