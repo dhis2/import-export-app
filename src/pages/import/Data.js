@@ -201,6 +201,7 @@ const DataImport = ({
     )
 }
 
+DataImport.dataTestId = 'import-data'
 DataImport.path = '/import/data'
 DataImport.title = i18n.t('Data Import')
 DataImport.menuIcon = <DataIcon />

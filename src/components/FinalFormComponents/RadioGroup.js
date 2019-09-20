@@ -31,9 +31,9 @@ export const RadioGroupLabel = ({ children }) => (
     <span className={styles.label}>{children}</span>
 )
 
-export const RadioGroup = ({ label, name, options, defaultValue }) => {
+export const RadioGroup = ({ label, name, options, defaultValue, ...rest }) => {
     return (
-        <RadioGroupContainer>
+        <RadioGroupContainer {...rest}>
             <RadioGroupLabel>{label}</RadioGroupLabel>
 
             <div className={styles.inputs}>

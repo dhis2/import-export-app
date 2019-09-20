@@ -12,12 +12,14 @@ function Heading({ children }) {
 function Contents({ type, list }) {
     return (
         <div className={s.list}>
-            {list.map(({ to, text, icon }) => (
+            {list.map(({ to, text, icon, dataTestId }) => (
                 <NavLink
                     to={to}
                     key={`${type}-${to}`}
                     className={s.link}
                     activeClassName={s.active}
+                    disabled
+                    data-test-id={`sidebar-link-${dataTestId}`}
                 >
                     <div className={s.item}>
                         {icon}
