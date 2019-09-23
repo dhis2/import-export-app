@@ -36,3 +36,5 @@ export const getUniqueCategoryAttributes = () =>
     getUniqueAttributes({ type: 'categoryOptionCombo' })
         .then(({ attributes }) => attributes)
         .catch(() => [])
+
+export const getSchemas = () => api.get('schemas.json')

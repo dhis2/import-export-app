@@ -34,9 +34,15 @@ function schemaGroups(schemas) {
     return groups
 }
 
-export const getSchemas = state => state.schemas.list
+export const getSchemas = state => {
+    console.log('state', state)
+    return state.schemas.list
+}
 
 export const getSortedSchemaGroups = createSelector(
-    state => getSchemas(state),
-    schemas => schemaGroups(schemas)
+    getSchemas,
+    schemas => {
+        console.log('schemas', schemas)
+        return schemaGroups(schemas)
+    }
 )
