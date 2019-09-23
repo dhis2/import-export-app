@@ -4,8 +4,8 @@ Feature: Offer common attributes as options in id scheme input
     be available as option in the id scheme input
 
     Scenario Outline: An attribute is only associated with data elements
-        Given the user is on the data <type> page
-        And an attribute is associated with "data elemnts" but not with "org units"
+        Given an attribute is associated with "data elements" but not with "org units"
+        And the user is on the data <type> page
         Then it should not be an option in the id scheme input
 
         Examples:
@@ -14,8 +14,8 @@ Feature: Offer common attributes as options in id scheme input
             | export |
 
     Scenario Outline: An attribute is only associated with organisation units
-        Given the user is on the data <type> page
-        And an attribute is associated with "org units" but not with "data elements"
+        Given an attribute is associated with "org units" but not with "data elements"
+        And the user is on the data <type> page
         Then it should not be an option in the id scheme input
 
         Examples:
@@ -24,8 +24,8 @@ Feature: Offer common attributes as options in id scheme input
             | export |
 
     Scenario Outline: An attribute is associated with both data elements and organisation units
-        Given the user is on the data <type> page
-        And an attribute is associated with org units and data elements
+        Given an attribute is associated with org units and data elements
+        And the user is on the data <type> page
         Then it should be a selectable option in the id scheme input
 
         Examples:

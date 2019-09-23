@@ -4,11 +4,11 @@ Feature: Offer attributes as options in organisation unit id scheme input
     be available as options in the organisation unit id scheme input
 
     Scenario: An attribute is associated with organisation units when importing data
-        Given the user is on the data import page
-        And an attribute is associated with organisation units
+        Given an attribute is associated with organisation units
+        And the user is on the data import page
         Then it should be a selectable option in the organisation unit id scheme input
 
     Scenario: An attribute is associated with organisation units when exporting data
-        Given the user is on the data export page
-        And an attribute is associated with organisation units
+        Given an attribute is associated with organisation units
+        And the user is on the data export page
         Then it should be a selectable option in the organisation unit id scheme input
