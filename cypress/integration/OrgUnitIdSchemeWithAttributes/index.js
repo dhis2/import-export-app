@@ -61,11 +61,10 @@ Then(
                                 })
                             })
                         } else {
-
-                        /**
-                         * "New style"
-                         * After refatoring, using `ui-core` components
-                         */
+                            /**
+                             * "New style"
+                             * After refatoring, using `ui-core` components
+                             */
                             attributes.forEach(({ id }) => {
                                 expect(
                                     $orgUnitIdScheme

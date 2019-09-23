@@ -23,7 +23,9 @@ Given(
 
             cy.route({
                 url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true`,
-                response: { attributes: [] },
+                response: {
+                    attributes: [],
+                },
             })
         } else {
             cy.route({
@@ -33,7 +35,9 @@ Given(
 
             cy.route({
                 url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
-                response: { attributes: [] },
+                response: {
+                    attributes: [],
+                },
             })
         }
     }
@@ -80,11 +84,10 @@ Then('it should not be an option in the id scheme input', () => {
                         }
                     )
                 } else {
-
-                /**
-                 * "New style"
-                 * After refatoring, using `ui-core` components
-                 */
+                    /**
+                     * "New style"
+                     * After refatoring, using `ui-core` components
+                     */
                     nonCommonAttributes.forEach(({ id }) => {
                         expect(
                             $idScheme
@@ -115,8 +118,8 @@ Given('an attribute is associated with org units and data elements', () => {
 
 Then('it should be a selectable option in the id scheme input', () => {
     cy.wait(['@dataElementAttributesXHR', '@orgUnitAttributesXHR'])
-        // extract responses from both attributes requests
         .then(async ([dataElementAttributesXHR, orgUnitAttributesXHR]) => {
+            // extract responses from both attributes requests
             const dataElementAttributes = JSON.parse(
                 await dataElementAttributesXHR.response.body.text()
             )
@@ -130,8 +133,8 @@ Then('it should be a selectable option in the id scheme input', () => {
                 orgUnit: orgUnitAttributes.attributes,
             }
         })
-        // find common attributes
         .then(attributes => {
+            // find common attributes
             const commonAttributes = attributes.orgUnit.filter(
                 ({ id }) =>
                     attributes.dataElement.findIndex(
@@ -143,8 +146,8 @@ Then('it should be a selectable option in the id scheme input', () => {
 
             return commonAttributes
         })
-        // check for existence in DOM
         .then(attributes => {
+            // check for existence in DOM
             cy.get('[data-test-id="more-options-button"]').click()
             cy.get('[data-test-id="input-id-scheme"]').then($idScheme => {
                 /**
@@ -176,11 +179,10 @@ Then('it should be a selectable option in the id scheme input', () => {
                         }
                     )
                 } else {
-
-                /**
-                 * "New style"
-                 * After refatoring, using `ui-core` components
-                 */
+                    /**
+                     * "New style"
+                     * After refatoring, using `ui-core` components
+                     */
                     attributes.forEach(({ id }) => {
                         expect(
                             $idScheme
