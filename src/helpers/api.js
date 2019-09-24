@@ -3,6 +3,9 @@ const ATTRIBUTES_ENDPOINT = 'attributes.json'
 let d2
 let api
 
+export const getD2 = () => d2
+export const getApi = () => api
+
 /**
  * Sets d2 and the api
  */
