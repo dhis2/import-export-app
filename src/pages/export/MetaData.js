@@ -7,6 +7,7 @@ import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
 import { isProduction } from '../../helpers/env'
 
 export class MetaDataExport extends FormBase {
+    static dataTestId = 'export-metadata'
     static path = '/export/metadata'
 
     static order = 5

@@ -42,12 +42,16 @@ const fields = {
         CTX_CSV_OPTION
     ),
     compression: getField('compression', i18n.t('Compression'), TYPE_RADIO),
-    dataElementIdScheme: getField(
-        'dataElementIdScheme',
-        i18n.t('Data element ID scheme'),
-        TYPE_SELECT,
-        CTX_MORE_OPTIONS
-    ),
+    dataElementIdScheme: {
+        name: 'dataElementIdScheme',
+        label: i18n.t('Data element ID scheme'),
+        type: TYPE_SELECT,
+        context: CTX_MORE_OPTIONS,
+        required: false,
+        attributes: {
+            'data-test-id': 'input-data-element-id-scheme',
+        },
+    },
     dryRun: getField('dryRun', i18n.t('Dry run'), TYPE_RADIO),
     endDate: getField('endDate', i18n.t('End date'), TYPE_DATE),
     eventIdScheme: getField(
@@ -68,7 +72,16 @@ const fields = {
         CTX_MORE_OPTIONS
     ),
     format: getField('format', i18n.t('Format'), TYPE_RADIO),
-    idScheme: getField('idScheme', i18n.t('ID scheme'), TYPE_SELECT),
+    idScheme: {
+        name: 'idScheme',
+        label: i18n.t('ID scheme'),
+        type: TYPE_SELECT,
+        context: CTX_MORE_OPTIONS,
+        required: false,
+        attributes: {
+            'data-test-id': 'input-id-scheme',
+        },
+    },
     identifier: getField('identifier', i18n.t('Identifier'), TYPE_RADIO),
     importMode: getField('importMode', i18n.t('Dry run'), TYPE_RADIO),
     importReportMode: getField(
@@ -103,12 +116,16 @@ const fields = {
     objectList: getField('objectList', i18n.t('Object'), TYPE_SELECT),
     objectType: getField('objectType', i18n.t('Object type'), TYPE_SELECT),
     orgUnit: getField('orgUnit', i18n.t('Organisation unit'), TYPE_ORG_UNIT),
-    orgUnitIdScheme: getField(
-        'orgUnitIdScheme',
-        i18n.t('Org unit ID scheme'),
-        TYPE_SELECT,
-        CTX_MORE_OPTIONS
-    ),
+    orgUnitIdScheme: {
+        name: 'orgUnitIdScheme',
+        label: i18n.t('Org unit ID scheme'),
+        type: TYPE_SELECT,
+        context: CTX_MORE_OPTIONS,
+        required: false,
+        attributes: {
+            'data-test-id': 'input-org-unit-id-scheme',
+        },
+    },
     orgUnit_SingleSelect: getField(
         'orgUnit',
         i18n.t('Organisation unit'),

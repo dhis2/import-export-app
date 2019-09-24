@@ -29,6 +29,7 @@ import { isProduction } from '../../helpers/env'
 import s from '../../components/Form/styles.module.css'
 
 class DataExport extends FormBase {
+    static dataTestId = 'export-data'
     static path = '/export/data'
 
     static order = 7

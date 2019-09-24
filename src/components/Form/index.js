@@ -37,8 +37,23 @@ export class Form extends React.Component {
                 return null
             }
 
-            const { type, name, label, className, required } = field
-            const props = { name, label, className, required, formMeta }
+            const {
+                type,
+                name,
+                label,
+                className,
+                required,
+                attributes = {},
+            } = field
+
+            const props = {
+                ...attributes,
+                name,
+                label,
+                className,
+                required,
+                formMeta,
+            }
 
             if (type === TYPE_RADIO) {
                 props['values'] = fieldValuesOverride[name]
