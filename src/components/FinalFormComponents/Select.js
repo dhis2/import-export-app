@@ -10,6 +10,7 @@ export const Select = ({
     options,
     resetOnUnmount,
     defaultValue,
+    ...rest
 }) => {
     const { input } = useField(name, {
         type: 'select',

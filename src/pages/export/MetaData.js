@@ -55,6 +55,7 @@ export const MetaDataExport = () => {
     )
 }
 
+MetaDataExport.dataTestId = 'export-metadata'
 MetaDataExport.path = '/export/metadata'
 MetaDataExport.menuIcon = <MetadataExportIcon />
 MetaDataExport.order = 5

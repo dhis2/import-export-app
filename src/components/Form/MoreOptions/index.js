@@ -27,6 +27,7 @@ export default function MoreOptions({ enabled, onClick }) {
         <div
             className={s.container}
             onClick={() => onClick(enabled ? CTX_DEFAULT : CTX_MORE_OPTIONS)}
+            data-test-id="more-options-button"
         >
             {enabled ? <MinusIcon /> : <PlusIcon />}
             {i18n.t('more options')}

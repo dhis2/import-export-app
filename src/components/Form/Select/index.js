@@ -27,28 +27,31 @@ export default class SelectField extends React.Component {
 
     render() {
         const { name, label, values, selected } = this.props
+        const dataTestId = this.props['data-test-id'] || undefined
 
         return (
-            <FormControl className={s.formControl}>
-                <FormLabel className={s.formLabel}>{label}</FormLabel>
-                <Select
-                    {...styles}
-                    autoWidth={true}
-                    value={selected}
-                    onChange={this.onChange}
-                    className={s.select}
-                    fullWidth={false}
-                >
-                    {values.map(v => (
-                        <MenuItem
-                            key={`mi-${name}-${v.value}`}
-                            value={v.value}
-                            primaryText={v.label}
-                            className={s.menuItem}
-                        />
-                    ))}
-                </Select>
-            </FormControl>
+            <div data-test-id={dataTestId}>
+                <FormControl className={s.formControl}>
+                    <FormLabel className={s.formLabel}>{label}</FormLabel>
+                    <Select
+                        {...styles}
+                        autoWidth={true}
+                        value={selected}
+                        onChange={this.onChange}
+                        className={s.select}
+                        fullWidth={false}
+                    >
+                        {values.map(v => (
+                            <MenuItem
+                                key={`mi-${name}-${v.value}`}
+                                value={v.value}
+                                primaryText={v.label}
+                                className={s.menuItem}
+                            />
+                        ))}
+                    </Select>
+                </FormControl>
+            </div>
         )
     }
 }

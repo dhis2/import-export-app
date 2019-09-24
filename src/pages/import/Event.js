@@ -99,6 +99,7 @@ const EventImport = ({
         </Form>
     )
 }
+EventImport.dataTestId = 'import-event'
 EventImport.path = '/import/event'
 EventImport.title = i18n.t('Event Import')
 EventImport.desc = i18n.t(
