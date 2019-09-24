@@ -18,7 +18,7 @@ export const Select = ({
 
     return (
         <div className={styles.container}>
-            <SelectField {...input} label={label} filled>
+            <SelectField {...input} label={label} outlined>
                 {options.map(option => (
                     <option key={option.value} value={option.value}>
                         {option.label}
