@@ -1,18 +1,20 @@
+import { Form } from 'react-final-form'
+import { Button } from '@dhis2/ui-core'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import cx from 'classnames'
 
-import { FormBase } from '../../components/FormBase'
+import { FormContent } from '../../components/FormSections/FormContent'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
 import { MetadataExportIcon } from '../../components/Icon'
-import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
-import { isProduction } from '../../helpers/env'
+import { Schemas } from '../../components/Inputs/Schemas'
+import stylesForm from '../../components/Form/styles.module.css'
+import stylesFormBase from '../../components/FormBase/styles.module.css'
 
-import { fetchSchemas } from '../../reducers/schemas/thunks'
-import { useEffect } from 'react'
-import { connect } from 'react-redux'
-import {
-    getSchemas,
-    getSortedSchemaGroups,
-} from '../../reducers/schemas/selectors'
+//import { FormBase } from '../../components/FormBase'
+//import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
+//import { isProduction } from '../../helpers/env'
 
 const EXCLUDE_SCHEMAS = new Set([
     'analyticsTableHooks',
@@ -44,40 +46,39 @@ const EXCLUDE_SCHEMAS = new Set([
     'validationNotificationTemplates',
 ])
 
-const MetaDataExportPage = ({
-    schemasLoading,
-    schemasLoaded,
-    schemas,
-    schemaGroups,
-    fetchSchemas,
-}) => {
-    useEffect(
-        () => {
-            !schemasLoaded && fetchSchemas(EXCLUDE_SCHEMAS)
-        },
-        [] // eslint-disable-line react-hooks/exhaustive-deps
-    )
-
-    if (schemasLoading) {
-        return 'Schemas loading...'
-    }
+export const MetaDataExport = () => {
+    const onSubmitHandler = console.log.bind(null, 'MetaDataExport values')
+    const defaultValues = {}
 
     return (
-        <code>
-            <pre>{JSON.stringify(schemas, null, 2)}</pre>
-        </code>
+        <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
+            {({ handleSubmit, values }) => (
+                <div className={stylesForm.wrapper}>
+                    <form
+                        className={cx(stylesFormBase.form, stylesForm.form)}
+                        onSubmit={handleSubmit}
+                        style={{ width: 800 }}
+                    >
+                        <FormHeader
+                            icon={MetaDataExport.menuIcon}
+                            label={MetaDataExport.title}
+                        />
+
+                        <FormContent>
+                            <Schemas excluseSchemas={EXCLUDE_SCHEMAS} />
+                        </FormContent>
+
+                        <FormFooter>
+                            <Button primary type="submit">
+                                {i18n.t('Export')}
+                            </Button>
+                        </FormFooter>
+                    </form>
+                </div>
+            )}
+        </Form>
     )
 }
-
-export const MetaDataExport = connect(
-    state => ({
-        schemasLoaded: state.schemas.loaded,
-        schemasLoading: state.schemas.loading,
-        schemas: getSchemas(state),
-        schemaGroups: getSortedSchemaGroups(state),
-    }),
-    { fetchSchemas }
-)(MetaDataExportPage)
 
 MetaDataExport.path = '/export/metadata'
 MetaDataExport.menuIcon = <MetadataExportIcon />
