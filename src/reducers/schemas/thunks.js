@@ -19,14 +19,12 @@ const groupName = klass => {
         group.pop()
     }
 
-    return group[group.length - 1]
+    return group[group.length - 1].replace(/(.)([A-Z])/g, '$1 $2')
 }
 
 const formatSchemas = map(schema => ({
-    name: schema.name,
-    klass: schema.klass,
-    displayName: schema.displayName,
-    collectionName: schema.collectionName,
+    label: schema.displayName,
+    name: schema.collectionName,
     group: groupName(schema.klass),
 }))
 

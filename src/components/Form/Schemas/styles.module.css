@@ -34,16 +34,12 @@ form .formLabel {
 
 .group .schema {
     margin-top: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
 }
 
 .group .schema label {
     height: 24px;
     width: 33%;
     margin-right: 0;
-    align-items: flex-start;
     white-space: nowrap;
 }
 .group .schema > div {
