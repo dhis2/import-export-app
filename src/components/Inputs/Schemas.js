@@ -6,17 +6,18 @@ import i18n from '@dhis2/d2-i18n'
 import propTypes from 'prop-types'
 
 import { Checkbox } from '../FinalFormComponents/Checkbox'
+import { Loading } from '../Loading'
 import { fetchSchemas } from '../../reducers/schemas/thunks'
 import {
     getGroupLables,
     getGroupOrder,
     getSchemaGroups,
 } from '../../reducers/schemas/selectors'
-import s from '../Form/Schemas/styles.module.css'
+import s from './Schemas.module.css'
 
 const SCHEMAS_KEY = 'schemas'
 
-const ToggleAll = ({ schemaKey, value, children }) => {
+const ToggleAll = ({ schemaKey, value, children, className }) => {
     const form = useForm()
 
     const onClick = useCallback(() => {
@@ -29,11 +30,18 @@ const ToggleAll = ({ schemaKey, value, children }) => {
         })
     }, [form, value, schemaKey])
 
-    return <Button onClick={onClick} type="button" children={children} />
+    return (
+        <Button
+            onClick={onClick}
+            type="button"
+            children={children}
+            className={className}
+        />
+    )
 }
 
 const SelectAll = ({ schemaKey }) => (
-    <ToggleAll schemaKey={schemaKey} value={true}>
+    <ToggleAll schemaKey={schemaKey} value={true} className={s.selectAllButton}>
         {i18n.t('Select All')}
     </ToggleAll>
 )
@@ -83,7 +91,7 @@ const SchemasInput = ({
     }, [schemasLoaded, fetchSchemas, excludeSchemas])
 
     if (!schemasLoaded || schemasLoading) {
-        return 'Schemas loading...'
+        return <Loading />
     }
 
     return (
