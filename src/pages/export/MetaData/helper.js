@@ -14,7 +14,6 @@ import {
     SHARING_KEY,
 } from '../../../components/Inputs/Sharing'
 import { getApi } from '../../../helpers/api'
-import { isProduction } from '../../../helpers/env'
 
 export const EXCLUDE_SCHEMAS = new Set([
     'analyticsTableHooks',
