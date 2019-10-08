@@ -10,7 +10,6 @@ import './locales'
 import './index.css'
 import App from './App'
 import { store } from './store'
-import { initApi } from './helpers/api'
 import * as serviceWorker from './serviceWorker'
 
 /**
