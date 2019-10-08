@@ -18,16 +18,16 @@ import {
     initialValues,
     onSubmit,
 } from './MetaData/helper'
-import stylesForm from '../../components/Form/styles.module.css'
-import stylesFormBase from '../../components/FormBase/styles.module.css'
+import formStyles from '../../components/Form/styles.module.css'
+import formBaseStyles from '../../components/FormBase/styles.module.css'
 
 export const MetaDataExport = () => {
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit, values }) => (
-                <div className={stylesForm.wrapper}>
+                <div className={formStyles.wrapper}>
                     <form
-                        className={cx(stylesFormBase.form, stylesForm.form)}
+                        className={cx(formBaseStyles.form, formStyles.form)}
                         onSubmit={handleSubmit}
                         style={{ width: 800 }}
                     >

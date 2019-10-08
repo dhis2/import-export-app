@@ -16,7 +16,6 @@ const RadioComponent = ({ name, label, value, defaultValue }) => {
             {...input}
             key={value}
             label={label}
-            valid={!!input.value && !meta.error}
             error={meta.touched && !!meta.error}
             className={styles.radio}
         />

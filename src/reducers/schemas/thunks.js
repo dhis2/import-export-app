@@ -1,4 +1,3 @@
-import { get, filter, map, pipe } from 'lodash/fp'
 import { getSchemas } from '../../helpers/api'
 import {
     loadingSchemasStart,
@@ -6,8 +5,8 @@ import {
     loadingSchemasDone,
 } from './actions'
 
-const filterOutExcludedSchemas = excludedSchemas =>
-    filter(
+const filterOutExcludedSchemas = (excludedSchemas, schemas) =>
+    schemas.filter(
         schema => schema.metadata && !excludedSchemas.has(schema.collectionName)
     )
 
@@ -22,24 +21,28 @@ const groupName = klass => {
     return group[group.length - 1].replace(/(.)([A-Z])/g, '$1 $2')
 }
 
-const formatSchemas = map(schema => ({
-    label: schema.displayName,
-    name: schema.collectionName,
-    group: groupName(schema.klass),
-}))
+const formatSchemas = schemas =>
+    schemas.map(schema => ({
+        label: schema.displayName,
+        name: schema.collectionName,
+        group: groupName(schema.klass),
+    }))
 
 export const fetchSchemas = excludedSchemas => dispatch => {
     dispatch(loadingSchemasStart())
 
     return getSchemas()
-        .then(
-            pipe(
-                get('schemas'),
-                filterOutExcludedSchemas(excludedSchemas),
-                formatSchemas,
-                loadingSchemasDone,
-                dispatch
+        .then(({ schemas }) => {
+            const filteredSchemas = filterOutExcludedSchemas(
+                excludedSchemas,
+                schemas
             )
-        )
+            const formattedSchemas = formatSchemas(filteredSchemas)
+            const loadingSchemasDoneAction = loadingSchemasDone(
+                formattedSchemas
+            )
+
+            dispatch(loadingSchemasDoneAction)
+        })
         .catch(e => dispatch(loadingSchemasError(e.message)))
 }

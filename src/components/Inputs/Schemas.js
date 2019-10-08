@@ -1,94 +1,34 @@
-import { Button } from '@dhis2/ui-core'
 import { connect } from 'react-redux'
-import { useForm } from 'react-final-form'
-import React, { useEffect, useCallback } from 'react'
-import i18n from '@dhis2/d2-i18n'
+import React, { useEffect } from 'react'
 import propTypes from 'prop-types'
 
-import { Checkbox } from '../FinalFormComponents/Checkbox'
 import { Loading } from '../Loading'
 import { fetchSchemas } from '../../reducers/schemas/thunks'
 import {
-    getGroupLables,
+    getGroupLabels,
     getGroupOrder,
     getSchemaGroups,
 } from '../../reducers/schemas/selectors'
+import { Controls } from './Schemas/Controls'
+import { SchemaGroup } from './Schemas/SchemaGroup'
 import s from './Schemas.module.css'
 
 const SCHEMAS_KEY = 'schemas'
 
-const ToggleAll = ({ schemaKey, value, children, className }) => {
-    const form = useForm()
-
-    const onClick = useCallback(() => {
-        const fieldKeys = Object.keys(form.getState().values[schemaKey])
-
-        form.batch(() => {
-            fieldKeys.forEach(fieldKey => {
-                form.change(`${schemaKey}.${fieldKey}`, value)
-            })
-        })
-    }, [form, value, schemaKey])
-
-    return (
-        <Button
-            onClick={onClick}
-            type="button"
-            children={children}
-            className={className}
-        />
-    )
-}
-
-const SelectAll = ({ schemaKey }) => (
-    <ToggleAll schemaKey={schemaKey} value={true} className={s.selectAllButton}>
-        {i18n.t('Select All')}
-    </ToggleAll>
-)
-
-const SelectNone = ({ schemaKey }) => (
-    <ToggleAll schemaKey={schemaKey} value={false}>
-        {i18n.t('Select None')}
-    </ToggleAll>
-)
-
-const Controls = ({ schemaKey }) => (
-    <div className={s.controls}>
-        <SelectAll schemaKey={schemaKey} />
-        <SelectNone schemaKey={schemaKey} />
-    </div>
-)
-
-const SchemaGroup = ({ label, schemas }) => (
-    <div className={s.group}>
-        <span className={s.formLabel}>{label}</span>
-        <div className={s.schema}>
-            {schemas.map(schema => (
-                <div key={schema.name}>
-                    <Checkbox
-                        label={schema.label}
-                        name={`schemas.${schema.name}`}
-                        checkedInitially
-                    />
-                </div>
-            ))}
-        </div>
-    </div>
-)
-
 const SchemasInput = ({
     excludeSchemas,
-
     schemasLoading,
     schemasLoaded,
     schemaGroups,
-    schemaGroupLables,
+    schemaGroupLabels,
     schemaGroupOrder,
     fetchSchemas,
 }) => {
     useEffect(() => {
-        !schemasLoaded && fetchSchemas(excludeSchemas)
-    }, [schemasLoaded, fetchSchemas, excludeSchemas])
+        if (!schemasLoading && !schemasLoaded) {
+            fetchSchemas(excludeSchemas)
+        }
+    }, [schemasLoading, schemasLoaded, fetchSchemas, excludeSchemas])
 
     if (!schemasLoaded || schemasLoading) {
         return <Loading />
@@ -100,7 +40,7 @@ const SchemasInput = ({
 
             <div className={s.formControl}>
                 {schemaGroupOrder.map(groupKey => {
-                    const label = schemaGroupLables[groupKey]
+                    const label = schemaGroupLabels[groupKey]
 
                     return (
                         <SchemaGroup
@@ -128,7 +68,7 @@ export const Schemas = connect(
         schemasLoaded: state.schemas.loaded,
         schemasLoading: state.schemas.loading,
         schemaGroups: getSchemaGroups(state),
-        schemaGroupLables: getGroupLables(state),
+        schemaGroupLabels: getGroupLabels(state),
         schemaGroupOrder: getGroupOrder(state),
     }),
     { fetchSchemas }

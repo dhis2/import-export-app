@@ -17,6 +17,9 @@ const groupSchemas = schemas =>
 
         return {
             ...groups,
+
+            // add schema to "group" collection if existing,
+            // otherwise create new collection with schema as first entry
             [group]: groups[group] ? [...groups[group], schema] : [schema],
         }
     }, {})
@@ -50,11 +53,13 @@ const combineSingleItemGroups = groups => {
  */
 function breakOnCamelCase(schemaName, name) {
     const temp = schemaName.substr(0, name.length).replace(/([A-Z]+)/g, ' $1')
+
     return temp[0].toUpperCase() + temp.substr(1)
 }
 
 function groupLabelLowerCase(name, schemas) {
     const validate = n => name === n.toLowerCase()
+
     for (let i = 0; i < schemas.length; i += 1) {
         if (validate(schemas[i]['name'])) {
             return [true, schemas[i]['displayName']]
@@ -66,6 +71,7 @@ function groupLabelLowerCase(name, schemas) {
 
 function groupLabelCamelCase(name, schemas) {
     const validate = n => n.includes(name) && n.indexOf(name) === 0
+
     for (let i = 0; i < schemas.length; i += 1) {
         const schemaName = schemas[i]['name'].toLowerCase()
         if (validate(schemaName)) {
@@ -78,6 +84,7 @@ function groupLabelCamelCase(name, schemas) {
 
 function groupLabel(name, schemas) {
     const nameLC = name.toLowerCase()
+
     if (nameLC === 'oauth2' || nameLC === 'other') {
         return name
     }
@@ -113,7 +120,7 @@ export const getSchemaGroups = createSelector(
     }
 )
 
-export const getGroupLables = createSelector(
+export const getGroupLabels = createSelector(
     getSchemaGroups,
     schemaGroups => {
         return Object.entries(schemaGroups).reduce(

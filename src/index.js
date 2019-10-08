@@ -23,7 +23,6 @@ init({
     baseUrl: `${REACT_APP_DHIS2_BASE_URL}/api/`,
     headers: { 'X-Requested-With': 'XMLHttpRequest' },
 })
-    .then(initApi)
     .then(() => {
         /**
          * Initialize material ui theme

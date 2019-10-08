@@ -59,14 +59,13 @@ const getEndpointExtension = (format, compression) => {
     return `${format}.${compression}`
 }
 
-export const onSubmit = values => {
-    const api = getApi()
+export const onSubmit = async values => {
+    const api = await getApi()
 
     const { schemas, format, compression, skipSharing } = values
 
     const endpoint = `metadata`
     const endpointExtension = getEndpointExtension(format, compression)
-    console.log('schemas', schemas)
     const schemaParams = Object.keys(schemas)
         .filter(s => schemas[s])
         .map(name => `${name}=true`)
