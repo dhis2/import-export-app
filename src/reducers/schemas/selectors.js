@@ -51,55 +51,79 @@ const combineSingleItemGroups = groups => {
  * Get group label helpers
  * =======================
  */
-function breakOnCamelCase(schemaName, name) {
-    const temp = schemaName.substr(0, name.length).replace(/([A-Z]+)/g, ' $1')
 
-    return temp[0].toUpperCase() + temp.substr(1)
-}
+/**
+ * This function will loop through all schemas and
+ * compare the the lower case groupKey with
+ * the schemas' name.
+ * If a match is found, that match will be returned
+ */
+function findLabelByLowerCaseComparison(groupKey, schemas) {
+    const isGroupKeyMatchingLowerCaseSchemaName = schemaName =>
+        groupKey === schemaName.toLowerCase()
 
-function groupLabelLowerCase(name, schemas) {
-    const validate = n => name === n.toLowerCase()
+    return schemas.reduce((foundLabel, { name: schemaName, displayName }) => {
+        // do not try to compare anything if a label already
+        // has been found
+        if (foundLabel) return foundLabel
 
-    for (let i = 0; i < schemas.length; i += 1) {
-        if (validate(schemas[i]['name'])) {
-            return [true, schemas[i]['displayName']]
+        if (isGroupKeyMatchingLowerCaseSchemaName(schemaName)) {
+            return displayName
         }
-    }
 
-    return [false, null]
+        return foundLabel
+    }, '')
 }
 
-function groupLabelCamelCase(name, schemas) {
-    const validate = n => n.includes(name) && n.indexOf(name) === 0
+const ucFirst = str => str[0].toUpperCase() + str.substr(1)
 
-    for (let i = 0; i < schemas.length; i += 1) {
-        const schemaName = schemas[i]['name'].toLowerCase()
-        if (validate(schemaName)) {
-            return [true, breakOnCamelCase(schemas[i]['name'], name)]
+/**
+ * This function will go through all schemas
+ * and will compare the scheme name with the
+ * lower case group key at position 0 of the schema key.
+ * Once a match is found, the match will be extracted,
+ * spaces will be inserted before all capital letters
+ * and the result returned
+ */
+function findKeyByCamelCaseComparison(groupKey, schemas) {
+    const isGroupKeyInSchemaName = schemaName =>
+        schemaName.includes(groupKey) && schemaName.indexOf(groupKey) === 0
+
+    // Will return either a label or an empty string
+    // if no match for the groupKey was found
+    return schemas.reduce((foundLabel, { name: schemaName }) => {
+        // do not try to compare anything if a label already
+        // has been found
+        if (foundLabel) return foundLabel
+
+        const lowerCaseSchemaName = schemaName.toLowerCase()
+
+        if (isGroupKeyInSchemaName(lowerCaseSchemaName)) {
+            return ucFirst(
+                schemaName
+                    // extract part that matches the groupKey
+                    .substr(0, groupKey.length)
+                    // insert space before capital letters
+                    .replace(/([A-Z]+)/g, ' $1')
+            )
         }
-    }
 
-    return [false, null]
+        return foundLabel
+    }, '')
 }
 
-function groupLabel(name, schemas) {
-    const nameLC = name.toLowerCase()
+function extractGroupLabelFromSchemas(groupKey, schemas) {
+    const lowerCaseGroupKey = groupKey.toLowerCase()
 
-    if (nameLC === 'oauth2' || nameLC === 'other') {
-        return name
+    if (lowerCaseGroupKey === 'oauth2' || lowerCaseGroupKey === 'other') {
+        return groupKey
     }
 
-    const [isLower, displayName] = groupLabelLowerCase(nameLC, schemas)
-    if (isLower) {
-        return displayName
-    }
-
-    const [isCamelCase, ccName] = groupLabelCamelCase(nameLC, schemas)
-    if (isCamelCase) {
-        return ccName
-    }
-
-    return name[0].toUpperCase() + name.substr(1)
+    return (
+        findLabelByLowerCaseComparison(lowerCaseGroupKey, schemas) ||
+        findKeyByCamelCaseComparison(lowerCaseGroupKey, schemas) ||
+        groupKey[0].toUpperCase() + groupKey.substr(1)
+    )
 }
 
 /**
@@ -125,7 +149,7 @@ export const getGroupLabels = createSelector(
     schemaGroups => {
         return Object.entries(schemaGroups).reduce(
             (groupLabels, [groupKey, schemas]) => {
-                const label = groupLabel(groupKey, schemas)
+                const label = extractGroupLabelFromSchemas(groupKey, schemas)
 
                 return {
                     ...groupLabels,
