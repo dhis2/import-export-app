@@ -1,0 +1,418 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ps\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "user is not logged in"
+msgstr ""
+
+msgid "Import Error"
+msgstr ""
+
+msgid "Go Back"
+msgstr ""
+
+msgid "filter data sets by name"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Clear All"
+msgstr ""
+
+msgid "Data sets"
+msgstr "د مالوماتو یا ډاټا ټولګې"
+
+msgid "Choose a file to upload"
+msgstr ""
+
+msgid "Required"
+msgstr "اړین دي"
+
+msgid "more options"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Select None"
+msgstr ""
+
+msgid "Logger"
+msgstr ""
+
+msgid "view messages received on using import/export forms."
+msgstr ""
+
+msgid "Import"
+msgstr "واردول"
+
+msgid "Export"
+msgstr "صادرول"
+
+msgid "Created"
+msgstr "ایجاد شوی دی"
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Ignored"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Total"
+msgstr "ټولټال"
+
+msgid "Type"
+msgstr "نمونه/ډول"
+
+msgid "Type Count"
+msgstr ""
+
+msgid "Messages"
+msgstr "پېغامونه"
+
+msgid "Summaries"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Import Summary"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Atomic Mode"
+msgstr ""
+
+msgid "Category ID scheme"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "End date"
+msgstr "د پای نېټه"
+
+msgid "Event ID Scheme"
+msgstr ""
+
+msgid "Flush Mode"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "ID scheme"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Report Mode"
+msgstr ""
+
+msgid "Import Strategy"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "Inclusion Strategy"
+msgstr ""
+
+msgid "Merge Mode"
+msgstr ""
+
+msgid "Object"
+msgstr "شی (څیز)"
+
+msgid "Organisation unit"
+msgstr "د سازمان واحد"
+
+msgid "Org unit ID scheme"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Preheat Mode"
+msgstr ""
+
+msgid "Program Stages"
+msgstr ""
+
+msgid "Programs"
+msgstr "پروګرامونه"
+
+msgid "Schemas"
+msgstr ""
+
+msgid "Data Sets"
+msgstr ""
+
+msgid "Sharing"
+msgstr "د شریکېدو په حال کې"
+
+msgid "Existing record check"
+msgstr ""
+
+msgid "Skip Sharing"
+msgstr ""
+
+msgid "Skip Validation"
+msgstr ""
+
+msgid "Start date"
+msgstr "د پیل نېټه"
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Yes"
+msgstr "هو [ درست ]"
+
+msgid "No"
+msgstr "نه [ نه ]"
+
+msgid "UID"
+msgstr ""
+
+msgid "Code"
+msgstr "کوډ یا شفر"
+
+msgid "Name"
+msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
+
+msgid "HR identifier"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr ""
+
+msgid "New and Updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "خذف یې کړئ"
+
+msgid "Skip check (fast)"
+msgstr ""
+
+msgid "Check (safe, recommended)"
+msgstr ""
+
+msgid "AUTO"
+msgstr ""
+
+msgid "Errors"
+msgstr "تېروتنې"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Reference"
+msgstr "مرجع / مأخذ"
+
+msgid "All"
+msgstr "ټول"
+
+msgid "None"
+msgstr "هېڅ یو"
+
+msgid "Create and Update"
+msgstr ""
+
+msgid "Create"
+msgstr "جوړ یې کړئ"
+
+msgid "Update"
+msgstr "تجدید یا نوي یې کړئ"
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr "ځاېناستول"
+
+msgid "Auto"
+msgstr ""
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "Gzip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Category combination"
+msgstr "د کټګورۍ ترکیب"
+
+msgid "Dashboard"
+msgstr "ډېشبورډ [ ډېسبورډ ]"
+
+msgid "Data element groups"
+msgstr "د مالوماتو د برخې ګروپونه"
+
+msgid "Option sets"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "Import/Export"
+msgstr "واردول-صادرول"
+
+msgid "Data Export"
+msgstr ""
+
+msgid ""
+"Export data values. This is the regular export function which exports data "
+"to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "Event Export"
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid "Metadata Export"
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+
+msgid "Meta Data Export"
+msgstr ""
+
+msgid "Metadata Dependency Export"
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects."
+msgstr ""
+
+msgid "Metadata Export with Dependencies"
+msgstr ""
+
+msgid "Import / Export"
+msgstr ""
+
+msgid "Import or Export DHIS2 data."
+msgstr ""
+
+msgid "Data Import"
+msgstr "ډاټا یا مالومات ولېږدوئ"
+
+msgid ""
+"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
+"is the standard exchange format for DHIS 2."
+msgstr ""
+
+msgid "Event Import"
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr ""
+
+msgid "GML Import"
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "Only import of GML data for existing organisation units is supported."
+msgstr ""
+
+msgid "Metadata Import"
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the standard"
+" DHIS 2 exchange format called DXF 2."
+msgstr ""
