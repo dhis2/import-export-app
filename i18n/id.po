@@ -1,0 +1,435 @@
+# Translators:
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "user is not logged in"
+msgstr "pengguna belum masuk"
+
+msgid "Import Error"
+msgstr "Kesalahan import"
+
+msgid "Go Back"
+msgstr "Kembali"
+
+msgid "filter data sets by name"
+msgstr "saring data set berdasar nama"
+
+msgid "Select All"
+msgstr "Pilih Semua"
+
+msgid "Clear All"
+msgstr "Bersihkan Semua"
+
+msgid "Data sets"
+msgstr "Data set"
+
+msgid "Choose a file to upload"
+msgstr "Pilih berkas untuk diunggah"
+
+msgid "Required"
+msgstr "Wajib"
+
+msgid "more options"
+msgstr "opsi lainnya"
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Select None"
+msgstr "Tidak Memilih"
+
+msgid "Logger"
+msgstr "Logger"
+
+msgid "view messages received on using import/export forms."
+msgstr "lihat pesan yang diterima tentang form import/eksport."
+
+msgid "Import"
+msgstr "Impor"
+
+msgid "Export"
+msgstr "Ekspor"
+
+msgid "Created"
+msgstr "Dibuat"
+
+msgid "Deleted"
+msgstr "Dihapus"
+
+msgid "Ignored"
+msgstr "Diabaikan"
+
+msgid "Updated"
+msgstr "Diperbarui"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Type"
+msgstr "Tipe"
+
+msgid "Type Count"
+msgstr "Hitung Tipe"
+
+msgid "Messages"
+msgstr "Pesan"
+
+msgid "Summaries"
+msgstr "Ringkasan"
+
+msgid "Conflicts"
+msgstr "Konflik"
+
+msgid "Import Summary"
+msgstr "Ringkasan Impor"
+
+msgid "Summary"
+msgstr "Ringkasan"
+
+msgid "Async"
+msgstr "Async"
+
+msgid "Atomic Mode"
+msgstr "Mode Atomik"
+
+msgid "Category ID scheme"
+msgstr "Skema ID Kategori"
+
+msgid "Children"
+msgstr "Sub"
+
+msgid "Object type"
+msgstr "Tipe Obyek"
+
+msgid "Compression"
+msgstr "Kompresi"
+
+msgid "Data element ID scheme"
+msgstr "Skema ID data elemen"
+
+msgid "Dry run"
+msgstr "Dry run"
+
+msgid "End date"
+msgstr "Tanggal berakhir"
+
+msgid "Event ID Scheme"
+msgstr "Skema ID Kejadian"
+
+msgid "Flush Mode"
+msgstr "Mode Flush"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "ID scheme"
+msgstr "Skema ID"
+
+msgid "Identifier"
+msgstr "Pengenal"
+
+msgid "Report Mode"
+msgstr "Mode Laporan"
+
+msgid "Import Strategy"
+msgstr "Strategi Impor"
+
+msgid "Include deleted"
+msgstr "Ikutkan yang dihapus"
+
+msgid "Inclusion"
+msgstr "Inklusi"
+
+msgid "Inclusion Strategy"
+msgstr "Strategi Inklusi"
+
+msgid "Merge Mode"
+msgstr "Mode Gabung"
+
+msgid "Object"
+msgstr "Objek"
+
+msgid "Organisation unit"
+msgstr "Unit organisasi"
+
+msgid "Org unit ID scheme"
+msgstr "Skema ID unit org"
+
+msgid "Preheat cache"
+msgstr "Preheat cache"
+
+msgid "Preheat Mode"
+msgstr "Mode Preheat"
+
+msgid "Program Stages"
+msgstr "Tahapan Program"
+
+msgid "Programs"
+msgstr "Program-program"
+
+msgid "Schemas"
+msgstr "Skema"
+
+msgid "Data Sets"
+msgstr "Data Set"
+
+msgid "Sharing"
+msgstr "Berbagi"
+
+msgid "Existing record check"
+msgstr "Cek rekaman yang sudah ada"
+
+msgid "Skip Sharing"
+msgstr "Lewati Berbagi"
+
+msgid "Skip Validation"
+msgstr "Lewati Validasi"
+
+msgid "Start date"
+msgstr "Tanggal dimulai"
+
+msgid "Strategy"
+msgstr "Strategi"
+
+msgid "Yes"
+msgstr "Ya"
+
+msgid "No"
+msgstr "Tidak"
+
+msgid "UID"
+msgstr "UID"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "HR identifier"
+msgstr "Identifier HR"
+
+msgid "Include descendants of organisation unit"
+msgstr "Ikutkan unit org di bawahnya"
+
+msgid "Selected organisation unit"
+msgstr "Unit org yang terpilih"
+
+msgid "Yes (faster for large imports)"
+msgstr "Ya (lebih cepat untuk impor ukuran besar)"
+
+msgid "New and Updates"
+msgstr "Baru dan Perbaruan"
+
+msgid "New only"
+msgstr "Hanya baru"
+
+msgid "Updates only"
+msgstr "Hanya perbaruan"
+
+msgid "Delete"
+msgstr "hapus"
+
+msgid "Skip check (fast)"
+msgstr "Lewati pengecekan (cepat)"
+
+msgid "Check (safe, recommended)"
+msgstr "Cek (aman, direkomendasikan)"
+
+msgid "AUTO"
+msgstr "OTOMATIS"
+
+msgid "Errors"
+msgstr "Kesalahan"
+
+msgid "Full"
+msgstr "Penuh"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Reference"
+msgstr "Referensi"
+
+msgid "All"
+msgstr "Semua"
+
+msgid "None"
+msgstr "Tidak ada"
+
+msgid "Create and Update"
+msgstr "Buat dan Perbarui"
+
+msgid "Create"
+msgstr "Buat"
+
+msgid "Update"
+msgstr "perbarui"
+
+msgid "Merge"
+msgstr "Gabung"
+
+msgid "Replace"
+msgstr "Gantikan"
+
+msgid "Auto"
+msgstr "Otomatis"
+
+msgid "With sharing"
+msgstr "Dengan pembagian"
+
+msgid "Without sharing"
+msgstr "Tanpa pembagian"
+
+msgid "Non Null"
+msgstr "Non Null"
+
+msgid "Always"
+msgstr "Selalu"
+
+msgid "Non Empty"
+msgstr "Tidak Kosong"
+
+msgid "Include children of organisation unit"
+msgstr "Ikutkan unit org di bawahnya"
+
+msgid "Zip"
+msgstr "Zip"
+
+msgid "Gzip"
+msgstr "Gzip"
+
+msgid "Uncompressed"
+msgstr "Tidak dikompres"
+
+msgid "Category combination"
+msgstr "Kombinasi kategori"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Data element groups"
+msgstr "Grup data elemen"
+
+msgid "Option sets"
+msgstr "Set opsi"
+
+msgid "[ All program stages]"
+msgstr "[ Semua tahapan program ]"
+
+msgid "Import/Export"
+msgstr "Impor/Ekspor"
+
+msgid "Data Export"
+msgstr "Ekspor Data"
+
+msgid ""
+"Export data values. This is the regular export function which exports data "
+"to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+"Nilai data ekspor. Ini adalah fungsi ekspor biasa untuk mengekspor data ke "
+"format pertukaran DHIS2 yang disebut DXF 2."
+
+msgid "Event Export"
+msgstr "Ekspor Kejadian"
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+"Ekspor data kejadian untuk program, tahapan dan entitas yang ditrack dalam "
+"format DXF 2."
+
+msgid "Metadata Export"
+msgstr "Ekspor Metadata"
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+"Ekspor meta data seperti data elemen dan unit organisasi dalam format "
+"pertukaran DHIS2 standar."
+
+msgid "Meta Data Export"
+msgstr "Ekspor Meta Data"
+
+msgid "Metadata Dependency Export"
+msgstr "Ekspor Dependensi Metadata"
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects."
+msgstr ""
+"Ekspor metadata seperti data set dan program termasuk objek metadata yang "
+"terkait"
+
+msgid "Metadata Export with Dependencies"
+msgstr "Ekspor Metadata dengan Dependensi"
+
+msgid "Import / Export"
+msgstr "Impor / Ekspor"
+
+msgid "Import or Export DHIS2 data."
+msgstr "Impor atau Ekspor data DHIS2."
+
+msgid "Data Import"
+msgstr "Impor Data"
+
+msgid ""
+"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
+"is the standard exchange format for DHIS 2."
+msgstr ""
+"Impor nilai data dalam format DXF 2 XML, JSON, CSV, dan PDF. DXF 2 adalah "
+"format pertukaran standar untuk DHIS2."
+
+msgid "Event Import"
+msgstr "Impor Kejadian"
+
+msgid ""
+"Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr ""
+"Impor data kejadian untuk program, tahapan dan entitas yang ditrack dalam "
+"format DXF 2."
+
+msgid "GML Import"
+msgstr "Impor GML"
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+"Impor data geografik untuk unit organisasi dengan format GML. GML merupakan "
+"grammar XML untuk mengekspresikan fitur geografik."
+
+msgid "Only import of GML data for existing organisation units is supported."
+msgstr ""
+"Hanya mendukung impor data GML untuk unit organisasi yang sudah dibuat."
+
+msgid "Metadata Import"
+msgstr "Impor Metadata"
+
+msgid ""
+"Import metadata like data elements and organisation units using the standard"
+" DHIS 2 exchange format called DXF 2."
+msgstr ""
+"Impor meta data seperti data elemen dan unit organisasi dalam format "
+"pertukaran DHIS2 standar."
