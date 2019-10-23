@@ -1,93 +1,28 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-07-12T10:21:05.448Z\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-19T09:02:38.293Z\n"
-"PO-Revision-Date: 2018-06-19T09:02:38.293Z\n"
-
-msgid "Metadata Import"
-msgstr "میٹا ڈیٹا اِیمپورٹ"
-
-msgid "Data Import"
-msgstr "ڈیٹا اِیمپورٹ"
-
-msgid "GML Import"
-msgstr "جی۔ایم۔ایل اِیمپورٹ"
-
-msgid "Event Import"
-msgstr "اِیونٹ اِیمپورٹ"
-
-msgid "Metadata Export"
-msgstr "میٹا ڈیٹا ایکسپورٹ"
-
-msgid "Metadata Dependency Export"
-msgstr "میٹا دیٹا ڈییپنڈسی ایکسپورٹ"
-
-msgid "Data Export"
-msgstr "ڈیٹا ایکسپورٹ"
-
-msgid "Event Export"
-msgstr "اِیونٹ ایکسپورٹ"
-
-msgid "Import"
-msgstr "اِیمپورٹ"
-
-msgid "Export"
-msgstr "ایکسپورٹ"
-
-msgid ""
-"Export data values. This is the regular export function which exports data "
-"to the DHIS 2 exchange format called DXF 2."
-msgstr ""
-"ایکسپورٹ ڈیٹا ویلیوز۔ یہ ایک عموممی ایکسپورٹ فنکشن ہے جو ڈی۔آئی۔ایچ۔ایس کے "
-"فارمیٹ میں DXF 2 میں ڈیٹا کو ایکسپورٹ کرتا ہے۔"
-
-msgid ""
-"Export event data for programs, stages and tracked entities in the DXF 2 "
-"format."
-msgstr "پرواگرام، سٹیج اور ٹریک اینٹیٹیز کا ڈیٹا DXF 2 فارمیٹ میں ایکسپورٹ کریں۔"
-
-msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
-msgstr ""
-" یٹا ایلمنٹس اور ارگنائزینشن یونٹ کی طرح میٹا دیٹا کو DHIS 2 ایکسچینج "
-"فارمیٹ میں ایکسپورٹ کریں"
-
-msgid ""
-"Export metadata like data sets and programs including related metadata "
-"objects."
-msgstr "میٹا ڈیٹا کو ڈیٹا سیٹ اور پروگرامز کی طرح ایکسپورٹ کریں۔"
-
-msgid ""
-"Import data values on the DXF 2 XML, JSON, CSV and PDF formats. DXF 2 is "
-"the standard exchange format for DHIS 2."
-msgstr ""
-"ڈیٹا ویلیوز کو ایمپورٹ کے لیے DXF 2, CSV, JSON یا PDF فارمٹ کو استمال کریں۔ "
-"ڈی۔آئی۔ایچ۔ایس 2 میں DXF 2 ڈیٹا ایکسچینج کا معیار ہے"
-
-msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
-msgstr "پروگرام، سٹیجیز اور ٹریک اینٹٹیز کو DXF 2 کے فارمیٹ میں ایمپورٹ کریں۔"
-
-msgid ""
-"Import geographic data for organisation units using GML format. GML is an "
-"XML grammar for expressing geographical features."
-msgstr ""
-"تنظیمی یونٹ سے مطالق جغرافیایی ڈیٹا کو ایمپورٹ کریں۔ GML ایمپورٹ کا یہ "
-"فارمیٹ XML پر مبنی ہے جو جغرافیایی خصوصیات کی رونمائی کرتا ہے۔"
-
-msgid ""
-"Import metadata like data elements and organisation units using the "
-"standard DHIS 2 exchange format called DXF 2."
-msgstr ""
-"۔DXF 2 کے فارمیٹ میں میٹا ڈیٹا کو ایمپورٹ کریں۔ مثلاً ڈیٹا ایلیمنٹ، تنظیمی "
-"یونٹ وغیرہ۔"
+"Language: ur\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "user is not logged in"
 msgstr "صارف نے لاگن نہیں کیا ہوا ہے"
+
+msgid "Import Error"
+msgstr ""
+
+msgid "Go Back"
+msgstr ""
 
 msgid "filter data sets by name"
 msgstr "ڈیٹا سیٹ کو نام سے فلٹر کرو"
@@ -108,13 +43,13 @@ msgid "more options"
 msgstr "مذید آپشنز"
 
 msgid "JSON"
-msgstr "جے۔سو۔ن"
+msgstr "JSON"
 
 msgid "XML"
-msgstr "ایکس۔ایم۔ایل"
+msgstr "XML"
 
 msgid "CSV"
-msgstr "سی۔ایس۔وی"
+msgstr "CSV"
 
 msgid "Select None"
 msgstr "کوئی سیلکٹ نہ کرو"
@@ -125,20 +60,62 @@ msgstr "لوگر"
 msgid "view messages received on using import/export forms."
 msgstr "پیغامات جو ایمپورٹ ایکسپوٹ کے دوران وصول ہوئے ہوں۔"
 
-msgid "Organisation unit"
-msgstr "تنظیمی یونٹ"
+msgid "Import"
+msgstr "درآمد کریں"
 
-msgid "Data Sets"
-msgstr "ڈیٹا سیٹ"
+msgid "Export"
+msgstr "برآمد کریں"
 
-msgid "Start date"
-msgstr "تاریخ آغاز"
+msgid "Created"
+msgstr "تخلیق"
 
-msgid "End date"
-msgstr "تاریخ اختتام"
+msgid "Deleted"
+msgstr ""
 
-msgid "Format"
-msgstr "فارمیٹ"
+msgid "Ignored"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Total"
+msgstr "کُل"
+
+msgid "Type"
+msgstr "ٹائپ"
+
+msgid "Type Count"
+msgstr ""
+
+msgid "Messages"
+msgstr "پیغامات"
+
+msgid "Summaries"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Import Summary"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Atomic Mode"
+msgstr ""
+
+msgid "Category ID scheme"
+msgstr "قسم ائ۔ڈی سکیم"
+
+msgid "Children"
+msgstr ""
+
+msgid "Object type"
+msgstr "آبجیکٹ کی قسم"
 
 msgid "Compression"
 msgstr "کمپریشن"
@@ -146,14 +123,95 @@ msgstr "کمپریشن"
 msgid "Data element ID scheme"
 msgstr "ڈیٹا ائ۔ڈی سکیم"
 
+msgid "Dry run"
+msgstr "ڈرائے رن"
+
+msgid "End date"
+msgstr "آخری تاریخ"
+
+msgid "Event ID Scheme"
+msgstr "ایونٹ ائی۔ڈی سکیم"
+
+msgid "Flush Mode"
+msgstr ""
+
+msgid "Format"
+msgstr "فارمیٹ"
+
+msgid "ID scheme"
+msgstr "ائ۔ڈی سکیم"
+
+msgid "Identifier"
+msgstr "شناختی"
+
+msgid "Report Mode"
+msgstr ""
+
+msgid "Import Strategy"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
+msgid "Inclusion"
+msgstr "شمولیت"
+
+msgid "Inclusion Strategy"
+msgstr ""
+
+msgid "Merge Mode"
+msgstr ""
+
+msgid "Object"
+msgstr "اؤبجیکٹ"
+
+msgid "Organisation unit"
+msgstr "تنظیم یونٹ"
+
 msgid "Org unit ID scheme"
 msgstr "تنظیمی یونٹ ائ۔ڈی سکیم"
 
-msgid "Category ID scheme"
-msgstr "قسم ائ۔ڈی سکیم"
+msgid "Preheat cache"
+msgstr "پہلے سے ہی کیش کو گرم کرو"
 
-msgid "Zip"
-msgstr "زی۔ایپ"
+msgid "Preheat Mode"
+msgstr ""
+
+msgid "Program Stages"
+msgstr "پروگرام سٹیجیز"
+
+msgid "Programs"
+msgstr "پروگرامز"
+
+msgid "Schemas"
+msgstr "سکیماماس"
+
+msgid "Data Sets"
+msgstr "ڈیٹا سیٹ"
+
+msgid "Sharing"
+msgstr "اشتراک کرنا"
+
+msgid "Existing record check"
+msgstr "پہلے کے ریکارڈ کا چیک"
+
+msgid "Skip Sharing"
+msgstr ""
+
+msgid "Skip Validation"
+msgstr ""
+
+msgid "Start date"
+msgstr "تاریخ آغاز"
+
+msgid "Strategy"
+msgstr "حکمت عملی"
+
+msgid "Yes"
+msgstr "ہاں"
+
+msgid "No"
+msgstr "نہیں"
 
 msgid "UID"
 msgstr "یو۔ای۔ڈی"
@@ -167,108 +225,14 @@ msgstr "نام"
 msgid "HR identifier"
 msgstr "ایچ۔اڑ ایڈینٹیفائر"
 
-msgid "Programs"
-msgstr "پروگرامس"
-
-msgid "Program Stages"
-msgstr "پروگرام سٹیجیز"
-
-msgid "ID scheme"
-msgstr "ائ۔ڈی سکیم"
-
-msgid "Inclusion"
-msgstr "شمولیت"
-
-msgid "[ All program stages]"
-msgstr "[تمام پروگرام سٹیجیز]"
+msgid "Include descendants of organisation unit"
+msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
 
 msgid "Selected organisation unit"
 msgstr "سیلیکٹیڈ تنظیمی یونٹ"
 
-msgid "Include children of organisation unit"
-msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
-
-msgid "Include descendants of organisation unit"
-msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
-
-msgid "Gzip"
-msgstr "جی۔زیپ"
-
-msgid "Meta Data Export"
-msgstr "میٹاڈیٹا ایمپورٹ"
-
-msgid "Schemas"
-msgstr "سکیماماس"
-
-msgid "Sharing"
-msgstr "اشتراک"
-
-msgid "Uncompressed"
-msgstr "ان کمپریس"
-
-msgid "With sharing"
-msgstr "اشتراک کے ساتھ"
-
-msgid "Without sharing"
-msgstr "بغیر اشتراک کے ساتھ"
-
-msgid "Metadata Export with Dependencies"
-msgstr "میٹا ڈیٹا ایکسپورٹ انحصار کے ساتھ"
-
-msgid "Object type"
-msgstr "اؤبجیکٹ ٹائپ"
-
-msgid "Object"
-msgstr "اؤبجیکٹ"
-
-msgid "Category combination"
-msgstr "قسم کا مجموعہ"
-
-msgid "Dashboard"
-msgstr "ڈیشپورڈ"
-
-msgid "Data element groups"
-msgstr "ڈیٹا عناصر کا گروہ"
-
-msgid "Import / Export"
-msgstr "ایمپورٹ / ایکسپورٹ"
-
-msgid "Import or Export DHIS2 data."
-msgstr "ایمپورٹ یا ایکسپورٹ ڈیٹا"
-
-msgid ""
-"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
-"is the standard exchange format for DHIS 2."
-msgstr ""
-"ایمپورٹ ڈیٹا ویلیوز ڈی۔ایکس۔ایف 2 ایکس ایم ایل، جے۔سون، سی۔ایس۔وی اور "
-"پی۔ڈی۔ایف فارمیٹس۔ ڈی۔ایکس۔ایف 2 ڈی۔ایچ۔آئی۔ایس کا عموممی فارمیٹ ہے۔"
-
-msgid "Dry run"
-msgstr "ڈرائے رن"
-
-msgid "Strategy"
-msgstr "حکمت عملی"
-
-msgid "Preheat cache"
-msgstr "پہلے سے ہی کیش کو گرم کرو"
-
-msgid "ID scheme (all objects)"
-msgstr "ائی۔ڈی سکیم"
-
-msgid "Existing record check"
-msgstr "پہلے کے ریکارڈ کا چیک"
-
-msgid "PDF"
-msgstr "پی۔ڈی۔ایف"
-
-msgid "ADX"
-msgstr "اے۔ڈی۔ایکس"
-
-msgid "No"
-msgstr "نہیں"
-
-msgid "Yes"
-msgstr "ہاں"
+msgid "Yes (faster for large imports)"
+msgstr "ہاں (تیزی بڑے ایمپورٹ کے لیے)"
 
 msgid "New and Updates"
 msgstr "نیا اور اپڈیٹس"
@@ -282,59 +246,175 @@ msgstr "صرف اپڈیٹس"
 msgid "Delete"
 msgstr "حذف"
 
-msgid "Yes (faster for large imports)"
-msgstr "ہاں (تیزی بڑے ایمپورٹ کے لیے)"
+msgid "Skip check (fast)"
+msgstr "چھوڑو چیکنگ (جلدی سے)"
 
 msgid "Check (safe, recommended)"
 msgstr "چیک (محتاط، تجویز شدہ)"
 
-msgid "Skip check (fast)"
-msgstr "چھوڑو چیکنگ (جلدی سے)"
+msgid "AUTO"
+msgstr ""
 
-msgid "Event ID Scheme"
-msgstr "ایونٹ ائی۔ڈی سکیم"
+msgid "Errors"
+msgstr "غلطیاں"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Reference"
+msgstr "ریفرنس"
+
+msgid "All"
+msgstr "تمام"
+
+msgid "None"
+msgstr "کوئی نہں"
+
+msgid "Create and Update"
+msgstr ""
+
+msgid "Create"
+msgstr "تخلیق"
+
+msgid "Update"
+msgstr "اپڈیٹ"
+
+msgid "Merge"
+msgstr "ضم"
+
+msgid "Replace"
+msgstr "تبدیل کریں"
+
+msgid "Auto"
+msgstr ""
+
+msgid "With sharing"
+msgstr "اشتراک کے ساتھ"
+
+msgid "Without sharing"
+msgstr "بغیر اشتراک کے ساتھ"
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
+
+msgid "Zip"
+msgstr "زی۔ایپ"
+
+msgid "Gzip"
+msgstr "جی۔زیپ"
+
+msgid "Uncompressed"
+msgstr "ان کمپریس"
+
+msgid "Category combination"
+msgstr "قسم کا مجموعہ"
+
+msgid "Dashboard"
+msgstr "ڈیشبورڈ"
+
+msgid "Data element groups"
+msgstr "ڈیٹا عناصر کے گروپ"
+
+msgid "[ All program stages]"
+msgstr "[تمام پروگرام سٹیجیز]"
+
+msgid "Data Export"
+msgstr "ڈیٹا ایکسپورٹ"
+
+msgid ""
+"Export data values. This is the regular export function which exports data "
+"to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+"ایکسپورٹ ڈیٹا ویلیوز۔ یہ ایک عموممی ایکسپورٹ فنکشن ہے جو ڈی۔آئی۔ایچ۔ایس کے "
+"فارمیٹ میں DXF 2 میں ڈیٹا کو ایکسپورٹ کرتا ہے۔"
+
+msgid "Event Export"
+msgstr "اِیونٹ ایکسپورٹ"
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+"پرواگرام، سٹیج اور ٹریک اینٹیٹیز کا ڈیٹا DXF 2 فارمیٹ میں ایکسپورٹ کریں۔"
+
+msgid "Metadata Export"
+msgstr "میٹا ڈیٹا ایکسپورٹ"
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+" یٹا ایلمنٹس اور ارگنائزینشن یونٹ کی طرح میٹا دیٹا کو DHIS 2 ایکسچینج فارمیٹ"
+" میں ایکسپورٹ کریں"
+
+msgid "Meta Data Export"
+msgstr "میٹاڈیٹا ایمپورٹ"
+
+msgid "Metadata Dependency Export"
+msgstr "میٹا دیٹا ڈییپنڈسی ایکسپورٹ"
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects."
+msgstr "میٹا ڈیٹا کو ڈیٹا سیٹ اور پروگرامز کی طرح ایکسپورٹ کریں۔"
+
+msgid "Metadata Export with Dependencies"
+msgstr "میٹا ڈیٹا ایکسپورٹ انحصار کے ساتھ"
+
+msgid "Import / Export"
+msgstr "ایمپورٹ / ایکسپورٹ"
+
+msgid "Import or Export DHIS2 data."
+msgstr "ایمپورٹ یا ایکسپورٹ ڈیٹا"
+
+msgid "Data Import"
+msgstr "ڈیٹا درآمد"
+
+msgid ""
+"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
+"is the standard exchange format for DHIS 2."
+msgstr ""
+"ایمپورٹ ڈیٹا ویلیوز ڈی۔ایکس۔ایف 2 ایکس ایم ایل، جے۔سون، سی۔ایس۔وی اور "
+"پی۔ڈی۔ایف فارمیٹس۔ ڈی۔ایکس۔ایف 2 ڈی۔ایچ۔آئی۔ایس کا عموممی فارمیٹ ہے۔"
+
+msgid "Event Import"
+msgstr "اِیونٹ اِیمپورٹ"
+
+msgid ""
+"Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr "پروگرام، سٹیجیز اور ٹریک اینٹٹیز کو DXF 2 کے فارمیٹ میں ایمپورٹ کریں۔"
+
+msgid "GML Import"
+msgstr "جی۔ایم۔ایل اِیمپورٹ"
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+"تنظیمی یونٹ سے مطالق جغرافیایی ڈیٹا کو ایمپورٹ کریں۔ GML ایمپورٹ کا یہ "
+"فارمیٹ XML پر مبنی ہے جو جغرافیایی خصوصیات کی رونمائی کرتا ہے۔"
 
 msgid "Only import of GML data for existing organisation units is supported."
 msgstr "صرف پہلے سے موجود تنظمی یونٹس کا جی۔ایم۔ایل ایمپورٹ ممکن ہے"
 
-msgid "Reference mode"
-msgstr "ریفرنس موڈ"
+msgid "Metadata Import"
+msgstr "میٹا ڈیٹا اِیمپورٹ"
 
-msgid "Organisation unit group membership"
-msgstr "تنظیمی یونٹ ممبرشپ"
-
-msgid "Data element group membership"
-msgstr "ڈیٹا عناصر گروپ ممبرشپ"
-
-msgid "Indicator group membership"
-msgstr "گروہ ممبرشپ کے اشارے"
-
-msgid "Data element"
-msgstr "ڈیٹا ایلیمٹ"
-
-msgid "Data element group"
-msgstr "ڈیٹا ایلیمٹ کا گروہ"
-
-msgid "Category option"
-msgstr "آپشن کی قسم"
-
-msgid "Category option group"
-msgstr "قسم کا آپشن گروپ"
-
-msgid "Organisation unit group"
-msgstr "تنظیمی یونٹ گروپ"
-
-msgid "Validation rule"
-msgstr "توثیقی قاعدہ"
-
-msgid "Option set"
-msgstr "آپشنز سیٹ"
-
-msgid "Translation"
-msgstr "ترجمہ"
-
-msgid "Allow invalid references"
-msgstr "غلط ریفرنسیز کی اجازت دو"
-
-msgid "Deny invalid references"
-msgstr "غلط ریفرنسیز کا انکار کرو"
+msgid ""
+"Import metadata like data elements and organisation units using the standard"
+" DHIS 2 exchange format called DXF 2."
+msgstr ""
+"۔DXF 2 کے فارمیٹ میں میٹا ڈیٹا کو ایمپورٹ کریں۔ مثلاً ڈیٹا ایلیمنٹ، تنظیمی "
+"یونٹ وغیرہ۔"
