@@ -1,4 +1,5 @@
 # Translators:
+# mrwine <matthieu@pinard.no>, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
 # 
 msgid ""
@@ -7,42 +8,42 @@ msgstr ""
 "POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
-"Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
+"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "user is not logged in"
-msgstr "användaren är inte loggad in"
+msgstr ""
 
 msgid "Import Error"
-msgstr "Fel vid import"
+msgstr ""
 
 msgid "Go Back"
-msgstr "Gå tillbaka"
+msgstr ""
 
 msgid "filter data sets by name"
-msgstr "filtrera data set vid namn"
+msgstr ""
 
 msgid "Select All"
-msgstr "Markera alla"
+msgstr ""
 
 msgid "Clear All"
-msgstr "Rensa alla"
+msgstr ""
 
 msgid "Data sets"
-msgstr "Dataset"
+msgstr "Ensembles de données"
 
 msgid "Choose a file to upload"
-msgstr "Välj fil att ladda upp"
+msgstr ""
 
 msgid "Required"
-msgstr "Obligatorisk"
+msgstr "Réquis"
 
 msgid "more options"
-msgstr "flera val"
+msgstr ""
 
 msgid "JSON"
 msgstr "JSON"
@@ -54,85 +55,85 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr "Avmarkera allt"
+msgstr ""
 
 msgid "Logger"
-msgstr "Logg"
+msgstr ""
 
 msgid "view messages received on using import/export forms."
-msgstr "se meddelanden mottagna från import/export formulär"
+msgstr ""
 
 msgid "Import"
-msgstr "Import"
+msgstr "Importer"
 
 msgid "Export"
-msgstr "Export"
+msgstr "Exporter"
 
 msgid "Created"
-msgstr "Skapad"
+msgstr "Créé"
 
 msgid "Deleted"
-msgstr "Raderad"
+msgstr ""
 
 msgid "Ignored"
-msgstr "Ignorerad"
+msgstr ""
 
 msgid "Updated"
-msgstr "Uppdaterad"
+msgstr ""
 
 msgid "Total"
-msgstr "Totalt"
+msgstr "Total"
 
 msgid "Type"
-msgstr "Typ"
+msgstr "Type"
 
 msgid "Type Count"
-msgstr "Antal typer"
+msgstr ""
 
 msgid "Messages"
-msgstr "Meddelanden"
+msgstr "Messages"
 
 msgid "Summaries"
-msgstr "Uppsummeringar"
+msgstr ""
 
 msgid "Conflicts"
-msgstr "Konflikter"
+msgstr ""
 
 msgid "Import Summary"
-msgstr "Import uppsummering"
+msgstr ""
 
 msgid "Summary"
-msgstr "Uppsummering"
+msgstr ""
 
 msgid "Async"
-msgstr "Asynk"
+msgstr ""
 
 msgid "Atomic Mode"
-msgstr "Atomiskt Läge"
+msgstr ""
 
 msgid "Category ID scheme"
-msgstr "Kategori ID schema"
+msgstr ""
 
 msgid "Children"
-msgstr "Barn"
+msgstr ""
 
 msgid "Object type"
-msgstr "Objekttyp"
+msgstr "Type d'objet"
 
 msgid "Compression"
-msgstr "Komprimering"
+msgstr ""
 
 msgid "Data element ID scheme"
-msgstr "Dataelement ID schema"
+msgstr ""
 
 msgid "Dry run"
-msgstr "Torrkörning"
+msgstr ""
 
 msgid "End date"
-msgstr "Slutdatum"
+msgstr "Date de fin"
 
 msgid "Event ID Scheme"
-msgstr "Händelse ID schema"
+msgstr ""
 
 msgid "Flush Mode"
 msgstr ""
@@ -144,7 +145,7 @@ msgid "ID scheme"
 msgstr ""
 
 msgid "Identifier"
-msgstr ""
+msgstr "Identifiant"
 
 msgid "Report Mode"
 msgstr ""
@@ -165,10 +166,10 @@ msgid "Merge Mode"
 msgstr ""
 
 msgid "Object"
-msgstr "Objektmeny"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "Organisation enhet"
+msgstr "Unité d'organisation"
 
 msgid "Org unit ID scheme"
 msgstr ""
@@ -183,7 +184,7 @@ msgid "Program Stages"
 msgstr ""
 
 msgid "Programs"
-msgstr "program"
+msgstr "Programmes"
 
 msgid "Schemas"
 msgstr ""
@@ -192,7 +193,7 @@ msgid "Data Sets"
 msgstr ""
 
 msgid "Sharing"
-msgstr ""
+msgstr "Partage"
 
 msgid "Existing record check"
 msgstr ""
@@ -204,25 +205,25 @@ msgid "Skip Validation"
 msgstr ""
 
 msgid "Start date"
-msgstr "Start datum"
+msgstr "Date de début"
 
 msgid "Strategy"
 msgstr ""
 
 msgid "Yes"
-msgstr "Ja"
+msgstr "Oui"
 
 msgid "No"
-msgstr "Nej"
+msgstr "Non"
 
 msgid "UID"
 msgstr ""
 
 msgid "Code"
-msgstr "Koda"
+msgstr "Code"
 
 msgid "Name"
-msgstr "Namn"
+msgstr "Nom"
 
 msgid "HR identifier"
 msgstr ""
@@ -246,7 +247,7 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
-msgstr "Ta bort"
+msgstr "Supprimer"
 
 msgid "Skip check (fast)"
 msgstr ""
@@ -258,7 +259,7 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "Erreurs"
 
 msgid "Full"
 msgstr ""
@@ -267,28 +268,28 @@ msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr "Referens"
+msgstr "Reférence"
 
 msgid "All"
-msgstr "Alla"
+msgstr "Tout"
 
 msgid "None"
-msgstr "Ingen"
+msgstr "Aucun"
 
 msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr "Skapa"
+msgstr "Créer"
 
 msgid "Update"
-msgstr "Uppdatering"
+msgstr "Mettre à jour"
 
 msgid "Merge"
-msgstr ""
+msgstr "Fusionner"
 
 msgid "Replace"
-msgstr ""
+msgstr "Remplacer"
 
 msgid "Auto"
 msgstr ""
@@ -321,13 +322,13 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
-msgstr ""
+msgstr "Combinaison de Catégories"
 
 msgid "Dashboard"
-msgstr "Instrumentbräda"
+msgstr "Tableau de bord"
 
 msgid "Data element groups"
-msgstr "Dataelementgrupper"
+msgstr "Groupes d'éléments de données"
 
 msgid "Option sets"
 msgstr ""
@@ -336,10 +337,10 @@ msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
-msgstr "Import Export"
+msgstr "Importer-Exporter"
 
 msgid "Data Export"
-msgstr "Data export"
+msgstr ""
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
@@ -347,7 +348,7 @@ msgid ""
 msgstr ""
 
 msgid "Event Export"
-msgstr "Händelse export"
+msgstr ""
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
@@ -355,7 +356,7 @@ msgid ""
 msgstr ""
 
 msgid "Metadata Export"
-msgstr "Metadata export"
+msgstr ""
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
@@ -366,7 +367,7 @@ msgid "Meta Data Export"
 msgstr ""
 
 msgid "Metadata Dependency Export"
-msgstr "Metadata beroenden export"
+msgstr ""
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
@@ -383,7 +384,7 @@ msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "Data Import"
-msgstr "Data import"
+msgstr ""
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
@@ -391,14 +392,14 @@ msgid ""
 msgstr ""
 
 msgid "Event Import"
-msgstr "Händelse import"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
 
 msgid "GML Import"
-msgstr "GML import"
+msgstr ""
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
@@ -409,7 +410,7 @@ msgid "Only import of GML data for existing organisation units is supported."
 msgstr ""
 
 msgid "Metadata Import"
-msgstr "Metadata import"
+msgstr ""
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
