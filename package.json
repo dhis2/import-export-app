@@ -8,7 +8,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "localize": "d2-i18n-generate -n import-export-app -p ./i18n/ -o ./src/locales/",
+    "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
+    "localize": "yarn extract-pot && d2-i18n-generate -n import-export-app -p ./i18n/ -o ./src/locales/",
     "prestart": "npm run localize",
     "prebuild": "npm run localize",
     "pretest": "npm run localize",
@@ -43,7 +44,7 @@
   },
   "devDependencies": {
     "@dhis2/cli-style": "^3.2.2",
-    "@dhis2/d2-i18n-extract": "^1.0.6",
+    "@dhis2/d2-i18n-extract": "^1.0.8",
     "@dhis2/d2-i18n-generate": "^1.1.1",
     "cypress": "^3.4.1",
     "cypress-cucumber-preprocessor": "^1.16.0",
