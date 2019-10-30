@@ -1,15 +1,43 @@
-import { SCHEMAS_SET } from './actions'
-
-const initialState = { loaded: false, loading: true, error: false, list: [] }
-const loadedState = { loaded: true, loading: false, error: false }
-
+import {
+    LOADING_SCHEMAS_START,
+    LOADING_SCHEMAS_ERROR,
+    LOADING_SCHEMAS_DONE,
+} from './actions'
 export * from './actions'
+
+const initialState = {
+    loaded: false,
+    loading: false,
+    error: '',
+    list: [],
+}
 
 export default function schemasReducer(state = initialState, action) {
     const { type, payload } = action
 
-    if (type === SCHEMAS_SET) {
-        return { ...loadedState, list: payload }
+    if (type === LOADING_SCHEMAS_START) {
+        return {
+            ...state,
+            loading: true,
+            error: '',
+        }
+    }
+
+    if (type === LOADING_SCHEMAS_ERROR) {
+        return {
+            ...state,
+            loading: false,
+            error: payload,
+        }
+    }
+
+    if (type === LOADING_SCHEMAS_DONE) {
+        return {
+            ...state,
+            loaded: true,
+            loading: false,
+            list: payload,
+        }
     }
 
     return state

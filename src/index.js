@@ -10,7 +10,6 @@ import './locales'
 import './index.css'
 import App from './App'
 import { store } from './store'
-import { initApi } from './helpers/api'
 import * as serviceWorker from './serviceWorker'
 
 /**
@@ -23,7 +22,6 @@ init({
     baseUrl: `${REACT_APP_DHIS2_BASE_URL}/api/`,
     headers: { 'X-Requested-With': 'XMLHttpRequest' },
 })
-    .then(initApi)
     .then(() => {
         /**
          * Initialize material ui theme

@@ -8,7 +8,6 @@ import File from './File'
 import Date from './Date'
 import Radio from './Radio'
 import Select from './Select'
-import Schemas from './Schemas'
 import OrgUnitTree from './OrgUnitTree'
 import MoreOptions from './MoreOptions'
 import DataSetPicker from './DataSetPicker'
@@ -17,7 +16,6 @@ import {
     TYPE_DATE,
     TYPE_RADIO,
     TYPE_SELECT,
-    TYPE_SCHEMAS,
     TYPE_ORG_UNIT,
     TYPE_ORG_UNIT_SINGLE_SELECT,
     TYPE_MORE_OPTIONS,
@@ -110,14 +108,6 @@ export class Form extends React.Component {
                         key="moreOptions"
                         enabled={context === CTX_MORE_OPTIONS}
                         onClick={this.props.changeContext}
-                    />
-                )
-            } else if (type === TYPE_SCHEMAS) {
-                return (
-                    <Schemas
-                        {...props}
-                        key={`schemas-${name}`}
-                        onChange={this.props.onChange}
                     />
                 )
             } else if (type === TYPE_ORG_UNIT) {

@@ -1,62 +1,65 @@
+import { Form } from 'react-final-form'
+import { Button } from '@dhis2/ui-core'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import cx from 'classnames'
 
-import { FormBase } from '../../components/FormBase'
+import { FormContent } from '../../components/FormSections/FormContent'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
 import { MetadataExportIcon } from '../../components/Icon'
-import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
-import { isProduction } from '../../helpers/env'
+import { Schemas } from '../../components/Inputs/Schemas'
+import { Format } from '../../components/Inputs/Format'
+import { Compression } from '../../components/Inputs/Compression'
+import { Sharing } from '../../components/Inputs/Sharing'
+import {
+    EXCLUDE_SCHEMAS,
+    supportedFormats,
+    initialValues,
+    onSubmit,
+} from './MetaData/helper'
+import formStyles from '../../components/Form/styles.module.css'
+import formBaseStyles from '../../components/FormBase/styles.module.css'
 
-export class MetaDataExport extends FormBase {
-    static dataTestId = 'export-metadata'
-    static path = '/export/metadata'
+export const MetaDataExport = () => {
+    return (
+        <Form onSubmit={onSubmit} initialValues={initialValues}>
+            {({ handleSubmit, values }) => (
+                <div className={formStyles.wrapper}>
+                    <form
+                        className={cx(formBaseStyles.form, formStyles.form)}
+                        onSubmit={handleSubmit}
+                        style={{ width: 800 }}
+                    >
+                        <FormHeader
+                            icon={MetaDataExport.menuIcon}
+                            label={MetaDataExport.title}
+                        />
 
-    static order = 5
-    static title = i18n.t('Metadata Export')
-    static desc = i18n.t(
-        'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.'
+                        <FormContent>
+                            <Schemas excludeSchemas={EXCLUDE_SCHEMAS} />
+                            <Format options={supportedFormats} />
+                            <Compression />
+                            <Sharing />
+                        </FormContent>
+
+                        <FormFooter>
+                            <Button primary type="submit">
+                                {i18n.t('Export')}
+                            </Button>
+                        </FormFooter>
+                    </form>
+                </div>
+            )}
+        </Form>
     )
-
-    static menuIcon = <MetadataExportIcon />
-    icon = <MetadataExportIcon />
-
-    formWidth = 800
-    formTitle = i18n.t('Meta Data Export')
-    submitLabel = i18n.t('Export')
-
-    fields = getFormFields(['schemas', 'format', 'compression', 'sharing'])
-
-    state = getFormValues([
-        'schemas',
-        'format:.json:json,xml,csv',
-        'compression',
-        'sharing',
-    ])
-
-    onSubmit = async () => {
-        try {
-            const {
-                schemas,
-                format,
-                compression,
-                sharing,
-            } = this.getFormState()
-
-            const endpoint = `metadata`
-            const downloadUrl = getDownloadUrl({
-                format,
-                compression,
-                endpoint,
-                sharing,
-            })
-            const schemaParams = Object.keys(schemas)
-                .filter(s => schemas[s])
-                .map(name => `${name}=true`)
-                .join('&')
-
-            const url = `${downloadUrl}&${schemaParams}`
-            window.location = url
-        } catch (e) {
-            !isProduction && console.log('MetaData Export error', e, '\n')
-        }
-    }
 }
+
+MetaDataExport.dataTestId = 'export-metadata'
+MetaDataExport.path = '/export/metadata'
+MetaDataExport.menuIcon = <MetadataExportIcon />
+MetaDataExport.order = 5
+MetaDataExport.title = i18n.t('Metadata Export')
+MetaDataExport.desc = i18n.t(
+    'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.'
+)

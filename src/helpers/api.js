@@ -1,17 +1,14 @@
+import { getInstance } from 'd2/lib/d2'
+
 const ATTRIBUTES_ENDPOINT = 'attributes.json'
 
-let d2
-let api
-
-/**
- * Sets d2 and the api
- */
-export const initApi = d2Instance => {
-    d2 = d2Instance
-    api = d2.Api.getApi()
+export const getApi = async () => {
+    const d2 = await getInstance()
+    return d2.Api.getApi()
 }
 
-export const getUniqueAttributes = ({ type }) => {
+export const getUniqueAttributes = async ({ type }) => {
+    const api = await getApi()
     const params = [
         `paging=false`,
         `fields=${['id', 'displayName'].join(',')}`,
@@ -36,3 +33,8 @@ export const getUniqueCategoryAttributes = () =>
     getUniqueAttributes({ type: 'categoryOptionCombo' })
         .then(({ attributes }) => attributes)
         .catch(() => [])
+
+export const getSchemas = async () => {
+    const api = await getApi()
+    return api.get('schemas.json')
+}
