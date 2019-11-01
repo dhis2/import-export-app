@@ -11,6 +11,8 @@ import './index.css'
 import App from './App'
 import { store } from './store'
 import * as serviceWorker from './serviceWorker'
+import { CssReset } from '@dhis2/ui-core'
+import { Provider as RuntimeProvider } from '@dhis2/app-runtime'
 
 /**
  * Initialize d2
@@ -36,13 +38,21 @@ init({
     })
     .then(muiTheme => {
         ReactDOM.render(
-            <Provider store={store}>
-                <MuiThemeProvider muiTheme={muiTheme}>
-                    <HashRouter>
-                        <App />
-                    </HashRouter>
-                </MuiThemeProvider>
-            </Provider>,
+            <RuntimeProvider
+                config={{
+                    baseUrl: REACT_APP_DHIS2_BASE_URL,
+                    apiVersion: '33',
+                }}
+            >
+                <CssReset />
+                <Provider store={store}>
+                    <MuiThemeProvider muiTheme={muiTheme}>
+                        <HashRouter>
+                            <App />
+                        </HashRouter>
+                    </MuiThemeProvider>
+                </Provider>
+            </RuntimeProvider>,
             document.getElementById('root')
         )
     })

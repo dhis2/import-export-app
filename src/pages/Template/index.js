@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import HeaderBar from '@dhis2/ui/widgets/HeaderBar'
+import { HeaderBar } from '@dhis2/ui-widgets'
 import i18n from '@dhis2/d2-i18n'
 import { SidePanel, Logger } from '../../components'
 import s from './styles.module.css'
