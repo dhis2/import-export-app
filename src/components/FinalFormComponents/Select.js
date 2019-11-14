@@ -10,7 +10,7 @@ export const Select = ({
     options,
     resetOnUnmount,
     defaultValue,
-    ...rest
+    dataTestId,
 }) => {
     const { input } = useField(name, {
         type: 'select',
@@ -18,7 +18,7 @@ export const Select = ({
     })
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-test-id={dataTestId}>
             <SelectField {...input} label={label} outlined>
                 {options.map(option => (
                     <option key={option.value} value={option.value}>
