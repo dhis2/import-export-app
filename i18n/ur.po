@@ -43,13 +43,13 @@ msgid "more options"
 msgstr "مذید آپشنز"
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "Select None"
 msgstr "کوئی سیلکٹ نہ کرو"
