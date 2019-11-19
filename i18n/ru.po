@@ -45,13 +45,13 @@ msgid "more options"
 msgstr "Дополнительные опции"
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "Select None"
 msgstr "Выберите Неизвестное значение"
@@ -217,7 +217,7 @@ msgid "No"
 msgstr "Нет"
 
 msgid "UID"
-msgstr "UID"
+msgstr ""
 
 msgid "Code"
 msgstr "Код"
@@ -313,10 +313,10 @@ msgid "Include children of organisation unit"
 msgstr "Включить дочерние ветви организационной единицы"
 
 msgid "Zip"
-msgstr "Zip"
+msgstr ""
 
 msgid "Gzip"
-msgstr "Gzip"
+msgstr ""
 
 msgid "Uncompressed"
 msgstr "Несжато"
