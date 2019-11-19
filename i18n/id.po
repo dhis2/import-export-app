@@ -46,19 +46,19 @@ msgid "more options"
 msgstr "opsi lainnya"
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "Select None"
 msgstr "Tidak Memilih"
 
 msgid "Logger"
-msgstr "Logger"
+msgstr ""
 
 msgid "view messages received on using import/export forms."
 msgstr "lihat pesan yang diterima tentang form import/eksport."
@@ -82,7 +82,7 @@ msgid "Updated"
 msgstr "Diperbarui"
 
 msgid "Total"
-msgstr "Total"
+msgstr ""
 
 msgid "Type"
 msgstr "Tipe"
@@ -106,7 +106,7 @@ msgid "Summary"
 msgstr "Ringkasan"
 
 msgid "Async"
-msgstr "Async"
+msgstr ""
 
 msgid "Atomic Mode"
 msgstr "Mode Atomik"
@@ -127,7 +127,7 @@ msgid "Data element ID scheme"
 msgstr "Skema ID data elemen"
 
 msgid "Dry run"
-msgstr "Dry run"
+msgstr ""
 
 msgid "End date"
 msgstr "Tanggal berakhir"
@@ -139,7 +139,7 @@ msgid "Flush Mode"
 msgstr "Mode Flush"
 
 msgid "Format"
-msgstr "Format"
+msgstr ""
 
 msgid "ID scheme"
 msgstr "Skema ID"
@@ -175,7 +175,7 @@ msgid "Org unit ID scheme"
 msgstr "Skema ID unit org"
 
 msgid "Preheat cache"
-msgstr "Preheat cache"
+msgstr ""
 
 msgid "Preheat Mode"
 msgstr "Mode Preheat"
@@ -217,7 +217,7 @@ msgid "No"
 msgstr "Tidak"
 
 msgid "UID"
-msgstr "UID"
+msgstr ""
 
 msgid "Code"
 msgstr "Kode"
@@ -265,7 +265,7 @@ msgid "Full"
 msgstr "Penuh"
 
 msgid "Debug"
-msgstr "Debug"
+msgstr ""
 
 msgid "Reference"
 msgstr "Referensi"
@@ -301,7 +301,7 @@ msgid "Without sharing"
 msgstr "Tanpa pembagian"
 
 msgid "Non Null"
-msgstr "Non Null"
+msgstr ""
 
 msgid "Always"
 msgstr "Selalu"
@@ -313,10 +313,10 @@ msgid "Include children of organisation unit"
 msgstr "Ikutkan unit org di bawahnya"
 
 msgid "Zip"
-msgstr "Zip"
+msgstr ""
 
 msgid "Gzip"
-msgstr "Gzip"
+msgstr ""
 
 msgid "Uncompressed"
 msgstr "Tidak dikompres"
@@ -325,7 +325,7 @@ msgid "Category combination"
 msgstr "Kombinasi kategori"
 
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr ""
 
 msgid "Data element groups"
 msgstr "Grup data elemen"
