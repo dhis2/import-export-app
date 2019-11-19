@@ -1,13 +1,13 @@
 # Translators:
-# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,13 +46,13 @@ msgid "more options"
 msgstr "Дополнительные опции"
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "Select None"
 msgstr "Выберите Неизвестное значение"
@@ -185,7 +185,7 @@ msgid "Program Stages"
 msgstr "Стадии программы"
 
 msgid "Programs"
-msgstr "Programs"
+msgstr "Программы"
 
 msgid "Schemas"
 msgstr "Схемы"
@@ -218,7 +218,7 @@ msgid "No"
 msgstr "Нет"
 
 msgid "UID"
-msgstr "UID"
+msgstr ""
 
 msgid "Code"
 msgstr "Код"
@@ -314,16 +314,16 @@ msgid "Include children of organisation unit"
 msgstr "Включить дочерние ветви организационной единицы"
 
 msgid "Zip"
-msgstr "Zip"
+msgstr ""
 
 msgid "Gzip"
-msgstr "Gzip"
+msgstr ""
 
 msgid "Uncompressed"
 msgstr "Несжато"
 
 msgid "Category combination"
-msgstr "Category combination"
+msgstr "Комбинация категорий"
 
 msgid "Dashboard"
 msgstr "Информационная панель"
