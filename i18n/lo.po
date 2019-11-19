@@ -1,13 +1,13 @@
 # Translators:
-# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,13 +46,13 @@ msgid "more options"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "Select None"
 msgstr ""
@@ -64,10 +64,10 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr "Import"
+msgstr ""
 
 msgid "Export"
-msgstr "Export"
+msgstr "ໂອນຂໍ້ມູນອອກ"
 
 msgid "Created"
 msgstr "ສ້າງແລ້ວ"
@@ -85,7 +85,7 @@ msgid "Total"
 msgstr "ລວມ"
 
 msgid "Type"
-msgstr "Type"
+msgstr "ປະເພດ"
 
 msgid "Type Count"
 msgstr ""
@@ -118,7 +118,7 @@ msgid "Children"
 msgstr ""
 
 msgid "Object type"
-msgstr "Object type"
+msgstr ""
 
 msgid "Compression"
 msgstr ""
@@ -145,7 +145,7 @@ msgid "ID scheme"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identifier"
+msgstr ""
 
 msgid "Report Mode"
 msgstr ""
@@ -184,13 +184,13 @@ msgid "Program Stages"
 msgstr ""
 
 msgid "Programs"
-msgstr "Programs"
+msgstr "ສາຍງານ"
 
 msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
-msgstr ""
+msgstr "ແບບຟອມ"
 
 msgid "Sharing"
 msgstr "ແບ່ງປັນ"
@@ -211,10 +211,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "ແມ່ນ"
 
 msgid "No"
-msgstr "No"
+msgstr "ບໍ່"
 
 msgid "UID"
 msgstr ""
@@ -247,7 +247,7 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
-msgstr "Delete"
+msgstr "ລົບ"
 
 msgid "Skip check (fast)"
 msgstr ""
@@ -268,10 +268,10 @@ msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr "Reference"
+msgstr ""
 
 msgid "All"
-msgstr "All"
+msgstr "ທັງໝົດ"
 
 msgid "None"
 msgstr "ບໍ່ມີ"
@@ -280,13 +280,13 @@ msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr "Create"
+msgstr "ສ້າງ"
 
 msgid "Update"
-msgstr "Update"
+msgstr "ປັບປຸງ"
 
 msgid "Merge"
-msgstr "Merge"
+msgstr ""
 
 msgid "Replace"
 msgstr "ແທນທີ່"
@@ -328,7 +328,7 @@ msgid "Dashboard"
 msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
 
 msgid "Data element groups"
-msgstr "Data element groups"
+msgstr "Data Element Groups"
 
 msgid "Option sets"
 msgstr ""
