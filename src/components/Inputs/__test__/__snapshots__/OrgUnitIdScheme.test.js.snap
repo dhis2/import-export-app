@@ -2,7 +2,7 @@
 
 exports[`Input component - OrgUnitIdScheme should render correctly 1`] = `
 <Select
-  data-test-id="input-org-unit-id-scheme"
+  dataTestId="input-org-unit-id-scheme"
   label="Org unit id scheme"
   name="orgUnitIdScheme"
   options={

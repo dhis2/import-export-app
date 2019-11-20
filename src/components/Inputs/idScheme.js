@@ -16,7 +16,7 @@ export const ID_SCHEME_DEFAULT_VALUE = OPTION_UID.value
 const idSchemeLabel = i18n.t('Id scheme')
 export const IdScheme = ({ options }) => (
     <Select
-        data-test-id="input-id-scheme"
+        dataTestId="input-id-scheme"
         name={ID_SCHEME_KEY}
         label={idSchemeLabel}
         options={options}

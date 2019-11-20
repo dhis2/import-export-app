@@ -25,4 +25,5 @@ yarn-error.log*
 # translation files
 src/locales
 
+cypress/videos
 cypress.env.json

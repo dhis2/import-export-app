@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-10-25T12:56:14.423Z\n"
-"PO-Revision-Date: 2019-10-25T12:56:14.423Z\n"
+"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
+"PO-Revision-Date: 2019-11-20T00:05:00.785Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -47,9 +47,6 @@ msgstr ""
 msgid "CSV"
 msgstr ""
 
-msgid "Select None"
-msgstr ""
-
 msgid "Yes"
 msgstr ""
 
@@ -69,6 +66,18 @@ msgid "Atomic mode"
 msgstr ""
 
 msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Compression"
 msgstr ""
 
 msgid "Uid"
@@ -191,6 +200,18 @@ msgstr ""
 msgid "Report mode"
 msgstr ""
 
+msgid "Select None"
+msgstr ""
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
+msgid "Sharing"
+msgstr ""
+
 msgid "Skip audit"
 msgstr ""
 
@@ -275,9 +296,6 @@ msgstr ""
 msgid "Object type"
 msgstr ""
 
-msgid "Compression"
-msgstr ""
-
 msgid "Data element ID scheme"
 msgstr ""
 
@@ -332,9 +350,6 @@ msgstr ""
 msgid "Data Sets"
 msgstr ""
 
-msgid "Sharing"
-msgstr ""
-
 msgid "Existing record check"
 msgstr ""
 
@@ -368,22 +383,10 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
-msgstr ""
-
 msgid "Include children of organisation unit"
 msgstr ""
 
-msgid "Zip"
-msgstr ""
-
 msgid "Gzip"
-msgstr ""
-
-msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
@@ -429,9 +432,6 @@ msgstr ""
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
-msgstr ""
-
-msgid "Meta Data Export"
 msgstr ""
 
 msgid "Metadata Dependency Export"
