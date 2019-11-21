@@ -1,11 +1,12 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
+# Marta Vila <marta@dhis2.org>, 2019
 # phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-10-25T12:36:50.482Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -24,6 +25,12 @@ msgstr ""
 msgid "Go Back"
 msgstr ""
 
+msgid "Required"
+msgstr "Requerido"
+
+msgid "Choose a file to upload"
+msgstr ""
+
 msgid "filter data sets by name"
 msgstr ""
 
@@ -35,12 +42,6 @@ msgstr ""
 
 msgid "Data sets"
 msgstr "Sets de datos"
-
-msgid "Choose a file to upload"
-msgstr ""
-
-msgid "Required"
-msgstr "Requerido"
 
 msgid "more options"
 msgstr ""
@@ -55,6 +56,171 @@ msgid "CSV"
 msgstr ""
 
 msgid "Select None"
+msgstr ""
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "No"
+msgstr "No"
+
+msgid "Async"
+msgstr ""
+
+msgid "All"
+msgstr "Todos"
+
+msgid "None"
+msgstr "Ninguno"
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr "Identificador"
+
+msgid "Errors"
+msgstr "Errores"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "Borrar"
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Merge"
+msgstr "Mezclar"
+
+msgid "Replace"
+msgstr "Reemplazar"
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Reference"
+msgstr "Referencia"
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Report mode"
+msgstr ""
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr ""
+
+msgid "Check (safe, recommended)"
+msgstr ""
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Id scheme"
 msgstr ""
 
 msgid "Logger"
@@ -82,7 +248,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 msgid "Type"
 msgstr "Tipo"
@@ -105,9 +271,6 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-msgid "Async"
-msgstr ""
-
 msgid "Atomic Mode"
 msgstr ""
 
@@ -126,9 +289,6 @@ msgstr ""
 msgid "Data element ID scheme"
 msgstr ""
 
-msgid "Dry run"
-msgstr ""
-
 msgid "End date"
 msgstr "Fecha final"
 
@@ -138,14 +298,8 @@ msgstr ""
 msgid "Flush Mode"
 msgstr ""
 
-msgid "Format"
-msgstr ""
-
 msgid "ID scheme"
 msgstr ""
-
-msgid "Identifier"
-msgstr "Identificador"
 
 msgid "Report Mode"
 msgstr ""
@@ -165,16 +319,10 @@ msgstr ""
 msgid "Merge Mode"
 msgstr ""
 
-msgid "Object"
-msgstr ""
-
 msgid "Organisation unit"
 msgstr "Unidad organizativa"
 
 msgid "Org unit ID scheme"
-msgstr ""
-
-msgid "Preheat cache"
 msgstr ""
 
 msgid "Preheat Mode"
@@ -207,74 +355,17 @@ msgstr ""
 msgid "Start date"
 msgstr "Fecha inicial"
 
-msgid "Strategy"
-msgstr ""
-
-msgid "Yes"
-msgstr "Si"
-
-msgid "No"
-msgstr "No"
-
-msgid "UID"
-msgstr ""
-
-msgid "Code"
-msgstr "Código"
-
-msgid "Name"
-msgstr "Nombre"
-
-msgid "HR identifier"
-msgstr ""
-
 msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
 msgstr ""
 
-msgid "Yes (faster for large imports)"
-msgstr ""
-
 msgid "New and Updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "Borrar"
-
-msgid "Skip check (fast)"
-msgstr ""
-
-msgid "Check (safe, recommended)"
 msgstr ""
 
 msgid "AUTO"
 msgstr ""
-
-msgid "Errors"
-msgstr "Errores"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "Referencia"
-
-msgid "All"
-msgstr "Todos"
-
-msgid "None"
-msgstr "Ninguno"
 
 msgid "Create and Update"
 msgstr ""
@@ -285,28 +376,10 @@ msgstr "Crear"
 msgid "Update"
 msgstr "Actualizar"
 
-msgid "Merge"
-msgstr "Mezclar"
-
-msgid "Replace"
-msgstr "Reemplazar"
-
-msgid "Auto"
-msgstr ""
-
 msgid "With sharing"
 msgstr ""
 
 msgid "Without sharing"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
 msgstr ""
 
 msgid "Include children of organisation unit"
@@ -347,6 +420,9 @@ msgid ""
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
 
+msgid "Loading options..."
+msgstr ""
+
 msgid "Event Export"
 msgstr ""
 
@@ -383,6 +459,12 @@ msgstr ""
 msgid "Import or Export DHIS2 data."
 msgstr ""
 
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
 msgid "Data Import"
 msgstr "Importar base de datos"
 
@@ -406,7 +488,7 @@ msgid ""
 "XML grammar for expressing geographical features."
 msgstr ""
 
-msgid "Only import of GML data for existing organisation units is supported."
+msgid "Couldn't load classKey options"
 msgstr ""
 
 msgid "Metadata Import"
@@ -415,4 +497,7 @@ msgstr ""
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "It seems like there was no data in the uploaded file."
 msgstr ""
