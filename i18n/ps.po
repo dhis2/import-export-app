@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-08-30T08:44:31.946Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -98,6 +98,9 @@ msgstr ""
 
 msgid "Conflicts"
 msgstr ""
+
+msgid "Errors"
+msgstr "تېروتنې"
 
 msgid "Import Summary"
 msgstr ""
@@ -258,9 +261,6 @@ msgstr ""
 msgid "AUTO"
 msgstr ""
 
-msgid "Errors"
-msgstr "تېروتنې"
-
 msgid "Full"
 msgstr ""
 
@@ -415,4 +415,7 @@ msgstr ""
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "It seems like there was no data in the uploaded file."
 msgstr ""
