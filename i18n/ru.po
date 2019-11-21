@@ -1,13 +1,13 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-10-25T12:36:50.482Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,6 +24,12 @@ msgstr "Ошибка импорта"
 msgid "Go Back"
 msgstr "Вернуться"
 
+msgid "Required"
+msgstr "Обязательный"
+
+msgid "Choose a file to upload"
+msgstr "Выбрать файл для загрузки"
+
 msgid "filter data sets by name"
 msgstr "фильтр наборов данных по имени"
 
@@ -35,12 +41,6 @@ msgstr "Очистить все"
 
 msgid "Data sets"
 msgstr "Наборы данных"
-
-msgid "Choose a file to upload"
-msgstr "Выбрать файл для загрузки"
-
-msgid "Required"
-msgstr "Обязательный"
 
 msgid "more options"
 msgstr "Дополнительные опции"
@@ -56,6 +56,171 @@ msgstr ""
 
 msgid "Select None"
 msgstr "Выберите Неизвестное значение"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Async"
+msgstr "Асинхронный"
+
+msgid "All"
+msgstr "Все"
+
+msgid "None"
+msgstr "Не известное значение"
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Dry run"
+msgstr "Пробный прогон программы"
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Auto"
+msgstr "Авто"
+
+msgid "Object"
+msgstr "Объект"
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "ADX"
+msgstr ""
+
+msgid "Format"
+msgstr "Форматировать"
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr "Идентификатор"
+
+msgid "Errors"
+msgstr "Ошибки"
+
+msgid "Full"
+msgstr "Полный"
+
+msgid "Debug"
+msgstr "Отладка"
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr "Только новый"
+
+msgid "Updates only"
+msgstr "Только обновления"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Non Null"
+msgstr "Не Null"
+
+msgid "Always"
+msgstr "Всегда"
+
+msgid "Non Empty"
+msgstr "Не пустой"
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Merge"
+msgstr "Объединить"
+
+msgid "Replace"
+msgstr "Заменить"
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr "Да (быстрее при импортировании больших объемов данных)"
+
+msgid "Preheat cache"
+msgstr "Подогрев кеша"
+
+msgid "Reference"
+msgstr "Ссылка"
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Report mode"
+msgstr ""
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr "Пропустить проверку (быстрая)"
+
+msgid "Check (safe, recommended)"
+msgstr "Проверка (безопасно, рекомендовано)"
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Strategy"
+msgstr "Стратегия"
+
+msgid "Id scheme"
+msgstr ""
 
 msgid "Logger"
 msgstr "Регистратор"
@@ -106,9 +271,6 @@ msgstr "Импортировать сводную информацию"
 msgid "Summary"
 msgstr "Сводная информация"
 
-msgid "Async"
-msgstr "Асинхронный"
-
 msgid "Atomic Mode"
 msgstr "Атомарный режим"
 
@@ -127,9 +289,6 @@ msgstr "Сжатие"
 msgid "Data element ID scheme"
 msgstr "ID схема элемента данных"
 
-msgid "Dry run"
-msgstr "Пробный прогон программы"
-
 msgid "End date"
 msgstr "Дата окончания"
 
@@ -139,14 +298,8 @@ msgstr "ID Схема события"
 msgid "Flush Mode"
 msgstr "Режим Очистки/Сброса"
 
-msgid "Format"
-msgstr "Форматировать"
-
 msgid "ID scheme"
 msgstr "Схема ID"
-
-msgid "Identifier"
-msgstr "Идентификатор"
 
 msgid "Report Mode"
 msgstr "Режим Отчета"
@@ -166,17 +319,11 @@ msgstr "Стратегия включения"
 msgid "Merge Mode"
 msgstr "Режим объединения"
 
-msgid "Object"
-msgstr "Объект"
-
 msgid "Organisation unit"
 msgstr "Организационная единица"
 
 msgid "Org unit ID scheme"
 msgstr "ID схема организации"
-
-msgid "Preheat cache"
-msgstr "Подогрев кеша"
 
 msgid "Preheat Mode"
 msgstr "Режим Подогрева кеша"
@@ -208,74 +355,17 @@ msgstr "Пропустить валидацию"
 msgid "Start date"
 msgstr "Дата начала"
 
-msgid "Strategy"
-msgstr "Стратегия"
-
-msgid "Yes"
-msgstr "Да"
-
-msgid "No"
-msgstr "Нет"
-
-msgid "UID"
-msgstr ""
-
-msgid "Code"
-msgstr "Код"
-
-msgid "Name"
-msgstr "Название"
-
-msgid "HR identifier"
-msgstr "Идентификатор в отделе кадров"
-
 msgid "Include descendants of organisation unit"
 msgstr "Включить потомков организационной единицы"
 
 msgid "Selected organisation unit"
 msgstr "Выбранная организационная единица"
 
-msgid "Yes (faster for large imports)"
-msgstr "Да (быстрее при импортировании больших объемов данных)"
-
 msgid "New and Updates"
 msgstr "Новые и обновления"
 
-msgid "New only"
-msgstr "Только новый"
-
-msgid "Updates only"
-msgstr "Только обновления"
-
-msgid "Delete"
-msgstr "Удалить"
-
-msgid "Skip check (fast)"
-msgstr "Пропустить проверку (быстрая)"
-
-msgid "Check (safe, recommended)"
-msgstr "Проверка (безопасно, рекомендовано)"
-
 msgid "AUTO"
 msgstr "АВТО"
-
-msgid "Errors"
-msgstr "Ошибки"
-
-msgid "Full"
-msgstr "Полный"
-
-msgid "Debug"
-msgstr "Отладка"
-
-msgid "Reference"
-msgstr "Ссылка"
-
-msgid "All"
-msgstr "Все"
-
-msgid "None"
-msgstr "Не известное значение"
 
 msgid "Create and Update"
 msgstr "Создать и обновить"
@@ -286,29 +376,11 @@ msgstr "Создать"
 msgid "Update"
 msgstr "Обновить"
 
-msgid "Merge"
-msgstr "Объединить"
-
-msgid "Replace"
-msgstr "Заменить"
-
-msgid "Auto"
-msgstr "Авто"
-
 msgid "With sharing"
 msgstr "С совместным использованием"
 
 msgid "Without sharing"
 msgstr "Без совместного использования"
-
-msgid "Non Null"
-msgstr "Не Null"
-
-msgid "Always"
-msgstr "Всегда"
-
-msgid "Non Empty"
-msgstr "Не пустой"
 
 msgid "Include children of organisation unit"
 msgstr "Включить дочерние ветви организационной единицы"
@@ -349,6 +421,9 @@ msgid ""
 msgstr ""
 "Экспортировать значения данных. Это стандартная функция экспорта, "
 "экспортирующая данные в формат обмена  DHIS 2, называемый DXF 2."
+
+msgid "Loading options..."
+msgstr ""
 
 msgid "Event Export"
 msgstr "Экспорт события"
@@ -392,6 +467,12 @@ msgstr "Импорт/Экспорт"
 msgid "Import or Export DHIS2 data."
 msgstr "Импорт или экспорт данных DHIS2."
 
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
 msgid "Data Import"
 msgstr "Импорт данных"
 
@@ -421,10 +502,8 @@ msgstr ""
 "Импорт геоданных для организационных единиц в формате GML. GML - это "
 "грамматика XML для описания географических характеристик."
 
-msgid "Only import of GML data for existing organisation units is supported."
+msgid "Couldn't load classKey options"
 msgstr ""
-"Поддерживается только импорт данных GML для существующих организационных "
-"единиц."
 
 msgid "Metadata Import"
 msgstr "Импорт мета данных"
@@ -435,3 +514,6 @@ msgid ""
 msgstr ""
 "Импорт мета-данных, таких как, элементы данных и организационные единицы, "
 "используя стандартный формат обмена DHIS 2, называемый DXF 2."
+
+msgid "It seems like there was no data in the uploaded file."
+msgstr ""
