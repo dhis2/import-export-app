@@ -1,12 +1,13 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,6 +24,12 @@ msgstr ""
 msgid "Go Back"
 msgstr ""
 
+msgid "Required"
+msgstr "لازمی"
+
+msgid "Choose a file to upload"
+msgstr "فائل اپلوڈ کے لیے سیلیکٹ کرو"
+
 msgid "filter data sets by name"
 msgstr "ڈیٹا سیٹ کو نام سے فلٹر کرو"
 
@@ -34,12 +41,6 @@ msgstr "تمام کلئر کرو"
 
 msgid "Data sets"
 msgstr "ڈیٹا سیٹس"
-
-msgid "Choose a file to upload"
-msgstr "فائل اپلوڈ کے لیے سیلیکٹ کرو"
-
-msgid "Required"
-msgstr "لازمی"
 
 msgid "more options"
 msgstr "مذید آپشنز"
@@ -53,8 +54,194 @@ msgstr "ایکس۔ایم۔ایل"
 msgid "CSV"
 msgstr "سی۔ایس۔وی"
 
+msgid "Yes"
+msgstr "ہاں"
+
+msgid "No"
+msgstr "نہیں"
+
+msgid "Async"
+msgstr ""
+
+msgid "All"
+msgstr "تمام"
+
+msgid "None"
+msgstr "کوئی نہں"
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr "زی۔ایپ"
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr "ان کمپریس"
+
+msgid "Compression"
+msgstr "کمپریشن"
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "کوڈ"
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Dry run"
+msgstr "ڈرائے رن"
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr "اؤبجیکٹ"
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "Format"
+msgstr "فارمیٹ"
+
+msgid "UID"
+msgstr "یو۔ای۔ڈی"
+
+msgid "Identifier"
+msgstr "شناختی"
+
+msgid "Errors"
+msgstr "غلطیاں"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr "صرف نیا"
+
+msgid "Updates only"
+msgstr "صرف اپڈیٹس"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Merge"
+msgstr "ضم"
+
+msgid "Replace"
+msgstr "تبدیل کریں"
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr "ہاں (تیزی بڑے ایمپورٹ کے لیے)"
+
+msgid "Preheat cache"
+msgstr "پہلے سے ہی کیش کو گرم کرو"
+
+msgid "Reference"
+msgstr "ریفرنس"
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Error"
+msgstr "غلطی"
+
+msgid "Report mode"
+msgstr ""
+
 msgid "Select None"
 msgstr "کوئی سیلکٹ نہ کرو"
+
+msgid "With sharing"
+msgstr "اشتراک کے ساتھ"
+
+msgid "Without sharing"
+msgstr "بغیر اشتراک کے ساتھ"
+
+msgid "Sharing"
+msgstr "اشتراک"
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr "چھوڑو چیکنگ (جلدی سے)"
+
+msgid "Check (safe, recommended)"
+msgstr "چیک (محتاط، تجویز شدہ)"
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Strategy"
+msgstr "حکمت عملی"
+
+msgid "Id scheme"
+msgstr ""
 
 msgid "Logger"
 msgstr "لوگر"
@@ -104,9 +291,6 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-msgid "Async"
-msgstr ""
-
 msgid "Atomic Mode"
 msgstr ""
 
@@ -119,14 +303,8 @@ msgstr ""
 msgid "Object type"
 msgstr "اؤبجیکٹ ٹائپ"
 
-msgid "Compression"
-msgstr "کمپریشن"
-
 msgid "Data element ID scheme"
 msgstr "ڈیٹا ائ۔ڈی سکیم"
-
-msgid "Dry run"
-msgstr "ڈرائے رن"
 
 msgid "End date"
 msgstr "تاریخ اختتام"
@@ -137,14 +315,8 @@ msgstr "ایونٹ ائی۔ڈی سکیم"
 msgid "Flush Mode"
 msgstr ""
 
-msgid "Format"
-msgstr "فارمیٹ"
-
 msgid "ID scheme"
 msgstr "ائ۔ڈی سکیم"
-
-msgid "Identifier"
-msgstr "شناختی"
 
 msgid "Report Mode"
 msgstr ""
@@ -164,17 +336,11 @@ msgstr ""
 msgid "Merge Mode"
 msgstr ""
 
-msgid "Object"
-msgstr "اؤبجیکٹ"
-
 msgid "Organisation unit"
 msgstr "تنظیمی یونٹ"
 
 msgid "Org unit ID scheme"
 msgstr "تنظیمی یونٹ ائ۔ڈی سکیم"
-
-msgid "Preheat cache"
-msgstr "پہلے سے ہی کیش کو گرم کرو"
 
 msgid "Preheat Mode"
 msgstr ""
@@ -191,9 +357,6 @@ msgstr "سکیماماس"
 msgid "Data Sets"
 msgstr "ڈیٹا سیٹ"
 
-msgid "Sharing"
-msgstr "اشتراک"
-
 msgid "Existing record check"
 msgstr "پہلے کے ریکارڈ کا چیک"
 
@@ -206,74 +369,17 @@ msgstr ""
 msgid "Start date"
 msgstr "تاریخ آغاز"
 
-msgid "Strategy"
-msgstr "حکمت عملی"
-
-msgid "Yes"
-msgstr "ہاں"
-
-msgid "No"
-msgstr "نہیں"
-
-msgid "UID"
-msgstr "یو۔ای۔ڈی"
-
-msgid "Code"
-msgstr "کوڈ"
-
-msgid "Name"
-msgstr "نام"
-
-msgid "HR identifier"
-msgstr "ایچ۔اڑ ایڈینٹیفائر"
-
 msgid "Include descendants of organisation unit"
 msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
 
 msgid "Selected organisation unit"
 msgstr "سیلیکٹیڈ تنظیمی یونٹ"
 
-msgid "Yes (faster for large imports)"
-msgstr "ہاں (تیزی بڑے ایمپورٹ کے لیے)"
-
 msgid "New and Updates"
 msgstr "نیا اور اپڈیٹس"
 
-msgid "New only"
-msgstr "صرف نیا"
-
-msgid "Updates only"
-msgstr "صرف اپڈیٹس"
-
-msgid "Delete"
-msgstr "حذف"
-
-msgid "Skip check (fast)"
-msgstr "چھوڑو چیکنگ (جلدی سے)"
-
-msgid "Check (safe, recommended)"
-msgstr "چیک (محتاط، تجویز شدہ)"
-
 msgid "AUTO"
 msgstr ""
-
-msgid "Errors"
-msgstr "غلطیاں"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "ریفرنس"
-
-msgid "All"
-msgstr "تمام"
-
-msgid "None"
-msgstr "کوئی نہں"
 
 msgid "Create and Update"
 msgstr ""
@@ -284,41 +390,11 @@ msgstr "تخلیق"
 msgid "Update"
 msgstr "اپڈیٹ"
 
-msgid "Merge"
-msgstr "ضم"
-
-msgid "Replace"
-msgstr "تبدیل کریں"
-
-msgid "Auto"
-msgstr ""
-
-msgid "With sharing"
-msgstr "اشتراک کے ساتھ"
-
-msgid "Without sharing"
-msgstr "بغیر اشتراک کے ساتھ"
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
-msgstr ""
-
 msgid "Include children of organisation unit"
 msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
 
-msgid "Zip"
-msgstr "زی۔ایپ"
-
 msgid "Gzip"
 msgstr "جی۔زیپ"
-
-msgid "Uncompressed"
-msgstr "ان کمپریس"
 
 msgid "Category combination"
 msgstr "قسم کا مجموعہ"
@@ -348,6 +424,9 @@ msgstr ""
 "ایکسپورٹ ڈیٹا ویلیوز۔ یہ ایک عموممی ایکسپورٹ فنکشن ہے جو ڈی۔آئی۔ایچ۔ایس کے "
 "فارمیٹ میں DXF 2 میں ڈیٹا کو ایکسپورٹ کرتا ہے۔"
 
+msgid "Loading options..."
+msgstr ""
+
 msgid "Event Export"
 msgstr "اِیونٹ ایکسپورٹ"
 
@@ -367,9 +446,6 @@ msgstr ""
 " یٹا ایلمنٹس اور ارگنائزینشن یونٹ کی طرح میٹا دیٹا کو DHIS 2 ایکسچینج فارمیٹ"
 " میں ایکسپورٹ کریں"
 
-msgid "Meta Data Export"
-msgstr "میٹاڈیٹا ایمپورٹ"
-
 msgid "Metadata Dependency Export"
 msgstr "میٹا دیٹا ڈییپنڈسی ایکسپورٹ"
 
@@ -386,6 +462,12 @@ msgstr "ایمپورٹ / ایکسپورٹ"
 
 msgid "Import or Export DHIS2 data."
 msgstr "ایمپورٹ یا ایکسپورٹ ڈیٹا"
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
 
 msgid "Data Import"
 msgstr "ڈیٹا اِیمپورٹ"
@@ -414,8 +496,8 @@ msgstr ""
 "تنظیمی یونٹ سے مطالق جغرافیایی ڈیٹا کو ایمپورٹ کریں۔ GML ایمپورٹ کا یہ "
 "فارمیٹ XML پر مبنی ہے جو جغرافیایی خصوصیات کی رونمائی کرتا ہے۔"
 
-msgid "Only import of GML data for existing organisation units is supported."
-msgstr "صرف پہلے سے موجود تنظمی یونٹس کا جی۔ایم۔ایل ایمپورٹ ممکن ہے"
+msgid "Couldn't load classKey options"
+msgstr ""
 
 msgid "Metadata Import"
 msgstr "میٹا ڈیٹا اِیمپورٹ"
@@ -426,3 +508,6 @@ msgid ""
 msgstr ""
 "۔DXF 2 کے فارمیٹ میں میٹا ڈیٹا کو ایمپورٹ کریں۔ مثلاً ڈیٹا ایلیمنٹ، تنظیمی "
 "یونٹ وغیرہ۔"
+
+msgid "It seems like there was no data in the uploaded file."
+msgstr ""
