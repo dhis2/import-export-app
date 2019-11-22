@@ -193,7 +193,7 @@ msgid "Preheat mode"
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "خطأ"
 
 msgid "Report mode"
 msgstr ""
