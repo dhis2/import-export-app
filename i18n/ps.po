@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -24,6 +24,12 @@ msgstr ""
 msgid "Go Back"
 msgstr ""
 
+msgid "Required"
+msgstr "اړین دي"
+
+msgid "Choose a file to upload"
+msgstr ""
+
 msgid "filter data sets by name"
 msgstr ""
 
@@ -35,12 +41,6 @@ msgstr ""
 
 msgid "Data sets"
 msgstr "د مالوماتو یا ډاټا ټولګې"
-
-msgid "Choose a file to upload"
-msgstr ""
-
-msgid "Required"
-msgstr "اړین دي"
 
 msgid "more options"
 msgstr ""
@@ -54,7 +54,193 @@ msgstr ""
 msgid "CSV"
 msgstr ""
 
+msgid "Yes"
+msgstr "هو [ درست ]"
+
+msgid "No"
+msgstr "نه [ نه ]"
+
+msgid "Async"
+msgstr ""
+
+msgid "All"
+msgstr "ټول"
+
+msgid "None"
+msgstr "هېڅ یو"
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "کوډ یا شفر"
+
+msgid "Name"
+msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr "شی (څیز)"
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Errors"
+msgstr "تېروتنې"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "خذف یې کړئ"
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr "ځاېناستول"
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Reference"
+msgstr "مرجع / مأخذ"
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Error"
+msgstr "تېروته"
+
+msgid "Report mode"
+msgstr ""
+
 msgid "Select None"
+msgstr ""
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
+msgid "Sharing"
+msgstr "د شریکېدو په حال کې"
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr ""
+
+msgid "Check (safe, recommended)"
+msgstr ""
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Id scheme"
 msgstr ""
 
 msgid "Logger"
@@ -105,9 +291,6 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-msgid "Async"
-msgstr ""
-
 msgid "Atomic Mode"
 msgstr ""
 
@@ -120,13 +303,7 @@ msgstr ""
 msgid "Object type"
 msgstr ""
 
-msgid "Compression"
-msgstr ""
-
 msgid "Data element ID scheme"
-msgstr ""
-
-msgid "Dry run"
 msgstr ""
 
 msgid "End date"
@@ -138,13 +315,7 @@ msgstr ""
 msgid "Flush Mode"
 msgstr ""
 
-msgid "Format"
-msgstr ""
-
 msgid "ID scheme"
-msgstr ""
-
-msgid "Identifier"
 msgstr ""
 
 msgid "Report Mode"
@@ -165,16 +336,10 @@ msgstr ""
 msgid "Merge Mode"
 msgstr ""
 
-msgid "Object"
-msgstr "شی (څیز)"
-
 msgid "Organisation unit"
 msgstr "د سازمان واحد"
 
 msgid "Org unit ID scheme"
-msgstr ""
-
-msgid "Preheat cache"
 msgstr ""
 
 msgid "Preheat Mode"
@@ -192,9 +357,6 @@ msgstr ""
 msgid "Data Sets"
 msgstr "د مالوماتو ټولګې"
 
-msgid "Sharing"
-msgstr "د شریکېدو په حال کې"
-
 msgid "Existing record check"
 msgstr ""
 
@@ -207,74 +369,17 @@ msgstr ""
 msgid "Start date"
 msgstr "د پیل نېټه"
 
-msgid "Strategy"
-msgstr ""
-
-msgid "Yes"
-msgstr "هو [ درست ]"
-
-msgid "No"
-msgstr "نه [ نه ]"
-
-msgid "UID"
-msgstr ""
-
-msgid "Code"
-msgstr "کوډ یا شفر"
-
-msgid "Name"
-msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
-
-msgid "HR identifier"
-msgstr ""
-
 msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
 msgstr ""
 
-msgid "Yes (faster for large imports)"
-msgstr ""
-
 msgid "New and Updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "خذف یې کړئ"
-
-msgid "Skip check (fast)"
-msgstr ""
-
-msgid "Check (safe, recommended)"
 msgstr ""
 
 msgid "AUTO"
 msgstr ""
-
-msgid "Errors"
-msgstr "تېروتنې"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "مرجع / مأخذ"
-
-msgid "All"
-msgstr "ټول"
-
-msgid "None"
-msgstr "هېڅ یو"
 
 msgid "Create and Update"
 msgstr ""
@@ -285,40 +390,10 @@ msgstr "جوړ یې کړئ"
 msgid "Update"
 msgstr "تجدید یا نوي یې کړئ"
 
-msgid "Merge"
-msgstr ""
-
-msgid "Replace"
-msgstr "ځاېناستول"
-
-msgid "Auto"
-msgstr ""
-
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
-msgstr ""
-
 msgid "Include children of organisation unit"
 msgstr ""
 
-msgid "Zip"
-msgstr ""
-
 msgid "Gzip"
-msgstr ""
-
-msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
@@ -347,6 +422,9 @@ msgid ""
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
 
+msgid "Loading options..."
+msgstr ""
+
 msgid "Event Export"
 msgstr ""
 
@@ -361,9 +439,6 @@ msgstr ""
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
-msgstr ""
-
-msgid "Meta Data Export"
 msgstr ""
 
 msgid "Metadata Dependency Export"
@@ -381,6 +456,12 @@ msgid "Import / Export"
 msgstr ""
 
 msgid "Import or Export DHIS2 data."
+msgstr ""
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
@@ -406,7 +487,7 @@ msgid ""
 "XML grammar for expressing geographical features."
 msgstr ""
 
-msgid "Only import of GML data for existing organisation units is supported."
+msgid "Couldn't load classKey options"
 msgstr ""
 
 msgid "Metadata Import"
@@ -415,4 +496,7 @@ msgstr ""
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "It seems like there was no data in the uploaded file."
 msgstr ""
