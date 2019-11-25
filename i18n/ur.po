@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-08-30T08:44:31.946Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -98,6 +98,9 @@ msgstr ""
 
 msgid "Conflicts"
 msgstr ""
+
+msgid "Errors"
+msgstr "غلطیاں"
 
 msgid "Import Summary"
 msgstr ""
@@ -257,9 +260,6 @@ msgstr "چیک (محتاط، تجویز شدہ)"
 
 msgid "AUTO"
 msgstr ""
-
-msgid "Errors"
-msgstr "غلطیاں"
 
 msgid "Full"
 msgstr ""
@@ -427,3 +427,6 @@ msgid ""
 msgstr ""
 "۔DXF 2 کے فارمیٹ میں میٹا ڈیٹا کو ایمپورٹ کریں۔ مثلاً ڈیٹا ایلیمنٹ، تنظیمی "
 "یونٹ وغیرہ۔"
+
+msgid "It seems like there was no data in the uploaded file."
+msgstr ""
