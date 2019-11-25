@@ -1,13 +1,14 @@
 # Translators:
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2019-10-25T12:36:50.482Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,6 +25,12 @@ msgstr "Kesalahan import"
 msgid "Go Back"
 msgstr "Kembali"
 
+msgid "Required"
+msgstr "Wajib"
+
+msgid "Choose a file to upload"
+msgstr "Pilih berkas untuk diunggah"
+
 msgid "filter data sets by name"
 msgstr "saring data set berdasar nama"
 
@@ -35,12 +42,6 @@ msgstr "Bersihkan Semua"
 
 msgid "Data sets"
 msgstr "Data set"
-
-msgid "Choose a file to upload"
-msgstr "Pilih berkas untuk diunggah"
-
-msgid "Required"
-msgstr "Wajib"
 
 msgid "more options"
 msgstr "opsi lainnya"
@@ -56,6 +57,171 @@ msgstr ""
 
 msgid "Select None"
 msgstr "Tidak Memilih"
+
+msgid "Yes"
+msgstr "Ya"
+
+msgid "No"
+msgstr "Tidak"
+
+msgid "Async"
+msgstr ""
+
+msgid "All"
+msgstr "Semua"
+
+msgid "None"
+msgstr "Tidak ada"
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Auto"
+msgstr "Otomatis"
+
+msgid "Object"
+msgstr "Objek"
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr "Pengenal"
+
+msgid "Errors"
+msgstr "Kesalahan"
+
+msgid "Full"
+msgstr "Penuh"
+
+msgid "Debug"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr "Hanya baru"
+
+msgid "Updates only"
+msgstr "Hanya perbaruan"
+
+msgid "Delete"
+msgstr "hapus"
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr "Selalu"
+
+msgid "Non Empty"
+msgstr "Tidak Kosong"
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Merge"
+msgstr "Gabung"
+
+msgid "Replace"
+msgstr "Gantikan"
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr "Ya (lebih cepat untuk impor ukuran besar)"
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Reference"
+msgstr "Referensi"
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Report mode"
+msgstr ""
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr "Lewati pengecekan (cepat)"
+
+msgid "Check (safe, recommended)"
+msgstr "Cek (aman, direkomendasikan)"
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Strategy"
+msgstr "Strategi"
+
+msgid "Id scheme"
+msgstr ""
 
 msgid "Logger"
 msgstr ""
@@ -105,9 +271,6 @@ msgstr "Ringkasan Impor"
 msgid "Summary"
 msgstr "Ringkasan"
 
-msgid "Async"
-msgstr ""
-
 msgid "Atomic Mode"
 msgstr "Mode Atomik"
 
@@ -126,9 +289,6 @@ msgstr "Kompresi"
 msgid "Data element ID scheme"
 msgstr "Skema ID data elemen"
 
-msgid "Dry run"
-msgstr ""
-
 msgid "End date"
 msgstr "Tanggal berakhir"
 
@@ -138,14 +298,8 @@ msgstr "Skema ID Kejadian"
 msgid "Flush Mode"
 msgstr "Mode Flush"
 
-msgid "Format"
-msgstr ""
-
 msgid "ID scheme"
 msgstr "Skema ID"
-
-msgid "Identifier"
-msgstr "Pengenal"
 
 msgid "Report Mode"
 msgstr "Mode Laporan"
@@ -165,17 +319,11 @@ msgstr "Strategi Inklusi"
 msgid "Merge Mode"
 msgstr "Mode Gabung"
 
-msgid "Object"
-msgstr "Objek"
-
 msgid "Organisation unit"
 msgstr "Unit organisasi"
 
 msgid "Org unit ID scheme"
 msgstr "Skema ID unit org"
-
-msgid "Preheat cache"
-msgstr ""
 
 msgid "Preheat Mode"
 msgstr "Mode Preheat"
@@ -207,74 +355,17 @@ msgstr "Lewati Validasi"
 msgid "Start date"
 msgstr "Tanggal dimulai"
 
-msgid "Strategy"
-msgstr "Strategi"
-
-msgid "Yes"
-msgstr "Ya"
-
-msgid "No"
-msgstr "Tidak"
-
-msgid "UID"
-msgstr ""
-
-msgid "Code"
-msgstr "Kode"
-
-msgid "Name"
-msgstr "Nama"
-
-msgid "HR identifier"
-msgstr "Identifier HR"
-
 msgid "Include descendants of organisation unit"
 msgstr "Ikutkan unit org di bawahnya"
 
 msgid "Selected organisation unit"
 msgstr "Unit org yang terpilih"
 
-msgid "Yes (faster for large imports)"
-msgstr "Ya (lebih cepat untuk impor ukuran besar)"
-
 msgid "New and Updates"
 msgstr "Baru dan Perbaruan"
 
-msgid "New only"
-msgstr "Hanya baru"
-
-msgid "Updates only"
-msgstr "Hanya perbaruan"
-
-msgid "Delete"
-msgstr "hapus"
-
-msgid "Skip check (fast)"
-msgstr "Lewati pengecekan (cepat)"
-
-msgid "Check (safe, recommended)"
-msgstr "Cek (aman, direkomendasikan)"
-
 msgid "AUTO"
 msgstr "OTOMATIS"
-
-msgid "Errors"
-msgstr "Kesalahan"
-
-msgid "Full"
-msgstr "Penuh"
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "Referensi"
-
-msgid "All"
-msgstr "Semua"
-
-msgid "None"
-msgstr "Tidak ada"
 
 msgid "Create and Update"
 msgstr "Buat dan Perbarui"
@@ -285,29 +376,11 @@ msgstr "Buat"
 msgid "Update"
 msgstr "perbarui"
 
-msgid "Merge"
-msgstr "Gabung"
-
-msgid "Replace"
-msgstr "Gantikan"
-
-msgid "Auto"
-msgstr "Otomatis"
-
 msgid "With sharing"
 msgstr "Dengan pembagian"
 
 msgid "Without sharing"
 msgstr "Tanpa pembagian"
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr "Selalu"
-
-msgid "Non Empty"
-msgstr "Tidak Kosong"
 
 msgid "Include children of organisation unit"
 msgstr "Ikutkan unit org di bawahnya"
@@ -348,6 +421,9 @@ msgid ""
 msgstr ""
 "Nilai data ekspor. Ini adalah fungsi ekspor biasa untuk mengekspor data ke "
 "format pertukaran DHIS2 yang disebut DXF 2."
+
+msgid "Loading options..."
+msgstr ""
 
 msgid "Event Export"
 msgstr "Ekspor Kejadian"
@@ -391,6 +467,12 @@ msgstr "Impor / Ekspor"
 msgid "Import or Export DHIS2 data."
 msgstr "Impor atau Ekspor data DHIS2."
 
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
 msgid "Data Import"
 msgstr "Impor Data"
 
@@ -420,9 +502,8 @@ msgstr ""
 "Impor data geografik untuk unit organisasi dengan format GML. GML merupakan "
 "grammar XML untuk mengekspresikan fitur geografik."
 
-msgid "Only import of GML data for existing organisation units is supported."
+msgid "Couldn't load classKey options"
 msgstr ""
-"Hanya mendukung impor data GML untuk unit organisasi yang sudah dibuat."
 
 msgid "Metadata Import"
 msgstr "Impor Metadata"
@@ -433,3 +514,6 @@ msgid ""
 msgstr ""
 "Impor meta data seperti data elemen dan unit organisasi dalam format "
 "pertukaran DHIS2 standar."
+
+msgid "It seems like there was no data in the uploaded file."
+msgstr ""
