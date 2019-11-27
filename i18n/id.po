@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T08:54:25.308Z\n"
+"POT-Creation-Date: 2019-08-30T09:16:41.273Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -95,6 +95,9 @@ msgstr "Ringkasan"
 
 msgid "Conflicts"
 msgstr "Konflik"
+
+msgid "Errors"
+msgstr "Kesalahan"
 
 msgid "Import Summary"
 msgstr "Ringkasan Impor"
@@ -254,9 +257,6 @@ msgstr "Cek (aman, direkomendasikan)"
 
 msgid "AUTO"
 msgstr "OTOMATIS"
-
-msgid "Errors"
-msgstr "Kesalahan"
 
 msgid "Full"
 msgstr "Penuh"
@@ -424,3 +424,6 @@ msgid ""
 msgstr ""
 "Impor meta data seperti data elemen dan unit organisasi dalam format "
 "pertukaran DHIS2 standar."
+
+msgid "It seems like there was no data in the uploaded file."
+msgstr ""
