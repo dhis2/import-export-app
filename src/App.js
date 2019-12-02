@@ -1,116 +1,44 @@
-import 'typeface-roboto'
-
-import { CssReset } from '@dhis2/ui-core'
-import { Route, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { getInstance, config } from 'd2/lib/d2'
-import PropTypes from 'prop-types'
 import React from 'react'
+import { DataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import moment from 'moment'
 
-import { Loading } from './components'
-import { isProduction } from './helpers/env'
-import { setUser, clearUser } from './reducers'
-import Template from './pages/Template'
-import * as pages from './pages'
-
-config.i18n.strings.add('settings')
-config.i18n.strings.add('profile')
-config.i18n.strings.add('account')
-config.i18n.strings.add('help')
-config.i18n.strings.add('log_out')
-config.i18n.strings.add('about_dhis2')
-config.i18n.strings.add('manage_my_apps')
-config.i18n.strings.add('app_search_placeholder')
-config.i18n.strings.add('no_results_found')
-config.i18n.strings.add('interpretations')
-config.i18n.strings.add('messages')
-
-function isLangRTL(code) {
-    const langs = ['ar', 'fa', 'ur']
-    const prefixed = langs.map(c => `${c}-`)
-    return (
-        langs.includes(code) ||
-        prefixed.filter(c => code.startsWith(c)).length > 0
-    )
+const query = {
+    me: {
+        resource: 'me',
+    },
 }
 
-function changeLocale(locale) {
-    moment.locale(locale)
-    i18n.changeLanguage(locale)
-    document.documentElement.setAttribute(
-        'dir',
-        isLangRTL(locale) ? 'rtl' : 'ltr'
-    )
-}
-
-class App extends React.Component {
-    static childContextTypes = {
-        d2: PropTypes.object,
-    }
-
-    state = {
-        d2: null,
-        loaded: false,
-    }
-
-    async componentDidMount() {
-        try {
-            const d2 = await getInstance()
-            const lang = d2.currentUser.userSettings.settings.keyUiLocale
-            // const lang = 'ur'
-            changeLocale(lang)
-            this.props.setUser(d2.currentUser)
-            this.setState({
-                d2,
-                loaded: true,
-            })
-        } catch (e) {
-            !isProduction && console.log('/api/me error')
-            !isProduction && console.log(e)
-            this.props.clearUser()
-            this.setState({
-                loaded: true,
-            })
-        }
-    }
-
-    getChildContext() {
-        return {
-            d2: this.state.d2 || null,
-        }
-    }
-
-    render() {
-        if (!this.state.loaded) {
-            return <Loading />
-        }
-
-        const { user } = this.props
-        if (!user) {
-            return <div>{i18n.t('user is not logged in')}</div>
-        }
-
-        return (
-            <Template>
-                <CssReset />
-                {Object.keys(pages).map(k => {
-                    const page = pages[k]
-                    return (
-                        <Route
-                            key={`page-${k}`}
-                            path={page.path}
-                            exact={true}
-                            component={page}
-                        />
-                    )
-                })}
-            </Template>
-        )
-    }
-}
-
-export default withRouter(
-    connect(({ user }) => ({ user }), { setUser, clearUser })(App)
+const MyApp = () => (
+    <div className="container">
+        <style jsx>{`
+            .container {
+                position: absolute;
+                top: 48px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+            }
+        }`}</style>
+        <DataQuery query={query}>
+            {({ error, loading, data }) => {
+                if (error) return <span>ERROR</span>
+                if (loading) return <span>...</span>
+                return (
+                    <>
+                        <h1>
+                            {i18n.t('Hello {{name}}', { name: data.me.name })}
+                        </h1>
+                        <h3>{i18n.t('Welcome to DHIS2!')}</h3>
+                    </>
+                )
+            }}
+        </DataQuery>
+    </div>
 )
+
+export default MyApp
