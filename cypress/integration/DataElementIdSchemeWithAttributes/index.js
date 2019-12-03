@@ -2,7 +2,7 @@ import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const loginUrl = Cypress.env('LOGIN_URL')
 
-Given('an attribute is associated with data elements', () => {
+Given('a unique attribute is associated with data elements', () => {
     cy.server()
         .stubWithFixture({
             url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true`,

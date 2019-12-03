@@ -11,7 +11,7 @@ Given('the user is on the data {word} page', type => {
 })
 
 Given(
-    'an attribute is associated with {string} but not with {string}',
+    'a unique attribute is associated with {string} but not with {string}',
     (left, right) => {
         cy.server()
 
@@ -100,21 +100,24 @@ Then('it should not be an option in the id scheme input', () => {
         })
 })
 
-Given('an attribute is associated with org units and data elements', () => {
-    cy.server()
+Given(
+    'a unique attribute is associated with org units and data elements',
+    () => {
+        cy.server()
 
-        .stubWithFixture({
-            url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true`,
-            fixture: 'dataElementAttributes',
-        })
-        .as('dataElementAttributesXHR')
+            .stubWithFixture({
+                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true`,
+                fixture: 'dataElementAttributes',
+            })
+            .as('dataElementAttributesXHR')
 
-        .stubWithFixture({
-            url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
-            fixture: 'orgUnitAttributes',
-        })
-        .as('orgUnitAttributesXHR')
-})
+            .stubWithFixture({
+                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
+                fixture: 'orgUnitAttributes',
+            })
+            .as('orgUnitAttributesXHR')
+    }
+)
 
 Then('it should be a selectable option in the id scheme input', () => {
     cy.wait(['@dataElementAttributesXHR', '@orgUnitAttributesXHR'])
