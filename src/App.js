@@ -1,12 +1,12 @@
-import React from 'react'
-import { DataQuery } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
+import React from 'react';
+import { DataQuery } from '@dhis2/app-runtime';
+import i18n from '@dhis2/d2-i18n';
 
 const query = {
     me: {
         resource: 'me',
     },
-}
+};
 
 const MyApp = () => (
     <div className="container">
@@ -26,8 +26,8 @@ const MyApp = () => (
         }`}</style>
         <DataQuery query={query}>
             {({ error, loading, data }) => {
-                if (error) return <span>ERROR</span>
-                if (loading) return <span>...</span>
+                if (error) return <span>ERROR</span>;
+                if (loading) return <span>...</span>;
                 return (
                     <>
                         <h1>
@@ -35,10 +35,10 @@ const MyApp = () => (
                         </h1>
                         <h3>{i18n.t('Welcome to DHIS2!')}</h3>
                     </>
-                )
+                );
             }}
         </DataQuery>
     </div>
-)
+);
 
-export default MyApp
+export default MyApp;
