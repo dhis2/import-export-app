@@ -2,7 +2,7 @@ import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const loginUrl = Cypress.env('LOGIN_URL')
 
-Given('an attribute is associated with organisation units', () => {
+Given('a unique attribute is associated with organisation units', () => {
     cy.server()
         .stubWithFixture({
             url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
