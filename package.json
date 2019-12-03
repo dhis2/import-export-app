@@ -1,20 +1,39 @@
 {
-  "name": "import-export-beta-app",
-  "version": "1.0.0",
-  "description": "",
-  "license": "BSD-3-Clause",
-  "private": true,
-  "scripts": {
-    "build": "d2-app-scripts build",
-    "start": "d2-app-scripts start",
-    "test": "d2-app-scripts test"
-  },
-  "devDependencies": {
-    "@dhis2/cli-app-scripts": "^2.0.0",
-    "cypress": "^3.7.0"
-  },
-  "dependencies": {
-    "@dhis2/app-runtime": "^2.0.4",
-    "@dhis2/ui-core": "^4.0.3"
-  }
+    "name": "import-export-beta-app",
+    "version": "1.0.0",
+    "description": "",
+    "license": "BSD-3-Clause",
+    "private": true,
+    "scripts": {
+        "build": "d2-app-scripts build",
+        "start": "d2-app-scripts start",
+        "test": "d2-app-scripts test",
+        "prettier-write": "prettier \"./src/{**/*,*}.js\" --write"
+    },
+    "devDependencies": {
+        "@dhis2/cli-app-scripts": "^2.0.0",
+        "babel-eslint": "^10.0.3",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react-app": "^9.0.2",
+        "babel-preset-stage-0": "^6.24.1",
+        "cypress": "^3.7.0",
+        "eslint": "^6.7.2",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-config-react-app": "^5.0.2",
+        "eslint-plugin-cypress": "^2.7.0",
+        "eslint-plugin-flowtype": "^4.5.2",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-react": "^7.17.0",
+        "eslint-plugin-react-hooks": "^2.3.0",
+        "prettier": "^1.19.1"
+    },
+    "dependencies": {
+        "@dhis2/app-runtime": "^2.0.4",
+        "@dhis2/ui-core": "^4.0.3"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    }
 }
