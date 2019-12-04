@@ -27,10 +27,10 @@ export default class SelectField extends React.Component {
 
     render() {
         const { name, label, values, selected } = this.props
-        const dataTestId = this.props['data-test-id'] || undefined
+        const dataTest = this.props['data-test'] || undefined
 
         return (
-            <div data-test-id={dataTestId}>
+            <div data-test={dataTest}>
                 <FormControl className={s.formControl}>
                     <FormLabel className={s.formLabel}>{label}</FormLabel>
                     <Select

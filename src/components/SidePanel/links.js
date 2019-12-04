@@ -14,7 +14,7 @@ function menu(list) {
         to: i.path,
         text: i.title,
         icon: i.menuIcon,
-        dataTestId: i.dataTestId,
+        dataTest: i.dataTest,
     }))
 }
 

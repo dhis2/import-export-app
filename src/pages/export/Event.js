@@ -15,7 +15,7 @@ import {
 import { isProduction } from '../../helpers/env'
 
 export class EventExport extends FormBase {
-    static dataTestId = 'export-event'
+    static dataTest = 'export-event'
     static path = '/export/event'
 
     static order = 8

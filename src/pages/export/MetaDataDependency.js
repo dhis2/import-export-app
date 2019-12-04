@@ -8,7 +8,7 @@ import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
 import { isProduction } from '../../helpers/env'
 
 export class MetaDataDependencyExport extends FormBase {
-    static dataTestId = 'export-metadata-dependency'
+    static dataTest = 'export-metadata-dependency'
     static path = '/export/metadata-dependency'
 
     static order = 9

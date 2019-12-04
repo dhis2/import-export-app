@@ -49,7 +49,7 @@ const fields = {
         context: CTX_MORE_OPTIONS,
         required: false,
         attributes: {
-            'data-test-id': 'input-data-element-id-scheme',
+            'data-test': 'input-data-element-id-scheme',
         },
     },
     dryRun: getField('dryRun', i18n.t('Dry run'), TYPE_RADIO),
@@ -79,7 +79,7 @@ const fields = {
         context: CTX_MORE_OPTIONS,
         required: false,
         attributes: {
-            'data-test-id': 'input-id-scheme',
+            'data-test': 'input-id-scheme',
         },
     },
     identifier: getField('identifier', i18n.t('Identifier'), TYPE_RADIO),
@@ -123,7 +123,7 @@ const fields = {
         context: CTX_MORE_OPTIONS,
         required: false,
         attributes: {
-            'data-test-id': 'input-org-unit-id-scheme',
+            'data-test': 'input-org-unit-id-scheme',
         },
     },
     orgUnit_SingleSelect: getField(
