@@ -7,7 +7,7 @@ const PlaceHolder = ({ name }) => {
 const dataImportPage = {
     name: 'Data import',
     description:
-        'Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 is the standard exchange format for DHIS 2.',
+        'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.',
     path: '/import/data',
     component: <PlaceHolder name="import/data" />,
 };
@@ -15,7 +15,7 @@ const dataImportPage = {
 const eventImportPage = {
     name: 'Event import',
     description:
-        'Import events for programs, stages and tracked entities in the DXF 2 format.',
+        'Import events for programs, stages and tracked entities using the DXF 2 format.',
     path: '/import/event',
     component: <PlaceHolder name="import/event" />,
 };
@@ -23,7 +23,7 @@ const eventImportPage = {
 const gmlImportPage = {
     name: 'GML import',
     description:
-        'Import geographic data for organisation units using GML format. GML is an XML grammar for expressing geographical features.',
+        'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.',
     path: '/import/gml',
     component: <PlaceHolder name="import/gml" />,
 };
@@ -31,15 +31,14 @@ const gmlImportPage = {
 const metadataImportPage = {
     name: 'Metadata import',
     description:
-        'Import metadata like data elements and organisation units using the standard DHIS 2 exchange format called DXF 2.',
+        'Import metadata like data elements and organisation units using the DXF 2 format.',
     path: '/import/metadata',
     component: <PlaceHolder name="import/metadata" />,
 };
 
 const dataExportPage = {
     name: 'Data export',
-    description:
-        'Export data values. This is the regular export function which exports data to the DHIS 2 exchange format called DXF 2.',
+    description: 'Export data values as ADX XML, DFX 2 XML, JSON or CSV files.',
     path: '/export/data',
     component: <PlaceHolder name="export/data" />,
 };
@@ -55,7 +54,7 @@ const eventExportPage = {
 const metadataDependencyExportPage = {
     name: 'Metadata dependency export',
     description:
-        'Export metadata like data sets and programs including related metadata objects.',
+        'Export metadata like data sets and programs including related metadata objects in the XML or JSON format.',
     path: '/export/metadata-dependency',
     component: <PlaceHolder name="export/metadata-dependency" />,
 };
@@ -63,7 +62,7 @@ const metadataDependencyExportPage = {
 const metadataExportPage = {
     name: 'Metadata export',
     description:
-        'Export meta data like data elements and organisation units to the standard DHIS 2 exchange format.',
+        'Export meta data like data elements and organisation units in the XML or JSON format.',
     path: '/export/metadata',
     component: <PlaceHolder name="export/metadata" />,
 };
