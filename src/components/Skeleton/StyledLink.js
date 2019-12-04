@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UnstyledLink = props => (
+const StyledLink = props => (
     <Link style={{ textDecoration: 'none' }} {...props} />
 );
 
-export default UnstyledLink;
+export default StyledLink;
