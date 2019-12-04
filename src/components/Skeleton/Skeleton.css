@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    height: 100vh;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    grid-template-columns: minmax(min-content, 300px) 2fr;
+}
+
+.menu {
+}
+
+.menu .section-title {
+    padding: 0px 24px;
+    line-height: 1.15;
+}
+
+.content {
+}

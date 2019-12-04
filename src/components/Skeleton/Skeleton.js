@@ -1,36 +1,51 @@
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { CssReset, Divider, Menu, MenuItem } from '@dhis2/ui-core';
 
+import s from './Skeleton.css';
 import { ImportPages, ExportPages, Pages } from '../../utils/pages';
-import UnstyledLink from './UnstyledLink';
+import StyledLink from './StyledLink';
 
-export const Skeleton = () => {
+const Skeleton = ({ location }) => {
     return (
-        <Router>
-            <Menu>
-                <h3>Import</h3>
-                {ImportPages.map(p => (
-                    <UnstyledLink to={p.path} key={p.path}>
-                        <MenuItem label={p.name} />
-                    </UnstyledLink>
+        <div className="container">
+            <Menu className="menu">
+                <h3 className="section-title">Import</h3>
+
+                {ImportPages.map(({ icon, name, path }) => (
+                    <StyledLink to={path} key={path}>
+                        <MenuItem
+                            active={location.pathname == path}
+                            icon={icon}
+                            label={name}
+                        />
+                    </StyledLink>
                 ))}
                 <Divider />
-                <h3>Export</h3>
-                {ExportPages.map(p => (
-                    <UnstyledLink to={p.path} key={p.path}>
-                        <MenuItem label={p.name} />
-                    </UnstyledLink>
+                <h3 className="section-title">Export</h3>
+                {ExportPages.map(({ icon, name, path }) => (
+                    <StyledLink to={path} key={path}>
+                        <MenuItem
+                            active={location.pathname == path}
+                            icon={icon}
+                            label={name}
+                        />
+                    </StyledLink>
                 ))}
             </Menu>
 
-            <Switch>
-                {Pages.map(p => (
-                    <Route path={p.path} key={p.path}>
-                        {p.component}
-                    </Route>
-                ))}
-            </Switch>
-        </Router>
+            <div className="content">
+                <Switch>
+                    {Pages.map(({ component, path }) => (
+                        <Route path={path} key={path}>
+                            {component}
+                        </Route>
+                    ))}
+                </Switch>
+            </div>
+        </div>
     );
 };
+
+const SkeletonRouter = withRouter(Skeleton);
+export { SkeletonRouter as Skeleton };
