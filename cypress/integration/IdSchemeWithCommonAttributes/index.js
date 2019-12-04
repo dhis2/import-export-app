@@ -6,7 +6,7 @@ const getKeyBySide = side => (side === 'org units' ? 'orgUnit' : 'dataElement')
 
 Given('the user is on the data {word} page', type => {
     cy.visitWhenStubbed(Cypress.env('APP_URL'))
-        .get(`[data-test-id="sidebar-link-${type}-data"]`)
+        .get(`[data-test="sidebar-link-${type}-data"]`)
         .click()
 })
 
@@ -53,8 +53,8 @@ Then('it should not be an option in the id scheme input', () => {
             return attributes
         })
         .then(nonCommonAttributes => {
-            cy.get('[data-test-id="more-options-button"]').click()
-            cy.get('[data-test-id="input-id-scheme"]').then($idScheme => {
+            cy.get('[data-test="more-options-button"]').click()
+            cy.get('[data-test="input-id-scheme"]').then($idScheme => {
                 /**
                  * "Old school style"
                  * The export page hasn't been refactored yet
@@ -151,8 +151,8 @@ Then('it should be a selectable option in the id scheme input', () => {
         })
         .then(attributes => {
             // check for existence in DOM
-            cy.get('[data-test-id="more-options-button"]').click()
-            cy.get('[data-test-id="input-id-scheme"]').then($idScheme => {
+            cy.get('[data-test="more-options-button"]').click()
+            cy.get('[data-test="input-id-scheme"]').then($idScheme => {
                 /**
                  * "Old school style"
                  * The export page hasn't been refactored yet

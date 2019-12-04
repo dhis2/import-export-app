@@ -13,13 +13,13 @@ Given('a unique attribute is associated with organisation units', () => {
 
 Given('the user is on the data import page', () => {
     cy.visitWhenStubbed(Cypress.env('APP_URL'))
-        .get('[data-test-id="sidebar-link-import-data"]')
+        .get('[data-test="sidebar-link-import-data"]')
         .click()
 })
 
 Given('the user is on the data export page', () => {
     cy.visitWhenStubbed(Cypress.env('APP_URL'))
-        .get('[data-test-id="sidebar-link-export-data"]')
+        .get('[data-test="sidebar-link-export-data"]')
         .click()
 })
 
@@ -29,8 +29,8 @@ Then(
         cy.wait(['@orgUnitAttributesXHR'])
             .then(async xhr => JSON.parse(await xhr.response.body.text()))
             .then(({ attributes }) => {
-                cy.get('[data-test-id="more-options-button"]').click()
-                cy.get('[data-test-id="input-org-unit-id-scheme"]').then(
+                cy.get('[data-test="more-options-button"]').click()
+                cy.get('[data-test="input-org-unit-id-scheme"]').then(
                     $orgUnitIdScheme => {
                         /**
                          * "Old school style"
