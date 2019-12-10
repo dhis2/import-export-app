@@ -2,7 +2,7 @@
 
 exports[`Input component - IdScheme should render correctly 1`] = `
 <Select
-  dataTestId="input-id-scheme"
+  dataTest="input-id-scheme"
   label="Id scheme"
   name="idScheme"
   options={

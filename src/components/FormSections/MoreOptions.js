@@ -20,7 +20,7 @@ export const MoreOptions = ({ children, openInitially }) => {
             <button
                 onClick={toggleShow}
                 className={styles.button}
-                data-test-id="more-options-button"
+                data-test="more-options-button"
             >
                 <span className={styles.icon}>
                     {show ? <MinusIcon /> : <PlusIcon />}

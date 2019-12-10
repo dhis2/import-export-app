@@ -24,7 +24,7 @@ export const OrgUnitIdScheme = ({ options }) => (
         name={ORG_UNIT_ID_SCHEME_KEY}
         label={orgUnitIdSchemeLabel}
         options={options}
-        dataTestId="input-org-unit-id-scheme"
+        dataTest="input-org-unit-id-scheme"
     />
 )
 
