@@ -1,5 +1,5 @@
 import { useField } from 'react-final-form'
-import { SelectField } from '@dhis2/ui-core'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 import React from 'react'
 import propTypes from 'prop-types'
 import styles from './RadioGroup.module.css'
@@ -19,13 +19,15 @@ export const Select = ({
 
     return (
         <div className={styles.container} data-test={dataTest}>
-            <SelectField {...input} label={label} outlined>
+            <SingleSelectField {...input} label={label} outlined>
                 {options.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
+                    <SingleSelectOption
+                        key={option.value}
+                        value={option.value}
+                        label={option.label}
+                    />
                 ))}
-            </SelectField>
+            </SingleSelectField>
         </div>
     )
 }

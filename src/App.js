@@ -1,6 +1,5 @@
 import 'typeface-roboto'
 
-import { CssReset } from '@dhis2/ui-core'
 import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getInstance, config } from 'd2/lib/d2'
@@ -94,7 +93,6 @@ class App extends React.Component {
 
         return (
             <Template>
-                <CssReset />
                 {Object.keys(pages).map(k => {
                     const page = pages[k]
                     return (
