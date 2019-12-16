@@ -61,7 +61,8 @@
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
     "webpack-manifest-plugin": "^2.0.3",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "redux-thunk": "^2.3.0"
   },
   "husky": {
     "hooks": {
@@ -156,6 +157,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.26.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

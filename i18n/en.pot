@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-08-30T09:16:41.273Z\n"
-"PO-Revision-Date: 2019-08-30T09:16:41.273Z\n"
+"POT-Creation-Date: 2019-12-16T10:22:14.642Z\n"
+"PO-Revision-Date: 2019-12-16T10:22:14.642Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -218,9 +218,6 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-msgid "HR identifier"
-msgstr ""
-
 msgid "Include descendants of organisation unit"
 msgstr ""
 
@@ -329,6 +326,9 @@ msgstr ""
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "Loading options..."
 msgstr ""
 
 msgid "Event Export"
