@@ -1,0 +1,25 @@
+.container {
+    padding: 10px;
+}
+.content {
+    padding: 10px;
+}
+.header {
+    margin-bottom: 10px;
+    line-height: 1.9;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.0;
+}
+.desc {
+    margin-left: 10px;
+}
+.icon {
+    margin-right: 10px;
+    height: 28px;
+}

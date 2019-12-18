@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container > div:nth-child(1) > div {
+    margin-right: 15px;
+}
+
+.group {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.group .schema {
+    margin-top: 5px;
+}
+
+.formLabel {
+    margin-bottom: 5px;
+    width: 100%;
+    user-select: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.formControl {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 1100px;
+    flex-wrap: wrap;
+}

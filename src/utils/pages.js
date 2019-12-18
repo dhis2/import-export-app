@@ -1,4 +1,7 @@
 import React from 'react';
+import i18n from '@dhis2/d2-i18n';
+
+import { MetadataExport } from '../components/MetadataExport';
 
 import {
     DataIcon,
@@ -16,74 +19,83 @@ const PlaceHolder = ({ name }) => {
 };
 
 const dataImportPage = {
-    name: 'Data import',
-    description:
-        'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.',
+    name: i18n.t('Data import'),
+    description: i18n.t(
+        'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
+    ),
     icon: <DataIcon />,
     path: '/import/data',
     component: <PlaceHolder name="import/data" />,
 };
 
 const eventImportPage = {
-    name: 'Event import',
-    description:
-        'Import events for programs, stages and tracked entities using the DXF 2 format.',
+    name: i18n.t('Event import'),
+    description: i18n.t(
+        'Import events for programs, stages and tracked entities using the DXF 2 format.'
+    ),
     icon: <EventIcon />,
     path: '/import/event',
     component: <PlaceHolder name="import/event" />,
 };
 
 const gmlImportPage = {
-    name: 'GML import',
-    description:
-        'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.',
+    name: i18n.t('GML import'),
+    description: i18n.t(
+        'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
+    ),
     icon: <GMLIcon />,
     path: '/import/gml',
     component: <PlaceHolder name="import/gml" />,
 };
 
 const metadataImportPage = {
-    name: 'Metadata import',
-    description:
-        'Import metadata like data elements and organisation units using the DXF 2 format.',
+    name: i18n.t('Metadata import'),
+    description: i18n.t(
+        'Import metadata like data elements and organisation units using the DXF 2 format.'
+    ),
     path: '/import/metadata',
     icon: <MetadataImportIcon />,
     component: <PlaceHolder name="import/metadata" />,
 };
 
 const dataExportPage = {
-    name: 'Data export',
-    description: 'Export data values as ADX XML, DFX 2 XML, JSON or CSV files.',
+    name: i18n.t('Data export'),
+    description: i18n.t(
+        'Export data values as ADX XML, DFX 2 XML, JSON or CSV files.'
+    ),
     path: '/export/data',
     icon: <DataIcon />,
     component: <PlaceHolder name="export/data" />,
 };
 
 const eventExportPage = {
-    name: 'Event export',
-    description:
-        'Export event data for programs, stages and tracked entities in the DXF 2 format.',
+    name: i18n.t('Event export'),
+    description: i18n.t(
+        'Export event data for programs, stages and tracked entities in the DXF 2 format.'
+    ),
     path: '/export/event',
     icon: <EventIcon />,
     component: <PlaceHolder name="export/event" />,
 };
 
 const metadataDependencyExportPage = {
-    name: 'Metadata dependency export',
-    description:
-        'Export metadata like data sets and programs including related metadata objects in the XML or JSON format.',
+    name: i18n.t('Metadata dependency export'),
+    description: i18n.t(
+        'Export metadata like data sets and programs including related metadata objects in the XML or JSON format.'
+    ),
     path: '/export/metadata-dependency',
     icon: <MetadataDependencyExportIcon />,
     component: <PlaceHolder name="export/metadata-dependency" />,
 };
 
 const metadataExportPage = {
-    name: 'Metadata export',
-    description:
-        'Export meta data like data elements and organisation units in the XML or JSON format.',
+    name: i18n.t('Metadata export'),
+    description: i18n.t(
+        'Export meta data like data elements and organisation units in the XML, JSON or CSV format.'
+    ),
     path: '/export/metadata',
     icon: <MetadataExportIcon />,
-    component: <PlaceHolder name="export/metadata" />,
+    component: <MetadataExport />,
 };
 
 const ImportPages = [
@@ -101,5 +113,16 @@ const ExportPages = [
 ];
 
 const AllPages = [...ImportPages, ...ExportPages];
+
+export {
+    dataImportPage,
+    eventImportPage,
+    gmlImportPage,
+    metadataImportPage,
+    dataExportPage,
+    eventExportPage,
+    metadataDependencyExportPage,
+    metadataExportPage,
+};
 
 export { ImportPages, ExportPages, AllPages as Pages };

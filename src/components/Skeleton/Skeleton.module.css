@@ -1,0 +1,16 @@
+.container {
+    display: grid;
+    height: 100vh;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    grid-template-columns: [sidebar] minmax(min-content, 300px) [content] 2fr;
+}
+
+.sidebar {
+    grid-column: sidebar;
+    height: 100%;
+}
+
+.content {
+    grid-column: content;
+}
