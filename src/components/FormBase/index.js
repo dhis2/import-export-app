@@ -66,6 +66,7 @@ export class FormBase extends React.Component {
                 changeContext={this.changeContext}
                 submitLabel={this.submitLabel}
                 onSubmit={this.onSubmit}
+                fieldValuesOverride={this.fieldValuesOverride || {}}
             />
         )
     }
