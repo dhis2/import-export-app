@@ -1,3 +1,4 @@
+import { connect } from 'react-redux'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
@@ -13,10 +14,16 @@ import {
     getFormFieldMoreOptions,
     getFormValues,
     getParamsFromFormState,
+    values,
 } from 'helpers'
 import { DataIcon } from 'components/Icon'
+import {
+    fetchUniqueDataElementAttributes,
+    fetchUniqueOrgUnitAttributes,
+} from '../../reducers/attributes/thunks'
+import s from '../../components/Form/styles.css'
 
-export class DataExport extends FormBase {
+class DataExport extends FormBase {
     static path = '/export/data'
 
     static order = 7
@@ -35,7 +42,6 @@ export class DataExport extends FormBase {
     formWidth = 800
     formTitle = i18n.t('Data Export')
     submitLabel = i18n.t('Export')
-
     fields = [
         ...getFormFields([
             'orgUnit',
@@ -56,7 +62,6 @@ export class DataExport extends FormBase {
             'categoryOptionComboIdScheme',
         ]),
     ]
-
     state = getFormValues([
         'orgUnit',
         'children',
@@ -72,7 +77,49 @@ export class DataExport extends FormBase {
     ])
 
     async componentDidMount() {
+        this.props.fetchDataElementAttributes()
+        this.props.fetchOrganisationUnitAttributes()
         await this.fetch()
+    }
+
+    componentDidUpdate(prevProps) {
+        // Only set field overrides if the amount of elements changed in the store
+        // These values will be loaded on page load only anyways
+        if (
+            prevProps.dataElementAttributes.length !==
+                this.props.dataElementAttributes.length ||
+            prevProps.orgUnitAttributes.length !==
+                this.props.orgUnitAttributes.length
+        ) {
+            // Collect default form options and add dynamic ones
+            const dataElementIdScheme = [
+                ...values.dataElementIdScheme.values,
+                ...this.props.dataElementAttributes.map(
+                    ({ id, displayName: label }) => ({
+                        value: `ATTRIBUTE:${id}`,
+                        label,
+                    })
+                ),
+            ]
+
+            const orgUnitIdScheme = [
+                ...values.orgUnitIdScheme.values,
+                ...this.props.orgUnitAttributes.map(
+                    ({ id, displayName: label }) => ({
+                        value: `ATTRIBUTE:${id}`,
+                        label,
+                    })
+                ),
+            ]
+
+            // Set the override values
+            // These will be used by the Form copmonent
+            // to build the input components
+            this.fieldValuesOverride = {
+                dataElementIdScheme,
+                orgUnitIdScheme,
+            }
+        }
     }
 
     async fetch() {
@@ -175,4 +222,44 @@ export class DataExport extends FormBase {
             console.log('Data Export error', e, '\n')
         }
     }
+  
+    render() {
+        const form = super.render()
+
+        if (this.props.loadingAttributes) {
+            return (
+                <div className={s.wrapper}>
+                    <div
+                        className={s.form}
+                        style={{
+                            padding: '14px 20px',
+                            width: 800,
+                            boxSizing: 'border-box',
+                            margin: '60px auto',
+                        }}
+                    >
+                        {i18n.t('Loading options...')}
+                    </div>
+                </div>
+            )
+        }
+
+        return form
+    }
 }
+
+const ConnectedDataExport = connect(
+    state => ({
+        loadingAttributes: state.attributes.loading,
+        dataElementAttributes: state.attributes.dataElement,
+        orgUnitAttributes: state.attributes.organisationUnit,
+    }),
+    dispatch => ({
+        fetchDataElementAttributes: () =>
+            dispatch(fetchUniqueDataElementAttributes()),
+        fetchOrganisationUnitAttributes: () =>
+            dispatch(fetchUniqueOrgUnitAttributes()),
+    })
+)(DataExport)
+
+export { ConnectedDataExport as DataExport }
