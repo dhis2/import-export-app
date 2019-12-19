@@ -59,7 +59,7 @@ const calculated = {
     format: getFormat,
 }
 
-const values = {
+export const values = {
     upload: {
         selected: null,
     },
@@ -75,7 +75,6 @@ const values = {
             ['UID', i18n.t('UID')],
             ['CODE', i18n.t('Code')],
             ['NAME', i18n.t('Name')],
-            ['ATTRIBUTE:UKNKz1H10EE', i18n.t('HR identifier')],
         ]),
     },
 
