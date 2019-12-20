@@ -28,7 +28,7 @@ const fields = {
     categoryOptionComboIdScheme: getField(
         'categoryOptionComboIdScheme',
         i18n.t('Category ID scheme'),
-        TYPE_RADIO,
+        TYPE_SELECT,
         CTX_MORE_OPTIONS
     ),
     children: getField('children', i18n.t('Children'), TYPE_RADIO),
@@ -42,7 +42,7 @@ const fields = {
     dataElementIdScheme: getField(
         'dataElementIdScheme',
         i18n.t('Data element ID scheme'),
-        TYPE_RADIO,
+        TYPE_SELECT,
         CTX_MORE_OPTIONS
     ),
     dryRun: getField('dryRun', i18n.t('Dry run'), TYPE_RADIO),
@@ -59,7 +59,12 @@ const fields = {
         CTX_MORE_OPTIONS
     ),
     format: getField('format', i18n.t('Format'), TYPE_RADIO),
-    idScheme: getField('idScheme', i18n.t('ID scheme'), TYPE_RADIO),
+    idScheme: getField(
+        'idScheme',
+        i18n.t('ID scheme'),
+        TYPE_SELECT,
+        CTX_MORE_OPTIONS
+    ),
     identifier: getField('identifier', i18n.t('Identifier'), TYPE_RADIO),
     importMode: getField('importMode', i18n.t('Dry run'), TYPE_RADIO),
     importReportMode: getField(
@@ -97,7 +102,7 @@ const fields = {
     orgUnitIdScheme: getField(
         'orgUnitIdScheme',
         i18n.t('Org unit ID scheme'),
-        TYPE_RADIO,
+        TYPE_SELECT,
         CTX_MORE_OPTIONS
     ),
     orgUnit_SingleSelect: getField(

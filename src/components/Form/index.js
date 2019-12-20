@@ -31,7 +31,7 @@ export * from './constants'
 
 export class Form extends React.Component {
     fields() {
-        const { fields, fieldValues, fieldValueOverrides } = this.props
+        const { fields, fieldValues, fieldValuesOverride } = this.props
         const { _context: context, _meta: formMeta } = fieldValues
 
         return fields.map(field => {
@@ -43,9 +43,9 @@ export class Form extends React.Component {
             const props = { name, label, className, required, formMeta }
 
             if (type === TYPE_RADIO) {
-                props['values'] = fieldValueOverrides[name]
-                  ? fieldValueOverrides[name]
-                  : fieldValues[name]['values']
+                props['values'] = fieldValuesOverride[name]
+                    ? fieldValuesOverride[name]
+                    : fieldValues[name]['values']
                 props['selected'] = fieldValues[name]['selected']
 
                 return (
@@ -56,7 +56,9 @@ export class Form extends React.Component {
                     />
                 )
             } else if (type === TYPE_SELECT) {
-                props['values'] = fieldValues[name]['values']
+                props['values'] = fieldValuesOverride[name]
+                    ? fieldValuesOverride[name]
+                    : fieldValues[name]['values']
                 props['selected'] = fieldValues[name]['selected']
 
                 return (
