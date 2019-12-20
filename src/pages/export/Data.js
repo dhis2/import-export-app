@@ -1,11 +1,13 @@
 import { connect } from 'react-redux'
+import { getInstance } from 'd2/lib/d2'
+import JSZip from 'jszip'
+import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import PropTypes from 'prop-types'
-import JSZip from 'jszip'
-import { getInstance } from 'd2/lib/d2'
-import { FormBase } from 'components/FormBase'
 import moment from 'moment'
+
+import { DataIcon } from 'components/Icon'
+import { FormBase } from 'components/FormBase'
 import { apiConfig } from 'config'
 import {
     downloadBlob,
@@ -16,11 +18,15 @@ import {
     getParamsFromFormState,
     values,
 } from 'helpers'
-import { DataIcon } from 'components/Icon'
+
 import {
     fetchUniqueDataElementAttributes,
     fetchUniqueOrgUnitAttributes,
 } from '../../reducers/attributes/thunks'
+import {
+    getSharedAttributes,
+    getSharedAttributesLoading,
+} from '../../reducers/attributes/selectors'
 import s from '../../components/Form/styles.css'
 
 class DataExport extends FormBase {
@@ -59,7 +65,7 @@ class DataExport extends FormBase {
             'includeDeleted',
             'dataElementIdScheme',
             'orgUnitIdScheme',
-            'categoryOptionComboIdScheme',
+            'idScheme',
         ]),
     ]
     state = getFormValues([
@@ -73,16 +79,26 @@ class DataExport extends FormBase {
         'includeDeleted',
         'dataElementIdScheme',
         'orgUnitIdScheme',
-        'categoryOptionComboIdScheme',
+        'idScheme',
     ])
 
     async componentDidMount() {
+        // creating default props here because componentDidUpdate
+        // will not be called on initial render
+        this.computeFieldOverrideValues({
+            dataElementAttributes: [],
+            orgUnitAttributes: [],
+        })
         this.props.fetchDataElementAttributes()
         this.props.fetchOrganisationUnitAttributes()
         await this.fetch()
     }
 
     componentDidUpdate(prevProps) {
+        this.computeFieldOverrideValues(prevProps)
+    }
+
+    computeFieldOverrideValues(prevProps) {
         // Only set field overrides if the amount of elements changed in the store
         // These values will be loaded on page load only anyways
         if (
@@ -112,13 +128,28 @@ class DataExport extends FormBase {
                 ),
             ]
 
+            const idScheme = [
+                ...values.idScheme.values,
+                ...this.props.sharedAttributes.map(
+                    ({ id, displayName: label }) => ({
+                        value: `ATTRIBUTE:${id}`,
+                        label,
+                    })
+                ),
+            ]
+
             // Set the override values
             // These will be used by the Form copmonent
             // to build the input components
+            // NOTE: this.forceUpdate() wouldn't be needed
+            // if "idScheme" was hidden before clicking on "more options"
+            // Due to that bug.. We have to force an update after this
             this.fieldValuesOverride = {
                 dataElementIdScheme,
                 orgUnitIdScheme,
+                idScheme,
             }
+            this.forceUpdate()
         }
     }
 
@@ -179,7 +210,7 @@ class DataExport extends FormBase {
                     'orgUnitIdScheme',
                     'includeDeleted',
                     'children',
-                    'categoryOptionComboIdScheme',
+                    'idScheme',
                 ],
                 append
             )
@@ -222,7 +253,7 @@ class DataExport extends FormBase {
             console.log('Data Export error', e, '\n')
         }
     }
-  
+
     render() {
         const form = super.render()
 
@@ -250,9 +281,10 @@ class DataExport extends FormBase {
 
 const ConnectedDataExport = connect(
     state => ({
-        loadingAttributes: state.attributes.loading,
-        dataElementAttributes: state.attributes.dataElement,
-        orgUnitAttributes: state.attributes.organisationUnit,
+        loadingAttributes: getSharedAttributesLoading(state),
+        dataElementAttributes: state.attributes.dataElement.data,
+        orgUnitAttributes: state.attributes.organisationUnit.data,
+        sharedAttributes: getSharedAttributes(state),
     }),
     dispatch => ({
         fetchDataElementAttributes: () =>
