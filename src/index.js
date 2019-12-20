@@ -10,7 +10,7 @@ import './locales'
 import './index.css'
 import App from './App'
 import { initApi } from './helpers/api'
-import { store } from './store'
+import { configureStore } from './configureStore'
 import { apiConfig } from 'config'
 import { init } from 'd2/lib/d2'
 
@@ -22,26 +22,26 @@ init({
         'X-Requested-With': 'XMLHttpRequest',
     },
 })
-  .then(initApi)
-  .then(() => {
-    lightBaseTheme.palette.primary1Color = '#4c708c'
-    lightBaseTheme.palette.primary2Color = '#4c708c'
-    lightBaseTheme.palette.primary3Color = '#4c708c'
-    lightBaseTheme.palette.pickerHeaderColor = '#4c708c'
+    .then(initApi)
+    .then(() => {
+        lightBaseTheme.palette.primary1Color = '#4c708c'
+        lightBaseTheme.palette.primary2Color = '#4c708c'
+        lightBaseTheme.palette.primary3Color = '#4c708c'
+        lightBaseTheme.palette.pickerHeaderColor = '#4c708c'
 
-    return getMuiTheme(lightBaseTheme)
-  })
-  .then(muiTheme => {
-    ReactDOM.render(
-      <Provider store={store}>
-        <MuiThemeProvider muiTheme={muiTheme}>
-          <HashRouter>
-            <App />
-          </HashRouter>
-        </MuiThemeProvider>
-      </Provider>,
-      document.getElementById('root')
-    )
-  })
+        return getMuiTheme(lightBaseTheme)
+    })
+    .then(muiTheme => {
+        const store = configureStore()
 
-
+        ReactDOM.render(
+            <Provider store={store}>
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <HashRouter>
+                        <App />
+                    </HashRouter>
+                </MuiThemeProvider>
+            </Provider>,
+            document.getElementById('root')
+        )
+    })

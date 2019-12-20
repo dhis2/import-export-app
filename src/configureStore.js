@@ -5,9 +5,5 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 export * from './reducers/user/actions'
 
-const store = createStore(
-    reducers,
-    composeWithDevTools(applyMiddleware(reduxThunk))
-)
-
-export { store }
+export const configureStore = () =>
+    createStore(reducers, composeWithDevTools(applyMiddleware(reduxThunk)))
