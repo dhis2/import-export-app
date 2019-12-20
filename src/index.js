@@ -10,7 +10,7 @@ import './locales'
 import './index.css'
 import App from './App'
 import { initApi } from './helpers/api'
-import { store } from './store'
+import { configureStore } from './configureStore'
 import { apiConfig } from 'config'
 import { init } from 'd2/lib/d2'
 
@@ -32,6 +32,8 @@ init({
         return getMuiTheme(lightBaseTheme)
     })
     .then(muiTheme => {
+        const store = configureStore()
+
         ReactDOM.render(
             <Provider store={store}>
                 <MuiThemeProvider muiTheme={muiTheme}>
