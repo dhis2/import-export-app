@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-08-30T08:44:31.946Z\n"
+"POT-Creation-Date: 2019-12-19T10:07:59.315Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -228,9 +228,6 @@ msgstr "Код"
 msgid "Name"
 msgstr "Ім'я"
 
-msgid "HR identifier"
-msgstr ""
-
 msgid "Include descendants of organisation unit"
 msgstr ""
 
@@ -345,6 +342,9 @@ msgstr ""
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "Loading options..."
 msgstr ""
 
 msgid "Event Export"
