@@ -90,3 +90,14 @@ export const getProgramStages = async programId => {
         .get(`${endpoint}?${params}`)
         .then(({ programStages }) => programStages)
 }
+
+/**
+ * @param {string} objectType
+ * @returns {Promise.<Object>}
+ */
+export const getObjects = async objectType => {
+    const params = 'fields=id,displayName&paging=false'
+    const api = await getApi()
+    const data = await api.get(`${objectType}?${params}`)
+    return data[objectType]
+}
