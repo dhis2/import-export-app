@@ -1,9 +1,8 @@
-import { getInstance } from 'd2/lib/d2'
 import React from 'react'
 
 import { Tree } from '../../Tree'
-import { api } from '../../../services'
 import { isProduction } from '../../../helpers/env'
+import { getOrgUnitRoot, getOrgUnitsForPath } from '../../../helpers/api'
 
 export default class OrgUnitTree extends React.Component {
     state = {
@@ -34,27 +33,20 @@ export default class OrgUnitTree extends React.Component {
 
     fetchRoot = async () => {
         try {
-            const d2 = await getInstance()
-            d2.models.organisationUnits
-                .list({
-                    level: 1,
-                    paging: false,
-                    fields: 'id,path,displayName,children::isNotEmpty',
+            getOrgUnitRoot().then(root => {
+                const list = root.toArray()
+                this.setState({
+                    list: list.map(item => {
+                        const { path, displayName } = item
+                        return {
+                            open: false,
+                            value: path,
+                            label: displayName,
+                            children: [],
+                        }
+                    }),
                 })
-                .then(root => {
-                    const list = root.toArray()
-                    this.setState({
-                        list: list.map(item => {
-                            const { path, displayName } = item
-                            return {
-                                open: false,
-                                value: path,
-                                label: displayName,
-                                children: [],
-                            }
-                        }),
-                    })
-                })
+            })
         } catch (e) {
             !isProduction && console.log('OrgUnitTree root fetch failed')
         }
@@ -62,23 +54,7 @@ export default class OrgUnitTree extends React.Component {
 
     fetchNode = async path => {
         try {
-            const params = []
-            const id = path.substr(path.lastIndexOf('/') + 1)
-            params.push('filter=' + encodeURIComponent(`id:in:[${id}]`))
-            params.push(
-                'fields=' +
-                    encodeURIComponent(
-                        ':all,displayName,path,children[id,displayName,path,children::isNotEmpty]'
-                    )
-            )
-            params.push('paging=false')
-            params.push('format=json')
-
-            const {
-                data: { organisationUnits },
-            } = await api.get(`organisationUnits?${params.join('&')}`)
-            const { children } = organisationUnits[0]
-
+            const children = await getOrgUnitsForPath(path)
             const items = children.map(({ path, displayName, children }) => ({
                 open: false,
                 value: path,

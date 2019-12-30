@@ -1,27 +1,40 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { useField } from 'react-final-form'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import propTypes from 'prop-types'
 
 import { Tree } from '../Tree'
-import { fetchNode } from './OrgUnitTree/fetchNode'
-import { fetchRoot } from './OrgUnitTree/fetchRoot'
+import { closeOrgUnit } from '../../reducers/orgUnits/actions'
+import {
+    getOrgUnitRootLoaded,
+    getOrgUnitRootLoading,
+    getOrgUnits,
+} from '../../reducers/orgUnits/selectors'
+import { openPath, loadRootOrgUnit } from '../../reducers/orgUnits/thunks'
 
 export const OrgUnitTree = ({ name, selected }) => {
-    const initialValue = selected
-    const { input } = useField(name, {
-        initialValue,
-        type: 'select',
-    })
-    const [list, setList] = useState([])
-
-    const onIconClick = (path, open, list) => {
-        setList(list)
-        if (open) fetchNode(path, list, setList)
+    const dispatch = useDispatch()
+    const list = useSelector(getOrgUnits)
+    const rootLoaded = useSelector(getOrgUnitRootLoaded)
+    const rootLoading = useSelector(getOrgUnitRootLoading)
+    const onIconClick = (path, open) => {
+        if (open) {
+            dispatch(openPath(path))
+        } else {
+            dispatch(closeOrgUnit(path))
+        }
     }
 
     useEffect(() => {
-        fetchRoot(setList)
-    }, [])
+        if (!rootLoaded && !rootLoading) {
+            dispatch(loadRootOrgUnit())
+        }
+    }, [rootLoaded, rootLoading, dispatch])
+
+    const { input } = useField(name, {
+        initialValue: selected,
+        type: 'select',
+    })
 
     return (
         <Tree
