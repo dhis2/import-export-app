@@ -61,30 +61,9 @@ function Node({
 }
 
 export class Tree extends React.Component {
-    updateState(list, open, value) {
-        if (!Array.isArray(list)) {
-            return
-        }
-
-        let found = false
-        for (let i = 0; i < list.length; i += 1) {
-            if (list[i]['value'] === value) {
-                list[i]['open'] = open
-                found = true
-            }
-
-            if (!found && typeof list[i]['children'] !== 'undefined') {
-                this.updateState(list[i]['children'], open, value)
-            }
-        }
-
-        return list
-    }
-
     onIconClick = (evt, open, value) => {
         evt.stopPropagation()
-        const list = this.updateState(this.props.list, open, value)
-        this.props.onIconClick(value, open, [...list])
+        this.props.onIconClick(value, open)
     }
 
     onClick = value => {

@@ -40,10 +40,53 @@ export const getSchemas = async () => {
     return api.get(`schemas.json?${params.join('&')}`)
 }
 
+export const getOrgUnitRoot = async () => {
+    const d2 = await getD2()
+    return d2.models.organisationUnits.list({
+        level: 1,
+        paging: false,
+        fields: 'id,path,displayName,children::isNotEmpty',
+    })
+}
+
+export const getOrgUnitsForPath = async path => {
+    const api = await getApi()
+    const id = path.substr(path.lastIndexOf('/') + 1)
+    const params = []
+    params.push(`filter=id:in:[${id}]`)
+    params.push(
+        'fields=:all,displayName,path,children[id,displayName,path,children::isNotEmpty]'
+    )
+    params.push('paging=false')
+    params.push('format=json')
+
+    const data = await api.get(`organisationUnits?${params.join('&')}`)
+    const { organisationUnits } = data
+
+    if (!organisationUnits || !organisationUnits.length) return []
+    if (!organisationUnits[0].children) return []
+    return organisationUnits[0].children
+}
+
 export const getDataSets = async () => {
     const d2 = await getD2()
     return d2.models.dataSet
         .list({ paging: false, fields: 'id,displayName' })
         .then(collection => collection.toArray())
         .catch(() => [])
+}
+
+export const getPrograms = async () => {
+    const api = await getApi()
+    const params = 'fields=id,displayName&paging=false'
+    return api.get(`programs?${params}`).then(({ programs }) => programs)
+}
+
+export const getProgramStages = async programId => {
+    const api = await getApi()
+    const endpoint = `programs/${programId}.json`
+    const params = 'fields=id,displayName,programStages[id,displayName]'
+    return api
+        .get(`${endpoint}?${params}`)
+        .then(({ data }) => data.programStages)
 }
