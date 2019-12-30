@@ -1,102 +1,66 @@
+import { Button } from '@dhis2/ui-core'
+import { Form } from 'react-final-form'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import cx from 'classnames'
 
-import { FormBase } from '../../components/FormBase'
+import { Compression } from '../../components/Inputs/Compression'
+import { FormContent } from '../../components/FormSections/FormContent'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
+import { Format } from '../../components/Inputs/Format'
 import { MetadataDependencyExportIcon } from '../../components/Icon'
-import { api } from '../../services'
-import { download } from '../../helpers/url'
-import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
-import { isProduction } from '../../helpers/env'
+import { ObjectList } from '../../components/Inputs/ObjectList'
+import { ObjectType } from '../../components/Inputs/ObjectType'
+import { Sharing } from '../../components/Inputs/Sharing'
+import {
+    supportedFormats,
+    initialValues,
+    onSubmit,
+} from './MetaDataDependency/helper'
+import formBaseStyles from '../../components/FormBase/styles.module.css'
+import formStyles from '../../components/Form/styles.module.css'
 
-export class MetaDataDependencyExport extends FormBase {
-    static dataTest = 'export-metadata-dependency'
-    static path = '/export/metadata-dependency'
+export const MetaDataDependencyExport = () => {
+    return (
+        <Form onSubmit={onSubmit} initialValues={initialValues}>
+            {({ handleSubmit, values }) => (
+                <div className={formStyles.wrapper}>
+                    <form
+                        className={cx(formBaseStyles.form, formStyles.form)}
+                        onSubmit={handleSubmit}
+                        style={{ width: 800 }}
+                    >
+                        <FormHeader
+                            icon={MetaDataDependencyExport.menuIcon}
+                            label={MetaDataDependencyExport.title}
+                        />
 
-    static order = 9
-    static title = i18n.t('Metadata Dependency Export')
-    static desc = i18n.t(
-        'Export metadata like data sets and programs including related metadata objects.'
+                        <FormContent>
+                            <ObjectType />
+                            <ObjectList />
+                            <Format options={supportedFormats} />
+                            <Compression />
+                            <Sharing />
+                        </FormContent>
+
+                        <FormFooter>
+                            <Button primary type="submit">
+                                {i18n.t('Export')}
+                            </Button>
+                        </FormFooter>
+                    </form>
+                </div>
+            )}
+        </Form>
     )
-
-    static menuIcon = <MetadataDependencyExportIcon />
-    icon = <MetadataDependencyExportIcon />
-
-    formWidth = 800
-    formTitle = i18n.t('Metadata Export with Dependencies')
-    submitLabel = i18n.t('Export')
-
-    fields = getFormFields([
-        'objectType',
-        'objectList',
-        'format',
-        'compression',
-        'sharing',
-    ])
-
-    state = getFormValues([
-        'objectType',
-        'objectList',
-        'format:.json:json,xml',
-        'compression',
-        'sharing',
-    ])
-
-    async componentDidMount() {
-        await this.fetch()
-    }
-
-    async fetch() {
-        try {
-            const objectType = this.state.objectType.selected
-            const { data } = await api.get(
-                `${objectType}?fields=id,displayName&paging=false`
-            )
-            const values = data[objectType].map(({ id, displayName }) => ({
-                value: id,
-                label: displayName,
-            }))
-
-            this.setState({
-                objectList: {
-                    values,
-                    selected: values[0]['value'],
-                },
-            })
-        } catch (e) {
-            !isProduction && console.log('fetch Schemas failed')
-            !isProduction && console.log(e)
-        }
-    }
-
-    onFormUpdate = (name, value) => {
-        if (name === 'objectType') {
-            this.fetch()
-        }
-    }
-
-    onSubmit = async () => {
-        try {
-            const {
-                objectType,
-                objectList,
-                format,
-                compression,
-                sharing,
-            } = this.getFormState()
-
-            const endpointSuffix = 'metadata'
-            const endpoint = `${objectType}/${objectList}/${endpointSuffix}`
-            const url = getDownloadUrl({
-                format,
-                compression,
-                endpoint,
-                sharing,
-            })
-
-            download(url)
-        } catch (e) {
-            !isProduction &&
-                console.log('MetaDataDependency Export error', e, '\n')
-        }
-    }
 }
+
+MetaDataDependencyExport.dataTest = 'export-metadata-dependency'
+MetaDataDependencyExport.path = '/export/metadata-dependency'
+MetaDataDependencyExport.order = 9
+MetaDataDependencyExport.title = i18n.t('Metadata Dependency Export')
+MetaDataDependencyExport.desc = i18n.t(
+    'Export metadata like data sets and programs including related metadata objects.'
+)
+MetaDataDependencyExport.menuIcon = <MetadataDependencyExportIcon />
