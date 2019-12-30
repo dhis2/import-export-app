@@ -1,10 +1,19 @@
+import { Label } from '../Field/Label'
+
+import { Field } from '../Field/Field'
+
+import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
 import i18n from '@dhis2/d2-i18n'
-import React from 'react'
-import {
-    RadioGroupContainer,
-    RadioGroupLabel,
-} from '../FinalFormComponents/RadioGroup'
+
 import { Select } from '../FinalFormComponents/Select'
+import { fetchUniqueOrgUnitAttributes } from '../../reducers/attributes/thunks'
+import {
+    getOrgUnitAttributes,
+    getOrgUnitAttributesError,
+    getOrgUnitAttributesLoaded,
+    getOrgUnitAttributesLoading,
+} from '../../reducers/attributes/selectors'
 
 export const OPTION_UID = { value: 'UID', label: i18n.t('Uid') }
 export const OPTION_CODE = { value: 'CODE', label: i18n.t('Code') }
@@ -19,26 +28,51 @@ export const ORG_UNIT_ID_SCHEME_KEY = 'orgUnitIdScheme'
 export const ORG_UNIT_ID_SCHEME_DEFAULT_VALUE = OPTION_UID.value
 
 const orgUnitIdSchemeLabel = i18n.t('Org unit id scheme')
-export const OrgUnitIdScheme = ({ options }) => (
-    <Select
-        name={ORG_UNIT_ID_SCHEME_KEY}
-        label={orgUnitIdSchemeLabel}
-        options={options}
-        dataTest="input-org-unit-id-scheme"
-    />
-)
 
-OrgUnitIdScheme.propTypes = {
-    options: Select.propTypes.options,
+const useLoadOrgUnitAttributes = () => {
+    const dispatch = useDispatch()
+    const loading = useSelector(getOrgUnitAttributesLoading)
+    const loaded = useSelector(getOrgUnitAttributesLoaded)
+    const error = useSelector(getOrgUnitAttributesError)
+
+    useEffect(() => {
+        if (!loaded && !loading && !error) {
+            dispatch(fetchUniqueOrgUnitAttributes())
+        }
+    }, [loaded, loading, error, dispatch])
 }
 
-OrgUnitIdScheme.defaultProps = {
-    options: ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
+export const OrgUnitIdScheme = () => {
+    useLoadOrgUnitAttributes()
+
+    const attributes = useSelector(getOrgUnitAttributes)
+    const loading = useSelector(getOrgUnitAttributesLoading)
+
+    if (loading) return <OrgUnitIdSchemeLoading />
+
+    const options = [
+        ...ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
+        ...attributes.map(({ id, displayName: label }) => ({
+            value: `ATTRIBUTE:${id}`,
+            label,
+        })),
+    ]
+
+    return (
+        <Field>
+            <Select
+                name={ORG_UNIT_ID_SCHEME_KEY}
+                label={orgUnitIdSchemeLabel}
+                options={options}
+                dataTest="input-org-unit-id-scheme"
+            />
+        </Field>
+    )
 }
 
 export const OrgUnitIdSchemeLoading = () => (
-    <RadioGroupContainer>
-        <RadioGroupLabel>{orgUnitIdSchemeLabel}</RadioGroupLabel>
+    <Field>
+        <Label>{orgUnitIdSchemeLabel}</Label>
         {i18n.t('Loading organisation unit id scheme options...')}
-    </RadioGroupContainer>
+    </Field>
 )

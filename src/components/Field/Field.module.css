@@ -1,0 +1,7 @@
+.field {
+    margin-top: 16px;
+}
+
+.field:first-child {
+    margin-top: 0;
+}

@@ -6,21 +6,26 @@ import propTypes from 'prop-types'
 export const Checkbox = ({
     label,
     name,
-    checkedInitially: initialValue,
     dataTest,
+    value,
+    initialValue,
+    format,
+    multiple,
+    parse,
 }) => {
     const { input } = useField(name, {
         initialValue,
         type: 'checkbox',
-        format: v => v.toString(),
-        parse: v => Boolean(v),
+        format,
+        parse,
+        multiple,
+        value,
     })
 
     return (
         <div data-test={dataTest}>
             <CoreCheckbox
                 {...input}
-                checked={input.value === 'true'}
                 label={label}
             />
         </div>
@@ -30,5 +35,9 @@ export const Checkbox = ({
 Checkbox.propTypes = {
     label: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
-    checkedInitially: propTypes.bool,
+    value: propTypes.string.isRequired,
+    format: propTypes.func,
+    initialValue: propTypes.string,
+    multiple: propTypes.bool,
+    parse: propTypes.func,
 }
