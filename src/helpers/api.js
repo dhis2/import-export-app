@@ -88,5 +88,5 @@ export const getProgramStages = async programId => {
     const params = 'fields=id,displayName,programStages[id,displayName]'
     return api
         .get(`${endpoint}?${params}`)
-        .then(({ data }) => data.programStages)
+        .then(({ programStages }) => programStages)
 }
