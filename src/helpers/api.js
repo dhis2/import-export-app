@@ -2,13 +2,13 @@ import { getInstance } from 'd2/lib/d2'
 
 const ATTRIBUTES_ENDPOINT = 'attributes.json'
 
+export const getD2 = () => getInstance()
 export const getApi = async () => {
-    const d2 = await getInstance()
+    const d2 = await getD2()
     return d2.Api.getApi()
 }
 
 export const getUniqueAttributes = async ({ type }) => {
-    const api = await getApi()
     const params = [
         `paging=false`,
         `fields=${['id', 'displayName'].join(',')}`,
@@ -16,23 +16,21 @@ export const getUniqueAttributes = async ({ type }) => {
         `filter=${type}Attribute:eq:true`,
     ]
 
-    return api.get(`${ATTRIBUTES_ENDPOINT}?${params.join('&')}`)
+    const api = await getApi()
+    return api
+        .get(`${ATTRIBUTES_ENDPOINT}?${params.join('&')}`)
+        .then(({ attributes }) => attributes)
+        .catch(() => [])
 }
 
 export const getUniqueDataElementAttributes = () =>
     getUniqueAttributes({ type: 'dataElement' })
-        .then(({ attributes }) => attributes)
-        .catch(() => [])
 
 export const getUniqueOrganisationUnitAttributes = () =>
     getUniqueAttributes({ type: 'organisationUnit' })
-        .then(({ attributes }) => attributes)
-        .catch(() => [])
 
 export const getUniqueCategoryAttributes = () =>
     getUniqueAttributes({ type: 'categoryOptionCombo' })
-        .then(({ attributes }) => attributes)
-        .catch(() => [])
 
 export const getSchemas = async () => {
     const api = await getApi()
@@ -40,4 +38,12 @@ export const getSchemas = async () => {
     const params = [`fields=${fields.join(',')}`]
 
     return api.get(`schemas.json?${params.join('&')}`)
+}
+
+export const getDataSets = async () => {
+    const d2 = await getD2()
+    return d2.models.dataSet
+        .list({ paging: false, fields: 'id,displayName' })
+        .then(collection => collection.toArray())
+        .catch(() => [])
 }
