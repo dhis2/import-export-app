@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
-"PO-Revision-Date: 2019-11-20T00:05:00.785Z\n"
+"POT-Creation-Date: 2019-12-30T00:47:08.961Z\n"
+"PO-Revision-Date: 2019-12-30T00:47:08.961Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -65,6 +65,15 @@ msgstr ""
 msgid "Atomic mode"
 msgstr ""
 
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
 msgid "Class key"
 msgstr ""
 
@@ -95,7 +104,19 @@ msgstr ""
 msgid "Loading data element id scheme options..."
 msgstr ""
 
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
 msgid "Dry run"
+msgstr ""
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
 msgstr ""
 
 msgid "Event id scheme"
@@ -155,6 +176,9 @@ msgstr ""
 msgid "Import strategy"
 msgstr ""
 
+msgid "Include delete"
+msgstr ""
+
 msgid "Non Null"
 msgstr ""
 
@@ -176,10 +200,10 @@ msgstr ""
 msgid "Merge mode"
 msgstr ""
 
-msgid "Org unit id scheme"
+msgid "Organisation unit"
 msgstr ""
 
-msgid "Loading organisation unit id scheme options..."
+msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Yes (faster for large imports)"
@@ -228,6 +252,12 @@ msgid "Skip sharing"
 msgstr ""
 
 msgid "Skip validation"
+msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
 msgstr ""
 
 msgid "Strategy"
@@ -290,16 +320,10 @@ msgstr ""
 msgid "Category ID scheme"
 msgstr ""
 
-msgid "Children"
-msgstr ""
-
 msgid "Object type"
 msgstr ""
 
 msgid "Data element ID scheme"
-msgstr ""
-
-msgid "End date"
 msgstr ""
 
 msgid "Event ID Scheme"
@@ -329,9 +353,6 @@ msgstr ""
 msgid "Merge Mode"
 msgstr ""
 
-msgid "Organisation unit"
-msgstr ""
-
 msgid "Org unit ID scheme"
 msgstr ""
 
@@ -357,15 +378,6 @@ msgid "Skip Sharing"
 msgstr ""
 
 msgid "Skip Validation"
-msgstr ""
-
-msgid "Start date"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Selected organisation unit"
 msgstr ""
 
 msgid "New and Updates"

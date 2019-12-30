@@ -9,16 +9,34 @@ export const getDataElementAttributes = state =>
 export const getDataElementAttributesLoading = state =>
     state.attributes.dataElement.loading
 
+export const getDataElementAttributesLoaded = state =>
+    state.attributes.dataElement.loaded
+
+export const getDataElementAttributesError = state =>
+    state.attributes.dataElement.error
+
 export const getOrgUnitAttributes = state =>
     state.attributes.organisationUnit.data
 
 export const getOrgUnitAttributesLoading = state =>
     state.attributes.organisationUnit.loading
 
+export const getOrgUnitAttributesLoaded = state =>
+    state.attributes.organisationUnit.loaded
+
+export const getOrgUnitAttributesError = state =>
+    state.attributes.organisationUnit.error
+
 export const getCategoryAttributes = state => state.attributes.category.data
 
 export const getCateboryAttributesLoading = state =>
     state.attributes.category.loading
+
+export const getCateboryAttributesLoaded = state =>
+    state.attributes.category.loaded
+
+export const getCateboryAttributesError = state =>
+    state.attributes.category.error
 
 export const getSharedAttributes = createSelector(
     [getDataElementAttributes, getOrgUnitAttributes],
