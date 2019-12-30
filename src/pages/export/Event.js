@@ -1,197 +1,76 @@
-import { getInstance } from 'd2/lib/d2'
+import { Button } from '@dhis2/ui-core'
+import { Form } from 'react-final-form'
 import React from 'react'
+import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
-import moment from 'moment/moment'
 
+import { Compression } from '../../components/Inputs/Compression'
+import { EndDate } from '../../components/Inputs/EndDate'
 import { EventIcon } from '../../components/Icon'
-import { FormBase } from '../../components/FormBase'
-import { api } from '../../services'
-import { download } from '../../helpers/url'
-import {
-    getFormFields,
-    getFormFieldMoreOptions,
-    getFormValues,
-    getParamsFromFormState,
-} from '../../helpers'
-import { isProduction } from '../../helpers/env'
+import { FormContent } from '../../components/FormSections/FormContent'
+import { FormFooter } from '../../components/FormSections/FormFooter'
+import { FormHeader } from '../../components/FormSections/FormHeader'
+import { Format } from '../../components/Inputs/Format'
+import { IdScheme } from '../../components/Inputs/idScheme'
+import { IncludeDelete } from '../../components/Inputs/IncludeDelete'
+import { Inclusion } from '../../components/Inputs/Inclusion'
+import { MoreOptions } from '../../components/FormSections/MoreOptions'
+import { OrgUnit } from '../../components/Inputs/OrgUnit'
+import { ProgramStages } from '../../components/Inputs/ProgramStages'
+import { Programs } from '../../components/Inputs/Programs'
+import { StartDate } from '../../components/Inputs/StartDate'
+import { supportedFormats, initialValues, onSubmit } from './Event/helper'
+import formBaseStyles from '../../components/FormBase/styles.module.css'
+import formStyles from '../../components/Form/styles.module.css'
 
-export class EventExport extends FormBase {
-    static dataTest = 'export-event'
-    static path = '/export/event'
+export const EventExport = () => {
+    return (
+        <Form onSubmit={onSubmit} initialValues={initialValues}>
+            {({ handleSubmit, values }) => (
+                <div className={formStyles.wrapper}>
+                    <form
+                        className={cx(formBaseStyles.form, formStyles.form)}
+                        onSubmit={handleSubmit}
+                        style={{ width: 800 }}
+                    >
+                        <FormHeader
+                            icon={EventExport.menuIcon}
+                            label={EventExport.title}
+                        />
 
-    static order = 8
-    static title = i18n.t('Event Export')
-    static desc = i18n.t(
-        'Export event data for programs, stages and tracked entities in the DXF 2 format.'
+                        <FormContent>
+                            <OrgUnit multiple={false} />
+                            <Programs />
+                            <ProgramStages />
+                            <IdScheme />
+                            <StartDate />
+                            <EndDate />
+                            <Format options={supportedFormats} />
+                            <Compression />
+
+                            <MoreOptions>
+                                <IncludeDelete />
+                                <Inclusion />
+                            </MoreOptions>
+                        </FormContent>
+
+                        <FormFooter>
+                            <Button primary type="submit">
+                                {i18n.t('Export')}
+                            </Button>
+                        </FormFooter>
+                    </form>
+                </div>
+            )}
+        </Form>
     )
-
-    static menuIcon = <EventIcon />
-    icon = <EventIcon />
-
-    formWidth = 800
-    formTitle = i18n.t('Event Export')
-    submitLabel = i18n.t('Export')
-
-    fields = [
-        ...getFormFields([
-            'orgUnit_SingleSelect',
-            'programs',
-            'programStages',
-            'idScheme',
-            'startDate',
-            'endDate',
-            'format',
-            'compression',
-        ]),
-
-        getFormFieldMoreOptions(),
-
-        ...getFormFields(['includeDeleted', 'inclusion']),
-    ]
-
-    state = getFormValues([
-        'orgUnit',
-        'programs',
-        'programStages',
-        'idScheme',
-        'startDate',
-        'endDate',
-        'format:.json:json,xml,csv',
-        'compression',
-        'includeDeleted',
-        'inclusion',
-    ])
-
-    async componentDidMount() {
-        await this.fetchPrograms()
-        await this.fetchOrgUnits()
-    }
-
-    async fetchPrograms() {
-        try {
-            const objectType = 'programs'
-            const params = 'fields=id,displayName&paging=false'
-            const { data } = await api.get(`${objectType}?${params}`)
-            const values = data[objectType].map(o => ({
-                value: o.id,
-                label: o.displayName,
-            }))
-
-            const selected = values[0]['value']
-            this.setState(
-                {
-                    programs: { values, selected },
-                },
-                () => this.fetchProgramStages(selected)
-            )
-        } catch (e) {
-            !isProduction && console.log('fetch Programs failed')
-            !isProduction && console.log(e)
-        }
-    }
-
-    async fetchOrgUnits() {
-        try {
-            const d2 = await getInstance()
-            const orgUnitTree = await d2.models.organisationUnits
-                .list({
-                    level: 1,
-                    paging: false,
-                    fields: 'id,path,displayName,children::isNotEmpty',
-                })
-                .then(root => root.toArray()[0])
-
-            this.setState({
-                orgUnit: {
-                    selected: [],
-                    value: orgUnitTree,
-                },
-            })
-        } catch (e) {
-            !isProduction && console.log('fetch Programs failed')
-            !isProduction && console.log(e)
-        }
-    }
-
-    async fetchProgramStages(id) {
-        try {
-            const {
-                data: { programStages },
-            } = await api.get(
-                `programs/${id}.json?fields=id,displayName,programStages[id,displayName]`
-            )
-            const values = programStages.map(({ id, displayName }) => ({
-                value: id,
-                label: displayName,
-            }))
-
-            values.unshift({
-                value: -1,
-                label: i18n.t('[ All program stages]'),
-            })
-            const selected = values[0]['value']
-            this.setState({
-                programStages: { values, selected },
-            })
-        } catch (e) {
-            !isProduction && console.log('fetch ProgramStages failed', id)
-            !isProduction && console.log(e)
-        }
-    }
-
-    onFormUpdate = (name, value) => {
-        if (name === 'programs') {
-            this.fetchProgramStages(value)
-        }
-    }
-
-    onSubmit = () => {
-        const {
-            orgUnit,
-            startDate,
-            endDate,
-            programStages,
-            inclusion,
-            format,
-            compression,
-        } = this.getFormState()
-
-        let attachment = `events${format}`
-        if (compression !== 'none') {
-            attachment += compression
-        }
-
-        const append = []
-
-        if (programStages !== -1) {
-            append.push(`programStage=${programStages}`)
-        }
-
-        if (orgUnit.length > 0) {
-            const path = orgUnit[0]
-            const orgUnitId = path.substr(path.lastIndexOf('/') + 1)
-            append.push(`orgUnit=${orgUnitId}`)
-        }
-
-        append.push('links=false')
-        append.push('skipPaging=true')
-        append.push(`attachment=${attachment}`)
-        append.push('startDate=' + moment(startDate).format('YYYY-MM-DD'))
-        append.push('endDate=' + moment(endDate).format('YYYY-MM-DD'))
-        append.push(`ouMode=${inclusion.toUpperCase()}`)
-        append.push(`format=${format.substr(1)}`)
-
-        let path = `events${format}`
-        if (compression !== 'none') {
-            path += `${compression}`
-        }
-
-        const params = getParamsFromFormState(
-            this.getFormState(),
-            ['programs', 'includeDeleted', 'idScheme'],
-            append
-        )
-
-        download(api.url(path) + '?' + params)
-    }
 }
+
+EventExport.dataTest = 'export-event'
+EventExport.path = '/export/event'
+EventExport.order = 8
+EventExport.title = i18n.t('Event Export')
+EventExport.desc = i18n.t(
+    'Export event data for programs, stages and tracked entities in the DXF 2 format.'
+)
+EventExport.menuIcon = <EventIcon />
