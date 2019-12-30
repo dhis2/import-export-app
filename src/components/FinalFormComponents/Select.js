@@ -14,10 +14,17 @@ export const Select = ({
     const { input } = useField(name, {
         type: 'select',
         defaultValue: defaultValue,
+        allowNull: true,
+        parse: value => (value === '' ? null : value),
     })
 
     return (
-        <SelectField {...input} label={label} outlined>
+        <SelectField
+            {...input}
+            value={input.value || ''}
+            label={label}
+            outlined
+        >
             {options.map(option => (
                 <option key={option.value} value={option.value}>
                     {option.label}
@@ -32,7 +39,7 @@ Select.propTypes = {
     name: propTypes.string.isRequired,
     options: propTypes.arrayOf(
         propTypes.shape({
-            value: propTypes.string.isRequired,
+            value: propTypes.string,
             label: propTypes.string.isRequired,
         })
     ).isRequired,
