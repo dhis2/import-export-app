@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-12-30T04:40:35.460Z\n"
-"PO-Revision-Date: 2019-12-30T04:40:35.460Z\n"
+"POT-Creation-Date: 2019-12-30T09:20:29.553Z\n"
+"PO-Revision-Date: 2019-12-30T09:20:29.553Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -179,6 +179,12 @@ msgstr ""
 msgid "Include delete"
 msgstr ""
 
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
 msgid "Non Null"
 msgstr ""
 
@@ -200,6 +206,30 @@ msgstr ""
 msgid "Merge mode"
 msgstr ""
 
+msgid "Loading Object options..."
+msgstr ""
+
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
 msgid "Organisation unit"
 msgstr ""
 
@@ -218,7 +248,16 @@ msgstr ""
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Programs"
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "Program stages"
+msgstr ""
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
 msgstr ""
 
 msgid "Loading program options..."
@@ -329,9 +368,6 @@ msgstr ""
 msgid "Category ID scheme"
 msgstr ""
 
-msgid "Object type"
-msgstr ""
-
 msgid "Data element ID scheme"
 msgstr ""
 
@@ -351,9 +387,6 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
-
-msgid "Inclusion"
 msgstr ""
 
 msgid "Inclusion Strategy"
@@ -401,25 +434,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-msgid "Include children of organisation unit"
-msgstr ""
-
 msgid "Gzip"
-msgstr ""
-
-msgid "Category combination"
-msgstr ""
-
-msgid "Dashboard"
-msgstr ""
-
-msgid "Data element groups"
-msgstr ""
-
-msgid "Option sets"
-msgstr ""
-
-msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
