@@ -12,7 +12,7 @@ import {
 } from '../../reducers/orgUnits/selectors'
 import { openPath, loadRootOrgUnit } from '../../reducers/orgUnits/thunks'
 
-export const OrgUnitTree = ({ name, selected }) => {
+export const OrgUnitTree = ({ name, selected, multiple }) => {
     const dispatch = useDispatch()
     const list = useSelector(getOrgUnits)
     const rootLoaded = useSelector(getOrgUnitRootLoaded)
@@ -38,7 +38,7 @@ export const OrgUnitTree = ({ name, selected }) => {
 
     return (
         <Tree
-            multiple={true}
+            multiple={multiple}
             selectable={true}
             list={list}
             selected={input.value}
@@ -51,8 +51,10 @@ export const OrgUnitTree = ({ name, selected }) => {
 OrgUnitTree.propTypes = {
     name: propTypes.string.isRequired,
     selected: propTypes.arrayOf(propTypes.string).isRequired,
+    multiple: propTypes.bool,
 }
 
 OrgUnitTree.defaultProps = {
     selected: [],
+    multiple: true,
 }
