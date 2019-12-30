@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-12-30T00:47:08.961Z\n"
-"PO-Revision-Date: 2019-12-30T00:47:08.961Z\n"
+"POT-Creation-Date: 2019-12-30T04:40:35.460Z\n"
+"PO-Revision-Date: 2019-12-30T04:40:35.460Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -218,6 +218,15 @@ msgstr ""
 msgid "Preheat mode"
 msgstr ""
 
+msgid "Programs"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
 msgid "Error"
 msgstr ""
 
@@ -362,9 +371,6 @@ msgstr ""
 msgid "Program Stages"
 msgstr ""
 
-msgid "Programs"
-msgstr ""
-
 msgid "Schemas"
 msgstr ""
 
@@ -419,6 +425,9 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
 msgid "Data Export"
 msgstr ""
 
@@ -464,9 +473,6 @@ msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "An unknown error occurred"
-msgstr ""
-
-msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
