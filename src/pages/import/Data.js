@@ -1,15 +1,11 @@
 import { Button } from '@dhis2/ui-core'
 import { Form } from 'react-final-form'
 import { connect } from 'react-redux'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
-import {
-    DATA_ELEMENT_ID_SCHEME_DEFAULT_OPTIONS,
-    DataElementIdScheme,
-    DataElementIdSchemeLoading,
-} from '../../components/Inputs/DataElementIdScheme'
+import { DataElementIdScheme } from '../../components/Inputs/DataElementIdScheme'
 import { DataIcon } from '../../components/Icon'
 import { DryRun } from '../../components/Inputs/DryRun'
 import { Error } from '../../components/Error'
@@ -18,17 +14,9 @@ import { FirstRowIsHeader } from '../../components/Inputs/FirstRowIsHeader'
 import { FormContent } from '../../components/FormSections/FormContent'
 import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
-import {
-    ID_SCHEME_DEFAULT_OPTIONS,
-    IdScheme,
-    IdSchemeLoading,
-} from '../../components/Inputs/idScheme'
+import { IdScheme } from '../../components/Inputs/idScheme'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
-import {
-    ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
-    OrgUnitIdScheme,
-    OrgUnitIdSchemeLoading,
-} from '../../components/Inputs/OrgUnitIdScheme'
+import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
 import { PreheatCache } from '../../components/Inputs/PreheatCache'
 import { Progress } from '../../components/Loading/Progress'
 import {
@@ -57,41 +45,7 @@ import { useErrorHandler } from '../../helpers/useErrorHandler'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
 
-const DataImport = ({
-    // data element attributes
-    dataElementAttributes,
-    dataElementAttributesLoaded,
-    loadingDataElementAttributes,
-
-    // org unit attributes
-    orgUnitAttributes,
-    orgUnitAttributesLoaded,
-    loadingOrgUnitAttributes,
-
-    // shared attributes
-    // Will be used for the id scheme field
-    sharedAttributes,
-    loadingSharedAttributes,
-
-    // action creators
-    fetchDataElementAttributes,
-    fetchOrganisationUnitAttributes,
-}) => {
-    useEffect(
-        () => {
-            if (!dataElementAttributesLoaded) {
-                fetchDataElementAttributes()
-            }
-
-            if (!orgUnitAttributesLoaded) {
-                fetchOrganisationUnitAttributes()
-            }
-        },
-
-        // load attributes on componentDidMount
-        [] // eslint-disable-line react-hooks/exhaustive-deps
-    )
-
+const DataImport = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useErrorHandler()
     const onSubmitHandler = onSubmit(setLoading, setError)
@@ -106,30 +60,6 @@ const DataImport = ({
                 }
             />
         )
-
-    const dataElementIdSchemeOptions = [
-        ...DATA_ELEMENT_ID_SCHEME_DEFAULT_OPTIONS,
-        ...dataElementAttributes.map(({ id, displayName: label }) => ({
-            value: `ATTRIBUTE:${id}`,
-            label,
-        })),
-    ]
-
-    const orgUnitIdSchemeOptions = [
-        ...ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
-        ...orgUnitAttributes.map(({ id, displayName: label }) => ({
-            value: `ATTRIBUTE:${id}`,
-            label,
-        })),
-    ]
-
-    const idSchemeOptions = [
-        ...ID_SCHEME_DEFAULT_OPTIONS,
-        ...sharedAttributes.map(({ id, displayName: label }) => ({
-            value: `ATTRIBUTE:${id}`,
-            label,
-        })),
-    ]
 
     return (
         <Form onSubmit={onSubmitHandler} initialValues={defaultValues}>
@@ -163,28 +93,9 @@ const DataImport = ({
                             </WithAuthority>
 
                             <MoreOptions>
-                                {loadingDataElementAttributes ? (
-                                    <DataElementIdSchemeLoading />
-                                ) : (
-                                    <DataElementIdScheme
-                                        options={dataElementIdSchemeOptions}
-                                    />
-                                )}
-
-                                {loadingOrgUnitAttributes ? (
-                                    <OrgUnitIdSchemeLoading />
-                                ) : (
-                                    <OrgUnitIdScheme
-                                        options={orgUnitIdSchemeOptions}
-                                    />
-                                )}
-
-                                {loadingSharedAttributes ? (
-                                    <IdSchemeLoading />
-                                ) : (
-                                    <IdScheme options={idSchemeOptions} />
-                                )}
-
+                                <DataElementIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
                                 <SkipExistingCheck />
                             </MoreOptions>
                         </FormContent>
