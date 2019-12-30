@@ -7,6 +7,7 @@ import user from './user'
 import orgUnit from './orgUnits'
 import program from './program'
 import programStage from './programStage'
+import object from './object'
 
 export * from './user/actions'
 export * from './schemas/actions'
@@ -15,10 +16,12 @@ export * from './dataSets/actions'
 export * from './orgUnits/actions'
 export * from './program/actions'
 export * from './programStage/actions'
+export * from './object/actions'
 
 export default combineReducers({
     attributes,
     dataSets,
+    object,
     orgUnit,
     program,
     programStage,
