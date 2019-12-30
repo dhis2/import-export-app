@@ -1,4 +1,13 @@
 import React from 'react'
+
+import { Field } from '../Field/Field'
 import { File } from '../FinalFormComponents/File'
 
-export const Upload = () => <File name="upload" dataTest="input-upload" />
+export const Upload = () => (
+    <Field>
+        <File
+            name="upload"
+            dataTest="input-upload"
+        />
+    </Field>
+)

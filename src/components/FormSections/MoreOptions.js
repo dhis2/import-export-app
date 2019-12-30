@@ -1,7 +1,8 @@
-import React, { Fragment, useCallback, useState } from 'react'
-import i18n from '@dhis2/d2-i18n'
+import React, { useCallback, useState } from 'react'
 import cx from 'classnames'
+import i18n from '@dhis2/d2-i18n'
 
+import { Field } from '../Field/Field'
 import { MinusIcon, PlusIcon } from '../Form/MoreOptions'
 import styles from './MoreOptions.module.css'
 
@@ -16,7 +17,7 @@ export const MoreOptions = ({ children, openInitially }) => {
     )
 
     return (
-        <Fragment>
+        <Field>
             <button
                 onClick={toggleShow}
                 className={styles.button}
@@ -32,7 +33,7 @@ export const MoreOptions = ({ children, openInitially }) => {
             <div className={cx(styles.content, { [styles.show]: show })}>
                 {children}
             </div>
-        </Fragment>
+        </Field>
     )
 }
 

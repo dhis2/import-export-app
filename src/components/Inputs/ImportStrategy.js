@@ -1,6 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import { RadioGroup } from '../FinalFormComponents/RadioGroup'
+import { Field } from '../Field/Field'
+import { Label } from '../Field/Label'
 
 export const OPTION_CREATE_AND_UPDATE = {
     value: 'CREATE_AND_UPDATE',
@@ -16,15 +18,18 @@ export const IMPORT_STRATEGY_KEY = 'importStrategy'
 export const IMPORT_STRATEGY_DEFAULT_VALUE = OPTION_CREATE_AND_UPDATE.value
 
 export const ImportStrategy = () => (
-    <RadioGroup
-        name={IMPORT_STRATEGY_KEY}
-        label={i18n.t('Import strategy')}
-        options={[
-            OPTION_CREATE_AND_UPDATE,
-            OPTION_CREATE,
-            OPTION_UPDATES,
-            OPTION_DELETE,
-        ]}
-        dataTest="input-import-stragegy"
-    />
+    <Field>
+        <Label>{i18n.t('Import strategy')}</Label>
+        <RadioGroup
+            name={IMPORT_STRATEGY_KEY}
+            label={i18n.t('Import strategy')}
+            options={[
+                OPTION_CREATE_AND_UPDATE,
+                OPTION_CREATE,
+                OPTION_UPDATES,
+                OPTION_DELETE,
+            ]}
+            dataTest="input-import-stragegy"
+        />
+    </Field>
 )

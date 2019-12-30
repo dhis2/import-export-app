@@ -11,7 +11,9 @@ export const SchemaGroup = ({ label, schemas }) => (
                     <Checkbox
                         label={schema.label}
                         name={`schemas.${schema.name}`}
-                        checkedInitially
+                        format={v => v.toString()}
+                        parse={v => Boolean(v)}
+                        initialValue="true"
                     />
                 </div>
             ))}

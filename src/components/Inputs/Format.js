@@ -1,6 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import { RadioGroup } from '../FinalFormComponents/RadioGroup'
+import { Field } from '../Field/Field'
+import { Label } from '../Field/Label'
 
 export const OPTION_JSON = { value: 'json', label: i18n.t('JSON') }
 export const OPTION_XML = { value: 'xml', label: i18n.t('XML') }
@@ -11,12 +13,15 @@ export const FORMAT_KEY = 'format'
 export const FORMAT_DEFAULT_VALUE = OPTION_JSON.value
 
 export const Format = ({ options }) => (
-    <RadioGroup
-        name={FORMAT_KEY}
-        label={i18n.t('Format')}
-        options={options}
-        dataTest="input-format"
-    />
+    <Field>
+        <Label>{i18n.t('Format')}</Label>
+        <RadioGroup
+            name={FORMAT_KEY}
+            label={i18n.t('Format')}
+            options={options}
+            dataTest="input-format"
+        />
+    </Field>
 )
 
 Format.propTypes = {

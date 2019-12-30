@@ -1,6 +1,8 @@
 import { FormSpy } from 'react-final-form'
 import React, { Fragment } from 'react'
 import i18n from '@dhis2/d2-i18n'
+import { Field } from '../Field/Field'
+import { Label } from '../Field/Label'
 
 import { RadioGroup } from '../FinalFormComponents/RadioGroup'
 
@@ -12,13 +14,16 @@ export const FIRST_ROW_IS_HEADER_DEFAULT_VALUE = OPTION_NO.value
 export const FirstRowIsHeader = ({ show }) => (
     <Fragment>
         {show && (
-            <RadioGroup
-                name={FIRST_ROW_IS_HEADER_KEY}
-                label={i18n.t('First row is header')}
-                options={[OPTION_YES, OPTION_NO]}
-                defaultValue={OPTION_NO.value}
-                dataTest="input-first-row-is-header"
-            />
+            <Field>
+                <Label>{i18n.t('First row is header')}</Label>
+                <RadioGroup
+                    name={FIRST_ROW_IS_HEADER_KEY}
+                    label={i18n.t('First row is header')}
+                    options={[OPTION_YES, OPTION_NO]}
+                    defaultValue={OPTION_NO.value}
+                    dataTest="input-first-row-is-header"
+                />
+            </Field>
         )}
 
         <FormSpy

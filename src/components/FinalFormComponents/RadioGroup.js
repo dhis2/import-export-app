@@ -9,11 +9,14 @@ const RadioComponent = ({ name, label, value, defaultValue }) => {
         type: 'radio',
         value,
         defaultValue,
+        allowNull: true,
+        parse: value => (value === '' ? null : value),
     })
 
     return (
         <Radio
             {...input}
+            value={input.value || ''}
             key={value}
             label={label}
             error={meta.touched && !!meta.error}
@@ -22,39 +25,20 @@ const RadioComponent = ({ name, label, value, defaultValue }) => {
     )
 }
 
-export const RadioGroupContainer = ({ children }) => (
-    <div className={styles.container}>{children}</div>
-)
-
-export const RadioGroupLabel = ({ children }) => (
-    <span className={styles.label}>{children}</span>
-)
-
-export const RadioGroup = ({
-    label,
-    name,
-    options,
-    defaultValue,
-    dataTest,
-    ...rest
-}) => {
+export const RadioGroup = ({ label, name, options, defaultValue, dataTest, ...rest }) => {
     return (
         <div data-test={dataTest}>
-            <RadioGroupContainer {...rest}>
-                <RadioGroupLabel>{label}</RadioGroupLabel>
-
-                <div className={styles.inputs}>
-                    {options.map(option => (
-                        <RadioComponent
-                            name={name}
-                            key={option.value}
-                            value={option.value}
-                            label={option.label}
-                            defaultValue={defaultValue}
-                        />
-                    ))}
-                </div>
-            </RadioGroupContainer>
+            <div className={styles.inputs}>
+                {options.map(option => (
+                    <RadioComponent
+                        name={name}
+                        key={option.value}
+                        value={option.value}
+                        label={option.label}
+                        defaultValue={defaultValue}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
@@ -64,8 +48,8 @@ RadioGroup.propTypes = {
     name: propTypes.string.isRequired,
     options: propTypes.arrayOf(
         propTypes.shape({
-            value: propTypes.string.isRequired,
             label: propTypes.string.isRequired,
+            value: propTypes.string,
         })
     ).isRequired,
 

@@ -1,6 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import { RadioGroup } from '../FinalFormComponents/RadioGroup'
+import { Field } from '../Field/Field'
+import { Label } from '../Field/Label'
 
 export const OPTION_WITH_SHARING = {
     value: 'false',
@@ -15,10 +17,13 @@ export const SHARING_KEY = 'skipSharing'
 export const SHARING_DEFAULT_VALUE = OPTION_WITH_SHARING.value
 
 export const Sharing = () => (
-    <RadioGroup
-        name={SHARING_KEY}
-        label={i18n.t('Sharing')}
-        options={[OPTION_WITH_SHARING, OPTION_WITHOUT_SHARING]}
-        dataTest="input-sharing"
-    />
+    <Field>
+        <Label>{i18n.t('Sharing')}</Label>
+        <RadioGroup
+            name={SHARING_KEY}
+            label={i18n.t('Sharing')}
+            options={[OPTION_WITH_SHARING, OPTION_WITHOUT_SHARING]}
+            dataTest="input-sharing"
+        />
+    </Field>
 )

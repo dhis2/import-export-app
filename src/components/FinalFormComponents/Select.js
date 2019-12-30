@@ -2,7 +2,6 @@ import { useField } from 'react-final-form'
 import { SelectField } from '@dhis2/ui-core'
 import React from 'react'
 import propTypes from 'prop-types'
-import styles from './RadioGroup.module.css'
 
 export const Select = ({
     label,
@@ -18,15 +17,13 @@ export const Select = ({
     })
 
     return (
-        <div className={styles.container} data-test={dataTest}>
-            <SelectField {...input} label={label} outlined>
-                {options.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </SelectField>
-        </div>
+        <SelectField {...input} label={label} outlined>
+            {options.map(option => (
+                <option key={option.value} value={option.value}>
+                    {option.label}
+                </option>
+            ))}
+        </SelectField>
     )
 }
 

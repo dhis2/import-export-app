@@ -47,6 +47,7 @@ const SchemasInput = ({
                             key={label}
                             label={label}
                             schemas={schemaGroups[groupKey]}
+                            value="true"
                         />
                     )
                 })}
