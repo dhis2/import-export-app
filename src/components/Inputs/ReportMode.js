@@ -14,5 +14,6 @@ export const ReportMode = () => (
         name={REPORT_MODE_KEY}
         label={i18n.t('Report mode')}
         options={[OPTION_ERRORS, OPTION_FULL, OPTION_DEBUG]}
+        dataTest="input-report-mode"
     />
 )

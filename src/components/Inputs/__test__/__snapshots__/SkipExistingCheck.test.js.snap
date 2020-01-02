@@ -2,6 +2,7 @@
 
 exports[`Input component - SkipExistingCheck should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-skip-existing-check"
   label="Skip existing check"
   name="skipExistingCheck"
   options={

@@ -2,6 +2,7 @@
 
 exports[`Input component - Identifier should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-identifier"
   label="Identifier"
   name="identifier"
   options={

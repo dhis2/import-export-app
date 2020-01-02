@@ -6,6 +6,7 @@ import moment from 'moment/moment'
 import { EventIcon } from '../../components/Icon'
 import { FormBase } from '../../components/FormBase'
 import { api } from '../../services'
+import { download } from '../../helpers/url'
 import {
     getFormFields,
     getFormFieldMoreOptions,
@@ -191,6 +192,6 @@ export class EventExport extends FormBase {
             append
         )
 
-        window.location = api.url(path) + '?' + params
+        download(api.url(path) + '?' + params)
     }
 }

@@ -124,7 +124,7 @@ export default class DataSetPicker extends React.Component {
 
     render() {
         return (
-            <div className={s.container}>
+            <div className={s.container} data-test="input-data-sets">
                 {this.header()}
                 {this.filter()}
                 {this.actions()}

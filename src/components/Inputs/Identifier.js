@@ -13,5 +13,6 @@ export const Identifier = () => (
         name={IDENTIFIER_KEY}
         label={i18n.t('Identifier')}
         options={[OPTION_UID, OPTION_CODE, OPTION_AUTO]}
+        dataTest="input-identifier"
     />
 )

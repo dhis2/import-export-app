@@ -17,5 +17,6 @@ export const PreheatMode = () => (
         name={PREHEAT_MODE_KEY}
         label={i18n.t('Preheat mode')}
         options={[OPTION_REFERENCE, OPTION_ALL, OPTION_NONE]}
+        dataTest="input-preheat-mode"
     />
 )

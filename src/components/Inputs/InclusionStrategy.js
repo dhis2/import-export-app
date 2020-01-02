@@ -16,5 +16,6 @@ export const InclusionStrategy = () => (
         name={INCLUSION_STRATEGY_KEY}
         label={i18n.t('Inclusion strategy')}
         options={[OPTION_NON_NULL, OPTION_ALWAYS, OPTION_NON_EMPTY]}
+        dataTest="input-inclusion-strategy"
     />
 )

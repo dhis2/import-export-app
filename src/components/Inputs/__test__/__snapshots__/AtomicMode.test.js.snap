@@ -2,6 +2,7 @@
 
 exports[`Input component - AtomicMode should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-atomic-mode"
   label="Atomic mode"
   name="atomicMode"
   options={

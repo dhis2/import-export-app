@@ -30,23 +30,32 @@ export const RadioGroupLabel = ({ children }) => (
     <span className={styles.label}>{children}</span>
 )
 
-export const RadioGroup = ({ label, name, options, defaultValue, ...rest }) => {
+export const RadioGroup = ({
+    label,
+    name,
+    options,
+    defaultValue,
+    dataTest,
+    ...rest
+}) => {
     return (
-        <RadioGroupContainer {...rest}>
-            <RadioGroupLabel>{label}</RadioGroupLabel>
+        <div data-test={dataTest}>
+            <RadioGroupContainer {...rest}>
+                <RadioGroupLabel>{label}</RadioGroupLabel>
 
-            <div className={styles.inputs}>
-                {options.map(option => (
-                    <RadioComponent
-                        name={name}
-                        key={option.value}
-                        value={option.value}
-                        label={option.label}
-                        defaultValue={defaultValue}
-                    />
-                ))}
-            </div>
-        </RadioGroupContainer>
+                <div className={styles.inputs}>
+                    {options.map(option => (
+                        <RadioComponent
+                            name={name}
+                            key={option.value}
+                            value={option.value}
+                            label={option.label}
+                            defaultValue={defaultValue}
+                        />
+                    ))}
+                </div>
+            </RadioGroupContainer>
+        </div>
     )
 }
 

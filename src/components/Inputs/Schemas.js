@@ -35,7 +35,7 @@ const SchemasInput = ({
     }
 
     return (
-        <div className={s.container}>
+        <div className={s.container} data-test="input-schemas">
             <Controls schemaKey={SCHEMAS_KEY} />
 
             <div className={s.formControl}>

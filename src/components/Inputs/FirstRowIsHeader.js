@@ -17,6 +17,7 @@ export const FirstRowIsHeader = ({ show }) => (
                 label={i18n.t('First row is header')}
                 options={[OPTION_YES, OPTION_NO]}
                 defaultValue={OPTION_NO.value}
+                dataTest="input-first-row-is-header"
             />
         )}
 

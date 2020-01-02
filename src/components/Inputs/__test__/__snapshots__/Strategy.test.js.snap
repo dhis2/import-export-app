@@ -2,6 +2,7 @@
 
 exports[`Input component - Strategy should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-strategy"
   label="Strategy"
   name="strategy"
   options={

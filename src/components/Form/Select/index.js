@@ -26,8 +26,7 @@ export default class SelectField extends React.Component {
         this.props.onChange(this.props.name, value)
 
     render() {
-        const { name, label, values, selected } = this.props
-        const dataTest = this.props['data-test'] || undefined
+        const { dataTest, name, label, values, selected } = this.props
 
         return (
             <div data-test={dataTest}>

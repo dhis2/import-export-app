@@ -2,6 +2,7 @@
 
 exports[`Input component - Async should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-async"
   label="Async"
   name="async"
   options={

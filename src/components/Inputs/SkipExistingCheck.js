@@ -15,5 +15,6 @@ export const SkipExistingCheck = () => (
         name={SKIP_EXISTING_CHECK_KEY}
         label={i18n.t('Skip existing check')}
         options={[OPTION_SKIP, OPTION_CHECK]}
+        dataTest="input-skip-existing-check"
     />
 )

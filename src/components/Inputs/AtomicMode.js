@@ -12,5 +12,6 @@ export const AtomicMode = () => (
         name={ATOMIC_MODE_KEY}
         label={i18n.t('Atomic mode')}
         options={[OPTION_ALL, OPTION_NONE]}
+        dataTest="input-atomic-mode"
     />
 )

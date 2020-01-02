@@ -2,6 +2,7 @@
 
 exports[`Input component - Format should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-format"
   label="Format"
   name="format"
   options={

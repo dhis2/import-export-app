@@ -12,5 +12,6 @@ export const FlushMode = () => (
         name={FLUSH_MODE_KEY}
         label={i18n.t('Flush mode')}
         options={[OPTION_AUTO, OPTION_OBJECT]}
+        dataTest="input-flush-mode"
     />
 )

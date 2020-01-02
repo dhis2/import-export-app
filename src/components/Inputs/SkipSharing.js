@@ -12,5 +12,6 @@ export const SkipSharing = () => (
         name={SKIP_SHARING_KEY}
         label={i18n.t('Skip sharing')}
         options={[OPTION_YES, OPTION_NO]}
+        dataTest="input-skip-sharing"
     />
 )
