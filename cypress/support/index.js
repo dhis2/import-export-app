@@ -1,3 +1,8 @@
+import './form/index'
+import './getAliases'
+import './getComparisonData'
 import './login'
+import './showMoreOptions'
 import './stubWithFixture'
+import './visitPage'
 import './visitWhenStubbed'
