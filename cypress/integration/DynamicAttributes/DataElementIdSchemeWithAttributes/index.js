@@ -12,15 +12,11 @@ Given('a unique attribute is associated with data elements', () => {
 })
 
 Given('the user is on the data import page', () => {
-    cy.visitWhenStubbed(Cypress.env('APP_URL'))
-        .get('[data-test="sidebar-link-import-data"]')
-        .click()
+    cy.visitPage('import', 'data')
 })
 
 Given('the user is on the data export page', () => {
-    cy.visitWhenStubbed(Cypress.env('APP_URL'))
-        .get('[data-test="sidebar-link-export-data"]')
-        .click()
+    cy.visitPage('export', 'data')
 })
 
 Then(

@@ -48,6 +48,7 @@
     "url-join": "^4.0.1"
   },
   "devDependencies": {
+    "@babel/helper-create-regexp-features-plugin": "^7.7.4",
     "@dhis2/cli-style": "^3.2.2",
     "@dhis2/d2-i18n-extract": "^1.0.8",
     "@dhis2/d2-i18n-generate": "^1.1.1",
@@ -58,6 +59,7 @@
     "enzyme-adapter-react-16": "^1.13.2",
     "enzyme-to-json": "^3.4.0",
     "husky": "^2.3.0",
+    "query-string": "^6.9.0",
     "redux-mock-store": "^1.5.3",
     "wait-on": "^3.3.0"
   },
