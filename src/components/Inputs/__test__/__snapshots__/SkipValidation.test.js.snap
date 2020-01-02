@@ -2,6 +2,7 @@
 
 exports[`Input component - SkipValidation should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-skip-validation"
   label="Skip validation"
   name="skipValidation"
   options={

@@ -12,5 +12,6 @@ export const DryRun = () => (
         name={DRY_RUN_KEY}
         label={i18n.t('Dry run')}
         options={[OPTION_YES, OPTION_NO]}
+        dataTest="input-dry-run"
     />
 )

@@ -16,5 +16,6 @@ export const ImportMode = () => (
         name={IMPORT_MODE_KEY}
         label={i18n.t('Dry run')}
         options={[OPTION_YES, OPTION_NO]}
+        dataTest="input-import-mode"
     />
 )

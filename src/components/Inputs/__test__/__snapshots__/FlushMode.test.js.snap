@@ -2,6 +2,7 @@
 
 exports[`Input component - FlushMode should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-flush-mode"
   label="Flush mode"
   name="flushMode"
   options={

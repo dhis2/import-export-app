@@ -16,6 +16,7 @@ export const ClassKey = ({ show, options, defaultValue }) => (
                 label={i18n.t('Class key')}
                 options={options}
                 defaultValue={defaultValue}
+                dataTest="input-class-key"
             />
         )}
 

@@ -19,25 +19,27 @@ export default class DateField extends React.Component {
     onChange = (_, date) => this.props.onChange(this.props.name, date)
 
     render() {
-        const { name, label, value, minDate } = this.props
+        const { dataTest, name, label, value, minDate } = this.props
         const format =
             this.props.format || moment.localeData().longDateFormat('L')
         const marginTop = minDate ? 8 : 16
 
         return (
-            <FormControl className={s.formControl} style={{ marginTop }}>
-                <FormLabel className={s.formLabel}>{label}</FormLabel>
-                <DatePicker
-                    {...styles}
-                    autoOk={true}
-                    key={`datePickerField-${name}`}
-                    name={`datePickerField-${name}`}
-                    format={format}
-                    minDate={minDate}
-                    value={value}
-                    onChange={this.onChange}
-                />
-            </FormControl>
+            <div data-test={dataTest}>
+                <FormControl className={s.formControl} style={{ marginTop }}>
+                    <FormLabel className={s.formLabel}>{label}</FormLabel>
+                    <DatePicker
+                        {...styles}
+                        autoOk={true}
+                        key={`datePickerField-${name}`}
+                        name={`datePickerField-${name}`}
+                        format={format}
+                        minDate={minDate}
+                        value={value}
+                        onChange={this.onChange}
+                    />
+                </FormControl>
+            </div>
         )
     }
 }

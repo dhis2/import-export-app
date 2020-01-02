@@ -2,6 +2,7 @@
 
 exports[`Input component - ReportMode should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-report-mode"
   label="Report mode"
   name="reportMode"
   options={

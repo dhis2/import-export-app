@@ -12,5 +12,6 @@ export const MergeMode = () => (
         name={MERGE_MODE_KEY}
         label={i18n.t('Merge mode')}
         options={[OPTION_MERGE, OPTION_REPLACE]}
+        dataTest="input-merge-mode"
     />
 )

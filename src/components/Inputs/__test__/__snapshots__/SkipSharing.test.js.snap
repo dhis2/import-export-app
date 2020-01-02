@@ -2,6 +2,7 @@
 
 exports[`Input component - SkipSharing should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-skip-sharing"
   label="Skip sharing"
   name="skipSharing"
   options={

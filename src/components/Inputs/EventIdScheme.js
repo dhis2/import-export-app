@@ -13,5 +13,6 @@ export const EventIdScheme = () => (
         name={EVENT_ID_SCHEME_KEY}
         label={i18n.t('Event id scheme')}
         options={[OPTION_UID, OPTION_CODE]}
+        dataTest="input-event-id-scheme"
     />
 )

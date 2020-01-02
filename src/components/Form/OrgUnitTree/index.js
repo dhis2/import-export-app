@@ -119,16 +119,20 @@ export default class OrgUnitTree extends React.Component {
         const { multiple, selectable } = this.props
         const { list, selected } = this.state
         return (
-            <Tree
-                multiple={typeof multiple !== 'undefined' ? multiple : false}
-                selectable={
-                    typeof selectable !== 'undefined' ? selectable : true
-                }
-                list={list}
-                selected={selected}
-                onIconClick={this.onIconClick}
-                setSelected={this.setSelected}
-            />
+            <div data-test="input-org-unit-tree">
+                <Tree
+                    multiple={
+                        typeof multiple !== 'undefined' ? multiple : false
+                    }
+                    selectable={
+                        typeof selectable !== 'undefined' ? selectable : true
+                    }
+                    list={list}
+                    selected={selected}
+                    onIconClick={this.onIconClick}
+                    setSelected={this.setSelected}
+                />
+            </div>
         )
     }
 }

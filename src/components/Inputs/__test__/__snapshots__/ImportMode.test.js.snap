@@ -2,6 +2,7 @@
 
 exports[`Input component - ImportMode should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-import-mode"
   label="Dry run"
   name="importMode"
   options={

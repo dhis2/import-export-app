@@ -36,5 +36,8 @@ export const getUniqueCategoryAttributes = () =>
 
 export const getSchemas = async () => {
     const api = await getApi()
-    return api.get('schemas.json')
+    const fields = ['metadata', 'collectionName', 'displayName', 'klass']
+    const params = [`fields=${fields.join(',')}`]
+
+    return api.get(`schemas.json?${params.join('&')}`)
 }

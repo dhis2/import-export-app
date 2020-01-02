@@ -2,6 +2,7 @@
 
 exports[`Input component - PreheatCache should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-preheat-cache"
   label="Preheat cache"
   name="preheatCache"
   options={

@@ -2,6 +2,7 @@
 
 exports[`Input component - InclusionStrategy should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-inclusion-strategy"
   label="Inclusion strategy"
   name="inclusionStrategy"
   options={

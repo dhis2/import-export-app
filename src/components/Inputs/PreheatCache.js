@@ -15,5 +15,6 @@ export const PreheatCache = () => (
         name={PREHEAT_CACHE_KEY}
         label={i18n.t('Preheat cache')}
         options={[OPTION_YES, OPTION_NO]}
+        dataTest="input-preheat-cache"
     />
 )

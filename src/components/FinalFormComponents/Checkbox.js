@@ -3,7 +3,12 @@ import { Checkbox as CoreCheckbox } from '@dhis2/ui-core'
 import React from 'react'
 import propTypes from 'prop-types'
 
-export const Checkbox = ({ label, name, checkedInitially: initialValue }) => {
+export const Checkbox = ({
+    label,
+    name,
+    checkedInitially: initialValue,
+    dataTest,
+}) => {
     const { input } = useField(name, {
         initialValue,
         type: 'checkbox',
@@ -12,11 +17,13 @@ export const Checkbox = ({ label, name, checkedInitially: initialValue }) => {
     })
 
     return (
-        <CoreCheckbox
-            {...input}
-            checked={input.value === 'true'}
-            label={label}
-        />
+        <div data-test={dataTest}>
+            <CoreCheckbox
+                {...input}
+                checked={input.value === 'true'}
+                label={label}
+            />
+        </div>
     )
 }
 

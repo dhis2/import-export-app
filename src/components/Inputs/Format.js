@@ -11,7 +11,12 @@ export const FORMAT_KEY = 'format'
 export const FORMAT_DEFAULT_VALUE = OPTION_JSON.value
 
 export const Format = ({ options }) => (
-    <RadioGroup name={FORMAT_KEY} label={i18n.t('Format')} options={options} />
+    <RadioGroup
+        name={FORMAT_KEY}
+        label={i18n.t('Format')}
+        options={options}
+        dataTest="input-format"
+    />
 )
 
 Format.propTypes = {

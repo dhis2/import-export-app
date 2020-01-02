@@ -25,5 +25,6 @@ export const ImportStrategy = () => (
             OPTION_UPDATES,
             OPTION_DELETE,
         ]}
+        dataTest="input-import-stragegy"
     />
 )

@@ -12,5 +12,6 @@ export const Async = () => (
         name={ASYNC_KEY}
         label={i18n.t('Async')}
         options={[OPTION_YES, OPTION_NO]}
+        dataTest="input-async"
     />
 )

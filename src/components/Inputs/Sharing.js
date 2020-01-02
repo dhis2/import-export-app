@@ -19,5 +19,6 @@ export const Sharing = () => (
         name={SHARING_KEY}
         label={i18n.t('Sharing')}
         options={[OPTION_WITH_SHARING, OPTION_WITHOUT_SHARING]}
+        dataTest="input-sharing"
     />
 )

@@ -13,6 +13,7 @@ import {
     SHARING_DEFAULT_VALUE,
     SHARING_KEY,
 } from '../../../components/Inputs/Sharing'
+import { download } from '../../../helpers/url'
 import { getApi } from '../../../helpers/api'
 
 export const EXCLUDE_SCHEMAS = new Set([
@@ -64,16 +65,19 @@ export const onSubmit = async values => {
 
     const { schemas, format, compression, skipSharing } = values
 
+    const { baseUrl } = api
     const endpoint = `metadata`
-    const endpointExtension = getEndpointExtension(format, compression)
+    const extension = getEndpointExtension(format, compression)
     const schemaParams = Object.keys(schemas)
         .filter(s => schemas[s])
         .map(name => `${name}=true`)
         .join('&')
-    const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`
-    const url = `${
-        api.baseUrl
-    }${endpoint}.${endpointExtension}?${downloadUrlParams}`
 
-    window.location = url
+    const params = [`skipSharing=${skipSharing}`, 'download=true', schemaParams]
+        .filter(v => v)
+        .join('&')
+
+    const url = `${baseUrl}${endpoint}.${extension}?${params}`
+
+    download(url)
 }

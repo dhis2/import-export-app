@@ -2,6 +2,7 @@
 
 exports[`Input component - DryRun should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-dry-run"
   label="Dry run"
   name="dryRun"
   options={

@@ -14,5 +14,6 @@ export const ImportReportMode = () => (
         name={IMPORT_REPORT_MODE_KEY}
         label={i18n.t('Import report mode')}
         options={[OPTION_ERRORS, OPTION_FULL, OPTION_DEBUG]}
+        dataTest="input-import-report-mode"
     />
 )

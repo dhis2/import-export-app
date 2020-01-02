@@ -12,5 +12,6 @@ export const SkipValidation = () => (
         name={SKIP_VALIDATION_KEY}
         label={i18n.t('Skip validation')}
         options={[OPTION_YES, OPTION_NO]}
+        dataTest="input-skip-validation"
     />
 )

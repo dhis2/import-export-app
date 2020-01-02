@@ -4,6 +4,7 @@ import i18n from '@dhis2/d2-i18n'
 import { FormBase } from '../../components/FormBase'
 import { MetadataDependencyExportIcon } from '../../components/Icon'
 import { api } from '../../services'
+import { download } from '../../helpers/url'
 import { getFormFields, getFormValues, getDownloadUrl } from '../../helpers'
 import { isProduction } from '../../helpers/env'
 
@@ -91,7 +92,8 @@ export class MetaDataDependencyExport extends FormBase {
                 endpoint,
                 sharing,
             })
-            window.location = url
+
+            download(url)
         } catch (e) {
             !isProduction &&
                 console.log('MetaDataDependency Export error', e, '\n')

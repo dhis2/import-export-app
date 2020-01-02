@@ -2,6 +2,7 @@
 
 exports[`Input component - MergeMode should render correctly 1`] = `
 <RadioGroup
+  dataTest="input-merge-mode"
   label="Merge mode"
   name="mergeMode"
   options={

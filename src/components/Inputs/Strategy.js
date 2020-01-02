@@ -25,5 +25,6 @@ export const Strategy = () => (
             OPTION_UPDATES,
             OPTION_DELETE,
         ]}
+        dataTest="input-strategy"
     />
 )

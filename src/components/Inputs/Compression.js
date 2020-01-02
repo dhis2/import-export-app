@@ -14,5 +14,6 @@ export const Compression = () => (
         name={COMPRESSION_KEY}
         label={i18n.t('Compression')}
         options={[OPTION_ZIP, OPTION_GZIP, OPTION_NONE]}
+        dataTest="input-compression"
     />
 )
