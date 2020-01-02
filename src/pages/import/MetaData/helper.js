@@ -106,7 +106,7 @@ export const onSubmit = (setLoading, setError) => values => {
             ]
         }
 
-        append.push('format=json')
+        append.push(`format=${format}`)
 
         const params = getParamsFromFormState(
             values,
