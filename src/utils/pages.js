@@ -2,6 +2,7 @@ import React from 'react';
 import i18n from '@dhis2/d2-i18n';
 
 import { MetadataExport } from '../components/MetadataExport';
+import { MetadataDependencyExport } from '../components/MetadataDependencyExport';
 
 import {
     DataIcon,
@@ -85,7 +86,7 @@ const metadataDependencyExportPage = {
     ),
     path: '/export/metadata-dependency',
     icon: <MetadataDependencyExportIcon />,
-    component: <PlaceHolder name="export/metadata-dependency" />,
+    component: <MetadataDependencyExport />,
 };
 
 const metadataExportPage = {

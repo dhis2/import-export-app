@@ -5,5 +5,134 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-12-18T12:14:09.822Z\n"
-"PO-Revision-Date: 2019-12-18T12:14:09.822Z\n"
+"POT-Creation-Date: 2020-01-07T12:34:16.917Z\n"
+"PO-Revision-Date: 2020-01-07T12:34:16.917Z\n"
+
+msgid "Object type"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Sharing"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Select None"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "JSON"
+msgstr ""
+
+msgid "CSV"
+msgstr ""
+
+msgid "XML"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
+msgid "Data sets"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Data import"
+msgstr ""
+
+msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgstr ""
+
+msgid "Event import"
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities using the DXF 2 "
+"format."
+msgstr ""
+
+msgid "GML import"
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using the GML format. GML is "
+"an XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "Metadata import"
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the DXF 2 "
+"format."
+msgstr ""
+
+msgid "Data export"
+msgstr ""
+
+msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
+msgstr ""
+
+msgid "Event export"
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid "Metadata dependency export"
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects in the XML or JSON format."
+msgstr ""
+
+msgid "Metadata export"
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units in the XML, JSON "
+"or CSV format."
+msgstr ""
