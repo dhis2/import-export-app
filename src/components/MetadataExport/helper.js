@@ -28,7 +28,4 @@ const EXCLUDE_SCHEMAS = new Set([
     'validationNotificationTemplates',
 ]);
 
-const getEndpointExtension = (format, compression) =>
-    compression ? `${format}.${compression}` : format;
-
-export { getEndpointExtension, EXCLUDE_SCHEMAS };
+export { EXCLUDE_SCHEMAS };

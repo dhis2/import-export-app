@@ -3,22 +3,25 @@ import { useConfig } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 
-import { metadataExportPage as p } from '../../utils/pages';
+import { metadataDependencyExportPage as p } from '../../utils/pages';
 import {
-    formatOptions,
+    formatNoCsvOptions,
     compressionOptions,
     sharingOptions,
+    objectTypeOptions,
     defaultFormatOption,
     defaultCompressionOption,
     defaultSharingOption,
+    defaultObjectTypeOption,
 } from '../../utils/options';
-import { EXCLUDE_SCHEMAS } from './helper';
-import { Schemas } from './Schemas/';
 import { Page } from '../Page';
 import { RadioGroup } from '../RadioGroup';
+import { Select } from '../Select';
+import { ObjectSelect } from './ObjectSelect/';
 
-const MetadataExport = () => {
-    const [checkedSchemas, setCheckedSchemas] = useState([]);
+const MetadataDependencyExport = () => {
+    const [objectType, setObjectType] = useState(defaultObjectTypeOption.value);
+    const [objectListSelected, setObjectListSelected] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption.value);
     const [compression, setCompression] = useState(
         defaultCompressionOption.value
@@ -28,29 +31,37 @@ const MetadataExport = () => {
 
     const exportHandler = () => {
         const apiBaseUrl = `${baseUrl}/api/`;
-        const endpoint = `metadata`;
+        const endpoint = `${objectType}/${objectListSelected}/metadata`;
         const endpointExtension = compression
             ? `${format}.${compression}`
             : format;
-        const schemaParams = checkedSchemas
-            .map(name => `${name}=true`)
-            .join('&');
-        const downloadUrlParams = `skipSharing=${sharing}&download=true&${schemaParams}`;
+        const downloadUrlParams = `skipSharing=${sharing}&download=true`;
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`;
         window.location = url;
     };
 
     return (
         <Page title={p.name} desc={p.description} icon={p.icon}>
-            <Schemas
-                excludeSchemas={EXCLUDE_SCHEMAS}
-                setCheckedSchemas={setCheckedSchemas}
-                checkedByDefault
+            <Select
+                filled
+                initialFocus
+                name="objectType"
+                label={i18n.t('Object type')}
+                options={objectTypeOptions}
+                setValue={setObjectType}
+                selected={objectType}
+            />
+            <ObjectSelect
+                name="objectList"
+                label={i18n.t('Object')}
+                type={objectType}
+                setSelected={setObjectListSelected}
+                selected={objectListSelected}
             />
             <RadioGroup
                 name="format"
                 label={i18n.t('Format')}
-                options={formatOptions}
+                options={formatNoCsvOptions}
                 setValue={setFormat}
                 checked={format}
             />
@@ -68,11 +79,15 @@ const MetadataExport = () => {
                 setValue={setSharing}
                 checked={sharing}
             />
-            <Button primary initialFocus onClick={exportHandler}>
+            <Button
+                primary
+                disabled={objectListSelected == undefined}
+                onClick={exportHandler}
+            >
                 {i18n.t('Export')}
             </Button>
         </Page>
     );
 };
 
-export { MetadataExport };
+export { MetadataDependencyExport };
