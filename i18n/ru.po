@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-08-30T08:44:31.946Z\n"
+"POT-Creation-Date: 2019-12-19T10:07:59.315Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -229,9 +229,6 @@ msgstr "Код"
 msgid "Name"
 msgstr "Название"
 
-msgid "HR identifier"
-msgstr "Идентификатор в отделе кадров"
-
 msgid "Include descendants of organisation unit"
 msgstr "Включить потомков организационной единицы"
 
@@ -349,6 +346,9 @@ msgid ""
 msgstr ""
 "Экспортировать значения данных. Это стандартная функция экспорта, "
 "экспортирующая данные в формат обмена  DHIS 2, называемый DXF 2."
+
+msgid "Loading options..."
+msgstr ""
 
 msgid "Event Export"
 msgstr "Экспорт события"
