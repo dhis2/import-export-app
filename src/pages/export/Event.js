@@ -12,7 +12,7 @@ import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
 import { Format } from '../../components/Inputs/Format'
 import { IdScheme } from '../../components/Inputs/idScheme'
-import { IncludeDelete } from '../../components/Inputs/IncludeDelete'
+import { IncludeDeleted } from '../../components/Inputs/IncludeDeleted'
 import { Inclusion } from '../../components/Inputs/Inclusion'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import { OrgUnit } from '../../components/Inputs/OrgUnit'
@@ -49,7 +49,7 @@ export const EventExport = () => {
                             <Compression />
 
                             <MoreOptions>
-                                <IncludeDelete />
+                                <IncludeDeleted />
                                 <Inclusion />
                             </MoreOptions>
                         </FormContent>

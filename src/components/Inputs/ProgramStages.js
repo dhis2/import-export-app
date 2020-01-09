@@ -26,14 +26,14 @@ const programStagesLabel = i18n.t('Program stages')
 const RenderComponent = ({ values }) => {
     const form = useForm()
     const dispatch = useDispatch()
-    const program = values ? values.program : null
+    const programs = values ? values.programs : null
 
     useEffect(() => {
-        if (program) {
-            dispatch(fetchProgramStages(program))
+        if (programs) {
+            dispatch(fetchProgramStages(programs))
             form.change(PROGRAM_STAGES_KEY, '')
         }
-    }, [program]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [programs]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return null
 }
@@ -63,14 +63,14 @@ export const ProgramStages = () => {
     }
 
     return (
-        <>
+        <div data-test="input-program-stages">
             <FormSpy
                 subscription={{ values: { program: true } }}
                 render={({ values }) => <RenderComponent values={values} />}
             />
 
             {component}
-        </>
+        </div>
     )
 }
 

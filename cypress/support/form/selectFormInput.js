@@ -65,21 +65,17 @@ const nameToDataTest = name => {
 /**
  * @param {string} name
  * @param {string} value
- * @param {label|bool} label
- * Can be a boolean to indicate that the underlying
- * input component is an old component, which will be removed
- * once all pages have been refactored to RFF
  */
-const selectFormInput = ({ name, value, label }) => {
+const selectFormInput = ({ name, value }) => {
     if (radioInputs.includes(name)) {
-        cy.selectRadio(name, value, label)
+        cy.selectRadio(name, value)
     } else if (selectInputs.includes(name)) {
         const dataTest = nameToDataTest(name)
-        cy.selectSelect(dataTest, value, label)
+        cy.selectSelect(dataTest, value)
     } else if (dateInputs.includes(name)) {
         cy.selectDate(name, value)
     } else {
-        throw new Error(`Step needs to handle "${name} / ${name}"`)
+        throw new Error(`Step needs to handle "${name}"`)
     }
 }
 

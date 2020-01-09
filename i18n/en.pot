@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-12-30T09:20:29.553Z\n"
-"PO-Revision-Date: 2019-12-30T09:20:29.553Z\n"
+"POT-Creation-Date: 2020-01-09T06:46:01.373Z\n"
+"PO-Revision-Date: 2020-01-09T06:46:01.373Z\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Import strategy"
 msgstr ""
 
-msgid "Include delete"
+msgid "Include deleted"
 msgstr ""
 
 msgid "Include children of organisation unit"
@@ -386,9 +386,6 @@ msgstr ""
 msgid "Import Strategy"
 msgstr ""
 
-msgid "Include deleted"
-msgstr ""
-
 msgid "Inclusion Strategy"
 msgstr ""
 
@@ -476,9 +473,6 @@ msgstr ""
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
-msgstr ""
-
-msgid "Metadata Export with Dependencies"
 msgstr ""
 
 msgid "Import / Export"

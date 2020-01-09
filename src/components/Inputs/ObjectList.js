@@ -57,7 +57,7 @@ export const ObjectList = () => {
                     name={OBJECT_KEY}
                     label={objectLabel}
                     options={options}
-                    dataTest="input-object"
+                    dataTest="input-object-list"
                 />
             </Field>
         )

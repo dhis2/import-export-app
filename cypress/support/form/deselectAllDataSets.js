@@ -1,7 +1,7 @@
 const deselectAllDataSets = () => {
-    cy.get(`[data-test="input-data-sets"]`)
-        .find('[class*="styles_actions"] > :last-child')
-        .click()
+    cy.get(
+        '[data-test="input-data-sets"] [data-test="checkboxgroup-clearall"] button'
+    ).click()
 
     return cy
 }

@@ -63,11 +63,9 @@ export const DataSets = () => {
         <Field>
             <Label>{dataSetsLabel}</Label>
             <Filter />
-            <CheckboxGroup
-                dataTest="input-data-sets"
-                name={DATA_SETS_KEY}
-                options={dataSets}
-            />
+            <div data-test="input-data-sets">
+                <CheckboxGroup name={DATA_SETS_KEY} options={dataSets} />
+            </div>
         </Field>
     )
 }

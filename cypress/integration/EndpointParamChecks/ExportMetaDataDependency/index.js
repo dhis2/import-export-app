@@ -30,17 +30,17 @@ Then('the download request is sent with the right parameters', () => {
 
         const call = win.assign.getCall(0)
         const url = call.args[0]
-        const [objectType, objectList, format, compression] = url
-            .match(/api\/([^\/]+)\/([^\/]+)\/metadata(\.[^.]+)(\.[^.]+)?\?/)
+        const [objectType, objectList, format, _, compression] = url
+            .match(/api\/([^\/]+)\/([^\/]+)\/metadata\.([^.]+)(\.([^.]+))?\?/)
             .slice(1)
 
         cy.getComparisonData(url).then(({ actual, expected, allData }) => {
             expect(expected.format).to.equal(format)
-            expect(expected.compression).to.equal(compression || 'none')
+            expect(expected.compression).to.equal(compression || '')
 
             const updatedExpected = {
                 download: 'true',
-                skipSharing: (expected.sharing !== 'true').toString(),
+                skipSharing: expected.skipSharing,
             }
 
             expect(actual).to.deep.equal(updatedExpected)

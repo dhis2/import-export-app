@@ -19,18 +19,20 @@ export const Select = ({
     })
 
     return (
-        <SelectField
-            {...input}
-            value={input.value || ''}
-            label={label}
-            outlined
-        >
-            {options.map(option => (
-                <option key={option.value} value={option.value}>
-                    {option.label}
-                </option>
-            ))}
-        </SelectField>
+        <div data-test={dataTest}>
+            <SelectField
+                {...input}
+                value={input.value || ''}
+                label={label}
+                outlined
+            >
+                {options.map(option => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                    </option>
+                ))}
+            </SelectField>
+        </div>
     )
 }
 

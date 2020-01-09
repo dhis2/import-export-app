@@ -37,14 +37,16 @@ export const OrgUnitTree = ({ name, selected, multiple }) => {
     })
 
     return (
-        <Tree
-            multiple={multiple}
-            selectable={true}
-            list={list}
-            selected={input.value}
-            onIconClick={onIconClick}
-            setSelected={input.onChange}
-        />
+        <div data-test="input-org-unit-tree">
+            <Tree
+                multiple={multiple}
+                selectable={true}
+                list={list}
+                selected={input.value}
+                onIconClick={onIconClick}
+                setSelected={input.onChange}
+            />
+        </div>
     )
 }
 
