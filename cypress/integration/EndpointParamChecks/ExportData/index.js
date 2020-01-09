@@ -47,14 +47,13 @@ Given('the Sierra Leone org unit has been selected', () => {
 })
 
 Given('the first data set has been selected', () => {
-    cy.get(
-        '[data-test="input-data-sets"] svg + div:contains("ART monthly summary")'
-    )
-        .parent()
-        .click()
+    cy.fixture('dataSets').then(({ dataSets }) => {
+        const [{ id }] = dataSets
+        cy.selectCheckbox('selectedDataSets', id)
 
-    cy.get('@defaultData').then(defaultData => {
-        cy.wrap({ ...defaultData, dataSet: 'lyLU2wR22tC' }).as('defaultData')
+        cy.get('@defaultData').then(defaultData => {
+            cy.wrap({ ...defaultData, dataSet: id }).as('defaultData')
+        })
     })
 })
 
@@ -79,11 +78,7 @@ When('the user selects the "Bo" org unit', () => {
 })
 
 Given('all data sets have been selected', () => {
-    cy.get('[data-test="input-data-sets"] [class*="styles_actionLabel"]')
-        .first()
-        .parent()
-        .click()
-
+    cy.selectAllDataSets()
     cy.get('@defaultData').then(defaultData => {
         cy.fixture('dataSets').then(({ dataSets }) => {
             const dataSet = dataSets.map(({ id }) => id)

@@ -16,7 +16,7 @@ import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
 import { Format } from '../../components/Inputs/Format'
 import { IdScheme } from '../../components/Inputs/idScheme'
-import { IncludeDelete } from '../../components/Inputs/IncludeDelete'
+import { IncludeDeleted } from '../../components/Inputs/IncludeDeleted'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
 import { OrgUnit } from '../../components/Inputs/OrgUnit'
 import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
@@ -75,7 +75,7 @@ export const DataExport = () => {
                             <Compression />
 
                             <MoreOptions>
-                                <IncludeDelete />
+                                <IncludeDeleted />
                                 <DataElementIdScheme />
                                 <OrgUnitIdScheme />
                                 <IdScheme />

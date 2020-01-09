@@ -1,8 +1,8 @@
 import { Button } from '@dhis2/ui-core'
 import { Form } from 'react-final-form'
 import React from 'react'
-import i18n from '@dhis2/d2-i18n'
 import cx from 'classnames'
+import i18n from '@dhis2/d2-i18n'
 
 import { Compression } from '../../components/Inputs/Compression'
 import { FormContent } from '../../components/FormSections/FormContent'
@@ -12,7 +12,7 @@ import { Format } from '../../components/Inputs/Format'
 import { MetadataDependencyExportIcon } from '../../components/Icon'
 import { ObjectList } from '../../components/Inputs/ObjectList'
 import { ObjectType } from '../../components/Inputs/ObjectType'
-import { Sharing } from '../../components/Inputs/Sharing'
+import { SkipSharing } from '../../components/Inputs/SkipSharing'
 import {
     supportedFormats,
     initialValues,
@@ -41,7 +41,7 @@ export const MetaDataDependencyExport = () => {
                             <ObjectList />
                             <Format options={supportedFormats} />
                             <Compression />
-                            <Sharing />
+                            <SkipSharing />
                         </FormContent>
 
                         <FormFooter>

@@ -5,16 +5,16 @@ Feature: The user should be able to export events
         Given the user is on the event export page
         And the more options are visible
         And the following options are set
-            | name           | value       | label                      |
-            | programs       | lxAQ7Zs9VYR | Antenatal care visit       |
-            | programStages  |             | [ All program stages]      |
-            | idScheme       | UID         | UID                        |
-            | startDate      | 2020-01-03  | true                       |
-            | endDate        | 2020-01-05  | true                       |
-            | format         | .json       | true                       |
-            | compression    | .zip        | true                       |
-            | includeDeleted | false       | true                       |
-            | inclusion      | selected    | Selected organisation unit |
+            | name           | value       |
+            | programs       | lxAQ7Zs9VYR |
+            | programStages  |             |
+            | idScheme       | UID         |
+            | startDate      | 2020-01-03  |
+            | endDate        | 2020-01-05  |
+            | format         | json        |
+            | compression    | zip         |
+            | includeDeleted | false       |
+            | inclusion      | selected    |
         And the Sierra Leone org unit has been selected
 
     Scenario: The user submits the form with the default values
@@ -28,17 +28,17 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different program
-        Given the "programs" input is set to "IpHINAT79UW" / "Child Programme"
+        Given the "programs" input is set to "IpHINAT79UW"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different program stage
-        Given the "programStages" input is set to "dBwrot7S420" / "Antenatal care visit - Program rules demo"
+        Given the "programStages" input is set to "dBwrot7S420"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
-        Given the "idScheme" input is set to "CODE" / "Code"
+        Given the "idScheme" input is set to "CODE"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -53,21 +53,21 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different format
-        Given the "format" input is set to ".xml" / "true"
+        Given the "format" input is set to "xml"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a no compression
-        Given the "compression" input is set to "none" / "true"
+        Given the "compression" input is set to ""
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects to include deleted
-        Given the "includeDeleted" input is set to "true" / "true"
+        Given the "includeDeleted" input is set to "true"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different inclusion
-        Given the "inclusion" input is set to "children" / "true"
+        Given the "inclusion" input is set to "children"
         When the export form is submitted
         Then the download request is sent with the right parameters

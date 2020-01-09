@@ -5,16 +5,16 @@ Feature: The user should be able to export data
         Given the user is on the data export page
         And the more options are visible
         And the following options are set
-            | name                | value      | label |
-            | children            | true       | true  |
-            | startDate           | 2020-01-03 | true  |
-            | endDate             | 2020-01-05 | true  |
-            | format              | .json      | true  |
-            | compression         | .zip       | true  |
-            | includeDeleted      | false      | true  |
-            | dataElementIdScheme | UID        | UID   |
-            | orgUnitIdScheme     | UID        | UID   |
-            | idScheme            | UID        | UID   |
+            | name                | value      |
+            | children            | true       |
+            | startDate           | 2020-01-03 |
+            | endDate             | 2020-01-05 |
+            | format              | json       |
+            | compression         | zip        |
+            | includeDeleted      | false      |
+            | dataElementIdScheme | UID        |
+            | orgUnitIdScheme     | UID        |
+            | idScheme            | UID        |
         And the Sierra Leone org unit has been selected
         And the first data set has been selected
 
@@ -34,7 +34,7 @@ Feature: The user should be able to export data
         Then the download request is sent with the right parameters
 
     Scenario: The user selects "Selected organisation unit" as children
-        Given the "children" input is set to "false" / "true"
+        Given the "children" input is set to "false"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -49,31 +49,31 @@ Feature: The user should be able to export data
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different format
-        Given the "format" input is set to ".xml" / "true"
+        Given the "format" input is set to "xml"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a no compression
-        Given the "compression" input is set to "none" / "true"
+        Given the "compression" input is set to ""
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects to include deleted
-        Given the "includeDeleted" input is set to "true" / "true"
+        Given the "includeDeleted" input is set to "true"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different data element id scheme
-        Given the "dataElementIdScheme" input is set to "CODE" / "Code"
+        Given the "dataElementIdScheme" input is set to "CODE"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different org unit id scheme
-        Given the "orgUnitIdScheme" input is set to "CODE" / "Code"
+        Given the "orgUnitIdScheme" input is set to "CODE"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
-        Given the "idScheme" input is set to "CODE" / "Code"
+        Given the "idScheme" input is set to "CODE"
         When the export form is submitted
         Then the download request is sent with the right parameters

@@ -65,7 +65,7 @@ const selectDay = nextDay => {
 }
 
 const selectDate = (name, value) => {
-    const prevDate = cy.get(`[name="datePickerField-${name}"]`).then($input => {
+    const prevDate = cy.get(`[name="${name}"]`).then($input => {
         const prevDate = $input.val()
 
         const [prevYear, prevMonth, prevDay] = prevDate.split('-')

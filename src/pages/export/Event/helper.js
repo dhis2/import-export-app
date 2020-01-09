@@ -20,9 +20,9 @@ import {
     ID_SCHEME_KEY,
 } from '../../../components/Inputs/idScheme'
 import {
-    INCLUDE_DELETE_DEFAULT_VALUE,
-    INCLUDE_DELETE_KEY,
-} from '../../../components/Inputs/IncludeDelete'
+    INCLUDE_DELETED_DEFAULT_VALUE,
+    INCLUDE_DELETED_KEY,
+} from '../../../components/Inputs/IncludeDeleted'
 import {
     INCLUSION_DEFAULT_VALUE,
     INCLUSION_KEY,
@@ -43,6 +43,7 @@ import {
     START_DATE_DEFAULT_VALUE,
     START_DATE_KEY,
 } from '../../../components/Inputs/StartDate'
+import { download } from '../../../helpers/url'
 import { getApi } from '../../../helpers/api'
 import { getParamsFromFormState } from '../../../helpers/form'
 
@@ -57,7 +58,7 @@ export const initialValues = {
     [END_DATE_KEY]: END_DATE_DEFAULT_VALUE,
     [FORMAT_KEY]: FORMAT_DEFAULT_VALUE,
     [COMPRESSION_KEY]: COMPRESSION_DEFAULT_VALUE,
-    [INCLUDE_DELETE_KEY]: INCLUDE_DELETE_DEFAULT_VALUE,
+    [INCLUDE_DELETED_KEY]: INCLUDE_DELETED_DEFAULT_VALUE,
     [INCLUSION_KEY]: INCLUSION_DEFAULT_VALUE,
 }
 
@@ -80,7 +81,7 @@ export const onSubmit = async values => {
 
     const append = []
 
-    if (programStages !== -1) {
+    if (programStages) {
         append.push(`programStage=${programStages}`)
     }
 
@@ -111,5 +112,6 @@ export const onSubmit = async values => {
 
     const api = await getApi()
     const url = `${api.baseUrl}${path}?${params}`
-    window.location = url
+
+    download(url)
 }

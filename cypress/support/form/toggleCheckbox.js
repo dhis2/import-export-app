@@ -1,11 +1,7 @@
 const toggleCheckbox = (name, label) => {
-    if (label) {
-        cy.get()
-    } else {
-        cy.get(`[name="${name}"]`)
-            .parents('label')
-            .click()
-    }
+    cy.get(`[name="${name}"]`)
+        .parents('label')
+        .click()
 
     return cy
 }

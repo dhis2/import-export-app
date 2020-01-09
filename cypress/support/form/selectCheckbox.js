@@ -1,4 +1,4 @@
-const selectRadio = (name, value) => {
+const selectCheckbox = (name, value) => {
     cy.get(`[name="${name}"][value="${value}"]`)
         .parents('label')
         .click()
@@ -6,4 +6,4 @@ const selectRadio = (name, value) => {
     return cy
 }
 
-Cypress.Commands.add('selectRadio', selectRadio)
+Cypress.Commands.add('selectCheckbox', selectCheckbox)

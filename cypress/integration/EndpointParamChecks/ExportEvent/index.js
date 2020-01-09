@@ -88,7 +88,7 @@ Then('the download request is sent with the right parameters', () => {
                     compression,
                     ...expected
                 } = allExpected
-                const extension = compression !== 'none' ? compression : ''
+                const extension = compression ? `.${compression}` : ''
                 const attachment = `events.${format}${extension}`
 
                 /**

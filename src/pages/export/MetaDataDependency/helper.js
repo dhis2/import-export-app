@@ -20,6 +20,7 @@ import {
     SHARING_DEFAULT_VALUE,
     SHARING_KEY,
 } from '../../../components/Inputs/Sharing'
+import { download } from '../../../helpers/url'
 import { getApi } from '../../../helpers/api'
 
 export const supportedFormats = [OPTION_JSON, OPTION_XML]
@@ -48,5 +49,5 @@ export const onSubmit = async values => {
     const extension = getEndpointExtension(format, compression)
     const url = `${baseUrl}${endpoint}.${extension}?${params.join('&')}`
 
-    window.location = url
+    download(url)
 }

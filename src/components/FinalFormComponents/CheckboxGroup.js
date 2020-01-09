@@ -19,10 +19,14 @@ export const CheckboxGroup = ({ name, options }) => {
     return (
         <div>
             <div className={styles.actions}>
-                <Button className={styles.selectAll} onClick={selectAll}>
-                    Select all
-                </Button>
-                <Button onClick={clearAll}>Clear all</Button>
+                <div data-test="checkboxgroup-selectall">
+                    <Button className={styles.selectAll} onClick={selectAll}>
+                        Select all
+                    </Button>
+                </div>
+                <div data-test="checkboxgroup-clearall">
+                    <Button onClick={clearAll}>Clear all</Button>
+                </div>
             </div>
 
             <div className={styles.options}>

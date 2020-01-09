@@ -1,7 +1,7 @@
 const selectAllDataSets = () => {
-    cy.get(`[data-test="input-data-sets"]`)
-        .find('[class*="styles_actions"] > :first-child')
-        .click()
+    cy.get(
+        '[data-test="input-data-sets"] [data-test="checkboxgroup-selectall"] button'
+    ).click()
 
     return cy
 }

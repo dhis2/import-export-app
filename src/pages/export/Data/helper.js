@@ -34,9 +34,9 @@ import {
     ID_SCHEME_KEY,
 } from '../../../components/Inputs/idScheme'
 import {
-    INCLUDE_DELETE_DEFAULT_VALUE,
-    INCLUDE_DELETE_KEY,
-} from '../../../components/Inputs/IncludeDelete'
+    INCLUDE_DELETED_DEFAULT_VALUE,
+    INCLUDE_DELETED_KEY,
+} from '../../../components/Inputs/IncludeDeleted'
 import {
     ORG_UNIT_DEFAULT_VALUE,
     ORG_UNIT_KEY,
@@ -67,7 +67,7 @@ export const initialValues = {
     [ID_SCHEME_KEY]: ID_SCHEME_DEFAULT_VALUE,
     [START_DATE_KEY]: START_DATE_DEFAULT_VALUE,
     [END_DATE_KEY]: END_DATE_DEFAULT_VALUE,
-    [INCLUDE_DELETE_KEY]: INCLUDE_DELETE_DEFAULT_VALUE,
+    [INCLUDE_DELETED_KEY]: INCLUDE_DELETED_DEFAULT_VALUE,
 }
 
 export const onSubmit = (setLoading, setError) => async values => {

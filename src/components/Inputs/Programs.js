@@ -14,7 +14,7 @@ import {
     getProgramsLoading,
 } from '../../reducers/program/selectors'
 
-export const PROGRAMS_KEY = 'program'
+export const PROGRAMS_KEY = 'programs'
 export const PROGRAMS_DEFAULT_VALUE = ''
 
 const programsLabel = i18n.t('Programs')
@@ -43,23 +43,29 @@ const useLoadPrograms = () => {
 export const Programs = () => {
     useLoadPrograms()
 
+    let component
     const programs = useSelector(getPrograms)
     const loading = useSelector(getProgramsLoading)
     const error = useSelector(getProgramsError)
 
-    if (loading) return <ProgramsLoading />
-    if (error) return <ProgramsError error={error} />
+    if (loading) {
+        component = <ProgramsLoading />
+    } else if (error) {
+        component = <ProgramsError error={error} />
+    } else {
+        component = (
+            <Field>
+                <Select
+                    name={PROGRAMS_KEY}
+                    label={programsLabel}
+                    options={programs}
+                    dataTest="input-programs"
+                />
+            </Field>
+        )
+    }
 
-    return (
-        <Field>
-            <Select
-                name={PROGRAMS_KEY}
-                label={programsLabel}
-                options={programs}
-                dataTest="input-programs"
-            />
-        </Field>
-    )
+    return <div data-test="input-programs">{component}</div>
 }
 
 export const ProgramsLoading = () => (
