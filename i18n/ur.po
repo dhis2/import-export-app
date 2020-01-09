@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-08-30T09:16:41.273Z\n"
+"POT-Creation-Date: 2020-01-07T10:27:09.944Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -225,9 +225,6 @@ msgstr "کوڈ"
 msgid "Name"
 msgstr "نام"
 
-msgid "HR identifier"
-msgstr "ایچ۔اڑ ایڈینٹیفائر"
-
 msgid "Include descendants of organisation unit"
 msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
 
@@ -339,6 +336,9 @@ msgid ""
 msgstr ""
 "ایکسپورٹ ڈیٹا ویلیوز۔ یہ ایک عموممی ایکسپورٹ فنکشن ہے جو ڈی۔آئی۔ایچ۔ایس کے "
 "فارمیٹ میں DXF 2 میں ڈیٹا کو ایکسپورٹ کرتا ہے۔"
+
+msgid "Loading options..."
+msgstr ""
 
 msgid "Event Export"
 msgstr "اِیونٹ ایکسپورٹ"
