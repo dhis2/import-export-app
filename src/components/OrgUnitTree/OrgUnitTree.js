@@ -118,7 +118,7 @@ const OrgUnitTree = ({ selected, setSelected, multiSelect = true }) => {
                 setSelected(selected => [...selected, path]);
             }
         } else {
-            setSelected(path);
+            setSelected([path]);
         }
     };
 
