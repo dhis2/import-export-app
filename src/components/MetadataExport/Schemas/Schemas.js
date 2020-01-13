@@ -16,7 +16,7 @@ import s from './Schemas.module.css';
 
 const schemaQuery = {
     schemas: {
-        resource: 'schemas.json',
+        resource: 'schemas',
         params: {
             paging: 'false',
         },
