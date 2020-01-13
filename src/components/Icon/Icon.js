@@ -59,3 +59,17 @@ export const LogoIcon = props => (
         <path d="M0 0h24v24H0z" fill="none" />
     </Icon>
 );
+
+export const PlusIcon = props => (
+    <Icon {...props}>
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+    </Icon>
+);
+
+export const MinusIcon = props => (
+    <Icon {...props}>
+        <path d="M19 13H5v-2h14v2z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+    </Icon>
+);
