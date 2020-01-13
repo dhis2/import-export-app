@@ -1,0 +1,20 @@
+.container {
+    margin-bottom: 15px;
+}
+
+.header {
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 15px 0 0 0;
+}
+
+.header svg {
+    margin-left: -3px;
+    margin-right: 5px;
+}
