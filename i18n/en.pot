@@ -5,13 +5,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-07T12:34:16.917Z\n"
-"PO-Revision-Date: 2020-01-07T12:34:16.917Z\n"
+"POT-Creation-Date: 2020-01-13T12:43:53.693Z\n"
+"PO-Revision-Date: 2020-01-13T12:43:53.693Z\n"
 
-msgid "Object type"
-msgstr ""
-
-msgid "Object"
+msgid "Include children"
 msgstr ""
 
 msgid "Format"
@@ -20,16 +17,31 @@ msgstr ""
 msgid "Compression"
 msgstr ""
 
-msgid "Sharing"
+msgid "Include deleted"
 msgstr ""
 
 msgid "Export"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Sharing"
 msgstr ""
 
 msgid "Select All"
 msgstr ""
 
 msgid "Select None"
+msgstr ""
+
+msgid "more options"
+msgstr ""
+
+msgid "Organisation unit"
 msgstr ""
 
 msgid "Import"
@@ -75,6 +87,15 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Option sets"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Name"
 msgstr ""
 
 msgid "Data import"
