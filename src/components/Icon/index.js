@@ -7,4 +7,6 @@ export {
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
+    MinusIcon,
+    PlusIcon,
 } from './Icon';
