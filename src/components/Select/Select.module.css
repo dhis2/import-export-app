@@ -1,3 +1,7 @@
 .select {
     margin: 0 0 15px 0;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
