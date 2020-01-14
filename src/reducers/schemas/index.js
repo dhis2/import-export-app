@@ -12,9 +12,10 @@ const initialState = {
     list: [],
 }
 
-export default function schemasReducer(state = initialState, action) {
-    const { type, payload } = action
-
+export default function schemasReducer(
+    state = initialState,
+    { type, payload }
+) {
     if (type === LOADING_SCHEMAS_START) {
         return {
             ...state,

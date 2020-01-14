@@ -17,7 +17,7 @@ export const programStageDefaultState = {
 
 export default function programStageReducer(
     state = programStageDefaultState,
-    { type, payload } = {}
+    { type, payload }
 ) {
     if (type === LOADING_PROGRAM_STAGES_START) {
         return { ...state, loading: true, error: '' }

@@ -79,7 +79,7 @@ export const orgUnitsDefaultState = {
 
 export default function orgUnitsReducer(
     state = orgUnitsDefaultState,
-    { type, payload } = {}
+    { type, payload }
 ) {
     if (type === LOADING_ORG_UNITS_ROOT_START) {
         return {
