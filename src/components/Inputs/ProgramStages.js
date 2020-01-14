@@ -1,10 +1,11 @@
-import { FormSpy, useForm } from 'react-final-form'
+import { useForm } from 'react-final-form'
 import { useDispatch, useSelector } from 'react-redux'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import i18n from '@dhis2/d2-i18n'
 
 import { Field } from '../Field/Field'
 import { Label } from '../Field/Label'
+import { PROGRAMS_KEY } from './Programs'
 import { Select } from '../FinalFormComponents/Select'
 import { fetchProgramStages } from '../../reducers/programStage/thunks'
 import {
@@ -23,69 +24,69 @@ export const PROGRAM_STAGES_DEFAULT_VALUE = OPTION_SELECT_STAGE.value
 
 const programStagesLabel = i18n.t('Program stages')
 
-const RenderComponent = ({ values }) => {
-    const form = useForm()
+const useFetchProgramStages = () => {
+    const { subscribe, change } = useForm()
+    const [program, setProgram] = useState()
     const dispatch = useDispatch()
-    const programs = values ? values.programs : null
+
+    useEffect(
+        () =>
+            subscribe(
+                ({ values }) => {
+                    const newProgram = values[PROGRAMS_KEY]
+                    if (program !== newProgram) setProgram(newProgram)
+                },
+                { values: true }
+            ),
+        [program] // eslint-disable-line react-hooks/exhaustive-deps
+    )
 
     useEffect(() => {
-        if (programs) {
-            dispatch(fetchProgramStages(programs))
-            form.change(PROGRAM_STAGES_KEY, '')
+        if (program) {
+            dispatch(fetchProgramStages(program))
+            change(PROGRAM_STAGES_KEY, '')
         }
-    }, [programs]) // eslint-disable-line react-hooks/exhaustive-deps
-
-    return null
+    }, [program]) // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 export const ProgramStages = () => {
-    let component
+    useFetchProgramStages()
+
     const programStages = useSelector(getProgramStages)
     const loading = useSelector(getProgramStagesLoading)
     const error = useSelector(getProgramStagesError)
 
-    if (loading) {
-        component = <ProgramStagesLoading />
-    } else if (error) {
-        component = <ProgramStagesError error={error} />
-    } else {
-        const options = [...PROGRAM_STAGES_DEFAULT_OPTIONS, ...programStages]
-        component = (
-            <Field>
-                <Select
-                    name={PROGRAM_STAGES_KEY}
-                    label={programStagesLabel}
-                    options={options}
-                    dataTest="input-programStages"
-                />
-            </Field>
-        )
-    }
+    if (error) return <ProgramStagesError error={error} />
+    if (loading) return <ProgramStagesLoading />
 
     return (
-        <div data-test="input-program-stages">
-            <FormSpy
-                subscription={{ values: { program: true } }}
-                render={({ values }) => <RenderComponent values={values} />}
+        <Field>
+            <Select
+                name={PROGRAM_STAGES_KEY}
+                label={programStagesLabel}
+                options={[...PROGRAM_STAGES_DEFAULT_OPTIONS, ...programStages]}
+                dataTest="input-program-stages"
             />
-
-            {component}
-        </div>
+        </Field>
     )
 }
 
 export const ProgramStagesLoading = () => (
-    <Field>
-        <Label>{programStagesLabel}</Label>
-        {i18n.t('Loading programStage options...')}
-    </Field>
+    <div data-test="input-program-stages-loading">
+        <Field>
+            <Label>{programStagesLabel}</Label>
+            {i18n.t('Loading programStage options...')}
+        </Field>
+    </div>
 )
 
 export const ProgramStagesError = ({ error }) => (
-    <Field>
-        <Label>{programStagesLabel}</Label>
-        {i18n.t('Something went wrong when loading the programStages!')}
-        <br />
-        {error}
-    </Field>
+    <div data-test="input-program-stages-error">
+        <Field>
+            <Label>{programStagesLabel}</Label>
+            {i18n.t('Something went wrong when loading the programStages!')}
+            <br />
+            {error}
+        </Field>
+    </div>
 )

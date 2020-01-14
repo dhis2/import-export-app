@@ -1,29 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - Strategy should render correctly 1`] = `
-<RadioGroup
-  dataTest="input-strategy"
-  label="Strategy"
-  name="strategy"
-  options={
-    Array [
-      Object {
-        "label": "New and updates",
-        "value": "NEW_AND_UPDATES",
-      },
-      Object {
-        "label": "New only",
-        "value": "NEW",
-      },
-      Object {
-        "label": "Updates only",
-        "value": "UPDATES",
-      },
-      Object {
-        "label": "Delete",
-        "value": "DELETE",
-      },
-    ]
-  }
-/>
+<Field>
+  <Label>
+    Strategy
+  </Label>
+  <RadioGroup
+    dataTest="input-strategy"
+    label="Strategy"
+    name="strategy"
+    options={
+      Array [
+        Object {
+          "label": "New and updates",
+          "value": "NEW_AND_UPDATES",
+        },
+        Object {
+          "label": "New only",
+          "value": "NEW",
+        },
+        Object {
+          "label": "Updates only",
+          "value": "UPDATES",
+        },
+        Object {
+          "label": "Delete",
+          "value": "DELETE",
+        },
+      ]
+    }
+  />
+</Field>
 `;

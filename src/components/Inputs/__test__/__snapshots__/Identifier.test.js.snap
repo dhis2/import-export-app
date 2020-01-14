@@ -1,25 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - Identifier should render correctly 1`] = `
-<RadioGroup
-  dataTest="input-identifier"
-  label="Identifier"
-  name="identifier"
-  options={
-    Array [
-      Object {
-        "label": "UID",
-        "value": "UID",
-      },
-      Object {
-        "label": "Code",
-        "value": "CODE",
-      },
-      Object {
-        "label": "Auto",
-        "value": "AUTO",
-      },
-    ]
-  }
-/>
+<Field>
+  <Label>
+    Identifier
+  </Label>
+  <RadioGroup
+    dataTest="input-identifier"
+    label="Identifier"
+    name="identifier"
+    options={
+      Array [
+        Object {
+          "label": "UID",
+          "value": "UID",
+        },
+        Object {
+          "label": "Code",
+          "value": "CODE",
+        },
+        Object {
+          "label": "Auto",
+          "value": "AUTO",
+        },
+      ]
+    }
+  />
+</Field>
 `;

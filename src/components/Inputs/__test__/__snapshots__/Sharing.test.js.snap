@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - Sharing should render correctly 1`] = `
+<Field>
+  <Label>
+    Sharing
+  </Label>
+  <RadioGroup
+    dataTest="input-sharing"
+    label="Sharing"
+    name="skipSharing"
+    options={
+      Array [
+        Object {
+          "label": "With sharing",
+          "value": "false",
+        },
+        Object {
+          "label": "Without sharing",
+          "value": "true",
+        },
+      ]
+    }
+  />
+</Field>
+`;

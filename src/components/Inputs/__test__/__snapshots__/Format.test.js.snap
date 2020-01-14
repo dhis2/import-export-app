@@ -1,25 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - Format should render correctly 1`] = `
-<RadioGroup
-  dataTest="input-format"
-  label="Format"
-  name="format"
-  options={
-    Array [
-      Object {
-        "label": "JSON",
-        "value": "json",
-      },
-      Object {
-        "label": "XML",
-        "value": "xml",
-      },
-      Object {
-        "label": "CSV",
-        "value": "csv",
-      },
-    ]
-  }
-/>
+<Field>
+  <Label>
+    Format
+  </Label>
+  <RadioGroup
+    dataTest="input-format"
+    label="Format"
+    name="format"
+    options={
+      Array [
+        Object {
+          "label": "JSON",
+          "value": "json",
+        },
+        Object {
+          "label": "XML",
+          "value": "xml",
+        },
+        Object {
+          "label": "CSV",
+          "value": "csv",
+        },
+      ]
+    }
+  />
+</Field>
 `;

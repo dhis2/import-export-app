@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - OrgUnit should render correctly 1`] = `
+<Field>
+  <Label>
+    Organisation unit
+  </Label>
+  <OrgUnitTree
+    label="Organisation unit"
+    multiple={true}
+    name="orgUnit"
+    selected={Array []}
+  />
+</Field>
+`;

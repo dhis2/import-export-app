@@ -45,8 +45,9 @@ export const DataElementIdScheme = () => {
 
     const attributes = useSelector(getDataElementAttributes)
     const loading = useSelector(getDataElementAttributesLoading)
+    const loaded = useSelector(getDataElementAttributesLoaded)
 
-    if (loading) return <DataElementIdSchemeLoading />
+    if (!loaded || loading) return <DataElementIdSchemeLoading />
 
     const options = [
         ...DATA_ELEMENT_ID_SCHEME_DEFAULT_OPTIONS,
@@ -69,8 +70,10 @@ export const DataElementIdScheme = () => {
 }
 
 export const DataElementIdSchemeLoading = () => (
-    <Field>
-        <Label>{dataElementIdSchemeLabel}</Label>
-        {i18n.t('Loading data element id scheme options...')}
-    </Field>
+    <div data-test="input-data-element-id-scheme-loading">
+        <Field>
+            <Label>{dataElementIdSchemeLabel}</Label>
+            {i18n.t('Loading data element id scheme options...')}
+        </Field>
+    </div>
 )

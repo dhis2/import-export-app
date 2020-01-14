@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - Upload should render correctly 1`] = `
+<Field>
+  <File
+    dataTest="input-upload"
+    name="upload"
+  />
+</Field>
+`;

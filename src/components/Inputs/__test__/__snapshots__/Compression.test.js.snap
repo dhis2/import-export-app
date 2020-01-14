@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - Compression should render correctly 1`] = `
+<Field>
+  <Label>
+    Compression
+  </Label>
+  <RadioGroup
+    dataTest="input-compression"
+    label="Compression"
+    name="compression"
+    options={
+      Array [
+        Object {
+          "label": "Zip",
+          "value": "zip",
+        },
+        Object {
+          "label": "GZip",
+          "value": "gz",
+        },
+        Object {
+          "label": "Uncompressed",
+          "value": null,
+        },
+      ]
+    }
+  />
+</Field>
+`;

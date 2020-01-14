@@ -47,8 +47,9 @@ export const OrgUnitIdScheme = () => {
 
     const attributes = useSelector(getOrgUnitAttributes)
     const loading = useSelector(getOrgUnitAttributesLoading)
+    const loaded = useSelector(getOrgUnitAttributesLoaded)
 
-    if (loading) return <OrgUnitIdSchemeLoading />
+    if (!loaded || loading) return <OrgUnitIdSchemeLoading />
 
     const options = [
         ...ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
@@ -71,8 +72,10 @@ export const OrgUnitIdScheme = () => {
 }
 
 export const OrgUnitIdSchemeLoading = () => (
-    <Field>
-        <Label>{orgUnitIdSchemeLabel}</Label>
-        {i18n.t('Loading organisation unit id scheme options...')}
-    </Field>
+    <div data-test="input-org-unit-id-scheme-loading">
+        <Field>
+            <Label>{orgUnitIdSchemeLabel}</Label>
+            {i18n.t('Loading organisation unit id scheme options...')}
+        </Field>
+    </div>
 )

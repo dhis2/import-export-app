@@ -1,21 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - DryRun should render correctly 1`] = `
-<RadioGroup
-  dataTest="input-dry-run"
-  label="Dry run"
-  name="dryRun"
-  options={
-    Array [
-      Object {
-        "label": "Yes",
-        "value": "true",
-      },
-      Object {
-        "label": "No",
-        "value": "false",
-      },
-    ]
-  }
-/>
+<Field>
+  <Label>
+    Dry run
+  </Label>
+  <RadioGroup
+    dataTest="input-dry-run"
+    label="Dry run"
+    name="dryRun"
+    options={
+      Array [
+        Object {
+          "label": "Yes",
+          "value": "true",
+        },
+        Object {
+          "label": "No",
+          "value": "false",
+        },
+      ]
+    }
+  />
+</Field>
 `;

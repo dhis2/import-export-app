@@ -54,10 +54,12 @@ export const DataSets = () => {
     const dataSets = useSelector(getFilteredDataSets)
     const loading = useSelector(getDataSetsLoading)
     const loaded = useSelector(getDataSetsLoaded)
+    const error = useSelector(getDataSetsError)
 
     useLoadDataSets()
 
     if (!loaded || loading) return <DataSetsLoading />
+    if (error) return <DataSetsError error={error} />
 
     return (
         <Field>
@@ -71,8 +73,21 @@ export const DataSets = () => {
 }
 
 export const DataSetsLoading = () => (
-    <Field>
-        <Label>{dataSetsLabel}</Label>
-        {i18n.t('Loading organisation unit id scheme options...')}
-    </Field>
+    <div data-test="input-data-sets-loading">
+        <Field>
+            <Label>{dataSetsLabel}</Label>
+            {i18n.t('Loading organisation unit id scheme options...')}
+        </Field>
+    </div>
+)
+
+export const DataSetsError = ({ error }) => (
+    <div data-test="input-data-sets-error">
+        <Field>
+            <Label>{dataSetsLabel}</Label>
+            {i18n.t('Something went wrong when loading the data sets!')}
+            <br />
+            {error}
+        </Field>
+    </div>
 )
