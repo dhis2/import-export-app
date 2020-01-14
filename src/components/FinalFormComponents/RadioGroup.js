@@ -25,7 +25,13 @@ const RadioComponent = ({ name, label, value, defaultValue }) => {
     )
 }
 
-export const RadioGroup = ({ label, name, options, defaultValue, dataTest, ...rest }) => {
+export const RadioGroup = ({
+    label,
+    name,
+    options,
+    defaultValue,
+    dataTest,
+}) => {
     return (
         <div data-test={dataTest}>
             <div className={styles.inputs}>
