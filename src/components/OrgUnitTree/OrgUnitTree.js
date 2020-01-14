@@ -3,6 +3,7 @@ import i18n from '@dhis2/d2-i18n';
 import { useDataEngine, useDataQuery } from '@dhis2/app-runtime';
 import { CircularLoader } from '@dhis2/ui-core';
 
+import { pathToId } from '../../utils/helper';
 import { FormField } from '../FormField';
 import { Tree } from './Tree';
 import s from './OrgUnitTree.module.css';
@@ -87,8 +88,7 @@ const OrgUnitTree = ({ selected, setSelected, multiSelect = true }) => {
 
     const onOpen = (path, ch) => {
         if (ch.length == 0) {
-            const pathSplit = path.split('/');
-            const orgId = pathSplit[pathSplit.length - 1];
+            const orgId = pathToId(path);
             engine.query(orgQuery, {
                 variables: {
                     id: orgId,

@@ -1,6 +1,7 @@
 import React from 'react';
 import i18n from '@dhis2/d2-i18n';
 
+import { DataExport } from '../components/DataExport';
 import { MetadataExport } from '../components/MetadataExport';
 import { MetadataDependencyExport } from '../components/MetadataDependencyExport';
 
@@ -66,7 +67,7 @@ const dataExportPage = {
     ),
     path: '/export/data',
     icon: <DataIcon />,
-    component: <PlaceHolder name="export/data" />,
+    component: <DataExport />,
 };
 
 const eventExportPage = {
