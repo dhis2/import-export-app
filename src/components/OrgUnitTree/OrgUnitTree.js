@@ -5,7 +5,7 @@ import { CircularLoader } from '@dhis2/ui-core';
 
 import { pathToId } from '../../utils/helper';
 import { FormField } from '../FormField';
-import { Tree } from './Tree';
+import { Tree } from './Tree/';
 import s from './OrgUnitTree.module.css';
 
 const rootQuery = {
