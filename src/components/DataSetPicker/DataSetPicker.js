@@ -3,7 +3,7 @@ import { useDataQuery } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { CircularLoader } from '@dhis2/ui-core';
 
-import { CheckboxList } from '../CheckboxList';
+import { SelectableList } from '../SelectableList';
 import { FormField } from '../FormField';
 import s from './DataSetPicker.module.css';
 
@@ -65,7 +65,7 @@ const DataSetPicker = ({
             <div className={s.container}>
                 {loading && <CircularLoader />}
                 {data && (
-                    <CheckboxList
+                    <SelectableList
                         label={i18n.t('Filter data sets by name')}
                         selected={selected}
                         select={onSelect}
