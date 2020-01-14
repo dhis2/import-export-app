@@ -8,6 +8,7 @@ const Select = ({
     label,
     loading,
     filled,
+    dense,
     initialFocus,
     options,
     setValue,
@@ -22,6 +23,7 @@ const Select = ({
     return (
         <div className={s.select}>
             <SelectField
+                dense={dense}
                 filled={filled}
                 initialFocus={initialFocus}
                 loading={loading}
