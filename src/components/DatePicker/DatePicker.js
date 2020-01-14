@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { jsDateToISO8601 } from '../../utils/helper';
 import { FormField } from '../FormField';
 
 const DatePicker = ({ name, label, date, onChange, required = true }) => {
@@ -7,15 +8,7 @@ const DatePicker = ({ name, label, date, onChange, required = true }) => {
         onChange(new Date(event.target.value));
     };
 
-    const value =
-        date.getFullYear().toString() +
-        '-' +
-        (date.getMonth() + 1).toString().padStart(2, 0) +
-        '-' +
-        date
-            .getDate()
-            .toString()
-            .padStart(2, 0);
+    const value = jsDateToISO8601(date);
 
     return (
         <FormField label={label}>

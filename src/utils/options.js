@@ -8,6 +8,11 @@ const formatOptions = [
 
 const formatNoCsvOptions = formatOptions.filter(f => f.value != 'csv');
 
+const formatADXOptions = [
+    ...formatOptions,
+    { value: 'adx', label: i18n.t('ADX') },
+];
+
 const compressionOptions = [
     { value: 'zip', label: i18n.t('Zip') },
     { value: 'gz', label: i18n.t('GZip') },
@@ -28,19 +33,46 @@ const objectTypeOptions = [
     { value: 'optionSets', label: i18n.t('Option sets') },
 ];
 
+const dataElementIdSchemeOptions = [
+    { value: 'UID', label: i18n.t('Uid') },
+    { value: 'CODE', label: i18n.t('Code') },
+    { value: 'NAME', label: i18n.t('Name') },
+];
+
+const orgUnitIdSchemeOptions = [
+    { value: 'UID', label: i18n.t('Uid') },
+    { value: 'CODE', label: i18n.t('Code') },
+    { value: 'NAME', label: i18n.t('Name') },
+];
+
+const idSchemeOptions = [
+    { value: 'UID', label: i18n.t('Uid') },
+    { value: 'CODE', label: i18n.t('Code') },
+];
+
 const defaultFormatOption = formatOptions[0];
 const defaultCompressionOption = compressionOptions[0];
 const defaultSharingOption = sharingOptions[0];
 const defaultObjectTypeOption = objectTypeOptions[0];
+const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0];
+const defaultOrgUnitIdSchemeOption = orgUnitIdSchemeOptions[0];
+const defaultIdSchemeOption = idSchemeOptions[0];
 
 export {
     formatOptions,
     formatNoCsvOptions,
+    formatADXOptions,
     compressionOptions,
     sharingOptions,
     objectTypeOptions,
+    dataElementIdSchemeOptions,
+    orgUnitIdSchemeOptions,
+    idSchemeOptions,
     defaultFormatOption,
     defaultCompressionOption,
     defaultSharingOption,
     defaultObjectTypeOption,
+    defaultDataElementIdSchemeOption,
+    defaultOrgUnitIdSchemeOption,
+    defaultIdSchemeOption,
 };
