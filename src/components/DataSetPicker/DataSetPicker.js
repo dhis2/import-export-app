@@ -17,7 +17,13 @@ const dataSetQuery = {
     },
 };
 
-const DataSetPicker = ({ selected, setSelected, multiSelect = true }) => {
+const DataSetPicker = ({
+    selected,
+    setSelected,
+    multiSelect = true,
+    withFilter = true,
+    withActions = true,
+}) => {
     const [list, setList] = useState([]);
     const { loading, error, data } = useDataQuery(dataSetQuery);
 
@@ -60,14 +66,15 @@ const DataSetPicker = ({ selected, setSelected, multiSelect = true }) => {
                 {loading && <CircularLoader />}
                 {data && (
                     <CheckboxList
+                        label={i18n.t('Filter data sets by name')}
                         selected={selected}
                         select={onSelect}
                         onSelectAll={onSelectAll}
                         onClearAll={onClearAll}
                         multiSelect={multiSelect}
                         list={list}
-                        withFilter
-                        withActions
+                        withFilter={withFilter}
+                        withActions={withActions}
                     />
                 )}
             </div>

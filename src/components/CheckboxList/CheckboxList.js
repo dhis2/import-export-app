@@ -5,6 +5,7 @@ import { Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core';
 import s from './CheckboxList.module.css';
 
 const CheckboxList = ({
+    label,
     selected,
     select,
     onSelectAll,
@@ -22,7 +23,7 @@ const CheckboxList = ({
                 <div className={s.filter}>
                     <InputField
                         name="filter"
-                        label={i18n.t('filter data sets by name')}
+                        label={label}
                         value={filter}
                         onChange={e => setFilter(e.target.value)}
                         dense

@@ -1,5 +1,4 @@
 .body {
-    width: 95%;
     height: 250px;
     overflow: scroll;
     overflow-x: hidden;
@@ -19,13 +18,11 @@
     padding: 0 !important;
 }
 .filter {
-    width: 95%;
     margin: 0 0 5px 0;
 }
 .actions {
     display: flex;
     flex-direction: row;
-    width: 95%;
     margin: 5px 0;
 }
 .action {
