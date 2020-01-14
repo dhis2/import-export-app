@@ -29,7 +29,7 @@ const initialState = {
 
 export default function attributesReducer(
     state = initialState,
-    { type, payload } = {}
+    { type, payload }
 ) {
     if (type === LOADING_ATTRIBUTES_START) {
         return {

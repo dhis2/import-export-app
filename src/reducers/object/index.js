@@ -17,7 +17,7 @@ export const objectDefaultState = {
 
 export default function objectReducer(
     state = objectDefaultState,
-    { type, payload } = {}
+    { type, payload }
 ) {
     if (type === LOADING_OBJECTS_START) {
         return { ...state, loading: true, error: '' }

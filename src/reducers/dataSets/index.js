@@ -19,7 +19,7 @@ export const dataSetsDefaultState = {
 
 export default function dataSets(
     state = dataSetsDefaultState,
-    { type, payload } = {}
+    { type, payload }
 ) {
     if (type === LOADING_DATA_SETS_START) {
         return { ...state, loading: true, error: '' }

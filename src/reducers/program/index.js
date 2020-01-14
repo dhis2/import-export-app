@@ -17,7 +17,7 @@ export const programDefaultState = {
 
 export default function programReducer(
     state = programDefaultState,
-    { type, payload } = {}
+    { type, payload }
 ) {
     if (type === LOADING_PROGRAMS_START) {
         return { ...state, loading: true, error: '' }
