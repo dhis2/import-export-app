@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - ObjectType should render correctly 1`] = `
+<Field>
+  <Select
+    dataTest="input-object-type"
+    label="Object type"
+    name="objectType"
+    options={
+      Array [
+        Object {
+          "label": "Data sets",
+          "value": "dataSets",
+        },
+        Object {
+          "label": "Programs",
+          "value": "programs",
+        },
+        Object {
+          "label": "Category combination",
+          "value": "categoryCombos",
+        },
+        Object {
+          "label": "Dashboard",
+          "value": "dashboards",
+        },
+        Object {
+          "label": "Data element groups",
+          "value": "dataElementGroups",
+        },
+        Object {
+          "label": "Option sets",
+          "value": "optionSets",
+        },
+      ]
+    }
+  />
+</Field>
+`;

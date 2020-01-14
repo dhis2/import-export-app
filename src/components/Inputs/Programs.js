@@ -43,43 +43,45 @@ const useLoadPrograms = () => {
 export const Programs = () => {
     useLoadPrograms()
 
-    let component
     const programs = useSelector(getPrograms)
     const loading = useSelector(getProgramsLoading)
+    const loaded = useSelector(getProgramsLoaded)
     const error = useSelector(getProgramsError)
 
-    if (loading) {
-        component = <ProgramsLoading />
+    if (!loaded || loading) {
+        return <ProgramsLoading />
     } else if (error) {
-        component = <ProgramsError error={error} />
-    } else {
-        component = (
-            <Field>
-                <Select
-                    name={PROGRAMS_KEY}
-                    label={programsLabel}
-                    options={programs}
-                    dataTest="input-programs"
-                />
-            </Field>
-        )
+        return <ProgramsError error={error} />
     }
 
-    return <div data-test="input-programs">{component}</div>
+    return (
+        <Field>
+            <Select
+                name={PROGRAMS_KEY}
+                label={programsLabel}
+                options={programs}
+                dataTest="input-programs"
+            />
+        </Field>
+    )
 }
 
 export const ProgramsLoading = () => (
-    <Field>
-        <Label>{programsLabel}</Label>
-        {i18n.t('Loading program options...')}
-    </Field>
+    <div data-test="input-programs-loading">
+        <Field>
+            <Label>{programsLabel}</Label>
+            {i18n.t('Loading program options...')}
+        </Field>
+    </div>
 )
 
 export const ProgramsError = ({ error }) => (
-    <Field>
-        <Label>{programsLabel}</Label>
-        {i18n.t('Something went wrong when loading the programs!')}
-        <br />
-        {error}
-    </Field>
+    <div data-test="input-programs-error">
+        <Field>
+            <Label>{programsLabel}</Label>
+            {i18n.t('Something went wrong when loading the programs!')}
+            <br />
+            {error}
+        </Field>
+    </div>
 )

@@ -1,21 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - ImportMode should render correctly 1`] = `
-<RadioGroup
-  dataTest="input-import-mode"
-  label="Dry run"
-  name="importMode"
-  options={
-    Array [
-      Object {
-        "label": "Yes",
-        "value": "VALIDATE",
-      },
-      Object {
-        "label": "No",
-        "value": "COMMIT",
-      },
-    ]
-  }
-/>
+<Field>
+  <Label>
+    Dry run
+  </Label>
+  <RadioGroup
+    dataTest="input-import-mode"
+    label="Dry run"
+    name="importMode"
+    options={
+      Array [
+        Object {
+          "label": "Yes",
+          "value": "VALIDATE",
+        },
+        Object {
+          "label": "No",
+          "value": "COMMIT",
+        },
+      ]
+    }
+  />
+</Field>
 `;

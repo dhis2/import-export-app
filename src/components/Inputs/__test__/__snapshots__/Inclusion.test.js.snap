@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - Inclusion should render correctly 1`] = `
+<Field>
+  <Label>
+    Inclusion
+  </Label>
+  <RadioGroup
+    label="Inclusion"
+    name="inclusion"
+    options={
+      Array [
+        Object {
+          "label": "Selected organisation unit",
+          "value": "selected",
+        },
+        Object {
+          "label": "Include children of organisation unit",
+          "value": "children",
+        },
+        Object {
+          "label": "Include descendants of organisation unit",
+          "value": "descendants",
+        },
+      ]
+    }
+  />
+</Field>
+`;

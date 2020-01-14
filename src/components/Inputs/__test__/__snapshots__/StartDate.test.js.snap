@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - StartDate should render correctly 1`] = `
+<Field>
+  <Label>
+    StartDate
+  </Label>
+  <DateInput
+    initialValue={2020-01-01T00:00:00.000Z}
+    label="Start date"
+    name="startDate"
+  />
+</Field>
+`;

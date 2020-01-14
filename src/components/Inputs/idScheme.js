@@ -47,8 +47,10 @@ export const IdScheme = () => {
 }
 
 export const IdSchemeLoading = () => (
-    <Field>
-        <Label>{idSchemeLabel}</Label>
-        {i18n.t('Loading organisation unit id scheme options...')}
-    </Field>
+    <div data-test="input-id-scheme-loading">
+        <Field>
+            <Label>{idSchemeLabel}</Label>
+            {i18n.t('Loading organisation unit id scheme options...')}
+        </Field>
+    </div>
 )

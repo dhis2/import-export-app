@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - PreheatMode should render correctly 1`] = `
+<Field>
+  <Label>
+    Preheat mode
+  </Label>
+  <RadioGroup
+    dataTest="input-preheat-mode"
+    label="Preheat mode"
+    name="preheatMode"
+    options={
+      Array [
+        Object {
+          "label": "Reference",
+          "value": "REFERENCE",
+        },
+        Object {
+          "label": "All",
+          "value": "ALL",
+        },
+        Object {
+          "label": "None",
+          "value": "NONE",
+        },
+      ]
+    }
+  />
+</Field>
+`;

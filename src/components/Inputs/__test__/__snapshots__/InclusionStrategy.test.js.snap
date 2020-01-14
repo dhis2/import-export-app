@@ -1,25 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input component - InclusionStrategy should render correctly 1`] = `
-<RadioGroup
-  dataTest="input-inclusion-strategy"
-  label="Inclusion strategy"
-  name="inclusionStrategy"
-  options={
-    Array [
-      Object {
-        "label": "Non Null",
-        "value": "NON_NULL",
-      },
-      Object {
-        "label": "Always",
-        "value": "ALWAYS",
-      },
-      Object {
-        "label": "Non Empty",
-        "value": "NON_EMPTY",
-      },
-    ]
-  }
-/>
+<Field>
+  <Label>
+    Inclusion strategy
+  </Label>
+  <RadioGroup
+    dataTest="input-inclusion-strategy"
+    label="Inclusion strategy"
+    name="inclusionStrategy"
+    options={
+      Array [
+        Object {
+          "label": "Non Null",
+          "value": "NON_NULL",
+        },
+        Object {
+          "label": "Always",
+          "value": "ALWAYS",
+        },
+        Object {
+          "label": "Non Empty",
+          "value": "NON_EMPTY",
+        },
+      ]
+    }
+  />
+</Field>
 `;

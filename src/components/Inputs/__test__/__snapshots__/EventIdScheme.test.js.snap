@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - EventIdScheme should render correctly 1`] = `
+<Field>
+  <Label>
+    Event id scheme
+  </Label>
+  <RadioGroup
+    dataTest="input-event-id-scheme"
+    label="Event id scheme"
+    name="eventIdScheme"
+    options={
+      Array [
+        Object {
+          "label": "Uid",
+          "value": "UID",
+        },
+        Object {
+          "label": "Code",
+          "value": "CODE",
+        },
+      ]
+    }
+  />
+</Field>
+`;

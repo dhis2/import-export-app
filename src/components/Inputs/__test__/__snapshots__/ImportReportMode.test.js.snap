@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - ImportReportMode should render correctly 1`] = `
+<Field>
+  <Label>
+    Import report mode
+  </Label>
+  <RadioGroup
+    dataTest="input-import-report-mode"
+    label="Import report mode"
+    name="importReportMode"
+    options={
+      Array [
+        Object {
+          "label": "Errors",
+          "value": "ERRORS",
+        },
+        Object {
+          "label": "Full",
+          "value": "FULL",
+        },
+        Object {
+          "label": "Debug",
+          "value": "DEBUG",
+        },
+      ]
+    }
+  />
+</Field>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component - SkipAudit should render correctly 1`] = `
+<Field>
+  <Label>
+    Skip audit
+  </Label>
+  <RadioGroup
+    dataTest="input-skip-audit"
+    defaultValue="false"
+    label="Skip audit"
+    name="skipAudit"
+    options={
+      Array [
+        Object {
+          "label": "Yes",
+          "value": "true",
+        },
+        Object {
+          "label": "No",
+          "value": "false",
+        },
+      ]
+    }
+  />
+</Field>
+`;

@@ -26,6 +26,7 @@ export const Checkbox = ({
         <div data-test={dataTest}>
             <CoreCheckbox
                 {...input}
+                value={input.value || 'irrelevant'}
                 label={label}
             />
         </div>
@@ -35,9 +36,9 @@ export const Checkbox = ({
 Checkbox.propTypes = {
     label: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
-    value: propTypes.string.isRequired,
     format: propTypes.func,
     initialValue: propTypes.string,
     multiple: propTypes.bool,
     parse: propTypes.func,
+    value: propTypes.string,
 }
