@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n';
 import { Divider, Menu, MenuItem } from '@dhis2/ui-core';
 
 import s from './Sidebar.module.css';
-import StyledLink from './StyledLink';
+import { StyledLink } from '../StyledLink/';
 
 const Sidebar = ({ importPages, exportPages, pathname }) => {
     return (

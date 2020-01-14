@@ -5,4 +5,4 @@ import s from './StyledLink.module.css';
 
 const StyledLink = props => <Link className={s.link} {...props} />;
 
-export default StyledLink;
+export { StyledLink };

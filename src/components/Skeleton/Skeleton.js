@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import s from './Skeleton.module.css';
-import { Sidebar } from './Sidebar';
+import { Sidebar } from './Sidebar/';
 import { ImportPages, ExportPages, Pages } from '../../utils/pages';
 
 const Skeleton = ({ location }) => {
