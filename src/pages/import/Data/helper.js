@@ -1,4 +1,3 @@
-import urljoin from 'url-join'
 import i18n from '@dhis2/d2-i18n'
 import {
     DATA_ELEMENT_ID_SCHEME_DEFAULT_VALUE,
@@ -86,11 +85,9 @@ export const onSubmit = (setLoading, setError) => (values, ...rest) => {
         setLoading(true)
 
         const { REACT_APP_DHIS2_BASE_URL } = process.env
-        const url = urljoin(
-            REACT_APP_DHIS2_BASE_URL,
-            'api/dataValueSets.json?',
-            params
-        )
+        const baseUrl = REACT_APP_DHIS2_BASE_URL
+        const url = `${baseUrl}/api/dataValueSets.json?${params}`
+
         const xhr = getUploadXHR(
             url,
             upload,
