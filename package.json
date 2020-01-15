@@ -44,8 +44,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "typeface-roboto": "^0.0.54",
-    "url-join": "^4.0.1"
+    "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
     "@babel/helper-create-regexp-features-plugin": "^7.7.4",
