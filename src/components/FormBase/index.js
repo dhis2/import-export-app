@@ -66,7 +66,8 @@ export class FormBase extends React.Component {
         // just check if there exists required fields without a value
         return !hasRequiredFieldsWithoutValue(this.fields, this.state)
     }
-    onBeforeSubmit = () => {
+    onBeforeSubmit = event => {
+        event.preventDefault()
         this.setMetaState({ submitted: true })
         const valid = this.validate()
         return valid && this.onSubmit()

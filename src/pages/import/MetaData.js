@@ -114,6 +114,7 @@ export const MetaDataImport = () => {
     )
 }
 
+MetaDataImport.dataTest = 'import-metadata'
 MetaDataImport.path = '/import/metadata'
 MetaDataImport.title = i18n.t('Metadata Import')
 MetaDataImport.menuIcon = <MetadataImportIcon />

@@ -13,7 +13,13 @@
     "prestart": "npm run localize",
     "prebuild": "npm run localize",
     "pretest": "npm run localize",
-    "lint:style": "d2-style js check --all"
+    "lint:style": "d2-style js check --all",
+    "cypress:start": "BROWSER=none yarn start",
+    "cypress:envtest": "node ./scripts/check_env_vars.js",
+    "cypress:browser": "cypress open --config baseUrl=http://localhost:3000,defaultCommandTimeout=15000",
+    "cypress:ci": "NO_COLOR=1 cypress run -b $BROWSER --config baseUrl=http://localhost:3000,defaultCommandTimeout=15000",
+    "cypress:open": "yarn cypress:envtest && concurrently --kill-others -n cra,cypress 'yarn cypress:start' 'wait-on http-get://localhost:3000 && yarn cypress:browser --env LOGIN_URL=$REACT_APP_DHIS2_BASE_URL'",
+    "cypress:run": "yarn cypress:envtest && concurrently --kill-others --success first -n cra,cypress 'yarn cypress:start' 'wait-on http-get://localhost:3000 && yarn cypress:ci --env LOGIN_URL=$REACT_APP_DHIS2_BASE_URL'"
   },
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.6",
@@ -41,14 +47,20 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
+    "@babel/helper-create-regexp-features-plugin": "^7.8.3",
     "@dhis2/cli-style": "^3.2.2",
     "@dhis2/d2-i18n-extract": "^1.0.8",
     "@dhis2/d2-i18n-generate": "^1.1.1",
+    "concurrently": "^5.0.2",
+    "cypress": "^3.8.2",
+    "cypress-cucumber-preprocessor": "^2.0.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
     "enzyme-to-json": "^3.4.0",
     "husky": "^2.3.0",
-    "redux-mock-store": "^1.5.3"
+    "query-string": "^6.9.0",
+    "redux-mock-store": "^1.5.3",
+    "wait-on": "^3.3.0"
   },
   "husky": {
     "hooks": {
@@ -65,5 +77,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }

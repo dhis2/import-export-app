@@ -10,6 +10,7 @@ export const Select = ({
     options,
     resetOnUnmount,
     defaultValue,
+    dataTest,
 }) => {
     const { input } = useField(name, {
         type: 'select',
@@ -17,7 +18,7 @@ export const Select = ({
     })
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-test={dataTest}>
             <SelectField {...input} label={label} filled>
                 {options.map(option => (
                     <option key={option.value} value={option.value}>
@@ -39,5 +40,6 @@ Select.propTypes = {
         })
     ).isRequired,
 
+    dataTest: propTypes.string,
     defaultValue: propTypes.string,
 }

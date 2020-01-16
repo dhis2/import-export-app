@@ -2,6 +2,7 @@
 
 exports[`Input component - DataElementIdScheme should render correctly 1`] = `
 <Select
+  dataTest="input-data-element-id-scheme"
   label="Data element id scheme"
   name="dataElementIdScheme"
   options={

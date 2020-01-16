@@ -24,6 +24,7 @@ export const DataElementIdScheme = ({ options }) => (
         name={DATA_ELEMENT_ID_SCHEME_KEY}
         label={dataElementIdSchemeLabel}
         options={options}
+        dataTest="input-data-element-id-scheme"
     />
 )
 
