@@ -56,6 +56,8 @@ export const GMLImport = () => {
         </Form>
     )
 }
+
+GMLImport.dataTest = 'import-gml'
 GMLImport.path = '/import/gml'
 GMLImport.title = i18n.t('GML Import')
 GMLImport.desc = i18n.t(

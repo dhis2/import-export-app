@@ -17,7 +17,11 @@ export const MoreOptions = ({ children, openInitially }) => {
 
     return (
         <Fragment>
-            <button onClick={toggleShow} className={styles.button}>
+            <button
+                onClick={toggleShow}
+                className={styles.button}
+                data-test="more-options-button"
+            >
                 <span className={styles.icon}>
                     {show ? <MinusIcon /> : <PlusIcon />}
                 </span>

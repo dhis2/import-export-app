@@ -6,6 +6,7 @@ import moment from 'moment/moment'
 import { EventIcon } from '../../components/Icon'
 import { FormBase } from '../../components/FormBase'
 import { api } from '../../services'
+import { download } from '../../helpers/url'
 import {
     getFormFields,
     getFormFieldMoreOptions,
@@ -15,6 +16,7 @@ import {
 import { isProduction } from '../../helpers/env'
 
 export class EventExport extends FormBase {
+    static dataTest = 'export-event'
     static path = '/export/event'
 
     static order = 8
@@ -190,6 +192,6 @@ export class EventExport extends FormBase {
             append
         )
 
-        window.location = api.url(path) + '?' + params
+        download(api.url(path) + '?' + params)
     }
 }

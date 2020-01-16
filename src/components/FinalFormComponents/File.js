@@ -12,7 +12,7 @@ const FileUploadIcon = () => (
     </svg>
 )
 
-export const File = ({ name }) => {
+export const File = ({ name, dataTest }) => {
     const ref = useRef()
     const { input, meta } = useField(name, {
         type: 'file',
@@ -27,7 +27,7 @@ export const File = ({ name }) => {
     const label = value ? value.name : i18n.t('Choose a file to upload') + ' *'
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-test={dataTest}>
             <input {...withoutValue} ref={ref} className={styles.input} />
 
             <button type="button" onClick={onClick} className={styles.button}>
