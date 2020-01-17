@@ -100,7 +100,6 @@ const DataExport = () => {
         new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
     );
     const [endDate, setEndDate] = useState(today);
-    const [showMoreOptions, setShowMoreOptions] = useState(false);
     const [includeDeleted, setIncludeDeleted] = useState(false);
     const [
         dataElementIdSchemeOptionsDyn,
@@ -123,9 +122,8 @@ const DataExport = () => {
     // useDataQuery doesn't support multiple filters yet
     // temporary work-around
     useEffect(() => {
-        const apiBaseUrl = `${baseUrl}/api/`;
         fetchAndSetAttributes(
-            apiBaseUrl,
+            `${baseUrl}/api/`,
             setDataElementIdSchemeOptions,
             setOrgUnitIdSchemeOptions,
             setIdSchemeOptions
@@ -259,7 +257,7 @@ const DataExport = () => {
                 date={endDate}
                 onChange={onDateChange(setEndDate)}
             />
-            <MoreOptions show={showMoreOptions} setShow={setShowMoreOptions}>
+            <MoreOptions>
                 <Switch
                     label={i18n.t('Include deleted')}
                     name="includeDeleted"
