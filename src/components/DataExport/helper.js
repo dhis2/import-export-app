@@ -14,7 +14,7 @@ const fetcher = (url, succF, errF) =>
             errF(e);
         });
 
-const helper = (
+const fetchAndSetAttributes = (
     apiBaseUrl,
     setDataElementIdSchemeOptions,
     setOrgUnitIdSchemeOptions,
@@ -69,4 +69,4 @@ const helper = (
     );
 };
 
-export { helper };
+export { fetchAndSetAttributes };

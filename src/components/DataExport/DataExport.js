@@ -35,7 +35,7 @@ import { OrgUnitTree } from '../OrgUnitTree';
 import { DataSetPicker } from '../DataSetPicker';
 import { MoreOptions } from '../MoreOptions';
 import { FormAlerts } from '../FormAlerts';
-import { helper } from './helper';
+import { fetchAndSetAttributes } from './helper';
 
 const today = new Date();
 
@@ -126,7 +126,7 @@ const DataExport = () => {
     // temporary work-around
     useEffect(() => {
         const apiBaseUrl = `${baseUrl}/api/`;
-        helper(
+        fetchAndSetAttributes(
             apiBaseUrl,
             setDataElementIdSchemeOptions,
             setOrgUnitIdSchemeOptions,
