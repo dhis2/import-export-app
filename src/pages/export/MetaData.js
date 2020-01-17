@@ -1,10 +1,14 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
+
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
+import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
+
+import { download } from '../../helpers/url'
 
 export class MetaDataExport extends FormBase {
+    static dataTest = 'export-metadata'
     static path = '/export/metadata'
 
     static order = 5
@@ -45,13 +49,15 @@ export class MetaDataExport extends FormBase {
                 endpoint,
                 sharing,
             })
-            const schemaParams = Object.keys(schemas)
+            const schemaArgs = Object.keys(schemas)
                 .filter(s => schemas[s])
                 .map(name => `${name}=true`)
-                .join('&')
+            const schemaParams = schemaArgs.length
+                ? `&${schemaArgs.join('&')}`
+                : ''
 
-            const url = `${downloadUrl}&${schemaParams}`
-            window.location = url
+            const url = `${downloadUrl}${schemaParams}`
+            download(url)
         } catch (e) {
             console.log('MetaData Export error', e, '\n')
         }

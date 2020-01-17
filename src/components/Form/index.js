@@ -39,8 +39,15 @@ export class Form extends React.Component {
                 return null
             }
 
-            const { type, name, label, className, required } = field
-            const props = { name, label, className, required, formMeta }
+            const { type, name, label, className, required, attributes } = field
+            const props = {
+                ...attributes,
+                name,
+                label,
+                className,
+                required,
+                formMeta,
+            }
 
             if (type === TYPE_RADIO) {
                 props['values'] = fieldValuesOverride[name]
@@ -111,47 +118,55 @@ export class Form extends React.Component {
                 const { selected } = fieldValues[name]
 
                 return (
-                    <FormControl
-                        key={`orgUnitTree-${name}`}
-                        className={s.formControl}
-                    >
-                        <FormLabel className={s.formLabel}>{label}</FormLabel>
-                        <OrgUnitTree
-                            multiple={true}
-                            selectable={true}
-                            selected={selected}
-                            updateSelected={(selected, isSelected, value) =>
-                                this.props.onChange(name, {
-                                    selected,
-                                    isSelected,
-                                    value,
-                                })
-                            }
-                        />
-                    </FormControl>
+                    <div data-test={props.dataTest}>
+                        <FormControl
+                            key={`orgUnitTree-${name}`}
+                            className={s.formControl}
+                        >
+                            <FormLabel className={s.formLabel}>
+                                {label}
+                            </FormLabel>
+                            <OrgUnitTree
+                                multiple={true}
+                                selectable={true}
+                                selected={selected}
+                                updateSelected={(selected, isSelected, value) =>
+                                    this.props.onChange(name, {
+                                        selected,
+                                        isSelected,
+                                        value,
+                                    })
+                                }
+                            />
+                        </FormControl>
+                    </div>
                 )
             } else if (type === TYPE_ORG_UNIT_SINGLE_SELECT) {
                 const { selected } = fieldValues[name]
 
                 return (
-                    <FormControl
-                        key={`orgUnitTree-${name}`}
-                        className={s.formControl}
-                    >
-                        <FormLabel className={s.formLabel}>{label}</FormLabel>
-                        <OrgUnitTree
-                            multiple={false}
-                            selectable={true}
-                            selected={selected}
-                            updateSelected={(selected, isSelected, value) =>
-                                this.props.onChange(name, {
-                                    selected,
-                                    isSelected,
-                                    value,
-                                })
-                            }
-                        />
-                    </FormControl>
+                    <div data-test={props.dataTest}>
+                        <FormControl
+                            key={`orgUnitTree-${name}`}
+                            className={s.formControl}
+                        >
+                            <FormLabel className={s.formLabel}>
+                                {label}
+                            </FormLabel>
+                            <OrgUnitTree
+                                multiple={false}
+                                selectable={true}
+                                selected={selected}
+                                updateSelected={(selected, isSelected, value) =>
+                                    this.props.onChange(name, {
+                                        selected,
+                                        isSelected,
+                                        value,
+                                    })
+                                }
+                            />
+                        </FormControl>
+                    </div>
                 )
             } else if (type === TYPE_DATASET_PICKER) {
                 if (fieldValues[name]['value'] === null) {
@@ -162,12 +177,14 @@ export class Form extends React.Component {
                 props['selected'] = fieldValues[name]['selected']
 
                 return (
-                    <FormControl key={`dataSetPicker-${name}`}>
-                        <DataSetPicker
-                            {...props}
-                            onChange={this.props.onChange}
-                        />
-                    </FormControl>
+                    <div data-test={props.dataTest}>
+                        <FormControl key={`dataSetPicker-${name}`}>
+                            <DataSetPicker
+                                {...props}
+                                onChange={this.props.onChange}
+                            />
+                        </FormControl>
+                    </div>
                 )
             }
 
@@ -197,6 +214,7 @@ export class Form extends React.Component {
             <div className={s.buttons}>
                 {this.props.onSubmit && (
                     <RaisedButton
+                        type="submit"
                         primary={true}
                         label={this.props.submitLabel}
                         onClick={this.props.onSubmit}

@@ -15,6 +15,7 @@ import {
 import { fetchLog } from './helpers'
 
 export class MetaDataImport extends FormBase {
+    static dataTest = 'import-metadata'
     static path = '/import/metadata'
 
     static order = 1
@@ -129,13 +130,12 @@ export class MetaDataImport extends FormBase {
             formData.set('upload', upload)
 
             const append = format === '.csv' ? [`classKey=${classKey}`] : []
-            append.push('format=json')
+            append.push(`format=${format.slice(1)}`)
 
             const params = getParamsFromFormState(
                 this.getFormState(),
                 [
                     'importMode',
-                    'dryRun',
                     'identifier',
                     'importReportMode',
                     'preheatMode',

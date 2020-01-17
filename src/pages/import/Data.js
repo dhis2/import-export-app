@@ -25,6 +25,7 @@ import {
 import s from '../../components/Form/styles.css'
 
 class DataImport extends FormBase {
+    static dataTest = 'import-data'
     static path = '/import/data'
 
     static order = 2

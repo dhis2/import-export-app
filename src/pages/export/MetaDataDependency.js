@@ -1,11 +1,15 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+
 import { FormBase } from 'components/FormBase'
+import { MetadataDependencyExportIcon } from 'components/Icon'
 import { api } from 'services'
 import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
-import { MetadataDependencyExportIcon } from 'components/Icon'
+
+import { download } from '../../helpers/url'
 
 export class MetaDataDependencyExport extends FormBase {
+    static dataTest = 'export-metadata-dependency'
     static path = '/export/metadata-dependency'
 
     static order = 9
@@ -88,7 +92,7 @@ export class MetaDataDependencyExport extends FormBase {
                 endpoint,
                 sharing,
             })
-            window.location = url
+            download(url)
         } catch (e) {
             console.log('MetaDataDependency Export error', e, '\n')
         }
