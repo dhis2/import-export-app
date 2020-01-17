@@ -26,29 +26,31 @@ export default class SelectField extends React.Component {
         this.props.onChange(this.props.name, value)
 
     render() {
-        const { name, label, values, selected } = this.props
+        const { name, label, values, selected, dataTest } = this.props
 
         return (
-            <FormControl className={s.formControl}>
-                <FormLabel className={s.formLabel}>{label}</FormLabel>
-                <Select
-                    {...styles}
-                    autoWidth={true}
-                    value={selected}
-                    onChange={this.onChange}
-                    className={s.select}
-                    fullWidth={false}
-                >
-                    {values.map(v => (
-                        <MenuItem
-                            key={`mi-${name}-${v.value}`}
-                            value={v.value}
-                            primaryText={v.label}
-                            className={s.menuItem}
-                        />
-                    ))}
-                </Select>
-            </FormControl>
+            <div data-test={dataTest}>
+                <FormControl className={s.formControl}>
+                    <FormLabel className={s.formLabel}>{label}</FormLabel>
+                    <Select
+                        {...styles}
+                        autoWidth={true}
+                        value={selected}
+                        onChange={this.onChange}
+                        className={s.select}
+                        fullWidth={false}
+                    >
+                        {values.map(v => (
+                            <MenuItem
+                                key={`mi-${name}-${v.value}`}
+                                value={v.value}
+                                primaryText={v.label}
+                                className={s.menuItem}
+                            />
+                        ))}
+                    </Select>
+                </FormControl>
+            </div>
         )
     }
 }

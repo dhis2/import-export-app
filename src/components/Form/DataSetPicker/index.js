@@ -20,8 +20,8 @@ const styles = {
     },
 }
 
-const Action = ({ label, children, onClick }) => (
-    <div className={s.action} onClick={onClick}>
+const Action = ({ label, children, onClick, dataTest }) => (
+    <div className={s.action} onClick={onClick} data-test={dataTest}>
         {children}
         <div className={s.actionLabel}>{label}</div>
     </div>
@@ -68,10 +68,18 @@ export default class DataSetPicker extends React.Component {
     actions() {
         return (
             <div className={s.actions}>
-                <Action onClick={this.onSelectAll} label={i18n.t('Select All')}>
+                <Action
+                    onClick={this.onSelectAll}
+                    label={i18n.t('Select All')}
+                    dataTest="data-sets-selectall"
+                >
                     <CheckedIcon />
                 </Action>
-                <Action onClick={this.onClearAll} label={i18n.t('Clear All')}>
+                <Action
+                    onClick={this.onClearAll}
+                    label={i18n.t('Clear All')}
+                    dataTest="data-sets-clearall"
+                >
                     <UnCheckedIcon />
                 </Action>
             </div>

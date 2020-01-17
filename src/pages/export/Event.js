@@ -1,10 +1,11 @@
+import { getInstance } from 'd2/lib/d2'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import moment from 'moment/moment'
+
+import { EventIcon } from 'components/Icon'
 import { FormBase } from 'components/FormBase'
 import { api } from 'services'
-import { getInstance } from 'd2/lib/d2'
-import moment from 'moment/moment'
-import { EventIcon } from 'components/Icon'
 import {
     getFormFields,
     getFormFieldMoreOptions,
@@ -12,7 +13,10 @@ import {
     getParamsFromFormState,
 } from 'helpers'
 
+import { download } from '../../helpers/url'
+
 export class EventExport extends FormBase {
+    static dataTest = 'export-event'
     static path = '/export/event'
 
     static order = 8
@@ -188,6 +192,6 @@ export class EventExport extends FormBase {
             append
         )
 
-        window.location = api.url(path) + '?' + params
+        download(api.url(path) + '?' + params)
     }
 }

@@ -1,5 +1,6 @@
 export * from './blob'
 export * from './date'
+export * from './download'
 export * from './fields'
 export * from './form'
 export * from './mime'

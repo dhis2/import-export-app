@@ -30,6 +30,7 @@ import {
 import s from '../../components/Form/styles.css'
 
 class DataExport extends FormBase {
+    static dataTest = 'export-data'
     static path = '/export/data'
 
     static order = 7

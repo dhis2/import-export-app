@@ -21,25 +21,27 @@ export default class FileField extends React.Component {
     onChange = () => this.props.onChange(this.props.name, this.fileRef.files[0])
 
     render() {
-        const { selected } = this.props
+        const { selected, dataTest } = this.props
         let label = this.props.label
         if (selected) {
             label = selected.name
         }
 
         return (
-            <FormControl className={s.formControl} onClick={this.onClick}>
-                <input
-                    type="file"
-                    onChange={this.onChange}
-                    ref={c => (this.fileRef = c)}
-                    className={s.hiddenFileInput}
-                />
-                <FileUploadIcon className={s.button} />
-                <FormLabel className={s.formLabel}>
-                    {label || i18n.t('Choose a file to upload')}
-                </FormLabel>
-            </FormControl>
+            <div data-test={dataTest}>
+                <FormControl className={s.formControl} onClick={this.onClick}>
+                    <input
+                        type="file"
+                        onChange={this.onChange}
+                        ref={c => (this.fileRef = c)}
+                        className={s.hiddenFileInput}
+                    />
+                    <FileUploadIcon className={s.button} />
+                    <FormLabel className={s.formLabel}>
+                        {label || i18n.t('Choose a file to upload')}
+                    </FormLabel>
+                </FormControl>
+            </div>
         )
     }
 }

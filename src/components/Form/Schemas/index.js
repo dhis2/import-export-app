@@ -83,7 +83,7 @@ function Group({ label, schemas, checked, onClick }) {
                     <Checkbox
                         {...styles}
                         key={`chk-${s.collectionName}`}
-                        value={s.name}
+                        value={s.collectionName}
                         label={s.displayName}
                         checked={checked[s.collectionName]}
                         onCheck={(evt, status) =>
@@ -230,6 +230,8 @@ export default class Schemas extends React.Component {
     }
 
     render() {
+        const { dataTest } = this.props
+
         if (!this.props.loaded) {
             return <Loading />
         }
@@ -238,7 +240,7 @@ export default class Schemas extends React.Component {
         }
 
         return (
-            <div className={s.container}>
+            <div className={s.container} data-test={dataTest}>
                 <Controls
                     onSelectAll={this.onSelectAll}
                     onSelectNone={this.onSelectNone}
