@@ -7,6 +7,7 @@ import { getFormFields, getFormValues, getUploadXHR } from 'helpers'
 import { fetchLog } from './helpers'
 
 export class GMLImport extends FormBase {
+    static dataTest = 'import-gml'
     static path = '/import/gml'
 
     static order = 4

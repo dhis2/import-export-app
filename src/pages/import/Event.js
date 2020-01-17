@@ -14,6 +14,7 @@ import {
 import { fetchLog } from './helpers'
 
 export class EventImport extends FormBase {
+    static dataTest = 'import-event'
     static path = '/import/event'
 
     static order = 3
