@@ -5,13 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-14T10:53:15.760Z\n"
-"PO-Revision-Date: 2020-01-14T10:53:15.760Z\n"
+"POT-Creation-Date: 2020-01-14T15:00:13.633Z\n"
+"PO-Revision-Date: 2020-01-14T15:00:13.633Z\n"
 
-msgid "Select all"
+msgid "At least one organisation unit must be selected"
 msgstr ""
 
-msgid "Clear all"
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "End date cannot be before start date"
+msgstr ""
+
+msgid "HTTP error when fetching data"
 msgstr ""
 
 msgid "Include children"
@@ -69,6 +75,12 @@ msgid "more options"
 msgstr ""
 
 msgid "Organisation unit"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Clear all"
 msgstr ""
 
 msgid "Import"
