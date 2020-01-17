@@ -5,13 +5,13 @@ import { Button } from '@dhis2/ui-core';
 import JSZip from 'jszip';
 
 import s from './DataExport.module.css';
+import { dataExportPage as p } from '../../utils/pages';
 import {
     createBlob,
     downloadBlob,
     jsDateToISO8601,
     pathToId,
 } from '../../utils/helper';
-import { dataExportPage as p } from '../../utils/pages';
 import {
     formatADXOptions,
     compressionOptions,
@@ -159,7 +159,7 @@ const DataExport = () => {
             alerts.push({
                 id: `period-${timestamp}`,
                 warning: true,
-                message: i18n.t('End date cannot be before start date'),
+                message: i18n.t('End date must be before start date'),
             });
         }
 
