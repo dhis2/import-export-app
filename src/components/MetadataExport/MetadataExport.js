@@ -16,6 +16,7 @@ import { EXCLUDE_SCHEMAS } from './helper';
 import { Schemas } from './Schemas/';
 import { Page } from '../Page';
 import { RadioGroup } from '../RadioGroup';
+import { FormAlerts } from '../FormAlerts';
 
 const MetadataExport = () => {
     const [checkedSchemas, setCheckedSchemas] = useState([]);
@@ -24,9 +25,29 @@ const MetadataExport = () => {
         defaultCompressionOption.value
     );
     const [sharing, setSharing] = useState(defaultSharingOption.value);
+    const [alerts, setAlerts] = useState([]);
     const { baseUrl } = useConfig();
 
     const exportHandler = () => {
+        // validate
+        let alerts = [];
+        const timestamp = new Date().getTime();
+
+        if (checkedSchemas.length == 0) {
+            alerts.push({
+                id: `schemas-length-${timestamp}`,
+                warning: true,
+                message: i18n.t('At least one schema must be selected'),
+            });
+        }
+
+        setAlerts(alerts);
+
+        if (alerts.length != 0) {
+            return;
+        }
+
+        // fetch data
         const apiBaseUrl = `${baseUrl}/api/`;
         const endpoint = `metadata`;
         const endpointExtension = compression
@@ -71,6 +92,7 @@ const MetadataExport = () => {
             <Button primary initialFocus onClick={exportHandler}>
                 {i18n.t('Export')}
             </Button>
+            <FormAlerts alerts={alerts} />
         </Page>
     );
 };
