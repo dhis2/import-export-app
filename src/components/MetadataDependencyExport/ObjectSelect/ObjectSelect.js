@@ -49,6 +49,7 @@ const ObjectSelect = ({ name, label, type, setSelected, selected }) => {
             options={objectList}
             selected={selected}
             setValue={setSelected}
+            dense
         />
     );
 };
