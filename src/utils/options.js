@@ -50,6 +50,21 @@ const idSchemeOptions = [
     { value: 'CODE', label: i18n.t('Code') },
 ];
 
+const inclusionOptions = [
+    {
+        value: 'SELECTED',
+        label: i18n.t('Selected organisation unit'),
+    },
+    {
+        value: 'CHILDREN',
+        label: i18n.t('Include children of organisation unit'),
+    },
+    {
+        value: 'DESCENDANTS',
+        label: i18n.t('Include descendants of organisation unit'),
+    },
+];
+
 const defaultFormatOption = formatOptions[0];
 const defaultCompressionOption = compressionOptions[0];
 const defaultSharingOption = sharingOptions[0];
@@ -57,6 +72,7 @@ const defaultObjectTypeOption = objectTypeOptions[0];
 const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0];
 const defaultOrgUnitIdSchemeOption = orgUnitIdSchemeOptions[0];
 const defaultIdSchemeOption = idSchemeOptions[0];
+const defaultInclusionOption = inclusionOptions[0];
 
 export {
     formatOptions,
@@ -68,6 +84,7 @@ export {
     dataElementIdSchemeOptions,
     orgUnitIdSchemeOptions,
     idSchemeOptions,
+    inclusionOptions,
     defaultFormatOption,
     defaultCompressionOption,
     defaultSharingOption,
@@ -75,4 +92,5 @@ export {
     defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
+    defaultInclusionOption,
 };
