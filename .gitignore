@@ -23,3 +23,7 @@ yarn-error.log*
 .idea
 src/locales
 manifest.webapp
+
+cypress.env.json
+cypress/videos
+cypress/screenshots

@@ -71,14 +71,21 @@
     }
   },
   "scripts": {
-    "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
-    "localize": "npm run extract-pot && d2-i18n-generate -n import-export-app -p ./i18n/ -o ./src/locales/",
-    "format": "code-style",
-    "prestart": "npm run localize && d2-manifest package.json ./public/manifest.webapp",
-    "prebuild": "rm -rf build && mkdir build && npm run manifest",
-    "manifest": "d2-manifest package.json build/manifest.webapp",
-    "start": "PORT=3000 node scripts/start.js",
     "build": "npm run localize && npm run manifest && node scripts/build.js",
+    "coverage": "npm run test -- --coverage",
+    "cypress:browser": "cypress open --config baseUrl=http://localhost:3000,defaultCommandTimeout=15000",
+    "cypress:ci": "NO_COLOR=1 cypress run -b $BROWSER --config baseUrl=http://localhost:3000,defaultCommandTimeout=15000",
+    "cypress:envtest": "node ./scripts/check_env_vars.js",
+    "cypress:open": "yarn cypress:envtest && concurrently --kill-others -n cra,cypress 'yarn cypress:start' 'wait-on http-get://localhost:3000 && yarn cypress:browser'",
+    "cypress:run": "yarn cypress:envtest && concurrently --kill-others --success first -n cra,cypress 'yarn cypress:start' 'wait-on http-get://localhost:3000 && yarn cypress:ci'",
+    "cypress:start": "BROWSER=none yarn start",
+    "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
+    "format": "code-style",
+    "localize": "npm run extract-pot && d2-i18n-generate -n import-export-app -p ./i18n/ -o ./src/locales/",
+    "manifest": "d2-manifest package.json build/manifest.webapp",
+    "prebuild": "rm -rf build && mkdir build && npm run manifest",
+    "prestart": "npm run localize && d2-manifest package.json ./public/manifest.webapp",
+    "start": "PORT=3000 node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "manifest.webapp": {
@@ -143,11 +150,15 @@
     ]
   },
   "devDependencies": {
+    "@babel/helper-create-regexp-features-plugin": "^7.8.3",
     "@dhis2/code-style": "^1.7.1",
     "@dhis2/d2-i18n-extract": "^1.0.6",
     "@dhis2/d2-i18n-generate": "^1.1.1",
     "babel-eslint": "^10.0.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "concurrently": "^5.0.2",
+    "cypress": "^3.8.2",
+    "cypress-cucumber-preprocessor": "^2.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.8.0",
@@ -159,6 +170,11 @@
     "eslint-plugin-jest": "^21.26.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "redux-mock-store": "^1.5.4"
+    "query-string": "^6.9.0",
+    "redux-mock-store": "^1.5.4",
+    "wait-on": "^3.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
