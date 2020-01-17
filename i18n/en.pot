@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-14T15:00:13.633Z\n"
-"PO-Revision-Date: 2020-01-14T15:00:13.633Z\n"
+"POT-Creation-Date: 2020-01-17T14:28:26.383Z\n"
+"PO-Revision-Date: 2020-01-17T14:28:26.383Z\n"
 
 msgid "At least one organisation unit must be selected"
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 msgid "At least one data set must be selected"
 msgstr ""
 
-msgid "End date cannot be before start date"
+msgid "End date must be before start date"
 msgstr ""
 
 msgid "HTTP error when fetching data"
@@ -56,6 +56,21 @@ msgstr ""
 msgid "Filter data sets by name"
 msgstr ""
 
+msgid "One organisation unit must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
+
+msgid "Program stage"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "[ All program stages ]"
+msgstr ""
+
 msgid "Object type"
 msgstr ""
 
@@ -63,6 +78,9 @@ msgid "Object"
 msgstr ""
 
 msgid "Sharing"
+msgstr ""
+
+msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Select All"
@@ -75,6 +93,12 @@ msgid "more options"
 msgstr ""
 
 msgid "Organisation unit"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Filter programs by name"
 msgstr ""
 
 msgid "Select all"
@@ -113,9 +137,6 @@ msgstr ""
 msgid "Without sharing"
 msgstr ""
 
-msgid "Programs"
-msgstr ""
-
 msgid "Category combination"
 msgstr ""
 
@@ -135,6 +156,15 @@ msgid "Code"
 msgstr ""
 
 msgid "Name"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Data import"

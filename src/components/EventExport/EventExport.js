@@ -43,7 +43,6 @@ const EventExport = ({}) => {
         new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
     );
     const [endDate, setEndDate] = useState(today);
-    const [showMoreOptions, setShowMoreOptions] = useState(false);
     const [includeDeleted, setIncludeDeleted] = useState(false);
     const [idScheme, setIdScheme] = useState(defaultIdSchemeOption.value);
     const [inclusion, setInclusion] = useState(defaultInclusionOption.value);
@@ -167,7 +166,7 @@ const EventExport = ({}) => {
                 setValue={setCompression}
                 checked={compression}
             />
-            <MoreOptions show={showMoreOptions} setShow={setShowMoreOptions}>
+            <MoreOptions>
                 <Switch
                     label={i18n.t('Include deleted')}
                     name="includeDeleted"
