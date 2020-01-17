@@ -9,6 +9,7 @@ import { dataExportPage as p } from '../../utils/pages';
 import {
     createBlob,
     downloadBlob,
+    fetchAndSetAttributes,
     jsDateToISO8601,
     pathToId,
 } from '../../utils/helper';
@@ -33,10 +34,10 @@ import { OrgUnitTree } from '../OrgUnitTree';
 import { DataSetPicker } from '../DataSetPicker';
 import { MoreOptions } from '../MoreOptions';
 import { FormAlerts } from '../FormAlerts';
-import { fetchAndSetAttributes } from './helper';
 
 const today = new Date();
 
+/*
 const attributesQuery = {
     dataElement: {
         resource: 'attributes',
@@ -55,6 +56,7 @@ const attributesQuery = {
         },
     },
 };
+*/
 
 const dataValueSetQuery = {
     sets: {
