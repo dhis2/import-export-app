@@ -29,7 +29,7 @@ const MetadataDependencyExport = () => {
     const [sharing, setSharing] = useState(defaultSharingOption.value);
     const { baseUrl } = useConfig();
 
-    const exportHandler = () => {
+    const onExport = () => {
         const apiBaseUrl = `${baseUrl}/api/`;
         const endpoint = `${objectType}/${objectListSelected}/metadata`;
         const endpointExtension = compression
@@ -82,7 +82,7 @@ const MetadataDependencyExport = () => {
             <Button
                 primary
                 disabled={objectListSelected == undefined}
-                onClick={exportHandler}
+                onClick={onExport}
             >
                 {i18n.t('Export')}
             </Button>

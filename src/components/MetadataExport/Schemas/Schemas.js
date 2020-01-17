@@ -62,7 +62,7 @@ const Schemas = ({ excludeSchemas, setCheckedSchemas, checkedByDefault }) => {
         );
     };
 
-    const selectGenericHandler = val => () => {
+    const onSelectGeneric = val => () => {
         const updatedSchemaGroups = Object.keys(schemaGroups).reduce(
             (acc, groupName) => ({
                 ...acc,
@@ -97,10 +97,10 @@ const Schemas = ({ excludeSchemas, setCheckedSchemas, checkedByDefault }) => {
             {schemaGroups && (
                 <>
                     <ButtonStrip>
-                        <Button onClick={selectGenericHandler(true)}>
+                        <Button onClick={onSelectGeneric(true)}>
                             {i18n.t('Select All')}
                         </Button>
-                        <Button onClick={selectGenericHandler(false)}>
+                        <Button onClick={onSelectGeneric(false)}>
                             {i18n.t('Select None')}
                         </Button>
                     </ButtonStrip>

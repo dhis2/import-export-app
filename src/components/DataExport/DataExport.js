@@ -15,13 +15,11 @@ import { dataExportPage as p } from '../../utils/pages';
 import {
     formatADXOptions,
     compressionOptions,
-    sharingOptions,
     dataElementIdSchemeOptions,
     orgUnitIdSchemeOptions,
     idSchemeOptions,
     defaultFormatOption,
     defaultCompressionOption,
-    defaultSharingOption,
     defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
@@ -134,7 +132,7 @@ const DataExport = () => {
         );
     }, []);
 
-    const exportHandler = () => {
+    const onExport = () => {
         // validate
         let alerts = [];
         const timestamp = new Date().getTime();
@@ -201,7 +199,7 @@ const DataExport = () => {
                 }
             },
             onError: e => {
-                console.log('DataExport exportHandler error: ', e);
+                console.log('DataExport onExport error: ', e);
                 setAlerts([
                     {
                         id: `http-${timestamp}`,
@@ -293,7 +291,7 @@ const DataExport = () => {
                     dense
                 />
             </MoreOptions>
-            <Button primary initialFocus onClick={exportHandler}>
+            <Button primary initialFocus onClick={onExport}>
                 {i18n.t('Export')}
             </Button>
             <FormAlerts alerts={alerts} />

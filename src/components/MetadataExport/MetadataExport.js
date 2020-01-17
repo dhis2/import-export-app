@@ -28,7 +28,7 @@ const MetadataExport = () => {
     const [alerts, setAlerts] = useState([]);
     const { baseUrl } = useConfig();
 
-    const exportHandler = () => {
+    const onExport = () => {
         // validate
         let alerts = [];
         const timestamp = new Date().getTime();
@@ -89,7 +89,7 @@ const MetadataExport = () => {
                 setValue={setSharing}
                 checked={sharing}
             />
-            <Button primary initialFocus onClick={exportHandler}>
+            <Button primary initialFocus onClick={onExport}>
                 {i18n.t('Export')}
             </Button>
             <FormAlerts alerts={alerts} />
