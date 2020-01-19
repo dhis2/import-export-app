@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useConfig, useDataEngine, useDataQuery } from '@dhis2/app-runtime';
+import React, { useState } from 'react';
+import { useDataEngine, useDataQuery } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 import JSZip from 'jszip';
@@ -9,16 +9,12 @@ import { dataExportPage as p } from '../../utils/pages';
 import {
     createBlob,
     downloadBlob,
-    fetchAndSetAttributes,
     jsDateToISO8601,
     pathToId,
 } from '../../utils/helper';
 import {
     formatADXOptions,
     compressionOptions,
-    dataElementIdSchemeOptions,
-    orgUnitIdSchemeOptions,
-    idSchemeOptions,
     defaultFormatOption,
     defaultCompressionOption,
     defaultDataElementIdSchemeOption,
@@ -33,6 +29,11 @@ import { Select } from '../Select';
 import { OrgUnitTree } from '../OrgUnitTree';
 import { DataSetPicker } from '../DataSetPicker';
 import { MoreOptions } from '../MoreOptions';
+import {
+    DataElementIdScheme,
+    IdScheme,
+    OrgUnitIdScheme,
+} from '../ElementSchemes';
 import { FormAlerts } from '../FormAlerts';
 
 const today = new Date();
@@ -103,14 +104,6 @@ const DataExport = () => {
     );
     const [endDate, setEndDate] = useState(today);
     const [includeDeleted, setIncludeDeleted] = useState(false);
-    const [
-        dataElementIdSchemeOptionsDyn,
-        setDataElementIdSchemeOptions,
-    ] = useState(dataElementIdSchemeOptions);
-    const [orgUnitIdSchemeOptionsDyn, setOrgUnitIdSchemeOptions] = useState(
-        orgUnitIdSchemeOptions
-    );
-    const [idSchemeOptionsDyn, setIdSchemeOptions] = useState(idSchemeOptions);
     const [dataElementIdScheme, setDataElementIdScheme] = useState(
         defaultDataElementIdSchemeOption.value
     );
@@ -119,18 +112,6 @@ const DataExport = () => {
     );
     const [idScheme, setIdScheme] = useState(defaultIdSchemeOption.value);
     const [alerts, setAlerts] = useState([]);
-    const { baseUrl } = useConfig();
-
-    // useDataQuery doesn't support multiple filters yet
-    // temporary work-around
-    useEffect(() => {
-        fetchAndSetAttributes(
-            `${baseUrl}/api/`,
-            setDataElementIdSchemeOptions,
-            setOrgUnitIdSchemeOptions,
-            setIdSchemeOptions
-        );
-    }, []);
 
     const onExport = () => {
         // validate
@@ -266,30 +247,15 @@ const DataExport = () => {
                     checked={includeDeleted}
                     setChecked={setIncludeDeleted}
                 />
-                <Select
-                    name="dataElementIdScheme"
-                    label={i18n.t('Data element ID scheme')}
-                    options={dataElementIdSchemeOptionsDyn}
+                <DataElementIdScheme
                     selected={dataElementIdScheme}
-                    setValue={setDataElementIdScheme}
-                    dense
+                    setSelected={setDataElementIdScheme}
                 />
-                <Select
-                    name="orgUnitIdScheme"
-                    label={i18n.t('Org unit ID scheme')}
-                    options={orgUnitIdSchemeOptionsDyn}
+                <OrgUnitIdScheme
                     selected={orgUnitIdScheme}
-                    setValue={setOrgUnitIdScheme}
-                    dense
+                    setSelected={setOrgUnitIdScheme}
                 />
-                <Select
-                    name="idScheme"
-                    label={i18n.t('ID scheme')}
-                    options={idSchemeOptionsDyn}
-                    selected={idScheme}
-                    setValue={setIdScheme}
-                    dense
-                />
+                <IdScheme selected={idScheme} setSelected={setIdScheme} />
             </MoreOptions>
             <Button primary initialFocus onClick={onExport}>
                 {i18n.t('Export')}
