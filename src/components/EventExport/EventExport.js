@@ -9,7 +9,6 @@ import { jsDateToISO8601, pathToId } from '../../utils/helper';
 import {
     formatOptions,
     compressionOptions,
-    idSchemeOptions,
     inclusionOptions,
     defaultFormatOption,
     defaultCompressionOption,
@@ -25,6 +24,7 @@ import { Select } from '../Select';
 import { OrgUnitTree } from '../OrgUnitTree';
 import { ProgramPicker } from '../ProgramPicker';
 import { MoreOptions } from '../MoreOptions';
+import { IdScheme } from '../ElementSchemes';
 import { FormAlerts } from '../FormAlerts';
 import { ProgramStageSelect, ALL_VALUE } from './ProgramStageSelect/';
 
@@ -173,14 +173,7 @@ const EventExport = ({}) => {
                     checked={includeDeleted}
                     setChecked={setIncludeDeleted}
                 />
-                <Select
-                    name="idScheme"
-                    label={i18n.t('ID scheme')}
-                    options={idSchemeOptions}
-                    selected={idScheme}
-                    setValue={setIdScheme}
-                    dense
-                />
+                <IdScheme selected={idScheme} setSelected={setIdScheme} />
                 <RadioGroup
                     name="inclusion"
                     label={i18n.t('Inclusion')}

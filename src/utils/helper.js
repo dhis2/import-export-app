@@ -88,7 +88,7 @@ const fetchAndSetAttributes = (
             });
         },
         e => {
-            console.log('DataExport data element attributes fetch error: ', e);
+            console.log('Data element attributes fetch error: ', e);
         }
     );
 
@@ -106,10 +106,7 @@ const fetchAndSetAttributes = (
             });
         },
         e => {
-            console.log(
-                'DataExport organization unit attributes fetch error: ',
-                e
-            );
+            console.log('Organization unit attributes fetch error: ', e);
         }
     );
 };
