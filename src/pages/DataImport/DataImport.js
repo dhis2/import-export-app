@@ -6,6 +6,7 @@ import { Button } from '@dhis2/ui-core';
 import s from './DataImport.module.css';
 import { dataImportPage as p } from '../../utils/pages';
 import { uploadFile } from '../../utils/helper';
+import { helpText } from '../../utils/text';
 import {
     formatAdxPdfOptions,
     strategyOptions,
@@ -126,9 +127,7 @@ const DataImport = () => {
                 name="dryRun"
                 checked={dryRun}
                 setChecked={setDryRun}
-                help={i18n.t(
-                    'Will do a test run without importing any data into the database'
-                )}
+                help={helpText.dryRun}
             />
             {format == 'csv' && (
                 <Switch
@@ -150,7 +149,7 @@ const DataImport = () => {
                 name="preheatCache"
                 checked={preheatCache}
                 setChecked={setPreheatCache}
-                help={i18n.t('Faster for large imports')}
+                help={helpText.preheatCache}
             />
             <WithAuthority pred={hasAuthorityToSkipAudit}>
                 <Switch
@@ -158,9 +157,7 @@ const DataImport = () => {
                     name="skipAudit"
                     checked={skipAudit}
                     setChecked={setSkipAudit}
-                    help={i18n.t(
-                        'Improves performance at the cost of ability to audit changes'
-                    )}
+                    help={helpText.skipAudit}
                 />
             </WithAuthority>
             <MoreOptions>
@@ -178,7 +175,7 @@ const DataImport = () => {
                     label={i18n.t('Skip exisiting check')}
                     checked={skipExistingCheck}
                     setChecked={setSkipExistingCheck}
-                    help={i18n.t('Faster, but unsafe')}
+                    help={helpText.skipExistingCheck}
                 />
             </MoreOptions>
             <Button primary initialFocus onClick={onImport}>
