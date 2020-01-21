@@ -5,20 +5,23 @@ import { FormField } from '../FormField';
 import s from './RadioGroup.module.css';
 
 const RadioGroup = ({ name, label, options, checked, setValue }) => {
+    const onChange = ({ value, name }) =>
+        setValue({ value: value, label: name });
+
     return (
         <FormField label={label}>
             <div className={s.inputs}>
-                {options.map(({ value, label, help }) => (
-                    <div key={value}>
+                {options.map(o => (
+                    <div key={o.value}>
                         <Radio
                             className={s.radio}
-                            name={value}
-                            value={value}
-                            label={label}
-                            checked={value == checked}
-                            onChange={() => setValue(value)}
+                            name={o.label}
+                            value={o.value}
+                            label={o.label}
+                            checked={o.value == checked.value}
+                            onChange={onChange}
                         />
-                        {help && <Help>{help}</Help>}
+                        {o.help && <Help>{o.help}</Help>}
                     </div>
                 ))}
             </div>

@@ -71,6 +71,7 @@ const ProgramPicker = ({
                 {loading && <CircularLoader />}
                 {data && (
                     <SelectableList
+                        name="programPicker"
                         label={i18n.t('Filter programs by name')}
                         selected={selected}
                         select={onSelect}

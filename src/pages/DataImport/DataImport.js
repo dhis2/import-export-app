@@ -40,19 +40,19 @@ const DataImport = () => {
     const { data, addTask } = useContext(TaskContext);
     const [loading, setLoading] = useState(false);
     const [file, setFile] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption.value);
+    const [format, setFormat] = useState(defaultFormatOption);
     const [dryRun, setDryRun] = useState(false);
-    const [strategy, setStrategy] = useState(defaultStrategyOption.value);
+    const [strategy, setStrategy] = useState(defaultStrategyOption);
     const [firstRowIsHeader, setFirstRowIsHeader] = useState(false);
     const [preheatCache, setPreheatCache] = useState(false);
     const [skipAudit, setSkipAudit] = useState(false);
     const [dataElementIdScheme, setDataElementIdScheme] = useState(
-        defaultDataElementIdSchemeOption.value
+        defaultDataElementIdSchemeOption
     );
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        defaultOrgUnitIdSchemeOption.value
+        defaultOrgUnitIdSchemeOption
     );
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption.value);
+    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption);
     const [skipExistingCheck, setSkipExistingCheck] = useState(false);
     const [alerts, setAlerts] = useState([]);
     const { baseUrl } = useConfig();
@@ -84,14 +84,16 @@ const DataImport = () => {
             `strategy=${strategy}`,
             `preheatCache=${preheatCache}`,
             `skipAudit=${skipAudit}`,
-            `dataElementIdScheme=${dataElementIdScheme}`,
-            `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `idScheme=${idScheme}`,
+            `dataElementIdScheme=${dataElementIdScheme.value}`,
+            `orgUnitIdScheme=${orgUnitIdScheme.value}`,
+            `idScheme=${idScheme.value}`,
             `skipExistingCheck=${skipExistingCheck}`,
-            `format=${format}`,
+            `format=${format.value}`,
             'async=true',
             ...[
-                format == 'csv' ? [`firstRowIsHeader=${firstRowIsHeader}`] : [],
+                format.value == 'csv'
+                    ? [`firstRowIsHeader=${firstRowIsHeader}`]
+                    : [],
             ],
         ].join('&');
         const url = `${apiBaseUrl}${endpoint}?${params}`;
@@ -99,7 +101,7 @@ const DataImport = () => {
         uploadFile(
             url,
             file,
-            format,
+            format.value,
             'DATAVALUE_IMPORT',
             setLoading,
             setAlerts,
@@ -129,7 +131,7 @@ const DataImport = () => {
                 setChecked={setDryRun}
                 help={helpText.dryRun}
             />
-            {format == 'csv' && (
+            {format.value == 'csv' && (
                 <Switch
                     label={i18n.t('First row is header')}
                     name="firstRowIsHeader"

@@ -24,11 +24,6 @@ const compressionOptions = [
     { value: '', label: i18n.t('Uncompressed') },
 ];
 
-const sharingOptions = [
-    { value: 'false', label: i18n.t('With sharing') },
-    { value: 'true', label: i18n.t('Without sharing') },
-];
-
 const objectTypeOptions = [
     { value: 'dataSets', label: i18n.t('Data sets') },
     { value: 'programs', label: i18n.t('Programs') },
@@ -132,7 +127,6 @@ const inclusionStrategyOptions = [
 
 const defaultFormatOption = formatOptions[0];
 const defaultCompressionOption = compressionOptions[0];
-const defaultSharingOption = sharingOptions[0];
 const defaultObjectTypeOption = objectTypeOptions[0];
 const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0];
 const defaultOrgUnitIdSchemeOption = orgUnitIdSchemeOptions[0];
@@ -156,7 +150,6 @@ export {
     formatAdxOptions,
     formatAdxPdfOptions,
     compressionOptions,
-    sharingOptions,
     objectTypeOptions,
     dataElementIdSchemeOptions,
     orgUnitIdSchemeOptions,
@@ -175,7 +168,6 @@ export {
     inclusionStrategyOptions,
     defaultFormatOption,
     defaultCompressionOption,
-    defaultSharingOption,
     defaultObjectTypeOption,
     defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,

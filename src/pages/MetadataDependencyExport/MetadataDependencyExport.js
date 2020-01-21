@@ -7,35 +7,32 @@ import { metadataDependencyExportPage as p } from '../../utils/pages';
 import {
     formatNoCsvOptions,
     compressionOptions,
-    sharingOptions,
     objectTypeOptions,
     defaultFormatOption,
     defaultCompressionOption,
-    defaultSharingOption,
     defaultObjectTypeOption,
 } from '../../utils/options';
 import { Page } from '../../components/Page';
+import { Switch } from '../../components/Switch';
 import { RadioGroup } from '../../components/RadioGroup';
 import { Select } from '../../components/Select';
 import { ObjectSelect } from './ObjectSelect/';
 
 const MetadataDependencyExport = () => {
-    const [objectType, setObjectType] = useState(defaultObjectTypeOption.value);
+    const [objectType, setObjectType] = useState(defaultObjectTypeOption);
     const [objectListSelected, setObjectListSelected] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption.value);
-    const [compression, setCompression] = useState(
-        defaultCompressionOption.value
-    );
-    const [sharing, setSharing] = useState(defaultSharingOption.value);
+    const [format, setFormat] = useState(defaultFormatOption);
+    const [compression, setCompression] = useState(defaultCompressionOption);
+    const [skipSharing, setSkipSharing] = useState(false);
     const { baseUrl } = useConfig();
 
     const onExport = () => {
         const apiBaseUrl = `${baseUrl}/api/`;
-        const endpoint = `${objectType}/${objectListSelected}/metadata`;
-        const endpointExtension = compression
-            ? `${format}.${compression}`
-            : format;
-        const downloadUrlParams = `skipSharing=${sharing}&download=true`;
+        const endpoint = `${objectType.value}/${objectListSelected.value}/metadata`;
+        const endpointExtension = compression.value
+            ? `${format.value}.${compression.value}`
+            : format.value;
+        const downloadUrlParams = `skipSharing=${skipSharing}&download=true`;
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`;
         window.location = url;
     };
@@ -57,6 +54,7 @@ const MetadataDependencyExport = () => {
                 type={objectType}
                 setSelected={setObjectListSelected}
                 selected={objectListSelected}
+                filterable
             />
             <RadioGroup
                 name="format"
@@ -72,12 +70,11 @@ const MetadataDependencyExport = () => {
                 setValue={setCompression}
                 checked={compression}
             />
-            <RadioGroup
-                name="sharing"
-                label={i18n.t('Sharing')}
-                options={sharingOptions}
-                setValue={setSharing}
-                checked={sharing}
+            <Switch
+                name="skipSharing"
+                label={i18n.t('Skip sharing')}
+                checked={skipSharing}
+                setChecked={setSkipSharing}
             />
             <Button
                 primary

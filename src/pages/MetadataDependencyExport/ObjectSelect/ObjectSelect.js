@@ -13,7 +13,14 @@ const listQuery = resource => ({
     },
 });
 
-const ObjectSelect = ({ name, label, type, setSelected, selected }) => {
+const ObjectSelect = ({
+    name,
+    label,
+    type,
+    setSelected,
+    selected,
+    filterable,
+}) => {
     const engine = useDataEngine();
     const [loading, setLoading] = useState(true);
     const [objectList, setObjectList] = useState([]);
@@ -22,15 +29,15 @@ const ObjectSelect = ({ name, label, type, setSelected, selected }) => {
         setLoading(true);
         setSelected(undefined);
         const fetcher = async () => {
-            await engine.query(listQuery(type), {
+            await engine.query(listQuery(type.value), {
                 onComplete: data => {
-                    const list = data.data[type];
+                    const list = data.data[type.value];
                     const formattedList = list.map(e => ({
                         value: e.id,
                         label: e.displayName,
                     }));
                     setObjectList(formattedList);
-                    setSelected(formattedList[0].value);
+                    setSelected(formattedList[0]);
                     setLoading(false);
                 },
                 onError: e => {
@@ -49,6 +56,7 @@ const ObjectSelect = ({ name, label, type, setSelected, selected }) => {
             options={objectList}
             selected={selected}
             setValue={setSelected}
+            filterable={filterable}
             dense
         />
     );
