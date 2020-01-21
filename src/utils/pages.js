@@ -5,6 +5,7 @@ import { DataImport } from '../pages/DataImport';
 import { DataExport } from '../pages/DataExport';
 import { EventExport } from '../pages/EventExport';
 import { EventImport } from '../pages/EventImport';
+import { GMLImport } from '../pages/GMLImport';
 import { MetadataDependencyExport } from '../pages/MetadataDependencyExport';
 import { MetadataExport } from '../pages/MetadataExport';
 
@@ -50,7 +51,7 @@ const gmlImportPage = {
     ),
     icon: <GMLIcon />,
     path: '/import/gml',
-    component: <PlaceHolder name="import/gml" />,
+    component: <GMLImport />,
 };
 
 const metadataImportPage = {
