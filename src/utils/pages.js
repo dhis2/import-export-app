@@ -1,6 +1,7 @@
 import React from 'react';
 import i18n from '@dhis2/d2-i18n';
 
+import { DataImport } from '../components/DataImport';
 import { DataExport } from '../components/DataExport';
 import { EventExport } from '../components/EventExport';
 import { MetadataDependencyExport } from '../components/MetadataDependencyExport';
@@ -28,7 +29,7 @@ const dataImportPage = {
     ),
     icon: <DataIcon />,
     path: '/import/data',
-    component: <PlaceHolder name="import/data" />,
+    component: <DataImport />,
 };
 
 const eventImportPage = {

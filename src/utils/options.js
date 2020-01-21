@@ -8,9 +8,14 @@ const formatOptions = [
 
 const formatNoCsvOptions = formatOptions.filter(f => f.value != 'csv');
 
-const formatADXOptions = [
+const formatAdxOptions = [
     ...formatOptions,
     { value: 'adx', label: i18n.t('ADX') },
+];
+
+const formatAdxPdfOptions = [
+    ...formatAdxOptions,
+    { value: 'pdf', label: i18n.t('PDF') },
 ];
 
 const compressionOptions = [
@@ -65,6 +70,38 @@ const inclusionOptions = [
     },
 ];
 
+const skipExisitingCheckOptions = [
+    {
+        value: 'true',
+        label: i18n.t('Skip check'),
+        help: 'fast',
+    },
+    {
+        value: 'false',
+        label: i18n.t('Check'),
+        help: 'safe, recommended',
+    },
+];
+
+const strategyOptions = [
+    {
+        value: 'NEW_AND_UPDATES',
+        label: i18n.t('New and updates'),
+    },
+    {
+        value: 'NEW',
+        label: i18n.t('New only'),
+    },
+    {
+        value: 'UPDATES',
+        label: i18n.t('Updates only'),
+    },
+    {
+        value: 'DELETE',
+        label: i18n.t('Delete'),
+    },
+];
+
 const defaultFormatOption = formatOptions[0];
 const defaultCompressionOption = compressionOptions[0];
 const defaultSharingOption = sharingOptions[0];
@@ -73,11 +110,14 @@ const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0];
 const defaultOrgUnitIdSchemeOption = orgUnitIdSchemeOptions[0];
 const defaultIdSchemeOption = idSchemeOptions[0];
 const defaultInclusionOption = inclusionOptions[0];
+const defaultSkipExisitingCheckOption = skipExisitingCheckOptions[0];
+const defaultStrategyOption = strategyOptions[0];
 
 export {
     formatOptions,
     formatNoCsvOptions,
-    formatADXOptions,
+    formatAdxOptions,
+    formatAdxPdfOptions,
     compressionOptions,
     sharingOptions,
     objectTypeOptions,
@@ -85,6 +125,8 @@ export {
     orgUnitIdSchemeOptions,
     idSchemeOptions,
     inclusionOptions,
+    skipExisitingCheckOptions,
+    strategyOptions,
     defaultFormatOption,
     defaultCompressionOption,
     defaultSharingOption,
@@ -93,4 +135,6 @@ export {
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
     defaultInclusionOption,
+    defaultSkipExisitingCheckOption,
+    defaultStrategyOption,
 };
