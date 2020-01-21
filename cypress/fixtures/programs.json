@@ -1,0 +1,60 @@
+{
+    "programs": [
+        {
+            "id": "lxAQ7Zs9VYR",
+            "displayName": "Antenatal care visit"
+        },
+        {
+            "id": "IpHINAT79UW",
+            "displayName": "Child Programme"
+        },
+        {
+            "id": "kla3mAPgvCH",
+            "displayName": "Contraceptives Voucher Program"
+        },
+        {
+            "id": "q04UBOqq3rp",
+            "displayName": "Information Campaign"
+        },
+        {
+            "id": "eBAyeGv0exc",
+            "displayName": "Inpatient morbidity and mortality"
+        },
+        {
+            "id": "qDkgAbB5Jlk",
+            "displayName": "Malaria case diagnosis, treatment and investigation"
+        },
+        {
+            "id": "VBqh0ynB2wv",
+            "displayName": "Malaria case registration"
+        },
+        {
+            "id": "M3xtLkYBlKI",
+            "displayName": "Malaria focus investigation"
+        },
+        {
+            "id": "bMcwwoVnbSR",
+            "displayName": "Malaria testing and surveillance"
+        },
+        {
+            "id": "uy2gU8kT1jF",
+            "displayName": "MNCH / PNC (Adult Woman)"
+        },
+        {
+            "id": "fDd25txQckK",
+            "displayName": "Provider Follow-up and Support Tool"
+        },
+        {
+            "id": "ur1Edk5Oe2n",
+            "displayName": "TB program"
+        },
+        {
+            "id": "WSGAb5XwJ3Y",
+            "displayName": "WHO RMNCH Tracker"
+        },
+        {
+            "id": "MoUd5BTQ3lY",
+            "displayName": "XX MAL RDT - Case Registration"
+        }
+    ]
+}
