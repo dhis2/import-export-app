@@ -31,13 +31,13 @@ const EventImport = () => {
     const { data, addTask } = useContext(TaskContext);
     const [loading, setLoading] = useState(false);
     const [file, setFile] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption.value);
+    const [format, setFormat] = useState(defaultFormatOption);
     const [dryRun, setDryRun] = useState(false);
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        defaultOrgUnitIdSchemeOption.value
+        defaultOrgUnitIdSchemeOption
     );
     const [eventIdScheme, setEventIdScheme] = useState(
-        defaultEventIdSchemeOption.value
+        defaultEventIdSchemeOption
     );
     const [alerts, setAlerts] = useState([]);
     const { baseUrl } = useConfig();
@@ -66,9 +66,9 @@ const EventImport = () => {
         const endpoint = 'events.json';
         const params = [
             `dryRun=${dryRun}`,
-            `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `eventIdScheme=${eventIdScheme}`,
-            `payloadFormat=${format}`,
+            `orgUnitIdScheme=${orgUnitIdScheme.value}`,
+            `eventIdScheme=${eventIdScheme.value}`,
+            `payloadFormat=${format.value}`,
             'skipFirst=true',
             'async=true',
         ].join('&');
@@ -77,7 +77,7 @@ const EventImport = () => {
         uploadFile(
             url,
             file,
-            format,
+            format.value,
             'EVENT_IMPORT',
             setLoading,
             setAlerts,

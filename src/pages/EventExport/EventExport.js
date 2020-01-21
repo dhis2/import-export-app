@@ -12,7 +12,6 @@ import {
     inclusionOptions,
     defaultFormatOption,
     defaultCompressionOption,
-    defaultSharingOption,
     defaultIdSchemeOption,
     defaultInclusionOption,
 } from '../../utils/options';
@@ -35,17 +34,15 @@ const EventExport = ({}) => {
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([]);
     const [selectedPrograms, setSelectedPrograms] = useState([]);
     const [programStage, setProgramStage] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption.value);
-    const [compression, setCompression] = useState(
-        defaultCompressionOption.value
-    );
+    const [format, setFormat] = useState(defaultFormatOption);
+    const [compression, setCompression] = useState(defaultCompressionOption);
     const [startDate, setStartDate] = useState(
         new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
     );
     const [endDate, setEndDate] = useState(today);
     const [includeDeleted, setIncludeDeleted] = useState(false);
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption.value);
-    const [inclusion, setInclusion] = useState(defaultInclusionOption.value);
+    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption);
+    const [inclusion, setInclusion] = useState(defaultInclusionOption);
     const [alerts, setAlerts] = useState([]);
     const { baseUrl } = useConfig();
 
@@ -87,25 +84,25 @@ const EventExport = ({}) => {
         // generate URL and redirect
         const apiBaseUrl = `${baseUrl}/api/`;
         const endpoint = `events`;
-        const endpointExtension = compression
-            ? `${format}.${compression}`
-            : format;
+        const endpointExtension = compression.value
+            ? `${format.value}.${compression.value}`
+            : format.value;
         const filename = `${endpoint}.${endpointExtension}`;
         const downloadUrlParams = [
             `orgUnit=${pathToId(selectedOrgUnits[0])}`,
             `programs=${selectedPrograms[0]}`,
             `includeDeleted=${includeDeleted}`,
-            `idScheme=${idScheme}`,
+            `idScheme=${idScheme.value}`,
             `attachment=${filename}`,
             `startDate=${jsDateToISO8601(startDate)}`,
             `endDate=${jsDateToISO8601(endDate)}`,
-            `ouMode=${inclusion}`,
-            `format=${format}`,
+            `ouMode=${inclusion.value}`,
+            `format=${format.value}`,
             'links=false',
             'skipPaging=true',
             ...[
-                programStage != ALL_VALUE
-                    ? [`programStage=${programStage}`]
+                programStage.value != ALL_VALUE
+                    ? [`programStage=${programStage.value}`]
                     : [],
             ],
         ].join('&');

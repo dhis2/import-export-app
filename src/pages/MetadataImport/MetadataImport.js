@@ -51,26 +51,24 @@ const MetadataImport = () => {
     const { data, addTask } = useContext(TaskContext);
     const [loading, setLoading] = useState(false);
     const [file, setFile] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption.value);
+    const [format, setFormat] = useState(defaultFormatOption);
     const [dryRun, setDryRun] = useState(false);
-    const [identifier, setIdentifier] = useState(defaultIdentifierOption.value);
+    const [identifier, setIdentifier] = useState(defaultIdentifierOption);
     const [importReportMode, setImportReportMode] = useState(
-        defaultImportReportModeOption.value
+        defaultImportReportModeOption
     );
-    const [preheatMode, setPreheatMode] = useState(
-        defaultPreheatModeOption.value
-    );
+    const [preheatMode, setPreheatMode] = useState(defaultPreheatModeOption);
     const [importStrategy, setImportStrategy] = useState(
-        defaultImportStrategyOption.value
+        defaultImportStrategyOption
     );
     const [firstRowIsHeader, setFirstRowIsHeader] = useState(false);
     const [classKeyOptions, setClassKeyOptions] = useState([]);
     const [classKey, setClassKey] = useState(undefined);
-    const [atomicMode, setAtomicMode] = useState(defaultAtomicModeOption.value);
-    const [mergeMode, setMergeMode] = useState(defaultMergeModeOption.value);
-    const [flushMode, setFlushMode] = useState(defaultFlushModeOption.value);
+    const [atomicMode, setAtomicMode] = useState(defaultAtomicModeOption);
+    const [mergeMode, setMergeMode] = useState(defaultMergeModeOption);
+    const [flushMode, setFlushMode] = useState(defaultFlushModeOption);
     const [inclusionStrategy, setInclusionStrategy] = useState(
-        defaultInclusionStrategyOption.value
+        defaultInclusionStrategyOption
     );
     const [skipSharing, setSkipSharing] = useState(false);
     const [skipValidation, setSkipValidation] = useState(false);
@@ -83,7 +81,7 @@ const MetadataImport = () => {
             setClassKeyOptions(
                 classData.keys.map(k => ({ value: k, label: k }))
             );
-            setClassKey(classData.keys[0]);
+            setClassKey({ value: classData.keys[0], label: classData.keys[0] });
         }
     }, [classData]);
 
@@ -113,22 +111,22 @@ const MetadataImport = () => {
             `dryRun=${dryRun}`,
             `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,
             `identifier=${identifier}`,
-            `importReportMode=${importReportMode}`,
-            `preheatMode=${preheatMode}`,
-            `importStrategy=${importStrategy}`,
-            `atomicMode=${atomicMode}`,
-            `mergeMode=${mergeMode}`,
-            `flushMode=${flushMode}`,
+            `importReportMode=${importReportMode.value}`,
+            `preheatMode=${preheatMode.value}`,
+            `importStrategy=${importStrategy.value}`,
+            `atomicMode=${atomicMode.value}`,
+            `mergeMode=${mergeMode.value}`,
+            `flushMode=${flushMode.value}`,
             `skipSharing=${skipSharing}`,
             `skipValidation=${skipValidation}`,
-            `inclusionStrategy=${inclusionStrategy}`,
+            `inclusionStrategy=${inclusionStrategy.value}`,
             `async=${async}`,
             'format=json',
             ...[
-                format == 'csv'
+                format.value == 'csv'
                     ? [
                           `firstRowIsHeader=${firstRowIsHeader}`,
-                          `classKey=${classKey}`,
+                          `classKey=${classKey.value}`,
                       ]
                     : [],
             ],
@@ -138,7 +136,7 @@ const MetadataImport = () => {
         uploadFile(
             url,
             file,
-            format,
+            format.value,
             'METADATA_IMPORT',
             setLoading,
             setAlerts,
@@ -168,7 +166,7 @@ const MetadataImport = () => {
                 setChecked={setDryRun}
                 help={helpText.dryRun}
             />
-            {format == 'csv' && (
+            {format.value == 'csv' && (
                 <>
                     <Switch
                         name="firstRowIsHeader"

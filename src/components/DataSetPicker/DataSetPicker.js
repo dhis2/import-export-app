@@ -66,6 +66,7 @@ const DataSetPicker = ({
                 {loading && <CircularLoader />}
                 {data && (
                     <SelectableList
+                        name="dataSetPicker"
                         label={i18n.t('Filter data sets by name')}
                         selected={selected}
                         select={onSelect}

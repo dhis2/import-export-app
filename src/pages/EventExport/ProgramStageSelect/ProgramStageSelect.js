@@ -17,6 +17,7 @@ const programStageQuery = {
 };
 
 const ALL_VALUE = ':all';
+const ALL_LABEL = i18n.t('[ All program stages ]');
 
 const ProgramStageSelect = ({
     name,
@@ -50,11 +51,11 @@ const ProgramStageSelect = ({
                     setStages([
                         {
                             value: ALL_VALUE,
-                            label: i18n.t('[ All program stages ]'),
+                            label: ALL_LABEL,
                         },
                         ...formattedList,
                     ]);
-                    setSelected(ALL_VALUE);
+                    setSelected({ value: ALL_VALUE, label: ALL_LABEL });
                     setLoading(false);
                 },
                 onError: e => {

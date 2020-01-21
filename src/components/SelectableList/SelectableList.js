@@ -6,6 +6,7 @@ import s from './SelectableList.module.css';
 
 const SelectableList = ({
     label,
+    name,
     selected,
     select,
     onSelectAll,
@@ -17,6 +18,8 @@ const SelectableList = ({
 }) => {
     const [filter, setFilter] = useState('');
 
+    const onSelect = ({ value }) => select(value);
+
     return (
         <div>
             {withFilter && (
@@ -25,7 +28,7 @@ const SelectableList = ({
                         name="filter"
                         label={label}
                         value={filter}
-                        onChange={e => setFilter(e.target.value)}
+                        onChange={({ value }) => setFilter(value)}
                         dense
                     />
                 </div>
@@ -77,10 +80,10 @@ const SelectableList = ({
 
                         return (
                             <MenuItem
-                                key={`dateSetPicker-mi-${value}`}
+                                key={`${name}-mi-${value}`}
                                 value={value}
                                 label={component}
-                                onClick={() => select(value)}
+                                onClick={onSelect}
                             />
                         );
                     })}

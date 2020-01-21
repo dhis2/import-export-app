@@ -95,22 +95,20 @@ const DataExport = () => {
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([]);
     const [includeChildren, setIncludeChildren] = useState(true);
     const [selectedDataSets, setSelectedDataSets] = useState([]);
-    const [format, setFormat] = useState(defaultFormatOption.value);
-    const [compression, setCompression] = useState(
-        defaultCompressionOption.value
-    );
+    const [format, setFormat] = useState(defaultFormatOption);
+    const [compression, setCompression] = useState(defaultCompressionOption);
     const [startDate, setStartDate] = useState(
         new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
     );
     const [endDate, setEndDate] = useState(today);
     const [includeDeleted, setIncludeDeleted] = useState(false);
     const [dataElementIdScheme, setDataElementIdScheme] = useState(
-        defaultDataElementIdSchemeOption.value
+        defaultDataElementIdSchemeOption
     );
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        defaultOrgUnitIdSchemeOption.value
+        defaultOrgUnitIdSchemeOption
     );
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption.value);
+    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption);
     const [alerts, setAlerts] = useState([]);
 
     const onExport = () => {
@@ -153,29 +151,30 @@ const DataExport = () => {
         // fetch data
         engine.query(dataValueSetQuery, {
             variables: {
-                dataElementIdScheme,
-                orgUnitIdScheme,
-                idScheme,
+                dataElementIdScheme: dataElementIdScheme.value,
+                orgUnitIdScheme: orgUnitIdScheme.value,
+                idScheme: idScheme.value,
                 includeDeleted,
                 children: includeChildren,
                 startDate: jsDateToISO8601(startDate),
                 endDate: jsDateToISO8601(endDate),
                 orgUnit: selectedOrgUnits.map(o => pathToId(o)),
                 dataSet: selectedDataSets,
-                format,
+                format: format.value,
             },
             onComplete: ({ sets }) => {
-                const dataStr = format === 'json' ? JSON.stringify(sets) : sets;
-                const filename = `data.${format}`;
-                if (compression !== '') {
+                const dataStr =
+                    format.value === 'json' ? JSON.stringify(sets) : sets;
+                const filename = `data.${format.value}`;
+                if (compression.value !== '') {
                     const zip = new JSZip();
                     zip.file(filename, dataStr);
                     zip.generateAsync({ type: 'blob' }).then(content => {
                         const url = URL.createObjectURL(content);
-                        downloadBlob(url, `${filename}.${compression}`);
+                        downloadBlob(url, `${filename}.${compression.value}`);
                     });
                 } else {
-                    const url = createBlob(dataStr, format);
+                    const url = createBlob(dataStr, format.value);
                     downloadBlob(url, filename);
                 }
             },

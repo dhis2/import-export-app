@@ -7,24 +7,21 @@ import { metadataExportPage as p } from '../../utils/pages';
 import {
     formatOptions,
     compressionOptions,
-    sharingOptions,
     defaultFormatOption,
     defaultCompressionOption,
-    defaultSharingOption,
 } from '../../utils/options';
 import { EXCLUDE_SCHEMAS } from './helper';
 import { Schemas } from './Schemas/';
 import { Page } from '../../components/Page';
+import { Switch } from '../../components/Switch';
 import { RadioGroup } from '../../components/RadioGroup';
 import { FormAlerts } from '../../components/FormAlerts';
 
 const MetadataExport = () => {
     const [checkedSchemas, setCheckedSchemas] = useState([]);
-    const [format, setFormat] = useState(defaultFormatOption.value);
-    const [compression, setCompression] = useState(
-        defaultCompressionOption.value
-    );
-    const [sharing, setSharing] = useState(defaultSharingOption.value);
+    const [format, setFormat] = useState(defaultFormatOption);
+    const [compression, setCompression] = useState(defaultCompressionOption);
+    const [skipSharing, setSkipSharing] = useState(false);
     const [alerts, setAlerts] = useState([]);
     const { baseUrl } = useConfig();
 
@@ -50,13 +47,13 @@ const MetadataExport = () => {
         // fetch data
         const apiBaseUrl = `${baseUrl}/api/`;
         const endpoint = `metadata`;
-        const endpointExtension = compression
-            ? `${format}.${compression}`
-            : format;
+        const endpointExtension = compression.value
+            ? `${format.value}.${compression.value}`
+            : format.value;
         const schemaParams = checkedSchemas
             .map(name => `${name}=true`)
             .join('&');
-        const downloadUrlParams = `skipSharing=${sharing}&download=true&${schemaParams}`;
+        const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`;
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`;
         window.location = url;
     };
@@ -82,12 +79,11 @@ const MetadataExport = () => {
                 setValue={setCompression}
                 checked={compression}
             />
-            <RadioGroup
-                name="sharing"
-                label={i18n.t('Sharing')}
-                options={sharingOptions}
-                setValue={setSharing}
-                checked={sharing}
+            <Switch
+                name="skipSharing"
+                label={i18n.t('Skip sharing')}
+                checked={skipSharing}
+                setChecked={setSkipSharing}
             />
             <Button primary initialFocus onClick={onExport}>
                 {i18n.t('Export')}

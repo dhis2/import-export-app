@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-21T11:34:46.220Z\n"
-"PO-Revision-Date: 2020-01-21T11:34:46.220Z\n"
+"POT-Creation-Date: 2020-01-21T15:14:08.741Z\n"
+"PO-Revision-Date: 2020-01-21T15:14:08.741Z\n"
 
 msgid "Data sets"
 msgstr ""
@@ -54,6 +54,12 @@ msgid "Import"
 msgstr ""
 
 msgid "Export"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
@@ -128,7 +134,7 @@ msgstr ""
 msgid "Object"
 msgstr ""
 
-msgid "Sharing"
+msgid "Skip sharing"
 msgstr ""
 
 msgid "At least one schema must be selected"
@@ -138,6 +144,39 @@ msgid "Select All"
 msgstr ""
 
 msgid "Select None"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Inclusion strategy"
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
@@ -168,12 +207,6 @@ msgid "GZip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
-
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
 msgstr ""
 
 msgid "Category combination"
@@ -222,6 +255,45 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Errors"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""
 
 msgid "Data import"

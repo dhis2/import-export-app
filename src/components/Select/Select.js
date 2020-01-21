@@ -1,7 +1,8 @@
 import React from 'react';
-import { SelectField } from '@dhis2/ui-core';
+import { SingleSelect, SingleSelectOption } from '@dhis2/ui-core';
 
 import s from './Select.module.css';
+import { FormField } from '../FormField';
 
 const Select = ({
     name,
@@ -9,32 +10,39 @@ const Select = ({
     loading,
     filled,
     dense,
+    filterable,
     initialFocus,
     options,
     setValue,
     selected,
+    noMatchText,
 }) => {
     const optionEls = options.map(o => (
-        <option key={o.value} value={o.value}>
-            {o.label}
-        </option>
+        <SingleSelectOption key={o.value} value={o.value} label={o.label} />
     ));
 
+    const onChange = ({ selected }) => setValue(selected);
+
     return (
-        <div className={s.select}>
-            <SelectField
-                dense={dense}
-                filled={filled}
-                initialFocus={initialFocus}
-                loading={loading}
-                name={name}
-                onChange={_ref => setValue(_ref.target.value)}
-                label={label}
-                value={selected}
-            >
-                {optionEls}
-            </SelectField>
-        </div>
+        <FormField label={label}>
+            <div className={s.select}>
+                <SingleSelect
+                    dense={dense}
+                    filled={filled}
+                    initialFocus={initialFocus}
+                    loading={loading}
+                    name={name}
+                    onChange={onChange}
+                    selected={selected}
+                    filterable={filterable}
+                    noMatchText={
+                        noMatchText ? noMatchText : `No match found for filter`
+                    }
+                >
+                    {optionEls}
+                </SingleSelect>
+            </div>
+        </FormField>
     );
 };
 
