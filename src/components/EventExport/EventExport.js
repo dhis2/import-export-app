@@ -94,7 +94,7 @@ const EventExport = ({}) => {
         const downloadUrlParams = [
             `orgUnit=${pathToId(selectedOrgUnits[0])}`,
             `programs=${selectedPrograms[0]}`,
-            `includeDeleted=${includeDeleted}&id`,
+            `includeDeleted=${includeDeleted}`,
             `idScheme=${idScheme}`,
             `attachment=${filename}`,
             `startDate=${jsDateToISO8601(startDate)}`,
