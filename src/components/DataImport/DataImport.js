@@ -37,7 +37,7 @@ const DataImport = () => {
     const [loading, setLoading] = useState(false);
     const [file, setFile] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption.value);
-    const [dryRun, setDryRun] = useState(true);
+    const [dryRun, setDryRun] = useState(false);
     const [strategy, setStrategy] = useState(defaultStrategyOption.value);
     const [firstRowIsHeader, setFirstRowIsHeader] = useState(false);
     const [preheatCache, setPreheatCache] = useState(false);
@@ -123,6 +123,9 @@ const DataImport = () => {
                 name="dryRun"
                 checked={dryRun}
                 setChecked={setDryRun}
+                help={i18n.t(
+                    'Will do a test run without importing any data into the database'
+                )}
             />
             {format == 'csv' && (
                 <Switch
@@ -152,6 +155,9 @@ const DataImport = () => {
                     name="skipAudit"
                     checked={skipAudit}
                     setChecked={setSkipAudit}
+                    help={i18n.t(
+                        'Improves performance at the cost of ability to audit changes'
+                    )}
                 />
             </WithAuthority>
             <MoreOptions>
