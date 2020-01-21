@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card } from '@dhis2/ui-core';
+import { Card, CircularLoader, ComponentCover } from '@dhis2/ui-core';
 
 import s from './Page.module.css';
 
-const Page = ({ title, desc, icon, children }) => {
+const Page = ({ title, desc, icon, children, loading = false }) => {
     return (
         <div className={s.container}>
             <div className={s.header}>
@@ -12,6 +12,11 @@ const Page = ({ title, desc, icon, children }) => {
                 <p className={s.desc}>{desc}</p>
             </div>
             <Card>
+                {loading && (
+                    <ComponentCover>
+                        <CircularLoader />
+                    </ComponentCover>
+                )}
                 <div className={s.content}>{children}</div>
             </Card>
         </div>
