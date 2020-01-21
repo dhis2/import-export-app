@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { useConfig, useDataQuery } from '@dhis2/app-runtime';
-import { CssReset, CircularLoader } from '@dhis2/ui-core';
+import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core';
 import i18n from '@dhis2/d2-i18n';
 
 import { fetchAndSetAttributes } from './utils/helper';
@@ -11,8 +11,7 @@ import {
     idSchemeOptions,
 } from './utils/options';
 import { Skeleton } from './components/Skeleton';
-import { SchemeContext } from './contexts/';
-import { UserContext } from './contexts/';
+import { SchemeContext, TaskContext, UserContext } from './contexts/';
 
 const userQuery = {
     user: {
@@ -20,8 +19,24 @@ const userQuery = {
     },
 };
 
+const jobEventQuery = {
+    events: {
+        resource: 'system/tasks/',
+        id: ({ type, taskId }) => `${type}/${taskId}`,
+    },
+};
+
+const jobSummaryQuery = {
+    summary: {
+        resource: 'system/taskSummaries/',
+        id: ({ type, taskId }) => `${type}/${taskId}`,
+    },
+};
+
+const refetchPeriod = 2000;
+
 const MyApp = () => {
-    const { loading, error, data } = useDataQuery(userQuery);
+    const { loading, error, data, engine } = useDataQuery(userQuery);
     const { baseUrl } = useConfig();
     const [
         dataElementIdSchemeOptionsDyn,
@@ -38,9 +53,97 @@ const MyApp = () => {
     });
     const [user, setUser] = useState(undefined);
 
+    const addTask = (type, id, entry) => {
+        setTasks(tasks => ({
+            ...tasks,
+            [type]: { ...tasks[type], [id]: entry },
+        }));
+        fetchEvents(type, id, entry);
+    };
+
+    const [tasks, setTasks] = useState({
+        data: {},
+        event: {},
+        gml: {},
+        metadata: {},
+        updateTasks: updatedTasks =>
+            setTasks(tasks => ({ ...tasks, ...updatedTasks })),
+        addTask: addTask,
+    });
+
+    const fetchEvents = async (type, id, task) => {
+        if (task.completed) {
+            return;
+        }
+
+        const newTask = { ...task };
+        const { events, error } = await engine.query(jobEventQuery, {
+            variables: {
+                type: task.importType,
+                taskId: task.id,
+            },
+        });
+
+        if (error) {
+            console.log('fetchEvents error: ', e);
+            return;
+        }
+
+        if (events && events.length) {
+            const newEvents = events
+                .filter(e => !task.events.some(te => te.id == e.uid))
+                .map(e => ({
+                    id: e.uid,
+                    text: e.message,
+                    date: new Date(e.time),
+                }));
+            newTask.events = [...newTask.events, ...newEvents.reverse()];
+            newTask.completed = events[0].completed;
+        }
+
+        newTask.lastUpdated = new Date();
+
+        if (!newTask.completed) {
+            setTimeout(() => fetchEvents(type, id, newTask), refetchPeriod);
+        } else {
+            fetchSummary(type, id, newTask);
+        }
+
+        setTasks(tasks => ({
+            ...tasks,
+            [type]: { ...tasks[type], [id]: newTask },
+        }));
+    };
+
+    const fetchSummary = async (type, id, task) => {
+        const newTask = { ...task };
+
+        const { summary, error } = await engine.query(jobSummaryQuery, {
+            variables: {
+                type: task.importType,
+                taskId: task.id,
+            },
+        });
+
+        if (error) {
+            console.log('fetchSummary error: ', e);
+            return;
+        }
+
+        newTask.summary = summary;
+        setTasks(tasks => ({
+            ...tasks,
+            [type]: { ...tasks[type], [id]: newTask },
+        }));
+    };
+
+    useEffect(() => {
+        console.log(tasks);
+    }, [tasks]);
+
     useEffect(() => {
         if (data) {
-            setUser(user);
+            setUser(data.user);
         }
     }, [data]);
 
@@ -69,13 +172,17 @@ const MyApp = () => {
         <div>
             <CssReset />
             {loading ? (
-                <CircularLoader large />
+                <ScreenCover>
+                    <CircularLoader />
+                </ScreenCover>
             ) : (
                 <UserContext.Provider value={user}>
                     <SchemeContext.Provider value={elementSchemes}>
-                        <Router>
-                            <Skeleton />
-                        </Router>
+                        <TaskContext.Provider value={tasks}>
+                            <Router>
+                                <Skeleton />
+                            </Router>
+                        </TaskContext.Provider>
                     </SchemeContext.Provider>
                 </UserContext.Provider>
             )}
