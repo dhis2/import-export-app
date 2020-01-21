@@ -123,51 +123,7 @@ const uploadFile = (
     addEntry
 ) => {
     setLoading(true);
-    try {
-        const xhr = getUploadXHR(
-            url,
-            file,
-            type,
-            ({ id, msg }) => {
-                let entry;
-                if (id == -1 && !msg) {
-                    entry = {
-                        id,
-                        created: new Date(),
-                        file: file.name,
-                        completed: true,
-                        summary: undefined,
-                        error: true,
-                        importType: type,
-                    };
-                } else {
-                    entry = {
-                        id,
-                        created: new Date(),
-                        lastUpdated: new Date(),
-                        file: file.name,
-                        completed: id == -1,
-                        events: [msg],
-                        summary: undefined,
-                        error: id == -1,
-                        importType: type,
-                    };
-                }
-                addEntry(id, entry);
-            },
-            e => {
-                let message = i18n.t('An unknown error occurred');
-                try {
-                    const response = JSON.parse(e.target.response);
-                    message = response.message;
-                } catch (e2) {}
-                throw message;
-            },
-            format
-        );
-        xhr.send(file);
-        setLoading(false);
-    } catch (e) {
+    const errorHandler = e => {
         console.error('sendFile error: ', e);
         setAlerts([
             {
@@ -179,6 +135,59 @@ const uploadFile = (
             },
         ]);
         setLoading(false);
+    };
+
+    try {
+        const xhr = getUploadXHR(
+            url,
+            file,
+            type,
+            ({ id, msg }) => {
+                const newId = id == -1 ? new Date().getTime() : id;
+                let entry;
+                if (id == -1 && !msg) {
+                    entry = {
+                        id: newId,
+                        created: new Date(),
+                        file: file.name,
+                        completed: true,
+                        summary: undefined,
+                        error: true,
+                        importType: type,
+                    };
+                } else {
+                    entry = {
+                        id: newId,
+                        created: new Date(),
+                        lastUpdated: new Date(),
+                        file: file.name,
+                        completed: id == -1,
+                        events: [msg],
+                        summary: undefined,
+                        error: id == -1,
+                        importType: type,
+                    };
+                }
+                addEntry(newId, entry);
+
+                if (id == -1) {
+                    errorHandler(msg);
+                }
+            },
+            e => {
+                let message = i18n.t('An unknown error occurred');
+                try {
+                    const response = JSON.parse(e.target.response);
+                    message = response.message;
+                } catch (e2) {}
+                errorHandler(message);
+            },
+            format
+        );
+        xhr.send(file);
+        setLoading(false);
+    } catch (e) {
+        errorHandler(e);
     }
 };
 
