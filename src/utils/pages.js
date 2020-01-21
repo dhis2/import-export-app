@@ -8,6 +8,7 @@ import { EventImport } from '../pages/EventImport';
 import { GMLImport } from '../pages/GMLImport';
 import { MetadataDependencyExport } from '../pages/MetadataDependencyExport';
 import { MetadataExport } from '../pages/MetadataExport';
+import { MetadataImport } from '../pages/MetadataImport';
 
 import {
     DataIcon,
@@ -19,10 +20,6 @@ import {
     MetadataExportIcon,
     MetadataImportIcon,
 } from '../components/Icon';
-
-const PlaceHolder = ({ name }) => {
-    return <h2>{name}</h2>;
-};
 
 const dataImportPage = {
     name: i18n.t('Data import'),
@@ -61,7 +58,7 @@ const metadataImportPage = {
     ),
     path: '/import/metadata',
     icon: <MetadataImportIcon />,
-    component: <PlaceHolder name="import/metadata" />,
+    component: <MetadataImport />,
 };
 
 const dataExportPage = {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-21T10:10:58.298Z\n"
-"PO-Revision-Date: 2020-01-21T10:10:58.298Z\n"
+"POT-Creation-Date: 2020-01-21T11:34:46.220Z\n"
+"PO-Revision-Date: 2020-01-21T11:34:46.220Z\n"
 
 msgid "Data sets"
 msgstr ""
@@ -15,6 +15,9 @@ msgid "Filter data sets by name"
 msgstr ""
 
 msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Event ID scheme"
 msgstr ""
 
 msgid "ID scheme"
@@ -89,9 +92,6 @@ msgstr ""
 msgid "Dry run"
 msgstr ""
 
-msgid "Will do a test run without importing any data into the database"
-msgstr ""
-
 msgid "First row is header"
 msgstr ""
 
@@ -101,19 +101,10 @@ msgstr ""
 msgid "Preheat cache"
 msgstr ""
 
-msgid "Faster for large imports"
-msgstr ""
-
 msgid "Skip audit"
 msgstr ""
 
-msgid "Improves performance at the cost of ability to audit changes"
-msgstr ""
-
 msgid "Skip exisiting check"
-msgstr ""
-
-msgid "Faster, but unsafe"
 msgstr ""
 
 msgid "One organisation unit must be selected"
@@ -149,10 +140,10 @@ msgstr ""
 msgid "Select None"
 msgstr ""
 
-msgid "An unknown error occurred"
+msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "An unknown error occurred. Please try again later"
+msgid "An unknown error occurred"
 msgstr ""
 
 msgid "JSON"
@@ -291,4 +282,16 @@ msgstr ""
 msgid ""
 "Export meta data like data elements and organisation units in the XML, JSON "
 "or CSV format."
+msgstr ""
+
+msgid "Will do a test run without importing any data into the database"
+msgstr ""
+
+msgid "Faster for large imports"
+msgstr ""
+
+msgid "Improves performance at the cost of ability to audit changes"
+msgstr ""
+
+msgid "Faster, but unsafe"
 msgstr ""
