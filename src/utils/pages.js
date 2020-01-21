@@ -4,6 +4,7 @@ import i18n from '@dhis2/d2-i18n';
 import { DataImport } from '../pages/DataImport';
 import { DataExport } from '../pages/DataExport';
 import { EventExport } from '../pages/EventExport';
+import { EventImport } from '../pages/EventImport';
 import { MetadataDependencyExport } from '../pages/MetadataDependencyExport';
 import { MetadataExport } from '../pages/MetadataExport';
 
@@ -39,7 +40,7 @@ const eventImportPage = {
     ),
     icon: <EventIcon />,
     path: '/import/event',
-    component: <PlaceHolder name="import/event" />,
+    component: <EventImport />,
 };
 
 const gmlImportPage = {
