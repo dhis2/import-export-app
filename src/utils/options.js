@@ -55,6 +55,8 @@ const idSchemeOptions = [
     { value: 'CODE', label: i18n.t('Code') },
 ];
 
+const eventIdSchemeOptions = [...idSchemeOptions];
+
 const inclusionOptions = [
     {
         value: 'SELECTED',
@@ -109,6 +111,7 @@ const defaultObjectTypeOption = objectTypeOptions[0];
 const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0];
 const defaultOrgUnitIdSchemeOption = orgUnitIdSchemeOptions[0];
 const defaultIdSchemeOption = idSchemeOptions[0];
+const defaultEventIdSchemeOption = eventIdSchemeOptions[0];
 const defaultInclusionOption = inclusionOptions[0];
 const defaultSkipExisitingCheckOption = skipExisitingCheckOptions[0];
 const defaultStrategyOption = strategyOptions[0];
@@ -124,6 +127,7 @@ export {
     dataElementIdSchemeOptions,
     orgUnitIdSchemeOptions,
     idSchemeOptions,
+    eventIdSchemeOptions,
     inclusionOptions,
     skipExisitingCheckOptions,
     strategyOptions,
@@ -134,6 +138,7 @@ export {
     defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
+    defaultEventIdSchemeOption,
     defaultInclusionOption,
     defaultSkipExisitingCheckOption,
     defaultStrategyOption,
