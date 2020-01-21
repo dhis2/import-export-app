@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDataEngine } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 
-import { Select } from '../../Select';
+import { Select } from '../../../components/Select';
 
 const programStageQuery = {
     data: {

@@ -14,9 +14,9 @@ import {
     defaultSharingOption,
     defaultObjectTypeOption,
 } from '../../utils/options';
-import { Page } from '../Page';
-import { RadioGroup } from '../RadioGroup';
-import { Select } from '../Select';
+import { Page } from '../../components/Page';
+import { RadioGroup } from '../../components/RadioGroup';
+import { Select } from '../../components/Select';
 import { ObjectSelect } from './ObjectSelect/';
 
 const MetadataDependencyExport = () => {

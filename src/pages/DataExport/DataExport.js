@@ -21,20 +21,20 @@ import {
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
 } from '../../utils/options';
-import { Page } from '../Page';
-import { RadioGroup } from '../RadioGroup';
-import { DatePicker } from '../DatePicker';
-import { Switch } from '../Switch';
-import { Select } from '../Select';
-import { OrgUnitTree } from '../OrgUnitTree';
-import { DataSetPicker } from '../DataSetPicker';
-import { MoreOptions } from '../MoreOptions';
+import { Page } from '../../components/Page';
+import { RadioGroup } from '../../components/RadioGroup';
+import { DatePicker } from '../../components/DatePicker';
+import { Switch } from '../../components/Switch';
+import { Select } from '../../components/Select';
+import { OrgUnitTree } from '../../components/OrgUnitTree';
+import { DataSetPicker } from '../../components/DataSetPicker';
+import { MoreOptions } from '../../components/MoreOptions';
 import {
     DataElementIdScheme,
     IdScheme,
     OrgUnitIdScheme,
-} from '../ElementSchemes';
-import { FormAlerts } from '../FormAlerts';
+} from '../../components/ElementSchemes';
+import { FormAlerts } from '../../components/FormAlerts';
 
 const today = new Date();
 

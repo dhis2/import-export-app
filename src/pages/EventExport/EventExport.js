@@ -16,16 +16,16 @@ import {
     defaultIdSchemeOption,
     defaultInclusionOption,
 } from '../../utils/options';
-import { Page } from '../Page';
-import { RadioGroup } from '../RadioGroup';
-import { DatePicker } from '../DatePicker';
-import { Switch } from '../Switch';
-import { Select } from '../Select';
-import { OrgUnitTree } from '../OrgUnitTree';
-import { ProgramPicker } from '../ProgramPicker';
-import { MoreOptions } from '../MoreOptions';
-import { IdScheme } from '../ElementSchemes';
-import { FormAlerts } from '../FormAlerts';
+import { Page } from '../../components/Page';
+import { RadioGroup } from '../../components/RadioGroup';
+import { DatePicker } from '../../components/DatePicker';
+import { Switch } from '../../components/Switch';
+import { Select } from '../../components/Select';
+import { OrgUnitTree } from '../../components/OrgUnitTree';
+import { ProgramPicker } from '../../components/ProgramPicker';
+import { MoreOptions } from '../../components/MoreOptions';
+import { IdScheme } from '../../components/ElementSchemes';
+import { FormAlerts } from '../../components/FormAlerts';
 import { ProgramStageSelect, ALL_VALUE } from './ProgramStageSelect/';
 
 const today = new Date();
