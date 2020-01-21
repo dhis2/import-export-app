@@ -13,7 +13,7 @@ import {
     pathToId,
 } from '../../utils/helper';
 import {
-    formatADXOptions,
+    formatAdxOptions,
     compressionOptions,
     defaultFormatOption,
     defaultCompressionOption,
@@ -217,7 +217,7 @@ const DataExport = () => {
             <RadioGroup
                 name="format"
                 label={i18n.t('Format')}
-                options={formatADXOptions}
+                options={formatAdxOptions}
                 setValue={setFormat}
                 checked={format}
             />
