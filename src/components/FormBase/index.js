@@ -40,6 +40,11 @@ export class FormBase extends React.Component {
         } catch (err) {}
     }
 
+    onBeforeSubmit = event => {
+        event.preventDefault()
+        return this.onSubmit()
+    }
+
     render() {
         if (this.state.error) {
             return (
@@ -65,7 +70,7 @@ export class FormBase extends React.Component {
                 onChange={this.onChange}
                 changeContext={this.changeContext}
                 submitLabel={this.submitLabel}
-                onSubmit={this.onSubmit}
+                onSubmit={this.onBeforeSubmit}
                 fieldValuesOverride={this.fieldValuesOverride || {}}
             />
         )

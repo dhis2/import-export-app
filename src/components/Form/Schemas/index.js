@@ -37,8 +37,8 @@ function schemaGroups(schemas) {
     Object.entries(groups).forEach(([k, v]) => {
         if (v.length === 1) {
             groupsWith1Item.push(k)
-            v[0]['group'] = OTHER_GROUP_NAME
-            otherGroup = otherGroup.concat(v)
+            const update = { ...v[0], group: OTHER_GROUP_NAME }
+            otherGroup = otherGroup.concat(update)
         }
     })
     groups[OTHER_GROUP_NAME] = otherGroup
@@ -46,13 +46,6 @@ function schemaGroups(schemas) {
     groupsWith1Item.forEach(k => {
         delete groups[k]
     })
-
-    // sort group items by length desc
-    // Object.entries(groups).forEach(([k, v]) => {
-    //   groups[k] = groups[k].sort(
-    //     (a, b) => a.displayName.length - b.displayName.length
-    //   )
-    // })
 
     return groups
 }
@@ -119,7 +112,7 @@ function Group({ label, schemas, checked, onClick }) {
                     <Checkbox
                         {...styles}
                         key={`chk-${s.collectionName}`}
-                        value={s.name}
+                        value={s.collectionName}
                         label={s.displayName}
                         checked={checked.includes(s.collectionName)}
                         onCheck={(evt, status) =>
@@ -242,6 +235,8 @@ export default class Schemas extends React.Component {
     }
 
     render() {
+        const { dataTest } = this.props
+
         if (!this.state.loaded) {
             return <Loading />
         }
@@ -251,7 +246,7 @@ export default class Schemas extends React.Component {
         }
 
         return (
-            <div className={s.container}>
+            <div className={s.container} data-test={dataTest}>
                 <Controls
                     onSelectAll={this.onSelectAll}
                     onSelectNone={this.onSelectNone}

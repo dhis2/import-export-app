@@ -5,7 +5,11 @@ import s from './styles.css'
 function NodeIcon({ hasChildren, open, value, onClick }) {
     if (hasChildren) {
         return (
-            <div className={s.icon} onClick={evt => onClick(evt, !open, value)}>
+            <div
+                className={s.icon}
+                onClick={evt => onClick(evt, !open, value)}
+                data-test="tree-node-icon"
+            >
                 {open ? '\u2212' : '\u002B'}
             </div>
         )
@@ -24,7 +28,11 @@ function NodeSpacer({ depth, hasChildren }) {
 }
 
 function NodeLabel({ label }) {
-    return <div className={s.text}>{label}</div>
+    return (
+        <div className={s.text} data-test="tree-node-label">
+            {label}
+        </div>
+    )
 }
 
 function Node({

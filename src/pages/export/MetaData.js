@@ -1,41 +1,14 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { api } from 'services'
-import { createBlob, downloadBlob, getFormFields, getFormValues } from 'helpers'
+
 import { FormBase } from 'components/FormBase'
 import { MetadataExportIcon } from 'components/Icon'
+import { getFormFields, getFormValues, getDownloadUrl } from 'helpers'
 
-const EXCLUDE_PARAMS = [
-    'analyticsTableHooks',
-    'charts',
-    'constants',
-    'dataElementDimensions',
-    'dataEntryForms',
-    'dataSetNotificationTemplates',
-    'dataStores',
-    'documents',
-    'eventCharts',
-    'eventReports',
-    'icons',
-    'jobConfigurations',
-    'messageConversations',
-    'metadataVersions',
-    'minMaxDataElements',
-    'oAuth2Clients',
-    'programDataElements',
-    'programNotificationTemplates',
-    'pushAnalysis',
-    'reportTables',
-    'reportingRates',
-    'reports',
-    'sections',
-    'smsCommands',
-    'sqlViews',
-    'trackedEntityInstanceFilters',
-    'validationNotificationTemplates',
-]
+import { download } from '../../helpers/url'
 
 export class MetaDataExport extends FormBase {
+    static dataTest = 'export-metadata'
     static path = '/export/metadata'
 
     static order = 5
@@ -47,7 +20,7 @@ export class MetaDataExport extends FormBase {
     static menuIcon = <MetadataExportIcon />
     icon = <MetadataExportIcon />
 
-    formWidth = '85%'
+    formWidth = 800
     formTitle = i18n.t('Meta Data Export')
     submitLabel = i18n.t('Export')
 
@@ -55,7 +28,7 @@ export class MetaDataExport extends FormBase {
 
     state = getFormValues([
         'schemas',
-        'format:.json:json,xml',
+        'format:.json:json,xml,csv',
         'compression',
         'sharing',
     ])
@@ -69,46 +42,20 @@ export class MetaDataExport extends FormBase {
                 sharing,
             } = this.getFormState()
 
-            const ext = format.substr(1)
-
-            const params = []
-            params.push('assumeTrue=false')
-            params.push(`format=json`)
-            params.push(
-                schemas
-                    .map(name => name)
-                    .sort()
-                    .map(name => `${name}=true`)
-                    .join('&')
-            )
-            params.push(EXCLUDE_PARAMS.map(name => `${name}=false`).join('&'))
-
-            if (sharing !== 'true') {
-                params.push(
-                    'fields=:owner,!user,!publicAccess,!userGroupAccesses'
-                )
-                params.push('skipSharing=true')
-            }
-
-            let endpoint = `metadata${format}`
-            if (compression !== 'none') {
-                endpoint += compression
-                window.location = api.url(`${endpoint}?${params.join('&')}`)
-                return
-            }
-
-            this.setState({ processing: true }, async () => {
-                const { data } = await api.get(
-                    `${endpoint}?${params.join('&')}`
-                )
-                let contents = data
-                if (ext === 'json') {
-                    contents = JSON.stringify(data)
-                }
-
-                downloadBlob(createBlob(contents, ext), endpoint)
-                this.setState({ processing: false })
+            let endpoint = `metadata`
+            const downloadUrl = getDownloadUrl({
+                format,
+                compression,
+                endpoint,
+                sharing,
             })
+            const schemaArgs = schemas.map(name => `${name}=true`)
+            const schemaParams = schemaArgs.length
+                ? `&${schemaArgs.join('&')}`
+                : ''
+
+            const url = `${downloadUrl}${schemaParams}`
+            download(url)
         } catch (e) {
             console.log('MetaData Export error', e, '\n')
         }
