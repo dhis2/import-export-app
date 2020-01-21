@@ -1,5 +1,7 @@
 import i18n from '@dhis2/d2-i18n';
 
+import { getUploadXHR } from './xhr';
+
 const pathToId = path => {
     const pathSplit = path.split('/');
     const orgId = pathSplit[pathSplit.length - 1];
@@ -111,10 +113,80 @@ const fetchAndSetAttributes = (
     );
 };
 
+const uploadFile = (
+    url,
+    file,
+    format,
+    type,
+    setLoading,
+    setAlerts,
+    addEntry
+) => {
+    setLoading(true);
+    try {
+        const xhr = getUploadXHR(
+            url,
+            file,
+            type,
+            ({ id, msg }) => {
+                let entry;
+                if (id == -1 && !msg) {
+                    entry = {
+                        id,
+                        created: new Date(),
+                        file: file.name,
+                        completed: true,
+                        summary: undefined,
+                        error: true,
+                        importType: type,
+                    };
+                } else {
+                    entry = {
+                        id,
+                        created: new Date(),
+                        lastUpdated: new Date(),
+                        file: file.name,
+                        completed: id == -1,
+                        events: [msg],
+                        summary: undefined,
+                        error: id == -1,
+                        importType: type,
+                    };
+                }
+                addEntry(id, entry);
+            },
+            e => {
+                let message = i18n.t('An unknown error occurred');
+                try {
+                    const response = JSON.parse(e.target.response);
+                    message = response.message;
+                } catch (e2) {}
+                throw message;
+            },
+            format
+        );
+        xhr.send(file);
+        setLoading(false);
+    } catch (e) {
+        console.error('sendFile error: ', e);
+        setAlerts([
+            {
+                id: 'xhr-${timestamp}',
+                critical: true,
+                message: i18n.t(
+                    'An unknown error occurred. Please try again later'
+                ),
+            },
+        ]);
+        setLoading(false);
+    }
+};
+
 export {
     createBlob,
     downloadBlob,
     fetchAndSetAttributes,
     jsDateToISO8601,
     pathToId,
+    uploadFile,
 };
