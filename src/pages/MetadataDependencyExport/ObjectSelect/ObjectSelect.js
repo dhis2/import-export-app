@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDataEngine } from '@dhis2/app-runtime';
 
-import { Select } from '../../Select';
+import { Select } from '../../../components/Select';
 
 const listQuery = resource => ({
     data: {

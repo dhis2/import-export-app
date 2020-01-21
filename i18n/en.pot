@@ -5,8 +5,53 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-20T14:08:36.676Z\n"
-"PO-Revision-Date: 2020-01-20T14:08:36.676Z\n"
+"POT-Creation-Date: 2020-01-21T10:10:58.298Z\n"
+"PO-Revision-Date: 2020-01-21T10:10:58.298Z\n"
+
+msgid "Data sets"
+msgstr ""
+
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "ID scheme"
+msgstr ""
+
+msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Choose a file to upload"
+msgstr ""
+
+msgid "more options"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Clear all"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Export"
+msgstr ""
 
 msgid "At least one organisation unit must be selected"
 msgstr ""
@@ -38,13 +83,13 @@ msgstr ""
 msgid "Include deleted"
 msgstr ""
 
-msgid "Export"
-msgstr ""
-
 msgid "An import file must be selected"
 msgstr ""
 
 msgid "Dry run"
+msgstr ""
+
+msgid "Will do a test run without importing any data into the database"
 msgstr ""
 
 msgid "First row is header"
@@ -62,28 +107,13 @@ msgstr ""
 msgid "Skip audit"
 msgstr ""
 
+msgid "Improves performance at the cost of ability to audit changes"
+msgstr ""
+
 msgid "Skip exisiting check"
 msgstr ""
 
 msgid "Faster, but unsafe"
-msgstr ""
-
-msgid "Import"
-msgstr ""
-
-msgid "Data sets"
-msgstr ""
-
-msgid "Filter data sets by name"
-msgstr ""
-
-msgid "Data element ID scheme"
-msgstr ""
-
-msgid "ID scheme"
-msgstr ""
-
-msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "One organisation unit must be selected"
@@ -99,12 +129,6 @@ msgid "Inclusion"
 msgstr ""
 
 msgid "[ All program stages ]"
-msgstr ""
-
-msgid "File"
-msgstr ""
-
-msgid "Choose a file to upload"
 msgstr ""
 
 msgid "Object type"
@@ -123,24 +147,6 @@ msgid "Select All"
 msgstr ""
 
 msgid "Select None"
-msgstr ""
-
-msgid "more options"
-msgstr ""
-
-msgid "Organisation unit"
-msgstr ""
-
-msgid "Programs"
-msgstr ""
-
-msgid "Filter programs by name"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "Clear all"
 msgstr ""
 
 msgid "An unknown error occurred"

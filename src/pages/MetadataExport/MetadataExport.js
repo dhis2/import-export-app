@@ -14,9 +14,9 @@ import {
 } from '../../utils/options';
 import { EXCLUDE_SCHEMAS } from './helper';
 import { Schemas } from './Schemas/';
-import { Page } from '../Page';
-import { RadioGroup } from '../RadioGroup';
-import { FormAlerts } from '../FormAlerts';
+import { Page } from '../../components/Page';
+import { RadioGroup } from '../../components/RadioGroup';
+import { FormAlerts } from '../../components/FormAlerts';
 
 const MetadataExport = () => {
     const [checkedSchemas, setCheckedSchemas] = useState([]);

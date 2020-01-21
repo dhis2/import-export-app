@@ -15,19 +15,22 @@ import {
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
 } from '../../utils/options';
-import { Page } from '../Page';
-import { FileUpload } from '../FileUpload';
-import { RadioGroup } from '../RadioGroup';
-import { Switch } from '../Switch';
-import { Select } from '../Select';
-import { WithAuthority, hasAuthorityToSkipAudit } from '../WithAuthority';
-import { MoreOptions } from '../MoreOptions';
+import { Page } from '../../components/Page';
+import { FileUpload } from '../../components/FileUpload';
+import { RadioGroup } from '../../components/RadioGroup';
+import { Switch } from '../../components/Switch';
+import { Select } from '../../components/Select';
+import {
+    WithAuthority,
+    hasAuthorityToSkipAudit,
+} from '../../components/WithAuthority';
+import { MoreOptions } from '../../components/MoreOptions';
 import {
     DataElementIdScheme,
     IdScheme,
     OrgUnitIdScheme,
-} from '../ElementSchemes';
-import { FormAlerts } from '../FormAlerts';
+} from '../../components/ElementSchemes';
+import { FormAlerts } from '../../components/FormAlerts';
 import { TaskContext } from '../../contexts/';
 
 const today = new Date();

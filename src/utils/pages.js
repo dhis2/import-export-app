@@ -1,11 +1,11 @@
 import React from 'react';
 import i18n from '@dhis2/d2-i18n';
 
-import { DataImport } from '../components/DataImport';
-import { DataExport } from '../components/DataExport';
-import { EventExport } from '../components/EventExport';
-import { MetadataDependencyExport } from '../components/MetadataDependencyExport';
-import { MetadataExport } from '../components/MetadataExport';
+import { DataImport } from '../pages/DataImport';
+import { DataExport } from '../pages/DataExport';
+import { EventExport } from '../pages/EventExport';
+import { MetadataDependencyExport } from '../pages/MetadataDependencyExport';
+import { MetadataExport } from '../pages/MetadataExport';
 
 import {
     DataIcon,
