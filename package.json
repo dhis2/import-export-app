@@ -8,10 +8,19 @@
         "build": "d2-app-scripts build",
         "start": "d2-app-scripts start",
         "test": "d2-app-scripts test",
-        "prettier-write": "prettier \"./src/{**/*,*}.js\" --write"
+        "prettier-write": "prettier \"./src/{**/*,*}.js\" --write",
+        "lint:js": "d2-style js check",
+        "lint:text": "d2-style text check",
+        "lint:staged": "yarn lint:js --staged && yarn lint:text --staged",
+        "lint": "yarn lint:js && yarn lint:text",
+        "format:js": "d2-style js apply",
+        "format:text": "d2-style text apply",
+        "format:staged": "yarn format:js --staged && yarn format:text --staged",
+        "format": "yarn format:js && yarn format:text"
     },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^3.2.2",
+        "@dhis2/cli-style": "^5.1.0",
         "babel-eslint": "^10.0.3",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react-app": "^9.0.2",

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import i18n from '@dhis2/d2-i18n';
 
 import { DataImport } from '../pages/DataImport';
@@ -14,8 +15,6 @@ import {
     DataIcon,
     EventIcon,
     GMLIcon,
-    Icon,
-    LogoIcon,
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
@@ -116,6 +115,14 @@ const ExportPages = [
 ];
 
 const AllPages = [...ImportPages, ...ExportPages];
+
+export const pagePropType = PropTypes.exact({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
+    icon: PropTypes.object.isRequired,
+    component: PropTypes.object.isRequired,
+});
 
 export {
     dataImportPage,

@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import s from './FormField.module.css';
 
-const FormField = ({ label, required = false, children }) => {
+const FormField = ({ dataTest, label, required = false, children }) => {
     return (
-        <div className={s.container}>
+        <div className={s.container} data-test={dataTest}>
             <span className={s.label}>
                 {label}
                 {required && <span> *</span>}
@@ -12,6 +13,13 @@ const FormField = ({ label, required = false, children }) => {
             {children}
         </div>
     );
+};
+
+FormField.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    children: PropTypes.object,
+    required: PropTypes.bool,
 };
 
 export { FormField };

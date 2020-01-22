@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     Card,
     CircularLoader,
@@ -8,7 +9,7 @@ import {
 
 import s from './Page.module.css';
 
-const Page = ({ title, desc, icon, children, loading = false }) => {
+const Page = ({ title, desc, icon, children, loading = false, dataTest }) => {
     const loadingEl =
         typeof loading == 'number' ? (
             <LinearLoader amount={loading} />
@@ -17,7 +18,7 @@ const Page = ({ title, desc, icon, children, loading = false }) => {
         );
 
     return (
-        <div className={s.container}>
+        <div className={s.container} data-test={dataTest}>
             <div className={s.header}>
                 <span className={s.icon}>{icon}</span>
                 <span className={s.title}>{title}</span>
@@ -29,6 +30,16 @@ const Page = ({ title, desc, icon, children, loading = false }) => {
             </Card>
         </div>
     );
+};
+
+Page.propTypes = {
+    children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+        .isRequired,
+    dataTest: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    icon: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
 };
 
 export { Page };

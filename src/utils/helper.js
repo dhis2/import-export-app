@@ -47,12 +47,11 @@ const downloadBlob = (url, filename) => {
     link.remove();
 };
 
-const fetchAndSetAttributes = (
+const fetchAndSetAttributes = ({
     apiBaseUrl,
     setDataElementIdSchemeOptions,
     setOrgUnitIdSchemeOptions,
-    setIdSchemeOptions
-) => {
+}) => {
     const fetchOptions = {
         credentials: 'include',
     };
@@ -113,15 +112,15 @@ const fetchAndSetAttributes = (
     );
 };
 
-const uploadFile = (
+const uploadFile = ({
     url,
     file,
     format,
     type,
     setProgress,
     setAlerts,
-    addEntry
-) => {
+    addEntry,
+}) => {
     setProgress(1);
     const genericErrorMessage = i18n.t(
         'An unknown error occurred. Please try again later'
@@ -141,11 +140,11 @@ const uploadFile = (
     };
 
     try {
-        const xhr = getUploadXHR(
+        const xhr = getUploadXHR({
             url,
-            file,
+            upload: file,
             type,
-            ({ id, msg }) => {
+            onResponse: ({ id, msg }) => {
                 const newId = id == -1 ? new Date().getTime() : id;
                 let entry;
                 if (id == -1 && !msg) {
@@ -178,18 +177,20 @@ const uploadFile = (
                 }
                 setProgress(0);
             },
-            ev => {
-                let message = genericErrorMessage;
+            onError: ev => {
+                let message;
                 try {
                     const response = JSON.parse(ev.target.response);
                     message = response.message;
-                } catch (e2) {}
+                } catch (e2) {
+                    message = genericErrorMessage;
+                }
                 errorHandler(message);
                 console.error('sendFile error', message);
             },
             setProgress,
-            format
-        );
+            format,
+        });
         xhr.send(file);
     } catch (e) {
         errorHandler(e);

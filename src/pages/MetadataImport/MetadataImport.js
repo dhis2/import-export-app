@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useConfig, useDataEngine, useDataQuery } from '@dhis2/app-runtime';
+import { useConfig, useDataQuery } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 
-import s from './MetadataImport.module.css';
+// import s from './MetadataImport.module.css';
 import { metadataImportPage as p } from '../../utils/pages';
 import { uploadFile } from '../../utils/helper';
+import { testIds } from '../../utils/testIds';
 import { helpText } from '../../utils/text';
 import {
     formatOptions,
@@ -42,13 +43,11 @@ const classKeyQuery = {
     },
 };
 
-const today = new Date();
-
 const MetadataImport = () => {
-    const { data: classData, loading: classLoading, error } = useDataQuery(
+    const { data: classData, loading: classLoading } = useDataQuery(
         classKeyQuery
     );
-    const { data, addTask } = useContext(TaskContext);
+    const { addTask } = useContext(TaskContext);
     const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption);
@@ -87,7 +86,7 @@ const MetadataImport = () => {
 
     const onImport = () => {
         // validate
-        let alerts = [];
+        const alerts = [];
         const timestamp = new Date().getTime();
 
         setAlerts(alerts);
@@ -128,15 +127,15 @@ const MetadataImport = () => {
         ].join('&');
         const url = `${apiBaseUrl}${endpoint}?${params}`;
 
-        uploadFile(
+        uploadFile({
             url,
             file,
-            format.value,
-            'METADATA_IMPORT',
+            format: format.value,
+            type: 'METADATA_IMPORT',
             setProgress,
             setAlerts,
-            (id, entry) => addTask('metadata', id, entry)
-        );
+            addEntry: (id, entry) => addTask('metadata', id, entry),
+        });
     };
 
     return (
@@ -145,14 +144,21 @@ const MetadataImport = () => {
             desc={p.description}
             icon={p.icon}
             loading={progress}
+            dataTest={testIds.MetadataImport.Page}
         >
-            <FileUpload name="upload" file={file} setFile={setFile} />
+            <FileUpload
+                name="upload"
+                file={file}
+                setFile={setFile}
+                dataTest={testIds.MetadataImport.FileUpload}
+            />
             <RadioGroup
                 name="format"
                 label={i18n.t('Format')}
                 options={formatOptions}
                 setValue={setFormat}
                 checked={format}
+                dataTest={testIds.MetadataImport.format}
             />
             <Switch
                 name="dryRun"
@@ -160,6 +166,7 @@ const MetadataImport = () => {
                 checked={dryRun}
                 setChecked={setDryRun}
                 help={helpText.dryRun}
+                dataTest={testIds.MetadataImport.dryRun}
             />
             {format.value == 'csv' && (
                 <>
@@ -168,6 +175,7 @@ const MetadataImport = () => {
                         label={i18n.t('First row is header')}
                         checked={firstRowIsHeader}
                         setChecked={setFirstRowIsHeader}
+                        dataTest={testIds.MetadataImport.firstRowIsHeader}
                     />
                     <Select
                         name="classKey"
@@ -177,6 +185,7 @@ const MetadataImport = () => {
                         setValue={setClassKey}
                         loading={classLoading}
                         dense
+                        dataTest={testIds.MetadataImport.classKey}
                     />
                 </>
             )}
@@ -186,6 +195,7 @@ const MetadataImport = () => {
                 options={identifierOptions}
                 setValue={setIdentifier}
                 checked={identifier}
+                dataTest={testIds.MetadataImport.identifier}
             />
             <RadioGroup
                 name="importReportMode"
@@ -193,6 +203,7 @@ const MetadataImport = () => {
                 options={importReportModeOptions}
                 setValue={setImportReportMode}
                 checked={importReportMode}
+                dataTest={testIds.MetadataImport.importReportMode}
             />
             <RadioGroup
                 name="preheatMode"
@@ -200,6 +211,7 @@ const MetadataImport = () => {
                 options={preheatModeOptions}
                 setValue={setPreheatMode}
                 checked={preheatMode}
+                dataTest={testIds.MetadataImport.preheatMode}
             />
             <RadioGroup
                 name="importStrategy"
@@ -207,6 +219,7 @@ const MetadataImport = () => {
                 options={importStrategyOptions}
                 setValue={setImportStrategy}
                 checked={importStrategy}
+                dataTest={testIds.MetadataImport.importStrategy}
             />
             <RadioGroup
                 name="atomicMode"
@@ -214,6 +227,7 @@ const MetadataImport = () => {
                 options={atomicModeOptions}
                 setValue={setAtomicMode}
                 checked={atomicMode}
+                dataTest={testIds.MetadataImport.atomicMode}
             />
             <RadioGroup
                 name="mergeMode"
@@ -221,32 +235,37 @@ const MetadataImport = () => {
                 options={mergeModeOptions}
                 setValue={setMergeMode}
                 checked={mergeMode}
+                dataTest={testIds.MetadataImport.mergeMode}
             />
-            <MoreOptions>
+            <MoreOptions dataTest={testIds.MetadataImport.MoreOptions}>
                 <RadioGroup
                     name="flushMode"
                     label={i18n.t('Flush mode')}
                     options={flushModeOptions}
                     setValue={setFlushMode}
                     checked={flushMode}
+                    dataTest={testIds.MetadataImport.flushMode}
                 />
                 <Switch
                     name="skipSharing"
                     label={i18n.t('Skip sharing')}
                     checked={skipSharing}
                     setChecked={setSkipSharing}
+                    dataTest={testIds.MetadataImport.skipSharing}
                 />
                 <Switch
                     name="skipValidation"
                     label={i18n.t('Skip validation')}
                     checked={skipValidation}
                     setChecked={setSkipValidation}
+                    dataTest={testIds.MetadataImport.skipValidation}
                 />
                 <Switch
                     name="isAsync"
                     label={i18n.t('Async')}
                     checked={isAsync}
                     setChecked={setIsAsync}
+                    dataTest={testIds.MetadataImport.isAsync}
                 />
                 <RadioGroup
                     name="inclusionStrategy"
@@ -254,12 +273,20 @@ const MetadataImport = () => {
                     options={inclusionStrategyOptions}
                     setValue={setInclusionStrategy}
                     checked={inclusionStrategy}
+                    dataTest={testIds.MetadataImport.inclusionStrategy}
                 />
             </MoreOptions>
-            <Button primary initialFocus onClick={onImport}>
+            <Button
+                primary
+                onClick={onImport}
+                dataTest={testIds.MetadataImport.submit}
+            >
                 {i18n.t('Import')}
             </Button>
-            <FormAlerts alerts={alerts} />
+            <FormAlerts
+                alerts={alerts}
+                dataTest={testIds.MetadataImport.FormAlerts}
+            />
         </Page>
     );
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import i18n from '@dhis2/d2-i18n';
 
 const formatOptions = [
@@ -144,6 +145,13 @@ const defaultMergeModeOption = mergeModeOptions[0];
 const defaultFlushModeOption = flushModeOptions[0];
 const defaultInclusionStrategyOption = inclusionStrategyOptions[0];
 
+const optionPropType = PropTypes.exact({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+});
+
+const optionsPropType = PropTypes.arrayOf(optionPropType);
+
 export {
     formatOptions,
     formatNoCsvOptions,
@@ -184,4 +192,6 @@ export {
     defaultMergeModeOption,
     defaultFlushModeOption,
     defaultInclusionStrategyOption,
+    optionPropType,
+    optionsPropType,
 };

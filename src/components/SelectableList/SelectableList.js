@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import i18n from '@dhis2/d2-i18n';
 import { Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core';
 
+import { optionsPropType } from '../../utils/options';
 import s from './SelectableList.module.css';
 
 const SelectableList = ({
@@ -9,12 +11,12 @@ const SelectableList = ({
     name,
     selected,
     select,
+    list,
     onSelectAll,
     onClearAll,
     multiSelect,
     withFilter,
     withActions,
-    list,
 }) => {
     const [filter, setFilter] = useState('');
 
@@ -90,6 +92,19 @@ const SelectableList = ({
             </div>
         </div>
     );
+};
+
+SelectableList.propTypes = {
+    label: PropTypes.string.isRequired,
+    list: optionsPropType.isRequired,
+    name: PropTypes.string.isRequired,
+    select: PropTypes.func.isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    multiSelect: PropTypes.bool,
+    withActions: PropTypes.bool,
+    withFilter: PropTypes.bool,
+    onClearAll: PropTypes.func,
+    onSelectAll: PropTypes.func,
 };
 
 export { SelectableList };

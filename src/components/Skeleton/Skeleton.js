@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import s from './Skeleton.module.css';
@@ -27,6 +28,10 @@ const Skeleton = ({ location }) => {
             </div>
         </div>
     );
+};
+
+Skeleton.propTypes = {
+    location: PropTypes.object.isRequired,
 };
 
 const SkeletonRouter = withRouter(Skeleton);

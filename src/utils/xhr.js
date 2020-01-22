@@ -1,14 +1,14 @@
 import { getMimeType } from './mime';
 
-const getUploadXHR = (
+const getUploadXHR = ({
     url,
     upload,
     type,
     onResponse,
     onError,
     setProgress,
-    format
-) => {
+    format,
+}) => {
     const xhr = new XMLHttpRequest();
     const contentType = getMimeType(format);
 
@@ -20,16 +20,21 @@ const getUploadXHR = (
         'attachment filename="' + upload.name + '"'
     );
 
-    xhr.onreadystatechange = onReadyStateChange(xhr, type, onResponse, onError);
+    xhr.onreadystatechange = onReadyStateChange({
+        xhr,
+        type,
+        onResponse,
+        onError,
+    });
     xhr.upload.onprogress = onProgress(setProgress);
     return xhr;
 };
 
-const onReadyStateChange = (xhr, type, onResponse, onError) => {
+const onReadyStateChange = ({ xhr, type, onResponse, onError }) => {
     return async e => {
         const status = Math.floor(xhr.status / 100);
         if (xhr.readyState === 4 && status === 2) {
-            const { id, msg } = extractIdAndMessage(xhr, type);
+            const { id, msg } = extractIdAndMessage(xhr);
             onResponse({ id: id, msg: msg, type: type });
         } else if (xhr.readyState !== 4 && [3, 4, 5].includes(status)) {
             onError(e);
@@ -37,7 +42,7 @@ const onReadyStateChange = (xhr, type, onResponse, onError) => {
     };
 };
 
-const extractIdAndMessage = (xhr, importType) => {
+const extractIdAndMessage = xhr => {
     const data = JSON.parse(xhr.responseText);
     const { message, status, typeReports, response } = data;
 
@@ -76,7 +81,6 @@ const extractIdAndMessage = (xhr, importType) => {
 const onProgress = setProgress => evt => {
     if (evt.lengthComputable) {
         const percentComplete = parseInt((evt.loaded / evt.total) * 100);
-        const stats = { ...evt, percentComplete };
         setProgress(Math.max(1, percentComplete));
     }
 };

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useConfig, useDataEngine, useDataQuery } from '@dhis2/app-runtime';
+import React, { useState } from 'react';
+import { useConfig } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 
-import s from './EventExport.module.css';
+// import s from './EventExport.module.css';
 import { eventExportPage as p } from '../../utils/pages';
+import { testIds } from '../../utils/testIds';
 import { jsDateToISO8601, pathToId } from '../../utils/helper';
 import {
     formatOptions,
@@ -19,7 +20,6 @@ import { Page } from '../../components/Page';
 import { RadioGroup } from '../../components/RadioGroup';
 import { DatePicker } from '../../components/DatePicker';
 import { Switch } from '../../components/Switch';
-import { Select } from '../../components/Select';
 import { OrgUnitTree } from '../../components/OrgUnitTree';
 import { ProgramPicker } from '../../components/ProgramPicker';
 import { MoreOptions } from '../../components/MoreOptions';
@@ -29,8 +29,7 @@ import { ProgramStageSelect, ALL_VALUE } from './ProgramStageSelect/';
 
 const today = new Date();
 
-const EventExport = ({}) => {
-    const engine = useDataEngine();
+const EventExport = () => {
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([]);
     const [selectedPrograms, setSelectedPrograms] = useState([]);
     const [programStage, setProgramStage] = useState(undefined);
@@ -48,7 +47,7 @@ const EventExport = ({}) => {
 
     const onExport = () => {
         // validate
-        let alerts = [];
+        const alerts = [];
         const timestamp = new Date().getTime();
 
         if (selectedOrgUnits.length == 0) {
@@ -100,11 +99,9 @@ const EventExport = ({}) => {
             `format=${format.value}`,
             'links=false',
             'skipPaging=true',
-            ...[
-                programStage.value != ALL_VALUE
-                    ? [`programStage=${programStage.value}`]
-                    : [],
-            ],
+            programStage.value != ALL_VALUE
+                ? `programStage=${programStage.value}`
+                : '',
         ].join('&');
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`;
         window.location = url;
@@ -115,11 +112,17 @@ const EventExport = ({}) => {
     };
 
     return (
-        <Page title={p.name} desc={p.description} icon={p.icon}>
+        <Page
+            title={p.name}
+            desc={p.description}
+            icon={p.icon}
+            dataTest={testIds.EventExport.Page}
+        >
             <OrgUnitTree
                 selected={selectedOrgUnits}
                 setSelected={setSelectedOrgUnits}
                 multiSelect={false}
+                dataTest={testIds.EventExport.OrgUnitTree}
             />
             <ProgramPicker
                 selected={selectedPrograms}
@@ -127,6 +130,7 @@ const EventExport = ({}) => {
                 multiSelect={false}
                 withActions={false}
                 autoSelectFirst
+                dataTest={testIds.EventExport.ProgramPicker}
             />
             <ProgramStageSelect
                 name="programStage"
@@ -136,18 +140,21 @@ const EventExport = ({}) => {
                 }
                 setSelected={setProgramStage}
                 selected={programStage}
+                dataTest={testIds.EventExport.ProgramStageSelect}
             />
             <DatePicker
                 name="startDate"
                 label={i18n.t('Start date')}
                 date={startDate}
                 onChange={onDateChange(setStartDate)}
+                dataTest={testIds.EventExport.startDate}
             />
             <DatePicker
                 name="endDate"
                 label={i18n.t('End date')}
                 date={endDate}
                 onChange={onDateChange(setEndDate)}
+                dataTest={testIds.EventExport.endDate}
             />
             <RadioGroup
                 name="format"
@@ -155,6 +162,7 @@ const EventExport = ({}) => {
                 options={formatOptions}
                 setValue={setFormat}
                 checked={format}
+                dataTest={testIds.EventExport.format}
             />
             <RadioGroup
                 name="compression"
@@ -162,27 +170,41 @@ const EventExport = ({}) => {
                 options={compressionOptions}
                 setValue={setCompression}
                 checked={compression}
+                dataTest={testIds.EventExport.compression}
             />
-            <MoreOptions>
+            <MoreOptions dataTest={testIds.EventExport.MoreOptions}>
                 <Switch
                     label={i18n.t('Include deleted')}
                     name="includeDeleted"
                     checked={includeDeleted}
                     setChecked={setIncludeDeleted}
+                    dataTest={testIds.EventExport.includeDeleted}
                 />
-                <IdScheme selected={idScheme} setSelected={setIdScheme} />
+                <IdScheme
+                    selected={idScheme}
+                    setSelected={setIdScheme}
+                    dataTest={testIds.EventExport.IdScheme}
+                />
                 <RadioGroup
                     name="inclusion"
                     label={i18n.t('Inclusion')}
                     options={inclusionOptions}
                     setValue={setInclusion}
                     checked={inclusion}
+                    dataTest={testIds.EventExport.inclusion}
                 />
             </MoreOptions>
-            <Button primary initialFocus onClick={onExport}>
+            <Button
+                primary
+                onClick={onExport}
+                dataTest={testIds.EventExport.exportButton}
+            >
                 {i18n.t('Export')}
             </Button>
-            <FormAlerts alerts={alerts} />
+            <FormAlerts
+                alerts={alerts}
+                dataTest={testIds.EventExport.FormAlerts}
+            />
         </Page>
     );
 };
