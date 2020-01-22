@@ -9,5 +9,4 @@ export {
     MetadataImportIcon,
     MinusIcon,
     PlusIcon,
-    UploadIcon,
 } from './Icon';
