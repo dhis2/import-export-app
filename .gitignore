@@ -24,5 +24,6 @@ yarn-error.log*
 src/locales
 manifest.webapp
 
+cypress.env.json
 cypress/videos
 cypress/screenshots
