@@ -17,7 +17,7 @@ const today = new Date();
 
 const GMLImport = () => {
     const { data, addTask } = useContext(TaskContext);
-    const [loading, setLoading] = useState(false);
+    const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(undefined);
     const [dryRun, setDryRun] = useState(false);
     const [alerts, setAlerts] = useState([]);
@@ -53,7 +53,7 @@ const GMLImport = () => {
             file,
             'gml',
             'GML_IMPORT',
-            setLoading,
+            setProgress,
             setAlerts,
             (id, entry) => addTask('gml', id, entry)
         );
@@ -64,7 +64,7 @@ const GMLImport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            loading={loading}
+            loading={progress}
         >
             <FileUpload name="upload" file={file} setFile={setFile} />
             <Switch

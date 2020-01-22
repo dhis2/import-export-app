@@ -49,7 +49,7 @@ const MetadataImport = () => {
         classKeyQuery
     );
     const { data, addTask } = useContext(TaskContext);
-    const [loading, setLoading] = useState(false);
+    const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption);
     const [dryRun, setDryRun] = useState(false);
@@ -72,7 +72,7 @@ const MetadataImport = () => {
     );
     const [skipSharing, setSkipSharing] = useState(false);
     const [skipValidation, setSkipValidation] = useState(false);
-    const [async, setAsync] = useState(true);
+    const [isAsync, setIsAsync] = useState(true);
     const [alerts, setAlerts] = useState([]);
     const { baseUrl } = useConfig();
 
@@ -110,7 +110,7 @@ const MetadataImport = () => {
         const params = [
             `dryRun=${dryRun}`,
             `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,
-            `identifier=${identifier}`,
+            `identifier=${identifier.value}`,
             `importReportMode=${importReportMode.value}`,
             `preheatMode=${preheatMode.value}`,
             `importStrategy=${importStrategy.value}`,
@@ -120,16 +120,11 @@ const MetadataImport = () => {
             `skipSharing=${skipSharing}`,
             `skipValidation=${skipValidation}`,
             `inclusionStrategy=${inclusionStrategy.value}`,
-            `async=${async}`,
+            `async=${isAsync}`,
             'format=json',
-            ...[
-                format.value == 'csv'
-                    ? [
-                          `firstRowIsHeader=${firstRowIsHeader}`,
-                          `classKey=${classKey.value}`,
-                      ]
-                    : [],
-            ],
+            format.value == 'csv'
+                ? `firstRowIsHeader=${firstRowIsHeader}&classKey=${classKey.value}`
+                : '',
         ].join('&');
         const url = `${apiBaseUrl}${endpoint}?${params}`;
 
@@ -138,7 +133,7 @@ const MetadataImport = () => {
             file,
             format.value,
             'METADATA_IMPORT',
-            setLoading,
+            setProgress,
             setAlerts,
             (id, entry) => addTask('metadata', id, entry)
         );
@@ -149,7 +144,7 @@ const MetadataImport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            loading={loading}
+            loading={progress}
         >
             <FileUpload name="upload" file={file} setFile={setFile} />
             <RadioGroup
@@ -248,10 +243,10 @@ const MetadataImport = () => {
                     setChecked={setSkipValidation}
                 />
                 <Switch
-                    name="async"
+                    name="isAsync"
                     label={i18n.t('Async')}
-                    checked={async}
-                    setChecked={setAsync}
+                    checked={isAsync}
+                    setChecked={setIsAsync}
                 />
                 <RadioGroup
                     name="inclusionStrategy"

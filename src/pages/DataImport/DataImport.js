@@ -38,7 +38,7 @@ const today = new Date();
 
 const DataImport = () => {
     const { data, addTask } = useContext(TaskContext);
-    const [loading, setLoading] = useState(false);
+    const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption);
     const [dryRun, setDryRun] = useState(false);
@@ -81,7 +81,7 @@ const DataImport = () => {
         const endpoint = 'dataValueSets.json';
         const params = [
             `dryRun=${dryRun}`,
-            `strategy=${strategy}`,
+            `strategy=${strategy.value}`,
             `preheatCache=${preheatCache}`,
             `skipAudit=${skipAudit}`,
             `dataElementIdScheme=${dataElementIdScheme.value}`,
@@ -90,11 +90,7 @@ const DataImport = () => {
             `skipExistingCheck=${skipExistingCheck}`,
             `format=${format.value}`,
             'async=true',
-            ...[
-                format.value == 'csv'
-                    ? [`firstRowIsHeader=${firstRowIsHeader}`]
-                    : [],
-            ],
+            format.value == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
         ].join('&');
         const url = `${apiBaseUrl}${endpoint}?${params}`;
 
@@ -103,7 +99,7 @@ const DataImport = () => {
             file,
             format.value,
             'DATAVALUE_IMPORT',
-            setLoading,
+            setProgress,
             setAlerts,
             (id, entry) => addTask('data', id, entry)
         );
@@ -114,7 +110,7 @@ const DataImport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            loading={loading}
+            loading={progress}
         >
             <FileUpload name="upload" file={file} setFile={setFile} />
             <RadioGroup

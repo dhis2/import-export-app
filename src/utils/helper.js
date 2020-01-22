@@ -90,7 +90,7 @@ const fetchAndSetAttributes = (
             });
         },
         e => {
-            console.log('Data element attributes fetch error: ', e);
+            console.error('Data element attributes fetch error: ', e);
         }
     );
 
@@ -108,7 +108,7 @@ const fetchAndSetAttributes = (
             });
         },
         e => {
-            console.log('Organization unit attributes fetch error: ', e);
+            console.error('Organization unit attributes fetch error: ', e);
         }
     );
 };
@@ -123,15 +123,18 @@ const uploadFile = (
     addEntry
 ) => {
     setProgress(1);
-    const errorHandler = e => {
-        console.error('sendFile error: ', e);
-        setAlerts([
+    const genericErrorMessage = i18n.t(
+        'An unknown error occurred. Please try again later'
+    );
+
+    const errorHandler = message => {
+        const timestamp = new Date().getTime();
+        setAlerts(alerts => [
+            ...alerts,
             {
-                id: 'xhr-${timestamp}',
+                id: `xhr-${timestamp}`,
                 critical: true,
-                message: i18n.t(
-                    'An unknown error occurred. Please try again later'
-                ),
+                message: message ? message : genericErrorMessage,
             },
         ]);
         setProgress(0);
@@ -171,18 +174,18 @@ const uploadFile = (
                 addEntry(newId, entry);
 
                 if (id == -1) {
-                    errorHandler(msg);
+                    errorHandler(msg.text);
                 }
                 setProgress(0);
             },
-            e => {
-                let message = i18n.t('An unknown error occurred');
+            ev => {
+                let message = genericErrorMessage;
                 try {
-                    const response = JSON.parse(e.target.response);
+                    const response = JSON.parse(ev.target.response);
                     message = response.message;
                 } catch (e2) {}
                 errorHandler(message);
-                setProgress(0);
+                console.error('sendFile error', message);
             },
             setProgress,
             format
