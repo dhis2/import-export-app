@@ -118,11 +118,11 @@ const uploadFile = (
     file,
     format,
     type,
-    setLoading,
+    setProgress,
     setAlerts,
     addEntry
 ) => {
-    setLoading(true);
+    setProgress(1);
     const errorHandler = e => {
         console.error('sendFile error: ', e);
         setAlerts([
@@ -134,7 +134,7 @@ const uploadFile = (
                 ),
             },
         ]);
-        setLoading(false);
+        setProgress(0);
     };
 
     try {
@@ -173,6 +173,7 @@ const uploadFile = (
                 if (id == -1) {
                     errorHandler(msg);
                 }
+                setProgress(0);
             },
             e => {
                 let message = i18n.t('An unknown error occurred');
@@ -181,11 +182,12 @@ const uploadFile = (
                     message = response.message;
                 } catch (e2) {}
                 errorHandler(message);
+                setProgress(0);
             },
+            setProgress,
             format
         );
         xhr.send(file);
-        setLoading(false);
     } catch (e) {
         errorHandler(e);
     }
