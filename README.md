@@ -37,6 +37,46 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## E2E Testing
+
+This app uses cypress to test the implementation.
+As both the app and cypress need to know the backend's url,
+it needs to be provided via an environment variable:
+
+#### Fish
+```bash
+env REACT_APP_DHIS2_BASE_URL=https://debug.dhis2.org/dev yarn cypress:open
+
+# or
+set -x REACT_APP_DHIS2_BASE_URL https://debug.dhis2.org/dev
+yarn cypress:open
+```
+
+#### Bash
+```bash
+REACT_APP_DHIS2_BASE_URL=https://debug.dhis2.org/dev yarn cypress:open
+
+# or
+export REACT_APP_DHIS2_BASE_URL=https://debug.dhis2.org/dev
+yarn cypress:open
+```
+
+### Opening the GUI
+
+The command to use the GUI is (still needs the env var, see above):
+
+```bash
+yarn cypress:open
+```
+
+### Running the CI command
+
+To run the CI command is (still needs the env var, see above), use:
+
+```bash
+yarn cypress:run
+```
+
 ## License
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fimport-export-app.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fimport-export-app?ref=badge_large)
