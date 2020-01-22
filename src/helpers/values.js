@@ -44,15 +44,24 @@ function getBoolean(
     return {
         selected,
         values: reverseOrder
-            ? getValues([['false', labelFalse], ['true', labelTrue]])
-            : getValues([['true', labelTrue], ['false', labelFalse]]),
+            ? getValues([
+                  ['false', labelFalse],
+                  ['true', labelTrue],
+              ])
+            : getValues([
+                  ['true', labelTrue],
+                  ['false', labelFalse],
+              ]),
     }
 }
 
 function getScheme(selected) {
     return {
         selected,
-        values: getValues([['UID', i18n.t('UID')], ['CODE', i18n.t('Code')]]),
+        values: getValues([
+            ['UID', i18n.t('UID')],
+            ['CODE', i18n.t('Code')],
+        ]),
     }
 }
 
@@ -167,7 +176,10 @@ export const values = {
 
     atomicMode: {
         selected: 'ALL',
-        values: getValues([['ALL', i18n.t('All')], ['NONE', i18n.t('None')]]),
+        values: getValues([
+            ['ALL', i18n.t('All')],
+            ['NONE', i18n.t('None')],
+        ]),
     },
 
     mergeMode: {
