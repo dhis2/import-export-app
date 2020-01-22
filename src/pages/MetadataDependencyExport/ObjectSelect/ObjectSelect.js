@@ -41,7 +41,7 @@ const ObjectSelect = ({
                     setLoading(false);
                 },
                 onError: e => {
-                    console.log('ObjectSelect error: ', e);
+                    console.error('ObjectSelect error: ', e);
                 },
             });
         };

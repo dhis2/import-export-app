@@ -59,7 +59,7 @@ const ProgramStageSelect = ({
                     setLoading(false);
                 },
                 onError: e => {
-                    console.log('ProgramStageSelect error: ', e);
+                    console.error('ProgramStageSelect error: ', e);
                 },
             });
         };

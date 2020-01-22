@@ -97,7 +97,7 @@ const OrgUnitTree = ({ selected, setSelected, multiSelect = true }) => {
                     setChildrenFor(path, data.units.children);
                 },
                 onError: e => {
-                    console.log('OrgUnitTree onOpen error: ', e);
+                    console.error('OrgUnitTree onOpen error: ', e);
                 },
             });
         } else {

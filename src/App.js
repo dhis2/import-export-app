@@ -85,7 +85,7 @@ const MyApp = () => {
         });
 
         if (error) {
-            console.log('fetchEvents error: ', e);
+            console.error('fetchEvents error: ', e);
             return;
         }
 
@@ -126,7 +126,7 @@ const MyApp = () => {
         });
 
         if (error) {
-            console.log('fetchSummary error: ', e);
+            console.error('fetchSummary error: ', e);
             return;
         }
 

@@ -44,7 +44,7 @@ const MetadataExport = () => {
             return;
         }
 
-        // fetch data
+        // generate download url
         const apiBaseUrl = `${baseUrl}/api/`;
         const endpoint = `metadata`;
         const endpointExtension = compression.value
