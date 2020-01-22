@@ -29,7 +29,7 @@ const today = new Date();
 
 const EventImport = () => {
     const { data, addTask } = useContext(TaskContext);
-    const [loading, setLoading] = useState(false);
+    const [setProgress, setProgress] = useState(0);
     const [file, setFile] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption);
     const [dryRun, setDryRun] = useState(false);
@@ -79,7 +79,7 @@ const EventImport = () => {
             file,
             format.value,
             'EVENT_IMPORT',
-            setLoading,
+            setProgress,
             setAlerts,
             (id, entry) => addTask('event', id, entry)
         );
@@ -90,7 +90,7 @@ const EventImport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            loading={loading}
+            loading={progress}
         >
             <FileUpload name="upload" file={file} setFile={setFile} />
             <RadioGroup
