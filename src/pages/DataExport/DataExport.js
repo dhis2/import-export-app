@@ -179,7 +179,7 @@ const DataExport = () => {
                 }
             },
             onError: e => {
-                console.log('DataExport onExport error: ', e);
+                console.error('DataExport onExport error: ', e);
                 setAlerts([
                     {
                         id: `http-${timestamp}`,
