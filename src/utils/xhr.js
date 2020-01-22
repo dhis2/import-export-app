@@ -1,6 +1,14 @@
 import { getMimeType } from './mime';
 
-const getUploadXHR = (url, upload, type, onResponse, onError, format) => {
+const getUploadXHR = (
+    url,
+    upload,
+    type,
+    onResponse,
+    onError,
+    setProgress,
+    format
+) => {
     const xhr = new XMLHttpRequest();
     const contentType = getMimeType(format);
 
@@ -13,7 +21,7 @@ const getUploadXHR = (url, upload, type, onResponse, onError, format) => {
     );
 
     xhr.onreadystatechange = onReadyStateChange(xhr, type, onResponse, onError);
-    xhr.upload.onprogress = onProgress;
+    xhr.upload.onprogress = onProgress(setProgress);
     return xhr;
 };
 
@@ -65,10 +73,11 @@ const extractIdAndMessage = (xhr, importType) => {
     return { id: -1, msg: undefined };
 };
 
-const onProgress = evt => {
+const onProgress = setProgress => evt => {
     if (evt.lengthComputable) {
         const percentComplete = parseInt((evt.loaded / evt.total) * 100);
         const stats = { ...evt, percentComplete };
+        setProgress(Math.max(1, percentComplete));
     }
 };
 
