@@ -112,8 +112,5 @@ class App extends React.Component {
 }
 
 export default withRouter(
-    connect(
-        ({ user }) => ({ user }),
-        { setUser, clearUser }
-    )(App)
+    connect(({ user }) => ({ user }), { setUser, clearUser })(App)
 )

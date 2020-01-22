@@ -5,9 +5,6 @@ import { File } from '../FinalFormComponents/File'
 
 export const Upload = () => (
     <Field>
-        <File
-            name="upload"
-            dataTest="input-upload"
-        />
+        <File name="upload" dataTest="input-upload" />
     </Field>
 )

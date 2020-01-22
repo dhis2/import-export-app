@@ -134,38 +134,29 @@ function extractGroupLabelFromSchemas(groupKey, schemas) {
  */
 export const getSchemas = state => state.schemas.list
 
-export const getSchemaGroups = createSelector(
-    getSchemas,
-    schemas => {
-        const groups = groupSchemas(schemas)
-        const combinedGroups = combineSingleItemGroups(groups)
+export const getSchemaGroups = createSelector(getSchemas, schemas => {
+    const groups = groupSchemas(schemas)
+    const combinedGroups = combineSingleItemGroups(groups)
 
-        return combinedGroups
-    }
-)
+    return combinedGroups
+})
 
-export const getGroupLabels = createSelector(
-    getSchemaGroups,
-    schemaGroups => {
-        return Object.entries(schemaGroups).reduce(
-            (groupLabels, [groupKey, schemas]) => {
-                const label = extractGroupLabelFromSchemas(groupKey, schemas)
+export const getGroupLabels = createSelector(getSchemaGroups, schemaGroups => {
+    return Object.entries(schemaGroups).reduce(
+        (groupLabels, [groupKey, schemas]) => {
+            const label = extractGroupLabelFromSchemas(groupKey, schemas)
 
-                return {
-                    ...groupLabels,
-                    [groupKey]: label,
-                }
-            },
-            {}
-        )
-    }
-)
+            return {
+                ...groupLabels,
+                [groupKey]: label,
+            }
+        },
+        {}
+    )
+})
 
-export const getGroupOrder = createSelector(
-    getSchemaGroups,
-    schemas => {
-        const groupKeys = Object.keys(schemas)
-        groupKeys.sort()
-        return groupKeys
-    }
-)
+export const getGroupOrder = createSelector(getSchemaGroups, schemas => {
+    const groupKeys = Object.keys(schemas)
+    groupKeys.sort()
+    return groupKeys
+})
