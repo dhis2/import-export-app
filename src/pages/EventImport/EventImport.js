@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { useConfig, useDataEngine, useDataQuery } from '@dhis2/app-runtime';
+import { useConfig } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 
-import s from './EventImport.module.css';
+// import s from './EventImport.module.css';
 import { eventImportPage as p } from '../../utils/pages';
 import { uploadFile } from '../../utils/helper';
+import { testIds } from '../../utils/testIds';
 import { helpText } from '../../utils/text';
 import {
     formatOptions,
@@ -25,11 +26,9 @@ import {
 import { FormAlerts } from '../../components/FormAlerts';
 import { TaskContext } from '../../contexts/';
 
-const today = new Date();
-
 const EventImport = () => {
-    const { data, addTask } = useContext(TaskContext);
-    const [setProgress, setProgress] = useState(0);
+    const { addTask } = useContext(TaskContext);
+    const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption);
     const [dryRun, setDryRun] = useState(false);
@@ -44,7 +43,7 @@ const EventImport = () => {
 
     const onImport = () => {
         // validate
-        let alerts = [];
+        const alerts = [];
         const timestamp = new Date().getTime();
 
         setAlerts(alerts);
@@ -74,15 +73,15 @@ const EventImport = () => {
         ].join('&');
         const url = `${apiBaseUrl}${endpoint}?${params}`;
 
-        uploadFile(
+        uploadFile({
             url,
             file,
-            format.value,
-            'EVENT_IMPORT',
+            format: format.value,
+            type: 'EVENT_IMPORT',
             setProgress,
             setAlerts,
-            (id, entry) => addTask('event', id, entry)
-        );
+            addEntry: (id, entry) => addTask('event', id, entry),
+        });
     };
 
     return (
@@ -91,14 +90,21 @@ const EventImport = () => {
             desc={p.description}
             icon={p.icon}
             loading={progress}
+            dataTest={testIds.EventImport.Page}
         >
-            <FileUpload name="upload" file={file} setFile={setFile} />
+            <FileUpload
+                name="upload"
+                file={file}
+                setFile={setFile}
+                dataTest={testIds.EventImport.FileUpload}
+            />
             <RadioGroup
                 name="format"
                 label={i18n.t('Format')}
                 options={formatOptions}
                 setValue={setFormat}
                 checked={format}
+                dataTest={testIds.EventImport.format}
             />
             <Switch
                 label={i18n.t('Dry run')}
@@ -106,21 +112,31 @@ const EventImport = () => {
                 checked={dryRun}
                 setChecked={setDryRun}
                 help={helpText.dryRun}
+                dataTest={testIds.EventImport.dryRun}
             />
-            <MoreOptions>
+            <MoreOptions dataTest={testIds.EventImport.MoreOptions}>
                 <EventIdScheme
                     selected={eventIdScheme}
                     setSelected={setEventIdScheme}
+                    dataTest={testIds.EventImport.EventIdScheme}
                 />
                 <OrgUnitIdScheme
                     selected={orgUnitIdScheme}
                     setSelected={setOrgUnitIdScheme}
+                    dataTest={testIds.EventImport.OrgUnitIdScheme}
                 />
             </MoreOptions>
-            <Button primary initialFocus onClick={onImport}>
+            <Button
+                primary
+                onClick={onImport}
+                dataTest={testIds.EventImport.submit}
+            >
                 {i18n.t('Import')}
             </Button>
-            <FormAlerts alerts={alerts} />
+            <FormAlerts
+                alerts={alerts}
+                dataTest={testIds.EventImport.FormAlerts}
+            />
         </Page>
     );
 };

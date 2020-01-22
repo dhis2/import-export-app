@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { useConfig, useDataEngine, useDataQuery } from '@dhis2/app-runtime';
+import { useConfig } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 
-import s from './DataImport.module.css';
+// import s from './DataImport.module.css';
 import { dataImportPage as p } from '../../utils/pages';
 import { uploadFile } from '../../utils/helper';
+import { testIds } from '../../utils/testIds';
 import { helpText } from '../../utils/text';
 import {
     formatAdxPdfOptions,
@@ -20,7 +21,6 @@ import { Page } from '../../components/Page';
 import { FileUpload } from '../../components/FileUpload';
 import { RadioGroup } from '../../components/RadioGroup';
 import { Switch } from '../../components/Switch';
-import { Select } from '../../components/Select';
 import {
     WithAuthority,
     hasAuthorityToSkipAudit,
@@ -34,10 +34,8 @@ import {
 import { FormAlerts } from '../../components/FormAlerts';
 import { TaskContext } from '../../contexts/';
 
-const today = new Date();
-
 const DataImport = () => {
-    const { data, addTask } = useContext(TaskContext);
+    const { addTask } = useContext(TaskContext);
     const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(undefined);
     const [format, setFormat] = useState(defaultFormatOption);
@@ -59,7 +57,7 @@ const DataImport = () => {
 
     const onImport = () => {
         // validate
-        let alerts = [];
+        const alerts = [];
         const timestamp = new Date().getTime();
 
         setAlerts(alerts);
@@ -94,15 +92,15 @@ const DataImport = () => {
         ].join('&');
         const url = `${apiBaseUrl}${endpoint}?${params}`;
 
-        uploadFile(
+        uploadFile({
             url,
             file,
-            format.value,
-            'DATAVALUE_IMPORT',
+            format: format.value,
+            type: 'DATAVALUE_IMPORT',
             setProgress,
             setAlerts,
-            (id, entry) => addTask('data', id, entry)
-        );
+            addEntry: (id, entry) => addTask('data', id, entry),
+        });
     };
 
     return (
@@ -111,14 +109,21 @@ const DataImport = () => {
             desc={p.description}
             icon={p.icon}
             loading={progress}
+            dataTest={testIds.DataImport.Page}
         >
-            <FileUpload name="upload" file={file} setFile={setFile} />
+            <FileUpload
+                name="upload"
+                file={file}
+                setFile={setFile}
+                dataTest={testIds.DataImport.FileUpload}
+            />
             <RadioGroup
                 name="format"
                 label={i18n.t('Format')}
                 options={formatAdxPdfOptions}
                 setValue={setFormat}
                 checked={format}
+                dataTest={testIds.DataImport.format}
             />
             <Switch
                 label={i18n.t('Dry run')}
@@ -126,6 +131,7 @@ const DataImport = () => {
                 checked={dryRun}
                 setChecked={setDryRun}
                 help={helpText.dryRun}
+                dataTest={testIds.DataImport.dryRun}
             />
             {format.value == 'csv' && (
                 <Switch
@@ -133,6 +139,7 @@ const DataImport = () => {
                     name="firstRowIsHeader"
                     checked={firstRowIsHeader}
                     setChecked={setFirstRowIsHeader}
+                    dataTest={testIds.DataImport.firstRowIsHeader}
                 />
             )}
             <RadioGroup
@@ -141,6 +148,7 @@ const DataImport = () => {
                 options={strategyOptions}
                 setValue={setStrategy}
                 checked={strategy}
+                dataTest={testIds.DataImport.strategy}
             />
             <Switch
                 label={i18n.t('Preheat cache')}
@@ -148,6 +156,7 @@ const DataImport = () => {
                 checked={preheatCache}
                 setChecked={setPreheatCache}
                 help={helpText.preheatCache}
+                dataTest={testIds.DataImport.preheatCache}
             />
             <WithAuthority pred={hasAuthorityToSkipAudit}>
                 <Switch
@@ -156,30 +165,45 @@ const DataImport = () => {
                     checked={skipAudit}
                     setChecked={setSkipAudit}
                     help={helpText.skipAudit}
+                    dataTest={testIds.DataImport.hasAuthorityToSkipAudit}
                 />
             </WithAuthority>
-            <MoreOptions>
+            <MoreOptions dataTest={testIds.DataImport.MoreOptions}>
                 <DataElementIdScheme
                     selected={dataElementIdScheme}
                     setSelected={setDataElementIdScheme}
+                    dataTest={testIds.DataImport.DataElementIdScheme}
                 />
                 <OrgUnitIdScheme
                     selected={orgUnitIdScheme}
                     setSelected={setOrgUnitIdScheme}
+                    dataTest={testIds.DataImport.OrgUnitIdScheme}
                 />
-                <IdScheme selected={idScheme} setSelected={setIdScheme} />
+                <IdScheme
+                    selected={idScheme}
+                    setSelected={setIdScheme}
+                    dataTest={testIds.DataImport.IdScheme}
+                />
                 <Switch
                     name="skipExistingCheck"
                     label={i18n.t('Skip exisiting check')}
                     checked={skipExistingCheck}
                     setChecked={setSkipExistingCheck}
                     help={helpText.skipExistingCheck}
+                    dataTest={testIds.DataImport.skipExisitingCheck}
                 />
             </MoreOptions>
-            <Button primary initialFocus onClick={onImport}>
+            <Button
+                primary
+                onClick={onImport}
+                dataTest={testIds.DataImport.submit}
+            >
                 {i18n.t('Import')}
             </Button>
-            <FormAlerts alerts={alerts} />
+            <FormAlerts
+                alerts={alerts}
+                dataTest={testIds.DataImport.FormAlerts}
+            />
         </Page>
     );
 };

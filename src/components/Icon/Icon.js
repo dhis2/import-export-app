@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Icon = ({ width, height, children }) => {
     const style = {
@@ -15,6 +16,13 @@ export const Icon = ({ width, height, children }) => {
             {children}
         </svg>
     );
+};
+
+Icon.propTypes = {
+    children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+        .isRequired,
+    height: PropTypes.number,
+    width: PropTypes.number,
 };
 
 export const MetadataImportIcon = props => (

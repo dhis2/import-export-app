@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDataEngine } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 
+import { optionPropType } from '../../../utils/options';
 import { Select } from '../../../components/Select';
 
 const programStageQuery = {
@@ -25,6 +27,7 @@ const ProgramStageSelect = ({
     program,
     setSelected,
     selected,
+    dataTest,
 }) => {
     const engine = useDataEngine();
     const [loading, setLoading] = useState(true);
@@ -77,8 +80,18 @@ const ProgramStageSelect = ({
             selected={selected}
             setValue={setSelected}
             dense
+            dataTest={dataTest}
         />
     );
+};
+
+ProgramStageSelect.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    setSelected: PropTypes.func.isRequired,
+    program: PropTypes.string,
+    selected: optionPropType,
 };
 
 export { ProgramStageSelect, ALL_VALUE };

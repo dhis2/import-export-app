@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import i18n from '@dhis2/d2-i18n';
-import { useDataEngine, useDataQuery } from '@dhis2/app-runtime';
+import { useDataQuery } from '@dhis2/app-runtime';
 import { CircularLoader } from '@dhis2/ui-core';
 
 import { pathToId } from '../../utils/helper';
@@ -30,9 +31,14 @@ const orgQuery = {
     },
 };
 
-const OrgUnitTree = ({ selected, setSelected, multiSelect = true }) => {
+const OrgUnitTree = ({
+    selected,
+    setSelected,
+    dataTest,
+    multiSelect = true,
+}) => {
     const [children, setChildren] = useState([]);
-    const { loading, error, data, engine } = useDataQuery(rootQuery);
+    const { loading, data, engine } = useDataQuery(rootQuery);
 
     useEffect(() => {
         if (data) {
@@ -123,7 +129,7 @@ const OrgUnitTree = ({ selected, setSelected, multiSelect = true }) => {
     };
 
     return (
-        <FormField label={i18n.t('Organisation unit')}>
+        <FormField label={i18n.t('Organisation unit')} dataTest={dataTest}>
             <div className={s.container}>
                 {loading && <CircularLoader />}
                 {data && (
@@ -139,6 +145,13 @@ const OrgUnitTree = ({ selected, setSelected, multiSelect = true }) => {
             </div>
         </FormField>
     );
+};
+
+OrgUnitTree.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelected: PropTypes.func.isRequired,
+    multiSelect: PropTypes.bool,
 };
 
 export { OrgUnitTree };

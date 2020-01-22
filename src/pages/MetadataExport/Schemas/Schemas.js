@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDataQuery } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { Button, ButtonStrip, CircularLoader } from '@dhis2/ui-core';
 
 import {
     filterOutExcludedSchemas,
-    groupName,
     formatSchemas,
     getSchemaGroups,
     getGroupLabels,
@@ -23,8 +23,13 @@ const schemaQuery = {
     },
 };
 
-const Schemas = ({ excludeSchemas, setCheckedSchemas, checkedByDefault }) => {
-    const { loading, error, data } = useDataQuery(schemaQuery);
+const Schemas = ({
+    excludeSchemas,
+    setCheckedSchemas,
+    checkedByDefault,
+    dataTest,
+}) => {
+    const { loading, data } = useDataQuery(schemaQuery);
     const [schemaGroups, setSchemaGroups] = useState(undefined);
     const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined);
     const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined);
@@ -78,7 +83,7 @@ const Schemas = ({ excludeSchemas, setCheckedSchemas, checkedByDefault }) => {
     };
 
     const toggleSchema = schemaGroup => ind => {
-        let updatedGroup = [...schemaGroups[schemaGroup]];
+        const updatedGroup = [...schemaGroups[schemaGroup]];
         updatedGroup[ind] = {
             ...updatedGroup[ind],
             checked: !updatedGroup[ind].checked,
@@ -92,7 +97,7 @@ const Schemas = ({ excludeSchemas, setCheckedSchemas, checkedByDefault }) => {
     };
 
     return (
-        <div className={s.container}>
+        <div className={s.container} data-test={dataTest}>
             {loading && <CircularLoader />}
             {schemaGroups && (
                 <>
@@ -123,6 +128,13 @@ const Schemas = ({ excludeSchemas, setCheckedSchemas, checkedByDefault }) => {
             )}
         </div>
     );
+};
+
+Schemas.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    excludeSchemas: PropTypes.object.isRequired,
+    setCheckedSchemas: PropTypes.func.isRequired,
+    checkedByDefault: PropTypes.bool,
 };
 
 export { Schemas };

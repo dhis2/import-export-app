@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { useConfig, useDataQuery } from '@dhis2/app-runtime';
 import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core';
-import i18n from '@dhis2/d2-i18n';
 
 import { fetchAndSetAttributes } from './utils/helper';
 import {
@@ -36,7 +35,7 @@ const jobSummaryQuery = {
 const refetchPeriod = 2000;
 
 const MyApp = () => {
-    const { loading, error, data, engine } = useDataQuery(userQuery);
+    const { loading, data, engine } = useDataQuery(userQuery);
     const { baseUrl } = useConfig();
     const [
         dataElementIdSchemeOptionsDyn,
@@ -45,6 +44,7 @@ const MyApp = () => {
     const [orgUnitIdSchemeOptionsDyn, setOrgUnitIdSchemeOptions] = useState(
         orgUnitIdSchemeOptions
     );
+    // eslint-disable-next-line no-unused-vars
     const [idSchemeOptionsDyn, setIdSchemeOptions] = useState(idSchemeOptions);
     const [elementSchemes, setElementSchemes] = useState({
         DataElementId: dataElementIdSchemeOptionsDyn,
@@ -85,7 +85,7 @@ const MyApp = () => {
         });
 
         if (error) {
-            console.error('fetchEvents error: ', e);
+            console.error('fetchEvents error: ', error);
             return;
         }
 
@@ -126,7 +126,7 @@ const MyApp = () => {
         });
 
         if (error) {
-            console.error('fetchSummary error: ', e);
+            console.error('fetchSummary error: ', error);
             return;
         }
 
@@ -148,12 +148,11 @@ const MyApp = () => {
     }, [data]);
 
     useEffect(() => {
-        fetchAndSetAttributes(
-            `${baseUrl}/api/`,
+        fetchAndSetAttributes({
+            apiBaseUrl: `${baseUrl}/api/`,
             setDataElementIdSchemeOptions,
             setOrgUnitIdSchemeOptions,
-            setIdSchemeOptions
-        );
+        });
     }, []);
 
     useEffect(() => {

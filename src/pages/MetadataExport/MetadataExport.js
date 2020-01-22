@@ -4,6 +4,7 @@ import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 
 import { metadataExportPage as p } from '../../utils/pages';
+import { testIds } from '../../utils/testIds';
 import {
     formatOptions,
     compressionOptions,
@@ -27,7 +28,7 @@ const MetadataExport = () => {
 
     const onExport = () => {
         // validate
-        let alerts = [];
+        const alerts = [];
         const timestamp = new Date().getTime();
 
         if (checkedSchemas.length == 0) {
@@ -59,11 +60,17 @@ const MetadataExport = () => {
     };
 
     return (
-        <Page title={p.name} desc={p.description} icon={p.icon}>
+        <Page
+            title={p.name}
+            desc={p.description}
+            icon={p.icon}
+            dataTest={testIds.MetadataExport.Page}
+        >
             <Schemas
                 excludeSchemas={EXCLUDE_SCHEMAS}
                 setCheckedSchemas={setCheckedSchemas}
                 checkedByDefault
+                dataTest={testIds.MetadataExport.Schemas}
             />
             <RadioGroup
                 name="format"
@@ -71,6 +78,7 @@ const MetadataExport = () => {
                 options={formatOptions}
                 setValue={setFormat}
                 checked={format}
+                dataTest={testIds.MetadataExport.format}
             />
             <RadioGroup
                 name="compression"
@@ -78,17 +86,26 @@ const MetadataExport = () => {
                 options={compressionOptions}
                 setValue={setCompression}
                 checked={compression}
+                dataTest={testIds.MetadataExport.compression}
             />
             <Switch
                 name="skipSharing"
                 label={i18n.t('Skip sharing')}
                 checked={skipSharing}
                 setChecked={setSkipSharing}
+                dataTest={testIds.MetadataExport.skipSharing}
             />
-            <Button primary initialFocus onClick={onExport}>
+            <Button
+                primary
+                onClick={onExport}
+                dataTest={testIds.MetadataExport.submit}
+            >
                 {i18n.t('Export')}
             </Button>
-            <FormAlerts alerts={alerts} />
+            <FormAlerts
+                alerts={alerts}
+                dataTest={testIds.MetadataExport.FormAlerts}
+            />
         </Page>
     );
 };

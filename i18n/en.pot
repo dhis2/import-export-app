@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-21T15:14:08.741Z\n"
-"PO-Revision-Date: 2020-01-21T15:14:08.741Z\n"
+"POT-Creation-Date: 2020-01-22T12:33:04.034Z\n"
+"PO-Revision-Date: 2020-01-22T12:33:04.034Z\n"
 
 msgid "Data sets"
 msgstr ""
@@ -180,9 +180,6 @@ msgid "Inclusion strategy"
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
-
-msgid "An unknown error occurred"
 msgstr ""
 
 msgid "JSON"

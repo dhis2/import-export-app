@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import i18n from '@dhis2/d2-i18n';
 
+import { optionPropType } from '../../utils/options';
 import { SchemeContext } from '../../contexts/';
 import { Select } from '../Select';
 
-const DataElementIdScheme = ({ selected, setSelected }) => {
+const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
     const { DataElementId } = useContext(SchemeContext);
     return (
         <Select
@@ -14,8 +16,15 @@ const DataElementIdScheme = ({ selected, setSelected }) => {
             selected={selected}
             setValue={setSelected}
             dense
+            dataTest={dataTest}
         />
     );
+};
+
+DataElementIdScheme.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    selected: optionPropType.isRequired,
+    setSelected: PropTypes.func.isRequired,
 };
 
 export { DataElementIdScheme };

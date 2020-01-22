@@ -4,6 +4,7 @@ import i18n from '@dhis2/d2-i18n';
 import { Button } from '@dhis2/ui-core';
 
 import { metadataDependencyExportPage as p } from '../../utils/pages';
+import { testIds } from '../../utils/testIds';
 import {
     formatNoCsvOptions,
     compressionOptions,
@@ -38,7 +39,12 @@ const MetadataDependencyExport = () => {
     };
 
     return (
-        <Page title={p.name} desc={p.description} icon={p.icon}>
+        <Page
+            title={p.name}
+            desc={p.description}
+            icon={p.icon}
+            dataTest={testIds.MetadataDependencyExport.Page}
+        >
             <Select
                 filled
                 initialFocus
@@ -47,6 +53,7 @@ const MetadataDependencyExport = () => {
                 options={objectTypeOptions}
                 setValue={setObjectType}
                 selected={objectType}
+                dataTest={testIds.MetadataDependencyExport.objectType}
             />
             <ObjectSelect
                 name="objectList"
@@ -55,6 +62,7 @@ const MetadataDependencyExport = () => {
                 setSelected={setObjectListSelected}
                 selected={objectListSelected}
                 filterable
+                dataTest={testIds.MetadataDependencyExport.ObjectSelect}
             />
             <RadioGroup
                 name="format"
@@ -62,6 +70,7 @@ const MetadataDependencyExport = () => {
                 options={formatNoCsvOptions}
                 setValue={setFormat}
                 checked={format}
+                dataTest={testIds.MetadataDependencyExport.format}
             />
             <RadioGroup
                 name="compression"
@@ -69,17 +78,20 @@ const MetadataDependencyExport = () => {
                 options={compressionOptions}
                 setValue={setCompression}
                 checked={compression}
+                dataTest={testIds.MetadataDependencyExport.compression}
             />
             <Switch
                 name="skipSharing"
                 label={i18n.t('Skip sharing')}
                 checked={skipSharing}
                 setChecked={setSkipSharing}
+                dataTest={testIds.MetadataDependencyExport.skipSharing}
             />
             <Button
                 primary
                 disabled={objectListSelected == undefined}
                 onClick={onExport}
+                dataTest={testIds.MetadataDependencyExport.submit}
             >
                 {i18n.t('Export')}
             </Button>

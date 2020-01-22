@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDataQuery } from '@dhis2/app-runtime';
 import i18n from '@dhis2/d2-i18n';
 import { CircularLoader } from '@dhis2/ui-core';
@@ -23,9 +24,10 @@ const DataSetPicker = ({
     multiSelect = true,
     withFilter = true,
     withActions = true,
+    dataTest,
 }) => {
     const [list, setList] = useState([]);
-    const { loading, error, data } = useDataQuery(dataSetQuery);
+    const { loading, data } = useDataQuery(dataSetQuery);
 
     useEffect(() => {
         if (data) {
@@ -61,7 +63,7 @@ const DataSetPicker = ({
     };
 
     return (
-        <FormField label={i18n.t('Data sets')}>
+        <FormField label={i18n.t('Data sets')} dataTest={dataTest}>
             <div className={s.container}>
                 {loading && <CircularLoader />}
                 {data && (
@@ -81,6 +83,15 @@ const DataSetPicker = ({
             </div>
         </FormField>
     );
+};
+
+DataSetPicker.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelected: PropTypes.func.isRequired,
+    multiSelect: PropTypes.bool,
+    withActions: PropTypes.bool,
+    withFilter: PropTypes.bool,
 };
 
 export { DataSetPicker };
