@@ -94,9 +94,14 @@ const MyApp = () => {
                 .filter(e => !task.events.some(te => te.id == e.uid))
                 .map(e => ({
                     id: e.uid,
+                    level: e.level,
                     text: e.message,
                     date: new Date(e.time),
                 }))
+            const errorEvent = newEvents.find(e => e.level == 'ERROR')
+            if (errorEvent) {
+                newTask.error = errorEvent.text
+            }
             newTask.events = [...newTask.events, ...newEvents.reverse()]
             newTask.completed = events[0].completed
         }
@@ -136,10 +141,6 @@ const MyApp = () => {
             [type]: { ...tasks[type], [id]: newTask },
         }))
     }
-
-    useEffect(() => {
-        console.log(tasks)
-    }, [tasks])
 
     useEffect(() => {
         if (data) {
