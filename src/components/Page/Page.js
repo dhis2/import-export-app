@@ -8,8 +8,18 @@ import {
 } from '@dhis2/ui-core'
 
 import s from './Page.module.css'
+import { testIds } from '../../utils/testIds'
+import { JobSummary } from '../../components/JobSummary'
 
-const Page = ({ title, desc, icon, children, loading = false, dataTest }) => {
+const Page = ({
+    title,
+    desc,
+    icon,
+    summaryTask,
+    children,
+    loading = false,
+    dataTest,
+}) => {
     const loadingEl =
         typeof loading == 'number' ? (
             <LinearLoader amount={loading} />
@@ -24,6 +34,16 @@ const Page = ({ title, desc, icon, children, loading = false, dataTest }) => {
                 <span className={s.title}>{title}</span>
                 <p className={s.desc}>{desc}</p>
             </div>
+            {summaryTask && (
+                <Card className={s.preBody}>
+                    <div className={s.content}>
+                        <JobSummary
+                            task={summaryTask}
+                            dataTest={testIds.JobSummary.container}
+                        />
+                    </div>
+                </Card>
+            )}
             <Card>
                 {!!loading && <ComponentCover>{loadingEl}</ComponentCover>}
                 <div className={s.content}>{children}</div>
@@ -40,6 +60,7 @@ Page.propTypes = {
     icon: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    summaryTask: PropTypes.object,
 }
 
 export { Page }
