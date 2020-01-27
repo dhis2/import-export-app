@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import { FileInput } from '@dhis2/ui-core';
+import React from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { FileInput } from '@dhis2/ui-core'
 
 // import s from './FileUpload.module.css';
-import { FormField } from '../FormField';
+import { FormField } from '../FormField'
 
 const FileUpload = ({
     file,
@@ -15,11 +15,11 @@ const FileUpload = ({
     accept = '*',
     dataTest,
 }) => {
-    const fileLabel = file ? file.name : i18n.t('Choose a file to upload');
+    const fileLabel = file ? file.name : i18n.t('Choose a file to upload')
 
     const onFileSelect = ({ files }) => {
-        setFile(files[0]);
-    };
+        setFile(files[0])
+    }
 
     return (
         <FormField label={label} required={required} dataTest={dataTest}>
@@ -30,8 +30,8 @@ const FileUpload = ({
                 buttonLabel={fileLabel}
             />
         </FormField>
-    );
-};
+    )
+}
 
 FileUpload.propTypes = {
     dataTest: PropTypes.string.isRequired,
@@ -41,6 +41,6 @@ FileUpload.propTypes = {
     file: PropTypes.instanceOf(File),
     label: PropTypes.string,
     required: PropTypes.bool,
-};
+}
 
-export { FileUpload };
+export { FileUpload }

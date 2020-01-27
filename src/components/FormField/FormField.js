@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import s from './FormField.module.css';
+import s from './FormField.module.css'
 
 const FormField = ({ dataTest, label, required = false, children }) => {
     return (
@@ -12,14 +12,14 @@ const FormField = ({ dataTest, label, required = false, children }) => {
             </span>
             {children}
         </div>
-    );
-};
+    )
+}
 
 FormField.propTypes = {
     dataTest: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     children: PropTypes.object,
     required: PropTypes.bool,
-};
+}
 
-export { FormField };
+export { FormField }

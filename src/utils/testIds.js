@@ -40,7 +40,7 @@ const commonIds = {
     skipValidation: 'input-skip-validation',
     startDate: 'input-start-date',
     strategy: 'input-strategy',
-};
+}
 
 const testIds = {
     DataImport: {
@@ -151,6 +151,6 @@ const testIds = {
         skipSharing: commonIds.skipSharing,
         submit: commonIds.export,
     },
-};
+}
 
-export { testIds };
+export { testIds }

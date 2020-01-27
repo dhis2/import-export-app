@@ -1,63 +1,63 @@
-import React, { useState } from 'react';
-import { useConfig } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { Button } from '@dhis2/ui-core';
+import React, { useState } from 'react'
+import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui-core'
 
-import { metadataExportPage as p } from '../../utils/pages';
-import { testIds } from '../../utils/testIds';
+import { metadataExportPage as p } from '../../utils/pages'
+import { testIds } from '../../utils/testIds'
 import {
     formatOptions,
     compressionOptions,
     defaultFormatOption,
     defaultCompressionOption,
-} from '../../utils/options';
-import { EXCLUDE_SCHEMAS } from './helper';
-import { Schemas } from './Schemas/';
-import { Page } from '../../components/Page';
-import { Switch } from '../../components/Switch';
-import { RadioGroup } from '../../components/RadioGroup';
-import { FormAlerts } from '../../components/FormAlerts';
+} from '../../utils/options'
+import { EXCLUDE_SCHEMAS } from './helper'
+import { Schemas } from './Schemas/'
+import { Page } from '../../components/Page'
+import { Switch } from '../../components/Switch'
+import { RadioGroup } from '../../components/RadioGroup'
+import { FormAlerts } from '../../components/FormAlerts'
 
 const MetadataExport = () => {
-    const [checkedSchemas, setCheckedSchemas] = useState([]);
-    const [format, setFormat] = useState(defaultFormatOption);
-    const [compression, setCompression] = useState(defaultCompressionOption);
-    const [skipSharing, setSkipSharing] = useState(false);
-    const [alerts, setAlerts] = useState([]);
-    const { baseUrl } = useConfig();
+    const [checkedSchemas, setCheckedSchemas] = useState([])
+    const [format, setFormat] = useState(defaultFormatOption)
+    const [compression, setCompression] = useState(defaultCompressionOption)
+    const [skipSharing, setSkipSharing] = useState(false)
+    const [alerts, setAlerts] = useState([])
+    const { baseUrl } = useConfig()
 
     const onExport = () => {
         // validate
-        const alerts = [];
-        const timestamp = new Date().getTime();
+        const alerts = []
+        const timestamp = new Date().getTime()
 
         if (checkedSchemas.length == 0) {
             alerts.push({
                 id: `schemas-length-${timestamp}`,
                 warning: true,
                 message: i18n.t('At least one schema must be selected'),
-            });
+            })
         }
 
-        setAlerts(alerts);
+        setAlerts(alerts)
 
         if (alerts.length != 0) {
-            return;
+            return
         }
 
         // generate download url
-        const apiBaseUrl = `${baseUrl}/api/`;
-        const endpoint = `metadata`;
+        const apiBaseUrl = `${baseUrl}/api/`
+        const endpoint = `metadata`
         const endpointExtension = compression.value
             ? `${format.value}.${compression.value}`
-            : format.value;
+            : format.value
         const schemaParams = checkedSchemas
             .map(name => `${name}=true`)
-            .join('&');
-        const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`;
-        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`;
-        window.location = url;
-    };
+            .join('&')
+        const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`
+        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
+        window.location = url
+    }
 
     return (
         <Page
@@ -107,7 +107,7 @@ const MetadataExport = () => {
                 dataTest={testIds.MetadataExport.FormAlerts}
             />
         </Page>
-    );
-};
+    )
+}
 
-export { MetadataExport };
+export { MetadataExport }

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { useDataEngine } from '@dhis2/app-runtime';
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { useDataEngine } from '@dhis2/app-runtime'
 
-import { optionPropType } from '../../../utils/options';
-import { Select } from '../../../components/Select';
+import { optionPropType } from '../../../utils/options'
+import { Select } from '../../../components/Select'
 
 const listQuery = resource => ({
     data: {
@@ -13,7 +13,7 @@ const listQuery = resource => ({
             paging: 'false',
         },
     },
-});
+})
 
 const ObjectSelect = ({
     name,
@@ -24,32 +24,32 @@ const ObjectSelect = ({
     dataTest,
     filterable,
 }) => {
-    const engine = useDataEngine();
-    const [loading, setLoading] = useState(true);
-    const [objectList, setObjectList] = useState([]);
+    const engine = useDataEngine()
+    const [loading, setLoading] = useState(true)
+    const [objectList, setObjectList] = useState([])
 
     useEffect(() => {
-        setLoading(true);
-        setSelected(undefined);
+        setLoading(true)
+        setSelected(undefined)
         const fetcher = async () => {
             await engine.query(listQuery(type.value), {
                 onComplete: data => {
-                    const list = data.data[type.value];
+                    const list = data.data[type.value]
                     const formattedList = list.map(e => ({
                         value: e.id,
                         label: e.displayName,
-                    }));
-                    setObjectList(formattedList);
-                    setSelected(formattedList[0]);
-                    setLoading(false);
+                    }))
+                    setObjectList(formattedList)
+                    setSelected(formattedList[0])
+                    setLoading(false)
                 },
                 onError: e => {
-                    console.error('ObjectSelect error: ', e);
+                    console.error('ObjectSelect error: ', e)
                 },
-            });
-        };
-        fetcher();
-    }, [type]);
+            })
+        }
+        fetcher()
+    }, [type])
 
     return (
         <Select
@@ -63,8 +63,8 @@ const ObjectSelect = ({
             dense
             dataTest={dataTest}
         />
-    );
-};
+    )
+}
 
 ObjectSelect.propTypes = {
     dataTest: PropTypes.string.isRequired,
@@ -74,6 +74,6 @@ ObjectSelect.propTypes = {
     type: optionPropType.isRequired,
     filterable: PropTypes.bool,
     selected: optionPropType,
-};
+}
 
-export { ObjectSelect };
+export { ObjectSelect }

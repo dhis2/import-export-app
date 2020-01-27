@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useConfig } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { Button } from '@dhis2/ui-core';
+import React, { useState } from 'react'
+import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui-core'
 
-import { metadataDependencyExportPage as p } from '../../utils/pages';
-import { testIds } from '../../utils/testIds';
+import { metadataDependencyExportPage as p } from '../../utils/pages'
+import { testIds } from '../../utils/testIds'
 import {
     formatNoCsvOptions,
     compressionOptions,
@@ -12,31 +12,31 @@ import {
     defaultFormatOption,
     defaultCompressionOption,
     defaultObjectTypeOption,
-} from '../../utils/options';
-import { Page } from '../../components/Page';
-import { Switch } from '../../components/Switch';
-import { RadioGroup } from '../../components/RadioGroup';
-import { Select } from '../../components/Select';
-import { ObjectSelect } from './ObjectSelect/';
+} from '../../utils/options'
+import { Page } from '../../components/Page'
+import { Switch } from '../../components/Switch'
+import { RadioGroup } from '../../components/RadioGroup'
+import { Select } from '../../components/Select'
+import { ObjectSelect } from './ObjectSelect/'
 
 const MetadataDependencyExport = () => {
-    const [objectType, setObjectType] = useState(defaultObjectTypeOption);
-    const [objectListSelected, setObjectListSelected] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption);
-    const [compression, setCompression] = useState(defaultCompressionOption);
-    const [skipSharing, setSkipSharing] = useState(false);
-    const { baseUrl } = useConfig();
+    const [objectType, setObjectType] = useState(defaultObjectTypeOption)
+    const [objectListSelected, setObjectListSelected] = useState(undefined)
+    const [format, setFormat] = useState(defaultFormatOption)
+    const [compression, setCompression] = useState(defaultCompressionOption)
+    const [skipSharing, setSkipSharing] = useState(false)
+    const { baseUrl } = useConfig()
 
     const onExport = () => {
-        const apiBaseUrl = `${baseUrl}/api/`;
-        const endpoint = `${objectType.value}/${objectListSelected.value}/metadata`;
+        const apiBaseUrl = `${baseUrl}/api/`
+        const endpoint = `${objectType.value}/${objectListSelected.value}/metadata`
         const endpointExtension = compression.value
             ? `${format.value}.${compression.value}`
-            : format.value;
-        const downloadUrlParams = `skipSharing=${skipSharing}&download=true`;
-        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`;
-        window.location = url;
-    };
+            : format.value
+        const downloadUrlParams = `skipSharing=${skipSharing}&download=true`
+        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
+        window.location = url
+    }
 
     return (
         <Page
@@ -96,7 +96,7 @@ const MetadataDependencyExport = () => {
                 {i18n.t('Export')}
             </Button>
         </Page>
-    );
-};
+    )
+}
 
-export { MetadataDependencyExport };
+export { MetadataDependencyExport }

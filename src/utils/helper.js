@@ -1,12 +1,12 @@
-import i18n from '@dhis2/d2-i18n';
+import i18n from '@dhis2/d2-i18n'
 
-import { getUploadXHR } from './xhr';
+import { getUploadXHR } from './xhr'
 
 const pathToId = path => {
-    const pathSplit = path.split('/');
-    const orgId = pathSplit[pathSplit.length - 1];
-    return orgId;
-};
+    const pathSplit = path.split('/')
+    const orgId = pathSplit[pathSplit.length - 1]
+    return orgId
+}
 
 const jsDateToISO8601 = date =>
     date.getFullYear().toString() +
@@ -16,36 +16,36 @@ const jsDateToISO8601 = date =>
     date
         .getDate()
         .toString()
-        .padStart(2, 0);
+        .padStart(2, 0)
 
 const blobType = (format, compression) => {
     if (compression === 'gzip') {
-        return `application/${format}+gzip`;
+        return `application/${format}+gzip`
     } else if (compression === 'zip') {
-        return `application/${format}+zip`;
+        return `application/${format}+zip`
     }
 
     if (format === 'xml') {
-        return 'application/xml';
+        return 'application/xml'
     } else if (format === 'json') {
-        return 'application/json';
+        return 'application/json'
     }
-};
+}
 
 const createBlob = (contents, format, compression = 'none') => {
     return URL.createObjectURL(
         new Blob([contents], { type: blobType(format, compression) })
-    );
-};
+    )
+}
 
 const downloadBlob = (url, filename) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', filename);
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-};
+    const link = document.createElement('a')
+    link.href = url
+    link.setAttribute('download', filename)
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+}
 
 const fetchAndSetAttributes = ({
     apiBaseUrl,
@@ -54,26 +54,26 @@ const fetchAndSetAttributes = ({
 }) => {
     const fetchOptions = {
         credentials: 'include',
-    };
+    }
 
     const fetcher = (url, succF, errF) =>
         fetch(url, fetchOptions)
             .then(resp => resp.json())
             .then(json => {
-                succF(json);
+                succF(json)
             })
             .catch(e => {
-                errF(e);
-            });
+                errF(e)
+            })
 
-    const fields = 'id,displayName';
-    const filters = attr => `unique:eq:true&filter=${attr}:eq:true`;
+    const fields = 'id,displayName'
+    const filters = attr => `unique:eq:true&filter=${attr}:eq:true`
     const dataElAttributesURL = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters(
         'dataElementAttribute'
-    )}`;
+    )}`
     const orgUnitAttributesURL = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters(
         'organisationUnitAttribute'
-    )}`;
+    )}`
 
     fetcher(
         dataElAttributesURL,
@@ -85,13 +85,13 @@ const fetchAndSetAttributes = ({
                         value: `ATTRIBUTE:${id}`,
                         label: i18n.t(displayName),
                     })),
-                ];
-            });
+                ]
+            })
         },
         e => {
-            console.error('Data element attributes fetch error: ', e);
+            console.error('Data element attributes fetch error: ', e)
         }
-    );
+    )
 
     fetcher(
         orgUnitAttributesURL,
@@ -103,14 +103,14 @@ const fetchAndSetAttributes = ({
                         value: `ATTRIBUTE:${id}`,
                         label: i18n.t(displayName),
                     })),
-                ];
-            });
+                ]
+            })
         },
         e => {
-            console.error('Organization unit attributes fetch error: ', e);
+            console.error('Organization unit attributes fetch error: ', e)
         }
-    );
-};
+    )
+}
 
 const uploadFile = ({
     url,
@@ -121,13 +121,13 @@ const uploadFile = ({
     setAlerts,
     addEntry,
 }) => {
-    setProgress(1);
+    setProgress(1)
     const genericErrorMessage = i18n.t(
         'An unknown error occurred. Please try again later'
-    );
+    )
 
     const errorHandler = message => {
-        const timestamp = new Date().getTime();
+        const timestamp = new Date().getTime()
         setAlerts(alerts => [
             ...alerts,
             {
@@ -135,9 +135,9 @@ const uploadFile = ({
                 critical: true,
                 message: message ? message : genericErrorMessage,
             },
-        ]);
-        setProgress(0);
-    };
+        ])
+        setProgress(0)
+    }
 
     try {
         const xhr = getUploadXHR({
@@ -145,8 +145,8 @@ const uploadFile = ({
             upload: file,
             type,
             onResponse: ({ id, msg }) => {
-                const newId = id == -1 ? new Date().getTime() : id;
-                let entry;
+                const newId = id == -1 ? new Date().getTime() : id
+                let entry
                 if (id == -1 && !msg) {
                     entry = {
                         id: newId,
@@ -156,7 +156,7 @@ const uploadFile = ({
                         summary: undefined,
                         error: true,
                         importType: type,
-                    };
+                    }
                 } else {
                     entry = {
                         id: newId,
@@ -168,34 +168,34 @@ const uploadFile = ({
                         summary: undefined,
                         error: id == -1,
                         importType: type,
-                    };
+                    }
                 }
-                addEntry(newId, entry);
+                addEntry(newId, entry)
 
                 if (id == -1) {
-                    errorHandler(msg.text);
+                    errorHandler(msg.text)
                 }
-                setProgress(0);
+                setProgress(0)
             },
             onError: ev => {
-                let message;
+                let message
                 try {
-                    const response = JSON.parse(ev.target.response);
-                    message = response.message;
+                    const response = JSON.parse(ev.target.response)
+                    message = response.message
                 } catch (e2) {
-                    message = genericErrorMessage;
+                    message = genericErrorMessage
                 }
-                errorHandler(message);
-                console.error('sendFile error', message);
+                errorHandler(message)
+                console.error('sendFile error', message)
             },
             setProgress,
             format,
-        });
-        xhr.send(file);
+        })
+        xhr.send(file)
     } catch (e) {
-        errorHandler(e);
+        errorHandler(e)
     }
-};
+}
 
 export {
     createBlob,
@@ -204,4 +204,4 @@ export {
     jsDateToISO8601,
     pathToId,
     uploadFile,
-};
+}

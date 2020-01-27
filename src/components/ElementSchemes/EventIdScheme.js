@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
+import React from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
 
-import { optionPropType } from '../../utils/options';
-import { Select } from '../Select';
-import { eventIdSchemeOptions } from '../../utils/options';
+import { optionPropType } from '../../utils/options'
+import { Select } from '../Select'
+import { eventIdSchemeOptions } from '../../utils/options'
 
 const EventIdScheme = ({ selected, setSelected, dataTest }) => {
     return (
@@ -17,13 +17,13 @@ const EventIdScheme = ({ selected, setSelected, dataTest }) => {
             dense
             dataTest={dataTest}
         />
-    );
-};
+    )
+}
 
 EventIdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
     selected: optionPropType.isRequired,
     setSelected: PropTypes.func.isRequired,
-};
+}
 
-export { EventIdScheme };
+export { EventIdScheme }

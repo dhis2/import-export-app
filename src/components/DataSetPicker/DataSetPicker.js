@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { useDataQuery } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { CircularLoader } from '@dhis2/ui-core';
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { CircularLoader } from '@dhis2/ui-core'
 
-import { SelectableList } from '../SelectableList';
-import { FormField } from '../FormField';
-import s from './DataSetPicker.module.css';
+import { SelectableList } from '../SelectableList'
+import { FormField } from '../FormField'
+import s from './DataSetPicker.module.css'
 
 const dataSetQuery = {
     dataSets: {
@@ -16,7 +16,7 @@ const dataSetQuery = {
             paging: 'false',
         },
     },
-};
+}
 
 const DataSetPicker = ({
     selected,
@@ -26,41 +26,41 @@ const DataSetPicker = ({
     withActions = true,
     dataTest,
 }) => {
-    const [list, setList] = useState([]);
-    const { loading, data } = useDataQuery(dataSetQuery);
+    const [list, setList] = useState([])
+    const { loading, data } = useDataQuery(dataSetQuery)
 
     useEffect(() => {
         if (data) {
-            const dataSets = data.dataSets.dataSets;
+            const dataSets = data.dataSets.dataSets
             const list = dataSets.map(({ id, displayName }) => ({
                 value: id,
                 label: displayName,
-            }));
-            setList(list);
+            }))
+            setList(list)
         }
-    }, [data]);
+    }, [data])
 
     const onSelect = id => {
         if (multiSelect) {
-            const newValue = !selected.includes(id);
+            const newValue = !selected.includes(id)
             if (newValue == false) {
-                setSelected(selected => selected.filter(p => p != id));
+                setSelected(selected => selected.filter(p => p != id))
             } else {
-                setSelected(selected => [...selected, id]);
+                setSelected(selected => [...selected, id])
             }
         } else {
-            setSelected([id]);
+            setSelected([id])
         }
-    };
+    }
 
     const onSelectAll = () => {
-        const all = list.map(({ value }) => value);
-        setSelected(all);
-    };
+        const all = list.map(({ value }) => value)
+        setSelected(all)
+    }
 
     const onClearAll = () => {
-        setSelected([]);
-    };
+        setSelected([])
+    }
 
     return (
         <FormField label={i18n.t('Data sets')} dataTest={dataTest}>
@@ -82,8 +82,8 @@ const DataSetPicker = ({
                 )}
             </div>
         </FormField>
-    );
-};
+    )
+}
 
 DataSetPicker.propTypes = {
     dataTest: PropTypes.string.isRequired,
@@ -92,6 +92,6 @@ DataSetPicker.propTypes = {
     multiSelect: PropTypes.bool,
     withActions: PropTypes.bool,
     withFilter: PropTypes.bool,
-};
+}
 
-export { DataSetPicker };
+export { DataSetPicker }

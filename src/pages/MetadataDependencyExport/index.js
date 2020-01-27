@@ -1,1 +1,1 @@
-export { MetadataDependencyExport } from './MetadataDependencyExport';
+export { MetadataDependencyExport } from './MetadataDependencyExport'

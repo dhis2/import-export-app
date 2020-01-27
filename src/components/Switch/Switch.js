@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import { Help, Switch as UISwitch } from '@dhis2/ui-core';
+import React from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { Help, Switch as UISwitch } from '@dhis2/ui-core'
 
-import { FormField } from '../FormField';
+import { FormField } from '../FormField'
 
 const Switch = ({ name, label, help, checked, setChecked, dataTest }) => {
     return (
@@ -18,8 +18,8 @@ const Switch = ({ name, label, help, checked, setChecked, dataTest }) => {
                 {help && <Help>{help}</Help>}
             </>
         </FormField>
-    );
-};
+    )
+}
 
 Switch.propTypes = {
     checked: PropTypes.bool.isRequired,
@@ -28,6 +28,6 @@ Switch.propTypes = {
     name: PropTypes.string.isRequired,
     setChecked: PropTypes.func.isRequired,
     help: PropTypes.string,
-};
+}
 
-export { Switch };
+export { Switch }

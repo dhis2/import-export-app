@@ -1,1 +1,1 @@
-export { OrgUnitTree } from './OrgUnitTree';
+export { OrgUnitTree } from './OrgUnitTree'

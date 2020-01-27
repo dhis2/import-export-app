@@ -1,1 +1,1 @@
-export { EventImport } from './EventImport';
+export { EventImport } from './EventImport'

@@ -5,6 +5,6 @@ const mapping = {
     gml: 'application/xml',
     adx: 'application/adx+xml',
     pdf: 'application/pdf',
-};
+}
 
-export const getMimeType = format => mapping[format] || null;
+export const getMimeType = format => mapping[format] || null

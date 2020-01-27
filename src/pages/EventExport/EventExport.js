@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useConfig } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { Button } from '@dhis2/ui-core';
+import React, { useState } from 'react'
+import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui-core'
 
 // import s from './EventExport.module.css';
-import { eventExportPage as p } from '../../utils/pages';
-import { testIds } from '../../utils/testIds';
-import { jsDateToISO8601, pathToId } from '../../utils/helper';
+import { eventExportPage as p } from '../../utils/pages'
+import { testIds } from '../../utils/testIds'
+import { jsDateToISO8601, pathToId } from '../../utils/helper'
 import {
     formatOptions,
     compressionOptions,
@@ -15,47 +15,47 @@ import {
     defaultCompressionOption,
     defaultIdSchemeOption,
     defaultInclusionOption,
-} from '../../utils/options';
-import { Page } from '../../components/Page';
-import { RadioGroup } from '../../components/RadioGroup';
-import { DatePicker } from '../../components/DatePicker';
-import { Switch } from '../../components/Switch';
-import { OrgUnitTree } from '../../components/OrgUnitTree';
-import { ProgramPicker } from '../../components/ProgramPicker';
-import { MoreOptions } from '../../components/MoreOptions';
-import { IdScheme } from '../../components/ElementSchemes';
-import { FormAlerts } from '../../components/FormAlerts';
-import { ProgramStageSelect, ALL_VALUE } from './ProgramStageSelect/';
+} from '../../utils/options'
+import { Page } from '../../components/Page'
+import { RadioGroup } from '../../components/RadioGroup'
+import { DatePicker } from '../../components/DatePicker'
+import { Switch } from '../../components/Switch'
+import { OrgUnitTree } from '../../components/OrgUnitTree'
+import { ProgramPicker } from '../../components/ProgramPicker'
+import { MoreOptions } from '../../components/MoreOptions'
+import { IdScheme } from '../../components/ElementSchemes'
+import { FormAlerts } from '../../components/FormAlerts'
+import { ProgramStageSelect, ALL_VALUE } from './ProgramStageSelect/'
 
-const today = new Date();
+const today = new Date()
 
 const EventExport = () => {
-    const [selectedOrgUnits, setSelectedOrgUnits] = useState([]);
-    const [selectedPrograms, setSelectedPrograms] = useState([]);
-    const [programStage, setProgramStage] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption);
-    const [compression, setCompression] = useState(defaultCompressionOption);
+    const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
+    const [selectedPrograms, setSelectedPrograms] = useState([])
+    const [programStage, setProgramStage] = useState(undefined)
+    const [format, setFormat] = useState(defaultFormatOption)
+    const [compression, setCompression] = useState(defaultCompressionOption)
     const [startDate, setStartDate] = useState(
         new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
-    );
-    const [endDate, setEndDate] = useState(today);
-    const [includeDeleted, setIncludeDeleted] = useState(false);
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption);
-    const [inclusion, setInclusion] = useState(defaultInclusionOption);
-    const [alerts, setAlerts] = useState([]);
-    const { baseUrl } = useConfig();
+    )
+    const [endDate, setEndDate] = useState(today)
+    const [includeDeleted, setIncludeDeleted] = useState(false)
+    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption)
+    const [inclusion, setInclusion] = useState(defaultInclusionOption)
+    const [alerts, setAlerts] = useState([])
+    const { baseUrl } = useConfig()
 
     const onExport = () => {
         // validate
-        const alerts = [];
-        const timestamp = new Date().getTime();
+        const alerts = []
+        const timestamp = new Date().getTime()
 
         if (selectedOrgUnits.length == 0) {
             alerts.push({
                 id: `org-unit-length-${timestamp}`,
                 warning: true,
                 message: i18n.t('One organisation unit must be selected'),
-            });
+            })
         }
 
         if (selectedPrograms.length == 0) {
@@ -63,7 +63,7 @@ const EventExport = () => {
                 id: `program-length-${timestamp}`,
                 warning: true,
                 message: i18n.t('One program must be selected'),
-            });
+            })
         }
 
         if (endDate <= startDate) {
@@ -71,22 +71,22 @@ const EventExport = () => {
                 id: `period-${timestamp}`,
                 warning: true,
                 message: i18n.t('End date must be before start date'),
-            });
+            })
         }
 
-        setAlerts(alerts);
+        setAlerts(alerts)
 
         if (alerts.length != 0) {
-            return;
+            return
         }
 
         // generate URL and redirect
-        const apiBaseUrl = `${baseUrl}/api/`;
-        const endpoint = `events`;
+        const apiBaseUrl = `${baseUrl}/api/`
+        const endpoint = `events`
         const endpointExtension = compression.value
             ? `${format.value}.${compression.value}`
-            : format.value;
-        const filename = `${endpoint}.${endpointExtension}`;
+            : format.value
+        const filename = `${endpoint}.${endpointExtension}`
         const downloadUrlParams = [
             `orgUnit=${pathToId(selectedOrgUnits[0])}`,
             `programs=${selectedPrograms[0]}`,
@@ -102,14 +102,14 @@ const EventExport = () => {
             programStage.value != ALL_VALUE
                 ? `programStage=${programStage.value}`
                 : '',
-        ].join('&');
-        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`;
-        window.location = url;
-    };
+        ].join('&')
+        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
+        window.location = url
+    }
 
     const onDateChange = stateFn => date => {
-        stateFn(date);
-    };
+        stateFn(date)
+    }
 
     return (
         <Page
@@ -206,7 +206,7 @@ const EventExport = () => {
                 dataTest={testIds.EventExport.FormAlerts}
             />
         </Page>
-    );
-};
+    )
+}
 
-export { EventExport };
+export { EventExport }

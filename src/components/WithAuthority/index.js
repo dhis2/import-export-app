@@ -1,2 +1,2 @@
-export { WithAuthority } from './WithAuthority';
-export * from './predicates';
+export { WithAuthority } from './WithAuthority'
+export * from './predicates'
