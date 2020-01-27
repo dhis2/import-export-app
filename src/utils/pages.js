@@ -22,6 +22,7 @@ import {
 
 const dataImportPage = {
     name: i18n.t('Data import'),
+    code: 'data-import',
     description: i18n.t(
         'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
     ),
@@ -32,6 +33,7 @@ const dataImportPage = {
 
 const eventImportPage = {
     name: i18n.t('Event import'),
+    code: 'event-import',
     description: i18n.t(
         'Import events for programs, stages and tracked entities using the DXF 2 format.'
     ),
@@ -42,6 +44,7 @@ const eventImportPage = {
 
 const gmlImportPage = {
     name: i18n.t('GML import'),
+    code: 'gml-import',
     description: i18n.t(
         'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
     ),
@@ -52,6 +55,7 @@ const gmlImportPage = {
 
 const metadataImportPage = {
     name: i18n.t('Metadata import'),
+    code: 'metadata-import',
     description: i18n.t(
         'Import metadata like data elements and organisation units using the DXF 2 format.'
     ),
@@ -62,6 +66,7 @@ const metadataImportPage = {
 
 const dataExportPage = {
     name: i18n.t('Data export'),
+    code: 'data-export',
     description: i18n.t(
         'Export data values as ADX XML, DFX 2 XML, JSON or CSV files.'
     ),
@@ -72,6 +77,7 @@ const dataExportPage = {
 
 const eventExportPage = {
     name: i18n.t('Event export'),
+    code: 'event-export',
     description: i18n.t(
         'Export event data for programs, stages and tracked entities in the DXF 2 format.'
     ),
@@ -82,6 +88,7 @@ const eventExportPage = {
 
 const metadataDependencyExportPage = {
     name: i18n.t('Metadata dependency export'),
+    code: 'metadata-dependency-export',
     description: i18n.t(
         'Export metadata like data sets and programs including related metadata objects in the XML or JSON format.'
     ),
@@ -92,6 +99,7 @@ const metadataDependencyExportPage = {
 
 const metadataExportPage = {
     name: i18n.t('Metadata export'),
+    code: 'metadata-export',
     description: i18n.t(
         'Export meta data like data elements and organisation units in the XML, JSON or CSV format.'
     ),
@@ -117,11 +125,12 @@ const ExportPages = [
 const AllPages = [...ImportPages, ...ExportPages]
 
 export const pagePropType = PropTypes.exact({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    icon: PropTypes.object.isRequired,
+    code: PropTypes.string.isRequired,
     component: PropTypes.object.isRequired,
+    description: PropTypes.string.isRequired,
+    icon: PropTypes.object.isRequired,
+    name: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
 })
 
 export {
