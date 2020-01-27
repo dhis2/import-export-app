@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 
 import s from './Skeleton.module.css'
 import { Sidebar } from './Sidebar/'
@@ -24,6 +24,7 @@ const Skeleton = ({ location }) => {
                             {component}
                         </Route>
                     ))}
+                    <Redirect from="*" to={ImportPages[0].path} />
                 </Switch>
             </div>
         </div>

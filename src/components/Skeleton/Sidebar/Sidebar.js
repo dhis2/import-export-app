@@ -12,8 +12,12 @@ const Sidebar = ({ importPages, exportPages, pathname }) => {
         <Menu className={s.menu}>
             <h3 className={s.sectionTitle}>{i18n.t('Import')}</h3>
 
-            {importPages.map(({ icon, name, path }) => (
-                <StyledLink to={path} key={path}>
+            {importPages.map(({ icon, name, code, path }) => (
+                <StyledLink
+                    to={path}
+                    key={path}
+                    dataTest={`sidebar-link-${code}`}
+                >
                     <MenuItem
                         active={pathname == path}
                         icon={icon}
@@ -23,8 +27,12 @@ const Sidebar = ({ importPages, exportPages, pathname }) => {
             ))}
             <Divider />
             <h3 className={s.sectionTitle}>{i18n.t('Export')}</h3>
-            {exportPages.map(({ icon, name, path }) => (
-                <StyledLink to={path} key={path}>
+            {exportPages.map(({ icon, name, code, path }) => (
+                <StyledLink
+                    to={path}
+                    key={path}
+                    dataTest={`sidebar-link-${code}`}
+                >
                     <MenuItem
                         active={pathname == path}
                         icon={icon}
