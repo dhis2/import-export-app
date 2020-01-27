@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-22T12:33:04.034Z\n"
-"PO-Revision-Date: 2020-01-22T12:33:04.034Z\n"
+"POT-Creation-Date: 2020-01-27T19:37:59.782Z\n"
+"PO-Revision-Date: 2020-01-27T19:37:59.782Z\n"
 
 msgid "Data sets"
 msgstr ""
@@ -30,6 +30,81 @@ msgid "File"
 msgstr ""
 
 msgid "Choose a file to upload"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Ignored"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Type count"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Property"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Job summary"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "In progress"
+msgstr ""
+
+msgid "Error"
 msgstr ""
 
 msgid "more options"
@@ -129,9 +204,6 @@ msgid "[ All program stages ]"
 msgstr ""
 
 msgid "Object type"
-msgstr ""
-
-msgid "Object"
 msgstr ""
 
 msgid "Skip sharing"
@@ -252,9 +324,6 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
-
-msgid "UID"
 msgstr ""
 
 msgid "Auto"

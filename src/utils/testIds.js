@@ -151,6 +151,19 @@ const testIds = {
         skipSharing: commonIds.skipSharing,
         submit: commonIds.export,
     },
+    JobSummary: {
+        container: 'job-summary-container',
+        chips: 'job-summary-chips',
+        conflicts: 'job-summary-conflicts',
+        date: 'job-summary-date',
+        details: 'job-summary-task-details',
+        events: 'job-summary-events',
+        filename: 'job-summary-filename',
+        messages: 'job-summarymessages',
+        singleSummary: 'job-summary-single-summary',
+        summary: 'job-summary-summary',
+        typeCount: 'job-summary-type-count',
+    },
 }
 
 export { testIds }

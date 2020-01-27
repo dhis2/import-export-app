@@ -1,0 +1,15 @@
+.container {
+    margin-bottom: 15px;
+}
+
+.title {
+    font-family: Roboto;
+    margin: 0px;
+}
+
+.taskDetails {
+    margin: 4px 0px 0px;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgb(74, 87, 104);
+}
