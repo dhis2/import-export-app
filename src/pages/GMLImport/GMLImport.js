@@ -12,10 +12,10 @@ import { Page } from '../../components/Page'
 import { FileUpload } from '../../components/FileUpload'
 import { Switch } from '../../components/Switch'
 import { FormAlerts } from '../../components/FormAlerts'
-import { TaskContext } from '../../contexts/'
+import { TaskContext, getNewestTask } from '../../contexts/'
 
 const GMLImport = () => {
-    const { addTask } = useContext(TaskContext)
+    const { gml: gmlTasks, addTask } = useContext(TaskContext)
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(undefined)
     const [dryRun, setDryRun] = useState(false)
@@ -65,6 +65,7 @@ const GMLImport = () => {
             icon={p.icon}
             loading={progress}
             dataTest={testIds.GMLImport.Page}
+            summaryTask={getNewestTask(gmlTasks)}
         >
             <FileUpload
                 name="upload"
