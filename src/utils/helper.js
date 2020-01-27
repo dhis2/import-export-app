@@ -9,14 +9,25 @@ const pathToId = path => {
 }
 
 const jsDateToISO8601 = date =>
-    date.getFullYear().toString() +
-    '-' +
-    (date.getMonth() + 1).toString().padStart(2, 0) +
-    '-' +
-    date
+    `${date.getFullYear().toString()}-${(date.getMonth() + 1)
+        .toString()
+        .padStart(2, 0)}-${date
         .getDate()
         .toString()
-        .padStart(2, 0)
+        .padStart(2, 0)}`
+
+const jsDateToString = date =>
+    `${jsDateToISO8601(date)} ${date
+        .getHours()
+        .toString()
+        .padStart(2, 0)}:${date
+        .getMinutes()
+        .toString()
+        .padStart(2, 0)}:${date
+        .getSeconds()
+        .toString()
+        .padStart(2, 0)}
+`
 
 const blobType = (format, compression) => {
     if (compression === 'gzip') {
@@ -144,12 +155,13 @@ const uploadFile = ({
             url,
             upload: file,
             type,
-            onResponse: ({ id, msg }) => {
+            onResponse: ({ id, msg, typeReports }) => {
                 const newId = id == -1 ? new Date().getTime() : id
                 let entry
                 if (id == -1 && !msg) {
                     entry = {
                         id: newId,
+                        level: 'ERROR',
                         created: new Date(),
                         file: file.name,
                         completed: true,
@@ -160,12 +172,13 @@ const uploadFile = ({
                 } else {
                     entry = {
                         id: newId,
+                        level: 'INFO',
                         created: new Date(),
                         lastUpdated: new Date(),
                         file: file.name,
                         completed: id == -1,
                         events: [msg],
-                        summary: undefined,
+                        summary: typeReports,
                         error: id == -1,
                         importType: type,
                     }
@@ -202,6 +215,7 @@ export {
     downloadBlob,
     fetchAndSetAttributes,
     jsDateToISO8601,
+    jsDateToString,
     pathToId,
     uploadFile,
 }

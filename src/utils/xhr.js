@@ -34,8 +34,8 @@ const onReadyStateChange = ({ xhr, type, onResponse, onError }) => {
     return async e => {
         const status = Math.floor(xhr.status / 100)
         if (xhr.readyState === 4 && status === 2) {
-            const { id, msg } = extractIdAndMessage(xhr)
-            onResponse({ id: id, msg: msg, type: type })
+            const idAndMsg = extractIdAndMessage(xhr)
+            onResponse({ ...idAndMsg, type: type })
         } else if (xhr.readyState !== 4 && [3, 4, 5].includes(status)) {
             onError(e)
         }
@@ -60,6 +60,7 @@ const extractIdAndMessage = xhr => {
                         typeReports[0].objectReports[0].errorReports[0].message,
                     date: new Date(),
                 },
+                typeReports: data,
             }
         }
     }
