@@ -1,1 +1,1 @@
-export { Schemas } from './Schemas';
+export { Schemas } from './Schemas'

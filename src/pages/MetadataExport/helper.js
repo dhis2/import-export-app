@@ -26,6 +26,6 @@ const EXCLUDE_SCHEMAS = new Set([
     'sqlViews',
     'trackedEntityInstanceFilters',
     'validationNotificationTemplates',
-]);
+])
 
-export { EXCLUDE_SCHEMAS };
+export { EXCLUDE_SCHEMAS }

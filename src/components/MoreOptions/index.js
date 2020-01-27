@@ -1,1 +1,1 @@
-export { MoreOptions } from './MoreOptions';
+export { MoreOptions } from './MoreOptions'

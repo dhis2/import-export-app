@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { SingleSelect, SingleSelectOption } from '@dhis2/ui-core';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { SingleSelect, SingleSelectOption } from '@dhis2/ui-core'
 
-import { optionPropType, optionsPropType } from '../../utils/options';
-import s from './Select.module.css';
-import { FormField } from '../FormField';
+import { optionPropType, optionsPropType } from '../../utils/options'
+import s from './Select.module.css'
+import { FormField } from '../FormField'
 
 const Select = ({
     name,
@@ -22,9 +22,9 @@ const Select = ({
 }) => {
     const optionEls = options.map(o => (
         <SingleSelectOption key={o.value} value={o.value} label={o.label} />
-    ));
+    ))
 
-    const onChange = ({ selected }) => setValue(selected);
+    const onChange = ({ selected }) => setValue(selected)
 
     return (
         <FormField label={label} dataTest={dataTest}>
@@ -46,8 +46,8 @@ const Select = ({
                 </SingleSelect>
             </div>
         </FormField>
-    );
-};
+    )
+}
 
 Select.propTypes = {
     dataTest: PropTypes.string.isRequired,
@@ -62,6 +62,6 @@ Select.propTypes = {
     loading: PropTypes.bool,
     noMatchText: PropTypes.string,
     selected: optionPropType,
-};
+}
 
-export { Select };
+export { Select }

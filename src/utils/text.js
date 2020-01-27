@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n';
+import i18n from '@dhis2/d2-i18n'
 
 const helpText = {
     dryRun: i18n.t(
@@ -9,6 +9,6 @@ const helpText = {
         'Improves performance at the cost of ability to audit changes'
     ),
     skipExistingCheck: i18n.t('Faster, but unsafe'),
-};
+}
 
-export { helpText };
+export { helpText }

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { AlertBar } from '@dhis2/ui-core';
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { AlertBar } from '@dhis2/ui-core'
 
-import s from './FormAlerts.module.css';
+import s from './FormAlerts.module.css'
 
 const FormAlerts = ({ alerts, dataTest }) => {
-    const [bars, setBars] = useState([]);
+    const [bars, setBars] = useState([])
 
     useEffect(() => {
         const newBars = alerts.map(a => (
@@ -19,18 +19,18 @@ const FormAlerts = ({ alerts, dataTest }) => {
             >
                 {a.message}
             </AlertBar>
-        ));
-        setBars(newBars);
-    }, [alerts]);
+        ))
+        setBars(newBars)
+    }, [alerts])
 
-    if (bars.length == 0) return null;
+    if (bars.length == 0) return null
 
     return (
         <div className={s.container} data-test={dataTest}>
             {bars}
         </div>
-    );
-};
+    )
+}
 
 FormAlerts.propTypes = {
     alerts: PropTypes.arrayOf(
@@ -43,6 +43,6 @@ FormAlerts.propTypes = {
         })
     ).isRequired,
     dataTest: PropTypes.string.isRequired,
-};
+}
 
-export { FormAlerts };
+export { FormAlerts }

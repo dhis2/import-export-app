@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
-import s from './Skeleton.module.css';
-import { Sidebar } from './Sidebar/';
-import { ImportPages, ExportPages, Pages } from '../../utils/pages';
+import s from './Skeleton.module.css'
+import { Sidebar } from './Sidebar/'
+import { ImportPages, ExportPages, Pages } from '../../utils/pages'
 
 const Skeleton = ({ location }) => {
     return (
@@ -27,12 +27,12 @@ const Skeleton = ({ location }) => {
                 </Switch>
             </div>
         </div>
-    );
-};
+    )
+}
 
 Skeleton.propTypes = {
     location: PropTypes.object.isRequired,
-};
+}
 
-const SkeletonRouter = withRouter(Skeleton);
-export { SkeletonRouter as Skeleton };
+const SkeletonRouter = withRouter(Skeleton)
+export { SkeletonRouter as Skeleton }

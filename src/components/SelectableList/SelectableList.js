@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import { Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core'
 
-import { optionsPropType } from '../../utils/options';
-import s from './SelectableList.module.css';
+import { optionsPropType } from '../../utils/options'
+import s from './SelectableList.module.css'
 
 const SelectableList = ({
     label,
@@ -18,9 +18,9 @@ const SelectableList = ({
     withFilter,
     withActions,
 }) => {
-    const [filter, setFilter] = useState('');
+    const [filter, setFilter] = useState('')
 
-    const onSelect = ({ value }) => select(value);
+    const onSelect = ({ value }) => select(value)
 
     return (
         <div>
@@ -78,7 +78,7 @@ const SelectableList = ({
                                 checked={selected.includes(value)}
                                 onChange={() => 0}
                             />
-                        );
+                        )
 
                         return (
                             <MenuItem
@@ -87,12 +87,12 @@ const SelectableList = ({
                                 label={component}
                                 onClick={onSelect}
                             />
-                        );
+                        )
                     })}
             </div>
         </div>
-    );
-};
+    )
+}
 
 SelectableList.propTypes = {
     label: PropTypes.string.isRequired,
@@ -105,6 +105,6 @@ SelectableList.propTypes = {
     withFilter: PropTypes.bool,
     onClearAll: PropTypes.func,
     onSelectAll: PropTypes.func,
-};
+}
 
-export { SelectableList };
+export { SelectableList }

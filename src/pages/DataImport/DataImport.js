@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react';
-import { useConfig } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { Button } from '@dhis2/ui-core';
+import React, { useContext, useState } from 'react'
+import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui-core'
 
 // import s from './DataImport.module.css';
-import { dataImportPage as p } from '../../utils/pages';
-import { uploadFile } from '../../utils/helper';
-import { testIds } from '../../utils/testIds';
-import { helpText } from '../../utils/text';
+import { dataImportPage as p } from '../../utils/pages'
+import { uploadFile } from '../../utils/helper'
+import { testIds } from '../../utils/testIds'
+import { helpText } from '../../utils/text'
 import {
     formatAdxPdfOptions,
     strategyOptions,
@@ -16,67 +16,67 @@ import {
     defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
-} from '../../utils/options';
-import { Page } from '../../components/Page';
-import { FileUpload } from '../../components/FileUpload';
-import { RadioGroup } from '../../components/RadioGroup';
-import { Switch } from '../../components/Switch';
+} from '../../utils/options'
+import { Page } from '../../components/Page'
+import { FileUpload } from '../../components/FileUpload'
+import { RadioGroup } from '../../components/RadioGroup'
+import { Switch } from '../../components/Switch'
 import {
     WithAuthority,
     hasAuthorityToSkipAudit,
-} from '../../components/WithAuthority';
-import { MoreOptions } from '../../components/MoreOptions';
+} from '../../components/WithAuthority'
+import { MoreOptions } from '../../components/MoreOptions'
 import {
     DataElementIdScheme,
     IdScheme,
     OrgUnitIdScheme,
-} from '../../components/ElementSchemes';
-import { FormAlerts } from '../../components/FormAlerts';
-import { TaskContext } from '../../contexts/';
+} from '../../components/ElementSchemes'
+import { FormAlerts } from '../../components/FormAlerts'
+import { TaskContext } from '../../contexts/'
 
 const DataImport = () => {
-    const { addTask } = useContext(TaskContext);
-    const [progress, setProgress] = useState(0);
-    const [file, setFile] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption);
-    const [dryRun, setDryRun] = useState(false);
-    const [strategy, setStrategy] = useState(defaultStrategyOption);
-    const [firstRowIsHeader, setFirstRowIsHeader] = useState(false);
-    const [preheatCache, setPreheatCache] = useState(false);
-    const [skipAudit, setSkipAudit] = useState(false);
+    const { addTask } = useContext(TaskContext)
+    const [progress, setProgress] = useState(0)
+    const [file, setFile] = useState(undefined)
+    const [format, setFormat] = useState(defaultFormatOption)
+    const [dryRun, setDryRun] = useState(false)
+    const [strategy, setStrategy] = useState(defaultStrategyOption)
+    const [firstRowIsHeader, setFirstRowIsHeader] = useState(false)
+    const [preheatCache, setPreheatCache] = useState(false)
+    const [skipAudit, setSkipAudit] = useState(false)
     const [dataElementIdScheme, setDataElementIdScheme] = useState(
         defaultDataElementIdSchemeOption
-    );
+    )
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
         defaultOrgUnitIdSchemeOption
-    );
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption);
-    const [skipExistingCheck, setSkipExistingCheck] = useState(false);
-    const [alerts, setAlerts] = useState([]);
-    const { baseUrl } = useConfig();
+    )
+    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption)
+    const [skipExistingCheck, setSkipExistingCheck] = useState(false)
+    const [alerts, setAlerts] = useState([])
+    const { baseUrl } = useConfig()
 
     const onImport = () => {
         // validate
-        const alerts = [];
-        const timestamp = new Date().getTime();
+        const alerts = []
+        const timestamp = new Date().getTime()
 
-        setAlerts(alerts);
+        setAlerts(alerts)
 
         if (!file) {
             alerts.push({
                 id: `file-${timestamp}`,
                 warning: true,
                 message: i18n.t('An import file must be selected'),
-            });
+            })
         }
 
         if (alerts.length != 0) {
-            return;
+            return
         }
 
         // send xhr
-        const apiBaseUrl = `${baseUrl}/api/`;
-        const endpoint = 'dataValueSets.json';
+        const apiBaseUrl = `${baseUrl}/api/`
+        const endpoint = 'dataValueSets.json'
         const params = [
             `dryRun=${dryRun}`,
             `strategy=${strategy.value}`,
@@ -89,8 +89,8 @@ const DataImport = () => {
             `format=${format.value}`,
             'async=true',
             format.value == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
-        ].join('&');
-        const url = `${apiBaseUrl}${endpoint}?${params}`;
+        ].join('&')
+        const url = `${apiBaseUrl}${endpoint}?${params}`
 
         uploadFile({
             url,
@@ -100,8 +100,8 @@ const DataImport = () => {
             setProgress,
             setAlerts,
             addEntry: (id, entry) => addTask('data', id, entry),
-        });
-    };
+        })
+    }
 
     return (
         <Page
@@ -205,7 +205,7 @@ const DataImport = () => {
                 dataTest={testIds.DataImport.FormAlerts}
             />
         </Page>
-    );
-};
+    )
+}
 
-export { DataImport };
+export { DataImport }

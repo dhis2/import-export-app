@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const SchemeContext = React.createContext({});
+const SchemeContext = React.createContext({})
 
-export { SchemeContext };
+export { SchemeContext }

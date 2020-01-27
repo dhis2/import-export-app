@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
+import React from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
 
-import { DataImport } from '../pages/DataImport';
-import { DataExport } from '../pages/DataExport';
-import { EventExport } from '../pages/EventExport';
-import { EventImport } from '../pages/EventImport';
-import { GMLImport } from '../pages/GMLImport';
-import { MetadataDependencyExport } from '../pages/MetadataDependencyExport';
-import { MetadataExport } from '../pages/MetadataExport';
-import { MetadataImport } from '../pages/MetadataImport';
+import { DataImport } from '../pages/DataImport'
+import { DataExport } from '../pages/DataExport'
+import { EventExport } from '../pages/EventExport'
+import { EventImport } from '../pages/EventImport'
+import { GMLImport } from '../pages/GMLImport'
+import { MetadataDependencyExport } from '../pages/MetadataDependencyExport'
+import { MetadataExport } from '../pages/MetadataExport'
+import { MetadataImport } from '../pages/MetadataImport'
 
 import {
     DataIcon,
@@ -18,7 +18,7 @@ import {
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
-} from '../components/Icon';
+} from '../components/Icon'
 
 const dataImportPage = {
     name: i18n.t('Data import'),
@@ -28,7 +28,7 @@ const dataImportPage = {
     icon: <DataIcon />,
     path: '/import/data',
     component: <DataImport />,
-};
+}
 
 const eventImportPage = {
     name: i18n.t('Event import'),
@@ -38,7 +38,7 @@ const eventImportPage = {
     icon: <EventIcon />,
     path: '/import/event',
     component: <EventImport />,
-};
+}
 
 const gmlImportPage = {
     name: i18n.t('GML import'),
@@ -48,7 +48,7 @@ const gmlImportPage = {
     icon: <GMLIcon />,
     path: '/import/gml',
     component: <GMLImport />,
-};
+}
 
 const metadataImportPage = {
     name: i18n.t('Metadata import'),
@@ -58,7 +58,7 @@ const metadataImportPage = {
     path: '/import/metadata',
     icon: <MetadataImportIcon />,
     component: <MetadataImport />,
-};
+}
 
 const dataExportPage = {
     name: i18n.t('Data export'),
@@ -68,7 +68,7 @@ const dataExportPage = {
     path: '/export/data',
     icon: <DataIcon />,
     component: <DataExport />,
-};
+}
 
 const eventExportPage = {
     name: i18n.t('Event export'),
@@ -78,7 +78,7 @@ const eventExportPage = {
     path: '/export/event',
     icon: <EventIcon />,
     component: <EventExport />,
-};
+}
 
 const metadataDependencyExportPage = {
     name: i18n.t('Metadata dependency export'),
@@ -88,7 +88,7 @@ const metadataDependencyExportPage = {
     path: '/export/metadata-dependency',
     icon: <MetadataDependencyExportIcon />,
     component: <MetadataDependencyExport />,
-};
+}
 
 const metadataExportPage = {
     name: i18n.t('Metadata export'),
@@ -98,23 +98,23 @@ const metadataExportPage = {
     path: '/export/metadata',
     icon: <MetadataExportIcon />,
     component: <MetadataExport />,
-};
+}
 
 const ImportPages = [
     dataImportPage,
     eventImportPage,
     gmlImportPage,
     metadataImportPage,
-];
+]
 
 const ExportPages = [
     dataExportPage,
     eventExportPage,
     metadataDependencyExportPage,
     metadataExportPage,
-];
+]
 
-const AllPages = [...ImportPages, ...ExportPages];
+const AllPages = [...ImportPages, ...ExportPages]
 
 export const pagePropType = PropTypes.exact({
     name: PropTypes.string.isRequired,
@@ -122,7 +122,7 @@ export const pagePropType = PropTypes.exact({
     path: PropTypes.string.isRequired,
     icon: PropTypes.object.isRequired,
     component: PropTypes.object.isRequired,
-});
+})
 
 export {
     dataImportPage,
@@ -133,6 +133,6 @@ export {
     eventExportPage,
     metadataDependencyExportPage,
     metadataExportPage,
-};
+}
 
-export { ImportPages, ExportPages, AllPages as Pages };
+export { ImportPages, ExportPages, AllPages as Pages }

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { useDataEngine } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { useDataEngine } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 
-import { optionPropType } from '../../../utils/options';
-import { Select } from '../../../components/Select';
+import { optionPropType } from '../../../utils/options'
+import { Select } from '../../../components/Select'
 
 const programStageQuery = {
     data: {
@@ -16,10 +16,10 @@ const programStageQuery = {
             paging: 'false',
         },
     },
-};
+}
 
-const ALL_VALUE = ':all';
-const ALL_LABEL = i18n.t('[ All program stages ]');
+const ALL_VALUE = ':all'
+const ALL_LABEL = i18n.t('[ All program stages ]')
 
 const ProgramStageSelect = ({
     name,
@@ -29,16 +29,16 @@ const ProgramStageSelect = ({
     selected,
     dataTest,
 }) => {
-    const engine = useDataEngine();
-    const [loading, setLoading] = useState(true);
-    const [stages, setStages] = useState([]);
+    const engine = useDataEngine()
+    const [loading, setLoading] = useState(true)
+    const [stages, setStages] = useState([])
 
     useEffect(() => {
         if (program) {
-            setLoading(true);
-            setSelected(undefined);
+            setLoading(true)
+            setSelected(undefined)
         } else {
-            setLoading(false);
+            setLoading(false)
         }
         const fetcher = async () => {
             await engine.query(programStageQuery, {
@@ -46,30 +46,30 @@ const ProgramStageSelect = ({
                     id: program,
                 },
                 onComplete: data => {
-                    const list = data.data.programStages;
+                    const list = data.data.programStages
                     const formattedList = list.map(e => ({
                         value: e.id,
                         label: e.displayName,
-                    }));
+                    }))
                     setStages([
                         {
                             value: ALL_VALUE,
                             label: ALL_LABEL,
                         },
                         ...formattedList,
-                    ]);
-                    setSelected({ value: ALL_VALUE, label: ALL_LABEL });
-                    setLoading(false);
+                    ])
+                    setSelected({ value: ALL_VALUE, label: ALL_LABEL })
+                    setLoading(false)
                 },
                 onError: e => {
-                    console.error('ProgramStageSelect error: ', e);
+                    console.error('ProgramStageSelect error: ', e)
                 },
-            });
-        };
-        if (program) {
-            fetcher();
+            })
         }
-    }, [program]);
+        if (program) {
+            fetcher()
+        }
+    }, [program])
 
     return (
         <Select
@@ -82,8 +82,8 @@ const ProgramStageSelect = ({
             dense
             dataTest={dataTest}
         />
-    );
-};
+    )
+}
 
 ProgramStageSelect.propTypes = {
     dataTest: PropTypes.string.isRequired,
@@ -92,6 +92,6 @@ ProgramStageSelect.propTypes = {
     setSelected: PropTypes.func.isRequired,
     program: PropTypes.string,
     selected: optionPropType,
-};
+}
 
-export { ProgramStageSelect, ALL_VALUE };
+export { ProgramStageSelect, ALL_VALUE }

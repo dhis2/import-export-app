@@ -6,6 +6,6 @@ const config = {
     entryPoints: {
         app: './src/App',
     },
-};
+}
 
-module.exports = config;
+module.exports = config

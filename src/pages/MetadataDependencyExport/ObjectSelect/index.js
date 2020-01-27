@@ -1,1 +1,1 @@
-export { ObjectSelect } from './ObjectSelect';
+export { ObjectSelect } from './ObjectSelect'

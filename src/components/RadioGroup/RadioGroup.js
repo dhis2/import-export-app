@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Help, Radio } from '@dhis2/ui-core';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Help, Radio } from '@dhis2/ui-core'
 
-import { optionPropType, optionsPropType } from '../../utils/options';
-import { FormField } from '../FormField';
-import s from './RadioGroup.module.css';
+import { optionPropType, optionsPropType } from '../../utils/options'
+import { FormField } from '../FormField'
+import s from './RadioGroup.module.css'
 
 const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
     const onChange = ({ value, name }) =>
-        setValue({ value: value, label: name });
+        setValue({ value: value, label: name })
 
     return (
         <FormField label={label} dataTest={dataTest} name={name}>
@@ -28,8 +28,8 @@ const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
                 ))}
             </div>
         </FormField>
-    );
-};
+    )
+}
 
 RadioGroup.propTypes = {
     checked: optionPropType.isRequired,
@@ -38,6 +38,6 @@ RadioGroup.propTypes = {
     name: PropTypes.string.isRequired,
     options: optionsPropType.isRequired,
     setValue: PropTypes.func.isRequired,
-};
+}
 
-export { RadioGroup };
+export { RadioGroup }

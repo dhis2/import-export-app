@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Checkbox } from '@dhis2/ui-core';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Checkbox } from '@dhis2/ui-core'
 
-import s from './Schemas.module.css';
+import s from './Schemas.module.css'
 
 const SchemaGroup = ({ label, schemas, toggleSchema, dataTest }) => (
     <div className={s.group} data-test={dataTest}>
@@ -21,7 +21,7 @@ const SchemaGroup = ({ label, schemas, toggleSchema, dataTest }) => (
             ))}
         </div>
     </div>
-);
+)
 
 SchemaGroup.propTypes = {
     label: PropTypes.string.isRequired,
@@ -35,6 +35,6 @@ SchemaGroup.propTypes = {
     ).isRequired,
     toggleSchema: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
-};
+}
 
-export { SchemaGroup };
+export { SchemaGroup }

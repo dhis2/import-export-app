@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { useDataQuery } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { Button, ButtonStrip, CircularLoader } from '@dhis2/ui-core';
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button, ButtonStrip, CircularLoader } from '@dhis2/ui-core'
 
 import {
     filterOutExcludedSchemas,
@@ -10,9 +10,9 @@ import {
     getSchemaGroups,
     getGroupLabels,
     getGroupOrder,
-} from './helper';
-import { SchemaGroup } from './SchemaGroup';
-import s from './Schemas.module.css';
+} from './helper'
+import { SchemaGroup } from './SchemaGroup'
+import s from './Schemas.module.css'
 
 const schemaQuery = {
     schemas: {
@@ -21,7 +21,7 @@ const schemaQuery = {
             paging: 'false',
         },
     },
-};
+}
 
 const Schemas = ({
     excludeSchemas,
@@ -29,29 +29,29 @@ const Schemas = ({
     checkedByDefault,
     dataTest,
 }) => {
-    const { loading, data } = useDataQuery(schemaQuery);
-    const [schemaGroups, setSchemaGroups] = useState(undefined);
-    const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined);
-    const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined);
+    const { loading, data } = useDataQuery(schemaQuery)
+    const [schemaGroups, setSchemaGroups] = useState(undefined)
+    const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined)
+    const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined)
 
     useEffect(() => {
         if (data) {
-            const schemas = data.schemas.schemas;
+            const schemas = data.schemas.schemas
             const filteredSchemas = filterOutExcludedSchemas(
                 excludeSchemas,
                 schemas
-            );
+            )
             const formattedSchemas = formatSchemas(
                 filteredSchemas,
                 checkedByDefault
-            );
-            const groups = getSchemaGroups(formattedSchemas);
-            setSchemaGroups(groups);
-            setSchemaGroupOrder(getGroupOrder(groups));
-            setSchemaGroupLabels(getGroupLabels(groups));
-            propagateCheckedSchemas(groups);
+            )
+            const groups = getSchemaGroups(formattedSchemas)
+            setSchemaGroups(groups)
+            setSchemaGroupOrder(getGroupOrder(groups))
+            setSchemaGroupLabels(getGroupLabels(groups))
+            propagateCheckedSchemas(groups)
         }
-    }, [data]);
+    }, [data])
 
     const propagateCheckedSchemas = updatedSchemaGroups => {
         setCheckedSchemas(
@@ -64,8 +64,8 @@ const Schemas = ({
                 ],
                 []
             )
-        );
-    };
+        )
+    }
 
     const onSelectGeneric = val => () => {
         const updatedSchemaGroups = Object.keys(schemaGroups).reduce(
@@ -77,24 +77,24 @@ const Schemas = ({
                 ),
             }),
             {}
-        );
-        setSchemaGroups(updatedSchemaGroups);
-        propagateCheckedSchemas(updatedSchemaGroups);
-    };
+        )
+        setSchemaGroups(updatedSchemaGroups)
+        propagateCheckedSchemas(updatedSchemaGroups)
+    }
 
     const toggleSchema = schemaGroup => ind => {
-        const updatedGroup = [...schemaGroups[schemaGroup]];
+        const updatedGroup = [...schemaGroups[schemaGroup]]
         updatedGroup[ind] = {
             ...updatedGroup[ind],
             checked: !updatedGroup[ind].checked,
-        };
+        }
         const updatedSchemaGroups = {
             ...schemaGroups,
             [schemaGroup]: updatedGroup,
-        };
-        setSchemaGroups(updatedSchemaGroups);
-        propagateCheckedSchemas(updatedSchemaGroups);
-    };
+        }
+        setSchemaGroups(updatedSchemaGroups)
+        propagateCheckedSchemas(updatedSchemaGroups)
+    }
 
     return (
         <div className={s.container} data-test={dataTest}>
@@ -112,7 +112,7 @@ const Schemas = ({
 
                     <div className={s.formControl}>
                         {schemaGroupOrder.map(groupKey => {
-                            const label = schemaGroupLabels[groupKey];
+                            const label = schemaGroupLabels[groupKey]
 
                             return (
                                 <SchemaGroup
@@ -121,20 +121,20 @@ const Schemas = ({
                                     schemas={schemaGroups[groupKey]}
                                     toggleSchema={toggleSchema(groupKey)}
                                 />
-                            );
+                            )
                         })}
                     </div>
                 </>
             )}
         </div>
-    );
-};
+    )
+}
 
 Schemas.propTypes = {
     dataTest: PropTypes.string.isRequired,
     excludeSchemas: PropTypes.object.isRequired,
     setCheckedSchemas: PropTypes.func.isRequired,
     checkedByDefault: PropTypes.bool,
-};
+}
 
-export { Schemas };
+export { Schemas }

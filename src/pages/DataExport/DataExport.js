@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { useDataEngine } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { Button } from '@dhis2/ui-core';
-import JSZip from 'jszip';
+import React, { useState } from 'react'
+import { useDataEngine } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui-core'
+import JSZip from 'jszip'
 
 // import s from './DataExport.module.css';
-import { dataExportPage as p } from '../../utils/pages';
-import { testIds } from '../../utils/testIds';
+import { dataExportPage as p } from '../../utils/pages'
+import { testIds } from '../../utils/testIds'
 import {
     createBlob,
     downloadBlob,
     jsDateToISO8601,
     pathToId,
-} from '../../utils/helper';
+} from '../../utils/helper'
 import {
     formatAdxOptions,
     compressionOptions,
@@ -21,22 +21,22 @@ import {
     defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
-} from '../../utils/options';
-import { Page } from '../../components/Page';
-import { RadioGroup } from '../../components/RadioGroup';
-import { DatePicker } from '../../components/DatePicker';
-import { Switch } from '../../components/Switch';
-import { OrgUnitTree } from '../../components/OrgUnitTree';
-import { DataSetPicker } from '../../components/DataSetPicker';
-import { MoreOptions } from '../../components/MoreOptions';
+} from '../../utils/options'
+import { Page } from '../../components/Page'
+import { RadioGroup } from '../../components/RadioGroup'
+import { DatePicker } from '../../components/DatePicker'
+import { Switch } from '../../components/Switch'
+import { OrgUnitTree } from '../../components/OrgUnitTree'
+import { DataSetPicker } from '../../components/DataSetPicker'
+import { MoreOptions } from '../../components/MoreOptions'
 import {
     DataElementIdScheme,
     IdScheme,
     OrgUnitIdScheme,
-} from '../../components/ElementSchemes';
-import { FormAlerts } from '../../components/FormAlerts';
+} from '../../components/ElementSchemes'
+import { FormAlerts } from '../../components/FormAlerts'
 
-const today = new Date();
+const today = new Date()
 
 /*
 const attributesQuery = {
@@ -87,34 +87,34 @@ const dataValueSetQuery = {
             paging: 'false',
         }),
     },
-};
+}
 
 const DataExport = () => {
     // const { loading, error, data } = useDataQuery(attributesQuery);
-    const engine = useDataEngine();
-    const [selectedOrgUnits, setSelectedOrgUnits] = useState([]);
-    const [includeChildren, setIncludeChildren] = useState(true);
-    const [selectedDataSets, setSelectedDataSets] = useState([]);
-    const [format, setFormat] = useState(defaultFormatOption);
-    const [compression, setCompression] = useState(defaultCompressionOption);
+    const engine = useDataEngine()
+    const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
+    const [includeChildren, setIncludeChildren] = useState(true)
+    const [selectedDataSets, setSelectedDataSets] = useState([])
+    const [format, setFormat] = useState(defaultFormatOption)
+    const [compression, setCompression] = useState(defaultCompressionOption)
     const [startDate, setStartDate] = useState(
         new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
-    );
-    const [endDate, setEndDate] = useState(today);
-    const [includeDeleted, setIncludeDeleted] = useState(false);
+    )
+    const [endDate, setEndDate] = useState(today)
+    const [includeDeleted, setIncludeDeleted] = useState(false)
     const [dataElementIdScheme, setDataElementIdScheme] = useState(
         defaultDataElementIdSchemeOption
-    );
+    )
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
         defaultOrgUnitIdSchemeOption
-    );
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption);
-    const [alerts, setAlerts] = useState([]);
+    )
+    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption)
+    const [alerts, setAlerts] = useState([])
 
     const onExport = () => {
         // validate
-        const alerts = [];
-        const timestamp = new Date().getTime();
+        const alerts = []
+        const timestamp = new Date().getTime()
 
         if (selectedOrgUnits.length == 0) {
             alerts.push({
@@ -123,7 +123,7 @@ const DataExport = () => {
                 message: i18n.t(
                     'At least one organisation unit must be selected'
                 ),
-            });
+            })
         }
 
         if (selectedDataSets.length == 0) {
@@ -131,7 +131,7 @@ const DataExport = () => {
                 id: `data-set-length-${timestamp}`,
                 warning: true,
                 message: i18n.t('At least one data set must be selected'),
-            });
+            })
         }
 
         if (endDate <= startDate) {
@@ -139,13 +139,13 @@ const DataExport = () => {
                 id: `period-${timestamp}`,
                 warning: true,
                 message: i18n.t('End date must be before start date'),
-            });
+            })
         }
 
-        setAlerts(alerts);
+        setAlerts(alerts)
 
         if (alerts.length != 0) {
-            return;
+            return
         }
 
         // fetch data
@@ -164,22 +164,22 @@ const DataExport = () => {
             },
             onComplete: ({ sets }) => {
                 const dataStr =
-                    format.value === 'json' ? JSON.stringify(sets) : sets;
-                const filename = `data.${format.value}`;
+                    format.value === 'json' ? JSON.stringify(sets) : sets
+                const filename = `data.${format.value}`
                 if (compression.value !== '') {
-                    const zip = new JSZip();
-                    zip.file(filename, dataStr);
+                    const zip = new JSZip()
+                    zip.file(filename, dataStr)
                     zip.generateAsync({ type: 'blob' }).then(content => {
-                        const url = URL.createObjectURL(content);
-                        downloadBlob(url, `${filename}.${compression.value}`);
-                    });
+                        const url = URL.createObjectURL(content)
+                        downloadBlob(url, `${filename}.${compression.value}`)
+                    })
                 } else {
-                    const url = createBlob(dataStr, format.value);
-                    downloadBlob(url, filename);
+                    const url = createBlob(dataStr, format.value)
+                    downloadBlob(url, filename)
                 }
             },
             onError: e => {
-                console.error('DataExport onExport error: ', e);
+                console.error('DataExport onExport error: ', e)
                 setAlerts([
                     {
                         id: `http-${timestamp}`,
@@ -188,14 +188,14 @@ const DataExport = () => {
                             'HTTP error when fetching data'
                         )}. ${e}`,
                     },
-                ]);
+                ])
             },
-        });
-    };
+        })
+    }
 
     const onDateChange = stateFn => date => {
-        stateFn(date);
-    };
+        stateFn(date)
+    }
 
     return (
         <Page
@@ -287,7 +287,7 @@ const DataExport = () => {
                 dataTest={testIds.DataExport.FormAlerts}
             />
         </Page>
-    );
-};
+    )
+}
 
-export { DataExport };
+export { DataExport }

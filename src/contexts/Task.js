@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const TaskContext = React.createContext(undefined);
+const TaskContext = React.createContext(undefined)
 
-export { TaskContext };
+export { TaskContext }

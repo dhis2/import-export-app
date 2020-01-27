@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useConfig, useDataQuery } from '@dhis2/app-runtime';
-import i18n from '@dhis2/d2-i18n';
-import { Button } from '@dhis2/ui-core';
+import React, { useContext, useEffect, useState } from 'react'
+import { useConfig, useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui-core'
 
 // import s from './MetadataImport.module.css';
-import { metadataImportPage as p } from '../../utils/pages';
-import { uploadFile } from '../../utils/helper';
-import { testIds } from '../../utils/testIds';
-import { helpText } from '../../utils/text';
+import { metadataImportPage as p } from '../../utils/pages'
+import { uploadFile } from '../../utils/helper'
+import { testIds } from '../../utils/testIds'
+import { helpText } from '../../utils/text'
 import {
     formatOptions,
     identifierOptions,
@@ -27,85 +27,85 @@ import {
     defaultMergeModeOption,
     defaultFlushModeOption,
     defaultInclusionStrategyOption,
-} from '../../utils/options';
-import { Page } from '../../components/Page';
-import { FileUpload } from '../../components/FileUpload';
-import { RadioGroup } from '../../components/RadioGroup';
-import { Switch } from '../../components/Switch';
-import { Select } from '../../components/Select';
-import { MoreOptions } from '../../components/MoreOptions';
-import { FormAlerts } from '../../components/FormAlerts';
-import { TaskContext } from '../../contexts/';
+} from '../../utils/options'
+import { Page } from '../../components/Page'
+import { FileUpload } from '../../components/FileUpload'
+import { RadioGroup } from '../../components/RadioGroup'
+import { Switch } from '../../components/Switch'
+import { Select } from '../../components/Select'
+import { MoreOptions } from '../../components/MoreOptions'
+import { FormAlerts } from '../../components/FormAlerts'
+import { TaskContext } from '../../contexts/'
 
 const classKeyQuery = {
     keys: {
         resource: 'metadata/csvImportClasses',
     },
-};
+}
 
 const MetadataImport = () => {
     const { data: classData, loading: classLoading } = useDataQuery(
         classKeyQuery
-    );
-    const { addTask } = useContext(TaskContext);
-    const [progress, setProgress] = useState(0);
-    const [file, setFile] = useState(undefined);
-    const [format, setFormat] = useState(defaultFormatOption);
-    const [dryRun, setDryRun] = useState(false);
-    const [identifier, setIdentifier] = useState(defaultIdentifierOption);
+    )
+    const { addTask } = useContext(TaskContext)
+    const [progress, setProgress] = useState(0)
+    const [file, setFile] = useState(undefined)
+    const [format, setFormat] = useState(defaultFormatOption)
+    const [dryRun, setDryRun] = useState(false)
+    const [identifier, setIdentifier] = useState(defaultIdentifierOption)
     const [importReportMode, setImportReportMode] = useState(
         defaultImportReportModeOption
-    );
-    const [preheatMode, setPreheatMode] = useState(defaultPreheatModeOption);
+    )
+    const [preheatMode, setPreheatMode] = useState(defaultPreheatModeOption)
     const [importStrategy, setImportStrategy] = useState(
         defaultImportStrategyOption
-    );
-    const [firstRowIsHeader, setFirstRowIsHeader] = useState(false);
-    const [classKeyOptions, setClassKeyOptions] = useState([]);
-    const [classKey, setClassKey] = useState(undefined);
-    const [atomicMode, setAtomicMode] = useState(defaultAtomicModeOption);
-    const [mergeMode, setMergeMode] = useState(defaultMergeModeOption);
-    const [flushMode, setFlushMode] = useState(defaultFlushModeOption);
+    )
+    const [firstRowIsHeader, setFirstRowIsHeader] = useState(false)
+    const [classKeyOptions, setClassKeyOptions] = useState([])
+    const [classKey, setClassKey] = useState(undefined)
+    const [atomicMode, setAtomicMode] = useState(defaultAtomicModeOption)
+    const [mergeMode, setMergeMode] = useState(defaultMergeModeOption)
+    const [flushMode, setFlushMode] = useState(defaultFlushModeOption)
     const [inclusionStrategy, setInclusionStrategy] = useState(
         defaultInclusionStrategyOption
-    );
-    const [skipSharing, setSkipSharing] = useState(false);
-    const [skipValidation, setSkipValidation] = useState(false);
-    const [isAsync, setIsAsync] = useState(true);
-    const [alerts, setAlerts] = useState([]);
-    const { baseUrl } = useConfig();
+    )
+    const [skipSharing, setSkipSharing] = useState(false)
+    const [skipValidation, setSkipValidation] = useState(false)
+    const [isAsync, setIsAsync] = useState(true)
+    const [alerts, setAlerts] = useState([])
+    const { baseUrl } = useConfig()
 
     useEffect(() => {
         if (classData) {
             setClassKeyOptions(
                 classData.keys.map(k => ({ value: k, label: k }))
-            );
-            setClassKey({ value: classData.keys[0], label: classData.keys[0] });
+            )
+            setClassKey({ value: classData.keys[0], label: classData.keys[0] })
         }
-    }, [classData]);
+    }, [classData])
 
     const onImport = () => {
         // validate
-        const alerts = [];
-        const timestamp = new Date().getTime();
+        const alerts = []
+        const timestamp = new Date().getTime()
 
-        setAlerts(alerts);
+        setAlerts(alerts)
 
         if (!file) {
             alerts.push({
                 id: `file-${timestamp}`,
                 warning: true,
                 message: i18n.t('An import file must be selected'),
-            });
+            })
         }
 
         if (alerts.length != 0) {
-            return;
+            return
         }
 
         // send xhr
-        const apiBaseUrl = `${baseUrl}/api/`;
-        const endpoint = 'metadata.json';
+        const apiBaseUrl = `${baseUrl}/api/`
+        const endpoint = 'metadata.json'
         const params = [
             `dryRun=${dryRun}`,
             `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,
@@ -124,8 +124,8 @@ const MetadataImport = () => {
             format.value == 'csv'
                 ? `firstRowIsHeader=${firstRowIsHeader}&classKey=${classKey.value}`
                 : '',
-        ].join('&');
-        const url = `${apiBaseUrl}${endpoint}?${params}`;
+        ].join('&')
+        const url = `${apiBaseUrl}${endpoint}?${params}`
 
         uploadFile({
             url,
@@ -135,8 +135,8 @@ const MetadataImport = () => {
             setProgress,
             setAlerts,
             addEntry: (id, entry) => addTask('metadata', id, entry),
-        });
-    };
+        })
+    }
 
     return (
         <Page
@@ -288,7 +288,7 @@ const MetadataImport = () => {
                 dataTest={testIds.MetadataImport.FormAlerts}
             />
         </Page>
-    );
-};
+    )
+}
 
-export { MetadataImport };
+export { MetadataImport }

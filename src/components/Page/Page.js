@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
     Card,
     CircularLoader,
     ComponentCover,
     LinearLoader,
-} from '@dhis2/ui-core';
+} from '@dhis2/ui-core'
 
-import s from './Page.module.css';
+import s from './Page.module.css'
 
 const Page = ({ title, desc, icon, children, loading = false, dataTest }) => {
     const loadingEl =
@@ -15,7 +15,7 @@ const Page = ({ title, desc, icon, children, loading = false, dataTest }) => {
             <LinearLoader amount={loading} />
         ) : (
             <CircularLoader />
-        );
+        )
 
     return (
         <div className={s.container} data-test={dataTest}>
@@ -29,8 +29,8 @@ const Page = ({ title, desc, icon, children, loading = false, dataTest }) => {
                 <div className={s.content}>{children}</div>
             </Card>
         </div>
-    );
-};
+    )
+}
 
 Page.propTypes = {
     children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
@@ -40,6 +40,6 @@ Page.propTypes = {
     icon: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-};
+}
 
-export { Page };
+export { Page }

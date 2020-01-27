@@ -1,7 +1,7 @@
-const { config } = require('@dhis2/cli-style');
-const husky = require(config.husky);
+const { config } = require('@dhis2/cli-style')
+const husky = require(config.husky)
 
-const tasks = arr => arr.join(' && ');
+const tasks = arr => arr.join(' && ')
 
 module.exports = {
     hooks: {
@@ -11,4 +11,4 @@ module.exports = {
             'd2-style text check --staged',
         ]),
     },
-};
+}
