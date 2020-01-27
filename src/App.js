@@ -135,6 +135,10 @@ const MyApp = () => {
             return
         }
 
+        if (summary.status == 'ERROR' && !newTask.error) {
+            newTask.error = true
+        }
+
         newTask.summary = summary
         setTasks(tasks => ({
             ...tasks,
