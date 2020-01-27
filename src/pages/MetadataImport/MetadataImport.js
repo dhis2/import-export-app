@@ -35,7 +35,7 @@ import { Switch } from '../../components/Switch'
 import { Select } from '../../components/Select'
 import { MoreOptions } from '../../components/MoreOptions'
 import { FormAlerts } from '../../components/FormAlerts'
-import { TaskContext } from '../../contexts/'
+import { TaskContext, getNewestTask } from '../../contexts/'
 
 const classKeyQuery = {
     keys: {
@@ -47,7 +47,7 @@ const MetadataImport = () => {
     const { data: classData, loading: classLoading } = useDataQuery(
         classKeyQuery
     )
-    const { addTask } = useContext(TaskContext)
+    const { metadata: metadataTasks, addTask } = useContext(TaskContext)
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(undefined)
     const [format, setFormat] = useState(defaultFormatOption)
@@ -145,6 +145,7 @@ const MetadataImport = () => {
             icon={p.icon}
             loading={progress}
             dataTest={testIds.MetadataImport.Page}
+            summaryTask={getNewestTask(metadataTasks)}
         >
             <FileUpload
                 name="upload"

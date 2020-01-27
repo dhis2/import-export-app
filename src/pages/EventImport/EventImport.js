@@ -21,10 +21,10 @@ import { Switch } from '../../components/Switch'
 import { MoreOptions } from '../../components/MoreOptions'
 import { EventIdScheme, OrgUnitIdScheme } from '../../components/ElementSchemes'
 import { FormAlerts } from '../../components/FormAlerts'
-import { TaskContext } from '../../contexts/'
+import { TaskContext, getNewestTask } from '../../contexts/'
 
 const EventImport = () => {
-    const { addTask } = useContext(TaskContext)
+    const { event: eventTasks, addTask } = useContext(TaskContext)
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(undefined)
     const [format, setFormat] = useState(defaultFormatOption)
@@ -88,6 +88,7 @@ const EventImport = () => {
             icon={p.icon}
             loading={progress}
             dataTest={testIds.EventImport.Page}
+            summaryTask={getNewestTask(eventTasks)}
         >
             <FileUpload
                 name="upload"
