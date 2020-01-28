@@ -1,13 +1,13 @@
 # Translators:
 # phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
+"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,6 +72,15 @@ msgstr "Не известное значение"
 msgid "Atomic mode"
 msgstr ""
 
+msgid "Include descendants of organisation unit"
+msgstr "Включить потомков организационной единицы"
+
+msgid "Selected organisation unit"
+msgstr "Выбранная организационная единица"
+
+msgid "Children"
+msgstr "Потомки"
+
 msgid "Class key"
 msgstr ""
 
@@ -102,8 +111,23 @@ msgstr ""
 msgid "Loading data element id scheme options..."
 msgstr ""
 
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
 msgid "Dry run"
 msgstr "Пробный прогон программы"
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr "Дата окончания"
 
 msgid "Event id scheme"
 msgstr ""
@@ -162,6 +186,15 @@ msgstr "Удалить"
 msgid "Import strategy"
 msgstr ""
 
+msgid "Include deleted"
+msgstr "Включить удаленное"
+
+msgid "Include children of organisation unit"
+msgstr "Включить дочерние ветви организационной единицы"
+
+msgid "Inclusion"
+msgstr "Включение"
+
 msgid "Non Null"
 msgstr "Не Null"
 
@@ -183,10 +216,34 @@ msgstr "Заменить"
 msgid "Merge mode"
 msgstr ""
 
-msgid "Org unit id scheme"
+msgid "Loading Object options..."
 msgstr ""
 
-msgid "Loading organisation unit id scheme options..."
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr "Программы"
+
+msgid "Category combination"
+msgstr "Комбинация категории"
+
+msgid "Dashboard"
+msgstr "Информационная панель"
+
+msgid "Data element groups"
+msgstr "Группы элементов данных"
+
+msgid "Option sets"
+msgstr "Наборы опций"
+
+msgid "Object type"
+msgstr "Тип объекта"
+
+msgid "Organisation unit"
+msgstr "Организационная единица"
+
+msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Yes (faster for large imports)"
@@ -199,6 +256,24 @@ msgid "Reference"
 msgstr "Ссылка"
 
 msgid "Preheat mode"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr "[Все стадии программы]"
+
+msgid "Program stages"
+msgstr "Этапы программ"
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Error"
@@ -236,6 +311,12 @@ msgstr ""
 
 msgid "Skip validation"
 msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr "Дата начала"
 
 msgid "Strategy"
 msgstr "Стратегия"
@@ -298,17 +379,8 @@ msgstr "Атомарный режим"
 msgid "Category ID scheme"
 msgstr "Схема ID категории"
 
-msgid "Children"
-msgstr "Потомки"
-
-msgid "Object type"
-msgstr "Тип объекта"
-
 msgid "Data element ID scheme"
 msgstr "ID схема элемента данных"
-
-msgid "End date"
-msgstr "Дата окончания"
 
 msgid "Event ID Scheme"
 msgstr "ID Схема события"
@@ -325,20 +397,11 @@ msgstr "Режим Отчета"
 msgid "Import Strategy"
 msgstr "Стратегия импорта"
 
-msgid "Include deleted"
-msgstr "Включить удаленное"
-
-msgid "Inclusion"
-msgstr "Включение"
-
 msgid "Inclusion Strategy"
 msgstr "Стратегия включения"
 
 msgid "Merge Mode"
 msgstr "Режим объединения"
-
-msgid "Organisation unit"
-msgstr "Организационная единица"
 
 msgid "Org unit ID scheme"
 msgstr "ID схема организации"
@@ -348,9 +411,6 @@ msgstr "Режим Подогрева кеша"
 
 msgid "Program Stages"
 msgstr "Стадии программы"
-
-msgid "Programs"
-msgstr "Программы"
 
 msgid "Schemas"
 msgstr "Схемы"
@@ -367,15 +427,6 @@ msgstr "Пропустить совместное использование"
 msgid "Skip Validation"
 msgstr "Пропустить валидацию"
 
-msgid "Start date"
-msgstr "Дата начала"
-
-msgid "Include descendants of organisation unit"
-msgstr "Включить потомков организационной единицы"
-
-msgid "Selected organisation unit"
-msgstr "Выбранная организационная единица"
-
 msgid "New and Updates"
 msgstr "Новые и обновления"
 
@@ -391,29 +442,14 @@ msgstr "Создать"
 msgid "Update"
 msgstr "Обновить"
 
-msgid "Include children of organisation unit"
-msgstr "Включить дочерние ветви организационной единицы"
-
 msgid "Gzip"
 msgstr ""
 
-msgid "Category combination"
-msgstr "Комбинация категории"
-
-msgid "Dashboard"
-msgstr "Информационная панель"
-
-msgid "Data element groups"
-msgstr "Группы элементов данных"
-
-msgid "Option sets"
-msgstr "Наборы опций"
-
-msgid "[ All program stages]"
-msgstr "[Все стадии программы]"
-
 msgid "Import/Export"
 msgstr "Импорт/Экспорт"
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
 
 msgid "Data Export"
 msgstr "Экспорт данных"
@@ -458,9 +494,6 @@ msgstr ""
 "Экспорт метаданных, таких как наборы данных и программ, включая "
 "соответсвующие объекты метаданных."
 
-msgid "Metadata Export with Dependencies"
-msgstr "Экспорт метаданных с зависимостями"
-
 msgid "Import / Export"
 msgstr "Импорт/Экспорт"
 
@@ -468,9 +501,6 @@ msgid "Import or Export DHIS2 data."
 msgstr "Импорт или экспорт данных DHIS2."
 
 msgid "An unknown error occurred"
-msgstr ""
-
-msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
