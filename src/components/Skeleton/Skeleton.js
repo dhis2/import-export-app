@@ -1,9 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import s from './Skeleton.module.css'
 import { Sidebar } from './Sidebar/'
+import { withJobOverviewModal } from '../JobOverview'
 import { ImportPages, ExportPages, Pages } from '../../utils/pages'
 
 const Skeleton = ({ location }) => {
@@ -36,4 +37,5 @@ Skeleton.propTypes = {
 }
 
 const SkeletonRouter = withRouter(Skeleton)
-export { SkeletonRouter as Skeleton }
+const SkeletonRouterModal = withJobOverviewModal(SkeletonRouter)
+export { SkeletonRouterModal as Skeleton }
