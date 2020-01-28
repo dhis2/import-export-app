@@ -2,6 +2,9 @@ import i18n from '@dhis2/d2-i18n'
 
 import { getUploadXHR } from './xhr'
 
+const trimString = (length, string) =>
+    string.length > length ? string.substring(0, length - 3) + '...' : string
+
 const pathToId = path => {
     const pathSplit = path.split('/')
     const orgId = pathSplit[pathSplit.length - 1]
@@ -217,5 +220,6 @@ export {
     jsDateToISO8601,
     jsDateToString,
     pathToId,
+    trimString,
     uploadFile,
 }
