@@ -107,61 +107,50 @@ const JobOverview = ({
         setSelectedJob(allTasks[0])
     }
 
+    if (!selectedJob) {
+        return <p>{i18n.t('No jobs started yet.')}</p>
+    }
+
     return (
         <div className={s.container} data-test={testIds.JobOverview.container}>
-            {selectedJob ? (
-                <>
+            <div className={s.items} data-test={testIds.JobOverview.items}>
+                <Menu className={s.Menu}>
                     <div
-                        className={s.items}
-                        data-test={testIds.JobOverview.items}
+                        className={s.chips}
+                        data-test={testIds.JobOverview.chips}
                     >
-                        <Menu className={s.Menu}>
-                            <div
-                                className={s.chips}
-                                data-test={testIds.JobOverview.chips}
+                        {categoryTypes.map(({ key, importType, label }) => (
+                            <Chip
+                                onClick={() => onChipClick(importType)}
+                                selected={activeTypes.includes(importType)}
+                                key={key}
+                                data-test={`${testIds.JobOverview.chips}-${key}`}
                             >
-                                {categoryTypes.map(
-                                    ({ key, importType, label }) => (
-                                        <Chip
-                                            onClick={() =>
-                                                onChipClick(importType)
-                                            }
-                                            selected={activeTypes.includes(
-                                                importType
-                                            )}
-                                            key={key}
-                                            data-test={`${testIds.JobOverview.chips}-${key}`}
-                                        >
-                                            {label}
-                                        </Chip>
-                                    )
-                                )}
-                            </div>
-                            {filteredTasks.map(t => (
-                                <MenuItem
-                                    key={`${testIds.JobOverview.items}-${t.id}`}
-                                    active={selectedJob.id == t.id}
-                                    label={<MenuLabel task={t} />}
-                                    onClick={() => setSelectedJob(t)}
-                                    icon={categoryTypesObj[t.importType].icon}
-                                />
-                            ))}
-                        </Menu>
+                                {label}
+                            </Chip>
+                        ))}
                     </div>
-                    <div
-                        className={s.summary}
-                        data-test={testIds.JobOverview.JobSummary}
-                    >
-                        <JobSummary
-                            task={selectedJob}
-                            dataTest={testIds.JobSummary.container}
-                            showDetails={false}
+                    {filteredTasks.map(t => (
+                        <MenuItem
+                            key={`${testIds.JobOverview.items}-${t.id}`}
+                            active={selectedJob.id == t.id}
+                            label={<MenuLabel task={t} />}
+                            onClick={() => setSelectedJob(t)}
+                            icon={categoryTypesObj[t.importType].icon}
                         />
-                    </div>
-                </>
-            ) : (
-                <p>{i18n.t('No jobs started yet.')}</p>
-            )}
+                    ))}
+                </Menu>
+            </div>
+            <div
+                className={s.summary}
+                data-test={testIds.JobOverview.JobSummary}
+            >
+                <JobSummary
+                    task={selectedJob}
+                    dataTest={testIds.JobSummary.container}
+                    showDetails={false}
+                />
+            </div>
         </div>
     )
 }
