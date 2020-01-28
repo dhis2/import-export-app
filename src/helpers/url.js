@@ -1,6 +1,6 @@
 import { isProduction } from './env'
 
-const assign = url => (window.location.url = url)
+const assign = url => window.location.assign(url)
 
 /**
  * Cypress does not have any mechanism to intercept assignments
