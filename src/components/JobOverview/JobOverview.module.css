@@ -1,0 +1,32 @@
+.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    grid-template-columns: [items] 330px [summary] 2fr;
+    height: 100%;
+}
+
+.items {
+    grid-column: items;
+    height: 100%;
+}
+
+.Menu {
+    height: 100%;
+}
+
+.summary {
+    grid-column: summary;
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.MenuLabel {
+    display: flex;
+    align-items: center;
+}
+
+.MenuLabelDate {
+    margin-left: 20px;
+}
