@@ -135,7 +135,7 @@ const MyApp = () => {
             return
         }
 
-        if (summary.status == 'ERROR' && !newTask.error) {
+        if (summary && summary.status == 'ERROR' && !newTask.error) {
             newTask.error = true
         }
 
@@ -173,7 +173,7 @@ const MyApp = () => {
     ])
 
     return (
-        <div>
+        <>
             <CssReset />
             {loading ? (
                 <ScreenCover>
@@ -190,7 +190,7 @@ const MyApp = () => {
                     </SchemeContext.Provider>
                 </UserContext.Provider>
             )}
-        </div>
+        </>
     )
 }
 
