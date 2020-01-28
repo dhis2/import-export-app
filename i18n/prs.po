@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
+"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -71,6 +71,15 @@ msgstr "هیچ‌کدام"
 msgid "Atomic mode"
 msgstr ""
 
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
 msgid "Class key"
 msgstr ""
 
@@ -101,8 +110,23 @@ msgstr ""
 msgid "Loading data element id scheme options..."
 msgstr ""
 
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
 msgid "Dry run"
 msgstr ""
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr "تاریخ اتمام"
 
 msgid "Event id scheme"
 msgstr ""
@@ -161,6 +185,15 @@ msgstr "حذف"
 msgid "Import strategy"
 msgstr ""
 
+msgid "Include deleted"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
 msgid "Non Null"
 msgstr ""
 
@@ -182,10 +215,34 @@ msgstr "تبدیل کردن"
 msgid "Merge mode"
 msgstr ""
 
-msgid "Org unit id scheme"
+msgid "Loading Object options..."
 msgstr ""
 
-msgid "Loading organisation unit id scheme options..."
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr "برنامه ها"
+
+msgid "Category combination"
+msgstr "ترکیب کتگوری"
+
+msgid "Dashboard"
+msgstr "داشبورد"
+
+msgid "Data element groups"
+msgstr "گروپ های عنصر اطلاعات"
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Object type"
+msgstr "نوع اعداد"
+
+msgid "Organisation unit"
+msgstr "بخش نهاد/سازمان"
+
+msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Yes (faster for large imports)"
@@ -198,6 +255,24 @@ msgid "Reference"
 msgstr "موخذ"
 
 msgid "Preheat mode"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "Program stages"
+msgstr ""
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Error"
@@ -235,6 +310,12 @@ msgstr ""
 
 msgid "Skip validation"
 msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr "تاریخ شروع"
 
 msgid "Strategy"
 msgstr ""
@@ -296,17 +377,8 @@ msgstr ""
 msgid "Category ID scheme"
 msgstr ""
 
-msgid "Children"
-msgstr ""
-
-msgid "Object type"
-msgstr "نوع اعداد"
-
 msgid "Data element ID scheme"
 msgstr ""
-
-msgid "End date"
-msgstr "تاریخ اتمام"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -323,20 +395,11 @@ msgstr ""
 msgid "Import Strategy"
 msgstr ""
 
-msgid "Include deleted"
-msgstr ""
-
-msgid "Inclusion"
-msgstr ""
-
 msgid "Inclusion Strategy"
 msgstr ""
 
 msgid "Merge Mode"
 msgstr ""
-
-msgid "Organisation unit"
-msgstr "بخش نهاد/سازمان"
 
 msgid "Org unit ID scheme"
 msgstr ""
@@ -346,9 +409,6 @@ msgstr ""
 
 msgid "Program Stages"
 msgstr ""
-
-msgid "Programs"
-msgstr "برنامه ها"
 
 msgid "Schemas"
 msgstr ""
@@ -363,15 +423,6 @@ msgid "Skip Sharing"
 msgstr ""
 
 msgid "Skip Validation"
-msgstr ""
-
-msgid "Start date"
-msgstr "تاریخ شروع"
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Selected organisation unit"
 msgstr ""
 
 msgid "New and Updates"
@@ -389,29 +440,14 @@ msgstr "ایجاد"
 msgid "Update"
 msgstr "تجدید"
 
-msgid "Include children of organisation unit"
-msgstr ""
-
 msgid "Gzip"
-msgstr ""
-
-msgid "Category combination"
-msgstr "ترکیب کتگوری"
-
-msgid "Dashboard"
-msgstr "داشبورد"
-
-msgid "Data element groups"
-msgstr "گروپ های عنصر اطلاعات"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
 msgstr "وارد-صادر"
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
 
 msgid "Data Export"
 msgstr ""
@@ -448,9 +484,6 @@ msgid ""
 "objects."
 msgstr ""
 
-msgid "Metadata Export with Dependencies"
-msgstr ""
-
 msgid "Import / Export"
 msgstr ""
 
@@ -458,9 +491,6 @@ msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "An unknown error occurred"
-msgstr ""
-
-msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
