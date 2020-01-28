@@ -367,22 +367,24 @@ Events.propTypes = {
     events: PropTypes.arrayOf(eventPropType).isRequired,
 }
 
-const JobSummary = ({ task, dataTest }) => {
+const JobSummary = ({ task, showDetails = true, dataTest }) => {
     if (!task) return null
 
     return (
         <div className={s.container} data-test={dataTest}>
             <div className={s.header}>
                 <h3 className={s.title}>{`${i18n.t('Job summary')}`}</h3>
-                <span className={s.taskDetails}>
-                    <span data-test={testIds.JobSummary.filename}>
-                        {task.file}
-                    </span>{' '}
-                    -{' '}
-                    <span data-test={testIds.JobSummary.date}>
-                        {jsDateToString(task.created)}{' '}
+                {showDetails && (
+                    <span className={s.taskDetails}>
+                        <span data-test={testIds.JobSummary.filename}>
+                            {task.file}
+                        </span>{' '}
+                        -{' '}
+                        <span data-test={testIds.JobSummary.date}>
+                            {jsDateToString(task.created)}{' '}
+                        </span>
                     </span>
-                </span>
+                )}
             </div>
             <div className={s.chips} data-test={testIds.JobSummary.chips}>
                 {task.completed ? (
@@ -408,6 +410,7 @@ const JobSummary = ({ task, dataTest }) => {
 
 JobSummary.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    showDetails: PropTypes.bool,
     task: PropTypes.object,
 }
 
