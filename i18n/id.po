@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
+"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -72,6 +72,15 @@ msgstr "Tidak ada"
 msgid "Atomic mode"
 msgstr ""
 
+msgid "Include descendants of organisation unit"
+msgstr "Ikutkan unit org di bawahnya"
+
+msgid "Selected organisation unit"
+msgstr "Unit org yang terpilih"
+
+msgid "Children"
+msgstr "Sub"
+
 msgid "Class key"
 msgstr ""
 
@@ -102,8 +111,23 @@ msgstr ""
 msgid "Loading data element id scheme options..."
 msgstr ""
 
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
 msgid "Dry run"
 msgstr ""
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr "Tanggal berakhir"
 
 msgid "Event id scheme"
 msgstr ""
@@ -162,6 +186,15 @@ msgstr "Hapus"
 msgid "Import strategy"
 msgstr ""
 
+msgid "Include deleted"
+msgstr "Ikutkan yang dihapus"
+
+msgid "Include children of organisation unit"
+msgstr "Ikutkan unit org di bawahnya"
+
+msgid "Inclusion"
+msgstr "Inklusi"
+
 msgid "Non Null"
 msgstr ""
 
@@ -183,10 +216,34 @@ msgstr "Gantikan"
 msgid "Merge mode"
 msgstr ""
 
-msgid "Org unit id scheme"
+msgid "Loading Object options..."
 msgstr ""
 
-msgid "Loading organisation unit id scheme options..."
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr "Program"
+
+msgid "Category combination"
+msgstr "Kombinasi kategori"
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data element groups"
+msgstr "Grup data elemen"
+
+msgid "Option sets"
+msgstr "Set opsi"
+
+msgid "Object type"
+msgstr "Tipe objek"
+
+msgid "Organisation unit"
+msgstr "Unit organisasi"
+
+msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Yes (faster for large imports)"
@@ -199,6 +256,24 @@ msgid "Reference"
 msgstr "Referensi"
 
 msgid "Preheat mode"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr "[ Semua tahapan program ]"
+
+msgid "Program stages"
+msgstr ""
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Error"
@@ -236,6 +311,12 @@ msgstr ""
 
 msgid "Skip validation"
 msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr "Tanggal mulai"
 
 msgid "Strategy"
 msgstr "Strategi"
@@ -297,17 +378,8 @@ msgstr "Mode Atomik"
 msgid "Category ID scheme"
 msgstr "Skema ID Kategori"
 
-msgid "Children"
-msgstr "Sub"
-
-msgid "Object type"
-msgstr "Tipe objek"
-
 msgid "Data element ID scheme"
 msgstr "Skema ID data elemen"
-
-msgid "End date"
-msgstr "Tanggal berakhir"
 
 msgid "Event ID Scheme"
 msgstr "Skema ID Kejadian"
@@ -324,20 +396,11 @@ msgstr "Mode Laporan"
 msgid "Import Strategy"
 msgstr "Strategi Impor"
 
-msgid "Include deleted"
-msgstr "Ikutkan yang dihapus"
-
-msgid "Inclusion"
-msgstr "Inklusi"
-
 msgid "Inclusion Strategy"
 msgstr "Strategi Inklusi"
 
 msgid "Merge Mode"
 msgstr "Mode Gabung"
-
-msgid "Organisation unit"
-msgstr "Unit organisasi"
 
 msgid "Org unit ID scheme"
 msgstr "Skema ID unit org"
@@ -347,9 +410,6 @@ msgstr "Mode Preheat"
 
 msgid "Program Stages"
 msgstr "Tahapan Program"
-
-msgid "Programs"
-msgstr "Program"
 
 msgid "Schemas"
 msgstr "Skema"
@@ -366,15 +426,6 @@ msgstr "Lewati Berbagi"
 msgid "Skip Validation"
 msgstr "Lewati Validasi"
 
-msgid "Start date"
-msgstr "Tanggal mulai"
-
-msgid "Include descendants of organisation unit"
-msgstr "Ikutkan unit org di bawahnya"
-
-msgid "Selected organisation unit"
-msgstr "Unit org yang terpilih"
-
 msgid "New and Updates"
 msgstr "Baru dan Perbaruan"
 
@@ -390,29 +441,14 @@ msgstr "Buat"
 msgid "Update"
 msgstr "Perbarui"
 
-msgid "Include children of organisation unit"
-msgstr "Ikutkan unit org di bawahnya"
-
 msgid "Gzip"
 msgstr ""
 
-msgid "Category combination"
-msgstr "Kombinasi kategori"
-
-msgid "Dashboard"
-msgstr ""
-
-msgid "Data element groups"
-msgstr "Grup data elemen"
-
-msgid "Option sets"
-msgstr "Set opsi"
-
-msgid "[ All program stages]"
-msgstr "[ Semua tahapan program ]"
-
 msgid "Import/Export"
 msgstr "Impor/Ekspor"
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
 
 msgid "Data Export"
 msgstr "Ekspor Data"
@@ -457,9 +493,6 @@ msgstr ""
 "Ekspor metadata seperti data set dan program termasuk objek metadata yang "
 "terkait"
 
-msgid "Metadata Export with Dependencies"
-msgstr "Ekspor Metadata dengan Dependensi"
-
 msgid "Import / Export"
 msgstr "Impor / Ekspor"
 
@@ -467,9 +500,6 @@ msgid "Import or Export DHIS2 data."
 msgstr "Impor atau Ekspor data DHIS2."
 
 msgid "An unknown error occurred"
-msgstr ""
-
-msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
