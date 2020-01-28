@@ -43,6 +43,9 @@ const commonIds = {
 }
 
 const testIds = {
+    App: {
+        overviewFab: 'app-job-overview-fab',
+    },
     DataImport: {
         Page: 'page-import-data',
         DataElementIdScheme: commonIds.DataElementIdScheme,
@@ -163,6 +166,14 @@ const testIds = {
         singleSummary: 'job-summary-single-summary',
         summary: 'job-summary-summary',
         typeCount: 'job-summary-type-count',
+    },
+    JobOverview: {
+        general: 'job-overview-',
+        MenuLabel: 'job-overview-menu-label',
+        container: 'job-overview-container',
+        items: 'job-overview-tasks',
+        chips: 'job-overview-chips',
+        JobSummary: 'job-overview-summary',
     },
 }
 
