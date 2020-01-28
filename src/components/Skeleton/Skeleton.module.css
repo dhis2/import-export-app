@@ -1,6 +1,10 @@
+html, body {
+    height: 100%;
+}
+
 .container {
     display: grid;
-    height: 100vh;
+    height: 100%;
     grid-gap: 20px;
     grid-template-rows: auto;
     grid-template-columns: [sidebar] minmax(min-content, 300px) [content] 2fr;

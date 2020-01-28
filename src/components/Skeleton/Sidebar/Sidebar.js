@@ -9,7 +9,7 @@ import { StyledLink } from '../StyledLink/'
 
 const Sidebar = ({ importPages, exportPages, pathname }) => {
     return (
-        <Menu className={s.menu}>
+        <Menu className={s.Menu}>
             <h3 className={s.sectionTitle}>{i18n.t('Import')}</h3>
 
             {importPages.map(({ icon, name, code, path }) => (
