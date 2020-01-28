@@ -1,5 +1,6 @@
 import '../common/settingFormValues'
 import { Before, Given } from 'cypress-cucumber-preprocessor/steps'
+import { ANCHOR_ID } from '../../../../src/helpers/url'
 
 const schemasApi = /api\/schemas.json\?fields=metadata,collectionName,displayName,klass/
 const dataApi = /api\/metadata\.(json|xml|csv)(\.(zip|gzip))?/
@@ -67,18 +68,19 @@ Given('the category option schema is selected', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.window().then(win => {
-        expect(win.assign).to.be.calledOnce
+    cy.get(`#${ANCHOR_ID}`).then($anchor => {
+        console.log($anchor)
 
-        const call = win.assign.getCall(0)
-        const url = call.args[0]
+        expect($anchor).to.have.class('clicked')
 
-        cy.getComparisonData(url).then(({ actual, expected: allExpected }) => {
-            const { format, compression, ...expected } = allExpected
-            expect(actual).to.deep.equal({
-                ...expected,
-                download: 'true',
-            })
-        })
+        cy.getComparisonData($anchor.attr('href')).then(
+            ({ actual, expected: allExpected }) => {
+                const { format, compression, ...expected } = allExpected
+                expect(actual).to.deep.equal({
+                    ...expected,
+                    download: 'true',
+                })
+            }
+        )
     })
 })

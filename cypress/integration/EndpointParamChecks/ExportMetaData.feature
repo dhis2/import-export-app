@@ -14,28 +14,28 @@ Feature: The user should be able to export meta data
         When the export form is submitted
         Then the download request is sent with the right parameters
 
-    Scenario: The user deselects all schemas
-        Given the schemas are all deselected
-        When the export form is submitted
-        Then the download request is sent with the right parameters
+# Scenario: The user deselects all schemas
+#     Given the schemas are all deselected
+#     When the export form is submitted
+#     Then the download request is sent with the right parameters
 
-    Scenario: The user selects only the first schema
-        Given the schemas are all deselected
-        And the category option schema is selected
-        When the export form is submitted
-        Then the download request is sent with the right parameters
+# Scenario: The user selects only the first schema
+#     Given the schemas are all deselected
+#     And the category option schema is selected
+#     When the export form is submitted
+#     Then the download request is sent with the right parameters
 
-    Scenario: The user selects a different format
-        Given the "format" input is set to "xml"
-        When the export form is submitted
-        Then the download request is sent with the right parameters
+# Scenario: The user selects a different format
+#     Given the "format" input is set to "xml"
+#     When the export form is submitted
+#     Then the download request is sent with the right parameters
 
-    Scenario: The user selects a no compression
-        Given the "compression" input is set to ""
-        When the export form is submitted
-        Then the download request is sent with the right parameters
+# Scenario: The user selects a no compression
+#     Given the "compression" input is set to ""
+#     When the export form is submitted
+#     Then the download request is sent with the right parameters
 
-    Scenario: The user selects a different sharing option
-        Given the "skipSharing" input is set to "true"
-        When the export form is submitted
-        Then the download request is sent with the right parameters
+# Scenario: The user selects a different sharing option
+#     Given the "skipSharing" input is set to "true"
+#     When the export form is submitted
+#     Then the download request is sent with the right parameters

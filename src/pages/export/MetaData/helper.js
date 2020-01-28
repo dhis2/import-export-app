@@ -79,5 +79,5 @@ export const onSubmit = async values => {
 
     const url = `${baseUrl}${endpoint}.${extension}?${params}`
 
-    download(url)
+    download(url, endpoint)
 }
