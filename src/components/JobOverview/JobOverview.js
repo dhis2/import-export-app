@@ -23,7 +23,12 @@ const categoryTypes = [
         icon: <EventIcon />,
         label: 'Event',
     },
-    { key: 'gml', importType: 'GML_IMPORT', icon: <GMLIcon />, label: 'GML' },
+    {
+        key: 'gml',
+        importType: 'GML_IMPORT',
+        icon: <GMLIcon />,
+        label: 'GML',
+    },
     {
         key: 'metadata',
         importType: 'METADATA_IMPORT',
@@ -39,7 +44,10 @@ const categoryTypesObj = categoryTypes.reduce((acc, cur) => {
 
 const MenuLabel = ({ task }) => {
     return (
-        <div className={s.MenuLabel}>
+        <div
+            className={s.MenuLabel}
+            data-test={`${testIds.JobOverview.MenuLabel}-${task.id}`}
+        >
             <div>
                 <span>{trimString(15, task.file)}</span>
                 <br />
@@ -61,6 +69,7 @@ MenuLabel.propTypes = {
         completed: PropTypes.bool.isRequired,
         created: PropTypes.instanceOf(Date).isRequired,
         file: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
     }).isRequired,
 }
 
@@ -99,12 +108,18 @@ const JobOverview = ({
     }
 
     return (
-        <div className={s.container}>
+        <div className={s.container} data-test={testIds.JobOverview.container}>
             {selectedJob ? (
                 <>
-                    <div className={s.items}>
+                    <div
+                        className={s.items}
+                        data-test={testIds.JobOverview.items}
+                    >
                         <Menu className={s.Menu}>
-                            <div className={s.chips}>
+                            <div
+                                className={s.chips}
+                                data-test={testIds.JobOverview.chips}
+                            >
                                 {categoryTypes.map(
                                     ({ key, importType, label }) => (
                                         <Chip
@@ -115,6 +130,7 @@ const JobOverview = ({
                                                 importType
                                             )}
                                             key={key}
+                                            data-test={`${testIds.JobOverview.chips}-${key}`}
                                         >
                                             {label}
                                         </Chip>
@@ -123,7 +139,7 @@ const JobOverview = ({
                             </div>
                             {filteredTasks.map(t => (
                                 <MenuItem
-                                    key={`${t.id}`}
+                                    key={`${testIds.JobOverview.items}-${t.id}`}
                                     active={selectedJob.id == t.id}
                                     label={<MenuLabel task={t} />}
                                     onClick={() => setSelectedJob(t)}
@@ -132,7 +148,10 @@ const JobOverview = ({
                             ))}
                         </Menu>
                     </div>
-                    <div className={s.summary}>
+                    <div
+                        className={s.summary}
+                        data-test={testIds.JobOverview.JobSummary}
+                    >
                         <JobSummary
                             task={selectedJob}
                             dataTest={testIds.JobSummary.container}

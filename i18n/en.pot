@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-27T19:37:59.782Z\n"
-"PO-Revision-Date: 2020-01-27T19:37:59.782Z\n"
+"POT-Creation-Date: 2020-01-28T13:00:46.709Z\n"
+"PO-Revision-Date: 2020-01-28T13:00:46.709Z\n"
 
 msgid "Data sets"
 msgstr ""
@@ -30,6 +30,21 @@ msgid "File"
 msgstr ""
 
 msgid "Choose a file to upload"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "In progress"
+msgstr ""
+
+msgid "No jobs started yet."
+msgstr ""
+
+msgid "Job overview"
+msgstr ""
+
+msgid "Close"
 msgstr ""
 
 msgid "Status"
@@ -96,12 +111,6 @@ msgid "ID"
 msgstr ""
 
 msgid "Job summary"
-msgstr ""
-
-msgid "Completed"
-msgstr ""
-
-msgid "In progress"
 msgstr ""
 
 msgid "Error"
