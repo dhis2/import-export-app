@@ -1,13 +1,13 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
+"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,6 +72,15 @@ msgstr "کوئی نہں"
 msgid "Atomic mode"
 msgstr ""
 
+msgid "Include descendants of organisation unit"
+msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
+
+msgid "Selected organisation unit"
+msgstr "سیلیکٹیڈ تنظیمی یونٹ"
+
+msgid "Children"
+msgstr ""
+
 msgid "Class key"
 msgstr ""
 
@@ -102,8 +111,23 @@ msgstr ""
 msgid "Loading data element id scheme options..."
 msgstr ""
 
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
 msgid "Dry run"
 msgstr "ڈرائے رن"
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr "تاریخ اختتام"
 
 msgid "Event id scheme"
 msgstr ""
@@ -162,6 +186,15 @@ msgstr "حذف"
 msgid "Import strategy"
 msgstr ""
 
+msgid "Include deleted"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
+
+msgid "Inclusion"
+msgstr "شمولیت"
+
 msgid "Non Null"
 msgstr ""
 
@@ -183,10 +216,34 @@ msgstr "تبدیل کریں"
 msgid "Merge mode"
 msgstr ""
 
-msgid "Org unit id scheme"
+msgid "Loading Object options..."
 msgstr ""
 
-msgid "Loading organisation unit id scheme options..."
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr "پروگرامس"
+
+msgid "Category combination"
+msgstr "قسم کا مجموعہ"
+
+msgid "Dashboard"
+msgstr "ڈیشپورڈ"
+
+msgid "Data element groups"
+msgstr "ڈیٹا عناصر کا گروہ"
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Object type"
+msgstr "اؤبجیکٹ ٹائپ"
+
+msgid "Organisation unit"
+msgstr "تنظیمی یونٹ"
+
+msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Yes (faster for large imports)"
@@ -199,6 +256,24 @@ msgid "Reference"
 msgstr "ریفرنس"
 
 msgid "Preheat mode"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr "[تمام پروگرام سٹیجیز]"
+
+msgid "Program stages"
+msgstr "پروگرام کا مرحلہ"
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Error"
@@ -236,6 +311,12 @@ msgstr ""
 
 msgid "Skip validation"
 msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr "تاریخ آغاز"
 
 msgid "Strategy"
 msgstr "حکمت عملی"
@@ -297,17 +378,8 @@ msgstr ""
 msgid "Category ID scheme"
 msgstr "قسم ائ۔ڈی سکیم"
 
-msgid "Children"
-msgstr ""
-
-msgid "Object type"
-msgstr "اؤبجیکٹ ٹائپ"
-
 msgid "Data element ID scheme"
 msgstr "ڈیٹا ائ۔ڈی سکیم"
-
-msgid "End date"
-msgstr "تاریخ اختتام"
 
 msgid "Event ID Scheme"
 msgstr "ایونٹ ائی۔ڈی سکیم"
@@ -324,20 +396,11 @@ msgstr ""
 msgid "Import Strategy"
 msgstr ""
 
-msgid "Include deleted"
-msgstr ""
-
-msgid "Inclusion"
-msgstr "شمولیت"
-
 msgid "Inclusion Strategy"
 msgstr ""
 
 msgid "Merge Mode"
 msgstr ""
-
-msgid "Organisation unit"
-msgstr "تنظیمی یونٹ"
 
 msgid "Org unit ID scheme"
 msgstr "تنظیمی یونٹ ائ۔ڈی سکیم"
@@ -347,9 +410,6 @@ msgstr ""
 
 msgid "Program Stages"
 msgstr "پروگرام سٹیجیز"
-
-msgid "Programs"
-msgstr "پروگرامس"
 
 msgid "Schemas"
 msgstr "سکیماماس"
@@ -366,15 +426,6 @@ msgstr ""
 msgid "Skip Validation"
 msgstr ""
 
-msgid "Start date"
-msgstr "تاریخ آغاز"
-
-msgid "Include descendants of organisation unit"
-msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
-
-msgid "Selected organisation unit"
-msgstr "سیلیکٹیڈ تنظیمی یونٹ"
-
 msgid "New and Updates"
 msgstr "نیا اور اپڈیٹس"
 
@@ -390,29 +441,14 @@ msgstr "تخلیق"
 msgid "Update"
 msgstr "اپڈیٹ"
 
-msgid "Include children of organisation unit"
-msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
-
 msgid "Gzip"
 msgstr "جی۔زیپ"
 
-msgid "Category combination"
-msgstr "قسم کا مجموعہ"
-
-msgid "Dashboard"
-msgstr "ڈیشپورڈ"
-
-msgid "Data element groups"
-msgstr "ڈیٹا عناصر کا گروہ"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "[ All program stages]"
-msgstr "[تمام پروگرام سٹیجیز]"
-
 msgid "Import/Export"
 msgstr "درآمد.برآمد"
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
 
 msgid "Data Export"
 msgstr "ڈیٹا ایکسپورٹ"
@@ -454,9 +490,6 @@ msgid ""
 "objects."
 msgstr "میٹا ڈیٹا کو ڈیٹا سیٹ اور پروگرامز کی طرح ایکسپورٹ کریں۔"
 
-msgid "Metadata Export with Dependencies"
-msgstr "میٹا ڈیٹا ایکسپورٹ انحصار کے ساتھ"
-
 msgid "Import / Export"
 msgstr "ایمپورٹ / ایکسپورٹ"
 
@@ -464,9 +497,6 @@ msgid "Import or Export DHIS2 data."
 msgstr "ایمپورٹ یا ایکسپورٹ ڈیٹا"
 
 msgid "An unknown error occurred"
-msgstr ""
-
-msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
