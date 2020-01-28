@@ -6,8 +6,8 @@ export const Icon = ({ width, height, children }) => {
         width: width || 24,
         height: height || 24,
         display: 'inline-block',
-        fill: '#000',
-        color: 'rgba(0, 0, 0, 0.87)',
+        fill: 'current-color',
+        color: 'current-color',
         userSelect: 'none',
     }
 
@@ -79,5 +79,11 @@ export const MinusIcon = props => (
     <Icon {...props}>
         <path d="M19 13H5v-2h14v2z" />
         <path d="M0 0h24v24H0z" fill="none" />
+    </Icon>
+)
+
+export const TasksIcon = props => (
+    <Icon {...props}>
+        <path d="M19 2h-4.2C14.4.8 13.3 0 12 0c-1.3 0-2.4.8-2.8 2H5C4 2 3 3 3 4v16c0 1 1 2 2 2h14c1 0 2-1 2-2V4c0-1-1-2-2-2zm-7 0c.6 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm7 18H5V4h2v3h10V4h2v16z"></path>
     </Icon>
 )
