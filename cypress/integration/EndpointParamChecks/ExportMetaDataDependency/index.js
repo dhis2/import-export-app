@@ -26,9 +26,9 @@ Given('the user is on the meta data dependency export page', () => {
 
 Then('the download request is sent with the right parameters', () => {
     cy.window().then(win => {
-        expect(win.assign).to.equal.calledOnce
+        expect(win.stubs.assign).to.equal.calledOnce
 
-        const call = win.assign.getCall(0)
+        const call = win.stubs.assign.getCall(0)
         const url = call.args[0]
         const [objectType, objectList, format, _, compression] = url
             .match(/api\/([^\/]+)\/([^\/]+)\/metadata\.([^.]+)(\.([^.]+))?\?/)
