@@ -74,9 +74,9 @@ When('the user selects the "Bo" org unit', () => {
 
 Then('the download request is sent with the right parameters', () => {
     cy.window().then(win => {
-        expect(win.assign).to.be.calledOnce
+        expect(win.stubs.assign).to.be.calledOnce
 
-        const call = win.assign.getCall(0)
+        const call = win.stubs.assign.getCall(0)
         const url = call.args[0]
 
         cy.getComparisonData(url).then(

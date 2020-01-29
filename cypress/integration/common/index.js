@@ -16,7 +16,8 @@ When('the form is submitted', () => {
 
 When('the export form is submitted', () => {
     cy.window().then(win => {
-        cy.stub(win, 'assign')
+        win.stubs.assign = cy.stub()
     })
+
     cy.get('button[type="submit"]').click()
 })
