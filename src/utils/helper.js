@@ -61,69 +61,26 @@ const downloadBlob = (url, filename) => {
     link.remove()
 }
 
-const fetchAndSetAttributes = ({
-    apiBaseUrl,
-    setDataElementIdSchemeOptions,
-    setOrgUnitIdSchemeOptions,
-}) => {
-    const fetchOptions = {
-        credentials: 'include',
-    }
-
-    const fetcher = (url, succF, errF) =>
-        fetch(url, fetchOptions)
+const fetchAttributes = async (apiBaseUrl, attribute) => {
+    const fetcher = async url =>
+        fetch(url, { credentials: 'include' })
             .then(resp => resp.json())
             .then(json => {
-                succF(json)
+                return json
             })
             .catch(e => {
-                errF(e)
+                console.error(`fetchAttributes ${attribute} fetch error: `, e)
             })
 
     const fields = 'id,displayName'
-    const filters = attr => `unique:eq:true&filter=${attr}:eq:true`
-    const dataElAttributesURL = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters(
-        'dataElementAttribute'
-    )}`
-    const orgUnitAttributesURL = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters(
-        'organisationUnitAttribute'
-    )}`
+    const filters = `unique:eq:true&filter=${attribute}:eq:true`
+    const url = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters}`
 
-    fetcher(
-        dataElAttributesURL,
-        ({ attributes }) => {
-            setDataElementIdSchemeOptions(old => {
-                return [
-                    ...old,
-                    ...attributes.map(({ id, displayName }) => ({
-                        value: `ATTRIBUTE:${id}`,
-                        label: i18n.t(displayName),
-                    })),
-                ]
-            })
-        },
-        e => {
-            console.error('Data element attributes fetch error: ', e)
-        }
-    )
-
-    fetcher(
-        orgUnitAttributesURL,
-        ({ attributes }) => {
-            setOrgUnitIdSchemeOptions(old => {
-                return [
-                    ...old,
-                    ...attributes.map(({ id, displayName }) => ({
-                        value: `ATTRIBUTE:${id}`,
-                        label: i18n.t(displayName),
-                    })),
-                ]
-            })
-        },
-        e => {
-            console.error('Organization unit attributes fetch error: ', e)
-        }
-    )
+    const json = await fetcher(url)
+    return json.attributes.map(({ id, displayName }) => ({
+        value: `ATTRIBUTE:${id}`,
+        label: displayName,
+    }))
 }
 
 const uploadFile = ({
@@ -216,7 +173,7 @@ const uploadFile = ({
 export {
     createBlob,
     downloadBlob,
-    fetchAndSetAttributes,
+    fetchAttributes,
     jsDateToISO8601,
     jsDateToString,
     pathToId,

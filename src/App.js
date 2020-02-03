@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { HashRouter as Router } from 'react-router-dom'
-import { useConfig, useDataQuery } from '@dhis2/app-runtime'
+import { useDataQuery } from '@dhis2/app-runtime'
 import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core'
 
-import { fetchAndSetAttributes } from './utils/helper'
-import {
-    dataElementIdSchemeOptions,
-    orgUnitIdSchemeOptions,
-    idSchemeOptions,
-} from './utils/options'
 import { Skeleton } from './components/Skeleton'
 import { SchemeContext, TaskContext, UserContext } from './contexts/'
 
@@ -36,39 +30,41 @@ const refetchPeriod = 2000
 
 const MyApp = () => {
     const { loading, data, engine } = useDataQuery(userQuery)
-    const { baseUrl } = useConfig()
-    const [
-        dataElementIdSchemeOptionsDyn,
-        setDataElementIdSchemeOptions,
-    ] = useState(dataElementIdSchemeOptions)
-    const [orgUnitIdSchemeOptionsDyn, setOrgUnitIdSchemeOptions] = useState(
-        orgUnitIdSchemeOptions
-    )
-    // eslint-disable-next-line no-unused-vars
-    const [idSchemeOptionsDyn, setIdSchemeOptions] = useState(idSchemeOptions)
+    const dataElementIdSchemeState = {
+        options: [],
+        loaded: false,
+        error: false,
+    }
+    const orgUnitIdSchemeState = {
+        options: [],
+        loaded: false,
+        error: false,
+    }
+    const idSchemeState = {
+        options: [],
+        loaded: false,
+        error: false,
+    }
     const [elementSchemes, setElementSchemes] = useState({
-        DataElementId: dataElementIdSchemeOptionsDyn,
-        OrgUnitId: orgUnitIdSchemeOptionsDyn,
-        Id: idSchemeOptionsDyn,
+        DataElementId: dataElementIdSchemeState,
+        OrgUnitId: orgUnitIdSchemeState,
+        Id: idSchemeState,
+        updateSchema: (type, value) =>
+            setElementSchemes(schemas => ({ ...schemas, [type]: value })),
     })
     const [user, setUser] = useState(undefined)
-
-    const addTask = (type, id, entry) => {
-        setTasks(tasks => ({
-            ...tasks,
-            [type]: { ...tasks[type], [id]: entry },
-        }))
-        fetchEvents(type, id, entry)
-    }
-
     const [tasks, setTasks] = useState({
         data: {},
         event: {},
         gml: {},
         metadata: {},
-        updateTasks: updatedTasks =>
-            setTasks(tasks => ({ ...tasks, ...updatedTasks })),
-        addTask: addTask,
+        addTask: (type, id, entry) => {
+            setTasks(tasks => ({
+                ...tasks,
+                [type]: { ...tasks[type], [id]: entry },
+            }))
+            fetchEvents(type, id, entry)
+        },
     })
 
     const fetchEvents = async (type, id, task) => {
@@ -151,26 +147,6 @@ const MyApp = () => {
             setUser(data.user)
         }
     }, [data])
-
-    useEffect(() => {
-        fetchAndSetAttributes({
-            apiBaseUrl: `${baseUrl}/api/`,
-            setDataElementIdSchemeOptions,
-            setOrgUnitIdSchemeOptions,
-        })
-    }, [])
-
-    useEffect(() => {
-        setElementSchemes({
-            DataElementId: dataElementIdSchemeOptionsDyn,
-            OrgUnitId: orgUnitIdSchemeOptionsDyn,
-            Id: idSchemeOptionsDyn,
-        })
-    }, [
-        dataElementIdSchemeOptionsDyn,
-        orgUnitIdSchemeOptionsDyn,
-        idSchemeOptionsDyn,
-    ])
 
     return (
         <>
