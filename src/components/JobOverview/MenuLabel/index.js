@@ -1,0 +1,1 @@
+export { MenuLabel } from './MenuLabel'

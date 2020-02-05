@@ -21,12 +21,3 @@
     overflow-y: auto;
     overflow-x: auto;
 }
-
-.MenuLabel {
-    display: flex;
-    align-items: center;
-}
-
-.MenuLabelDate {
-    margin-left: 20px;
-}
