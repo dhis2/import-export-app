@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.date {
+    margin-left: 20px;
+}

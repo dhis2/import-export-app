@@ -1,1 +1,2 @@
-export { JobSummary, MiniJobSummary } from './JobSummary'
+export { JobSummary } from './JobSummary'
+export { MiniJobSummary } from './MiniJobSummary/'

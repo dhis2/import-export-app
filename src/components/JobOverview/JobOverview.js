@@ -5,73 +5,10 @@ import { Chip, Menu, MenuItem } from '@dhis2/ui-core'
 
 import s from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'
-import { jsDateToString, trimString } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
 import { JobSummary } from '../JobSummary/'
-import { DataIcon, EventIcon, GMLIcon, MetadataImportIcon } from '../Icon'
-
-const categoryTypes = [
-    {
-        key: 'data',
-        importType: 'DATAVALUE_IMPORT',
-        icon: <DataIcon />,
-        label: 'Data',
-    },
-    {
-        key: 'event',
-        importType: 'EVENT_IMPORT',
-        icon: <EventIcon />,
-        label: 'Event',
-    },
-    {
-        key: 'gml',
-        importType: 'GML_IMPORT',
-        icon: <GMLIcon />,
-        label: 'GML',
-    },
-    {
-        key: 'metadata',
-        importType: 'METADATA_IMPORT',
-        icon: <MetadataImportIcon />,
-        label: 'Metadata',
-    },
-]
-
-const categoryTypesObj = categoryTypes.reduce((acc, cur) => {
-    acc[cur.importType] = cur
-    return acc
-}, {})
-
-const MenuLabel = ({ task }) => {
-    return (
-        <div
-            className={s.MenuLabel}
-            data-test={`${testIds.JobOverview.MenuLabel}-${task.id}`}
-        >
-            <div>
-                <span>{trimString(15, task.file)}</span>
-                <br />
-                <span>
-                    {task.completed
-                        ? i18n.t('Completed')
-                        : i18n.t('In progress')}{' '}
-                </span>
-            </div>
-            <div className={s.MenuLabelDate}>
-                {jsDateToString(task.created)}
-            </div>
-        </div>
-    )
-}
-
-MenuLabel.propTypes = {
-    task: PropTypes.shape({
-        completed: PropTypes.bool.isRequired,
-        created: PropTypes.instanceOf(Date).isRequired,
-        file: PropTypes.string.isRequired,
-        id: PropTypes.string.isRequired,
-    }).isRequired,
-}
+import { categoryTypes, categoryTypesObj } from './helper'
+import { MenuLabel } from './MenuLabel'
 
 const JobOverview = ({
     activeTypes,

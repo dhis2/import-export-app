@@ -1,3 +1,16 @@
+import PropTypes from 'prop-types'
+
+const statsPropTypeObj = {
+    deleted: PropTypes.number.isRequired,
+    ignored: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    updated: PropTypes.number.isRequired,
+    imported: PropTypes.number,
+    created: PropTypes.number,
+}
+
+const statsPropType = PropTypes.exact(statsPropTypeObj)
+
 const getClassName = c => {
     const s = c.split('.')
     return s[s.length - 1]
@@ -37,4 +50,4 @@ const typeReportParse = report => {
     return { stats: allStats, messages: allMessages }
 }
 
-export { typeReportParse }
+export { typeReportParse, statsPropType, statsPropTypeObj }

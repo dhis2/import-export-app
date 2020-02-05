@@ -1,0 +1,1 @@
+export { SingleSummary } from './SingleSummary'
