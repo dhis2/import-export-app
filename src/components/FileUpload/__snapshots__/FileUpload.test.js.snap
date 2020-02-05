@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-test="file-upload"
+  >
+    <span>
+      File
+    </span>
+    <div
+      class="jsx-1051217026 file-input"
+      data-test="file-upload-fileinput"
+    >
+      <input
+        accept="*"
+        class="jsx-1051217026"
+        id="file"
+        name="file"
+        type="file"
+      />
+      <button
+        class="jsx-3433386394 icon"
+        data-test="dhis2-uicore-button"
+        type="button"
+      >
+        <span
+          class="jsx-3433386394 button-icon"
+        >
+          <svg
+            class="jsx-4098137027 "
+          >
+            <path
+              class="jsx-4098137027"
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              class="jsx-4098137027"
+              d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"
+            />
+          </svg>
+        </span>
+        Choose a file to upload
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

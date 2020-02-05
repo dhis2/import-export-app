@@ -28,6 +28,7 @@ const FileUpload = ({
                 name={name}
                 onChange={onFileSelect}
                 buttonLabel={fileLabel}
+                dataTest={`${dataTest}-fileinput`}
             />
         </FormField>
     )
