@@ -53,6 +53,7 @@ const DataImport = () => {
     const [idScheme, setIdScheme] = useState(defaultIdSchemeOption)
     const [skipExistingCheck, setSkipExistingCheck] = useState(false)
     const [alerts, setAlerts] = useState([])
+    const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
     const onImport = () => {
@@ -101,6 +102,7 @@ const DataImport = () => {
             setAlerts,
             addEntry: (id, entry) => addTask('data', id, entry),
         })
+        setShowFullSummaryTask(true)
     }
 
     return (
@@ -111,6 +113,7 @@ const DataImport = () => {
             loading={progress}
             dataTest={testIds.DataImport.Page}
             summaryTask={getNewestTask(dataTasks)}
+            showFullSummaryTask={showFullSummaryTask}
         >
             <FileUpload
                 name="upload"

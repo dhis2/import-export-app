@@ -9,13 +9,14 @@ import {
 
 import s from './Page.module.css'
 import { testIds } from '../../utils/testIds'
-import { JobSummary } from '../../components/JobSummary'
+import { JobSummary, MiniJobSummary } from '../../components/JobSummary'
 
 const Page = ({
     title,
     desc,
     icon,
     summaryTask,
+    showFullSummaryTask,
     children,
     loading = false,
     dataTest,
@@ -37,10 +38,17 @@ const Page = ({
             {summaryTask && (
                 <Card className={s.preBody}>
                     <div className={s.content}>
-                        <JobSummary
-                            task={summaryTask}
-                            dataTest={testIds.JobSummary.container}
-                        />
+                        {showFullSummaryTask ? (
+                            <JobSummary
+                                task={summaryTask}
+                                dataTest={testIds.JobSummary.container}
+                            />
+                        ) : (
+                            <MiniJobSummary
+                                task={summaryTask}
+                                dataTest={testIds.MiniJobSummary.container}
+                            />
+                        )}
                     </div>
                 </Card>
             )}
@@ -60,6 +68,7 @@ Page.propTypes = {
     icon: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    showFullSummaryTask: PropTypes.bool,
     summaryTask: PropTypes.object,
 }
 

@@ -36,6 +36,7 @@ const EventImport = () => {
         defaultEventIdSchemeOption
     )
     const [alerts, setAlerts] = useState([])
+    const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
     const onImport = () => {
@@ -79,6 +80,7 @@ const EventImport = () => {
             setAlerts,
             addEntry: (id, entry) => addTask('event', id, entry),
         })
+        setShowFullSummaryTask(true)
     }
 
     return (
@@ -89,6 +91,7 @@ const EventImport = () => {
             loading={progress}
             dataTest={testIds.EventImport.Page}
             summaryTask={getNewestTask(eventTasks)}
+            showFullSummaryTask={showFullSummaryTask}
         >
             <FileUpload
                 name="upload"

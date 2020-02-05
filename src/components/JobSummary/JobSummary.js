@@ -16,6 +16,7 @@ import s from './JobSummary.module.css'
 import { typeReportParse } from './helper'
 import { jsDateToString } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
+import { MoreOptions } from '../MoreOptions'
 import { FormField } from '../FormField'
 import { Chip } from './Chip/'
 
@@ -367,6 +368,26 @@ Events.propTypes = {
     events: PropTypes.arrayOf(eventPropType).isRequired,
 }
 
+const MiniJobSummary = ({ task, dataTest }) => {
+    if (!task) return null
+
+    return (
+        <div className={s.miniContainer} data-test={dataTest}>
+            <MoreOptions
+                label={i18n.t('View summary of recently started import job')}
+                dataTest={`${dataTest}-MoreOptions`}
+            >
+                <JobSummary task={task} dataTest={`${dataTest}-JobSummary`} />
+            </MoreOptions>
+        </div>
+    )
+}
+
+MiniJobSummary.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    task: PropTypes.object,
+}
+
 const JobSummary = ({ task, showDetails = true, dataTest }) => {
     if (!task) return null
 
@@ -414,4 +435,4 @@ JobSummary.propTypes = {
     task: PropTypes.object,
 }
 
-export { JobSummary }
+export { JobSummary, MiniJobSummary }

@@ -20,6 +20,7 @@ const GMLImport = () => {
     const [file, setFile] = useState(undefined)
     const [dryRun, setDryRun] = useState(false)
     const [alerts, setAlerts] = useState([])
+    const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
     const onImport = () => {
@@ -56,6 +57,7 @@ const GMLImport = () => {
             setAlerts,
             addEntry: (id, entry) => addTask('gml', id, entry),
         })
+        setShowFullSummaryTask(true)
     }
 
     return (
@@ -66,6 +68,7 @@ const GMLImport = () => {
             loading={progress}
             dataTest={testIds.GMLImport.Page}
             summaryTask={getNewestTask(gmlTasks)}
+            showFullSummaryTask={showFullSummaryTask}
         >
             <FileUpload
                 name="upload"
