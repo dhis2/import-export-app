@@ -26,6 +26,7 @@ const WithTasks = Component => props => {
         event: {},
         gml: {},
         metadata: {},
+        jobOverview: undefined,
         addTask: (type, id, entry) => {
             setTasks(tasks => ({
                 ...tasks,
@@ -33,6 +34,11 @@ const WithTasks = Component => props => {
             }))
             fetchEvents(type, id, entry)
         },
+        updateJobOverview: val =>
+            setTasks(tasks => ({
+                ...tasks,
+                jobOverview: val,
+            })),
     })
 
     const fetchEvents = async (type, id, task) => {

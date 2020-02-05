@@ -6,3 +6,11 @@
     padding: 0px 24px;
     line-height: 1.15;
 }
+
+.jobOverview {
+    background-color: rgba(255, 195, 36, 1.0);
+}
+
+.jobOverview:hover {
+    background-color: rgba(255, 195, 36, 0.5) !important;
+}

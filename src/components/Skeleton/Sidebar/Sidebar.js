@@ -7,7 +7,7 @@ import s from './Sidebar.module.css'
 import { pagePropType } from '../../../utils/pages'
 import { StyledLink } from '../StyledLink/'
 
-const Sidebar = ({ importPages, exportPages, pathname }) => {
+const Sidebar = ({ importPages, exportPages, jobOverviewPage, pathname }) => {
     return (
         <Menu className={s.Menu}>
             <h3 className={s.sectionTitle}>{i18n.t('Import')}</h3>
@@ -40,6 +40,19 @@ const Sidebar = ({ importPages, exportPages, pathname }) => {
                     />
                 </StyledLink>
             ))}
+            <Divider />
+            <StyledLink
+                to={jobOverviewPage.path}
+                key={jobOverviewPage.path}
+                dataTest={`sidebar-link-${jobOverviewPage.code}`}
+            >
+                <MenuItem
+                    active={pathname == jobOverviewPage.path}
+                    icon={jobOverviewPage.icon}
+                    label={jobOverviewPage.name}
+                    className={s.jobOverview}
+                />
+            </StyledLink>
         </Menu>
     )
 }
@@ -47,6 +60,7 @@ const Sidebar = ({ importPages, exportPages, pathname }) => {
 Sidebar.propTypes = {
     exportPages: PropTypes.arrayOf(pagePropType).isRequired,
     importPages: PropTypes.arrayOf(pagePropType).isRequired,
+    jobOverviewPage: pagePropType.isRequired,
     pathname: PropTypes.string.isRequired,
 }
 
