@@ -5,7 +5,12 @@ import i18n from '@dhis2/d2-i18n'
 import { MinusIcon, PlusIcon } from '../Icon'
 import s from './MoreOptions.module.css'
 
-const MoreOptions = ({ children, initiallyVisible = false, dataTest }) => {
+const MoreOptions = ({
+    children,
+    initiallyVisible = false,
+    label = i18n.t('more options'),
+    dataTest,
+}) => {
     const [hidden, setHidden] = useState(!initiallyVisible)
 
     const onToggle = () => {
@@ -16,7 +21,7 @@ const MoreOptions = ({ children, initiallyVisible = false, dataTest }) => {
         <div className={s.container} data-test={dataTest}>
             <div className={s.header} onClick={onToggle}>
                 {hidden ? <PlusIcon /> : <MinusIcon />}
-                {i18n.t('more options')}
+                {label}
             </div>
             <div className={s.children}>{!hidden && children}</div>
         </div>
@@ -28,6 +33,7 @@ MoreOptions.propTypes = {
         .isRequired,
     dataTest: PropTypes.string.isRequired,
     initiallyVisible: PropTypes.bool,
+    label: PropTypes.string,
 }
 
 export { MoreOptions }

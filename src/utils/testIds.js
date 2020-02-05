@@ -152,6 +152,9 @@ const testIds = {
         skipSharing: commonIds.skipSharing,
         submit: commonIds.export,
     },
+    MiniJobSummary: {
+        container: 'mini-job-summary-container',
+    },
     JobSummary: {
         container: 'job-summary-container',
         chips: 'job-summary-chips',

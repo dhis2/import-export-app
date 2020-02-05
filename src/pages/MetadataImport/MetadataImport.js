@@ -73,6 +73,7 @@ const MetadataImport = () => {
     const [skipValidation, setSkipValidation] = useState(false)
     const [isAsync, setIsAsync] = useState(true)
     const [alerts, setAlerts] = useState([])
+    const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
     useEffect(() => {
@@ -136,6 +137,7 @@ const MetadataImport = () => {
             setAlerts,
             addEntry: (id, entry) => addTask('metadata', id, entry),
         })
+        setShowFullSummaryTask(true)
     }
 
     return (
@@ -146,6 +148,7 @@ const MetadataImport = () => {
             loading={progress}
             dataTest={testIds.MetadataImport.Page}
             summaryTask={getNewestTask(metadataTasks)}
+            showFullSummaryTask={showFullSummaryTask}
         >
             <FileUpload
                 name="upload"
