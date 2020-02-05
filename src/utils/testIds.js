@@ -169,6 +169,7 @@ const testIds = {
     },
     JobOverview: {
         general: 'job-overview-',
+        Page: 'job-overview-page',
         MenuLabel: 'job-overview-menu-label',
         container: 'job-overview-container',
         items: 'job-overview-tasks',

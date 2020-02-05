@@ -10,6 +10,7 @@ import { GMLImport } from '../pages/GMLImport'
 import { MetadataDependencyExport } from '../pages/MetadataDependencyExport'
 import { MetadataExport } from '../pages/MetadataExport'
 import { MetadataImport } from '../pages/MetadataImport'
+import { JobOverview } from '../pages/JobOverview'
 
 import {
     DataIcon,
@@ -18,6 +19,7 @@ import {
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
+    TasksIcon,
 } from '../components/Icon'
 
 const dataImportPage = {
@@ -122,7 +124,16 @@ const ExportPages = [
     metadataExportPage,
 ]
 
-const AllPages = [...ImportPages, ...ExportPages]
+const JobOverviewPage = {
+    name: i18n.t('Job overview'),
+    code: 'job-overview',
+    description: i18n.t('An overview of all import jobs started this session.'),
+    path: '/utils/job-overview',
+    icon: <TasksIcon />,
+    component: <JobOverview />,
+}
+
+const AllPages = [...ImportPages, ...ExportPages, JobOverviewPage]
 
 export const pagePropType = PropTypes.exact({
     code: PropTypes.string.isRequired,
@@ -144,4 +155,4 @@ export {
     metadataExportPage,
 }
 
-export { ImportPages, ExportPages, AllPages as Pages }
+export { ImportPages, ExportPages, JobOverviewPage, AllPages as Pages }

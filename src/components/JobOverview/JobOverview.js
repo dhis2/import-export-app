@@ -83,9 +83,9 @@ const JobOverview = ({
 
     const onChipClick = key => {
         if (activeTypes.includes(key)) {
-            setActiveTypes(at => [...at].filter(k => k != key))
+            setActiveTypes([...activeTypes].filter(k => k != key))
         } else {
-            setActiveTypes(at => [...at, key])
+            setActiveTypes([...activeTypes, key])
         }
     }
 

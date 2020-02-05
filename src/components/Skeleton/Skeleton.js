@@ -4,8 +4,12 @@ import PropTypes from 'prop-types'
 
 import s from './Skeleton.module.css'
 import { Sidebar } from './Sidebar/'
-import { withJobOverviewModal } from '../JobOverview'
-import { ImportPages, ExportPages, Pages } from '../../utils/pages'
+import {
+    ImportPages,
+    ExportPages,
+    JobOverviewPage,
+    Pages,
+} from '../../utils/pages'
 
 const Skeleton = ({ location }) => {
     return (
@@ -15,6 +19,7 @@ const Skeleton = ({ location }) => {
                     pathname={location.pathname}
                     importPages={ImportPages}
                     exportPages={ExportPages}
+                    jobOverviewPage={JobOverviewPage}
                 />
             </div>
 
@@ -37,5 +42,4 @@ Skeleton.propTypes = {
 }
 
 const SkeletonRouter = withRouter(Skeleton)
-const SkeletonRouterModal = withJobOverviewModal(SkeletonRouter)
-export { SkeletonRouterModal as Skeleton }
+export { SkeletonRouter as Skeleton }
