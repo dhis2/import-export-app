@@ -43,9 +43,7 @@ const commonIds = {
 }
 
 const testIds = {
-    App: {
-        overviewFab: 'app-job-overview-fab',
-    },
+    App: {},
     DataImport: {
         Page: 'page-import-data',
         DataElementIdScheme: commonIds.DataElementIdScheme,
