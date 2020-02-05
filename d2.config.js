@@ -1,7 +1,7 @@
 const config = {
     type: 'app',
-    name: 'import-export-beta-app',
-    title: 'Import/Export beta',
+    name: 'import-export-app',
+    title: 'Import/Export',
     coreApp: true,
 
     entryPoints: {
