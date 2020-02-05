@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-01-28T13:00:46.709Z\n"
-"PO-Revision-Date: 2020-01-28T13:00:46.709Z\n"
+"POT-Creation-Date: 2020-02-05T14:11:21.408Z\n"
+"PO-Revision-Date: 2020-02-05T14:11:21.408Z\n"
 
 msgid "Data sets"
 msgstr ""
@@ -41,19 +41,10 @@ msgstr ""
 msgid "No jobs started yet."
 msgstr ""
 
-msgid "Job overview"
+msgid "Type count"
 msgstr ""
 
-msgid "Close"
-msgstr ""
-
-msgid "Status"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
-msgid "Summary"
+msgid "Type"
 msgstr ""
 
 msgid "Created"
@@ -69,21 +60,6 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
-
-msgid "Conflicts"
-msgstr ""
-
-msgid "Object"
-msgstr ""
-
-msgid "Value"
-msgstr ""
-
-msgid "Type count"
-msgstr ""
-
-msgid "Type"
 msgstr ""
 
 msgid "Messages"
@@ -110,10 +86,31 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
+msgid "View summary of recently started import job"
+msgstr ""
+
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Value"
 msgstr ""
 
 msgid "more options"
@@ -429,6 +426,12 @@ msgstr ""
 msgid ""
 "Export meta data like data elements and organisation units in the XML, JSON "
 "or CSV format."
+msgstr ""
+
+msgid "Job overview"
+msgstr ""
+
+msgid "An overview of all import jobs started this session."
 msgstr ""
 
 msgid "Will do a test run without importing any data into the database"
