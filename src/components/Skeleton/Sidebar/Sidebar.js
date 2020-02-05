@@ -50,7 +50,9 @@ const Sidebar = ({ importPages, exportPages, jobOverviewPage, pathname }) => {
                     active={pathname == jobOverviewPage.path}
                     icon={jobOverviewPage.icon}
                     label={jobOverviewPage.name}
-                    className={s.jobOverview}
+                    className={
+                        pathname == jobOverviewPage.path ? '' : s.jobOverview
+                    }
                 />
             </StyledLink>
         </Menu>
