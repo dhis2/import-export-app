@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-02-05T14:11:21.408Z\n"
-"PO-Revision-Date: 2020-02-05T14:11:21.408Z\n"
+"POT-Creation-Date: 2020-02-10T08:53:41.621Z\n"
+"PO-Revision-Date: 2020-02-10T08:53:41.621Z\n"
 
 msgid "Data sets"
 msgstr ""
@@ -32,19 +32,70 @@ msgstr ""
 msgid "Choose a file to upload"
 msgstr ""
 
+msgid "No jobs started yet."
+msgstr ""
+
 msgid "Completed"
 msgstr ""
 
 msgid "In progress"
 msgstr ""
 
-msgid "No jobs started yet."
+msgid "Data"
 msgstr ""
 
-msgid "Type count"
+msgid "Event"
+msgstr ""
+
+msgid "GML"
+msgstr ""
+
+msgid "Metadata"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Job summary"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "UID"
 msgstr ""
 
 msgid "Type"
+msgstr ""
+
+msgid "Property"
+msgstr ""
+
+msgid "View summary of recently started import job"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Summary"
 msgstr ""
 
 msgid "Created"
@@ -62,55 +113,16 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-msgid "Messages"
+msgid "Object"
 msgstr ""
 
-msgid "UID"
-msgstr ""
-
-msgid "Property"
-msgstr ""
-
-msgid "Message"
+msgid "Value"
 msgstr ""
 
 msgid "Overview"
 msgstr ""
 
-msgid "Events"
-msgstr ""
-
-msgid "Time"
-msgstr ""
-
-msgid "ID"
-msgstr ""
-
-msgid "View summary of recently started import job"
-msgstr ""
-
-msgid "Job summary"
-msgstr ""
-
-msgid "Error"
-msgstr ""
-
-msgid "Conflicts"
-msgstr ""
-
-msgid "Status"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
-msgid "Summary"
-msgstr ""
-
-msgid "Object"
-msgstr ""
-
-msgid "Value"
+msgid "Type count"
 msgstr ""
 
 msgid "more options"

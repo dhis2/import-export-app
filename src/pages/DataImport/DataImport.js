@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui-core'
 
-// import s from './DataImport.module.css';
+// import s from './DataImport.module.css'
 import { dataImportPage as p } from '../../utils/pages'
 import { uploadFile } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
@@ -31,6 +30,7 @@ import {
     IdScheme,
     OrgUnitIdScheme,
 } from '../../components/ElementSchemes'
+import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
@@ -39,7 +39,6 @@ const DataImport = () => {
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(undefined)
     const [format, setFormat] = useState(defaultFormatOption)
-    const [dryRun, setDryRun] = useState(false)
     const [strategy, setStrategy] = useState(defaultStrategyOption)
     const [firstRowIsHeader, setFirstRowIsHeader] = useState(false)
     const [preheatCache, setPreheatCache] = useState(false)
@@ -56,7 +55,7 @@ const DataImport = () => {
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onImport = () => {
+    const onSubmit = ({ dryRun }) => {
         // validate
         const alerts = []
         const timestamp = new Date().getTime()
@@ -129,14 +128,6 @@ const DataImport = () => {
                 checked={format}
                 dataTest={testIds.DataImport.format}
             />
-            <Switch
-                label={i18n.t('Dry run')}
-                name="dryRun"
-                checked={dryRun}
-                setChecked={setDryRun}
-                help={helpText.dryRun}
-                dataTest={testIds.DataImport.dryRun}
-            />
             {format.value == 'csv' && (
                 <Switch
                     label={i18n.t('First row is header')}
@@ -197,13 +188,12 @@ const DataImport = () => {
                     dataTest={testIds.DataImport.skipExisitingCheck}
                 />
             </MoreOptions>
-            <Button
-                primary
-                onClick={onImport}
-                dataTest={testIds.DataImport.submit}
-            >
-                {i18n.t('Import')}
-            </Button>
+            <ImportButtonStrip
+                onSubmit={onSubmit}
+                dryRunDataTest={testIds.DataImport.dryRun}
+                importDataTest={testIds.DataImport.submit}
+                dataTest={testIds.DataImport.ImportButtonStrip}
+            />
             <FormAlerts
                 alerts={alerts}
                 dataTest={testIds.DataImport.FormAlerts}
