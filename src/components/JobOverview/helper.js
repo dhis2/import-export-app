@@ -34,4 +34,9 @@ const categoryTypesObj = categoryTypes.reduce((acc, cur) => {
     return acc
 }, {})
 
-export { categoryTypes, categoryTypesObj }
+const jobToPath = job => ({
+    pathname: `/import/${categoryTypesObj[job.importType].key}`,
+    query: { id: job.id },
+})
+
+export { categoryTypes, categoryTypesObj, jobToPath }

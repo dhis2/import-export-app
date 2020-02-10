@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
@@ -34,23 +35,62 @@ import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const DataImport = () => {
+const DataImport = ({ query }) => {
     const { data: dataTasks, addTask } = useContext(TaskContext)
+
+    // recreating a previously run job
+    let prevJobDetails = undefined
+    if (query && query.id) {
+        const job = dataTasks[query.id]
+        if (job) {
+            prevJobDetails = job.jobDetails
+        }
+    }
+
+    const initialState = {
+        file: prevJobDetails ? prevJobDetails.file : undefined,
+        format: prevJobDetails ? prevJobDetails.format : defaultFormatOption,
+        strategy: prevJobDetails
+            ? prevJobDetails.strategy
+            : defaultStrategyOption,
+        firstRowIsHeader: prevJobDetails
+            ? prevJobDetails.firstRowIsHeader
+            : false,
+        preheatCache: prevJobDetails ? prevJobDetails.preheatCache : false,
+        skipAudit: prevJobDetails ? prevJobDetails.skipAudit : false,
+        dataElementIdScheme: prevJobDetails
+            ? prevJobDetails.dataElementIdScheme
+            : defaultDataElementIdSchemeOption,
+        orgUnitIdScheme: prevJobDetails
+            ? prevJobDetails.orgUnitIdScheme
+            : defaultOrgUnitIdSchemeOption,
+        idScheme: prevJobDetails
+            ? prevJobDetails.idScheme
+            : defaultIdSchemeOption,
+        skipExistingCheck: prevJobDetails
+            ? prevJobDetails.skipExistingCheck
+            : false,
+    }
+
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(undefined)
-    const [format, setFormat] = useState(defaultFormatOption)
-    const [strategy, setStrategy] = useState(defaultStrategyOption)
-    const [firstRowIsHeader, setFirstRowIsHeader] = useState(false)
-    const [preheatCache, setPreheatCache] = useState(false)
-    const [skipAudit, setSkipAudit] = useState(false)
+    const [file, setFile] = useState(initialState.file)
+    const [format, setFormat] = useState(initialState.format)
+    const [strategy, setStrategy] = useState(initialState.strategy)
+    const [firstRowIsHeader, setFirstRowIsHeader] = useState(
+        initialState.firstRowIsHeader
+    )
+    const [preheatCache, setPreheatCache] = useState(initialState.preheatCache)
+    const [skipAudit, setSkipAudit] = useState(initialState.skipAudit)
     const [dataElementIdScheme, setDataElementIdScheme] = useState(
-        defaultDataElementIdSchemeOption
+        initialState.dataElementIdScheme
     )
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        defaultOrgUnitIdSchemeOption
+        initialState.orgUnitIdScheme
     )
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption)
-    const [skipExistingCheck, setSkipExistingCheck] = useState(false)
+    const [idScheme, setIdScheme] = useState(initialState.idScheme)
+    const [skipExistingCheck, setSkipExistingCheck] = useState(
+        initialState.skipExistingCheck
+    )
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
@@ -92,6 +132,20 @@ const DataImport = () => {
         ].join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
+        const jobDetails = {
+            file,
+            format,
+            dryRun,
+            strategy,
+            preheatCache,
+            skipAudit,
+            dataElementIdScheme,
+            orgUnitIdScheme,
+            idScheme,
+            skipExistingCheck,
+            firstRowIsHeader,
+        }
+
         uploadFile({
             url,
             file,
@@ -99,7 +153,8 @@ const DataImport = () => {
             type: 'DATAVALUE_IMPORT',
             setProgress,
             setAlerts,
-            addEntry: (id, entry) => addTask('data', id, entry),
+            addEntry: (id, entry) =>
+                addTask('data', id, { ...entry, jobDetails: jobDetails }),
         })
         setShowFullSummaryTask(true)
     }
@@ -200,6 +255,12 @@ const DataImport = () => {
             />
         </Page>
     )
+}
+
+DataImport.propTypes = {
+    query: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+    }),
 }
 
 export { DataImport }

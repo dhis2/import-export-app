@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
@@ -42,34 +43,84 @@ const classKeyQuery = {
     },
 }
 
-const MetadataImport = () => {
+const MetadataImport = ({ query }) => {
     const { data: classData, loading: classLoading } = useDataQuery(
         classKeyQuery
     )
     const { metadata: metadataTasks, addTask } = useContext(TaskContext)
+
+    // recreating a previously run job
+    let prevJobDetails = undefined
+    if (query && query.id) {
+        const job = metadataTasks[query.id]
+        if (job) {
+            prevJobDetails = job.jobDetails
+        }
+    }
+
+    const initialState = {
+        file: prevJobDetails ? prevJobDetails.file : undefined,
+        format: prevJobDetails ? prevJobDetails.format : defaultFormatOption,
+        identifier: prevJobDetails
+            ? prevJobDetails.identifier
+            : defaultIdentifierOption,
+        importReportMode: prevJobDetails
+            ? prevJobDetails.importReportMode
+            : defaultImportReportModeOption,
+        preheatMode: prevJobDetails
+            ? prevJobDetails.preheatMode
+            : defaultPreheatModeOption,
+        importStrategy: prevJobDetails
+            ? prevJobDetails.importStrategy
+            : defaultImportStrategyOption,
+        firstRowIsHeader: prevJobDetails
+            ? prevJobDetails.firstRowIsHeader
+            : false,
+        // classKey: prevJobDetails ? prevJobDetails.classKey : undefined,
+        atomicMode: prevJobDetails
+            ? prevJobDetails.atomicMode
+            : defaultAtomicModeOption,
+        mergeMode: prevJobDetails
+            ? prevJobDetails.mergeMode
+            : defaultMergeModeOption,
+        flushMode: prevJobDetails
+            ? prevJobDetails.flushMode
+            : defaultFlushModeOption,
+        inclusionStrategy: prevJobDetails
+            ? prevJobDetails.inclusionStrategy
+            : defaultInclusionStrategyOption,
+        skipSharing: prevJobDetails ? prevJobDetails.skipSharing : false,
+        skipValidation: prevJobDetails ? prevJobDetails.skipValidation : false,
+        isAsync: prevJobDetails ? prevJobDetails.isAsync : true,
+    }
+
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(undefined)
-    const [format, setFormat] = useState(defaultFormatOption)
-    const [identifier, setIdentifier] = useState(defaultIdentifierOption)
+    const [file, setFile] = useState(initialState.file)
+    const [format, setFormat] = useState(initialState.format)
+    const [identifier, setIdentifier] = useState(initialState.identifier)
     const [importReportMode, setImportReportMode] = useState(
-        defaultImportReportModeOption
+        initialState.importReportMode
     )
-    const [preheatMode, setPreheatMode] = useState(defaultPreheatModeOption)
+    const [preheatMode, setPreheatMode] = useState(initialState.preheatMode)
     const [importStrategy, setImportStrategy] = useState(
-        defaultImportStrategyOption
+        initialState.importStrategy
     )
-    const [firstRowIsHeader, setFirstRowIsHeader] = useState(false)
+    const [firstRowIsHeader, setFirstRowIsHeader] = useState(
+        initialState.firstRowIsHeader
+    )
     const [classKeyOptions, setClassKeyOptions] = useState([])
-    const [classKey, setClassKey] = useState(undefined)
-    const [atomicMode, setAtomicMode] = useState(defaultAtomicModeOption)
-    const [mergeMode, setMergeMode] = useState(defaultMergeModeOption)
-    const [flushMode, setFlushMode] = useState(defaultFlushModeOption)
+    const [classKey, setClassKey] = useState(initialState.classKey)
+    const [atomicMode, setAtomicMode] = useState(initialState.atomicMode)
+    const [mergeMode, setMergeMode] = useState(initialState.mergeMode)
+    const [flushMode, setFlushMode] = useState(initialState.flushMode)
     const [inclusionStrategy, setInclusionStrategy] = useState(
-        defaultInclusionStrategyOption
+        initialState.inclusionStrategy
     )
-    const [skipSharing, setSkipSharing] = useState(false)
-    const [skipValidation, setSkipValidation] = useState(false)
-    const [isAsync, setIsAsync] = useState(true)
+    const [skipSharing, setSkipSharing] = useState(initialState.skipSharing)
+    const [skipValidation, setSkipValidation] = useState(
+        initialState.skipValidation
+    )
+    const [isAsync, setIsAsync] = useState(initialState.isAsync)
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
@@ -79,7 +130,14 @@ const MetadataImport = () => {
             setClassKeyOptions(
                 classData.keys.map(k => ({ value: k, label: k }))
             )
-            setClassKey({ value: classData.keys[0], label: classData.keys[0] })
+            if (prevJobDetails) {
+                setClassKey(prevJobDetails.classKey)
+            } else {
+                setClassKey({
+                    value: classData.keys[0],
+                    label: classData.keys[0],
+                })
+            }
         }
     }, [classData])
 
@@ -126,6 +184,25 @@ const MetadataImport = () => {
         ].join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
+        const jobDetails = {
+            file,
+            format,
+            dryRun,
+            identifier,
+            importReportMode,
+            preheatMode,
+            importStrategy,
+            firstRowIsHeader,
+            classKey,
+            atomicMode,
+            mergeMode,
+            flushMode,
+            inclusionStrategy,
+            skipSharing,
+            skipValidation,
+            isAsync,
+        }
+
         uploadFile({
             url,
             file,
@@ -133,7 +210,8 @@ const MetadataImport = () => {
             type: 'METADATA_IMPORT',
             setProgress,
             setAlerts,
-            addEntry: (id, entry) => addTask('metadata', id, entry),
+            addEntry: (id, entry) =>
+                addTask('metadata', id, { ...entry, jobDetails: jobDetails }),
         })
         setShowFullSummaryTask(true)
     }
@@ -282,6 +360,12 @@ const MetadataImport = () => {
             />
         </Page>
     )
+}
+
+MetadataImport.propTypes = {
+    query: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+    }),
 }
 
 export { MetadataImport }

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
@@ -21,16 +22,37 @@ import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const EventImport = () => {
+const EventImport = ({ query }) => {
     const { event: eventTasks, addTask } = useContext(TaskContext)
+
+    // recreating a previously run job
+    let prevJobDetails = undefined
+    if (query && query.id) {
+        const job = eventTasks[query.id]
+        if (job) {
+            prevJobDetails = job.jobDetails
+        }
+    }
+
+    const initialState = {
+        file: prevJobDetails ? prevJobDetails.file : undefined,
+        format: prevJobDetails ? prevJobDetails.format : defaultFormatOption,
+        orgUnitIdScheme: prevJobDetails
+            ? prevJobDetails.orgUnitIdScheme
+            : defaultOrgUnitIdSchemeOption,
+        eventIdScheme: prevJobDetails
+            ? prevJobDetails.eventIdScheme
+            : defaultEventIdSchemeOption,
+    }
+
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(undefined)
-    const [format, setFormat] = useState(defaultFormatOption)
+    const [file, setFile] = useState(initialState.file)
+    const [format, setFormat] = useState(initialState.format)
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        defaultOrgUnitIdSchemeOption
+        initialState.orgUnitIdScheme
     )
     const [eventIdScheme, setEventIdScheme] = useState(
-        defaultEventIdSchemeOption
+        initialState.eventIdScheme
     )
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
@@ -68,6 +90,14 @@ const EventImport = () => {
         ].join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
+        const jobDetails = {
+            file,
+            format,
+            dryRun,
+            eventIdScheme,
+            orgUnitIdScheme,
+        }
+
         uploadFile({
             url,
             file,
@@ -75,7 +105,8 @@ const EventImport = () => {
             type: 'EVENT_IMPORT',
             setProgress,
             setAlerts,
-            addEntry: (id, entry) => addTask('event', id, entry),
+            addEntry: (id, entry) =>
+                addTask('event', id, { ...entry, jobDetails: jobDetails }),
         })
         setShowFullSummaryTask(true)
     }
@@ -128,6 +159,12 @@ const EventImport = () => {
             />
         </Page>
     )
+}
+
+EventImport.propTypes = {
+    query: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+    }),
 }
 
 export { EventImport }

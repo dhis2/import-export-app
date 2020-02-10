@@ -17,7 +17,4 @@
 
 .summary {
     grid-column: summary;
-    overflow: scroll;
-    overflow-y: auto;
-    overflow-x: auto;
 }

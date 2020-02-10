@@ -30,7 +30,7 @@ const dataImportPage = {
     ),
     icon: <DataIcon />,
     path: '/import/data',
-    component: <DataImport />,
+    component: DataImport,
 }
 
 const eventImportPage = {
@@ -41,7 +41,7 @@ const eventImportPage = {
     ),
     icon: <EventIcon />,
     path: '/import/event',
-    component: <EventImport />,
+    component: EventImport,
 }
 
 const gmlImportPage = {
@@ -52,7 +52,7 @@ const gmlImportPage = {
     ),
     icon: <GMLIcon />,
     path: '/import/gml',
-    component: <GMLImport />,
+    component: GMLImport,
 }
 
 const metadataImportPage = {
@@ -63,7 +63,7 @@ const metadataImportPage = {
     ),
     path: '/import/metadata',
     icon: <MetadataImportIcon />,
-    component: <MetadataImport />,
+    component: MetadataImport,
 }
 
 const dataExportPage = {
@@ -74,7 +74,7 @@ const dataExportPage = {
     ),
     path: '/export/data',
     icon: <DataIcon />,
-    component: <DataExport />,
+    component: DataExport,
 }
 
 const eventExportPage = {
@@ -85,7 +85,7 @@ const eventExportPage = {
     ),
     path: '/export/event',
     icon: <EventIcon />,
-    component: <EventExport />,
+    component: EventExport,
 }
 
 const metadataDependencyExportPage = {
@@ -96,7 +96,7 @@ const metadataDependencyExportPage = {
     ),
     path: '/export/metadata-dependency',
     icon: <MetadataDependencyExportIcon />,
-    component: <MetadataDependencyExport />,
+    component: MetadataDependencyExport,
 }
 
 const metadataExportPage = {
@@ -107,7 +107,7 @@ const metadataExportPage = {
     ),
     path: '/export/metadata',
     icon: <MetadataExportIcon />,
-    component: <MetadataExport />,
+    component: MetadataExport,
 }
 
 const ImportPages = [
@@ -130,14 +130,14 @@ const JobOverviewPage = {
     description: i18n.t('An overview of all import jobs started this session.'),
     path: '/utils/job-overview',
     icon: <TasksIcon />,
-    component: <JobOverview />,
+    component: JobOverview,
 }
 
 const AllPages = [...ImportPages, ...ExportPages, JobOverviewPage]
 
 export const pagePropType = PropTypes.exact({
     code: PropTypes.string.isRequired,
-    component: PropTypes.object.isRequired,
+    component: PropTypes.func.isRequired,
     description: PropTypes.string.isRequired,
     icon: PropTypes.object.isRequired,
     name: PropTypes.string.isRequired,

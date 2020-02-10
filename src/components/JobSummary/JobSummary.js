@@ -9,18 +9,25 @@ import { testIds } from '../../utils/testIds'
 import { Chip } from './Chip/'
 import { Events } from './Events/'
 import { Summary } from './Summary/'
+import { Details } from './Details/'
 
-const JobSummary = ({ task, showDetails = true, dataTest }) => {
+const JobSummary = ({
+    task,
+    showFileDetails = true,
+    showJobDetails = false,
+    dataTest,
+}) => {
     if (!task) return null
+    const { jobDetails } = task
 
     return (
         <div className={s.container} data-test={dataTest}>
             <div className={s.header}>
                 <h3 className={s.title}>{`${i18n.t('Job summary')}`}</h3>
-                {showDetails && (
+                {showFileDetails && (
                     <span className={s.taskDetails}>
                         <span data-test={testIds.JobSummary.filename}>
-                            {task.file}
+                            {jobDetails.file.name}
                         </span>{' '}
                         -{' '}
                         <span data-test={testIds.JobSummary.date}>
@@ -39,6 +46,7 @@ const JobSummary = ({ task, showDetails = true, dataTest }) => {
                 {task.summary && task.summary.conflicts && (
                     <Chip warning text={i18n.t('Conflicts')} />
                 )}
+                {jobDetails.dryRun && <Chip info text={i18n.t('Dry run')} />}
             </div>
             <Divider />
             {task.completed && task.summary && (
@@ -47,13 +55,19 @@ const JobSummary = ({ task, showDetails = true, dataTest }) => {
             <div className={s.events}>
                 <Events events={task.events} />
             </div>
+            {showJobDetails && (
+                <div className={s.jobDetails}>
+                    <Details details={task.jobDetails} />
+                </div>
+            )}
         </div>
     )
 }
 
 JobSummary.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    showDetails: PropTypes.bool,
+    showFileDetails: PropTypes.bool,
+    showJobDetails: PropTypes.bool,
     task: PropTypes.object,
 }
 

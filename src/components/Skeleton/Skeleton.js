@@ -25,9 +25,9 @@ const Skeleton = ({ location }) => {
 
             <div className={s.content}>
                 <Switch>
-                    {Pages.map(({ component, path }) => (
+                    {Pages.map(({ component: Component, path }) => (
                         <Route path={path} key={path}>
-                            {component}
+                            <Component query={location.query} />
                         </Route>
                     ))}
                     <Redirect from="*" to={ImportPages[0].path} />

@@ -13,7 +13,7 @@ const MenuLabel = ({ task }) => {
             data-test={`${testIds.JobOverview.MenuLabel}-${task.id}`}
         >
             <div>
-                <span>{trimString(15, task.file)}</span>
+                <span>{trimString(15, task.jobDetails.file.name)}</span>
                 <br />
                 <span>
                     {task.completed
@@ -30,9 +30,9 @@ MenuLabel.propTypes = {
     task: PropTypes.shape({
         completed: PropTypes.bool.isRequired,
         created: PropTypes.instanceOf(Date).isRequired,
-        file: PropTypes.string.isRequired,
         id: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
             .isRequired,
+        jobDetails: PropTypes.object.isRequired,
     }).isRequired,
 }
 

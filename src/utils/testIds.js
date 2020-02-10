@@ -167,6 +167,7 @@ const testIds = {
         date: 'job-summary-date',
         details: 'job-summary-task-details',
         events: 'job-summary-events',
+        jobDetails: 'job-summary-job-details',
         filename: 'job-summary-filename',
         messages: 'job-summarymessages',
         singleSummary: 'job-summary-single-summary',
