@@ -54,7 +54,7 @@ const Summary = ({ summary }) => {
         />
     )
     const allSummaries =
-        summary.responseType == 'ImportSummaries'
+        summary.responseType == 'ImportSummaries' && summary.importSummaries
             ? summary.importSummaries.map((s, i) => {
                   ;({ imported, deleted, ignored, updated } = s.importCount)
                   total = imported + deleted + ignored + updated
