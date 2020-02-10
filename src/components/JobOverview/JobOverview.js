@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Chip, Menu, MenuItem } from '@dhis2/ui-core'
+import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
 
 import s from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'
 import { testIds } from '../../utils/testIds'
 import { JobSummary } from '../JobSummary/'
-import { categoryTypes, categoryTypesObj } from './helper'
+import { categoryTypes, categoryTypesObj, jobToPath } from './helper'
 import { MenuLabel } from './MenuLabel'
 
 const JobOverview = ({
@@ -85,8 +86,12 @@ const JobOverview = ({
                 <JobSummary
                     task={selectedJob}
                     dataTest={testIds.JobSummary.container}
-                    showDetails={false}
+                    showFileDetails={false}
+                    showJobDetails={true}
                 />
+                <Link to={jobToPath(selectedJob)}>
+                    <Button primary>{i18n.t('Recreate job')}</Button>
+                </Link>
             </div>
         </div>
     )

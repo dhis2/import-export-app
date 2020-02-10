@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
@@ -12,10 +13,24 @@ import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const GMLImport = () => {
+const GMLImport = ({ query }) => {
     const { gml: gmlTasks, addTask } = useContext(TaskContext)
+
+    // recreating a previously run job
+    let prevJobDetails = undefined
+    if (query && query.id) {
+        const job = gmlTasks[query.id]
+        if (job) {
+            prevJobDetails = job.jobDetails
+        }
+    }
+
+    const initialState = {
+        file: prevJobDetails ? prevJobDetails.file : undefined,
+    }
+
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(undefined)
+    const [file, setFile] = useState(initialState.file)
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
@@ -45,6 +60,11 @@ const GMLImport = () => {
         const params = [`dryRun=${dryRun}`, 'format=json'].join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
+        const jobDetails = {
+            file,
+            dryRun,
+        }
+
         uploadFile({
             url,
             file,
@@ -52,7 +72,8 @@ const GMLImport = () => {
             type: 'GML_IMPORT',
             setProgress,
             setAlerts,
-            addEntry: (id, entry) => addTask('gml', id, entry),
+            addEntry: (id, entry) =>
+                addTask('gml', id, { ...entry, jobDetails: jobDetails }),
         })
         setShowFullSummaryTask(true)
     }
@@ -85,6 +106,12 @@ const GMLImport = () => {
             />
         </Page>
     )
+}
+
+GMLImport.propTypes = {
+    query: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+    }),
 }
 
 export { GMLImport }
