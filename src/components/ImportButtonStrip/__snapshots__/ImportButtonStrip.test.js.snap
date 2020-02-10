@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-test="import-strip"
+  >
+    <div
+      class="jsx-825293260 "
+      data-test="import-strip-button-strip"
+    >
+      <button
+        class="jsx-3433386394 primary"
+        data-test="import-strip-dry-run-btn"
+        type="button"
+      >
+        Dry run
+      </button>
+      <button
+        class="jsx-3433386394 secondary"
+        data-test="import-strip-import-btn"
+        type="button"
+      >
+        Import
+      </button>
+    </div>
+    <p
+      class="jsx-2306638964 "
+      data-test="import-strip-help"
+    >
+      Dry run: Will do a test run without importing any data into the database
+    </p>
+  </div>
+</DocumentFragment>
+`;

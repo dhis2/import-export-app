@@ -13,8 +13,8 @@ const ImportButtonStrip = ({
     dataTest,
 }) => {
     return (
-        <div>
-            <ButtonStrip dataTest={dataTest}>
+        <div data-test={dataTest}>
+            <ButtonStrip dataTest={`${dataTest}-button-strip`}>
                 <Button
                     primary
                     onClick={() => onSubmit({ dryRun: true })}
@@ -31,7 +31,9 @@ const ImportButtonStrip = ({
                     {i18n.t('Import')}
                 </Button>
             </ButtonStrip>
-            <Help>{`${i18n.t('Dry run')}: ${helpText.dryRun}`}</Help>
+            <Help dataTest={`${dataTest}-help`}>{`${i18n.t('Dry run')}: ${
+                helpText.dryRun
+            }`}</Help>
         </div>
     )
 }
