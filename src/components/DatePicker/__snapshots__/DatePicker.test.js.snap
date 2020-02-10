@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-test="date-picker"
+  >
+    <span>
+      Start date
+    </span>
+    <div
+      class="jsx-1540540055 "
+      data-test="dhis2-uicore-inputfield"
+    >
+      <div
+        class="jsx-3625278269"
+        data-test="dhis2-uicore-constrictor"
+      >
+        <div
+          class="jsx-3353877153 jsx-1090541828 input"
+          data-test="dhis2-uicore-input"
+        >
+          <input
+            class="jsx-3353877153 jsx-1090541828 "
+            id="file"
+            name="file"
+            type="date"
+            value="2020-02-10"
+          />
+          <div
+            class="jsx-3353877153 jsx-1090541828 status-icon"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
