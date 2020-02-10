@@ -45,6 +45,18 @@ const commonIds = {
 
 const testIds = {
     App: {},
+    Icon: {
+        data: 'icon-data',
+        event: 'icon-event',
+        gml: 'icon-gml',
+        logo: 'icon-logo',
+        metadataDependencyExport: 'icon-metadatadependencyexport',
+        metadataExport: 'icon-metadataexport',
+        metadataImport: 'icon-metadataimport',
+        minus: 'icon-minus',
+        plus: 'icon-plus',
+        tasks: 'icon-tasks',
+    },
     DataImport: {
         Page: 'page-import-data',
         DataElementIdScheme: commonIds.DataElementIdScheme,
