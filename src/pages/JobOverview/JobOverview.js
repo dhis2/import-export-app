@@ -21,13 +21,11 @@ const JobOverview = () => {
 
     const setActiveTypes = types => {
         updateJobOverview({
-            ...jobOverview,
             activeTypes: types,
         })
     }
     const setSelectedJob = job => {
         updateJobOverview({
-            ...jobOverview,
             selectedJob: job,
         })
     }
@@ -56,7 +54,6 @@ const JobOverview = () => {
                     setActiveTypes={setActiveTypes}
                     selectedJob={selectedJob}
                     setSelectedJob={setSelectedJob}
-                    noCard
                 />
             </div>
         </Page>

@@ -37,7 +37,10 @@ const WithTasks = Component => props => {
         updateJobOverview: val =>
             setTasks(tasks => ({
                 ...tasks,
-                jobOverview: val,
+                jobOverview: {
+                    ...tasks.jobOverview,
+                    ...val,
+                },
             })),
     })
 
