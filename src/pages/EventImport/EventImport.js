@@ -1,13 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui-core'
 
 // import s from './EventImport.module.css';
 import { eventImportPage as p } from '../../utils/pages'
 import { uploadFile } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
-import { helpText } from '../../utils/text'
 import {
     formatOptions,
     defaultFormatOption,
@@ -17,9 +15,9 @@ import {
 import { Page } from '../../components/Page'
 import { FileUpload } from '../../components/FileUpload'
 import { RadioGroup } from '../../components/RadioGroup'
-import { Switch } from '../../components/Switch'
 import { MoreOptions } from '../../components/MoreOptions'
 import { EventIdScheme, OrgUnitIdScheme } from '../../components/ElementSchemes'
+import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
@@ -28,7 +26,6 @@ const EventImport = () => {
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(undefined)
     const [format, setFormat] = useState(defaultFormatOption)
-    const [dryRun, setDryRun] = useState(false)
     const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
         defaultOrgUnitIdSchemeOption
     )
@@ -39,7 +36,7 @@ const EventImport = () => {
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onImport = () => {
+    const onSubmit = ({ dryRun }) => {
         // validate
         const alerts = []
         const timestamp = new Date().getTime()
@@ -107,14 +104,6 @@ const EventImport = () => {
                 checked={format}
                 dataTest={testIds.EventImport.format}
             />
-            <Switch
-                label={i18n.t('Dry run')}
-                name="dryRun"
-                checked={dryRun}
-                setChecked={setDryRun}
-                help={helpText.dryRun}
-                dataTest={testIds.EventImport.dryRun}
-            />
             <MoreOptions dataTest={testIds.EventImport.MoreOptions}>
                 <EventIdScheme
                     selected={eventIdScheme}
@@ -127,13 +116,12 @@ const EventImport = () => {
                     dataTest={testIds.EventImport.OrgUnitIdScheme}
                 />
             </MoreOptions>
-            <Button
-                primary
-                onClick={onImport}
-                dataTest={testIds.EventImport.submit}
-            >
-                {i18n.t('Import')}
-            </Button>
+            <ImportButtonStrip
+                onSubmit={onSubmit}
+                dryRunDataTest={testIds.DataImport.dryRun}
+                importDataTest={testIds.DataImport.submit}
+                dataTest={testIds.DataImport.ImportButtonStrip}
+            />
             <FormAlerts
                 alerts={alerts}
                 dataTest={testIds.EventImport.FormAlerts}

@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui-core'
 
 // import s from './MetadataImport.module.css';
 import { metadataImportPage as p } from '../../utils/pages'
 import { uploadFile } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
-import { helpText } from '../../utils/text'
 import {
     formatOptions,
     identifierOptions,
@@ -34,6 +32,7 @@ import { RadioGroup } from '../../components/RadioGroup'
 import { Switch } from '../../components/Switch'
 import { Select } from '../../components/Select'
 import { MoreOptions } from '../../components/MoreOptions'
+import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
@@ -51,7 +50,6 @@ const MetadataImport = () => {
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(undefined)
     const [format, setFormat] = useState(defaultFormatOption)
-    const [dryRun, setDryRun] = useState(false)
     const [identifier, setIdentifier] = useState(defaultIdentifierOption)
     const [importReportMode, setImportReportMode] = useState(
         defaultImportReportModeOption
@@ -85,7 +83,7 @@ const MetadataImport = () => {
         }
     }, [classData])
 
-    const onImport = () => {
+    const onSubmit = ({ dryRun }) => {
         // validate
         const alerts = []
         const timestamp = new Date().getTime()
@@ -163,14 +161,6 @@ const MetadataImport = () => {
                 setValue={setFormat}
                 checked={format}
                 dataTest={testIds.MetadataImport.format}
-            />
-            <Switch
-                name="dryRun"
-                label={i18n.t('Dry run')}
-                checked={dryRun}
-                setChecked={setDryRun}
-                help={helpText.dryRun}
-                dataTest={testIds.MetadataImport.dryRun}
             />
             {format.value == 'csv' && (
                 <>
@@ -280,13 +270,12 @@ const MetadataImport = () => {
                     dataTest={testIds.MetadataImport.inclusionStrategy}
                 />
             </MoreOptions>
-            <Button
-                primary
-                onClick={onImport}
-                dataTest={testIds.MetadataImport.submit}
-            >
-                {i18n.t('Import')}
-            </Button>
+            <ImportButtonStrip
+                onSubmit={onSubmit}
+                dryRunDataTest={testIds.DataImport.dryRun}
+                importDataTest={testIds.DataImport.submit}
+                dataTest={testIds.DataImport.ImportButtonStrip}
+            />
             <FormAlerts
                 alerts={alerts}
                 dataTest={testIds.MetadataImport.FormAlerts}
