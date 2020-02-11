@@ -38,13 +38,15 @@ const OrgUnitTree = ({
     multiSelect = true,
 }) => {
     const [children, setChildren] = useState([])
-    const { loading, data, engine } = useDataQuery(rootQuery, {
+    const [error, setError] = useState(undefined)
+    const { loading, engine } = useDataQuery(rootQuery, {
         onComplete: data => {
             const roots = data.roots.organisationUnits
             const list = formatList(roots)
             setChildren(list)
         },
         onError: error => {
+            setError(error)
             console.error('OrgUnitTree error: ', error)
         },
     })
@@ -129,21 +131,36 @@ const OrgUnitTree = ({
         }
     }
 
+    let content
+    if (loading) {
+        content = <CircularLoader dataTest={`${dataTest}-loading`} />
+    } else if (error) {
+        content = (
+            <div data-test={`${dataTest}-error`}>
+                <p>
+                    {i18n.t(
+                        'Something went wrong when loading the organisation units!'
+                    )}
+                </p>
+                <p>{error.message}</p>
+            </div>
+        )
+    } else {
+        content = (
+            <Tree
+                selected={selected}
+                select={onSelect}
+                multiSelect={multiSelect}
+                onOpen={onOpen}
+                onClose={onClose}
+                list={children}
+            />
+        )
+    }
+
     return (
         <FormField label={i18n.t('Organisation unit')} dataTest={dataTest}>
-            <div className={s.container}>
-                {loading && <CircularLoader />}
-                {data && (
-                    <Tree
-                        selected={selected}
-                        select={onSelect}
-                        multiSelect={multiSelect}
-                        onOpen={onOpen}
-                        onClose={onClose}
-                        list={children}
-                    />
-                )}
-            </div>
+            <div className={s.container}>{content}</div>
         </FormField>
     )
 }

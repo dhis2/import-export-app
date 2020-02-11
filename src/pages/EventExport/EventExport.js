@@ -66,6 +66,14 @@ const EventExport = () => {
             })
         }
 
+        if (!programStage) {
+            alerts.push({
+                id: `program-stage-${timestamp}`,
+                warning: true,
+                message: i18n.t('One program stage must be selected'),
+            })
+        }
+
         if (endDate <= startDate) {
             alerts.push({
                 id: `period-${timestamp}`,
@@ -196,6 +204,7 @@ const EventExport = () => {
             </MoreOptions>
             <Button
                 primary
+                disabled={programStage == undefined}
                 onClick={onExport}
                 dataTest={testIds.EventExport.exportButton}
             >

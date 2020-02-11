@@ -28,7 +28,8 @@ const ProgramPicker = ({
     autoSelectFirst = false,
 }) => {
     const [list, setList] = useState([])
-    const { loading, data } = useDataQuery(programQuery, {
+    const [error, setError] = useState(undefined)
+    const { loading } = useDataQuery(programQuery, {
         onComplete: data => {
             const programs = data.programs.programs
             const list = programs.map(({ id, displayName }) => ({
@@ -42,6 +43,7 @@ const ProgramPicker = ({
             }
         },
         onError: error => {
+            setError(error)
             console.error('ProgramPicker error: ', error)
         },
     })
@@ -68,25 +70,38 @@ const ProgramPicker = ({
         setSelected([])
     }
 
+    let content
+    if (loading) {
+        content = <CircularLoader dataTest={`${dataTest}-loading`} />
+    } else if (error) {
+        content = (
+            <div data-test={`${dataTest}-error`}>
+                <p>
+                    {i18n.t('Something went wrong when loading the programs!')}
+                </p>
+                <p>{error.message}</p>
+            </div>
+        )
+    } else {
+        content = (
+            <SelectableList
+                name="programPicker"
+                label={i18n.t('Filter programs by name')}
+                selected={selected}
+                select={onSelect}
+                onSelectAll={onSelectAll}
+                onClearAll={onClearAll}
+                multiSelect={multiSelect}
+                list={list}
+                withFilter={withFilter}
+                withActions={withActions}
+            />
+        )
+    }
+
     return (
         <FormField label={i18n.t('Programs')} dataTest={dataTest}>
-            <div className={s.container}>
-                {loading && <CircularLoader />}
-                {data && (
-                    <SelectableList
-                        name="programPicker"
-                        label={i18n.t('Filter programs by name')}
-                        selected={selected}
-                        select={onSelect}
-                        onSelectAll={onSelectAll}
-                        onClearAll={onClearAll}
-                        multiSelect={multiSelect}
-                        list={list}
-                        withFilter={withFilter}
-                        withActions={withActions}
-                    />
-                )}
-            </div>
+            <div className={s.container}>{content}</div>
         </FormField>
     )
 }

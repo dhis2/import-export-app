@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import { useDataEngine } from '@dhis2/app-runtime'
 
@@ -25,6 +26,7 @@ const ObjectSelect = ({
     filterable,
 }) => {
     const engine = useDataEngine()
+    const [error, setError] = useState(undefined)
     const [loading, setLoading] = useState(true)
     const [objectList, setObjectList] = useState([])
 
@@ -43,13 +45,20 @@ const ObjectSelect = ({
                     setSelected(formattedList[0])
                     setLoading(false)
                 },
-                onError: e => {
-                    console.error('ObjectSelect error: ', e)
+                onError: error => {
+                    setError(error)
+                    console.error('ObjectSelect error: ', error)
                 },
             })
         }
         fetcher()
     }, [type])
+
+    const validationText =
+        error &&
+        `${i18n.t('Something went wrong when loading the objects')} : ${
+            error.message
+        }`
 
     return (
         <Select
@@ -60,8 +69,10 @@ const ObjectSelect = ({
             selected={selected}
             setValue={setSelected}
             filterable={filterable}
-            dense
             dataTest={dataTest}
+            validationText={validationText}
+            error={!!error}
+            dense
         />
     )
 }
