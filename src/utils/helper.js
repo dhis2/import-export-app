@@ -64,19 +64,27 @@ const downloadBlob = (url, filename) => {
 const fetchAttributes = async (apiBaseUrl, attribute) => {
     const fetcher = async url =>
         fetch(url, { credentials: 'include' })
-            .then(resp => resp.json())
-            .then(json => {
-                return json
+            .then(resp => {
+                if (resp.status >= 200 && resp.status < 300) {
+                    return Promise.resolve(resp.json())
+                } else {
+                    throw resp
+                }
             })
-            .catch(e => {
-                console.error(`fetchAttributes ${attribute} fetch error: `, e)
+            .catch(resp => {
+                var error = new Error(resp.statusText || resp.status)
+                console.error(
+                    `fetchAttributes ${attribute} fetch error: `,
+                    error
+                )
+                return Promise.reject(error)
             })
 
     const fields = 'id,displayName'
     const filters = `unique:eq:true&filter=${attribute}:eq:true`
     const url = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters}`
 
-    const json = await fetcher(url)
+    const json = await fetcher(url).catch(error => Promise.reject(error))
     return json.attributes.map(({ id, displayName }) => ({
         value: `ATTRIBUTE:${id}`,
         label: displayName,

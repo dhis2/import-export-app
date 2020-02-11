@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
@@ -10,24 +10,31 @@ import { Select } from '../Select'
 
 const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
     const { baseUrl } = useConfig()
+    const [error, setError] = useState(undefined)
     const { DataElementId, updateSchema } = useContext(SchemeContext)
 
     useEffect(() => {
         const f = async () => {
-            const attributes = await fetchAttributes(
-                `${baseUrl}/api/`,
-                'dataElementAttribute'
-            )
-            updateSchema('DataElementId', {
-                options: attributes,
-                loaded: true,
-                error: false,
-            })
+            await fetchAttributes(`${baseUrl}/api/`, 'dataElementAttribute')
+                .then(attributes =>
+                    updateSchema('DataElementId', {
+                        options: attributes,
+                        loaded: true,
+                        error: false,
+                    })
+                )
+                .catch(error => setError(error))
         }
         if (!DataElementId.loaded) {
             f()
         }
     }, [])
+
+    const validationText =
+        error &&
+        `${i18n.t(
+            'Something went wrong when loading the additional data element ID schemes'
+        )} : ${error.message}`
 
     const options = [...dataElementIdSchemeOptions, ...DataElementId.options]
     return (
@@ -39,6 +46,8 @@ const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
             setValue={setSelected}
             dataTest={dataTest}
             loading={!DataElementId.loaded}
+            validationText={validationText}
+            error={!!error}
             dense
         />
     )
