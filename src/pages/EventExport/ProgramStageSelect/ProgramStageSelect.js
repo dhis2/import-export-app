@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import { useDataEngine } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 
 import { optionPropType } from '../../../utils/options'
 import { Select } from '../../../components/Select'
@@ -30,6 +30,7 @@ const ProgramStageSelect = ({
     dataTest,
 }) => {
     const engine = useDataEngine()
+    const [error, setError] = useState(undefined)
     const [loading, setLoading] = useState(true)
     const [stages, setStages] = useState([])
 
@@ -61,8 +62,9 @@ const ProgramStageSelect = ({
                     setSelected({ value: ALL_VALUE, label: ALL_LABEL })
                     setLoading(false)
                 },
-                onError: e => {
-                    console.error('ProgramStageSelect error: ', e)
+                onError: error => {
+                    setError(error)
+                    console.error('ProgramStageSelect error: ', error)
                 },
             })
         }
@@ -70,6 +72,12 @@ const ProgramStageSelect = ({
             fetcher()
         }
     }, [program])
+
+    const validationText =
+        error &&
+        `${i18n.t('Something went wrong when loading the program stages')} : ${
+            error.message
+        }`
 
     return (
         <Select
@@ -79,8 +87,10 @@ const ProgramStageSelect = ({
             options={stages}
             selected={selected}
             setValue={setSelected}
-            dense
             dataTest={dataTest}
+            validationText={validationText}
+            error={!!error}
+            dense
         />
     )
 }

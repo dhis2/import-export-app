@@ -27,7 +27,8 @@ const DataSetPicker = ({
     dataTest,
 }) => {
     const [list, setList] = useState([])
-    const { loading, data } = useDataQuery(dataSetQuery, {
+    const [error, setError] = useState(undefined)
+    const { loading } = useDataQuery(dataSetQuery, {
         onComplete: data => {
             const dataSets = data.dataSets.dataSets
             const list = dataSets.map(({ id, displayName }) => ({
@@ -37,6 +38,7 @@ const DataSetPicker = ({
             setList(list)
         },
         onError: error => {
+            setError(error)
             console.error('DataSetPicker error: ', error)
         },
     })
@@ -63,25 +65,38 @@ const DataSetPicker = ({
         setSelected([])
     }
 
+    let content
+    if (loading) {
+        content = <CircularLoader dataTest={`${dataTest}-loading`} />
+    } else if (error) {
+        content = (
+            <div data-test={`${dataTest}-error`}>
+                <p>
+                    {i18n.t('Something went wrong when loading the data sets!')}
+                </p>
+                <p>{error.message}</p>
+            </div>
+        )
+    } else {
+        content = (
+            <SelectableList
+                name="dataSetPicker"
+                label={i18n.t('Filter data sets by name')}
+                selected={selected}
+                select={onSelect}
+                onSelectAll={onSelectAll}
+                onClearAll={onClearAll}
+                multiSelect={multiSelect}
+                list={list}
+                withFilter={withFilter}
+                withActions={withActions}
+            />
+        )
+    }
+
     return (
         <FormField label={i18n.t('Data sets')} dataTest={dataTest}>
-            <div className={s.container}>
-                {loading && <CircularLoader />}
-                {data && (
-                    <SelectableList
-                        name="dataSetPicker"
-                        label={i18n.t('Filter data sets by name')}
-                        selected={selected}
-                        select={onSelect}
-                        onSelectAll={onSelectAll}
-                        onClearAll={onClearAll}
-                        multiSelect={multiSelect}
-                        list={list}
-                        withFilter={withFilter}
-                        withActions={withActions}
-                    />
-                )}
-            </div>
+            <div className={s.container}>{content}</div>
         </FormField>
     )
 }

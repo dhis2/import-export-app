@@ -29,6 +29,7 @@ const Schemas = ({
     checkedByDefault,
     dataTest,
 }) => {
+    const [error, setError] = useState(undefined)
     const [schemaGroups, setSchemaGroups] = useState(undefined)
     const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined)
     const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined)
@@ -50,6 +51,7 @@ const Schemas = ({
             propagateCheckedSchemas(groups)
         },
         onError: error => {
+            setError(error)
             console.error('Schemas error: ', error)
         },
     })
@@ -97,36 +99,51 @@ const Schemas = ({
         propagateCheckedSchemas(updatedSchemaGroups)
     }
 
+    let content
+    if (loading) {
+        content = <CircularLoader dataTest={`${dataTest}-loading`} />
+    } else if (error) {
+        content = (
+            <div data-test={`${dataTest}-error`}>
+                <p>
+                    {i18n.t('Something went wrong when loading the schemas!')}
+                </p>
+                <p>{error.message}</p>
+            </div>
+        )
+    } else {
+        content = (
+            <>
+                <ButtonStrip>
+                    <Button onClick={onSelectGeneric(true)}>
+                        {i18n.t('Select All')}
+                    </Button>
+                    <Button onClick={onSelectGeneric(false)}>
+                        {i18n.t('Select None')}
+                    </Button>
+                </ButtonStrip>
+
+                <div className={s.formControl}>
+                    {schemaGroupOrder.map(groupKey => {
+                        const label = schemaGroupLabels[groupKey]
+
+                        return (
+                            <SchemaGroup
+                                key={label}
+                                label={label}
+                                schemas={schemaGroups[groupKey]}
+                                toggleSchema={toggleSchema(groupKey)}
+                            />
+                        )
+                    })}
+                </div>
+            </>
+        )
+    }
+
     return (
         <div className={s.container} data-test={dataTest}>
-            {loading && <CircularLoader />}
-            {!loading && (
-                <>
-                    <ButtonStrip>
-                        <Button onClick={onSelectGeneric(true)}>
-                            {i18n.t('Select All')}
-                        </Button>
-                        <Button onClick={onSelectGeneric(false)}>
-                            {i18n.t('Select None')}
-                        </Button>
-                    </ButtonStrip>
-
-                    <div className={s.formControl}>
-                        {schemaGroupOrder.map(groupKey => {
-                            const label = schemaGroupLabels[groupKey]
-
-                            return (
-                                <SchemaGroup
-                                    key={label}
-                                    label={label}
-                                    schemas={schemaGroups[groupKey]}
-                                    toggleSchema={toggleSchema(groupKey)}
-                                />
-                            )
-                        })}
-                    </div>
-                </>
-            )}
+            {content}
         </div>
     )
 }

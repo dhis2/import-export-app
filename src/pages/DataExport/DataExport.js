@@ -178,15 +178,15 @@ const DataExport = () => {
                     downloadBlob(url, filename)
                 }
             },
-            onError: e => {
-                console.error('DataExport onExport error: ', e)
+            onError: error => {
+                console.error('DataExport onExport error: ', error)
                 setAlerts([
                     {
                         id: `http-${timestamp}`,
                         critical: true,
-                        message: `${i18n.t(
-                            'HTTP error when fetching data'
-                        )}. ${e}`,
+                        message: `${i18n.t('HTTP error when fetching data')}. ${
+                            error.message
+                        }`,
                     },
                 ])
             },
