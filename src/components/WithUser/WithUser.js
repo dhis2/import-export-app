@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
 import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core'
 
@@ -11,14 +11,15 @@ const userQuery = {
 }
 
 const WithUser = Component => props => {
-    const { loading, data } = useDataQuery(userQuery)
     const [user, setUser] = useState(undefined)
-
-    useEffect(() => {
-        if (data) {
+    const { loading } = useDataQuery(userQuery, {
+        onComplete: data => {
             setUser(data.user)
-        }
-    }, [data])
+        },
+        onError: error => {
+            console.error('WithUser error: ', error)
+        },
+    })
 
     return (
         <>

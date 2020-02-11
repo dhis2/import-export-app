@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
@@ -28,10 +28,8 @@ const ProgramPicker = ({
     autoSelectFirst = false,
 }) => {
     const [list, setList] = useState([])
-    const { loading, data } = useDataQuery(programQuery)
-
-    useEffect(() => {
-        if (data) {
+    const { loading, data } = useDataQuery(programQuery, {
+        onComplete: data => {
             const programs = data.programs.programs
             const list = programs.map(({ id, displayName }) => ({
                 value: id,
@@ -42,8 +40,11 @@ const ProgramPicker = ({
             if (autoSelectFirst) {
                 setSelected([list[0].value])
             }
-        }
-    }, [data])
+        },
+        onError: error => {
+            console.error('ProgramPicker error: ', error)
+        },
+    })
 
     const onSelect = id => {
         if (multiSelect) {

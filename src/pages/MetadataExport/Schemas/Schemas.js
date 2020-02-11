@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
@@ -29,13 +29,11 @@ const Schemas = ({
     checkedByDefault,
     dataTest,
 }) => {
-    const { loading, data } = useDataQuery(schemaQuery)
     const [schemaGroups, setSchemaGroups] = useState(undefined)
     const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined)
     const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined)
-
-    useEffect(() => {
-        if (data) {
+    const { loading } = useDataQuery(schemaQuery, {
+        onComplete: data => {
             const schemas = data.schemas.schemas
             const filteredSchemas = filterOutExcludedSchemas(
                 excludeSchemas,
@@ -50,8 +48,11 @@ const Schemas = ({
             setSchemaGroupOrder(getGroupOrder(groups))
             setSchemaGroupLabels(getGroupLabels(groups))
             propagateCheckedSchemas(groups)
-        }
-    }, [data])
+        },
+        onError: error => {
+            console.error('Schemas error: ', error)
+        },
+    })
 
     const propagateCheckedSchemas = updatedSchemaGroups => {
         setCheckedSchemas(
@@ -99,7 +100,7 @@ const Schemas = ({
     return (
         <div className={s.container} data-test={dataTest}>
             {loading && <CircularLoader />}
-            {schemaGroups && (
+            {!loading && (
                 <>
                     <ButtonStrip>
                         <Button onClick={onSelectGeneric(true)}>

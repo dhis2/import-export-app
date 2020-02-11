@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { useDataQuery } from '@dhis2/app-runtime'
@@ -38,15 +38,16 @@ const OrgUnitTree = ({
     multiSelect = true,
 }) => {
     const [children, setChildren] = useState([])
-    const { loading, data, engine } = useDataQuery(rootQuery)
-
-    useEffect(() => {
-        if (data) {
+    const { loading, data, engine } = useDataQuery(rootQuery, {
+        onComplete: data => {
             const roots = data.roots.organisationUnits
             const list = formatList(roots)
             setChildren(list)
-        }
-    }, [data])
+        },
+        onError: error => {
+            console.error('OrgUnitTree error: ', error)
+        },
+    })
 
     const formatList = list => {
         return list.map(({ id, path, displayName, children }) => ({
