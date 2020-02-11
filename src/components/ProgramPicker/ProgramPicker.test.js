@@ -57,7 +57,7 @@ test('programs load and are shown in a list', async () => {
     expect(setSelected).toHaveBeenLastCalledWith([firstItem.id])
 })
 
-test('programs fails to load and an error is shown', async () => {
+test('programs fail to load and an error is shown', async () => {
     // suppress console errors
     console.error = jest.fn()
 
