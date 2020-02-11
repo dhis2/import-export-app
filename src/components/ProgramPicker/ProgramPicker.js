@@ -95,6 +95,7 @@ const ProgramPicker = ({
                 list={list}
                 withFilter={withFilter}
                 withActions={withActions}
+                dataTest={`${dataTest}-list`}
             />
         )
     }
