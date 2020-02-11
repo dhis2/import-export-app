@@ -57,7 +57,7 @@ test('data sets load and are shown in a list', async () => {
     expect(setSelected).toHaveBeenLastCalledWith([firstItem.id])
 })
 
-test('data sets fails to load and an error is shown', async () => {
+test('data sets fail to load and an error is shown', async () => {
     // suppress console errors
     console.error = jest.fn()
 
