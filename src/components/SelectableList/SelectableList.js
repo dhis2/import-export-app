@@ -17,15 +17,16 @@ const SelectableList = ({
     multiSelect,
     withFilter,
     withActions,
+    dataTest,
 }) => {
     const [filter, setFilter] = useState('')
 
     const onSelect = ({ value }) => select(value)
 
     return (
-        <div>
+        <div data-test={dataTest}>
             {withFilter && (
-                <div className={s.filter}>
+                <div className={s.filter} data-test={`${dataTest}-filter`}>
                     <InputField
                         name="filter"
                         label={label}
@@ -37,7 +38,7 @@ const SelectableList = ({
             )}
 
             {withActions && (
-                <div className={s.actions}>
+                <div className={s.actions} data-test={`${dataTest}-actions`}>
                     <Checkbox
                         className={s.action}
                         name="select-all"
@@ -56,7 +57,7 @@ const SelectableList = ({
                 </div>
             )}
 
-            <div className={s.body}>
+            <div className={s.body} data-test={`${dataTest}-body`}>
                 {list
                     .filter(({ label }) =>
                         label.toLowerCase().includes(filter.toLowerCase())
@@ -82,6 +83,7 @@ const SelectableList = ({
 
                         return (
                             <MenuItem
+                                dataTest={`${dataTest}-body-li-${value}`}
                                 key={`${name}-mi-${value}`}
                                 value={value}
                                 label={component}
@@ -95,6 +97,7 @@ const SelectableList = ({
 }
 
 SelectableList.propTypes = {
+    dataTest: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     list: optionsPropType.isRequired,
     name: PropTypes.string.isRequired,
