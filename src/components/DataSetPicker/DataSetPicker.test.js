@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { render, waitForElement } from 'test-utils'
+import { render, waitForElement, fireEvent } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import { CustomDataProvider } from '@dhis2/app-runtime'
 
@@ -26,28 +26,39 @@ const props = {
 }
 
 test('data sets load and are shown in a list', async () => {
-    const { getByDataTest, getAllByDataTest } = render(
+    const setSelected = jest.fn()
+
+    const { getByDataTest, getAllByDataTest, getByText } = render(
         <CustomDataProvider data={customData}>
-            <DataSetPicker {...props} />
+            <DataSetPicker {...props} setSelected={setSelected} />
         </CustomDataProvider>
     )
 
     const loading = getByDataTest('data-set-picker-loading')
     expect(loading).toBeInTheDocument()
 
+    // loading has finished
     await waitForElement(() => getByDataTest('data-set-picker-list'))
     expect(loading).not.toBeInTheDocument()
 
     const listElements = getAllByDataTest(/data-set-picker-list-body-li-*/)
     expect(listElements).toHaveLength(customData.dataSets.dataSets.length)
 
+    // all data sets are in the document
     customData.dataSets.dataSets.forEach(d => {
         const el = getByDataTest(`data-set-picker-list-body-li-${d.id}`)
         expect(el).toHaveTextContent(d.displayName)
     })
+
+    // clicking on first item fires setSelected
+    const firstItem = customData.dataSets.dataSets[0]
+    fireEvent.click(getByText(firstItem.displayName))
+    expect(setSelected).toHaveBeenCalledTimes(1)
+    expect(setSelected).toHaveBeenLastCalledWith([firstItem.id])
 })
 
 test('data sets fails to load and an error is shown', async () => {
+    // suppress console errors
     console.error = jest.fn()
 
     const { getByDataTest, getByText } = render(
@@ -59,6 +70,7 @@ test('data sets fails to load and an error is shown', async () => {
     const loading = getByDataTest('data-set-picker-loading')
     expect(loading).toBeInTheDocument()
 
+    // loading has finished
     await waitForElement(() =>
         getByText(i18n.t('Something went wrong when loading the data sets!'))
     )
