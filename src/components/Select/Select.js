@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SingleSelect, SingleSelectOption } from '@dhis2/ui-core'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { optionPropType, optionsPropType } from '../../utils/options'
 import s from './Select.module.css'
@@ -15,6 +15,10 @@ const Select = ({
     selected,
     noMatchText,
     loading,
+    error,
+    warning,
+    validationText,
+    helpText,
     filled,
     dense,
     filterable,
@@ -29,11 +33,13 @@ const Select = ({
     return (
         <FormField label={label} dataTest={dataTest}>
             <div className={s.select}>
-                <SingleSelect
+                <SingleSelectField
                     dense={dense}
                     filled={filled}
                     initialFocus={initialFocus}
                     loading={loading}
+                    warning={warning}
+                    error={error}
                     name={name}
                     onChange={onChange}
                     selected={selected}
@@ -41,9 +47,11 @@ const Select = ({
                     noMatchText={
                         noMatchText ? noMatchText : `No match found for filter`
                     }
+                    helpText={helpText}
+                    validationText={validationText}
                 >
                     {optionEls}
-                </SingleSelect>
+                </SingleSelectField>
             </div>
         </FormField>
     )
@@ -56,12 +64,16 @@ Select.propTypes = {
     options: optionsPropType.isRequired,
     setValue: PropTypes.func.isRequired,
     dense: PropTypes.bool,
+    error: PropTypes.bool,
     filled: PropTypes.bool,
     filterable: PropTypes.bool,
+    helpText: PropTypes.string,
     initialFocus: PropTypes.bool,
     loading: PropTypes.bool,
     noMatchText: PropTypes.string,
     selected: optionPropType,
+    validationText: PropTypes.string,
+    warning: PropTypes.bool,
 }
 
 export { Select }
