@@ -57,7 +57,7 @@ const SelectableList = ({
                 </div>
             )}
 
-            <div className={s.body} data-test={`${dataTest}-body`}>
+            <div className={s.body} data-test={`${dataTest}-body`} name={name}>
                 {list
                     .filter(({ label }) =>
                         label.toLowerCase().includes(filter.toLowerCase())
@@ -84,7 +84,7 @@ const SelectableList = ({
                         return (
                             <MenuItem
                                 dataTest={`${dataTest}-body-li-${value}`}
-                                key={`${name}-mi-${value}`}
+                                key={`${dataTest}-body-li-${value}`}
                                 value={value}
                                 label={component}
                                 onClick={onSelect}
