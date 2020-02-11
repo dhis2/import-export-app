@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
@@ -44,9 +44,24 @@ const classKeyQuery = {
 }
 
 const MetadataImport = ({ query }) => {
-    const { data: classData, loading: classLoading } = useDataQuery(
-        classKeyQuery
-    )
+    const { loading: classLoading } = useDataQuery(classKeyQuery, {
+        onComplete: classData => {
+            setClassKeyOptions(
+                classData.keys.map(k => ({ value: k, label: k }))
+            )
+            if (prevJobDetails) {
+                setClassKey(prevJobDetails.classKey)
+            } else {
+                setClassKey({
+                    value: classData.keys[0],
+                    label: classData.keys[0],
+                })
+            }
+        },
+        onError: error => {
+            console.error('MetadataImport error: ', error)
+        },
+    })
     const { metadata: metadataTasks, addTask } = useContext(TaskContext)
 
     // recreating a previously run job
@@ -124,22 +139,6 @@ const MetadataImport = ({ query }) => {
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
-
-    useEffect(() => {
-        if (classData) {
-            setClassKeyOptions(
-                classData.keys.map(k => ({ value: k, label: k }))
-            )
-            if (prevJobDetails) {
-                setClassKey(prevJobDetails.classKey)
-            } else {
-                setClassKey({
-                    value: classData.keys[0],
-                    label: classData.keys[0],
-                })
-            }
-        }
-    }, [classData])
 
     const onSubmit = ({ dryRun }) => {
         // validate

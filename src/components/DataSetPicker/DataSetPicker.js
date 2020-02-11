@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
@@ -27,18 +27,19 @@ const DataSetPicker = ({
     dataTest,
 }) => {
     const [list, setList] = useState([])
-    const { loading, data } = useDataQuery(dataSetQuery)
-
-    useEffect(() => {
-        if (data) {
+    const { loading, data } = useDataQuery(dataSetQuery, {
+        onComplete: data => {
             const dataSets = data.dataSets.dataSets
             const list = dataSets.map(({ id, displayName }) => ({
                 value: id,
                 label: displayName,
             }))
             setList(list)
-        }
-    }, [data])
+        },
+        onError: error => {
+            console.error('DataSetPicker error: ', error)
+        },
+    })
 
     const onSelect = id => {
         if (multiSelect) {
