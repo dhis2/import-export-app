@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
@@ -10,24 +10,34 @@ import { Select } from '../Select'
 
 const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
     const { baseUrl } = useConfig()
+    const [error, setError] = useState(undefined)
     const { OrgUnitId, updateSchema } = useContext(SchemeContext)
 
     useEffect(() => {
         const f = async () => {
-            const attributes = await fetchAttributes(
+            await fetchAttributes(
                 `${baseUrl}/api/`,
                 'organisationUnitAttribute'
             )
-            updateSchema('OrgUnitId', {
-                options: attributes,
-                loaded: true,
-                error: false,
-            })
+                .then(attributes =>
+                    updateSchema('OrgUnitId', {
+                        options: attributes,
+                        loaded: true,
+                        error: false,
+                    })
+                )
+                .catch(error => setError(error))
         }
         if (!OrgUnitId.loaded) {
             f()
         }
     }, [])
+
+    const validationText =
+        error &&
+        `${i18n.t(
+            'Something went wrong when loading the additional organisation unit ID schemes'
+        )} : ${error.message}`
 
     const options = [...orgUnitIdSchemeOptions, ...OrgUnitId.options]
     return (
@@ -39,6 +49,8 @@ const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
             setValue={setSelected}
             dataTest={dataTest}
             loading={!OrgUnitId.loaded}
+            validationText={validationText}
+            error={!!error}
             dense
         />
     )
