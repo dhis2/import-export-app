@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
-import { useConfig, useDataQuery } from '@dhis2/app-runtime'
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
 // import s from './MetadataImport.module.css';
@@ -31,37 +31,13 @@ import { Page } from '../../components/Page'
 import { FileUpload } from '../../components/FileUpload'
 import { RadioGroup } from '../../components/RadioGroup'
 import { Switch } from '../../components/Switch'
-import { Select } from '../../components/Select'
 import { MoreOptions } from '../../components/MoreOptions'
+import { ClassKey } from './ClassKey/'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const classKeyQuery = {
-    keys: {
-        resource: 'metadata/csvImportClasses',
-    },
-}
-
 const MetadataImport = ({ query }) => {
-    const { loading: classLoading } = useDataQuery(classKeyQuery, {
-        onComplete: classData => {
-            setClassKeyOptions(
-                classData.keys.map(k => ({ value: k, label: k }))
-            )
-            if (prevJobDetails) {
-                setClassKey(prevJobDetails.classKey)
-            } else {
-                setClassKey({
-                    value: classData.keys[0],
-                    label: classData.keys[0],
-                })
-            }
-        },
-        onError: error => {
-            console.error('MetadataImport error: ', error)
-        },
-    })
     const { metadata: metadataTasks, addTask } = useContext(TaskContext)
 
     // recreating a previously run job
@@ -91,7 +67,6 @@ const MetadataImport = ({ query }) => {
         firstRowIsHeader: prevJobDetails
             ? prevJobDetails.firstRowIsHeader
             : false,
-        // classKey: prevJobDetails ? prevJobDetails.classKey : undefined,
         atomicMode: prevJobDetails
             ? prevJobDetails.atomicMode
             : defaultAtomicModeOption,
@@ -123,7 +98,6 @@ const MetadataImport = ({ query }) => {
     const [firstRowIsHeader, setFirstRowIsHeader] = useState(
         initialState.firstRowIsHeader
     )
-    const [classKeyOptions, setClassKeyOptions] = useState([])
     const [classKey, setClassKey] = useState(initialState.classKey)
     const [atomicMode, setAtomicMode] = useState(initialState.atomicMode)
     const [mergeMode, setMergeMode] = useState(initialState.mergeMode)
@@ -152,6 +126,14 @@ const MetadataImport = ({ query }) => {
                 id: `file-${timestamp}`,
                 warning: true,
                 message: i18n.t('An import file must be selected'),
+            })
+        }
+
+        if (format.value == 'csv' && !classKey) {
+            alerts.push({
+                id: `classKey-${timestamp}`,
+                warning: true,
+                message: i18n.t('A class key must be selected'),
             })
         }
 
@@ -248,14 +230,12 @@ const MetadataImport = ({ query }) => {
                         setChecked={setFirstRowIsHeader}
                         dataTest={testIds.MetadataImport.firstRowIsHeader}
                     />
-                    <Select
-                        name="classKey"
-                        label={i18n.t('Class key')}
-                        options={classKeyOptions}
-                        selected={classKey}
+                    <ClassKey
+                        prevValue={
+                            prevJobDetails ? prevJobDetails.classKey : undefined
+                        }
+                        value={classKey}
                         setValue={setClassKey}
-                        loading={classLoading}
-                        dense
                         dataTest={testIds.MetadataImport.classKey}
                     />
                 </>
