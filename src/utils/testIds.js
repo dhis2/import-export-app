@@ -195,6 +195,11 @@ const testIds = {
         chips: 'job-overview-chips',
         JobSummary: 'job-overview-summary',
     },
+    WithUser: {
+        ScreenCover: 'with-user-screen-cover',
+        Loader: 'with-user-loader',
+        Error: 'with-user-error',
+    },
 }
 
 export { testIds }
