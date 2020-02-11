@@ -90,6 +90,7 @@ const DataSetPicker = ({
                 list={list}
                 withFilter={withFilter}
                 withActions={withActions}
+                dataTest={`${dataTest}-list`}
             />
         )
     }
