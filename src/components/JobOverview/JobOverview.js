@@ -62,7 +62,7 @@ const JobOverview = ({
                                 onClick={() => onChipClick(importType)}
                                 selected={activeTypes.includes(importType)}
                                 key={key}
-                                data-test={`${testIds.JobOverview.chips}-${key}`}
+                                dataTest={`${testIds.JobOverview.chips}-${key}`}
                             >
                                 {label}
                             </Chip>
