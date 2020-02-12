@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuLabel matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-test="job-overview-menu-label-EcJpZjEcMfI"
+  >
+    <div>
+      <span>
+        data1.json
+      </span>
+      <br />
+      <span>
+        Completed 
+      </span>
+    </div>
+    <div>
+      2020-02-12 14:00:23
+
+    </div>
+  </div>
+</DocumentFragment>
+`;
