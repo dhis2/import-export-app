@@ -66,9 +66,9 @@ const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
                         </TableRowHead>
                     </TableHead>
                     <TableBody>
-                        {conflicts.map(c => (
+                        {conflicts.map((c, i) => (
                             <TableRow
-                                key={`${testIds.JobSummary.conflicts}-${c.object}`}
+                                key={`${testIds.JobSummary.conflicts}-${c.object}-${i}`}
                             >
                                 <TableCell>{c.object}</TableCell>
                                 <TableCell>{c.value}</TableCell>
