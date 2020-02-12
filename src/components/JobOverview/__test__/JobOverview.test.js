@@ -8,6 +8,7 @@ import '@testing-library/jest-dom/extend-expect'
 import { tasksState } from './data'
 import { TaskContext } from '../../../contexts/'
 import { JobOverview } from '../'
+import { MenuLabel } from '../MenuLabel'
 
 afterEach(() => {
     cleanup()
@@ -127,4 +128,11 @@ test('import type filters should filter jobs', async () => {
         'GML_IMPORT',
         'METADATA_IMPORT',
     ])
+})
+
+describe('MenuLabel', () => {
+    it('matches snapshot', () => {
+        const { asFragment } = render(<MenuLabel task={allJobs[0]} />)
+        expect(asFragment()).toMatchSnapshot()
+    })
 })
