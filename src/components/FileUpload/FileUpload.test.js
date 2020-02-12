@@ -1,4 +1,5 @@
 import React from 'react'
+import i18n from '@dhis2/d2-i18n'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
@@ -18,7 +19,7 @@ it('matches snapshot', () => {
 it('shows instructions', () => {
     const { getByDataTest } = render(<FileUpload {...props} />)
     const button = getByDataTest('file-upload-fileinput')
-    expect(button).toHaveTextContent('Choose a file to upload')
+    expect(button).toHaveTextContent(i18n.t('Choose a file to upload'))
 })
 
 it('shows filename', () => {
