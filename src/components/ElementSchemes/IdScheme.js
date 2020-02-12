@@ -44,7 +44,7 @@ const IdScheme = ({ selected, setSelected, dataTest }) => {
             selected={selected}
             setValue={setSelected}
             dataTest={dataTest}
-            loading={!OrgUnitId.loaded || !DataElementId.loaded}
+            loading={!Id.loaded}
             dense
         />
     )

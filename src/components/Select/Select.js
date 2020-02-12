@@ -32,7 +32,7 @@ const Select = ({
 
     return (
         <FormField label={label} dataTest={dataTest}>
-            <div className={s.select}>
+            <div className={s.select} data-test={`${dataTest}-container`}>
                 <SingleSelectField
                     dense={dense}
                     filled={filled}
@@ -49,6 +49,7 @@ const Select = ({
                     }
                     helpText={helpText}
                     validationText={validationText}
+                    dataTest={`${dataTest}-ssf`}
                 >
                     {optionEls}
                 </SingleSelectField>
