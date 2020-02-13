@@ -19,11 +19,17 @@ const MoreOptions = ({
 
     return (
         <div className={s.container} data-test={dataTest}>
-            <div className={s.header} onClick={onToggle}>
+            <div
+                className={s.header}
+                onClick={onToggle}
+                data-test={`${dataTest}-header`}
+            >
                 {hidden ? <PlusIcon /> : <MinusIcon />}
                 {label}
             </div>
-            <div className={s.children}>{!hidden && children}</div>
+            <div className={s.children} data-test={`${dataTest}-children`}>
+                {!hidden && children}
+            </div>
         </div>
     )
 }
