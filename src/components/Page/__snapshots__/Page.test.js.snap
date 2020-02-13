@@ -1,0 +1,703 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot when loading(bool) and no summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="page"
+  >
+    <div
+      class="header"
+    >
+      <span
+        class="icon"
+      >
+        <svg
+          data-test="icon-logo"
+          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="title"
+      >
+        Title
+      </span>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </div>
+    <div
+      class="jsx-3536470681 "
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="jsx-1340571363 "
+        data-test="dhis2-uicore-componentcover"
+      >
+        <div
+          class="jsx-1261481057 "
+          data-test="dhis2-uicore-circularloader"
+          role="progressbar"
+        >
+          <svg
+            class="jsx-1261481057"
+            viewBox="22 22 44 44"
+          >
+            <circle
+              class="jsx-1261481057 circle"
+              cx="44"
+              cy="44"
+              fill="none"
+              r="20.2"
+              stroke-width="3.6"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <p>
+          Child paragraph
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when loading(number) and no summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="page"
+  >
+    <div
+      class="header"
+    >
+      <span
+        class="icon"
+      >
+        <svg
+          data-test="icon-logo"
+          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="title"
+      >
+        Title
+      </span>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </div>
+    <div
+      class="jsx-3536470681 "
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="jsx-1340571363 "
+        data-test="dhis2-uicore-componentcover"
+      >
+        <div
+          class="jsx-1195089001 jsx-1880179825 "
+          data-test="dhis2-uicore-linearloader"
+          role="progressbar"
+        >
+          <div
+            class="jsx-1191682544 jsx-689354218"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <p>
+          Child paragraph
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when not loading and a full summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="page"
+  >
+    <div
+      class="header"
+    >
+      <span
+        class="icon"
+      >
+        <svg
+          data-test="icon-logo"
+          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="title"
+      >
+        Title
+      </span>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </div>
+    <div
+      class="jsx-3536470681 preBody"
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="container"
+          data-test="job-summary-container"
+        >
+          <div
+            class="header"
+          >
+            <h3
+              class="title"
+            >
+              Job summary
+            </h3>
+            <span
+              class="taskDetails"
+            >
+              <span
+                data-test="job-summary-filename"
+              >
+                data1.json
+              </span>
+               - 
+              <span
+                data-test="job-summary-date"
+              >
+                2020-02-12 14:00:23
+ 
+              </span>
+            </span>
+          </div>
+          <div
+            class="tags"
+            data-test="job-summary-tags"
+          >
+            <div
+              class="container success"
+            >
+              <span
+                class="text"
+              >
+                Completed
+              </span>
+            </div>
+            <div
+              class="container info"
+            >
+              <span
+                class="text"
+              >
+                Dry run
+              </span>
+            </div>
+          </div>
+          <div
+            class="jsx-1555285825 jsx-519675527 "
+            data-test="dhis2-uicore-divider"
+          />
+          <div
+            data-test="job-summary-summary"
+          >
+            <div>
+              <div
+                class="container"
+                data-test="job-summary-single-summary"
+              >
+                <span
+                  class="label"
+                >
+                  Summary #Overview
+                </span>
+                <table
+                  class="jsx-2430604489 "
+                  data-test="dhis2-uicore-table"
+                >
+                  <thead
+                    data-test="dhis2-uicore-tablehead"
+                  >
+                    <tr
+                      class="jsx-2163445633 "
+                      data-test="dhis2-uicore-tablerowhead"
+                    >
+                      <th
+                        class="jsx-1796049005 "
+                        data-test="dhis2-uicore-tablecellhead"
+                      >
+                        Status
+                      </th>
+                      <th
+                        class="jsx-1796049005 "
+                        data-test="dhis2-uicore-tablecellhead"
+                      >
+                        Description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    data-test="dhis2-uicore-tablebody"
+                  >
+                    <tr
+                      class="jsx-2163445633 "
+                      data-test="dhis2-uicore-tablerow"
+                    >
+                      <td
+                        class="jsx-996330601 "
+                        data-test="dhis2-uicore-tablecell"
+                      >
+                        SUCCESS
+                      </td>
+                      <td
+                        class="jsx-996330601 "
+                        data-test="dhis2-uicore-tablecell"
+                      >
+                        Import process completed successfully
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table
+                  class="jsx-2430604489 "
+                  data-test="dhis2-uicore-table"
+                >
+                  <thead
+                    data-test="dhis2-uicore-tablehead"
+                  >
+                    <tr
+                      class="jsx-2163445633 "
+                      data-test="dhis2-uicore-tablerowhead"
+                    >
+                      <th
+                        class="jsx-1796049005 "
+                        data-test="dhis2-uicore-tablecellhead"
+                      >
+                        Created
+                      </th>
+                      <th
+                        class="jsx-1796049005 "
+                        data-test="dhis2-uicore-tablecellhead"
+                      >
+                        Deleted
+                      </th>
+                      <th
+                        class="jsx-1796049005 "
+                        data-test="dhis2-uicore-tablecellhead"
+                      >
+                        Ignored
+                      </th>
+                      <th
+                        class="jsx-1796049005 "
+                        data-test="dhis2-uicore-tablecellhead"
+                      >
+                        Updated
+                      </th>
+                      <th
+                        class="jsx-1796049005 "
+                        data-test="dhis2-uicore-tablecellhead"
+                      >
+                        Total
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    data-test="dhis2-uicore-tablebody"
+                  >
+                    <tr
+                      class="jsx-2163445633 "
+                      data-test="dhis2-uicore-tablerow"
+                    >
+                      <td
+                        class="jsx-996330601 "
+                        data-test="dhis2-uicore-tablecell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="jsx-996330601 "
+                        data-test="dhis2-uicore-tablecell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="jsx-996330601 "
+                        data-test="dhis2-uicore-tablecell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="jsx-996330601 "
+                        data-test="dhis2-uicore-tablecell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="jsx-996330601 "
+                        data-test="dhis2-uicore-tablecell"
+                      >
+                        0
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div
+            class="events"
+          >
+            <div
+              class="container"
+              data-test="job-summary-events"
+            >
+              <span
+                class="label"
+              >
+                Events
+              </span>
+              <table
+                class="jsx-2430604489 "
+                data-test="dhis2-uicore-table"
+              >
+                <thead
+                  data-test="dhis2-uicore-tablehead"
+                >
+                  <tr
+                    class="jsx-2163445633 "
+                    data-test="dhis2-uicore-tablerowhead"
+                  >
+                    <th
+                      class="jsx-1796049005 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Time
+                    </th>
+                    <th
+                      class="jsx-1796049005 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Message
+                    </th>
+                    <th
+                      class="jsx-1796049005 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      ID
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  data-test="dhis2-uicore-tablebody"
+                >
+                  <tr
+                    class="jsx-2163445633 "
+                    data-test="dhis2-uicore-tablerow"
+                  >
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      2020-02-12 13:00:23
+
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      Initiated dataValueImport
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      init
+                    </td>
+                  </tr>
+                  <tr
+                    class="jsx-2163445633 "
+                    data-test="dhis2-uicore-tablerow"
+                  >
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      2020-02-12 13:00:23
+
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      Process started
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      LPCnEwppbqy
+                    </td>
+                  </tr>
+                  <tr
+                    class="jsx-2163445633 "
+                    data-test="dhis2-uicore-tablerow"
+                  >
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      2020-02-12 13:00:23
+
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      Importing data values
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      quL1PHwVPg1
+                    </td>
+                  </tr>
+                  <tr
+                    class="jsx-2163445633 "
+                    data-test="dhis2-uicore-tablerow"
+                  >
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      2020-02-12 13:00:23
+
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      Import done
+                    </td>
+                    <td
+                      class="jsx-996330601 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      fn5gnxqYk1J
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="jsx-3536470681 "
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="content"
+      >
+        <p>
+          Child paragraph
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when not loading and a mini summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="page"
+  >
+    <div
+      class="header"
+    >
+      <span
+        class="icon"
+      >
+        <svg
+          data-test="icon-logo"
+          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="title"
+      >
+        Title
+      </span>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </div>
+    <div
+      class="jsx-3536470681 preBody"
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="content"
+      >
+        <div
+          data-test="mini-job-summary-container"
+        >
+          <div
+            class="container"
+            data-test="mini-job-summary-container-MoreOptions"
+          >
+            <div
+              class="header"
+              data-test="mini-job-summary-container-MoreOptions-header"
+            >
+              <svg
+                data-test="icon-plus"
+                style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+              View summary of recently started import job
+            </div>
+            <div
+              class="children"
+              data-test="mini-job-summary-container-MoreOptions-children"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="jsx-3536470681 "
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="content"
+      >
+        <p>
+          Child paragraph
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when not loading and no summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="page"
+  >
+    <div
+      class="header"
+    >
+      <span
+        class="icon"
+      >
+        <svg
+          data-test="icon-logo"
+          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="title"
+      >
+        Title
+      </span>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </div>
+    <div
+      class="jsx-3536470681 "
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="content"
+      >
+        <p>
+          Child paragraph
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
