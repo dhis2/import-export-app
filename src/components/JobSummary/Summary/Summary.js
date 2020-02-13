@@ -76,7 +76,7 @@ const Summary = ({ summary }) => {
                       />
                   )
               })
-            : []
+            : null
 
     return (
         <div data-test={testIds.JobSummary.summary}>

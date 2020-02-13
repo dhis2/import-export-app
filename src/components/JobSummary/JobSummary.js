@@ -36,7 +36,7 @@ const JobSummary = ({
                     </span>
                 )}
             </div>
-            <div className={s.chips} data-test={testIds.JobSummary.chips}>
+            <div className={s.tags} data-test={testIds.JobSummary.tags}>
                 {task.completed ? (
                     <Tag success text={i18n.t('Completed')} />
                 ) : (
