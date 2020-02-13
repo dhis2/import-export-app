@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import s from './Chip.module.css'
+import s from './Tag.module.css'
 
-const Chip = ({ text, success, warning, error, info }) => (
+const Tag = ({ text, success, warning, error, info }) => (
     <div
         className={`${s.container} ${warning && s.warning} ${error &&
             s.error} ${success && s.success} ${info && s.info}`}
@@ -12,7 +12,7 @@ const Chip = ({ text, success, warning, error, info }) => (
     </div>
 )
 
-Chip.propTypes = {
+Tag.propTypes = {
     text: PropTypes.string.isRequired,
     error: PropTypes.bool,
     info: PropTypes.bool,
@@ -20,4 +20,4 @@ Chip.propTypes = {
     warning: PropTypes.bool,
 }
 
-export { Chip }
+export { Tag }
