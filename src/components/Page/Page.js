@@ -16,7 +16,7 @@ const Page = ({
     desc,
     icon,
     summaryTask,
-    showFullSummaryTask,
+    showFullSummaryTask = false,
     children,
     loading = false,
     dataTest,
