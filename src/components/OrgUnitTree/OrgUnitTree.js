@@ -105,8 +105,9 @@ const OrgUnitTree = ({
                 onComplete: data => {
                     setChildrenFor(path, data.units.children)
                 },
-                onError: e => {
-                    console.error('OrgUnitTree onOpen error: ', e)
+                onError: error => {
+                    setError(error)
+                    console.error('OrgUnitTree onOpen error: ', error)
                 },
             })
         } else {
@@ -122,9 +123,9 @@ const OrgUnitTree = ({
         if (multiSelect) {
             const newValue = !selected.includes(path)
             if (newValue == false) {
-                setSelected(selected => selected.filter(p => p != path))
+                setSelected(selected.filter(p => p != path))
             } else {
-                setSelected(selected => [...selected, path])
+                setSelected([...selected, path])
             }
         } else {
             setSelected([path])
@@ -154,6 +155,7 @@ const OrgUnitTree = ({
                 onOpen={onOpen}
                 onClose={onClose}
                 list={children}
+                dataTest={`${dataTest}-tree`}
             />
         )
     }
