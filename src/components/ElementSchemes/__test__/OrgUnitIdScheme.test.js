@@ -142,8 +142,8 @@ test('additional schemas fail to load and an error is shown ', async () => {
     const errorMessage = getByDataTest('org-unit-id-scheme-ssf-validation')
     expect(errorMessage).toBeInTheDocument()
     expect(errorMessage).toHaveTextContent(
-        i18n.t(
-            'Something went wrong when loading the additional organisation unit ID schemes : 404'
-        )
+        `${i18n.t(
+            'Something went wrong when loading the additional organisation unit ID schemes'
+        )} : 404`
     )
 })
