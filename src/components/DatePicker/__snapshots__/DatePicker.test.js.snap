@@ -3,9 +3,12 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
+    class="container"
     data-test="date-picker"
   >
-    <span>
+    <span
+      class="label"
+    >
       Start date
     </span>
     <div

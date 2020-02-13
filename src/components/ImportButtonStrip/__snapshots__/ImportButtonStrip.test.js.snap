@@ -10,7 +10,7 @@ exports[`matches snapshot 1`] = `
       data-test="import-strip-button-strip"
     >
       <button
-        class="jsx-3433386394 primary"
+        class="jsx-3433386394 dryRun primary"
         data-test="import-strip-dry-run-btn"
         type="button"
       >
