@@ -28,6 +28,7 @@ const Tree = ({
                     label={label}
                     checked={selected.includes(value)}
                     onChange={() => select(value)}
+                    dataTest={`${dataTest}-${value}-select`}
                 />
             ) : (
                 <Radio
@@ -36,6 +37,7 @@ const Tree = ({
                     label={label}
                     checked={selected.includes(value)}
                     onChange={() => select(value)}
+                    dataTest={`${dataTest}-${value}-select`}
                 />
             )
 
@@ -48,7 +50,7 @@ const Tree = ({
                     value={value}
                     onOpen={() => onOpen(value, children)}
                     onClose={() => onClose(value, children)}
-                    dataTest={dataTest}
+                    dataTest={`${dataTest}-${value}`}
                 >
                     {hasChildren && children.length == 0 ? (
                         <span>placeholder</span>
@@ -59,7 +61,11 @@ const Tree = ({
         })
     }
 
-    return list.length == 0 ? null : <div className={s.container}>{view()}</div>
+    return list.length == 0 ? null : (
+        <div className={s.container} data-test={dataTest}>
+            {view()}
+        </div>
+    )
 }
 
 const listItemPropType = PropTypes.exact({
@@ -73,13 +79,13 @@ const listItemPropType = PropTypes.exact({
 
 //   80:5  error  Callback prop types must be listed after all other prop types  react/sort-prop-types
 Tree.propTypes = {
+    dataTest: PropTypes.string.isRequired,
     list: PropTypes.arrayOf(listItemPropType).isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClose: PropTypes.func.isRequired,
     // eslint-disable-next-line react/sort-prop-types
     onOpen: PropTypes.func.isRequired,
     select: PropTypes.func.isRequired,
-    dataTest: PropTypes.string,
     multiSelect: PropTypes.bool,
 }
 

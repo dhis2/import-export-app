@@ -52,9 +52,9 @@ const ProgramPicker = ({
         if (multiSelect) {
             const newValue = !selected.includes(id)
             if (newValue == false) {
-                setSelected(selected => selected.filter(p => p != id))
+                setSelected(selected.filter(p => p != id))
             } else {
-                setSelected(selected => [...selected, id])
+                setSelected([...selected, id])
             }
         } else {
             setSelected([id])
