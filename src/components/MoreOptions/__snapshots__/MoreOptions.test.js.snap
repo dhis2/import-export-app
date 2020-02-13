@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot when not toggled 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="more-options"
+  >
+    <div
+      class="header"
+      data-test="more-options-header"
+    >
+      <svg
+        data-test="icon-plus"
+        style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
+      more options
+    </div>
+    <div
+      class="children"
+      data-test="more-options-children"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when toggled 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="more-options"
+  >
+    <div
+      class="header"
+      data-test="more-options-header"
+    >
+      <svg
+        data-test="icon-minus"
+        style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 13H5v-2h14v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
+      more options
+    </div>
+    <div
+      class="children"
+      data-test="more-options-children"
+    >
+      <p>
+        Child paragraph
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when toggled and different label 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="more-options"
+  >
+    <div
+      class="header"
+      data-test="more-options-header"
+    >
+      <svg
+        data-test="icon-minus"
+        style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 13H5v-2h14v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
+      Details
+    </div>
+    <div
+      class="children"
+      data-test="more-options-children"
+    >
+      <p>
+        Child paragraph
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
