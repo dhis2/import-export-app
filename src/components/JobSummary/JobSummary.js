@@ -6,7 +6,7 @@ import { Divider } from '@dhis2/ui-core'
 import s from './JobSummary.module.css'
 import { jsDateToString } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
-import { Chip } from './Chip/'
+import { Tag } from './Tag/'
 import { Events } from './Events/'
 import { Summary } from './Summary/'
 import { Details } from './Details/'
@@ -38,15 +38,15 @@ const JobSummary = ({
             </div>
             <div className={s.chips} data-test={testIds.JobSummary.chips}>
                 {task.completed ? (
-                    <Chip success text={i18n.t('Completed')} />
+                    <Tag success text={i18n.t('Completed')} />
                 ) : (
-                    <Chip text={i18n.t('In progress')} />
+                    <Tag text={i18n.t('In progress')} />
                 )}
-                {task.error && <Chip error text={i18n.t('Error')} />}
+                {task.error && <Tag error text={i18n.t('Error')} />}
                 {task.summary && task.summary.conflicts && (
-                    <Chip warning text={i18n.t('Conflicts')} />
+                    <Tag warning text={i18n.t('Conflicts')} />
                 )}
-                {jobDetails.dryRun && <Chip info text={i18n.t('Dry run')} />}
+                {jobDetails.dryRun && <Tag info text={i18n.t('Dry run')} />}
             </div>
             <Divider />
             {task.completed && task.summary && (
