@@ -309,7 +309,7 @@ export const tasksState = {
             summary: {
                 status: 'ERROR',
                 stats: {
-                    created: new Date(0),
+                    created: 0,
                     updated: 0,
                     deleted: 0,
                     ignored: 0,
@@ -319,7 +319,7 @@ export const tasksState = {
                     {
                         klass: 'org.hisp.dhis.dxf2.gml.DefaultGmlImportService',
                         stats: {
-                            created: new Date(0),
+                            created: 0,
                             updated: 0,
                             deleted: 0,
                             ignored: 0,
@@ -398,7 +398,7 @@ export const tasksState = {
                 },
                 status: 'OK',
                 stats: {
-                    created: new Date(0),
+                    created: 0,
                     updated: 0,
                     deleted: 0,
                     ignored: 0,
@@ -569,3 +569,7 @@ export const jobOverviewState = {
         },
     },
 }
+
+export const allJobs = ['data', 'event', 'gml', 'metadata']
+    .map(type => Object.keys(tasksState[type]).map(id => tasksState[type][id]))
+    .flat()

@@ -3,6 +3,7 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
+    class="container"
     data-test="job-overview-menu-label-EcJpZjEcMfI"
   >
     <div>
@@ -14,7 +15,9 @@ exports[`matches snapshot 1`] = `
         Completed 
       </span>
     </div>
-    <div>
+    <div
+      class="date"
+    >
       2020-02-12 14:00:23
 
     </div>

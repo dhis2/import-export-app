@@ -3,9 +3,12 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
+    class="container"
     data-test="file-upload"
   >
-    <span>
+    <span
+      class="label"
+    >
       File
     </span>
     <div

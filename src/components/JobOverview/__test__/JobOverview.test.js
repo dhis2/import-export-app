@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history'
 import { render, fireEvent, cleanup } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { tasksState } from './data'
+import { tasksState, allJobs } from './data'
 import { TaskContext } from '../../../contexts/'
 import { JobOverview } from '../'
 import { MenuLabel } from '../MenuLabel'
@@ -14,10 +14,6 @@ afterEach(() => {
     cleanup()
     jest.clearAllMocks()
 })
-
-const allJobs = ['data', 'event', 'gml', 'metadata']
-    .map(type => Object.keys(tasksState[type]).map(id => tasksState[type][id]))
-    .flat()
 
 const props = {
     activeTypes: [],
@@ -51,7 +47,7 @@ test('should show "no jobs started" message when no jobs', async () => {
 
 test('should show list of jobs started', async () => {
     const contextValue = { ...tasksState }
-    const selectedJob = tasksState.data['EcJpZjEcMfI']
+    const selectedJob = allJobs[0]
 
     const { getByDataTest, getAllByDataTest } = renderContext(contextValue, {
         ...props,
@@ -84,7 +80,7 @@ test('should show list of jobs started', async () => {
 
 test('import type filters should filter jobs', async () => {
     const contextValue = { ...tasksState }
-    const selectedJob = tasksState.data['EcJpZjEcMfI']
+    const selectedJob = allJobs[0]
     const setSelectedJob = jest.fn()
     const setActiveTypes = jest.fn()
 
