@@ -174,16 +174,16 @@ const testIds = {
     },
     JobSummary: {
         container: 'job-summary-container',
-        chips: 'job-summary-chips',
         conflicts: 'job-summary-conflicts',
         date: 'job-summary-date',
         details: 'job-summary-task-details',
         events: 'job-summary-events',
         jobDetails: 'job-summary-job-details',
         filename: 'job-summary-filename',
-        messages: 'job-summarymessages',
+        messages: 'job-summary-messages',
         singleSummary: 'job-summary-single-summary',
         summary: 'job-summary-summary',
+        tags: 'job-summary-tags',
         typeCount: 'job-summary-type-count',
     },
     JobOverview: {
