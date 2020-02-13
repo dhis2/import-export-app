@@ -4,4 +4,7 @@ module.exports = {
         'utils', // a utility folder
         __dirname, // the root directory
     ],
+    moduleNameMapper: {
+        '\\.css$': 'identity-obj-proxy',
+    },
 }
