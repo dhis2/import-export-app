@@ -1,5 +1,7 @@
-const cucumber = require('cypress-cucumber-preprocessor').default
+const plugins = require('@dhis2/cli-utils-cypress/plugins')
 
 module.exports = (on, config) => {
-    on('file:preprocessor', cucumber())
+    plugins(on, config)
+
+    // Add additional plugins here
 }
