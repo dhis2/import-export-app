@@ -5,13 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-02-10T12:06:29.003Z\n"
-"PO-Revision-Date: 2020-02-10T12:06:29.003Z\n"
+"POT-Creation-Date: 2020-02-12T09:32:39.778Z\n"
+"PO-Revision-Date: 2020-02-12T09:32:39.778Z\n"
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "Filter data sets by name"
+msgstr ""
 
 msgid "Data sets"
 msgstr ""
 
-msgid "Filter data sets by name"
+msgid "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
 
 msgid "Data element ID scheme"
@@ -21,6 +27,11 @@ msgid "Event ID scheme"
 msgstr ""
 
 msgid "ID scheme"
+msgstr ""
+
+msgid ""
+"Something went wrong when loading the additional organisation unit ID "
+"schemes"
 msgstr ""
 
 msgid "Organisation unit ID scheme"
@@ -143,13 +154,19 @@ msgstr ""
 msgid "more options"
 msgstr ""
 
+msgid "Something went wrong when loading the organisation units!"
+msgstr ""
+
 msgid "Organisation unit"
 msgstr ""
 
-msgid "Programs"
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Filter programs by name"
+msgstr ""
+
+msgid "Programs"
 msgstr ""
 
 msgid "Select all"
@@ -165,6 +182,9 @@ msgid "Yes"
 msgstr ""
 
 msgid "No"
+msgstr ""
+
+msgid "Something went wrong when loading the current user!"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
@@ -221,6 +241,9 @@ msgstr ""
 msgid "One program must be selected"
 msgstr ""
 
+msgid "One program stage must be selected"
+msgstr ""
+
 msgid "Program stage"
 msgstr ""
 
@@ -230,13 +253,22 @@ msgstr ""
 msgid "[ All program stages ]"
 msgstr ""
 
+msgid "Something went wrong when loading the program stages"
+msgstr ""
+
 msgid "Object type"
 msgstr ""
 
 msgid "Skip sharing"
 msgstr ""
 
+msgid "Something went wrong when loading the objects"
+msgstr ""
+
 msgid "At least one schema must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
@@ -245,7 +277,13 @@ msgstr ""
 msgid "Select None"
 msgstr ""
 
+msgid "Something went wrong when loading the class keys"
+msgstr ""
+
 msgid "Class key"
+msgstr ""
+
+msgid "A class key must be selected"
 msgstr ""
 
 msgid "Identifier"
