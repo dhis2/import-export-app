@@ -43,28 +43,6 @@ const DataSetPicker = ({
         },
     })
 
-    const onSelect = id => {
-        if (multiSelect) {
-            const newValue = !selected.includes(id)
-            if (newValue == false) {
-                setSelected(selected.filter(p => p != id))
-            } else {
-                setSelected([...selected, id])
-            }
-        } else {
-            setSelected([id])
-        }
-    }
-
-    const onSelectAll = () => {
-        const all = list.map(({ value }) => value)
-        setSelected(all)
-    }
-
-    const onClearAll = () => {
-        setSelected([])
-    }
-
     let content
     if (loading) {
         content = <CircularLoader dataTest={`${dataTest}-loading`} />
@@ -83,9 +61,7 @@ const DataSetPicker = ({
                 name="dataSetPicker"
                 label={i18n.t('Filter data sets by name')}
                 selected={selected}
-                select={onSelect}
-                onSelectAll={onSelectAll}
-                onClearAll={onClearAll}
+                setSelected={setSelected}
                 multiSelect={multiSelect}
                 list={list}
                 withFilter={withFilter}

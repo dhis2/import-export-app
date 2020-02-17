@@ -10,10 +10,8 @@ const SelectableList = ({
     label,
     name,
     selected,
-    select,
+    setSelected,
     list,
-    onSelectAll,
-    onClearAll,
     multiSelect,
     withFilter,
     withActions,
@@ -21,7 +19,27 @@ const SelectableList = ({
 }) => {
     const [filter, setFilter] = useState('')
 
-    const onSelect = ({ value }) => select(value)
+    const onSelectAll = () => {
+        const all = list.map(({ value }) => value)
+        setSelected(all)
+    }
+
+    const onClearAll = () => {
+        setSelected([])
+    }
+
+    const onSelect = ({ value: id }) => {
+        if (multiSelect) {
+            const newValue = !selected.includes(id)
+            if (newValue == false) {
+                setSelected(selected.filter(p => p != id))
+            } else {
+                setSelected([...selected, id])
+            }
+        } else {
+            setSelected([id])
+        }
+    }
 
     return (
         <div data-test={dataTest}>
@@ -101,13 +119,11 @@ SelectableList.propTypes = {
     label: PropTypes.string.isRequired,
     list: optionsPropType.isRequired,
     name: PropTypes.string.isRequired,
-    select: PropTypes.func.isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelected: PropTypes.func.isRequired,
     multiSelect: PropTypes.bool,
     withActions: PropTypes.bool,
     withFilter: PropTypes.bool,
-    onClearAll: PropTypes.func,
-    onSelectAll: PropTypes.func,
 }
 
 export { SelectableList }
