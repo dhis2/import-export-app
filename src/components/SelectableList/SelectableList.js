@@ -20,12 +20,16 @@ const SelectableList = ({
     const [filter, setFilter] = useState('')
 
     const onSelectAll = () => {
-        const all = list.map(({ value }) => value)
-        setSelected(all)
+        if (multiSelect) {
+            const all = list.map(({ value }) => value)
+            setSelected(all)
+        }
     }
 
     const onClearAll = () => {
-        setSelected([])
+        if (multiSelect) {
+            setSelected([])
+        }
     }
 
     const onSelect = ({ value: id }) => {
@@ -63,6 +67,7 @@ const SelectableList = ({
                         value="select-all"
                         label={i18n.t('Select all')}
                         onChange={onSelectAll}
+                        dataTest={`${dataTest}-actions-select-all`}
                         checked
                     />
                     <Checkbox
@@ -71,6 +76,7 @@ const SelectableList = ({
                         value="clear-all"
                         label={i18n.t('Clear all')}
                         onChange={onClearAll}
+                        dataTest={`${dataTest}-actions-clear-all`}
                     />
                 </div>
             )}
