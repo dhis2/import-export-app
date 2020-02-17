@@ -1,22 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Help, Switch as UISwitch } from '@dhis2/ui-core'
+import { SwitchField } from '@dhis2/ui-core'
 
 import { FormField } from '../FormField'
 
 const Switch = ({ name, label, help, checked, setChecked, dataTest }) => {
     return (
         <FormField label={label} dataTest={dataTest}>
-            <>
-                <UISwitch
-                    name={name}
-                    onChange={() => setChecked(!checked)}
-                    checked={checked}
-                    label={checked ? i18n.t('Yes') : i18n.t('No')}
-                />
-                {help && <Help>{help}</Help>}
-            </>
+            <SwitchField
+                name={name}
+                onChange={() => setChecked(!checked)}
+                checked={checked}
+                label={checked ? i18n.t('Yes') : i18n.t('No')}
+                helpText={help}
+                dataTest={`${dataTest}-sf`}
+            />
         </FormField>
     )
 }
