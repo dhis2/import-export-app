@@ -22,6 +22,7 @@ const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
                             label={o.label}
                             checked={o.value == checked.value}
                             onChange={onChange}
+                            dataTest={`${dataTest}-${o.value}`}
                         />
                         {o.help && <Help>{o.help}</Help>}
                     </div>
