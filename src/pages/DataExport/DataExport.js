@@ -84,7 +84,6 @@ const dataValueSetQuery = {
             orgUnit,
             dataSet,
             format,
-            paging: 'false',
         }),
     },
 }
