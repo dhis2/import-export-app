@@ -17,7 +17,7 @@ const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
                     <div key={o.value}>
                         <Radio
                             className={s.radio}
-                            name={o.label}
+                            name={name}
                             value={o.value}
                             label={o.label}
                             checked={o.value == checked.value}

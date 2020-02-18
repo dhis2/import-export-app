@@ -90,7 +90,7 @@ const SelectableList = ({
                         const component = multiSelect ? (
                             <Checkbox
                                 value={value}
-                                name={value}
+                                name={name}
                                 label={label}
                                 checked={selected.includes(value)}
                                 onChange={() => 0}
@@ -98,7 +98,7 @@ const SelectableList = ({
                         ) : (
                             <Radio
                                 value={value}
-                                name={value}
+                                name={name}
                                 label={label}
                                 checked={selected.includes(value)}
                                 onChange={() => 0}
