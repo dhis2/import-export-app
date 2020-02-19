@@ -7,8 +7,8 @@ import { FormField } from '../FormField'
 import s from './RadioGroup.module.css'
 
 const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
-    const onChange = ({ value, name }) =>
-        setValue({ value: value, label: name })
+    const onChange = label => ({ value }) =>
+        setValue({ value: value, label: label })
 
     return (
         <FormField label={label} dataTest={dataTest} name={name}>
@@ -21,7 +21,7 @@ const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
                             value={o.value}
                             label={o.label}
                             checked={o.value == checked.value}
-                            onChange={onChange}
+                            onChange={onChange(o.label)}
                             dataTest={`${dataTest}-${o.value}`}
                         />
                         {o.help && <Help>{o.help}</Help>}
