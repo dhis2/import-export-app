@@ -6,11 +6,7 @@ import { Button } from '@dhis2/ui-core'
 // import s from './EventExport.module.css';
 import { eventExportPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
-import {
-    globalLocationAssign,
-    jsDateToISO8601,
-    pathToId,
-} from '../../utils/helper'
+import { jsDateToISO8601, locationAssign, pathToId } from '../../utils/helper'
 import {
     formatOptions,
     compressionOptions,
@@ -118,8 +114,7 @@ const EventExport = () => {
             .filter(s => s != '')
             .join('&')
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-        globalLocationAssign()
-        window.locationAssign(url)
+        locationAssign(url)
     }
 
     const onDateChange = stateFn => date => {

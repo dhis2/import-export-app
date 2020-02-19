@@ -5,7 +5,7 @@ import { Button } from '@dhis2/ui-core'
 
 import { metadataDependencyExportPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
-import { globalLocationAssign } from '../../utils/helper'
+import { locationAssign } from '../../utils/helper'
 import {
     formatNoCsvOptions,
     compressionOptions,
@@ -36,8 +36,7 @@ const MetadataDependencyExport = () => {
             : format.value
         const downloadUrlParams = `skipSharing=${skipSharing}&download=true`
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-        globalLocationAssign()
-        window.locationAssign(url)
+        locationAssign(url)
     }
 
     return (

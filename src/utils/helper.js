@@ -176,9 +176,12 @@ const uploadFile = ({
     }
 }
 
-const globalLocationAssign = () => {
-    if (!window.locationAssign) {
-        window.locationAssign = url => (window.location = url)
+// call stub function if available
+const locationAssign = url => {
+    if (window.locationAssign) {
+        window.locationAssign(url)
+    } else {
+        window.location = url
     }
 }
 
@@ -186,7 +189,7 @@ export {
     createBlob,
     downloadBlob,
     fetchAttributes,
-    globalLocationAssign,
+    locationAssign,
     jsDateToISO8601,
     jsDateToString,
     pathToId,
