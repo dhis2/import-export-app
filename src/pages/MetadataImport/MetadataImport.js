@@ -145,7 +145,6 @@ const MetadataImport = ({ query }) => {
         const apiBaseUrl = `${baseUrl}/api/`
         const endpoint = 'metadata.json'
         const params = [
-            `dryRun=${dryRun}`,
             `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,
             `identifier=${identifier.value}`,
             `importReportMode=${importReportMode.value}`,
@@ -158,11 +157,13 @@ const MetadataImport = ({ query }) => {
             `skipValidation=${skipValidation}`,
             `inclusionStrategy=${inclusionStrategy.value}`,
             `async=${isAsync}`,
-            'format=json',
+            `format=${format.value}`,
             format.value == 'csv'
                 ? `firstRowIsHeader=${firstRowIsHeader}&classKey=${classKey.value}`
                 : '',
-        ].join('&')
+        ]
+            .filter(s => s != '')
+            .join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
         const jobDetails = {

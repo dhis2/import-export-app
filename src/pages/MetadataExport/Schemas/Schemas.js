@@ -115,10 +115,16 @@ const Schemas = ({
         content = (
             <>
                 <ButtonStrip>
-                    <Button onClick={onSelectGeneric(true)}>
+                    <Button
+                        onClick={onSelectGeneric(true)}
+                        dataTest={`${dataTest}-select-all`}
+                    >
                         {i18n.t('Select All')}
                     </Button>
-                    <Button onClick={onSelectGeneric(false)}>
+                    <Button
+                        onClick={onSelectGeneric(false)}
+                        dataTest={`${dataTest}-select-none`}
+                    >
                         {i18n.t('Select None')}
                     </Button>
                 </ButtonStrip>

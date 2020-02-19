@@ -18,7 +18,7 @@ const programStageQuery = {
     },
 }
 
-const ALL_VALUE = ':all'
+const ALL_VALUE = ''
 const ALL_LABEL = i18n.t('[ All program stages ]')
 
 const ProgramStageSelect = ({

@@ -133,11 +133,11 @@ const DataExport = () => {
             })
         }
 
-        if (endDate <= startDate) {
+        if (endDate < startDate) {
             alerts.push({
                 id: `period-${timestamp}`,
                 warning: true,
-                message: i18n.t('End date must be before start date'),
+                message: i18n.t('End date must be after start date'),
             })
         }
 
