@@ -1,8 +1,5 @@
 const deselectAllDataSets = () => {
-    cy.get(
-        '[data-test="input-data-sets"] [data-test="checkboxgroup-clearall"] button'
-    ).click()
-
+    cy.get('[data-test="input-data-set-picker-list-actions-clear-all"]').click()
     return cy
 }
 

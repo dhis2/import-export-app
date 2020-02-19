@@ -1,0 +1,18 @@
+[
+    {
+        "uid": "FMUTlClhwp0",
+        "level": "INFO",
+        "category": "METADATA_IMPORT",
+        "time": "2020-02-19T13:32:34.754",
+        "message": "(admin) Import:Done took 0.28 seconds",
+        "completed": true
+    },
+    {
+        "uid": "erOPdChwNNC",
+        "level": "INFO",
+        "category": "METADATA_IMPORT",
+        "time": "2020-02-19T13:32:34.473",
+        "message": "(admin) Import:Start",
+        "completed": false
+    }
+]

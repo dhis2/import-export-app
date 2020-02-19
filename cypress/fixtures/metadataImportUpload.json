@@ -1,0 +1,13 @@
+{
+    "httpStatus": "OK",
+    "httpStatusCode": 200,
+    "status": "OK",
+    "message": "Initiated metadataImport",
+    "response": {
+        "name": "metadataImport",
+        "id": "LsJVYK4DwaO",
+        "created": "2020-02-19T13:32:34.442",
+        "jobType": "METADATA_IMPORT",
+        "relativeNotifierEndpoint": "/api/system/tasks/METADATA_IMPORT/LsJVYK4DwaO"
+    }
+}

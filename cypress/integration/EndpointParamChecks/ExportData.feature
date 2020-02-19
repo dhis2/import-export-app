@@ -44,7 +44,7 @@ Feature: The user should be able to export data
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different end date
-        Given the "startDate" input is set to "2020-01-06"
+        Given the "endDate" input is set to "2020-01-07"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

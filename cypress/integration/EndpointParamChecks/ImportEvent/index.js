@@ -1,12 +1,28 @@
 import '../common/settingFormValues'
-import { Before, Given } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const dataApi = /api\/events.(json|xml|csv)/
+const tasksApi = /tasks/
+const summaryApi = /taskSummaries/
 
 Before(() => {
     cy.server()
-        .route('POST', dataApi, {})
-        .as('uploadXHR')
+
+    cy.stubWithFixture({
+        method: 'POST',
+        url: dataApi,
+        fixture: 'eventImportUpload',
+    }).as('uploadXHR')
+
+    cy.stubWithFixture({
+        url: tasksApi,
+        fixture: 'eventImportTasks',
+    }).as('tasksXHR')
+
+    cy.stubWithFixture({
+        url: summaryApi,
+        fixture: 'eventImportSummaries',
+    }).as('tasksXHR')
 })
 
 Given('the user is on the event page', () => {

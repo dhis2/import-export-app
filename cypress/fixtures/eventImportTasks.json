@@ -1,0 +1,18 @@
+[
+    {
+        "uid": "iWERDgNv77G",
+        "level": "INFO",
+        "category": "EVENT_IMPORT",
+        "time": "2020-02-19T13:10:44.884",
+        "message": "Import done. Completed in 00:00:00.085.",
+        "completed": true
+    },
+    {
+        "uid": "vwsCQpeX4az",
+        "level": "INFO",
+        "category": "EVENT_IMPORT",
+        "time": "2020-02-19T13:10:44.796",
+        "message": "Importing events",
+        "completed": false
+    }
+]

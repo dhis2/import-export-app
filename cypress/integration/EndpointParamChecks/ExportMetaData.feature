@@ -17,7 +17,7 @@ Feature: The user should be able to export meta data
     Scenario: The user deselects all schemas
         Given the schemas are all deselected
         When the export form is submitted
-        Then the download request is sent with the right parameters
+        Then the download request is not sent
 
     Scenario: The user selects only the first schema
         Given the schemas are all deselected

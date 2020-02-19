@@ -1,14 +1,28 @@
 import '../common/settingFormValues'
-import { Before, Given } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const dataApi = /api\/dataValueSets.(json|xml|csv|adx|pdf)/
+const tasksApi = /tasks/
+const summaryApi = /taskSummaries/
 
 Before(() => {
     cy.server()
-        .route('POST', dataApi, {})
-        .as('uploadXHR')
 
-    cy.route(/api\/me\/authorization/, ['F_SKIP_DATA_IMPORT_AUDIT'])
+    cy.stubWithFixture({
+        method: 'POST',
+        url: dataApi,
+        fixture: 'dataImportUpload',
+    }).as('uploadXHR')
+
+    cy.stubWithFixture({
+        url: tasksApi,
+        fixture: 'dataImportTasks',
+    }).as('tasksXHR')
+
+    cy.stubWithFixture({
+        url: summaryApi,
+        fixture: 'dataImportSummaries',
+    }).as('tasksXHR')
 })
 
 Given('the user is on the data import page', () => {

@@ -1,12 +1,28 @@
 import '../common/settingFormValues'
-import { Before, Given } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const metadataApi = /api\/metadata.json/
+const tasksApi = /tasks/
+const summaryApi = /taskSummaries/
 
 Before(() => {
     cy.server()
-        .route('POST', metadataApi, {})
-        .as('uploadXHR')
+
+    cy.stubWithFixture({
+        method: 'POST',
+        url: metadataApi,
+        fixture: 'metadataImportUpload',
+    }).as('uploadXHR')
+
+    cy.stubWithFixture({
+        url: tasksApi,
+        fixture: 'metadataImportTasks',
+    }).as('tasksXHR')
+
+    cy.stubWithFixture({
+        url: summaryApi,
+        fixture: 'metadataImportSummaries',
+    }).as('tasksXHR')
 })
 
 Given('the user is on the meta data import page', () => {

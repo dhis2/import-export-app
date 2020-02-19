@@ -1,8 +1,7 @@
 const selectAllDataSets = () => {
     cy.get(
-        '[data-test="input-data-sets"] [data-test="checkboxgroup-selectall"] button'
+        '[data-test="input-data-set-picker-list-actions-select-all"]'
     ).click()
-
     return cy
 }
 

@@ -1,12 +1,16 @@
 import '../common/settingFormValues'
-import { Before, Given } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const dataApi = /api\/metadata\/gml/
 
 Before(() => {
     cy.server()
-        .route('POST', dataApi, {})
-        .as('uploadXHR')
+
+    cy.stubWithFixture({
+        method: 'POST',
+        url: dataApi,
+        fixture: 'gmlImportUpload',
+    }).as('uploadXHR')
 })
 
 Given('the user is on the gml page', () => {

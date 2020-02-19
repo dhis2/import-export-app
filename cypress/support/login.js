@@ -6,9 +6,12 @@ const loginEndPoint = 'dhis-web-commons/security/login.action'
  * https://docs.cypress.io/guides/guides/web-security.html#One-Superdomain-per-Test
  */
 Cypress.Commands.add('login', () => {
-    const username = Cypress.env('LOGIN_USERNAME')
-    const password = Cypress.env('LOGIN_PASSWORD')
-    const loginUrl = Cypress.env('LOGIN_URL')
+    // AuthBoundary
+    localStorage.setItem('DHIS2_BASE_URL', 'http://localhost:8080')
+
+    const username = Cypress.env('dhis2_username')
+    const password = Cypress.env('dhis2_password')
+    const loginUrl = Cypress.env('dhis2_base_url')
     const loginAuth = `Basic ${btoa(`${username}:${password}`)}`
 
     return cy.request({
