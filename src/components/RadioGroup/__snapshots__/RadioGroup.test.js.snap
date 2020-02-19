@@ -22,7 +22,7 @@ exports[`matches snapshot 1`] = `
           <input
             checked=""
             class="jsx-288718393"
-            name="Abc"
+            name="format"
             type="radio"
             value="a"
           />
@@ -62,7 +62,7 @@ exports[`matches snapshot 1`] = `
         >
           <input
             class="jsx-288718393"
-            name="Def"
+            name="format"
             type="radio"
             value="b"
           />
@@ -102,7 +102,7 @@ exports[`matches snapshot 1`] = `
         >
           <input
             class="jsx-288718393"
-            name="Ghi"
+            name="format"
             type="radio"
             value="c"
           />

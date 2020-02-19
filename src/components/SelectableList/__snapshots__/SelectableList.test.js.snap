@@ -165,7 +165,7 @@ exports[`matches snapshot 1`] = `
             >
               <input
                 class="jsx-2149578448"
-                name="a"
+                name="data-sets"
                 type="checkbox"
                 value="a"
               />
@@ -224,7 +224,7 @@ exports[`matches snapshot 1`] = `
             >
               <input
                 class="jsx-2149578448"
-                name="b"
+                name="data-sets"
                 type="checkbox"
                 value="b"
               />
@@ -283,7 +283,7 @@ exports[`matches snapshot 1`] = `
             >
               <input
                 class="jsx-2149578448"
-                name="c"
+                name="data-sets"
                 type="checkbox"
                 value="c"
               />
