@@ -1,0 +1,26 @@
+[
+    {
+        "uid": "IAcsMnK0HPc",
+        "level": "INFO",
+        "category": "DATAVALUE_IMPORT",
+        "time": "2020-02-19T12:50:12.017",
+        "message": "Import done",
+        "completed": true
+    },
+    {
+        "uid": "UQTbefLc4vO",
+        "level": "INFO",
+        "category": "DATAVALUE_IMPORT",
+        "time": "2020-02-19T12:50:12.016",
+        "message": "Importing data values",
+        "completed": false
+    },
+    {
+        "uid": "LUV77a5A2eM",
+        "level": "INFO",
+        "category": "DATAVALUE_IMPORT",
+        "time": "2020-02-19T12:50:11.878",
+        "message": "Process started",
+        "completed": false
+    }
+]

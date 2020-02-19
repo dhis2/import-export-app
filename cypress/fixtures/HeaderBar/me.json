@@ -1,0 +1,8 @@
+{
+    "name": "John Doe",
+    "email": "john_doe@dhis2.org",
+    "settings": {
+        "keyUiLocale": "en"
+    },
+    "authorities": ["F_SKIP_DATA_IMPORT_AUDIT"]
+}

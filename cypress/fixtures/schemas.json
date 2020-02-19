@@ -1,652 +1,652 @@
 {
-  "schemas":[
-    {
-      "klass":"org.hisp.dhis.attribute.Attribute",
-      "metadata":true,
-      "displayName":"Attribute",
-      "collectionName":"attributes"
-    },
-    {
-      "klass":"org.hisp.dhis.user.UserAuthorityGroup",
-      "metadata":true,
-      "displayName":"User Authority Group",
-      "collectionName":"userRoles"
-    },
-    {
-      "klass":"org.hisp.dhis.user.User",
-      "metadata":true,
-      "displayName":"User",
-      "collectionName":"users"
-    },
-    {
-      "klass":"org.hisp.dhis.user.UserGroup",
-      "metadata":true,
-      "displayName":"User Group",
-      "collectionName":"userGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.fileresource.ExternalFileResource",
-      "metadata":true,
-      "displayName":"External File Resource",
-      "collectionName":"externalFileResources"
-    },
-    {
-      "klass":"org.hisp.dhis.sqlview.SqlView",
-      "metadata":true,
-      "displayName":"Sql View",
-      "collectionName":"sqlViews"
-    },
-    {
-      "klass":"org.hisp.dhis.security.oauth2.OAuth2Client",
-      "metadata":true,
-      "displayName":"O Auth2 Client",
-      "collectionName":"oAuth2Clients"
-    },
-    {
-      "klass":"org.hisp.dhis.constant.Constant",
-      "metadata":true,
-      "displayName":"Constant",
-      "collectionName":"constants"
-    },
-    {
-      "klass":"org.hisp.dhis.option.Option",
-      "metadata":true,
-      "displayName":"Option",
-      "collectionName":"options"
-    },
-    {
-      "klass":"org.hisp.dhis.scheduling.JobConfiguration",
-      "metadata":true,
-      "displayName":"Job Configuration",
-      "collectionName":"jobConfigurations"
-    },
-    {
-      "klass":"org.hisp.dhis.option.OptionSet",
-      "metadata":true,
-      "displayName":"Option Set",
-      "collectionName":"optionSets"
-    },
-    {
-      "klass":"org.hisp.dhis.option.OptionGroup",
-      "metadata":true,
-      "displayName":"Option Group",
-      "collectionName":"optionGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.option.OptionGroupSet",
-      "metadata":true,
-      "displayName":"Option Group Set",
-      "collectionName":"optionGroupSets"
-    },
-    {
-      "klass":"org.hisp.dhis.color.ColorSet",
-      "metadata":true,
-      "displayName":"Color Set",
-      "collectionName":"colorSets"
-    },
-    {
-      "klass":"org.hisp.dhis.legend.LegendSet",
-      "metadata":true,
-      "displayName":"Legend Set",
-      "collectionName":"legendSets"
-    },
-    {
-      "klass":"org.hisp.dhis.organisationunit.OrganisationUnit",
-      "metadata":true,
-      "displayName":"Organisation Unit",
-      "collectionName":"organisationUnits"
-    },
-    {
-      "klass":"org.hisp.dhis.organisationunit.OrganisationUnitLevel",
-      "metadata":true,
-      "displayName":"Organisation Unit Level",
-      "collectionName":"organisationUnitLevels"
-    },
-    {
-      "klass":"org.hisp.dhis.organisationunit.OrganisationUnitGroup",
-      "metadata":true,
-      "displayName":"Organisation Unit Group",
-      "collectionName":"organisationUnitGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.organisationunit.OrganisationUnitGroupSet",
-      "metadata":true,
-      "displayName":"Organisation Unit Group Set",
-      "collectionName":"organisationUnitGroupSets"
-    },
-    {
-      "klass":"org.hisp.dhis.category.CategoryOption",
-      "metadata":true,
-      "displayName":"Category Option",
-      "collectionName":"categoryOptions"
-    },
-    {
-      "klass":"org.hisp.dhis.category.CategoryOptionGroup",
-      "metadata":true,
-      "displayName":"Category Option Group",
-      "collectionName":"categoryOptionGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.category.CategoryOptionGroupSet",
-      "metadata":true,
-      "displayName":"Category Option Group Set",
-      "collectionName":"categoryOptionGroupSets"
-    },
-    {
-      "klass":"org.hisp.dhis.category.Category",
-      "metadata":true,
-      "displayName":"Category",
-      "collectionName":"categories"
-    },
-    {
-      "klass":"org.hisp.dhis.category.CategoryCombo",
-      "metadata":true,
-      "displayName":"Category Combo",
-      "collectionName":"categoryCombos"
-    },
-    {
-      "klass":"org.hisp.dhis.category.CategoryOptionCombo",
-      "metadata":true,
-      "displayName":"Category Option Combo",
-      "collectionName":"categoryOptionCombos"
-    },
-    {
-      "klass":"org.hisp.dhis.dataelement.DataElement",
-      "metadata":true,
-      "displayName":"Data Element",
-      "collectionName":"dataElements"
-    },
-    {
-      "klass":"org.hisp.dhis.dataelement.DataElementGroup",
-      "metadata":true,
-      "displayName":"Data Element Group",
-      "collectionName":"dataElementGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.dataelement.DataElementGroupSet",
-      "metadata":true,
-      "displayName":"Data Element Group Set",
-      "collectionName":"dataElementGroupSets"
-    },
-    {
-      "klass":"org.hisp.dhis.indicator.IndicatorType",
-      "metadata":true,
-      "displayName":"Indicator Type",
-      "collectionName":"indicatorTypes"
-    },
-    {
-      "klass":"org.hisp.dhis.analytics.AnalyticsTableHook",
-      "metadata":true,
-      "displayName":"Analytics Table Hook",
-      "collectionName":"analyticsTableHooks"
-    },
-    {
-      "klass":"org.hisp.dhis.indicator.Indicator",
-      "metadata":true,
-      "displayName":"Indicator",
-      "collectionName":"indicators"
-    },
-    {
-      "klass":"org.hisp.dhis.indicator.IndicatorGroup",
-      "metadata":true,
-      "displayName":"Indicator Group",
-      "collectionName":"indicatorGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.indicator.IndicatorGroupSet",
-      "metadata":true,
-      "displayName":"Indicator Group Set",
-      "collectionName":"indicatorGroupSets"
-    },
-    {
-      "klass":"org.hisp.dhis.dataentryform.DataEntryForm",
-      "metadata":true,
-      "displayName":"Data Entry Form",
-      "collectionName":"dataEntryForms"
-    },
-    {
-      "klass":"org.hisp.dhis.dataset.DataSet",
-      "metadata":true,
-      "displayName":"Data Set",
-      "collectionName":"dataSets"
-    },
-    {
-      "klass":"org.hisp.dhis.dataset.notifications.DataSetNotificationTemplate",
-      "metadata":true,
-      "displayName":"Data Set Notification Template",
-      "collectionName":"dataSetNotificationTemplates"
-    },
-    {
-      "klass":"org.hisp.dhis.dataset.Section",
-      "metadata":true,
-      "displayName":"Section",
-      "collectionName":"sections"
-    },
-    {
-      "klass":"org.hisp.dhis.dataapproval.DataApprovalLevel",
-      "metadata":true,
-      "displayName":"Data Approval Level",
-      "collectionName":"dataApprovalLevels"
-    },
-    {
-      "klass":"org.hisp.dhis.dataapproval.DataApprovalWorkflow",
-      "metadata":true,
-      "displayName":"Data Approval Workflow",
-      "collectionName":"dataApprovalWorkflows"
-    },
-    {
-      "klass":"org.hisp.dhis.validation.ValidationRule",
-      "metadata":true,
-      "displayName":"Validation Rule",
-      "collectionName":"validationRules"
-    },
-    {
-      "klass":"org.hisp.dhis.validation.ValidationRuleGroup",
-      "metadata":true,
-      "displayName":"Validation Rule Group",
-      "collectionName":"validationRuleGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.validation.notification.ValidationNotificationTemplate",
-      "metadata":true,
-      "displayName":"Validation Notification Template",
-      "collectionName":"validationNotificationTemplates"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentity.TrackedEntityAttribute",
-      "metadata":true,
-      "displayName":"Tracked Entity Attribute",
-      "collectionName":"trackedEntityAttributes"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentity.TrackedEntityType",
-      "metadata":true,
-      "displayName":"Tracked Entity Type",
-      "collectionName":"trackedEntityTypes"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramTrackedEntityAttributeGroup",
-      "metadata":true,
-      "displayName":"Program Tracked Entity Attribute Group",
-      "collectionName":"programTrackedEntityAttributeGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentity.TrackedEntityTypeAttribute",
-      "metadata":false,
-      "displayName":"Tracked Entity Type Attribute",
-      "collectionName":"trackedEntityTypeAttributes"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramStageSection",
-      "metadata":true,
-      "displayName":"Program Stage Section",
-      "collectionName":"programStageSections"
-    },
-    {
-      "klass":"org.hisp.dhis.program.notification.ProgramNotificationTemplate",
-      "metadata":true,
-      "displayName":"Program Notification Template",
-      "collectionName":"programNotificationTemplates"
-    },
-    {
-      "klass":"org.hisp.dhis.sms.command.SMSCommand",
-      "metadata":true,
-      "displayName":"S M S Command",
-      "collectionName":"smsCommands"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramStage",
-      "metadata":true,
-      "displayName":"Program Stage",
-      "collectionName":"programStages"
-    },
-    {
-      "klass":"org.hisp.dhis.program.Program",
-      "metadata":true,
-      "displayName":"Program",
-      "collectionName":"programs"
-    },
-    {
-      "klass":"org.hisp.dhis.eventchart.EventChart",
-      "metadata":true,
-      "displayName":"Event Chart",
-      "collectionName":"eventCharts"
-    },
-    {
-      "klass":"org.hisp.dhis.eventreport.EventReport",
-      "metadata":true,
-      "displayName":"Event Report",
-      "collectionName":"eventReports"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramSection",
-      "metadata":true,
-      "displayName":"Program Section",
-      "collectionName":"programSections"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramIndicator",
-      "metadata":true,
-      "displayName":"Program Indicator",
-      "collectionName":"programIndicators"
-    },
-    {
-      "klass":"org.hisp.dhis.relationship.RelationshipType",
-      "metadata":true,
-      "displayName":"Relationship Type",
-      "collectionName":"relationshipTypes"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramIndicatorGroup",
-      "metadata":true,
-      "displayName":"Program Indicator Group",
-      "collectionName":"programIndicatorGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.programrule.ProgramRuleVariable",
-      "metadata":true,
-      "displayName":"Program Rule Variable",
-      "collectionName":"programRuleVariables"
-    },
-    {
-      "klass":"org.hisp.dhis.programrule.ProgramRuleAction",
-      "metadata":true,
-      "displayName":"Program Rule Action",
-      "collectionName":"programRuleActions"
-    },
-    {
-      "klass":"org.hisp.dhis.programrule.ProgramRule",
-      "metadata":true,
-      "displayName":"Program Rule",
-      "collectionName":"programRules"
-    },
-    {
-      "klass":"org.hisp.dhis.mapping.MapView",
-      "metadata":true,
-      "displayName":"Map View",
-      "collectionName":"mapViews"
-    },
-    {
-      "klass":"org.hisp.dhis.reporttable.ReportTable",
-      "metadata":true,
-      "displayName":"Report Table",
-      "collectionName":"reportTables"
-    },
-    {
-      "klass":"org.hisp.dhis.report.Report",
-      "metadata":true,
-      "displayName":"Report",
-      "collectionName":"reports"
-    },
-    {
-      "klass":"org.hisp.dhis.mapping.ExternalMapLayer",
-      "metadata":true,
-      "displayName":"External Map Layer",
-      "collectionName":"externalMapLayers"
-    },
-    {
-      "klass":"org.hisp.dhis.chart.Chart",
-      "metadata":true,
-      "displayName":"Chart",
-      "collectionName":"charts"
-    },
-    {
-      "klass":"org.hisp.dhis.validation.ValidationResult",
-      "metadata":false,
-      "displayName":"Validation Result",
-      "collectionName":"validationResults"
-    },
-    {
-      "klass":"org.hisp.dhis.document.Document",
-      "metadata":true,
-      "displayName":"Document",
-      "collectionName":"documents"
-    },
-    {
-      "klass":"org.hisp.dhis.mapping.Map",
-      "metadata":true,
-      "displayName":"Map",
-      "collectionName":"maps"
-    },
-    {
-      "klass":"org.hisp.dhis.predictor.Predictor",
-      "metadata":true,
-      "displayName":"Predictor",
-      "collectionName":"predictors"
-    },
-    {
-      "klass":"org.hisp.dhis.predictor.PredictorGroup",
-      "metadata":true,
-      "displayName":"Predictor Group",
-      "collectionName":"predictorGroups"
-    },
-    {
-      "klass":"org.hisp.dhis.dashboard.DashboardItem",
-      "metadata":false,
-      "displayName":"Dashboard Item",
-      "collectionName":"dashboardItems"
-    },
-    {
-      "klass":"org.hisp.dhis.dashboard.Dashboard",
-      "metadata":true,
-      "displayName":"Dashboard",
-      "collectionName":"dashboards"
-    },
-    {
-      "klass":"org.hisp.dhis.pushanalysis.PushAnalysis",
-      "metadata":true,
-      "displayName":"Push Analysis",
-      "collectionName":"pushAnalysis"
-    },
-    {
-      "klass":"org.hisp.dhis.keyjsonvalue.KeyJsonValue",
-      "metadata":false,
-      "displayName":"Key Json Value",
-      "collectionName":"dataStores"
-    },
-    {
-      "klass":"org.hisp.dhis.color.Color",
-      "metadata":false,
-      "displayName":"Color",
-      "collectionName":"colors"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramTrackedEntityAttribute",
-      "metadata":false,
-      "displayName":"Program Tracked Entity Attribute",
-      "collectionName":"programTrackedEntityAttributes"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramStageInstance",
-      "metadata":false,
-      "displayName":"Program Stage Instance",
-      "collectionName":"programStageInstances"
-    },
-    {
-      "klass":"org.hisp.dhis.message.MessageConversation",
-      "metadata":false,
-      "displayName":"Message Conversation",
-      "collectionName":"messageConversations"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramStageDataElement",
-      "metadata":false,
-      "displayName":"Program Stage Data Element",
-      "collectionName":"programStageDataElements"
-    },
-    {
-      "klass":"org.hisp.dhis.dataelement.DataElementOperand",
-      "metadata":false,
-      "displayName":"Data Element Operand",
-      "collectionName":"dataElementOperands"
-    },
-    {
-      "klass":"org.hisp.dhis.user.UserAccess",
-      "metadata":false,
-      "displayName":"User Access",
-      "collectionName":"userAccesses"
-    },
-    {
-      "klass":"org.hisp.dhis.relationship.Relationship",
-      "metadata":false,
-      "displayName":"Relationship",
-      "collectionName":"relationships"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramDataElementDimensionItem",
-      "metadata":false,
-      "displayName":"Program Data Element Dimension Item",
-      "collectionName":"programDataElements"
-    },
-    {
-      "klass":"org.hisp.dhis.category.CategoryDimension",
-      "metadata":false,
-      "displayName":"Category Dimension",
-      "collectionName":"categoryDimensions"
-    },
-    {
-      "klass":"org.hisp.dhis.programstagefilter.ProgramStageInstanceFilter",
-      "metadata":true,
-      "displayName":"Program Stage Instance Filter",
-      "collectionName":"eventFilters"
-    },
-    {
-      "klass":"org.hisp.dhis.legend.Legend",
-      "metadata":false,
-      "displayName":"Legend",
-      "collectionName":"legends"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentity.TrackedEntityDataElementDimension",
-      "metadata":false,
-      "displayName":"Tracked Entity Data Element Dimension",
-      "collectionName":"trackedEntityDataElementDimensions"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentityfilter.TrackedEntityInstanceFilter",
-      "metadata":true,
-      "displayName":"Tracked Entity Instance Filter",
-      "collectionName":"trackedEntityInstanceFilters"
-    },
-    {
-      "klass":"org.hisp.dhis.metadata.version.MetadataVersion",
-      "metadata":false,
-      "displayName":"Metadata Version",
-      "collectionName":"metadataVersions"
-    },
-    {
-      "klass":"org.hisp.dhis.user.UserCredentials",
-      "metadata":false,
-      "displayName":"User Credentials",
-      "collectionName":"userCredentials"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentity.TrackedEntityInstance",
-      "metadata":false,
-      "displayName":"Tracked Entity Instance",
-      "collectionName":"trackedEntityInstances"
-    },
-    {
-      "klass":"org.hisp.dhis.icon.Icon",
-      "metadata":false,
-      "displayName":"Icon",
-      "collectionName":"icons"
-    },
-    {
-      "klass":"org.hisp.dhis.dataset.DataInputPeriod",
-      "metadata":false,
-      "displayName":"Data Input Period",
-      "collectionName":"dataInputPeriods"
-    },
-    {
-      "klass":"org.hisp.dhis.common.ReportingRate",
-      "metadata":false,
-      "displayName":"Reporting Rate",
-      "collectionName":"reportingRates"
-    },
-    {
-      "klass":"org.hisp.dhis.dataset.DataSetElement",
-      "metadata":false,
-      "displayName":"Data Set Element",
-      "collectionName":"dataSetElements"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentity.TrackedEntityProgramIndicatorDimension",
-      "metadata":false,
-      "displayName":"Tracked Entity Program Indicator Dimension",
-      "collectionName":"dataElementDimensions"
-    },
-    {
-      "klass":"org.hisp.dhis.minmax.MinMaxDataElement",
-      "metadata":false,
-      "displayName":"Min Max Data Element",
-      "collectionName":"minMaxDataElements"
-    },
-    {
-      "klass":"org.hisp.dhis.interpretation.Interpretation",
-      "metadata":false,
-      "displayName":"Interpretation",
-      "collectionName":"interpretations"
-    },
-    {
-      "klass":"org.hisp.dhis.organisationunit.OrganisationUnitGroupSetDimension",
-      "metadata":false,
-      "displayName":"Organisation Unit Group Set Dimension",
-      "collectionName":"organisationUnitGroupSetDimensions"
-    },
-    {
-      "klass":"org.hisp.dhis.trackedentityattributevalue.TrackedEntityAttributeValue",
-      "metadata":false,
-      "displayName":"Tracked Entity Attribute Value",
-      "collectionName":"trackedEntityAttributeValues"
-    },
-    {
-      "klass":"org.hisp.dhis.interpretation.InterpretationComment",
-      "metadata":false,
-      "displayName":"Interpretation Comment",
-      "collectionName":"interpretationComments"
-    },
-    {
-      "klass":"org.hisp.dhis.category.CategoryOptionGroupSetDimension",
-      "metadata":false,
-      "displayName":"Category Option Group Set Dimension",
-      "collectionName":"categoryOptionGroupSetDimensions"
-    },
-    {
-      "klass":"org.hisp.dhis.program.AnalyticsPeriodBoundary",
-      "metadata":false,
-      "displayName":"Analytics Period Boundary",
-      "collectionName":"analyticsPeriodBoundaries"
-    },
-    {
-      "klass":"org.hisp.dhis.dataelement.DataElementGroupSetDimension",
-      "metadata":false,
-      "displayName":"Data Element Group Set Dimension",
-      "collectionName":"dataElementGroupSetDimensions"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramTrackedEntityAttributeDimensionItem",
-      "metadata":false,
-      "displayName":"Program Tracked Entity Attribute Dimension Item",
-      "collectionName":"ProgramTrackedEntityAttributeDimensionItems"
-    },
-    {
-      "klass":"org.hisp.dhis.program.ProgramInstance",
-      "metadata":false,
-      "displayName":"Program Instance",
-      "collectionName":"programInstances"
-    },
-    {
-      "klass":"org.hisp.dhis.fileresource.FileResource",
-      "metadata":false,
-      "displayName":"File Resource",
-      "collectionName":"fileResources"
-    },
-    {
-      "klass":"org.hisp.dhis.user.UserGroupAccess",
-      "metadata":false,
-      "displayName":"User Group Access",
-      "collectionName":"userGroupAccesses"
-    }
-  ]
+    "schemas": [
+        {
+            "klass": "org.hisp.dhis.attribute.Attribute",
+            "metadata": true,
+            "displayName": "Attribute",
+            "collectionName": "attributes"
+        },
+        {
+            "klass": "org.hisp.dhis.user.UserAuthorityGroup",
+            "metadata": true,
+            "displayName": "User Authority Group",
+            "collectionName": "userRoles"
+        },
+        {
+            "klass": "org.hisp.dhis.user.User",
+            "metadata": true,
+            "displayName": "User",
+            "collectionName": "users"
+        },
+        {
+            "klass": "org.hisp.dhis.user.UserGroup",
+            "metadata": true,
+            "displayName": "User Group",
+            "collectionName": "userGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.fileresource.ExternalFileResource",
+            "metadata": true,
+            "displayName": "External File Resource",
+            "collectionName": "externalFileResources"
+        },
+        {
+            "klass": "org.hisp.dhis.sqlview.SqlView",
+            "metadata": true,
+            "displayName": "Sql View",
+            "collectionName": "sqlViews"
+        },
+        {
+            "klass": "org.hisp.dhis.security.oauth2.OAuth2Client",
+            "metadata": true,
+            "displayName": "O Auth2 Client",
+            "collectionName": "oAuth2Clients"
+        },
+        {
+            "klass": "org.hisp.dhis.constant.Constant",
+            "metadata": true,
+            "displayName": "Constant",
+            "collectionName": "constants"
+        },
+        {
+            "klass": "org.hisp.dhis.option.Option",
+            "metadata": true,
+            "displayName": "Option",
+            "collectionName": "options"
+        },
+        {
+            "klass": "org.hisp.dhis.scheduling.JobConfiguration",
+            "metadata": true,
+            "displayName": "Job Configuration",
+            "collectionName": "jobConfigurations"
+        },
+        {
+            "klass": "org.hisp.dhis.option.OptionSet",
+            "metadata": true,
+            "displayName": "Option Set",
+            "collectionName": "optionSets"
+        },
+        {
+            "klass": "org.hisp.dhis.option.OptionGroup",
+            "metadata": true,
+            "displayName": "Option Group",
+            "collectionName": "optionGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.option.OptionGroupSet",
+            "metadata": true,
+            "displayName": "Option Group Set",
+            "collectionName": "optionGroupSets"
+        },
+        {
+            "klass": "org.hisp.dhis.color.ColorSet",
+            "metadata": true,
+            "displayName": "Color Set",
+            "collectionName": "colorSets"
+        },
+        {
+            "klass": "org.hisp.dhis.legend.LegendSet",
+            "metadata": true,
+            "displayName": "Legend Set",
+            "collectionName": "legendSets"
+        },
+        {
+            "klass": "org.hisp.dhis.organisationunit.OrganisationUnit",
+            "metadata": true,
+            "displayName": "Organisation Unit",
+            "collectionName": "organisationUnits"
+        },
+        {
+            "klass": "org.hisp.dhis.organisationunit.OrganisationUnitLevel",
+            "metadata": true,
+            "displayName": "Organisation Unit Level",
+            "collectionName": "organisationUnitLevels"
+        },
+        {
+            "klass": "org.hisp.dhis.organisationunit.OrganisationUnitGroup",
+            "metadata": true,
+            "displayName": "Organisation Unit Group",
+            "collectionName": "organisationUnitGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.organisationunit.OrganisationUnitGroupSet",
+            "metadata": true,
+            "displayName": "Organisation Unit Group Set",
+            "collectionName": "organisationUnitGroupSets"
+        },
+        {
+            "klass": "org.hisp.dhis.category.CategoryOption",
+            "metadata": true,
+            "displayName": "Category Option",
+            "collectionName": "categoryOptions"
+        },
+        {
+            "klass": "org.hisp.dhis.category.CategoryOptionGroup",
+            "metadata": true,
+            "displayName": "Category Option Group",
+            "collectionName": "categoryOptionGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.category.CategoryOptionGroupSet",
+            "metadata": true,
+            "displayName": "Category Option Group Set",
+            "collectionName": "categoryOptionGroupSets"
+        },
+        {
+            "klass": "org.hisp.dhis.category.Category",
+            "metadata": true,
+            "displayName": "Category",
+            "collectionName": "categories"
+        },
+        {
+            "klass": "org.hisp.dhis.category.CategoryCombo",
+            "metadata": true,
+            "displayName": "Category Combo",
+            "collectionName": "categoryCombos"
+        },
+        {
+            "klass": "org.hisp.dhis.category.CategoryOptionCombo",
+            "metadata": true,
+            "displayName": "Category Option Combo",
+            "collectionName": "categoryOptionCombos"
+        },
+        {
+            "klass": "org.hisp.dhis.dataelement.DataElement",
+            "metadata": true,
+            "displayName": "Data Element",
+            "collectionName": "dataElements"
+        },
+        {
+            "klass": "org.hisp.dhis.dataelement.DataElementGroup",
+            "metadata": true,
+            "displayName": "Data Element Group",
+            "collectionName": "dataElementGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.dataelement.DataElementGroupSet",
+            "metadata": true,
+            "displayName": "Data Element Group Set",
+            "collectionName": "dataElementGroupSets"
+        },
+        {
+            "klass": "org.hisp.dhis.indicator.IndicatorType",
+            "metadata": true,
+            "displayName": "Indicator Type",
+            "collectionName": "indicatorTypes"
+        },
+        {
+            "klass": "org.hisp.dhis.analytics.AnalyticsTableHook",
+            "metadata": true,
+            "displayName": "Analytics Table Hook",
+            "collectionName": "analyticsTableHooks"
+        },
+        {
+            "klass": "org.hisp.dhis.indicator.Indicator",
+            "metadata": true,
+            "displayName": "Indicator",
+            "collectionName": "indicators"
+        },
+        {
+            "klass": "org.hisp.dhis.indicator.IndicatorGroup",
+            "metadata": true,
+            "displayName": "Indicator Group",
+            "collectionName": "indicatorGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.indicator.IndicatorGroupSet",
+            "metadata": true,
+            "displayName": "Indicator Group Set",
+            "collectionName": "indicatorGroupSets"
+        },
+        {
+            "klass": "org.hisp.dhis.dataentryform.DataEntryForm",
+            "metadata": true,
+            "displayName": "Data Entry Form",
+            "collectionName": "dataEntryForms"
+        },
+        {
+            "klass": "org.hisp.dhis.dataset.DataSet",
+            "metadata": true,
+            "displayName": "Data Set",
+            "collectionName": "dataSets"
+        },
+        {
+            "klass": "org.hisp.dhis.dataset.notifications.DataSetNotificationTemplate",
+            "metadata": true,
+            "displayName": "Data Set Notification Template",
+            "collectionName": "dataSetNotificationTemplates"
+        },
+        {
+            "klass": "org.hisp.dhis.dataset.Section",
+            "metadata": true,
+            "displayName": "Section",
+            "collectionName": "sections"
+        },
+        {
+            "klass": "org.hisp.dhis.dataapproval.DataApprovalLevel",
+            "metadata": true,
+            "displayName": "Data Approval Level",
+            "collectionName": "dataApprovalLevels"
+        },
+        {
+            "klass": "org.hisp.dhis.dataapproval.DataApprovalWorkflow",
+            "metadata": true,
+            "displayName": "Data Approval Workflow",
+            "collectionName": "dataApprovalWorkflows"
+        },
+        {
+            "klass": "org.hisp.dhis.validation.ValidationRule",
+            "metadata": true,
+            "displayName": "Validation Rule",
+            "collectionName": "validationRules"
+        },
+        {
+            "klass": "org.hisp.dhis.validation.ValidationRuleGroup",
+            "metadata": true,
+            "displayName": "Validation Rule Group",
+            "collectionName": "validationRuleGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.validation.notification.ValidationNotificationTemplate",
+            "metadata": true,
+            "displayName": "Validation Notification Template",
+            "collectionName": "validationNotificationTemplates"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentity.TrackedEntityAttribute",
+            "metadata": true,
+            "displayName": "Tracked Entity Attribute",
+            "collectionName": "trackedEntityAttributes"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentity.TrackedEntityType",
+            "metadata": true,
+            "displayName": "Tracked Entity Type",
+            "collectionName": "trackedEntityTypes"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramTrackedEntityAttributeGroup",
+            "metadata": true,
+            "displayName": "Program Tracked Entity Attribute Group",
+            "collectionName": "programTrackedEntityAttributeGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentity.TrackedEntityTypeAttribute",
+            "metadata": false,
+            "displayName": "Tracked Entity Type Attribute",
+            "collectionName": "trackedEntityTypeAttributes"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramStageSection",
+            "metadata": true,
+            "displayName": "Program Stage Section",
+            "collectionName": "programStageSections"
+        },
+        {
+            "klass": "org.hisp.dhis.program.notification.ProgramNotificationTemplate",
+            "metadata": true,
+            "displayName": "Program Notification Template",
+            "collectionName": "programNotificationTemplates"
+        },
+        {
+            "klass": "org.hisp.dhis.sms.command.SMSCommand",
+            "metadata": true,
+            "displayName": "S M S Command",
+            "collectionName": "smsCommands"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramStage",
+            "metadata": true,
+            "displayName": "Program Stage",
+            "collectionName": "programStages"
+        },
+        {
+            "klass": "org.hisp.dhis.program.Program",
+            "metadata": true,
+            "displayName": "Program",
+            "collectionName": "programs"
+        },
+        {
+            "klass": "org.hisp.dhis.eventchart.EventChart",
+            "metadata": true,
+            "displayName": "Event Chart",
+            "collectionName": "eventCharts"
+        },
+        {
+            "klass": "org.hisp.dhis.eventreport.EventReport",
+            "metadata": true,
+            "displayName": "Event Report",
+            "collectionName": "eventReports"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramSection",
+            "metadata": true,
+            "displayName": "Program Section",
+            "collectionName": "programSections"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramIndicator",
+            "metadata": true,
+            "displayName": "Program Indicator",
+            "collectionName": "programIndicators"
+        },
+        {
+            "klass": "org.hisp.dhis.relationship.RelationshipType",
+            "metadata": true,
+            "displayName": "Relationship Type",
+            "collectionName": "relationshipTypes"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramIndicatorGroup",
+            "metadata": true,
+            "displayName": "Program Indicator Group",
+            "collectionName": "programIndicatorGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.programrule.ProgramRuleVariable",
+            "metadata": true,
+            "displayName": "Program Rule Variable",
+            "collectionName": "programRuleVariables"
+        },
+        {
+            "klass": "org.hisp.dhis.programrule.ProgramRuleAction",
+            "metadata": true,
+            "displayName": "Program Rule Action",
+            "collectionName": "programRuleActions"
+        },
+        {
+            "klass": "org.hisp.dhis.programrule.ProgramRule",
+            "metadata": true,
+            "displayName": "Program Rule",
+            "collectionName": "programRules"
+        },
+        {
+            "klass": "org.hisp.dhis.mapping.MapView",
+            "metadata": true,
+            "displayName": "Map View",
+            "collectionName": "mapViews"
+        },
+        {
+            "klass": "org.hisp.dhis.reporttable.ReportTable",
+            "metadata": true,
+            "displayName": "Report Table",
+            "collectionName": "reportTables"
+        },
+        {
+            "klass": "org.hisp.dhis.report.Report",
+            "metadata": true,
+            "displayName": "Report",
+            "collectionName": "reports"
+        },
+        {
+            "klass": "org.hisp.dhis.mapping.ExternalMapLayer",
+            "metadata": true,
+            "displayName": "External Map Layer",
+            "collectionName": "externalMapLayers"
+        },
+        {
+            "klass": "org.hisp.dhis.chart.Chart",
+            "metadata": true,
+            "displayName": "Chart",
+            "collectionName": "charts"
+        },
+        {
+            "klass": "org.hisp.dhis.validation.ValidationResult",
+            "metadata": false,
+            "displayName": "Validation Result",
+            "collectionName": "validationResults"
+        },
+        {
+            "klass": "org.hisp.dhis.document.Document",
+            "metadata": true,
+            "displayName": "Document",
+            "collectionName": "documents"
+        },
+        {
+            "klass": "org.hisp.dhis.mapping.Map",
+            "metadata": true,
+            "displayName": "Map",
+            "collectionName": "maps"
+        },
+        {
+            "klass": "org.hisp.dhis.predictor.Predictor",
+            "metadata": true,
+            "displayName": "Predictor",
+            "collectionName": "predictors"
+        },
+        {
+            "klass": "org.hisp.dhis.predictor.PredictorGroup",
+            "metadata": true,
+            "displayName": "Predictor Group",
+            "collectionName": "predictorGroups"
+        },
+        {
+            "klass": "org.hisp.dhis.dashboard.DashboardItem",
+            "metadata": false,
+            "displayName": "Dashboard Item",
+            "collectionName": "dashboardItems"
+        },
+        {
+            "klass": "org.hisp.dhis.dashboard.Dashboard",
+            "metadata": true,
+            "displayName": "Dashboard",
+            "collectionName": "dashboards"
+        },
+        {
+            "klass": "org.hisp.dhis.pushanalysis.PushAnalysis",
+            "metadata": true,
+            "displayName": "Push Analysis",
+            "collectionName": "pushAnalysis"
+        },
+        {
+            "klass": "org.hisp.dhis.keyjsonvalue.KeyJsonValue",
+            "metadata": false,
+            "displayName": "Key Json Value",
+            "collectionName": "dataStores"
+        },
+        {
+            "klass": "org.hisp.dhis.color.Color",
+            "metadata": false,
+            "displayName": "Color",
+            "collectionName": "colors"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramTrackedEntityAttribute",
+            "metadata": false,
+            "displayName": "Program Tracked Entity Attribute",
+            "collectionName": "programTrackedEntityAttributes"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramStageInstance",
+            "metadata": false,
+            "displayName": "Program Stage Instance",
+            "collectionName": "programStageInstances"
+        },
+        {
+            "klass": "org.hisp.dhis.message.MessageConversation",
+            "metadata": false,
+            "displayName": "Message Conversation",
+            "collectionName": "messageConversations"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramStageDataElement",
+            "metadata": false,
+            "displayName": "Program Stage Data Element",
+            "collectionName": "programStageDataElements"
+        },
+        {
+            "klass": "org.hisp.dhis.dataelement.DataElementOperand",
+            "metadata": false,
+            "displayName": "Data Element Operand",
+            "collectionName": "dataElementOperands"
+        },
+        {
+            "klass": "org.hisp.dhis.user.UserAccess",
+            "metadata": false,
+            "displayName": "User Access",
+            "collectionName": "userAccesses"
+        },
+        {
+            "klass": "org.hisp.dhis.relationship.Relationship",
+            "metadata": false,
+            "displayName": "Relationship",
+            "collectionName": "relationships"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramDataElementDimensionItem",
+            "metadata": false,
+            "displayName": "Program Data Element Dimension Item",
+            "collectionName": "programDataElements"
+        },
+        {
+            "klass": "org.hisp.dhis.category.CategoryDimension",
+            "metadata": false,
+            "displayName": "Category Dimension",
+            "collectionName": "categoryDimensions"
+        },
+        {
+            "klass": "org.hisp.dhis.programstagefilter.ProgramStageInstanceFilter",
+            "metadata": true,
+            "displayName": "Program Stage Instance Filter",
+            "collectionName": "eventFilters"
+        },
+        {
+            "klass": "org.hisp.dhis.legend.Legend",
+            "metadata": false,
+            "displayName": "Legend",
+            "collectionName": "legends"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentity.TrackedEntityDataElementDimension",
+            "metadata": false,
+            "displayName": "Tracked Entity Data Element Dimension",
+            "collectionName": "trackedEntityDataElementDimensions"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentityfilter.TrackedEntityInstanceFilter",
+            "metadata": true,
+            "displayName": "Tracked Entity Instance Filter",
+            "collectionName": "trackedEntityInstanceFilters"
+        },
+        {
+            "klass": "org.hisp.dhis.metadata.version.MetadataVersion",
+            "metadata": false,
+            "displayName": "Metadata Version",
+            "collectionName": "metadataVersions"
+        },
+        {
+            "klass": "org.hisp.dhis.user.UserCredentials",
+            "metadata": false,
+            "displayName": "User Credentials",
+            "collectionName": "userCredentials"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentity.TrackedEntityInstance",
+            "metadata": false,
+            "displayName": "Tracked Entity Instance",
+            "collectionName": "trackedEntityInstances"
+        },
+        {
+            "klass": "org.hisp.dhis.icon.Icon",
+            "metadata": false,
+            "displayName": "Icon",
+            "collectionName": "icons"
+        },
+        {
+            "klass": "org.hisp.dhis.dataset.DataInputPeriod",
+            "metadata": false,
+            "displayName": "Data Input Period",
+            "collectionName": "dataInputPeriods"
+        },
+        {
+            "klass": "org.hisp.dhis.common.ReportingRate",
+            "metadata": false,
+            "displayName": "Reporting Rate",
+            "collectionName": "reportingRates"
+        },
+        {
+            "klass": "org.hisp.dhis.dataset.DataSetElement",
+            "metadata": false,
+            "displayName": "Data Set Element",
+            "collectionName": "dataSetElements"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentity.TrackedEntityProgramIndicatorDimension",
+            "metadata": false,
+            "displayName": "Tracked Entity Program Indicator Dimension",
+            "collectionName": "dataElementDimensions"
+        },
+        {
+            "klass": "org.hisp.dhis.minmax.MinMaxDataElement",
+            "metadata": false,
+            "displayName": "Min Max Data Element",
+            "collectionName": "minMaxDataElements"
+        },
+        {
+            "klass": "org.hisp.dhis.interpretation.Interpretation",
+            "metadata": false,
+            "displayName": "Interpretation",
+            "collectionName": "interpretations"
+        },
+        {
+            "klass": "org.hisp.dhis.organisationunit.OrganisationUnitGroupSetDimension",
+            "metadata": false,
+            "displayName": "Organisation Unit Group Set Dimension",
+            "collectionName": "organisationUnitGroupSetDimensions"
+        },
+        {
+            "klass": "org.hisp.dhis.trackedentityattributevalue.TrackedEntityAttributeValue",
+            "metadata": false,
+            "displayName": "Tracked Entity Attribute Value",
+            "collectionName": "trackedEntityAttributeValues"
+        },
+        {
+            "klass": "org.hisp.dhis.interpretation.InterpretationComment",
+            "metadata": false,
+            "displayName": "Interpretation Comment",
+            "collectionName": "interpretationComments"
+        },
+        {
+            "klass": "org.hisp.dhis.category.CategoryOptionGroupSetDimension",
+            "metadata": false,
+            "displayName": "Category Option Group Set Dimension",
+            "collectionName": "categoryOptionGroupSetDimensions"
+        },
+        {
+            "klass": "org.hisp.dhis.program.AnalyticsPeriodBoundary",
+            "metadata": false,
+            "displayName": "Analytics Period Boundary",
+            "collectionName": "analyticsPeriodBoundaries"
+        },
+        {
+            "klass": "org.hisp.dhis.dataelement.DataElementGroupSetDimension",
+            "metadata": false,
+            "displayName": "Data Element Group Set Dimension",
+            "collectionName": "dataElementGroupSetDimensions"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramTrackedEntityAttributeDimensionItem",
+            "metadata": false,
+            "displayName": "Program Tracked Entity Attribute Dimension Item",
+            "collectionName": "ProgramTrackedEntityAttributeDimensionItems"
+        },
+        {
+            "klass": "org.hisp.dhis.program.ProgramInstance",
+            "metadata": false,
+            "displayName": "Program Instance",
+            "collectionName": "programInstances"
+        },
+        {
+            "klass": "org.hisp.dhis.fileresource.FileResource",
+            "metadata": false,
+            "displayName": "File Resource",
+            "collectionName": "fileResources"
+        },
+        {
+            "klass": "org.hisp.dhis.user.UserGroupAccess",
+            "metadata": false,
+            "displayName": "User Group Access",
+            "collectionName": "userGroupAccesses"
+        }
+    ]
 }

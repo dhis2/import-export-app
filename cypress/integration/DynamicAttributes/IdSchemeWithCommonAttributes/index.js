@@ -1,13 +1,13 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const loginUrl = Cypress.env('LOGIN_URL')
+const loginUrl = Cypress.env('dhis2_base_url')
 
 const getKeyBySide = side => (side === 'org units' ? 'orgUnit' : 'dataElement')
 
 Given('the user is on the data {word} page', type => {
-    cy.visitWhenStubbed(Cypress.env('APP_URL'))
-        .get(`[data-test="sidebar-link-${type}-data"]`)
-        .click()
+    cy.visitWhenStubbed(`/`)
+        .get(`[data-test="sidebar-link-data-${type}"]`)
+        .click({ force: true })
 })
 
 Given(
@@ -44,59 +44,26 @@ Given(
 )
 
 Then('it should not be an option in the id scheme input', () => {
+    cy.showMoreOptions()
     cy.wait('@attributesXHR')
-        .then(async attributesXHR => {
-            const { attributes } = JSON.parse(
-                await attributesXHR.response.body.text()
-            )
-
+        .then(attributesXHR => {
+            const { attributes } = attributesXHR.response.body
             return attributes
         })
         .then(nonCommonAttributes => {
-            cy.get('[data-test="more-options-button"]').click()
-            cy.get('[data-test="input-id-scheme"]').then($idScheme => {
-                /**
-                 * "Old school style"
-                 * The export page hasn't been refactored yet
-                 * The whole if-else will be replaced with the
-                 * code in the else block once the export page
-                 * has been refactored as well
-                 */
-                if (
-                    $idScheme
-                        .find('> div')
-                        .attr('class')
-                        .match(/styles_formControl/)
-                ) {
-                    $idScheme.find('button').click()
-                    cy.get('[role="presentation"] [role="menuitem"]').then(
-                        $menuItems => {
-                            const allItemLabels = $menuItems
-                                .toArray()
-                                .map(el => el.innerText)
-                            nonCommonAttributes.forEach(({ displayName }) => {
-                                expect(
-                                    allItemLabels.findIndex(
-                                        label => label === displayName
-                                    )
-                                ).to.equal(-1)
-                            })
-                        }
-                    )
-                } else {
-                    /**
-                     * "New style"
-                     * After refatoring, using `ui-core` components
-                     */
+            // check for existence in DOM
+            cy.get('[data-test="input-id-scheme"]').click()
+            cy.get('[data-test="dhis2-uicore-select-menu"]').then(
+                $selectMenu => {
                     nonCommonAttributes.forEach(({ id }) => {
                         expect(
-                            $idScheme
-                                .find(`[value="ATTRIBUTE:${id}"]`)
+                            $selectMenu
+                                .find(`[data-value="ATTRIBUTE:${id}"]`)
                                 .toArray()
                         ).to.have.lengthOf(0)
                     })
                 }
-            })
+            )
         })
 })
 
@@ -120,16 +87,12 @@ Given(
 )
 
 Then('it should be a selectable option in the id scheme input', () => {
+    cy.showMoreOptions()
     cy.wait(['@dataElementAttributesXHR', '@orgUnitAttributesXHR'])
-        .then(async ([dataElementAttributesXHR, orgUnitAttributesXHR]) => {
+        .then(([dataElementAttributesXHR, orgUnitAttributesXHR]) => {
             // extract responses from both attributes requests
-            const dataElementAttributes = JSON.parse(
-                await dataElementAttributesXHR.response.body.text()
-            )
-
-            const orgUnitAttributes = JSON.parse(
-                await orgUnitAttributesXHR.response.body.text()
-            )
+            const dataElementAttributes = dataElementAttributesXHR.response.body
+            const orgUnitAttributes = orgUnitAttributesXHR.response.body
 
             return {
                 dataElement: dataElementAttributes.attributes,
@@ -151,49 +114,17 @@ Then('it should be a selectable option in the id scheme input', () => {
         })
         .then(attributes => {
             // check for existence in DOM
-            cy.get('[data-test="more-options-button"]').click()
-            cy.get('[data-test="input-id-scheme"]').then($idScheme => {
-                /**
-                 * "Old school style"
-                 * The export page hasn't been refactored yet
-                 * The whole if-else will be replaced with the
-                 * code in the else block once the export page
-                 * has been refactored as well
-                 */
-                if (
-                    $idScheme
-                        .find('> div')
-                        .attr('class')
-                        .match(/styles_formControl/)
-                ) {
-                    $idScheme.find('button').click()
-                    cy.get('[role="presentation"] [role="menuitem"]').then(
-                        $menuItems => {
-                            const allItemLabels = $menuItems
-                                .toArray()
-                                .map(el => el.innerText)
-                            attributes.forEach(({ displayName }) => {
-                                expect(
-                                    allItemLabels.findIndex(
-                                        label => label === displayName
-                                    )
-                                ).to.not.equal(-1)
-                            })
-                        }
-                    )
-                } else {
-                    /**
-                     * "New style"
-                     * After refatoring, using `ui-core` components
-                     */
+            cy.get('[data-test="input-id-scheme"]').click()
+            cy.get('[data-test="dhis2-uicore-select-menu"]').then(
+                $selectMenu => {
                     attributes.forEach(({ id }) => {
                         expect(
-                            $idScheme
-                                .find(`[value="ATTRIBUTE:${id}"]`)
+                            $selectMenu
+                                .find(`[data-value="ATTRIBUTE:${id}"]`)
                                 .toArray()
                         ).to.have.lengthOf(1)
                     })
                 }
-            })
+            )
         })
 })

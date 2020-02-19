@@ -1,0 +1,13 @@
+{
+    "httpStatus": "OK",
+    "httpStatusCode": 200,
+    "status": "OK",
+    "message": "Initiated dataValueImport",
+    "response": {
+        "name": "dataValueImport",
+        "id": "VSvRqiTbZFw",
+        "created": "2020-02-19T12:50:11.788",
+        "jobType": "DATAVALUE_IMPORT",
+        "relativeNotifierEndpoint": "/api/system/tasks/DATAVALUE_IMPORT/VSvRqiTbZFw"
+    }
+}

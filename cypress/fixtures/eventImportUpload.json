@@ -1,0 +1,13 @@
+{
+    "httpStatus": "OK",
+    "httpStatusCode": 200,
+    "status": "OK",
+    "message": "Initiated inMemoryEventImport",
+    "response": {
+        "name": "inMemoryEventImport",
+        "id": "MWl2zN9toYr",
+        "created": "2020-02-19T13:10:44.793",
+        "jobType": "EVENT_IMPORT",
+        "relativeNotifierEndpoint": "/api/system/tasks/EVENT_IMPORT/MWl2zN9toYr"
+    }
+}

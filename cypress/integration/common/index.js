@@ -1,23 +1,26 @@
 import { Before, Given, When } from 'cypress-cucumber-preprocessor/steps'
 
-Before(() => cy.login())
+Before(() => {
+    cy.login()
+    cy.stubHeaderBar()
+})
 
 Given('the more options are visible', () => {
     cy.showMoreOptions()
 })
 
 Given('a file has been selected', () => {
-    cy.selectFile('input-upload', 'json', 'orgUnitAttributes.json')
+    cy.selectFile('input-file-upload', 'json', 'orgUnitAttributes.json')
 })
 
-When('the form is submitted', () => {
-    cy.get('form button[type="submit"]').click()
+When('the import form is submitted', () => {
+    cy.get('[data-test="input-import-submit"]').click()
+})
+
+When('the import form is submitted as a dry run', () => {
+    cy.get('[data-test="input-dry-run"]').click()
 })
 
 When('the export form is submitted', () => {
-    cy.window().then(win => {
-        win.stubs.assign = cy.stub()
-    })
-
-    cy.get('button[type="submit"]').click()
+    cy.get('[data-test="input-export-submit"]').click()
 })

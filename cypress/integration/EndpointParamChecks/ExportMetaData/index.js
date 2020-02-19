@@ -1,5 +1,5 @@
 import '../common/settingFormValues'
-import { Before, Given } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const schemasApi = /api\/schemas.json\?fields=metadata,collectionName,displayName,klass/
 const dataApi = /api\/metadata\.(json|xml|csv)(\.(zip|gzip))?/
@@ -18,7 +18,7 @@ Given('the user is on the meta data export page', () => {
 })
 
 Given('all schemas have been selected', () => {
-    cy.get('[class*="Schemas_selectAllButton"]').click()
+    cy.get(`[data-test="input-schemas-select-all"]`).click()
 
     cy.get('@changedData').then(changedData => {
         cy.get('[name^="schemas."]').then($inputs => {
@@ -38,7 +38,7 @@ Given('all schemas have been selected', () => {
 })
 
 Given('the schemas are all deselected', () => {
-    cy.get('[class*="Schemas_selectAllButton"] + button').click()
+    cy.get(`[data-test="input-schemas-select-none"]`).click()
 
     cy.get('@changedData').then(changedData => {
         cy.get('[name^="schemas."]').then($inputs => {
@@ -66,19 +66,38 @@ Given('the category option schema is selected', () => {
     })
 })
 
+When('the export form is submitted', () => {
+    cy.window().then(win => {
+        const locationAssignStub = cy.stub().as('locationAssign')
+        win.locationAssign = locationAssignStub
+        cy.get('[data-test="input-export-submit"]').click()
+    })
+})
+
+Then('the download request is not sent', () => {
+    cy.window().then(win => {
+        cy.get('@locationAssign').then(locationAssignStub => {
+            expect(locationAssignStub).not.to.be.called
+        })
+    })
+})
+
 Then('the download request is sent with the right parameters', () => {
     cy.window().then(win => {
-        expect(win.stubs.assign).to.be.calledOnce
+        cy.get('@locationAssign').then(locationAssignStub => {
+            expect(locationAssignStub).to.be.calledOnce
+            const call = locationAssignStub.getCall(0)
+            const url = call.args[0]
 
-        const call = win.stubs.assign.getCall(0)
-        const url = call.args[0]
-
-        cy.getComparisonData(url).then(({ actual, expected: allExpected }) => {
-            const { format, compression, ...expected } = allExpected
-            expect(actual).to.deep.equal({
-                ...expected,
-                download: 'true',
-            })
+            cy.getComparisonData(url).then(
+                ({ actual, expected: allExpected }) => {
+                    const { format, compression, ...expected } = allExpected
+                    expect(actual).to.deep.equal({
+                        ...expected,
+                        download: 'true',
+                    })
+                }
+            )
         })
     })
 })

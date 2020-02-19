@@ -1,0 +1,26 @@
+{
+    "importParams": {
+        "userOverrideMode": "NONE",
+        "importMode": "COMMIT",
+        "identifier": "UID",
+        "preheatMode": "REFERENCE",
+        "importStrategy": "CREATE_AND_UPDATE",
+        "atomicMode": "ALL",
+        "mergeMode": "MERGE",
+        "flushMode": "AUTO",
+        "skipSharing": false,
+        "skipTranslation": false,
+        "skipValidation": false,
+        "metadataSyncImport": false,
+        "firstRowIsHeader": true,
+        "username": "admin"
+    },
+    "status": "OK",
+    "stats": {
+        "created": 0,
+        "updated": 0,
+        "deleted": 0,
+        "ignored": 0,
+        "total": 0
+    }
+}

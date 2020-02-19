@@ -14,7 +14,7 @@ Feature: The user should be able to export events
             | format         | json        |
             | compression    | zip         |
             | includeDeleted | false       |
-            | inclusion      | selected    |
+            | inclusion      | SELECTED    |
         And the Sierra Leone org unit has been selected
 
     Scenario: The user submits the form with the default values
@@ -48,7 +48,7 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different end date
-        Given the "startDate" input is set to "2020-01-06"
+        Given the "endDate" input is set to "2020-01-06"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -68,6 +68,6 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different inclusion
-        Given the "inclusion" input is set to "children"
+        Given the "inclusion" input is set to "CHILDREN"
         When the export form is submitted
         Then the download request is sent with the right parameters
