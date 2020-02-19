@@ -6,7 +6,11 @@ import { Button } from '@dhis2/ui-core'
 // import s from './EventExport.module.css';
 import { eventExportPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
+import {
+    globalLocationAssign,
+    jsDateToISO8601,
+    pathToId,
+} from '../../utils/helper'
 import {
     formatOptions,
     compressionOptions,
@@ -74,11 +78,11 @@ const EventExport = () => {
             })
         }
 
-        if (endDate <= startDate) {
+        if (endDate < startDate) {
             alerts.push({
                 id: `period-${timestamp}`,
                 warning: true,
-                message: i18n.t('End date must be before start date'),
+                message: i18n.t('End date must be after start date'),
             })
         }
 
@@ -110,9 +114,12 @@ const EventExport = () => {
             programStage.value != ALL_VALUE
                 ? `programStage=${programStage.value}`
                 : '',
-        ].join('&')
+        ]
+            .filter(s => s != '')
+            .join('&')
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-        window.location = url
+        globalLocationAssign()
+        window.locationAssign(url)
     }
 
     const onDateChange = stateFn => date => {
@@ -206,7 +213,7 @@ const EventExport = () => {
                 primary
                 disabled={programStage == undefined}
                 onClick={onExport}
-                dataTest={testIds.EventExport.exportButton}
+                dataTest={testIds.EventExport.submit}
             >
                 {i18n.t('Export')}
             </Button>

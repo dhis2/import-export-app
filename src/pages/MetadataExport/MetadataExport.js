@@ -5,6 +5,7 @@ import { Button } from '@dhis2/ui-core'
 
 import { metadataExportPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
+import { globalLocationAssign } from '../../utils/helper'
 import {
     formatOptions,
     compressionOptions,
@@ -56,7 +57,8 @@ const MetadataExport = () => {
             .join('&')
         const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`
         const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-        window.location = url
+        globalLocationAssign()
+        window.locationAssign(url)
     }
 
     return (

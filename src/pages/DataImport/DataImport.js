@@ -129,7 +129,9 @@ const DataImport = ({ query }) => {
             `format=${format.value}`,
             'async=true',
             format.value == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
-        ].join('&')
+        ]
+            .filter(s => s != '')
+            .join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
         const jobDetails = {

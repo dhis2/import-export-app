@@ -151,7 +151,7 @@ const uploadFile = ({
                 }
                 addEntry(newId, entry)
 
-                if (id == -1) {
+                if (id == -1 && msg) {
                     errorHandler(msg.text)
                 }
                 setProgress(0)
@@ -176,10 +176,17 @@ const uploadFile = ({
     }
 }
 
+const globalLocationAssign = () => {
+    if (!window.locationAssign) {
+        window.locationAssign = url => (window.location = url)
+    }
+}
+
 export {
     createBlob,
     downloadBlob,
     fetchAttributes,
+    globalLocationAssign,
     jsDateToISO8601,
     jsDateToString,
     pathToId,
