@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-02-27T14:06:26.173Z\n"
-"PO-Revision-Date: 2020-02-27T14:06:26.173Z\n"
+"POT-Creation-Date: 2020-02-27T14:41:32.450Z\n"
+"PO-Revision-Date: 2020-02-27T14:41:32.450Z\n"
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -37,310 +37,16 @@ msgstr ""
 msgid "Organisation unit ID scheme"
 msgstr ""
 
-msgid "Import Error"
-msgstr ""
-
-msgid "Go Back"
-msgstr ""
-
 msgid "File"
 msgstr ""
 
 msgid "Choose a file to upload"
 msgstr ""
 
-msgid "Required"
-msgstr ""
-
-msgid "filter data sets by name"
-msgstr ""
-
-msgid "Select All"
-msgstr ""
-
-msgid "Clear All"
-msgstr ""
-
-msgid "more options"
-msgstr ""
-
-msgid "JSON"
-msgstr ""
-
-msgid "XML"
-msgstr ""
-
-msgid "CSV"
-msgstr ""
-
 msgid "Dry run"
 msgstr ""
 
 msgid "Import"
-msgstr ""
-
-msgid "Yes"
-msgstr ""
-
-msgid "No"
-msgstr ""
-
-msgid "Async"
-msgstr ""
-
-msgid "All"
-msgstr ""
-
-msgid "None"
-msgstr ""
-
-msgid "Atomic mode"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Selected organisation unit"
-msgstr ""
-
-msgid "Children"
-msgstr ""
-
-msgid "Class key"
-msgstr ""
-
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Compression"
-msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "Data element id scheme"
-msgstr ""
-
-msgid "Loading data element id scheme options..."
-msgstr ""
-
-msgid "Data sets filter"
-msgstr ""
-
-msgid "Loading organisation unit id scheme options..."
-msgstr ""
-
-msgid "EndDate"
-msgstr ""
-
-msgid "End date"
-msgstr ""
-
-msgid "Event id scheme"
-msgstr ""
-
-msgid "First row is header"
-msgstr ""
-
-msgid "Auto"
-msgstr ""
-
-msgid "Object"
-msgstr ""
-
-msgid "Flush mode"
-msgstr ""
-
-msgid "PDF"
-msgstr ""
-
-msgid "ADX"
-msgstr ""
-
-msgid "Format"
-msgstr ""
-
-msgid "UID"
-msgstr ""
-
-msgid "Identifier"
-msgstr ""
-
-msgid "Errors"
-msgstr ""
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Import report mode"
-msgstr ""
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
-msgid "Import strategy"
-msgstr ""
-
-msgid "Include deleted"
-msgstr ""
-
-msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Inclusion"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
-msgstr ""
-
-msgid "Inclusion strategy"
-msgstr ""
-
-msgid "Merge"
-msgstr ""
-
-msgid "Replace"
-msgstr ""
-
-msgid "Merge mode"
-msgstr ""
-
-msgid "Loading Object options..."
-msgstr ""
-
-msgid "Something went wrong when loading the object!"
-msgstr ""
-
-msgid "Programs"
-msgstr ""
-
-msgid "Category combination"
-msgstr ""
-
-msgid "Dashboard"
-msgstr ""
-
-msgid "Data element groups"
-msgstr ""
-
-msgid "Option sets"
-msgstr ""
-
-msgid "Object type"
-msgstr ""
-
-msgid "Organisation unit"
-msgstr ""
-
-msgid "Org unit id scheme"
-msgstr ""
-
-msgid "Yes (faster for large imports)"
-msgstr ""
-
-msgid "Preheat cache"
-msgstr ""
-
-msgid "Reference"
-msgstr ""
-
-msgid "Preheat mode"
-msgstr ""
-
-msgid "[ All program stages]"
-msgstr ""
-
-msgid "Program stages"
-msgstr ""
-
-msgid "Loading programStage options..."
-msgstr ""
-
-msgid "Something went wrong when loading the programStages!"
-msgstr ""
-
-msgid "Loading program options..."
-msgstr ""
-
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Error"
-msgstr ""
-
-msgid "Report mode"
-msgstr ""
-
-msgid "Select None"
-msgstr ""
-
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
-msgstr ""
-
-msgid "Sharing"
-msgstr ""
-
-msgid "Skip audit"
-msgstr ""
-
-msgid "Skip check (fast)"
-msgstr ""
-
-msgid "Check (safe, recommended)"
-msgstr ""
-
-msgid "Skip existing check"
-msgstr ""
-
-msgid "Skip sharing"
-msgstr ""
-
-msgid "Skip validation"
-msgstr ""
-
-msgid "StartDate"
-msgstr ""
-
-msgid "Start date"
-msgstr ""
-
-msgid "Strategy"
-msgstr ""
-
-msgid "Id scheme"
 msgstr ""
 
 msgid "No jobs started yet."
@@ -391,10 +97,16 @@ msgstr ""
 msgid "Job summary"
 msgstr ""
 
+msgid "Error"
+msgstr ""
+
 msgid "Conflicts"
 msgstr ""
 
 msgid "Messages"
+msgstr ""
+
+msgid "UID"
 msgstr ""
 
 msgid "Type"
@@ -430,22 +142,31 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
+msgid "Object"
+msgstr ""
+
 msgid "Overview"
 msgstr ""
 
 msgid "Type count"
 msgstr ""
 
-msgid "Logger"
-msgstr ""
-
-msgid "view messages received on using import/export forms."
+msgid "more options"
 msgstr ""
 
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
+msgid "Organisation unit"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
 msgid "Filter programs by name"
+msgstr ""
+
+msgid "Programs"
 msgstr ""
 
 msgid "Select all"
@@ -457,82 +178,25 @@ msgstr ""
 msgid "Export"
 msgstr ""
 
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
 msgid "Type Count"
 msgstr ""
 
 msgid "Summaries"
 msgstr ""
 
+msgid "Errors"
+msgstr ""
+
 msgid "Import Summary"
 msgstr ""
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
-
-msgid "Atomic Mode"
-msgstr ""
-
-msgid "Category ID scheme"
-msgstr ""
-
-msgid "Event ID Scheme"
-msgstr ""
-
-msgid "Flush Mode"
-msgstr ""
-
-msgid "Report Mode"
-msgstr ""
-
-msgid "Import Strategy"
-msgstr ""
-
-msgid "Inclusion Strategy"
-msgstr ""
-
-msgid "Merge Mode"
-msgstr ""
-
-msgid "Org unit ID scheme"
-msgstr ""
-
-msgid "Preheat Mode"
-msgstr ""
-
-msgid "Program Stages"
-msgstr ""
-
-msgid "Schemas"
-msgstr ""
-
-msgid "Data Sets"
-msgstr ""
-
-msgid "Existing record check"
-msgstr ""
-
-msgid "Skip Sharing"
-msgstr ""
-
-msgid "Skip Validation"
-msgstr ""
-
-msgid "New and Updates"
-msgstr ""
-
-msgid "AUTO"
-msgstr ""
-
-msgid "Create and Update"
-msgstr ""
-
-msgid "Create"
-msgstr ""
-
-msgid "Update"
-msgstr ""
-
-msgid "Gzip"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
@@ -550,7 +214,34 @@ msgstr ""
 msgid "Include children"
 msgstr ""
 
+msgid "Format"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
 msgid "An import file must be selected"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Skip audit"
 msgstr ""
 
 msgid "Skip exisiting check"
@@ -568,10 +259,19 @@ msgstr ""
 msgid "Program stage"
 msgstr ""
 
+msgid "Inclusion"
+msgstr ""
+
 msgid "[ All program stages ]"
 msgstr ""
 
 msgid "Something went wrong when loading the program stages"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Skip sharing"
 msgstr ""
 
 msgid "Something went wrong when loading the objects"
@@ -583,99 +283,157 @@ msgstr ""
 msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
+msgid "Select All"
+msgstr ""
+
+msgid "Select None"
+msgstr ""
+
 msgid "Something went wrong when loading the class keys"
+msgstr ""
+
+msgid "Class key"
 msgstr ""
 
 msgid "A class key must be selected"
 msgstr ""
 
-msgid "Import/Export"
+msgid "Identifier"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Inclusion strategy"
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "Data Export"
+msgid "JSON"
 msgstr ""
 
-msgid ""
-"Export data values. This is the regular export function which exports data "
-"to the DHIS 2 exchange format called DXF 2."
+msgid "CSV"
 msgstr ""
 
-msgid "Event Export"
+msgid "XML"
 msgstr ""
 
-msgid ""
-"Export event data for programs, stages and tracked entities in the DXF 2 "
-"format."
+msgid "ADX"
 msgstr ""
 
-msgid "Metadata Export"
+msgid "PDF"
 msgstr ""
 
-msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
+msgid "Zip"
 msgstr ""
 
-msgid "Metadata Dependency Export"
+msgid "GZip"
 msgstr ""
 
-msgid ""
-"Export metadata like data sets and programs including related metadata "
-"objects."
+msgid "Uncompressed"
 msgstr ""
 
-msgid "Import / Export"
+msgid "Category combination"
 msgstr ""
 
-msgid "Import or Export DHIS2 data."
+msgid "Dashboard"
 msgstr ""
 
-msgid "An unknown error occurred"
+msgid "Data element groups"
 msgstr ""
 
-msgid "Data Import"
+msgid "Option sets"
 msgstr ""
 
-msgid ""
-"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
-"is the standard exchange format for DHIS 2."
+msgid "Uid"
 msgstr ""
 
-msgid "Event Import"
+msgid "Code"
 msgstr ""
 
-msgid "Import events for programs, stages and tracked entities in the DXF 2 format."
+msgid "Name"
 msgstr ""
 
-msgid "GML Import"
+msgid "Selected organisation unit"
 msgstr ""
 
-msgid ""
-"Import geographic data for organisation units using GML format. GML is an "
-"XML grammar for expressing geographical features."
+msgid "Include children of organisation unit"
 msgstr ""
 
-msgid "Couldn't load classKey options"
-msgstr ""
-
-msgid "Metadata Import"
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the "
-"standard DHIS 2 exchange format called DXF 2."
-msgstr ""
-
-msgid "It seems like there was no data in the uploaded file."
+msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Skip check"
 msgstr ""
 
 msgid "Check"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""
 
 msgid "Data import"
@@ -715,6 +473,11 @@ msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
 msgstr ""
 
 msgid "Event export"
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
 msgstr ""
 
 msgid "Metadata dependency export"
