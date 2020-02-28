@@ -1,13 +1,13 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,6 +24,12 @@ msgstr ""
 msgid "Go Back"
 msgstr ""
 
+msgid "Required"
+msgstr "ຕ້ອງການ"
+
+msgid "Choose a file to upload"
+msgstr ""
+
 msgid "filter data sets by name"
 msgstr ""
 
@@ -36,25 +42,286 @@ msgstr ""
 msgid "Data sets"
 msgstr "ແບບຟອມ"
 
-msgid "Choose a file to upload"
-msgstr ""
-
-msgid "Required"
-msgstr "ຕ້ອງການ"
-
 msgid "more options"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
+msgstr "CSV"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Async"
+msgstr ""
+
+msgid "All"
+msgstr "ທັງໝົດ"
+
+msgid "None"
+msgstr "ບໍ່ມີ"
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "ລະຫັດ"
+
+msgid "Name"
+msgstr "ຊື່"
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr "ວັນທີສຸດທ້າຍ"
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr "Identifier"
+
+msgid "Errors"
+msgstr "ຜິດພາດ"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "ລົບ"
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Merge"
+msgstr "Merge"
+
+msgid "Replace"
+msgstr "ແທນທີ່"
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Loading Object options..."
+msgstr ""
+
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr "ສາຍງານ"
+
+msgid "Category combination"
+msgstr "Category Combination"
+
+msgid "Dashboard"
+msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
+
+msgid "Data element groups"
+msgstr "Data Element Groups"
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Object type"
+msgstr "Object type"
+
+msgid "Organisation unit"
+msgstr "​ຫົວ​ໜ່ວຍ​ການ​ຈັດ​ຕັ້ງ"
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "Program stages"
+msgstr ""
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "Error"
+msgstr "ເກີດການຜິດພາດ"
+
+msgid "Report mode"
 msgstr ""
 
 msgid "Select None"
+msgstr ""
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
+msgid "Sharing"
+msgstr "ແບ່ງປັນ"
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr ""
+
+msgid "Check (safe, recommended)"
+msgstr ""
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr "ວັນທີເລີ່ມຕົ້ນ"
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Id scheme"
 msgstr ""
 
 msgid "Logger"
@@ -64,7 +331,7 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr ""
+msgstr "Import"
 
 msgid "Export"
 msgstr "ໂອນຂໍ້ມູນອອກ"
@@ -85,7 +352,7 @@ msgid "Total"
 msgstr "ລວມ"
 
 msgid "Type"
-msgstr "ປະເພດ"
+msgstr "Type"
 
 msgid "Type Count"
 msgstr ""
@@ -105,32 +372,14 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-msgid "Async"
-msgstr ""
-
 msgid "Atomic Mode"
 msgstr ""
 
 msgid "Category ID scheme"
 msgstr ""
 
-msgid "Children"
-msgstr ""
-
-msgid "Object type"
-msgstr ""
-
-msgid "Compression"
-msgstr ""
-
 msgid "Data element ID scheme"
 msgstr ""
-
-msgid "Dry run"
-msgstr ""
-
-msgid "End date"
-msgstr "ວັນທີສຸດທ້າຍ"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -138,13 +387,7 @@ msgstr ""
 msgid "Flush Mode"
 msgstr ""
 
-msgid "Format"
-msgstr ""
-
 msgid "ID scheme"
-msgstr ""
-
-msgid "Identifier"
 msgstr ""
 
 msgid "Report Mode"
@@ -153,28 +396,13 @@ msgstr ""
 msgid "Import Strategy"
 msgstr ""
 
-msgid "Include deleted"
-msgstr ""
-
-msgid "Inclusion"
-msgstr ""
-
 msgid "Inclusion Strategy"
 msgstr ""
 
 msgid "Merge Mode"
 msgstr ""
 
-msgid "Object"
-msgstr ""
-
-msgid "Organisation unit"
-msgstr "​ຫົວ​ໜ່ວຍ​ການ​ຈັດ​ຕັ້ງ"
-
 msgid "Org unit ID scheme"
-msgstr ""
-
-msgid "Preheat cache"
 msgstr ""
 
 msgid "Preheat Mode"
@@ -183,17 +411,11 @@ msgstr ""
 msgid "Program Stages"
 msgstr ""
 
-msgid "Programs"
-msgstr "ສາຍງານ"
-
 msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
 msgstr "ແບບຟອມ"
-
-msgid "Sharing"
-msgstr "ແບ່ງປັນ"
 
 msgid "Existing record check"
 msgstr ""
@@ -204,77 +426,11 @@ msgstr ""
 msgid "Skip Validation"
 msgstr ""
 
-msgid "Start date"
-msgstr "ວັນທີເລີ່ມຕົ້ນ"
-
-msgid "Strategy"
-msgstr ""
-
-msgid "Yes"
-msgstr "ແມ່ນ"
-
-msgid "No"
-msgstr "ບໍ່"
-
-msgid "UID"
-msgstr ""
-
-msgid "Code"
-msgstr "ລະຫັດ"
-
-msgid "Name"
-msgstr "ຊື່"
-
-msgid "HR identifier"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Selected organisation unit"
-msgstr ""
-
-msgid "Yes (faster for large imports)"
-msgstr ""
-
 msgid "New and Updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "ລົບ"
-
-msgid "Skip check (fast)"
-msgstr ""
-
-msgid "Check (safe, recommended)"
 msgstr ""
 
 msgid "AUTO"
 msgstr ""
-
-msgid "Errors"
-msgstr "ຜິດພາດ"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr ""
-
-msgid "All"
-msgstr "ທັງໝົດ"
-
-msgid "None"
-msgstr "ບໍ່ມີ"
 
 msgid "Create and Update"
 msgstr ""
@@ -285,59 +441,14 @@ msgstr "ສ້າງ"
 msgid "Update"
 msgstr "ປັບປຸງ"
 
-msgid "Merge"
-msgstr ""
-
-msgid "Replace"
-msgstr "ແທນທີ່"
-
-msgid "Auto"
-msgstr ""
-
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
-msgstr ""
-
-msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Zip"
-msgstr ""
-
 msgid "Gzip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Category combination"
-msgstr "Category Combination"
-
-msgid "Dashboard"
-msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
-
-msgid "Data element groups"
-msgstr "Data Element Groups"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
 msgstr "ນຳຂໍ້ມູນເຂົ້າ-ອອກ"
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
 
 msgid "Data Export"
 msgstr ""
@@ -345,6 +456,9 @@ msgstr ""
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "Loading options..."
 msgstr ""
 
 msgid "Event Export"
@@ -363,9 +477,6 @@ msgid ""
 "DHIS 2 exchange format."
 msgstr ""
 
-msgid "Meta Data Export"
-msgstr ""
-
 msgid "Metadata Dependency Export"
 msgstr ""
 
@@ -374,13 +485,13 @@ msgid ""
 "objects."
 msgstr ""
 
-msgid "Metadata Export with Dependencies"
-msgstr ""
-
 msgid "Import / Export"
 msgstr ""
 
 msgid "Import or Export DHIS2 data."
+msgstr ""
+
+msgid "An unknown error occurred"
 msgstr ""
 
 msgid "Data Import"
@@ -406,7 +517,7 @@ msgid ""
 "XML grammar for expressing geographical features."
 msgstr ""
 
-msgid "Only import of GML data for existing organisation units is supported."
+msgid "Couldn't load classKey options"
 msgstr ""
 
 msgid "Metadata Import"
@@ -415,4 +526,7 @@ msgstr ""
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "It seems like there was no data in the uploaded file."
 msgstr ""
