@@ -1,13 +1,13 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgid "Go Back"
 msgstr "Gå tillbaka"
 
 msgid "Required"
-msgstr "Obligatorisk"
+msgstr "Nödvändig"
 
 msgid "Choose a file to upload"
 msgstr "Välj fil att ladda upp"
@@ -40,7 +40,7 @@ msgid "Clear All"
 msgstr "Rensa alla"
 
 msgid "Data sets"
-msgstr "Dataset"
+msgstr "dataset"
 
 msgid "more options"
 msgstr "flera val"
@@ -181,7 +181,7 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
-msgstr "Ta bort"
+msgstr "Radera"
 
 msgid "Import strategy"
 msgstr ""
@@ -229,7 +229,7 @@ msgid "Category combination"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "Instrumentbräda"
+msgstr "instrumentbräda"
 
 msgid "Data element groups"
 msgstr "Dataelementgrupper"
@@ -241,7 +241,7 @@ msgid "Object type"
 msgstr "Objekttyp"
 
 msgid "Organisation unit"
-msgstr "Organisation enhet"
+msgstr "Organisationsenhet"
 
 msgid "Org unit id scheme"
 msgstr ""
@@ -358,7 +358,7 @@ msgid "Type Count"
 msgstr "Antal typer"
 
 msgid "Messages"
-msgstr "Meddelanden"
+msgstr "meddelanden"
 
 msgid "Summaries"
 msgstr "Uppsummeringar"
@@ -439,7 +439,7 @@ msgid "Create"
 msgstr "Skapa"
 
 msgid "Update"
-msgstr "Uppdatering"
+msgstr "Uppdatera"
 
 msgid "Gzip"
 msgstr ""
