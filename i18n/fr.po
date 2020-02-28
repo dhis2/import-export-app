@@ -1,16 +1,15 @@
 # Translators:
-# mrwine <matthieu@pinard.no>, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# Bram Piot <bram.piot@gmail.com>, 2019
-# Djibril Dione <dione.djibril@gmail.com>, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# Bram Piot <bram.piot@gmail.com>, 2020
+# Djibril Dione <dione.djibril@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Djibril Dione <dione.djibril@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Djibril Dione <dione.djibril@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -340,7 +339,7 @@ msgid "Export"
 msgstr "Exporter"
 
 msgid "Created"
-msgstr "Créé"
+msgstr "Créé le"
 
 msgid "Deleted"
 msgstr ""
@@ -361,7 +360,7 @@ msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 msgid "Summaries"
 msgstr ""
