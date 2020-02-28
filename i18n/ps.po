@@ -1,13 +1,13 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,19 +46,19 @@ msgid "more options"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "Yes"
-msgstr "هو [ درست ]"
+msgstr "هو"
 
 msgid "No"
-msgstr "نه [ نه ]"
+msgstr "نه"
 
 msgid "Async"
 msgstr ""
@@ -70,6 +70,15 @@ msgid "None"
 msgstr "هېڅ یو"
 
 msgid "Atomic mode"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Children"
 msgstr ""
 
 msgid "Class key"
@@ -94,7 +103,7 @@ msgid "Code"
 msgstr "کوډ یا شفر"
 
 msgid "Name"
-msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
+msgstr "نوم"
 
 msgid "Data element id scheme"
 msgstr ""
@@ -102,8 +111,23 @@ msgstr ""
 msgid "Loading data element id scheme options..."
 msgstr ""
 
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
 msgid "Dry run"
 msgstr ""
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr "د پای نېټه"
 
 msgid "Event id scheme"
 msgstr ""
@@ -162,6 +186,15 @@ msgstr "خذف یې کړئ"
 msgid "Import strategy"
 msgstr ""
 
+msgid "Include deleted"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
 msgid "Non Null"
 msgstr ""
 
@@ -183,10 +216,34 @@ msgstr "ځاېناستول"
 msgid "Merge mode"
 msgstr ""
 
-msgid "Org unit id scheme"
+msgid "Loading Object options..."
 msgstr ""
 
-msgid "Loading organisation unit id scheme options..."
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr "پروګرامونه"
+
+msgid "Category combination"
+msgstr "د کټګورۍ ترکیب"
+
+msgid "Dashboard"
+msgstr "ډېشبورډ [ ډېسبورډ ]"
+
+msgid "Data element groups"
+msgstr "د مالوماتو د برخې ګروپونه"
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr "د سازمان واحد"
+
+msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Yes (faster for large imports)"
@@ -199,6 +256,24 @@ msgid "Reference"
 msgstr "مرجع / مأخذ"
 
 msgid "Preheat mode"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "Program stages"
+msgstr ""
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Error"
@@ -236,6 +311,12 @@ msgstr ""
 
 msgid "Skip validation"
 msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr "د پیل نېټه"
 
 msgid "Strategy"
 msgstr ""
@@ -297,17 +378,8 @@ msgstr ""
 msgid "Category ID scheme"
 msgstr ""
 
-msgid "Children"
-msgstr ""
-
-msgid "Object type"
-msgstr ""
-
 msgid "Data element ID scheme"
 msgstr ""
-
-msgid "End date"
-msgstr "د پای نېټه"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -324,20 +396,11 @@ msgstr ""
 msgid "Import Strategy"
 msgstr ""
 
-msgid "Include deleted"
-msgstr ""
-
-msgid "Inclusion"
-msgstr ""
-
 msgid "Inclusion Strategy"
 msgstr ""
 
 msgid "Merge Mode"
 msgstr ""
-
-msgid "Organisation unit"
-msgstr "د سازمان واحد"
 
 msgid "Org unit ID scheme"
 msgstr ""
@@ -347,9 +410,6 @@ msgstr ""
 
 msgid "Program Stages"
 msgstr ""
-
-msgid "Programs"
-msgstr "پروګرامونه"
 
 msgid "Schemas"
 msgstr ""
@@ -364,15 +424,6 @@ msgid "Skip Sharing"
 msgstr ""
 
 msgid "Skip Validation"
-msgstr ""
-
-msgid "Start date"
-msgstr "د پیل نېټه"
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Selected organisation unit"
 msgstr ""
 
 msgid "New and Updates"
@@ -390,29 +441,14 @@ msgstr "جوړ یې کړئ"
 msgid "Update"
 msgstr "تجدید یا نوي یې کړئ"
 
-msgid "Include children of organisation unit"
-msgstr ""
-
 msgid "Gzip"
-msgstr ""
-
-msgid "Category combination"
-msgstr "د کټګورۍ ترکیب"
-
-msgid "Dashboard"
-msgstr "ډېشبورډ [ ډېسبورډ ]"
-
-msgid "Data element groups"
-msgstr "د مالوماتو د برخې ګروپونه"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
 msgstr "واردول-صادرول"
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
 
 msgid "Data Export"
 msgstr ""
@@ -449,9 +485,6 @@ msgid ""
 "objects."
 msgstr ""
 
-msgid "Metadata Export with Dependencies"
-msgstr ""
-
 msgid "Import / Export"
 msgstr ""
 
@@ -459,9 +492,6 @@ msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "An unknown error occurred"
-msgstr ""
-
-msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
