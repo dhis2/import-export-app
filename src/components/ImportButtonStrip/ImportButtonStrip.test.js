@@ -8,7 +8,7 @@ const props = {
     dataTest: 'import-strip',
     dryRunDataTest: 'import-strip-dry-run-btn',
     importDataTest: 'import-strip-import-btn',
-    onSubmit: () => 1,
+    onImport: () => 1,
 }
 
 const r = <ImportButtonStrip {...props} />
