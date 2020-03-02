@@ -16,6 +16,8 @@ import {
     defaultIdSchemeOption,
     defaultInclusionOption,
 } from '../../utils/options'
+import { useProgramStages, ALL_VALUE } from '../../hooks/useProgramStages'
+import { Select } from '../../components/Select'
 import { Page } from '../../components/Page'
 import { RadioGroup } from '../../components/RadioGroup'
 import { DatePicker } from '../../components/DatePicker'
@@ -25,7 +27,6 @@ import { ProgramPicker } from '../../components/ProgramPicker'
 import { MoreOptions } from '../../components/MoreOptions'
 import { IdScheme } from '../../components/ElementSchemes'
 import { FormAlerts } from '../../components/FormAlerts'
-import { ProgramStageSelect, ALL_VALUE } from './ProgramStageSelect/'
 
 const today = new Date()
 
@@ -44,6 +45,16 @@ const EventExport = () => {
     const [inclusion, setInclusion] = useState(defaultInclusionOption)
     const [alerts, setAlerts] = useState([])
     const { baseUrl } = useConfig()
+
+    const {
+        loading: programStagesLoading,
+        error: programStagesError,
+        validationText: programStagesValidationText,
+        programStages,
+    } = useProgramStages(
+        selectedPrograms.length == 0 ? null : selectedPrograms[0],
+        setProgramStage
+    )
 
     const onExport = () => {
         // validate
@@ -96,6 +107,8 @@ const EventExport = () => {
             : format.value
         const filename = `${endpoint}.${endpointExtension}`
         const downloadUrlParams = [
+            'links=false',
+            'skipPaging=true',
             `orgUnit=${pathToId(selectedOrgUnits[0])}`,
             `programs=${selectedPrograms[0]}`,
             `includeDeleted=${includeDeleted}`,
@@ -105,8 +118,6 @@ const EventExport = () => {
             `endDate=${jsDateToISO8601(endDate)}`,
             `ouMode=${inclusion.value}`,
             `format=${format.value}`,
-            'links=false',
-            'skipPaging=true',
             programStage.value != ALL_VALUE
                 ? `programStage=${programStage.value}`
                 : '',
@@ -142,15 +153,17 @@ const EventExport = () => {
                 autoSelectFirst
                 dataTest={testIds.EventExport.ProgramPicker}
             />
-            <ProgramStageSelect
-                name="programStage"
+            <Select
+                loading={programStagesLoading}
+                name="programStages"
                 label={i18n.t('Program stage')}
-                program={
-                    selectedPrograms.length == 0 ? null : selectedPrograms[0]
-                }
-                setSelected={setProgramStage}
+                options={programStages}
                 selected={programStage}
+                setValue={setProgramStage}
                 dataTest={testIds.EventExport.ProgramStageSelect}
+                validationText={programStagesValidationText}
+                error={!!programStagesError}
+                dense
             />
             <DatePicker
                 name="startDate"

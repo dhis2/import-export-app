@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import i18n from '@dhis2/d2-i18n'
-import PropTypes from 'prop-types'
 import { useDataEngine } from '@dhis2/app-runtime'
-
-import { optionPropType } from '../../../utils/options'
-import { Select } from '../../../components/Select'
 
 const programStageQuery = {
     data: {
@@ -19,16 +15,9 @@ const programStageQuery = {
 }
 
 const ALL_VALUE = ''
-const ALL_LABEL = i18n.t('[ All program stages ]')
+const ALL_LABEL = `[ ${i18n.t('All program stages')} ]`
 
-const ProgramStageSelect = ({
-    name,
-    label,
-    program,
-    setSelected,
-    selected,
-    dataTest,
-}) => {
+const useProgramStages = (program, setSelected) => {
     const engine = useDataEngine()
     const [error, setError] = useState(undefined)
     const [loading, setLoading] = useState(true)
@@ -41,8 +30,9 @@ const ProgramStageSelect = ({
         } else {
             setLoading(false)
         }
-        const fetcher = async () => {
-            await engine.query(programStageQuery, {
+
+        if (program) {
+            engine.query(programStageQuery, {
                 variables: {
                     id: program,
                 },
@@ -64,12 +54,9 @@ const ProgramStageSelect = ({
                 },
                 onError: error => {
                     setError(error)
-                    console.error('ProgramStageSelect error: ', error)
+                    console.error('useProgramStages error: ', error)
                 },
             })
-        }
-        if (program) {
-            fetcher()
         }
     }, [program])
 
@@ -79,29 +66,7 @@ const ProgramStageSelect = ({
             error.message
         }`
 
-    return (
-        <Select
-            loading={loading}
-            name={name}
-            label={label}
-            options={stages}
-            selected={selected}
-            setValue={setSelected}
-            dataTest={dataTest}
-            validationText={validationText}
-            error={!!error}
-            dense
-        />
-    )
+    return { loading, error, validationText, programStages: stages }
 }
 
-ProgramStageSelect.propTypes = {
-    dataTest: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    setSelected: PropTypes.func.isRequired,
-    program: PropTypes.string,
-    selected: optionPropType,
-}
-
-export { ProgramStageSelect, ALL_VALUE }
+export { useProgramStages, ALL_VALUE }
