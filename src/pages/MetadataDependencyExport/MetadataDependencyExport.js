@@ -14,11 +14,11 @@ import {
     defaultCompressionOption,
     defaultObjectTypeOption,
 } from '../../utils/options'
+import { useObjects } from '../../hooks/useObjects'
 import { Page } from '../../components/Page'
 import { Switch } from '../../components/Switch'
 import { RadioGroup } from '../../components/RadioGroup'
 import { Select } from '../../components/Select'
-import { ObjectSelect } from './ObjectSelect/'
 
 const MetadataDependencyExport = () => {
     const [objectType, setObjectType] = useState(defaultObjectTypeOption)
@@ -27,6 +27,13 @@ const MetadataDependencyExport = () => {
     const [compression, setCompression] = useState(defaultCompressionOption)
     const [skipSharing, setSkipSharing] = useState(false)
     const { baseUrl } = useConfig()
+
+    const {
+        loading: objectsLoading,
+        error: objectsError,
+        validationText: objectsValidationText,
+        objects,
+    } = useObjects(objectType, setObjectListSelected)
 
     const onExport = () => {
         const apiBaseUrl = `${baseUrl}/api/`
@@ -56,14 +63,18 @@ const MetadataDependencyExport = () => {
                 selected={objectType}
                 dataTest={testIds.MetadataDependencyExport.objectType}
             />
-            <ObjectSelect
-                name="objectList"
+            <Select
+                loading={objectsLoading}
+                name="object"
                 label={i18n.t('Object')}
-                type={objectType}
-                setSelected={setObjectListSelected}
+                options={objects}
                 selected={objectListSelected}
-                filterable
+                setValue={setObjectListSelected}
                 dataTest={testIds.MetadataDependencyExport.ObjectSelect}
+                validationText={objectsValidationText}
+                error={!!objectsError}
+                filterable
+                dense
             />
             <RadioGroup
                 name="format"
