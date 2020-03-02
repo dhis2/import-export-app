@@ -6,7 +6,9 @@ exports[`matches snapshot 1`] = `
     class="container"
     data-test="job-overview-menu-label-EcJpZjEcMfI"
   >
-    <div>
+    <div
+      class="status"
+    >
       <span>
         data1.json
       </span>

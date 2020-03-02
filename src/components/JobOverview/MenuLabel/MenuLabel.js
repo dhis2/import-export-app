@@ -12,7 +12,7 @@ const MenuLabel = ({ task }) => {
             className={s.container}
             data-test={`${testIds.JobOverview.MenuLabel}-${task.id}`}
         >
-            <div>
+            <div className={s.status}>
                 <span>{trimString(15, task.jobDetails.file.name)}</span>
                 <br />
                 <span>
