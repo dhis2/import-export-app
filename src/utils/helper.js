@@ -128,7 +128,7 @@ const uploadFile = ({
                 let entry
                 if (id == -1 && !msg) {
                     entry = {
-                        id: newId,
+                        id: newId.toString(),
                         level: 'ERROR',
                         created: new Date(),
                         completed: true,
@@ -138,7 +138,7 @@ const uploadFile = ({
                     }
                 } else {
                     entry = {
-                        id: newId,
+                        id: newId.toString(),
                         level: 'INFO',
                         created: new Date(),
                         lastUpdated: new Date(),
