@@ -44,7 +44,11 @@ const commonIds = {
 }
 
 const testIds = {
-    App: {},
+    App: {
+        ScreenCover: 'app-screen-cover',
+        Loader: 'app-loader',
+        Error: 'app-error',
+    },
     Icon: {
         data: 'icon-data',
         event: 'icon-event',
@@ -194,11 +198,6 @@ const testIds = {
         items: 'job-overview-tasks',
         chips: 'job-overview-chips',
         JobSummary: 'job-overview-summary',
-    },
-    WithUser: {
-        ScreenCover: 'with-user-screen-cover',
-        Loader: 'with-user-loader',
-        Error: 'with-user-error',
     },
 }
 
