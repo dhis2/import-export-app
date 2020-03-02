@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-// import s from './MetadataImport.module.css';
 import { metadataImportPage as p } from '../../utils/pages'
-import { uploadFile } from '../../utils/helper'
+import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
 import {
     formatOptions,
@@ -37,6 +36,26 @@ import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
+const createInitialState = prevJobDetails => ({
+    file: prevJobDetails.file,
+    format: prevJobDetails.format || defaultFormatOption,
+    identifier: prevJobDetails.identifier || defaultIdentifierOption,
+    importReportMode:
+        prevJobDetails.importReportMode || defaultImportReportModeOption,
+    preheatMode: prevJobDetails.preheatMode || defaultPreheatModeOption,
+    importStrategy:
+        prevJobDetails.importStrategy || defaultImportStrategyOption,
+    firstRowIsHeader: !!prevJobDetails.firstRowIsHeader,
+    atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
+    mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
+    flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
+    inclusionStrategy:
+        prevJobDetails.inclusionStrategy || defaultInclusionStrategyOption,
+    skipSharing: !!prevJobDetails.skipSharing,
+    skipValidation: !!prevJobDetails.skipValidation,
+    isAsync: !prevJobDetails.isAsync,
+})
+
 const MetadataImport = ({ query }) => {
     const {
         tasks: { metadata: metadataTasks },
@@ -44,48 +63,8 @@ const MetadataImport = ({ query }) => {
     } = useContext(TaskContext)
 
     // recreating a previously run job
-    let prevJobDetails = undefined
-    if (query && query.id) {
-        const job = metadataTasks[query.id]
-        if (job) {
-            prevJobDetails = job.jobDetails
-        }
-    }
-
-    const initialState = {
-        file: prevJobDetails ? prevJobDetails.file : undefined,
-        format: prevJobDetails ? prevJobDetails.format : defaultFormatOption,
-        identifier: prevJobDetails
-            ? prevJobDetails.identifier
-            : defaultIdentifierOption,
-        importReportMode: prevJobDetails
-            ? prevJobDetails.importReportMode
-            : defaultImportReportModeOption,
-        preheatMode: prevJobDetails
-            ? prevJobDetails.preheatMode
-            : defaultPreheatModeOption,
-        importStrategy: prevJobDetails
-            ? prevJobDetails.importStrategy
-            : defaultImportStrategyOption,
-        firstRowIsHeader: prevJobDetails
-            ? prevJobDetails.firstRowIsHeader
-            : false,
-        atomicMode: prevJobDetails
-            ? prevJobDetails.atomicMode
-            : defaultAtomicModeOption,
-        mergeMode: prevJobDetails
-            ? prevJobDetails.mergeMode
-            : defaultMergeModeOption,
-        flushMode: prevJobDetails
-            ? prevJobDetails.flushMode
-            : defaultFlushModeOption,
-        inclusionStrategy: prevJobDetails
-            ? prevJobDetails.inclusionStrategy
-            : defaultInclusionStrategyOption,
-        skipSharing: prevJobDetails ? prevJobDetails.skipSharing : false,
-        skipValidation: prevJobDetails ? prevJobDetails.skipValidation : false,
-        isAsync: prevJobDetails ? prevJobDetails.isAsync : true,
-    }
+    const prevJobDetails = getPrevJobDetails(query, metadataTasks)
+    const initialState = createInitialState(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(initialState.file)
@@ -117,7 +96,7 @@ const MetadataImport = ({ query }) => {
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onSubmit = ({ dryRun }) => {
+    const onImport = ({ dryRun }) => {
         // validate
         const alerts = []
         const timestamp = new Date().getTime()
@@ -332,7 +311,7 @@ const MetadataImport = ({ query }) => {
                 />
             </MoreOptions>
             <ImportButtonStrip
-                onSubmit={onSubmit}
+                onImport={onImport}
                 dryRunDataTest={testIds.DataImport.dryRun}
                 importDataTest={testIds.DataImport.submit}
                 dataTest={testIds.DataImport.ImportButtonStrip}

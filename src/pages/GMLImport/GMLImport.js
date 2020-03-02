@@ -3,15 +3,18 @@ import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-// import s from './GMLImport.module.css';
 import { gmlImportPage as p } from '../../utils/pages'
-import { uploadFile } from '../../utils/helper'
+import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
 import { Page } from '../../components/Page'
 import { FileUpload } from '../../components/FileUpload'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
+
+const createInitialState = prevJobDetails => ({
+    file: prevJobDetails.file,
+})
 
 const GMLImport = ({ query }) => {
     const {
@@ -20,17 +23,8 @@ const GMLImport = ({ query }) => {
     } = useContext(TaskContext)
 
     // recreating a previously run job
-    let prevJobDetails = undefined
-    if (query && query.id) {
-        const job = gmlTasks[query.id]
-        if (job) {
-            prevJobDetails = job.jobDetails
-        }
-    }
-
-    const initialState = {
-        file: prevJobDetails ? prevJobDetails.file : undefined,
-    }
+    const prevJobDetails = getPrevJobDetails(query, gmlTasks)
+    const initialState = createInitialState(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(initialState.file)
@@ -38,7 +32,7 @@ const GMLImport = ({ query }) => {
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onSubmit = ({ dryRun }) => {
+    const onImport = ({ dryRun }) => {
         // validate
         const alerts = []
         const timestamp = new Date().getTime()
@@ -98,7 +92,7 @@ const GMLImport = ({ query }) => {
                 dataTest={testIds.GMLImport.FileUpload}
             />
             <ImportButtonStrip
-                onSubmit={onSubmit}
+                onImport={onImport}
                 dryRunDataTest={testIds.DataImport.dryRun}
                 importDataTest={testIds.DataImport.submit}
                 dataTest={testIds.DataImport.ImportButtonStrip}
