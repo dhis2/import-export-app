@@ -5,10 +5,10 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
 
 import s from './JobOverview.module.css'
-import { TaskContext } from '../../contexts/'
+import { TaskContext, categoryTypes } from '../../contexts/'
 import { testIds } from '../../utils/testIds'
 import { JobSummary } from '../JobSummary/'
-import { categoryTypes, categoryTypesObj, jobToPath } from './helper'
+import { categoryTypesObj, jobToPath } from './helper'
 import { MenuLabel } from './MenuLabel'
 
 const JobOverview = ({
@@ -17,7 +17,7 @@ const JobOverview = ({
     selectedJob,
     setSelectedJob,
 }) => {
-    const tasks = useContext(TaskContext)
+    const { tasks } = useContext(TaskContext)
 
     const onChipClick = key => {
         if (activeTypes.includes(key)) {

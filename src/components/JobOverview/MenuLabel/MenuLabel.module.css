@@ -3,6 +3,10 @@
     align-items: center;
 }
 
+.status {
+    min-width: 100px;
+}
+
 .date {
     margin-left: 20px;
 }

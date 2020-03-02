@@ -38,7 +38,10 @@ import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
 const MetadataImport = ({ query }) => {
-    const { metadata: metadataTasks, addTask } = useContext(TaskContext)
+    const {
+        tasks: { metadata: metadataTasks },
+        addTask,
+    } = useContext(TaskContext)
 
     // recreating a previously run job
     let prevJobDetails = undefined

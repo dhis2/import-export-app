@@ -14,7 +14,10 @@ import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
 const GMLImport = ({ query }) => {
-    const { gml: gmlTasks, addTask } = useContext(TaskContext)
+    const {
+        tasks: { gml: gmlTasks },
+        addTask,
+    } = useContext(TaskContext)
 
     // recreating a previously run job
     let prevJobDetails = undefined

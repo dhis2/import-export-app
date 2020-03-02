@@ -5,16 +5,7 @@ import { TaskContext } from '../../contexts/'
 import { JobOverviewPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
 import { Page } from '../../components/Page'
-import {
-    JobOverview as JobOverviewComponent,
-    categoryTypes,
-} from '../../components/JobOverview'
-
-const allCategories = categoryTypes.map(({ importType }) => importType)
-const initialJobOverview = {
-    activeTypes: allCategories,
-    selectedJob: undefined,
-}
+import { JobOverview as JobOverviewComponent } from '../../components/JobOverview'
 
 const JobOverview = () => {
     const { jobOverview, updateJobOverview } = useContext(TaskContext)
@@ -30,17 +21,6 @@ const JobOverview = () => {
         })
     }
 
-    if (!jobOverview) {
-        updateJobOverview(initialJobOverview)
-    }
-
-    const activeTypes = jobOverview
-        ? jobOverview.activeTypes
-        : initialJobOverview.activeTypes
-    const selectedJob = jobOverview
-        ? jobOverview.selectedJob
-        : initialJobOverview.selectedJob
-
     return (
         <Page
             title={p.name}
@@ -50,9 +30,9 @@ const JobOverview = () => {
         >
             <div className={s.container}>
                 <JobOverviewComponent
-                    activeTypes={activeTypes}
+                    activeTypes={jobOverview.activeTypes}
                     setActiveTypes={setActiveTypes}
-                    selectedJob={selectedJob}
+                    selectedJob={jobOverview.selectedJob}
                     setSelectedJob={setSelectedJob}
                 />
             </div>

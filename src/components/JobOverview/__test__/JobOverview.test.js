@@ -25,7 +25,7 @@ const props = {
 const renderContext = (contextValue, props) => {
     const history = createMemoryHistory()
     return render(
-        <TaskContext.Provider value={contextValue}>
+        <TaskContext.Provider value={{ tasks: contextValue }}>
             <Router history={history}>
                 <JobOverview {...props} />
             </Router>
