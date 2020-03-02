@@ -4,7 +4,6 @@ import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 import JSZip from 'jszip'
 
-// import s from './DataExport.module.css';
 import { dataExportPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
 import {
@@ -77,8 +76,8 @@ const dataValueSetQuery = {
             dataElementIdScheme,
             orgUnitIdScheme,
             idScheme,
-            includeDeleted: `${includeDeleted}`,
-            children: `${children}`,
+            includeDeleted,
+            children,
             startDate,
             endDate,
             orgUnit,
@@ -153,8 +152,8 @@ const DataExport = () => {
                 dataElementIdScheme: dataElementIdScheme.value,
                 orgUnitIdScheme: orgUnitIdScheme.value,
                 idScheme: idScheme.value,
-                includeDeleted,
-                children: includeChildren,
+                includeDeleted: includeDeleted.toString(),
+                children: includeChildren.toString(),
                 startDate: jsDateToISO8601(startDate),
                 endDate: jsDateToISO8601(endDate),
                 orgUnit: selectedOrgUnits.map(o => pathToId(o)),
