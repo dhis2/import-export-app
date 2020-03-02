@@ -13,7 +13,7 @@ import {
     defaultCompressionOption,
 } from '../../utils/options'
 import { EXCLUDE_SCHEMAS } from './helper'
-import { Schemas } from './Schemas/'
+import { Schemas } from '../../components/Schemas'
 import { Page } from '../../components/Page'
 import { Switch } from '../../components/Switch'
 import { RadioGroup } from '../../components/RadioGroup'
