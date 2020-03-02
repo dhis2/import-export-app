@@ -26,14 +26,15 @@ import {
     defaultFlushModeOption,
     defaultInclusionStrategyOption,
 } from '../../utils/options'
+import { useClassKeys } from '../../hooks/useClassKeys'
 import { Page } from '../../components/Page'
 import { FileUpload } from '../../components/FileUpload'
 import { RadioGroup } from '../../components/RadioGroup'
 import { Switch } from '../../components/Switch'
 import { MoreOptions } from '../../components/MoreOptions'
-import { ClassKey } from './ClassKey/'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
+import { Select } from '../../components/Select'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
 const createInitialState = prevJobDetails => ({
@@ -95,6 +96,17 @@ const MetadataImport = ({ query }) => {
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
+
+    const {
+        loading: classKeysLoading,
+        error: classKeysError,
+        validationText: classKeysValidationText,
+        classKeys,
+    } = useClassKeys(
+        classKey,
+        setClassKey,
+        prevJobDetails.classKey || undefined
+    )
 
     const onImport = ({ dryRun }) => {
         // validate
@@ -213,13 +225,17 @@ const MetadataImport = ({ query }) => {
                         setChecked={setFirstRowIsHeader}
                         dataTest={testIds.MetadataImport.firstRowIsHeader}
                     />
-                    <ClassKey
-                        prevValue={
-                            prevJobDetails ? prevJobDetails.classKey : undefined
-                        }
-                        value={classKey}
+                    <Select
+                        name="classKey"
+                        label={i18n.t('Class key')}
+                        options={classKeys}
+                        selected={classKeysLoading ? undefined : classKey}
                         setValue={setClassKey}
+                        loading={classKeysLoading}
                         dataTest={testIds.MetadataImport.classKey}
+                        validationText={classKeysValidationText}
+                        error={!!classKeysError}
+                        dense
                     />
                 </>
             )}
