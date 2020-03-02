@@ -3,7 +3,6 @@ import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 
-// import s from './EventExport.module.css';
 import { eventExportPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
 import { jsDateToISO8601, locationAssign, pathToId } from '../../utils/helper'
