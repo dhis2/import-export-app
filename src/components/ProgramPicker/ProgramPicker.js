@@ -6,7 +6,6 @@ import { CircularLoader } from '@dhis2/ui-core'
 
 import { SelectableList } from '../SelectableList'
 import { FormField } from '../FormField'
-import s from './ProgramPicker.module.css'
 
 const programQuery = {
     programs: {
@@ -78,7 +77,7 @@ const ProgramPicker = ({
 
     return (
         <FormField label={i18n.t('Programs')} dataTest={dataTest}>
-            <div className={s.container}>{content}</div>
+            <div>{content}</div>
         </FormField>
     )
 }

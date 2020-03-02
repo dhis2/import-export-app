@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Radio, Checkbox, Node } from '@dhis2/ui-core'
 
-import s from './Tree.module.css'
-
 const Tree = ({
     list,
     select,
@@ -61,11 +59,7 @@ const Tree = ({
         })
     }
 
-    return list.length == 0 ? null : (
-        <div className={s.container} data-test={dataTest}>
-            {view()}
-        </div>
-    )
+    return list.length == 0 ? null : <div data-test={dataTest}>{view()}</div>
 }
 
 const listItemPropType = PropTypes.exact({
