@@ -185,10 +185,20 @@ const locationAssign = url => {
     }
 }
 
+const getPrevJobDetails = (query, tasks) => {
+    if (!query || !query.id) return {}
+
+    const job = tasks[query.id]
+    if (!job) return {}
+
+    return job.jobDetails
+}
+
 export {
     createBlob,
     downloadBlob,
     fetchAttributes,
+    getPrevJobDetails,
     locationAssign,
     jsDateToISO8601,
     jsDateToString,

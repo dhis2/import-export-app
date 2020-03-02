@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-// import s from './EventImport.module.css';
 import { eventImportPage as p } from '../../utils/pages'
-import { uploadFile } from '../../utils/helper'
+import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
 import {
     formatOptions,
@@ -22,6 +21,14 @@ import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
+const createInitialState = prevJobDetails => ({
+    file: prevJobDetails.file,
+    format: prevJobDetails.format || defaultFormatOption,
+    orgUnitIdScheme:
+        prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
+    eventIdScheme: prevJobDetails.eventIdScheme || defaultEventIdSchemeOption,
+})
+
 const EventImport = ({ query }) => {
     const {
         tasks: { event: eventTasks },
@@ -29,24 +36,8 @@ const EventImport = ({ query }) => {
     } = useContext(TaskContext)
 
     // recreating a previously run job
-    let prevJobDetails = undefined
-    if (query && query.id) {
-        const job = eventTasks[query.id]
-        if (job) {
-            prevJobDetails = job.jobDetails
-        }
-    }
-
-    const initialState = {
-        file: prevJobDetails ? prevJobDetails.file : undefined,
-        format: prevJobDetails ? prevJobDetails.format : defaultFormatOption,
-        orgUnitIdScheme: prevJobDetails
-            ? prevJobDetails.orgUnitIdScheme
-            : defaultOrgUnitIdSchemeOption,
-        eventIdScheme: prevJobDetails
-            ? prevJobDetails.eventIdScheme
-            : defaultEventIdSchemeOption,
-    }
+    const prevJobDetails = getPrevJobDetails(query, eventTasks)
+    const initialState = createInitialState(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState(initialState.file)
@@ -61,7 +52,7 @@ const EventImport = ({ query }) => {
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onSubmit = ({ dryRun }) => {
+    const onImport = ({ dryRun }) => {
         // validate
         const alerts = []
         const timestamp = new Date().getTime()
@@ -151,7 +142,7 @@ const EventImport = ({ query }) => {
                 />
             </MoreOptions>
             <ImportButtonStrip
-                onSubmit={onSubmit}
+                onImport={onImport}
                 dryRunDataTest={testIds.DataImport.dryRun}
                 importDataTest={testIds.DataImport.submit}
                 dataTest={testIds.DataImport.ImportButtonStrip}
