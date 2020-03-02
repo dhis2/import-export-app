@@ -27,6 +27,7 @@ const JobOverview = ({
         }
     }
 
+    // all tasks sorted by type, createdAt (descending)
     const allTasks = categoryTypes
         .map(({ key: type }) =>
             Object.keys(tasks[type]).map(id => tasks[type][id])
@@ -41,6 +42,8 @@ const JobOverview = ({
         activeTypes.includes(t.importType)
     )
 
+    // set selected job to first job if
+    // first time user visits the job overview page
     if (!selectedJob && allTasks.length > 0) {
         setSelectedJob(allTasks[0])
     }
