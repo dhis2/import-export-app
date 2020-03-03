@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import s from './Tag.module.css'
+import styles from './Tag.module.css'
 
 const Tag = ({ text, success, warning, error, info }) => {
     const classNames = [
-        s.container,
-        warning && s.warning,
-        error && s.error,
-        success && s.success,
-        info && s.info,
+        styles.container,
+        warning && styles.warning,
+        error && styles.error,
+        success && styles.success,
+        info && styles.info,
     ]
         .filter(a => !!a)
         .join(' ')
 
     return (
         <div className={classNames}>
-            <span className={s.text}>{text}</span>
+            <span className={styles.text}>{text}</span>
         </div>
     )
 }

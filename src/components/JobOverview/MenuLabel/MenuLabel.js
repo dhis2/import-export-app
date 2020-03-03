@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import s from './MenuLabel.module.css'
+import styles from './MenuLabel.module.css'
 import { jsDateToString, trimString } from '../../../utils/helper'
 import { testIds } from '../../../utils/testIds'
 
 const MenuLabel = ({ task }) => {
     return (
         <div
-            className={s.container}
+            className={styles.container}
             data-test={`${testIds.JobOverview.MenuLabel}-${task.id}`}
         >
-            <div className={s.status}>
+            <div className={styles.status}>
                 <span>{trimString(15, task.jobDetails.file.name)}</span>
                 <br />
                 <span>
@@ -21,7 +21,7 @@ const MenuLabel = ({ task }) => {
                         : i18n.t('In progress')}{' '}
                 </span>
             </div>
-            <div className={s.date}>{jsDateToString(task.created)}</div>
+            <div className={styles.date}>{jsDateToString(task.created)}</div>
         </div>
     )
 }

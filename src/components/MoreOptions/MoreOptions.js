@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { MinusIcon, PlusIcon } from '../Icon'
-import s from './MoreOptions.module.css'
+import styles from './MoreOptions.module.css'
 
 const MoreOptions = ({
     children,
@@ -18,16 +18,16 @@ const MoreOptions = ({
     }
 
     return (
-        <div className={s.container} data-test={dataTest}>
+        <div className={styles.container} data-test={dataTest}>
             <div
-                className={s.header}
+                className={styles.header}
                 onClick={onToggle}
                 data-test={`${dataTest}-header`}
             >
                 {hidden ? <PlusIcon /> : <MinusIcon />}
                 {label}
             </div>
-            <div className={s.children} data-test={`${dataTest}-children`}>
+            <div className={styles.children} data-test={`${dataTest}-children`}>
                 {!hidden && children}
             </div>
         </div>

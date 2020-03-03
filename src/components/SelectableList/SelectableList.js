@@ -4,7 +4,7 @@ import i18n from '@dhis2/d2-i18n'
 import { Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core'
 
 import { optionsPropType } from '../../utils/options'
-import s from './SelectableList.module.css'
+import styles from './SelectableList.module.css'
 
 const SelectableList = ({
     label,
@@ -48,7 +48,7 @@ const SelectableList = ({
     return (
         <div data-test={dataTest}>
             {withFilter && (
-                <div className={s.filter} data-test={`${dataTest}-filter`}>
+                <div className={styles.filter} data-test={`${dataTest}-filter`}>
                     <InputField
                         name="filter"
                         label={label}
@@ -60,9 +60,12 @@ const SelectableList = ({
             )}
 
             {withActions && (
-                <div className={s.actions} data-test={`${dataTest}-actions`}>
+                <div
+                    className={styles.actions}
+                    data-test={`${dataTest}-actions`}
+                >
                     <Checkbox
-                        className={s.action}
+                        className={styles.action}
                         name="select-all"
                         value="select-all"
                         label={i18n.t('Select all')}
@@ -71,7 +74,7 @@ const SelectableList = ({
                         checked
                     />
                     <Checkbox
-                        className={s.action}
+                        className={styles.action}
                         name="clear-all"
                         value="clear-all"
                         label={i18n.t('Clear all')}
@@ -81,7 +84,11 @@ const SelectableList = ({
                 </div>
             )}
 
-            <div className={s.body} data-test={`${dataTest}-body`} name={name}>
+            <div
+                className={styles.body}
+                data-test={`${dataTest}-body`}
+                name={name}
+            >
                 {list
                     .filter(({ label }) =>
                         label.toLowerCase().includes(filter.toLowerCase())

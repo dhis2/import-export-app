@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Button, ButtonStrip, Help } from '@dhis2/ui-core'
 
-import s from './ImportButtonStrip.module.css'
+import styles from './ImportButtonStrip.module.css'
 import { helpText } from '../../utils/text'
 
 const ImportButtonStrip = ({
@@ -19,7 +19,7 @@ const ImportButtonStrip = ({
                     primary
                     onClick={() => onImport({ dryRun: true })}
                     dataTest={dryRunDataTest}
-                    className={s.dryRun}
+                    className={styles.dryRun}
                 >
                     {i18n.t('Dry run')}
                 </Button>

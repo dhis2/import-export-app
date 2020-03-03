@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Divider, Menu, MenuItem } from '@dhis2/ui-core'
 
-import s from './Sidebar.module.css'
+import styles from './Sidebar.module.css'
 import { pagePropType } from '../../utils/pages'
 import { StyledLink } from '../StyledLink/'
 
@@ -13,8 +13,8 @@ const Sidebar = ({ importPages, exportPages, jobOverviewPage }) => {
     const pathname = location.pathname
 
     return (
-        <Menu className={s.Menu}>
-            <h3 className={s.sectionTitle}>{i18n.t('Import')}</h3>
+        <Menu className={styles.Menu}>
+            <h3 className={styles.sectionTitle}>{i18n.t('Import')}</h3>
 
             {importPages.map(({ icon, name, code, path }) => (
                 <StyledLink
@@ -30,7 +30,7 @@ const Sidebar = ({ importPages, exportPages, jobOverviewPage }) => {
                 </StyledLink>
             ))}
             <Divider />
-            <h3 className={s.sectionTitle}>{i18n.t('Export')}</h3>
+            <h3 className={styles.sectionTitle}>{i18n.t('Export')}</h3>
             {exportPages.map(({ icon, name, code, path }) => (
                 <StyledLink
                     to={path}
@@ -55,7 +55,9 @@ const Sidebar = ({ importPages, exportPages, jobOverviewPage }) => {
                     icon={jobOverviewPage.icon}
                     label={jobOverviewPage.name}
                     className={
-                        pathname == jobOverviewPage.path ? '' : s.jobOverview
+                        pathname == jobOverviewPage.path
+                            ? ''
+                            : styles.jobOverview
                     }
                 />
             </StyledLink>

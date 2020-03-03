@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Divider } from '@dhis2/ui-core'
 
-import s from './JobSummary.module.css'
+import styles from './JobSummary.module.css'
 import { jsDateToString } from '../../utils/helper'
 import { testIds } from '../../utils/testIds'
 import { Tag } from './Tag/'
@@ -21,11 +21,11 @@ const JobSummary = ({
     const { jobDetails } = task
 
     return (
-        <div className={s.container} data-test={dataTest}>
-            <div className={s.header}>
-                <h3 className={s.title}>{`${i18n.t('Job summary')}`}</h3>
+        <div className={styles.container} data-test={dataTest}>
+            <div className={styles.header}>
+                <h3 className={styles.title}>{`${i18n.t('Job summary')}`}</h3>
                 {showFileDetails && (
-                    <span className={s.taskDetails}>
+                    <span className={styles.taskDetails}>
                         <span data-test={testIds.JobSummary.filename}>
                             {jobDetails.file.name}
                         </span>{' '}
@@ -36,7 +36,7 @@ const JobSummary = ({
                     </span>
                 )}
             </div>
-            <div className={s.tags} data-test={testIds.JobSummary.tags}>
+            <div className={styles.tags} data-test={testIds.JobSummary.tags}>
                 {task.completed ? (
                     <Tag success text={i18n.t('Completed')} />
                 ) : (
@@ -52,11 +52,11 @@ const JobSummary = ({
             {task.completed && task.summary && (
                 <Summary summary={task.summary} />
             )}
-            <div className={s.events}>
+            <div className={styles.events}>
                 <Events events={task.events} />
             </div>
             {showJobDetails && (
-                <div className={s.jobDetails}>
+                <div className={styles.jobDetails}>
                     <Details details={task.jobDetails} />
                 </div>
             )}

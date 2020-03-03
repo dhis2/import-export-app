@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
 
-import s from './JobOverview.module.css'
+import styles from './JobOverview.module.css'
 import { TaskContext, categoryTypes } from '../../contexts/'
 import { testIds } from '../../utils/testIds'
 import { JobSummary } from '../JobSummary/'
@@ -53,11 +53,14 @@ const JobOverview = ({
     }
 
     return (
-        <div className={s.container} data-test={testIds.JobOverview.container}>
-            <div className={s.items} data-test={testIds.JobOverview.items}>
-                <Menu className={s.Menu}>
+        <div
+            className={styles.container}
+            data-test={testIds.JobOverview.container}
+        >
+            <div className={styles.items} data-test={testIds.JobOverview.items}>
+                <Menu className={styles.Menu}>
                     <div
-                        className={s.chips}
+                        className={styles.chips}
                         data-test={testIds.JobOverview.chips}
                     >
                         {categoryTypes.map(({ key, importType, label }) => (
@@ -83,7 +86,7 @@ const JobOverview = ({
                 </Menu>
             </div>
             <div
-                className={s.summary}
+                className={styles.summary}
                 data-test={testIds.JobOverview.JobSummary}
             >
                 <JobSummary

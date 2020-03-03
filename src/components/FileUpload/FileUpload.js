@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { FileInput } from '@dhis2/ui-core'
 
-// import s from './FileUpload.module.css';
 import { FormField } from '../FormField'
 
 const FileUpload = ({

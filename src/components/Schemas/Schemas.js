@@ -12,7 +12,7 @@ import {
     getGroupOrder,
 } from './helper'
 import { SchemaGroup } from './SchemaGroup'
-import s from './Schemas.module.css'
+import styles from './Schemas.module.css'
 
 const schemaQuery = {
     schemas: {
@@ -129,7 +129,7 @@ const Schemas = ({
                     </Button>
                 </ButtonStrip>
 
-                <div className={s.formControl}>
+                <div className={styles.formControl}>
                     {schemaGroupOrder.map(groupKey => {
                         const label = schemaGroupLabels[groupKey]
 
@@ -148,7 +148,7 @@ const Schemas = ({
     }
 
     return (
-        <div className={s.container} data-test={dataTest}>
+        <div className={styles.container} data-test={dataTest}>
             {content}
         </div>
     )

@@ -8,7 +8,7 @@ import { TaskContext } from './contexts/'
 import { UserContext } from './contexts/'
 import { useUser, useTasks } from './hooks/'
 
-import s from './App.module.css'
+import styles from './App.module.css'
 import { Sidebar } from './components/Sidebar'
 import { Router } from './components/Router'
 import { ImportPages, ExportPages, JobOverviewPage } from './utils/pages'
@@ -44,8 +44,8 @@ const App = () => {
                 >
                     <CssReset />
 
-                    <div className={s.container}>
-                        <div className={s.sidebar}>
+                    <div className={styles.container}>
+                        <div className={styles.sidebar}>
                             <Sidebar
                                 importPages={ImportPages}
                                 exportPages={ExportPages}
@@ -53,7 +53,7 @@ const App = () => {
                             />
                         </div>
 
-                        <div className={s.content}>
+                        <div className={styles.content}>
                             <Router />
                         </div>
                     </div>
