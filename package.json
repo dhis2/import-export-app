@@ -20,7 +20,7 @@
         "cypress:open": "yarn d2-utils-cypress open"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^3.2.2",
+        "@dhis2/cli-app-scripts": "^3.2.5",
         "@dhis2/cli-style": "^5.1.0",
         "@dhis2/cli-utils-cypress": "^1.0.2",
         "@testing-library/jest-dom": "^5.1.0",
@@ -44,7 +44,7 @@
     },
     "dependencies": {
         "@dhis2/app-runtime": "^2.0.4",
-        "@dhis2/ui-core": "^4.6.1",
+        "@dhis2/ui-core": "^4.13.0",
         "jszip": "^3.2.2",
         "react-router-dom": "^5.1.2"
     },
