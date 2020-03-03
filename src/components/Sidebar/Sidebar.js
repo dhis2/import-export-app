@@ -1,13 +1,17 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Divider, Menu, MenuItem } from '@dhis2/ui-core'
 
 import s from './Sidebar.module.css'
-import { pagePropType } from '../../../utils/pages'
+import { pagePropType } from '../../utils/pages'
 import { StyledLink } from '../StyledLink/'
 
-const Sidebar = ({ importPages, exportPages, jobOverviewPage, pathname }) => {
+const Sidebar = ({ importPages, exportPages, jobOverviewPage }) => {
+    const location = useLocation()
+    const pathname = location.pathname
+
     return (
         <Menu className={s.Menu}>
             <h3 className={s.sectionTitle}>{i18n.t('Import')}</h3>
@@ -63,7 +67,6 @@ Sidebar.propTypes = {
     exportPages: PropTypes.arrayOf(pagePropType).isRequired,
     importPages: PropTypes.arrayOf(pagePropType).isRequired,
     jobOverviewPage: pagePropType.isRequired,
-    pathname: PropTypes.string.isRequired,
 }
 
 export { Sidebar }
