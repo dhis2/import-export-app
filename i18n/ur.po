@@ -1,12 +1,12 @@
 # Translators:
-# phil_dhis2, 2019
+# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
@@ -46,19 +46,19 @@ msgid "more options"
 msgstr "مذید آپشنز"
 
 msgid "JSON"
-msgstr "جے۔سو۔ن"
+msgstr "JSON"
 
 msgid "XML"
-msgstr "ایکس۔ایم۔ایل"
+msgstr "XML"
 
 msgid "CSV"
-msgstr "سی۔ایس۔وی"
+msgstr "CSV"
 
 msgid "Yes"
-msgstr "ہاں"
+msgstr "Ø¬Û ÛØ§Úº"
 
 msgid "No"
-msgstr "نہیں"
+msgstr "ÙÛÛÚº"
 
 msgid "Async"
 msgstr ""
@@ -103,7 +103,7 @@ msgid "Code"
 msgstr "کوڈ"
 
 msgid "Name"
-msgstr "نام"
+msgstr "ÙØ§Ù"
 
 msgid "Data element id scheme"
 msgstr ""
@@ -127,7 +127,7 @@ msgid "EndDate"
 msgstr ""
 
 msgid "End date"
-msgstr "تاریخ اختتام"
+msgstr "آخری تاریخ"
 
 msgid "Event id scheme"
 msgstr ""
@@ -223,25 +223,25 @@ msgid "Something went wrong when loading the object!"
 msgstr ""
 
 msgid "Programs"
-msgstr "پروگرامس"
+msgstr "پروگرامز"
 
 msgid "Category combination"
 msgstr "قسم کا مجموعہ"
 
 msgid "Dashboard"
-msgstr "ڈیشپورڈ"
+msgstr "ڈیشبورڈ"
 
 msgid "Data element groups"
-msgstr "ڈیٹا عناصر کا گروہ"
+msgstr "ڈیٹا عناصر کے گروپ"
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "اؤبجیکٹ ٹائپ"
+msgstr "آبجیکٹ کی قسم"
 
 msgid "Organisation unit"
-msgstr "تنظیمی یونٹ"
+msgstr "تنظیم یونٹ"
 
 msgid "Org unit id scheme"
 msgstr ""
@@ -292,7 +292,7 @@ msgid "Without sharing"
 msgstr "بغیر اشتراک کے ساتھ"
 
 msgid "Sharing"
-msgstr "اشتراک"
+msgstr "اشتراک کرنا"
 
 msgid "Skip audit"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "StartDate"
 msgstr ""
 
 msgid "Start date"
-msgstr "تاریخ آغاز"
+msgstr "تاریخ آغاز"
 
 msgid "Strategy"
 msgstr "حکمت عملی"
@@ -331,10 +331,10 @@ msgid "view messages received on using import/export forms."
 msgstr "پیغامات جو ایمپورٹ ایکسپوٹ کے دوران وصول ہوئے ہوں۔"
 
 msgid "Import"
-msgstr "اِیمپورٹ"
+msgstr "درآمد کریں"
 
 msgid "Export"
-msgstr "ایکسپورٹ"
+msgstr "برآمد کریں"
 
 msgid "Created"
 msgstr "تخلیق"
@@ -500,7 +500,7 @@ msgid "An unknown error occurred"
 msgstr ""
 
 msgid "Data Import"
-msgstr "ڈیٹا اِیمپورٹ"
+msgstr "ڈیٹا درآمد"
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
