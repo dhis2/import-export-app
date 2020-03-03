@@ -4,7 +4,7 @@ import { Help, Radio } from '@dhis2/ui-core'
 
 import { optionPropType, optionsPropType } from '../../utils/options'
 import { FormField } from '../FormField'
-import s from './RadioGroup.module.css'
+import styles from './RadioGroup.module.css'
 
 const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
     const onChange = label => ({ value }) =>
@@ -12,11 +12,11 @@ const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
 
     return (
         <FormField label={label} dataTest={dataTest} name={name}>
-            <div className={s.inputs}>
+            <div className={styles.inputs}>
                 {options.map(o => (
                     <div key={o.value}>
                         <Radio
-                            className={s.radio}
+                            className={styles.radio}
                             name={name}
                             value={o.value}
                             label={o.label}

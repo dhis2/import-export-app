@@ -7,7 +7,7 @@ import {
     LinearLoader,
 } from '@dhis2/ui-core'
 
-import s from './Page.module.css'
+import styles from './Page.module.css'
 import { testIds } from '../../utils/testIds'
 import { JobSummary, MiniJobSummary } from '../../components/JobSummary'
 
@@ -29,15 +29,15 @@ const Page = ({
         )
 
     return (
-        <div className={s.container} data-test={dataTest}>
-            <div className={s.header}>
-                <span className={s.icon}>{icon}</span>
-                <span className={s.title}>{title}</span>
-                <p className={s.desc}>{desc}</p>
+        <div className={styles.container} data-test={dataTest}>
+            <div className={styles.header}>
+                <span className={styles.icon}>{icon}</span>
+                <span className={styles.title}>{title}</span>
+                <p className={styles.desc}>{desc}</p>
             </div>
             {summaryTask && (
-                <Card className={s.preBody}>
-                    <div className={s.content}>
+                <Card className={styles.preBody}>
+                    <div className={styles.content}>
                         {showFullSummaryTask ? (
                             <JobSummary
                                 task={summaryTask}
@@ -54,7 +54,7 @@ const Page = ({
             )}
             <Card>
                 {!!loading && <ComponentCover>{loadingEl}</ComponentCover>}
-                <div className={s.content}>{children}</div>
+                <div className={styles.content}>{children}</div>
             </Card>
         </div>
     )

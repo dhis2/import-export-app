@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { optionPropType, optionsPropType } from '../../utils/options'
-import s from './Select.module.css'
+import styles from './Select.module.css'
 import { FormField } from '../FormField'
 
 const Select = ({
@@ -32,7 +32,7 @@ const Select = ({
 
     return (
         <FormField label={label} dataTest={dataTest}>
-            <div className={s.select} data-test={`${dataTest}-container`}>
+            <div className={styles.select} data-test={`${dataTest}-container`}>
                 <SingleSelectField
                     dense={dense}
                     filled={filled}

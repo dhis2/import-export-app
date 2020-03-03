@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import s from './JobOverview.module.css'
+import styles from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'
 import { JobOverviewPage as p } from '../../utils/pages'
 import { testIds } from '../../utils/testIds'
@@ -28,7 +28,7 @@ const JobOverview = () => {
             icon={p.icon}
             dataTest={testIds.JobOverview.Page}
         >
-            <div className={s.container}>
+            <div className={styles.container}>
                 <JobOverviewComponent
                     activeTypes={jobOverview.activeTypes}
                     setActiveTypes={setActiveTypes}

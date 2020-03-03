@@ -7,7 +7,7 @@ import { CircularLoader } from '@dhis2/ui-core'
 import { pathToId } from '../../utils/helper'
 import { FormField } from '../FormField'
 import { Tree } from './Tree/'
-import s from './OrgUnitTree.module.css'
+import styles from './OrgUnitTree.module.css'
 
 const rootQuery = {
     roots: {
@@ -162,7 +162,7 @@ const OrgUnitTree = ({
 
     return (
         <FormField label={i18n.t('Organisation unit')} dataTest={dataTest}>
-            <div className={s.container}>{content}</div>
+            <div className={styles.container}>{content}</div>
         </FormField>
     )
 }

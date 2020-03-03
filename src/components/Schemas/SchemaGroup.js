@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Checkbox } from '@dhis2/ui-core'
 
-import s from './Schemas.module.css'
+import styles from './Schemas.module.css'
 
 const SchemaGroup = ({ label, schemas, toggleSchema, dataTest }) => (
-    <div className={s.group} data-test={dataTest}>
-        <span className={s.formLabel}>{label}</span>
-        <div className={s.schema}>
+    <div className={styles.group} data-test={dataTest}>
+        <span className={styles.formLabel}>{label}</span>
+        <div className={styles.schema}>
             {schemas.map((schema, ind) => (
                 <div key={schema.name}>
                     <Checkbox

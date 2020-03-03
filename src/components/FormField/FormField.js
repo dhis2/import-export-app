@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import s from './FormField.module.css'
+import styles from './FormField.module.css'
 
 const FormField = ({ dataTest, label, required = false, children }) => {
     return (
-        <div className={s.container} data-test={dataTest}>
-            <span className={s.label}>
+        <div className={styles.container} data-test={dataTest}>
+            <span className={styles.label}>
                 {label}
                 {required && <span> *</span>}
             </span>
