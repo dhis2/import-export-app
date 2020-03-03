@@ -7,6 +7,20 @@ import { testIds } from '../../../utils/testIds'
 import { SingleSummary } from '../SingleSummary/'
 import { TypeReportSummary } from '../TypeReportSummary/'
 
+const extractStats = summary => {
+    if (summary.responseType == 'ImportSummaries') {
+        const { imported, deleted, ignored, updated, total } = summary
+        return { imported, deleted, ignored, updated, total }
+    } else if (summary.importCount) {
+        const { imported, deleted, ignored, updated } = summary.importCount
+        const total = imported + deleted + ignored + updated
+        return { imported, deleted, ignored, updated, total }
+    } else if (summary.stats) {
+        const { imported, deleted, ignored, updated, total } = summary.stats
+        return { imported, deleted, ignored, updated, total }
+    }
+}
+
 const Summary = ({ summary }) => {
     // gml import type object return
     if (summary.typeReports) {
@@ -26,23 +40,7 @@ const Summary = ({ summary }) => {
         )
     }
 
-    let imported, deleted, ignored, updated, total
-    if (summary.responseType == 'ImportSummaries') {
-        ;({ imported, deleted, ignored, updated, total } = summary)
-    } else if (summary.importCount) {
-        ;({ imported, deleted, ignored, updated } = summary.importCount)
-        total = imported + deleted + ignored + updated
-    } else if (summary.stats) {
-        ;({ imported, deleted, ignored, updated, total } = summary.stats)
-    }
-
-    const importCount = {
-        imported,
-        deleted,
-        ignored,
-        updated,
-        total,
-    }
+    const importCount = extractStats(summary)
 
     const overviewSummary = (
         <SingleSummary
@@ -56,15 +54,7 @@ const Summary = ({ summary }) => {
     const allSummaries =
         summary.responseType == 'ImportSummaries' && summary.importSummaries
             ? summary.importSummaries.map((s, i) => {
-                  ;({ imported, deleted, ignored, updated } = s.importCount)
-                  total = imported + deleted + ignored + updated
-                  const importCount = {
-                      imported,
-                      deleted,
-                      ignored,
-                      updated,
-                      total,
-                  }
+                  const importCount = extractStats(s)
                   return (
                       <SingleSummary
                           key={`single-summary-${i}`}
