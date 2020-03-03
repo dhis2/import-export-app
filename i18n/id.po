@@ -1,13 +1,14 @@
 # Translators:
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
-# phil_dhis2, 2019
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,13 +47,13 @@ msgid "more options"
 msgstr "opsi lainnya"
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "Yes"
 msgstr "Ya"
@@ -151,13 +152,13 @@ msgid "ADX"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgid "UID"
 msgstr ""
 
 msgid "Identifier"
-msgstr ""
+msgstr "Pengenal"
 
 msgid "Errors"
 msgstr "Kesalahan"
@@ -181,7 +182,7 @@ msgid "Updates only"
 msgstr "Hanya perbaruan"
 
 msgid "Delete"
-msgstr "Hapus"
+msgstr "hapus"
 
 msgid "Import strategy"
 msgstr ""
@@ -223,13 +224,13 @@ msgid "Something went wrong when loading the object!"
 msgstr ""
 
 msgid "Programs"
-msgstr "Program"
+msgstr "Program-program"
 
 msgid "Category combination"
 msgstr "Kombinasi kategori"
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 msgid "Data element groups"
 msgstr "Grup data elemen"
@@ -238,7 +239,7 @@ msgid "Option sets"
 msgstr "Set opsi"
 
 msgid "Object type"
-msgstr "Tipe objek"
+msgstr "Tipe Obyek"
 
 msgid "Organisation unit"
 msgstr "Unit organisasi"
@@ -292,7 +293,7 @@ msgid "Without sharing"
 msgstr "Tanpa pembagian"
 
 msgid "Sharing"
-msgstr "Pembagian"
+msgstr "Berbagi"
 
 msgid "Skip audit"
 msgstr ""
@@ -316,7 +317,7 @@ msgid "StartDate"
 msgstr ""
 
 msgid "Start date"
-msgstr "Tanggal mulai"
+msgstr "Tanggal dimulai"
 
 msgid "Strategy"
 msgstr "Strategi"
@@ -439,7 +440,7 @@ msgid "Create"
 msgstr "Buat"
 
 msgid "Update"
-msgstr "Perbarui"
+msgstr "perbarui"
 
 msgid "Gzip"
 msgstr ""
