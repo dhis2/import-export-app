@@ -1,36 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { orgUnitIdSchemeOptions, optionPropType } from '../../utils/options'
-import { SchemeContext } from '../../contexts/'
 import { Select } from '../Select'
 
 const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
     const { baseUrl } = useConfig()
+    const [loading, setLoading] = useState(true)
+    const [schemes, setSchemes] = useState([])
     const [error, setError] = useState(undefined)
-    const { OrgUnitId, updateSchema } = useContext(SchemeContext)
 
     useEffect(() => {
-        const f = async () => {
-            await fetchAttributes(
-                `${baseUrl}/api/`,
-                'organisationUnitAttribute'
-            )
-                .then(attributes =>
-                    updateSchema('OrgUnitId', {
-                        options: attributes,
-                        loaded: true,
-                        error: false,
-                    })
-                )
-                .catch(error => setError(error))
-        }
-        if (!OrgUnitId.loaded) {
-            f()
-        }
+        fetchAttributes(`${baseUrl}/api/`, 'organisationUnitAttribute')
+            .then(attributes => setSchemes(attributes))
+            .catch(error => setError(error))
+        setLoading(false)
     }, [])
 
     const validationText =
@@ -39,7 +26,7 @@ const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
             'Something went wrong when loading the additional organisation unit ID schemes'
         )} : ${error.message}`
 
-    const options = [...orgUnitIdSchemeOptions, ...OrgUnitId.options]
+    const options = [...orgUnitIdSchemeOptions, ...schemes]
     return (
         <Select
             name="OrgUnitIdScheme"
@@ -48,7 +35,7 @@ const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
             selected={selected}
             setValue={setSelected}
             dataTest={dataTest}
-            loading={!OrgUnitId.loaded}
+            loading={loading}
             validationText={validationText}
             error={!!error}
             dense

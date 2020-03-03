@@ -1,41 +1,56 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
+import { fetchAttributes } from '../../utils/helper'
 import { idSchemeOptions, optionPropType } from '../../utils/options'
-import { SchemeContext } from '../../contexts/'
 import { Select } from '../Select'
 
 const attributeFoundIn = (attribute, collection) =>
     !!collection.find(({ value }) => value === attribute.value)
 
 const IdScheme = ({ selected, setSelected, dataTest }) => {
-    const { Id, OrgUnitId, DataElementId, updateSchema } = useContext(
-        SchemeContext
-    )
+    const { baseUrl } = useConfig()
+    const [loading, setLoading] = useState(true)
+    const [schemes, setSchemes] = useState([])
+    const [error, setError] = useState(undefined)
 
     useEffect(() => {
-        if (OrgUnitId.loaded && DataElementId.loaded) {
-            const sharedAttributes = DataElementId.options.reduce(
+        const f = async () => {
+            const dataElementAttributes = await fetchAttributes(
+                `${baseUrl}/api/`,
+                'dataElementAttribute'
+            ).catch(error => setError(error))
+            const organisationUnitAttributes = await fetchAttributes(
+                `${baseUrl}/api/`,
+                'organisationUnitAttribute'
+            ).catch(error => setError(error))
+
+            const sharedAttributes = dataElementAttributes.reduce(
                 (shared, attribute) => {
                     const foundInOrgUnits = attributeFoundIn(
                         attribute,
-                        OrgUnitId.options
+                        organisationUnitAttributes
                     )
                     return foundInOrgUnits ? [...shared, attribute] : shared
                 },
                 []
             )
 
-            updateSchema('Id', {
-                options: sharedAttributes,
-                loaded: true,
-                error: false,
-            })
+            setSchemes(sharedAttributes)
+            setLoading(false)
         }
-    }, [OrgUnitId, DataElementId])
+        f()
+    }, [])
 
-    const options = [...idSchemeOptions, ...Id.options]
+    const validationText =
+        error &&
+        `${i18n.t(
+            'Something went wrong when loading the additional ID schemes'
+        )} : ${error.message}`
+
+    const options = [...idSchemeOptions, ...schemes]
     return (
         <Select
             name="IdScheme"
@@ -44,7 +59,9 @@ const IdScheme = ({ selected, setSelected, dataTest }) => {
             selected={selected}
             setValue={setSelected}
             dataTest={dataTest}
-            loading={!Id.loaded}
+            loading={loading}
+            validationText={validationText}
+            error={!!error}
             dense
         />
     )

@@ -6,7 +6,6 @@ import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core'
 import { testIds } from './utils/testIds'
 import { TaskContext } from './contexts/'
 import { UserContext } from './contexts/'
-import { WithSchemes } from './components/WithSchemes'
 import { useUser, useTasks } from './hooks/'
 import { Skeleton } from './components/Skeleton'
 
@@ -45,4 +44,4 @@ const App = () => {
     )
 }
 
-export default WithSchemes(App)
+export default App
