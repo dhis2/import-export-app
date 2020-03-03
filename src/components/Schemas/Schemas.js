@@ -99,57 +99,54 @@ const Schemas = ({
         propagateCheckedSchemas(updatedSchemaGroups)
     }
 
-    let content
-    if (loading) {
-        content = <CircularLoader dataTest={`${dataTest}-loading`} />
-    } else if (error) {
-        content = (
-            <div data-test={`${dataTest}-error`}>
-                <p>
-                    {i18n.t('Something went wrong when loading the schemas!')}
-                </p>
-                <p>{error.message}</p>
-            </div>
-        )
-    } else {
-        content = (
-            <>
-                <ButtonStrip>
-                    <Button
-                        onClick={onSelectGeneric(true)}
-                        dataTest={`${dataTest}-select-all`}
-                    >
-                        {i18n.t('Select All')}
-                    </Button>
-                    <Button
-                        onClick={onSelectGeneric(false)}
-                        dataTest={`${dataTest}-select-none`}
-                    >
-                        {i18n.t('Select None')}
-                    </Button>
-                </ButtonStrip>
-
-                <div className={styles.formControl}>
-                    {schemaGroupOrder.map(groupKey => {
-                        const label = schemaGroupLabels[groupKey]
-
-                        return (
-                            <SchemaGroup
-                                key={label}
-                                label={label}
-                                schemas={schemaGroups[groupKey]}
-                                toggleSchema={toggleSchema(groupKey)}
-                            />
-                        )
-                    })}
-                </div>
-            </>
-        )
-    }
+    const showSchemas = !loading && !error
 
     return (
         <div className={styles.container} data-test={dataTest}>
-            {content}
+            {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
+            {error && (
+                <div data-test={`${dataTest}-error`}>
+                    <p>
+                        {i18n.t(
+                            'Something went wrong when loading the schemas!'
+                        )}
+                    </p>
+                    <p>{error.message}</p>
+                </div>
+            )}
+            {showSchemas && (
+                <>
+                    <ButtonStrip>
+                        <Button
+                            onClick={onSelectGeneric(true)}
+                            dataTest={`${dataTest}-select-all`}
+                        >
+                            {i18n.t('Select All')}
+                        </Button>
+                        <Button
+                            onClick={onSelectGeneric(false)}
+                            dataTest={`${dataTest}-select-none`}
+                        >
+                            {i18n.t('Select None')}
+                        </Button>
+                    </ButtonStrip>
+
+                    <div className={styles.formControl}>
+                        {schemaGroupOrder.map(groupKey => {
+                            const label = schemaGroupLabels[groupKey]
+
+                            return (
+                                <SchemaGroup
+                                    key={label}
+                                    label={label}
+                                    schemas={schemaGroups[groupKey]}
+                                    toggleSchema={toggleSchema(groupKey)}
+                                />
+                            )
+                        })}
+                    </div>
+                </>
+            )}
         </div>
     )
 }

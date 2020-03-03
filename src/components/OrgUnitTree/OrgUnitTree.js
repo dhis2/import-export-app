@@ -132,37 +132,34 @@ const OrgUnitTree = ({
         }
     }
 
-    let content
-    if (loading) {
-        content = <CircularLoader dataTest={`${dataTest}-loading`} />
-    } else if (error) {
-        content = (
-            <div data-test={`${dataTest}-error`}>
-                <p>
-                    {i18n.t(
-                        'Something went wrong when loading the organisation units!'
-                    )}
-                </p>
-                <p>{error.message}</p>
-            </div>
-        )
-    } else {
-        content = (
-            <Tree
-                selected={selected}
-                select={onSelect}
-                multiSelect={multiSelect}
-                onOpen={onOpen}
-                onClose={onClose}
-                list={children}
-                dataTest={`${dataTest}-tree`}
-            />
-        )
-    }
+    const showTree = !loading && !error
 
     return (
         <FormField label={i18n.t('Organisation unit')} dataTest={dataTest}>
-            <div className={styles.container}>{content}</div>
+            <div className={styles.container}>
+                {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
+                {error && (
+                    <div data-test={`${dataTest}-error`}>
+                        <p>
+                            {i18n.t(
+                                'Something went wrong when loading the organisation units!'
+                            )}
+                        </p>
+                        <p>{error.message}</p>
+                    </div>
+                )}
+                {showTree && (
+                    <Tree
+                        selected={selected}
+                        select={onSelect}
+                        multiSelect={multiSelect}
+                        onOpen={onOpen}
+                        onClose={onClose}
+                        list={children}
+                        dataTest={`${dataTest}-tree`}
+                    />
+                )}
+            </div>
         </FormField>
     )
 }

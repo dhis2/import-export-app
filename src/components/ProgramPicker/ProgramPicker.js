@@ -47,37 +47,34 @@ const ProgramPicker = ({
         },
     })
 
-    let content
-    if (loading) {
-        content = <CircularLoader dataTest={`${dataTest}-loading`} />
-    } else if (error) {
-        content = (
-            <div data-test={`${dataTest}-error`}>
-                <p>
-                    {i18n.t('Something went wrong when loading the programs!')}
-                </p>
-                <p>{error.message}</p>
-            </div>
-        )
-    } else {
-        content = (
-            <SelectableList
-                name="programPicker"
-                label={i18n.t('Filter programs by name')}
-                selected={selected}
-                setSelected={setSelected}
-                multiSelect={multiSelect}
-                list={list}
-                withFilter={withFilter}
-                withActions={withActions}
-                dataTest={`${dataTest}-list`}
-            />
-        )
-    }
+    const showList = !loading && !error
 
     return (
         <FormField label={i18n.t('Programs')} dataTest={dataTest}>
-            <div>{content}</div>
+            {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
+            {error && (
+                <div data-test={`${dataTest}-error`}>
+                    <p>
+                        {i18n.t(
+                            'Something went wrong when loading the programs!'
+                        )}
+                    </p>
+                    <p>{error.message}</p>
+                </div>
+            )}
+            {showList && (
+                <SelectableList
+                    name="programPicker"
+                    label={i18n.t('Filter programs by name')}
+                    selected={selected}
+                    setSelected={setSelected}
+                    multiSelect={multiSelect}
+                    list={list}
+                    withFilter={withFilter}
+                    withActions={withActions}
+                    dataTest={`${dataTest}-list`}
+                />
+            )}
         </FormField>
     )
 }
