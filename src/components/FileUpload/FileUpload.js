@@ -16,16 +16,12 @@ const FileUpload = ({
 }) => {
     const fileLabel = file ? file.name : i18n.t('Choose a file to upload')
 
-    const onFileSelect = ({ files }) => {
-        setFile(files[0])
-    }
-
     return (
         <FormField label={label} required={required} dataTest={dataTest}>
             <FileInput
                 accept={accept}
                 name={name}
-                onChange={onFileSelect}
+                onChange={({ files }) => setFile(files[0])}
                 buttonLabel={fileLabel}
                 dataTest={`${dataTest}-fileinput`}
             />
