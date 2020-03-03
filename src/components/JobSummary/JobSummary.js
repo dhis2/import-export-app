@@ -11,6 +11,49 @@ import { Events } from './Events/'
 import { Summary } from './Summary/'
 import { Details } from './Details/'
 
+const Header = ({ jobDetails, task, showFileDetails }) => (
+    <div className={styles.header}>
+        <h3 className={styles.title}>{`${i18n.t('Job summary')}`}</h3>
+        {showFileDetails && (
+            <span className={styles.taskDetails}>
+                <span data-test={testIds.JobSummary.filename}>
+                    {jobDetails.file.name}
+                </span>{' '}
+                -{' '}
+                <span data-test={testIds.JobSummary.date}>
+                    {jsDateToString(task.created)}{' '}
+                </span>
+            </span>
+        )}
+    </div>
+)
+
+Header.propTypes = {
+    jobDetails: PropTypes.object.isRequired,
+    task: PropTypes.object.isRequired,
+    showFileDetails: PropTypes.bool,
+}
+
+const Tags = ({ jobDetails, task }) => (
+    <div className={styles.tags} data-test={testIds.JobSummary.tags}>
+        {task.completed ? (
+            <Tag success text={i18n.t('Completed')} />
+        ) : (
+            <Tag text={i18n.t('In progress')} />
+        )}
+        {task.error && <Tag error text={i18n.t('Error')} />}
+        {task.summary && task.summary.conflicts && (
+            <Tag warning text={i18n.t('Conflicts')} />
+        )}
+        {jobDetails.dryRun && <Tag info text={i18n.t('Dry run')} />}
+    </div>
+)
+
+Tags.propTypes = {
+    jobDetails: PropTypes.object.isRequired,
+    task: PropTypes.object.isRequired,
+}
+
 const JobSummary = ({
     task,
     showFileDetails = true,
@@ -22,32 +65,12 @@ const JobSummary = ({
 
     return (
         <div className={styles.container} data-test={dataTest}>
-            <div className={styles.header}>
-                <h3 className={styles.title}>{`${i18n.t('Job summary')}`}</h3>
-                {showFileDetails && (
-                    <span className={styles.taskDetails}>
-                        <span data-test={testIds.JobSummary.filename}>
-                            {jobDetails.file.name}
-                        </span>{' '}
-                        -{' '}
-                        <span data-test={testIds.JobSummary.date}>
-                            {jsDateToString(task.created)}{' '}
-                        </span>
-                    </span>
-                )}
-            </div>
-            <div className={styles.tags} data-test={testIds.JobSummary.tags}>
-                {task.completed ? (
-                    <Tag success text={i18n.t('Completed')} />
-                ) : (
-                    <Tag text={i18n.t('In progress')} />
-                )}
-                {task.error && <Tag error text={i18n.t('Error')} />}
-                {task.summary && task.summary.conflicts && (
-                    <Tag warning text={i18n.t('Conflicts')} />
-                )}
-                {jobDetails.dryRun && <Tag info text={i18n.t('Dry run')} />}
-            </div>
+            <Header
+                jobDetails={jobDetails}
+                task={task}
+                showFileDetails={showFileDetails}
+            />
+            <Tags jobDetails={jobDetails} task={task} />
             <Divider />
             {task.completed && task.summary && (
                 <Summary summary={task.summary} />
