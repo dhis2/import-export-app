@@ -18,7 +18,7 @@ const FormField = ({ dataTest, label, required = false, children }) => {
 FormField.propTypes = {
     dataTest: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    children: PropTypes.object,
+    children: PropTypes.node,
     required: PropTypes.bool,
 }
 
