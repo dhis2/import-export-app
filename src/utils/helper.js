@@ -62,7 +62,7 @@ const downloadBlob = (url, filename) => {
 }
 
 const fetchAttributes = async (apiBaseUrl, attribute) => {
-    const fetcher = async url =>
+    const fetcher = url =>
         fetch(url, { credentials: 'include' })
             .then(resp => {
                 if (resp.status >= 200 && resp.status < 300) {
@@ -72,7 +72,7 @@ const fetchAttributes = async (apiBaseUrl, attribute) => {
                 }
             })
             .catch(resp => {
-                var error = new Error(resp.statusText || resp.status)
+                const error = new Error(resp.statusText || resp.status)
                 console.error(
                     `fetchAttributes ${attribute} fetch error: `,
                     error

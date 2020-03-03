@@ -18,27 +18,34 @@ const IdScheme = ({ selected, setSelected, dataTest }) => {
 
     useEffect(() => {
         const f = async () => {
+            let err
+
             const dataElementAttributes = await fetchAttributes(
                 `${baseUrl}/api/`,
                 'dataElementAttribute'
-            ).catch(error => setError(error))
+            ).catch(error => (err = error))
             const organisationUnitAttributes = await fetchAttributes(
                 `${baseUrl}/api/`,
                 'organisationUnitAttribute'
-            ).catch(error => setError(error))
+            ).catch(error => (err = error))
 
-            const sharedAttributes = dataElementAttributes.reduce(
-                (shared, attribute) => {
-                    const foundInOrgUnits = attributeFoundIn(
-                        attribute,
-                        organisationUnitAttributes
-                    )
-                    return foundInOrgUnits ? [...shared, attribute] : shared
-                },
-                []
-            )
+            setError(err)
 
-            setSchemes(sharedAttributes)
+            if (!err) {
+                const sharedAttributes = dataElementAttributes.reduce(
+                    (shared, attribute) => {
+                        const foundInOrgUnits = attributeFoundIn(
+                            attribute,
+                            organisationUnitAttributes
+                        )
+                        return foundInOrgUnits ? [...shared, attribute] : shared
+                    },
+                    []
+                )
+
+                setSchemes(sharedAttributes)
+            }
+
             setLoading(false)
         }
         f()
