@@ -46,16 +46,16 @@ exports[`matches snapshot when loading(bool) and no summary task 1`] = `
         data-test="dhis2-uicore-componentcover"
       >
         <div
-          class="jsx-1261481057 "
+          class="jsx-19995197 "
           data-test="dhis2-uicore-circularloader"
           role="progressbar"
         >
           <svg
-            class="jsx-1261481057"
+            class="jsx-19995197"
             viewBox="22 22 44 44"
           >
             <circle
-              class="jsx-1261481057 circle"
+              class="jsx-19995197 circle"
               cx="44"
               cy="44"
               fill="none"
@@ -241,7 +241,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
             </div>
           </div>
           <div
-            class="jsx-1555285825 jsx-519675527 "
+            class="jsx-1555285825 jsx-876534464 "
             data-test="dhis2-uicore-divider"
           />
           <div

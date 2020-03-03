@@ -107,11 +107,11 @@ test('child organisation units load and are shown as nodes in the tree', async (
     await waitForElement(() => getByDataTest('out-tree'))
     expect(loading).not.toBeInTheDocument()
 
-    // clicking on 'Sierre Leone' arrow should trigger a query
+    // clicking on 'Sierre Leone' toggle should trigger a query
     // and result in child nodes being rendered
     const sl = customData.organisationUnits.organisationUnits[0]
-    const slArrow = getByDataTest(`out-tree-${sl.path}-arrow`)
-    fireEvent.click(slArrow.firstChild)
+    const slToggle = getByDataTest(`out-tree-${sl.path}-toggle`)
+    fireEvent.click(slToggle.firstChild)
 
     const tonkolili = customData.organisationUnits.children[0]
     await waitForElement(() => getByDataTest(`out-tree-${tonkolili.path}`))

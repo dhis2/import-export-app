@@ -12,6 +12,7 @@ exports[`matches snapshot when multiple alerts 1`] = `
     >
       <div
         class="jsx-3287073920"
+        data-test="dhis2-uicore-alertbar-icon"
       >
         <svg
           class="jsx-23150291 "
@@ -51,6 +52,7 @@ exports[`matches snapshot when multiple alerts 1`] = `
     >
       <div
         class="jsx-3287073920"
+        data-test="dhis2-uicore-alertbar-icon"
       >
         <svg
           class="jsx-884574500 "
@@ -90,6 +92,7 @@ exports[`matches snapshot when multiple alerts 1`] = `
     >
       <div
         class="jsx-3287073920"
+        data-test="dhis2-uicore-alertbar-icon"
       >
         <svg
           class="jsx-1002481213 "
@@ -129,6 +132,7 @@ exports[`matches snapshot when multiple alerts 1`] = `
     >
       <div
         class="jsx-3287073920"
+        data-test="dhis2-uicore-alertbar-icon"
       >
         <svg
           class="jsx-1870954797 "

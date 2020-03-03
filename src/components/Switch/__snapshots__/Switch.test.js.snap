@@ -16,7 +16,7 @@ exports[`matches snapshot 1`] = `
       data-test="switch-preheat-cache-sf"
     >
       <label
-        class="jsx-1342977247 jsx-2945570378"
+        class="jsx-1342977247 "
         data-test="dhis2-uicore-switch"
       >
         <input
