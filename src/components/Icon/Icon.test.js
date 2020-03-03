@@ -2,17 +2,14 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { Icon, MetadataImportIcon } from '.'
+import { MetadataImportIcon } from '.'
 
 const props = {
-    dataTest: 'metadata-import-icon',
+    width: 48,
+    height: 48,
 }
 
-const r = (
-    <Icon {...props}>
-        <MetadataImportIcon />
-    </Icon>
-)
+const r = <MetadataImportIcon {...props} />
 
 it('matches snapshot', () => {
     const { asFragment } = render(r)
@@ -21,6 +18,6 @@ it('matches snapshot', () => {
 
 it('shows icon', () => {
     const { getByDataTest } = render(r)
-    const icon = getByDataTest('metadata-import-icon')
+    const icon = getByDataTest('icon-metadataimport')
     expect(icon).toContainHTML('</path>')
 })
