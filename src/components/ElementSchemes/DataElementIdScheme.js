@@ -1,33 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { dataElementIdSchemeOptions, optionPropType } from '../../utils/options'
-import { SchemeContext } from '../../contexts/'
 import { Select } from '../Select'
 
 const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
     const { baseUrl } = useConfig()
+    const [loading, setLoading] = useState(true)
+    const [schemes, setSchemes] = useState([])
     const [error, setError] = useState(undefined)
-    const { DataElementId, updateSchema } = useContext(SchemeContext)
 
     useEffect(() => {
-        const f = async () => {
-            await fetchAttributes(`${baseUrl}/api/`, 'dataElementAttribute')
-                .then(attributes =>
-                    updateSchema('DataElementId', {
-                        options: attributes,
-                        loaded: true,
-                        error: false,
-                    })
-                )
-                .catch(error => setError(error))
-        }
-        if (!DataElementId.loaded) {
-            f()
-        }
+        fetchAttributes(`${baseUrl}/api/`, 'dataElementAttribute')
+            .then(attributes => setSchemes(attributes))
+            .catch(error => setError(error))
+        setLoading(false)
     }, [])
 
     const validationText =
@@ -36,7 +26,7 @@ const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
             'Something went wrong when loading the additional data element ID schemes'
         )} : ${error.message}`
 
-    const options = [...dataElementIdSchemeOptions, ...DataElementId.options]
+    const options = [...dataElementIdSchemeOptions, ...schemes]
     return (
         <Select
             name="dataElementIdScheme"
@@ -45,7 +35,7 @@ const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
             selected={selected}
             setValue={setSelected}
             dataTest={dataTest}
-            loading={!DataElementId.loaded}
+            loading={loading}
             validationText={validationText}
             error={!!error}
             dense
