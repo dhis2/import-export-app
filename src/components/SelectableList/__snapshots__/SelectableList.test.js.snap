@@ -14,12 +14,12 @@ exports[`matches snapshot 1`] = `
         data-test="dhis2-uicore-inputfield"
       >
         <label
-          class="jsx-3751407064 "
+          class="jsx-2718078600 "
           data-test="dhis2-uicore-label"
           for="filter"
         >
           <span
-            class="jsx-3751407064"
+            class="jsx-2718078600"
           >
             Data sets
           </span>
@@ -150,14 +150,14 @@ exports[`matches snapshot 1`] = `
       name="data-sets"
     >
       <li
-        class="jsx-2880366133 jsx-2069506860"
+        class="jsx-1729285861 jsx-2908761452"
         data-test="list-data-sets-body-li-a"
       >
         <a
-          class="jsx-2880366133 link"
+          class="jsx-1729285861 link"
         >
           <div
-            class="jsx-2880366133 label"
+            class="jsx-1729285861 label"
           >
             <label
               class="jsx-2149578448 "
@@ -209,14 +209,14 @@ exports[`matches snapshot 1`] = `
         </a>
       </li>
       <li
-        class="jsx-2880366133 jsx-2069506860"
+        class="jsx-1729285861 jsx-2908761452"
         data-test="list-data-sets-body-li-b"
       >
         <a
-          class="jsx-2880366133 link"
+          class="jsx-1729285861 link"
         >
           <div
-            class="jsx-2880366133 label"
+            class="jsx-1729285861 label"
           >
             <label
               class="jsx-2149578448 "
@@ -268,14 +268,14 @@ exports[`matches snapshot 1`] = `
         </a>
       </li>
       <li
-        class="jsx-2880366133 jsx-2069506860"
+        class="jsx-1729285861 jsx-2908761452"
         data-test="list-data-sets-body-li-c"
       >
         <a
-          class="jsx-2880366133 link"
+          class="jsx-1729285861 link"
         >
           <div
-            class="jsx-2880366133 label"
+            class="jsx-1729285861 label"
           >
             <label
               class="jsx-2149578448 "

@@ -23,12 +23,12 @@ exports[`matches snapshot 1`] = `
         type="file"
       />
       <button
-        class="jsx-3433386394 icon"
+        class="jsx-3488140868 icon"
         data-test="dhis2-uicore-button"
         type="button"
       >
         <span
-          class="jsx-3433386394 button-icon"
+          class="jsx-3488140868 button-icon"
         >
           <svg
             class="jsx-4098137027 "

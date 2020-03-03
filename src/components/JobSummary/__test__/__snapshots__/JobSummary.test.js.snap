@@ -64,7 +64,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="jsx-1555285825 jsx-519675527 "
+      class="jsx-1555285825 jsx-876534464 "
       data-test="dhis2-uicore-divider"
     />
     <div
@@ -570,7 +570,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="jsx-1555285825 jsx-519675527 "
+      class="jsx-1555285825 jsx-876534464 "
       data-test="dhis2-uicore-divider"
     />
     <div

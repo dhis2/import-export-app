@@ -35,6 +35,7 @@ exports[`matches snapshot 1`] = `
               >
                 <div
                   class="jsx-297747822 root"
+                  data-test="dhis2-uicore-select-input"
                   tabindex="0"
                 >
                   <div
