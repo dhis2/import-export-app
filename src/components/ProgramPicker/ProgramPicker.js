@@ -27,8 +27,7 @@ const ProgramPicker = ({
     autoSelectFirst = false,
 }) => {
     const [list, setList] = useState([])
-    const [error, setError] = useState(undefined)
-    const { loading } = useDataQuery(programQuery, {
+    const { error, loading } = useDataQuery(programQuery, {
         onComplete: data => {
             const programs = data.programs.programs
             const list = programs.map(({ id, displayName }) => ({
@@ -42,7 +41,6 @@ const ProgramPicker = ({
             }
         },
         onError: error => {
-            setError(error)
             console.error('ProgramPicker error: ', error)
         },
     })
