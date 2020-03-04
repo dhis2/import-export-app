@@ -3,7 +3,6 @@ import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 
-import { metadataDependencyExportPage as p } from '../../utils/pages'
 import { locationAssign } from '../../utils/helper'
 import {
     formatNoCsvOptions,
@@ -18,6 +17,7 @@ import { Page } from '../../components/Page'
 import { Switch } from '../../components/Switch'
 import { RadioGroup } from '../../components/RadioGroup'
 import { Select } from '../../components/Select'
+import { MetadataDependencyExportIcon } from '../../components/Icon'
 
 const MetadataDependencyExport = () => {
     const [objectType, setObjectType] = useState(defaultObjectTypeOption)
@@ -47,9 +47,9 @@ const MetadataDependencyExport = () => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             dataTest="page-export-metadata-dependency"
         >
             <Select
@@ -109,5 +109,12 @@ const MetadataDependencyExport = () => {
         </Page>
     )
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Metadata dependency export')
+const PAGE_DESCRIPTION = i18n.t(
+    'Export metadata like data sets and programs including related metadata objects in the XML or JSON format.'
+)
+const PAGE_ICON = <MetadataDependencyExportIcon />
 
 export { MetadataDependencyExport }

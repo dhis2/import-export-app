@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-import { metadataImportPage as p } from '../../utils/pages'
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import {
     formatOptions,
@@ -33,6 +32,7 @@ import { Switch } from '../../components/Switch'
 import { MoreOptions } from '../../components/MoreOptions'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
+import { MetadataImportIcon } from '../../components/Icon'
 import { Select } from '../../components/Select'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
@@ -193,9 +193,9 @@ const MetadataImport = ({ query }) => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             loading={progress}
             dataTest="page-import-metadata"
             summaryTask={getNewestTask(metadataTasks)}
@@ -341,5 +341,12 @@ MetadataImport.propTypes = {
         id: PropTypes.string.isRequired,
     }),
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Metadata import')
+const PAGE_DESCRIPTION = i18n.t(
+    'Import metadata like data elements and organisation units using the DXF 2 format.'
+)
+const PAGE_ICON = <MetadataImportIcon />
 
 export { MetadataImport }

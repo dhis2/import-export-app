@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-import { dataImportPage as p } from '../../utils/pages'
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import { helpText } from '../../utils/text'
 import {
@@ -31,6 +30,7 @@ import {
 } from '../../components/ElementSchemes'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
+import { DataIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
 const createInitialState = prevJobDetails => ({
@@ -149,9 +149,9 @@ const DataImport = ({ query }) => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             loading={progress}
             dataTest="page-import-data"
             summaryTask={getNewestTask(dataTasks)}
@@ -247,5 +247,12 @@ DataImport.propTypes = {
         id: PropTypes.string.isRequired,
     }),
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Data import')
+const PAGE_DESCRIPTION = i18n.t(
+    'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
+)
+const PAGE_ICON = <DataIcon />
 
 export { DataImport }

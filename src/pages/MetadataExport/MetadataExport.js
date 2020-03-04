@@ -3,7 +3,6 @@ import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 
-import { metadataExportPage as p } from '../../utils/pages'
 import { locationAssign } from '../../utils/helper'
 import {
     formatOptions,
@@ -17,6 +16,7 @@ import { Page } from '../../components/Page'
 import { Switch } from '../../components/Switch'
 import { RadioGroup } from '../../components/RadioGroup'
 import { FormAlerts } from '../../components/FormAlerts'
+import { MetadataExportIcon } from '../../components/Icon'
 
 const MetadataExport = () => {
     const [checkedSchemas, setCheckedSchemas] = useState([])
@@ -61,9 +61,9 @@ const MetadataExport = () => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             dataTest="page-export-metadata"
         >
             <Schemas
@@ -102,5 +102,12 @@ const MetadataExport = () => {
         </Page>
     )
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Metadata export')
+const PAGE_DESCRIPTION = i18n.t(
+    'Export meta data like data elements and organisation units in the XML, JSON or CSV format.'
+)
+const PAGE_ICON = <MetadataExportIcon />
 
 export { MetadataExport }
