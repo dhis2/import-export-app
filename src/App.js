@@ -10,7 +10,6 @@ import { useUser, useTasks } from './hooks/'
 import styles from './App.module.css'
 import { Sidebar } from './components/Sidebar'
 import { Router } from './components/Router'
-import { ImportPages, ExportPages, JobOverviewPage } from './utils/pages'
 
 const App = () => {
     const { tasks, addTask, jobOverview, updateJobOverview } = useTasks()
@@ -45,11 +44,7 @@ const App = () => {
 
                     <div className={styles.container}>
                         <div className={styles.sidebar}>
-                            <Sidebar
-                                importPages={ImportPages}
-                                exportPages={ExportPages}
-                                jobOverviewPage={JobOverviewPage}
-                            />
+                            <Sidebar />
                         </div>
 
                         <div className={styles.content}>

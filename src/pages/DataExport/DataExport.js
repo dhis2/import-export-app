@@ -4,7 +4,6 @@ import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 import JSZip from 'jszip'
 
-import { dataExportPage as p } from '../../utils/pages'
 import {
     createBlob,
     downloadBlob,
@@ -33,6 +32,7 @@ import {
     OrgUnitIdScheme,
 } from '../../components/ElementSchemes'
 import { FormAlerts } from '../../components/FormAlerts'
+import { DataIcon } from '../../components/Icon'
 
 const today = new Date()
 
@@ -196,9 +196,9 @@ const DataExport = () => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             dataTest="page-export-data"
         >
             <OrgUnitTree
@@ -279,5 +279,12 @@ const DataExport = () => {
         </Page>
     )
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Data export')
+const PAGE_DESCRIPTION = i18n.t(
+    'Export data values as ADX XML, DFX 2 XML, JSON or CSV files.'
+)
+const PAGE_ICON = <DataIcon />
 
 export { DataExport }

@@ -3,7 +3,6 @@ import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 
-import { eventExportPage as p } from '../../utils/pages'
 import { jsDateToISO8601, locationAssign, pathToId } from '../../utils/helper'
 import {
     formatOptions,
@@ -25,6 +24,7 @@ import { ProgramPicker } from '../../components/ProgramPicker'
 import { MoreOptions } from '../../components/MoreOptions'
 import { IdScheme } from '../../components/ElementSchemes'
 import { FormAlerts } from '../../components/FormAlerts'
+import { EventIcon } from '../../components/Icon'
 
 const today = new Date()
 
@@ -132,9 +132,9 @@ const EventExport = () => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             dataTest="page-export-data"
         >
             <OrgUnitTree
@@ -227,5 +227,12 @@ const EventExport = () => {
         </Page>
     )
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Event export')
+const PAGE_DESCRIPTION = i18n.t(
+    'Export event data for programs, stages and tracked entities in the DXF 2 format.'
+)
+const PAGE_ICON = <EventIcon />
 
 export { EventExport }

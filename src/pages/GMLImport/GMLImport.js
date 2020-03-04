@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-import { gmlImportPage as p } from '../../utils/pages'
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import { Page } from '../../components/Page'
 import { FileUpload } from '../../components/FileUpload'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
+import { GMLIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
 const createInitialState = prevJobDetails => ({
@@ -76,9 +76,9 @@ const GMLImport = ({ query }) => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             loading={progress}
             dataTest="page-import-gml"
             summaryTask={getNewestTask(gmlTasks)}
@@ -106,5 +106,12 @@ GMLImport.propTypes = {
         id: PropTypes.string.isRequired,
     }),
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('GML import')
+const PAGE_DESCRIPTION = i18n.t(
+    'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
+)
+const PAGE_ICON = <GMLIcon />
 
 export { GMLImport }

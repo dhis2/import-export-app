@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-import { eventImportPage as p } from '../../utils/pages'
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import {
     formatOptions,
@@ -18,6 +17,7 @@ import { MoreOptions } from '../../components/MoreOptions'
 import { EventIdScheme, OrgUnitIdScheme } from '../../components/ElementSchemes'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
+import { EventIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
 const createInitialState = prevJobDetails => ({
@@ -106,9 +106,9 @@ const EventImport = ({ query }) => {
 
     return (
         <Page
-            title={p.name}
-            desc={p.description}
-            icon={p.icon}
+            title={PAGE_NAME}
+            desc={PAGE_DESCRIPTION}
+            icon={PAGE_ICON}
             loading={progress}
             dataTest="page-import-event"
             summaryTask={getNewestTask(eventTasks)}
@@ -156,5 +156,12 @@ EventImport.propTypes = {
         id: PropTypes.string.isRequired,
     }),
 }
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Event import')
+const PAGE_DESCRIPTION = i18n.t(
+    'Import events for programs, stages and tracked entities using the DXF 2 format.'
+)
+const PAGE_ICON = <EventIcon />
 
 export { EventImport }
