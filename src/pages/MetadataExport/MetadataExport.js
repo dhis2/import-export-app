@@ -4,7 +4,6 @@ import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 
 import { metadataExportPage as p } from '../../utils/pages'
-import { testIds } from '../../utils/testIds'
 import { locationAssign } from '../../utils/helper'
 import {
     formatOptions,
@@ -65,13 +64,13 @@ const MetadataExport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            dataTest={testIds.MetadataExport.Page}
+            dataTest="page-export-metadata"
         >
             <Schemas
                 excludeSchemas={EXCLUDE_SCHEMAS}
                 setCheckedSchemas={setCheckedSchemas}
                 checkedByDefault
-                dataTest={testIds.MetadataExport.Schemas}
+                dataTest="input-schemas"
             />
             <RadioGroup
                 name="format"
@@ -79,7 +78,7 @@ const MetadataExport = () => {
                 options={formatOptions}
                 setValue={setFormat}
                 checked={format}
-                dataTest={testIds.MetadataExport.format}
+                dataTest="input-format"
             />
             <RadioGroup
                 name="compression"
@@ -87,26 +86,19 @@ const MetadataExport = () => {
                 options={compressionOptions}
                 setValue={setCompression}
                 checked={compression}
-                dataTest={testIds.MetadataExport.compression}
+                dataTest="input-compression"
             />
             <Switch
                 name="skipSharing"
                 label={i18n.t('Skip sharing')}
                 checked={skipSharing}
                 setChecked={setSkipSharing}
-                dataTest={testIds.MetadataExport.skipSharing}
+                dataTest="input-skip-sharing"
             />
-            <Button
-                primary
-                onClick={onExport}
-                dataTest={testIds.MetadataExport.submit}
-            >
+            <Button primary onClick={onExport} dataTest="input-export-submit">
                 {i18n.t('Export')}
             </Button>
-            <FormAlerts
-                alerts={alerts}
-                dataTest={testIds.MetadataExport.FormAlerts}
-            />
+            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

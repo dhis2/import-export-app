@@ -5,7 +5,6 @@ import { Divider } from '@dhis2/ui-core'
 
 import styles from './JobSummary.module.css'
 import { jsDateToString } from '../../utils/helper'
-import { testIds } from '../../utils/testIds'
 import { Tag } from './Tag/'
 import { Events } from './Events/'
 import { Summary } from './Summary/'
@@ -16,11 +15,11 @@ const Header = ({ jobDetails, task, showFileDetails }) => (
         <h3 className={styles.title}>{`${i18n.t('Job summary')}`}</h3>
         {showFileDetails && (
             <span className={styles.taskDetails}>
-                <span data-test={testIds.JobSummary.filename}>
+                <span data-test="job-summary-filename">
                     {jobDetails.file.name}
                 </span>{' '}
                 -{' '}
-                <span data-test={testIds.JobSummary.date}>
+                <span data-test="job-summary-date">
                     {jsDateToString(task.created)}{' '}
                 </span>
             </span>
@@ -35,7 +34,7 @@ Header.propTypes = {
 }
 
 const Tags = ({ jobDetails, task }) => (
-    <div className={styles.tags} data-test={testIds.JobSummary.tags}>
+    <div className={styles.tags} data-test="job-summary-tags">
         {task.completed ? (
             <Tag success text={i18n.t('Completed')} />
         ) : (

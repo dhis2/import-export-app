@@ -11,7 +11,6 @@ import {
     TableCellHead,
 } from '@dhis2/ui-core'
 
-import { testIds } from '../../../utils/testIds'
 import { jsDateToString } from '../../../utils/helper'
 import { FormField } from '../../FormField'
 
@@ -19,7 +18,7 @@ const Events = ({ events }) => {
     return (
         <FormField
             label={`${i18n.t('Events')}`}
-            dataTest={testIds.JobSummary.events}
+            dataTest="job-summary-events"
             name="events"
         >
             <Table>
@@ -32,7 +31,7 @@ const Events = ({ events }) => {
                 </TableHead>
                 <TableBody>
                     {events.map(e => (
-                        <TableRow key={`${testIds.JobSummary.events}-${e.id}`}>
+                        <TableRow key={`job-summary-events-${e.id}`}>
                             <TableCell>{jsDateToString(e.date)}</TableCell>
                             <TableCell>{e.text}</TableCell>
                             <TableCell>{e.id}</TableCell>

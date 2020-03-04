@@ -5,7 +5,6 @@ import i18n from '@dhis2/d2-i18n'
 
 import { dataImportPage as p } from '../../utils/pages'
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
-import { testIds } from '../../utils/testIds'
 import { helpText } from '../../utils/text'
 import {
     formatAdxPdfOptions,
@@ -154,7 +153,7 @@ const DataImport = ({ query }) => {
             desc={p.description}
             icon={p.icon}
             loading={progress}
-            dataTest={testIds.DataImport.Page}
+            dataTest="page-import-data"
             summaryTask={getNewestTask(dataTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
@@ -162,7 +161,7 @@ const DataImport = ({ query }) => {
                 name="upload"
                 file={file}
                 setFile={setFile}
-                dataTest={testIds.DataImport.FileUpload}
+                dataTest="input-file-upload"
             />
             <RadioGroup
                 name="format"
@@ -170,7 +169,7 @@ const DataImport = ({ query }) => {
                 options={formatAdxPdfOptions}
                 setValue={setFormat}
                 checked={format}
-                dataTest={testIds.DataImport.format}
+                dataTest="input-format"
             />
             {format.value == 'csv' && (
                 <Switch
@@ -178,7 +177,7 @@ const DataImport = ({ query }) => {
                     name="firstRowIsHeader"
                     checked={firstRowIsHeader}
                     setChecked={setFirstRowIsHeader}
-                    dataTest={testIds.DataImport.firstRowIsHeader}
+                    dataTest="input-first-row-is-header"
                 />
             )}
             <RadioGroup
@@ -187,7 +186,7 @@ const DataImport = ({ query }) => {
                 options={strategyOptions}
                 setValue={setStrategy}
                 checked={strategy}
-                dataTest={testIds.DataImport.strategy}
+                dataTest="input-strategy"
             />
             <Switch
                 label={i18n.t('Preheat cache')}
@@ -195,7 +194,7 @@ const DataImport = ({ query }) => {
                 checked={preheatCache}
                 setChecked={setPreheatCache}
                 help={helpText.preheatCache}
-                dataTest={testIds.DataImport.preheatCache}
+                dataTest="input-preheat-cache"
             />
             <WithAuthority pred={hasAuthorityToSkipAudit}>
                 <Switch
@@ -204,24 +203,24 @@ const DataImport = ({ query }) => {
                     checked={skipAudit}
                     setChecked={setSkipAudit}
                     help={helpText.skipAudit}
-                    dataTest={testIds.DataImport.hasAuthorityToSkipAudit}
+                    dataTest="input-has-authority-to-skip-audit"
                 />
             </WithAuthority>
-            <MoreOptions dataTest={testIds.DataImport.MoreOptions}>
+            <MoreOptions dataTest="interaction-more-options">
                 <DataElementIdScheme
                     selected={dataElementIdScheme}
                     setSelected={setDataElementIdScheme}
-                    dataTest={testIds.DataImport.DataElementIdScheme}
+                    dataTest="input-data-element-id-scheme"
                 />
                 <OrgUnitIdScheme
                     selected={orgUnitIdScheme}
                     setSelected={setOrgUnitIdScheme}
-                    dataTest={testIds.DataImport.OrgUnitIdScheme}
+                    dataTest="input-org-unit-id-scheme"
                 />
                 <IdScheme
                     selected={idScheme}
                     setSelected={setIdScheme}
-                    dataTest={testIds.DataImport.IdScheme}
+                    dataTest="input-id-scheme"
                 />
                 <Switch
                     name="skipExistingCheck"
@@ -229,19 +228,16 @@ const DataImport = ({ query }) => {
                     checked={skipExistingCheck}
                     setChecked={setSkipExistingCheck}
                     help={helpText.skipExistingCheck}
-                    dataTest={testIds.DataImport.skipExisitingCheck}
+                    dataTest="input-skip-exisiting-check"
                 />
             </MoreOptions>
             <ImportButtonStrip
                 onImport={onImport}
-                dryRunDataTest={testIds.DataImport.dryRun}
-                importDataTest={testIds.DataImport.submit}
-                dataTest={testIds.DataImport.ImportButtonStrip}
+                dryRunDataTest="input-dry-run"
+                importDataTest="input-import-submit"
+                dataTest="input-import-button-strip"
             />
-            <FormAlerts
-                alerts={alerts}
-                dataTest={testIds.DataImport.FormAlerts}
-            />
+            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

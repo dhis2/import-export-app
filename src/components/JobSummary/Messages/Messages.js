@@ -11,7 +11,6 @@ import {
     TableCellHead,
 } from '@dhis2/ui-core'
 
-import { testIds } from '../../../utils/testIds'
 import { FormField } from '../../FormField'
 
 const Messages = ({ messages }) => {
@@ -19,7 +18,7 @@ const Messages = ({ messages }) => {
     return (
         <FormField
             label={`${i18n.t('Messages')}`}
-            dataTest={testIds.JobSummary.messages}
+            dataTest="job-summary-messages"
             name="messages"
         >
             <Table>
@@ -33,7 +32,7 @@ const Messages = ({ messages }) => {
                 </TableHead>
                 <TableBody>
                     {messages.map((m, i) => (
-                        <TableRow key={`${testIds.JobSummary.messages}-${i}`}>
+                        <TableRow key={`job-summary-messages-${i}`}>
                             <TableCell>{m.uid}</TableCell>
                             <TableCell>{m.type}</TableCell>
                             <TableCell>{m.property}</TableCell>

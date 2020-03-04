@@ -5,7 +5,6 @@ import { Button } from '@dhis2/ui-core'
 import JSZip from 'jszip'
 
 import { dataExportPage as p } from '../../utils/pages'
-import { testIds } from '../../utils/testIds'
 import {
     createBlob,
     downloadBlob,
@@ -200,24 +199,24 @@ const DataExport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            dataTest={testIds.DataExport.Page}
+            dataTest="page-export-data"
         >
             <OrgUnitTree
                 selected={selectedOrgUnits}
                 setSelected={setSelectedOrgUnits}
-                dataTest={testIds.DataExport.OrgUnitTree}
+                dataTest="input-org-unit-tree"
             />
             <Switch
                 label={i18n.t('Include children')}
                 name="includeChildren"
                 checked={includeChildren}
                 setChecked={setIncludeChildren}
-                dataTest={testIds.DataExport.includeChildren}
+                dataTest="input-include-children"
             />
             <DataSetPicker
                 selected={selectedDataSets}
                 setSelected={setSelectedDataSets}
-                dataTest={testIds.DataExport.DataSetPicker}
+                dataTest="input-data-set-picker"
             />
             <RadioGroup
                 name="format"
@@ -225,7 +224,7 @@ const DataExport = () => {
                 options={formatAdxOptions}
                 setValue={setFormat}
                 checked={format}
-                dataTest={testIds.DataExport.format}
+                dataTest="input-format"
             />
             <RadioGroup
                 name="compression"
@@ -233,57 +232,50 @@ const DataExport = () => {
                 options={compressionOptions}
                 setValue={setCompression}
                 checked={compression}
-                dataTest={testIds.DataExport.compression}
+                dataTest="input-compression"
             />
             <DatePicker
                 name="startDate"
                 label={i18n.t('Start date')}
                 date={startDate}
                 onChange={onDateChange(setStartDate)}
-                dataTest={testIds.DataExport.startDate}
+                dataTest="input-start-date"
             />
             <DatePicker
                 name="endDate"
                 label={i18n.t('End date')}
                 date={endDate}
                 onChange={onDateChange(setEndDate)}
-                dataTest={testIds.DataExport.endDate}
+                dataTest="input-end-date"
             />
-            <MoreOptions dataTest={testIds.DataExport.MoreOptions}>
+            <MoreOptions dataTest="interaction-more-options">
                 <Switch
                     label={i18n.t('Include deleted')}
                     name="includeDeleted"
                     checked={includeDeleted}
                     setChecked={setIncludeDeleted}
-                    dataTest={testIds.DataExport.includeDeleted}
+                    dataTest="input-include-deleted"
                 />
                 <DataElementIdScheme
                     selected={dataElementIdScheme}
                     setSelected={setDataElementIdScheme}
-                    dataTest={testIds.DataExport.DataElementIdScheme}
+                    dataTest="input-data-element-id-scheme"
                 />
                 <OrgUnitIdScheme
                     selected={orgUnitIdScheme}
                     setSelected={setOrgUnitIdScheme}
-                    dataTest={testIds.DataExport.OrgUnitIdScheme}
+                    dataTest="input-org-unit-id-scheme"
                 />
                 <IdScheme
                     selected={idScheme}
                     setSelected={setIdScheme}
-                    dataTest={testIds.DataExport.IdScheme}
+                    dataTest="input-id-scheme"
                 />
             </MoreOptions>
-            <Button
-                primary
-                onClick={onExport}
-                dataTest={testIds.DataExport.submit}
-            >
+            <Button primary onClick={onExport} dataTest="input-export-submit">
                 {i18n.t('Export')}
             </Button>
-            <FormAlerts
-                alerts={alerts}
-                dataTest={testIds.DataExport.FormAlerts}
-            />
+            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

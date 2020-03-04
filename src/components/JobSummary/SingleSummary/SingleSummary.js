@@ -11,7 +11,6 @@ import {
     TableCellHead,
 } from '@dhis2/ui-core'
 
-import { testIds } from '../../../utils/testIds'
 import { statsPropType } from '../helper'
 import { SingleStatusTable } from '../SingleStatusTable/'
 import { FormField } from '../../FormField'
@@ -20,7 +19,7 @@ const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
     <div>
         <FormField
             label={`${i18n.t('Summary')} #${id}`}
-            dataTest={testIds.JobSummary.singleSummary}
+            dataTest="job-summary-single-summary"
             name="summary"
         >
             <>
@@ -55,7 +54,7 @@ const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
         {conflicts && (
             <FormField
                 label={`${i18n.t('Conflicts')}`}
-                dataTest={testIds.JobSummary.conflicts}
+                dataTest="job-summary-conflicts"
                 name="conflicts"
             >
                 <Table>
@@ -68,7 +67,7 @@ const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
                     <TableBody>
                         {conflicts.map((c, i) => (
                             <TableRow
-                                key={`${testIds.JobSummary.conflicts}-${c.object}-${i}`}
+                                key={`job-summary-conflicts-${c.object}-${i}`}
                             >
                                 <TableCell>{c.object}</TableCell>
                                 <TableCell>{c.value}</TableCell>

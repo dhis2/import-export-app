@@ -4,13 +4,12 @@ import i18n from '@dhis2/d2-i18n'
 
 import styles from './MenuLabel.module.css'
 import { jsDateToString, trimString } from '../../../utils/helper'
-import { testIds } from '../../../utils/testIds'
 
 const MenuLabel = ({ task }) => {
     return (
         <div
             className={styles.container}
-            data-test={`${testIds.JobOverview.MenuLabel}-${task.id}`}
+            data-test={`job-overview-menu-label-${task.id}`}
         >
             <div className={styles.status}>
                 <span>{trimString(15, task.jobDetails.file.name)}</span>
