@@ -31,23 +31,3 @@ Given('the {string} input is set to {string}', (name, value) => {
         }
     )
 })
-
-/**
- * Can be removed once all pages have been refactored
- */
-Given(
-    'the {string} input is set to {string} / {string}',
-    (name, value, label) => {
-        cy.selectFormInput({ name, value, label })
-        cy.getAliases('@defaultData', '@changedData').then(
-            ([defaultData, changedData]) => {
-                const updates = {
-                    ...changedData,
-                    [name]: value,
-                }
-
-                cy.wrap(updates).as('changedData')
-            }
-        )
-    }
-)
