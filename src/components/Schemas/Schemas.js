@@ -29,11 +29,10 @@ const Schemas = ({
     checkedByDefault,
     dataTest,
 }) => {
-    const [error, setError] = useState(undefined)
     const [schemaGroups, setSchemaGroups] = useState(undefined)
     const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined)
     const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined)
-    const { loading } = useDataQuery(schemaQuery, {
+    const { error, loading } = useDataQuery(schemaQuery, {
         onComplete: data => {
             const schemas = data.schemas.schemas
             const filteredSchemas = filterOutExcludedSchemas(
@@ -51,7 +50,6 @@ const Schemas = ({
             propagateCheckedSchemas(groups)
         },
         onError: error => {
-            setError(error)
             console.error('Schemas error: ', error)
         },
     })
