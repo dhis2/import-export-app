@@ -6,7 +6,6 @@ import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
 
 import styles from './JobOverview.module.css'
 import { TaskContext, categoryTypes } from '../../contexts/'
-import { testIds } from '../../utils/testIds'
 import { JobSummary } from '../JobSummary/'
 import { categoryTypesObj, jobToPath } from './helper'
 import { MenuLabel } from './MenuLabel'
@@ -53,22 +52,19 @@ const JobOverview = ({
     }
 
     return (
-        <div
-            className={styles.container}
-            data-test={testIds.JobOverview.container}
-        >
-            <div className={styles.items} data-test={testIds.JobOverview.items}>
+        <div className={styles.container} data-test="job-overview-container">
+            <div className={styles.items} data-test="job-overview-tasks">
                 <Menu className={styles.Menu}>
                     <div
                         className={styles.chips}
-                        data-test={testIds.JobOverview.chips}
+                        data-test="job-overview-chips"
                     >
                         {categoryTypes.map(({ key, importType, label }) => (
                             <Chip
                                 onClick={() => onChipClick(importType)}
                                 selected={activeTypes.includes(importType)}
                                 key={key}
-                                dataTest={`${testIds.JobOverview.chips}-${key}`}
+                                dataTest={`job-overview-chips-${key}`}
                             >
                                 {label}
                             </Chip>
@@ -76,7 +72,7 @@ const JobOverview = ({
                     </div>
                     {filteredTasks.map(t => (
                         <MenuItem
-                            key={`${testIds.JobOverview.items}-${t.id}`}
+                            key={`job-overview-tasks-${t.id}`}
                             active={selectedJob.id == t.id}
                             label={<MenuLabel task={t} />}
                             onClick={() => setSelectedJob(t)}
@@ -85,13 +81,10 @@ const JobOverview = ({
                     ))}
                 </Menu>
             </div>
-            <div
-                className={styles.summary}
-                data-test={testIds.JobOverview.JobSummary}
-            >
+            <div className={styles.summary} data-test="job-overview-summary">
                 <JobSummary
                     task={selectedJob}
-                    dataTest={testIds.JobSummary.container}
+                    dataTest="job-summary-container"
                     showFileDetails={false}
                     showJobDetails={true}
                 />

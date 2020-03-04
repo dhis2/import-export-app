@@ -3,7 +3,6 @@ import React, { useContext } from 'react'
 import styles from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'
 import { JobOverviewPage as p } from '../../utils/pages'
-import { testIds } from '../../utils/testIds'
 import { Page } from '../../components/Page'
 import { JobOverview as JobOverviewComponent } from '../../components/JobOverview'
 
@@ -26,7 +25,7 @@ const JobOverview = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            dataTest={testIds.JobOverview.Page}
+            dataTest="job-overview-page"
         >
             <div className={styles.container}>
                 <JobOverviewComponent

@@ -8,7 +8,6 @@ import {
 } from '@dhis2/ui-core'
 
 import styles from './Page.module.css'
-import { testIds } from '../../utils/testIds'
 import { JobSummary, MiniJobSummary } from '../../components/JobSummary'
 
 const Page = ({
@@ -41,12 +40,12 @@ const Page = ({
                         {showFullSummaryTask ? (
                             <JobSummary
                                 task={summaryTask}
-                                dataTest={testIds.JobSummary.container}
+                                dataTest="job-summary-container"
                             />
                         ) : (
                             <MiniJobSummary
                                 task={summaryTask}
-                                dataTest={testIds.MiniJobSummary.container}
+                                dataTest="mini-job-summary-container"
                             />
                         )}
                     </div>

@@ -4,7 +4,6 @@ import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 
 import { eventExportPage as p } from '../../utils/pages'
-import { testIds } from '../../utils/testIds'
 import { jsDateToISO8601, locationAssign, pathToId } from '../../utils/helper'
 import {
     formatOptions,
@@ -136,13 +135,13 @@ const EventExport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            dataTest={testIds.EventExport.Page}
+            dataTest="page-export-data"
         >
             <OrgUnitTree
                 selected={selectedOrgUnits}
                 setSelected={setSelectedOrgUnits}
                 multiSelect={false}
-                dataTest={testIds.EventExport.OrgUnitTree}
+                dataTest="input-org-unit-tree"
             />
             <ProgramPicker
                 selected={selectedPrograms}
@@ -150,7 +149,7 @@ const EventExport = () => {
                 multiSelect={false}
                 withActions={false}
                 autoSelectFirst
-                dataTest={testIds.EventExport.ProgramPicker}
+                dataTest="input-program-picker"
             />
             <Select
                 loading={programStagesLoading}
@@ -159,7 +158,7 @@ const EventExport = () => {
                 options={programStages}
                 selected={programStage}
                 setValue={setProgramStage}
-                dataTest={testIds.EventExport.ProgramStageSelect}
+                dataTest="input-program-stage-select"
                 validationText={programStagesValidationText}
                 error={!!programStagesError}
                 dense
@@ -169,14 +168,14 @@ const EventExport = () => {
                 label={i18n.t('Start date')}
                 date={startDate}
                 onChange={onDateChange(setStartDate)}
-                dataTest={testIds.EventExport.startDate}
+                dataTest="input-start-date"
             />
             <DatePicker
                 name="endDate"
                 label={i18n.t('End date')}
                 date={endDate}
                 onChange={onDateChange(setEndDate)}
-                dataTest={testIds.EventExport.endDate}
+                dataTest="input-end-date"
             />
             <RadioGroup
                 name="format"
@@ -184,7 +183,7 @@ const EventExport = () => {
                 options={formatOptions}
                 setValue={setFormat}
                 checked={format}
-                dataTest={testIds.EventExport.format}
+                dataTest="input-format"
             />
             <RadioGroup
                 name="compression"
@@ -192,20 +191,20 @@ const EventExport = () => {
                 options={compressionOptions}
                 setValue={setCompression}
                 checked={compression}
-                dataTest={testIds.EventExport.compression}
+                dataTest="input-compression"
             />
-            <MoreOptions dataTest={testIds.EventExport.MoreOptions}>
+            <MoreOptions dataTest="interaction-more-options">
                 <Switch
                     label={i18n.t('Include deleted')}
                     name="includeDeleted"
                     checked={includeDeleted}
                     setChecked={setIncludeDeleted}
-                    dataTest={testIds.EventExport.includeDeleted}
+                    dataTest="input-include-deleted"
                 />
                 <IdScheme
                     selected={idScheme}
                     setSelected={setIdScheme}
-                    dataTest={testIds.EventExport.IdScheme}
+                    dataTest="input-id-scheme"
                 />
                 <RadioGroup
                     name="inclusion"
@@ -213,21 +212,18 @@ const EventExport = () => {
                     options={inclusionOptions}
                     setValue={setInclusion}
                     checked={inclusion}
-                    dataTest={testIds.EventExport.inclusion}
+                    dataTest="input-inclusion"
                 />
             </MoreOptions>
             <Button
                 primary
                 disabled={programStage == undefined}
                 onClick={onExport}
-                dataTest={testIds.EventExport.submit}
+                dataTest="input-export-submit"
             >
                 {i18n.t('Export')}
             </Button>
-            <FormAlerts
-                alerts={alerts}
-                dataTest={testIds.EventExport.FormAlerts}
-            />
+            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

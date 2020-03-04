@@ -5,7 +5,6 @@ import i18n from '@dhis2/d2-i18n'
 
 import { eventImportPage as p } from '../../utils/pages'
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
-import { testIds } from '../../utils/testIds'
 import {
     formatOptions,
     defaultFormatOption,
@@ -111,7 +110,7 @@ const EventImport = ({ query }) => {
             desc={p.description}
             icon={p.icon}
             loading={progress}
-            dataTest={testIds.EventImport.Page}
+            dataTest="page-import-event"
             summaryTask={getNewestTask(eventTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
@@ -119,7 +118,7 @@ const EventImport = ({ query }) => {
                 name="upload"
                 file={file}
                 setFile={setFile}
-                dataTest={testIds.EventImport.FileUpload}
+                dataTest="input-file-upload"
             />
             <RadioGroup
                 name="format"
@@ -127,30 +126,27 @@ const EventImport = ({ query }) => {
                 options={formatOptions}
                 setValue={setFormat}
                 checked={format}
-                dataTest={testIds.EventImport.format}
+                dataTest="input-format"
             />
-            <MoreOptions dataTest={testIds.EventImport.MoreOptions}>
+            <MoreOptions dataTest="interaction-more-options">
                 <EventIdScheme
                     selected={eventIdScheme}
                     setSelected={setEventIdScheme}
-                    dataTest={testIds.EventImport.EventIdScheme}
+                    dataTest="input-event-id-scheme"
                 />
                 <OrgUnitIdScheme
                     selected={orgUnitIdScheme}
                     setSelected={setOrgUnitIdScheme}
-                    dataTest={testIds.EventImport.OrgUnitIdScheme}
+                    dataTest="input-org-unit-id-scheme"
                 />
             </MoreOptions>
             <ImportButtonStrip
                 onImport={onImport}
-                dryRunDataTest={testIds.DataImport.dryRun}
-                importDataTest={testIds.DataImport.submit}
-                dataTest={testIds.DataImport.ImportButtonStrip}
+                dryRunDataTest="input-dry-run"
+                importDataTest="input-import-submit"
+                dataTest="input-import-button-strip"
             />
-            <FormAlerts
-                alerts={alerts}
-                dataTest={testIds.EventImport.FormAlerts}
-            />
+            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

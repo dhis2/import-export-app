@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { typeReportParse } from '../helper'
-import { testIds } from '../../../utils/testIds'
 import { SingleSummary } from '../SingleSummary/'
 import { TypeReportSummary } from '../TypeReportSummary/'
 
@@ -30,7 +29,7 @@ const Summary = ({ summary }) => {
         }
         const { stats, messages } = typeReportParse(summary.typeReports)
         return (
-            <div data-test={testIds.JobSummary.summary}>
+            <div data-test="job-summary-summary">
                 <TypeReportSummary
                     overviewStats={overviewStats}
                     stats={stats}
@@ -69,7 +68,7 @@ const Summary = ({ summary }) => {
             : null
 
     return (
-        <div data-test={testIds.JobSummary.summary}>
+        <div data-test="job-summary-summary">
             {overviewSummary}
             {allSummaries}
         </div>

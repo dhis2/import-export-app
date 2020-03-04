@@ -3,7 +3,6 @@ import { HashRouter } from 'react-router-dom'
 import i18n from '@dhis2/d2-i18n'
 import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core'
 
-import { testIds } from './utils/testIds'
 import { TaskContext } from './contexts/'
 import { UserContext } from './contexts/'
 import { useUser, useTasks } from './hooks/'
@@ -19,13 +18,13 @@ const App = () => {
 
     if (loading) {
         return (
-            <ScreenCover dataTest={testIds.App.ScreenCover}>
-                <CircularLoader dataTest={testIds.App.Loader} />
+            <ScreenCover dataTest="app-screen-cover">
+                <CircularLoader dataTest="app-loader" />
             </ScreenCover>
         )
     } else if (error) {
         return (
-            <div data-test={testIds.App.Error}>
+            <div data-test="app-error">
                 <p>
                     {i18n.t(
                         'Something went wrong when loading the current user!'

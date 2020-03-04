@@ -12,7 +12,6 @@ import {
 } from '@dhis2/ui-core'
 
 import { statsPropTypeObj } from '../helper'
-import { testIds } from '../../../utils/testIds'
 import { FormField } from '../../FormField'
 
 const TypeCount = ({ stats }) => {
@@ -20,7 +19,7 @@ const TypeCount = ({ stats }) => {
     return (
         <FormField
             label={`${i18n.t('Type count')}`}
-            dataTest={testIds.JobSummary.typeCount}
+            dataTest="job-summary-type-count"
             name="typeCount"
         >
             <Table>
@@ -36,7 +35,7 @@ const TypeCount = ({ stats }) => {
                 </TableHead>
                 <TableBody>
                     {stats.map((s, i) => (
-                        <TableRow key={`${testIds.JobSummary.typeCount}-${i}`}>
+                        <TableRow key={`job-summary-type-count-${i}`}>
                             <TableCell>{s.type}</TableCell>
                             <TableCell>{s.created}</TableCell>
                             <TableCell>{s.deleted}</TableCell>

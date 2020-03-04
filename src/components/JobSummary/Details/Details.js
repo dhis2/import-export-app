@@ -11,7 +11,6 @@ import {
     TableCellHead,
 } from '@dhis2/ui-core'
 
-import { testIds } from '../../../utils/testIds'
 import { FormField } from '../../FormField'
 
 const valueToString = value => {
@@ -27,7 +26,7 @@ const Details = ({ details }) => {
     return (
         <FormField
             label={`${i18n.t('Job details')}`}
-            dataTest={testIds.JobSummary.jobDetails}
+            dataTest="job-summary-job-details"
             name="details"
         >
             <Table>
@@ -39,9 +38,7 @@ const Details = ({ details }) => {
                 </TableHead>
                 <TableBody>
                     {Object.keys(details).map(key => (
-                        <TableRow
-                            key={`${testIds.JobSummary.jobDetails}-${key}`}
-                        >
+                        <TableRow key={`job-summary-job-details-${key}`}>
                             <TableCell>{key}</TableCell>
                             <TableCell>{valueToString(details[key])}</TableCell>
                         </TableRow>

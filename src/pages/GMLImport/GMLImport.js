@@ -5,7 +5,6 @@ import i18n from '@dhis2/d2-i18n'
 
 import { gmlImportPage as p } from '../../utils/pages'
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
-import { testIds } from '../../utils/testIds'
 import { Page } from '../../components/Page'
 import { FileUpload } from '../../components/FileUpload'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
@@ -81,7 +80,7 @@ const GMLImport = ({ query }) => {
             desc={p.description}
             icon={p.icon}
             loading={progress}
-            dataTest={testIds.GMLImport.Page}
+            dataTest="page-import-gml"
             summaryTask={getNewestTask(gmlTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
@@ -89,18 +88,15 @@ const GMLImport = ({ query }) => {
                 name="upload"
                 file={file}
                 setFile={setFile}
-                dataTest={testIds.GMLImport.FileUpload}
+                dataTest="input-file-upload"
             />
             <ImportButtonStrip
                 onImport={onImport}
-                dryRunDataTest={testIds.DataImport.dryRun}
-                importDataTest={testIds.DataImport.submit}
-                dataTest={testIds.DataImport.ImportButtonStrip}
+                dryRunDataTest="input-dry-run"
+                importDataTest="input-import-submit"
+                dataTest="input-import-button-strip"
             />
-            <FormAlerts
-                alerts={alerts}
-                dataTest={testIds.GMLImport.FormAlerts}
-            />
+            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

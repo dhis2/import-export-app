@@ -4,7 +4,6 @@ import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui-core'
 
 import { metadataDependencyExportPage as p } from '../../utils/pages'
-import { testIds } from '../../utils/testIds'
 import { locationAssign } from '../../utils/helper'
 import {
     formatNoCsvOptions,
@@ -51,7 +50,7 @@ const MetadataDependencyExport = () => {
             title={p.name}
             desc={p.description}
             icon={p.icon}
-            dataTest={testIds.MetadataDependencyExport.Page}
+            dataTest="page-export-metadata-dependency"
         >
             <Select
                 filled
@@ -61,7 +60,7 @@ const MetadataDependencyExport = () => {
                 options={objectTypeOptions}
                 setValue={setObjectType}
                 selected={objectType}
-                dataTest={testIds.MetadataDependencyExport.objectType}
+                dataTest="input-object-type"
             />
             <Select
                 loading={objectsLoading}
@@ -70,7 +69,7 @@ const MetadataDependencyExport = () => {
                 options={objects}
                 selected={objectListSelected}
                 setValue={setObjectListSelected}
-                dataTest={testIds.MetadataDependencyExport.ObjectSelect}
+                dataTest="input-object-select"
                 validationText={objectsValidationText}
                 error={!!objectsError}
                 filterable
@@ -82,7 +81,7 @@ const MetadataDependencyExport = () => {
                 options={formatNoCsvOptions}
                 setValue={setFormat}
                 checked={format}
-                dataTest={testIds.MetadataDependencyExport.format}
+                dataTest="input-format"
             />
             <RadioGroup
                 name="compression"
@@ -90,20 +89,20 @@ const MetadataDependencyExport = () => {
                 options={compressionOptions}
                 setValue={setCompression}
                 checked={compression}
-                dataTest={testIds.MetadataDependencyExport.compression}
+                dataTest="input-compression"
             />
             <Switch
                 name="skipSharing"
                 label={i18n.t('Skip sharing')}
                 checked={skipSharing}
                 setChecked={setSkipSharing}
-                dataTest={testIds.MetadataDependencyExport.skipSharing}
+                dataTest="input-skip-sharing"
             />
             <Button
                 primary
                 disabled={objectListSelected == undefined}
                 onClick={onExport}
-                dataTest={testIds.MetadataDependencyExport.submit}
+                dataTest="input-export-submit"
             >
                 {i18n.t('Export')}
             </Button>
