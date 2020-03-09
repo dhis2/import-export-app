@@ -4,13 +4,13 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
-import { idSchemeOptions, optionPropType } from '../../utils/options'
+import { idSchemeOptions } from '../../utils/options'
 import { Select } from '../Select'
 
 const attributeFoundIn = (attribute, collection) =>
     !!collection.find(({ value }) => value === attribute.value)
 
-const IdScheme = ({ selected, setSelected, dataTest }) => {
+const IdScheme = ({ dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -60,11 +60,9 @@ const IdScheme = ({ selected, setSelected, dataTest }) => {
     const options = [...idSchemeOptions, ...schemes]
     return (
         <Select
-            name="IdScheme"
+            name="idScheme"
             label={i18n.t('ID scheme')}
             options={options}
-            selected={selected}
-            setValue={setSelected}
             dataTest={dataTest}
             loading={loading}
             validationText={validationText}
@@ -76,8 +74,6 @@ const IdScheme = ({ selected, setSelected, dataTest }) => {
 
 IdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    selected: optionPropType.isRequired,
-    setSelected: PropTypes.func.isRequired,
 }
 
 export { IdScheme }

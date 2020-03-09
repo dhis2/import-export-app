@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
+import { Field, SingleSelect } from '@dhis2/ui-forms'
 
 import { optionPropType, optionsPropType } from '../../utils/options'
 import styles from './Select.module.css'
@@ -11,8 +11,7 @@ const Select = ({
     dataTest,
     label,
     options,
-    setValue,
-    selected,
+    initialValue,
     noMatchText,
     loading,
     error,
@@ -24,25 +23,20 @@ const Select = ({
     filterable,
     initialFocus,
 }) => {
-    const optionEls = options.map(o => (
-        <SingleSelectOption key={o.value} value={o.value} label={o.label} />
-    ))
-
-    const onChange = ({ selected }) => setValue(selected)
-
     return (
         <FormField label={label} dataTest={dataTest}>
             <div className={styles.select} data-test={`${dataTest}-container`}>
-                <SingleSelectField
+                <Field
+                    component={SingleSelect}
+                    name={name}
+                    options={options}
                     dense={dense}
                     filled={filled}
                     initialFocus={initialFocus}
                     loading={loading}
                     warning={warning}
                     error={error}
-                    name={name}
-                    onChange={onChange}
-                    selected={selected}
+                    initialValue={initialValue}
                     filterable={filterable}
                     noMatchText={
                         noMatchText ? noMatchText : `No match found for filter`
@@ -50,9 +44,7 @@ const Select = ({
                     helpText={helpText}
                     validationText={validationText}
                     dataTest={`${dataTest}-ssf`}
-                >
-                    {optionEls}
-                </SingleSelectField>
+                />
             </div>
         </FormField>
     )
@@ -63,16 +55,15 @@ Select.propTypes = {
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     options: optionsPropType.isRequired,
-    setValue: PropTypes.func.isRequired,
     dense: PropTypes.bool,
     error: PropTypes.bool,
     filled: PropTypes.bool,
     filterable: PropTypes.bool,
     helpText: PropTypes.string,
     initialFocus: PropTypes.bool,
+    initialValue: optionPropType,
     loading: PropTypes.bool,
     noMatchText: PropTypes.string,
-    selected: optionPropType,
     validationText: PropTypes.string,
     warning: PropTypes.bool,
 }

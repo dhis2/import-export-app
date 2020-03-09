@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
-import { dataElementIdSchemeOptions, optionPropType } from '../../utils/options'
+import { dataElementIdSchemeOptions } from '../../utils/options'
 import { Select } from '../Select'
 
-const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
+const DataElementIdScheme = ({ dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -32,8 +32,6 @@ const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
             name="dataElementIdScheme"
             label={i18n.t('Data element ID scheme')}
             options={options}
-            selected={selected}
-            setValue={setSelected}
             dataTest={dataTest}
             loading={loading}
             validationText={validationText}
@@ -45,8 +43,6 @@ const DataElementIdScheme = ({ selected, setSelected, dataTest }) => {
 
 DataElementIdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    selected: optionPropType.isRequired,
-    setSelected: PropTypes.func.isRequired,
 }
 
 export { DataElementIdScheme }

@@ -1,28 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { FileInput } from '@dhis2/ui-core'
+import { Field, FileInput } from '@dhis2/ui-forms'
 
 import { FormField } from '../FormField'
 
+const SINGLE_FILE_VALIDATOR = files =>
+    !files || files.length == 0 ? i18n.t('Please select a file') : undefined
+
 const FileUpload = ({
-    file,
-    setFile,
+    initialValue,
     required,
     name,
     label = i18n.t('File'),
     accept = '*',
     dataTest,
 }) => {
-    const fileLabel = file ? file.name : i18n.t('Choose a file to upload')
-
     return (
         <FormField label={label} required={required} dataTest={dataTest}>
-            <FileInput
-                accept={accept}
+            <Field
+                component={FileInput}
                 name={name}
-                onChange={({ files }) => setFile(files[0])}
-                buttonLabel={fileLabel}
+                accept={accept}
+                required={required}
+                initialValue={initialValue}
                 dataTest={`${dataTest}-fileinput`}
             />
         </FormField>
@@ -32,11 +33,10 @@ const FileUpload = ({
 FileUpload.propTypes = {
     dataTest: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    setFile: PropTypes.func.isRequired,
     accept: PropTypes.string,
-    file: PropTypes.instanceOf(File),
+    initialValue: PropTypes.instanceOf(File),
     label: PropTypes.string,
     required: PropTypes.bool,
 }
 
-export { FileUpload }
+export { FileUpload, SINGLE_FILE_VALIDATOR }
