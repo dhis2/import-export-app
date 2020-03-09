@@ -2262,6 +2262,16 @@
     "@dhis2/prop-types" "^1.5.0"
     classnames "^2.2.6"
 
+"@dhis2/ui-forms@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-forms/-/ui-forms-1.0.1.tgz#7927bf2ccb48909394f03d935be544765c3cd7f0"
+  integrity sha512-JBoIwl3oL3XNgpzLQ/HeSbj5lfPguOcOTOhPd/QbFGJRaS6kbXtf3k3WZqBcN1KLWcGlTicF/kNyJcwr7UT+ng==
+  dependencies:
+    "@dhis2/prop-types" "^1.5"
+    classnames "^2.2.6"
+    final-form "^4.18.5"
+    react-final-form "^6.3.0"
+
 "@dhis2/ui-widgets@^2.0.4":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@dhis2/ui-widgets/-/ui-widgets-2.0.6.tgz#95247dbdfad0ec7d6836f3ccbe8ae85adf5f631d"
@@ -7689,6 +7699,13 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
+final-form@^4.18.5:
+  version "4.18.7"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.18.7.tgz#c30239ac9154cbfbf4f6d19e831f5fc9cbc1ba78"
+  integrity sha512-XdlYYGDcoUcKKVzRJxLg8N/ZG3wVLZvhO7K7PKQWVMjCiIUWdmtBwApw2NFS4P7RJvg8OdF73qGXhhE3K5PuDQ==
+  dependencies:
+    "@babel/runtime" "^7.8.3"
+
 finalhandler@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.1.2.tgz#b7e7d000ffd11938d0fdb053506f6ebabe9f587d"
@@ -13079,6 +13096,14 @@ react-error-overlay@^6.0.4:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.4.tgz#0d165d6d27488e660bc08e57bdabaad741366f7a"
   integrity sha512-ueZzLmHltszTshDMwyfELDq8zOA803wQ1ZuzCccXa1m57k1PxSHfflPD5W9YIiTXLs0JTLzoj6o1LuM5N6zzNA==
 
+react-final-form@^6.3.0:
+  version "6.3.5"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-6.3.5.tgz#772781071d26d26493b0c8ef4f97f76f06fc1c0f"
+  integrity sha512-btqEp1+n1WO4bUDopBdvUoIuoGHf91n/EOJg0QU5YjhX9CK+4RIsBI0M41lmyT3H6hWv6NELdX5n5zBJyOIXoA==
+  dependencies:
+    "@babel/runtime" "^7.8.3"
+    ts-essentials "^5.0.0"
+
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
@@ -15307,6 +15332,11 @@ trim-off-newlines@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
+
+ts-essentials@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-5.0.0.tgz#531d590c9cd62652c9d96284904cbdb2a1dd5ca8"
+  integrity sha512-ftKWOm6Jq+/UCBekDfxUjLODEd5XGN2EM/+TIQV9LJ5xSV12je4GqdRyv7pXXGGYmEt/nQa6F00xTWYJ5PMjIQ==
 
 ts-pnp@1.1.5, ts-pnp@^1.1.2:
   version "1.1.5"
