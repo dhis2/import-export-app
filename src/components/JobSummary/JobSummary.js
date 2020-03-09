@@ -16,7 +16,7 @@ const Header = ({ jobDetails, task, showFileDetails }) => (
         {showFileDetails && (
             <span className={styles.taskDetails}>
                 <span data-test="job-summary-filename">
-                    {jobDetails.file.name}
+                    {jobDetails.files[0].name}
                 </span>{' '}
                 -{' '}
                 <span data-test="job-summary-date">

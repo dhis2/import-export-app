@@ -16,6 +16,8 @@ import { FormField } from '../../FormField'
 const valueToString = value => {
     if (value instanceof File) {
         return value.name
+    } else if (Array.isArray(value)) {
+        return value.map(v => valueToString(v)).join(',')
     } else if (value instanceof Object) {
         return value.label
     }

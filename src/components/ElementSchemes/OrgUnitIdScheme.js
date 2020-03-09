@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
-import { orgUnitIdSchemeOptions, optionPropType } from '../../utils/options'
+import { orgUnitIdSchemeOptions } from '../../utils/options'
 import { Select } from '../Select'
 
-const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
+const OrgUnitIdScheme = ({ dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -29,11 +29,9 @@ const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
     const options = [...orgUnitIdSchemeOptions, ...schemes]
     return (
         <Select
-            name="OrgUnitIdScheme"
+            name="orgUnitIdScheme"
             label={i18n.t('Organisation unit ID scheme')}
             options={options}
-            selected={selected}
-            setValue={setSelected}
             dataTest={dataTest}
             loading={loading}
             validationText={validationText}
@@ -45,8 +43,6 @@ const OrgUnitIdScheme = ({ selected, setSelected, dataTest }) => {
 
 OrgUnitIdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    selected: optionPropType.isRequired,
-    setSelected: PropTypes.func.isRequired,
 }
 
 export { OrgUnitIdScheme }

@@ -12,7 +12,7 @@ const MenuLabel = ({ task }) => {
             data-test={`job-overview-menu-label-${task.id}`}
         >
             <div className={styles.status}>
-                <span>{trimString(15, task.jobDetails.file.name)}</span>
+                <span>{trimString(15, task.jobDetails.files[0].name)}</span>
                 <br />
                 <span>
                     {task.completed

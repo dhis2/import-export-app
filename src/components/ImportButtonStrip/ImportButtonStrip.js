@@ -7,9 +7,9 @@ import styles from './ImportButtonStrip.module.css'
 import { helpText } from '../../utils/text'
 
 const ImportButtonStrip = ({
-    onImport,
     dryRunDataTest,
     importDataTest,
+    form,
     dataTest,
 }) => {
     return (
@@ -17,7 +17,8 @@ const ImportButtonStrip = ({
             <ButtonStrip dataTest={`${dataTest}-button-strip`}>
                 <Button
                     primary
-                    onClick={() => onImport({ dryRun: true })}
+                    type="submit"
+                    onClick={() => form.change('dryRun', true)}
                     dataTest={dryRunDataTest}
                     className={styles.dryRun}
                 >
@@ -25,7 +26,8 @@ const ImportButtonStrip = ({
                 </Button>
                 <Button
                     secondary
-                    onClick={() => onImport({ dryRun: false })}
+                    type="submit"
+                    onClick={() => form.change('dryRun', false)}
                     dataTest={importDataTest}
                 >
                     {i18n.t('Import')}
@@ -41,8 +43,8 @@ const ImportButtonStrip = ({
 ImportButtonStrip.propTypes = {
     dataTest: PropTypes.string.isRequired,
     dryRunDataTest: PropTypes.string.isRequired,
+    form: PropTypes.object.isRequired,
     importDataTest: PropTypes.string.isRequired,
-    onImport: PropTypes.func.isRequired,
 }
 
 export { ImportButtonStrip }

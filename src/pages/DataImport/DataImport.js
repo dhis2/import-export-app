@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
+import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
@@ -15,7 +16,7 @@ import {
     defaultIdSchemeOption,
 } from '../../utils/options'
 import { Page } from '../../components/Page'
-import { FileUpload } from '../../components/FileUpload'
+import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
 import { RadioGroup } from '../../components/RadioGroup'
 import { Switch } from '../../components/Switch'
 import {
@@ -33,8 +34,8 @@ import { FormAlerts } from '../../components/FormAlerts'
 import { DataIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const createInitialState = prevJobDetails => ({
-    file: prevJobDetails.file,
+const createInitialValues = prevJobDetails => ({
+    files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     strategy: prevJobDetails.strategy || defaultStrategyOption,
     firstRowIsHeader: !!prevJobDetails.firstRowIsHeader,
@@ -56,49 +57,27 @@ const DataImport = ({ query }) => {
 
     // recreating a previously run job
     const prevJobDetails = getPrevJobDetails(query, dataTasks)
-    const initialState = createInitialState(prevJobDetails)
+    const initialValues = createInitialValues(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(initialState.file)
-    const [format, setFormat] = useState(initialState.format)
-    const [strategy, setStrategy] = useState(initialState.strategy)
-    const [firstRowIsHeader, setFirstRowIsHeader] = useState(
-        initialState.firstRowIsHeader
-    )
-    const [preheatCache, setPreheatCache] = useState(initialState.preheatCache)
-    const [skipAudit, setSkipAudit] = useState(initialState.skipAudit)
-    const [dataElementIdScheme, setDataElementIdScheme] = useState(
-        initialState.dataElementIdScheme
-    )
-    const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        initialState.orgUnitIdScheme
-    )
-    const [idScheme, setIdScheme] = useState(initialState.idScheme)
-    const [skipExistingCheck, setSkipExistingCheck] = useState(
-        initialState.skipExistingCheck
-    )
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onImport = ({ dryRun }) => {
-        // validate
-        const alerts = []
-        const timestamp = new Date().getTime()
-
-        setAlerts(alerts)
-
-        if (!file) {
-            alerts.push({
-                id: `file-${timestamp}`,
-                warning: true,
-                message: i18n.t('An import file must be selected'),
-            })
-        }
-
-        if (alerts.length != 0) {
-            return
-        }
+    const onImport = values => {
+        const {
+            dryRun,
+            files,
+            strategy,
+            preheatCache,
+            skipAudit,
+            dataElementIdScheme,
+            orgUnitIdScheme,
+            idScheme,
+            skipExistingCheck,
+            format,
+            firstRowIsHeader,
+        } = values
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
@@ -114,37 +93,29 @@ const DataImport = ({ query }) => {
             `idScheme=${idScheme.value}`,
             `skipExistingCheck=${skipExistingCheck}`,
             `format=${format.value}`,
-            format.value == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
+            format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
         ]
             .filter(s => s != '')
             .join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
-        const jobDetails = {
-            file,
-            format,
-            dryRun,
-            strategy,
-            preheatCache,
-            skipAudit,
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            skipExistingCheck,
-            firstRowIsHeader,
-        }
-
         uploadFile({
             url,
-            file,
+            file: files[0],
             format: format.value,
             type: 'DATAVALUE_IMPORT',
             setProgress,
             setAlerts,
             addEntry: (id, entry) =>
-                addTask('data', id, { ...entry, jobDetails: jobDetails }),
+                addTask('data', id, { ...entry, jobDetails: values }),
         })
         setShowFullSummaryTask(true)
+    }
+
+    const validate = values => {
+        return {
+            files: SINGLE_FILE_VALIDATOR(values.files),
+        }
     }
 
     return (
@@ -157,87 +128,74 @@ const DataImport = ({ query }) => {
             summaryTask={getNewestTask(dataTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
-            <FileUpload
-                name="upload"
-                file={file}
-                setFile={setFile}
-                dataTest="input-file-upload"
+            <Form
+                onSubmit={onImport}
+                initialValues={initialValues}
+                validate={validate}
+                render={({ handleSubmit, form, values }) => (
+                    <form onSubmit={handleSubmit}>
+                        <FileUpload name="files" dataTest="input-file-upload" />
+                        <RadioGroup
+                            name="format"
+                            label={i18n.t('Format')}
+                            options={formatAdxPdfOptions}
+                            dataTest="input-format"
+                        />
+                        {values.format == 'csv' && (
+                            <Switch
+                                label={i18n.t('First row is header')}
+                                name="firstRowIsHeader"
+                                value={values.firstRowIsHeader}
+                                dataTest="input-first-row-is-header"
+                            />
+                        )}
+                        <RadioGroup
+                            name="strategy"
+                            label={i18n.t('Strategy')}
+                            options={strategyOptions}
+                            dataTest="input-strategy"
+                        />
+                        <Switch
+                            label={i18n.t('Preheat cache')}
+                            name="preheatCache"
+                            value={values.preheatCache}
+                            help={helpText.preheatCache}
+                            dataTest="input-preheat-cache"
+                        />
+                        <WithAuthority pred={hasAuthorityToSkipAudit}>
+                            <Switch
+                                label={i18n.t('Skip audit')}
+                                name="skipAudit"
+                                value={values.skipAudit}
+                                help={helpText.skipAudit}
+                                dataTest="input-has-authority-to-skip-audit"
+                            />
+                        </WithAuthority>
+                        <MoreOptions dataTest="interaction-more-options">
+                            <DataElementIdScheme dataTest="input-data-element-id-scheme" />
+                            <OrgUnitIdScheme dataTest="input-org-unit-id-scheme" />
+                            <IdScheme dataTest="input-id-scheme" />
+                            <Switch
+                                name="skipExistingCheck"
+                                label={i18n.t('Skip exisiting check')}
+                                value={values.skipExistingCheck}
+                                help={helpText.skipExistingCheck}
+                                dataTest="input-skip-exisiting-check"
+                            />
+                        </MoreOptions>
+                        <ImportButtonStrip
+                            form={form}
+                            dryRunDataTest="input-dry-run"
+                            importDataTest="input-import-submit"
+                            dataTest="input-import-button-strip"
+                        />
+                        <FormAlerts
+                            alerts={alerts}
+                            dataTest="input-form-alerts"
+                        />
+                    </form>
+                )}
             />
-            <RadioGroup
-                name="format"
-                label={i18n.t('Format')}
-                options={formatAdxPdfOptions}
-                setValue={setFormat}
-                checked={format}
-                dataTest="input-format"
-            />
-            {format.value == 'csv' && (
-                <Switch
-                    label={i18n.t('First row is header')}
-                    name="firstRowIsHeader"
-                    checked={firstRowIsHeader}
-                    setChecked={setFirstRowIsHeader}
-                    dataTest="input-first-row-is-header"
-                />
-            )}
-            <RadioGroup
-                name="strategy"
-                label={i18n.t('Strategy')}
-                options={strategyOptions}
-                setValue={setStrategy}
-                checked={strategy}
-                dataTest="input-strategy"
-            />
-            <Switch
-                label={i18n.t('Preheat cache')}
-                name="preheatCache"
-                checked={preheatCache}
-                setChecked={setPreheatCache}
-                help={helpText.preheatCache}
-                dataTest="input-preheat-cache"
-            />
-            <WithAuthority pred={hasAuthorityToSkipAudit}>
-                <Switch
-                    label={i18n.t('Skip audit')}
-                    name="skipAudit"
-                    checked={skipAudit}
-                    setChecked={setSkipAudit}
-                    help={helpText.skipAudit}
-                    dataTest="input-has-authority-to-skip-audit"
-                />
-            </WithAuthority>
-            <MoreOptions dataTest="interaction-more-options">
-                <DataElementIdScheme
-                    selected={dataElementIdScheme}
-                    setSelected={setDataElementIdScheme}
-                    dataTest="input-data-element-id-scheme"
-                />
-                <OrgUnitIdScheme
-                    selected={orgUnitIdScheme}
-                    setSelected={setOrgUnitIdScheme}
-                    dataTest="input-org-unit-id-scheme"
-                />
-                <IdScheme
-                    selected={idScheme}
-                    setSelected={setIdScheme}
-                    dataTest="input-id-scheme"
-                />
-                <Switch
-                    name="skipExistingCheck"
-                    label={i18n.t('Skip exisiting check')}
-                    checked={skipExistingCheck}
-                    setChecked={setSkipExistingCheck}
-                    help={helpText.skipExistingCheck}
-                    dataTest="input-skip-exisiting-check"
-                />
-            </MoreOptions>
-            <ImportButtonStrip
-                onImport={onImport}
-                dryRunDataTest="input-dry-run"
-                importDataTest="input-import-submit"
-                dataTest="input-import-button-strip"
-            />
-            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

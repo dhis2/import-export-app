@@ -1,1 +1,1 @@
-export { FileUpload } from './FileUpload'
+export { FileUpload, SINGLE_FILE_VALIDATOR } from './FileUpload'
