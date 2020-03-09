@@ -1,18 +1,19 @@
 import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
+import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
 import { Page } from '../../components/Page'
-import { FileUpload } from '../../components/FileUpload'
+import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { GMLIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const createInitialState = prevJobDetails => ({
-    file: prevJobDetails.file,
+const createInitialValues = prevJobDetails => ({
+    files: prevJobDetails.files,
 })
 
 const GMLImport = ({ query }) => {
@@ -23,32 +24,15 @@ const GMLImport = ({ query }) => {
 
     // recreating a previously run job
     const prevJobDetails = getPrevJobDetails(query, gmlTasks)
-    const initialState = createInitialState(prevJobDetails)
+    const initialValues = createInitialValues(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(initialState.file)
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onImport = ({ dryRun }) => {
-        // validate
-        const alerts = []
-        const timestamp = new Date().getTime()
-
-        setAlerts(alerts)
-
-        if (!file) {
-            alerts.push({
-                id: `file-${timestamp}`,
-                warning: true,
-                message: i18n.t('An import file must be selected'),
-            })
-        }
-
-        if (alerts.length != 0) {
-            return
-        }
+    const onImport = values => {
+        const { dryRun, files } = values
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
@@ -56,22 +40,23 @@ const GMLImport = ({ query }) => {
         const params = [`dryRun=${dryRun}`, 'format=json'].join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
-        const jobDetails = {
-            file,
-            dryRun,
-        }
-
         uploadFile({
             url,
-            file,
+            file: files[0],
             format: 'gml',
             type: 'GML_IMPORT',
             setProgress,
             setAlerts,
             addEntry: (id, entry) =>
-                addTask('gml', id, { ...entry, jobDetails: jobDetails }),
+                addTask('gml', id, { ...entry, jobDetails: values }),
         })
         setShowFullSummaryTask(true)
+    }
+
+    const validate = values => {
+        return {
+            files: SINGLE_FILE_VALIDATOR(values.files),
+        }
     }
 
     return (
@@ -84,19 +69,26 @@ const GMLImport = ({ query }) => {
             summaryTask={getNewestTask(gmlTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
-            <FileUpload
-                name="upload"
-                file={file}
-                setFile={setFile}
-                dataTest="input-file-upload"
+            <Form
+                onSubmit={onImport}
+                initialValues={initialValues}
+                validate={validate}
+                render={({ handleSubmit, form }) => (
+                    <form onSubmit={handleSubmit}>
+                        <FileUpload name="files" dataTest="input-file-upload" />
+                        <ImportButtonStrip
+                            form={form}
+                            dryRunDataTest="input-dry-run"
+                            importDataTest="input-import-submit"
+                            dataTest="input-import-button-strip"
+                        />
+                        <FormAlerts
+                            alerts={alerts}
+                            dataTest="input-form-alerts"
+                        />
+                    </form>
+                )}
             />
-            <ImportButtonStrip
-                onImport={onImport}
-                dryRunDataTest="input-dry-run"
-                importDataTest="input-import-submit"
-                dataTest="input-import-button-strip"
-            />
-            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }
