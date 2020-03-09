@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
+import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
@@ -26,7 +27,7 @@ import {
 } from '../../utils/options'
 import { useClassKeys } from '../../hooks/useClassKeys'
 import { Page } from '../../components/Page'
-import { FileUpload } from '../../components/FileUpload'
+import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
 import { RadioGroup } from '../../components/RadioGroup'
 import { Switch } from '../../components/Switch'
 import { MoreOptions } from '../../components/MoreOptions'
@@ -36,8 +37,8 @@ import { MetadataImportIcon } from '../../components/Icon'
 import { Select } from '../../components/Select'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const createInitialState = prevJobDetails => ({
-    file: prevJobDetails.file,
+const createInitialValues = prevJobDetails => ({
+    files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     identifier: prevJobDetails.identifier || defaultIdentifierOption,
     importReportMode:
@@ -64,34 +65,11 @@ const MetadataImport = ({ query }) => {
 
     // recreating a previously run job
     const prevJobDetails = getPrevJobDetails(query, metadataTasks)
-    const initialState = createInitialState(prevJobDetails)
+    const [initialValues, setInitialValues] = useState(
+        createInitialValues(prevJobDetails)
+    )
 
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(initialState.file)
-    const [format, setFormat] = useState(initialState.format)
-    const [identifier, setIdentifier] = useState(initialState.identifier)
-    const [importReportMode, setImportReportMode] = useState(
-        initialState.importReportMode
-    )
-    const [preheatMode, setPreheatMode] = useState(initialState.preheatMode)
-    const [importStrategy, setImportStrategy] = useState(
-        initialState.importStrategy
-    )
-    const [firstRowIsHeader, setFirstRowIsHeader] = useState(
-        initialState.firstRowIsHeader
-    )
-    const [classKey, setClassKey] = useState(initialState.classKey)
-    const [atomicMode, setAtomicMode] = useState(initialState.atomicMode)
-    const [mergeMode, setMergeMode] = useState(initialState.mergeMode)
-    const [flushMode, setFlushMode] = useState(initialState.flushMode)
-    const [inclusionStrategy, setInclusionStrategy] = useState(
-        initialState.inclusionStrategy
-    )
-    const [skipSharing, setSkipSharing] = useState(initialState.skipSharing)
-    const [skipValidation, setSkipValidation] = useState(
-        initialState.skipValidation
-    )
-    const [isAsync, setIsAsync] = useState(initialState.isAsync)
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
@@ -102,37 +80,33 @@ const MetadataImport = ({ query }) => {
         validationText: classKeysValidationText,
         classKeys,
     } = useClassKeys(
-        classKey,
-        setClassKey,
+        classKey =>
+            setInitialValues(initialValues => ({
+                ...initialValues,
+                classKey: classKey,
+            })),
         prevJobDetails.classKey || undefined
     )
 
-    const onImport = ({ dryRun }) => {
-        // validate
-        const alerts = []
-        const timestamp = new Date().getTime()
-
-        setAlerts(alerts)
-
-        if (!file) {
-            alerts.push({
-                id: `file-${timestamp}`,
-                warning: true,
-                message: i18n.t('An import file must be selected'),
-            })
-        }
-
-        if (format.value == 'csv' && !classKey) {
-            alerts.push({
-                id: `classKey-${timestamp}`,
-                warning: true,
-                message: i18n.t('A class key must be selected'),
-            })
-        }
-
-        if (alerts.length != 0) {
-            return
-        }
+    const onImport = values => {
+        const {
+            dryRun,
+            files,
+            format,
+            identifier,
+            importReportMode,
+            preheatMode,
+            importStrategy,
+            atomicMode,
+            mergeMode,
+            flushMode,
+            skipSharing,
+            skipValidation,
+            inclusionStrategy,
+            isAsync,
+            firstRowIsHeader,
+            classKey,
+        } = values
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
@@ -159,36 +133,29 @@ const MetadataImport = ({ query }) => {
             .join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
-        const jobDetails = {
-            file,
-            format,
-            dryRun,
-            identifier,
-            importReportMode,
-            preheatMode,
-            importStrategy,
-            firstRowIsHeader,
-            classKey,
-            atomicMode,
-            mergeMode,
-            flushMode,
-            inclusionStrategy,
-            skipSharing,
-            skipValidation,
-            isAsync,
-        }
-
         uploadFile({
             url,
-            file,
+            file: files[0],
             format: format.value,
             type: 'METADATA_IMPORT',
             setProgress,
             setAlerts,
             addEntry: (id, entry) =>
-                addTask('metadata', id, { ...entry, jobDetails: jobDetails }),
+                addTask('metadata', id, { ...entry, jobDetails: values }),
         })
         setShowFullSummaryTask(true)
+    }
+
+    const validate = values => {
+        const classKeyValidator = (format, classKey) =>
+            format.value == 'csv' && !classKey
+                ? i18n.t('A class key must be selected')
+                : undefined
+
+        return {
+            files: SINGLE_FILE_VALIDATOR(values.files),
+            classKey: classKeyValidator(values.format, values.classKey),
+        }
     }
 
     return (
@@ -201,137 +168,116 @@ const MetadataImport = ({ query }) => {
             summaryTask={getNewestTask(metadataTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
-            <FileUpload
-                name="upload"
-                file={file}
-                setFile={setFile}
-                dataTest="input-file-upload"
+            <Form
+                onSubmit={onImport}
+                initialValues={initialValues}
+                validate={validate}
+                render={({ handleSubmit, form, values }) => (
+                    <form onSubmit={handleSubmit}>
+                        <FileUpload name="files" dataTest="input-file-upload" />
+                        <RadioGroup
+                            name="format"
+                            label={i18n.t('Format')}
+                            options={formatOptions}
+                            dataTest="input-format"
+                        />
+                        {values.format.value == 'csv' && (
+                            <>
+                                <Switch
+                                    name="firstRowIsHeader"
+                                    label={i18n.t('First row is header')}
+                                    dataTest="input-first-row-is-header"
+                                />
+                                <Select
+                                    name="classKey"
+                                    label={i18n.t('Class key')}
+                                    options={classKeys}
+                                    loading={classKeysLoading}
+                                    dataTest="input-class-key"
+                                    validationText={classKeysValidationText}
+                                    error={!!classKeysError}
+                                    dense
+                                />
+                            </>
+                        )}
+                        <RadioGroup
+                            name="identifier"
+                            label={i18n.t('Identifier')}
+                            options={identifierOptions}
+                            dataTest="input-identifier"
+                        />
+                        <RadioGroup
+                            name="importReportMode"
+                            label={i18n.t('Import report mode')}
+                            options={importReportModeOptions}
+                            dataTest="input-import-report-mode"
+                        />
+                        <RadioGroup
+                            name="preheatMode"
+                            label={i18n.t('Preheat mode')}
+                            options={preheatModeOptions}
+                            dataTest="input-preheat-mode"
+                        />
+                        <RadioGroup
+                            name="importStrategy"
+                            label={i18n.t('Import strategy')}
+                            options={importStrategyOptions}
+                            dataTest="input-import-strategy"
+                        />
+                        <RadioGroup
+                            name="atomicMode"
+                            label={i18n.t('Atomic mode')}
+                            options={atomicModeOptions}
+                            dataTest="input-atomic-mode"
+                        />
+                        <RadioGroup
+                            name="mergeMode"
+                            label={i18n.t('Merge mode')}
+                            options={mergeModeOptions}
+                            dataTest="input-merge-mode"
+                        />
+                        <MoreOptions dataTest="interaction-more-options">
+                            <RadioGroup
+                                name="flushMode"
+                                label={i18n.t('Flush mode')}
+                                options={flushModeOptions}
+                                dataTest="input-flush-mode"
+                            />
+                            <Switch
+                                name="skipSharing"
+                                label={i18n.t('Skip sharing')}
+                                dataTest="input-skip-sharing"
+                            />
+                            <Switch
+                                name="skipValidation"
+                                label={i18n.t('Skip validation')}
+                                dataTest="input-skip-validation"
+                            />
+                            <Switch
+                                name="isAsync"
+                                label={i18n.t('Async')}
+                                dataTest="input-is-async"
+                            />
+                            <RadioGroup
+                                name="inclusionStrategy"
+                                label={i18n.t('Inclusion strategy')}
+                                options={inclusionStrategyOptions}
+                                dataTest="input-inclusion-strategy"
+                            />
+                        </MoreOptions>
+                        <ImportButtonStrip
+                            form={form}
+                            dryRunDataTest="input-dry-run"
+                            importDataTest="input-import-submit"
+                            dataTest="input-import-button-strip"
+                        />
+                        <FormAlerts
+                            alerts={alerts}
+                            dataTest="input-form-alerts"
+                        />
+                    </form>
+                )}
             />
-            <RadioGroup
-                name="format"
-                label={i18n.t('Format')}
-                options={formatOptions}
-                setValue={setFormat}
-                checked={format}
-                dataTest="input-format"
-            />
-            {format.value == 'csv' && (
-                <>
-                    <Switch
-                        name="firstRowIsHeader"
-                        label={i18n.t('First row is header')}
-                        checked={firstRowIsHeader}
-                        setChecked={setFirstRowIsHeader}
-                        dataTest="input-first-row-is-header"
-                    />
-                    <Select
-                        name="classKey"
-                        label={i18n.t('Class key')}
-                        options={classKeys}
-                        selected={classKeysLoading ? undefined : classKey}
-                        setValue={setClassKey}
-                        loading={classKeysLoading}
-                        dataTest="input-class-key"
-                        validationText={classKeysValidationText}
-                        error={!!classKeysError}
-                        dense
-                    />
-                </>
-            )}
-            <RadioGroup
-                name="identifier"
-                label={i18n.t('Identifier')}
-                options={identifierOptions}
-                setValue={setIdentifier}
-                checked={identifier}
-                dataTest="input-identifier"
-            />
-            <RadioGroup
-                name="importReportMode"
-                label={i18n.t('Import report mode')}
-                options={importReportModeOptions}
-                setValue={setImportReportMode}
-                checked={importReportMode}
-                dataTest="input-import-report-mode"
-            />
-            <RadioGroup
-                name="preheatMode"
-                label={i18n.t('Preheat mode')}
-                options={preheatModeOptions}
-                setValue={setPreheatMode}
-                checked={preheatMode}
-                dataTest="input-preheat-mode"
-            />
-            <RadioGroup
-                name="importStrategy"
-                label={i18n.t('Import strategy')}
-                options={importStrategyOptions}
-                setValue={setImportStrategy}
-                checked={importStrategy}
-                dataTest="input-import-strategy"
-            />
-            <RadioGroup
-                name="atomicMode"
-                label={i18n.t('Atomic mode')}
-                options={atomicModeOptions}
-                setValue={setAtomicMode}
-                checked={atomicMode}
-                dataTest="input-atomic-mode"
-            />
-            <RadioGroup
-                name="mergeMode"
-                label={i18n.t('Merge mode')}
-                options={mergeModeOptions}
-                setValue={setMergeMode}
-                checked={mergeMode}
-                dataTest="input-merge-mode"
-            />
-            <MoreOptions dataTest="interaction-more-options">
-                <RadioGroup
-                    name="flushMode"
-                    label={i18n.t('Flush mode')}
-                    options={flushModeOptions}
-                    setValue={setFlushMode}
-                    checked={flushMode}
-                    dataTest="input-flush-mode"
-                />
-                <Switch
-                    name="skipSharing"
-                    label={i18n.t('Skip sharing')}
-                    checked={skipSharing}
-                    setChecked={setSkipSharing}
-                    dataTest="input-skip-sharing"
-                />
-                <Switch
-                    name="skipValidation"
-                    label={i18n.t('Skip validation')}
-                    checked={skipValidation}
-                    setChecked={setSkipValidation}
-                    dataTest="input-skip-validation"
-                />
-                <Switch
-                    name="isAsync"
-                    label={i18n.t('Async')}
-                    checked={isAsync}
-                    setChecked={setIsAsync}
-                    dataTest="input-is-async"
-                />
-                <RadioGroup
-                    name="inclusionStrategy"
-                    label={i18n.t('Inclusion strategy')}
-                    options={inclusionStrategyOptions}
-                    setValue={setInclusionStrategy}
-                    checked={inclusionStrategy}
-                    dataTest="input-inclusion-strategy"
-                />
-            </MoreOptions>
-            <ImportButtonStrip
-                onImport={onImport}
-                dryRunDataTest="input-dry-run"
-                importDataTest="input-import-submit"
-                dataTest="input-import-button-strip"
-            />
-            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }

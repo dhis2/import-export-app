@@ -8,15 +8,15 @@ const classKeyQuery = {
     },
 }
 
-const useClassKeys = (value, setValue, prevValue) => {
+const useClassKeys = (setValue, prevValue) => {
     const [classKeys, setClassKeys] = useState([])
 
     const { loading, error } = useDataQuery(classKeyQuery, {
         onComplete: classData => {
             setClassKeys(classData.keys.map(k => ({ value: k, label: k })))
-            if (prevValue && !value) {
+            if (prevValue) {
                 setValue(prevValue)
-            } else if (!value) {
+            } else {
                 setValue({
                     value: classData.keys[0],
                     label: classData.keys[0],
