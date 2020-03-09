@@ -141,7 +141,7 @@ const DataImport = ({ query }) => {
                             options={formatAdxPdfOptions}
                             dataTest="input-format"
                         />
-                        {values.format == 'csv' && (
+                        {values.format.value == 'csv' && (
                             <Switch
                                 label={i18n.t('First row is header')}
                                 name="firstRowIsHeader"
