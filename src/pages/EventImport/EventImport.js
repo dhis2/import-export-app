@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useConfig } from '@dhis2/app-runtime'
+import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails, uploadFile } from '../../utils/helper'
@@ -11,7 +12,7 @@ import {
     defaultEventIdSchemeOption,
 } from '../../utils/options'
 import { Page } from '../../components/Page'
-import { FileUpload } from '../../components/FileUpload'
+import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
 import { RadioGroup } from '../../components/RadioGroup'
 import { MoreOptions } from '../../components/MoreOptions'
 import { EventIdScheme, OrgUnitIdScheme } from '../../components/ElementSchemes'
@@ -20,8 +21,8 @@ import { FormAlerts } from '../../components/FormAlerts'
 import { EventIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
-const createInitialState = prevJobDetails => ({
-    file: prevJobDetails.file,
+const createInitialValues = prevJobDetails => ({
+    files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
@@ -36,39 +37,15 @@ const EventImport = ({ query }) => {
 
     // recreating a previously run job
     const prevJobDetails = getPrevJobDetails(query, eventTasks)
-    const initialState = createInitialState(prevJobDetails)
+    const initialValues = createInitialValues(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
-    const [file, setFile] = useState(initialState.file)
-    const [format, setFormat] = useState(initialState.format)
-    const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        initialState.orgUnitIdScheme
-    )
-    const [eventIdScheme, setEventIdScheme] = useState(
-        initialState.eventIdScheme
-    )
     const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onImport = ({ dryRun }) => {
-        // validate
-        const alerts = []
-        const timestamp = new Date().getTime()
-
-        setAlerts(alerts)
-
-        if (!file) {
-            alerts.push({
-                id: `file-${timestamp}`,
-                warning: true,
-                message: i18n.t('An import file must be selected'),
-            })
-        }
-
-        if (alerts.length != 0) {
-            return
-        }
+    const onImport = values => {
+        const { dryRun, files, format, orgUnitIdScheme, eventIdScheme } = values
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
@@ -83,25 +60,23 @@ const EventImport = ({ query }) => {
         ].join('&')
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
-        const jobDetails = {
-            file,
-            format,
-            dryRun,
-            eventIdScheme,
-            orgUnitIdScheme,
-        }
-
         uploadFile({
             url,
-            file,
+            file: files[0],
             format: format.value,
             type: 'EVENT_IMPORT',
             setProgress,
             setAlerts,
             addEntry: (id, entry) =>
-                addTask('event', id, { ...entry, jobDetails: jobDetails }),
+                addTask('event', id, { ...entry, jobDetails: values }),
         })
         setShowFullSummaryTask(true)
+    }
+
+    const validate = values => {
+        return {
+            files: SINGLE_FILE_VALIDATOR(values.files),
+        }
     }
 
     return (
@@ -114,39 +89,36 @@ const EventImport = ({ query }) => {
             summaryTask={getNewestTask(eventTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
-            <FileUpload
-                name="upload"
-                file={file}
-                setFile={setFile}
-                dataTest="input-file-upload"
+            <Form
+                onSubmit={onImport}
+                initialValues={initialValues}
+                validate={validate}
+                render={({ handleSubmit, form }) => (
+                    <form onSubmit={handleSubmit}>
+                        <FileUpload name="files" dataTest="input-file-upload" />
+                        <RadioGroup
+                            name="format"
+                            label={i18n.t('Format')}
+                            options={formatOptions}
+                            dataTest="input-format"
+                        />
+                        <MoreOptions dataTest="interaction-more-options">
+                            <EventIdScheme dataTest="input-event-id-scheme" />
+                            <OrgUnitIdScheme dataTest="input-org-unit-id-scheme" />
+                        </MoreOptions>
+                        <ImportButtonStrip
+                            form={form}
+                            dryRunDataTest="input-dry-run"
+                            importDataTest="input-import-submit"
+                            dataTest="input-import-button-strip"
+                        />
+                        <FormAlerts
+                            alerts={alerts}
+                            dataTest="input-form-alerts"
+                        />
+                    </form>
+                )}
             />
-            <RadioGroup
-                name="format"
-                label={i18n.t('Format')}
-                options={formatOptions}
-                setValue={setFormat}
-                checked={format}
-                dataTest="input-format"
-            />
-            <MoreOptions dataTest="interaction-more-options">
-                <EventIdScheme
-                    selected={eventIdScheme}
-                    setSelected={setEventIdScheme}
-                    dataTest="input-event-id-scheme"
-                />
-                <OrgUnitIdScheme
-                    selected={orgUnitIdScheme}
-                    setSelected={setOrgUnitIdScheme}
-                    dataTest="input-org-unit-id-scheme"
-                />
-            </MoreOptions>
-            <ImportButtonStrip
-                onImport={onImport}
-                dryRunDataTest="input-dry-run"
-                importDataTest="input-import-submit"
-                dataTest="input-import-button-strip"
-            />
-            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }
