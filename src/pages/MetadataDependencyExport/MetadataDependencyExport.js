@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import { Form, hasValue, composeValidators } from '@dhis2/ui-forms'
 import { Button } from '@dhis2/ui-core'
 
 import { locationAssign } from '../../utils/helper'
@@ -12,31 +13,32 @@ import {
     defaultCompressionOption,
     defaultObjectTypeOption,
 } from '../../utils/options'
-import { useObjects } from '../../hooks/useObjects'
 import { Page } from '../../components/Page'
 import { Switch } from '../../components/Switch'
 import { RadioGroup } from '../../components/RadioGroup'
+import {
+    Objects,
+    SINGLE_EXACT_OBJECT_VALIDATOR,
+} from '../../components/Objects'
 import { Select } from '../../components/Select'
 import { MetadataDependencyExportIcon } from '../../components/Icon'
 
+const initialValues = {
+    objectType: defaultObjectTypeOption,
+    object: undefined,
+    format: defaultFormatOption,
+    compression: defaultCompressionOption,
+    skipSharing: false,
+}
+
 const MetadataDependencyExport = () => {
-    const [objectType, setObjectType] = useState(defaultObjectTypeOption)
-    const [objectListSelected, setObjectListSelected] = useState(undefined)
-    const [format, setFormat] = useState(defaultFormatOption)
-    const [compression, setCompression] = useState(defaultCompressionOption)
-    const [skipSharing, setSkipSharing] = useState(false)
     const { baseUrl } = useConfig()
 
-    const {
-        loading: objectsLoading,
-        error: objectsError,
-        validationText: objectsValidationText,
-        objects,
-    } = useObjects(objectType, setObjectListSelected)
+    const onExport = values => {
+        const { objectType, object, format, compression, skipSharing } = values
 
-    const onExport = () => {
         const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = `${objectType.value}/${objectListSelected.value}/metadata`
+        const endpoint = `${objectType.value}/${object.value}/metadata`
         const endpointExtension = compression.value
             ? `${format.value}.${compression.value}`
             : format.value
@@ -45,6 +47,13 @@ const MetadataDependencyExport = () => {
         locationAssign(url)
     }
 
+    const validate = values => ({
+        object: composeValidators(
+            hasValue,
+            SINGLE_EXACT_OBJECT_VALIDATOR
+        )(values.object),
+    })
+
     return (
         <Page
             title={PAGE_NAME}
@@ -52,60 +61,53 @@ const MetadataDependencyExport = () => {
             icon={PAGE_ICON}
             dataTest="page-export-metadata-dependency"
         >
-            <Select
-                filled
-                initialFocus
-                name="objectType"
-                label={i18n.t('Object type')}
-                options={objectTypeOptions}
-                setValue={setObjectType}
-                selected={objectType}
-                dataTest="input-object-type"
+            <Form
+                onSubmit={onExport}
+                initialValues={initialValues}
+                validate={validate}
+                render={({ handleSubmit, form, values }) => (
+                    <form onSubmit={handleSubmit}>
+                        <Select
+                            filled
+                            initialFocus
+                            name="objectType"
+                            label={i18n.t('Object type')}
+                            options={objectTypeOptions}
+                            dataTest="input-object-type"
+                        />
+                        <Objects
+                            objectType={values.objectType}
+                            form={form}
+                            dataTest="input-object-select"
+                        />
+                        <RadioGroup
+                            name="format"
+                            label={i18n.t('Format')}
+                            options={formatNoCsvOptions}
+                            dataTest="input-format"
+                        />
+                        <RadioGroup
+                            name="compression"
+                            label={i18n.t('Compression')}
+                            options={compressionOptions}
+                            dataTest="input-compression"
+                        />
+                        <Switch
+                            name="skipSharing"
+                            label={i18n.t('Skip sharing')}
+                            dataTest="input-skip-sharing"
+                        />
+                        <Button
+                            primary
+                            disabled={values.object == undefined}
+                            type="submit"
+                            dataTest="input-export-submit"
+                        >
+                            {i18n.t('Export')}
+                        </Button>
+                    </form>
+                )}
             />
-            <Select
-                loading={objectsLoading}
-                name="object"
-                label={i18n.t('Object')}
-                options={objects}
-                selected={objectListSelected}
-                setValue={setObjectListSelected}
-                dataTest="input-object-select"
-                validationText={objectsValidationText}
-                error={!!objectsError}
-                filterable
-                dense
-            />
-            <RadioGroup
-                name="format"
-                label={i18n.t('Format')}
-                options={formatNoCsvOptions}
-                setValue={setFormat}
-                checked={format}
-                dataTest="input-format"
-            />
-            <RadioGroup
-                name="compression"
-                label={i18n.t('Compression')}
-                options={compressionOptions}
-                setValue={setCompression}
-                checked={compression}
-                dataTest="input-compression"
-            />
-            <Switch
-                name="skipSharing"
-                label={i18n.t('Skip sharing')}
-                checked={skipSharing}
-                setChecked={setSkipSharing}
-                dataTest="input-skip-sharing"
-            />
-            <Button
-                primary
-                disabled={objectListSelected == undefined}
-                onClick={onExport}
-                dataTest="input-export-submit"
-            >
-                {i18n.t('Export')}
-            </Button>
         </Page>
     )
 }
