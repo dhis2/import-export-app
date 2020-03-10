@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-03-10T12:14:57.137Z\n"
-"PO-Revision-Date: 2020-03-10T12:14:57.137Z\n"
+"POT-Creation-Date: 2020-03-10T12:58:58.899Z\n"
+"PO-Revision-Date: 2020-03-10T12:58:58.899Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -161,6 +161,9 @@ msgid "Type count"
 msgstr ""
 
 msgid "more options"
+msgstr ""
+
+msgid "One object must be selected"
 msgstr ""
 
 msgid "Organisation unit"
