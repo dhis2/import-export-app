@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { orgUnitIdSchemeOptions } from '../../utils/options'
-import { Select } from '../Select'
+import { SelectField } from '../Select'
 
 const OrgUnitIdScheme = ({ dataTest }) => {
     const { baseUrl } = useConfig()
@@ -28,7 +28,7 @@ const OrgUnitIdScheme = ({ dataTest }) => {
 
     const options = [...orgUnitIdSchemeOptions, ...schemes]
     return (
-        <Select
+        <SelectField
             name="orgUnitIdScheme"
             label={i18n.t('Organisation unit ID scheme')}
             options={options}

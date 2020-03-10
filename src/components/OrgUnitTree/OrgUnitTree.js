@@ -32,7 +32,8 @@ const orgQuery = {
 }
 
 const OrgUnitTree = ({
-    input: { value: selected, onChange: setSelected },
+    selected,
+    setSelected,
     meta,
     dataTest,
     multiSelect = true,
@@ -169,11 +170,9 @@ const OrgUnitTree = ({
 
 OrgUnitTree.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    input: PropTypes.shape({
-        value: PropTypes.arrayOf(PropTypes.string).isRequired,
-        onChange: PropTypes.func.isRequired,
-    }).isRequired,
     meta: PropTypes.object.isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelected: PropTypes.func.isRequired,
     multiSelect: PropTypes.bool,
 }
 

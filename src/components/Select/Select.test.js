@@ -18,6 +18,7 @@ const props = {
     options: options,
     checked: options[0],
     setValue: setValue,
+    meta: {},
     dataTest: 'select-object-type',
 }
 

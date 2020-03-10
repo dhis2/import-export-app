@@ -15,12 +15,12 @@ import {
 } from '../../utils/options'
 import { Page } from '../../components/Page'
 import { Switch } from '../../components/Switch'
-import { RadioGroup } from '../../components/RadioGroup'
+import { RadioGroupField } from '../../components/RadioGroup'
 import {
     Objects,
     SINGLE_EXACT_OBJECT_VALIDATOR,
 } from '../../components/Objects'
-import { Select } from '../../components/Select'
+import { SelectField } from '../../components/Select'
 import { MetadataDependencyExportIcon } from '../../components/Icon'
 
 const initialValues = {
@@ -67,7 +67,7 @@ const MetadataDependencyExport = () => {
                 validate={validate}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
-                        <Select
+                        <SelectField
                             filled
                             initialFocus
                             name="objectType"
@@ -80,13 +80,13 @@ const MetadataDependencyExport = () => {
                             form={form}
                             dataTest="input-object-select"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="format"
                             label={i18n.t('Format')}
                             options={formatNoCsvOptions}
                             dataTest="input-format"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="compression"
                             label={i18n.t('Compression')}
                             options={compressionOptions}

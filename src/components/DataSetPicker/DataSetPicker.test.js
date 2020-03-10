@@ -22,6 +22,7 @@ const props = {
     multiSelect: false,
     withFilter: false,
     withActions: false,
+    meta: {},
     dataTest: 'data-set-picker',
 }
 

@@ -72,7 +72,7 @@ export const tasksState = {
             error: false,
             importType: 'DATAVALUE_IMPORT',
             jobDetails: {
-                file: new File([], 'data1.json'),
+                files: [new File([], 'data1.json')],
                 format: {
                     value: 'json',
                     label: 'JSON',
@@ -194,7 +194,7 @@ export const tasksState = {
             error: false,
             importType: 'DATAVALUE_IMPORT',
             jobDetails: {
-                file: new File([], 'data2.json'),
+                files: [new File([], 'data2.json')],
                 format: {
                     value: 'json',
                     label: 'JSON',
@@ -274,7 +274,7 @@ export const tasksState = {
             error: true,
             importType: 'EVENT_IMPORT',
             jobDetails: {
-                file: new File([], 'event1.json'),
+                files: [new File([], 'event1.json')],
                 format: {
                     value: 'json',
                     label: 'JSON',
@@ -347,7 +347,7 @@ export const tasksState = {
             error: true,
             importType: 'GML_IMPORT',
             jobDetails: {
-                file: new File([], 'gml1.gml'),
+                files: [new File([], 'gml1.gml')],
                 dryRun: true,
             },
         },
@@ -408,7 +408,7 @@ export const tasksState = {
             error: false,
             importType: 'METADATA_IMPORT',
             jobDetails: {
-                file: new File([], 'metadata1.csv'),
+                files: [new File([], 'metadata1.csv')],
                 format: {
                     value: 'csv',
                     label: 'CSV',
@@ -539,7 +539,7 @@ export const jobOverviewState = {
             error: false,
             importType: 'DATAVALUE_IMPORT',
             jobDetails: {
-                file: {},
+                files: [],
                 format: {
                     value: 'json',
                     label: 'JSON',

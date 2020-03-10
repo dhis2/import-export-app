@@ -15,8 +15,29 @@ const SINGLE_EXACT_PROGRAM_VALIDATOR = selectedPrograms =>
         ? i18n.t('One program must be selected')
         : undefined
 
+const Wrapper = ({ input: { value, onChange }, meta, ...rest }) => (
+    <ProgramPicker
+        meta={meta}
+        selected={value}
+        setSelected={onChange}
+        {...rest}
+    />
+)
+
+Wrapper.propTypes = {
+    input: PropTypes.shape({
+        value: PropTypes.arrayOf(PropTypes.string).isRequired,
+        onChange: PropTypes.func,
+    }).isRequired,
+    meta: PropTypes.shape({
+        error: PropTypes.string,
+        pristine: PropTypes.bool,
+        touched: PropTypes.bool,
+    }).isRequired,
+}
+
 const ProgramPickerField = ({ name, ...rest }) => {
-    return <Field component={ProgramPicker} name={name} {...rest} />
+    return <Field component={Wrapper} name={name} {...rest} />
 }
 
 ProgramPickerField.propTypes = {

@@ -18,7 +18,8 @@ const programQuery = {
 }
 
 const ProgramPicker = ({
-    input: { value: selected, onChange: setSelected },
+    selected,
+    setSelected,
     meta,
     dataTest,
     multiSelect = true,
@@ -82,11 +83,9 @@ const ProgramPicker = ({
 
 ProgramPicker.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    input: PropTypes.shape({
-        value: PropTypes.arrayOf(PropTypes.string).isRequired,
-        onChange: PropTypes.func.isRequired,
-    }).isRequired,
     meta: PropTypes.object.isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelected: PropTypes.func.isRequired,
     autoSelectFirst: PropTypes.bool,
     multiSelect: PropTypes.bool,
     withActions: PropTypes.bool,

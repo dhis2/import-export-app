@@ -16,9 +16,9 @@ import {
 } from '../../utils/options'
 import { ALL_VALUE } from '../../hooks/useProgramStages'
 import { Page } from '../../components/Page'
-import { RadioGroup } from '../../components/RadioGroup'
+import { RadioGroupField } from '../../components/RadioGroup'
 import {
-    DatePicker,
+    DatePickerField,
     DATE_VALIDATOR,
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
@@ -159,23 +159,23 @@ const EventExport = () => {
                             form={form}
                             dataTest="input-program-stage-select"
                         />
-                        <DatePicker
+                        <DatePickerField
                             name="startDate"
                             label={i18n.t('Start date')}
                             dataTest="input-start-date"
                         />
-                        <DatePicker
+                        <DatePickerField
                             name="endDate"
                             label={i18n.t('End date')}
                             dataTest="input-end-date"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="format"
                             label={i18n.t('Format')}
                             options={formatOptions}
                             dataTest="input-format"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="compression"
                             label={i18n.t('Compression')}
                             options={compressionOptions}
@@ -188,7 +188,7 @@ const EventExport = () => {
                                 dataTest="input-include-deleted"
                             />
                             <IdScheme dataTest="input-id-scheme" />
-                            <RadioGroup
+                            <RadioGroupField
                                 name="inclusion"
                                 label={i18n.t('Inclusion')}
                                 options={inclusionOptions}

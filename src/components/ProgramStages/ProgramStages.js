@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { Select } from '../Select'
+import { SelectField } from '../Select'
 import { useProgramStages } from '../../hooks/useProgramStages'
 
 const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
@@ -21,7 +21,7 @@ const ProgramStages = ({ selectedPrograms, form, dataTest }) => {
     } = useProgramStages(program, setProgramStage)
 
     return (
-        <Select
+        <SelectField
             name="programStage"
             loading={programStagesLoading}
             label={i18n.t('Program stage')}

@@ -10,8 +10,29 @@ const SINGLE_DATASET_VALIDATOR = selectedDataSets =>
         ? i18n.t('At least one data set must be selected')
         : undefined
 
+const Wrapper = ({ input: { value, onChange }, meta, ...rest }) => (
+    <DataSetPicker
+        meta={meta}
+        selected={value}
+        setSelected={onChange}
+        {...rest}
+    />
+)
+
+Wrapper.propTypes = {
+    input: PropTypes.shape({
+        value: PropTypes.arrayOf(PropTypes.string).isRequired,
+        onChange: PropTypes.func,
+    }).isRequired,
+    meta: PropTypes.shape({
+        error: PropTypes.string,
+        pristine: PropTypes.bool,
+        touched: PropTypes.bool,
+    }).isRequired,
+}
+
 const DataSetPickerField = ({ name, ...rest }) => {
-    return <Field component={DataSetPicker} name={name} {...rest} />
+    return <Field component={Wrapper} name={name} {...rest} />
 }
 
 DataSetPickerField.propTypes = {

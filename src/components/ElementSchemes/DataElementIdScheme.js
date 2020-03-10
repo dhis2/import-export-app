@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { dataElementIdSchemeOptions } from '../../utils/options'
-import { Select } from '../Select'
+import { SelectField } from '../Select'
 
 const DataElementIdScheme = ({ dataTest }) => {
     const { baseUrl } = useConfig()
@@ -28,7 +28,7 @@ const DataElementIdScheme = ({ dataTest }) => {
 
     const options = [...dataElementIdSchemeOptions, ...schemes]
     return (
-        <Select
+        <SelectField
             name="dataElementIdScheme"
             label={i18n.t('Data element ID scheme')}
             options={options}

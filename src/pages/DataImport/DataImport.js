@@ -17,7 +17,7 @@ import {
 } from '../../utils/options'
 import { Page } from '../../components/Page'
 import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
-import { RadioGroup } from '../../components/RadioGroup'
+import { RadioGroupField } from '../../components/RadioGroup'
 import { Switch } from '../../components/Switch'
 import {
     WithAuthority,
@@ -135,7 +135,7 @@ const DataImport = ({ query }) => {
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload name="files" dataTest="input-file-upload" />
-                        <RadioGroup
+                        <RadioGroupField
                             name="format"
                             label={i18n.t('Format')}
                             options={formatAdxPdfOptions}
@@ -149,7 +149,7 @@ const DataImport = ({ query }) => {
                                 dataTest="input-first-row-is-header"
                             />
                         )}
-                        <RadioGroup
+                        <RadioGroupField
                             name="strategy"
                             label={i18n.t('Strategy')}
                             options={strategyOptions}

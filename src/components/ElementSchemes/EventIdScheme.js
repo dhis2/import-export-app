@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { Select } from '../Select'
+import { SelectField } from '../Select'
 import { eventIdSchemeOptions } from '../../utils/options'
 
 const EventIdScheme = ({ dataTest }) => {
     return (
-        <Select
+        <SelectField
             name="eventIdScheme"
             label={i18n.t('Event ID scheme')}
             options={eventIdSchemeOptions}
