@@ -58,6 +58,7 @@ const props = {
     selected: [],
     setSelected: jest.fn(),
     multiSelect: true,
+    meta: {},
     dataTest: 'out',
 }
 

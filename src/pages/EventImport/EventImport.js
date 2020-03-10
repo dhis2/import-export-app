@@ -13,7 +13,7 @@ import {
 } from '../../utils/options'
 import { Page } from '../../components/Page'
 import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
-import { RadioGroup } from '../../components/RadioGroup'
+import { RadioGroupField } from '../../components/RadioGroup'
 import { MoreOptions } from '../../components/MoreOptions'
 import { EventIdScheme, OrgUnitIdScheme } from '../../components/ElementSchemes'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
@@ -96,7 +96,7 @@ const EventImport = ({ query }) => {
                 render={({ handleSubmit, form }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload name="files" dataTest="input-file-upload" />
-                        <RadioGroup
+                        <RadioGroupField
                             name="format"
                             label={i18n.t('Format')}
                             options={formatOptions}

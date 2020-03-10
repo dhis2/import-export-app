@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { Select } from '../Select'
+import { SelectField } from '../Select'
 import { useObjects } from '../../hooks/useObjects'
 
 const SINGLE_EXACT_OBJECT_VALIDATOR = object =>
@@ -19,7 +19,7 @@ const Objects = ({ objectType, form, dataTest }) => {
     } = useObjects(objectType, setObjectListSelected)
 
     return (
-        <Select
+        <SelectField
             loading={objectsLoading}
             name="object"
             label={i18n.t('Object')}

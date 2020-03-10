@@ -110,7 +110,7 @@ test('import type filters should filter jobs', async () => {
         allJobs.find(
             j =>
                 j.importType == 'EVENT_IMPORT' &&
-                j.jobDetails.file.name == 'event1.json'
+                j.jobDetails.files[0].name == 'event1.json'
         )
     )
 

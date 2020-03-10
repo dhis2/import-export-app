@@ -28,7 +28,7 @@ import {
 import { useClassKeys } from '../../hooks/useClassKeys'
 import { Page } from '../../components/Page'
 import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
-import { RadioGroup } from '../../components/RadioGroup'
+import { RadioGroupField } from '../../components/RadioGroup'
 import { Switch } from '../../components/Switch'
 import { MoreOptions } from '../../components/MoreOptions'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
@@ -175,7 +175,7 @@ const MetadataImport = ({ query }) => {
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload name="files" dataTest="input-file-upload" />
-                        <RadioGroup
+                        <RadioGroupField
                             name="format"
                             label={i18n.t('Format')}
                             options={formatOptions}
@@ -200,44 +200,44 @@ const MetadataImport = ({ query }) => {
                                 />
                             </>
                         )}
-                        <RadioGroup
+                        <RadioGroupField
                             name="identifier"
                             label={i18n.t('Identifier')}
                             options={identifierOptions}
                             dataTest="input-identifier"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="importReportMode"
                             label={i18n.t('Import report mode')}
                             options={importReportModeOptions}
                             dataTest="input-import-report-mode"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="preheatMode"
                             label={i18n.t('Preheat mode')}
                             options={preheatModeOptions}
                             dataTest="input-preheat-mode"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="importStrategy"
                             label={i18n.t('Import strategy')}
                             options={importStrategyOptions}
                             dataTest="input-import-strategy"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="atomicMode"
                             label={i18n.t('Atomic mode')}
                             options={atomicModeOptions}
                             dataTest="input-atomic-mode"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="mergeMode"
                             label={i18n.t('Merge mode')}
                             options={mergeModeOptions}
                             dataTest="input-merge-mode"
                         />
                         <MoreOptions dataTest="interaction-more-options">
-                            <RadioGroup
+                            <RadioGroupField
                                 name="flushMode"
                                 label={i18n.t('Flush mode')}
                                 options={flushModeOptions}
@@ -258,7 +258,7 @@ const MetadataImport = ({ query }) => {
                                 label={i18n.t('Async')}
                                 dataTest="input-is-async"
                             />
-                            <RadioGroup
+                            <RadioGroupField
                                 name="inclusionStrategy"
                                 label={i18n.t('Inclusion strategy')}
                                 options={inclusionStrategyOptions}

@@ -18,7 +18,8 @@ const dataSetQuery = {
 }
 
 const DataSetPicker = ({
-    input: { value: selected, onChange: setSelected },
+    selected,
+    setSelected,
     meta,
     multiSelect = true,
     withFilter = true,
@@ -79,11 +80,9 @@ const DataSetPicker = ({
 
 DataSetPicker.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    input: PropTypes.shape({
-        value: PropTypes.arrayOf(PropTypes.string).isRequired,
-        onChange: PropTypes.func.isRequired,
-    }).isRequired,
     meta: PropTypes.object.isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelected: PropTypes.func.isRequired,
     multiSelect: PropTypes.bool,
     withActions: PropTypes.bool,
     withFilter: PropTypes.bool,

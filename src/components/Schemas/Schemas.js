@@ -25,7 +25,7 @@ const schemaQuery = {
 
 const Schemas = ({
     excludeSchemas,
-    input: { onChange: setCheckedSchemas },
+    setCheckedSchemas,
     meta,
     checkedByDefault,
     dataTest,
@@ -156,10 +156,8 @@ const Schemas = ({
 Schemas.propTypes = {
     dataTest: PropTypes.string.isRequired,
     excludeSchemas: PropTypes.object.isRequired,
-    input: PropTypes.shape({
-        onChange: PropTypes.func.isRequired,
-    }).isRequired,
     meta: PropTypes.object.isRequired,
+    setCheckedSchemas: PropTypes.func.isRequired,
     checkedByDefault: PropTypes.bool,
 }
 

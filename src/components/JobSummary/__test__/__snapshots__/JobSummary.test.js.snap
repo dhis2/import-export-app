@@ -472,7 +472,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
-                file
+                files
               </td>
               <td
                 class="jsx-996330601 "
@@ -1021,7 +1021,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
-                file
+                files
               </td>
               <td
                 class="jsx-996330601 "

@@ -8,6 +8,7 @@ const props = {
     dataTest: 'import-strip',
     dryRunDataTest: 'import-strip-dry-run-btn',
     importDataTest: 'import-strip-import-btn',
+    form: {},
     onImport: () => 1,
 }
 

@@ -15,7 +15,7 @@ import { EXCLUDE_SCHEMAS } from './helper'
 import { SchemasField, SINGLE_SCHEMA_VALIDATOR } from '../../components/Schemas'
 import { Page } from '../../components/Page'
 import { Switch } from '../../components/Switch'
-import { RadioGroup } from '../../components/RadioGroup'
+import { RadioGroupField } from '../../components/RadioGroup'
 import { MetadataExportIcon } from '../../components/Icon'
 
 const initialValues = {
@@ -71,13 +71,13 @@ const MetadataExport = () => {
                             checkedByDefault
                             dataTest="input-schemas"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="format"
                             label={i18n.t('Format')}
                             options={formatOptions}
                             dataTest="input-format"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="compression"
                             label={i18n.t('Compression')}
                             options={compressionOptions}

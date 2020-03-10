@@ -21,9 +21,9 @@ import {
     defaultIdSchemeOption,
 } from '../../utils/options'
 import { Page } from '../../components/Page'
-import { RadioGroup } from '../../components/RadioGroup'
+import { RadioGroupField } from '../../components/RadioGroup'
 import {
-    DatePicker,
+    DatePickerField,
     DATE_VALIDATOR,
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
@@ -205,24 +205,24 @@ const DataExport = () => {
                             name="selectedDataSets"
                             dataTest="input-data-set-picker"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="format"
                             label={i18n.t('Format')}
                             options={formatAdxOptions}
                             dataTest="input-format"
                         />
-                        <RadioGroup
+                        <RadioGroupField
                             name="compression"
                             label={i18n.t('Compression')}
                             options={compressionOptions}
                             dataTest="input-compression"
                         />
-                        <DatePicker
+                        <DatePickerField
                             name="startDate"
                             label={i18n.t('Start date')}
                             dataTest="input-start-date"
                         />
-                        <DatePicker
+                        <DatePickerField
                             name="endDate"
                             label={i18n.t('End date')}
                             dataTest="input-end-date"
