@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-03-10T12:58:58.899Z\n"
-"PO-Revision-Date: 2020-03-10T12:58:58.899Z\n"
+"POT-Creation-Date: 2020-03-10T15:43:09.119Z\n"
+"PO-Revision-Date: 2020-03-10T15:43:09.119Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -59,9 +59,6 @@ msgid "Please select a file"
 msgstr ""
 
 msgid "File"
-msgstr ""
-
-msgid "Choose a file to upload"
 msgstr ""
 
 msgid "Dry run"
@@ -208,7 +205,7 @@ msgstr ""
 msgid "Select None"
 msgstr ""
 
-msgid "No match found for filter"
+msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Select all"
@@ -349,9 +346,6 @@ msgstr ""
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects in the XML or JSON format."
-msgstr ""
-
-msgid "At least one schema must be selected"
 msgstr ""
 
 msgid ""
