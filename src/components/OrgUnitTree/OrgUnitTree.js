@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { useDataQuery } from '@dhis2/app-runtime'
-import { CircularLoader } from '@dhis2/ui-core'
+import { CircularLoader, Help } from '@dhis2/ui-core'
 
 import { pathToId } from '../../utils/helper'
 import { FormField } from '../FormField'
@@ -32,8 +32,8 @@ const orgQuery = {
 }
 
 const OrgUnitTree = ({
-    selected,
-    setSelected,
+    input: { value: selected, onChange: setSelected },
+    meta,
     dataTest,
     multiSelect = true,
 }) => {
@@ -159,6 +159,9 @@ const OrgUnitTree = ({
                         dataTest={`${dataTest}-tree`}
                     />
                 )}
+                {(meta.touched || !meta.pristine) && meta.error && (
+                    <Help error>{meta.error}</Help>
+                )}
             </div>
         </FormField>
     )
@@ -166,8 +169,11 @@ const OrgUnitTree = ({
 
 OrgUnitTree.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
-    setSelected: PropTypes.func.isRequired,
+    input: PropTypes.shape({
+        value: PropTypes.arrayOf(PropTypes.string).isRequired,
+        onChange: PropTypes.func.isRequired,
+    }).isRequired,
+    meta: PropTypes.object.isRequired,
     multiSelect: PropTypes.bool,
 }
 

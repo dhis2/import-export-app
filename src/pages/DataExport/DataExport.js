@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import { Form, hasValue, composeValidators } from '@dhis2/ui-forms'
 import { Button } from '@dhis2/ui-core'
 import JSZip from 'jszip'
 
@@ -21,10 +22,21 @@ import {
 } from '../../utils/options'
 import { Page } from '../../components/Page'
 import { RadioGroup } from '../../components/RadioGroup'
-import { DatePicker } from '../../components/DatePicker'
+import {
+    DatePicker,
+    DATE_VALIDATOR,
+    DATE_BEFORE_VALIDATOR,
+    DATE_AFTER_VALIDATOR,
+} from '../../components/DatePicker'
 import { Switch } from '../../components/Switch'
-import { OrgUnitTree } from '../../components/OrgUnitTree'
-import { DataSetPicker } from '../../components/DataSetPicker'
+import {
+    OrgUnitTreeField,
+    SINGLE_ORG_VALIDATOR,
+} from '../../components/OrgUnitTree'
+import {
+    DataSetPickerField,
+    SINGLE_DATASET_VALIDATOR,
+} from '../../components/DataSetPicker'
 import { MoreOptions } from '../../components/MoreOptions'
 import {
     DataElementIdScheme,
@@ -33,29 +45,6 @@ import {
 } from '../../components/ElementSchemes'
 import { FormAlerts } from '../../components/FormAlerts'
 import { DataIcon } from '../../components/Icon'
-
-const today = new Date()
-
-/*
-const attributesQuery = {
-    dataElement: {
-        resource: 'attributes',
-        params: {
-            filter: ['unique:eq:true', 'dataElementAttribute:eq:true'],
-            fields: 'id,displayName',
-            paging: 'false',
-        },
-    },
-    orgUnit: {
-        resource: 'attributes',
-        params: {
-            filter: ['unique:eq:true', 'organisationUnitAttribute:eq:true'],
-            fields: 'id,displayName',
-            paging: 'false',
-        },
-    },
-};
-*/
 
 const dataValueSetQuery = {
     sets: {
@@ -86,64 +75,43 @@ const dataValueSetQuery = {
     },
 }
 
+const today = new Date()
+const initialValues = {
+    selectedOrgUnits: [],
+    includeChildren: true,
+    selectedDataSets: [],
+    format: defaultFormatOption,
+    compression: defaultCompressionOption,
+    startDate: new Date(
+        today.getFullYear(),
+        today.getMonth() - 3,
+        today.getDate()
+    ),
+    endDate: today,
+    includeDeleted: false,
+    dataElementIdScheme: defaultDataElementIdSchemeOption,
+    orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
+    idScheme: defaultIdSchemeOption,
+}
+
 const DataExport = () => {
-    // const { loading, error, data } = useDataQuery(attributesQuery);
     const engine = useDataEngine()
-    const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
-    const [includeChildren, setIncludeChildren] = useState(true)
-    const [selectedDataSets, setSelectedDataSets] = useState([])
-    const [format, setFormat] = useState(defaultFormatOption)
-    const [compression, setCompression] = useState(defaultCompressionOption)
-    const [startDate, setStartDate] = useState(
-        new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
-    )
-    const [endDate, setEndDate] = useState(today)
-    const [includeDeleted, setIncludeDeleted] = useState(false)
-    const [dataElementIdScheme, setDataElementIdScheme] = useState(
-        defaultDataElementIdSchemeOption
-    )
-    const [orgUnitIdScheme, setOrgUnitIdScheme] = useState(
-        defaultOrgUnitIdSchemeOption
-    )
-    const [idScheme, setIdScheme] = useState(defaultIdSchemeOption)
     const [alerts, setAlerts] = useState([])
 
-    const onExport = () => {
-        // validate
-        const alerts = []
-        const timestamp = new Date().getTime()
-
-        if (selectedOrgUnits.length == 0) {
-            alerts.push({
-                id: `org-unit-length-${timestamp}`,
-                warning: true,
-                message: i18n.t(
-                    'At least one organisation unit must be selected'
-                ),
-            })
-        }
-
-        if (selectedDataSets.length == 0) {
-            alerts.push({
-                id: `data-set-length-${timestamp}`,
-                warning: true,
-                message: i18n.t('At least one data set must be selected'),
-            })
-        }
-
-        if (endDate < startDate) {
-            alerts.push({
-                id: `period-${timestamp}`,
-                warning: true,
-                message: i18n.t('End date must be after start date'),
-            })
-        }
-
-        setAlerts(alerts)
-
-        if (alerts.length != 0) {
-            return
-        }
+    const onExport = values => {
+        const {
+            selectedOrgUnits,
+            includeChildren,
+            selectedDataSets,
+            format,
+            compression,
+            startDate,
+            endDate,
+            includeDeleted,
+            dataElementIdScheme,
+            orgUnitIdScheme,
+            idScheme,
+        } = values
 
         // fetch data
         engine.query(dataValueSetQuery, {
@@ -179,7 +147,7 @@ const DataExport = () => {
                 console.error('DataExport onExport error: ', error)
                 setAlerts([
                     {
-                        id: `http-${timestamp}`,
+                        id: `http-${new Date().getTime()}`,
                         critical: true,
                         message: `${i18n.t('HTTP error when fetching data')}. ${
                             error.message
@@ -190,9 +158,26 @@ const DataExport = () => {
         })
     }
 
-    const onDateChange = stateFn => date => {
-        stateFn(date)
-    }
+    const validate = values => ({
+        selectedOrgUnits: composeValidators(
+            hasValue,
+            SINGLE_ORG_VALIDATOR
+        )(values.selectedOrgUnits),
+        selectedDataSets: composeValidators(
+            hasValue,
+            SINGLE_DATASET_VALIDATOR
+        )(values.selectedDataSets),
+        startDate: composeValidators(
+            hasValue,
+            DATE_VALIDATOR,
+            DATE_BEFORE_VALIDATOR
+        )(values.startDate, values.endDate),
+        endDate: composeValidators(
+            hasValue,
+            DATE_VALIDATOR,
+            DATE_AFTER_VALIDATOR
+        )(values.endDate, values.startDate),
+    })
 
     return (
         <Page
@@ -201,81 +186,71 @@ const DataExport = () => {
             icon={PAGE_ICON}
             dataTest="page-export-data"
         >
-            <OrgUnitTree
-                selected={selectedOrgUnits}
-                setSelected={setSelectedOrgUnits}
-                dataTest="input-org-unit-tree"
+            <Form
+                onSubmit={onExport}
+                initialValues={initialValues}
+                validate={validate}
+                render={({ handleSubmit, form }) => (
+                    <form onSubmit={handleSubmit}>
+                        <OrgUnitTreeField
+                            name="selectedOrgUnits"
+                            dataTest="input-org-unit-tree"
+                        />
+                        <Switch
+                            label={i18n.t('Include children')}
+                            name="includeChildren"
+                            dataTest="input-include-children"
+                        />
+                        <DataSetPickerField
+                            name="selectedDataSets"
+                            dataTest="input-data-set-picker"
+                        />
+                        <RadioGroup
+                            name="format"
+                            label={i18n.t('Format')}
+                            options={formatAdxOptions}
+                            dataTest="input-format"
+                        />
+                        <RadioGroup
+                            name="compression"
+                            label={i18n.t('Compression')}
+                            options={compressionOptions}
+                            dataTest="input-compression"
+                        />
+                        <DatePicker
+                            name="startDate"
+                            label={i18n.t('Start date')}
+                            dataTest="input-start-date"
+                        />
+                        <DatePicker
+                            name="endDate"
+                            label={i18n.t('End date')}
+                            dataTest="input-end-date"
+                        />
+                        <MoreOptions dataTest="interaction-more-options">
+                            <Switch
+                                label={i18n.t('Include deleted')}
+                                name="includeDeleted"
+                                dataTest="input-include-deleted"
+                            />
+                            <DataElementIdScheme dataTest="input-data-element-id-scheme" />
+                            <OrgUnitIdScheme dataTest="input-org-unit-id-scheme" />
+                            <IdScheme dataTest="input-id-scheme" />
+                        </MoreOptions>
+                        <Button
+                            primary
+                            type="submit"
+                            dataTest="input-export-submit"
+                        >
+                            {i18n.t('Export')}
+                        </Button>
+                        <FormAlerts
+                            alerts={alerts}
+                            dataTest="input-form-alerts"
+                        />
+                    </form>
+                )}
             />
-            <Switch
-                label={i18n.t('Include children')}
-                name="includeChildren"
-                checked={includeChildren}
-                setChecked={setIncludeChildren}
-                dataTest="input-include-children"
-            />
-            <DataSetPicker
-                selected={selectedDataSets}
-                setSelected={setSelectedDataSets}
-                dataTest="input-data-set-picker"
-            />
-            <RadioGroup
-                name="format"
-                label={i18n.t('Format')}
-                options={formatAdxOptions}
-                setValue={setFormat}
-                checked={format}
-                dataTest="input-format"
-            />
-            <RadioGroup
-                name="compression"
-                label={i18n.t('Compression')}
-                options={compressionOptions}
-                setValue={setCompression}
-                checked={compression}
-                dataTest="input-compression"
-            />
-            <DatePicker
-                name="startDate"
-                label={i18n.t('Start date')}
-                date={startDate}
-                onChange={onDateChange(setStartDate)}
-                dataTest="input-start-date"
-            />
-            <DatePicker
-                name="endDate"
-                label={i18n.t('End date')}
-                date={endDate}
-                onChange={onDateChange(setEndDate)}
-                dataTest="input-end-date"
-            />
-            <MoreOptions dataTest="interaction-more-options">
-                <Switch
-                    label={i18n.t('Include deleted')}
-                    name="includeDeleted"
-                    checked={includeDeleted}
-                    setChecked={setIncludeDeleted}
-                    dataTest="input-include-deleted"
-                />
-                <DataElementIdScheme
-                    selected={dataElementIdScheme}
-                    setSelected={setDataElementIdScheme}
-                    dataTest="input-data-element-id-scheme"
-                />
-                <OrgUnitIdScheme
-                    selected={orgUnitIdScheme}
-                    setSelected={setOrgUnitIdScheme}
-                    dataTest="input-org-unit-id-scheme"
-                />
-                <IdScheme
-                    selected={idScheme}
-                    setSelected={setIdScheme}
-                    dataTest="input-id-scheme"
-                />
-            </MoreOptions>
-            <Button primary onClick={onExport} dataTest="input-export-submit">
-                {i18n.t('Export')}
-            </Button>
-            <FormAlerts alerts={alerts} dataTest="input-form-alerts" />
         </Page>
     )
 }
