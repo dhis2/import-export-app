@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Form, hasValue, composeValidators } from '@dhis2/ui-forms'
@@ -38,7 +38,6 @@ import {
 } from '../../components/ProgramPicker'
 import { MoreOptions } from '../../components/MoreOptions'
 import { IdScheme } from '../../components/ElementSchemes'
-import { FormAlerts } from '../../components/FormAlerts'
 import { EventIcon } from '../../components/Icon'
 
 const today = new Date()
@@ -60,8 +59,6 @@ const initialValues = {
 }
 
 const EventExport = () => {
-    // eslint-disable-next-line no-unused-vars
-    const [alerts, setAlerts] = useState([])
     const { baseUrl } = useConfig()
 
     const onExport = values => {
@@ -206,10 +203,6 @@ const EventExport = () => {
                         >
                             {i18n.t('Export')}
                         </Button>
-                        <FormAlerts
-                            alerts={alerts}
-                            dataTest="input-form-alerts"
-                        />
                     </form>
                 )}
             />
