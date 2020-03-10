@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-03-10T10:23:07.398Z\n"
-"PO-Revision-Date: 2020-03-10T10:23:07.398Z\n"
+"POT-Creation-Date: 2020-03-10T12:14:57.137Z\n"
+"PO-Revision-Date: 2020-03-10T12:14:57.137Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -172,6 +172,9 @@ msgstr ""
 msgid "At least one organisation unit must be selected"
 msgstr ""
 
+msgid "One organisation unit must be selected"
+msgstr ""
+
 msgid "Programs"
 msgstr ""
 
@@ -179,6 +182,18 @@ msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Filter programs by name"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
+
+msgid "One program stage must be selected"
+msgstr ""
+
+msgid "Program stage"
 msgstr ""
 
 msgid "Something went wrong when loading the schemas!"
@@ -299,18 +314,6 @@ msgid "Skip exisiting check"
 msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
-msgstr ""
-
-msgid "One organisation unit must be selected"
-msgstr ""
-
-msgid "One program must be selected"
-msgstr ""
-
-msgid "One program stage must be selected"
-msgstr ""
-
-msgid "Program stage"
 msgstr ""
 
 msgid "Inclusion"
