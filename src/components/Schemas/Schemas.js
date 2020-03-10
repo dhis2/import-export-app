@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button, ButtonStrip, CircularLoader } from '@dhis2/ui-core'
+import { Button, ButtonStrip, CircularLoader, Help } from '@dhis2/ui-core'
 
 import {
     filterOutExcludedSchemas,
@@ -25,7 +25,8 @@ const schemaQuery = {
 
 const Schemas = ({
     excludeSchemas,
-    setCheckedSchemas,
+    input: { onChange: setCheckedSchemas },
+    meta,
     checkedByDefault,
     dataTest,
 }) => {
@@ -143,6 +144,9 @@ const Schemas = ({
                             )
                         })}
                     </div>
+                    {(meta.touched || !meta.pristine) && meta.error && (
+                        <Help error>{meta.error}</Help>
+                    )}
                 </>
             )}
         </div>
@@ -152,7 +156,10 @@ const Schemas = ({
 Schemas.propTypes = {
     dataTest: PropTypes.string.isRequired,
     excludeSchemas: PropTypes.object.isRequired,
-    setCheckedSchemas: PropTypes.func.isRequired,
+    input: PropTypes.shape({
+        onChange: PropTypes.func.isRequired,
+    }).isRequired,
+    meta: PropTypes.object.isRequired,
     checkedByDefault: PropTypes.bool,
 }
 
