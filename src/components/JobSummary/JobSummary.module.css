@@ -13,3 +13,7 @@
     line-height: 14px;
     color: rgb(74, 87, 104);
 }
+
+.tags > * {
+    margin-right: 10px;
+}

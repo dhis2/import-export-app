@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Divider } from '@dhis2/ui-core'
+import { Divider, Tag } from '@dhis2/ui-core'
 
 import styles from './JobSummary.module.css'
 import { jsDateToString } from '../../utils/helper'
-import { Tag } from './Tag/'
 import { Events } from './Events/'
 import { Summary } from './Summary/'
 import { Details } from './Details/'
@@ -36,15 +35,23 @@ Header.propTypes = {
 const Tags = ({ jobDetails, task }) => (
     <div className={styles.tags} data-test="job-summary-tags">
         {task.completed ? (
-            <Tag success text={i18n.t('Completed')} />
+            <Tag positive>{i18n.t('Completed')}</Tag>
         ) : (
-            <Tag text={i18n.t('In progress')} />
+            <Tag neutral>{i18n.t('In progress')}</Tag>
         )}
-        {task.error && <Tag error text={i18n.t('Error')} />}
+        {task.error && (
+            <Tag negative bold>
+                {i18n.t('Error')}
+            </Tag>
+        )}
         {task.summary && task.summary.conflicts && (
-            <Tag warning text={i18n.t('Conflicts')} />
+            <Tag negative>{i18n.t('Conflicts')}</Tag>
         )}
-        {jobDetails.dryRun && <Tag info text={i18n.t('Dry run')} />}
+        {jobDetails.dryRun && (
+            <Tag neutral bold>
+                {i18n.t('Dry run')}
+            </Tag>
+        )}
     </div>
 )
 
