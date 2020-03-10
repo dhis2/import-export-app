@@ -9,54 +9,52 @@ import styles from './RadioGroup.module.css'
 
 const CustomFieldComponent = ({
     radioName: name,
-    label,
     options,
     dataTest,
     input: { onChange, value },
 }) => (
-    <FormField label={label} dataTest={dataTest} name={name}>
-        <div className={styles.inputs}>
-            {options.map(o => (
-                <div key={o.value}>
-                    <Radio
-                        className={styles.radio}
-                        name={name}
-                        value={o.value}
-                        label={o.label}
-                        checked={o.value == value.value}
-                        onChange={() =>
-                            onChange({ value: o.value, label: o.label })
-                        }
-                        dataTest={`${dataTest}-${o.value}`}
-                    />
-                    {o.help && <Help>{o.help}</Help>}
-                </div>
-            ))}
-        </div>
-    </FormField>
+    <div className={styles.inputs}>
+        {options.map(o => (
+            <div key={o.value}>
+                <Radio
+                    className={styles.radio}
+                    name={name}
+                    value={o.value}
+                    label={o.label}
+                    checked={o.value == value.value}
+                    onChange={() =>
+                        onChange({ value: o.value, label: o.label })
+                    }
+                    dataTest={`${dataTest}-${o.value}`}
+                />
+                {o.help && <Help>{o.help}</Help>}
+            </div>
+        ))}
+    </div>
 )
 
 CustomFieldComponent.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    options: optionsPropType.isRequired,
-    radioName: PropTypes.string.isRequired,
     input: PropTypes.shape({
         value: optionPropType.isRequired,
         onChange: PropTypes.func.isRequired,
-    }),
+    }).isRequired,
+    options: optionsPropType.isRequired,
+    radioName: PropTypes.string.isRequired,
 }
 
 const RadioGroup = ({ name, label, options, dataTest }) => {
     return (
-        <Field
-            name={name}
-            component={CustomFieldComponent}
-            radioName={name}
-            label={label}
-            options={options}
-            dataTest={dataTest}
-        />
+        <FormField label={label} dataTest={dataTest}>
+            <Field
+                name={name}
+                component={CustomFieldComponent}
+                radioName={name}
+                label={label}
+                options={options}
+                dataTest={dataTest}
+            />
+        </FormField>
     )
 }
 

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-03-09T13:04:13.739Z\n"
-"PO-Revision-Date: 2020-03-09T13:04:13.739Z\n"
+"POT-Creation-Date: 2020-03-10T10:23:07.398Z\n"
+"PO-Revision-Date: 2020-03-10T10:23:07.398Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -18,6 +18,18 @@ msgid "Something went wrong when loading the data sets!"
 msgstr ""
 
 msgid "Filter data sets by name"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "Invalid date"
+msgstr ""
+
+msgid "Start date must be before end date"
+msgstr ""
+
+msgid "End date must be after start date"
 msgstr ""
 
 msgid "Something went wrong when loading the additional data element ID schemes"
@@ -157,6 +169,9 @@ msgstr ""
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
+msgid "At least one organisation unit must be selected"
+msgstr ""
+
 msgid "Programs"
 msgstr ""
 
@@ -173,6 +188,9 @@ msgid "Select All"
 msgstr ""
 
 msgid "Select None"
+msgstr ""
+
+msgid "No match found for filter"
 msgstr ""
 
 msgid "Select all"
@@ -241,15 +259,6 @@ msgstr ""
 msgid "Something went wrong when loading the program stages"
 msgstr ""
 
-msgid "At least one organisation unit must be selected"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "End date must be after start date"
-msgstr ""
-
 msgid "HTTP error when fetching data"
 msgstr ""
 
@@ -310,9 +319,6 @@ msgstr ""
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
-msgstr ""
-
-msgid "An import file must be selected"
 msgstr ""
 
 msgid ""
