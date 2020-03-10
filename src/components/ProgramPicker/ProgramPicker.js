@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { CircularLoader } from '@dhis2/ui-core'
+import { CircularLoader, Help } from '@dhis2/ui-core'
 
 import { SelectableList } from '../SelectableList'
 import { FormField } from '../FormField'
@@ -18,8 +18,8 @@ const programQuery = {
 }
 
 const ProgramPicker = ({
-    selected,
-    setSelected,
+    input: { value: selected, onChange: setSelected },
+    meta,
     dataTest,
     multiSelect = true,
     withFilter = true,
@@ -73,14 +73,20 @@ const ProgramPicker = ({
                     dataTest={`${dataTest}-list`}
                 />
             )}
+            {(meta.touched || !meta.pristine) && meta.error && (
+                <Help error>{meta.error}</Help>
+            )}
         </FormField>
     )
 }
 
 ProgramPicker.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
-    setSelected: PropTypes.func.isRequired,
+    input: PropTypes.shape({
+        value: PropTypes.arrayOf(PropTypes.string).isRequired,
+        onChange: PropTypes.func.isRequired,
+    }).isRequired,
+    meta: PropTypes.object.isRequired,
     autoSelectFirst: PropTypes.bool,
     multiSelect: PropTypes.bool,
     withActions: PropTypes.bool,
