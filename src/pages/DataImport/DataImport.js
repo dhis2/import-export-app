@@ -132,6 +132,7 @@ const DataImport = ({ query }) => {
                 onSubmit={onImport}
                 initialValues={initialValues}
                 validate={validate}
+                subscription={{ values: true }}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload name="files" dataTest="input-file-upload" />

@@ -34,7 +34,7 @@ import { MoreOptions } from '../../components/MoreOptions'
 import { ImportButtonStrip } from '../../components/ImportButtonStrip'
 import { FormAlerts } from '../../components/FormAlerts'
 import { MetadataImportIcon } from '../../components/Icon'
-import { Select } from '../../components/Select'
+import { SelectField } from '../../components/Select'
 import { TaskContext, getNewestTask } from '../../contexts/'
 
 const createInitialValues = prevJobDetails => ({
@@ -172,6 +172,7 @@ const MetadataImport = ({ query }) => {
                 onSubmit={onImport}
                 initialValues={initialValues}
                 validate={validate}
+                subscription={{ values: true }}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload name="files" dataTest="input-file-upload" />
@@ -188,7 +189,7 @@ const MetadataImport = ({ query }) => {
                                     label={i18n.t('First row is header')}
                                     dataTest="input-first-row-is-header"
                                 />
-                                <Select
+                                <SelectField
                                     name="classKey"
                                     label={i18n.t('Class key')}
                                     options={classKeys}
