@@ -23,6 +23,7 @@ const props = {
     withFilter: false,
     withActions: false,
     meta: {},
+    label: 'Program',
     dataTest: 'program-picker',
 }
 

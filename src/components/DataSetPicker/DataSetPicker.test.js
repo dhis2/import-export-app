@@ -23,6 +23,7 @@ const props = {
     withFilter: false,
     withActions: false,
     meta: {},
+    label: 'Data set',
     dataTest: 'data-set-picker',
 }
 
