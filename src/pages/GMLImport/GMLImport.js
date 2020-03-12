@@ -4,13 +4,23 @@ import { useConfig } from '@dhis2/app-runtime'
 import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
 
-import { getPrevJobDetails, uploadFile } from '../../utils/helper'
+import { getPrevJobDetails } from '../../utils/helper'
 import { Page } from '../../components/Page'
-import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
-import { ImportButtonStrip } from '../../components/ImportButtonStrip'
-import { FormAlerts } from '../../components/FormAlerts'
+import {
+    FileUpload,
+    ImportButtonStrip,
+    FormAlerts,
+} from '../../components/Inputs/'
 import { GMLIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
+import { onImport } from './form-helper'
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('GML import')
+const PAGE_DESCRIPTION = i18n.t(
+    'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
+)
+const PAGE_ICON = <GMLIcon />
 
 const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
@@ -27,37 +37,15 @@ const GMLImport = ({ query }) => {
     const initialValues = createInitialValues(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
-    const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onImport = values => {
-        const { dryRun, files } = values
-
-        // send xhr
-        const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = 'metadata/gml.json'
-        const params = [`dryRun=${dryRun}`, 'format=json'].join('&')
-        const url = `${apiBaseUrl}${endpoint}?${params}`
-
-        uploadFile({
-            url,
-            file: files[0],
-            format: 'gml',
-            type: 'GML_IMPORT',
-            setProgress,
-            setAlerts,
-            addEntry: (id, entry) =>
-                addTask('gml', id, { ...entry, jobDetails: values }),
-        })
-        setShowFullSummaryTask(true)
-    }
-
-    const validate = values => {
-        return {
-            files: SINGLE_FILE_VALIDATOR(values.files),
-        }
-    }
+    const onSubmit = onImport({
+        baseUrl,
+        setProgress,
+        addTask,
+        setShowFullSummaryTask,
+    })
 
     return (
         <Page
@@ -70,22 +58,13 @@ const GMLImport = ({ query }) => {
             showFullSummaryTask={showFullSummaryTask}
         >
             <Form
-                onSubmit={onImport}
+                onSubmit={onSubmit}
                 initialValues={initialValues}
-                validate={validate}
-                render={({ handleSubmit, form }) => (
+                render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload name="files" dataTest="input-file-upload" />
-                        <ImportButtonStrip
-                            form={form}
-                            dryRunDataTest="input-dry-run"
-                            importDataTest="input-import-submit"
-                            dataTest="input-import-button-strip"
-                        />
-                        <FormAlerts
-                            alerts={alerts}
-                            dataTest="input-form-alerts"
-                        />
+                        <FileUpload />
+                        <ImportButtonStrip form={form} />
+                        <FormAlerts alerts={submitError} />
                     </form>
                 )}
             />
@@ -98,12 +77,5 @@ GMLImport.propTypes = {
         id: PropTypes.string.isRequired,
     }),
 }
-
-// PAGE INFO
-const PAGE_NAME = i18n.t('GML import')
-const PAGE_DESCRIPTION = i18n.t(
-    'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
-)
-const PAGE_ICON = <GMLIcon />
 
 export { GMLImport }

@@ -10,7 +10,7 @@ import { SelectField } from '../Select'
 const attributeFoundIn = (attribute, collection) =>
     !!collection.find(({ value }) => value === attribute.value)
 
-const IdScheme = ({ dataTest }) => {
+const IdScheme = ({ name, label, dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -60,8 +60,8 @@ const IdScheme = ({ dataTest }) => {
     const options = [...idSchemeOptions, ...schemes]
     return (
         <SelectField
-            name="idScheme"
-            label={i18n.t('ID scheme')}
+            name={name}
+            label={label}
             options={options}
             dataTest={dataTest}
             loading={loading}
@@ -74,6 +74,8 @@ const IdScheme = ({ dataTest }) => {
 
 IdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
 }
 
 export { IdScheme }

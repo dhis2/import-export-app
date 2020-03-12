@@ -1,22 +1,31 @@
 import React from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Form, hasValue, composeValidators } from '@dhis2/ui-forms'
-import { Button } from '@dhis2/ui-core'
+import { Form } from '@dhis2/ui-forms'
 
-import { locationAssign } from '../../utils/helper'
 import {
     formatOptions,
     compressionOptions,
     defaultFormatOption,
     defaultCompressionOption,
 } from '../../utils/options'
-import { EXCLUDE_SCHEMAS } from './helper'
-import { SchemasField, SINGLE_SCHEMA_VALIDATOR } from '../../components/Schemas'
 import { Page } from '../../components/Page'
-import { Switch } from '../../components/Switch'
-import { RadioGroupField } from '../../components/RadioGroup'
+import {
+    Format,
+    Schemas,
+    Compression,
+    SkipSharing,
+    ExportButton,
+} from '../../components/Inputs'
 import { MetadataExportIcon } from '../../components/Icon'
+import { onExport } from './form-helper'
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Metadata export')
+const PAGE_DESCRIPTION = i18n.t(
+    'Export meta data like data elements and organisation units in the XML, JSON or CSV format.'
+)
+const PAGE_ICON = <MetadataExportIcon />
 
 const initialValues = {
     checkedSchemas: [],
@@ -27,30 +36,7 @@ const initialValues = {
 
 const MetadataExport = () => {
     const { baseUrl } = useConfig()
-
-    const onExport = values => {
-        const { checkedSchemas, format, compression, skipSharing } = values
-
-        // generate download url
-        const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = `metadata`
-        const endpointExtension = compression.value
-            ? `${format.value}.${compression.value}`
-            : format.value
-        const schemaParams = checkedSchemas
-            .map(name => `${name}=true`)
-            .join('&')
-        const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`
-        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-        locationAssign(url)
-    }
-
-    const validate = values => ({
-        checkedSchemas: composeValidators(
-            hasValue,
-            SINGLE_SCHEMA_VALIDATOR
-        )(values.checkedSchemas),
-    })
+    const onSubmit = onExport(baseUrl)
 
     return (
         <Page
@@ -60,53 +46,22 @@ const MetadataExport = () => {
             dataTest="page-export-metadata"
         >
             <Form
-                onSubmit={onExport}
+                onSubmit={onSubmit}
                 initialValues={initialValues}
-                validate={validate}
-                render={({ handleSubmit, form }) => (
+                render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
-                        <SchemasField
-                            name="checkedSchemas"
-                            excludeSchemas={EXCLUDE_SCHEMAS}
-                            checkedByDefault
-                            dataTest="input-schemas"
+                        <Schemas />
+                        <Format availableFormats={formatOptions} />
+                        <Compression
+                            availableCompressions={compressionOptions}
                         />
-                        <RadioGroupField
-                            name="format"
-                            label={i18n.t('Format')}
-                            options={formatOptions}
-                            dataTest="input-format"
-                        />
-                        <RadioGroupField
-                            name="compression"
-                            label={i18n.t('Compression')}
-                            options={compressionOptions}
-                            dataTest="input-compression"
-                        />
-                        <Switch
-                            name="skipSharing"
-                            label={i18n.t('Skip sharing')}
-                            dataTest="input-skip-sharing"
-                        />
-                        <Button
-                            primary
-                            type="submit"
-                            dataTest="input-export-submit"
-                        >
-                            {i18n.t('Export')}
-                        </Button>
+                        <SkipSharing value={values.skipSharing} />
+                        <ExportButton />
                     </form>
                 )}
             />
         </Page>
     )
 }
-
-// PAGE INFO
-const PAGE_NAME = i18n.t('Metadata export')
-const PAGE_DESCRIPTION = i18n.t(
-    'Export meta data like data elements and organisation units in the XML, JSON or CSV format.'
-)
-const PAGE_ICON = <MetadataExportIcon />
 
 export { MetadataExport }

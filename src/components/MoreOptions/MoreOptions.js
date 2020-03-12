@@ -9,7 +9,7 @@ const MoreOptions = ({
     children,
     initiallyVisible = false,
     label = i18n.t('more options'),
-    dataTest,
+    dataTest = 'interaction-more-options',
 }) => {
     const [hidden, setHidden] = useState(!initiallyVisible)
 
@@ -37,7 +37,7 @@ const MoreOptions = ({
 MoreOptions.propTypes = {
     children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
         .isRequired,
-    dataTest: PropTypes.string.isRequired,
+    dataTest: PropTypes.string,
     initiallyVisible: PropTypes.bool,
     label: PropTypes.string,
 }

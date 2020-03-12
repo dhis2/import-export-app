@@ -7,7 +7,7 @@ import { fetchAttributes } from '../../utils/helper'
 import { orgUnitIdSchemeOptions } from '../../utils/options'
 import { SelectField } from '../Select'
 
-const OrgUnitIdScheme = ({ dataTest }) => {
+const OrgUnitIdScheme = ({ name, label, dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -29,8 +29,8 @@ const OrgUnitIdScheme = ({ dataTest }) => {
     const options = [...orgUnitIdSchemeOptions, ...schemes]
     return (
         <SelectField
-            name="orgUnitIdScheme"
-            label={i18n.t('Organisation unit ID scheme')}
+            name={name}
+            label={label}
             options={options}
             dataTest={dataTest}
             loading={loading}
@@ -43,6 +43,8 @@ const OrgUnitIdScheme = ({ dataTest }) => {
 
 OrgUnitIdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
 }
 
 export { OrgUnitIdScheme }

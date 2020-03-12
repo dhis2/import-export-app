@@ -1,0 +1,20 @@
+import React from 'react'
+import i18n from '@dhis2/d2-i18n'
+import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { DatePickerField, DATE_VALIDATOR } from '../DatePicker'
+
+const NAME = 'endDate'
+const DATATEST = 'input-end-date'
+const LABEL = i18n.t('End date')
+const VALIDATOR = composeValidators(hasValue, DATE_VALIDATOR)
+
+const EndDate = () => (
+    <DatePickerField
+        name={NAME}
+        validator={VALIDATOR}
+        label={LABEL}
+        dataTest={DATATEST}
+    />
+)
+
+export { EndDate }

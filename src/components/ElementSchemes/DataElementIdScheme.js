@@ -7,7 +7,7 @@ import { fetchAttributes } from '../../utils/helper'
 import { dataElementIdSchemeOptions } from '../../utils/options'
 import { SelectField } from '../Select'
 
-const DataElementIdScheme = ({ dataTest }) => {
+const DataElementIdScheme = ({ name, label, dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -29,8 +29,8 @@ const DataElementIdScheme = ({ dataTest }) => {
     const options = [...dataElementIdSchemeOptions, ...schemes]
     return (
         <SelectField
-            name="dataElementIdScheme"
-            label={i18n.t('Data element ID scheme')}
+            name={name}
+            label={label}
             options={options}
             dataTest={dataTest}
             loading={loading}
@@ -43,6 +43,8 @@ const DataElementIdScheme = ({ dataTest }) => {
 
 DataElementIdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
 }
 
 export { DataElementIdScheme }

@@ -4,11 +4,9 @@ import { useConfig } from '@dhis2/app-runtime'
 import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
 
-import { getPrevJobDetails, uploadFile } from '../../utils/helper'
-import { helpText } from '../../utils/text'
+import { getPrevJobDetails } from '../../utils/helper'
 import {
     formatAdxPdfOptions,
-    strategyOptions,
     defaultFormatOption,
     defaultStrategyOption,
     defaultDataElementIdSchemeOption,
@@ -16,23 +14,35 @@ import {
     defaultIdSchemeOption,
 } from '../../utils/options'
 import { Page } from '../../components/Page'
-import { FileUpload, SINGLE_FILE_VALIDATOR } from '../../components/FileUpload'
-import { RadioGroupField } from '../../components/RadioGroup'
-import { Switch } from '../../components/Switch'
+import {
+    FileUpload,
+    Format,
+    FirstRowIsHeader,
+    Strategy,
+    PreheatCache,
+    SkipAudit,
+    SkipExistingCheck,
+    DataElementIdScheme,
+    IdScheme,
+    OrgUnitIdScheme,
+    ImportButtonStrip,
+    FormAlerts,
+} from '../../components/Inputs'
 import {
     WithAuthority,
     hasAuthorityToSkipAudit,
 } from '../../components/WithAuthority'
 import { MoreOptions } from '../../components/MoreOptions'
-import {
-    DataElementIdScheme,
-    IdScheme,
-    OrgUnitIdScheme,
-} from '../../components/ElementSchemes'
-import { ImportButtonStrip } from '../../components/ImportButtonStrip'
-import { FormAlerts } from '../../components/FormAlerts'
 import { DataIcon } from '../../components/Icon'
 import { TaskContext, getNewestTask } from '../../contexts/'
+import { onImport } from './form-helper'
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Data import')
+const PAGE_DESCRIPTION = i18n.t(
+    'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
+)
+const PAGE_ICON = <DataIcon />
 
 const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
@@ -60,63 +70,15 @@ const DataImport = ({ query }) => {
     const initialValues = createInitialValues(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
-    const [alerts, setAlerts] = useState([])
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const { baseUrl } = useConfig()
 
-    const onImport = values => {
-        const {
-            dryRun,
-            files,
-            strategy,
-            preheatCache,
-            skipAudit,
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            skipExistingCheck,
-            format,
-            firstRowIsHeader,
-        } = values
-
-        // send xhr
-        const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = 'dataValueSets.json'
-        const params = [
-            'async=true',
-            `dryRun=${dryRun}`,
-            `strategy=${strategy.value}`,
-            `preheatCache=${preheatCache}`,
-            `skipAudit=${skipAudit}`,
-            `dataElementIdScheme=${dataElementIdScheme.value}`,
-            `orgUnitIdScheme=${orgUnitIdScheme.value}`,
-            `idScheme=${idScheme.value}`,
-            `skipExistingCheck=${skipExistingCheck}`,
-            `format=${format.value}`,
-            format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
-        ]
-            .filter(s => s != '')
-            .join('&')
-        const url = `${apiBaseUrl}${endpoint}?${params}`
-
-        uploadFile({
-            url,
-            file: files[0],
-            format: format.value,
-            type: 'DATAVALUE_IMPORT',
-            setProgress,
-            setAlerts,
-            addEntry: (id, entry) =>
-                addTask('data', id, { ...entry, jobDetails: values }),
-        })
-        setShowFullSummaryTask(true)
-    }
-
-    const validate = values => {
-        return {
-            files: SINGLE_FILE_VALIDATOR(values.files),
-        }
-    }
+    const onSubmit = onImport({
+        baseUrl,
+        setProgress,
+        addTask,
+        setShowFullSummaryTask,
+    })
 
     return (
         <Page
@@ -129,71 +91,32 @@ const DataImport = ({ query }) => {
             showFullSummaryTask={showFullSummaryTask}
         >
             <Form
-                onSubmit={onImport}
+                onSubmit={onSubmit}
                 initialValues={initialValues}
-                validate={validate}
                 subscription={{ values: true }}
-                render={({ handleSubmit, form, values }) => (
+                render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload name="files" dataTest="input-file-upload" />
-                        <RadioGroupField
-                            name="format"
-                            label={i18n.t('Format')}
-                            options={formatAdxPdfOptions}
-                            dataTest="input-format"
+                        <FileUpload />
+                        <Format availableFormats={formatAdxPdfOptions} />
+                        <FirstRowIsHeader
+                            show={values.format.value == 'csv'}
+                            value={values.firstRowIsHeader}
                         />
-                        {values.format.value == 'csv' && (
-                            <Switch
-                                label={i18n.t('First row is header')}
-                                name="firstRowIsHeader"
-                                value={values.firstRowIsHeader}
-                                dataTest="input-first-row-is-header"
-                            />
-                        )}
-                        <RadioGroupField
-                            name="strategy"
-                            label={i18n.t('Strategy')}
-                            options={strategyOptions}
-                            dataTest="input-strategy"
-                        />
-                        <Switch
-                            label={i18n.t('Preheat cache')}
-                            name="preheatCache"
-                            value={values.preheatCache}
-                            help={helpText.preheatCache}
-                            dataTest="input-preheat-cache"
-                        />
+                        <Strategy />
+                        <PreheatCache value={values.preheatCache} />
                         <WithAuthority pred={hasAuthorityToSkipAudit}>
-                            <Switch
-                                label={i18n.t('Skip audit')}
-                                name="skipAudit"
-                                value={values.skipAudit}
-                                help={helpText.skipAudit}
-                                dataTest="input-has-authority-to-skip-audit"
-                            />
+                            <SkipAudit value={values.skipAudit} />
                         </WithAuthority>
-                        <MoreOptions dataTest="interaction-more-options">
-                            <DataElementIdScheme dataTest="input-data-element-id-scheme" />
-                            <OrgUnitIdScheme dataTest="input-org-unit-id-scheme" />
-                            <IdScheme dataTest="input-id-scheme" />
-                            <Switch
-                                name="skipExistingCheck"
-                                label={i18n.t('Skip exisiting check')}
+                        <MoreOptions>
+                            <DataElementIdScheme />
+                            <OrgUnitIdScheme />
+                            <IdScheme />
+                            <SkipExistingCheck
                                 value={values.skipExistingCheck}
-                                help={helpText.skipExistingCheck}
-                                dataTest="input-skip-exisiting-check"
                             />
                         </MoreOptions>
-                        <ImportButtonStrip
-                            form={form}
-                            dryRunDataTest="input-dry-run"
-                            importDataTest="input-import-submit"
-                            dataTest="input-import-button-strip"
-                        />
-                        <FormAlerts
-                            alerts={alerts}
-                            dataTest="input-form-alerts"
-                        />
+                        <ImportButtonStrip form={form} />
+                        <FormAlerts alerts={submitError} />
                     </form>
                 )}
             />
@@ -206,12 +129,5 @@ DataImport.propTypes = {
         id: PropTypes.string.isRequired,
     }),
 }
-
-// PAGE INFO
-const PAGE_NAME = i18n.t('Data import')
-const PAGE_DESCRIPTION = i18n.t(
-    'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
-)
-const PAGE_ICON = <DataIcon />
 
 export { DataImport }

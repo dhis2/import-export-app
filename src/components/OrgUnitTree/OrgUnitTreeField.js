@@ -36,12 +36,15 @@ Wrapper.propTypes = {
     }).isRequired,
 }
 
-const OrgUnitTreeField = ({ name, ...rest }) => {
-    return <Field component={Wrapper} name={name} {...rest} />
+const OrgUnitTreeField = ({ name, validator, ...rest }) => {
+    return (
+        <Field component={Wrapper} name={name} validate={validator} {...rest} />
+    )
 }
 
 OrgUnitTreeField.propTypes = {
     name: PropTypes.string.isRequired,
+    validator: PropTypes.func,
 }
 
 export { OrgUnitTreeField, SINGLE_ORG_VALIDATOR, SINGLE_EXACT_ORG_VALIDATOR }

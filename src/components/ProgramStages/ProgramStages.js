@@ -8,8 +8,15 @@ import { useProgramStages } from '../../hooks/useProgramStages'
 const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
     !programStage ? i18n.t('One program stage must be selected') : undefined
 
-const ProgramStages = ({ selectedPrograms, form, dataTest }) => {
-    const setProgramStage = val => form.change('programStage', val)
+const ProgramStages = ({
+    name,
+    label,
+    selectedPrograms,
+    form,
+    validator,
+    dataTest,
+}) => {
+    const setProgramStage = val => form.change(name, val)
     const program =
         selectedPrograms.length > 0 ? selectedPrograms[0] : undefined
 
@@ -22,9 +29,10 @@ const ProgramStages = ({ selectedPrograms, form, dataTest }) => {
 
     return (
         <SelectField
-            name="programStage"
+            name={name}
             loading={programStagesLoading}
-            label={i18n.t('Program stage')}
+            label={label}
+            validate={validator}
             dataTest={dataTest}
             options={programStages}
             validationText={programStagesValidationText}
@@ -37,7 +45,10 @@ const ProgramStages = ({ selectedPrograms, form, dataTest }) => {
 ProgramStages.propTypes = {
     dataTest: PropTypes.string.isRequired,
     form: PropTypes.object.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     selectedPrograms: PropTypes.array.isRequired,
+    validator: PropTypes.func,
 }
 
 export { ProgramStages, SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR }
