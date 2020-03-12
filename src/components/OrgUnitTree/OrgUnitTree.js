@@ -32,6 +32,7 @@ const orgQuery = {
 }
 
 const OrgUnitTree = ({
+    label,
     selected,
     setSelected,
     meta,
@@ -136,7 +137,7 @@ const OrgUnitTree = ({
     const showTree = !loading && !error
 
     return (
-        <FormField label={i18n.t('Organisation unit')} dataTest={dataTest}>
+        <FormField label={label} dataTest={dataTest}>
             <div className={styles.container}>
                 {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
                 {error && (
@@ -170,6 +171,7 @@ const OrgUnitTree = ({
 
 OrgUnitTree.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     meta: PropTypes.object.isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelected: PropTypes.func.isRequired,

@@ -40,11 +40,12 @@ Wrapper.propTypes = {
     }).isRequired,
 }
 
-const DatePickerField = ({ name, ...rest }) => {
+const DatePickerField = ({ name, validator, ...rest }) => {
     return (
         <Field
             component={Wrapper}
             name={name}
+            validate={validator}
             inputName={name}
             type="date"
             inputWidth="200px"
@@ -55,6 +56,7 @@ const DatePickerField = ({ name, ...rest }) => {
 
 DatePickerField.propTypes = {
     name: PropTypes.string.isRequired,
+    validator: PropTypes.func,
 }
 
 export {

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
@@ -43,9 +43,11 @@ const JobOverview = ({
 
     // set selected job to first job if
     // first time user visits the job overview page
-    if (!selectedJob && allTasks.length > 0) {
-        setSelectedJob(allTasks[0])
-    }
+    useEffect(() => {
+        if (!selectedJob && allTasks.length > 0) {
+            setSelectedJob(allTasks[0])
+        }
+    }, [])
 
     if (!selectedJob) {
         return <p>{i18n.t('No jobs started yet.')}</p>

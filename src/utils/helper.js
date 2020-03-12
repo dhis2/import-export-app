@@ -91,89 +91,81 @@ const fetchAttributes = async (apiBaseUrl, attribute) => {
     }))
 }
 
-const uploadFile = ({
-    url,
-    file,
-    format,
-    type,
-    setProgress,
-    setAlerts,
-    addEntry,
-}) => {
+const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
     setProgress(1)
     const genericErrorMessage = i18n.t(
         'An unknown error occurred. Please try again later'
     )
 
-    const errorHandler = message => {
+    const errorGenerator = message => {
         const timestamp = new Date().getTime()
-        setAlerts(alerts => [
-            ...alerts,
-            {
-                id: `xhr-${timestamp}`,
-                critical: true,
-                message: message ? message : genericErrorMessage,
-            },
-        ])
         setProgress(0)
+        return {
+            id: `xhr-${timestamp}`,
+            critical: true,
+            message: message ? message : genericErrorMessage,
+        }
     }
 
-    try {
-        const xhr = getUploadXHR({
-            url,
-            upload: file,
-            type,
-            onResponse: ({ id, msg, typeReports }) => {
-                const newId = id == -1 ? new Date().getTime() : id
-                let entry
-                if (id == -1 && !msg) {
-                    entry = {
-                        id: newId.toString(),
-                        level: 'ERROR',
-                        created: new Date(),
-                        completed: true,
-                        summary: undefined,
-                        error: true,
-                        importType: type,
+    return new Promise((resolve, reject) => {
+        try {
+            const xhr = getUploadXHR({
+                url,
+                upload: file,
+                type,
+                onResponse: ({ id, msg, typeReports }) => {
+                    const newId = id == -1 ? new Date().getTime() : id
+                    let entry
+                    if (id == -1 && !msg) {
+                        entry = {
+                            id: newId.toString(),
+                            level: 'ERROR',
+                            created: new Date(),
+                            completed: true,
+                            summary: undefined,
+                            error: true,
+                            importType: type,
+                        }
+                    } else {
+                        entry = {
+                            id: newId.toString(),
+                            level: 'INFO',
+                            created: new Date(),
+                            lastUpdated: new Date(),
+                            completed: id == -1,
+                            events: [msg],
+                            summary: typeReports,
+                            error: id == -1,
+                            importType: type,
+                        }
                     }
-                } else {
-                    entry = {
-                        id: newId.toString(),
-                        level: 'INFO',
-                        created: new Date(),
-                        lastUpdated: new Date(),
-                        completed: id == -1,
-                        events: [msg],
-                        summary: typeReports,
-                        error: id == -1,
-                        importType: type,
-                    }
-                }
-                addEntry(newId, entry)
+                    addEntry(newId, entry)
 
-                if (id == -1 && msg) {
-                    errorHandler(msg.text)
-                }
-                setProgress(0)
-            },
-            onError: ev => {
-                let message
-                try {
-                    const response = JSON.parse(ev.target.response)
-                    message = response.message
-                } catch (e2) {
-                    message = genericErrorMessage
-                }
-                errorHandler(message)
-                console.error('sendFile error', message)
-            },
-            setProgress,
-            format,
-        })
-        xhr.send(file)
-    } catch (e) {
-        errorHandler(e)
-    }
+                    if (id == -1 && msg) {
+                        reject(errorGenerator(msg.text))
+                    }
+                    setProgress(0)
+                    resolve({})
+                },
+                onError: ev => {
+                    let message
+                    try {
+                        const response = JSON.parse(ev.target.response)
+                        message = response.message
+                    } catch (e2) {
+                        message = genericErrorMessage
+                    }
+                    console.error('sendFile error', message)
+                    reject(errorGenerator(message))
+                },
+                setProgress,
+                format,
+            })
+            xhr.send(file)
+        } catch (e) {
+            reject(errorGenerator(e))
+        }
+    })
 }
 
 // call stub function if available

@@ -8,19 +8,21 @@ const FormAlerts = ({ alerts, dataTest }) => {
     const [bars, setBars] = useState([])
 
     useEffect(() => {
-        const newBars = alerts.map(a => (
-            <AlertBar
-                key={`alert-${a.id}`}
-                warning={a.warning}
-                info={a.info}
-                critical={a.critical}
-                success={a.success}
-                duration={8000}
-            >
-                {a.message}
-            </AlertBar>
-        ))
-        setBars(newBars)
+        if (alerts) {
+            const newBars = alerts.map(a => (
+                <AlertBar
+                    key={`alert-${a.id}`}
+                    warning={a.warning}
+                    info={a.info}
+                    critical={a.critical}
+                    success={a.success}
+                    duration={8000}
+                >
+                    {a.message}
+                </AlertBar>
+            ))
+            setBars(newBars)
+        }
     }, [alerts])
 
     if (bars.length == 0) return null
@@ -33,6 +35,7 @@ const FormAlerts = ({ alerts, dataTest }) => {
 }
 
 FormAlerts.propTypes = {
+    dataTest: PropTypes.string.isRequired,
     alerts: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
@@ -41,8 +44,7 @@ FormAlerts.propTypes = {
             info: PropTypes.bool,
             warning: PropTypes.bool,
         })
-    ).isRequired,
-    dataTest: PropTypes.string.isRequired,
+    ),
 }
 
 export { FormAlerts }

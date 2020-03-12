@@ -1,44 +1,40 @@
 import React from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Form, hasValue, composeValidators } from '@dhis2/ui-forms'
-import { Button } from '@dhis2/ui-core'
+import { Form } from '@dhis2/ui-forms'
 
-import { jsDateToISO8601, locationAssign, pathToId } from '../../utils/helper'
 import {
     formatOptions,
     compressionOptions,
-    inclusionOptions,
     defaultFormatOption,
     defaultCompressionOption,
     defaultIdSchemeOption,
     defaultInclusionOption,
 } from '../../utils/options'
-import { ALL_VALUE } from '../../hooks/useProgramStages'
 import { Page } from '../../components/Page'
-import { RadioGroupField } from '../../components/RadioGroup'
 import {
-    DatePickerField,
-    DATE_VALIDATOR,
-    DATE_BEFORE_VALIDATOR,
-    DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker'
-import { Switch } from '../../components/Switch'
-import {
-    OrgUnitTreeField,
-    SINGLE_EXACT_ORG_VALIDATOR,
-} from '../../components/OrgUnitTree'
-import {
+    OrgUnitTree,
+    ProgramPicker,
+    Format,
+    Compression,
+    StartDate,
+    EndDate,
+    IncludeDeleted,
+    Inclusion,
+    ExportButton,
     ProgramStages,
-    SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR,
-} from '../../components/ProgramStages'
-import {
-    ProgramPickerField,
-    SINGLE_EXACT_PROGRAM_VALIDATOR,
-} from '../../components/ProgramPicker'
+    IdScheme,
+} from '../../components/Inputs'
 import { MoreOptions } from '../../components/MoreOptions'
-import { IdScheme } from '../../components/ElementSchemes'
 import { EventIcon } from '../../components/Icon'
+import { onExport, validate } from './form-helper'
+
+// PAGE INFO
+const PAGE_NAME = i18n.t('Event export')
+const PAGE_DESCRIPTION = i18n.t(
+    'Export event data for programs, stages and tracked entities in the DXF 2 format.'
+)
+const PAGE_ICON = <EventIcon />
 
 const today = new Date()
 const initialValues = {
@@ -60,74 +56,7 @@ const initialValues = {
 
 const EventExport = () => {
     const { baseUrl } = useConfig()
-
-    const onExport = values => {
-        const {
-            selectedOrgUnits,
-            selectedPrograms,
-            programStage,
-            format,
-            compression,
-            startDate,
-            endDate,
-            includeDeleted,
-            idScheme,
-            inclusion,
-        } = values
-
-        // generate URL and redirect
-        const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = `events`
-        const endpointExtension = compression.value
-            ? `${format.value}.${compression.value}`
-            : format.value
-        const filename = `${endpoint}.${endpointExtension}`
-        const downloadUrlParams = [
-            'links=false',
-            'skipPaging=true',
-            `orgUnit=${pathToId(selectedOrgUnits[0])}`,
-            `programs=${selectedPrograms[0]}`,
-            `includeDeleted=${includeDeleted}`,
-            `idScheme=${idScheme.value}`,
-            `attachment=${filename}`,
-            `startDate=${jsDateToISO8601(startDate)}`,
-            `endDate=${jsDateToISO8601(endDate)}`,
-            `ouMode=${inclusion.value}`,
-            `format=${format.value}`,
-            programStage.value != ALL_VALUE
-                ? `programStage=${programStage.value}`
-                : '',
-        ]
-            .filter(s => s != '')
-            .join('&')
-        const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-        locationAssign(url)
-    }
-
-    const validate = values => ({
-        selectedOrgUnits: composeValidators(
-            hasValue,
-            SINGLE_EXACT_ORG_VALIDATOR
-        )(values.selectedOrgUnits),
-        selectedPrograms: composeValidators(
-            hasValue,
-            SINGLE_EXACT_PROGRAM_VALIDATOR
-        )(values.selectedPrograms),
-        programStage: composeValidators(
-            hasValue,
-            SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR
-        )(values.programStage),
-        startDate: composeValidators(
-            hasValue,
-            DATE_VALIDATOR,
-            DATE_BEFORE_VALIDATOR
-        )(values.startDate, values.endDate),
-        endDate: composeValidators(
-            hasValue,
-            DATE_VALIDATOR,
-            DATE_AFTER_VALIDATOR
-        )(values.endDate, values.startDate),
-    })
+    const onSubmit = onExport(baseUrl)
 
     return (
         <Page
@@ -137,84 +66,35 @@ const EventExport = () => {
             dataTest="page-export-data"
         >
             <Form
-                onSubmit={onExport}
+                onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
+                subscription={{ values: true }}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
-                        <OrgUnitTreeField
-                            name="selectedOrgUnits"
-                            multiSelect={false}
-                            dataTest="input-org-unit-tree"
-                        />
-                        <ProgramPickerField
-                            name="selectedPrograms"
-                            multiSelect={false}
-                            withActions={false}
-                            autoSelectFirst
-                            dataTest="input-program-picker"
-                        />
+                        <OrgUnitTree multiSelect={false} />
+                        <ProgramPicker />
                         <ProgramStages
                             selectedPrograms={values.selectedPrograms}
                             form={form}
-                            dataTest="input-program-stage-select"
                         />
-                        <DatePickerField
-                            name="startDate"
-                            label={i18n.t('Start date')}
-                            dataTest="input-start-date"
+                        <StartDate />
+                        <EndDate />
+                        <Format availableFormats={formatOptions} />
+                        <Compression
+                            availableCompressions={compressionOptions}
                         />
-                        <DatePickerField
-                            name="endDate"
-                            label={i18n.t('End date')}
-                            dataTest="input-end-date"
-                        />
-                        <RadioGroupField
-                            name="format"
-                            label={i18n.t('Format')}
-                            options={formatOptions}
-                            dataTest="input-format"
-                        />
-                        <RadioGroupField
-                            name="compression"
-                            label={i18n.t('Compression')}
-                            options={compressionOptions}
-                            dataTest="input-compression"
-                        />
-                        <MoreOptions dataTest="interaction-more-options">
-                            <Switch
-                                label={i18n.t('Include deleted')}
-                                name="includeDeleted"
-                                dataTest="input-include-deleted"
-                            />
-                            <IdScheme dataTest="input-id-scheme" />
-                            <RadioGroupField
-                                name="inclusion"
-                                label={i18n.t('Inclusion')}
-                                options={inclusionOptions}
-                                dataTest="input-inclusion"
-                            />
+                        <MoreOptions>
+                            <IncludeDeleted value={values.includeDeleted} />
+                            <IdScheme />
+                            <Inclusion />
                         </MoreOptions>
-                        <Button
-                            primary
-                            type="submit"
-                            disabled={values.programStage == undefined}
-                            dataTest="input-export-submit"
-                        >
-                            {i18n.t('Export')}
-                        </Button>
+                        <ExportButton />
                     </form>
                 )}
             />
         </Page>
     )
 }
-
-// PAGE INFO
-const PAGE_NAME = i18n.t('Event export')
-const PAGE_DESCRIPTION = i18n.t(
-    'Export event data for programs, stages and tracked entities in the DXF 2 format.'
-)
-const PAGE_ICON = <EventIcon />
 
 export { EventExport }

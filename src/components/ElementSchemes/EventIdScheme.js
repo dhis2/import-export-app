@@ -1,15 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 
 import { SelectField } from '../Select'
 import { eventIdSchemeOptions } from '../../utils/options'
 
-const EventIdScheme = ({ dataTest }) => {
+const EventIdScheme = ({ name, label, dataTest }) => {
     return (
         <SelectField
-            name="eventIdScheme"
-            label={i18n.t('Event ID scheme')}
+            name={name}
+            label={label}
             options={eventIdSchemeOptions}
             dense
             dataTest={dataTest}
@@ -19,6 +18,8 @@ const EventIdScheme = ({ dataTest }) => {
 
 EventIdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
 }
 
 export { EventIdScheme }

@@ -1,3 +1,11 @@
+import React from 'react'
+import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { SchemasField, SINGLE_SCHEMA_VALIDATOR } from '../../components/Schemas'
+
+const NAME = 'checkedSchemas'
+const VALIDATOR = composeValidators(hasValue, SINGLE_SCHEMA_VALIDATOR)
+const DATATEST = 'input-schemas'
+
 const EXCLUDE_SCHEMAS = new Set([
     'analyticsTableHooks',
     'charts',
@@ -28,4 +36,14 @@ const EXCLUDE_SCHEMAS = new Set([
     'validationNotificationTemplates',
 ])
 
-export { EXCLUDE_SCHEMAS }
+const Schemas = () => (
+    <SchemasField
+        name={NAME}
+        excludeSchemas={EXCLUDE_SCHEMAS}
+        validator={VALIDATOR}
+        checkedByDefault
+        dataTest={DATATEST}
+    />
+)
+
+export { Schemas }

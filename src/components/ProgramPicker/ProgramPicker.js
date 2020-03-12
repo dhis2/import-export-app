@@ -18,6 +18,7 @@ const programQuery = {
 }
 
 const ProgramPicker = ({
+    label,
     selected,
     setSelected,
     meta,
@@ -49,7 +50,7 @@ const ProgramPicker = ({
     const showList = !loading && !error
 
     return (
-        <FormField label={i18n.t('Programs')} dataTest={dataTest}>
+        <FormField label={label} dataTest={dataTest}>
             {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
             {error && (
                 <div data-test={`${dataTest}-error`}>
@@ -83,6 +84,7 @@ const ProgramPicker = ({
 
 ProgramPicker.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     meta: PropTypes.object.isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelected: PropTypes.func.isRequired,

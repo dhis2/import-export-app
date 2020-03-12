@@ -8,8 +8,8 @@ import { useObjects } from '../../hooks/useObjects'
 const SINGLE_EXACT_OBJECT_VALIDATOR = object =>
     !object ? i18n.t('One object must be selected') : undefined
 
-const Objects = ({ objectType, form, dataTest }) => {
-    const setObjectListSelected = val => form.change('object', val)
+const Objects = ({ name, label, objectType, form, validator, dataTest }) => {
+    const setObjectListSelected = val => form.change(name, val)
 
     const {
         loading: objectsLoading,
@@ -21,9 +21,10 @@ const Objects = ({ objectType, form, dataTest }) => {
     return (
         <SelectField
             loading={objectsLoading}
-            name="object"
-            label={i18n.t('Object')}
+            name={name}
+            label={label}
             options={objects}
+            validate={validator}
             dataTest={dataTest}
             validationText={objectsValidationText}
             error={!!objectsError}
@@ -36,7 +37,10 @@ const Objects = ({ objectType, form, dataTest }) => {
 Objects.propTypes = {
     dataTest: PropTypes.string.isRequired,
     form: PropTypes.object.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     objectType: PropTypes.object.isRequired,
+    validator: PropTypes.func,
 }
 
 export { Objects, SINGLE_EXACT_OBJECT_VALIDATOR }

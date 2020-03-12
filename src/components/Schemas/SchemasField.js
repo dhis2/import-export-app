@@ -26,12 +26,15 @@ Wrapper.propTypes = {
     }).isRequired,
 }
 
-const SchemasField = ({ name, ...rest }) => {
-    return <Field component={Wrapper} name={name} {...rest} />
+const SchemasField = ({ name, validator, ...rest }) => {
+    return (
+        <Field component={Wrapper} name={name} validate={validator} {...rest} />
+    )
 }
 
 SchemasField.propTypes = {
     name: PropTypes.string.isRequired,
+    validator: PropTypes.func,
 }
 
 export { SchemasField, SINGLE_SCHEMA_VALIDATOR }
