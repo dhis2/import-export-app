@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
 import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
@@ -26,13 +26,14 @@ const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
 })
 
-const GMLImport = ({ query }) => {
+const GMLImport = () => {
     const {
         tasks: { gml: gmlTasks },
         addTask,
     } = useContext(TaskContext)
 
     // recreating a previously run job
+    const query = useLocation().query
     const prevJobDetails = getPrevJobDetails(query, gmlTasks)
     const initialValues = createInitialValues(prevJobDetails)
 
@@ -70,12 +71,6 @@ const GMLImport = ({ query }) => {
             />
         </Page>
     )
-}
-
-GMLImport.propTypes = {
-    query: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-    }),
 }
 
 export { GMLImport }
