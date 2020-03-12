@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 
 import { DataImport } from '../../pages/DataImport'
 import { DataExport } from '../../pages/DataExport'
@@ -12,37 +12,20 @@ import { MetadataImport } from '../../pages/MetadataImport'
 import { JobOverview } from '../../pages/JobOverview'
 
 const Router = () => {
-    const location = useLocation()
-
     return (
         <Switch>
-            <Route path="/import/data">
-                <DataImport query={location.query} />
-            </Route>
-            <Route path="/import/event">
-                <EventImport query={location.query} />
-            </Route>
-            <Route path="/import/gml">
-                <GMLImport query={location.query} />
-            </Route>
-            <Route path="/import/metadata">
-                <MetadataImport query={location.query} />
-            </Route>
-            <Route path="/export/data">
-                <DataExport />
-            </Route>
-            <Route path="/export/event">
-                <EventExport />
-            </Route>
-            <Route path="/export/metadata-dependency">
-                <MetadataDependencyExport />
-            </Route>
-            <Route path="/export/metadata">
-                <MetadataExport />
-            </Route>
-            <Route path="/utils/job-overview">
-                <JobOverview />
-            </Route>
+            <Route path="/import/data" component={DataImport} />
+            <Route path="/import/event" component={EventImport} />
+            <Route path="/import/gml" component={GMLImport} />
+            <Route path="/import/metadata" component={MetadataImport} />
+            <Route path="/export/data" component={DataExport} />
+            <Route path="/export/event" component={EventExport} />
+            <Route
+                path="/export/metadata-dependency"
+                component={MetadataDependencyExport}
+            />
+            <Route path="/export/metadata" component={MetadataExport} />
+            <Route path="/utils/job-overview" component={JobOverview} />
             <Redirect from="*" to="/import/data" />
         </Switch>
     )

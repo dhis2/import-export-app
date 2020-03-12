@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
 import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
@@ -69,13 +69,14 @@ const createInitialValues = prevJobDetails => ({
     isAsync: !prevJobDetails.isAsync,
 })
 
-const MetadataImport = ({ query }) => {
+const MetadataImport = () => {
     const {
         tasks: { metadata: metadataTasks },
         addTask,
     } = useContext(TaskContext)
 
     // recreating a previously run job
+    const query = useLocation().query
     const prevJobDetails = getPrevJobDetails(query, metadataTasks)
     const initialValues = createInitialValues(prevJobDetails)
 
@@ -138,12 +139,6 @@ const MetadataImport = ({ query }) => {
             />
         </Page>
     )
-}
-
-MetadataImport.propTypes = {
-    query: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-    }),
 }
 
 export { MetadataImport }

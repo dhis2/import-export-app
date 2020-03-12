@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
 import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
@@ -40,13 +40,14 @@ const createInitialValues = prevJobDetails => ({
     eventIdScheme: prevJobDetails.eventIdScheme || defaultEventIdSchemeOption,
 })
 
-const EventImport = ({ query }) => {
+const EventImport = () => {
     const {
         tasks: { event: eventTasks },
         addTask,
     } = useContext(TaskContext)
 
     // recreating a previously run job
+    const query = useLocation().query
     const prevJobDetails = getPrevJobDetails(query, eventTasks)
     const initialValues = createInitialValues(prevJobDetails)
 
@@ -90,12 +91,6 @@ const EventImport = ({ query }) => {
             />
         </Page>
     )
-}
-
-EventImport.propTypes = {
-    query: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-    }),
 }
 
 export { EventImport }
