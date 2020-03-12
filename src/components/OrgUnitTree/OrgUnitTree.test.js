@@ -59,6 +59,7 @@ const props = {
     setSelected: jest.fn(),
     multiSelect: true,
     meta: {},
+    label: 'Organisation unit',
     dataTest: 'out',
 }
 
