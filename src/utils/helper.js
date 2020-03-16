@@ -91,21 +91,23 @@ const fetchAttributes = async (apiBaseUrl, attribute) => {
     }))
 }
 
+const genericErrorMessage = i18n.t(
+    'An unknown error occurred. Please try again later'
+)
+
+const errorGenerator = setProgress => message => {
+    const timestamp = new Date().getTime()
+    setProgress(0)
+    return {
+        id: `xhr-${timestamp}`,
+        critical: true,
+        message: message ? message : genericErrorMessage,
+    }
+}
+
 const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
     setProgress(1)
-    const genericErrorMessage = i18n.t(
-        'An unknown error occurred. Please try again later'
-    )
-
-    const errorGenerator = message => {
-        const timestamp = new Date().getTime()
-        setProgress(0)
-        return {
-            id: `xhr-${timestamp}`,
-            critical: true,
-            message: message ? message : genericErrorMessage,
-        }
-    }
+    const errF = errorGenerator(setProgress)
 
     return new Promise((resolve, reject) => {
         try {
@@ -142,7 +144,7 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
                     addEntry(newId, entry)
 
                     if (id == -1 && msg) {
-                        reject(errorGenerator(msg.text))
+                        reject(errF(msg.text))
                     }
                     setProgress(0)
                     resolve({})
@@ -156,7 +158,7 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
                         message = genericErrorMessage
                     }
                     console.error('sendFile error', message)
-                    reject(errorGenerator(message))
+                    reject(errF(message))
                 },
                 setProgress,
                 format,
