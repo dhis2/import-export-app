@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { DataSetPickerField } from '../../components/'
 import {
-    DataSetPickerField,
     SINGLE_DATASET_VALIDATOR,
     SINGLE_EXACT_DATASET_VALIDATOR,
-} from '../../components/DataSetPicker'
+} from '../../components/DataSetPicker/DataSetPickerField'
 
 const NAME = 'selectedDataSets'
 const LABEL = i18n.t('Data sets')

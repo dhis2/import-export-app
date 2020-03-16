@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { typeReportParse } from '../helper'
-import { SingleSummary } from '../SingleSummary/'
-import { TypeReportSummary } from '../TypeReportSummary/'
+import { SingleSummary } from '../SingleSummary/SingleSummary'
+import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary'
 
 const extractStats = summary => {
     if (summary.responseType == 'ImportSummaries') {

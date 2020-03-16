@@ -1,15 +1,17 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
-import { DataImport } from '../../pages/DataImport'
-import { DataExport } from '../../pages/DataExport'
-import { EventExport } from '../../pages/EventExport'
-import { EventImport } from '../../pages/EventImport'
-import { GMLImport } from '../../pages/GMLImport'
-import { MetadataDependencyExport } from '../../pages/MetadataDependencyExport'
-import { MetadataExport } from '../../pages/MetadataExport'
-import { MetadataImport } from '../../pages/MetadataImport'
-import { JobOverview } from '../../pages/JobOverview'
+import {
+    DataImport,
+    DataExport,
+    EventExport,
+    EventImport,
+    GMLImport,
+    MetadataDependencyExport,
+    MetadataExport,
+    MetadataImport,
+    JobOverview,
+} from '../../pages'
 
 const Router = () => {
     return (

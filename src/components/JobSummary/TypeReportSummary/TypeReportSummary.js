@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { statsPropType } from '../helper'
-import { SingleSummary } from '../SingleSummary/'
-import { TypeCount, typeCountStatsPropTypeObj } from '../TypeCount/'
-import { Messages, messagesPropType } from '../Messages/'
+import { statsPropType, messagesPropType } from '../helper'
+import { SingleSummary } from '../SingleSummary/SingleSummary'
+import { TypeCount, typeCountStatsPropTypeObj } from '../TypeCount/TypeCount'
+import { Messages } from '../Messages/Messages'
 
 const TypeReportSummary = ({ overviewStats, stats, messages }) => {
     return (

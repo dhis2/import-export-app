@@ -3,7 +3,7 @@ import { ALL_VALUE } from '../../hooks/useProgramStages'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker'
+} from '../../components/DatePicker/DatePickerField'
 
 const onExport = baseUrl => values => {
     const {

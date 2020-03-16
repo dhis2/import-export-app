@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Field } from '@dhis2/ui-forms'
 
-import { Schemas } from '.'
+import { Schemas } from './Schemas'
 
 const SINGLE_SCHEMA_VALIDATOR = checkedSchemas =>
     checkedSchemas.length == 0

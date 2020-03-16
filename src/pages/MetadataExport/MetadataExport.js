@@ -9,7 +9,6 @@ import {
     defaultFormatOption,
     defaultCompressionOption,
 } from '../../utils/options'
-import { Page } from '../../components/Page'
 import {
     Format,
     Schemas,
@@ -17,7 +16,7 @@ import {
     SkipSharing,
     ExportButton,
 } from '../../components/Inputs'
-import { MetadataExportIcon } from '../../components/Icon'
+import { Page, MetadataExportIcon } from '../../components/'
 import { onExport } from './form-helper'
 
 // PAGE INFO

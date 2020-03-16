@@ -12,7 +12,7 @@ import {
 } from '@dhis2/ui-core'
 
 import { statsPropTypeObj } from '../helper'
-import { FormField } from '../../FormField'
+import { FormField } from '../../'
 
 const TypeCount = ({ stats }) => {
     if (stats.length == 0) return null

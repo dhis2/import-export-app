@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { idSchemeOptions } from '../../utils/options'
-import { SelectField } from '../Select'
+import { SelectField } from '../'
 
 const attributeFoundIn = (attribute, collection) =>
     !!collection.find(({ value }) => value === attribute.value)

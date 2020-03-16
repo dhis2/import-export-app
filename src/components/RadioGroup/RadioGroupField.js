@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Field } from '@dhis2/ui-forms'
 
-import { RadioGroup } from '.'
+import { RadioGroup } from './RadioGroup'
 import { optionPropType } from '../../utils/options'
 
 const Wrapper = ({

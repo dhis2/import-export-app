@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Field } from '@dhis2/ui-forms'
 
-import { Select } from '.'
+import { Select } from '../'
 
 const Wrapper = ({ input: { value, onChange }, meta, inputName, ...rest }) => (
     <Select

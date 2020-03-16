@@ -4,8 +4,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CircularLoader, Help } from '@dhis2/ui-core'
 
-import { SelectableList } from '../SelectableList'
-import { FormField } from '../FormField'
+import { FormField, SelectableList } from '../'
 
 const programQuery = {
     programs: {

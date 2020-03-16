@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { RadioGroupField } from '../RadioGroup'
+import { RadioGroupField } from '../'
 import { optionsPropType } from '../../utils/options'
 
 const NAME = 'compression'

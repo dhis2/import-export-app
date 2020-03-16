@@ -4,7 +4,7 @@ import { render, waitForElement, fireEvent } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import { CustomDataProvider } from '@dhis2/app-runtime'
 
-import { DataSetPicker } from '.'
+import { DataSetPicker } from '../'
 
 const customData = {
     dataSets: {

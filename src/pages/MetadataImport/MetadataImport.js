@@ -17,7 +17,6 @@ import {
     defaultFlushModeOption,
     defaultInclusionStrategyOption,
 } from '../../utils/options'
-import { Page } from '../../components/Page'
 import {
     FileUpload,
     Format,
@@ -37,8 +36,7 @@ import {
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs'
-import { MoreOptions } from '../../components/MoreOptions'
-import { MetadataImportIcon } from '../../components/Icon'
+import { Page, MetadataImportIcon, MoreOptions } from '../../components/'
 import { TaskContext, getNewestTask } from '../../contexts/'
 import { onImport, validate } from './form-helper'
 

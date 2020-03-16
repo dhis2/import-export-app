@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { OrgUnitIdScheme as OrgUnitIdSchemeGeneric } from '../ElementSchemes'
+import { OrgUnitIdScheme as OrgUnitIdSchemeGeneric } from '../'
 
 const NAME = 'orgUnitIdScheme'
 const DATATEST = 'input-org-unit-id-scheme'

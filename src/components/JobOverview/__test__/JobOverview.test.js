@@ -7,8 +7,8 @@ import '@testing-library/jest-dom/extend-expect'
 
 import { tasksState, allJobs } from './data'
 import { TaskContext } from '../../../contexts/'
-import { JobOverview } from '../'
-import { MenuLabel } from '../MenuLabel'
+import { JobOverview } from '../../'
+import { MenuLabel } from '../MenuLabel/MenuLabel'
 
 afterEach(() => {
     cleanup()

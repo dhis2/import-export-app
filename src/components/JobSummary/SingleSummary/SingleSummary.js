@@ -12,8 +12,8 @@ import {
 } from '@dhis2/ui-core'
 
 import { statsPropType } from '../helper'
-import { SingleStatusTable } from '../SingleStatusTable/'
-import { FormField } from '../../FormField'
+import { SingleStatusTable } from '../SingleStatusTable/SingleStatusTable'
+import { FormField } from '../../'
 
 const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
     <div>

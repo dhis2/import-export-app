@@ -5,13 +5,12 @@ import { Form } from '@dhis2/ui-forms'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
-import { Page } from '../../components/Page'
 import {
     FileUpload,
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/'
-import { GMLIcon } from '../../components/Icon'
+import { Page, GMLIcon } from '../../components/'
 import { TaskContext, getNewestTask } from '../../contexts/'
 import { onImport } from './form-helper'
 

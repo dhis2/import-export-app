@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent, cleanup } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { SelectableList } from '.'
+import { SelectableList } from '../'
 
 const setSelected = jest.fn().mockName('setSelected')
 

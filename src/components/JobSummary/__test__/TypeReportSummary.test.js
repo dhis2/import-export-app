@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { TypeReportSummary } from '../TypeReportSummary'
+import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary'
 
 const props = {
     overviewStats: {

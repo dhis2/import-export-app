@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { EventIdScheme as EventIdSchemeGeneric } from '../ElementSchemes'
+import { EventIdScheme as EventIdSchemeGeneric } from '../'
 
 const NAME = 'eventIdScheme'
 const DATATEST = 'input-event-id-scheme'

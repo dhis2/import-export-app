@@ -4,7 +4,7 @@ import { render, waitForElement, fireEvent } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import { CustomDataProvider } from '@dhis2/app-runtime'
 
-import { OrgUnitTree } from '.'
+import { OrgUnitTree } from '../'
 
 // maybe use a function resource here for children instead?
 // https://github.com/dhis2/app-runtime/blob/master/services/data/src/links/CustomDataLink.ts#L61-L68

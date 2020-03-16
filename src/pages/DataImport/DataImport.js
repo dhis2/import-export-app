@@ -13,7 +13,6 @@ import {
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
 } from '../../utils/options'
-import { Page } from '../../components/Page'
 import {
     FileUpload,
     Format,
@@ -28,12 +27,8 @@ import {
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs'
-import {
-    WithAuthority,
-    hasAuthorityToSkipAudit,
-} from '../../components/WithAuthority'
-import { MoreOptions } from '../../components/MoreOptions'
-import { DataIcon } from '../../components/Icon'
+import { hasAuthorityToSkipAudit } from '../../components/WithAuthority/predicates'
+import { Page, WithAuthority, MoreOptions, DataIcon } from '../../components/'
 import { TaskContext, getNewestTask } from '../../contexts/'
 import { onImport } from './form-helper'
 

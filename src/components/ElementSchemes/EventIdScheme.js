@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { SelectField } from '../Select'
+import { SelectField } from '../'
 import { eventIdSchemeOptions } from '../../utils/options'
 
 const EventIdScheme = ({ name, label, dataTest }) => {
