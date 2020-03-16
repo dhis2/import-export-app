@@ -1,23 +1,48 @@
 import React from 'react'
-import i18n from '@dhis2/d2-i18n'
+import PropTypes from 'prop-types'
 import { hasValue, composeValidators } from '@dhis2/ui-forms'
-import { Objects as ObjectsGeneric } from '../../components/'
-import { SINGLE_EXACT_OBJECT_VALIDATOR } from '../../components/Objects/Objects'
+import i18n from '@dhis2/d2-i18n'
 
-const VALIDATOR = composeValidators(hasValue, SINGLE_EXACT_OBJECT_VALIDATOR)
+import { SelectField } from '../'
+import { useObjects } from '../../hooks/'
+
+const SINGLE_EXACT_OBJECT_VALIDATOR = object =>
+    !object ? i18n.t('One object must be selected') : undefined
 
 const NAME = 'object'
 const LABEL = i18n.t('Object')
+const VALIDATOR = composeValidators(hasValue, SINGLE_EXACT_OBJECT_VALIDATOR)
 const DATATEST = 'input-object-select'
 
-const Objects = props => (
-    <ObjectsGeneric
-        name={NAME}
-        label={LABEL}
-        validator={VALIDATOR}
-        dataTest={DATATEST}
-        {...props}
-    />
-)
+const Objects = ({ objectType, form }) => {
+    const setObjectListSelected = val => form.change(NAME, val)
+
+    const {
+        loading: objectsLoading,
+        error: objectsError,
+        validationText: objectsValidationText,
+        objects,
+    } = useObjects(objectType, setObjectListSelected)
+
+    return (
+        <SelectField
+            loading={objectsLoading}
+            name={NAME}
+            label={LABEL}
+            options={objects}
+            validate={VALIDATOR}
+            dataTest={DATATEST}
+            validationText={objectsValidationText}
+            error={!!objectsError}
+            filterable
+            dense
+        />
+    )
+}
+
+Objects.propTypes = {
+    form: PropTypes.object.isRequired,
+    objectType: PropTypes.object.isRequired,
+}
 
 export { Objects }
