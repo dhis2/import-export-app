@@ -30,7 +30,7 @@ const onExport = baseUrl => values => {
         'links=false',
         'skipPaging=true',
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,
-        `programs=${selectedPrograms[0]}`,
+        `program=${selectedPrograms[0]}`,
         `includeDeleted=${includeDeleted}`,
         `idScheme=${idScheme.value}`,
         `attachment=${filename}`,

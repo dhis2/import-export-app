@@ -6,7 +6,7 @@ Feature: The user should be able to export events
         And the more options are visible
         And the following options are set
             | name           | value       |
-            | programs       | lxAQ7Zs9VYR |
+            | program        | lxAQ7Zs9VYR |
             | programStages  |             |
             | idScheme       | UID         |
             | startDate      | 2020-01-03  |
@@ -28,7 +28,7 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different program
-        Given the "programs" input is set to "IpHINAT79UW"
+        Given the "program" input is set to "IpHINAT79UW"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

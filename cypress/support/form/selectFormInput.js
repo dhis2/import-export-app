@@ -21,7 +21,7 @@ const radioInputs = [
     'inclusionStrategy',
     'mergeMode',
     'preheatMode',
-    'programs',
+    'program',
     'sharing',
     'strategy',
 ]
@@ -60,7 +60,7 @@ const nameToDataTest = name => {
         case 'idScheme':
             return 'input-id-scheme'
 
-        case 'programs':
+        case 'program':
             return 'programPicker'
 
         case 'programStages':
