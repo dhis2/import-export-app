@@ -53,7 +53,7 @@ const onImport = ({
     const url = `${apiBaseUrl}${endpoint}?${params}`
 
     try {
-        uploadFile({
+        await uploadFile({
             url,
             file: files[0],
             format: format.value,
@@ -63,8 +63,9 @@ const onImport = ({
                 addTask('metadata', id, { ...entry, jobDetails: values }),
         })
     } catch (e) {
-        const errors = [e]
-        return { [FORM_ERROR]: errors }
+        const formErrors = validate(values)
+        const allErrors = { [FORM_ERROR]: [e], ...formErrors }
+        return allErrors
     } finally {
         setShowFullSummaryTask(true)
     }

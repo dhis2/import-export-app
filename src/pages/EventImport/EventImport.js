@@ -73,7 +73,7 @@ const EventImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true }}
+                subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload />

@@ -71,7 +71,7 @@ const DataExport = () => {
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true }}
+                subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <OrgUnitTree />

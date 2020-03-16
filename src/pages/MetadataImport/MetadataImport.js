@@ -38,7 +38,7 @@ import {
 } from '../../components/Inputs'
 import { Page, MetadataImportIcon, MoreOptions } from '../../components/'
 import { TaskContext, getNewestTask } from '../../contexts/'
-import { onImport, validate } from './form-helper'
+import { onImport } from './form-helper'
 
 // PAGE INFO
 const PAGE_NAME = i18n.t('Metadata import')
@@ -102,8 +102,7 @@ const MetadataImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                validate={validate}
-                subscription={{ values: true }}
+                subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
