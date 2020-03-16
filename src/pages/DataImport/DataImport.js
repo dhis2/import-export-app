@@ -89,7 +89,7 @@ const DataImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true }}
+                subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
