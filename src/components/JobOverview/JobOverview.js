@@ -5,10 +5,11 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
 
 import styles from './JobOverview.module.css'
-import { TaskContext, categoryTypes } from '../../contexts/'
-import { JobSummary } from '../JobSummary/'
+import { TaskContext } from '../../contexts/'
+import { categoryTypes } from '../../utils/tasks'
+import { JobSummary } from '../'
 import { categoryTypesObj, jobToPath } from './helper'
-import { MenuLabel } from './MenuLabel'
+import { MenuLabel } from './MenuLabel/MenuLabel'
 
 const JobOverview = ({
     activeTypes,

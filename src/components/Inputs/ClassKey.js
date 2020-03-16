@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { SelectField } from '../Select'
-import { useClassKeys } from '../../hooks/useClassKeys'
+import { SelectField } from '../'
+import { useClassKeys } from '../../hooks/'
 
 const NAME = 'classKey'
 const LABEL = i18n.t('Object')

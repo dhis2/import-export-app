@@ -11,7 +11,6 @@ import {
     defaultOrgUnitIdSchemeOption,
     defaultEventIdSchemeOption,
 } from '../../utils/options'
-import { Page } from '../../components/Page'
 import {
     FileUpload,
     Format,
@@ -20,8 +19,7 @@ import {
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs'
-import { MoreOptions } from '../../components/MoreOptions'
-import { EventIcon } from '../../components/Icon'
+import { Page, MoreOptions, EventIcon } from '../../components/'
 import { TaskContext, getNewestTask } from '../../contexts/'
 import { onImport } from './form-helper'
 

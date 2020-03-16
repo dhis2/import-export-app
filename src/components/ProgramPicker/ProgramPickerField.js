@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Field } from '@dhis2/ui-forms'
 
-import { ProgramPicker } from '.'
+import { ProgramPicker } from '../'
 
 const SINGLE_PROGRAM_VALIDATOR = selectedPrograms =>
     selectedPrograms.length == 0

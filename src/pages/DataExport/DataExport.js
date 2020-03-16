@@ -12,7 +12,6 @@ import {
     defaultOrgUnitIdSchemeOption,
     defaultIdSchemeOption,
 } from '../../utils/options'
-import { Page } from '../../components/Page'
 import {
     OrgUnitTree,
     IncludeChildren,
@@ -28,8 +27,7 @@ import {
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs'
-import { MoreOptions } from '../../components/MoreOptions'
-import { DataIcon } from '../../components/Icon'
+import { Page, MoreOptions, DataIcon } from '../../components/'
 import { onExport, validate } from './form-helper'
 
 // PAGE INFO

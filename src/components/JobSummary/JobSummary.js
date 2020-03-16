@@ -5,9 +5,9 @@ import { Divider, Tag } from '@dhis2/ui-core'
 
 import styles from './JobSummary.module.css'
 import { jsDateToString } from '../../utils/helper'
-import { Events } from './Events/'
-import { Summary } from './Summary/'
-import { Details } from './Details/'
+import { Events } from './Events/Events'
+import { Summary } from './Summary/Summary'
+import { Details } from './Details/Details'
 
 const Header = ({ jobDetails, task, showFileDetails }) => (
     <div className={styles.header}>

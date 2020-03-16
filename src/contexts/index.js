@@ -1,7 +1,2 @@
 export { UserContext } from './User'
-export {
-    TaskContext,
-    getNewestTask,
-    categoryTypes,
-    allCategories,
-} from './Task'
+export { TaskContext, getNewestTask } from './Task'

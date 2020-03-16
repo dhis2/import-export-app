@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormAlerts as FormAlertsGeneric } from '../FormAlerts'
+import { FormAlerts as FormAlertsGeneric } from '../'
 
 const DATATEST = 'input-form-alerts'
 

@@ -45,7 +45,7 @@ Given('the Sierra Leone org unit has been selected', () => {
 })
 
 Given('the user expands the root level of the org unit tree', () => {
-    cy.get(`[data-test="input-org-unit-tree-tree-/${sierraId}-arrow"]`).click()
+    cy.get(`[data-test="input-org-unit-tree-tree-/${sierraId}-toggle"]`).click()
 })
 
 const boId = 'O6uvpzGd5pu'

@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { SelectField } from '../../components/Select'
+import { SelectField } from '../../components/'
 import { objectTypeOptions } from '../../utils/options'
 
 const NAME = 'objectType'

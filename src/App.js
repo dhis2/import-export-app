@@ -8,8 +8,8 @@ import { UserContext } from './contexts/'
 import { useUser, useTasks } from './hooks/'
 
 import styles from './App.module.css'
-import { Sidebar } from './components/Sidebar'
-import { Router } from './components/Router'
+import { Sidebar } from './components/'
+import { Router } from './components/'
 
 const App = () => {
     const { tasks, addTask, jobOverview, updateJobOverview } = useTasks()

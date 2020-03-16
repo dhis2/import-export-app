@@ -3,8 +3,8 @@ import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
 import { allJobs } from '../JobOverview/__test__/data'
-import { LogoIcon } from '../Icon'
-import { Page } from '.'
+import { LogoIcon } from '../'
+import { Page } from '../'
 
 const dataJob = allJobs.find(j => j.importType == 'DATAVALUE_IMPORT')
 

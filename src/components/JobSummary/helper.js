@@ -50,4 +50,13 @@ const typeReportParse = report => {
     return { stats: allStats, messages: allMessages }
 }
 
-export { typeReportParse, statsPropType, statsPropTypeObj }
+const messagesPropType = PropTypes.arrayOf(
+    PropTypes.exact({
+        uid: PropTypes.string,
+        type: PropTypes.string,
+        property: PropTypes.string,
+        message: PropTypes.string,
+    })
+)
+
+export { typeReportParse, statsPropType, statsPropTypeObj, messagesPropType }

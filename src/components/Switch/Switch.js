@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Field, Switch as SwitchUI } from '@dhis2/ui-forms'
 
-import { FormField } from '../FormField'
+import { FormField } from '../'
 
 const Switch = ({ name, label, help, value, dataTest }) => {
     return (

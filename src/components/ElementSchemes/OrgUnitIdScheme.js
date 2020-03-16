@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { orgUnitIdSchemeOptions } from '../../utils/options'
-import { SelectField } from '../Select'
+import { SelectField } from '../'
 
 const OrgUnitIdScheme = ({ name, label, dataTest }) => {
     const { baseUrl } = useConfig()

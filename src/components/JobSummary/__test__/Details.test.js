@@ -3,7 +3,7 @@ import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
 import { allJobs } from '../../JobOverview/__test__/data'
-import { Details } from '../Details'
+import { Details } from '../Details/Details'
 
 const props = {
     details: allJobs[0].jobDetails,

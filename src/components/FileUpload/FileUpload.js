@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import { Field, FileInput } from '@dhis2/ui-forms'
 
-import { FormField } from '../FormField'
+import { FormField } from '../'
 
 const SINGLE_FILE_VALIDATOR = files =>
     !files || files.length == 0 ? i18n.t('Please select a file') : undefined

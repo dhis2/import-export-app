@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { dataElementIdSchemeOptions } from '../../utils/options'
-import { SelectField } from '../Select'
+import { SelectField } from '../'
 
 const DataElementIdScheme = ({ name, label, dataTest }) => {
     const { baseUrl } = useConfig()

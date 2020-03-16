@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { SingleStatusTable } from '../SingleStatusTable'
+import { SingleStatusTable } from '../SingleStatusTable/SingleStatusTable'
 
 const props = {
     status: 'WARNING',

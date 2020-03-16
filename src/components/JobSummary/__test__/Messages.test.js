@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { Messages } from '../Messages'
+import { Messages } from '../Messages/Messages'
 
 const props = {
     messages: [

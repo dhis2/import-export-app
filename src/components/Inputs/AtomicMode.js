@@ -1,7 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { atomicModeOptions } from '../../utils/options'
-import { RadioGroupField } from '../RadioGroup'
+import { RadioGroupField } from '../'
 
 const NAME = 'atomicMode'
 const DATATEST = 'input-atomic-mode'

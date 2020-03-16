@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { MoreOptions } from '.'
+import { MoreOptions } from '../'
 
 const renderMoreOptions = (initiallyVisible, props) =>
     render(

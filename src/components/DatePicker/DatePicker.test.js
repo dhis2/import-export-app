@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { DatePicker } from '.'
+import { DatePicker } from '../'
 
 const props = {
     dataTest: 'date-picker',

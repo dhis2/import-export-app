@@ -11,7 +11,7 @@ import {
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker'
+} from '../../components/DatePicker/DatePickerField'
 
 const dataValueSetQuery = {
     sets: {

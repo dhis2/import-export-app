@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Help, Radio } from '@dhis2/ui-core'
 
 import { optionPropType, optionsPropType } from '../../utils/options'
-import { FormField } from '../FormField'
+import { FormField } from '../'
 import styles from './RadioGroup.module.css'
 
 const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {

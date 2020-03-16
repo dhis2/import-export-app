@@ -3,7 +3,7 @@ import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
 import { allJobs } from '../../JobOverview/__test__/data'
-import { Summary } from '../Summary'
+import { Summary } from '../Summary/Summary'
 
 describe('different job type summaries', () => {
     const oneOfEach = [

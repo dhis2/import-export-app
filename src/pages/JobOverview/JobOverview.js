@@ -3,9 +3,11 @@ import i18n from '@dhis2/d2-i18n'
 
 import styles from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'
-import { Page } from '../../components/Page'
-import { TasksIcon } from '../../components/Icon'
-import { JobOverview as JobOverviewComponent } from '../../components/JobOverview'
+import {
+    JobOverview as JobOverviewComponent,
+    Page,
+    TasksIcon,
+} from '../../components/'
 
 const JobOverview = () => {
     const { jobOverview, updateJobOverview } = useContext(TaskContext)

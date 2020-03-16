@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import {
     Table,
@@ -11,7 +10,8 @@ import {
     TableCellHead,
 } from '@dhis2/ui-core'
 
-import { FormField } from '../../FormField'
+import { FormField } from '../../'
+import { messagesPropType } from '../helper'
 
 const Messages = ({ messages }) => {
     if (messages.length == 0) return null
@@ -44,15 +44,6 @@ const Messages = ({ messages }) => {
         </FormField>
     )
 }
-
-const messagesPropType = PropTypes.arrayOf(
-    PropTypes.exact({
-        uid: PropTypes.string,
-        type: PropTypes.string,
-        property: PropTypes.string,
-        message: PropTypes.string,
-    })
-)
 
 Messages.propTypes = {
     messages: messagesPropType.isRequired,

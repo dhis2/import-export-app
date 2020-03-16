@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { SelectField } from '../Select'
-import { useObjects } from '../../hooks/useObjects'
+import { SelectField } from '../'
+import { useObjects } from '../../hooks/'
 
 const SINGLE_EXACT_OBJECT_VALIDATOR = object =>
     !object ? i18n.t('One object must be selected') : undefined

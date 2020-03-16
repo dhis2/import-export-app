@@ -11,7 +11,6 @@ import {
     defaultIdSchemeOption,
     defaultInclusionOption,
 } from '../../utils/options'
-import { Page } from '../../components/Page'
 import {
     OrgUnitTree,
     ProgramPicker,
@@ -25,8 +24,7 @@ import {
     ProgramStages,
     IdScheme,
 } from '../../components/Inputs'
-import { MoreOptions } from '../../components/MoreOptions'
-import { EventIcon } from '../../components/Icon'
+import { Page, MoreOptions, EventIcon } from '../../components/'
 import { onExport, validate } from './form-helper'
 
 // PAGE INFO
@@ -73,7 +71,7 @@ const EventExport = () => {
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <OrgUnitTree multiSelect={false} />
-                        <ProgramPicker />
+                        <ProgramPicker autoSelectFirst />
                         <ProgramStages
                             selectedPrograms={values.selectedPrograms}
                             form={form}
