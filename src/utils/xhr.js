@@ -36,7 +36,7 @@ const onReadyStateChange = ({ xhr, type, onResponse, onError }) => {
         if (xhr.readyState === 4 && status === 2) {
             const idAndMsg = extractIdAndMessage(xhr)
             onResponse({ ...idAndMsg, type: type })
-        } else if (xhr.readyState === 4 && [3, 4, 5].includes(status)) {
+        } else if (xhr.readyState === 4) {
             onError(e)
         }
     }
