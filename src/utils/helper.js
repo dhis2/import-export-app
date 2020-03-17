@@ -115,36 +115,51 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
                 url,
                 upload: file,
                 type,
-                onResponse: ({ id, msg, typeReports }) => {
-                    const newId = id == -1 ? new Date().getTime() : id
+                onResponse: ({ error, id, msg, typeReports }) => {
                     let entry
-                    if (id == -1 && !msg) {
+                    if (error && msg) {
+                        // error but we have a message
                         entry = {
-                            id: newId.toString(),
+                            id: new Date().getTime(),
                             level: 'ERROR',
                             created: new Date(),
+                            lastUpdated: new Date(),
+                            completed: true,
+                            events: [msg],
+                            summary: typeReports,
+                            error: true,
+                            importType: type,
+                        }
+                    } else if (error) {
+                        // error with no message
+                        entry = {
+                            id: new Date().getTime(),
+                            level: 'ERROR',
+                            created: new Date(),
+                            lastUpdated: new Date(),
                             completed: true,
                             summary: undefined,
                             error: true,
                             importType: type,
                         }
                     } else {
+                        // success
                         entry = {
-                            id: newId.toString(),
+                            id: id,
                             level: 'INFO',
                             created: new Date(),
                             lastUpdated: new Date(),
-                            completed: id == -1,
+                            completed: false,
                             events: [msg],
-                            summary: typeReports,
-                            error: id == -1,
+                            summary: undefined,
+                            error: false,
                             importType: type,
                         }
                     }
-                    addEntry(newId, entry)
+                    addEntry(entry.id, entry)
 
-                    if (id == -1 && msg) {
-                        reject(errF(msg.text))
+                    if (error) {
+                        reject(errF(msg && msg.text))
                     }
                     setProgress(0)
                     resolve({})
@@ -165,6 +180,7 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
             })
             xhr.send(file)
         } catch (e) {
+            // xhr.send can throw an exception
             reject(errorGenerator(e))
         }
     })
