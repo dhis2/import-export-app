@@ -53,7 +53,7 @@ const extractIdAndMessage = xhr => {
             Array.isArray(typeReports[0].objectReports[0].errorReports)
         ) {
             return {
-                id: -1,
+                error: true,
                 msg: {
                     id: 'init',
                     text:
@@ -76,7 +76,7 @@ const extractIdAndMessage = xhr => {
         }
     }
 
-    return { id: -1, msg: undefined }
+    return { error: true }
 }
 
 const onProgress = setProgress => evt => {
