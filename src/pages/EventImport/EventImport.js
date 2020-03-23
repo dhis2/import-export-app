@@ -8,12 +8,14 @@ import { getPrevJobDetails } from '../../utils/helper'
 import {
     formatOptions,
     defaultFormatOption,
+    defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,
     defaultEventIdSchemeOption,
 } from '../../utils/options'
 import {
     FileUpload,
     Format,
+    DataElementIdScheme,
     EventIdScheme,
     OrgUnitIdScheme,
     ImportButtonStrip,
@@ -33,6 +35,8 @@ const PAGE_ICON = <EventIcon />
 const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
+    dataElementIdScheme:
+        prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
     eventIdScheme: prevJobDetails.eventIdScheme || defaultEventIdSchemeOption,
@@ -79,6 +83,7 @@ const EventImport = () => {
                         <FileUpload />
                         <Format availableFormats={formatOptions} />
                         <MoreOptions>
+                            <DataElementIdScheme />
                             <EventIdScheme />
                             <OrgUnitIdScheme />
                         </MoreOptions>
