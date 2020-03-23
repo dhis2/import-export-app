@@ -15,45 +15,50 @@ const App = () => {
     const { tasks, addTask, jobOverview, updateJobOverview } = useTasks()
     const { loading, error, user } = useUser()
 
-    if (loading) {
-        return (
-            <ScreenCover dataTest="app-screen-cover">
-                <CircularLoader dataTest="app-loader" />
-            </ScreenCover>
-        )
-    } else if (error) {
-        return (
-            <div data-test="app-error">
-                <p>
-                    {i18n.t(
-                        'Something went wrong when loading the current user!'
-                    )}
-                </p>
-                <p>{error.message}</p>
-            </div>
-        )
-    }
+    const showApp = !loading && !error
 
     return (
-        <HashRouter>
-            <UserContext.Provider value={user}>
-                <TaskContext.Provider
-                    value={{ tasks, addTask, jobOverview, updateJobOverview }}
-                >
-                    <CssReset />
-
-                    <div className={styles.container}>
-                        <div className={styles.sidebar}>
-                            <Sidebar />
-                        </div>
-
-                        <div className={styles.content}>
-                            <Router />
-                        </div>
-                    </div>
-                </TaskContext.Provider>
-            </UserContext.Provider>
-        </HashRouter>
+        <>
+            <CssReset />
+            {loading && (
+                <ScreenCover dataTest="app-screen-cover">
+                    <CircularLoader dataTest="app-loader" />
+                </ScreenCover>
+            )}
+            {error && (
+                <div data-test="app-error">
+                    <p>
+                        {i18n.t(
+                            'Something went wrong when loading the current user!'
+                        )}
+                    </p>
+                    <p>{error.message}</p>
+                </div>
+            )}
+            {showApp && (
+                <HashRouter>
+                    <UserContext.Provider value={user}>
+                        <TaskContext.Provider
+                            value={{
+                                tasks,
+                                addTask,
+                                jobOverview,
+                                updateJobOverview,
+                            }}
+                        >
+                            <div className={styles.container}>
+                                <div className={styles.sidebar}>
+                                    <Sidebar />
+                                </div>
+                                <div className={styles.content}>
+                                    <Router />
+                                </div>
+                            </div>
+                        </TaskContext.Provider>
+                    </UserContext.Provider>
+                </HashRouter>
+            )}
+        </>
     )
 }
 
