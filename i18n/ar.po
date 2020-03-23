@@ -17,34 +17,34 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "لم يتم تسجيل دخول المستخدم"
 
 msgid "Import Error"
-msgstr ""
+msgstr "تصدير الخطأ"
 
 msgid "Go Back"
-msgstr ""
+msgstr "العودة للخلف"
 
 msgid "Required"
 msgstr "مطلوب"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "اختر ملفاً للتحميل"
 
 msgid "filter data sets by name"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "تحديد الكل"
 
 msgid "Clear All"
-msgstr ""
+msgstr "الغاء التحديد عن الكل"
 
 msgid "Data sets"
 msgstr "حزم البيانات"
 
 msgid "more options"
-msgstr ""
+msgstr "المزيد من الخيارات"
 
 msgid "JSON"
 msgstr ""
@@ -56,7 +56,7 @@ msgid "CSV"
 msgstr ""
 
 msgid "Select None"
-msgstr ""
+msgstr "الغاء التحديد عن الكل"
 
 msgid "Yes"
 msgstr "نعم"
@@ -128,7 +128,7 @@ msgid "Identifier"
 msgstr "المعرف"
 
 msgid "Errors"
-msgstr ""
+msgstr "اخطاء"
 
 msgid "Full"
 msgstr ""
@@ -140,13 +140,13 @@ msgid "Import report mode"
 msgstr ""
 
 msgid "New and updates"
-msgstr ""
+msgstr "جديد وتحديثات"
 
 msgid "New only"
-msgstr ""
+msgstr "الجديد فقظ"
 
 msgid "Updates only"
-msgstr ""
+msgstr "تحديثات فقط"
 
 msgid "Delete"
 msgstr "حذف"
@@ -158,10 +158,10 @@ msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "دائماً"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
 
 msgid "Inclusion strategy"
 msgstr ""
@@ -266,7 +266,7 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Import Summary"
-msgstr ""
+msgstr "خلاصة عملية الإستيراد"
 
 msgid "Summary"
 msgstr ""
@@ -284,7 +284,7 @@ msgid "Object type"
 msgstr "نوع العنصر"
 
 msgid "Compression"
-msgstr ""
+msgstr "الضغط"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -308,7 +308,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "تضمين ماتم حذفه"
 
 msgid "Inclusion"
 msgstr ""
@@ -392,7 +392,7 @@ msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "غير مضغوط"
 
 msgid "Category combination"
 msgstr "مزيج الفئات"
