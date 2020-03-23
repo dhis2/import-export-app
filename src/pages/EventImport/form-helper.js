@@ -7,7 +7,14 @@ const onImport = ({
     addTask,
     setShowFullSummaryTask,
 }) => async values => {
-    const { dryRun, files, format, orgUnitIdScheme, eventIdScheme } = values
+    const {
+        dryRun,
+        files,
+        format,
+        dataElementIdScheme,
+        orgUnitIdScheme,
+        eventIdScheme,
+    } = values
 
     // send xhr
     const apiBaseUrl = `${baseUrl}/api/`
@@ -16,6 +23,7 @@ const onImport = ({
         'skipFirst=true',
         'async=true',
         `dryRun=${dryRun}`,
+        `dataElementIdScheme=${dataElementIdScheme.value}`,
         `orgUnitIdScheme=${orgUnitIdScheme.value}`,
         `eventIdScheme=${eventIdScheme.value}`,
         `payloadFormat=${format.value}`,
