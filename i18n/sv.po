@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
+"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -15,295 +15,154 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "user is not logged in"
-msgstr "användaren är inte loggad in"
-
-msgid "Import Error"
-msgstr "Fel vid import"
-
-msgid "Go Back"
-msgstr "Gå tillbaka"
-
-msgid "Required"
-msgstr "Obligatorisk"
-
-msgid "Choose a file to upload"
-msgstr "Välj fil att ladda upp"
-
-msgid "filter data sets by name"
-msgstr "filtrera data set vid namn"
-
-msgid "Select All"
-msgstr "Markera alla"
-
-msgid "Clear All"
-msgstr "Rensa alla"
-
-msgid "Data sets"
-msgstr "Dataset"
-
-msgid "more options"
-msgstr "flera val"
-
-msgid "JSON"
-msgstr "JSON"
-
-msgid "XML"
-msgstr "XML"
-
-msgid "CSV"
-msgstr "CSV"
-
-msgid "Yes"
-msgstr "Ja"
-
-msgid "No"
-msgstr "Nej"
-
-msgid "Async"
-msgstr "Asynk"
-
-msgid "All"
-msgstr "Alla"
-
-msgid "None"
-msgstr "Ingen"
-
-msgid "Atomic mode"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Selected organisation unit"
-msgstr ""
-
-msgid "Children"
-msgstr "Barn"
-
-msgid "Class key"
-msgstr ""
-
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Compression"
-msgstr "Komprimering"
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "Koda"
-
-msgid "Name"
-msgstr "Namn"
-
-msgid "Data element id scheme"
-msgstr ""
-
-msgid "Loading data element id scheme options..."
-msgstr ""
-
-msgid "Data sets filter"
-msgstr ""
-
-msgid "Loading organisation unit id scheme options..."
+msgid "Something went wrong when loading the current user!"
 msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
 
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
+
+msgid "Invalid date"
+msgstr ""
+
+msgid "Start date must be before end date"
+msgstr ""
+
+msgid "End date must be after start date"
+msgstr ""
+
+msgid ""
+"Something went wrong when loading the additional data element ID schemes"
+msgstr ""
+
+msgid "Something went wrong when loading the additional ID schemes"
+msgstr ""
+
+msgid ""
+"Something went wrong when loading the additional organisation unit ID "
+"schemes"
+msgstr ""
+
+msgid "Please select a file"
+msgstr ""
+
+msgid "Will do a test run without importing any data into the database"
+msgstr ""
+
 msgid "Dry run"
 msgstr "Torrkörning"
 
-msgid "EndDate"
-msgstr ""
+msgid "Import"
+msgstr "Import"
 
-msgid "End date"
-msgstr "Slutdatum"
-
-msgid "Event id scheme"
-msgstr ""
-
-msgid "First row is header"
-msgstr ""
-
-msgid "Auto"
+msgid "Atomic mode"
 msgstr ""
 
 msgid "Object"
 msgstr "Objektmeny"
 
+msgid "Compression"
+msgstr "Komprimering"
+
+msgid "Data element ID scheme"
+msgstr "Dataelement ID schema"
+
+msgid "Data sets"
+msgstr "Dataset"
+
+msgid "End date"
+msgstr "Slutdatum"
+
+msgid "Event ID scheme"
+msgstr ""
+
+msgid "Export"
+msgstr "Export"
+
+msgid "File"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
 msgid "Flush mode"
-msgstr ""
-
-msgid "PDF"
-msgstr ""
-
-msgid "ADX"
 msgstr ""
 
 msgid "Format"
 msgstr ""
 
-msgid "UID"
+msgid "ID scheme"
 msgstr ""
 
 msgid "Identifier"
 msgstr ""
 
-msgid "Errors"
-msgstr ""
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
 msgid "Import report mode"
 msgstr ""
 
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "Ta bort"
-
 msgid "Import strategy"
+msgstr ""
+
+msgid "Include children"
 msgstr ""
 
 msgid "Include deleted"
 msgstr ""
 
-msgid "Include children of organisation unit"
-msgstr ""
-
 msgid "Inclusion"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
 msgstr ""
 
-msgid "Merge"
-msgstr ""
-
-msgid "Replace"
-msgstr ""
+msgid "Async"
+msgstr "Asynk"
 
 msgid "Merge mode"
-msgstr ""
-
-msgid "Loading Object options..."
-msgstr ""
-
-msgid "Something went wrong when loading the object!"
-msgstr ""
-
-msgid "Programs"
-msgstr "program"
-
-msgid "Category combination"
-msgstr ""
-
-msgid "Dashboard"
-msgstr "Instrumentbräda"
-
-msgid "Data element groups"
-msgstr "Dataelementgrupper"
-
-msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
 msgstr "Objekttyp"
 
+msgid "Organisation unit ID scheme"
+msgstr ""
+
 msgid "Organisation unit"
 msgstr "Organisation enhet"
-
-msgid "Org unit id scheme"
-msgstr ""
-
-msgid "Yes (faster for large imports)"
-msgstr ""
 
 msgid "Preheat cache"
 msgstr ""
 
-msgid "Reference"
-msgstr "Referens"
+msgid "Faster for large imports"
+msgstr ""
 
 msgid "Preheat mode"
 msgstr ""
 
-msgid "[ All program stages]"
-msgstr ""
+msgid "Programs"
+msgstr "program"
 
-msgid "Program stages"
-msgstr ""
-
-msgid "Loading programStage options..."
-msgstr ""
-
-msgid "Something went wrong when loading the programStages!"
-msgstr ""
-
-msgid "Loading program options..."
-msgstr ""
-
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Error"
-msgstr "Fel"
-
-msgid "Report mode"
-msgstr ""
-
-msgid "Select None"
-msgstr "Avmarkera allt"
-
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
-msgstr ""
-
-msgid "Sharing"
+msgid "Program stage"
 msgstr ""
 
 msgid "Skip audit"
 msgstr ""
 
-msgid "Skip check (fast)"
+msgid "Improves performance at the cost of ability to audit changes"
 msgstr ""
 
-msgid "Check (safe, recommended)"
+msgid "Skip exisiting check"
 msgstr ""
 
-msgid "Skip existing check"
+msgid "Faster, but unsafe"
 msgstr ""
 
 msgid "Skip sharing"
@@ -312,29 +171,77 @@ msgstr ""
 msgid "Skip validation"
 msgstr ""
 
-msgid "StartDate"
-msgstr ""
-
 msgid "Start date"
 msgstr "Start datum"
 
 msgid "Strategy"
 msgstr ""
 
-msgid "Id scheme"
+msgid "No jobs started yet."
 msgstr ""
 
-msgid "Logger"
-msgstr "Logg"
+msgid "Recreate job"
+msgstr ""
 
-msgid "view messages received on using import/export forms."
-msgstr "se meddelanden mottagna från import/export formulär"
+msgid "Completed"
+msgstr ""
 
-msgid "Import"
-msgstr "Import"
+msgid "In progress"
+msgstr ""
 
-msgid "Export"
-msgstr "Export"
+msgid "Job details"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Job summary"
+msgstr ""
+
+msgid "Error"
+msgstr "Fel"
+
+msgid "Conflicts"
+msgstr "Konflikter"
+
+msgid "Messages"
+msgstr "Meddelanden"
+
+msgid "UID"
+msgstr ""
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Property"
+msgstr ""
+
+msgid "View summary of recently started import job"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Summary"
+msgstr "Uppsummering"
 
 msgid "Created"
 msgstr "Skapad"
@@ -351,182 +258,269 @@ msgstr "Uppdaterad"
 msgid "Total"
 msgstr "Totalt"
 
-msgid "Type"
-msgstr "Typ"
-
-msgid "Type Count"
-msgstr "Antal typer"
-
-msgid "Messages"
-msgstr "Meddelanden"
-
-msgid "Summaries"
-msgstr "Uppsummeringar"
-
-msgid "Conflicts"
-msgstr "Konflikter"
-
-msgid "Import Summary"
-msgstr "Import uppsummering"
-
-msgid "Summary"
-msgstr "Uppsummering"
-
-msgid "Atomic Mode"
-msgstr "Atomiskt Läge"
-
-msgid "Category ID scheme"
-msgstr "Kategori ID schema"
-
-msgid "Data element ID scheme"
-msgstr "Dataelement ID schema"
-
-msgid "Event ID Scheme"
-msgstr "Händelse ID schema"
-
-msgid "Flush Mode"
+msgid "Overview"
 msgstr ""
 
-msgid "ID scheme"
+msgid "Type count"
 msgstr ""
 
-msgid "Report Mode"
+msgid "more options"
+msgstr "flera val"
+
+msgid "One object must be selected"
 msgstr ""
 
-msgid "Import Strategy"
+msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
-msgid "Inclusion Strategy"
+msgid "At least one organisation unit must be selected"
 msgstr ""
 
-msgid "Merge Mode"
+msgid "One organisation unit must be selected"
 msgstr ""
 
-msgid "Org unit ID scheme"
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
-msgid "Preheat Mode"
+msgid "Filter programs by name"
 msgstr ""
 
-msgid "Program Stages"
+msgid "At least one program must be selected"
 msgstr ""
 
-msgid "Schemas"
+msgid "One program must be selected"
 msgstr ""
 
-msgid "Data Sets"
-msgstr "datamängder"
-
-msgid "Existing record check"
+msgid "One program stage must be selected"
 msgstr ""
 
-msgid "Skip Sharing"
+msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
-msgid "Skip Validation"
+msgid "Select All"
+msgstr "Markera alla"
+
+msgid "Select None"
+msgstr "Avmarkera allt"
+
+msgid "At least one schema must be selected"
 msgstr ""
 
-msgid "New and Updates"
+msgid "Select all"
 msgstr ""
 
-msgid "AUTO"
+msgid "Clear all"
 msgstr ""
 
-msgid "Create and Update"
+msgid "Data import"
 msgstr ""
 
-msgid "Create"
-msgstr "Skapa"
-
-msgid "Update"
-msgstr "Uppdatering"
-
-msgid "Gzip"
+msgid "Event import"
 msgstr ""
 
-msgid "Import/Export"
-msgstr "Import Export"
-
-msgid "An unknown error occurred. Please try again later"
+msgid "GML import"
 msgstr ""
 
-msgid "Data Export"
-msgstr "Data export"
-
-msgid ""
-"Export data values. This is the regular export function which exports data "
-"to the DHIS 2 exchange format called DXF 2."
+msgid "Metadata import"
 msgstr ""
 
-msgid "Loading options..."
+msgid "Data export"
 msgstr ""
 
-msgid "Event Export"
-msgstr "Händelse export"
+msgid "Event export"
+msgstr ""
+
+msgid "Metadata dependency export"
+msgstr ""
+
+msgid "Metadata export"
+msgstr ""
+
+msgid "Job overview"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nej"
+
+msgid "Data"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "GML"
+msgstr ""
+
+msgid "Metadata"
+msgstr ""
+
+msgid "Something went wrong when loading the class keys"
+msgstr ""
+
+msgid "Something went wrong when loading the objects"
+msgstr ""
+
+msgid "All program stages"
+msgstr ""
+
+msgid "Something went wrong when loading the program stages"
+msgstr ""
+
+msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
+msgstr ""
+
+msgid "HTTP error when fetching data"
+msgstr ""
+
+msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgstr ""
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
 
-msgid "Metadata Export"
-msgstr "Metadata export"
-
 msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
+"Import events for programs, stages and tracked entities using the DXF 2 "
+"format."
 msgstr ""
 
-msgid "Metadata Dependency Export"
-msgstr "Metadata beroenden export"
+msgid ""
+"Import geographic data for organisation units using the GML format. GML is "
+"an XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "An overview of all import jobs started this session."
+msgstr ""
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
-"objects."
+"objects in the XML or JSON format."
 msgstr ""
-
-msgid "Import / Export"
-msgstr ""
-
-msgid "Import or Export DHIS2 data."
-msgstr ""
-
-msgid "An unknown error occurred"
-msgstr ""
-
-msgid "Data Import"
-msgstr "Data import"
 
 msgid ""
-"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
-"is the standard exchange format for DHIS 2."
+"Export meta data like data elements and organisation units in the XML, JSON "
+"or CSV format."
 msgstr ""
-
-msgid "Event Import"
-msgstr "Händelse import"
 
 msgid ""
-"Import events for programs, stages and tracked entities in the DXF 2 format."
+"Import metadata like data elements and organisation units using the DXF 2 "
+"format."
 msgstr ""
 
-msgid "GML Import"
-msgstr "GML import"
-
-msgid ""
-"Import geographic data for organisation units using GML format. GML is an "
-"XML grammar for expressing geographical features."
+msgid "A class key must be selected"
 msgstr ""
 
-msgid "Couldn't load classKey options"
+msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "Metadata Import"
-msgstr "Metadata import"
+msgid "JSON"
+msgstr "JSON"
 
-msgid ""
-"Import metadata like data elements and organisation units using the standard"
-" DHIS 2 exchange format called DXF 2."
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
 msgstr ""
 
-msgid "It seems like there was no data in the uploaded file."
+msgid "PDF"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr "Instrumentbräda"
+
+msgid "Data element groups"
+msgstr "Dataelementgrupper"
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "Koda"
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Skip check"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "Ta bort"
+
+msgid "Auto"
+msgstr ""
+
+msgid "Errors"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Reference"
+msgstr "Referens"
+
+msgid "All"
+msgstr "Alla"
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""
