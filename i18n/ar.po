@@ -17,34 +17,34 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "لم يتم تسجيل دخول المستخدم"
 
 msgid "Import Error"
-msgstr ""
+msgstr "تصدير الخطأ"
 
 msgid "Go Back"
-msgstr ""
+msgstr "العودة للخلف"
 
 msgid "filter data sets by name"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "تحديد الكل"
 
 msgid "Clear All"
-msgstr ""
+msgstr "الغاء التحديد عن الكل"
 
 msgid "Data sets"
 msgstr "حزم البيانات"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "اختر ملفاً للتحميل"
 
 msgid "Required"
 msgstr "مطلوب"
 
 msgid "more options"
-msgstr ""
+msgstr "المزيد من الخيارات"
 
 msgid "JSON"
 msgstr ""
@@ -56,7 +56,7 @@ msgid "CSV"
 msgstr ""
 
 msgid "Select None"
-msgstr ""
+msgstr "الغاء التحديد عن الكل"
 
 msgid "Logger"
 msgstr ""
@@ -101,10 +101,10 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "اخطاء"
 
 msgid "Import Summary"
-msgstr ""
+msgstr "خلاصة عملية الإستيراد"
 
 msgid "Summary"
 msgstr ""
@@ -125,7 +125,7 @@ msgid "Object type"
 msgstr "نوع العنصر"
 
 msgid "Compression"
-msgstr ""
+msgstr "الضغط"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -158,7 +158,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "تضمين ماتم حذفه"
 
 msgid "Inclusion"
 msgstr ""
@@ -242,10 +242,10 @@ msgid "New and Updates"
 msgstr ""
 
 msgid "New only"
-msgstr ""
+msgstr "الجديد فقظ"
 
 msgid "Updates only"
-msgstr ""
+msgstr "تحديثات فقط"
 
 msgid "Delete"
 msgstr "حذف"
@@ -302,10 +302,10 @@ msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "دائماً"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
 
 msgid "Include children of organisation unit"
 msgstr ""
@@ -317,7 +317,7 @@ msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "غير مضغوط"
 
 msgid "Category combination"
 msgstr "مزيج الفئات"
