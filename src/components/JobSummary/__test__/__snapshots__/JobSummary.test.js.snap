@@ -26,7 +26,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
         <span
           data-test="job-summary-date"
         >
-          2020-02-12 14:00:32
+          2020-02-12 13:00:32
  
         </span>
       </span>
@@ -410,7 +410,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
-                2020-02-12 14:00:32
+                2020-02-12 13:00:32
 
               </td>
               <td
@@ -538,7 +538,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
         <span
           data-test="job-summary-date"
         >
-          2020-02-12 14:00:59
+          2020-02-12 13:00:59
  
         </span>
       </span>
@@ -893,7 +893,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
-                2020-02-12 13:00:58
+                2020-02-12 12:00:58
 
               </td>
               <td
@@ -917,7 +917,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
-                2020-02-12 13:00:59
+                2020-02-12 12:00:59
 
               </td>
               <td
@@ -941,7 +941,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
-                2020-02-12 13:00:59
+                2020-02-12 12:00:59
 
               </td>
               <td
@@ -965,7 +965,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
-                2020-02-12 13:00:59
+                2020-02-12 12:00:59
 
               </td>
               <td

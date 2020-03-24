@@ -12,7 +12,7 @@ const NAME = 'selectedPrograms'
 const LABEL = i18n.t('Programs')
 const DATATEST = 'input-program-picker'
 
-const ProgramPicker = ({ multiSelect = false, ...rest }) => {
+const ProgramPicker = ({ multiSelect, ...rest }) => {
     const programValidator = multiSelect
         ? SINGLE_PROGRAM_VALIDATOR
         : SINGLE_EXACT_PROGRAM_VALIDATOR
@@ -23,11 +23,16 @@ const ProgramPicker = ({ multiSelect = false, ...rest }) => {
             name={NAME}
             multiSelect={multiSelect}
             validator={validator}
+            withActions={false}
             label={LABEL}
             dataTest={DATATEST}
             {...rest}
         />
     )
+}
+
+ProgramPicker.defaultProps = {
+    multiSelect: false,
 }
 
 ProgramPicker.propTypes = {

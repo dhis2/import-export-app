@@ -6,9 +6,21 @@ import { Events } from '../Events/Events'
 
 const props = {
     events: [
-        { date: new Date('2020-01-01'), text: 'First day of year', id: 'Jan' },
-        { date: new Date('2020-01-02'), text: 'Snd day of year', id: 'Jan2' },
-        { date: new Date('2020-12-31'), text: 'Last day of year', id: 'Dec' },
+        {
+            date: new Date('2020-01-01T00:00:00'),
+            text: 'First day of year',
+            id: 'Jan',
+        },
+        {
+            date: new Date('2020-01-02T00:00:00'),
+            text: 'Snd day of year',
+            id: 'Jan2',
+        },
+        {
+            date: new Date('2020-12-31T00:00:00'),
+            text: 'Last day of year',
+            id: 'Dec',
+        },
     ],
 }
 

@@ -22,10 +22,10 @@ const ProgramPicker = ({
     setSelected,
     meta,
     dataTest,
-    multiSelect = true,
-    withFilter = true,
-    withActions = true,
-    autoSelectFirst = false,
+    multiSelect,
+    withFilter,
+    withActions,
+    autoSelectFirst,
 }) => {
     const [list, setList] = useState([])
     const { error, loading } = useDataQuery(programQuery, {
@@ -79,6 +79,13 @@ const ProgramPicker = ({
             )}
         </FormField>
     )
+}
+
+ProgramPicker.defaultProps = {
+    multiSelect: false,
+    withFilter: true,
+    withActions: false,
+    autoSelectFirst: true,
 }
 
 ProgramPicker.propTypes = {

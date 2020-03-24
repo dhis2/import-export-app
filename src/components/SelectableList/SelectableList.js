@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core'
+import { Button, Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core'
 
 import { optionsPropType } from '../../utils/options'
 import styles from './SelectableList.module.css'
@@ -64,23 +64,20 @@ const SelectableList = ({
                     className={styles.actions}
                     data-test={`${dataTest}-actions`}
                 >
-                    <Checkbox
+                    <Button
                         className={styles.action}
-                        name="select-all"
-                        value="select-all"
-                        label={i18n.t('Select all')}
-                        onChange={onSelectAll}
+                        onClick={onSelectAll}
                         dataTest={`${dataTest}-actions-select-all`}
-                        checked
-                    />
-                    <Checkbox
+                    >
+                        {i18n.t('Select all')}
+                    </Button>
+                    <Button
                         className={styles.action}
-                        name="clear-all"
-                        value="clear-all"
-                        label={i18n.t('Clear all')}
-                        onChange={onClearAll}
+                        onClick={onClearAll}
                         dataTest={`${dataTest}-actions-clear-all`}
-                    />
+                    >
+                        {i18n.t('Clear all')}
+                    </Button>
                 </div>
             )}
 

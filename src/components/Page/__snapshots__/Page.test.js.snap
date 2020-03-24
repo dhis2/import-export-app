@@ -212,7 +212,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
               <span
                 data-test="job-summary-date"
               >
-                2020-02-12 14:00:23
+                2020-02-12 13:00:23
  
               </span>
             </span>
@@ -448,7 +448,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                       class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
-                      2020-02-12 13:00:23
+                      2020-02-12 12:00:23
 
                     </td>
                     <td
@@ -472,7 +472,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                       class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
-                      2020-02-12 13:00:23
+                      2020-02-12 12:00:23
 
                     </td>
                     <td
@@ -496,7 +496,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                       class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
-                      2020-02-12 13:00:23
+                      2020-02-12 12:00:23
 
                     </td>
                     <td
@@ -520,7 +520,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                       class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
-                      2020-02-12 13:00:23
+                      2020-02-12 12:00:23
 
                     </td>
                     <td

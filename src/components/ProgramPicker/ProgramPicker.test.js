@@ -22,6 +22,7 @@ const props = {
     multiSelect: false,
     withFilter: false,
     withActions: false,
+    autoSelectFirst: true,
     meta: {},
     label: 'Program',
     dataTest: 'program-picker',
@@ -55,7 +56,7 @@ test('programs load and are shown in a list', async () => {
     // clicking on first item fires setSelected
     const firstItem = customData.programs.programs[0]
     fireEvent.click(getByText(firstItem.displayName))
-    expect(setSelected).toHaveBeenCalledTimes(1)
+    expect(setSelected).toHaveBeenCalledTimes(2)
     expect(setSelected).toHaveBeenLastCalledWith([firstItem.id])
 })
 

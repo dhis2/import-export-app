@@ -3,32 +3,32 @@ export const tasksState = {
         EcJpZjEcMfI: {
             id: 'EcJpZjEcMfI',
             level: 'INFO',
-            created: new Date('2020-02-12T13:00:23.350Z'),
-            lastUpdated: new Date('2020-02-12T13:00:23.766Z'),
+            created: new Date('2020-02-12T13:00:23.350'),
+            lastUpdated: new Date('2020-02-12T13:00:23.766'),
             completed: true,
             events: [
                 {
                     id: 'init',
                     text: 'Initiated dataValueImport',
-                    date: new Date('2020-02-12T12:00:23.230Z'),
+                    date: new Date('2020-02-12T12:00:23.230'),
                 },
                 {
                     id: 'LPCnEwppbqy',
                     level: 'INFO',
                     text: 'Process started',
-                    date: new Date('2020-02-12T12:00:23.232Z'),
+                    date: new Date('2020-02-12T12:00:23.232'),
                 },
                 {
                     id: 'quL1PHwVPg1',
                     level: 'INFO',
                     text: 'Importing data values',
-                    date: new Date('2020-02-12T12:00:23.498Z'),
+                    date: new Date('2020-02-12T12:00:23.498'),
                 },
                 {
                     id: 'fn5gnxqYk1J',
                     level: 'INFO',
                     text: 'Import done',
-                    date: new Date('2020-02-12T12:00:23.499Z'),
+                    date: new Date('2020-02-12T12:00:23.499'),
                 },
             ],
             summary: {
@@ -103,32 +103,32 @@ export const tasksState = {
         SN0RKLRMWBY: {
             id: 'SN0RKLRMWBY',
             level: 'INFO',
-            created: new Date('2020-02-12T13:00:59.136Z'),
-            lastUpdated: new Date('2020-02-12T13:00:59.240Z'),
+            created: new Date('2020-02-12T13:00:59.136'),
+            lastUpdated: new Date('2020-02-12T13:00:59.240'),
             completed: true,
             events: [
                 {
                     id: 'init',
                     text: 'Initiated dataValueImport',
-                    date: new Date('2020-02-12T12:00:58.999Z'),
+                    date: new Date('2020-02-12T12:00:58.999'),
                 },
                 {
                     id: 'oE17j9gw54i',
                     level: 'INFO',
                     text: 'Process started',
-                    date: new Date('2020-02-12T12:00:59.001Z'),
+                    date: new Date('2020-02-12T12:00:59.001'),
                 },
                 {
                     id: 'SKEyN7hdwyd',
                     level: 'INFO',
                     text: 'Importing data values',
-                    date: new Date('2020-02-12T12:00:59.035Z'),
+                    date: new Date('2020-02-12T12:00:59.035'),
                 },
                 {
                     id: 'CO2RDYqaGde',
                     level: 'INFO',
                     text: 'Import done',
-                    date: new Date('2020-02-12T12:00:59.148Z'),
+                    date: new Date('2020-02-12T12:00:59.148'),
                 },
             ],
             summary: {
@@ -227,26 +227,26 @@ export const tasksState = {
         xW1s5Xo5rWZ: {
             id: 'xW1s5Xo5rWZ',
             level: 'INFO',
-            created: new Date('2020-02-12T13:00:28.184Z'),
-            lastUpdated: new Date('2020-02-12T13:00:28.291Z'),
+            created: new Date('2020-02-12T13:00:28.184'),
+            lastUpdated: new Date('2020-02-12T13:00:28.291'),
             completed: true,
             events: [
                 {
                     id: 'init',
                     text: 'Initiated inMemoryEventImport',
-                    date: new Date('2020-02-12T12:00:28.136Z'),
+                    date: new Date('2020-02-12T12:00:28.136'),
                 },
                 {
                     id: 'sso1rmwbq4i',
                     level: 'INFO',
                     text: 'Importing events',
-                    date: new Date('2020-02-12T12:00:28.137Z'),
+                    date: new Date('2020-02-12T12:00:28.137'),
                 },
                 {
                     id: 'kRVdpRp3pIy',
                     level: 'INFO',
                     text: 'Import done. Completed in 00:00:00.013.',
-                    date: new Date('2020-02-12T12:00:28.154Z'),
+                    date: new Date('2020-02-12T12:00:28.154'),
                 },
             ],
             summary: {
@@ -295,15 +295,15 @@ export const tasksState = {
         '1581512432380': {
             id: 1581512432380,
             level: 'INFO',
-            created: new Date('2020-02-12T13:00:32.380Z'),
-            lastUpdated: new Date('2020-02-12T13:00:32.380Z'),
+            created: new Date('2020-02-12T13:00:32.380'),
+            lastUpdated: new Date('2020-02-12T13:00:32.380'),
             completed: true,
             events: [
                 {
                     id: 'init',
                     text:
                         'Failed to validate job runtime - `GML import failed: Content is not allowed in prolog. On line 1 column 1.`',
-                    date: new Date('2020-02-12T13:00:32.380Z'),
+                    date: new Date('2020-02-12T13:00:32.380'),
                 },
             ],
             summary: {
@@ -356,26 +356,26 @@ export const tasksState = {
         zS69mHvSSfj: {
             id: 'zS69mHvSSfj',
             level: 'INFO',
-            created: new Date('2020-02-12T13:00:38.990Z'),
-            lastUpdated: new Date('2020-02-12T13:00:39.155Z'),
+            created: new Date('2020-02-12T13:00:38.990'),
+            lastUpdated: new Date('2020-02-12T13:00:39.155'),
             completed: true,
             events: [
                 {
                     id: 'init',
                     text: 'Initiated metadataImport',
-                    date: new Date('2020-02-12T12:00:38.727Z'),
+                    date: new Date('2020-02-12T12:00:38.727'),
                 },
                 {
                     id: 'kltTBpl5Xxy',
                     level: 'INFO',
                     text: '(admin) Import:Start',
-                    date: new Date('2020-02-12T12:00:38.751Z'),
+                    date: new Date('2020-02-12T12:00:38.751'),
                 },
                 {
                     id: 'JvqlsZAY0c1',
                     level: 'INFO',
                     text: '(admin) Import:Done took 0.14 seconds',
-                    date: new Date('2020-02-12T12:00:38.892Z'),
+                    date: new Date('2020-02-12T12:00:38.892'),
                 },
             ],
             summary: {
@@ -470,32 +470,32 @@ export const jobOverviewState = {
         selectedJob: {
             id: 'EcJpZjEcMfI',
             level: 'INFO',
-            created: new Date('2020-02-12T13:00:23.350Z'),
-            lastUpdated: new Date('2020-02-12T13:00:23.766Z'),
+            created: new Date('2020-02-12T13:00:23.350'),
+            lastUpdated: new Date('2020-02-12T13:00:23.766'),
             completed: true,
             events: [
                 {
                     id: 'init',
                     text: 'Initiated dataValueImport',
-                    date: new Date('2020-02-12T12:00:23.230Z'),
+                    date: new Date('2020-02-12T12:00:23.230'),
                 },
                 {
                     id: 'LPCnEwppbqy',
                     level: 'INFO',
                     text: 'Process started',
-                    date: new Date('2020-02-12T12:00:23.232Z'),
+                    date: new Date('2020-02-12T12:00:23.232'),
                 },
                 {
                     id: 'quL1PHwVPg1',
                     level: 'INFO',
                     text: 'Importing data values',
-                    date: new Date('2020-02-12T12:00:23.498Z'),
+                    date: new Date('2020-02-12T12:00:23.498'),
                 },
                 {
                     id: 'fn5gnxqYk1J',
                     level: 'INFO',
                     text: 'Import done',
-                    date: new Date('2020-02-12T12:00:23.499Z'),
+                    date: new Date('2020-02-12T12:00:23.499'),
                 },
             ],
             summary: {
