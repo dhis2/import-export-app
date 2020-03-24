@@ -18,7 +18,7 @@ const schemaQuery = {
     schemas: {
         resource: 'schemas',
         params: {
-            paging: 'false',
+            fields: ['metadata', 'collectionName', 'displayName', 'klass'],
         },
     },
 }
