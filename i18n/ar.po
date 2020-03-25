@@ -1,13 +1,14 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# Hamza Assada <7amza.it@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-01-07T10:27:09.944Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,31 +17,31 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "لم يتم تسجيل دخول المستخدم"
 
 msgid "Import Error"
-msgstr ""
+msgstr "تصدير الخطأ"
 
 msgid "Go Back"
-msgstr ""
+msgstr "العودة للخلف"
 
 msgid "filter data sets by name"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "تحديد الكل"
 
 msgid "Clear All"
-msgstr ""
+msgstr "الغاء التحديد عن الكل"
 
 msgid "Data sets"
 msgstr "حزم البيانات"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "اختر ملفاً للتحميل"
 
 msgid "more options"
-msgstr ""
+msgstr "المزيد من الخيارات"
 
 msgid "JSON"
 msgstr ""
@@ -52,7 +53,7 @@ msgid "CSV"
 msgstr ""
 
 msgid "Select None"
-msgstr ""
+msgstr "الغاء التحديد عن الكل"
 
 msgid "Logger"
 msgstr ""
@@ -97,10 +98,10 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "اخطاء"
 
 msgid "Import Summary"
-msgstr ""
+msgstr "خلاصة عملية الإستيراد"
 
 msgid "Summary"
 msgstr ""
@@ -121,7 +122,7 @@ msgid "Object type"
 msgstr "نوع العنصر"
 
 msgid "Compression"
-msgstr ""
+msgstr "الضغط"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -154,7 +155,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "تضمين ماتم حذفه"
 
 msgid "Inclusion"
 msgstr ""
@@ -166,7 +167,7 @@ msgid "Merge Mode"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "الكائن"
 
 msgid "Organisation unit"
 msgstr "الوحدة التنظيمية"
@@ -238,10 +239,10 @@ msgid "New and Updates"
 msgstr ""
 
 msgid "New only"
-msgstr ""
+msgstr "الجديد فقظ"
 
 msgid "Updates only"
-msgstr ""
+msgstr "تحديثات فقط"
 
 msgid "Delete"
 msgstr "حذف"
@@ -298,10 +299,10 @@ msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "دائماً"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
 
 msgid "Include children of organisation unit"
 msgstr ""
@@ -313,7 +314,7 @@ msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "غير مضغوط"
 
 msgid "Category combination"
 msgstr "مزيج الفئات"
