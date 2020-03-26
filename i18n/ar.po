@@ -290,7 +290,7 @@ msgid "Replace"
 msgstr "استبدال"
 
 msgid "Auto"
-msgstr ""
+msgstr "تلقائي"
 
 msgid "With sharing"
 msgstr ""
