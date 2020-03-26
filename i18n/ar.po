@@ -104,7 +104,7 @@ msgid "First row is header"
 msgstr ""
 
 msgid "Auto"
-msgstr ""
+msgstr "تلقائي"
 
 msgid "Object"
 msgstr "الكائن"
