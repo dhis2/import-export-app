@@ -491,7 +491,7 @@ msgid "Delete"
 msgstr "حذف"
 
 msgid "Auto"
-msgstr ""
+msgstr "تلقائي"
 
 msgid "Errors"
 msgstr "اخطاء"
