@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "@dhis2/app-runtime": "^2.0.4",
-        "@dhis2/ui-core": "^4.14.0",
+        "@dhis2/ui-core": "^4.16.0",
         "@dhis2/ui-forms": "^1.0.1",
         "jszip": "^3.2.2",
         "react-router-dom": "^5.1.2"
