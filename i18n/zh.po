@@ -48,13 +48,13 @@ msgid "more options"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "Select None"
 msgstr ""
@@ -93,7 +93,7 @@ msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
-msgstr ""
+msgstr "消息"
 
 msgid "Summaries"
 msgstr ""
@@ -126,7 +126,7 @@ msgid "Object type"
 msgstr "对象类型"
 
 msgid "Compression"
-msgstr ""
+msgstr "压缩"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -144,7 +144,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "格式"
 
 msgid "ID scheme"
 msgstr ""
@@ -288,13 +288,13 @@ msgid "Merge"
 msgstr "合并"
 
 msgid "Replace"
-msgstr ""
+msgstr "替换"
 
 msgid "Auto"
 msgstr ""
 
 msgid "With sharing"
-msgstr ""
+msgstr "共享于"
 
 msgid "Without sharing"
 msgstr ""
@@ -330,7 +330,7 @@ msgid "Data element groups"
 msgstr "数据元组"
 
 msgid "Option sets"
-msgstr ""
+msgstr "选项集"
 
 msgid "[ All program stages]"
 msgstr ""
