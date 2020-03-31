@@ -260,7 +260,7 @@ msgid "Total"
 msgstr "الإجمالي"
 
 msgid "Overview"
-msgstr ""
+msgstr "نظرة عامة"
 
 msgid "Type count"
 msgstr ""
@@ -275,7 +275,7 @@ msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr ""
+msgstr "يجب تحديد وحدة تنظيمية واحدة على الأقل"
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -356,7 +356,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr ""
+msgstr "البيانات الوصفية"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -476,7 +476,7 @@ msgid "Skip check"
 msgstr ""
 
 msgid "Check"
-msgstr ""
+msgstr "تحقق"
 
 msgid "New and updates"
 msgstr "جديد وتحديثات"
