@@ -138,7 +138,7 @@ msgid "First row is header"
 msgstr ""
 
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 msgid "Object"
 msgstr ""
