@@ -1,44 +1,43 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# Hamza Assada <7amza.it@gmail.com>, 2020
+# easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
-"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr "حدث خطأ أثناء تحميل المستخدم الحالي"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr "حدث خطأ ما أثناء تحميل مجموعات البيانات!"
+msgstr ""
 
 msgid "Filter data sets by name"
-msgstr "تصفية مجموعة البيانات حسب الإسم"
+msgstr ""
 
 msgid "At least one data set must be selected"
-msgstr "يجب تحديد مجموعة بيانات واحدة على الأقل"
+msgstr ""
 
 msgid "One data set must be selected"
-msgstr "يجب تحديد مجموعة بيانات واحدة"
+msgstr ""
 
 msgid "Invalid date"
-msgstr "تاريخ غير صالح"
+msgstr ""
 
 msgid "Start date must be before end date"
-msgstr "يجب أن يكون تاريخ البدء قبل تاريخ الانتهاء"
+msgstr ""
 
 msgid "End date must be after start date"
-msgstr "يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء"
+msgstr ""
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -53,58 +52,58 @@ msgid ""
 msgstr ""
 
 msgid "Please select a file"
-msgstr "يرجى تحديد ملف"
+msgstr ""
 
 msgid "Will do a test run without importing any data into the database"
-msgstr "سيتم إجراء اختبار دون استيراد أي بيانات إلى قاعدة البيانات"
+msgstr ""
 
 msgid "Dry run"
 msgstr ""
 
 msgid "Import"
-msgstr "استيراد"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
 
 msgid "Object"
-msgstr "الكائن"
+msgstr ""
 
 msgid "Compression"
-msgstr "الضغط"
+msgstr ""
 
 msgid "Data element ID scheme"
 msgstr ""
 
 msgid "Data sets"
-msgstr "حزم البيانات"
+msgstr "数据集"
 
 msgid "End date"
-msgstr "تاريخ النهاية"
+msgstr "结束日期"
 
 msgid "Event ID scheme"
 msgstr ""
 
 msgid "Export"
-msgstr "تصدير"
+msgstr "导出"
 
 msgid "File"
-msgstr "ملف"
+msgstr ""
 
 msgid "First row is header"
-msgstr "الصف الأول هو عناوين الأعمدة"
+msgstr ""
 
 msgid "Flush mode"
 msgstr ""
 
 msgid "Format"
-msgstr "التنسيق"
+msgstr ""
 
 msgid "ID scheme"
 msgstr ""
 
 msgid "Identifier"
-msgstr "المعرف"
+msgstr ""
 
 msgid "Import report mode"
 msgstr ""
@@ -116,7 +115,7 @@ msgid "Include children"
 msgstr ""
 
 msgid "Include deleted"
-msgstr "تضمين ماتم حذفه"
+msgstr ""
 
 msgid "Inclusion"
 msgstr ""
@@ -131,31 +130,31 @@ msgid "Merge mode"
 msgstr ""
 
 msgid "Object type"
-msgstr "نوع العنصر"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "الوحدة التنظيمية"
+msgstr "机构"
 
 msgid "Preheat cache"
 msgstr ""
 
 msgid "Faster for large imports"
-msgstr "أسرع لعمليات الإستيراد الكبيرة"
+msgstr ""
 
 msgid "Preheat mode"
 msgstr ""
 
 msgid "Programs"
-msgstr "البرامج"
-
-msgid "Program stage"
 msgstr ""
 
+msgid "Program stage"
+msgstr "项目阶段"
+
 msgid "Skip audit"
-msgstr "تجاهل التدقيق"
+msgstr ""
 
 msgid "Improves performance at the cost of ability to audit changes"
 msgstr ""
@@ -164,16 +163,16 @@ msgid "Skip exisiting check"
 msgstr ""
 
 msgid "Faster, but unsafe"
-msgstr "أسرع ولكن غير آمن"
+msgstr ""
 
 msgid "Skip sharing"
-msgstr "تجنب حالة المشاركة"
+msgstr ""
 
 msgid "Skip validation"
-msgstr "تجنب عملية التحقق"
+msgstr ""
 
 msgid "Start date"
-msgstr "تاريخ البداية"
+msgstr "开始日期"
 
 msgid "Strategy"
 msgstr ""
@@ -185,10 +184,10 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "Completed"
-msgstr "اكتمل"
+msgstr "已完成"
 
 msgid "In progress"
-msgstr "قيد التقدم"
+msgstr "进行中"
 
 msgid "Job details"
 msgstr ""
@@ -197,16 +196,16 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 msgid "Events"
-msgstr "الأحداث"
+msgstr "事件"
 
 msgid "Time"
-msgstr "الوقت"
+msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "消息"
 
 msgid "ID"
 msgstr ""
@@ -215,19 +214,19 @@ msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "خطأ"
+msgstr "错误"
 
 msgid "Conflicts"
-msgstr "تعارضات"
+msgstr ""
 
 msgid "Messages"
-msgstr "الرسائل"
+msgstr "消息"
 
 msgid "UID"
 msgstr ""
 
 msgid "Type"
-msgstr "النوع"
+msgstr "类型"
 
 msgid "Property"
 msgstr ""
@@ -236,61 +235,61 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "الحالة"
+msgstr "状态"
 
 msgid "Description"
-msgstr "الوصف"
+msgstr "描述"
 
 msgid "Summary"
-msgstr "الخلاصة"
+msgstr ""
 
 msgid "Created"
-msgstr "تم الإنشاء"
+msgstr "创建"
 
 msgid "Deleted"
-msgstr "تم حذفه"
+msgstr ""
 
 msgid "Ignored"
-msgstr "تم تجاهله"
+msgstr ""
 
 msgid "Updated"
-msgstr "تم تحديثه"
+msgstr ""
 
 msgid "Total"
-msgstr "الإجمالي"
+msgstr "总共"
 
 msgid "Overview"
-msgstr "نظرة عامة"
+msgstr "概要"
 
 msgid "Type count"
 msgstr ""
 
 msgid "more options"
-msgstr "المزيد من الخيارات"
+msgstr ""
 
 msgid "One object must be selected"
-msgstr "يجب تحديد كائن واحد على الأقل"
+msgstr ""
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr "حدث خطأ ما أثناء تحميل الوحدات التنظيمية!"
+msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "يجب تحديد وحدة تنظيمية واحدة على الأقل"
+msgstr "至少得选择一个机构"
 
 msgid "One organisation unit must be selected"
-msgstr "يجب تحديد وحدة تنظيمية واحدة"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr "حدث خطأ ما أثناء تحميل البرامج!"
+msgstr ""
 
 msgid "Filter programs by name"
-msgstr "تصفية البرامج حسب الإسم"
+msgstr ""
 
 msgid "At least one program must be selected"
-msgstr "يجب تحديد برنامج واحد على الأقل"
+msgstr ""
 
 msgid "One program must be selected"
-msgstr "يجب تحديد برنامج واحد"
+msgstr ""
 
 msgid "One program stage must be selected"
 msgstr ""
@@ -299,64 +298,64 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr "تحديد الكل"
+msgstr ""
 
 msgid "Select None"
-msgstr "الغاء التحديد عن الكل"
+msgstr ""
 
 msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Select all"
-msgstr "تحديد الكل"
+msgstr ""
 
 msgid "Clear all"
-msgstr "تنظيف الكل"
+msgstr ""
 
 msgid "Data import"
-msgstr "استيراد البيانات"
+msgstr ""
 
 msgid "Event import"
-msgstr "استيراد الأحداث"
+msgstr ""
 
 msgid "GML import"
 msgstr ""
 
 msgid "Metadata import"
-msgstr "استيراد البيانات الوصفية"
+msgstr ""
 
 msgid "Data export"
-msgstr "تصدير البيانات"
+msgstr ""
 
 msgid "Event export"
-msgstr "تصدير الأحداث"
+msgstr ""
 
 msgid "Metadata dependency export"
 msgstr ""
 
 msgid "Metadata export"
-msgstr "تصدير البيانات الوصفية"
+msgstr ""
 
 msgid "Job overview"
 msgstr ""
 
 msgid "Yes"
-msgstr "نعم"
+msgstr "Yes"
 
 msgid "No"
-msgstr "لا"
+msgstr "No"
 
 msgid "Data"
 msgstr ""
 
 msgid "Event"
-msgstr ""
+msgstr "事件"
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "البيانات الوصفية"
+msgstr "元数据"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -419,13 +418,13 @@ msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "ADX"
 msgstr ""
@@ -440,16 +439,16 @@ msgid "GZip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr "غير مضغوط"
+msgstr ""
 
 msgid "Category combination"
-msgstr "مزيج الفئات"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "لوحة المعلومات"
+msgstr "仪表盘"
 
 msgid "Data element groups"
-msgstr "مجموعات عناصر البيانات"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
@@ -458,10 +457,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "الرمز"
+msgstr ""
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "名称"
 
 msgid "Selected organisation unit"
 msgstr ""
@@ -476,25 +475,25 @@ msgid "Skip check"
 msgstr ""
 
 msgid "Check"
-msgstr "تحقق"
+msgstr "检查"
 
 msgid "New and updates"
-msgstr "جديد وتحديثات"
+msgstr ""
 
 msgid "New only"
-msgstr "الجديد فقظ"
+msgstr ""
 
 msgid "Updates only"
-msgstr "تحديثات فقط"
+msgstr ""
 
 msgid "Delete"
-msgstr "حذف"
+msgstr "删除"
 
 msgid "Auto"
-msgstr "تلقائي"
+msgstr ""
 
 msgid "Errors"
-msgstr "اخطاء"
+msgstr "错误"
 
 msgid "Full"
 msgstr ""
@@ -503,25 +502,25 @@ msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr "المرجع"
+msgstr ""
 
 msgid "All"
-msgstr "الجميع"
+msgstr "全部"
 
 msgid "None"
-msgstr "لا شيء"
+msgstr "没有"
 
 msgid "Merge"
-msgstr "دمج"
+msgstr ""
 
 msgid "Replace"
-msgstr "استبدال"
+msgstr ""
 
 msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr "دائماً"
+msgstr ""
 
 msgid "Non Empty"
-msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
+msgstr ""

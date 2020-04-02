@@ -492,7 +492,7 @@ msgid "Delete"
 msgstr "删除"
 
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 msgid "Errors"
 msgstr "错误"
