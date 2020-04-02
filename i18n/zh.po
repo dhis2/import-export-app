@@ -1,13 +1,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-07-12T06:06:14.220Z\n"
+"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,59 +17,233 @@ msgstr ""
 "Language: zh\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "user is not logged in"
+msgid "Something went wrong when loading the current user!"
 msgstr ""
 
-msgid "Import Error"
+msgid "Something went wrong when loading the data sets!"
 msgstr ""
 
-msgid "Go Back"
+msgid "Filter data sets by name"
 msgstr ""
 
-msgid "filter data sets by name"
+msgid "At least one data set must be selected"
 msgstr ""
 
-msgid "Select All"
+msgid "One data set must be selected"
 msgstr ""
 
-msgid "Clear All"
+msgid "Invalid date"
 msgstr ""
 
-msgid "Data sets"
-msgstr "数据集"
-
-msgid "Choose a file to upload"
+msgid "Start date must be before end date"
 msgstr ""
 
-msgid "Required"
-msgstr "所需"
-
-msgid "more options"
+msgid "End date must be after start date"
 msgstr ""
 
-msgid "JSON"
+msgid ""
+"Something went wrong when loading the additional data element ID schemes"
 msgstr ""
 
-msgid "XML"
+msgid "Something went wrong when loading the additional ID schemes"
 msgstr ""
 
-msgid "CSV"
+msgid ""
+"Something went wrong when loading the additional organisation unit ID "
+"schemes"
 msgstr ""
 
-msgid "Select None"
+msgid "Please select a file"
 msgstr ""
 
-msgid "Logger"
+msgid "Will do a test run without importing any data into the database"
 msgstr ""
 
-msgid "view messages received on using import/export forms."
+msgid "Dry run"
 msgstr ""
 
 msgid "Import"
 msgstr "导入"
 
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Compression"
+msgstr "压缩"
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Data sets"
+msgstr "数据集"
+
+msgid "End date"
+msgstr "结束日期"
+
+msgid "Event ID scheme"
+msgstr ""
+
 msgid "Export"
 msgstr "导出"
+
+msgid "File"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "Format"
+msgstr "格式"
+
+msgid "ID scheme"
+msgstr ""
+
+msgid "Identifier"
+msgstr "标识"
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Include children"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Object type"
+msgstr "对象类型"
+
+msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr "组织机构"
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Faster for large imports"
+msgstr ""
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Programs"
+msgstr "项目"
+
+msgid "Program stage"
+msgstr ""
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Improves performance at the cost of ability to audit changes"
+msgstr ""
+
+msgid "Skip exisiting check"
+msgstr ""
+
+msgid "Faster, but unsafe"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Start date"
+msgstr "开始日期"
+
+msgid "Strategy"
+msgstr ""
+
+msgid "No jobs started yet."
+msgstr ""
+
+msgid "Recreate job"
+msgstr ""
+
+msgid "Completed"
+msgstr "完成"
+
+msgid "In progress"
+msgstr ""
+
+msgid "Job details"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Events"
+msgstr "事件"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Message"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Job summary"
+msgstr ""
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Messages"
+msgstr "消息"
+
+msgid "UID"
+msgstr ""
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Property"
+msgstr ""
+
+msgid "View summary of recently started import job"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
 
 msgid "Created"
 msgstr "已创建"
@@ -84,130 +260,85 @@ msgstr ""
 msgid "Total"
 msgstr "总共"
 
-msgid "Type"
-msgstr "类型"
-
-msgid "Type Count"
+msgid "Overview"
 msgstr ""
 
-msgid "Messages"
+msgid "Type count"
 msgstr ""
 
-msgid "Summaries"
+msgid "more options"
 msgstr ""
 
-msgid "Conflicts"
+msgid "One object must be selected"
 msgstr ""
 
-msgid "Import Summary"
+msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
-msgid "Summary"
+msgid "At least one organisation unit must be selected"
 msgstr ""
 
-msgid "Async"
+msgid "One organisation unit must be selected"
 msgstr ""
 
-msgid "Atomic Mode"
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
-msgid "Category ID scheme"
+msgid "Filter programs by name"
 msgstr ""
 
-msgid "Children"
+msgid "At least one program must be selected"
 msgstr ""
 
-msgid "Object type"
-msgstr "对象类型"
-
-msgid "Compression"
+msgid "One program must be selected"
 msgstr ""
 
-msgid "Data element ID scheme"
+msgid "One program stage must be selected"
 msgstr ""
 
-msgid "Dry run"
+msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
-msgid "End date"
-msgstr "结束日期"
-
-msgid "Event ID Scheme"
+msgid "Select All"
 msgstr ""
 
-msgid "Flush Mode"
+msgid "Select None"
 msgstr ""
 
-msgid "Format"
+msgid "At least one schema must be selected"
 msgstr ""
 
-msgid "ID scheme"
+msgid "Select all"
 msgstr ""
 
-msgid "Identifier"
+msgid "Clear all"
 msgstr ""
 
-msgid "Report Mode"
+msgid "Data import"
 msgstr ""
 
-msgid "Import Strategy"
+msgid "Event import"
 msgstr ""
 
-msgid "Include deleted"
+msgid "GML import"
 msgstr ""
 
-msgid "Inclusion"
+msgid "Metadata import"
 msgstr ""
 
-msgid "Inclusion Strategy"
+msgid "Data export"
 msgstr ""
 
-msgid "Merge Mode"
+msgid "Event export"
 msgstr ""
 
-msgid "Object"
+msgid "Metadata dependency export"
 msgstr ""
 
-msgid "Organisation unit"
-msgstr "组织机构"
-
-msgid "Org unit ID scheme"
+msgid "Metadata export"
 msgstr ""
 
-msgid "Preheat cache"
-msgstr ""
-
-msgid "Preheat Mode"
-msgstr ""
-
-msgid "Program Stages"
-msgstr ""
-
-msgid "Programs"
-msgstr "项目"
-
-msgid "Schemas"
-msgstr ""
-
-msgid "Data Sets"
-msgstr "数据集管理"
-
-msgid "Sharing"
-msgstr ""
-
-msgid "Existing record check"
-msgstr ""
-
-msgid "Skip Sharing"
-msgstr ""
-
-msgid "Skip Validation"
-msgstr ""
-
-msgid "Start date"
-msgstr "开始日期"
-
-msgid "Strategy"
+msgid "Job overview"
 msgstr ""
 
 msgid "Yes"
@@ -216,7 +347,115 @@ msgstr "是"
 msgid "No"
 msgstr "否"
 
-msgid "UID"
+msgid "Data"
+msgstr ""
+
+msgid "Event"
+msgstr "事件"
+
+msgid "GML"
+msgstr ""
+
+msgid "Metadata"
+msgstr "元数据"
+
+msgid "Something went wrong when loading the class keys"
+msgstr ""
+
+msgid "Something went wrong when loading the objects"
+msgstr ""
+
+msgid "All program stages"
+msgstr ""
+
+msgid "Something went wrong when loading the program stages"
+msgstr ""
+
+msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
+msgstr ""
+
+msgid "HTTP error when fetching data"
+msgstr ""
+
+msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities using the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using the GML format. GML is "
+"an XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "An overview of all import jobs started this session."
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects in the XML or JSON format."
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units in the XML, JSON "
+"or CSV format."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the DXF 2 "
+"format."
+msgstr ""
+
+msgid "A class key must be selected"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Category combination"
+msgstr "值域组合"
+
+msgid "Dashboard"
+msgstr "状态面板"
+
+msgid "Data element groups"
+msgstr "数据元组"
+
+msgid "Option sets"
+msgstr "选项集"
+
+msgid "Uid"
 msgstr ""
 
 msgid "Code"
@@ -225,19 +464,22 @@ msgstr "代码"
 msgid "Name"
 msgstr "名称"
 
-msgid "HR identifier"
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Include descendants of organisation unit"
 msgstr ""
 
-msgid "Selected organisation unit"
+msgid "Skip check"
 msgstr ""
 
-msgid "Yes (faster for large imports)"
+msgid "Check"
 msgstr ""
 
-msgid "New and Updates"
+msgid "New and updates"
 msgstr ""
 
 msgid "New only"
@@ -249,17 +491,11 @@ msgstr ""
 msgid "Delete"
 msgstr "删除"
 
-msgid "Skip check (fast)"
-msgstr ""
-
-msgid "Check (safe, recommended)"
-msgstr ""
-
-msgid "AUTO"
+msgid "Auto"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "错误"
 
 msgid "Full"
 msgstr ""
@@ -276,29 +512,11 @@ msgstr "全部"
 msgid "None"
 msgstr "无"
 
-msgid "Create and Update"
-msgstr ""
-
-msgid "Create"
-msgstr "创建"
-
-msgid "Update"
-msgstr "更新"
-
 msgid "Merge"
 msgstr "合并"
 
 msgid "Replace"
-msgstr ""
-
-msgid "Auto"
-msgstr ""
-
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
-msgstr ""
+msgstr "替换"
 
 msgid "Non Null"
 msgstr ""
@@ -307,112 +525,4 @@ msgid "Always"
 msgstr ""
 
 msgid "Non Empty"
-msgstr ""
-
-msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Zip"
-msgstr ""
-
-msgid "Gzip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Category combination"
-msgstr "值域组合"
-
-msgid "Dashboard"
-msgstr "状态面板"
-
-msgid "Data element groups"
-msgstr "数据元组"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "[ All program stages]"
-msgstr ""
-
-msgid "Import/Export"
-msgstr "数据导入导出"
-
-msgid "Data Export"
-msgstr ""
-
-msgid ""
-"Export data values. This is the regular export function which exports data "
-"to the DHIS 2 exchange format called DXF 2."
-msgstr ""
-
-msgid "Event Export"
-msgstr ""
-
-msgid ""
-"Export event data for programs, stages and tracked entities in the DXF 2 "
-"format."
-msgstr ""
-
-msgid "Metadata Export"
-msgstr ""
-
-msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
-msgstr ""
-
-msgid "Meta Data Export"
-msgstr ""
-
-msgid "Metadata Dependency Export"
-msgstr ""
-
-msgid ""
-"Export metadata like data sets and programs including related metadata "
-"objects."
-msgstr ""
-
-msgid "Metadata Export with Dependencies"
-msgstr ""
-
-msgid "Import / Export"
-msgstr ""
-
-msgid "Import or Export DHIS2 data."
-msgstr ""
-
-msgid "Data Import"
-msgstr ""
-
-msgid ""
-"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
-"is the standard exchange format for DHIS 2."
-msgstr ""
-
-msgid "Event Import"
-msgstr ""
-
-msgid ""
-"Import events for programs, stages and tracked entities in the DXF 2 format."
-msgstr ""
-
-msgid "GML Import"
-msgstr ""
-
-msgid ""
-"Import geographic data for organisation units using GML format. GML is an "
-"XML grammar for expressing geographical features."
-msgstr ""
-
-msgid "Only import of GML data for existing organisation units is supported."
-msgstr ""
-
-msgid "Metadata Import"
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the standard"
-" DHIS 2 exchange format called DXF 2."
 msgstr ""
