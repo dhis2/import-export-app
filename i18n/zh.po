@@ -288,7 +288,7 @@ msgid "Replace"
 msgstr "替换"
 
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 msgid "With sharing"
 msgstr "共享于"
