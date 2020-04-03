@@ -42,15 +42,16 @@ msgstr "يجب أن يكون تاريخ الانتهاء بعد تاريخ ال�
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل الـ ID schemes الإضافية الخاصة بعنصر البيانات"
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل الـ ID schemes الإضافية"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
+"حدث خطأ ما أثناء تحميل الـ ID schemes الإضافية الخاصة بالوحدة التنظيمية"
 
 msgid "Please select a file"
 msgstr "يرجى تحديد ملف"
@@ -158,7 +159,7 @@ msgid "Skip audit"
 msgstr "تجاهل التدقيق"
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr ""
+msgstr "يحسن الأداء على حساب القدرة على مراجعة التغييرات"
 
 msgid "Skip exisiting check"
 msgstr ""
@@ -197,7 +198,7 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "القيمة"
 
 msgid "Events"
 msgstr "الأحداث"
@@ -206,7 +207,7 @@ msgid "Time"
 msgstr "الوقت"
 
 msgid "Message"
-msgstr ""
+msgstr "الرسالة"
 
 msgid "ID"
 msgstr ""
@@ -365,10 +366,10 @@ msgid "Something went wrong when loading the objects"
 msgstr ""
 
 msgid "All program stages"
-msgstr ""
+msgstr "كل مراحل البرنامج"
 
 msgid "Something went wrong when loading the program stages"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل مراحل البرنامج"
 
 msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
 msgstr ""
@@ -416,7 +417,7 @@ msgid "A class key must be selected"
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
 
 msgid "JSON"
 msgstr ""
@@ -473,7 +474,7 @@ msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Skip check"
-msgstr ""
+msgstr "تجاوز التفحص"
 
 msgid "Check"
 msgstr "تحقق"
@@ -497,7 +498,7 @@ msgid "Errors"
 msgstr "اخطاء"
 
 msgid "Full"
-msgstr ""
+msgstr "كامل"
 
 msgid "Debug"
 msgstr ""
