@@ -164,7 +164,7 @@ msgid "Errors"
 msgstr "اخطاء"
 
 msgid "Full"
-msgstr ""
+msgstr "كامل"
 
 msgid "Debug"
 msgstr ""
@@ -449,7 +449,7 @@ msgid "Import/Export"
 msgstr "استيراد-تصدير"
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
 
 msgid "Data Export"
 msgstr ""
