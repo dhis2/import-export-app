@@ -119,7 +119,7 @@ msgid "Loading organisation unit id scheme options..."
 msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل مجموعات البيانات!"
 
 msgid "Dry run"
 msgstr ""
@@ -134,7 +134,7 @@ msgid "Event id scheme"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "الصف الأول هو عناوين الأعمدة"
 
 msgid "Auto"
 msgstr "تلقائي"
@@ -152,7 +152,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "التنسيق"
 
 msgid "UID"
 msgstr ""
@@ -275,7 +275,7 @@ msgid "Loading program options..."
 msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل البرامج!"
 
 msgid "Error"
 msgstr "خطأ"
@@ -296,7 +296,7 @@ msgid "Sharing"
 msgstr "المشاركة"
 
 msgid "Skip audit"
-msgstr ""
+msgstr "تجاهل التدقيق"
 
 msgid "Skip check (fast)"
 msgstr ""
@@ -308,10 +308,10 @@ msgid "Skip existing check"
 msgstr ""
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "تجنب حالة المشاركة"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "تجنب عملية التحقق"
 
 msgid "StartDate"
 msgstr ""
@@ -341,13 +341,13 @@ msgid "Created"
 msgstr "تم الإنشاء"
 
 msgid "Deleted"
-msgstr ""
+msgstr "تم حذفه"
 
 msgid "Ignored"
-msgstr ""
+msgstr "تم تجاهله"
 
 msgid "Updated"
-msgstr ""
+msgstr "تم تحديثه"
 
 msgid "Total"
 msgstr "الإجمالي"
@@ -365,13 +365,13 @@ msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
-msgstr ""
+msgstr "تعارضات"
 
 msgid "Import Summary"
 msgstr "خلاصة عملية الإستيراد"
 
 msgid "Summary"
-msgstr ""
+msgstr "الخلاصة"
 
 msgid "Atomic Mode"
 msgstr ""
