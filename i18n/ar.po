@@ -74,13 +74,13 @@ msgid "Created"
 msgstr "تم الإنشاء"
 
 msgid "Deleted"
-msgstr ""
+msgstr "تم حذفه"
 
 msgid "Ignored"
-msgstr ""
+msgstr "تم تجاهله"
 
 msgid "Updated"
-msgstr ""
+msgstr "تم تحديثه"
 
 msgid "Total"
 msgstr "الإجمالي"
@@ -98,7 +98,7 @@ msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
-msgstr ""
+msgstr "تعارضات"
 
 msgid "Errors"
 msgstr "اخطاء"
@@ -107,7 +107,7 @@ msgid "Import Summary"
 msgstr "خلاصة عملية الإستيراد"
 
 msgid "Summary"
-msgstr ""
+msgstr "الخلاصة"
 
 msgid "Async"
 msgstr ""
@@ -143,7 +143,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "التنسيق"
 
 msgid "ID scheme"
 msgstr ""
