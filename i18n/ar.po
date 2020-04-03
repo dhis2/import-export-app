@@ -260,7 +260,7 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "كامل"
 
 msgid "Debug"
 msgstr ""
