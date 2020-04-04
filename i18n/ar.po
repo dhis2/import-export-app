@@ -155,7 +155,7 @@ msgid "Format"
 msgstr "التنسيق"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr "المعرف"
