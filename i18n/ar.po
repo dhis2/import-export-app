@@ -225,7 +225,7 @@ msgid "Messages"
 msgstr "الرسائل"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Type"
 msgstr "النوع"
