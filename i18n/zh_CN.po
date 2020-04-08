@@ -31,7 +31,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "无效的的日期"
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -457,7 +457,7 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr ""
+msgstr "代码"
 
 msgid "Name"
 msgstr "名称"
