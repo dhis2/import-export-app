@@ -36,7 +36,7 @@ msgid "filter data sets by name"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "全选"
 
 msgid "Clear All"
 msgstr ""
@@ -45,7 +45,7 @@ msgid "Data sets"
 msgstr "数据集"
 
 msgid "more options"
-msgstr ""
+msgstr "更多选项"
 
 msgid "JSON"
 msgstr "JSON"
@@ -57,7 +57,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr ""
+msgstr "不选"
 
 msgid "Yes"
 msgstr "是"
@@ -66,7 +66,7 @@ msgid "No"
 msgstr "否"
 
 msgid "Async"
-msgstr ""
+msgstr "异步"
 
 msgid "All"
 msgstr "全部"
@@ -75,7 +75,7 @@ msgid "None"
 msgstr "无"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "原子化模式"
 
 msgid "Class key"
 msgstr ""
@@ -96,22 +96,22 @@ msgid "Loading data element id scheme options..."
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "空运行"
 
 msgid "Event id scheme"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "第一行是表头"
 
 msgid "Auto"
 msgstr "自动"
 
 msgid "Object"
-msgstr ""
+msgstr "对象"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "缓存刷新模式"
 
 msgid "PDF"
 msgstr "PDF"
@@ -123,7 +123,7 @@ msgid "Format"
 msgstr "格式"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr "标识"
@@ -132,40 +132,40 @@ msgid "Errors"
 msgstr "错误"
 
 msgid "Full"
-msgstr ""
+msgstr "全部"
 
 msgid "Debug"
-msgstr ""
+msgstr "调试"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "导入报表模式"
 
 msgid "New and updates"
-msgstr ""
+msgstr "新建和更新"
 
 msgid "New only"
-msgstr ""
+msgstr "仅新建"
 
 msgid "Updates only"
-msgstr ""
+msgstr "仅更新"
 
 msgid "Delete"
 msgstr "删除"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "导入策略"
 
 msgid "Non Null"
-msgstr ""
+msgstr "不为空"
 
 msgid "Always"
-msgstr ""
+msgstr "总是"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "非空"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "包括策略"
 
 msgid "Merge"
 msgstr "合并"
@@ -174,7 +174,7 @@ msgid "Replace"
 msgstr "替换"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "合并模式"
 
 msgid "Org unit id scheme"
 msgstr ""
@@ -186,13 +186,13 @@ msgid "Yes (faster for large imports)"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "缓存预热"
 
 msgid "Reference"
 msgstr "引用"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "预热模式"
 
 msgid "Error"
 msgstr "错误"
@@ -201,7 +201,7 @@ msgid "Report mode"
 msgstr ""
 
 msgid "Skip audit"
-msgstr ""
+msgstr "跳过审计"
 
 msgid "Skip check (fast)"
 msgstr ""
@@ -213,13 +213,13 @@ msgid "Skip existing check"
 msgstr ""
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "跳过共享"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "跳过验证"
 
 msgid "Strategy"
-msgstr ""
+msgstr "策略"
 
 msgid "Id scheme"
 msgstr ""
@@ -240,13 +240,13 @@ msgid "Created"
 msgstr "已创建"
 
 msgid "Deleted"
-msgstr ""
+msgstr "删除的"
 
 msgid "Ignored"
-msgstr ""
+msgstr "忽略的"
 
 msgid "Updated"
-msgstr ""
+msgstr "更新的"
 
 msgid "Total"
 msgstr "总共"
@@ -264,13 +264,13 @@ msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
-msgstr ""
+msgstr "冲突"
 
 msgid "Import Summary"
 msgstr ""
 
 msgid "Summary"
-msgstr ""
+msgstr "摘要"
 
 msgid "Atomic Mode"
 msgstr ""
@@ -288,7 +288,7 @@ msgid "Compression"
 msgstr "压缩"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "数据元ID方案"
 
 msgid "End date"
 msgstr "结束日期"
@@ -300,7 +300,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID方案"
 
 msgid "Report Mode"
 msgstr ""
@@ -309,10 +309,10 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "包括删除的"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "包括"
 
 msgid "Inclusion Strategy"
 msgstr ""
@@ -360,7 +360,7 @@ msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "选择的机构"
 
 msgid "New and Updates"
 msgstr ""
@@ -384,7 +384,7 @@ msgid "Without sharing"
 msgstr ""
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "包括下属机构"
 
 msgid "Zip"
 msgstr ""
@@ -393,7 +393,7 @@ msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "无压缩"
 
 msgid "Category combination"
 msgstr "值域组合"
@@ -430,7 +430,7 @@ msgstr ""
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
-msgstr ""
+msgstr "导出项目、阶段和跟踪实体事件数据为DXF2格式"
 
 msgid "Metadata Export"
 msgstr ""
@@ -464,10 +464,10 @@ msgid "An unknown error occurred"
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "发生未知错误，请稍后再试"
 
 msgid "Data Import"
-msgstr ""
+msgstr "数据导入"
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
