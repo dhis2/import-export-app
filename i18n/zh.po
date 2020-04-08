@@ -30,7 +30,7 @@ msgid "filter data sets by name"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "全选"
 
 msgid "Clear All"
 msgstr ""
@@ -45,7 +45,7 @@ msgid "Required"
 msgstr "所需"
 
 msgid "more options"
-msgstr ""
+msgstr "更多选项"
 
 msgid "JSON"
 msgstr "JSON"
@@ -57,7 +57,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr ""
+msgstr "不选"
 
 msgid "Logger"
 msgstr ""
@@ -75,13 +75,13 @@ msgid "Created"
 msgstr "已创建"
 
 msgid "Deleted"
-msgstr ""
+msgstr "删除的"
 
 msgid "Ignored"
-msgstr ""
+msgstr "忽略的"
 
 msgid "Updated"
-msgstr ""
+msgstr "更新的"
 
 msgid "Total"
 msgstr "总共"
@@ -99,7 +99,7 @@ msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
-msgstr ""
+msgstr "冲突"
 
 msgid "Errors"
 msgstr "错误"
@@ -108,10 +108,10 @@ msgid "Import Summary"
 msgstr ""
 
 msgid "Summary"
-msgstr ""
+msgstr "摘要"
 
 msgid "Async"
-msgstr ""
+msgstr "异步"
 
 msgid "Atomic Mode"
 msgstr ""
@@ -129,10 +129,10 @@ msgid "Compression"
 msgstr "压缩"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "数据元ID方案"
 
 msgid "Dry run"
-msgstr ""
+msgstr "空运行"
 
 msgid "End date"
 msgstr "结束日期"
@@ -147,7 +147,7 @@ msgid "Format"
 msgstr "格式"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID方案"
 
 msgid "Identifier"
 msgstr "标识"
@@ -159,10 +159,10 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "包括删除的"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "包括"
 
 msgid "Inclusion Strategy"
 msgstr ""
@@ -171,7 +171,7 @@ msgid "Merge Mode"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "对象"
 
 msgid "Organisation unit"
 msgstr "组织机构"
@@ -180,7 +180,7 @@ msgid "Org unit ID scheme"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "缓存预热"
 
 msgid "Preheat Mode"
 msgstr ""
@@ -213,7 +213,7 @@ msgid "Start date"
 msgstr "开始日期"
 
 msgid "Strategy"
-msgstr ""
+msgstr "策略"
 
 msgid "Yes"
 msgstr "是"
@@ -222,7 +222,7 @@ msgid "No"
 msgstr "否"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Code"
 msgstr "代码"
@@ -234,7 +234,7 @@ msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "选择的机构"
 
 msgid "Yes (faster for large imports)"
 msgstr ""
@@ -243,10 +243,10 @@ msgid "New and Updates"
 msgstr ""
 
 msgid "New only"
-msgstr ""
+msgstr "仅新建"
 
 msgid "Updates only"
-msgstr ""
+msgstr "仅更新"
 
 msgid "Delete"
 msgstr "删除"
@@ -261,10 +261,10 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "全部"
 
 msgid "Debug"
-msgstr ""
+msgstr "调试"
 
 msgid "Reference"
 msgstr "引用"
@@ -300,16 +300,16 @@ msgid "Without sharing"
 msgstr ""
 
 msgid "Non Null"
-msgstr ""
+msgstr "不为空"
 
 msgid "Always"
-msgstr ""
+msgstr "总是"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "非空"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "包括下属机构"
 
 msgid "Zip"
 msgstr ""
@@ -318,7 +318,7 @@ msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "无压缩"
 
 msgid "Category combination"
 msgstr "值域组合"
@@ -355,7 +355,7 @@ msgstr ""
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
-msgstr ""
+msgstr "导出项目、阶段和跟踪实体事件数据为DXF2格式"
 
 msgid "Metadata Export"
 msgstr ""
@@ -386,7 +386,7 @@ msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "Data Import"
-msgstr ""
+msgstr "数据导入"
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
