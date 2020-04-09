@@ -1,0 +1,526 @@
+# Translators:
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Something went wrong when loading the current user!"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
+
+msgid "Invalid date"
+msgstr ""
+
+msgid "Start date must be before end date"
+msgstr ""
+
+msgid "End date must be after start date"
+msgstr ""
+
+msgid ""
+"Something went wrong when loading the additional data element ID schemes"
+msgstr ""
+
+msgid "Something went wrong when loading the additional ID schemes"
+msgstr ""
+
+msgid ""
+"Something went wrong when loading the additional organisation unit ID "
+"schemes"
+msgstr ""
+
+msgid "Please select a file"
+msgstr ""
+
+msgid "Will do a test run without importing any data into the database"
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Data sets"
+msgstr "Datasett"
+
+msgid "End date"
+msgstr "Sluttdato"
+
+msgid "Event ID scheme"
+msgstr ""
+
+msgid "Export"
+msgstr "Eksporter"
+
+msgid "File"
+msgstr "Fil"
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "ID scheme"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Include children"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Faster for large imports"
+msgstr ""
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Program stage"
+msgstr "Programfase"
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Improves performance at the cost of ability to audit changes"
+msgstr ""
+
+msgid "Skip exisiting check"
+msgstr ""
+
+msgid "Faster, but unsafe"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Start date"
+msgstr "Startdato"
+
+msgid "Strategy"
+msgstr ""
+
+msgid "No jobs started yet."
+msgstr ""
+
+msgid "Recreate job"
+msgstr ""
+
+msgid "Completed"
+msgstr "Fullført"
+
+msgid "In progress"
+msgstr "Pågående"
+
+msgid "Job details"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Value"
+msgstr "Verdi"
+
+msgid "Events"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr "Melding"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Job summary"
+msgstr ""
+
+msgid "Error"
+msgstr "Feil"
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Messages"
+msgstr "Meldinger"
+
+msgid "UID"
+msgstr ""
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Property"
+msgstr ""
+
+msgid "View summary of recently started import job"
+msgstr ""
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "Summary"
+msgstr ""
+
+msgid "Created"
+msgstr "Opprettet"
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Ignored"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Total"
+msgstr "Totalt"
+
+msgid "Overview"
+msgstr ""
+
+msgid "Type count"
+msgstr ""
+
+msgid "more options"
+msgstr ""
+
+msgid "One object must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the organisation units!"
+msgstr ""
+
+msgid "At least one organisation unit must be selected"
+msgstr ""
+
+msgid "One organisation unit must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
+
+msgid "One program stage must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the schemas!"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Select None"
+msgstr ""
+
+msgid "At least one schema must be selected"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Clear all"
+msgstr "Fjern alt"
+
+msgid "Data import"
+msgstr ""
+
+msgid "Event import"
+msgstr ""
+
+msgid "GML import"
+msgstr ""
+
+msgid "Metadata import"
+msgstr ""
+
+msgid "Data export"
+msgstr ""
+
+msgid "Event export"
+msgstr ""
+
+msgid "Metadata dependency export"
+msgstr ""
+
+msgid "Metadata export"
+msgstr ""
+
+msgid "Job overview"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nei"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Event"
+msgstr "Hendelse"
+
+msgid "GML"
+msgstr ""
+
+msgid "Metadata"
+msgstr ""
+
+msgid "Something went wrong when loading the class keys"
+msgstr ""
+
+msgid "Something went wrong when loading the objects"
+msgstr ""
+
+msgid "All program stages"
+msgstr ""
+
+msgid "Something went wrong when loading the program stages"
+msgstr ""
+
+msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
+msgstr ""
+
+msgid "HTTP error when fetching data"
+msgstr ""
+
+msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities using the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using the GML format. GML is "
+"an XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "An overview of all import jobs started this session."
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects in the XML or JSON format."
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units in the XML, JSON "
+"or CSV format."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the DXF 2 "
+"format."
+msgstr ""
+
+msgid "A class key must be selected"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr "Dashbord"
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Skip check"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "Slett"
+
+msgid "Auto"
+msgstr ""
+
+msgid "Errors"
+msgstr "Feil"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "All"
+msgstr "Alt"
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
