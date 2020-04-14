@@ -31,7 +31,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Ugyldig dato"
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -199,7 +199,7 @@ msgid "Value"
 msgstr "Verdi"
 
 msgid "Events"
-msgstr ""
+msgstr "Hendelser"
 
 msgid "Time"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "Velg alle"
 
 msgid "Select None"
 msgstr ""
@@ -490,7 +490,7 @@ msgid "Delete"
 msgstr "Slett"
 
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 msgid "Errors"
 msgstr "Feil"
@@ -514,7 +514,7 @@ msgid "Merge"
 msgstr ""
 
 msgid "Replace"
-msgstr ""
+msgstr "Erstatt"
 
 msgid "Non Null"
 msgstr ""
