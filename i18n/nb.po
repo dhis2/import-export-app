@@ -334,7 +334,7 @@ msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
-msgstr ""
+msgstr "Importer/Eksporter"
 
 msgid "Data Export"
 msgstr ""
