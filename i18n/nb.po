@@ -502,7 +502,7 @@ msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr ""
+msgstr "Referanse"
 
 msgid "All"
 msgstr "Alt"
