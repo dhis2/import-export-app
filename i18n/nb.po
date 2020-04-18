@@ -1,59 +1,58 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# Hamza Assada <7amza.it@gmail.com>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-01-07T10:27:09.944Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
-"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "user is not logged in"
-msgstr "لم يتم تسجيل دخول المستخدم"
+msgstr ""
 
 msgid "Import Error"
-msgstr "تصدير الخطأ"
+msgstr ""
 
 msgid "Go Back"
-msgstr "العودة للخلف"
+msgstr ""
 
 msgid "filter data sets by name"
 msgstr ""
 
 msgid "Select All"
-msgstr "تحديد الكل"
+msgstr "Velg alle"
 
 msgid "Clear All"
-msgstr "الغاء التحديد عن الكل"
+msgstr ""
 
 msgid "Data sets"
-msgstr "حزم البيانات"
+msgstr "Datasett"
 
 msgid "Choose a file to upload"
-msgstr "اختر ملفاً للتحميل"
+msgstr ""
 
 msgid "more options"
-msgstr "المزيد من الخيارات"
+msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "Select None"
-msgstr "الغاء التحديد عن الكل"
+msgstr ""
 
 msgid "Logger"
 msgstr ""
@@ -62,49 +61,49 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr "استيراد"
+msgstr ""
 
 msgid "Export"
-msgstr "تصدير"
+msgstr "Eksporter"
 
 msgid "Created"
-msgstr "تم الإنشاء"
+msgstr "Opprettet"
 
 msgid "Deleted"
-msgstr "تم حذفه"
+msgstr ""
 
 msgid "Ignored"
-msgstr "تم تجاهله"
+msgstr ""
 
 msgid "Updated"
-msgstr "تم تحديثه"
+msgstr ""
 
 msgid "Total"
-msgstr "الإجمالي"
+msgstr "Totalt"
 
 msgid "Type"
-msgstr "النوع"
+msgstr "Type"
 
 msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
-msgstr "الرسائل"
+msgstr "Meldinger"
 
 msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
-msgstr "تعارضات"
+msgstr ""
 
 msgid "Errors"
-msgstr "اخطاء"
+msgstr "Feil"
 
 msgid "Import Summary"
-msgstr "خلاصة عملية الإستيراد"
+msgstr ""
 
 msgid "Summary"
-msgstr "الخلاصة"
+msgstr ""
 
 msgid "Async"
 msgstr ""
@@ -119,10 +118,10 @@ msgid "Children"
 msgstr ""
 
 msgid "Object type"
-msgstr "نوع العنصر"
+msgstr ""
 
 msgid "Compression"
-msgstr "الضغط"
+msgstr ""
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -131,7 +130,7 @@ msgid "Dry run"
 msgstr ""
 
 msgid "End date"
-msgstr "تاريخ النهاية"
+msgstr "Sluttdato"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -140,13 +139,13 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "Format"
-msgstr "التنسيق"
+msgstr ""
 
 msgid "ID scheme"
 msgstr ""
 
 msgid "Identifier"
-msgstr "المعرف"
+msgstr ""
 
 msgid "Report Mode"
 msgstr ""
@@ -155,7 +154,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr "تضمين ماتم حذفه"
+msgstr ""
 
 msgid "Inclusion"
 msgstr ""
@@ -167,10 +166,10 @@ msgid "Merge Mode"
 msgstr ""
 
 msgid "Object"
-msgstr "الكائن"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "الوحدة التنظيمية"
+msgstr "Organisasjonsenhet"
 
 msgid "Org unit ID scheme"
 msgstr ""
@@ -185,16 +184,16 @@ msgid "Program Stages"
 msgstr ""
 
 msgid "Programs"
-msgstr "البرامج"
+msgstr ""
 
 msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
-msgstr "ضبط البيانات"
+msgstr ""
 
 msgid "Sharing"
-msgstr "المشاركة"
+msgstr "Deling"
 
 msgid "Existing record check"
 msgstr ""
@@ -206,25 +205,25 @@ msgid "Skip Validation"
 msgstr ""
 
 msgid "Start date"
-msgstr "تاريخ البداية"
+msgstr "Startdato"
 
 msgid "Strategy"
 msgstr ""
 
 msgid "Yes"
-msgstr "نعم"
+msgstr "Ja"
 
 msgid "No"
-msgstr "لا"
+msgstr "Nei"
 
 msgid "UID"
-msgstr "UID"
+msgstr ""
 
 msgid "Code"
-msgstr "الرمز"
+msgstr "Kode"
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "Navn"
 
 msgid "Include descendants of organisation unit"
 msgstr ""
@@ -239,13 +238,13 @@ msgid "New and Updates"
 msgstr ""
 
 msgid "New only"
-msgstr "الجديد فقظ"
+msgstr ""
 
 msgid "Updates only"
-msgstr "تحديثات فقط"
+msgstr ""
 
 msgid "Delete"
-msgstr "حذف"
+msgstr "Slett"
 
 msgid "Skip check (fast)"
 msgstr ""
@@ -257,37 +256,37 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Full"
-msgstr "كامل"
+msgstr ""
 
 msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr "المرجع"
+msgstr "Referanse"
 
 msgid "All"
-msgstr "الجميع"
+msgstr "Alt"
 
 msgid "None"
-msgstr "لا شيء"
+msgstr "Ingen"
 
 msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr "إنشاء"
+msgstr "Opprett"
 
 msgid "Update"
-msgstr "تحديث"
+msgstr "Oppdater"
 
 msgid "Merge"
-msgstr "دمج"
+msgstr ""
 
 msgid "Replace"
-msgstr "استبدال"
+msgstr "Erstatt"
 
 msgid "Auto"
-msgstr "تلقائي"
+msgstr "Auto"
 
 msgid "With sharing"
 msgstr ""
@@ -299,10 +298,10 @@ msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr "دائماً"
+msgstr ""
 
 msgid "Non Empty"
-msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
+msgstr ""
 
 msgid "Include children of organisation unit"
 msgstr ""
@@ -314,16 +313,16 @@ msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr "غير مضغوط"
+msgstr ""
 
 msgid "Category combination"
-msgstr "مزيج الفئات"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "لوحة المعلومات"
+msgstr "Dashbord"
 
 msgid "Data element groups"
-msgstr "مجموعات عناصر البيانات"
+msgstr ""
 
 msgid "[ All program stages]"
 msgstr ""
@@ -376,7 +375,7 @@ msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "Data Import"
-msgstr "استيراد البيانات"
+msgstr "Dataimport"
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
