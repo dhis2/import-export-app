@@ -61,7 +61,7 @@ msgid "Dry run"
 msgstr ""
 
 msgid "Import"
-msgstr ""
+msgstr "Importer"
 
 msgid "Atomic mode"
 msgstr ""
@@ -97,7 +97,7 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgid "ID scheme"
 msgstr ""
@@ -148,7 +148,7 @@ msgid "Preheat mode"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Programmer"
 
 msgid "Program stage"
 msgstr "Programfase"
@@ -202,7 +202,7 @@ msgid "Events"
 msgstr "Hendelser"
 
 msgid "Time"
-msgstr ""
+msgstr "Klokkeslett"
 
 msgid "Message"
 msgstr "Melding"
@@ -307,7 +307,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Select all"
-msgstr ""
+msgstr "Velg alt"
 
 msgid "Clear all"
 msgstr "Fjern alt"
@@ -430,7 +430,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "Zip"
 msgstr ""
@@ -442,13 +442,13 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
-msgstr ""
+msgstr "Kategorikombinasjon"
 
 msgid "Dashboard"
 msgstr "Dashbord"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Dataelementgrupper"
 
 msgid "Option sets"
 msgstr ""
@@ -511,7 +511,7 @@ msgid "None"
 msgstr "Ingen"
 
 msgid "Merge"
-msgstr ""
+msgstr "Slå sammen"
 
 msgid "Replace"
 msgstr "Erstatt"
