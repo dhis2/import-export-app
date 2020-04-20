@@ -1,13 +1,13 @@
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-12-19T10:07:59.315Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +64,7 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr ""
+msgstr "Importer"
 
 msgid "Export"
 msgstr "Eksporter"
@@ -142,7 +142,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgid "ID scheme"
 msgstr ""
@@ -187,7 +187,7 @@ msgid "Program Stages"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Programmer"
 
 msgid "Schemas"
 msgstr ""
@@ -283,7 +283,7 @@ msgid "Update"
 msgstr "Oppdater"
 
 msgid "Merge"
-msgstr ""
+msgstr "Slå sammen"
 
 msgid "Replace"
 msgstr "Erstatt"
@@ -292,7 +292,7 @@ msgid "Auto"
 msgstr "Auto"
 
 msgid "With sharing"
-msgstr ""
+msgstr "Med deling"
 
 msgid "Without sharing"
 msgstr ""
@@ -319,13 +319,13 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
-msgstr ""
+msgstr "Kategorikombinasjon"
 
 msgid "Dashboard"
 msgstr "Dashbord"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Dataelementgrupper"
 
 msgid "Option sets"
 msgstr ""
