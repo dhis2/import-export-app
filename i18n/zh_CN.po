@@ -208,7 +208,7 @@ msgid "Message"
 msgstr "消息"
 
 msgid "ID"
-msgstr ""
+msgstr "Id"
 
 msgid "Job summary"
 msgstr ""
@@ -310,7 +310,7 @@ msgid "Select all"
 msgstr ""
 
 msgid "Clear all"
-msgstr ""
+msgstr "全清除"
 
 msgid "Data import"
 msgstr ""
@@ -346,7 +346,7 @@ msgid "No"
 msgstr "No"
 
 msgid "Data"
-msgstr ""
+msgstr "数据"
 
 msgid "Event"
 msgstr "事件"
@@ -490,7 +490,7 @@ msgid "Delete"
 msgstr "删除"
 
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 msgid "Errors"
 msgstr "错误"
