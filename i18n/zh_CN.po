@@ -1,6 +1,4 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
 # easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
 # 
@@ -10,42 +8,42 @@ msgstr ""
 "POT-Creation-Date: 2019-12-19T10:07:59.315Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "user is not logged in"
-msgstr "用户还没有登录"
+msgstr ""
 
 msgid "Import Error"
-msgstr "导入错误"
+msgstr ""
 
 msgid "Go Back"
-msgstr "回退"
+msgstr ""
 
 msgid "filter data sets by name"
-msgstr "按名称过滤数据集"
+msgstr ""
 
 msgid "Select All"
-msgstr "全选"
+msgstr ""
 
 msgid "Clear All"
-msgstr "清除全部"
+msgstr ""
 
 msgid "Data sets"
 msgstr "数据集"
 
 msgid "Choose a file to upload"
-msgstr "选择一个文件上传"
+msgstr ""
 
 msgid "Required"
-msgstr "所需"
+msgstr "需要的"
 
 msgid "more options"
-msgstr "更多选项"
+msgstr ""
 
 msgid "JSON"
 msgstr "JSON"
@@ -57,31 +55,31 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr "不选"
+msgstr ""
 
 msgid "Logger"
-msgstr "日志"
+msgstr ""
 
 msgid "view messages received on using import/export forms."
-msgstr "查看使用导入导出表单接收的消息"
+msgstr ""
 
 msgid "Import"
-msgstr "导入"
+msgstr ""
 
 msgid "Export"
 msgstr "导出"
 
 msgid "Created"
-msgstr "已创建"
+msgstr "创建"
 
 msgid "Deleted"
-msgstr "删除的"
+msgstr ""
 
 msgid "Ignored"
-msgstr "忽略的"
+msgstr ""
 
 msgid "Updated"
-msgstr "更新的"
+msgstr ""
 
 msgid "Total"
 msgstr "总共"
@@ -90,139 +88,139 @@ msgid "Type"
 msgstr "类型"
 
 msgid "Type Count"
-msgstr "类型数量"
+msgstr ""
 
 msgid "Messages"
 msgstr "消息"
 
 msgid "Summaries"
-msgstr "摘要"
+msgstr ""
 
 msgid "Conflicts"
-msgstr "冲突"
+msgstr ""
 
 msgid "Errors"
 msgstr "错误"
 
 msgid "Import Summary"
-msgstr "导入摘要"
+msgstr ""
 
 msgid "Summary"
-msgstr "摘要"
+msgstr ""
 
 msgid "Async"
-msgstr "异步"
+msgstr ""
 
 msgid "Atomic Mode"
-msgstr "原子化模式"
+msgstr ""
 
 msgid "Category ID scheme"
-msgstr "分类ID方案"
+msgstr ""
 
 msgid "Children"
-msgstr "下属"
+msgstr ""
 
 msgid "Object type"
-msgstr "对象类型"
+msgstr ""
 
 msgid "Compression"
-msgstr "压缩"
+msgstr ""
 
 msgid "Data element ID scheme"
-msgstr "数据元ID方案"
+msgstr ""
 
 msgid "Dry run"
-msgstr "空运行"
+msgstr ""
 
 msgid "End date"
 msgstr "结束日期"
 
 msgid "Event ID Scheme"
-msgstr "事件ID方案"
+msgstr ""
 
 msgid "Flush Mode"
-msgstr "缓存刷新模式"
+msgstr ""
 
 msgid "Format"
-msgstr "格式"
+msgstr ""
 
 msgid "ID scheme"
-msgstr "ID方案"
+msgstr ""
 
 msgid "Identifier"
-msgstr "标识"
+msgstr ""
 
 msgid "Report Mode"
-msgstr "报表模式"
+msgstr ""
 
 msgid "Import Strategy"
-msgstr "导入策略"
+msgstr ""
 
 msgid "Include deleted"
-msgstr "包括删除的"
+msgstr ""
 
 msgid "Inclusion"
-msgstr "包括"
+msgstr ""
 
 msgid "Inclusion Strategy"
-msgstr "冲突策略"
+msgstr ""
 
 msgid "Merge Mode"
-msgstr "合并模式"
+msgstr ""
 
 msgid "Object"
-msgstr "对象"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "组织机构"
+msgstr "机构"
 
 msgid "Org unit ID scheme"
-msgstr "机构ID规划"
+msgstr ""
 
 msgid "Preheat cache"
-msgstr "缓存预热"
+msgstr ""
 
 msgid "Preheat Mode"
-msgstr "预热模式"
+msgstr ""
 
 msgid "Program Stages"
-msgstr "项目阶段"
+msgstr ""
 
 msgid "Programs"
-msgstr "项目"
+msgstr ""
 
 msgid "Schemas"
-msgstr "规划"
+msgstr ""
 
 msgid "Data Sets"
-msgstr "数据集管理"
+msgstr ""
 
 msgid "Sharing"
-msgstr "共享"
+msgstr ""
 
 msgid "Existing record check"
-msgstr "存在记录检查"
+msgstr ""
 
 msgid "Skip Sharing"
-msgstr "跳过共享"
+msgstr ""
 
 msgid "Skip Validation"
-msgstr "跳过有效性验证"
+msgstr ""
 
 msgid "Start date"
 msgstr "开始日期"
 
 msgid "Strategy"
-msgstr "策略"
+msgstr ""
 
 msgid "Yes"
-msgstr "是"
+msgstr "Yes"
 
 msgid "No"
-msgstr "否"
+msgstr "No"
 
 msgid "UID"
-msgstr "UID"
+msgstr ""
 
 msgid "Code"
 msgstr "代码"
@@ -231,52 +229,52 @@ msgid "Name"
 msgstr "名称"
 
 msgid "Include descendants of organisation unit"
-msgstr "包括下属机构"
+msgstr ""
 
 msgid "Selected organisation unit"
-msgstr "选择的机构"
+msgstr ""
 
 msgid "Yes (faster for large imports)"
-msgstr "是（大量导入较快）"
+msgstr ""
 
 msgid "New and Updates"
-msgstr "新建和更新"
+msgstr ""
 
 msgid "New only"
-msgstr "仅新建"
+msgstr ""
 
 msgid "Updates only"
-msgstr "仅更新"
+msgstr ""
 
 msgid "Delete"
 msgstr "删除"
 
 msgid "Skip check (fast)"
-msgstr "跳过检查（较快）"
+msgstr ""
 
 msgid "Check (safe, recommended)"
-msgstr "检查（安全，推荐）"
+msgstr ""
 
 msgid "AUTO"
-msgstr "自动"
+msgstr ""
 
 msgid "Full"
-msgstr "全部"
+msgstr ""
 
 msgid "Debug"
-msgstr "调试"
+msgstr ""
 
 msgid "Reference"
-msgstr "引用"
+msgstr ""
 
 msgid "All"
 msgstr "全部"
 
 msgid "None"
-msgstr "无"
+msgstr "没有"
 
 msgid "Create and Update"
-msgstr "创建和更新"
+msgstr ""
 
 msgid "Create"
 msgstr "创建"
@@ -285,105 +283,105 @@ msgid "Update"
 msgstr "更新"
 
 msgid "Merge"
-msgstr "合并"
+msgstr ""
 
 msgid "Replace"
-msgstr "替换"
+msgstr ""
 
 msgid "Auto"
 msgstr "自动"
 
 msgid "With sharing"
-msgstr "共享于"
+msgstr ""
 
 msgid "Without sharing"
-msgstr "无共享"
+msgstr ""
 
 msgid "Non Null"
-msgstr "不为空"
+msgstr ""
 
 msgid "Always"
-msgstr "总是"
+msgstr ""
 
 msgid "Non Empty"
-msgstr "非空"
+msgstr ""
 
 msgid "Include children of organisation unit"
-msgstr "包括下属机构"
+msgstr ""
 
 msgid "Zip"
-msgstr "Zip"
+msgstr ""
 
 msgid "Gzip"
-msgstr "GZip"
+msgstr ""
 
 msgid "Uncompressed"
-msgstr "无压缩"
+msgstr ""
 
 msgid "Category combination"
-msgstr "值域组合"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "状态面板"
+msgstr "仪表盘"
 
 msgid "Data element groups"
-msgstr "数据元组"
+msgstr ""
 
 msgid "Option sets"
-msgstr "选项集"
+msgstr ""
 
 msgid "[ All program stages]"
-msgstr "【所有项目阶段】"
+msgstr ""
 
 msgid "Import/Export"
-msgstr "数据导入导出"
+msgstr ""
 
 msgid "Data Export"
-msgstr "数据导出"
+msgstr ""
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
-msgstr "导出数据值，这是导出DHIS2交换格式（DXF2）的常规导出功能"
+msgstr ""
 
 msgid "Loading options..."
-msgstr "载入选项中。。。"
+msgstr ""
 
 msgid "Event Export"
-msgstr "事件导出"
+msgstr ""
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
-msgstr "导出项目、阶段和跟踪实体事件数据为DXF2格式"
+msgstr ""
 
 msgid "Metadata Export"
-msgstr "元数据导出"
+msgstr ""
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
-msgstr "导出数据元、机构等元数据为标准的DHIS2交换格式"
+msgstr ""
 
 msgid "Meta Data Export"
 msgstr ""
 
 msgid "Metadata Dependency Export"
-msgstr "元数据依赖性导出"
+msgstr ""
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
-msgstr "导出诸如数据集、项目相关的元数据对象"
+msgstr ""
 
 msgid "Metadata Export with Dependencies"
 msgstr ""
 
 msgid "Import / Export"
-msgstr "导入/导出"
+msgstr ""
 
 msgid "Import or Export DHIS2 data."
-msgstr "导入或导出DHIS2数据"
+msgstr ""
 
 msgid "Data Import"
 msgstr "数据导入"
@@ -391,33 +389,33 @@ msgstr "数据导入"
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
 "is the standard exchange format for DHIS 2."
-msgstr "使用DXF 2 XML, JSON, CSV 和PDF格式导入数据值。DXF2是标准的交换格式。"
+msgstr ""
 
 msgid "Event Import"
-msgstr "事件导入"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
-msgstr "从DXF2格式导入项目、阶段和跟踪实体事件数据"
+msgstr ""
 
 msgid "GML Import"
-msgstr "GML导入"
+msgstr ""
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
-msgstr "使用GML格式导入机构的地理空间数据"
+msgstr ""
 
 msgid "Only import of GML data for existing organisation units is supported."
 msgstr ""
 
 msgid "Metadata Import"
-msgstr "元数据导入"
+msgstr ""
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
-msgstr "从DHIS2 DXF2交换格式导入数据元、机构等元数据"
+msgstr ""
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr "上传的文件好像没有数据"
+msgstr ""
