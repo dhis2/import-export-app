@@ -26,7 +26,7 @@ msgid "Go Back"
 msgstr "العودة للخلف"
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "تصفية حزم البيانات حسب الإسم"
 
 msgid "Select All"
 msgstr "تحديد الكل"
@@ -92,7 +92,7 @@ msgid "Messages"
 msgstr "الرسائل"
 
 msgid "Summaries"
-msgstr ""
+msgstr "الخلاصات"
 
 msgid "Conflicts"
 msgstr "تعارضات"
@@ -107,7 +107,7 @@ msgid "Summary"
 msgstr "الخلاصة"
 
 msgid "Async"
-msgstr ""
+msgstr "غير متزامن"
 
 msgid "Atomic Mode"
 msgstr ""
@@ -128,7 +128,7 @@ msgid "Data element ID scheme"
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
 
 msgid "End date"
 msgstr "تاريخ النهاية"
@@ -152,7 +152,7 @@ msgid "Report Mode"
 msgstr ""
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "استراتيجية الاستيراد"
 
 msgid "Include deleted"
 msgstr "تضمين ماتم حذفه"
@@ -161,7 +161,7 @@ msgid "Inclusion"
 msgstr ""
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "استراتيجية الإدماج"
 
 msgid "Merge Mode"
 msgstr ""
@@ -182,7 +182,7 @@ msgid "Preheat Mode"
 msgstr ""
 
 msgid "Program Stages"
-msgstr ""
+msgstr "مراحل البرنامج"
 
 msgid "Programs"
 msgstr "البرامج"
@@ -200,7 +200,7 @@ msgid "Existing record check"
 msgstr ""
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "تخطي بيانات المشاركة"
 
 msgid "Skip Validation"
 msgstr ""
@@ -209,7 +209,7 @@ msgid "Start date"
 msgstr "تاريخ البداية"
 
 msgid "Strategy"
-msgstr ""
+msgstr "استراتيجية"
 
 msgid "Yes"
 msgstr "نعم"
@@ -230,13 +230,13 @@ msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "الوحدة التنظيمية المختارة"
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "نعم (أسرع لعمليات الإستيراد الكبيرة)"
 
 msgid "New and Updates"
-msgstr ""
+msgstr "جديد وتحديثات"
 
 msgid "New only"
 msgstr "الجديد فقظ"
@@ -251,7 +251,7 @@ msgid "Skip check (fast)"
 msgstr ""
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "تحقق (آمن ، موصى به)"
 
 msgid "AUTO"
 msgstr ""
@@ -272,7 +272,7 @@ msgid "None"
 msgstr "لا شيء"
 
 msgid "Create and Update"
-msgstr ""
+msgstr "إنشاء وتحديث"
 
 msgid "Create"
 msgstr "إنشاء"
@@ -290,10 +290,10 @@ msgid "Auto"
 msgstr "تلقائي"
 
 msgid "With sharing"
-msgstr ""
+msgstr "مع بيانات المشاركة"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "من غير بيانات المشاركة"
 
 msgid "Non Null"
 msgstr ""
@@ -326,10 +326,10 @@ msgid "Data element groups"
 msgstr "مجموعات عناصر البيانات"
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[كل مراحل البرنامج]"
 
 msgid "Data Export"
-msgstr ""
+msgstr "تصدير البيانات"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
@@ -337,18 +337,19 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "تحميل الخيارات..."
 
 msgid "Event Export"
-msgstr ""
+msgstr "تصدير الأحداث"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"تصدير الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "تصدير البيانات الوصفية"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
@@ -370,7 +371,7 @@ msgid "Metadata Export with Dependencies"
 msgstr ""
 
 msgid "Import / Export"
-msgstr ""
+msgstr "استيراد / تصدير"
 
 msgid "Import or Export DHIS2 data."
 msgstr ""
@@ -384,25 +385,28 @@ msgid ""
 msgstr ""
 
 msgid "Event Import"
-msgstr ""
+msgstr "استيراد الأحداث"
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"استيراد الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid "GML Import"
-msgstr ""
+msgstr "استيراد GML"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"استيراد البيانات الجغرافية للوحدات التنظيمية باستخدام تنسيق GML. GML عبارة "
+"عن قواعد XML للتعبير عن المعالم الجغرافية."
 
 msgid "Only import of GML data for existing organisation units is supported."
 msgstr ""
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "استيراد البيانات الوصفية"
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
@@ -410,4 +414,4 @@ msgid ""
 msgstr ""
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "يبدو أنه لا توجد بيانات في الملف الذي تم تحميله."
