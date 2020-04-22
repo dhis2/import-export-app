@@ -32,7 +32,7 @@ msgid "Choose a file to upload"
 msgstr "اختر ملفاً للتحميل"
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "تصفية حزم البيانات حسب الإسم"
 
 msgid "Select All"
 msgstr "تحديد الكل"
@@ -62,7 +62,7 @@ msgid "No"
 msgstr "لا"
 
 msgid "Async"
-msgstr ""
+msgstr "غير متزامن"
 
 msgid "All"
 msgstr "الجميع"
@@ -77,7 +77,7 @@ msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "الوحدة التنظيمية المختارة"
 
 msgid "Children"
 msgstr ""
@@ -122,7 +122,7 @@ msgid "Something went wrong when loading the data sets!"
 msgstr "حدث خطأ ما أثناء تحميل مجموعات البيانات!"
 
 msgid "Dry run"
-msgstr ""
+msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
 
 msgid "EndDate"
 msgstr ""
@@ -170,7 +170,7 @@ msgid "Debug"
 msgstr ""
 
 msgid "Import report mode"
-msgstr ""
+msgstr "وضع تقرير الاستيراد"
 
 msgid "New and updates"
 msgstr "جديد وتحديثات"
@@ -185,7 +185,7 @@ msgid "Delete"
 msgstr "حذف"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "استراتيجية الاستيراد"
 
 msgid "Include deleted"
 msgstr "تضمين ماتم حذفه"
@@ -206,7 +206,7 @@ msgid "Non Empty"
 msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "استراتيجية الإدماج"
 
 msgid "Merge"
 msgstr "دمج"
@@ -215,13 +215,13 @@ msgid "Replace"
 msgstr "استبدال"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "اسلوب الدمج"
 
 msgid "Loading Object options..."
 msgstr ""
 
 msgid "Something went wrong when loading the object!"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل الكائن!"
 
 msgid "Programs"
 msgstr "البرامج"
@@ -248,7 +248,7 @@ msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "نعم (أسرع لعمليات الإستيراد الكبيرة)"
 
 msgid "Preheat cache"
 msgstr ""
@@ -260,19 +260,19 @@ msgid "Preheat mode"
 msgstr ""
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[كل مراحل البرنامج]"
 
 msgid "Program stages"
-msgstr ""
+msgstr "مراحل البرنامج"
 
 msgid "Loading programStage options..."
-msgstr ""
+msgstr "تحميل خيارات مرحلة البرنامج"
 
 msgid "Something went wrong when loading the programStages!"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل مراحل البرنامج!"
 
 msgid "Loading program options..."
-msgstr ""
+msgstr "تحميل خيارات البرنامج"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "حدث خطأ ما أثناء تحميل البرامج!"
@@ -287,10 +287,10 @@ msgid "Select None"
 msgstr "الغاء التحديد عن الكل"
 
 msgid "With sharing"
-msgstr ""
+msgstr "مع بيانات المشاركة"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "من غير بيانات المشاركة"
 
 msgid "Sharing"
 msgstr "المشاركة"
@@ -302,7 +302,7 @@ msgid "Skip check (fast)"
 msgstr ""
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "تحقق (آمن ، موصى به)"
 
 msgid "Skip existing check"
 msgstr ""
@@ -314,13 +314,13 @@ msgid "Skip validation"
 msgstr "تجنب عملية التحقق"
 
 msgid "StartDate"
-msgstr ""
+msgstr "تاريخ البداية"
 
 msgid "Start date"
 msgstr "تاريخ البداية"
 
 msgid "Strategy"
-msgstr ""
+msgstr "استراتيجية"
 
 msgid "Id scheme"
 msgstr ""
@@ -362,7 +362,7 @@ msgid "Messages"
 msgstr "الرسائل"
 
 msgid "Summaries"
-msgstr ""
+msgstr "الخلاصات"
 
 msgid "Conflicts"
 msgstr "تعارضات"
@@ -395,10 +395,10 @@ msgid "Report Mode"
 msgstr ""
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "استراتيجية الاستيراد"
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "استراتيجية الإدماج"
 
 msgid "Merge Mode"
 msgstr ""
@@ -410,7 +410,7 @@ msgid "Preheat Mode"
 msgstr ""
 
 msgid "Program Stages"
-msgstr ""
+msgstr "مراحل البرنامج"
 
 msgid "Schemas"
 msgstr ""
@@ -422,19 +422,19 @@ msgid "Existing record check"
 msgstr ""
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "تخطي بيانات المشاركة"
 
 msgid "Skip Validation"
 msgstr ""
 
 msgid "New and Updates"
-msgstr ""
+msgstr "جديد وتحديثات"
 
 msgid "AUTO"
 msgstr ""
 
 msgid "Create and Update"
-msgstr ""
+msgstr "إنشاء وتحديث"
 
 msgid "Create"
 msgstr "إنشاء"
@@ -452,7 +452,7 @@ msgid "An unknown error occurred. Please try again later"
 msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
 
 msgid "Data Export"
-msgstr ""
+msgstr "تصدير البيانات"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
@@ -460,18 +460,19 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "تحميل الخيارات..."
 
 msgid "Event Export"
-msgstr ""
+msgstr "تصدير الأحداث"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"تصدير الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "تصدير البيانات الوصفية"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
@@ -487,13 +488,13 @@ msgid ""
 msgstr ""
 
 msgid "Import / Export"
-msgstr ""
+msgstr "استيراد / تصدير"
 
 msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "حدث خطأ غير معروف"
 
 msgid "Data Import"
 msgstr "استيراد البيانات"
@@ -504,25 +505,28 @@ msgid ""
 msgstr ""
 
 msgid "Event Import"
-msgstr ""
+msgstr "استيراد الأحداث"
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"استيراد الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid "GML Import"
-msgstr ""
+msgstr "استيراد GML"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"استيراد البيانات الجغرافية للوحدات التنظيمية باستخدام تنسيق GML. GML عبارة "
+"عن قواعد XML للتعبير عن المعالم الجغرافية."
 
 msgid "Couldn't load classKey options"
 msgstr ""
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "استيراد البيانات الوصفية"
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
@@ -530,4 +534,4 @@ msgid ""
 msgstr ""
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "يبدو أنه لا توجد بيانات في الملف الذي تم تحميله."
