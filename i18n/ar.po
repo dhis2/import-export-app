@@ -60,7 +60,7 @@ msgid "Will do a test run without importing any data into the database"
 msgstr "سيتم إجراء اختبار دون استيراد أي بيانات إلى قاعدة البيانات"
 
 msgid "Dry run"
-msgstr ""
+msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
 
 msgid "Import"
 msgstr "استيراد"
@@ -108,13 +108,13 @@ msgid "Identifier"
 msgstr "المعرف"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "اسلوب تقرير الاستيراد"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "استراتيجية الاستيراد"
 
 msgid "Include children"
-msgstr ""
+msgstr "تضمين الأبناء"
 
 msgid "Include deleted"
 msgstr "تضمين ماتم حذفه"
@@ -123,13 +123,13 @@ msgid "Inclusion"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "استراتيجية الإدماج"
 
 msgid "Async"
-msgstr ""
+msgstr "غير متزامن"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "اسلوب الدمج"
 
 msgid "Object type"
 msgstr "نوع العنصر"
@@ -153,7 +153,7 @@ msgid "Programs"
 msgstr "البرامج"
 
 msgid "Program stage"
-msgstr ""
+msgstr "مرحلة البرنامج"
 
 msgid "Skip audit"
 msgstr "تجاهل التدقيق"
@@ -177,13 +177,13 @@ msgid "Start date"
 msgstr "تاريخ البداية"
 
 msgid "Strategy"
-msgstr ""
+msgstr "استراتيجية"
 
 msgid "No jobs started yet."
-msgstr ""
+msgstr "لم تبدأ أي مهام حتى الآن."
 
 msgid "Recreate job"
-msgstr ""
+msgstr "إعادة إنشاء المهمة"
 
 msgid "Completed"
 msgstr "اكتمل"
@@ -192,7 +192,7 @@ msgid "In progress"
 msgstr "قيد التقدم"
 
 msgid "Job details"
-msgstr ""
+msgstr "تفاصيل المهمة"
 
 msgid "Key"
 msgstr ""
@@ -213,7 +213,7 @@ msgid "ID"
 msgstr ""
 
 msgid "Job summary"
-msgstr ""
+msgstr "خلاصة المهمة"
 
 msgid "Error"
 msgstr "خطأ"
@@ -231,10 +231,10 @@ msgid "Type"
 msgstr "النوع"
 
 msgid "Property"
-msgstr ""
+msgstr "خاصية"
 
 msgid "View summary of recently started import job"
-msgstr ""
+msgstr "عرض ملخص لمهمة الاستيراد التي بدأت مؤخرًا"
 
 msgid "Status"
 msgstr "الحالة"
@@ -294,10 +294,10 @@ msgid "One program must be selected"
 msgstr "يجب تحديد برنامج واحد"
 
 msgid "One program stage must be selected"
-msgstr ""
+msgstr "يجب تحديد مرحلة برنامج واحدة"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل المخططات!"
 
 msgid "Select All"
 msgstr "تحديد الكل"
@@ -306,7 +306,7 @@ msgid "Select None"
 msgstr "الغاء التحديد عن الكل"
 
 msgid "At least one schema must be selected"
-msgstr ""
+msgstr "يجب تحديد مخطط واحد على الأقل"
 
 msgid "Select all"
 msgstr "تحديد الكل"
@@ -321,7 +321,7 @@ msgid "Event import"
 msgstr "استيراد الأحداث"
 
 msgid "GML import"
-msgstr ""
+msgstr "استيراد GML"
 
 msgid "Metadata import"
 msgstr "استيراد البيانات الوصفية"
@@ -339,7 +339,7 @@ msgid "Metadata export"
 msgstr "تصدير البيانات الوصفية"
 
 msgid "Job overview"
-msgstr ""
+msgstr "نظرة عامة على المهمة"
 
 msgid "Yes"
 msgstr "نعم"
@@ -348,10 +348,10 @@ msgid "No"
 msgstr "لا"
 
 msgid "Data"
-msgstr ""
+msgstr "بيانات"
 
 msgid "Event"
-msgstr ""
+msgstr "حدث"
 
 msgid "GML"
 msgstr ""
@@ -363,7 +363,7 @@ msgid "Something went wrong when loading the class keys"
 msgstr ""
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل الكائنات"
 
 msgid "All program stages"
 msgstr "كل مراحل البرنامج"
@@ -372,10 +372,10 @@ msgid "Something went wrong when loading the program stages"
 msgstr "حدث خطأ ما أثناء تحميل مراحل البرنامج"
 
 msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
-msgstr ""
+msgstr "تصدير قيم البيانات كملفات ADX XML أو DFX 2 XML أو JSON أو CSV."
 
 msgid "HTTP error when fetching data"
-msgstr ""
+msgstr "خطأ HTTP اثناء جلب البيانات"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -384,19 +384,23 @@ msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"تصدير الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
+"استيراد الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
 msgstr ""
+"استيراد البيانات الجغرافية للوحدات التنظيمية باستخدام تنسيق GML. GML عبارة "
+"عن قواعد XML للتعبير عن المعالم الجغرافية."
 
 msgid "An overview of all import jobs started this session."
-msgstr ""
+msgstr "نظرة عامة على جميع مهام الاستيراد التي بدأت في هذه الجلسة."
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
@@ -465,7 +469,7 @@ msgid "Name"
 msgstr "الاسم"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "الوحدة التنظيمية المختارة"
 
 msgid "Include children of organisation unit"
 msgstr ""
