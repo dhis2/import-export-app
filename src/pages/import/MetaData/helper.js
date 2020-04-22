@@ -142,7 +142,10 @@ export const onSubmit = (setLoading, setError) => values => {
 
                 try {
                     const response = JSON.parse(e.target.response)
-                    message = response.message
+
+                    if (response.message) {
+                        message = response.message
+                    }
                 } catch (e2) {}
 
                 setError(message)
