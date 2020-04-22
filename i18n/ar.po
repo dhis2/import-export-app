@@ -32,7 +32,7 @@ msgid "Choose a file to upload"
 msgstr "اختر ملفاً للتحميل"
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "تصفية حزم البيانات حسب الإسم"
 
 msgid "Select All"
 msgstr "تحديد الكل"
@@ -65,7 +65,7 @@ msgid "No"
 msgstr "لا"
 
 msgid "Async"
-msgstr ""
+msgstr "غير متزامن"
 
 msgid "All"
 msgstr "الجميع"
@@ -95,7 +95,7 @@ msgid "Loading data element id scheme options..."
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
 
 msgid "Event id scheme"
 msgstr ""
@@ -137,7 +137,7 @@ msgid "Debug"
 msgstr ""
 
 msgid "Import report mode"
-msgstr ""
+msgstr "وضع تقرير الاستيراد"
 
 msgid "New and updates"
 msgstr "جديد وتحديثات"
@@ -152,7 +152,7 @@ msgid "Delete"
 msgstr "حذف"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "استراتيجية الاستيراد"
 
 msgid "Non Null"
 msgstr ""
@@ -164,7 +164,7 @@ msgid "Non Empty"
 msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "استراتيجية الإدماج"
 
 msgid "Merge"
 msgstr "دمج"
@@ -173,7 +173,7 @@ msgid "Replace"
 msgstr "استبدال"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "اسلوب الدمج"
 
 msgid "Org unit id scheme"
 msgstr ""
@@ -182,7 +182,7 @@ msgid "Loading organisation unit id scheme options..."
 msgstr ""
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "نعم (أسرع لعمليات الإستيراد الكبيرة)"
 
 msgid "Preheat cache"
 msgstr ""
@@ -206,7 +206,7 @@ msgid "Skip check (fast)"
 msgstr ""
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "تحقق (آمن ، موصى به)"
 
 msgid "Skip existing check"
 msgstr ""
@@ -218,7 +218,7 @@ msgid "Skip validation"
 msgstr "تجنب عملية التحقق"
 
 msgid "Strategy"
-msgstr ""
+msgstr "استراتيجية"
 
 msgid "Id scheme"
 msgstr ""
@@ -260,7 +260,7 @@ msgid "Messages"
 msgstr "الرسائل"
 
 msgid "Summaries"
-msgstr ""
+msgstr "الخلاصات"
 
 msgid "Conflicts"
 msgstr "تعارضات"
@@ -305,7 +305,7 @@ msgid "Report Mode"
 msgstr ""
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "استراتيجية الاستيراد"
 
 msgid "Include deleted"
 msgstr "تضمين ماتم حذفه"
@@ -314,7 +314,7 @@ msgid "Inclusion"
 msgstr ""
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "استراتيجية الإدماج"
 
 msgid "Merge Mode"
 msgstr ""
@@ -329,7 +329,7 @@ msgid "Preheat Mode"
 msgstr ""
 
 msgid "Program Stages"
-msgstr ""
+msgstr "مراحل البرنامج"
 
 msgid "Programs"
 msgstr "البرامج"
@@ -347,7 +347,7 @@ msgid "Existing record check"
 msgstr ""
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "تخطي بيانات المشاركة"
 
 msgid "Skip Validation"
 msgstr ""
@@ -359,16 +359,16 @@ msgid "Include descendants of organisation unit"
 msgstr ""
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "الوحدة التنظيمية المختارة"
 
 msgid "New and Updates"
-msgstr ""
+msgstr "جديد وتحديثات"
 
 msgid "AUTO"
 msgstr ""
 
 msgid "Create and Update"
-msgstr ""
+msgstr "إنشاء وتحديث"
 
 msgid "Create"
 msgstr "إنشاء"
@@ -377,10 +377,10 @@ msgid "Update"
 msgstr "تحديث"
 
 msgid "With sharing"
-msgstr ""
+msgstr "مع بيانات المشاركة"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "من غير بيانات المشاركة"
 
 msgid "Include children of organisation unit"
 msgstr ""
@@ -407,13 +407,13 @@ msgid "Option sets"
 msgstr ""
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[كل مراحل البرنامج]"
 
 msgid "Import/Export"
 msgstr "استيراد-تصدير"
 
 msgid "Data Export"
-msgstr ""
+msgstr "تصدير البيانات"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
@@ -421,18 +421,19 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "تحميل الخيارات..."
 
 msgid "Event Export"
-msgstr ""
+msgstr "تصدير الأحداث"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"تصدير الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "تصدير البيانات الوصفية"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
@@ -454,13 +455,13 @@ msgid "Metadata Export with Dependencies"
 msgstr ""
 
 msgid "Import / Export"
-msgstr ""
+msgstr "استيراد / تصدير"
 
 msgid "Import or Export DHIS2 data."
 msgstr ""
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "حدث خطأ غير معروف"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
@@ -474,25 +475,28 @@ msgid ""
 msgstr ""
 
 msgid "Event Import"
-msgstr ""
+msgstr "استيراد الأحداث"
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"استيراد الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid "GML Import"
-msgstr ""
+msgstr "استيراد GML"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"استيراد البيانات الجغرافية للوحدات التنظيمية باستخدام تنسيق GML. GML عبارة "
+"عن قواعد XML للتعبير عن المعالم الجغرافية."
 
 msgid "Couldn't load classKey options"
 msgstr ""
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "استيراد البيانات الوصفية"
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
@@ -500,4 +504,4 @@ msgid ""
 msgstr ""
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "يبدو أنه لا توجد بيانات في الملف الذي تم تحميله."
