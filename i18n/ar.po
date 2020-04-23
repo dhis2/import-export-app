@@ -360,7 +360,7 @@ msgid "Metadata"
 msgstr "البيانات الوصفية"
 
 msgid "Something went wrong when loading the class keys"
-msgstr ""
+msgstr "حدث خطأ ما عند تحميل class keys"
 
 msgid "Something went wrong when loading the objects"
 msgstr "حدث خطأ ما أثناء تحميل الكائنات"
@@ -379,6 +379,7 @@ msgstr "خطأ HTTP اثناء جلب البيانات"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
+"استيراد قيم البيانات من ملفات ADX XML أو DXF 2 XML أو JSON أو CSV أو PDF."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
@@ -406,19 +407,24 @@ msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects in the XML or JSON format."
 msgstr ""
+"تصدير البيانات التعريفية مثل حزم البيانات والبرامج بما في ذلك كائنات "
+"البيانات التعريفية ذات الصلة بتنسيق XML أو JSON."
 
 msgid ""
 "Export meta data like data elements and organisation units in the XML, JSON "
 "or CSV format."
 msgstr ""
+"تصدير البيانات التعريفية مثل عناصر البيانات والوحدات التنظيمية بتنسيق XML أو"
+" JSON أو CSV."
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
 "format."
 msgstr ""
+"تصدير البيانات التعريفية مثل عناصر البيانات والوحدات التنظيمية بتنسيق DFX 2."
 
 msgid "A class key must be selected"
-msgstr ""
+msgstr "يجب تحديد class key"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
@@ -472,10 +478,10 @@ msgid "Selected organisation unit"
 msgstr "الوحدة التنظيمية المختارة"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "تضمين الوحدات الفرعية الأبناء من الوحدة التنظيمية"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "تضمين كافة الوحدات الفرعية المتفرعة من الوحدة التنظيمية"
 
 msgid "Skip check"
 msgstr "تجاوز التفحص"
