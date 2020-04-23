@@ -1304,10 +1304,10 @@
     "@dhis2/ui-widgets" "^2.0.4"
     moment "^2.24.0"
 
-"@dhis2/app-runtime@^2.0.4":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-runtime/-/app-runtime-2.1.0.tgz#4aa9192183477abb98f7eb3d58bec5b4d5786b44"
-  integrity sha512-msWbIjnr01PWSBTfSuIqb71chaiy7Z1Xg2G11Ib/3X3QJyEJ5tuXhmkTXRHGJFkeZv+QfiMl7tHGxJewwSZb+g==
+"@dhis2/app-runtime@^2.0.4", "@dhis2/app-runtime@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-runtime/-/app-runtime-2.1.2.tgz#493e6b462cdba1b5cb54db21bb3f331aa2306992"
+  integrity sha512-ynGxv/9T5fvva1TYY6haAkDmyelvfayzHtAJdHMy57Yvf8z14THJcBR3MeAFRfM+1njgGWeTk14evgmgpZkfeA==
 
 "@dhis2/app-shell@3.2.5":
   version "3.2.5"
