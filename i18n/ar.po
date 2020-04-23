@@ -92,7 +92,7 @@ msgid "Data element id scheme"
 msgstr ""
 
 msgid "Loading data element id scheme options..."
-msgstr ""
+msgstr "جار تحميل خيارات id scheme الخاص بـ عنصر البيانات..."
 
 msgid "Dry run"
 msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
@@ -179,7 +179,7 @@ msgid "Org unit id scheme"
 msgstr ""
 
 msgid "Loading organisation unit id scheme options..."
-msgstr ""
+msgstr "جار تحميل خيارات id scheme الخاص بالوحدة التنظيمية..."
 
 msgid "Yes (faster for large imports)"
 msgstr "نعم (أسرع لعمليات الإستيراد الكبيرة)"
@@ -203,7 +203,7 @@ msgid "Skip audit"
 msgstr "تجاهل التدقيق"
 
 msgid "Skip check (fast)"
-msgstr ""
+msgstr "تخطي الفحص (سريع)"
 
 msgid "Check (safe, recommended)"
 msgstr "تحقق (آمن ، موصى به)"
@@ -350,13 +350,13 @@ msgid "Skip Sharing"
 msgstr "تخطي بيانات المشاركة"
 
 msgid "Skip Validation"
-msgstr ""
+msgstr "تخطي التحقق من الصحة"
 
 msgid "Start date"
 msgstr "تاريخ البداية"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "تضمين كافة الوحدات الفرعية المتفرعة من الوحدة التنظيمية"
 
 msgid "Selected organisation unit"
 msgstr "الوحدة التنظيمية المختارة"
@@ -383,7 +383,7 @@ msgid "Without sharing"
 msgstr "من غير بيانات المشاركة"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "تضمين الوحدات الفرعية الأبناء من الوحدة التنظيمية"
 
 msgid "Zip"
 msgstr ""
@@ -439,6 +439,8 @@ msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
 msgstr ""
+"تصدير بيانات التعريف مثل عناصر البيانات والوحدات التنظيمية بتنسيق التبادلي "
+"القياسي لـ  DHIS 2."
 
 msgid "Meta Data Export"
 msgstr ""
@@ -450,6 +452,8 @@ msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
 msgstr ""
+"تصدير بيانات التعريف مثل مجموعات البيانات والبرامج بما في ذلك كائنات "
+"البيانات التعريف ذات الصلة."
 
 msgid "Metadata Export with Dependencies"
 msgstr ""
@@ -493,7 +497,7 @@ msgstr ""
 "عن قواعد XML للتعبير عن المعالم الجغرافية."
 
 msgid "Couldn't load classKey options"
-msgstr ""
+msgstr "تعذر تحميل خيارات الـ classKey"
 
 msgid "Metadata Import"
 msgstr "استيراد البيانات الوصفية"
@@ -502,6 +506,8 @@ msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
 msgstr ""
+"استيراد بيانات التعريف مثل عناصر البيانات والوحدات التنظيمية باستخدام تنسيق "
+"تبادل DHIS 2 القياسي المسمى DXF 2."
 
 msgid "It seems like there was no data in the uploaded file."
 msgstr "يبدو أنه لا توجد بيانات في الملف الذي تم تحميله."
