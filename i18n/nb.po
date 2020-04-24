@@ -1,3 +1,4 @@
+# 
 # Translators:
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
@@ -70,7 +71,7 @@ msgid "Object"
 msgstr ""
 
 msgid "Compression"
-msgstr ""
+msgstr "Kompresjon"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -355,7 +356,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
