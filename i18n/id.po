@@ -1,14 +1,15 @@
 # 
 # Translators:
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
 # phil_dhis2, 2019
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,13 +99,13 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgid "ID scheme"
 msgstr "Skema ID"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Pengenal"
 
 msgid "Import report mode"
 msgstr ""
@@ -152,7 +153,7 @@ msgid "Programs"
 msgstr "Program"
 
 msgid "Program stage"
-msgstr ""
+msgstr "Tahapan program"
 
 msgid "Skip audit"
 msgstr ""
@@ -185,10 +186,10 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "Completed"
-msgstr ""
+msgstr "Selesai"
 
 msgid "In progress"
-msgstr ""
+msgstr "Dalam proses"
 
 msgid "Job details"
 msgstr ""
@@ -197,16 +198,16 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Nilai"
 
 msgid "Events"
-msgstr ""
+msgstr "Event"
 
 msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "Pesan"
 
 msgid "ID"
 msgstr ""
@@ -236,10 +237,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "Description"
-msgstr ""
+msgstr "Deskripsi"
 
 msgid "Summary"
 msgstr "Ringkasan"
@@ -347,16 +348,16 @@ msgid "No"
 msgstr "Tidak"
 
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 msgid "Event"
-msgstr ""
+msgstr "Kejadian"
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -421,13 +422,13 @@ msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "ADX"
 msgstr ""
@@ -448,7 +449,7 @@ msgid "Category combination"
 msgstr "Kombinasi kategori"
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 msgid "Data element groups"
 msgstr "Grup data elemen"

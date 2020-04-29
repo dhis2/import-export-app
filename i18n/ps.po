@@ -1,13 +1,14 @@
+# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-20T00:05:00.785Z\n"
+"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,220 +16,154 @@ msgstr ""
 "Language: ps\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "user is not logged in"
+msgid "Something went wrong when loading the current user!"
 msgstr ""
 
-msgid "Import Error"
+msgid "Something went wrong when loading the data sets!"
 msgstr ""
 
-msgid "Go Back"
+msgid "Filter data sets by name"
 msgstr ""
 
-msgid "Required"
-msgstr "اړین دي"
-
-msgid "Choose a file to upload"
+msgid "At least one data set must be selected"
 msgstr ""
 
-msgid "filter data sets by name"
+msgid "One data set must be selected"
 msgstr ""
 
-msgid "Select All"
+msgid "Invalid date"
 msgstr ""
 
-msgid "Clear All"
+msgid "Start date must be before end date"
 msgstr ""
 
-msgid "Data sets"
-msgstr "د مالوماتو یا ډاټا ټولګې"
-
-msgid "more options"
+msgid "End date must be after start date"
 msgstr ""
 
-msgid "JSON"
+msgid ""
+"Something went wrong when loading the additional data element ID schemes"
 msgstr ""
 
-msgid "XML"
+msgid "Something went wrong when loading the additional ID schemes"
 msgstr ""
 
-msgid "CSV"
+msgid ""
+"Something went wrong when loading the additional organisation unit ID "
+"schemes"
 msgstr ""
 
-msgid "Yes"
-msgstr "هو [ درست ]"
-
-msgid "No"
-msgstr "نه [ نه ]"
-
-msgid "Async"
+msgid "Please select a file"
 msgstr ""
 
-msgid "All"
-msgstr "ټول"
-
-msgid "None"
-msgstr "هېڅ یو"
-
-msgid "Atomic mode"
-msgstr ""
-
-msgid "Class key"
-msgstr ""
-
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Compression"
-msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "کوډ یا شفر"
-
-msgid "Name"
-msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
-
-msgid "Data element id scheme"
-msgstr ""
-
-msgid "Loading data element id scheme options..."
+msgid "Will do a test run without importing any data into the database"
 msgstr ""
 
 msgid "Dry run"
 msgstr ""
 
-msgid "Event id scheme"
-msgstr ""
+msgid "Import"
+msgstr "واردول"
 
-msgid "First row is header"
-msgstr ""
-
-msgid "Auto"
+msgid "Atomic mode"
 msgstr ""
 
 msgid "Object"
 msgstr "شی (څیز)"
 
+msgid "Compression"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Data sets"
+msgstr "د مالوماتو یا ډاټا ټولګې"
+
+msgid "End date"
+msgstr "د پای نېټه"
+
+msgid "Event ID scheme"
+msgstr ""
+
+msgid "Export"
+msgstr "صادرول"
+
+msgid "File"
+msgstr "فایل"
+
+msgid "First row is header"
+msgstr ""
+
 msgid "Flush mode"
-msgstr ""
-
-msgid "PDF"
-msgstr ""
-
-msgid "ADX"
 msgstr ""
 
 msgid "Format"
 msgstr ""
 
-msgid "UID"
+msgid "ID scheme"
 msgstr ""
 
 msgid "Identifier"
 msgstr ""
 
-msgid "Errors"
-msgstr "تېروتنې"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
 msgid "Import report mode"
 msgstr ""
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "خذف یې کړئ"
 
 msgid "Import strategy"
 msgstr ""
 
-msgid "Non Null"
+msgid "Include children"
 msgstr ""
 
-msgid "Always"
+msgid "Include deleted"
 msgstr ""
 
-msgid "Non Empty"
+msgid "Inclusion"
 msgstr ""
 
 msgid "Inclusion strategy"
 msgstr ""
 
-msgid "Merge"
+msgid "Async"
 msgstr ""
-
-msgid "Replace"
-msgstr "ځاېناستول"
 
 msgid "Merge mode"
 msgstr ""
 
-msgid "Org unit id scheme"
+msgid "Object type"
 msgstr ""
 
-msgid "Loading organisation unit id scheme options..."
+msgid "Organisation unit ID scheme"
 msgstr ""
 
-msgid "Yes (faster for large imports)"
-msgstr ""
+msgid "Organisation unit"
+msgstr "د سازمان واحد"
 
 msgid "Preheat cache"
 msgstr ""
 
-msgid "Reference"
-msgstr "مرجع / مأخذ"
+msgid "Faster for large imports"
+msgstr ""
 
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Error"
-msgstr "تېروته"
+msgid "Programs"
+msgstr "پروګرامونه"
 
-msgid "Report mode"
-msgstr ""
-
-msgid "Select None"
-msgstr ""
-
-msgid "With sharing"
-msgstr ""
-
-msgid "Without sharing"
-msgstr ""
-
-msgid "Sharing"
-msgstr "د شریکېدو په حال کې"
+msgid "Program stage"
+msgstr "د پروګرام پړاو"
 
 msgid "Skip audit"
 msgstr ""
 
-msgid "Skip check (fast)"
+msgid "Improves performance at the cost of ability to audit changes"
 msgstr ""
 
-msgid "Check (safe, recommended)"
+msgid "Skip exisiting check"
 msgstr ""
 
-msgid "Skip existing check"
+msgid "Faster, but unsafe"
 msgstr ""
 
 msgid "Skip sharing"
@@ -237,23 +172,77 @@ msgstr ""
 msgid "Skip validation"
 msgstr ""
 
+msgid "Start date"
+msgstr "د پیل نېټه"
+
 msgid "Strategy"
 msgstr ""
 
-msgid "Id scheme"
+msgid "No jobs started yet."
 msgstr ""
 
-msgid "Logger"
+msgid "Recreate job"
 msgstr ""
 
-msgid "view messages received on using import/export forms."
+msgid "Completed"
+msgstr "بشپړ شوی"
+
+msgid "In progress"
+msgstr "دوام لري"
+
+msgid "Job details"
 msgstr ""
 
-msgid "Import"
-msgstr "واردول"
+msgid "Key"
+msgstr ""
 
-msgid "Export"
-msgstr "صادرول"
+msgid "Value"
+msgstr "ارزښت یا رقم"
+
+msgid "Events"
+msgstr "پېښې"
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr "پېغام"
+
+msgid "ID"
+msgstr "د هویت څرګندونه"
+
+msgid "Job summary"
+msgstr ""
+
+msgid "Error"
+msgstr "تېروته"
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Messages"
+msgstr "پېغامونه"
+
+msgid "UID"
+msgstr ""
+
+msgid "Type"
+msgstr "نمونه/ډول"
+
+msgid "Property"
+msgstr ""
+
+msgid "View summary of recently started import job"
+msgstr ""
+
+msgid "Status"
+msgstr "وضعیت"
+
+msgid "Description"
+msgstr "تشریح [ ژباړه ـ نښه ـ تشریح ]"
+
+msgid "Summary"
+msgstr ""
 
 msgid "Created"
 msgstr "ایجاد شوی دی"
@@ -270,130 +259,187 @@ msgstr ""
 msgid "Total"
 msgstr "ټولټال"
 
-msgid "Type"
-msgstr "نمونه/ډول"
-
-msgid "Type Count"
+msgid "Overview"
 msgstr ""
 
-msgid "Messages"
-msgstr "پېغامونه"
-
-msgid "Summaries"
+msgid "Type count"
 msgstr ""
 
-msgid "Conflicts"
+msgid "more options"
 msgstr ""
 
-msgid "Import Summary"
+msgid "One object must be selected"
 msgstr ""
 
-msgid "Summary"
+msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
-msgid "Atomic Mode"
+msgid "At least one organisation unit must be selected"
 msgstr ""
 
-msgid "Category ID scheme"
+msgid "One organisation unit must be selected"
 msgstr ""
 
-msgid "Children"
+msgid "Something went wrong when loading the programs!"
 msgstr ""
 
-msgid "Object type"
+msgid "Filter programs by name"
 msgstr ""
 
-msgid "Data element ID scheme"
+msgid "At least one program must be selected"
 msgstr ""
 
-msgid "End date"
-msgstr "د پای نېټه"
-
-msgid "Event ID Scheme"
+msgid "One program must be selected"
 msgstr ""
 
-msgid "Flush Mode"
+msgid "One program stage must be selected"
 msgstr ""
 
-msgid "ID scheme"
+msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
-msgid "Report Mode"
+msgid "Select All"
 msgstr ""
 
-msgid "Import Strategy"
+msgid "Select None"
 msgstr ""
 
-msgid "Include deleted"
+msgid "At least one schema must be selected"
 msgstr ""
 
-msgid "Inclusion"
+msgid "Select all"
+msgstr "ټول غوره یا انتخاب کړئ"
+
+msgid "Clear all"
 msgstr ""
 
-msgid "Inclusion Strategy"
+msgid "Data import"
 msgstr ""
 
-msgid "Merge Mode"
+msgid "Event import"
 msgstr ""
 
-msgid "Organisation unit"
-msgstr "د سازمان واحد"
-
-msgid "Org unit ID scheme"
+msgid "GML import"
 msgstr ""
 
-msgid "Preheat Mode"
+msgid "Metadata import"
 msgstr ""
 
-msgid "Program Stages"
+msgid "Data export"
 msgstr ""
 
-msgid "Programs"
-msgstr "پروګرامونه"
-
-msgid "Schemas"
+msgid "Event export"
 msgstr ""
 
-msgid "Data Sets"
-msgstr "د مالوماتو ټولګې"
-
-msgid "Existing record check"
+msgid "Metadata dependency export"
 msgstr ""
 
-msgid "Skip Sharing"
+msgid "Metadata export"
 msgstr ""
 
-msgid "Skip Validation"
+msgid "Job overview"
 msgstr ""
 
-msgid "Start date"
-msgstr "د پیل نېټه"
+msgid "Yes"
+msgstr "هو [ درست ]"
 
-msgid "Include descendants of organisation unit"
+msgid "No"
+msgstr "نه [ نه ]"
+
+msgid "Data"
+msgstr "مالومات (ډاټا)"
+
+msgid "Event"
+msgstr "پېښه"
+
+msgid "GML"
 msgstr ""
 
-msgid "Selected organisation unit"
+msgid "Metadata"
 msgstr ""
 
-msgid "New and Updates"
+msgid "Something went wrong when loading the class keys"
 msgstr ""
 
-msgid "AUTO"
+msgid "Something went wrong when loading the objects"
 msgstr ""
 
-msgid "Create and Update"
+msgid "All program stages"
 msgstr ""
 
-msgid "Create"
-msgstr "جوړ یې کړئ"
-
-msgid "Update"
-msgstr "تجدید یا نوي یې کړئ"
-
-msgid "Include children of organisation unit"
+msgid "Something went wrong when loading the program stages"
 msgstr ""
 
-msgid "Gzip"
+msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
+msgstr ""
+
+msgid "HTTP error when fetching data"
+msgstr ""
+
+msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities using the DXF 2 "
+"format."
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using the GML format. GML is "
+"an XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "An overview of all import jobs started this session."
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects in the XML or JSON format."
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units in the XML, JSON "
+"or CSV format."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the DXF 2 "
+"format."
+msgstr ""
+
+msgid "A class key must be selected"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
@@ -408,95 +454,74 @@ msgstr "د مالوماتو د برخې ګروپونه"
 msgid "Option sets"
 msgstr ""
 
-msgid "[ All program stages]"
+msgid "Uid"
 msgstr ""
 
-msgid "Import/Export"
-msgstr "واردول-صادرول"
+msgid "Code"
+msgstr "کوډ یا شفر"
 
-msgid "Data Export"
+msgid "Name"
+msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
+
+msgid "Selected organisation unit"
 msgstr ""
 
-msgid ""
-"Export data values. This is the regular export function which exports data "
-"to the DHIS 2 exchange format called DXF 2."
+msgid "Include children of organisation unit"
 msgstr ""
 
-msgid "Loading options..."
+msgid "Include descendants of organisation unit"
 msgstr ""
 
-msgid "Event Export"
+msgid "Skip check"
 msgstr ""
 
-msgid ""
-"Export event data for programs, stages and tracked entities in the DXF 2 "
-"format."
+msgid "Check"
 msgstr ""
 
-msgid "Metadata Export"
+msgid "New and updates"
 msgstr ""
 
-msgid ""
-"Export meta data like data elements and organisation units to the standard "
-"DHIS 2 exchange format."
+msgid "New only"
 msgstr ""
 
-msgid "Metadata Dependency Export"
+msgid "Updates only"
 msgstr ""
 
-msgid ""
-"Export metadata like data sets and programs including related metadata "
-"objects."
+msgid "Delete"
+msgstr "خذف یې کړئ"
+
+msgid "Auto"
 msgstr ""
 
-msgid "Metadata Export with Dependencies"
+msgid "Errors"
+msgstr "تېروتنې"
+
+msgid "Full"
 msgstr ""
 
-msgid "Import / Export"
+msgid "Debug"
 msgstr ""
 
-msgid "Import or Export DHIS2 data."
+msgid "Reference"
+msgstr "مرجع / مأخذ"
+
+msgid "All"
+msgstr "ټول"
+
+msgid "None"
+msgstr "هېڅ یو"
+
+msgid "Merge"
 msgstr ""
 
-msgid "An unknown error occurred"
+msgid "Replace"
+msgstr "ځاېناستول"
+
+msgid "Non Null"
 msgstr ""
 
-msgid "An unknown error occurred. Please try again later"
+msgid "Always"
 msgstr ""
 
-msgid "Data Import"
-msgstr "ډاټا یا مالومات ولېږدوئ"
-
-msgid ""
-"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
-"is the standard exchange format for DHIS 2."
-msgstr ""
-
-msgid "Event Import"
-msgstr ""
-
-msgid ""
-"Import events for programs, stages and tracked entities in the DXF 2 format."
-msgstr ""
-
-msgid "GML Import"
-msgstr ""
-
-msgid ""
-"Import geographic data for organisation units using GML format. GML is an "
-"XML grammar for expressing geographical features."
-msgstr ""
-
-msgid "Couldn't load classKey options"
-msgstr ""
-
-msgid "Metadata Import"
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the standard"
-" DHIS 2 exchange format called DXF 2."
-msgstr ""
-
-msgid "It seems like there was no data in the uploaded file."
+msgid "Non Empty"
 msgstr ""
