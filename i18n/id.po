@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-12-19T10:07:59.315Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,13 +47,13 @@ msgid "more options"
 msgstr "opsi lainnya"
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "Select None"
 msgstr "Tidak Memilih"
@@ -143,7 +143,7 @@ msgid "Flush Mode"
 msgstr "Mode Flush"
 
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgid "ID scheme"
 msgstr "Skema ID"
@@ -323,7 +323,7 @@ msgid "Category combination"
 msgstr "Kombinasi kategori"
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 msgid "Data element groups"
 msgstr "Grup data elemen"
