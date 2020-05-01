@@ -461,7 +461,7 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "Đang tải tùy chọn ..."
 
 msgid "Event Export"
 msgstr ""
