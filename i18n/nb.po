@@ -41,7 +41,7 @@ msgid "Choose a file to upload"
 msgstr ""
 
 msgid "more options"
-msgstr ""
+msgstr "flere alternativer"
 
 msgid "JSON"
 msgstr "JSON"
@@ -53,7 +53,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr ""
+msgstr "Velg ingen"
 
 msgid "Logger"
 msgstr ""
@@ -71,13 +71,13 @@ msgid "Created"
 msgstr "Opprettet"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Slettet"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorert"
 
 msgid "Updated"
-msgstr ""
+msgstr "Oppdatert"
 
 msgid "Total"
 msgstr "Totalt"
@@ -95,7 +95,7 @@ msgid "Summaries"
 msgstr ""
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Konflikter"
 
 msgid "Errors"
 msgstr "Feil"
@@ -104,10 +104,10 @@ msgid "Import Summary"
 msgstr ""
 
 msgid "Summary"
-msgstr ""
+msgstr "Sammendrag"
 
 msgid "Async"
-msgstr ""
+msgstr "Asynk"
 
 msgid "Atomic Mode"
 msgstr ""
@@ -125,10 +125,10 @@ msgid "Compression"
 msgstr "Kompresjon"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "ID-element for dataelement"
 
 msgid "Dry run"
-msgstr ""
+msgstr "Testkjøring"
 
 msgid "End date"
 msgstr "Sluttdato"
@@ -143,7 +143,7 @@ msgid "Format"
 msgstr "Format"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID ordning"
 
 msgid "Identifier"
 msgstr "Identifikator"
@@ -155,10 +155,10 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Inkluder slettede"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "Inkludering"
 
 msgid "Inclusion Strategy"
 msgstr ""
@@ -167,7 +167,7 @@ msgid "Merge Mode"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "Objekt"
 
 msgid "Organisation unit"
 msgstr "Organisasjonsenhet"
@@ -176,7 +176,7 @@ msgid "Org unit ID scheme"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Forvarm buffer"
 
 msgid "Preheat Mode"
 msgstr ""
@@ -209,7 +209,7 @@ msgid "Start date"
 msgstr "Startdato"
 
 msgid "Strategy"
-msgstr ""
+msgstr "Strategi"
 
 msgid "Yes"
 msgstr "Ja"
@@ -218,7 +218,7 @@ msgid "No"
 msgstr "Nei"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Code"
 msgstr "Kode"
@@ -227,10 +227,10 @@ msgid "Name"
 msgstr "Navn"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "Inkluder etterkommere av organisasjonsenheten"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "Merket organisasjonsenhet"
 
 msgid "Yes (faster for large imports)"
 msgstr ""
@@ -239,10 +239,10 @@ msgid "New and Updates"
 msgstr ""
 
 msgid "New only"
-msgstr ""
+msgstr "Bare ny"
 
 msgid "Updates only"
-msgstr ""
+msgstr "Bare oppdateringer"
 
 msgid "Delete"
 msgstr "Slett"
@@ -257,10 +257,10 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "Full"
 
 msgid "Debug"
-msgstr ""
+msgstr "Feilsøking"
 
 msgid "Reference"
 msgstr "Referanse"
@@ -296,25 +296,25 @@ msgid "Without sharing"
 msgstr ""
 
 msgid "Non Null"
-msgstr ""
+msgstr "Ikke null"
 
 msgid "Always"
-msgstr ""
+msgstr "Alltid"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "Ikke tom"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "Inkluder underordnede av organisasjonsenhet"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Ikke komprimert"
 
 msgid "Category combination"
 msgstr "Kategorikombinasjon"
@@ -346,6 +346,8 @@ msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"Eksporter hendelsesdata for programmer, faser og sporede enheter i DXF "
+"2-format."
 
 msgid "Metadata Export"
 msgstr ""
