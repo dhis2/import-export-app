@@ -22,7 +22,7 @@
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^3.2.5",
         "@dhis2/cli-style": "^5.1.0",
-        "@dhis2/cli-utils-cypress": "^1.0.2",
+        "@dhis2/cli-utils-cypress": "^2.1.0",
         "@testing-library/jest-dom": "^5.1.0",
         "@testing-library/react": "^9.4.0",
         "query-string": "^6.11.0"
