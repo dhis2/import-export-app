@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-01-10T08:23:03.965Z\n"
+"POT-Creation-Date: 2020-04-28T06:03:53.764Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -459,9 +459,6 @@ msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
-
-msgid "Loading options..."
-msgstr "Đang tải tùy chọn ..."
 
 msgid "Event Export"
 msgstr ""
