@@ -1,7 +1,6 @@
 import { Button } from '@dhis2/ui-core'
 import { Form } from 'react-final-form'
-import { connect } from 'react-redux'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 
@@ -15,15 +14,10 @@ import { FormFooter } from '../../components/FormSections/FormFooter'
 import { FormHeader } from '../../components/FormSections/FormHeader'
 import { Format } from '../../components/Inputs/Format'
 import { IdScheme } from '../../components/Inputs/idScheme'
-import {
-    ORG_UNIT_ID_SCHEME_DEFAULT_OPTIONS,
-    OrgUnitIdSchemeLoading,
-    OrgUnitIdScheme,
-} from '../../components/Inputs/OrgUnitIdScheme'
+import { OrgUnitIdScheme } from '../../components/Inputs/OrgUnitIdScheme'
 import { Progress } from '../../components/Loading/Progress'
 import { TaskSummary } from '../../components/TaskSummary'
 import { Upload } from '../../components/Inputs/Upload'
-import { fetchUniqueOrgUnitAttributes } from '../../reducers/attributes/thunks'
 import { supportedFormats, defaultValues, onSubmit } from './Event/helper'
 import stylesForm from '../../components/Form/styles.module.css'
 import stylesFormBase from '../../components/FormBase/styles.module.css'
