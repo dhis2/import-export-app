@@ -1,6 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 
 import {
+    DATA_ELEMENT_ID_SCHEME_DEFAULT_VALUE,
+    DATA_ELEMENT_ID_SCHEME_KEY,
+} from '../../../components/Inputs/DataElementIdScheme'
+import {
     DRY_RUN_DEFAULT_VALUE,
     DRY_RUN_KEY,
 } from '../../../components/Inputs/DryRun'
@@ -16,6 +20,10 @@ import {
     OPTION_XML,
 } from '../../../components/Inputs/Format'
 import {
+    ID_SCHEME_DEFAULT_VALUE,
+    ID_SCHEME_KEY,
+} from '../../../components/Inputs/idScheme'
+import {
     ORG_UNIT_ID_SCHEME_DEFAULT_VALUE,
     ORG_UNIT_ID_SCHEME_KEY,
 } from '../../../components/Inputs/OrgUnitIdScheme'
@@ -25,9 +33,11 @@ import { isProduction } from '../../../helpers/env'
 export const supportedFormats = [OPTION_JSON, OPTION_XML, OPTION_CSV]
 
 export const defaultValues = {
-    [FORMAT_KEY]: FORMAT_DEFAULT_VALUE,
+    [DATA_ELEMENT_ID_SCHEME_KEY]: DATA_ELEMENT_ID_SCHEME_DEFAULT_VALUE,
     [DRY_RUN_KEY]: DRY_RUN_DEFAULT_VALUE,
     [EVENT_ID_SCHEME_KEY]: EVENT_ID_SCHEME_DEFAULT_VALUE,
+    [FORMAT_KEY]: FORMAT_DEFAULT_VALUE,
+    [ID_SCHEME_KEY]: ID_SCHEME_DEFAULT_VALUE,
     [ORG_UNIT_ID_SCHEME_KEY]: ORG_UNIT_ID_SCHEME_DEFAULT_VALUE,
 }
 
@@ -37,7 +47,13 @@ export const onSubmit = (setLoading, setError) => values => {
 
         const params = getParamsFromFormState(
             values,
-            ['dryRun', 'eventIdScheme', 'orgUnitIdScheme'],
+            [
+                DRY_RUN_KEY,
+                EVENT_ID_SCHEME_KEY,
+                ORG_UNIT_ID_SCHEME_KEY,
+                DATA_ELEMENT_ID_SCHEME_KEY,
+                ID_SCHEME_KEY,
+            ],
             ['async=true', 'skipFirst=true', `payloadFormat=${format}`]
         )
         setLoading(true)
