@@ -33,7 +33,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Ngày không hợp lệ"
 
 msgid "Start date must be before end date"
 msgstr ""
