@@ -346,7 +346,7 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "Laster alternativer..."
 
 msgid "Event Export"
 msgstr ""
