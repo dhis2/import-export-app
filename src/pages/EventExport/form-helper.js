@@ -15,6 +15,8 @@ const onExport = baseUrl => values => {
         startDate,
         endDate,
         includeDeleted,
+        dataElementIdScheme,
+        orgUnitIdScheme,
         idScheme,
         inclusion,
     } = values
@@ -32,6 +34,8 @@ const onExport = baseUrl => values => {
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,
         `program=${selectedPrograms[0]}`,
         `includeDeleted=${includeDeleted}`,
+        `dataElementIdScheme=${dataElementIdScheme.value}`,
+        `orgUnitIdScheme=${orgUnitIdScheme.value}`,
         `idScheme=${idScheme.value}`,
         `attachment=${filename}`,
         `startDate=${jsDateToISO8601(startDate)}`,

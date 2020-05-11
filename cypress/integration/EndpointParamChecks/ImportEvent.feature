@@ -11,6 +11,7 @@ Feature: The user should be able to import events
             | dryRun              | false |
             | dataElementIdScheme | UID   |
             | eventIdScheme       | UID   |
+            | idScheme            | UID   |
             | orgUnitIdScheme     | UID   |
 
     Scenario: The user submits the form with the default values
@@ -34,6 +35,11 @@ Feature: The user should be able to import events
 
     Scenario: The user selects a different event id scheme
         Given the "eventIdScheme" input is set to "CODE"
+        When the import form is submitted
+        Then the upload request is sent with the right parameters
+
+    Scenario: The user selects a different id scheme
+        Given the "idScheme" input is set to "CODE"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 

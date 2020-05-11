@@ -5,16 +5,18 @@ Feature: The user should be able to export events
         Given the user is on the event export page
         And the more options are visible
         And the following options are set
-            | name           | value       |
-            | program        | lxAQ7Zs9VYR |
-            | programStages  |             |
-            | idScheme       | UID         |
-            | startDate      | 2020-01-03  |
-            | endDate        | 2020-01-05  |
-            | format         | json        |
-            | compression    | zip         |
-            | includeDeleted | false       |
-            | inclusion      | SELECTED    |
+            | name                | value       |
+            | program             | lxAQ7Zs9VYR |
+            | programStages       |             |
+            | idScheme            | UID         |
+            | dataElementIdScheme | UID         |
+            | orgUnitIdScheme     | UID         |
+            | startDate           | 2020-01-03  |
+            | endDate             | 2020-01-05  |
+            | format              | json        |
+            | compression         | zip         |
+            | includeDeleted      | false       |
+            | inclusion           | SELECTED    |
         And the Sierra Leone org unit has been selected
 
     Scenario: The user submits the form with the default values
@@ -39,6 +41,16 @@ Feature: The user should be able to export events
 
     Scenario: The user selects a different id scheme
         Given the "idScheme" input is set to "CODE"
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The user selects a different data element id scheme
+        Given the "dataElementIdScheme" input is set to "CODE"
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The user selects a different org unit id scheme
+        Given the "orgUnitIdScheme" input is set to "CODE"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

@@ -9,6 +9,8 @@ import {
     defaultFormatOption,
     defaultCompressionOption,
     defaultIdSchemeOption,
+    defaultDataElementIdSchemeOption,
+    defaultOrgUnitIdSchemeOption,
     defaultInclusionOption,
 } from '../../utils/options'
 import {
@@ -22,6 +24,8 @@ import {
     Inclusion,
     ExportButton,
     ProgramStages,
+    DataElementIdScheme,
+    OrgUnitIdScheme,
     IdScheme,
 } from '../../components/Inputs'
 import { Page, MoreOptions, EventIcon } from '../../components/'
@@ -48,6 +52,8 @@ const initialValues = {
     ),
     endDate: today,
     includeDeleted: false,
+    dataElementIdScheme: defaultDataElementIdSchemeOption,
+    orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
     idScheme: defaultIdSchemeOption,
     inclusion: defaultInclusionOption,
 }
@@ -84,6 +90,8 @@ const EventExport = () => {
                         />
                         <MoreOptions>
                             <IncludeDeleted value={values.includeDeleted} />
+                            <DataElementIdScheme />
+                            <OrgUnitIdScheme />
                             <IdScheme />
                             <Inclusion />
                         </MoreOptions>

@@ -14,6 +14,7 @@ const onImport = ({
         dataElementIdScheme,
         orgUnitIdScheme,
         eventIdScheme,
+        idScheme,
     } = values
 
     // send xhr
@@ -26,6 +27,7 @@ const onImport = ({
         `dataElementIdScheme=${dataElementIdScheme.value}`,
         `orgUnitIdScheme=${orgUnitIdScheme.value}`,
         `eventIdScheme=${eventIdScheme.value}`,
+        `idScheme=${idScheme.value}`,
         `payloadFormat=${format.value}`,
     ].join('&')
     const url = `${apiBaseUrl}${endpoint}?${params}`

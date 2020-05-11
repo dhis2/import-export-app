@@ -11,12 +11,14 @@ import {
     defaultDataElementIdSchemeOption,
     defaultOrgUnitIdSchemeOption,
     defaultEventIdSchemeOption,
+    defaultIdSchemeOption,
 } from '../../utils/options'
 import {
     FileUpload,
     Format,
     DataElementIdScheme,
     EventIdScheme,
+    IdScheme,
     OrgUnitIdScheme,
     ImportButtonStrip,
     FormAlerts,
@@ -40,6 +42,7 @@ const createInitialValues = prevJobDetails => ({
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
     eventIdScheme: prevJobDetails.eventIdScheme || defaultEventIdSchemeOption,
+    idScheme: prevJobDetails.idScheme || defaultIdSchemeOption,
 })
 
 const EventImport = () => {
@@ -83,9 +86,10 @@ const EventImport = () => {
                         <FileUpload />
                         <Format availableFormats={formatOptions} />
                         <MoreOptions>
-                            <DataElementIdScheme />
                             <EventIdScheme />
+                            <DataElementIdScheme />
                             <OrgUnitIdScheme />
+                            <IdScheme />
                         </MoreOptions>
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
