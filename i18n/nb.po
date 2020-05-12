@@ -1,14 +1,14 @@
 # 
 # Translators:
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-01-07T10:27:09.944Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,28 +17,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "Brukeren er ikke logget inn"
 
 msgid "Import Error"
-msgstr ""
+msgstr "Importfeil"
 
 msgid "Go Back"
-msgstr ""
+msgstr "Gå tilbake"
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "filtrer datasett etter navn"
 
 msgid "Select All"
 msgstr "Velg alle"
 
 msgid "Clear All"
-msgstr ""
+msgstr "Fjern alt"
 
 msgid "Data sets"
 msgstr "Datasett"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "Velg en fil å laste opp"
 
 msgid "more options"
 msgstr "flere alternativer"
@@ -56,10 +56,11 @@ msgid "Select None"
 msgstr "Velg ingen"
 
 msgid "Logger"
-msgstr ""
+msgstr "Logger"
 
 msgid "view messages received on using import/export forms."
 msgstr ""
+"vis meldinger som ble mottatt ved bruk av importering/eksportering skjemaer."
 
 msgid "Import"
 msgstr "Importer"
@@ -86,13 +87,13 @@ msgid "Type"
 msgstr "Type"
 
 msgid "Type Count"
-msgstr ""
+msgstr "Type teller"
 
 msgid "Messages"
 msgstr "Meldinger"
 
 msgid "Summaries"
-msgstr ""
+msgstr "Sammendrag"
 
 msgid "Conflicts"
 msgstr "Konflikter"
@@ -101,7 +102,7 @@ msgid "Errors"
 msgstr "Feil"
 
 msgid "Import Summary"
-msgstr ""
+msgstr "Importer sammendrag"
 
 msgid "Summary"
 msgstr "Sammendrag"
@@ -110,13 +111,13 @@ msgid "Async"
 msgstr "Asynk"
 
 msgid "Atomic Mode"
-msgstr ""
+msgstr "Atomisk modus"
 
 msgid "Category ID scheme"
-msgstr ""
+msgstr "Kategori ID-skjema"
 
 msgid "Children"
-msgstr ""
+msgstr "Barn"
 
 msgid "Object type"
 msgstr "Objekttype"
@@ -134,10 +135,10 @@ msgid "End date"
 msgstr "Sluttdato"
 
 msgid "Event ID Scheme"
-msgstr ""
+msgstr "Hendelse ID skjema"
 
 msgid "Flush Mode"
-msgstr ""
+msgstr "Flushmodus"
 
 msgid "Format"
 msgstr "Format"
@@ -149,10 +150,10 @@ msgid "Identifier"
 msgstr "Identifikator"
 
 msgid "Report Mode"
-msgstr ""
+msgstr "Rapportmodus"
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "Importer strategi"
 
 msgid "Include deleted"
 msgstr "Inkluder slettede"
@@ -161,10 +162,10 @@ msgid "Inclusion"
 msgstr "Inkludering"
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "Inkluderingsstrategi"
 
 msgid "Merge Mode"
-msgstr ""
+msgstr "Slå sammen modus"
 
 msgid "Object"
 msgstr "Objekt"
@@ -173,37 +174,37 @@ msgid "Organisation unit"
 msgstr "Organisasjonsenhet"
 
 msgid "Org unit ID scheme"
-msgstr ""
+msgstr "Org enhet ID skjema"
 
 msgid "Preheat cache"
 msgstr "Forvarm buffer"
 
 msgid "Preheat Mode"
-msgstr ""
+msgstr "Forvarmmodus"
 
 msgid "Program Stages"
-msgstr ""
+msgstr "Programfaser"
 
 msgid "Programs"
 msgstr "Programmer"
 
 msgid "Schemas"
-msgstr ""
+msgstr "Skjemaer"
 
 msgid "Data Sets"
-msgstr ""
+msgstr "Datasett"
 
 msgid "Sharing"
 msgstr "Deling"
 
 msgid "Existing record check"
-msgstr ""
+msgstr "Eksisterende oppføringssjekk"
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "Hopp over deling"
 
 msgid "Skip Validation"
-msgstr ""
+msgstr "Hopp over validering"
 
 msgid "Start date"
 msgstr "Startdato"
@@ -233,10 +234,10 @@ msgid "Selected organisation unit"
 msgstr "Merket organisasjonsenhet"
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "Ja (raskere for store importeringer)"
 
 msgid "New and Updates"
-msgstr ""
+msgstr "Ny og oppdateringer"
 
 msgid "New only"
 msgstr "Bare ny"
@@ -248,13 +249,13 @@ msgid "Delete"
 msgstr "Slett"
 
 msgid "Skip check (fast)"
-msgstr ""
+msgstr "Hopp over sjekk (raskt)"
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "Sjekk (sikkert, anbefalt)"
 
 msgid "AUTO"
-msgstr ""
+msgstr "AUTO"
 
 msgid "Full"
 msgstr "Full"
@@ -272,7 +273,7 @@ msgid "None"
 msgstr "Ingen"
 
 msgid "Create and Update"
-msgstr ""
+msgstr "Opprett og oppdater"
 
 msgid "Create"
 msgstr "Opprett"
@@ -293,7 +294,7 @@ msgid "With sharing"
 msgstr "Med deling"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "Uten deling"
 
 msgid "Non Null"
 msgstr "Ikke null"
@@ -311,7 +312,7 @@ msgid "Zip"
 msgstr "Zip"
 
 msgid "Gzip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
 msgstr "Ikke komprimert"
@@ -326,21 +327,23 @@ msgid "Data element groups"
 msgstr "Dataelementgrupper"
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[ Alle programfaser]"
 
 msgid "Data Export"
-msgstr ""
+msgstr "Dataeksport"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Eksporter dataverdier. Dette er den vanlige eksporteringsfunksjonen som "
+"eksporterer data til DHIS 2-utvekslingsformat kalt DXF 2."
 
 msgid "Loading options..."
 msgstr "Laster alternativer..."
 
 msgid "Event Export"
-msgstr ""
+msgstr "Hendelseeksport"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
@@ -350,32 +353,36 @@ msgstr ""
 "2-format."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "Metadataeksport"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
 msgstr ""
+"Eksporter metadata som dataelementer og organisasjonsenheter til standard "
+"DHIS 2-utvekslingsformat."
 
 msgid "Meta Data Export"
-msgstr ""
+msgstr "Metadataeksport"
 
 msgid "Metadata Dependency Export"
-msgstr ""
+msgstr "Metadataeksport med avhengigheter"
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
 msgstr ""
+"Eksporter metadata som datasett og programmer inkludert relaterte metadata "
+"objekter."
 
 msgid "Metadata Export with Dependencies"
-msgstr ""
+msgstr "Metadataeksport med avhengigheter"
 
 msgid "Import / Export"
-msgstr ""
+msgstr "Importer/Eksporter"
 
 msgid "Import or Export DHIS2 data."
-msgstr ""
+msgstr "Importer eller Eksporter DHIS2 data."
 
 msgid "Data Import"
 msgstr "Dataimport"
@@ -384,32 +391,40 @@ msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
 "is the standard exchange format for DHIS 2."
 msgstr ""
+"Importer dataverdier på DXF 2 XML, JSON, CSV og PDF-format. DXF 2 er "
+"standard utvekslingsformat for DHIS 2."
 
 msgid "Event Import"
-msgstr ""
+msgstr "Hendelseimport"
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"Importer hendelser for programmer, faser, og sporede enheter i DXF 2-format."
 
 msgid "GML Import"
-msgstr ""
+msgstr "GML import"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"Importer geografisk data for organisasjonsenheter ved bruk av GML-format. "
+"GML er en XML-grammatikk for å uttrykke geografiske funksjoner."
 
 msgid "Only import of GML data for existing organisation units is supported."
 msgstr ""
+"Bare import av GML-data for eksisterende organisasjonsenheter støttes."
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "Metadataimport"
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Importer metadata som dataelementer og organisasjonsenheter ved bruk av "
+"standard DHIS 2- utvekslingsformat kalt DXF 2."
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "Det ser ikke ut som det var noe data i den opplastede filen."
