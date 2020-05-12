@@ -1,7 +1,5 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const loginUrl = Cypress.env('dhis2_base_url')
-
 const getKeyBySide = side => (side === 'org units' ? 'orgUnit' : 'dataElement')
 
 Given('the user is on the data {word} page', type => {
@@ -17,24 +15,24 @@ Given(
 
         if (left === 'org units') {
             cy.route({
-                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
+                url: /api\/\d{2}\/attributes\?filter=unique:eq:true&filter=organisationUnitAttribute:eq:true&fields=id,displayName&paging=false/,
                 response: 'fx:orgUnitAttributes',
             }).as('attributesXHR')
 
             cy.route({
-                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true`,
+                url: /api\/\d{2}\/attributes\?filter=unique:eq:true&filter=dataElementAttribute:eq:true&fields=id,displayName&paging=false/,
                 response: {
                     attributes: [],
                 },
             })
         } else {
             cy.route({
-                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true`,
+                url: /api\/\d{2}\/attributes\?filter=unique:eq:true&filter=dataElementAttribute:eq:true&fields=id,displayName&paging=false/,
                 response: 'fx:dataElementAttributes',
             }).as('attributesXHR')
 
             cy.route({
-                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
+                url: /api\/\d{2}\/attributes\?filter=unique:eq:true&filter=organisationUnitAttribute:eq:true&fields=id,displayName&paging=false/,
                 response: {
                     attributes: [],
                 },
@@ -73,13 +71,13 @@ Given(
         cy.server()
 
             .stubWithFixture({
-                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true`,
+                url: /api\/\d{2}\/attributes\?filter=unique:eq:true&filter=dataElementAttribute:eq:true&fields=id,displayName&paging=false/,
                 fixture: 'dataElementAttributes',
             })
             .as('dataElementAttributesXHR')
 
             .stubWithFixture({
-                url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
+                url: /api\/\d{2}\/attributes\?filter=unique:eq:true&filter=organisationUnitAttribute:eq:true&fields=id,displayName&paging=false/,
                 fixture: 'orgUnitAttributes',
             })
             .as('orgUnitAttributesXHR')

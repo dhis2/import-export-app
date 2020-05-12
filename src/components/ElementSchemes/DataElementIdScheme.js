@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { useConfig } from '@dhis2/app-runtime'
+import React from 'react'
+import { useDataQuery } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { fetchAttributes } from '../../utils/helper'
 import { dataElementIdSchemeOptions } from '../../utils/options'
 import { SelectField } from '../'
 
-const DataElementIdScheme = ({ name, label, dataTest }) => {
-    const { baseUrl } = useConfig()
-    const [loading, setLoading] = useState(true)
-    const [schemes, setSchemes] = useState([])
-    const [error, setError] = useState(undefined)
+const schemeQuery = {
+    dataElements: {
+        resource: 'attributes',
+        params: {
+            filter: ['unique:eq:true', 'dataElementAttribute:eq:true'],
+            fields: ['id', 'displayName'],
+            paging: 'false',
+        },
+    },
+}
 
-    useEffect(() => {
-        fetchAttributes(`${baseUrl}/api/`, 'dataElementAttribute')
-            .then(attributes => setSchemes(attributes))
-            .catch(error => setError(error))
-        setLoading(false)
-    }, [])
+const DataElementIdScheme = ({ name, label, dataTest }) => {
+    const { loading, error, data } = useDataQuery(schemeQuery)
 
     const validationText =
         error &&
@@ -26,7 +26,15 @@ const DataElementIdScheme = ({ name, label, dataTest }) => {
             'Something went wrong when loading the additional data element ID schemes'
         )} : ${error.message}`
 
+    const schemes = data
+        ? data.dataElements.attributes.map(({ id, displayName }) => ({
+              value: `ATTRIBUTE:${id}`,
+              label: displayName,
+          }))
+        : []
+
     const options = [...dataElementIdSchemeOptions, ...schemes]
+
     return (
         <SelectField
             name={name}

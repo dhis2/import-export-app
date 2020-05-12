@@ -61,36 +61,6 @@ const downloadBlob = (url, filename) => {
     link.remove()
 }
 
-const fetchAttributes = async (apiBaseUrl, attribute) => {
-    const fetcher = url =>
-        fetch(url, { credentials: 'include' })
-            .then(resp => {
-                if (resp.status >= 200 && resp.status < 300) {
-                    return Promise.resolve(resp.json())
-                } else {
-                    throw resp
-                }
-            })
-            .catch(resp => {
-                const error = new Error(resp.statusText || resp.status)
-                console.error(
-                    `fetchAttributes ${attribute} fetch error: `,
-                    error
-                )
-                return Promise.reject(error)
-            })
-
-    const fields = 'id,displayName'
-    const filters = `unique:eq:true&filter=${attribute}:eq:true`
-    const url = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters}`
-
-    const json = await fetcher(url).catch(error => Promise.reject(error))
-    return json.attributes.map(({ id, displayName }) => ({
-        value: `ATTRIBUTE:${id}`,
-        label: displayName,
-    }))
-}
-
 const genericErrorMessage = i18n.t(
     'An unknown error occurred. Please try again later'
 )
@@ -207,7 +177,6 @@ const getPrevJobDetails = (query, tasks) => {
 export {
     createBlob,
     downloadBlob,
-    fetchAttributes,
     getPrevJobDetails,
     locationAssign,
     jsDateToISO8601,

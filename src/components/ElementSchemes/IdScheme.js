@@ -1,55 +1,52 @@
-import React, { useState, useEffect } from 'react'
-import { useConfig } from '@dhis2/app-runtime'
+import React from 'react'
+import { useDataQuery } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { fetchAttributes } from '../../utils/helper'
 import { idSchemeOptions } from '../../utils/options'
 import { SelectField } from '../'
 
+const schemeQuery = {
+    orgUnits: {
+        resource: 'attributes',
+        params: {
+            filter: ['unique:eq:true', 'organisationUnitAttribute:eq:true'],
+            fields: ['id', 'displayName'],
+            paging: 'false',
+        },
+    },
+    dataElements: {
+        resource: 'attributes',
+        params: {
+            filter: ['unique:eq:true', 'dataElementAttribute:eq:true'],
+            fields: ['id', 'displayName'],
+            paging: 'false',
+        },
+    },
+}
+
 const attributeFoundIn = (attribute, collection) =>
-    !!collection.find(({ value }) => value === attribute.value)
+    !!collection.find(({ id }) => id === attribute.id)
+
+const findSharedAttributes = (
+    dataElementAttributes,
+    organisationUnitAttributes
+) =>
+    dataElementAttributes
+        .reduce((shared, attribute) => {
+            const foundInOrgUnits = attributeFoundIn(
+                attribute,
+                organisationUnitAttributes
+            )
+            return foundInOrgUnits ? [...shared, attribute] : shared
+        }, [])
+        .map(({ id, displayName }) => ({
+            value: `ATTRIBUTE:${id}`,
+            label: displayName,
+        }))
 
 const IdScheme = ({ name, label, dataTest }) => {
-    const { baseUrl } = useConfig()
-    const [loading, setLoading] = useState(true)
-    const [schemes, setSchemes] = useState([])
-    const [error, setError] = useState(undefined)
-
-    useEffect(() => {
-        const f = async () => {
-            let err
-
-            const dataElementAttributes = await fetchAttributes(
-                `${baseUrl}/api/`,
-                'dataElementAttribute'
-            ).catch(error => (err = error))
-            const organisationUnitAttributes = await fetchAttributes(
-                `${baseUrl}/api/`,
-                'organisationUnitAttribute'
-            ).catch(error => (err = error))
-
-            setError(err)
-
-            if (!err) {
-                const sharedAttributes = dataElementAttributes.reduce(
-                    (shared, attribute) => {
-                        const foundInOrgUnits = attributeFoundIn(
-                            attribute,
-                            organisationUnitAttributes
-                        )
-                        return foundInOrgUnits ? [...shared, attribute] : shared
-                    },
-                    []
-                )
-
-                setSchemes(sharedAttributes)
-            }
-
-            setLoading(false)
-        }
-        f()
-    }, [])
+    const { loading, error, data } = useDataQuery(schemeQuery)
 
     const validationText =
         error &&
@@ -57,7 +54,15 @@ const IdScheme = ({ name, label, dataTest }) => {
             'Something went wrong when loading the additional ID schemes'
         )} : ${error.message}`
 
+    const schemes = data
+        ? findSharedAttributes(
+              data.dataElements.attributes,
+              data.orgUnits.attributes
+          )
+        : []
+
     const options = [...idSchemeOptions, ...schemes]
+
     return (
         <SelectField
             name={name}

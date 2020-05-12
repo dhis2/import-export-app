@@ -1,11 +1,9 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const loginUrl = Cypress.env('dhis2_base_url')
-
 Given('a unique attribute is associated with organisation units', () => {
     cy.server()
         .stubWithFixture({
-            url: `${loginUrl}/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true`,
+            url: /api\/\d{2}\/attributes\?filter=unique:eq:true&filter=organisationUnitAttribute:eq:true&fields=id,displayName&paging=false/,
             fixture: 'orgUnitAttributes',
         })
         .as('orgUnitAttributesXHR')
