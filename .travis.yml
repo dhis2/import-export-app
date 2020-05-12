@@ -7,7 +7,7 @@ script:
     - npm run build
 deploy:
     - provider: script
-      script: npx --package @dhis2/deploy-build deploy-build
+      script: npx --package @dhis2/deploy-build deploy-build d2-ci build/app
       skip_cleanup: true
       on:
           all_branches: true
