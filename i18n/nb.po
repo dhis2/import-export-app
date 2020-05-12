@@ -1,5 +1,6 @@
+# 
 # Translators:
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
@@ -16,64 +17,64 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "Noe gikk galt ved lasting av gjeldende bruker!"
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "Noe gikk galt ved lasting av datasettene!"
 
 msgid "Filter data sets by name"
-msgstr ""
+msgstr "Filtrer datasettene etter navn"
 
 msgid "At least one data set must be selected"
-msgstr ""
+msgstr "Minst ett av datasettene må merkes"
 
 msgid "One data set must be selected"
-msgstr ""
+msgstr "Et datasett må merkes"
 
 msgid "Invalid date"
 msgstr "Ugyldig dato"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "Startdato må være før sluttdato"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "Sluttdato må være etter startdato"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
-msgstr ""
+msgstr "Noe gikk galt da du lastet inn ID-ordningene for ekstra dataelementer"
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr ""
+msgstr "Noe gikk galt da du lastet inn de ekstra ID-ordningene"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
-msgstr ""
+msgstr "Noe gikk galt da du lastet inn ID-ordningene for organisasjonsenheten"
 
 msgid "Please select a file"
-msgstr ""
+msgstr "Vennligst velg en fil"
 
 msgid "Will do a test run without importing any data into the database"
-msgstr ""
+msgstr "Vil kjøre en testkjøring uten å importere noe data inn i databasen"
 
 msgid "Dry run"
-msgstr ""
+msgstr "Testkjøring"
 
 msgid "Import"
-msgstr ""
+msgstr "Importer"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Atomisk modus"
 
 msgid "Object"
-msgstr ""
+msgstr "Objekt"
 
 msgid "Compression"
-msgstr ""
+msgstr "Kompresjon"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "ID-element for dataelement"
 
 msgid "Data sets"
 msgstr "Datasett"
@@ -82,7 +83,7 @@ msgid "End date"
 msgstr "Sluttdato"
 
 msgid "Event ID scheme"
-msgstr ""
+msgstr "Hendelse ID-ordning"
 
 msgid "Export"
 msgstr "Eksporter"
@@ -91,97 +92,97 @@ msgid "File"
 msgstr "Fil"
 
 msgid "First row is header"
-msgstr ""
+msgstr "Første rad er overskrift"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Flushmodus"
 
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID ordning"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Identifikator"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Importer rapportmodus"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Importer strategi"
 
 msgid "Include children"
-msgstr ""
+msgstr "Inkluder underordnede"
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Inkluder slettede"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "Inkludering"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Inkluderingsstrategi"
 
 msgid "Async"
-msgstr ""
+msgstr "Asynk"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Slå sammen modus"
 
 msgid "Object type"
-msgstr ""
+msgstr "Objekttype"
 
 msgid "Organisation unit ID scheme"
-msgstr ""
+msgstr "Organisasjonsenhet ID ordning"
 
 msgid "Organisation unit"
 msgstr "Organisasjonsenhet"
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Forvarm buffer"
 
 msgid "Faster for large imports"
-msgstr ""
+msgstr "Raskere for store importeringer"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Forvarmmodus"
 
 msgid "Programs"
-msgstr ""
+msgstr "Programmer"
 
 msgid "Program stage"
 msgstr "Programfase"
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Hopp over tilsyn"
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr ""
+msgstr "Forbedrer ytelsen til bekostning av evnen til å revidere endringer"
 
 msgid "Skip exisiting check"
-msgstr ""
+msgstr "Hopp over eksisterende sjekk"
 
 msgid "Faster, but unsafe"
-msgstr ""
+msgstr "Raskere, men mindre sikkert"
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Hopp over deling"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Hopp over validering"
 
 msgid "Start date"
 msgstr "Startdato"
 
 msgid "Strategy"
-msgstr ""
+msgstr "Strategi"
 
 msgid "No jobs started yet."
-msgstr ""
+msgstr "Ingen jobber startet ennå."
 
 msgid "Recreate job"
-msgstr ""
+msgstr "Gjenskap jobben"
 
 msgid "Completed"
 msgstr "Fullført"
@@ -190,10 +191,10 @@ msgid "In progress"
 msgstr "Pågående"
 
 msgid "Job details"
-msgstr ""
+msgstr "Jobbdetaljer"
 
 msgid "Key"
-msgstr ""
+msgstr "Nøkkel"
 
 msgid "Value"
 msgstr "Verdi"
@@ -202,7 +203,7 @@ msgid "Events"
 msgstr "Hendelser"
 
 msgid "Time"
-msgstr ""
+msgstr "Klokkeslett"
 
 msgid "Message"
 msgstr "Melding"
@@ -211,28 +212,28 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Job summary"
-msgstr ""
+msgstr "Jobbsammendrag"
 
 msgid "Error"
 msgstr "Feil"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Konflikter"
 
 msgid "Messages"
 msgstr "Meldinger"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Type"
 msgstr "Type"
 
 msgid "Property"
-msgstr ""
+msgstr "Egenskap"
 
 msgid "View summary of recently started import job"
-msgstr ""
+msgstr "Vis sammendrag av nylige startede importjobber"
 
 msgid "Status"
 msgstr "Status"
@@ -241,103 +242,103 @@ msgid "Description"
 msgstr "Beskrivelse"
 
 msgid "Summary"
-msgstr ""
+msgstr "Sammendrag"
 
 msgid "Created"
 msgstr "Opprettet"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Slettet"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorert"
 
 msgid "Updated"
-msgstr ""
+msgstr "Oppdatert"
 
 msgid "Total"
 msgstr "Totalt"
 
 msgid "Overview"
-msgstr ""
+msgstr "Oversikt"
 
 msgid "Type count"
-msgstr ""
+msgstr "Type teller"
 
 msgid "more options"
-msgstr ""
+msgstr "flere alternativer"
 
 msgid "One object must be selected"
-msgstr ""
+msgstr "Et objekt må merkes"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr ""
+msgstr "Noe gikk galt ved lasting av organisasjonsenheter!"
 
 msgid "At least one organisation unit must be selected"
-msgstr ""
+msgstr "Minst en organisasjonsenhet må merkes"
 
 msgid "One organisation unit must be selected"
-msgstr ""
+msgstr "En organisasjonsenhet må merkes"
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "Noe gikk galt ved lasting av programmer!"
 
 msgid "Filter programs by name"
-msgstr ""
+msgstr "Filtrer programmer etter navn"
 
 msgid "At least one program must be selected"
-msgstr ""
+msgstr "Minst et program må merkes"
 
 msgid "One program must be selected"
-msgstr ""
+msgstr "Et program må merkes"
 
 msgid "One program stage must be selected"
-msgstr ""
+msgstr "En programfase må merkes"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr ""
+msgstr "Noe gikk galt ved lasting av skjemaene!"
 
 msgid "Select All"
 msgstr "Velg alle"
 
 msgid "Select None"
-msgstr ""
+msgstr "Velg ingen"
 
 msgid "At least one schema must be selected"
-msgstr ""
+msgstr "Minst et skjema må merkes"
 
 msgid "Select all"
-msgstr ""
+msgstr "Velg alt"
 
 msgid "Clear all"
 msgstr "Fjern alt"
 
 msgid "Data import"
-msgstr ""
+msgstr "Dataimport"
 
 msgid "Event import"
-msgstr ""
+msgstr "Hendelseimport"
 
 msgid "GML import"
-msgstr ""
+msgstr "GML import"
 
 msgid "Metadata import"
-msgstr ""
+msgstr "Metadataimport"
 
 msgid "Data export"
-msgstr ""
+msgstr "Dataeksport"
 
 msgid "Event export"
-msgstr ""
+msgstr "Hendelseeksport"
 
 msgid "Metadata dependency export"
-msgstr ""
+msgstr "Metadataeksport med avhengigheter"
 
 msgid "Metadata export"
-msgstr ""
+msgstr "Metadataeksport"
 
 msgid "Job overview"
-msgstr ""
+msgstr "Jobboversikt"
 
 msgid "Yes"
 msgstr "Ja"
@@ -352,70 +353,83 @@ msgid "Event"
 msgstr "Hendelse"
 
 msgid "GML"
-msgstr ""
+msgstr "GML"
 
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 msgid "Something went wrong when loading the class keys"
-msgstr ""
+msgstr "Noe gikk galt da ved lasting av klassetastene"
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "Noe gikk galt ved lasting av objektene"
 
 msgid "All program stages"
-msgstr ""
+msgstr "Alle programfaser"
 
 msgid "Something went wrong when loading the program stages"
-msgstr ""
+msgstr "Noe gikk galt ved lasting av programfasene"
 
 msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
-msgstr ""
+msgstr "Eksporter dataverdier som ADX XML, DFX 2 XML, JSON eller CSV filer."
 
 msgid "HTTP error when fetching data"
-msgstr ""
+msgstr "HTTP-feil ved henting av data"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
+"Importer dataverdier fra ADX XML, DXF 2 XML, JSON, CSV eller PDF filer."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"Eksporter hendelsesdata for programmer, faser og sporede enheter i DXF "
+"2-format."
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
+"Importer hendelsesdata for programmer, faser og sporede enheter i DXF 2 "
+"format."
 
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
 msgstr ""
+"Importer geografiske data for organisasjonsenheter ved bruk av GML-format. "
+"GML er en XML-grammatikk for å uttrykke geografiske funksjoner."
 
 msgid "An overview of all import jobs started this session."
-msgstr ""
+msgstr "En oversikt over alle importjobber som ble startet i denne sesjonen."
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects in the XML or JSON format."
 msgstr ""
+"Eksporter metadata som datasett og programmer inkludert relaterte "
+"metadataobjekter i XML- eller JSON-format."
 
 msgid ""
 "Export meta data like data elements and organisation units in the XML, JSON "
 "or CSV format."
 msgstr ""
+"Eksporter metadata som dataelementer og organisasjonsenheter i XML-, JSON- "
+"eller CSV-format."
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
 "format."
 msgstr ""
+"Importer metadata som dataelementer og organisasjonsenheter ved bruk av DXF "
+"2-format."
 
 msgid "A class key must be selected"
-msgstr ""
+msgstr "En klassetast må merkes"
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "En ukjent feil oppsto. Vennligst prøv igjen senere"
 
 msgid "JSON"
 msgstr "JSON"
@@ -427,34 +441,34 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Ikke komprimert"
 
 msgid "Category combination"
-msgstr ""
+msgstr "Kategorikombinasjon"
 
 msgid "Dashboard"
 msgstr "Dashbord"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Dataelementgrupper"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Alternativsett"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Kode"
@@ -463,28 +477,28 @@ msgid "Name"
 msgstr "Navn"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "Merket organisasjonsenhet"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "Inkluder underordnede av organisasjonsenhet"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "Inkluder etterkommere av organisasjonsenheten"
 
 msgid "Skip check"
-msgstr ""
+msgstr "Hopp over sjekk"
 
 msgid "Check"
-msgstr ""
+msgstr "Sjekk"
 
 msgid "New and updates"
-msgstr ""
+msgstr "Ny og oppdateringer"
 
 msgid "New only"
-msgstr ""
+msgstr "Bare ny"
 
 msgid "Updates only"
-msgstr ""
+msgstr "Bare oppdateringer"
 
 msgid "Delete"
 msgstr "Slett"
@@ -496,10 +510,10 @@ msgid "Errors"
 msgstr "Feil"
 
 msgid "Full"
-msgstr ""
+msgstr "Full"
 
 msgid "Debug"
-msgstr ""
+msgstr "Feilsøking"
 
 msgid "Reference"
 msgstr "Referanse"
@@ -511,16 +525,16 @@ msgid "None"
 msgstr "Ingen"
 
 msgid "Merge"
-msgstr ""
+msgstr "Slå sammen"
 
 msgid "Replace"
 msgstr "Erstatt"
 
 msgid "Non Null"
-msgstr ""
+msgstr "Ikke null"
 
 msgid "Always"
-msgstr ""
+msgstr "Alltid"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "Ikke tom"

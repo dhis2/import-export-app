@@ -1,13 +1,14 @@
+# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +89,7 @@ msgid "Export"
 msgstr "Export"
 
 msgid "File"
-msgstr ""
+msgstr "File"
 
 msgid "First row is header"
 msgstr ""
@@ -184,7 +185,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "Completed"
-msgstr ""
+msgstr "Avklarad"
 
 msgid "In progress"
 msgstr ""
@@ -196,19 +197,19 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Värde"
 
 msgid "Events"
-msgstr ""
+msgstr "Händelser"
 
 msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "Meddelande"
 
 msgid "ID"
-msgstr ""
+msgstr "id"
 
 msgid "Job summary"
 msgstr ""
@@ -235,10 +236,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 msgid "Summary"
 msgstr "Uppsummering"
@@ -307,10 +308,10 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Select all"
-msgstr ""
+msgstr "Välj alla"
 
 msgid "Clear all"
-msgstr ""
+msgstr "Rensa alla"
 
 msgid "Data import"
 msgstr ""
@@ -346,7 +347,7 @@ msgid "No"
 msgstr "Nej"
 
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 msgid "Event"
 msgstr ""
@@ -355,7 +356,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -475,7 +476,7 @@ msgid "Skip check"
 msgstr ""
 
 msgid "Check"
-msgstr ""
+msgstr "Kontrollera"
 
 msgid "New and updates"
 msgstr ""

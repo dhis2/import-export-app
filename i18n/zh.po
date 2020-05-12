@@ -1,3 +1,4 @@
+# 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
@@ -429,16 +430,16 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "PDF"
 msgstr "PDF"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
 msgstr "无压缩"
@@ -456,7 +457,7 @@ msgid "Option sets"
 msgstr "选项集"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "代码"
@@ -471,7 +472,7 @@ msgid "Include children of organisation unit"
 msgstr "包括垂直下属机构"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "包括下属机构"
 
 msgid "Skip check"
 msgstr "跳过检查"

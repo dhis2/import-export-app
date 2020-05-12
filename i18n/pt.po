@@ -1,14 +1,15 @@
+# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,7 +90,7 @@ msgid "Export"
 msgstr "Exportar"
 
 msgid "File"
-msgstr ""
+msgstr "Arquivo"
 
 msgid "First row is header"
 msgstr ""
@@ -152,7 +153,7 @@ msgid "Programs"
 msgstr "Programas"
 
 msgid "Program stage"
-msgstr ""
+msgstr "Estagio de programa"
 
 msgid "Skip audit"
 msgstr ""
@@ -185,10 +186,10 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "Completed"
-msgstr ""
+msgstr "Completo"
 
 msgid "In progress"
-msgstr ""
+msgstr "Em curso"
 
 msgid "Job details"
 msgstr ""
@@ -197,19 +198,19 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 msgid "Events"
-msgstr ""
+msgstr "Eventos"
 
 msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "Mensagem"
 
 msgid "ID"
-msgstr ""
+msgstr "Id"
 
 msgid "Job summary"
 msgstr ""
@@ -236,10 +237,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 msgid "Summary"
 msgstr ""
@@ -308,7 +309,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Select all"
-msgstr ""
+msgstr "Selec. todos"
 
 msgid "Clear all"
 msgstr ""
@@ -347,10 +348,10 @@ msgid "No"
 msgstr "Não"
 
 msgid "Data"
-msgstr ""
+msgstr "Dados"
 
 msgid "Event"
-msgstr ""
+msgstr "Evento"
 
 msgid "GML"
 msgstr ""
@@ -419,13 +420,13 @@ msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "ADX"
 msgstr ""
