@@ -7,7 +7,7 @@ const loginEndPoint = 'dhis-web-commons/security/login.action'
  */
 Cypress.Commands.add('login', () => {
     // AuthBoundary
-    localStorage.setItem('DHIS2_BASE_URL', 'http://localhost:8080')
+    localStorage.setItem('DHIS2_BASE_URL', Cypress.env('dhis2_base_url'))
 
     const username = Cypress.env('dhis2_username')
     const password = Cypress.env('dhis2_password')
