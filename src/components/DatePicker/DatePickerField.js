@@ -5,6 +5,8 @@ import { Field } from '@dhis2/ui-forms'
 
 import { DatePicker } from '../'
 
+const OPTIONAL_DATE_VALIDATOR = date =>
+    date ? DATE_VALIDATOR(date) : undefined
 const DATE_VALIDATOR = date =>
     new Date(date) == 'Invalid Date' ? i18n.t('Invalid date') : undefined
 const DATE_BEFORE_VALIDATOR = (date1, date2) =>
@@ -29,7 +31,10 @@ const Wrapper = ({
 
 Wrapper.propTypes = {
     input: PropTypes.shape({
-        value: PropTypes.instanceOf(Date).isRequired,
+        value: PropTypes.oneOfType([
+            PropTypes.instanceOf(Date),
+            PropTypes.string,
+        ]),
         onChange: PropTypes.func,
     }).isRequired,
     inputName: PropTypes.string.isRequired,
@@ -47,8 +52,6 @@ const DatePickerField = ({ name, validator, ...rest }) => {
             name={name}
             validate={validator}
             inputName={name}
-            type="date"
-            inputWidth="200px"
             {...rest}
         />
     )
@@ -64,4 +67,5 @@ export {
     DATE_VALIDATOR,
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
+    OPTIONAL_DATE_VALIDATOR,
 }

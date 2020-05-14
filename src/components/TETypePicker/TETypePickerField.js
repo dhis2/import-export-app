@@ -3,20 +3,20 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Field } from '@dhis2/ui-forms'
 
-import { ProgramPicker } from '../'
+import { TETypePicker } from '../'
 
-const SINGLE_PROGRAM_VALIDATOR = selectedPrograms =>
-    selectedPrograms.length == 0
-        ? i18n.t('At least one program must be selected')
+const SINGLE_TETYPE_VALIDATOR = selectedTypes =>
+    selectedTypes.length == 0
+        ? i18n.t('At least one tracked entity type must be selected')
         : undefined
 
-const SINGLE_EXACT_PROGRAM_VALIDATOR = selectedPrograms =>
-    selectedPrograms.length != 1
-        ? i18n.t('One program must be selected')
+const SINGLE_EXACT_TETYPE_VALIDATOR = selectedTypes =>
+    selectedTypes.length != 1
+        ? i18n.t('One tracked entity type must be selected')
         : undefined
 
 const Wrapper = ({ input: { value, onChange }, meta, ...rest }) => (
-    <ProgramPicker
+    <TETypePicker
         meta={meta}
         selected={value}
         setSelected={onChange}
@@ -36,19 +36,19 @@ Wrapper.propTypes = {
     }).isRequired,
 }
 
-const ProgramPickerField = ({ name, validator, ...rest }) => {
+const TETypePickerField = ({ name, validator, ...rest }) => {
     return (
         <Field component={Wrapper} name={name} validate={validator} {...rest} />
     )
 }
 
-ProgramPickerField.propTypes = {
+TETypePickerField.propTypes = {
     name: PropTypes.string.isRequired,
     validator: PropTypes.func,
 }
 
 export {
-    ProgramPickerField,
-    SINGLE_PROGRAM_VALIDATOR,
-    SINGLE_EXACT_PROGRAM_VALIDATOR,
+    TETypePickerField,
+    SINGLE_TETYPE_VALIDATOR,
+    SINGLE_EXACT_TETYPE_VALIDATOR,
 }

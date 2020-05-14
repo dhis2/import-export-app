@@ -30,8 +30,10 @@ const Page = ({
     return (
         <div className={styles.container} data-test={dataTest}>
             <div className={styles.header}>
-                <span className={styles.icon}>{icon}</span>
-                <span className={styles.title}>{title}</span>
+                <span className={styles.iconAndTitle}>
+                    <span className={styles.icon}>{icon}</span>
+                    <span className={styles.title}>{title}</span>
+                </span>
                 <p className={styles.desc}>{desc}</p>
             </div>
             {summaryTask && (

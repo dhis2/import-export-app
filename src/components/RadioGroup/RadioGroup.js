@@ -6,13 +6,21 @@ import { optionPropType, optionsPropType } from '../../utils/options'
 import { FormField } from '../'
 import styles from './RadioGroup.module.css'
 
-const RadioGroup = ({ name, label, options, checked, setValue, dataTest }) => {
+const RadioGroup = ({
+    name,
+    label,
+    options,
+    checked,
+    setValue,
+    vertical,
+    dataTest,
+}) => {
     const onChange = label => ({ value }) =>
         setValue({ value: value, label: label })
 
     return (
         <FormField label={label} dataTest={dataTest} name={name}>
-            <div className={styles.inputs}>
+            <div className={vertical ? undefined : styles.inputs}>
                 {options.map(o => (
                     <div key={o.value}>
                         <Radio
@@ -39,6 +47,7 @@ RadioGroup.propTypes = {
     name: PropTypes.string.isRequired,
     options: optionsPropType.isRequired,
     setValue: PropTypes.func.isRequired,
+    vertical: PropTypes.bool,
 }
 
 export { RadioGroup }

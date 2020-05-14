@@ -19,6 +19,11 @@ const formatAdxPdfOptions = [
     { value: 'pdf', label: i18n.t('PDF') },
 ]
 
+const formatJsonpOptions = [
+    ...formatOptions,
+    { value: 'jsonp', label: i18n.t('JSONP') },
+]
+
 const compressionOptions = [
     { value: 'zip', label: i18n.t('Zip') },
     { value: 'gz', label: i18n.t('GZip') },
@@ -126,6 +131,69 @@ const inclusionStrategyOptions = [
     { value: 'NON_EMPTY', label: i18n.t('Non Empty') },
 ]
 
+const orgUnitSelectionModeOptions = [
+    {
+        value: 'SELECTED',
+        label: i18n.t('Selected organisation units'),
+    },
+    {
+        value: 'CHILDREN',
+        label: i18n.t('Include children of selected organisation units'),
+    },
+    {
+        value: 'DESCENDANTS',
+        label: i18n.t('Include descendants of selected organisation unit'),
+    },
+    {
+        value: 'ACCESSIBLE',
+        label: i18n.t(
+            'Data view organisation units associated with the current user'
+        ),
+    },
+    {
+        value: 'CAPTURE',
+        label: i18n.t(
+            'Data capture organisation units associated with the current user'
+        ),
+    },
+    {
+        value: 'ALL',
+        label: i18n.t('All organisation units in the system'),
+    },
+]
+
+const teiTypeFilterOptions = [
+    { value: 'NONE', label: i18n.t('None') },
+    { value: 'PROGRAM', label: i18n.t('Program') },
+    { value: 'TE', label: i18n.t('Tracked entity') },
+]
+
+const programStatusOptions = [
+    { value: 'ALL', label: i18n.t('All') },
+    { value: 'ACTIVE', label: i18n.t('Active') },
+    { value: 'COMPLETED', label: i18n.t('Completed') },
+    { value: 'CANCELLED', label: i18n.t('Cancelled') },
+]
+
+const followUpStatusOptions = [
+    { value: 'ALL', label: i18n.t('All') },
+    { value: 'TRUE', label: i18n.t('True') },
+    { value: 'FALSE', label: i18n.t('False') },
+]
+
+const lastUpdatedFilterOptions = [
+    { value: 'NONE', label: i18n.t('None') },
+    { value: 'DATE', label: i18n.t('Start and end date') },
+    { value: 'DURATION', label: i18n.t('Duration') },
+]
+
+const assignedUserModeOptions = [
+    { value: 'ANY', label: i18n.t('Any') },
+    { value: 'CURRENT', label: i18n.t('Current') },
+    { value: 'NONE', label: i18n.t('None') },
+    { value: 'PROVIDED', label: i18n.t('Provided') },
+]
+
 const defaultFormatOption = formatOptions[0]
 const defaultCompressionOption = compressionOptions[0]
 const defaultObjectTypeOption = objectTypeOptions[0]
@@ -144,6 +212,12 @@ const defaultAtomicModeOption = atomicModeOptions[0]
 const defaultMergeModeOption = mergeModeOptions[0]
 const defaultFlushModeOption = flushModeOptions[0]
 const defaultInclusionStrategyOption = inclusionStrategyOptions[0]
+const defaultOrgUnitSelectionModeOption = orgUnitSelectionModeOptions[0]
+const defaultTEITypeFilterOption = teiTypeFilterOptions[0]
+const defaultProgramStatusOption = programStatusOptions[0]
+const defaultFollowUpStatusOption = followUpStatusOptions[0]
+const defaultLastUpdatedFilterOption = lastUpdatedFilterOptions[0]
+const defaultAssignedUserModeOption = assignedUserModeOptions[0]
 
 const optionPropType = PropTypes.exact({
     value: PropTypes.string.isRequired,
@@ -157,6 +231,7 @@ export {
     formatNoCsvOptions,
     formatAdxOptions,
     formatAdxPdfOptions,
+    formatJsonpOptions,
     compressionOptions,
     objectTypeOptions,
     dataElementIdSchemeOptions,
@@ -174,6 +249,12 @@ export {
     mergeModeOptions,
     flushModeOptions,
     inclusionStrategyOptions,
+    orgUnitSelectionModeOptions,
+    teiTypeFilterOptions,
+    programStatusOptions,
+    followUpStatusOptions,
+    lastUpdatedFilterOptions,
+    assignedUserModeOptions,
     defaultFormatOption,
     defaultCompressionOption,
     defaultObjectTypeOption,
@@ -192,6 +273,12 @@ export {
     defaultMergeModeOption,
     defaultFlushModeOption,
     defaultInclusionStrategyOption,
+    defaultOrgUnitSelectionModeOption,
+    defaultTEITypeFilterOption,
+    defaultProgramStatusOption,
+    defaultFollowUpStatusOption,
+    defaultLastUpdatedFilterOption,
+    defaultAssignedUserModeOption,
     optionPropType,
     optionsPropType,
 }

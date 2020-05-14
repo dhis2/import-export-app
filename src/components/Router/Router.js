@@ -10,6 +10,7 @@ import {
     MetadataDependencyExport,
     MetadataExport,
     MetadataImport,
+    TEIExport,
     JobOverview,
 } from '../../pages'
 
@@ -27,6 +28,7 @@ const Router = () => {
                 component={MetadataDependencyExport}
             />
             <Route path="/export/metadata" component={MetadataExport} />
+            <Route path="/export/tei" component={TEIExport} />
             <Route path="/utils/job-overview" component={JobOverview} />
             <Redirect from="*" to="/import/data" />
         </Switch>

@@ -10,26 +10,30 @@ exports[`matches snapshot when loading(bool) and no summary task 1`] = `
       class="header"
     >
       <span
-        class="icon"
+        class="iconAndTitle"
       >
-        <svg
-          data-test="icon-logo"
-          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-          viewBox="0 0 24 24"
+        <span
+          class="icon"
         >
-          <path
-            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-      </span>
-      <span
-        class="title"
-      >
-        Title
+          <svg
+            data-test="icon-logo"
+            style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          class="title"
+        >
+          Title
+        </span>
       </span>
       <p
         class="desc"
@@ -87,26 +91,30 @@ exports[`matches snapshot when loading(number) and no summary task 1`] = `
       class="header"
     >
       <span
-        class="icon"
+        class="iconAndTitle"
       >
-        <svg
-          data-test="icon-logo"
-          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-          viewBox="0 0 24 24"
+        <span
+          class="icon"
         >
-          <path
-            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-      </span>
-      <span
-        class="title"
-      >
-        Title
+          <svg
+            data-test="icon-logo"
+            style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          class="title"
+        >
+          Title
+        </span>
       </span>
       <p
         class="desc"
@@ -154,26 +162,30 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
       class="header"
     >
       <span
-        class="icon"
+        class="iconAndTitle"
       >
-        <svg
-          data-test="icon-logo"
-          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-          viewBox="0 0 24 24"
+        <span
+          class="icon"
         >
-          <path
-            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-      </span>
-      <span
-        class="title"
-      >
-        Title
+          <svg
+            data-test="icon-logo"
+            style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          class="title"
+        >
+          Title
+        </span>
       </span>
       <p
         class="desc"
@@ -569,26 +581,30 @@ exports[`matches snapshot when not loading and a mini summary task 1`] = `
       class="header"
     >
       <span
-        class="icon"
+        class="iconAndTitle"
       >
-        <svg
-          data-test="icon-logo"
-          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-          viewBox="0 0 24 24"
+        <span
+          class="icon"
         >
-          <path
-            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-      </span>
-      <span
-        class="title"
-      >
-        Title
+          <svg
+            data-test="icon-logo"
+            style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          class="title"
+        >
+          Title
+        </span>
       </span>
       <p
         class="desc"
@@ -663,26 +679,30 @@ exports[`matches snapshot when not loading and no summary task 1`] = `
       class="header"
     >
       <span
-        class="icon"
+        class="iconAndTitle"
       >
-        <svg
-          data-test="icon-logo"
-          style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-          viewBox="0 0 24 24"
+        <span
+          class="icon"
         >
-          <path
-            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-      </span>
-      <span
-        class="title"
-      >
-        Title
+          <svg
+            data-test="icon-logo"
+            style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          class="title"
+        >
+          Title
+        </span>
       </span>
       <p
         class="desc"

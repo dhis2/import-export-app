@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
-"PO-Revision-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-05-18T09:12:49.431Z\n"
+"PO-Revision-Date: 2020-05-18T09:12:49.431Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -32,6 +32,12 @@ msgstr ""
 msgid "End date must be after start date"
 msgstr ""
 
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
 msgid "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
 
@@ -53,6 +59,9 @@ msgid "Dry run"
 msgstr ""
 
 msgid "Import"
+msgstr ""
+
+msgid "Assigned user mode"
 msgstr ""
 
 msgid "Atomic mode"
@@ -88,7 +97,7 @@ msgstr ""
 msgid "Flush mode"
 msgstr ""
 
-msgid "Format"
+msgid "Follow up status"
 msgstr ""
 
 msgid "ID scheme"
@@ -101,6 +110,9 @@ msgid "Import report mode"
 msgstr ""
 
 msgid "Import strategy"
+msgstr ""
+
+msgid "Include all attributes"
 msgstr ""
 
 msgid "Include children"
@@ -118,13 +130,31 @@ msgstr ""
 msgid "Async"
 msgstr ""
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
 msgid "Merge mode"
 msgstr ""
 
 msgid "Object type"
 msgstr ""
 
+msgid "One object must be selected"
+msgstr ""
+
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Organisation unit selection mode"
 msgstr ""
 
 msgid "Organisation unit"
@@ -139,10 +169,19 @@ msgstr ""
 msgid "Preheat mode"
 msgstr ""
 
+msgid "Program end date"
+msgstr ""
+
 msgid "Programs"
 msgstr ""
 
 msgid "Program stage"
+msgstr ""
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Program status"
 msgstr ""
 
 msgid "Skip audit"
@@ -167,6 +206,15 @@ msgid "Start date"
 msgstr ""
 
 msgid "Strategy"
+msgstr ""
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Users"
 msgstr ""
 
 msgid "No jobs started yet."
@@ -259,9 +307,6 @@ msgstr ""
 msgid "more options"
 msgstr ""
 
-msgid "One object must be selected"
-msgstr ""
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
@@ -328,6 +373,9 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr ""
 
@@ -337,16 +385,28 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-msgid "Data"
+msgid "Something went wrong when loading the tracked entity types!"
 msgstr ""
 
-msgid "Event"
+msgid "Filter tracked entity types by name"
 msgstr ""
 
-msgid "GML"
+msgid "At least one tracked entity type must be selected"
 msgstr ""
 
-msgid "Metadata"
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
 msgstr ""
 
 msgid "Something went wrong when loading the class keys"
@@ -406,6 +466,12 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr ""
 
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "At least one of the '{{lastUpdated}}' date fields must be specified"
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
@@ -422,6 +488,9 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
+msgstr ""
+
+msgid "JSONP"
 msgstr ""
 
 msgid "Zip"
@@ -515,4 +584,67 @@ msgid "Always"
 msgstr ""
 
 msgid "Non Empty"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr ""
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Program"
+msgstr ""
+
+msgid "Tracked entity"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Any"
+msgstr ""
+
+msgid "Current"
+msgstr ""
+
+msgid "Provided"
+msgstr ""
+
+msgid "Data"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "GML"
+msgstr ""
+
+msgid "Metadata"
 msgstr ""

@@ -9,6 +9,7 @@ export {
     MinusIcon,
     PlusIcon,
     TasksIcon,
+    TEIIcon,
 } from './Icon/Icon'
 export { DataElementIdScheme } from './ElementSchemes/DataElementIdScheme'
 export { DataSetPicker } from './DataSetPicker/DataSetPicker'
@@ -44,3 +45,8 @@ export { Sidebar } from './Sidebar/Sidebar'
 export { StyledLink } from './StyledLink/StyledLink'
 export { Switch } from './Switch/Switch'
 export { WithAuthority } from './WithAuthority/WithAuthority'
+export { TETypePicker } from './TETypePicker/TETypePicker'
+export { TETypePickerField } from './TETypePicker/TETypePickerField'
+export { DurationField } from './Duration/DurationField'
+export { UserPicker } from './UserPicker/UserPicker'
+export { UserPickerField } from './UserPicker/UserPickerField'

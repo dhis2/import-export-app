@@ -13,6 +13,7 @@ import {
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
+    TEIIcon,
     TasksIcon,
 } from '../'
 
@@ -72,6 +73,13 @@ const metadataExportPage = {
     icon: <MetadataExportIcon />,
 }
 
+const teiExportPage = {
+    name: i18n.t('TEI export'),
+    code: 'tei-export',
+    path: '/export/tei',
+    icon: <TEIIcon />,
+}
+
 const importPages = [
     dataImportPage,
     eventImportPage,
@@ -84,6 +92,7 @@ const exportPages = [
     eventExportPage,
     metadataDependencyExportPage,
     metadataExportPage,
+    teiExportPage,
 ]
 
 const jobOverviewPage = {

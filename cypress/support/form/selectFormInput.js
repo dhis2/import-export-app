@@ -1,6 +1,7 @@
 const switchInputs = [
     'async',
     'children',
+    'includeAllAttributes',
     'includeDeleted',
     'preheatCache',
     'skipAudit',
@@ -10,20 +11,28 @@ const switchInputs = [
 ]
 
 const radioInputs = [
+    'assignedUser',
+    'assignedUserMode',
     'atomicMode',
     'compression',
     'flushMode',
+    'followUpStatus',
     'format',
     'identifier',
     'importReportMode',
     'importStrategy',
     'inclusion',
     'inclusionStrategy',
+    'lastUpdatedFilter',
     'mergeMode',
+    'ouMode',
     'preheatMode',
     'program',
+    'programStatus',
     'sharing',
     'strategy',
+    'teiTypeFilter',
+    'trackedEntity',
 ]
 
 const ignoreInputs = ['dryRun', 'importMode']
@@ -38,10 +47,22 @@ const selectInputs = [
     'objectList',
 ]
 
-const dateInputs = ['startDate', 'endDate']
+const dateInputs = [
+    'startDate',
+    'endDate',
+    'programStartDate',
+    'programEndDate',
+    'lastUpdatedStartDate',
+    'lastUpdatedEndDate',
+]
+
+const textInputs = ['lastUpdatedDuration']
 
 const nameToDataTest = name => {
     switch (name) {
+        case 'assignedUser':
+            return 'userPicker'
+
         case 'async':
             return 'isAsync'
 
@@ -72,6 +93,9 @@ const nameToDataTest = name => {
         case 'objectList':
             return 'input-object-select'
 
+        case 'trackedEntity':
+            return 'teTypePicker'
+
         default:
             return name
     }
@@ -93,6 +117,8 @@ const selectFormInput = ({ name, value }) => {
         cy.selectSelect(dataTest, value)
     } else if (dateInputs.includes(name)) {
         cy.selectDate(name, value)
+    } else if (textInputs.includes(name)) {
+        cy.selectText(name, value)
     } else if (ignoreInputs.includes(name)) {
     } else {
         throw new Error(`Step needs to handle "${name}"`)

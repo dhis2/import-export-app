@@ -15,10 +15,14 @@ const DatePicker = ({
     required = true,
 }) => {
     const onChangeHelper = ({ value }) => {
-        onChange(new Date(value))
+        if (value == '') {
+            onChange(value)
+        } else {
+            onChange(new Date(value))
+        }
     }
 
-    const value = jsDateToISO8601(date)
+    const value = date && jsDateToISO8601(date)
 
     return (
         <FormField label={label} dataTest={dataTest}>
@@ -38,7 +42,8 @@ const DatePicker = ({
 
 DatePicker.propTypes = {
     dataTest: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date).isRequired,
+    date: PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.string])
+        .isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,

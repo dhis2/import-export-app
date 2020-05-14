@@ -32,3 +32,8 @@
     margin-right: 10px;
     height: 28px;
 }
+
+.iconAndTitle {
+    display: flex;
+    align-items: center;
+}

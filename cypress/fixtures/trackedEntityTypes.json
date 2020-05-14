@@ -1,0 +1,13 @@
+{
+    "trackedEntityTypes": [
+        { "id": "bVkFYAvoUCP", "displayName": "ARV commodity" },
+        { "id": "UinS6TQnkUi", "displayName": "Borehole / well" },
+        { "id": "EawlYwOO61R", "displayName": "Building" },
+        { "id": "RNaVTQTPR8z", "displayName": "Drug batch" },
+        { "id": "hyKZglfYp0C", "displayName": "Equipment" },
+        { "id": "We9I19a3vO1", "displayName": "Focus area" },
+        { "id": "kIeke8tAQnd", "displayName": "Lab sample" },
+        { "id": "Zy2SEgA61ys", "displayName": "Malaria Entity" },
+        { "id": "nEenWmSyUEp", "displayName": "Person" }
+    ]
+}
