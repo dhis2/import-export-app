@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { render, waitForElement, fireEvent } from 'test-utils'
+import { render, waitFor, fireEvent } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import { CustomDataProvider } from '@dhis2/app-runtime'
 
@@ -75,7 +75,7 @@ test('root organisation units load and are shown', async () => {
     expect(loading).toBeInTheDocument()
 
     // loading has finished
-    await waitForElement(() => getByDataTest('out-tree'))
+    await waitFor(() => getByDataTest('out-tree'))
     expect(loading).not.toBeInTheDocument()
 
     // all root org units are in the document
@@ -106,7 +106,7 @@ test('child organisation units load and are shown as nodes in the tree', async (
     expect(loading).toBeInTheDocument()
 
     // loading has finished
-    await waitForElement(() => getByDataTest('out-tree'))
+    await waitFor(() => getByDataTest('out-tree'))
     expect(loading).not.toBeInTheDocument()
 
     // clicking on 'Sierre Leone' toggle should trigger a query
@@ -116,7 +116,7 @@ test('child organisation units load and are shown as nodes in the tree', async (
     fireEvent.click(slToggle.firstChild)
 
     const tonkolili = customData.organisationUnits.children[0]
-    await waitForElement(() => getByDataTest(`out-tree-${tonkolili.path}`))
+    await waitFor(() => getByDataTest(`out-tree-${tonkolili.path}`))
 
     // // all child org units of Sierra Leone are in the document
     customData.organisationUnits.children.forEach(ou => {
@@ -142,7 +142,7 @@ test('root organisation units fali load and an error is shown', async () => {
     expect(loading).toBeInTheDocument()
 
     // loading has finished
-    await waitForElement(() =>
+    await waitFor(() =>
         getByText(
             i18n.t('Something went wrong when loading the organisation units!')
         )

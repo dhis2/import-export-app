@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { render, waitForElement, fireEvent } from 'test-utils'
+import { render, waitFor, fireEvent } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import { CustomDataProvider } from '@dhis2/app-runtime'
 
@@ -41,7 +41,7 @@ test('programs load and are shown in a list', async () => {
     expect(loading).toBeInTheDocument()
 
     // loading has finished
-    await waitForElement(() => getByDataTest('program-picker-list'))
+    await waitFor(() => getByDataTest('program-picker-list'))
     expect(loading).not.toBeInTheDocument()
 
     const listElements = getAllByDataTest(/program-picker-list-body-li-*/)
@@ -74,7 +74,7 @@ test('programs fail to load and an error is shown', async () => {
     expect(loading).toBeInTheDocument()
 
     // loading has finished
-    await waitForElement(() =>
+    await waitFor(() =>
         getByText(i18n.t('Something went wrong when loading the programs!'))
     )
     expect(loading).not.toBeInTheDocument()
