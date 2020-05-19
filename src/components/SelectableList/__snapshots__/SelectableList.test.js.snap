@@ -71,7 +71,7 @@ exports[`matches snapshot 1`] = `
       name="data-sets"
     >
       <li
-        class="jsx-1729285861 jsx-2908761452"
+        class="jsx-1729285861 "
         data-test="list-data-sets-body-li-a"
       >
         <a
@@ -130,7 +130,7 @@ exports[`matches snapshot 1`] = `
         </a>
       </li>
       <li
-        class="jsx-1729285861 jsx-2908761452"
+        class="jsx-1729285861 "
         data-test="list-data-sets-body-li-b"
       >
         <a
@@ -189,7 +189,7 @@ exports[`matches snapshot 1`] = `
         </a>
       </li>
       <li
-        class="jsx-1729285861 jsx-2908761452"
+        class="jsx-1729285861 "
         data-test="list-data-sets-body-li-c"
       >
         <a
