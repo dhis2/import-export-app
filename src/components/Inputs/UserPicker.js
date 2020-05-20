@@ -12,23 +12,25 @@ const NAME = 'selectedUsers'
 const DATATEST = 'input-user-picker'
 const LABEL = i18n.t('Users')
 
-const UserPicker = ({ multiSelect, ...rest }) => {
+const UserPicker = ({ multiSelect, show, ...rest }) => {
     const userValidator = multiSelect
         ? SINGLE_USER_VALIDATOR
         : SINGLE_EXACT_USER_VALIDATOR
     const validator = composeValidators(hasValue, userValidator)
 
     return (
-        <UserPickerField
-            name={NAME}
-            multiSelect={multiSelect}
-            autoSelectFirst={false}
-            validator={validator}
-            withActions={true}
-            label={LABEL}
-            dataTest={DATATEST}
-            {...rest}
-        />
+        show && (
+            <UserPickerField
+                name={NAME}
+                multiSelect={multiSelect}
+                autoSelectFirst={false}
+                validator={validator}
+                withActions={true}
+                label={LABEL}
+                dataTest={DATATEST}
+                {...rest}
+            />
+        )
     )
 }
 
@@ -38,6 +40,7 @@ UserPicker.defaultProps = {
 
 UserPicker.propTypes = {
     multiSelect: PropTypes.bool,
+    show: PropTypes.bool,
 }
 
 export { UserPicker }

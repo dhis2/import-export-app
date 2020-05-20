@@ -1,0 +1,13 @@
+{
+    "httpStatus": "OK",
+    "httpStatusCode": 200,
+    "status": "OK",
+    "message": "Initiated inMemoryEventImport",
+    "response": {
+        "name": "inMemoryEventImport",
+        "id": "spd3n1Rwfbv",
+        "created": "2020-05-20T13:06:15.133",
+        "jobType": "TEI_IMPORT",
+        "relativeNotifierEndpoint": "/api/system/tasks/TEI_IMPORT/spd3n1Rwfbv"
+    }
+}

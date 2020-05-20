@@ -103,35 +103,47 @@ const TEIExport = () => {
                         <OrgUnitTree />
                         <OrgUnitMode />
                         <TEITypeFilter />
-                        {values.teiTypeFilter.value == 'PROGRAM' && (
-                            <>
-                                <ProgramPicker />
-                                <ProgramStatus />
-                                <FollowUpStatus />
-                                <ProgramStartDate />
-                                <ProgramEndDate />
-                            </>
-                        )}
-                        {values.teiTypeFilter.value == 'TE' && <TETypePicker />}
+                        <ProgramPicker
+                            show={values.teiTypeFilter.value == 'PROGRAM'}
+                        />
+                        <ProgramStatus
+                            show={values.teiTypeFilter.value == 'PROGRAM'}
+                        />
+                        <FollowUpStatus
+                            show={values.teiTypeFilter.value == 'PROGRAM'}
+                        />
+                        <ProgramStartDate
+                            show={values.teiTypeFilter.value == 'PROGRAM'}
+                        />
+                        <ProgramEndDate
+                            show={values.teiTypeFilter.value == 'PROGRAM'}
+                        />
+                        <TETypePicker
+                            show={values.teiTypeFilter.value == 'TE'}
+                        />
                         <Format availableFormats={formatJsonpOptions} />
                         <Compression
                             availableCompressions={compressionOptions}
                         />
                         <MoreOptions>
                             <LastUpdatedFilter />
-                            {values.lastUpdatedFilter.value == 'DATE' && (
-                                <>
-                                    <LastUpdatedStartDate />
-                                    <LastUpdatedEndDate />
-                                </>
-                            )}
-                            {values.lastUpdatedFilter.value == 'DURATION' && (
-                                <LastUpdatedDuration />
-                            )}
+                            <LastUpdatedStartDate
+                                show={values.lastUpdatedFilter.value == 'DATE'}
+                            />
+                            <LastUpdatedEndDate
+                                show={values.lastUpdatedFilter.value == 'DATE'}
+                            />
+                            <LastUpdatedDuration
+                                show={
+                                    values.lastUpdatedFilter.value == 'DURATION'
+                                }
+                            />
                             <AssignedUserMode />
-                            {values.assignedUserMode.value == 'PROVIDED' && (
-                                <UserPicker />
-                            )}
+                            <UserPicker
+                                show={
+                                    values.assignedUserMode.value == 'PROVIDED'
+                                }
+                            />
                             <IncludeDeleted value={values.includeDeleted} />
                             <IncludeAllAttributes
                                 value={values.includeAllAttributes}

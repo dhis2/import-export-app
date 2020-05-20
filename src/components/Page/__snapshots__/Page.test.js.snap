@@ -405,6 +405,10 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                 </table>
               </div>
             </div>
+            <div
+              class="rest"
+              data-test="job-summary-summary-rest"
+            />
           </div>
           <div
             class="events"

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-05-18T09:12:49.431Z\n"
-"PO-Revision-Date: 2020-05-18T09:12:49.431Z\n"
+"POT-Creation-Date: 2020-05-22T07:28:51.687Z\n"
+"PO-Revision-Date: 2020-05-22T07:28:51.687Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -361,6 +361,9 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr ""
 
@@ -466,10 +469,22 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr ""
 
+msgid "Tracked entity instances export"
+msgstr ""
+
 msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
 msgstr ""
 
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
 msgid "At least one of the '{{lastUpdated}}' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
@@ -647,4 +662,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
+msgstr ""
+
+msgid "TEI"
 msgstr ""

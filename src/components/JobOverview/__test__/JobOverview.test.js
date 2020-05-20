@@ -39,6 +39,7 @@ test('should show "no jobs started" message when no jobs', async () => {
         event: {},
         gml: {},
         metadata: {},
+        tei: {},
     }
 
     const { getByText } = renderContext(contextValue, props)

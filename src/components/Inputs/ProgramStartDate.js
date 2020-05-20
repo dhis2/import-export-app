@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { composeValidators } from '@dhis2/ui-forms'
 import { DatePickerField } from '../'
@@ -9,13 +10,18 @@ const DATATEST = 'input-program-start-date'
 const LABEL = i18n.t('Program start date')
 const VALIDATOR = composeValidators(OPTIONAL_DATE_VALIDATOR)
 
-const ProgramStartDate = () => (
-    <DatePickerField
-        name={NAME}
-        validator={VALIDATOR}
-        label={LABEL}
-        dataTest={DATATEST}
-    />
-)
+const ProgramStartDate = ({ show }) =>
+    show && (
+        <DatePickerField
+            name={NAME}
+            validator={VALIDATOR}
+            label={LABEL}
+            dataTest={DATATEST}
+        />
+    )
+
+ProgramStartDate.propTypes = {
+    show: PropTypes.bool,
+}
 
 export { ProgramStartDate }

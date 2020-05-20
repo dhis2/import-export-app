@@ -457,6 +457,7 @@ export const tasksState = {
             },
         },
     },
+    tei: {},
 }
 
 export const jobOverviewState = {
@@ -570,6 +571,6 @@ export const jobOverviewState = {
     },
 }
 
-export const allJobs = ['data', 'event', 'gml', 'metadata']
+export const allJobs = ['data', 'event', 'gml', 'metadata', 'tei']
     .map(type => Object.keys(tasksState[type]).map(id => tasksState[type][id]))
     .flat()

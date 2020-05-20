@@ -147,6 +147,10 @@ exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = 
         </table>
       </div>
     </div>
+    <div
+      class="rest"
+      data-test="job-summary-summary-rest"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -296,146 +300,151 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
         </table>
       </div>
     </div>
-    <div>
-      <div
-        class="container"
-        data-test="job-summary-single-summary"
-      >
-        <span
-          class="label"
+    <div
+      class="rest"
+      data-test="job-summary-summary-rest"
+    >
+      <div>
+        <div
+          class="container"
+          data-test="job-summary-single-summary"
         >
-          Summary #1
-        </span>
-        <table
-          class="jsx-2430604489 "
-          data-test="dhis2-uicore-table"
-        >
-          <thead
-            data-test="dhis2-uicore-tablehead"
+          <span
+            class="label"
           >
-            <tr
-              class="jsx-2163445633 "
-              data-test="dhis2-uicore-tablerowhead"
-            >
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Status
-              </th>
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Description
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            data-test="dhis2-uicore-tablebody"
+            Summary #1
+          </span>
+          <table
+            class="jsx-2430604489 "
+            data-test="dhis2-uicore-table"
           >
-            <tr
-              class="jsx-2163445633 "
-              data-test="dhis2-uicore-tablerow"
+            <thead
+              data-test="dhis2-uicore-tablehead"
             >
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
+              <tr
+                class="jsx-2163445633 "
+                data-test="dhis2-uicore-tablerowhead"
               >
-                ERROR
-              </td>
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
+                <th
+                  class="jsx-1796049005 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Status
+                </th>
+                <th
+                  class="jsx-1796049005 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              data-test="dhis2-uicore-tablebody"
+            >
+              <tr
+                class="jsx-2163445633 "
+                data-test="dhis2-uicore-tablerow"
               >
-                Event date is required. 
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table
-          class="jsx-2430604489 "
-          data-test="dhis2-uicore-table"
-        >
-          <thead
-            data-test="dhis2-uicore-tablehead"
+                <td
+                  class="jsx-996330601 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  ERROR
+                </td>
+                <td
+                  class="jsx-996330601 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  Event date is required. 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table
+            class="jsx-2430604489 "
+            data-test="dhis2-uicore-table"
           >
-            <tr
-              class="jsx-2163445633 "
-              data-test="dhis2-uicore-tablerowhead"
+            <thead
+              data-test="dhis2-uicore-tablehead"
             >
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
+              <tr
+                class="jsx-2163445633 "
+                data-test="dhis2-uicore-tablerowhead"
               >
-                Created
-              </th>
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Deleted
-              </th>
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Ignored
-              </th>
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Updated
-              </th>
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Total
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            data-test="dhis2-uicore-tablebody"
-          >
-            <tr
-              class="jsx-2163445633 "
-              data-test="dhis2-uicore-tablerow"
+                <th
+                  class="jsx-1796049005 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Created
+                </th>
+                <th
+                  class="jsx-1796049005 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Deleted
+                </th>
+                <th
+                  class="jsx-1796049005 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Ignored
+                </th>
+                <th
+                  class="jsx-1796049005 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Updated
+                </th>
+                <th
+                  class="jsx-1796049005 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              data-test="dhis2-uicore-tablebody"
             >
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
+              <tr
+                class="jsx-2163445633 "
+                data-test="dhis2-uicore-tablerow"
               >
-                0
-              </td>
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              >
-                0
-              </td>
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              >
-                1
-              </td>
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              >
-                0
-              </td>
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              >
-                1
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                <td
+                  class="jsx-996330601 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-996330601 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-996330601 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  1
+                </td>
+                <td
+                  class="jsx-996330601 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-996330601 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  1
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -873,6 +882,10 @@ exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
         </table>
       </div>
     </div>
+    <div
+      class="rest"
+      data-test="job-summary-summary-rest"
+    />
   </div>
 </DocumentFragment>
 `;

@@ -44,6 +44,12 @@ const metadataImportPage = {
     path: '/import/metadata',
     icon: <MetadataImportIcon />,
 }
+const teiImportPage = {
+    name: i18n.t('TEI import'),
+    code: 'tei-import',
+    path: '/import/tei',
+    icon: <TEIIcon />,
+}
 
 const dataExportPage = {
     name: i18n.t('Data export'),
@@ -85,6 +91,7 @@ const importPages = [
     eventImportPage,
     gmlImportPage,
     metadataImportPage,
+    teiImportPage,
 ]
 
 const exportPages = [

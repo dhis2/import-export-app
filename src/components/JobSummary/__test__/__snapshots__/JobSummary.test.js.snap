@@ -838,6 +838,10 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
           </table>
         </div>
       </div>
+      <div
+        class="rest"
+        data-test="job-summary-summary-rest"
+      />
     </div>
     <div
       class="events"

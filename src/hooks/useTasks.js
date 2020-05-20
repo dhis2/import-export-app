@@ -21,6 +21,7 @@ const defaultTasks = {
     event: {},
     gml: {},
     metadata: {},
+    tei: {},
 }
 const defaultJobOverview = {
     activeTypes: allCategories,

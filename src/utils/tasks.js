@@ -6,6 +6,7 @@ import {
     EventIcon,
     GMLIcon,
     MetadataImportIcon,
+    TEIIcon,
 } from '../components/Icon/Icon'
 
 const categoryTypes = [
@@ -32,6 +33,12 @@ const categoryTypes = [
         importType: 'METADATA_IMPORT',
         icon: <MetadataImportIcon />,
         label: i18n.t('Metadata'),
+    },
+    {
+        key: 'tei',
+        importType: 'TEI_IMPORT',
+        icon: <TEIIcon />,
+        label: i18n.t('TEI'),
     },
 ]
 

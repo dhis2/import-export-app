@@ -12,31 +12,35 @@ const NAME = 'selectedPrograms'
 const LABEL = i18n.t('Programs')
 const DATATEST = 'input-program-picker'
 
-const ProgramPicker = ({ multiSelect, ...rest }) => {
+const ProgramPicker = ({ multiSelect, show, ...rest }) => {
     const programValidator = multiSelect
         ? SINGLE_PROGRAM_VALIDATOR
         : SINGLE_EXACT_PROGRAM_VALIDATOR
     const validator = composeValidators(hasValue, programValidator)
 
     return (
-        <ProgramPickerField
-            name={NAME}
-            multiSelect={multiSelect}
-            validator={validator}
-            withActions={false}
-            label={LABEL}
-            dataTest={DATATEST}
-            {...rest}
-        />
+        show && (
+            <ProgramPickerField
+                name={NAME}
+                multiSelect={multiSelect}
+                validator={validator}
+                withActions={false}
+                label={LABEL}
+                dataTest={DATATEST}
+                {...rest}
+            />
+        )
     )
 }
 
 ProgramPicker.defaultProps = {
     multiSelect: false,
+    show: true,
 }
 
 ProgramPicker.propTypes = {
     multiSelect: PropTypes.bool,
+    show: PropTypes.bool,
 }
 
 export { ProgramPicker }

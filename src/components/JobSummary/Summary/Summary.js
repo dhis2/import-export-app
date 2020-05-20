@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
+import styles from './Summary.module.css'
 import { typeReportParse } from '../helper'
 import { SingleSummary } from '../SingleSummary/SingleSummary'
 import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary'
@@ -70,7 +71,9 @@ const Summary = ({ summary }) => {
     return (
         <div data-test="job-summary-summary">
             {overviewSummary}
-            {allSummaries}
+            <div className={styles.rest} data-test="job-summary-summary-rest">
+                {allSummaries}
+            </div>
         </div>
     )
 }

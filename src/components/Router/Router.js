@@ -11,6 +11,7 @@ import {
     MetadataExport,
     MetadataImport,
     TEIExport,
+    TEIImport,
     JobOverview,
 } from '../../pages'
 
@@ -21,6 +22,7 @@ const Router = () => {
             <Route path="/import/event" component={EventImport} />
             <Route path="/import/gml" component={GMLImport} />
             <Route path="/import/metadata" component={MetadataImport} />
+            <Route path="/import/tei" component={TEIImport} />
             <Route path="/export/data" component={DataExport} />
             <Route path="/export/event" component={EventExport} />
             <Route

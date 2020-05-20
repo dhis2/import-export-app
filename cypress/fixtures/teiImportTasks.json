@@ -1,0 +1,18 @@
+[
+    {
+        "uid": "ynm0BL9vimO",
+        "level": "INFO",
+        "category": "TEI_IMPORT",
+        "time": "2020-05-20T13:06:15.286",
+        "message": "Import done",
+        "completed": true
+    },
+    {
+        "uid": "uP8ToYClCLp",
+        "level": "INFO",
+        "category": "TEI_IMPORT",
+        "time": "2020-05-20T13:06:15.133",
+        "message": "Importing tracked entities",
+        "completed": false
+    }
+]

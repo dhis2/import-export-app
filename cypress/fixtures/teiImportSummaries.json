@@ -1,0 +1,611 @@
+{
+    "responseType": "ImportSummaries",
+    "status": "ERROR",
+    "imported": 0,
+    "updated": 0,
+    "deleted": 0,
+    "ignored": 50,
+    "importSummaries": [
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance QGyxOe1zewj already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "QGyxOe1zewj"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance YZ64FEtYScT already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "YZ64FEtYScT"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance IPJNnWA0jp6 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "IPJNnWA0jp6"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance F8yKM85NbxW already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "F8yKM85NbxW"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance WWwwbGoAdw9 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "WWwwbGoAdw9"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance DsSlC54GNXy already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "DsSlC54GNXy"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance lrY3NyXsE44 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "lrY3NyXsE44"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance wZIiR4DwWqt already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "wZIiR4DwWqt"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance OVAe90MEbqk already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "OVAe90MEbqk"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance KTx8PXgqhN3 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "KTx8PXgqhN3"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance za53hFnvId7 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "za53hFnvId7"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance pNNw1t6MJVa already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "pNNw1t6MJVa"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance AuAWm61eD0X already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "AuAWm61eD0X"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance NpMOsS49kH2 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "NpMOsS49kH2"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance WTUuP8WDyMQ already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "WTUuP8WDyMQ"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance ouQgthfDfU1 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "ouQgthfDfU1"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance tFxi3V14vHq already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "tFxi3V14vHq"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance k8TU70vWtnP already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "k8TU70vWtnP"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance rEYUGH97Ssd already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "rEYUGH97Ssd"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance Fbru4rg4dYV already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "Fbru4rg4dYV"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance RHA9RWNvAnC already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "RHA9RWNvAnC"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance V8OG7dip6IQ already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "V8OG7dip6IQ"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance T7C7Czw2HFV already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "T7C7Czw2HFV"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance TtfoJCZyKey already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "TtfoJCZyKey"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance JM29jwvw8Ub already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "JM29jwvw8Ub"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance jZRaFaYkAtE already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "jZRaFaYkAtE"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance ckniBeAUk5L already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "ckniBeAUk5L"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance JGBLuTWHmvI already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "JGBLuTWHmvI"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance Ct11M84CzCJ already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "Ct11M84CzCJ"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance oBeBPkwmGxm already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "oBeBPkwmGxm"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance TiMeEVph5R5 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "TiMeEVph5R5"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance ILEn0CQsV2B already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "ILEn0CQsV2B"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance KWsrqi7xrX7 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "KWsrqi7xrX7"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance bjnodTs2Ihn already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "bjnodTs2Ihn"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance dFYfOrtALcA already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "dFYfOrtALcA"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance bj4UmUpqaSp already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "bj4UmUpqaSp"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance TFkMo11deu2 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "TFkMo11deu2"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance s4NfKOuayqG already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "s4NfKOuayqG"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance QBYMQm9GU4T already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "QBYMQm9GU4T"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance dNpxRu1mWG5 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "dNpxRu1mWG5"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance neR4cmMY22o already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "neR4cmMY22o"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance Er7oTDZsq6N already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "Er7oTDZsq6N"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance nVtfCS1gUZH already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "nVtfCS1gUZH"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance S3JjTA4QMNe already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "S3JjTA4QMNe"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance yKO4L1jaUbg already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "yKO4L1jaUbg"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance Imv2o18b9wX already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "Imv2o18b9wX"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance ClJ3fn47c4s already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "ClJ3fn47c4s"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance lebQyoZNcp7 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "lebQyoZNcp7"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance YGyelJBMeKy already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "YGyelJBMeKy"
+        },
+        {
+            "responseType": "ImportSummary",
+            "status": "ERROR",
+            "description": "Tracked entity instance vOxUH373fy5 already exists or was deleted earlier",
+            "importCount": {
+                "imported": 0,
+                "updated": 0,
+                "ignored": 1,
+                "deleted": 0
+            },
+            "reference": "vOxUH373fy5"
+        }
+    ],
+    "total": 50
+}
