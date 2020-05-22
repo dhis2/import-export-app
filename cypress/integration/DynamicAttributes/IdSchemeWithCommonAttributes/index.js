@@ -53,7 +53,7 @@ Then('it should not be an option in the id scheme input', () => {
         .then(nonCommonAttributes => {
             // check for existence in DOM
             cy.get('[data-test="input-id-scheme"]').click()
-            cy.get('[data-test="dhis2-uicore-select-menu"]').then(
+            cy.get('[data-test="dhis2-uicore-select-menu-menuwrapper"]').then(
                 $selectMenu => {
                     nonCommonAttributes.forEach(({ id }) => {
                         expect(
@@ -115,7 +115,7 @@ Then('it should be a selectable option in the id scheme input', () => {
         .then(attributes => {
             // check for existence in DOM
             cy.get('[data-test="input-id-scheme"]').click()
-            cy.get('[data-test="dhis2-uicore-select-menu"]').then(
+            cy.get('[data-test="dhis2-uicore-select-menu-menuwrapper"]').then(
                 $selectMenu => {
                     attributes.forEach(({ id }) => {
                         expect(

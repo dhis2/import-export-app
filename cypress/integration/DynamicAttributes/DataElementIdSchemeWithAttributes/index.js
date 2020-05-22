@@ -27,17 +27,17 @@ Then(
             .then(xhr => xhr.response.body)
             .then(({ attributes }) => {
                 cy.get('[data-test="input-data-element-id-scheme"]').click()
-                cy.get('[data-test="dhis2-uicore-select-menu"]').then(
-                    $selectMenu => {
-                        attributes.forEach(({ id }) => {
-                            expect(
-                                $selectMenu
-                                    .find(`[data-value="ATTRIBUTE:${id}"]`)
-                                    .toArray()
-                            ).to.have.lengthOf(1)
-                        })
-                    }
-                )
+                cy.get(
+                    '[data-test="dhis2-uicore-select-menu-menuwrapper"]'
+                ).then($selectMenu => {
+                    attributes.forEach(({ id }) => {
+                        expect(
+                            $selectMenu
+                                .find(`[data-value="ATTRIBUTE:${id}"]`)
+                                .toArray()
+                        ).to.have.lengthOf(1)
+                    })
+                })
             })
     }
 )
