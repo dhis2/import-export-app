@@ -4,7 +4,10 @@ import { render, waitForElement, fireEvent } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import { CustomDataProvider } from '@dhis2/app-runtime'
 
-import { DataSetPicker } from '../'
+import { ResourcePicker } from '../index'
+import { resourceTypes } from './resourceTypes'
+
+// test with data sets as resource
 
 const customData = {
     dataSets: {
@@ -25,6 +28,10 @@ const props = {
     meta: {},
     label: 'Data set',
     dataTest: 'data-set-picker',
+    resourceType: resourceTypes.DATASET,
+    listName: 'dataSetPicker',
+    filterLabel: i18n.t('Filter data sets by name'),
+    errorMessage: i18n.t('Something went wrong when loading the data sets!'),
 }
 
 test('data sets load and are shown in a list', async () => {
@@ -32,7 +39,7 @@ test('data sets load and are shown in a list', async () => {
 
     const { getByDataTest, getAllByDataTest, getByText } = render(
         <CustomDataProvider data={customData}>
-            <DataSetPicker {...props} setSelected={setSelected} />
+            <ResourcePicker {...props} setSelected={setSelected} />
         </CustomDataProvider>
     )
 
@@ -65,7 +72,7 @@ test('data sets fail to load and an error is shown', async () => {
 
     const { getByDataTest, getByText } = render(
         <CustomDataProvider data={{}}>
-            <DataSetPicker {...props} />
+            <ResourcePicker {...props} />
         </CustomDataProvider>
     )
 

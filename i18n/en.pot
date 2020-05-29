@@ -5,22 +5,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-05-22T07:28:51.687Z\n"
-"PO-Revision-Date: 2020-05-22T07:28:51.687Z\n"
+"POT-Creation-Date: 2020-06-02T11:30:57.858Z\n"
+"PO-Revision-Date: 2020-06-02T11:30:57.858Z\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
-
-msgid "Something went wrong when loading the data sets!"
-msgstr ""
-
-msgid "Filter data sets by name"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "One data set must be selected"
 msgstr ""
 
 msgid "Invalid date"
@@ -73,6 +61,15 @@ msgstr ""
 msgid "Compression"
 msgstr ""
 
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
 msgid "Data element ID scheme"
 msgstr ""
 
@@ -100,13 +97,55 @@ msgstr ""
 msgid "Follow up status"
 msgstr ""
 
+msgid "JSON"
+msgstr ""
+
+msgid "CSV"
+msgstr ""
+
+msgid "XML"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "JSONP"
+msgstr ""
+
 msgid "ID scheme"
+msgstr ""
+
+msgid "UID"
 msgstr ""
 
 msgid "Identifier"
 msgstr ""
 
+msgid "Errors"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
 msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
 msgstr ""
 
 msgid "Import strategy"
@@ -121,7 +160,25 @@ msgstr ""
 msgid "Include deleted"
 msgstr ""
 
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
 msgid "Inclusion"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
@@ -136,13 +193,40 @@ msgstr ""
 msgid "Last updated end date"
 msgstr ""
 
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
 msgid "Filter by last updated"
 msgstr ""
 
 msgid "Last updated start date"
 msgstr ""
 
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
 msgid "Merge mode"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
@@ -152,6 +236,24 @@ msgid "One object must be selected"
 msgstr ""
 
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr ""
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
 msgstr ""
 
 msgid "Organisation unit selection mode"
@@ -166,19 +268,28 @@ msgstr ""
 msgid "Faster for large imports"
 msgstr ""
 
+msgid "Reference"
+msgstr ""
+
 msgid "Preheat mode"
 msgstr ""
 
 msgid "Program end date"
 msgstr ""
 
-msgid "Programs"
-msgstr ""
-
 msgid "Program stage"
 msgstr ""
 
 msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Cancelled"
 msgstr ""
 
 msgid "Program status"
@@ -208,6 +319,12 @@ msgstr ""
 msgid "Strategy"
 msgstr ""
 
+msgid "Program"
+msgstr ""
+
+msgid "Tracked entity"
+msgstr ""
+
 msgid "Filter by"
 msgstr ""
 
@@ -221,9 +338,6 @@ msgid "No jobs started yet."
 msgstr ""
 
 msgid "Recreate job"
-msgstr ""
-
-msgid "Completed"
 msgstr ""
 
 msgid "In progress"
@@ -260,9 +374,6 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Messages"
-msgstr ""
-
-msgid "UID"
 msgstr ""
 
 msgid "Type"
@@ -329,6 +440,15 @@ msgid "One program must be selected"
 msgstr ""
 
 msgid "One program stage must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
 msgstr ""
 
 msgid "Something went wrong when loading the schemas!"

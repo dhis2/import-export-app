@@ -1,37 +1,56 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import { CircularLoader, Help } from '@dhis2/ui-core'
 
+import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
+import { resourceTypes } from './resourceTypes'
 import { FormField, SelectableList } from '../'
 
-const programQuery = {
-    programs: {
-        resource: 'programs',
-        params: {
-            fields: 'id,displayName',
-            paging: 'false',
-        },
-    },
+const resourceToQuery = resourceType => {
+    if (resourceType == resourceTypes.DATASET) {
+        return { resourceName: 'dataSets', query: dataSetQuery }
+    } else if (resourceType == resourceTypes.PROGRAM) {
+        return { resourceName: 'programs', query: programQuery }
+    } else if (resourceType == resourceTypes.TETYPE) {
+        return { resourceName: 'trackedEntityTypes', query: TETypeQuery }
+    } else if (resourceType == resourceTypes.USER) {
+        return { resourceName: 'users', query: userQuery }
+    }
+
+    return { error: `Unkown resource type: ${resourceType}` }
 }
 
-const ProgramPicker = ({
+const ResourcePicker = ({
     label,
+    resourceType,
     selected,
     setSelected,
     meta,
-    dataTest,
     multiSelect,
     withFilter,
     withActions,
     autoSelectFirst,
+    dataTest,
+    listName,
+    filterLabel,
+    errorMessage,
 }) => {
     const [list, setList] = useState([])
-    const { error, loading } = useDataQuery(programQuery, {
+    const [error, setError] = useState(undefined)
+    const { error: resourceError, resourceName, query } = resourceToQuery(
+        resourceType
+    )
+
+    if (resourceError) {
+        console.error(`ResourcePicker: ${resourceError}`)
+        return null
+    }
+
+    const { loading } = useDataQuery(query, {
         onComplete: data => {
-            const programs = data.programs.programs
-            const list = programs.map(({ id, displayName }) => ({
+            const elements = data[resourceName][resourceName]
+            const list = elements.map(({ id, displayName }) => ({
                 value: id,
                 label: displayName,
             }))
@@ -42,7 +61,8 @@ const ProgramPicker = ({
             }
         },
         onError: error => {
-            console.error('ProgramPicker error: ', error)
+            setError(error)
+            console.error(`ResourcePicker(${resourceName}) error: `, error)
         },
     })
 
@@ -53,18 +73,14 @@ const ProgramPicker = ({
             {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
             {error && (
                 <div data-test={`${dataTest}-error`}>
-                    <p>
-                        {i18n.t(
-                            'Something went wrong when loading the programs!'
-                        )}
-                    </p>
+                    <p>{errorMessage}</p>
                     <p>{error.message}</p>
                 </div>
             )}
             {showList && (
                 <SelectableList
-                    name="programPicker"
-                    label={i18n.t('Filter programs by name')}
+                    name={listName}
+                    label={filterLabel}
                     selected={selected}
                     setSelected={setSelected}
                     multiSelect={multiSelect}
@@ -81,17 +97,14 @@ const ProgramPicker = ({
     )
 }
 
-ProgramPicker.defaultProps = {
-    multiSelect: false,
-    withFilter: true,
-    withActions: false,
-    autoSelectFirst: true,
-}
-
-ProgramPicker.propTypes = {
+ResourcePicker.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    errorMessage: PropTypes.string.isRequired,
+    filterLabel: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    listName: PropTypes.string.isRequired,
     meta: PropTypes.object.isRequired,
+    resourceType: PropTypes.number.isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelected: PropTypes.func.isRequired,
     autoSelectFirst: PropTypes.bool,
@@ -100,4 +113,10 @@ ProgramPicker.propTypes = {
     withFilter: PropTypes.bool,
 }
 
-export { ProgramPicker }
+ResourcePicker.defaultProps = {
+    multiSelect: true,
+    withFilter: true,
+    withActions: true,
+}
+
+export { ResourcePicker }
