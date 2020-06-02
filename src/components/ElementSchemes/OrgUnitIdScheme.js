@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
-import { orgUnitIdSchemeOptions } from '../../utils/options'
+import { optionsPropType } from '../../utils/options'
 import { SelectField } from '../'
 
-const OrgUnitIdScheme = ({ name, label, dataTest }) => {
+const OrgUnitIdScheme = ({ name, label, orgUnitIdSchemeOptions, dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -45,6 +45,7 @@ OrgUnitIdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    orgUnitIdSchemeOptions: optionsPropType.isRequired,
 }
 
 export { OrgUnitIdScheme }

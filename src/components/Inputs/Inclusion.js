@@ -1,7 +1,22 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { inclusionOptions } from '../../utils/options'
 import { RadioGroupField } from '../'
+
+const inclusionOptions = [
+    {
+        value: 'SELECTED',
+        label: i18n.t('Selected organisation unit'),
+    },
+    {
+        value: 'CHILDREN',
+        label: i18n.t('Include children of organisation unit'),
+    },
+    {
+        value: 'DESCENDANTS',
+        label: i18n.t('Include descendants of organisation unit'),
+    },
+]
+const defaultInclusionOption = inclusionOptions[0]
 
 const NAME = 'inclusion'
 const DATATEST = 'input-inclusion'
@@ -16,4 +31,4 @@ const Inclusion = () => (
     />
 )
 
-export { Inclusion }
+export { Inclusion, defaultInclusionOption }

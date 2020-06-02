@@ -4,45 +4,42 @@ import i18n from '@dhis2/d2-i18n'
 import { Form } from '@dhis2/ui-forms'
 
 import {
-    formatJsonpOptions,
-    compressionOptions,
-    defaultFormatOption,
-    defaultOrgUnitSelectionModeOption,
-    defaultTEITypeFilterOption,
-    defaultProgramStatusOption,
-    defaultFollowUpStatusOption,
-    defaultCompressionOption,
-    defaultLastUpdatedFilterOption,
-    defaultAssignedUserModeOption,
-    defaultDataElementIdSchemeOption,
-    defaultOrgUnitIdSchemeOption,
-    defaultIdSchemeOption,
-    defaultEventIdSchemeOption,
-} from '../../utils/options'
-import {
     Format,
+    formatJsonpOptions,
+    defaultFormatOption,
     OrgUnitTree,
     OrgUnitMode,
+    defaultOrgUnitSelectionModeOption,
     TEITypeFilter,
+    defaultTEITypeFilterOption,
     ProgramStatus,
+    defaultProgramStatusOption,
     FollowUpStatus,
+    defaultFollowUpStatusOption,
     ProgramStartDate,
     ProgramEndDate,
     ProgramPicker,
     TETypePicker,
     Compression,
+    defaultCompressionOption,
     LastUpdatedFilter,
+    defaultLastUpdatedFilterOption,
     LastUpdatedStartDate,
     LastUpdatedEndDate,
     LastUpdatedDuration,
     AssignedUserMode,
+    defaultAssignedUserModeOption,
     UserPicker,
     IncludeDeleted,
     IncludeAllAttributes,
     DataElementIdScheme,
+    defaultDataElementIdSchemeOption,
     EventIdScheme,
+    defaultEventIdSchemeOption,
     IdScheme,
+    defaultIdSchemeOption,
     OrgUnitIdScheme,
+    defaultOrgUnitIdSchemeOption,
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs'
@@ -122,9 +119,7 @@ const TEIExport = () => {
                             show={values.teiTypeFilter.value == 'TE'}
                         />
                         <Format availableFormats={formatJsonpOptions} />
-                        <Compression
-                            availableCompressions={compressionOptions}
-                        />
+                        <Compression />
                         <MoreOptions>
                             <LastUpdatedFilter />
                             <LastUpdatedStartDate

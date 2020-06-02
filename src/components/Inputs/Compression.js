@@ -1,23 +1,25 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../'
-import { optionsPropType } from '../../utils/options'
+
+const compressionOptions = [
+    { value: 'zip', label: i18n.t('Zip') },
+    { value: 'gz', label: i18n.t('GZip') },
+    { value: '', label: i18n.t('Uncompressed') },
+]
+const defaultCompressionOption = compressionOptions[0]
 
 const NAME = 'compression'
 const DATATEST = 'input-compression'
 const LABEL = i18n.t('Compression')
 
-const Compression = ({ availableCompressions }) => (
+const Compression = () => (
     <RadioGroupField
         name={NAME}
         label={LABEL}
-        options={availableCompressions}
+        options={compressionOptions}
         dataTest={DATATEST}
     />
 )
 
-Compression.propTypes = {
-    availableCompressions: optionsPropType.isRequired,
-}
-
-export { Compression }
+export { Compression, defaultCompressionOption }

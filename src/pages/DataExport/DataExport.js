@@ -4,26 +4,23 @@ import i18n from '@dhis2/d2-i18n'
 import { Form } from '@dhis2/ui-forms'
 
 import {
-    formatAdxOptions,
-    compressionOptions,
-    defaultFormatOption,
-    defaultCompressionOption,
-    defaultDataElementIdSchemeOption,
-    defaultOrgUnitIdSchemeOption,
-    defaultIdSchemeOption,
-} from '../../utils/options'
-import {
     OrgUnitTree,
     IncludeChildren,
     DataSetPicker,
     Format,
+    formatAdxOptions,
+    defaultFormatOption,
     Compression,
+    defaultCompressionOption,
     StartDate,
     EndDate,
     IncludeDeleted,
     DataElementIdScheme,
+    defaultDataElementIdSchemeOption,
     IdScheme,
+    defaultIdSchemeOption,
     OrgUnitIdScheme,
+    defaultOrgUnitIdSchemeOption,
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs'
@@ -78,9 +75,7 @@ const DataExport = () => {
                         <IncludeChildren value={values.includeChildren} />
                         <DataSetPicker />
                         <Format availableFormats={formatAdxOptions} />
-                        <Compression
-                            availableCompressions={compressionOptions}
-                        />
+                        <Compression />
                         <StartDate />
                         <EndDate />
                         <MoreOptions>

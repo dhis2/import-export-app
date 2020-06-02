@@ -4,15 +4,12 @@ import i18n from '@dhis2/d2-i18n'
 import { Form } from '@dhis2/ui-forms'
 
 import {
-    formatOptions,
-    compressionOptions,
-    defaultFormatOption,
-    defaultCompressionOption,
-} from '../../utils/options'
-import {
     Format,
+    formatOptions,
+    defaultFormatOption,
     Schemas,
     Compression,
+    defaultCompressionOption,
     SkipSharing,
     ExportButton,
 } from '../../components/Inputs'
@@ -51,9 +48,7 @@ const MetadataExport = () => {
                     <form onSubmit={handleSubmit}>
                         <Schemas />
                         <Format availableFormats={formatOptions} />
-                        <Compression
-                            availableCompressions={compressionOptions}
-                        />
+                        <Compression />
                         <SkipSharing value={values.skipSharing} />
                         <ExportButton />
                     </form>

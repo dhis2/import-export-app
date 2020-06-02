@@ -2,7 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../'
-import { followUpStatusOptions } from '../../utils/options'
+
+const followUpStatusOptions = [
+    { value: 'ALL', label: i18n.t('All') },
+    { value: 'TRUE', label: i18n.t('True') },
+    { value: 'FALSE', label: i18n.t('False') },
+]
+const defaultFollowUpStatusOption = followUpStatusOptions[0]
 
 const NAME = 'followUpStatus'
 const DATATEST = 'input-follow-up-status'
@@ -22,4 +28,4 @@ FollowUpStatus.propTypes = {
     show: PropTypes.bool,
 }
 
-export { FollowUpStatus }
+export { FollowUpStatus, defaultFollowUpStatusOption }

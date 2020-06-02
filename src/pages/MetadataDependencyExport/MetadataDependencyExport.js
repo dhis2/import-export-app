@@ -4,16 +4,13 @@ import i18n from '@dhis2/d2-i18n'
 import { Form } from '@dhis2/ui-forms'
 
 import {
-    formatNoCsvOptions,
-    compressionOptions,
-    defaultFormatOption,
-    defaultCompressionOption,
-    defaultObjectTypeOption,
-} from '../../utils/options'
-import {
     Format,
+    formatNoCsvOptions,
+    defaultFormatOption,
     Compression,
+    defaultCompressionOption,
     ObjectType,
+    defaultObjectTypeOption,
     Objects,
     SkipSharing,
     ExportButton,
@@ -55,9 +52,7 @@ const MetadataDependencyExport = () => {
                         <ObjectType />
                         <Objects objectType={values.objectType} form={form} />
                         <Format availableFormats={formatNoCsvOptions} />
-                        <Compression
-                            availableCompressions={compressionOptions}
-                        />
+                        <Compression />
                         <SkipSharing value={values.skipSharing} />
                         <ExportButton />
                     </form>

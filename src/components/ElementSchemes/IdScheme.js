@@ -3,14 +3,14 @@ import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
+import { optionsPropType } from '../../utils/options'
 import { fetchAttributes } from '../../utils/helper'
-import { idSchemeOptions } from '../../utils/options'
 import { SelectField } from '../'
 
 const attributeFoundIn = (attribute, collection) =>
     !!collection.find(({ value }) => value === attribute.value)
 
-const IdScheme = ({ name, label, dataTest }) => {
+const IdScheme = ({ name, label, idSchemeOptions, dataTest }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(true)
     const [schemes, setSchemes] = useState([])
@@ -74,6 +74,7 @@ const IdScheme = ({ name, label, dataTest }) => {
 
 IdScheme.propTypes = {
     dataTest: PropTypes.string.isRequired,
+    idSchemeOptions: optionsPropType.isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
 }

@@ -6,20 +6,18 @@ import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
 import {
-    formatOptions,
-    defaultFormatOption,
-    defaultDataElementIdSchemeOption,
-    defaultOrgUnitIdSchemeOption,
-    defaultEventIdSchemeOption,
-    defaultIdSchemeOption,
-} from '../../utils/options'
-import {
     FileUpload,
     Format,
+    formatOptions,
+    defaultFormatOption,
     DataElementIdScheme,
+    defaultDataElementIdSchemeOption,
     EventIdScheme,
+    defaultEventIdSchemeOption,
     IdScheme,
+    defaultIdSchemeOption,
     OrgUnitIdScheme,
+    defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs'

@@ -4,29 +4,26 @@ import i18n from '@dhis2/d2-i18n'
 import { Form } from '@dhis2/ui-forms'
 
 import {
-    formatOptions,
-    compressionOptions,
-    defaultFormatOption,
-    defaultCompressionOption,
-    defaultIdSchemeOption,
-    defaultDataElementIdSchemeOption,
-    defaultOrgUnitIdSchemeOption,
-    defaultInclusionOption,
-} from '../../utils/options'
-import {
     OrgUnitTree,
     ProgramPicker,
     Format,
+    formatOptions,
+    defaultFormatOption,
     Compression,
+    defaultCompressionOption,
     StartDate,
     EndDate,
     IncludeDeleted,
     Inclusion,
+    defaultInclusionOption,
     ExportButton,
     ProgramStages,
     DataElementIdScheme,
+    defaultDataElementIdSchemeOption,
     OrgUnitIdScheme,
+    defaultOrgUnitIdSchemeOption,
     IdScheme,
+    defaultIdSchemeOption,
 } from '../../components/Inputs'
 import { Page, MoreOptions, EventIcon } from '../../components/'
 import { onExport, validate } from './form-helper'
@@ -85,9 +82,7 @@ const EventExport = () => {
                         <StartDate />
                         <EndDate />
                         <Format availableFormats={formatOptions} />
-                        <Compression
-                            availableCompressions={compressionOptions}
-                        />
+                        <Compression />
                         <MoreOptions>
                             <IncludeDeleted value={values.includeDeleted} />
                             <DataElementIdScheme />

@@ -6,24 +6,22 @@ import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
 import {
-    formatAdxPdfOptions,
-    defaultFormatOption,
-    defaultStrategyOption,
-    defaultDataElementIdSchemeOption,
-    defaultOrgUnitIdSchemeOption,
-    defaultIdSchemeOption,
-} from '../../utils/options'
-import {
     FileUpload,
     Format,
+    formatAdxPdfOptions,
+    defaultFormatOption,
     FirstRowIsHeader,
     Strategy,
+    defaultStrategyOption,
     PreheatCache,
     SkipAudit,
     SkipExistingCheck,
     DataElementIdScheme,
+    defaultDataElementIdSchemeOption,
     IdScheme,
+    defaultIdSchemeOption,
     OrgUnitIdScheme,
+    defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs'

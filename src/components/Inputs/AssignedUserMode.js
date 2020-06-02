@@ -1,7 +1,14 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../'
-import { assignedUserModeOptions } from '../../utils/options'
+
+const assignedUserModeOptions = [
+    { value: 'ANY', label: i18n.t('Any') },
+    { value: 'CURRENT', label: i18n.t('Current') },
+    { value: 'NONE', label: i18n.t('None') },
+    { value: 'PROVIDED', label: i18n.t('Provided') },
+]
+const defaultAssignedUserModeOption = assignedUserModeOptions[0]
 
 const NAME = 'assignedUserMode'
 const DATATEST = 'input-assigned-user-mode'
@@ -16,4 +23,4 @@ const AssignedUserMode = () => (
     />
 )
 
-export { AssignedUserMode }
+export { AssignedUserMode, defaultAssignedUserModeOption }

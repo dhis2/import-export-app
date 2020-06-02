@@ -1,7 +1,12 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { flushModeOptions } from '../../utils/options'
 import { RadioGroupField } from '../'
+
+const flushModeOptions = [
+    { value: 'AUTO', label: i18n.t('Auto') },
+    { value: 'OBJECT', label: i18n.t('Object') },
+]
+const defaultFlushModeOption = flushModeOptions[0]
 
 const NAME = 'flushMode'
 const DATATEST = 'input-flush-mode'
@@ -16,4 +21,4 @@ const FlushMode = () => (
     />
 )
 
-export { FlushMode }
+export { FlushMode, defaultFlushModeOption }

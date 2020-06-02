@@ -1,7 +1,13 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../'
-import { teiTypeFilterOptions } from '../../utils/options'
+
+const teiTypeFilterOptions = [
+    { value: 'NONE', label: i18n.t('None') },
+    { value: 'PROGRAM', label: i18n.t('Program') },
+    { value: 'TE', label: i18n.t('Tracked entity') },
+]
+const defaultTEITypeFilterOption = teiTypeFilterOptions[0]
 
 const NAME = 'teiTypeFilter'
 const DATATEST = 'input-tei-type-filter'
@@ -16,4 +22,4 @@ const TEITypeFilter = () => (
     />
 )
 
-export { TEITypeFilter }
+export { TEITypeFilter, defaultTEITypeFilterOption }

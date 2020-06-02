@@ -49,13 +49,37 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
+msgid "Any"
+msgstr ""
+
+msgid "Current"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Provided"
+msgstr ""
+
 msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
 msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
 
 msgid "Object"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
 msgstr ""
 
 msgid "Compression"
@@ -76,6 +100,18 @@ msgstr ""
 msgid "Data sets"
 msgstr ""
 
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
+
 msgid "End date"
 msgstr ""
 
@@ -91,7 +127,16 @@ msgstr ""
 msgid "First row is header"
 msgstr ""
 
+msgid "Auto"
+msgstr ""
+
 msgid "Flush mode"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
 msgstr ""
 
 msgid "Follow up status"
@@ -277,6 +322,18 @@ msgstr ""
 msgid "Program end date"
 msgstr ""
 
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
+
 msgid "Program stage"
 msgstr ""
 
@@ -331,7 +388,31 @@ msgstr ""
 msgid "Tracked entity types"
 msgstr ""
 
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
 msgid "Users"
+msgstr ""
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
 msgstr ""
 
 msgid "No jobs started yet."
@@ -427,28 +508,7 @@ msgstr ""
 msgid "One organisation unit must be selected"
 msgstr ""
 
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Filter programs by name"
-msgstr ""
-
-msgid "At least one program must be selected"
-msgstr ""
-
-msgid "One program must be selected"
-msgstr ""
-
 msgid "One program stage must be selected"
-msgstr ""
-
-msgid "Something went wrong when loading the data sets!"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "One data set must be selected"
 msgstr ""
 
 msgid "Something went wrong when loading the schemas!"
@@ -506,30 +566,6 @@ msgid "Yes"
 msgstr ""
 
 msgid "No"
-msgstr ""
-
-msgid "Something went wrong when loading the tracked entity types!"
-msgstr ""
-
-msgid "Filter tracked entity types by name"
-msgstr ""
-
-msgid "At least one tracked entity type must be selected"
-msgstr ""
-
-msgid "One tracked entity type must be selected"
-msgstr ""
-
-msgid "Something went wrong when loading the users!"
-msgstr ""
-
-msgid "Filter users by name"
-msgstr ""
-
-msgid "At least one user must be selected"
-msgstr ""
-
-msgid "One user must be selected"
 msgstr ""
 
 msgid "Something went wrong when loading the class keys"
@@ -628,15 +664,6 @@ msgstr ""
 msgid "JSONP"
 msgstr ""
 
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
 msgid "Category combination"
 msgstr ""
 
@@ -685,9 +712,6 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-msgid "Auto"
-msgstr ""
-
 msgid "Errors"
 msgstr ""
 
@@ -698,12 +722,6 @@ msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr ""
-
-msgid "All"
-msgstr ""
-
-msgid "None"
 msgstr ""
 
 msgid "Merge"
@@ -751,25 +769,10 @@ msgstr ""
 msgid "Cancelled"
 msgstr ""
 
-msgid "True"
-msgstr ""
-
-msgid "False"
-msgstr ""
-
 msgid "Start and end date"
 msgstr ""
 
 msgid "Duration"
-msgstr ""
-
-msgid "Any"
-msgstr ""
-
-msgid "Current"
-msgstr ""
-
-msgid "Provided"
 msgstr ""
 
 msgid "Data"

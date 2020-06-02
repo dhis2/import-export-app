@@ -2,7 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../'
-import { programStatusOptions } from '../../utils/options'
+
+const programStatusOptions = [
+    { value: 'ALL', label: i18n.t('All') },
+    { value: 'ACTIVE', label: i18n.t('Active') },
+    { value: 'COMPLETED', label: i18n.t('Completed') },
+    { value: 'CANCELLED', label: i18n.t('Cancelled') },
+]
+const defaultProgramStatusOption = programStatusOptions[0]
 
 const NAME = 'programStatus'
 const DATATEST = 'input-program-status'
@@ -22,4 +29,4 @@ ProgramStatus.propTypes = {
     show: PropTypes.bool,
 }
 
-export { ProgramStatus }
+export { ProgramStatus, defaultProgramStatusOption }

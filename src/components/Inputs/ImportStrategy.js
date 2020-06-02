@@ -1,7 +1,14 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { importStrategyOptions } from '../../utils/options'
 import { RadioGroupField } from '../'
+
+const importStrategyOptions = [
+    { value: 'CREATE_AND_UPDATE', label: i18n.t('New and updates') },
+    { value: 'CREATE', label: i18n.t('New only') },
+    { value: 'UPDATES', label: i18n.t('Updates only') },
+    { value: 'DELETE', label: i18n.t('Delete') },
+]
+const defaultImportStrategyOption = importStrategyOptions[0]
 
 const NAME = 'importStrategy'
 const DATATEST = 'input-import-strategy'
@@ -16,4 +23,4 @@ const ImportStrategy = () => (
     />
 )
 
-export { ImportStrategy }
+export { ImportStrategy, defaultImportStrategyOption }
