@@ -95,63 +95,48 @@ const TEIExport = () => {
                 initialValues={initialValues}
                 validate={validate}
                 subscription={{ values: true, submitError: true }}
-                render={({ handleSubmit, form, values, submitError }) => (
-                    <form onSubmit={handleSubmit}>
-                        <OrgUnitTree />
-                        <OrgUnitMode />
-                        <TEITypeFilter />
-                        <ProgramPicker
-                            show={values.teiTypeFilter.value == 'PROGRAM'}
-                        />
-                        <ProgramStatus
-                            show={values.teiTypeFilter.value == 'PROGRAM'}
-                        />
-                        <FollowUpStatus
-                            show={values.teiTypeFilter.value == 'PROGRAM'}
-                        />
-                        <ProgramStartDate
-                            show={values.teiTypeFilter.value == 'PROGRAM'}
-                        />
-                        <ProgramEndDate
-                            show={values.teiTypeFilter.value == 'PROGRAM'}
-                        />
-                        <TETypePicker
-                            show={values.teiTypeFilter.value == 'TE'}
-                        />
-                        <Format availableFormats={formatJsonpOptions} />
-                        <Compression />
-                        <MoreOptions>
-                            <LastUpdatedFilter />
-                            <LastUpdatedStartDate
-                                show={values.lastUpdatedFilter.value == 'DATE'}
-                            />
-                            <LastUpdatedEndDate
-                                show={values.lastUpdatedFilter.value == 'DATE'}
-                            />
-                            <LastUpdatedDuration
-                                show={
-                                    values.lastUpdatedFilter.value == 'DURATION'
-                                }
-                            />
-                            <AssignedUserMode />
-                            <UserPicker
-                                show={
-                                    values.assignedUserMode.value == 'PROVIDED'
-                                }
-                            />
-                            <IncludeDeleted value={values.includeDeleted} />
-                            <IncludeAllAttributes
-                                value={values.includeAllAttributes}
-                            />
-                            <DataElementIdScheme />
-                            <EventIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
-                        </MoreOptions>
-                        <ExportButton />
-                        <FormAlerts alerts={submitError} />
-                    </form>
-                )}
+                render={({ handleSubmit, form, values, submitError }) => {
+                    const showProgramFilters =
+                        values.teiTypeFilter.value == 'PROGRAM'
+                    const showTEFilters = values.teiTypeFilter.value == 'TE'
+                    const showLUDates = values.lastUpdatedFilter.value == 'DATE'
+                    const showLUDuration =
+                        values.lastUpdatedFilter.value == 'DURATION'
+                    const showUserPicker =
+                        values.assignedUserMode.value == 'PROVIDED'
+
+                    return (
+                        <form onSubmit={handleSubmit}>
+                            <OrgUnitTree />
+                            <OrgUnitMode />
+                            <TEITypeFilter />
+                            <ProgramPicker show={showProgramFilters} />
+                            <ProgramStatus show={showProgramFilters} />
+                            <FollowUpStatus show={showProgramFilters} />
+                            <ProgramStartDate show={showProgramFilters} />
+                            <ProgramEndDate show={showProgramFilters} />
+                            <TETypePicker show={showTEFilters} />
+                            <Format availableFormats={formatJsonpOptions} />
+                            <Compression />
+                            <MoreOptions>
+                                <LastUpdatedFilter />
+                                <LastUpdatedStartDate show={showLUDates} />
+                                <LastUpdatedEndDate show={showLUDates} />
+                                <LastUpdatedDuration show={showLUDuration} />
+                                <AssignedUserMode />
+                                <UserPicker show={showUserPicker} />
+                                <IncludeDeleted />
+                                <IncludeAllAttributes />
+                                <DataElementIdScheme />
+                                <EventIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </MoreOptions>
+                            <ExportButton />
+                            <FormAlerts alerts={submitError} />
+                        </form>
+                    )
+                }}
             />
         </Page>
     )
