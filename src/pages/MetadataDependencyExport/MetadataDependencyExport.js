@@ -53,7 +53,7 @@ const MetadataDependencyExport = () => {
                         <Objects objectType={values.objectType} form={form} />
                         <Format availableFormats={formatNoCsvOptions} />
                         <Compression />
-                        <SkipSharing value={values.skipSharing} />
+                        <SkipSharing />
                         <ExportButton />
                     </form>
                 )}

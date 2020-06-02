@@ -69,17 +69,17 @@ const DataExport = () => {
                 initialValues={initialValues}
                 validate={validate}
                 subscription={{ values: true, submitError: true }}
-                render={({ handleSubmit, form, values, submitError }) => (
+                render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <OrgUnitTree />
-                        <IncludeChildren value={values.includeChildren} />
+                        <IncludeChildren />
                         <DataSetPicker />
                         <Format availableFormats={formatAdxOptions} />
                         <Compression />
                         <StartDate />
                         <EndDate />
                         <MoreOptions>
-                            <IncludeDeleted value={values.includeDeleted} />
+                            <IncludeDeleted />
                             <DataElementIdScheme />
                             <OrgUnitIdScheme />
                             <IdScheme />

@@ -105,10 +105,7 @@ const MetadataImport = () => {
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
                         <Format availableFormats={formatOptions} />
-                        <FirstRowIsHeader
-                            show={values.format.value == 'csv'}
-                            value={values.firstRowIsHeader}
-                        />
+                        <FirstRowIsHeader show={values.format.value == 'csv'} />
                         <ClassKey
                             show={values.format.value == 'csv'}
                             form={form}
@@ -122,9 +119,9 @@ const MetadataImport = () => {
                         <MergeMode />
                         <MoreOptions>
                             <FlushMode />
-                            <SkipSharing value={values.skipSharing} />
-                            <SkipValidation value={values.skipValidation} />
-                            <IsAsync value={values.isAsync} />
+                            <SkipSharing />
+                            <SkipValidation />
+                            <IsAsync />
                             <InclusionStrategy />
                         </MoreOptions>
                         <ImportButtonStrip form={form} />

@@ -112,7 +112,7 @@ const TEIImport = () => {
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 subscription={{ values: true, submitError: true }}
-                render={({ handleSubmit, form, values, submitError }) => (
+                render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
                         <Format availableFormats={formatNoCsvOptions} />
@@ -124,9 +124,9 @@ const TEIImport = () => {
                         <MergeMode />
                         <MoreOptions>
                             <FlushMode />
-                            <SkipSharing value={values.skipSharing} />
-                            <SkipValidation value={values.skipValidation} />
-                            <IsAsync value={values.isAsync} />
+                            <SkipSharing />
+                            <SkipValidation />
+                            <IsAsync />
                             <InclusionStrategy />
                             <DataElementIdScheme />
                             <EventIdScheme />

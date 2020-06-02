@@ -92,22 +92,17 @@ const DataImport = () => {
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
                         <Format availableFormats={formatAdxPdfOptions} />
-                        <FirstRowIsHeader
-                            show={values.format.value == 'csv'}
-                            value={values.firstRowIsHeader}
-                        />
+                        <FirstRowIsHeader show={values.format.value == 'csv'} />
                         <Strategy />
-                        <PreheatCache value={values.preheatCache} />
+                        <PreheatCache />
                         <WithAuthority pred={hasAuthorityToSkipAudit}>
-                            <SkipAudit value={values.skipAudit} />
+                            <SkipAudit />
                         </WithAuthority>
                         <MoreOptions>
                             <DataElementIdScheme />
                             <OrgUnitIdScheme />
                             <IdScheme />
-                            <SkipExistingCheck
-                                value={values.skipExistingCheck}
-                            />
+                            <SkipExistingCheck />
                         </MoreOptions>
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />

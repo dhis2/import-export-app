@@ -5,13 +5,26 @@ import { Field, Switch as SwitchUI } from '@dhis2/ui-forms'
 
 import { FormField } from '../'
 
-const Switch = ({ name, label, help, value, dataTest }) => {
+const Wrapper = ({ input, meta, ...rest }) => (
+    <SwitchUI
+        input={input}
+        meta={meta}
+        label={input.value ? i18n.t('Yes') : i18n.t('No')}
+        {...rest}
+    />
+)
+
+Wrapper.propTypes = {
+    input: PropTypes.object.isRequired,
+    meta: PropTypes.object.isRequired,
+}
+
+const Switch = ({ name, label, help, dataTest }) => {
     return (
         <FormField label={label} dataTest={dataTest}>
             <Field
-                component={SwitchUI}
+                component={Wrapper}
                 name={name}
-                label={value ? i18n.t('Yes') : i18n.t('No')}
                 helpText={help}
                 dataTest={`${dataTest}-sf`}
             />
@@ -24,7 +37,6 @@ Switch.propTypes = {
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     help: PropTypes.string,
-    value: PropTypes.bool,
 }
 
 export { Switch }

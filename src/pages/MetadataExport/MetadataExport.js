@@ -44,12 +44,12 @@ const MetadataExport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                render={({ handleSubmit, form, values }) => (
+                render={({ handleSubmit, form }) => (
                     <form onSubmit={handleSubmit}>
                         <Schemas />
                         <Format availableFormats={formatOptions} />
                         <Compression />
-                        <SkipSharing value={values.skipSharing} />
+                        <SkipSharing />
                         <ExportButton />
                     </form>
                 )}

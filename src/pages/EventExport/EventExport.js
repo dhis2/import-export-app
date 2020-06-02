@@ -84,7 +84,7 @@ const EventExport = () => {
                         <Format availableFormats={formatOptions} />
                         <Compression />
                         <MoreOptions>
-                            <IncludeDeleted value={values.includeDeleted} />
+                            <IncludeDeleted />
                             <DataElementIdScheme />
                             <OrgUnitIdScheme />
                             <IdScheme />
