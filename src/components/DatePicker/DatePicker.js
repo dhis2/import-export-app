@@ -15,7 +15,7 @@ const DatePicker = ({
     required = true,
 }) => {
     const onChangeHelper = ({ value }) => {
-        if (value == '') {
+        if (!value) {
             onChange(value)
         } else {
             onChange(new Date(value))
