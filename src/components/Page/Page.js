@@ -8,7 +8,7 @@ import {
 } from '@dhis2/ui-core'
 
 import styles from './Page.module.css'
-import { JobSummary, MiniJobSummary } from '../../components/'
+import { JobSummary, MiniJobSummary } from '../index'
 
 const Page = ({
     title,

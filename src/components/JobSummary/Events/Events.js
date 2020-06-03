@@ -12,7 +12,7 @@ import {
 } from '@dhis2/ui-core'
 
 import { jsDateToString } from '../../../utils/helper'
-import { FormField } from '../../'
+import { FormField } from '../../index'
 
 const Events = ({ events }) => {
     return (

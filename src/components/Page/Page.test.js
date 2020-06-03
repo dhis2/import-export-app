@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect'
 
 import { allJobs } from '../JobOverview/__test__/data'
 import { LogoIcon } from '../'
-import { Page } from '../'
+import { Page } from '../index'
 
 const dataJob = allJobs.find(j => j.importType == 'DATAVALUE_IMPORT')
 

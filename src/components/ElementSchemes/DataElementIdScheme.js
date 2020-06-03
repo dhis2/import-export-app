@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import { fetchAttributes } from '../../utils/helper'
 import { optionsPropType } from '../../utils/options'
-import { SelectField } from '../'
+import { SelectField } from '../index'
 
 const DataElementIdScheme = ({
     name,

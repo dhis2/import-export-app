@@ -12,8 +12,8 @@ import {
     defaultCompressionOption,
     SkipSharing,
     ExportButton,
-} from '../../components/Inputs'
-import { Page, MetadataExportIcon } from '../../components/'
+} from '../../components/Inputs/index'
+import { Page, MetadataExportIcon } from '../../components/index'
 import { onExport } from './form-helper'
 
 // PAGE INFO

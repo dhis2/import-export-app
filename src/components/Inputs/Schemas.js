@@ -1,7 +1,7 @@
 import React from 'react'
 import { hasValue, composeValidators } from '@dhis2/ui-forms'
-import { SchemasField } from '../../components/'
-import { SINGLE_SCHEMA_VALIDATOR } from '../../components/Schemas/SchemasField'
+import { SchemasField } from '../index'
+import { SINGLE_SCHEMA_VALIDATOR } from '../Schemas/SchemasField'
 
 const NAME = 'checkedSchemas'
 const VALIDATOR = composeValidators(hasValue, SINGLE_SCHEMA_VALIDATOR)

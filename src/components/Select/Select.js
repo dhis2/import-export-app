@@ -4,7 +4,7 @@ import { SingleSelectField, SingleSelectOption, Help } from '@dhis2/ui-core'
 
 import { optionPropType, optionsPropType } from '../../utils/options'
 import styles from './Select.module.css'
-import { FormField } from '../'
+import { FormField } from '../index'
 
 const Select = ({
     name,

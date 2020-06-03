@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { IdScheme as IdSchemeGeneric } from '../'
+import { IdScheme as IdSchemeGeneric } from '../index'
 
 const idSchemeOptions = [
     { value: 'UID', label: i18n.t('Uid') },

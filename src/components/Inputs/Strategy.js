@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { RadioGroupField } from '../'
+import { RadioGroupField } from '../index'
 
 const strategyOptions = [
     { value: 'NEW_AND_UPDATES', label: i18n.t('New and updates') },

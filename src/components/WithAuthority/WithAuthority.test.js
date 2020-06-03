@@ -2,8 +2,8 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { UserContext } from '../../contexts/'
-import { WithAuthority } from '../'
+import { UserContext } from '../../contexts/index'
+import { WithAuthority } from '../index'
 
 const rejectAllPredicate = () => false
 const testPredicate = authorities => authorities.includes('TEST')

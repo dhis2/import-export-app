@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-06-02T11:30:57.858Z\n"
-"PO-Revision-Date: 2020-06-02T11:30:57.858Z\n"
+"POT-Creation-Date: 2020-06-04T08:51:29.549Z\n"
+"PO-Revision-Date: 2020-06-04T08:51:29.549Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Object"
+msgid "Class key"
 msgstr ""
 
 msgid "Zip"
@@ -128,6 +128,9 @@ msgid "First row is header"
 msgstr ""
 
 msgid "Auto"
+msgstr ""
+
+msgid "Object"
 msgstr ""
 
 msgid "Flush mode"
@@ -634,7 +637,7 @@ msgstr ""
 msgid "HTTP error when fetching tracked entity instances"
 msgstr ""
 
-msgid "At least one of the '{{lastUpdated}}' date fields must be specified"
+msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
 
 msgid "Tracked entity instances import"

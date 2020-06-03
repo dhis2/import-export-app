@@ -23,8 +23,8 @@ import {
     defaultOrgUnitIdSchemeOption,
     ExportButton,
     FormAlerts,
-} from '../../components/Inputs'
-import { Page, MoreOptions, DataIcon } from '../../components/'
+} from '../../components/Inputs/index'
+import { Page, MoreOptions, DataIcon } from '../../components/index'
 import { onExport, validate } from './form-helper'
 
 // PAGE INFO

@@ -7,7 +7,7 @@ import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
 import styles from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'
 import { categoryTypes } from '../../utils/tasks'
-import { JobSummary } from '../'
+import { JobSummary } from '../index'
 import { categoryTypesObj, jobToPath } from './helper'
 import { MenuLabel } from './MenuLabel/MenuLabel'
 

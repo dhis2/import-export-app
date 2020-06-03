@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { InputField } from '@dhis2/ui-core'
 
 import { jsDateToISO8601 } from '../../utils/helper'
-import { FormField } from '../'
+import { FormField } from '../index'
 
 const DatePicker = ({
     name,

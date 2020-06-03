@@ -10,7 +10,7 @@ import {
     TableCellHead,
 } from '@dhis2/ui-core'
 
-import { FormField } from '../../'
+import { FormField } from '../../index'
 import { messagesPropType } from '../helper'
 
 const Messages = ({ messages }) => {

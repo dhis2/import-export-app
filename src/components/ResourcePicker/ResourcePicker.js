@@ -5,7 +5,7 @@ import { CircularLoader, Help } from '@dhis2/ui-core'
 
 import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
 import { resourceTypes } from './resourceTypes'
-import { FormField, SelectableList } from '../'
+import { FormField, SelectableList } from '../index'
 
 const resourceToQuery = resourceType => {
     if (resourceType == resourceTypes.DATASET) {

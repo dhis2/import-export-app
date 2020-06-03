@@ -2,9 +2,9 @@ language: node_js
 node_js:
     - lts/*
 script:
-    - npm run lint
-    - npm run test
-    - npm run build
+    - yarn lint
+    - yarn test
+    - yarn build
 deploy:
     - provider: script
       script: npx --package @dhis2/deploy-build deploy-build d2-ci build/app

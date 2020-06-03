@@ -13,7 +13,7 @@ import {
 
 import { statsPropType } from '../helper'
 import { SingleStatusTable } from '../SingleStatusTable/SingleStatusTable'
-import { FormField } from '../../'
+import { FormField } from '../../index'
 
 const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
     <div>

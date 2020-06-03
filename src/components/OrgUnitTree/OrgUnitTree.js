@@ -5,7 +5,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { CircularLoader, Help } from '@dhis2/ui-core'
 
 import { pathToId } from '../../utils/helper'
-import { FormField } from '../'
+import { FormField } from '../index'
 import { Tree } from './Tree/Tree'
 import styles from './OrgUnitTree.module.css'
 

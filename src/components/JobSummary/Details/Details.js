@@ -11,7 +11,7 @@ import {
     TableCellHead,
 } from '@dhis2/ui-core'
 
-import { FormField } from '../../'
+import { FormField } from '../../index'
 
 const valueToString = value => {
     if (value instanceof File) {

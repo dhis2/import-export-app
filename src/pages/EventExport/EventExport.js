@@ -24,8 +24,8 @@ import {
     defaultOrgUnitIdSchemeOption,
     IdScheme,
     defaultIdSchemeOption,
-} from '../../components/Inputs'
-import { Page, MoreOptions, EventIcon } from '../../components/'
+} from '../../components/Inputs/index'
+import { Page, MoreOptions, EventIcon } from '../../components/index'
 import { onExport, validate } from './form-helper'
 
 // PAGE INFO

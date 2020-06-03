@@ -1,8 +1,8 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui-forms'
-import { ProgramStages as ProgramStagesGeneric } from '../../components/'
-import { SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR } from '../../components/ProgramStages/ProgramStages'
+import { ProgramStages as ProgramStagesGeneric } from '../'
+import { SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR } from '../ProgramStages/ProgramStages'
 
 const VALIDATOR = composeValidators(
     hasValue,

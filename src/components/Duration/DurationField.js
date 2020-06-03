@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { InputField } from '@dhis2/ui-core'
 import { Field } from '@dhis2/ui-forms'
-import { FormField } from '../'
+import { FormField } from '../index'
 
 // (\d+d)?: one or more numbers followed by d; d for days
 // rest of the capturing groups are similar to the one described above

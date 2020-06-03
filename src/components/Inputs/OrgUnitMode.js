@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { UserContext } from '../../contexts/'
+import { UserContext } from '../../contexts/index'
 import { hasAuthorityToSelectAllOrgUnits } from '../WithAuthority/predicates'
-import { RadioGroupField } from '../'
+import { RadioGroupField } from '../index'
 
 const orgUnitSelectionModeOptions = [
     {

@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui-forms'
-import { OrgUnitTreeField } from '../../components/'
+import { OrgUnitTreeField } from '../index'
 import {
     SINGLE_ORG_VALIDATOR,
     SINGLE_EXACT_ORG_VALIDATOR,
-} from '../../components/OrgUnitTree/OrgUnitTreeField'
+} from '../OrgUnitTree/OrgUnitTreeField'
 
 const NAME = 'selectedOrgUnits'
 const LABEL = i18n.t('Organisation unit')

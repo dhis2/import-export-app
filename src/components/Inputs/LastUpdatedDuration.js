@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui-forms'
-import { DurationField } from '../'
+import { DurationField } from '../index'
 import { DURATION_VALIDATOR } from '../Duration/DurationField'
 
 const NAME = 'lastUpdatedDuration'

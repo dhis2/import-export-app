@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 import { Divider, Menu, MenuItem } from '@dhis2/ui-core'
 
 import styles from './Sidebar.module.css'
-import { StyledLink } from '../'
+import { StyledLink } from '../index'
 import {
     DataIcon,
     EventIcon,
@@ -15,7 +15,7 @@ import {
     MetadataImportIcon,
     TEIIcon,
     TasksIcon,
-} from '../'
+} from '../index'
 
 const dataImportPage = {
     name: i18n.t('Data import'),

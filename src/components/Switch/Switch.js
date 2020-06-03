@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Field, Switch as SwitchUI } from '@dhis2/ui-forms'
 
-import { FormField } from '../'
+import { FormField } from '../index'
 
 const Wrapper = ({ input, meta, ...rest }) => (
     <SwitchUI

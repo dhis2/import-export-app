@@ -9,9 +9,9 @@ import {
     FileUpload,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs/'
-import { Page, GMLIcon } from '../../components/'
-import { TaskContext, getNewestTask } from '../../contexts/'
+} from '../../components/Inputs/index'
+import { Page, GMLIcon } from '../../components/index'
+import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
 // PAGE INFO

@@ -14,8 +14,8 @@ import {
     Objects,
     SkipSharing,
     ExportButton,
-} from '../../components/Inputs'
-import { Page, MetadataDependencyExportIcon } from '../../components/'
+} from '../../components/Inputs/index'
+import { Page, MetadataDependencyExportIcon } from '../../components/index'
 import { onExport } from './form-helper'
 
 // PAGE INFO

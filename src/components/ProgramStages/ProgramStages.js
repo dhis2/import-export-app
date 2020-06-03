@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
-import { SelectField } from '../'
-import { useProgramStages } from '../../hooks/'
+import { SelectField } from '../index'
+import { useProgramStages } from '../../hooks/index'
 
 const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
     !programStage ? i18n.t('One program stage must be selected') : undefined

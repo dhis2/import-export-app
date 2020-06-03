@@ -20,9 +20,9 @@ import {
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs'
-import { Page, MoreOptions, EventIcon } from '../../components/'
-import { TaskContext, getNewestTask } from '../../contexts/'
+} from '../../components/Inputs/index'
+import { Page, MoreOptions, EventIcon } from '../../components/index'
+import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
 // PAGE INFO

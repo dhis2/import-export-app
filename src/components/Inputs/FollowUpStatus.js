@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { RadioGroupField } from '../'
+import { RadioGroupField } from '../index'
 
 const followUpStatusOptions = [
     { value: 'ALL', label: i18n.t('All') },

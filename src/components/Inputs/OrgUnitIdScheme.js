@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { OrgUnitIdScheme as OrgUnitIdSchemeGeneric } from '../'
+import { OrgUnitIdScheme as OrgUnitIdSchemeGeneric } from '../index'
 
 const orgUnitIdSchemeOptions = [
     { value: 'UID', label: i18n.t('Uid') },

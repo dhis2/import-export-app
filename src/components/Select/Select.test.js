@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { Select } from '../'
+import { Select } from '../index'
 
 const options = [
     { value: 'a', label: 'Abc' },

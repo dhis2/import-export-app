@@ -24,10 +24,15 @@ import {
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs'
+} from '../../components/Inputs/index'
 import { hasAuthorityToSkipAudit } from '../../components/WithAuthority/predicates'
-import { Page, WithAuthority, MoreOptions, DataIcon } from '../../components/'
-import { TaskContext, getNewestTask } from '../../contexts/'
+import {
+    Page,
+    WithAuthority,
+    MoreOptions,
+    DataIcon,
+} from '../../components/index'
+import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
 // PAGE INFO

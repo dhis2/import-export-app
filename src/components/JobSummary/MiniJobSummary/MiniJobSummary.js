@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import { JobSummary } from '../JobSummary'
-import { MoreOptions } from '../../'
+import { MoreOptions } from '../../index'
 
 const MiniJobSummary = ({ task, dataTest }) => {
     if (!task) return null

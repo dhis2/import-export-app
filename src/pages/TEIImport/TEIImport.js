@@ -39,9 +39,9 @@ import {
     defaultIdSchemeOption,
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
-} from '../../components/Inputs'
-import { Page, TEIIcon, MoreOptions } from '../../components/'
-import { TaskContext, getNewestTask } from '../../contexts/'
+} from '../../components/Inputs/index'
+import { Page, TEIIcon, MoreOptions } from '../../components/index'
+import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
 // PAGE INFO
