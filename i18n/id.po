@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -21,18 +21,6 @@ msgstr ""
 msgid "Something went wrong when loading the current user!"
 msgstr ""
 
-msgid "Something went wrong when loading the data sets!"
-msgstr ""
-
-msgid "Filter data sets by name"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "One data set must be selected"
-msgstr ""
-
 msgid "Invalid date"
 msgstr ""
 
@@ -41,6 +29,12 @@ msgstr ""
 
 msgid "End date must be after start date"
 msgstr ""
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
+msgstr "Format"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -66,20 +60,68 @@ msgstr ""
 msgid "Import"
 msgstr "Impor"
 
+msgid "Any"
+msgstr ""
+
+msgid "Current"
+msgstr ""
+
+msgid "None"
+msgstr "Tidak ada"
+
+msgid "Provided"
+msgstr ""
+
+msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
+msgstr "Semua"
+
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Object"
-msgstr "Objek"
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr "Tidak dikompres"
 
 msgid "Compression"
 msgstr "Kompresi"
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Name"
+msgstr "Nama"
 
 msgid "Data element ID scheme"
 msgstr "Skema ID data elemen"
 
 msgid "Data sets"
 msgstr "Data set"
+
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
 
 msgid "End date"
 msgstr "Tanggal berakhir"
@@ -96,22 +138,79 @@ msgstr ""
 msgid "First row is header"
 msgstr ""
 
+msgid "Auto"
+msgstr "Otomatis"
+
+msgid "Object"
+msgstr "Objek"
+
 msgid "Flush mode"
 msgstr ""
 
-msgid "Format"
-msgstr "Format"
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Follow up status"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "JSONP"
+msgstr ""
 
 msgid "ID scheme"
 msgstr "Skema ID"
 
+msgid "UID"
+msgstr ""
+
 msgid "Identifier"
 msgstr "Pengenal"
+
+msgid "Errors"
+msgstr "Kesalahan"
+
+msgid "Full"
+msgstr "Penuh"
+
+msgid "Debug"
+msgstr ""
 
 msgid "Import report mode"
 msgstr ""
 
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr "Hanya baru"
+
+msgid "Updates only"
+msgstr "Hanya perbaruan"
+
+msgid "Delete"
+msgstr "Hapus"
+
 msgid "Import strategy"
+msgstr ""
+
+msgid "Include all attributes"
 msgstr ""
 
 msgid "Include children"
@@ -120,8 +219,26 @@ msgstr ""
 msgid "Include deleted"
 msgstr "Ikutkan yang dihapus"
 
+msgid "Selected organisation unit"
+msgstr "Unit org yang terpilih"
+
+msgid "Include children of organisation unit"
+msgstr "Ikutkan unit org di bawahnya"
+
+msgid "Include descendants of organisation unit"
+msgstr "Ikutkan unit org di bawahnya"
+
 msgid "Inclusion"
 msgstr "Inklusi"
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr "Selalu"
+
+msgid "Non Empty"
+msgstr "Tidak Kosong"
 
 msgid "Inclusion strategy"
 msgstr ""
@@ -129,13 +246,76 @@ msgstr ""
 msgid "Async"
 msgstr ""
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Merge"
+msgstr "Gabung"
+
+msgid "Replace"
+msgstr "Gantikan"
+
 msgid "Merge mode"
 msgstr ""
+
+msgid "Programs"
+msgstr "Program"
+
+msgid "Category combination"
+msgstr "Kombinasi kategori"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Data element groups"
+msgstr "Grup data elemen"
+
+msgid "Option sets"
+msgstr "Set opsi"
 
 msgid "Object type"
 msgstr "Tipe objek"
 
+msgid "One object must be selected"
+msgstr ""
+
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr ""
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Organisation unit selection mode"
 msgstr ""
 
 msgid "Organisation unit"
@@ -147,14 +327,44 @@ msgstr ""
 msgid "Faster for large imports"
 msgstr ""
 
+msgid "Reference"
+msgstr "Referensi"
+
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Programs"
-msgstr "Program"
+msgid "Program end date"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
 
 msgid "Program stage"
 msgstr "Tahapan program"
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Completed"
+msgstr "Selesai"
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "Program status"
+msgstr ""
 
 msgid "Skip audit"
 msgstr ""
@@ -180,14 +390,50 @@ msgstr "Tanggal mulai"
 msgid "Strategy"
 msgstr "Strategi"
 
+msgid "Program"
+msgstr ""
+
+msgid "Tracked entity"
+msgstr ""
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
 msgid "No jobs started yet."
 msgstr ""
 
 msgid "Recreate job"
 msgstr ""
-
-msgid "Completed"
-msgstr "Selesai"
 
 msgid "In progress"
 msgstr "Dalam proses"
@@ -224,9 +470,6 @@ msgstr "Konflik"
 
 msgid "Messages"
 msgstr "Pesan"
-
-msgid "UID"
-msgstr ""
 
 msgid "Type"
 msgstr "Tipe"
@@ -270,9 +513,6 @@ msgstr ""
 msgid "more options"
 msgstr "opsi lainnya"
 
-msgid "One object must be selected"
-msgstr ""
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
@@ -280,18 +520,6 @@ msgid "At least one organisation unit must be selected"
 msgstr ""
 
 msgid "One organisation unit must be selected"
-msgstr ""
-
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Filter programs by name"
-msgstr ""
-
-msgid "At least one program must be selected"
-msgstr ""
-
-msgid "One program must be selected"
 msgstr ""
 
 msgid "One program stage must be selected"
@@ -327,6 +555,9 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr ""
 
@@ -339,6 +570,9 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr ""
 
@@ -347,18 +581,6 @@ msgstr "Ya"
 
 msgid "No"
 msgstr "Tidak"
-
-msgid "Data"
-msgstr "Data"
-
-msgid "Event"
-msgstr "Kejadian"
-
-msgid "GML"
-msgstr ""
-
-msgid "Metadata"
-msgstr "Metadata"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -419,113 +641,38 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr ""
 
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "JSON"
-msgstr "JSON"
+msgid "Data"
+msgstr "Data"
 
-msgid "CSV"
-msgstr "CSV"
+msgid "Event"
+msgstr "Kejadian"
 
-msgid "XML"
-msgstr "XML"
-
-msgid "ADX"
+msgid "GML"
 msgstr ""
 
-msgid "PDF"
+msgid "Metadata"
+msgstr "Metadata"
+
+msgid "TEI"
 msgstr ""
-
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr "Tidak dikompres"
-
-msgid "Category combination"
-msgstr "Kombinasi kategori"
-
-msgid "Dashboard"
-msgstr "Dashboard"
-
-msgid "Data element groups"
-msgstr "Grup data elemen"
-
-msgid "Option sets"
-msgstr "Set opsi"
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "Kode"
-
-msgid "Name"
-msgstr "Nama"
-
-msgid "Selected organisation unit"
-msgstr "Unit org yang terpilih"
-
-msgid "Include children of organisation unit"
-msgstr "Ikutkan unit org di bawahnya"
-
-msgid "Include descendants of organisation unit"
-msgstr "Ikutkan unit org di bawahnya"
-
-msgid "Skip check"
-msgstr ""
-
-msgid "Check"
-msgstr ""
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr "Hanya baru"
-
-msgid "Updates only"
-msgstr "Hanya perbaruan"
-
-msgid "Delete"
-msgstr "Hapus"
-
-msgid "Auto"
-msgstr "Otomatis"
-
-msgid "Errors"
-msgstr "Kesalahan"
-
-msgid "Full"
-msgstr "Penuh"
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "Referensi"
-
-msgid "All"
-msgstr "Semua"
-
-msgid "None"
-msgstr "Tidak ada"
-
-msgid "Merge"
-msgstr "Gabung"
-
-msgid "Replace"
-msgstr "Gantikan"
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr "Selalu"
-
-msgid "Non Empty"
-msgstr "Tidak Kosong"

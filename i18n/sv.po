@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -19,18 +19,6 @@ msgstr ""
 msgid "Something went wrong when loading the current user!"
 msgstr ""
 
-msgid "Something went wrong when loading the data sets!"
-msgstr ""
-
-msgid "Filter data sets by name"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "One data set must be selected"
-msgstr ""
-
 msgid "Invalid date"
 msgstr ""
 
@@ -38,6 +26,12 @@ msgid "Start date must be before end date"
 msgstr ""
 
 msgid "End date must be after start date"
+msgstr ""
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
 msgstr ""
 
 msgid ""
@@ -64,20 +58,68 @@ msgstr "Torrkörning"
 msgid "Import"
 msgstr "Import"
 
+msgid "Any"
+msgstr ""
+
+msgid "Current"
+msgstr ""
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Provided"
+msgstr ""
+
+msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
+msgstr "Alla"
+
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Object"
-msgstr "Objektmeny"
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
 
 msgid "Compression"
 msgstr "Komprimering"
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "Koda"
+
+msgid "Name"
+msgstr "Namn"
 
 msgid "Data element ID scheme"
 msgstr "Dataelement ID schema"
 
 msgid "Data sets"
 msgstr "Dataset"
+
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
 
 msgid "End date"
 msgstr "Slutdatum"
@@ -94,22 +136,79 @@ msgstr "File"
 msgid "First row is header"
 msgstr ""
 
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr "Objektmeny"
+
 msgid "Flush mode"
 msgstr ""
 
-msgid "Format"
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Follow up status"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "JSONP"
 msgstr ""
 
 msgid "ID scheme"
 msgstr ""
 
+msgid "UID"
+msgstr ""
+
 msgid "Identifier"
+msgstr ""
+
+msgid "Errors"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
 msgstr ""
 
 msgid "Import report mode"
 msgstr ""
 
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "Ta bort"
+
 msgid "Import strategy"
+msgstr ""
+
+msgid "Include all attributes"
 msgstr ""
 
 msgid "Include children"
@@ -118,7 +217,25 @@ msgstr ""
 msgid "Include deleted"
 msgstr ""
 
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
 msgid "Inclusion"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
@@ -127,13 +244,76 @@ msgstr ""
 msgid "Async"
 msgstr "Asynk"
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
 msgid "Merge mode"
+msgstr ""
+
+msgid "Programs"
+msgstr "program"
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr "Instrumentbräda"
+
+msgid "Data element groups"
+msgstr "Dataelementgrupper"
+
+msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
 msgstr "Objekttyp"
 
+msgid "One object must be selected"
+msgstr ""
+
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr ""
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Organisation unit selection mode"
 msgstr ""
 
 msgid "Organisation unit"
@@ -145,13 +325,43 @@ msgstr ""
 msgid "Faster for large imports"
 msgstr ""
 
+msgid "Reference"
+msgstr "Referens"
+
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Programs"
-msgstr "program"
+msgid "Program end date"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
 
 msgid "Program stage"
+msgstr ""
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Completed"
+msgstr "Avklarad"
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "Program status"
 msgstr ""
 
 msgid "Skip audit"
@@ -178,14 +388,50 @@ msgstr "Start datum"
 msgid "Strategy"
 msgstr ""
 
+msgid "Program"
+msgstr ""
+
+msgid "Tracked entity"
+msgstr ""
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
 msgid "No jobs started yet."
 msgstr ""
 
 msgid "Recreate job"
 msgstr ""
-
-msgid "Completed"
-msgstr "Avklarad"
 
 msgid "In progress"
 msgstr ""
@@ -222,9 +468,6 @@ msgstr "Konflikter"
 
 msgid "Messages"
 msgstr "Meddelanden"
-
-msgid "UID"
-msgstr ""
 
 msgid "Type"
 msgstr "Typ"
@@ -268,9 +511,6 @@ msgstr ""
 msgid "more options"
 msgstr "flera val"
 
-msgid "One object must be selected"
-msgstr ""
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
@@ -278,18 +518,6 @@ msgid "At least one organisation unit must be selected"
 msgstr ""
 
 msgid "One organisation unit must be selected"
-msgstr ""
-
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Filter programs by name"
-msgstr ""
-
-msgid "At least one program must be selected"
-msgstr ""
-
-msgid "One program must be selected"
 msgstr ""
 
 msgid "One program stage must be selected"
@@ -325,6 +553,9 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr ""
 
@@ -337,6 +568,9 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr ""
 
@@ -345,18 +579,6 @@ msgstr "Ja"
 
 msgid "No"
 msgstr "Nej"
-
-msgid "Data"
-msgstr "Data"
-
-msgid "Event"
-msgstr ""
-
-msgid "GML"
-msgstr ""
-
-msgid "Metadata"
-msgstr "Metadata"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -415,113 +637,38 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr ""
 
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "JSON"
-msgstr "JSON"
+msgid "Data"
+msgstr "Data"
 
-msgid "CSV"
-msgstr "CSV"
-
-msgid "XML"
-msgstr "XML"
-
-msgid "ADX"
+msgid "Event"
 msgstr ""
 
-msgid "PDF"
+msgid "GML"
 msgstr ""
 
-msgid "Zip"
-msgstr ""
+msgid "Metadata"
+msgstr "Metadata"
 
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Category combination"
-msgstr ""
-
-msgid "Dashboard"
-msgstr "Instrumentbräda"
-
-msgid "Data element groups"
-msgstr "Dataelementgrupper"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "Koda"
-
-msgid "Name"
-msgstr "Namn"
-
-msgid "Selected organisation unit"
-msgstr ""
-
-msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Skip check"
-msgstr ""
-
-msgid "Check"
-msgstr "Kontrollera"
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "Ta bort"
-
-msgid "Auto"
-msgstr ""
-
-msgid "Errors"
-msgstr ""
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "Referens"
-
-msgid "All"
-msgstr "Alla"
-
-msgid "None"
-msgstr "Ingen"
-
-msgid "Merge"
-msgstr ""
-
-msgid "Replace"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
+msgid "TEI"
 msgstr ""

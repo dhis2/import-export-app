@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -19,18 +19,6 @@ msgstr ""
 msgid "Something went wrong when loading the current user!"
 msgstr "Noe gikk galt ved lasting av gjeldende bruker!"
 
-msgid "Something went wrong when loading the data sets!"
-msgstr "Noe gikk galt ved lasting av datasettene!"
-
-msgid "Filter data sets by name"
-msgstr "Filtrer datasettene etter navn"
-
-msgid "At least one data set must be selected"
-msgstr "Minst ett av datasettene må merkes"
-
-msgid "One data set must be selected"
-msgstr "Et datasett må merkes"
-
 msgid "Invalid date"
 msgstr "Ugyldig dato"
 
@@ -39,6 +27,12 @@ msgstr "Startdato må være før sluttdato"
 
 msgid "End date must be after start date"
 msgstr "Sluttdato må være etter startdato"
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
+msgstr "Format"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -64,20 +58,68 @@ msgstr "Testkjøring"
 msgid "Import"
 msgstr "Importer"
 
+msgid "Any"
+msgstr ""
+
+msgid "Current"
+msgstr ""
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Provided"
+msgstr ""
+
+msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
+msgstr "Alt"
+
 msgid "Atomic mode"
 msgstr "Atomisk modus"
 
-msgid "Object"
-msgstr "Objekt"
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr "Zip"
+
+msgid "GZip"
+msgstr "GZip"
+
+msgid "Uncompressed"
+msgstr "Ikke komprimert"
 
 msgid "Compression"
 msgstr "Kompresjon"
+
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Name"
+msgstr "Navn"
 
 msgid "Data element ID scheme"
 msgstr "ID-element for dataelement"
 
 msgid "Data sets"
 msgstr "Datasett"
+
+msgid "Filter data sets by name"
+msgstr "Filtrer datasettene etter navn"
+
+msgid "Something went wrong when loading the data sets!"
+msgstr "Noe gikk galt ved lasting av datasettene!"
+
+msgid "At least one data set must be selected"
+msgstr "Minst ett av datasettene må merkes"
+
+msgid "One data set must be selected"
+msgstr "Et datasett må merkes"
 
 msgid "End date"
 msgstr "Sluttdato"
@@ -94,23 +136,80 @@ msgstr "Fil"
 msgid "First row is header"
 msgstr "Første rad er overskrift"
 
+msgid "Auto"
+msgstr "Auto"
+
+msgid "Object"
+msgstr "Objekt"
+
 msgid "Flush mode"
 msgstr "Flushmodus"
 
-msgid "Format"
-msgstr "Format"
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Follow up status"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr "ADX"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "JSONP"
+msgstr ""
 
 msgid "ID scheme"
 msgstr "ID ordning"
 
+msgid "UID"
+msgstr "UID"
+
 msgid "Identifier"
 msgstr "Identifikator"
+
+msgid "Errors"
+msgstr "Feil"
+
+msgid "Full"
+msgstr "Full"
+
+msgid "Debug"
+msgstr "Feilsøking"
 
 msgid "Import report mode"
 msgstr "Importer rapportmodus"
 
+msgid "New and updates"
+msgstr "Ny og oppdateringer"
+
+msgid "New only"
+msgstr "Bare ny"
+
+msgid "Updates only"
+msgstr "Bare oppdateringer"
+
+msgid "Delete"
+msgstr "Slett"
+
 msgid "Import strategy"
 msgstr "Importer strategi"
+
+msgid "Include all attributes"
+msgstr ""
 
 msgid "Include children"
 msgstr "Inkluder underordnede"
@@ -118,8 +217,26 @@ msgstr "Inkluder underordnede"
 msgid "Include deleted"
 msgstr "Inkluder slettede"
 
+msgid "Selected organisation unit"
+msgstr "Merket organisasjonsenhet"
+
+msgid "Include children of organisation unit"
+msgstr "Inkluder underordnede av organisasjonsenhet"
+
+msgid "Include descendants of organisation unit"
+msgstr "Inkluder etterkommere av organisasjonsenheten"
+
 msgid "Inclusion"
 msgstr "Inkludering"
+
+msgid "Non Null"
+msgstr "Ikke null"
+
+msgid "Always"
+msgstr "Alltid"
+
+msgid "Non Empty"
+msgstr "Ikke tom"
 
 msgid "Inclusion strategy"
 msgstr "Inkluderingsstrategi"
@@ -127,14 +244,77 @@ msgstr "Inkluderingsstrategi"
 msgid "Async"
 msgstr "Asynk"
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Merge"
+msgstr "Slå sammen"
+
+msgid "Replace"
+msgstr "Erstatt"
+
 msgid "Merge mode"
 msgstr "Slå sammen modus"
+
+msgid "Programs"
+msgstr "Programmer"
+
+msgid "Category combination"
+msgstr "Kategorikombinasjon"
+
+msgid "Dashboard"
+msgstr "Dashbord"
+
+msgid "Data element groups"
+msgstr "Dataelementgrupper"
+
+msgid "Option sets"
+msgstr "Alternativsett"
 
 msgid "Object type"
 msgstr "Objekttype"
 
+msgid "One object must be selected"
+msgstr "Et objekt må merkes"
+
 msgid "Organisation unit ID scheme"
 msgstr "Organisasjonsenhet ID ordning"
+
+msgid "Selected organisation units"
+msgstr ""
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Organisation unit selection mode"
+msgstr ""
 
 msgid "Organisation unit"
 msgstr "Organisasjonsenhet"
@@ -145,14 +325,44 @@ msgstr "Forvarm buffer"
 msgid "Faster for large imports"
 msgstr "Raskere for store importeringer"
 
+msgid "Reference"
+msgstr "Referanse"
+
 msgid "Preheat mode"
 msgstr "Forvarmmodus"
 
-msgid "Programs"
-msgstr "Programmer"
+msgid "Program end date"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr "Filtrer programmer etter navn"
+
+msgid "Something went wrong when loading the programs!"
+msgstr "Noe gikk galt ved lasting av programmer!"
+
+msgid "At least one program must be selected"
+msgstr "Minst et program må merkes"
+
+msgid "One program must be selected"
+msgstr "Et program må merkes"
 
 msgid "Program stage"
 msgstr "Programfase"
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Completed"
+msgstr "Fullført"
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "Program status"
+msgstr ""
 
 msgid "Skip audit"
 msgstr "Hopp over tilsyn"
@@ -178,14 +388,50 @@ msgstr "Startdato"
 msgid "Strategy"
 msgstr "Strategi"
 
+msgid "Program"
+msgstr ""
+
+msgid "Tracked entity"
+msgstr ""
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
 msgid "No jobs started yet."
 msgstr "Ingen jobber startet ennå."
 
 msgid "Recreate job"
 msgstr "Gjenskap jobben"
-
-msgid "Completed"
-msgstr "Fullført"
 
 msgid "In progress"
 msgstr "Pågående"
@@ -222,9 +468,6 @@ msgstr "Konflikter"
 
 msgid "Messages"
 msgstr "Meldinger"
-
-msgid "UID"
-msgstr "UID"
 
 msgid "Type"
 msgstr "Type"
@@ -268,9 +511,6 @@ msgstr "Type teller"
 msgid "more options"
 msgstr "flere alternativer"
 
-msgid "One object must be selected"
-msgstr "Et objekt må merkes"
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr "Noe gikk galt ved lasting av organisasjonsenheter!"
 
@@ -279,18 +519,6 @@ msgstr "Minst en organisasjonsenhet må merkes"
 
 msgid "One organisation unit must be selected"
 msgstr "En organisasjonsenhet må merkes"
-
-msgid "Something went wrong when loading the programs!"
-msgstr "Noe gikk galt ved lasting av programmer!"
-
-msgid "Filter programs by name"
-msgstr "Filtrer programmer etter navn"
-
-msgid "At least one program must be selected"
-msgstr "Minst et program må merkes"
-
-msgid "One program must be selected"
-msgstr "Et program må merkes"
 
 msgid "One program stage must be selected"
 msgstr "En programfase må merkes"
@@ -325,6 +553,9 @@ msgstr "GML import"
 msgid "Metadata import"
 msgstr "Metadataimport"
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr "Dataeksport"
 
@@ -337,6 +568,9 @@ msgstr "Metadataeksport med avhengigheter"
 msgid "Metadata export"
 msgstr "Metadataeksport"
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr "Jobboversikt"
 
@@ -345,18 +579,6 @@ msgstr "Ja"
 
 msgid "No"
 msgstr "Nei"
-
-msgid "Data"
-msgstr "Data"
-
-msgid "Event"
-msgstr "Hendelse"
-
-msgid "GML"
-msgstr "GML"
-
-msgid "Metadata"
-msgstr "Metadata"
 
 msgid "Something went wrong when loading the class keys"
 msgstr "Noe gikk galt da ved lasting av klassetastene"
@@ -428,113 +650,38 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr "En klassetast må merkes"
 
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr "En ukjent feil oppsto. Vennligst prøv igjen senere"
 
-msgid "JSON"
-msgstr "JSON"
+msgid "Data"
+msgstr "Data"
 
-msgid "CSV"
-msgstr "CSV"
+msgid "Event"
+msgstr "Hendelse"
 
-msgid "XML"
-msgstr "XML"
+msgid "GML"
+msgstr "GML"
 
-msgid "ADX"
-msgstr "ADX"
+msgid "Metadata"
+msgstr "Metadata"
 
-msgid "PDF"
-msgstr "PDF"
-
-msgid "Zip"
-msgstr "Zip"
-
-msgid "GZip"
-msgstr "GZip"
-
-msgid "Uncompressed"
-msgstr "Ikke komprimert"
-
-msgid "Category combination"
-msgstr "Kategorikombinasjon"
-
-msgid "Dashboard"
-msgstr "Dashbord"
-
-msgid "Data element groups"
-msgstr "Dataelementgrupper"
-
-msgid "Option sets"
-msgstr "Alternativsett"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Kode"
-
-msgid "Name"
-msgstr "Navn"
-
-msgid "Selected organisation unit"
-msgstr "Merket organisasjonsenhet"
-
-msgid "Include children of organisation unit"
-msgstr "Inkluder underordnede av organisasjonsenhet"
-
-msgid "Include descendants of organisation unit"
-msgstr "Inkluder etterkommere av organisasjonsenheten"
-
-msgid "Skip check"
-msgstr "Hopp over sjekk"
-
-msgid "Check"
-msgstr "Sjekk"
-
-msgid "New and updates"
-msgstr "Ny og oppdateringer"
-
-msgid "New only"
-msgstr "Bare ny"
-
-msgid "Updates only"
-msgstr "Bare oppdateringer"
-
-msgid "Delete"
-msgstr "Slett"
-
-msgid "Auto"
-msgstr "Auto"
-
-msgid "Errors"
-msgstr "Feil"
-
-msgid "Full"
-msgstr "Full"
-
-msgid "Debug"
-msgstr "Feilsøking"
-
-msgid "Reference"
-msgstr "Referanse"
-
-msgid "All"
-msgstr "Alt"
-
-msgid "None"
-msgstr "Ingen"
-
-msgid "Merge"
-msgstr "Slå sammen"
-
-msgid "Replace"
-msgstr "Erstatt"
-
-msgid "Non Null"
-msgstr "Ikke null"
-
-msgid "Always"
-msgstr "Alltid"
-
-msgid "Non Empty"
-msgstr "Ikke tom"
+msgid "TEI"
+msgstr ""
