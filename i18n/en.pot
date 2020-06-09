@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-06-04T08:51:29.549Z\n"
-"PO-Revision-Date: 2020-06-04T08:51:29.549Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
+"PO-Revision-Date: 2020-06-09T09:41:35.316Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -647,135 +647,6 @@ msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
-
-msgid "JSON"
-msgstr ""
-
-msgid "CSV"
-msgstr ""
-
-msgid "XML"
-msgstr ""
-
-msgid "ADX"
-msgstr ""
-
-msgid "PDF"
-msgstr ""
-
-msgid "JSONP"
-msgstr ""
-
-msgid "Category combination"
-msgstr ""
-
-msgid "Dashboard"
-msgstr ""
-
-msgid "Data element groups"
-msgstr ""
-
-msgid "Option sets"
-msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "Selected organisation unit"
-msgstr ""
-
-msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Skip check"
-msgstr ""
-
-msgid "Check"
-msgstr ""
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
-msgid "Errors"
-msgstr ""
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr ""
-
-msgid "Merge"
-msgstr ""
-
-msgid "Replace"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
-msgstr ""
-
-msgid "Selected organisation units"
-msgstr ""
-
-msgid "Include children of selected organisation units"
-msgstr ""
-
-msgid "Include descendants of selected organisation unit"
-msgstr ""
-
-msgid "Data view organisation units associated with the current user"
-msgstr ""
-
-msgid "Data capture organisation units associated with the current user"
-msgstr ""
-
-msgid "All organisation units in the system"
-msgstr ""
-
-msgid "Program"
-msgstr ""
-
-msgid "Tracked entity"
-msgstr ""
-
-msgid "Active"
-msgstr ""
-
-msgid "Cancelled"
-msgstr ""
-
-msgid "Start and end date"
-msgstr ""
-
-msgid "Duration"
 msgstr ""
 
 msgid "Data"

@@ -30,8 +30,8 @@ const Events = ({ events }) => {
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
-                    {events.map(e => (
-                        <TableRow key={`job-summary-events-${e.id}`}>
+                    {events.map((e, i) => (
+                        <TableRow key={`job-summary-events-${e.id}-${i}`}>
                             <TableCell>{jsDateToString(e.date)}</TableCell>
                             <TableCell>{e.text}</TableCell>
                             <TableCell>{e.id}</TableCell>
