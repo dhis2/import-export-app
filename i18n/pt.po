@@ -423,7 +423,7 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "Carregando opções ..."
 
 msgid "Event Export"
 msgstr ""
