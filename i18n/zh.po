@@ -1,8 +1,8 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
 # easylin <lin_xd@126.com>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
@@ -61,10 +61,10 @@ msgid "Import"
 msgstr "导入"
 
 msgid "Any"
-msgstr ""
+msgstr "任何"
 
 msgid "Current"
-msgstr ""
+msgstr "当前"
 
 msgid "None"
 msgstr "无"
@@ -82,7 +82,7 @@ msgid "Atomic mode"
 msgstr "原子化模式"
 
 msgid "Class key"
-msgstr ""
+msgstr "分类键值"
 
 msgid "Zip"
 msgstr "Zip"
@@ -148,10 +148,10 @@ msgid "Flush mode"
 msgstr "缓存刷新模式"
 
 msgid "True"
-msgstr ""
+msgstr "真"
 
 msgid "False"
-msgstr ""
+msgstr "假"
 
 msgid "Follow up status"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Organisation unit ID scheme"
 msgstr "机构ID方案"
 
 msgid "Selected organisation units"
-msgstr ""
+msgstr "已选组织机构"
 
 msgid "Include children of selected organisation units"
 msgstr ""
@@ -355,16 +355,16 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "活跃的"
 
 msgid "Completed"
 msgstr "完成"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "已取消"
 
 msgid "Program status"
-msgstr ""
+msgstr "项目状态"
 
 msgid "Skip audit"
 msgstr "跳过审计"
@@ -391,16 +391,16 @@ msgid "Strategy"
 msgstr "策略"
 
 msgid "Program"
-msgstr ""
+msgstr "项目"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "跟踪的实体"
 
 msgid "Filter by"
-msgstr ""
+msgstr "过滤"
 
 msgid "Tracked entity types"
-msgstr ""
+msgstr "跟踪实体类型"
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -415,7 +415,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "用户"
 
 msgid "Filter users by name"
 msgstr ""
@@ -673,4 +673,4 @@ msgid "Metadata"
 msgstr "元数据"
 
 msgid "TEI"
-msgstr ""
+msgstr "跟踪实体"

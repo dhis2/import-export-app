@@ -1,16 +1,17 @@
 # 
 # Translators:
-# phil_dhis2, 2019
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# Carwoto Sa'an <carwoto@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020\n"
+"Last-Translator: Carwoto Sa'an <carwoto@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +65,7 @@ msgid "Any"
 msgstr ""
 
 msgid "Current"
-msgstr ""
+msgstr "Saat ini"
 
 msgid "None"
 msgstr "Tidak ada"
@@ -355,16 +356,16 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Aktif"
 
 msgid "Completed"
 msgstr "Selesai"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Dibatalkan"
 
 msgid "Program status"
-msgstr ""
+msgstr "Status program"
 
 msgid "Skip audit"
 msgstr ""
@@ -391,10 +392,10 @@ msgid "Strategy"
 msgstr "Strategi"
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "Entitas dilacak"
 
 msgid "Filter by"
 msgstr ""
@@ -415,7 +416,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "User"
 
 msgid "Filter users by name"
 msgstr ""

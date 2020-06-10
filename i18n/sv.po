@@ -62,7 +62,7 @@ msgid "Any"
 msgstr ""
 
 msgid "Current"
-msgstr ""
+msgstr "AKTUELL"
 
 msgid "None"
 msgstr "Ingen"
@@ -353,13 +353,13 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Aktiva"
 
 msgid "Completed"
 msgstr "Avklarad"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Avbruten"
 
 msgid "Program status"
 msgstr ""
@@ -389,13 +389,13 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Tracked entity"
 msgstr ""
 
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrera med"
 
 msgid "Tracked entity types"
 msgstr ""
@@ -413,7 +413,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "användare"
 
 msgid "Filter users by name"
 msgstr ""
@@ -671,4 +671,4 @@ msgid "Metadata"
 msgstr "Metadata"
 
 msgid "TEI"
-msgstr ""
+msgstr "TEI"

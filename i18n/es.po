@@ -1,16 +1,17 @@
 # 
 # Translators:
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Marta Vila <marta@dhis2.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# ericbp <ericbarredap@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: ericbp <ericbarredap@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +65,7 @@ msgid "Any"
 msgstr ""
 
 msgid "Current"
-msgstr ""
+msgstr "En uso"
 
 msgid "None"
 msgstr "Ninguno"
@@ -148,10 +149,10 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "Verdadero"
 
 msgid "False"
-msgstr ""
+msgstr "Falso"
 
 msgid "Follow up status"
 msgstr ""
@@ -298,7 +299,7 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Selected organisation units"
-msgstr ""
+msgstr "Unidades organizativas seleccionadas"
 
 msgid "Include children of selected organisation units"
 msgstr ""
@@ -355,16 +356,16 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 msgid "Completed"
 msgstr "Completado"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancelar"
 
 msgid "Program status"
-msgstr ""
+msgstr "Estado del programa"
 
 msgid "Skip audit"
 msgstr ""
@@ -391,10 +392,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programa"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "Entidad de seguimiento"
 
 msgid "Filter by"
 msgstr ""
@@ -415,7 +416,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "Usuarios"
 
 msgid "Filter users by name"
 msgstr ""
@@ -673,4 +674,4 @@ msgid "Metadata"
 msgstr "Metadatos"
 
 msgid "TEI"
-msgstr ""
+msgstr "TEI"

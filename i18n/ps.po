@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -19,18 +19,6 @@ msgstr ""
 msgid "Something went wrong when loading the current user!"
 msgstr ""
 
-msgid "Something went wrong when loading the data sets!"
-msgstr ""
-
-msgid "Filter data sets by name"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "One data set must be selected"
-msgstr ""
-
 msgid "Invalid date"
 msgstr ""
 
@@ -38,6 +26,12 @@ msgid "Start date must be before end date"
 msgstr ""
 
 msgid "End date must be after start date"
+msgstr ""
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
 msgstr ""
 
 msgid ""
@@ -64,20 +58,68 @@ msgstr ""
 msgid "Import"
 msgstr "واردول"
 
+msgid "Any"
+msgstr ""
+
+msgid "Current"
+msgstr "اوسنۍ"
+
+msgid "None"
+msgstr "هېڅ یو"
+
+msgid "Provided"
+msgstr ""
+
+msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
+msgstr "ټول"
+
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Object"
-msgstr "شی (څیز)"
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
 
 msgid "Compression"
 msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "کوډ یا شفر"
+
+msgid "Name"
+msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
 
 msgid "Data element ID scheme"
 msgstr ""
 
 msgid "Data sets"
 msgstr "د مالوماتو یا ډاټا ټولګې"
+
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
 
 msgid "End date"
 msgstr "د پای نېټه"
@@ -94,22 +136,79 @@ msgstr "فایل"
 msgid "First row is header"
 msgstr ""
 
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr "شی (څیز)"
+
 msgid "Flush mode"
 msgstr ""
 
-msgid "Format"
+msgid "True"
+msgstr "صحیح"
+
+msgid "False"
+msgstr "غلط"
+
+msgid "Follow up status"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "JSONP"
 msgstr ""
 
 msgid "ID scheme"
 msgstr ""
 
+msgid "UID"
+msgstr ""
+
 msgid "Identifier"
+msgstr ""
+
+msgid "Errors"
+msgstr "تېروتنې"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
 msgstr ""
 
 msgid "Import report mode"
 msgstr ""
 
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "خذف یې کړئ"
+
 msgid "Import strategy"
+msgstr ""
+
+msgid "Include all attributes"
 msgstr ""
 
 msgid "Include children"
@@ -118,7 +217,25 @@ msgstr ""
 msgid "Include deleted"
 msgstr ""
 
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
 msgid "Inclusion"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
@@ -127,13 +244,76 @@ msgstr ""
 msgid "Async"
 msgstr ""
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr "ځاېناستول"
+
 msgid "Merge mode"
+msgstr ""
+
+msgid "Programs"
+msgstr "پروګرامونه"
+
+msgid "Category combination"
+msgstr "د کټګورۍ ترکیب"
+
+msgid "Dashboard"
+msgstr "ډېشبورډ [ ډېسبورډ ]"
+
+msgid "Data element groups"
+msgstr "د مالوماتو د برخې ګروپونه"
+
+msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
 msgstr ""
 
+msgid "One object must be selected"
+msgstr ""
+
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr "د سازمان غوره شوي واحدونه"
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Organisation unit selection mode"
 msgstr ""
 
 msgid "Organisation unit"
@@ -145,14 +325,44 @@ msgstr ""
 msgid "Faster for large imports"
 msgstr ""
 
+msgid "Reference"
+msgstr "مرجع / مأخذ"
+
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Programs"
-msgstr "پروګرامونه"
+msgid "Program end date"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
 
 msgid "Program stage"
 msgstr "د پروګرام پړاو"
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Completed"
+msgstr "بشپړ شوی"
+
+msgid "Cancelled"
+msgstr "لغوه شوی"
+
+msgid "Program status"
+msgstr "د پروګرام وضعیت او څرنګوالۍ"
 
 msgid "Skip audit"
 msgstr ""
@@ -178,14 +388,50 @@ msgstr "د پیل نېټه"
 msgid "Strategy"
 msgstr ""
 
+msgid "Program"
+msgstr "پروګرام"
+
+msgid "Tracked entity"
+msgstr "تعقیب شوی نهاد"
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Users"
+msgstr "کاروونکي [ کاروونکي ]"
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
 msgid "No jobs started yet."
 msgstr ""
 
 msgid "Recreate job"
 msgstr ""
-
-msgid "Completed"
-msgstr "بشپړ شوی"
 
 msgid "In progress"
 msgstr "دوام لري"
@@ -222,9 +468,6 @@ msgstr ""
 
 msgid "Messages"
 msgstr "پېغامونه"
-
-msgid "UID"
-msgstr ""
 
 msgid "Type"
 msgstr "نمونه/ډول"
@@ -268,9 +511,6 @@ msgstr ""
 msgid "more options"
 msgstr ""
 
-msgid "One object must be selected"
-msgstr ""
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
@@ -278,18 +518,6 @@ msgid "At least one organisation unit must be selected"
 msgstr ""
 
 msgid "One organisation unit must be selected"
-msgstr ""
-
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Filter programs by name"
-msgstr ""
-
-msgid "At least one program must be selected"
-msgstr ""
-
-msgid "One program must be selected"
 msgstr ""
 
 msgid "One program stage must be selected"
@@ -325,6 +553,9 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr ""
 
@@ -337,6 +568,9 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr ""
 
@@ -345,18 +579,6 @@ msgstr "هو [ درست ]"
 
 msgid "No"
 msgstr "نه [ نه ]"
-
-msgid "Data"
-msgstr "مالومات (ډاټا)"
-
-msgid "Event"
-msgstr "پېښه"
-
-msgid "GML"
-msgstr ""
-
-msgid "Metadata"
-msgstr ""
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -415,113 +637,38 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr ""
 
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "JSON"
-msgstr "JSON"
+msgid "Data"
+msgstr "مالومات (ډاټا)"
 
-msgid "CSV"
-msgstr "CSV"
+msgid "Event"
+msgstr "پېښه"
 
-msgid "XML"
-msgstr "XML"
-
-msgid "ADX"
+msgid "GML"
 msgstr ""
 
-msgid "PDF"
+msgid "Metadata"
 msgstr ""
 
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Category combination"
-msgstr "د کټګورۍ ترکیب"
-
-msgid "Dashboard"
-msgstr "ډېشبورډ [ ډېسبورډ ]"
-
-msgid "Data element groups"
-msgstr "د مالوماتو د برخې ګروپونه"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "کوډ یا شفر"
-
-msgid "Name"
-msgstr "نوم [ ژباړه ـ نښه ـ نوم ]"
-
-msgid "Selected organisation unit"
-msgstr ""
-
-msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Skip check"
-msgstr ""
-
-msgid "Check"
-msgstr ""
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "خذف یې کړئ"
-
-msgid "Auto"
-msgstr ""
-
-msgid "Errors"
-msgstr "تېروتنې"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "مرجع / مأخذ"
-
-msgid "All"
-msgstr "ټول"
-
-msgid "None"
-msgstr "هېڅ یو"
-
-msgid "Merge"
-msgstr ""
-
-msgid "Replace"
-msgstr "ځاېناستول"
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
+msgid "TEI"
 msgstr ""

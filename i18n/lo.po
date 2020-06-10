@@ -62,7 +62,7 @@ msgid "Any"
 msgstr ""
 
 msgid "Current"
-msgstr ""
+msgstr "ປະຈຸບັນ"
 
 msgid "None"
 msgstr "ບໍ່ມີ"
@@ -296,7 +296,7 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Selected organisation units"
-msgstr ""
+msgstr "ເລືອກ​ເອົາຫົວ​ໜ່ວຍການຈັດຕັ້ງ​"
 
 msgid "Include children of selected organisation units"
 msgstr ""
@@ -353,16 +353,16 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "ທີ່ຍັງນໍາໃຊ້ຢູ່"
 
 msgid "Completed"
 msgstr "ສໍາເລັດແລ້ວ"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "ຍົກເລີກແລ້ວ"
 
 msgid "Program status"
-msgstr ""
+msgstr "ສະຖານະຂອງສາຍງານ"
 
 msgid "Skip audit"
 msgstr ""
@@ -389,10 +389,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "Tracked Entity"
 
 msgid "Filter by"
 msgstr ""
@@ -413,7 +413,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "ຜູ້ນໍາໃຊ້"
 
 msgid "Filter users by name"
 msgstr ""
@@ -671,4 +671,4 @@ msgid "Metadata"
 msgstr "ໂຄງຮ່າງຖານຂໍ້ມູນ"
 
 msgid "TEI"
-msgstr ""
+msgstr "ຈໍານວນກໍລະນີທີ່ປ້ອນເຂົ້າ"

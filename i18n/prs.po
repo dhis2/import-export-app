@@ -61,7 +61,7 @@ msgid "Any"
 msgstr ""
 
 msgid "Current"
-msgstr ""
+msgstr "کنونی/ فعلی"
 
 msgid "None"
 msgstr "هیچ‌کدام"
@@ -145,10 +145,10 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "درست"
 
 msgid "False"
-msgstr ""
+msgstr "اشتباه"
 
 msgid "Follow up status"
 msgstr ""
@@ -295,7 +295,7 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Selected organisation units"
-msgstr ""
+msgstr "واحد های سازمان انتخاب شده"
 
 msgid "Include children of selected organisation units"
 msgstr ""
@@ -352,7 +352,7 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "فعال"
 
 msgid "Completed"
 msgstr "تکمیل شد"
@@ -388,10 +388,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "برنامه"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "ردیابی هویت"
 
 msgid "Filter by"
 msgstr ""
@@ -412,7 +412,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "استفاده کننده گان"
 
 msgid "Filter users by name"
 msgstr ""

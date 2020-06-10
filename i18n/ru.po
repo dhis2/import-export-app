@@ -2,13 +2,14 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Wanda <wanda@frontlineaids.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Wanda <wanda@frontlineaids.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,10 +60,10 @@ msgid "Import"
 msgstr "Импорт"
 
 msgid "Any"
-msgstr ""
+msgstr "Любой"
 
 msgid "Current"
-msgstr ""
+msgstr "Текущий"
 
 msgid "None"
 msgstr "Не известное значение"
@@ -146,10 +147,10 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "Истина"
 
 msgid "False"
-msgstr ""
+msgstr "Ложь"
 
 msgid "Follow up status"
 msgstr ""
@@ -296,7 +297,7 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Selected organisation units"
-msgstr ""
+msgstr "Выбранные организации/отделы"
 
 msgid "Include children of selected organisation units"
 msgstr ""
@@ -353,16 +354,16 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Действующий"
 
 msgid "Completed"
 msgstr "Завершенный"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Отмененный"
 
 msgid "Program status"
-msgstr ""
+msgstr "Статус программы"
 
 msgid "Skip audit"
 msgstr ""
@@ -389,16 +390,16 @@ msgid "Strategy"
 msgstr "Стратегия"
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "Tracked entity"
 
 msgid "Filter by"
 msgstr ""
 
 msgid "Tracked entity types"
-msgstr ""
+msgstr "Типы отслеживаемых объектов"
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -413,7 +414,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "Пользователи"
 
 msgid "Filter users by name"
 msgstr ""

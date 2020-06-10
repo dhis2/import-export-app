@@ -61,10 +61,10 @@ msgid "Import"
 msgstr "Imprtar"
 
 msgid "Any"
-msgstr ""
+msgstr "Qualquer"
 
 msgid "Current"
-msgstr ""
+msgstr "Corrente"
 
 msgid "None"
 msgstr "Nenhum"
@@ -148,10 +148,10 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "Verdade"
 
 msgid "False"
-msgstr ""
+msgstr "Falso"
 
 msgid "Follow up status"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Selected organisation units"
-msgstr ""
+msgstr "Unidades organizacionais selecionadas"
 
 msgid "Include children of selected organisation units"
 msgstr ""
@@ -355,13 +355,13 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 msgid "Completed"
 msgstr "Completo"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancelado"
 
 msgid "Program status"
 msgstr ""
@@ -391,13 +391,13 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programa"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "Entidade Rastreada"
 
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrar por"
 
 msgid "Tracked entity types"
 msgstr ""
@@ -415,7 +415,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "Utilizadores"
 
 msgid "Filter users by name"
 msgstr ""
@@ -673,4 +673,4 @@ msgid "Metadata"
 msgstr "Metadados"
 
 msgid "TEI"
-msgstr ""
+msgstr "TEI"

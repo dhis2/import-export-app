@@ -62,7 +62,7 @@ msgid "Any"
 msgstr ""
 
 msgid "Current"
-msgstr ""
+msgstr "موجودہ"
 
 msgid "None"
 msgstr "کوئی نہں"
@@ -146,10 +146,10 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "سچ ہے"
 
 msgid "False"
-msgstr ""
+msgstr "غلط"
 
 msgid "Follow up status"
 msgstr ""
@@ -353,16 +353,16 @@ msgid "Program start date"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "فعال"
 
 msgid "Completed"
 msgstr "مکمل"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "منسوخ"
 
 msgid "Program status"
-msgstr ""
+msgstr "پروگرام کی حیثیت"
 
 msgid "Skip audit"
 msgstr ""
@@ -389,10 +389,10 @@ msgid "Strategy"
 msgstr "حکمت عملی"
 
 msgid "Program"
-msgstr ""
+msgstr "پروگرام"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "ٹریک شدہ ادارے"
 
 msgid "Filter by"
 msgstr ""
@@ -413,7 +413,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "صارف"
 
 msgid "Filter users by name"
 msgstr ""
