@@ -364,7 +364,7 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 msgid "Program status"
-msgstr ""
+msgstr "Status do programa"
 
 msgid "Skip audit"
 msgstr ""
