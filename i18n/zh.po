@@ -31,7 +31,7 @@ msgid "End date must be after start date"
 msgstr "结束日期必须晚于起始日期"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "无效的期间"
 
 msgid "Format"
 msgstr "格式"
@@ -70,10 +70,10 @@ msgid "None"
 msgstr "无"
 
 msgid "Provided"
-msgstr ""
+msgstr "提供"
 
 msgid "Assigned user mode"
-msgstr ""
+msgstr "指派的用户模式"
 
 msgid "All"
 msgstr "全部"
@@ -154,7 +154,7 @@ msgid "False"
 msgstr "假"
 
 msgid "Follow up status"
-msgstr ""
+msgstr "后续跟踪状态"
 
 msgid "JSON"
 msgstr "JSON"
@@ -172,7 +172,7 @@ msgid "PDF"
 msgstr "PDF"
 
 msgid "JSONP"
-msgstr ""
+msgstr "JSONP"
 
 msgid "ID scheme"
 msgstr "ID方案"
@@ -211,7 +211,7 @@ msgid "Import strategy"
 msgstr "导入策略"
 
 msgid "Include all attributes"
-msgstr ""
+msgstr "包括所有属性"
 
 msgid "Include children"
 msgstr "包括下属"
@@ -247,22 +247,22 @@ msgid "Async"
 msgstr "异步"
 
 msgid "Last updated duration"
-msgstr ""
+msgstr "最近更新的期间"
 
 msgid "Last updated end date"
-msgstr ""
+msgstr "最近更新的结束日期"
 
 msgid "Start and end date"
-msgstr ""
+msgstr "开始-结束日期"
 
 msgid "Duration"
-msgstr ""
+msgstr "期间"
 
 msgid "Filter by last updated"
-msgstr ""
+msgstr "按最近更新过滤"
 
 msgid "Last updated start date"
-msgstr ""
+msgstr "上次更新的起始日期"
 
 msgid "Merge"
 msgstr "合并"
@@ -301,22 +301,22 @@ msgid "Selected organisation units"
 msgstr "已选组织机构"
 
 msgid "Include children of selected organisation units"
-msgstr ""
+msgstr "包括选择机构的下属"
 
 msgid "Include descendants of selected organisation unit"
-msgstr ""
+msgstr "包括选择机构的各级下属"
 
 msgid "Data view organisation units associated with the current user"
-msgstr ""
+msgstr "当前用户的机构数据查看"
 
 msgid "Data capture organisation units associated with the current user"
-msgstr ""
+msgstr "当前用户的机构数据采集"
 
 msgid "All organisation units in the system"
-msgstr ""
+msgstr "系统所有机构"
 
 msgid "Organisation unit selection mode"
-msgstr ""
+msgstr "机构选择模式"
 
 msgid "Organisation unit"
 msgstr "组织机构"
@@ -334,7 +334,7 @@ msgid "Preheat mode"
 msgstr "预热模式"
 
 msgid "Program end date"
-msgstr ""
+msgstr "项目结束日期"
 
 msgid "Filter programs by name"
 msgstr "按名称过滤项目"
@@ -352,7 +352,7 @@ msgid "Program stage"
 msgstr "项目阶段"
 
 msgid "Program start date"
-msgstr ""
+msgstr "项目开始日期"
 
 msgid "Active"
 msgstr "活跃的"
@@ -403,31 +403,31 @@ msgid "Tracked entity types"
 msgstr "跟踪实体类型"
 
 msgid "Filter tracked entity types by name"
-msgstr ""
+msgstr "按名称过滤跟踪实体类型"
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr ""
+msgstr "载入实体类型发生错误"
 
 msgid "At least one tracked entity type must be selected"
-msgstr ""
+msgstr "至少选择一个跟踪实体类型"
 
 msgid "One tracked entity type must be selected"
-msgstr ""
+msgstr "至少选择一个跟踪实体类型"
 
 msgid "Users"
 msgstr "用户"
 
 msgid "Filter users by name"
-msgstr ""
+msgstr "按名称过滤用户"
 
 msgid "Something went wrong when loading the users!"
-msgstr ""
+msgstr "载入用户发生错误"
 
 msgid "At least one user must be selected"
-msgstr ""
+msgstr "必须选择一个用户"
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "必须选择一个用户"
 
 msgid "No jobs started yet."
 msgstr "还没有起到的作业"
@@ -556,7 +556,7 @@ msgid "Metadata import"
 msgstr "元数据导入"
 
 msgid "TEI import"
-msgstr ""
+msgstr "实体导入"
 
 msgid "Data export"
 msgstr "数据导出"
@@ -571,7 +571,7 @@ msgid "Metadata export"
 msgstr "元数据导出"
 
 msgid "TEI export"
-msgstr ""
+msgstr "实体导出"
 
 msgid "Job overview"
 msgstr "作业概要"
@@ -640,22 +640,22 @@ msgid "A class key must be selected"
 msgstr "必须选择应该类键值"
 
 msgid "Tracked entity instances export"
-msgstr ""
+msgstr "跟踪实体导出"
 
 msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
-msgstr ""
+msgstr "导出跟踪实体实例为XML，JSON，JSONP或CSV格式"
 
 msgid "HTTP error when fetching tracked entity instances"
-msgstr ""
+msgstr "提取跟踪实体实例发生HTTP错误"
 
 msgid "At least one of the 'last updated' date fields must be specified"
-msgstr ""
+msgstr "至少选择一个最近更新的日期字段"
 
 msgid "Tracked entity instances import"
-msgstr ""
+msgstr "跟踪实体实例导入"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr ""
+msgstr "从JSON或XML文件导入跟踪实体实例"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "发生未知错误，请稍后再试"
