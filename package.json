@@ -30,7 +30,7 @@
     "dependencies": {
         "@dhis2/app-runtime": "^2.2.1",
         "@dhis2/ui-core": "^4.21.1",
-        "@dhis2/ui-forms": "^1.0.1",
+        "@dhis2/ui-forms": "^5.0.4",
         "jszip": "^3.4.0",
         "react-router-dom": "^5.2.0"
     },
