@@ -115,7 +115,7 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "ADX"
 msgstr ""
