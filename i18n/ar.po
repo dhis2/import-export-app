@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Hamza Assada <7amza.it@gmail.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Hamza Assada <7amza.it@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,18 +20,6 @@ msgstr ""
 msgid "Something went wrong when loading the current user!"
 msgstr "حدث خطأ أثناء تحميل المستخدم الحالي"
 
-msgid "Something went wrong when loading the data sets!"
-msgstr "حدث خطأ ما أثناء تحميل مجموعات البيانات!"
-
-msgid "Filter data sets by name"
-msgstr "تصفية مجموعة البيانات حسب الإسم"
-
-msgid "At least one data set must be selected"
-msgstr "يجب تحديد مجموعة بيانات واحدة على الأقل"
-
-msgid "One data set must be selected"
-msgstr "يجب تحديد مجموعة بيانات واحدة"
-
 msgid "Invalid date"
 msgstr "تاريخ غير صالح"
 
@@ -40,6 +28,12 @@ msgstr "يجب أن يكون تاريخ البدء قبل تاريخ الانت�
 
 msgid "End date must be after start date"
 msgstr "يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء"
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
+msgstr "التنسيق"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -66,20 +60,68 @@ msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
 msgid "Import"
 msgstr "استيراد"
 
+msgid "Any"
+msgstr "أي"
+
+msgid "Current"
+msgstr "الحالي"
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "Provided"
+msgstr ""
+
+msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
+msgstr "الجميع"
+
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Object"
-msgstr "الكائن"
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr "غير مضغوط"
 
 msgid "Compression"
 msgstr "الضغط"
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "الرمز"
+
+msgid "Name"
+msgstr "الاسم"
 
 msgid "Data element ID scheme"
 msgstr ""
 
 msgid "Data sets"
 msgstr "حزم البيانات"
+
+msgid "Filter data sets by name"
+msgstr "تصفية مجموعة البيانات حسب الإسم"
+
+msgid "Something went wrong when loading the data sets!"
+msgstr "حدث خطأ ما أثناء تحميل مجموعات البيانات!"
+
+msgid "At least one data set must be selected"
+msgstr "يجب تحديد مجموعة بيانات واحدة على الأقل"
+
+msgid "One data set must be selected"
+msgstr "يجب تحديد مجموعة بيانات واحدة"
 
 msgid "End date"
 msgstr "تاريخ النهاية"
@@ -96,23 +138,80 @@ msgstr "ملف"
 msgid "First row is header"
 msgstr "الصف الأول هو عناوين الأعمدة"
 
+msgid "Auto"
+msgstr "تلقائي"
+
+msgid "Object"
+msgstr "الكائن"
+
 msgid "Flush mode"
 msgstr ""
 
-msgid "Format"
-msgstr "التنسيق"
+msgid "True"
+msgstr "صح"
+
+msgid "False"
+msgstr "خطأ"
+
+msgid "Follow up status"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "JSONP"
+msgstr ""
 
 msgid "ID scheme"
 msgstr ""
 
+msgid "UID"
+msgstr "UID"
+
 msgid "Identifier"
 msgstr "المعرف"
+
+msgid "Errors"
+msgstr "اخطاء"
+
+msgid "Full"
+msgstr "كامل"
+
+msgid "Debug"
+msgstr ""
 
 msgid "Import report mode"
 msgstr "اسلوب تقرير الاستيراد"
 
+msgid "New and updates"
+msgstr "جديد وتحديثات"
+
+msgid "New only"
+msgstr "الجديد فقظ"
+
+msgid "Updates only"
+msgstr "تحديثات فقط"
+
+msgid "Delete"
+msgstr "حذف"
+
 msgid "Import strategy"
 msgstr "استراتيجية الاستيراد"
+
+msgid "Include all attributes"
+msgstr ""
 
 msgid "Include children"
 msgstr "تضمين الأبناء"
@@ -120,8 +219,26 @@ msgstr "تضمين الأبناء"
 msgid "Include deleted"
 msgstr "تضمين ماتم حذفه"
 
+msgid "Selected organisation unit"
+msgstr "الوحدة التنظيمية المختارة"
+
+msgid "Include children of organisation unit"
+msgstr "تضمين الوحدات الفرعية الأبناء من الوحدة التنظيمية"
+
+msgid "Include descendants of organisation unit"
+msgstr "تضمين كافة الوحدات الفرعية المتفرعة من الوحدة التنظيمية"
+
 msgid "Inclusion"
 msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr "دائماً"
+
+msgid "Non Empty"
+msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
 
 msgid "Inclusion strategy"
 msgstr "استراتيجية الإدماج"
@@ -129,13 +246,76 @@ msgstr "استراتيجية الإدماج"
 msgid "Async"
 msgstr "غير متزامن"
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Merge"
+msgstr "دمج"
+
+msgid "Replace"
+msgstr "استبدال"
+
 msgid "Merge mode"
 msgstr "اسلوب الدمج"
+
+msgid "Programs"
+msgstr "البرامج"
+
+msgid "Category combination"
+msgstr "مزيج الفئات"
+
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+msgid "Data element groups"
+msgstr "مجموعات عناصر البيانات"
+
+msgid "Option sets"
+msgstr ""
 
 msgid "Object type"
 msgstr "نوع العنصر"
 
+msgid "One object must be selected"
+msgstr "يجب تحديد كائن واحد على الأقل"
+
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr "الوحدات التنظيمية المحددة"
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Organisation unit selection mode"
 msgstr ""
 
 msgid "Organisation unit"
@@ -147,14 +327,44 @@ msgstr ""
 msgid "Faster for large imports"
 msgstr "أسرع لعمليات الإستيراد الكبيرة"
 
+msgid "Reference"
+msgstr "المرجع"
+
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Programs"
-msgstr "البرامج"
+msgid "Program end date"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr "تصفية البرامج حسب الإسم"
+
+msgid "Something went wrong when loading the programs!"
+msgstr "حدث خطأ ما أثناء تحميل البرامج!"
+
+msgid "At least one program must be selected"
+msgstr "يجب تحديد برنامج واحد على الأقل"
+
+msgid "One program must be selected"
+msgstr "يجب تحديد برنامج واحد"
 
 msgid "Program stage"
 msgstr "مرحلة البرنامج"
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Completed"
+msgstr "اكتمل"
+
+msgid "Cancelled"
+msgstr "تم الإلغاء"
+
+msgid "Program status"
+msgstr "حالة البرنامج"
 
 msgid "Skip audit"
 msgstr "تجاهل التدقيق"
@@ -180,14 +390,50 @@ msgstr "تاريخ البداية"
 msgid "Strategy"
 msgstr "استراتيجية"
 
+msgid "Program"
+msgstr "البرنامج"
+
+msgid "Tracked entity"
+msgstr "الكيان المتتبع"
+
+msgid "Filter by"
+msgstr "تصفية حسب"
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Users"
+msgstr "المستخدمون"
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
 msgid "No jobs started yet."
 msgstr "لم تبدأ أي مهام حتى الآن."
 
 msgid "Recreate job"
 msgstr "إعادة إنشاء المهمة"
-
-msgid "Completed"
-msgstr "اكتمل"
 
 msgid "In progress"
 msgstr "قيد التقدم"
@@ -224,9 +470,6 @@ msgstr "تعارضات"
 
 msgid "Messages"
 msgstr "الرسائل"
-
-msgid "UID"
-msgstr "UID"
 
 msgid "Type"
 msgstr "النوع"
@@ -270,9 +513,6 @@ msgstr ""
 msgid "more options"
 msgstr "المزيد من الخيارات"
 
-msgid "One object must be selected"
-msgstr "يجب تحديد كائن واحد على الأقل"
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr "حدث خطأ ما أثناء تحميل الوحدات التنظيمية!"
 
@@ -281,18 +521,6 @@ msgstr "يجب تحديد وحدة تنظيمية واحدة على الأقل"
 
 msgid "One organisation unit must be selected"
 msgstr "يجب تحديد وحدة تنظيمية واحدة"
-
-msgid "Something went wrong when loading the programs!"
-msgstr "حدث خطأ ما أثناء تحميل البرامج!"
-
-msgid "Filter programs by name"
-msgstr "تصفية البرامج حسب الإسم"
-
-msgid "At least one program must be selected"
-msgstr "يجب تحديد برنامج واحد على الأقل"
-
-msgid "One program must be selected"
-msgstr "يجب تحديد برنامج واحد"
 
 msgid "One program stage must be selected"
 msgstr "يجب تحديد مرحلة برنامج واحدة"
@@ -327,6 +555,9 @@ msgstr "استيراد GML"
 msgid "Metadata import"
 msgstr "استيراد البيانات الوصفية"
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr "تصدير البيانات"
 
@@ -339,6 +570,9 @@ msgstr ""
 msgid "Metadata export"
 msgstr "تصدير البيانات الوصفية"
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr "نظرة عامة على المهمة"
 
@@ -347,18 +581,6 @@ msgstr "نعم"
 
 msgid "No"
 msgstr "لا"
-
-msgid "Data"
-msgstr "بيانات"
-
-msgid "Event"
-msgstr "حدث"
-
-msgid "GML"
-msgstr ""
-
-msgid "Metadata"
-msgstr "البيانات الوصفية"
 
 msgid "Something went wrong when loading the class keys"
 msgstr "حدث خطأ ما عند تحميل class keys"
@@ -427,113 +649,38 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr "يجب تحديد class key"
 
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
 
-msgid "JSON"
-msgstr "JSON"
+msgid "Data"
+msgstr "بيانات"
 
-msgid "CSV"
-msgstr "CSV"
+msgid "Event"
+msgstr "حدث"
 
-msgid "XML"
-msgstr "XML"
-
-msgid "ADX"
+msgid "GML"
 msgstr ""
 
-msgid "PDF"
-msgstr ""
+msgid "Metadata"
+msgstr "البيانات الوصفية"
 
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr "غير مضغوط"
-
-msgid "Category combination"
-msgstr "مزيج الفئات"
-
-msgid "Dashboard"
-msgstr "لوحة المعلومات"
-
-msgid "Data element groups"
-msgstr "مجموعات عناصر البيانات"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "الرمز"
-
-msgid "Name"
-msgstr "الاسم"
-
-msgid "Selected organisation unit"
-msgstr "الوحدة التنظيمية المختارة"
-
-msgid "Include children of organisation unit"
-msgstr "تضمين الوحدات الفرعية الأبناء من الوحدة التنظيمية"
-
-msgid "Include descendants of organisation unit"
-msgstr "تضمين كافة الوحدات الفرعية المتفرعة من الوحدة التنظيمية"
-
-msgid "Skip check"
-msgstr "تجاوز التفحص"
-
-msgid "Check"
-msgstr "تحقق"
-
-msgid "New and updates"
-msgstr "جديد وتحديثات"
-
-msgid "New only"
-msgstr "الجديد فقظ"
-
-msgid "Updates only"
-msgstr "تحديثات فقط"
-
-msgid "Delete"
-msgstr "حذف"
-
-msgid "Auto"
-msgstr "تلقائي"
-
-msgid "Errors"
-msgstr "اخطاء"
-
-msgid "Full"
-msgstr "كامل"
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "المرجع"
-
-msgid "All"
-msgstr "الجميع"
-
-msgid "None"
-msgstr "لا شيء"
-
-msgid "Merge"
-msgstr "دمج"
-
-msgid "Replace"
-msgstr "استبدال"
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr "دائماً"
-
-msgid "Non Empty"
-msgstr "نعم (اسرع عند عمليات التصدير كبيرة الحجم)"
+msgid "TEI"
+msgstr "TEI"

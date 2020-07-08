@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -19,18 +19,6 @@ msgstr ""
 msgid "Something went wrong when loading the current user!"
 msgstr ""
 
-msgid "Something went wrong when loading the data sets!"
-msgstr ""
-
-msgid "Filter data sets by name"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "One data set must be selected"
-msgstr ""
-
 msgid "Invalid date"
 msgstr ""
 
@@ -39,6 +27,12 @@ msgstr ""
 
 msgid "End date must be after start date"
 msgstr ""
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
+msgstr "فارمیٹ"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -64,20 +58,68 @@ msgstr "ڈرائے رن"
 msgid "Import"
 msgstr "اِیمپورٹ"
 
+msgid "Any"
+msgstr ""
+
+msgid "Current"
+msgstr "موجودہ"
+
+msgid "None"
+msgstr "کوئی نہں"
+
+msgid "Provided"
+msgstr ""
+
+msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
+msgstr "تمام"
+
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Object"
-msgstr "اؤبجیکٹ"
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr "زی۔ایپ"
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr "ان کمپریس"
 
 msgid "Compression"
 msgstr "کمپریشن"
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "کوڈ"
+
+msgid "Name"
+msgstr "نام"
 
 msgid "Data element ID scheme"
 msgstr "ڈیٹا ائ۔ڈی سکیم"
 
 msgid "Data sets"
 msgstr "ڈیٹا سیٹس"
+
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
 
 msgid "End date"
 msgstr "تاریخ اختتام"
@@ -94,22 +136,79 @@ msgstr "فائل"
 msgid "First row is header"
 msgstr ""
 
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr "اؤبجیکٹ"
+
 msgid "Flush mode"
 msgstr ""
 
-msgid "Format"
-msgstr "فارمیٹ"
+msgid "True"
+msgstr "سچ ہے"
+
+msgid "False"
+msgstr "غلط"
+
+msgid "Follow up status"
+msgstr ""
+
+msgid "JSON"
+msgstr "جے۔سو۔ن"
+
+msgid "CSV"
+msgstr "سی۔ایس۔وی"
+
+msgid "XML"
+msgstr "ایکس۔ایم۔ایل"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "JSONP"
+msgstr ""
 
 msgid "ID scheme"
 msgstr "ائ۔ڈی سکیم"
 
+msgid "UID"
+msgstr "یو۔ای۔ڈی"
+
 msgid "Identifier"
 msgstr "شناختی"
+
+msgid "Errors"
+msgstr "غلطیاں"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
 
 msgid "Import report mode"
 msgstr ""
 
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr "صرف نیا"
+
+msgid "Updates only"
+msgstr "صرف اپڈیٹس"
+
+msgid "Delete"
+msgstr "حذف"
+
 msgid "Import strategy"
+msgstr ""
+
+msgid "Include all attributes"
 msgstr ""
 
 msgid "Include children"
@@ -118,8 +217,26 @@ msgstr ""
 msgid "Include deleted"
 msgstr ""
 
+msgid "Selected organisation unit"
+msgstr "سیلیکٹیڈ تنظیمی یونٹ"
+
+msgid "Include children of organisation unit"
+msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
+
+msgid "Include descendants of organisation unit"
+msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
+
 msgid "Inclusion"
 msgstr "شمولیت"
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
 
 msgid "Inclusion strategy"
 msgstr ""
@@ -127,13 +244,76 @@ msgstr ""
 msgid "Async"
 msgstr ""
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Merge"
+msgstr "ضم"
+
+msgid "Replace"
+msgstr "تبدیل کریں"
+
 msgid "Merge mode"
+msgstr ""
+
+msgid "Programs"
+msgstr "پروگرامس"
+
+msgid "Category combination"
+msgstr "قسم کا مجموعہ"
+
+msgid "Dashboard"
+msgstr "ڈیشپورڈ"
+
+msgid "Data element groups"
+msgstr "ڈیٹا عناصر کا گروہ"
+
+msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
 msgstr "اؤبجیکٹ ٹائپ"
 
+msgid "One object must be selected"
+msgstr ""
+
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr ""
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Organisation unit selection mode"
 msgstr ""
 
 msgid "Organisation unit"
@@ -145,14 +325,44 @@ msgstr "پہلے سے ہی کیش کو گرم کرو"
 msgid "Faster for large imports"
 msgstr ""
 
+msgid "Reference"
+msgstr "ریفرنس"
+
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Programs"
-msgstr "پروگرامس"
+msgid "Program end date"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
 
 msgid "Program stage"
 msgstr "پروگرام کا مرحلہ"
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Completed"
+msgstr "مکمل"
+
+msgid "Cancelled"
+msgstr "منسوخ"
+
+msgid "Program status"
+msgstr "پروگرام کی حیثیت"
 
 msgid "Skip audit"
 msgstr ""
@@ -178,14 +388,50 @@ msgstr "تاریخ آغاز"
 msgid "Strategy"
 msgstr "حکمت عملی"
 
+msgid "Program"
+msgstr "پروگرام"
+
+msgid "Tracked entity"
+msgstr "ٹریک شدہ ادارے"
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Users"
+msgstr "صارف"
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
 msgid "No jobs started yet."
 msgstr ""
 
 msgid "Recreate job"
 msgstr ""
-
-msgid "Completed"
-msgstr "مکمل"
 
 msgid "In progress"
 msgstr "کام جاری ہے"
@@ -222,9 +468,6 @@ msgstr ""
 
 msgid "Messages"
 msgstr "پیغامات"
-
-msgid "UID"
-msgstr "یو۔ای۔ڈی"
 
 msgid "Type"
 msgstr "ٹائپ"
@@ -268,9 +511,6 @@ msgstr ""
 msgid "more options"
 msgstr "مذید آپشنز"
 
-msgid "One object must be selected"
-msgstr ""
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
@@ -278,18 +518,6 @@ msgid "At least one organisation unit must be selected"
 msgstr ""
 
 msgid "One organisation unit must be selected"
-msgstr ""
-
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Filter programs by name"
-msgstr ""
-
-msgid "At least one program must be selected"
-msgstr ""
-
-msgid "One program must be selected"
 msgstr ""
 
 msgid "One program stage must be selected"
@@ -325,6 +553,9 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr ""
 
@@ -337,6 +568,9 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr ""
 
@@ -345,18 +579,6 @@ msgstr "ہاں"
 
 msgid "No"
 msgstr "نہیں"
-
-msgid "Data"
-msgstr "ڈیٹا"
-
-msgid "Event"
-msgstr "تقریب"
-
-msgid "GML"
-msgstr ""
-
-msgid "Metadata"
-msgstr "میٹا ڈیٹا"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -416,113 +638,38 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr ""
 
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "JSON"
-msgstr "جے۔سو۔ن"
+msgid "Data"
+msgstr "ڈیٹا"
 
-msgid "CSV"
-msgstr "سی۔ایس۔وی"
+msgid "Event"
+msgstr "تقریب"
 
-msgid "XML"
-msgstr "ایکس۔ایم۔ایل"
-
-msgid "ADX"
+msgid "GML"
 msgstr ""
 
-msgid "PDF"
-msgstr ""
+msgid "Metadata"
+msgstr "میٹا ڈیٹا"
 
-msgid "Zip"
-msgstr "زی۔ایپ"
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr "ان کمپریس"
-
-msgid "Category combination"
-msgstr "قسم کا مجموعہ"
-
-msgid "Dashboard"
-msgstr "ڈیشپورڈ"
-
-msgid "Data element groups"
-msgstr "ڈیٹا عناصر کا گروہ"
-
-msgid "Option sets"
-msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "کوڈ"
-
-msgid "Name"
-msgstr "نام"
-
-msgid "Selected organisation unit"
-msgstr "سیلیکٹیڈ تنظیمی یونٹ"
-
-msgid "Include children of organisation unit"
-msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
-
-msgid "Include descendants of organisation unit"
-msgstr "تنظیمی یونٹ کی شاخیں شامل کرو"
-
-msgid "Skip check"
-msgstr ""
-
-msgid "Check"
-msgstr ""
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr "صرف نیا"
-
-msgid "Updates only"
-msgstr "صرف اپڈیٹس"
-
-msgid "Delete"
-msgstr "حذف"
-
-msgid "Auto"
-msgstr ""
-
-msgid "Errors"
-msgstr "غلطیاں"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr "ریفرنس"
-
-msgid "All"
-msgstr "تمام"
-
-msgid "None"
-msgstr "کوئی نہں"
-
-msgid "Merge"
-msgstr "ضم"
-
-msgid "Replace"
-msgstr "تبدیل کریں"
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
+msgid "TEI"
 msgstr ""

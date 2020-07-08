@@ -1,14 +1,14 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2020
 # easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-03-16T08:18:48.259Z\n"
+"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,18 +19,6 @@ msgstr ""
 msgid "Something went wrong when loading the current user!"
 msgstr ""
 
-msgid "Something went wrong when loading the data sets!"
-msgstr ""
-
-msgid "Filter data sets by name"
-msgstr ""
-
-msgid "At least one data set must be selected"
-msgstr ""
-
-msgid "One data set must be selected"
-msgstr ""
-
 msgid "Invalid date"
 msgstr "无效的的日期"
 
@@ -39,6 +27,12 @@ msgstr ""
 
 msgid "End date must be after start date"
 msgstr ""
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
+msgstr "格式"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -64,20 +58,68 @@ msgstr ""
 msgid "Import"
 msgstr "导入"
 
+msgid "Any"
+msgstr "任何"
+
+msgid "Current"
+msgstr "当前"
+
+msgid "None"
+msgstr "没有"
+
+msgid "Provided"
+msgstr ""
+
+msgid "Assigned user mode"
+msgstr ""
+
+msgid "All"
+msgstr "全部"
+
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Object"
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
 msgstr ""
 
 msgid "Compression"
 msgstr "压缩"
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr "代码"
+
+msgid "Name"
+msgstr "名称"
 
 msgid "Data element ID scheme"
 msgstr ""
 
 msgid "Data sets"
 msgstr "数据集"
+
+msgid "Filter data sets by name"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
 
 msgid "End date"
 msgstr "结束日期"
@@ -94,22 +136,79 @@ msgstr "文件"
 msgid "First row is header"
 msgstr ""
 
+msgid "Auto"
+msgstr "自动"
+
+msgid "Object"
+msgstr ""
+
 msgid "Flush mode"
 msgstr ""
 
-msgid "Format"
-msgstr "格式"
+msgid "True"
+msgstr "真"
+
+msgid "False"
+msgstr "假"
+
+msgid "Follow up status"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "JSONP"
+msgstr ""
 
 msgid "ID scheme"
+msgstr ""
+
+msgid "UID"
 msgstr ""
 
 msgid "Identifier"
 msgstr "标识"
 
+msgid "Errors"
+msgstr "错误"
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
 msgid "Import report mode"
 msgstr ""
 
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "删除"
+
 msgid "Import strategy"
+msgstr ""
+
+msgid "Include all attributes"
 msgstr ""
 
 msgid "Include children"
@@ -118,7 +217,25 @@ msgstr ""
 msgid "Include deleted"
 msgstr ""
 
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
 msgid "Inclusion"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
@@ -127,13 +244,76 @@ msgstr ""
 msgid "Async"
 msgstr ""
 
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Start and end date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Filter by last updated"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Merge"
+msgstr "合并"
+
+msgid "Replace"
+msgstr ""
+
 msgid "Merge mode"
 msgstr ""
+
+msgid "Programs"
+msgstr "项目"
+
+msgid "Category combination"
+msgstr "值域组合"
+
+msgid "Dashboard"
+msgstr "仪表盘"
+
+msgid "Data element groups"
+msgstr "数据元组"
+
+msgid "Option sets"
+msgstr "选项集"
 
 msgid "Object type"
 msgstr "对象类型"
 
+msgid "One object must be selected"
+msgstr ""
+
 msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Selected organisation units"
+msgstr ""
+
+msgid "Include children of selected organisation units"
+msgstr ""
+
+msgid "Include descendants of selected organisation unit"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Organisation unit selection mode"
 msgstr ""
 
 msgid "Organisation unit"
@@ -145,14 +325,44 @@ msgstr ""
 msgid "Faster for large imports"
 msgstr ""
 
+msgid "Reference"
+msgstr ""
+
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Programs"
-msgstr "项目"
+msgid "Program end date"
+msgstr ""
+
+msgid "Filter programs by name"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
 
 msgid "Program stage"
 msgstr "项目阶段"
+
+msgid "Program start date"
+msgstr ""
+
+msgid "Active"
+msgstr "活跃的"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Cancelled"
+msgstr "取消"
+
+msgid "Program status"
+msgstr ""
 
 msgid "Skip audit"
 msgstr ""
@@ -178,14 +388,50 @@ msgstr "开始日期"
 msgid "Strategy"
 msgstr ""
 
+msgid "Program"
+msgstr "项目"
+
+msgid "Tracked entity"
+msgstr "跟踪实体"
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr "跟踪实体类型"
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Filter users by name"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
 msgid "No jobs started yet."
 msgstr ""
 
 msgid "Recreate job"
 msgstr ""
-
-msgid "Completed"
-msgstr "已完成"
 
 msgid "In progress"
 msgstr "进行中"
@@ -222,9 +468,6 @@ msgstr ""
 
 msgid "Messages"
 msgstr "消息"
-
-msgid "UID"
-msgstr ""
 
 msgid "Type"
 msgstr "类型"
@@ -268,9 +511,6 @@ msgstr ""
 msgid "more options"
 msgstr ""
 
-msgid "One object must be selected"
-msgstr ""
-
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
@@ -278,18 +518,6 @@ msgid "At least one organisation unit must be selected"
 msgstr "至少得选择一个机构"
 
 msgid "One organisation unit must be selected"
-msgstr ""
-
-msgid "Something went wrong when loading the programs!"
-msgstr ""
-
-msgid "Filter programs by name"
-msgstr ""
-
-msgid "At least one program must be selected"
-msgstr ""
-
-msgid "One program must be selected"
 msgstr ""
 
 msgid "One program stage must be selected"
@@ -325,6 +553,9 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
+msgid "TEI import"
+msgstr ""
+
 msgid "Data export"
 msgstr ""
 
@@ -337,6 +568,9 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
+msgid "TEI export"
+msgstr ""
+
 msgid "Job overview"
 msgstr ""
 
@@ -345,18 +579,6 @@ msgstr "Yes"
 
 msgid "No"
 msgstr "No"
-
-msgid "Data"
-msgstr "数据"
-
-msgid "Event"
-msgstr "事件"
-
-msgid "GML"
-msgstr ""
-
-msgid "Metadata"
-msgstr "元数据"
 
 msgid "Something went wrong when loading the class keys"
 msgstr ""
@@ -415,113 +637,38 @@ msgstr ""
 msgid "A class key must be selected"
 msgstr ""
 
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "HTTP error when fetching tracked entity instances"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "JSON"
-msgstr "JSON"
+msgid "Data"
+msgstr "数据"
 
-msgid "CSV"
-msgstr "CSV"
+msgid "Event"
+msgstr "事件"
 
-msgid "XML"
-msgstr "XML"
-
-msgid "ADX"
+msgid "GML"
 msgstr ""
 
-msgid "PDF"
-msgstr "PDF"
+msgid "Metadata"
+msgstr "元数据"
 
-msgid "Zip"
-msgstr ""
-
-msgid "GZip"
-msgstr ""
-
-msgid "Uncompressed"
-msgstr ""
-
-msgid "Category combination"
-msgstr "值域组合"
-
-msgid "Dashboard"
-msgstr "仪表盘"
-
-msgid "Data element groups"
-msgstr "数据元组"
-
-msgid "Option sets"
-msgstr "选项集"
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "代码"
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Selected organisation unit"
-msgstr ""
-
-msgid "Include children of organisation unit"
-msgstr ""
-
-msgid "Include descendants of organisation unit"
-msgstr ""
-
-msgid "Skip check"
-msgstr ""
-
-msgid "Check"
-msgstr "检查"
-
-msgid "New and updates"
-msgstr ""
-
-msgid "New only"
-msgstr ""
-
-msgid "Updates only"
-msgstr ""
-
-msgid "Delete"
-msgstr "删除"
-
-msgid "Auto"
-msgstr "自动"
-
-msgid "Errors"
-msgstr "错误"
-
-msgid "Full"
-msgstr ""
-
-msgid "Debug"
-msgstr ""
-
-msgid "Reference"
-msgstr ""
-
-msgid "All"
-msgstr "全部"
-
-msgid "None"
-msgstr "没有"
-
-msgid "Merge"
-msgstr "合并"
-
-msgid "Replace"
-msgstr ""
-
-msgid "Non Null"
-msgstr ""
-
-msgid "Always"
-msgstr ""
-
-msgid "Non Empty"
-msgstr ""
+msgid "TEI"
+msgstr "跟踪实体"
