@@ -106,7 +106,7 @@ msgid "First row is header"
 msgstr ""
 
 msgid "Auto"
-msgstr ""
+msgstr "Automatico "
 
 msgid "Object"
 msgstr "Objeto"
@@ -115,7 +115,7 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "ADX"
 msgstr ""
@@ -423,7 +423,7 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "Carregando opções ..."
 
 msgid "Event Export"
 msgstr ""
