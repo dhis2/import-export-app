@@ -58,7 +58,7 @@ msgid "Dry run"
 msgstr ""
 
 msgid "Import"
-msgstr "Imprtar"
+msgstr "Importar"
 
 msgid "Any"
 msgstr "Qualquer"
@@ -142,7 +142,7 @@ msgid "Auto"
 msgstr "Automatico "
 
 msgid "Object"
-msgstr "Objeto"
+msgstr "Objecto"
 
 msgid "Flush mode"
 msgstr ""
