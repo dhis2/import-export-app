@@ -1606,12 +1606,32 @@
     i18next "^10.3"
     moment "^2.24.0"
 
-"@dhis2/prop-types@^1.5", "@dhis2/prop-types@^1.6", "@dhis2/prop-types@^1.6.4":
+"@dhis2/prop-types@^1.6", "@dhis2/prop-types@^1.6.4":
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-1.6.4.tgz#ec4d256c9440d4d00071524422a727c61ddaa6f6"
   integrity sha512-qkVj8OuyjDmSxzYDlCWZllvC9hIbrIImMp79/U5CVsIRbjUF0zA/tfbv4rWnsWALmwEHOQFbzl5GnO5D8RNneA==
   dependencies:
     prop-types "^15"
+
+"@dhis2/ui-constants@5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-constants/-/ui-constants-5.2.0.tgz#1c1faaf5d3b46b1cae318fe6240b20a3357d37db"
+  integrity sha512-xR188gj2nxTWQskz6Uu9CBAEJrgNyAwHGZhXTOJMq1yMRHaasKM0C2xCH2a6aVi6ojlt5U1oKtdsyQ0hgwGUJA==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
+
+"@dhis2/ui-core@5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-5.2.0.tgz#d0d5707f0433534d80f5ddf46cec1d2c5586ff3a"
+  integrity sha512-/PNxXSOJ4Q7QwWoTlsZNywgkLvK0hEY6LrsaFsvNcHCBd9FqYj9EjAkxZRPBUa0KQWaglbetIubCe3+G6pxtSw==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
+    "@dhis2/ui-constants" "5.2.0"
+    "@dhis2/ui-icons" "5.2.0"
+    "@popperjs/core" "^2.4.2"
+    classnames "^2.2.6"
+    react-popper "^2.2.3"
+    resize-observer-polyfill "^1.5.1"
 
 "@dhis2/ui-core@^4.21.1", "@dhis2/ui-core@^4.6.1":
   version "4.21.1"
@@ -1624,15 +1644,23 @@
     react-popper "^2.2.3"
     resize-observer-polyfill "^1.5.1"
 
-"@dhis2/ui-forms@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui-forms/-/ui-forms-1.0.1.tgz#7927bf2ccb48909394f03d935be544765c3cd7f0"
-  integrity sha512-JBoIwl3oL3XNgpzLQ/HeSbj5lfPguOcOTOhPd/QbFGJRaS6kbXtf3k3WZqBcN1KLWcGlTicF/kNyJcwr7UT+ng==
+"@dhis2/ui-forms@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-forms/-/ui-forms-5.2.0.tgz#14e4102a5045f0319e5e882c4d622cf7a982bf69"
+  integrity sha512-nRAHjOxn7i9F0YwvuJsi1ymKOjqle9aRX1eQ88LENengiYhSMp73tUkwQkEfGHVyTWiuEkUFz1fwC5l7GfsaAA==
   dependencies:
-    "@dhis2/prop-types" "^1.5"
+    "@dhis2/prop-types" "^1.6.4"
+    "@dhis2/ui-core" "5.2.0"
     classnames "^2.2.6"
-    final-form "^4.18.5"
-    react-final-form "^6.3.0"
+    final-form "^4.20.0"
+    react-final-form "^6.5.0"
+
+"@dhis2/ui-icons@5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-icons/-/ui-icons-5.2.0.tgz#9d982463eb51f63f5e181cb62f7a96ac6a88f34b"
+  integrity sha512-lFI7vkVimcD9agJYA8HUzOggskPE5vHPyFgRDE93rRXMWp3xBmm3c/XnqMfWdvu/PC22EhCP/Y4sSoSpCbIjlA==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
 
 "@dhis2/ui-widgets@^2.1.1":
   version "2.1.1"
@@ -1920,17 +1948,17 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.0.tgz#0e1bdf8d021e7ea58affade33d9d607e11365915"
   integrity sha512-NMrDy6EWh9TPdSRiHmHH2ye1v5U0gBD7pRYwSwJvomx7Bm4GG04vu63dYiVzebLOx2obPpJugew06xVP0Nk7hA==
 
+"@popperjs/core@^2.4.2":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.4.tgz#11d5db19bd178936ec89cd84519c4de439574398"
+  integrity sha512-1oO6+dN5kdIA3sKPZhRGJTfGVP4SWV6KqlMOwry4J3HfyD68sl/3KmG7DeYUzvN+RbhXDnv/D8vNNB8168tAMg==
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
   integrity sha512-MI4Xx6LHs4Webyvi6EbspgyAb4D2Q2VtnCQ1blOJcoLS6mVa8lNN2rkIy1CVxfTUpoyIbCTkXES1rLXztFD1lg==
   dependencies:
     any-observable "^0.3.0"
-
-"@scarf/scarf@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@scarf/scarf/-/scarf-1.0.5.tgz#accee0bce88a9047672f7c8faf3cada59c996b81"
-  integrity sha512-9WKaGVpQH905Aqkk+BczFEeLQxS07rl04afFRPUG9IcSlOwmo5EVVuuNu0d4M9LMYucObvK0LoAe+5HfMW2QhQ==
 
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
@@ -6436,13 +6464,12 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
-final-form@^4.18.5:
-  version "4.20.0"
-  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.20.0.tgz#454ba46f783a4c4404ad875cf36f470395ad5efa"
-  integrity sha512-kdPGNlR/23M2p7ccVwE/vCBQH9TH1NAhhMVkETHbaQXkTWIJdEii3ZdHrOgYvFY7O87myEhcqzx3zjMERtoNJg==
+final-form@^4.20.0:
+  version "4.20.1"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.20.1.tgz#525a7f7f27f55c28d8994b157b24d6104fc560e9"
+  integrity sha512-IIsOK3JRxJrN72OBj7vFWZxtGt3xc1bYwJVPchjVWmDol9DlzMSAOPB+vwe75TUYsw1JaH0fTQnIgwSQZQ9Acg==
   dependencies:
     "@babel/runtime" "^7.10.0"
-    "@scarf/scarf" "^1.0.5"
 
 finalhandler@~1.1.2:
   version "1.1.2"
@@ -11752,14 +11779,12 @@ react-fast-compare@^3.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-final-form@^6.3.0:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-6.5.0.tgz#b0440acf534fd57991c048764ab20af13124aed6"
-  integrity sha512-H97PLCtfMIN32NHqm85E738Pj+NOF1p0eQEG+h5DbdaofwtqDRp7taHu45+PlXOqg9ANbM6MyXkYxWpIiE6qbQ==
+react-final-form@^6.5.0:
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-6.5.1.tgz#baf798129d459c669cfda5ce60a77801ef52badc"
+  integrity sha512-+Hzd9PqYY1Cv3MnWzw64QOl5BjC5BtSDakx+N7Re49r0FASdFhgpXLFFCJ31fvegq2euP6hz6Ow9K6XM9BSqCA==
   dependencies:
     "@babel/runtime" "^7.10.0"
-    "@scarf/scarf" "^1.0.5"
-    ts-essentials "^6.0.5"
 
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
@@ -13954,11 +13979,6 @@ trim-off-newlines@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
-
-ts-essentials@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-6.0.5.tgz#dd5b98f73bd56dc94d15dfbc0fbf01da3163eb42"
-  integrity sha512-RSAKlpu+E0DCGY8FsbG92EveRLw2Y+UgK3ksX01w1VaHeG01dKkYo/KtAV4q0qPT6nPbLfyerb2YPVSediP+8g==
 
 ts-pnp@1.1.6:
   version "1.1.6"
