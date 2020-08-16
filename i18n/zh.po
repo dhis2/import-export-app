@@ -2,15 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
-# easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-12-19T10:07:59.315Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -367,7 +367,7 @@ msgid ""
 msgstr "导出数据元、机构等元数据为标准的DHIS2交换格式"
 
 msgid "Meta Data Export"
-msgstr ""
+msgstr "元数据导出"
 
 msgid "Metadata Dependency Export"
 msgstr "元数据依赖性导出"
@@ -378,7 +378,7 @@ msgid ""
 msgstr "导出诸如数据集、项目相关的元数据对象"
 
 msgid "Metadata Export with Dependencies"
-msgstr ""
+msgstr "具有依赖项的元数据导出"
 
 msgid "Import / Export"
 msgstr "导入/导出"
@@ -410,7 +410,7 @@ msgid ""
 msgstr "使用GML格式导入机构的地理空间数据"
 
 msgid "Only import of GML data for existing organisation units is supported."
-msgstr ""
+msgstr "仅支持导入现有组织单位的GML数据。"
 
 msgid "Metadata Import"
 msgstr "元数据导入"
