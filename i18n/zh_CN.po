@@ -1,14 +1,14 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgid "Will do a test run without importing any data into the database"
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "空运行"
 
 msgid "Import"
 msgstr "导入"
@@ -77,25 +77,25 @@ msgid "All"
 msgstr "全部"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "原子化模式"
 
 msgid "Class key"
-msgstr ""
+msgstr "分类键值"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "无压缩"
 
 msgid "Compression"
 msgstr "压缩"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "代码"
@@ -104,7 +104,7 @@ msgid "Name"
 msgstr "名称"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "数据元ID方案"
 
 msgid "Data sets"
 msgstr "数据集"
@@ -113,7 +113,7 @@ msgid "Filter data sets by name"
 msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "载入当前数据集发生错误"
 
 msgid "At least one data set must be selected"
 msgstr ""
@@ -134,16 +134,16 @@ msgid "File"
 msgstr "文件"
 
 msgid "First row is header"
-msgstr ""
+msgstr "第一行是表头"
 
 msgid "Auto"
 msgstr "自动"
 
 msgid "Object"
-msgstr ""
+msgstr "对象"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "缓存刷新模式"
 
 msgid "True"
 msgstr "真"
@@ -164,7 +164,7 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "PDF"
 msgstr "PDF"
@@ -173,10 +173,10 @@ msgid "JSONP"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID方案"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr "标识"
@@ -185,28 +185,28 @@ msgid "Errors"
 msgstr "错误"
 
 msgid "Full"
-msgstr ""
+msgstr "全部"
 
 msgid "Debug"
-msgstr ""
+msgstr "调试"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "导入报表模式"
 
 msgid "New and updates"
-msgstr ""
+msgstr "新建和更新"
 
 msgid "New only"
-msgstr ""
+msgstr "仅新建"
 
 msgid "Updates only"
-msgstr ""
+msgstr "仅更新"
 
 msgid "Delete"
 msgstr "删除"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "导入策略"
 
 msgid "Include all attributes"
 msgstr ""
@@ -215,34 +215,34 @@ msgid "Include children"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "包括删除的"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "选择的机构"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "包括下属机构"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "包括下属机构"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "包括"
 
 msgid "Non Null"
-msgstr ""
+msgstr "不为空"
 
 msgid "Always"
-msgstr ""
+msgstr "总是"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "非空"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "包括策略"
 
 msgid "Async"
-msgstr ""
+msgstr "异步"
 
 msgid "Last updated duration"
 msgstr ""
@@ -266,10 +266,10 @@ msgid "Merge"
 msgstr "合并"
 
 msgid "Replace"
-msgstr ""
+msgstr "替换"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "合并模式"
 
 msgid "Programs"
 msgstr "项目"
@@ -320,16 +320,16 @@ msgid "Organisation unit"
 msgstr "机构"
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "缓存预热"
 
 msgid "Faster for large imports"
 msgstr ""
 
 msgid "Reference"
-msgstr ""
+msgstr "引用"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "预热模式"
 
 msgid "Program end date"
 msgstr ""
@@ -338,7 +338,7 @@ msgid "Filter programs by name"
 msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "载入项目发生错误"
 
 msgid "At least one program must be selected"
 msgstr ""
@@ -365,7 +365,7 @@ msgid "Program status"
 msgstr ""
 
 msgid "Skip audit"
-msgstr ""
+msgstr "跳过审计"
 
 msgid "Improves performance at the cost of ability to audit changes"
 msgstr ""
@@ -377,16 +377,16 @@ msgid "Faster, but unsafe"
 msgstr ""
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "跳过共享"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "跳过验证"
 
 msgid "Start date"
 msgstr "开始日期"
 
 msgid "Strategy"
-msgstr ""
+msgstr "策略"
 
 msgid "Program"
 msgstr "项目"
@@ -464,7 +464,7 @@ msgid "Error"
 msgstr "错误"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "冲突"
 
 msgid "Messages"
 msgstr "消息"
@@ -485,19 +485,19 @@ msgid "Description"
 msgstr "描述"
 
 msgid "Summary"
-msgstr ""
+msgstr "摘要"
 
 msgid "Created"
 msgstr "创建"
 
 msgid "Deleted"
-msgstr ""
+msgstr "删除的"
 
 msgid "Ignored"
-msgstr ""
+msgstr "忽略的"
 
 msgid "Updated"
-msgstr ""
+msgstr "更新的"
 
 msgid "Total"
 msgstr "总共"
@@ -509,7 +509,7 @@ msgid "Type count"
 msgstr ""
 
 msgid "more options"
-msgstr ""
+msgstr "更多选项"
 
 msgid "Something went wrong when loading the organisation units!"
 msgstr ""
@@ -527,10 +527,10 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "全选"
 
 msgid "Select None"
-msgstr ""
+msgstr "不选"
 
 msgid "At least one schema must be selected"
 msgstr ""
@@ -604,7 +604,7 @@ msgstr ""
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
-msgstr ""
+msgstr "导出项目、阶段和跟踪实体事件数据为DXF2格式"
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -656,7 +656,7 @@ msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "发生未知错误，请稍后再试"
 
 msgid "Data"
 msgstr "数据"
