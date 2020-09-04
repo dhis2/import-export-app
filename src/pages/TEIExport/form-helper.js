@@ -57,7 +57,11 @@ const minimizeParams = ({
 
     if (teiTypeFilter.value == 'PROGRAM') {
         minParams.program = selectedPrograms[0]
-        minParams.programStatus = programStatus.value
+        if (minParams.programStatus) {
+            // programStatus = ALL is now the same
+            // as not providing a value for this param at all
+            minParams.programStatus = programStatus.value
+        }
         minParams.followUpStatus = followUpStatus.value
 
         if (programStartDate) {
