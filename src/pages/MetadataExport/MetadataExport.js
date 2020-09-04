@@ -19,7 +19,7 @@ import { onExport } from './form-helper'
 // PAGE INFO
 const PAGE_NAME = i18n.t('Metadata export')
 const PAGE_DESCRIPTION = i18n.t(
-    'Export meta data like data elements and organisation units in the XML, JSON or CSV format.'
+    'Export metadata like data elements and organisation units in the XML, JSON or CSV format.'
 )
 const PAGE_ICON = <MetadataExportIcon />
 
