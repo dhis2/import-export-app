@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
-import i18n from '@dhis2/d2-i18n'
+import i18n from './locales'
 import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core'
 
 import { TaskContext } from './contexts/'
