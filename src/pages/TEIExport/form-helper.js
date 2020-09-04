@@ -39,6 +39,7 @@ const minimizeParams = ({
     lastUpdatedDuration,
 }) => {
     const minParams = {
+        id: format.value.toLowerCase(),
         ou: selectedOrgUnits.map(o => pathToId(o)).join(';'),
         ouMode: ouMode.value,
         format: format.value,
@@ -96,9 +97,11 @@ const minimizeParams = ({
     return minParams
 }
 
+// HACK: this endpoint does not respect the 'format' parameter
 const teiQuery = {
     sets: {
-        resource: 'trackedEntityInstances',
+        resource: '/',
+        id: ({ id }) => `trackedEntityInstances.${id}`,
         params: x => x,
     },
 }
