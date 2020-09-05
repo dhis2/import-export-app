@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
+import { SingleSelectFieldFF } from '@dhis2/ui'
 
-import { SelectField } from '../index'
+import styles from './ProgramStages.module.css'
 import { useProgramStages } from '../../hooks/index'
+import { StyledField } from '../index'
 
 const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
     !programStage ? i18n.t('One program stage must be selected') : undefined
@@ -11,34 +13,34 @@ const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
 const ProgramStages = ({
     name,
     label,
-    selectedPrograms,
+    selectedProgram,
     form,
     validator,
     dataTest,
 }) => {
     const setProgramStage = val => form.change(name, val)
-    const program =
-        selectedPrograms.length > 0 ? selectedPrograms[0] : undefined
 
     const {
         loading: programStagesLoading,
         error: programStagesError,
         validationText: programStagesValidationText,
         programStages,
-    } = useProgramStages(program, setProgramStage)
+    } = useProgramStages(selectedProgram, setProgramStage)
 
     return (
-        <SelectField
-            name={name}
-            loading={programStagesLoading}
-            label={label}
-            validate={validator}
-            dataTest={dataTest}
-            options={programStages}
-            validationText={programStagesValidationText}
-            error={!!programStagesError}
-            dense
-        />
+        <div className={styles.container}>
+            <StyledField
+                component={SingleSelectFieldFF}
+                name={name}
+                loading={programStagesLoading}
+                label={label}
+                validate={validator}
+                dataTest={dataTest}
+                options={programStages}
+                validationText={programStagesValidationText}
+                error={!!programStagesError}
+            />
+        </div>
     )
 }
 
@@ -47,7 +49,7 @@ ProgramStages.propTypes = {
     form: PropTypes.object.isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    selectedPrograms: PropTypes.array.isRequired,
+    selectedProgram: PropTypes.string.isRequired,
     validator: PropTypes.func,
 }
 

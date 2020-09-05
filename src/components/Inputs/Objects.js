@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
+import { SingleSelectFieldFF } from '@dhis2/ui'
 
-import { SelectField } from '../index'
+import { StyledField } from '../index'
 import { useObjects } from '../../hooks/index'
 
 const SINGLE_EXACT_OBJECT_VALIDATOR = object =>
@@ -25,24 +26,26 @@ const Objects = ({ objectType, form }) => {
     } = useObjects(objectType, setObjectListSelected)
 
     return (
-        <SelectField
-            loading={objectsLoading}
-            name={NAME}
-            label={LABEL}
-            options={objects}
-            validate={VALIDATOR}
-            dataTest={DATATEST}
-            validationText={objectsValidationText}
-            error={!!objectsError}
-            filterable
-            dense
-        />
+        <div style={{ maxWidth: '480px' }}>
+            <StyledField
+                component={SingleSelectFieldFF}
+                loading={objectsLoading}
+                name={NAME}
+                label={LABEL}
+                options={objects}
+                validate={VALIDATOR}
+                dataTest={DATATEST}
+                validationText={objectsValidationText}
+                error={!!objectsError}
+                filterable
+            />
+        </div>
     )
 }
 
 Objects.propTypes = {
     form: PropTypes.object.isRequired,
-    objectType: PropTypes.object.isRequired,
+    objectType: PropTypes.string.isRequired,
 }
 
 export { Objects }

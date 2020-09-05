@@ -1,6 +1,7 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { SelectField } from '../index'
+import { SingleSelectFieldFF } from '@dhis2/ui'
+import { StyledField } from '../index'
 
 const objectTypeOptions = [
     { value: 'dataSets', label: i18n.t('Data sets') },
@@ -10,21 +11,24 @@ const objectTypeOptions = [
     { value: 'dataElementGroups', label: i18n.t('Data element groups') },
     { value: 'optionSets', label: i18n.t('Option sets') },
 ]
-const defaultObjectTypeOption = objectTypeOptions[0]
+const defaultObjectTypeOption = objectTypeOptions[0].value
 
 const NAME = 'objectType'
 const LABEL = i18n.t('Object type')
 const DATATEST = 'input-object-type'
 
 const ObjectType = () => (
-    <SelectField
-        name={NAME}
-        label={LABEL}
-        options={objectTypeOptions}
-        filled
-        initialFocus
-        dataTest={DATATEST}
-    />
+    <div style={{ maxWidth: '480px' }}>
+        <StyledField
+            component={SingleSelectFieldFF}
+            name={NAME}
+            label={LABEL}
+            options={objectTypeOptions}
+            dataTest={DATATEST}
+            filled
+            initialFocus
+        />
+    </div>
 )
 
 export { ObjectType, defaultObjectTypeOption }

@@ -6,7 +6,7 @@ const eventIdSchemeOptions = [
     { value: 'UID', label: i18n.t('Uid') },
     { value: 'CODE', label: i18n.t('Code') },
 ]
-const defaultEventIdSchemeOption = eventIdSchemeOptions[0]
+const defaultEventIdSchemeOption = eventIdSchemeOptions[0].value
 
 const NAME = 'eventIdScheme'
 const DATATEST = 'input-event-id-scheme'

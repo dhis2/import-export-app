@@ -1,13 +1,29 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { Switch } from '../index'
+import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
+import { FormField } from '../index'
+
+const { Field } = ReactFinalForm
 
 const NAME = 'skipSharing'
 const DATATEST = 'input-skip-sharing'
-const LABEL = i18n.t('Skip sharing')
+const SHORT_LABEL = i18n.t('Skip sharing')
+const LABEL = i18n.t('Skip sharing and access settings')
+const HELPTEXT = i18n.t(
+    'Skip sharing properties, do not merge sharing when doing updates, and do not add user group access when creating new objects'
+)
 
 const SkipSharing = () => (
-    <Switch name={NAME} label={LABEL} dataTest={DATATEST} />
+    <FormField label={SHORT_LABEL} dataTest={DATATEST}>
+        <Field
+            type="checkbox"
+            component={CheckboxFieldFF}
+            name={NAME}
+            label={LABEL}
+            helpText={HELPTEXT}
+            dataTest={`${DATATEST}-sf`}
+        />
+    </FormField>
 )
 
 export { SkipSharing }

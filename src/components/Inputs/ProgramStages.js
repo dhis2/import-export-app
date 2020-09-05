@@ -1,6 +1,6 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import { ProgramStages as ProgramStagesGeneric } from '../'
 import { SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR } from '../ProgramStages/ProgramStages'
 
@@ -10,7 +10,7 @@ const VALIDATOR = composeValidators(
 )
 
 const NAME = 'programStage'
-const LABEL = i18n.t('Program stage')
+const LABEL = i18n.t('Which program stage should be included?')
 const DATATEST = 'input-program-stage-select'
 
 const ProgramStages = props => (

@@ -20,6 +20,12 @@
 
 .body li a {
     padding: 0 !important;
+    height: 24px !important;
+    min-height: 24px !important;
+}
+
+.body li a span {
+    padding: 0 !important;
 }
 
 .filter {

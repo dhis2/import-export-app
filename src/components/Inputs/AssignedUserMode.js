@@ -3,10 +3,10 @@ import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../index'
 
 const assignedUserModeOptions = [
-    { value: 'ANY', label: i18n.t('Any') },
-    { value: 'CURRENT', label: i18n.t('Current') },
+    { value: 'ANY', label: i18n.t('Any user') },
+    { value: 'CURRENT', label: i18n.t('Current user') },
     { value: 'NONE', label: i18n.t('None') },
-    { value: 'PROVIDED', label: i18n.t('Provided') },
+    { value: 'PROVIDED', label: i18n.t('Selected users') },
 ]
 const defaultAssignedUserModeOption = assignedUserModeOptions[0]
 

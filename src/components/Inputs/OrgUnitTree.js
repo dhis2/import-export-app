@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import { OrgUnitTreeField } from '../index'
 import {
     SINGLE_ORG_VALIDATOR,
@@ -9,7 +9,7 @@ import {
 } from '../OrgUnitTree/OrgUnitTreeField'
 
 const NAME = 'selectedOrgUnits'
-const LABEL = i18n.t('Organisation unit')
+const LABEL = i18n.t('Organisation unit(s) to export data from')
 const DATATEST = 'input-org-unit-tree'
 
 const OrgUnitTree = ({ multiSelect = true }) => {

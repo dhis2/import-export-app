@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { useDataQuery } from '@dhis2/app-runtime'
-import { CircularLoader, Help } from '@dhis2/ui-core'
+import { CircularLoader, Help } from '@dhis2/ui'
 
 import { pathToId } from '../../utils/helper'
 import { FormField } from '../index'

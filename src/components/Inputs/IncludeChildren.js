@@ -1,13 +1,27 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { Switch } from '../index'
+import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
+import { FormField } from '../index'
+
+const { Field } = ReactFinalForm
 
 const NAME = 'includeChildren'
 const DATATEST = 'input-include-children'
-const LABEL = i18n.t('Include children')
+const SHORT_LABEL = i18n.t('Include first level units')
+const LABEL = i18n.t(
+    'Include the first level of organisation units inside selections'
+)
 
 const IncludeChildren = () => (
-    <Switch name={NAME} label={LABEL} dataTest={DATATEST} />
+    <FormField label={SHORT_LABEL} dataTest={DATATEST}>
+        <Field
+            type="checkbox"
+            component={CheckboxFieldFF}
+            name={NAME}
+            label={LABEL}
+            dataTest={`${DATATEST}-sf`}
+        />
+    </FormField>
 )
 
 export { IncludeChildren }

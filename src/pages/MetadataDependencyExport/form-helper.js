@@ -4,7 +4,7 @@ const onExport = baseUrl => values => {
     const { objectType, object, format, compression, skipSharing } = values
 
     const apiBaseUrl = `${baseUrl}/api/`
-    const endpoint = `${objectType.value}/${object.value}/metadata`
+    const endpoint = `${objectType}/${object}/metadata`
     const endpointExtension = compression.value
         ? `${format.value}.${compression.value}`
         : format.value

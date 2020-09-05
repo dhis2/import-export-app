@@ -1,39 +1,37 @@
 .container {
-    padding: 10px;
+    height: 100%;
+    padding-right: var(--spacers-dp8);
+}
+
+.limitedWidth {
+    max-width: 800px;
 }
 
 .content {
-    padding: 10px;
+    height: 100%;
+    width: 100%;
 }
 
 .preBody {
     margin-bottom: 25px;
+    padding: 10px;
 }
 
 .header {
-    margin-bottom: 10px;
-    line-height: 1.9;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #e9ecef;
+    margin: var(--spacers-dp24) 0;
 }
 
 .title {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.0;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--colors-grey800);
+    margin: var(--spacers-dp12) 0;
+    line-height: 20px;
 }
 
 .desc {
-    margin-left: 10px;
-}
-
-.icon {
-    margin-right: 10px;
-    height: 28px;
-}
-
-.iconAndTitle {
-    display: flex;
-    align-items: center;
+    font-size: 14px;
+    color: var(--colors-grey700);
+    margin: 0 0;
+    line-height: 20px;
 }

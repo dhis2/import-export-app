@@ -1,20 +1,18 @@
-html, body {
-    height: 100%;
-}
-
 .container {
     display: grid;
     height: 100%;
-    grid-gap: 20px;
-    grid-template-rows: auto;
-    grid-template-columns: [sidebar] 300px [content] 2fr;
+    grid-gap: 0 var(--spacers-dp24);
+    grid-template-columns: [sidebar] 280px [content] 1fr;
+    background-color: var(--colors-grey050);
+    color: var(--colors-grey900);
 }
 
 .sidebar {
     grid-column: sidebar;
-    height: 100%;
+    background-color: var(--colors-grey200);
 }
 
 .content {
     grid-column: content;
+    background-color: inherit;
 }

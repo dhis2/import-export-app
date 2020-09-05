@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
@@ -34,9 +34,16 @@ import {
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index'
-import { Page, MetadataImportIcon, MoreOptions } from '../../components/index'
+import {
+    Page,
+    MetadataImportIcon,
+    MoreOptions,
+    BasicOptions,
+} from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
+
+const { Form } = ReactFinalForm
 
 // PAGE INFO
 const PAGE_NAME = i18n.t('Metadata import')
@@ -103,20 +110,31 @@ const MetadataImport = () => {
                 subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
-                        <Format availableFormats={formatOptions} />
-                        <FirstRowIsHeader show={values.format.value == 'csv'} />
-                        <ClassKey
-                            show={values.format.value == 'csv'}
-                            form={form}
-                            prevValue={prevJobDetails.classKey}
-                        />
-                        <Identifier />
-                        <ImportReportMode />
-                        <PreheatMode />
-                        <ImportStrategy />
-                        <AtomicMode />
-                        <MergeMode />
+                        <BasicOptions>
+                            <FileUpload
+                                helpText={i18n.t(
+                                    'Supported file types: JSON, CSV, and XML.'
+                                )}
+                            />
+                            <Format
+                                availableFormats={formatOptions}
+                                type="import"
+                            />
+                            <FirstRowIsHeader
+                                show={values.format.value == 'csv'}
+                            />
+                            <ClassKey
+                                show={values.format.value == 'csv'}
+                                form={form}
+                                prevValue={prevJobDetails.classKey}
+                            />
+                            <Identifier />
+                            <ImportReportMode />
+                            <PreheatMode />
+                            <ImportStrategy />
+                            <AtomicMode />
+                            <MergeMode />
+                        </BasicOptions>
                         <MoreOptions>
                             <FlushMode />
                             <SkipSharing />

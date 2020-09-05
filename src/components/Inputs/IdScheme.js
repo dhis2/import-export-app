@@ -6,7 +6,7 @@ const idSchemeOptions = [
     { value: 'UID', label: i18n.t('Uid') },
     { value: 'CODE', label: i18n.t('Code') },
 ]
-const defaultIdSchemeOption = idSchemeOptions[0]
+const defaultIdSchemeOption = idSchemeOptions[0].value
 
 const NAME = 'idScheme'
 const DATATEST = 'input-id-scheme'

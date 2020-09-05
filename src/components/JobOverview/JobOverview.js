@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
+import { Button, Chip, Menu, MenuItem } from '@dhis2/ui'
 
 import styles from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'

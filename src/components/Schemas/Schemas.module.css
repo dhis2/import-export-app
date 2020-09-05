@@ -21,10 +21,10 @@
     margin-bottom: 5px;
     width: 100%;
     user-select: none;
-    color: #000;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     text-transform: uppercase;
+    color: var(--colors-grey800);
 }
 
 .formControl {

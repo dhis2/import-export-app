@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Radio, Checkbox, Node } from '@dhis2/ui-core'
+import { Radio, Checkbox, Node } from '@dhis2/ui'
 
 const Tree = ({
     list,

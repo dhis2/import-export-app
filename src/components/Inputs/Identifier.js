@@ -12,12 +12,14 @@ const defaultIdentifierOption = identifierOptions[0]
 const NAME = 'identifier'
 const DATATEST = 'input-identifier'
 const LABEL = i18n.t('Identifier')
+const HELPTEXT = i18n.t('Identifier scheme to use for reference matching')
 
 const Identifier = () => (
     <RadioGroupField
         name={NAME}
         label={LABEL}
         options={identifierOptions}
+        helpText={HELPTEXT}
         dataTest={DATATEST}
     />
 )

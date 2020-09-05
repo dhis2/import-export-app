@@ -3,10 +3,22 @@ import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../index'
 
 const strategyOptions = [
-    { value: 'NEW_AND_UPDATES', label: i18n.t('New and updates') },
-    { value: 'NEW', label: i18n.t('New only') },
-    { value: 'UPDATES', label: i18n.t('Updates only') },
-    { value: 'DELETE', label: i18n.t('Delete') },
+    {
+        value: 'NEW_AND_UPDATES',
+        label: i18n.t('Import new values and update existing'),
+    },
+    {
+        value: 'NEW',
+        label: i18n.t('Import new values only'),
+    },
+    {
+        value: 'UPDATES',
+        label: i18n.t('Only update existing values, ignore new values'),
+    },
+    {
+        value: 'DELETE',
+        label: i18n.t('Remove values not included in uploaded file'),
+    },
 ]
 const defaultStrategyOption = strategyOptions[0]
 
@@ -20,6 +32,7 @@ const Strategy = () => (
         label={LABEL}
         options={strategyOptions}
         dataTest={DATATEST}
+        vertical
     />
 )
 

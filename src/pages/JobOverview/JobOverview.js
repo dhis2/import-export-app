@@ -28,6 +28,7 @@ const JobOverview = () => {
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            limitWidth={false}
             dataTest="job-overview-page"
         >
             <div className={styles.container}>

@@ -12,7 +12,7 @@ const defaultFollowUpStatusOption = followUpStatusOptions[0]
 
 const NAME = 'followUpStatus'
 const DATATEST = 'input-follow-up-status'
-const LABEL = i18n.t('Follow up status')
+const LABEL = i18n.t('Include only entities with follow-up status')
 
 const FollowUpStatus = ({ show }) =>
     show && (

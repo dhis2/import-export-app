@@ -11,7 +11,7 @@ const defaultCompressionOption = compressionOptions[0]
 
 const NAME = 'compression'
 const DATATEST = 'input-compression'
-const LABEL = i18n.t('Compression')
+const LABEL = i18n.t('Compression mode')
 
 const Compression = () => (
     <RadioGroupField

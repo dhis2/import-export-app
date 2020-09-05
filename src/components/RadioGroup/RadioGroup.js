@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Help, Radio } from '@dhis2/ui-core'
+import cx from 'classnames'
+import { Help, Radio } from '@dhis2/ui'
 
 import { optionPropType, optionsPropType } from '../../utils/options'
 import { FormField } from '../index'
@@ -13,6 +14,7 @@ const RadioGroup = ({
     checked,
     setValue,
     vertical,
+    helpText,
     dataTest,
 }) => {
     const onChange = label => ({ value }) =>
@@ -20,11 +22,15 @@ const RadioGroup = ({
 
     return (
         <FormField label={label} dataTest={dataTest} name={name}>
-            <div className={vertical ? undefined : styles.inputs}>
+            <div
+                className={cx({
+                    [styles.vertical]: vertical,
+                    [styles.horizontal]: !vertical,
+                })}
+            >
                 {options.map(o => (
                     <div key={o.value}>
                         <Radio
-                            className={styles.radio}
                             name={name}
                             value={o.value}
                             label={o.label}
@@ -36,6 +42,7 @@ const RadioGroup = ({
                     </div>
                 ))}
             </div>
+            {helpText && <Help>{helpText}</Help>}
         </FormField>
     )
 }
@@ -47,6 +54,7 @@ RadioGroup.propTypes = {
     name: PropTypes.string.isRequired,
     options: optionsPropType.isRequired,
     setValue: PropTypes.func.isRequired,
+    helpText: PropTypes.string,
     vertical: PropTypes.bool,
 }
 

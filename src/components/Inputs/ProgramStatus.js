@@ -13,7 +13,7 @@ const defaultProgramStatusOption = programStatusOptions[0]
 
 const NAME = 'programStatus'
 const DATATEST = 'input-program-status'
-const LABEL = i18n.t('Program status')
+const LABEL = i18n.t('Include only entities with status')
 
 const ProgramStatus = ({ show }) =>
     show && (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Button, Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui-core'
+import { Button, Checkbox, InputField, MenuItem, Radio } from '@dhis2/ui'
 
 import { optionsPropType } from '../../utils/options'
 import styles from './SelectableList.module.css'

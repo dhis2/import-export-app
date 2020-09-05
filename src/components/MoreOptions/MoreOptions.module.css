@@ -1,5 +1,5 @@
 .container {
-    margin: 15px 0;
+    margin-bottom: var(--spacers-dp48);
 }
 
 .header {
@@ -7,14 +7,29 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    color: #000;
-    font-size: 14px;
+    margin: var(--spacers-dp8) 0;
+}
+
+.label {
+    font-size: 18px;
     font-weight: 500;
-    text-transform: uppercase;
-    margin: 15px 0;
+    color: var(--colors-grey900);
+    margin: 0;
+}
+
+.children {
+    margin-top: var(--spacers-dp4);
 }
 
 .header svg {
     margin-left: -3px;
     margin-right: 5px;
+}
+
+.chevronHidden {
+    transform: rotate(90deg);
+}
+
+.chevronVisible {
+    transform: rotate(-90deg);
 }

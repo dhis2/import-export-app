@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Field } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import { RadioGroup } from '../index'
 import { optionPropType } from '../../utils/options'
+const { Field } = ReactFinalForm
 
 const Wrapper = ({
     input: { value, onChange },
