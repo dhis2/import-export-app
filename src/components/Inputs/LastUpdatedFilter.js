@@ -7,7 +7,7 @@ const lastUpdatedFilterOptions = [
     { value: 'DATE', label: i18n.t('Start/end dates') },
     { value: 'DURATION', label: i18n.t('Time since last updated') },
 ]
-const defaultLastUpdatedFilterOption = lastUpdatedFilterOptions[0]
+const defaultLastUpdatedFilterOption = lastUpdatedFilterOptions[0].value
 
 const NAME = 'lastUpdatedFilter'
 const DATATEST = 'input-last-updated-filter'

@@ -8,7 +8,7 @@ const followUpStatusOptions = [
     { value: 'TRUE', label: i18n.t('Marked for follow-up') },
     { value: 'FALSE', label: i18n.t('Not marked for follow-up') },
 ]
-const defaultFollowUpStatusOption = followUpStatusOptions[0]
+const defaultFollowUpStatusOption = followUpStatusOptions[0].value
 
 const NAME = 'followUpStatus'
 const DATATEST = 'input-follow-up-status'

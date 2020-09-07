@@ -16,7 +16,7 @@ const inclusionOptions = [
         label: i18n.t('Include all units inside selections'),
     },
 ]
-const defaultInclusionOption = inclusionOptions[0]
+const defaultInclusionOption = inclusionOptions[0].value
 
 const NAME = 'inclusion'
 const DATATEST = 'input-inclusion'

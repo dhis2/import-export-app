@@ -9,7 +9,7 @@ const programStatusOptions = [
     { value: 'COMPLETED', label: i18n.t('Completed') },
     { value: 'CANCELLED', label: i18n.t('Cancelled') },
 ]
-const defaultProgramStatusOption = programStatusOptions[0]
+const defaultProgramStatusOption = programStatusOptions[0].value
 
 const NAME = 'programStatus'
 const DATATEST = 'input-program-status'

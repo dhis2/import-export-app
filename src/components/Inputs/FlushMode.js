@@ -6,7 +6,7 @@ const flushModeOptions = [
     { value: 'AUTO', label: i18n.t('Auto (recommended)') },
     { value: 'OBJECT', label: i18n.t('Object (debugging purposes)') },
 ]
-const defaultFlushModeOption = flushModeOptions[0]
+const defaultFlushModeOption = flushModeOptions[0].value
 
 const NAME = 'flushMode'
 const DATATEST = 'input-flush-mode'

@@ -16,7 +16,7 @@ const inclusionStrategyOptions = [
         label: i18n.t('Include non-empty properties'),
     },
 ]
-const defaultInclusionStrategyOption = inclusionStrategyOptions[0]
+const defaultInclusionStrategyOption = inclusionStrategyOptions[0].value
 
 const NAME = 'inclusionStrategy'
 const DATATEST = 'input-inclusion-strategy'

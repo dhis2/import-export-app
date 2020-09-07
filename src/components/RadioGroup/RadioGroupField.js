@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 
 import { RadioGroup } from '../index'
-import { optionPropType } from '../../utils/options'
 const { Field } = ReactFinalForm
 
 const Wrapper = ({
@@ -23,7 +22,7 @@ const Wrapper = ({
 
 Wrapper.propTypes = {
     input: PropTypes.shape({
-        value: optionPropType.isRequired,
+        value: PropTypes.string.isRequired,
         onChange: PropTypes.func,
     }).isRequired,
     inputName: PropTypes.string.isRequired,

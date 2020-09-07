@@ -7,7 +7,7 @@ const identifierOptions = [
     { value: 'CODE', label: i18n.t('Code') },
     { value: 'AUTO', label: i18n.t('Auto') },
 ]
-const defaultIdentifierOption = identifierOptions[0]
+const defaultIdentifierOption = identifierOptions[0].value
 
 const NAME = 'identifier'
 const DATATEST = 'input-identifier'

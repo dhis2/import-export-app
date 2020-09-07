@@ -22,7 +22,7 @@ const formatJsonpOptions = [
     ...formatOptions,
     { value: 'jsonp', label: i18n.t('JSONP') },
 ]
-const defaultFormatOption = formatOptions[0]
+const defaultFormatOption = formatOptions[0].value
 
 const NAME = 'format'
 const DATATEST = 'input-format'

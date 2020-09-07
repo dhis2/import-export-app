@@ -20,7 +20,7 @@ const strategyOptions = [
         label: i18n.t('Remove values not included in uploaded file'),
     },
 ]
-const defaultStrategyOption = strategyOptions[0]
+const defaultStrategyOption = strategyOptions[0].value
 
 const NAME = 'strategy'
 const DATATEST = 'input-strategy'

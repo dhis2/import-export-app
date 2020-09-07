@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { Help, Radio } from '@dhis2/ui'
 
-import { optionPropType, optionsPropType } from '../../utils/options'
+import { optionsPropType } from '../../utils/options'
 import { FormField } from '../index'
 import styles from './RadioGroup.module.css'
 
@@ -17,9 +17,6 @@ const RadioGroup = ({
     helpText,
     dataTest,
 }) => {
-    const onChange = label => ({ value }) =>
-        setValue({ value: value, label: label })
-
     return (
         <FormField label={label} dataTest={dataTest} name={name}>
             <div
@@ -34,8 +31,8 @@ const RadioGroup = ({
                             name={name}
                             value={o.value}
                             label={o.label}
-                            checked={o.value == checked.value}
-                            onChange={onChange(o.label)}
+                            checked={o.value == checked}
+                            onChange={() => setValue(o.value)}
                             dataTest={`${dataTest}-${o.value}`}
                         />
                         {o.help && <Help>{o.help}</Help>}
@@ -48,7 +45,7 @@ const RadioGroup = ({
 }
 
 RadioGroup.propTypes = {
-    checked: optionPropType.isRequired,
+    checked: PropTypes.string.isRequired,
     dataTest: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

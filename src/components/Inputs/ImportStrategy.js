@@ -20,7 +20,7 @@ const importStrategyOptions = [
         label: i18n.t('Remove values not included in uploaded file'),
     },
 ]
-const defaultImportStrategyOption = importStrategyOptions[0]
+const defaultImportStrategyOption = importStrategyOptions[0].value
 
 const NAME = 'importStrategy'
 const DATATEST = 'input-import-strategy'

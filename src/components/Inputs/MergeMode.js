@@ -16,7 +16,7 @@ const mergeModeOptions = [
         ),
     },
 ]
-const defaultMergeModeOption = mergeModeOptions[0]
+const defaultMergeModeOption = mergeModeOptions[0].value
 
 const NAME = 'mergeMode'
 const DATATEST = 'input-merge-mode'

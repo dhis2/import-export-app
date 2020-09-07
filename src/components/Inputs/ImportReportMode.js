@@ -18,7 +18,7 @@ const importReportModeOptions = [
         ),
     },
 ]
-const defaultImportReportModeOption = importReportModeOptions[0]
+const defaultImportReportModeOption = importReportModeOptions[0].value
 
 const NAME = 'importReportMode'
 const DATATEST = 'input-import-report-mode'

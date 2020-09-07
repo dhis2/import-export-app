@@ -7,7 +7,7 @@ const preheatModeOptions = [
     { value: 'ALL', label: i18n.t('All') },
     { value: 'NONE', label: i18n.t('None') },
 ]
-const defaultPreheatModeOption = preheatModeOptions[0]
+const defaultPreheatModeOption = preheatModeOptions[0].value
 
 const NAME = 'preheatMode'
 const DATATEST = 'input-preheat-mode'

@@ -6,7 +6,7 @@ const atomicModeOptions = [
     { value: 'ALL', label: i18n.t('Do not import') },
     { value: 'NONE', label: i18n.t('Import') },
 ]
-const defaultAtomicModeOption = atomicModeOptions[0]
+const defaultAtomicModeOption = atomicModeOptions[0].value
 
 const NAME = 'atomicMode'
 const DATATEST = 'input-atomic-mode'

@@ -8,7 +8,7 @@ const assignedUserModeOptions = [
     { value: 'NONE', label: i18n.t('None') },
     { value: 'PROVIDED', label: i18n.t('Selected users') },
 ]
-const defaultAssignedUserModeOption = assignedUserModeOptions[0]
+const defaultAssignedUserModeOption = assignedUserModeOptions[0].value
 
 const NAME = 'assignedUserMode'
 const DATATEST = 'input-assigned-user-mode'
