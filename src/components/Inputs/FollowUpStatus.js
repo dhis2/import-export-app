@@ -5,8 +5,8 @@ import { RadioGroupField } from '../index'
 
 const followUpStatusOptions = [
     { value: 'ALL', label: i18n.t('All') },
-    { value: 'TRUE', label: i18n.t('True') },
-    { value: 'FALSE', label: i18n.t('False') },
+    { value: 'TRUE', label: i18n.t('Marked for follow-up') },
+    { value: 'FALSE', label: i18n.t('Not marked for follow-up') },
 ]
 const defaultFollowUpStatusOption = followUpStatusOptions[0]
 
