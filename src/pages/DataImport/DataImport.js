@@ -112,9 +112,7 @@ const DataImport = () => {
                                 availableFormats={formatAdxPdfOptions}
                                 type="import"
                             />
-                            <FirstRowIsHeader
-                                show={values.format.value == 'csv'}
-                            />
+                            <FirstRowIsHeader show={values.format == 'csv'} />
                             <Strategy />
                             <PreheatCache />
                             <WithAuthority pred={hasAuthorityToSkipAudit}>

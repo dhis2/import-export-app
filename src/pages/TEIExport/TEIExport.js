@@ -105,14 +105,12 @@ const TEIExport = () => {
                 validate={validate}
                 subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, values, submitError }) => {
-                    const showProgramFilters =
-                        values.teiTypeFilter.value == 'PROGRAM'
-                    const showTEFilters = values.teiTypeFilter.value == 'TE'
-                    const showLUDates = values.lastUpdatedFilter.value == 'DATE'
+                    const showProgramFilters = values.teiTypeFilter == 'PROGRAM'
+                    const showTEFilters = values.teiTypeFilter == 'TE'
+                    const showLUDates = values.lastUpdatedFilter == 'DATE'
                     const showLUDuration =
-                        values.lastUpdatedFilter.value == 'DURATION'
-                    const showUserPicker =
-                        values.assignedUserMode.value == 'PROVIDED'
+                        values.lastUpdatedFilter == 'DURATION'
+                    const showUserPicker = values.assignedUserMode == 'PROVIDED'
 
                     return (
                         <form onSubmit={handleSubmit}>

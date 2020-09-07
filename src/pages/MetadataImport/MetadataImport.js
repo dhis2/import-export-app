@@ -123,11 +123,9 @@ const MetadataImport = () => {
                                 availableFormats={formatOptions}
                                 type="import"
                             />
-                            <FirstRowIsHeader
-                                show={values.format.value == 'csv'}
-                            />
+                            <FirstRowIsHeader show={values.format == 'csv'} />
                             <ClassKey
-                                show={values.format.value == 'csv'}
+                                show={values.format == 'csv'}
                                 form={form}
                                 prevValue={prevJobDetails.classKey}
                             />

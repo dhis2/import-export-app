@@ -61,29 +61,29 @@ const onExport = engine => async values => {
     try {
         const { sets } = await engine.query(dataValueSetQuery, {
             variables: {
-                dataElementIdScheme: dataElementIdScheme.value,
-                orgUnitIdScheme: orgUnitIdScheme.value,
-                idScheme: idScheme.value,
+                dataElementIdScheme: dataElementIdScheme,
+                orgUnitIdScheme: orgUnitIdScheme,
+                idScheme: idScheme,
                 includeDeleted: includeDeleted.toString(),
                 children: includeChildren.toString(),
                 startDate: jsDateToISO8601(startDate),
                 endDate: jsDateToISO8601(endDate),
                 orgUnit: selectedOrgUnits.map(o => pathToId(o)),
                 dataSet: selectedDataSets,
-                format: format.value,
+                format: format,
             },
         })
-        const dataStr = format.value === 'json' ? JSON.stringify(sets) : sets
-        const filename = `data.${format.value}`
-        if (compression.value !== '') {
+        const dataStr = format === 'json' ? JSON.stringify(sets) : sets
+        const filename = `data.${format}`
+        if (compression !== '') {
             const zip = new JSZip()
             zip.file(filename, dataStr)
             zip.generateAsync({ type: 'blob' }).then(content => {
                 const url = URL.createObjectURL(content)
-                downloadBlob(url, `${filename}.${compression.value}`)
+                downloadBlob(url, `${filename}.${compression}`)
             })
         } else {
-            const url = createBlob(dataStr, format.value)
+            const url = createBlob(dataStr, format)
             downloadBlob(url, filename)
         }
     } catch (error) {

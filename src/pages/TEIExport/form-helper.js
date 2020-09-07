@@ -40,25 +40,25 @@ const minimizeParams = ({
 }) => {
     const minParams = {
         ou: selectedOrgUnits.map(o => pathToId(o)).join(';'),
-        ouMode: ouMode.value,
-        format: format.value,
+        ouMode: ouMode,
+        format: format,
         includeDeleted: includeDeleted.toString(),
         includeAllAttributes: includeAllAttributes.toString(),
-        dataElementIdScheme: dataElementIdScheme.value,
-        eventIdScheme: eventIdScheme.value,
-        orgUnitIdScheme: orgUnitIdScheme.value,
-        idScheme: idScheme.value,
-        assignedUserMode: assignedUserMode.value,
+        dataElementIdScheme: dataElementIdScheme,
+        eventIdScheme: eventIdScheme,
+        orgUnitIdScheme: orgUnitIdScheme,
+        idScheme: idScheme,
+        assignedUserMode: assignedUserMode,
     }
 
-    if (assignedUserMode.value == 'PROVIDED') {
+    if (assignedUserMode == 'PROVIDED') {
         minParams.assignedUser = selectedUsers.join(';')
     }
 
-    if (teiTypeFilter.value == 'PROGRAM') {
-        minParams.program = selectedPrograms[0]
-        minParams.programStatus = programStatus.value
-        minParams.followUpStatus = followUpStatus.value
+    if (teiTypeFilter == 'PROGRAM') {
+        minParams.program = selectedPrograms
+        minParams.programStatus = programStatus
+        minParams.followUpStatus = followUpStatus
 
         if (programStartDate) {
             minParams.programStartDate = jsDateToISO8601(programStartDate)
@@ -69,11 +69,11 @@ const minimizeParams = ({
         }
     }
 
-    if (teiTypeFilter.value == 'TE') {
-        minParams.trackedEntity = selectedTETypes[0]
+    if (teiTypeFilter == 'TE') {
+        minParams.trackedEntity = selectedTETypes
     }
 
-    if (lastUpdatedFilter.value == 'DATE') {
+    if (lastUpdatedFilter == 'DATE') {
         if (lastUpdatedStartDate) {
             minParams.lastUpdatedStartDate = jsDateToISO8601(
                 lastUpdatedStartDate
@@ -85,7 +85,7 @@ const minimizeParams = ({
         }
     }
 
-    if (lastUpdatedFilter.value == 'DURATION') {
+    if (lastUpdatedFilter == 'DURATION') {
         minParams.lastUpdatedDuration = lastUpdatedDuration
     }
 
@@ -108,17 +108,17 @@ const onExport = engine => async values => {
             variables: minimizeParams(values),
         })
 
-        const teiStr = format.value === 'json' ? JSON.stringify(teis) : teis
-        const filename = `trackedEntityInstances.${format.value}`
-        if (compression.value !== '') {
+        const teiStr = format === 'json' ? JSON.stringify(teis) : teis
+        const filename = `trackedEntityInstances.${format}`
+        if (compression !== '') {
             const zip = new JSZip()
             zip.file(filename, teiStr)
             zip.generateAsync({ type: 'blob' }).then(content => {
                 const url = URL.createObjectURL(content)
-                downloadBlob(url, `${filename}.${compression.value}`)
+                downloadBlob(url, `${filename}.${compression}`)
             })
         } else {
-            const url = createBlob(teiStr, format.value)
+            const url = createBlob(teiStr, format)
             downloadBlob(url, filename)
         }
     } catch (error) {
@@ -141,7 +141,7 @@ const validate = values => {
     const errors = {}
 
     if (
-        values.teiTypeFilter.value == 'PROGRAM' &&
+        values.teiTypeFilter == 'PROGRAM' &&
         values.programStartDate &&
         values.programEndDate
     ) {
@@ -156,7 +156,7 @@ const validate = values => {
     }
 
     if (
-        values.lastUpdatedFilter.value == 'DATE' &&
+        values.lastUpdatedFilter == 'DATE' &&
         values.lastUpdatedStartDate &&
         values.lastUpdatedEndDate
     ) {
@@ -171,7 +171,7 @@ const validate = values => {
     }
 
     if (
-        values.lastUpdatedFilter.value == 'DATE' &&
+        values.lastUpdatedFilter == 'DATE' &&
         !values.lastUpdatedStartDate &&
         !values.lastUpdatedEndDate
     ) {
