@@ -9,7 +9,8 @@ import styles from './MoreOptions.module.css'
 
 const MoreOptions = ({
     children,
-    initiallyVisible = false,
+    initiallyVisible,
+    noBottomMargin,
     label = i18n.t('Advanced options'),
     dataTest = 'interaction-more-options',
 }) => {
@@ -20,7 +21,10 @@ const MoreOptions = ({
     }
 
     return (
-        <section className={styles.container} data-test={dataTest}>
+        <section
+            className={cx({ [styles.container]: !noBottomMargin })}
+            data-test={dataTest}
+        >
             <header
                 className={styles.header}
                 onClick={onToggle}
@@ -42,12 +46,18 @@ const MoreOptions = ({
     )
 }
 
+MoreOptions.defaultProps = {
+    initiallyVisible: false,
+    noBottomMargin: false,
+}
+
 MoreOptions.propTypes = {
     children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
         .isRequired,
     dataTest: PropTypes.string,
     initiallyVisible: PropTypes.bool,
     label: PropTypes.string,
+    noBottomMargin: PropTypes.bool,
 }
 
 export { MoreOptions }
