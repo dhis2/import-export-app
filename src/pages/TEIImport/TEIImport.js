@@ -125,7 +125,10 @@ const TEIImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON and XML.'
+                                    'Supported file types: JSON and XML.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
                                 )}
                             />
                             <Format

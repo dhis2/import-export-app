@@ -113,7 +113,10 @@ const MetadataImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON, CSV, and XML.'
+                                    'Supported file types: JSON, CSV, and XML.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
                                 )}
                             />
                             <Format

@@ -102,7 +102,10 @@ const DataImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON, CSV, XML, ADX and PDF.'
+                                    'Supported file types: JSON, CSV, XML, ADX and PDF.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
                                 )}
                             />
                             <Format
