@@ -39,7 +39,7 @@ const ClassKey = ({ form, prevValue, show = true }) => {
 
 ClassKey.propTypes = {
     form: PropTypes.object.isRequired,
-    prevValue: PropTypes.object,
+    prevValue: PropTypes.string,
     show: PropTypes.bool,
 }
 
