@@ -83,10 +83,10 @@ const ResourcePicker = ({
         <FormField label={label} dataTest={dataTest}>
             {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
             {error && (
-                <div data-test={`${dataTest}-error`}>
+                <Help error data-test={`${dataTest}-error`}>
                     <p>{errorMessage}</p>
                     <p>{error.message}</p>
-                </div>
+                </Help>
             )}
             {showList &&
                 (multiSelect ? (
