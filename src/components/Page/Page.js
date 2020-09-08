@@ -1,7 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Card, CircularLoader, ComponentCover, LinearLoader } from '@dhis2/ui'
+import {
+    Card,
+    CenteredContent,
+    CircularLoader,
+    ComponentCover,
+    LinearLoader,
+} from '@dhis2/ui'
 
 import styles from './Page.module.css'
 import { JobSummary, MiniJobSummary } from '../index'
@@ -50,7 +56,13 @@ const Page = ({
                 </Card>
             )}
             <div className={styles.content}>
-                {!!loading && <ComponentCover>{loadingEl}</ComponentCover>}
+                {!!loading && (
+                    <div className={styles.loading}>
+                        <ComponentCover translucent>
+                            <CenteredContent>{loadingEl}</CenteredContent>
+                        </ComponentCover>
+                    </div>
+                )}
                 {children}
             </div>
         </div>
