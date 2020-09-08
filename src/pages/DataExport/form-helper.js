@@ -1,5 +1,6 @@
+import { locationAssign, compressionToName } from '../../utils/helper'
+import { getMimeType } from '../../utils/mime'
 import i18n from '@dhis2/d2-i18n'
-import JSZip from 'jszip'
 
 import { FORM_ERROR } from '../../utils/final-form'
 import {
@@ -13,79 +14,57 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
 
-const dataValueSetQuery = {
-    sets: {
-        resource: 'dataValueSets',
-        params: ({
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            includeDeleted,
-            children,
-            startDate,
-            endDate,
-            orgUnit,
-            dataSet,
-            format,
-        }) => ({
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            includeDeleted,
-            children,
-            startDate,
-            endDate,
-            orgUnit,
-            dataSet,
-            format,
-        }),
-    },
-}
+const valuesToParams = ({
+    selectedOrgUnits,
+    includeChildren,
+    selectedDataSets,
+    format,
+    compression,
+    startDate,
+    endDate,
+    includeDeleted,
+    dataElementIdScheme,
+    orgUnitIdScheme,
+    idScheme,
+}) =>
+    [
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `idScheme=${idScheme}`,
+        `includeDeleted=${includeDeleted}`,
+        `children=${includeChildren}`,
+        `startDate=${jsDateToISO8601(startDate)}`,
+        `endDate=${jsDateToISO8601(endDate)}`,
+        `orgUnit=${selectedOrgUnits.map(o => pathToId(o))}`,
+        `dataSet=${selectedDataSets}`,
+        `format=${format}`,
+        `compression=${compressionToName(compression)}`,
+    ].join('&')
 
-const onExport = engine => async values => {
-    const {
-        selectedOrgUnits,
-        includeChildren,
-        selectedDataSets,
-        format,
-        compression,
-        startDate,
-        endDate,
-        includeDeleted,
-        dataElementIdScheme,
-        orgUnitIdScheme,
-        idScheme,
-    } = values
+const onExport = baseUrl => async values => {
+    const { format, compression } = values
 
-    // fetch data
+    const apiBaseUrl = `${baseUrl}/api/`
+    const endpoint = `dataValueSets`
+    const downloadUrlParams = valuesToParams(values)
+    const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
+
+    // if compression is set we can redirect to the appropriate URL
+    // and set the compression parameter
+    if (compression) {
+        locationAssign(url)
+        return
+    }
+
+    // fetch data and create blob
     try {
-        const { sets } = await engine.query(dataValueSetQuery, {
-            variables: {
-                dataElementIdScheme: dataElementIdScheme.value,
-                orgUnitIdScheme: orgUnitIdScheme.value,
-                idScheme: idScheme.value,
-                includeDeleted: includeDeleted.toString(),
-                children: includeChildren.toString(),
-                startDate: jsDateToISO8601(startDate),
-                endDate: jsDateToISO8601(endDate),
-                orgUnit: selectedOrgUnits.map(o => pathToId(o)),
-                dataSet: selectedDataSets,
-                format: format.value,
-            },
+        const data = await fetch(url, {
+            Accept: getMimeType(format),
         })
-        const dataStr = format.value === 'json' ? JSON.stringify(sets) : sets
-        const filename = `data.${format.value}`
-        if (compression.value !== '') {
-            const zip = new JSZip()
-            zip.file(filename, dataStr)
-            zip.generateAsync({ type: 'blob' }).then(content => {
-                const url = URL.createObjectURL(content)
-                downloadBlob(url, `${filename}.${compression.value}`)
-            })
-        } else {
-            const url = createBlob(dataStr, format.value)
-            downloadBlob(url, filename)
-        }
+        const dataStr = await data.text()
+        const filename = `data.${format}`
+        const downloadUrl = createBlob(dataStr, format)
+        downloadBlob(downloadUrl, filename)
     } catch (error) {
         const errors = [
             {

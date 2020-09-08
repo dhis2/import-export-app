@@ -9,7 +9,7 @@ import {
     TableRow,
     TableRowHead,
     TableCellHead,
-} from '@dhis2/ui-core'
+} from '@dhis2/ui'
 
 import { FormField } from '../../index'
 

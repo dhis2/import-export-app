@@ -1,7 +1,7 @@
 import React from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import {
     Format,
@@ -16,10 +16,12 @@ import {
 import { Page, MetadataExportIcon } from '../../components/index'
 import { onExport } from './form-helper'
 
+const { Form } = ReactFinalForm
+
 // PAGE INFO
 const PAGE_NAME = i18n.t('Metadata export')
 const PAGE_DESCRIPTION = i18n.t(
-    'Export meta data like data elements and organisation units in the XML, JSON or CSV format.'
+    'Export metadata, such as data elements and organisation units, in XML, JSON or CSV format.'
 )
 const PAGE_ICON = <MetadataExportIcon />
 
@@ -50,7 +52,7 @@ const MetadataExport = () => {
                         <Format availableFormats={formatOptions} />
                         <Compression />
                         <SkipSharing />
-                        <ExportButton />
+                        <ExportButton label={i18n.t('Export metadata')} />
                     </form>
                 )}
             />

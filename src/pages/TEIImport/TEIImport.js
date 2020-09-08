@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
@@ -40,9 +40,17 @@ import {
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
 } from '../../components/Inputs/index'
-import { Page, TEIIcon, MoreOptions } from '../../components/index'
+import {
+    Page,
+    TEIIcon,
+    MoreOptions,
+    SchemeContainer,
+    BasicOptions,
+} from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
+
+const { Form } = ReactFinalForm
 
 // PAGE INFO
 const PAGE_NAME = i18n.t('Tracked entity instances import')
@@ -114,24 +122,38 @@ const TEIImport = () => {
                 subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
-                        <Format availableFormats={formatNoCsvOptions} />
-                        <Identifier />
-                        <ImportReportMode />
-                        <PreheatMode />
-                        <ImportStrategy />
-                        <AtomicMode />
-                        <MergeMode />
+                        <BasicOptions>
+                            <FileUpload
+                                helpText={i18n.t(
+                                    'Supported file types: JSON and XML.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
+                                )}
+                            />
+                            <Format
+                                availableFormats={formatNoCsvOptions}
+                                type="import"
+                            />
+                            <Identifier />
+                            <ImportReportMode />
+                            <PreheatMode />
+                            <ImportStrategy />
+                            <AtomicMode />
+                            <MergeMode />
+                        </BasicOptions>
                         <MoreOptions>
                             <FlushMode />
                             <SkipSharing />
                             <SkipValidation />
                             <IsAsync />
                             <InclusionStrategy />
-                            <DataElementIdScheme />
-                            <EventIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
+                            <SchemeContainer>
+                                <DataElementIdScheme />
+                                <EventIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </SchemeContainer>
                         </MoreOptions>
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />

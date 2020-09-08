@@ -32,20 +32,20 @@ const onImport = ({
     const endpoint = 'metadata.json'
     const params = [
         `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,
-        `identifier=${identifier.value}`,
-        `importReportMode=${importReportMode.value}`,
-        `preheatMode=${preheatMode.value}`,
-        `importStrategy=${importStrategy.value}`,
-        `atomicMode=${atomicMode.value}`,
-        `mergeMode=${mergeMode.value}`,
-        `flushMode=${flushMode.value}`,
+        `identifier=${identifier}`,
+        `importReportMode=${importReportMode}`,
+        `preheatMode=${preheatMode}`,
+        `importStrategy=${importStrategy}`,
+        `atomicMode=${atomicMode}`,
+        `mergeMode=${mergeMode}`,
+        `flushMode=${flushMode}`,
         `skipSharing=${skipSharing}`,
         `skipValidation=${skipValidation}`,
-        `inclusionStrategy=${inclusionStrategy.value}`,
+        `inclusionStrategy=${inclusionStrategy}`,
         `async=${isAsync}`,
-        `format=${format.value}`,
-        format.value == 'csv'
-            ? `firstRowIsHeader=${firstRowIsHeader}&classKey=${classKey.value}`
+        `format=${format}`,
+        format == 'csv'
+            ? `firstRowIsHeader=${firstRowIsHeader}&classKey=${classKey}`
             : '',
     ]
         .filter(s => s != '')
@@ -56,8 +56,9 @@ const onImport = ({
         await uploadFile({
             url,
             file: files[0],
-            format: format.value,
+            format: format,
             type: 'METADATA_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('metadata', id, { ...entry, jobDetails: values }),
@@ -73,7 +74,7 @@ const onImport = ({
 
 const validate = values => {
     const classKeyValidator = (format, classKey) =>
-        format.value == 'csv' && !classKey
+        format == 'csv' && !classKey
             ? i18n.t('A class key must be selected')
             : undefined
 

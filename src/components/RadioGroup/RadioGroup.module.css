@@ -1,7 +1,11 @@
-.inputs {
+.horizontal {
     display: flex;
 }
 
-.radio {
-    margin-right: 15px;
+.horizontal div {
+    margin-right: var(--spacers-dp24);
+}
+
+.vertical div {
+    padding-bottom: var(--spacers-dp8);
 }

@@ -27,14 +27,14 @@ const onImport = ({
     const params = [
         'async=true',
         `dryRun=${dryRun}`,
-        `strategy=${strategy.value}`,
+        `strategy=${strategy}`,
         `preheatCache=${preheatCache}`,
         `skipAudit=${skipAudit}`,
-        `dataElementIdScheme=${dataElementIdScheme.value}`,
-        `orgUnitIdScheme=${orgUnitIdScheme.value}`,
-        `idScheme=${idScheme.value}`,
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `idScheme=${idScheme}`,
         `skipExistingCheck=${skipExistingCheck}`,
-        `format=${format.value}`,
+        `format=${format}`,
         format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
     ]
         .filter(s => s != '')
@@ -45,7 +45,7 @@ const onImport = ({
         await uploadFile({
             url,
             file: files[0],
-            format: format.value,
+            format: format,
             type: 'DATAVALUE_IMPORT',
             setProgress,
             addEntry: (id, entry) =>

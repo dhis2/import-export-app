@@ -1,21 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Field } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import { ResourcePicker } from '../index'
+const { Field } = ReactFinalForm
 
 const Wrapper = ({ input: { value, onChange }, meta, ...rest }) => (
     <ResourcePicker
         meta={meta}
         selected={value}
-        setSelected={onChange}
+        setSelected={({ selected }) => onChange(selected)}
         {...rest}
     />
 )
 
 Wrapper.propTypes = {
     input: PropTypes.shape({
-        value: PropTypes.arrayOf(PropTypes.string).isRequired,
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.arrayOf(PropTypes.string),
+        ]).isRequired,
         onChange: PropTypes.func,
     }).isRequired,
     meta: PropTypes.shape({

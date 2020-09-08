@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
+import { SingleSelectFieldFF } from '@dhis2/ui'
 
-import { SelectField } from '../index'
+import { StyledField } from '../index'
 import { useClassKeys } from '../../hooks/index'
 
 const NAME = 'classKey'
@@ -21,7 +22,8 @@ const ClassKey = ({ form, prevValue, show = true }) => {
 
     return (
         show && (
-            <SelectField
+            <StyledField
+                component={SingleSelectFieldFF}
                 name={NAME}
                 label={LABEL}
                 options={classKeys}
@@ -30,7 +32,6 @@ const ClassKey = ({ form, prevValue, show = true }) => {
                 validationText={classKeysValidationText}
                 error={!!classKeysError}
                 filterable
-                dense
             />
         )
     )
@@ -38,7 +39,7 @@ const ClassKey = ({ form, prevValue, show = true }) => {
 
 ClassKey.propTypes = {
     form: PropTypes.object.isRequired,
-    prevValue: PropTypes.object,
+    prevValue: PropTypes.string,
     show: PropTypes.bool,
 }
 

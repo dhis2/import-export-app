@@ -1,14 +1,19 @@
 import React from 'react'
-import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui-core'
+import PropTypes from 'prop-types'
+import { Button } from '@dhis2/ui'
 
 const DATATEST = 'input-export-submit'
-const LABEL = i18n.t('Export')
 
-const ExportButton = () => (
-    <Button primary type="submit" dataTest={DATATEST}>
-        {LABEL}
-    </Button>
+const ExportButton = ({ label }) => (
+    <div style={{ marginBottom: 'var(--spacers-dp24)' }}>
+        <Button primary type="submit" dataTest={DATATEST}>
+            {label}
+        </Button>
+    </div>
 )
+
+ExportButton.propTypes = {
+    label: PropTypes.string.isRequired,
+}
 
 export { ExportButton }

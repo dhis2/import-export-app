@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import { ResourcePickerField } from '../index'
 import { resourceTypes } from '../ResourcePicker/resourceTypes'
 
 const NAME = 'selectedDataSets'
-const LABEL = i18n.t('Data sets')
+const LABEL = i18n.t('Which data sets should be included in export?')
 const DATATEST = 'input-data-set-picker'
 const LISTNAME = 'dataSetPicker'
-const FILTERLABEL = i18n.t('Filter data sets by name')
+const FILTERLABEL = i18n.t('Filter data sets')
+const SELECTEDLABEL = i18n.t('Selected data sets')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the data sets!')
 const RESOURCETYPE = resourceTypes.DATASET
 
@@ -37,6 +38,7 @@ const DataSetPicker = ({ multiSelect = true }) => {
             listName={LISTNAME}
             label={LABEL}
             filterLabel={FILTERLABEL}
+            selectedLabel={SELECTEDLABEL}
             dataTest={DATATEST}
             validator={validator}
             multiSelect={multiSelect}

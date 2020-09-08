@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
+import { SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
+import { StyledField } from '../index'
 import { fetchAttributes } from '../../utils/helper'
 import { optionsPropType } from '../../utils/options'
-import { SelectField } from '../index'
 
 const OrgUnitIdScheme = ({ name, label, orgUnitIdSchemeOptions, dataTest }) => {
     const { baseUrl } = useConfig()
@@ -28,7 +29,8 @@ const OrgUnitIdScheme = ({ name, label, orgUnitIdSchemeOptions, dataTest }) => {
 
     const options = [...orgUnitIdSchemeOptions, ...schemes]
     return (
-        <SelectField
+        <StyledField
+            component={SingleSelectFieldFF}
             name={name}
             label={label}
             options={options}
@@ -36,7 +38,6 @@ const OrgUnitIdScheme = ({ name, label, orgUnitIdSchemeOptions, dataTest }) => {
             loading={loading}
             validationText={validationText}
             error={!!error}
-            dense
         />
     )
 }

@@ -17,10 +17,7 @@ const useClassKeys = (setValue, prevValue) => {
             if (prevValue) {
                 setValue(prevValue)
             } else {
-                setValue({
-                    value: classData.keys[0],
-                    label: classData.keys[0],
-                })
+                setValue(classData.keys[0])
             }
         },
         onError: error => {

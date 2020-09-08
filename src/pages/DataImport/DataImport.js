@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
@@ -29,11 +29,15 @@ import { hasAuthorityToSkipAudit } from '../../components/WithAuthority/predicat
 import {
     Page,
     WithAuthority,
+    BasicOptions,
     MoreOptions,
+    SchemeContainer,
     DataIcon,
 } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
+
+const { Form } = ReactFinalForm
 
 // PAGE INFO
 const PAGE_NAME = i18n.t('Data import')
@@ -95,18 +99,32 @@ const DataImport = () => {
                 subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
-                        <Format availableFormats={formatAdxPdfOptions} />
-                        <FirstRowIsHeader show={values.format.value == 'csv'} />
-                        <Strategy />
-                        <PreheatCache />
-                        <WithAuthority pred={hasAuthorityToSkipAudit}>
-                            <SkipAudit />
-                        </WithAuthority>
+                        <BasicOptions>
+                            <FileUpload
+                                helpText={i18n.t(
+                                    'Supported file types: JSON, CSV, XML, ADX and PDF.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
+                                )}
+                            />
+                            <Format
+                                availableFormats={formatAdxPdfOptions}
+                                type="import"
+                            />
+                            <FirstRowIsHeader show={values.format == 'csv'} />
+                            <Strategy />
+                            <PreheatCache />
+                            <WithAuthority pred={hasAuthorityToSkipAudit}>
+                                <SkipAudit />
+                            </WithAuthority>
+                        </BasicOptions>
                         <MoreOptions>
-                            <DataElementIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
+                            <SchemeContainer>
+                                <DataElementIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </SchemeContainer>
                             <SkipExistingCheck />
                         </MoreOptions>
                         <ImportButtonStrip form={form} />

@@ -1,20 +1,25 @@
-html, body {
-    height: 100%;
+body {
+    overflow: hidden; /* scrolling is handled by app-shell, this causes issues with "double" scroll */
+    background-color: var(--colors-grey050);
 }
 
 .container {
     display: grid;
     height: 100%;
-    grid-gap: 20px;
-    grid-template-rows: auto;
-    grid-template-columns: [sidebar] 300px [content] 2fr;
+    grid-gap: 0 var(--spacers-dp24);
+    grid-template-columns: [sidebar] 280px [content] minmax(0, 1fr);
+    color: var(--colors-grey900);
 }
 
 .sidebar {
     grid-column: sidebar;
+    background-color: var(--colors-grey200);
+    overflow: auto;
+    position: fixed;
     height: 100%;
 }
 
 .content {
     grid-column: content;
+    background-color: inherit;
 }

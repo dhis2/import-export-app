@@ -5,9 +5,9 @@ import { RadioGroupField } from '../index'
 const teiTypeFilterOptions = [
     { value: 'NONE', label: i18n.t('None') },
     { value: 'PROGRAM', label: i18n.t('Program') },
-    { value: 'TE', label: i18n.t('Tracked entity') },
+    { value: 'TE', label: i18n.t('Tracked entity type') },
 ]
-const defaultTEITypeFilterOption = teiTypeFilterOptions[0]
+const defaultTEITypeFilterOption = teiTypeFilterOptions[0].value
 
 const NAME = 'teiTypeFilter'
 const DATATEST = 'input-tei-type-filter'
