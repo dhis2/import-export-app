@@ -13,11 +13,13 @@
 }
 
 .sectionTitle {
-    font-size: 16px;
+    background-color: inherit !important;
+}
+
+.sectionTitle h6 {
+    font-size: 16px !important;
     color: var(--colors-grey900);
-    font-weight: 500;
-    padding: 0px 24px;
-    line-height: 1.15;
+    padding: var(--spacers-dp16) var(--spacers-dp24) var(--spacers-dp12);
 }
 
 .jobOverview {}
