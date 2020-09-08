@@ -44,9 +44,11 @@ const Tags = ({ jobDetails, task }) => (
                 {i18n.t('Error')}
             </Tag>
         )}
-        {task.summary && task.summary.conflicts && (
-            <Tag negative>{i18n.t('Conflicts')}</Tag>
-        )}
+        {task.summary &&
+            task.summary.conflicts &&
+            (task.summary.conflicts.length || null) && (
+                <Tag negative>{i18n.t('Conflicts')}</Tag>
+            )}
         {jobDetails.dryRun && (
             <Tag neutral bold>
                 {i18n.t('Dry run')}
