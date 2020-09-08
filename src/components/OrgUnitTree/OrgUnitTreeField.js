@@ -5,6 +5,7 @@ import { CircularLoader, Help } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, OrganisationUnitTree } from '@dhis2/ui'
 
+import styles from './OrgUnitTreeField.module.css'
 const { Field } = ReactFinalForm
 
 const rootQuery = {
@@ -47,15 +48,17 @@ const Wrapper = ({
                 </Help>
             )}
             {data && (
-                <OrganisationUnitTree
-                    onChange={({ selected }) => {
-                        onChange(selected)
-                    }}
-                    selected={value}
-                    roots={data.roots.organisationUnits.map(ou => ou.id)}
-                    {...rest}
-                    singleSelection={!multiSelect}
-                />
+                <div className={styles.wrapper}>
+                    <OrganisationUnitTree
+                        onChange={({ selected }) => {
+                            onChange(selected)
+                        }}
+                        selected={value}
+                        roots={data.roots.organisationUnits.map(ou => ou.id)}
+                        {...rest}
+                        singleSelection={!multiSelect}
+                    />
+                </div>
             )}
 
             {(meta.touched || !meta.pristine) && meta.error && (
