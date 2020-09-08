@@ -30,7 +30,7 @@ const Events = ({ events }) => {
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
-                    {(events || []) &&
+                    {(events || null) &&
                         events.map((e, i) => (
                             <TableRow key={`job-summary-events-${e.id}-${i}`}>
                                 <TableCell>{jsDateToString(e.date)}</TableCell>
@@ -51,7 +51,7 @@ const eventPropType = PropTypes.shape({
 })
 
 Events.propTypes = {
-    events: PropTypes.arrayOf(eventPropType).isRequired,
+    events: PropTypes.arrayOf(eventPropType),
 }
 
 export { Events }
