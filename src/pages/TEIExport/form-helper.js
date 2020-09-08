@@ -1,5 +1,6 @@
+import { locationAssign, compressionToName } from '../../utils/helper'
+import { getMimeType } from '../../utils/mime'
 import i18n from '@dhis2/d2-i18n'
-import JSZip from 'jszip'
 
 import { FORM_ERROR } from '../../utils/final-form'
 import {
@@ -14,13 +15,14 @@ import {
 } from '../../components/DatePicker/DatePickerField'
 
 // calculate minimum set of parameters based on given filters
-const minimizeParams = ({
+const valuesToParams = ({
     selectedOrgUnits,
     selectedUsers,
     selectedPrograms,
     selectedTETypes,
     ouMode,
     format,
+    compression,
     includeDeleted,
     includeAllAttributes,
     dataElementIdScheme,
@@ -51,13 +53,22 @@ const minimizeParams = ({
         assignedUserMode: assignedUserMode,
     }
 
+    if (compression) {
+        minParams.compression = compressionToName(compression)
+    }
+
     if (assignedUserMode == 'PROVIDED') {
         minParams.assignedUser = selectedUsers.join(';')
     }
 
     if (teiTypeFilter == 'PROGRAM') {
         minParams.program = selectedPrograms
-        minParams.programStatus = programStatus
+        if (minParams.programStatus) {
+            // programStatus = ALL is now the same
+            // as not providing a value for this param at all
+            minParams.programStatus = programStatus
+        }
+
         minParams.followUpStatus = followUpStatus
 
         if (programStartDate) {
@@ -89,38 +100,35 @@ const minimizeParams = ({
         minParams.lastUpdatedDuration = lastUpdatedDuration
     }
 
-    return minParams
+    return Object.keys(minParams)
+        .map(param => `${param}=${minParams[param]}`)
+        .join('&')
 }
 
-const teiQuery = {
-    sets: {
-        resource: 'trackedEntityInstances',
-        params: x => x,
-    },
-}
-
-const onExport = engine => async values => {
+const onExport = baseUrl => async values => {
     const { format, compression } = values
 
-    // fetch data
-    try {
-        const { sets: teis } = await engine.query(teiQuery, {
-            variables: minimizeParams(values),
-        })
+    const apiBaseUrl = `${baseUrl}/api/`
+    const endpoint = `trackedEntityInstances`
+    const downloadUrlParams = valuesToParams(values)
+    const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
 
-        const teiStr = format === 'json' ? JSON.stringify(teis) : teis
+    // if compression is set we can redirect to the appropriate URL
+    // and set the compression parameter
+    if (compression) {
+        locationAssign(url)
+        return
+    }
+
+    // fetch data and create blob
+    try {
+        const teis = await fetch(url, {
+            Accept: getMimeType(format),
+        })
+        const teiStr = await teis.text()
         const filename = `trackedEntityInstances.${format}`
-        if (compression !== '') {
-            const zip = new JSZip()
-            zip.file(filename, teiStr)
-            zip.generateAsync({ type: 'blob' }).then(content => {
-                const url = URL.createObjectURL(content)
-                downloadBlob(url, `${filename}.${compression}`)
-            })
-        } else {
-            const url = createBlob(teiStr, format)
-            downloadBlob(url, filename)
-        }
+        const downloadUrl = createBlob(teiStr, format)
+        downloadBlob(downloadUrl, filename)
     } catch (error) {
         const errors = [
             {
