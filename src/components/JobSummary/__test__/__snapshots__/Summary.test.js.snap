@@ -3,6 +3,7 @@
 exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = `
 <DocumentFragment>
   <div
+    class="container"
     data-test="job-summary-summary"
   >
     <div>
@@ -158,6 +159,7 @@ exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = 
 exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
 <DocumentFragment>
   <div
+    class="container"
     data-test="job-summary-summary"
   >
     <div>
@@ -742,6 +744,7 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
 exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
 <DocumentFragment>
   <div
+    class="container"
     data-test="job-summary-summary"
   >
     <div>

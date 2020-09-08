@@ -586,6 +586,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
       data-test="dhis2-uicore-divider"
     />
     <div
+      class="container"
       data-test="job-summary-summary"
     >
       <div>

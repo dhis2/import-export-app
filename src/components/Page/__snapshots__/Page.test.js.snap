@@ -24,27 +24,40 @@ exports[`matches snapshot when loading(bool) and no summary task 1`] = `
       class="content"
     >
       <div
-        class="jsx-3042342945 "
-        data-test="dhis2-uicore-componentcover"
+        class="loading"
       >
         <div
-          class="jsx-19995197 "
-          data-test="dhis2-uicore-circularloader"
-          role="progressbar"
+          class="jsx-3042342945 translucent"
+          data-test="dhis2-uicore-componentcover"
         >
-          <svg
-            class="jsx-19995197"
-            viewBox="22 22 44 44"
+          <div
+            class="jsx-761413583 centered-content middle"
+            data-test="dhis2-uicore-centeredcontent"
           >
-            <circle
-              class="jsx-19995197 circle"
-              cx="44"
-              cy="44"
-              fill="none"
-              r="20.2"
-              stroke-width="3.6"
-            />
-          </svg>
+            <div
+              class="jsx-761413583 centered-inner-content"
+            >
+              <div
+                class="jsx-19995197 "
+                data-test="dhis2-uicore-circularloader"
+                role="progressbar"
+              >
+                <svg
+                  class="jsx-19995197"
+                  viewBox="22 22 44 44"
+                >
+                  <circle
+                    class="jsx-19995197 circle"
+                    cx="44"
+                    cy="44"
+                    fill="none"
+                    r="20.2"
+                    stroke-width="3.6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <p>
@@ -79,17 +92,30 @@ exports[`matches snapshot when loading(number) and no summary task 1`] = `
       class="content"
     >
       <div
-        class="jsx-3042342945 "
-        data-test="dhis2-uicore-componentcover"
+        class="loading"
       >
         <div
-          class="jsx-1195089001 jsx-1880179825 "
-          data-test="dhis2-uicore-linearloader"
-          role="progressbar"
+          class="jsx-3042342945 translucent"
+          data-test="dhis2-uicore-componentcover"
         >
           <div
-            class="jsx-1191682544 jsx-689354218"
-          />
+            class="jsx-761413583 centered-content middle"
+            data-test="dhis2-uicore-centeredcontent"
+          >
+            <div
+              class="jsx-761413583 centered-inner-content"
+            >
+              <div
+                class="jsx-1195089001 jsx-1880179825 "
+                data-test="dhis2-uicore-linearloader"
+                role="progressbar"
+              >
+                <div
+                  class="jsx-1191682544 jsx-689354218"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <p>
@@ -185,6 +211,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
           data-test="dhis2-uicore-divider"
         />
         <div
+          class="container"
           data-test="job-summary-summary"
         >
           <div>
