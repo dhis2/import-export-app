@@ -60,6 +60,7 @@ const onImport = ({
             file: files[0],
             format: format,
             type: 'TEI_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('tei', id, { ...entry, jobDetails: values }),

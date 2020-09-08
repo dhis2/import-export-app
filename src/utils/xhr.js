@@ -76,6 +76,37 @@ const extractIdAndMessage = xhr => {
         }
     }
 
+    // sync metadata, tei import
+    if (typeReports) {
+        if (
+            Array.isArray(typeReports) &&
+            typeReports[0] &&
+            Array.isArray(typeReports[0].objectReports) &&
+            typeReports[0].objectReports[0] &&
+            Array.isArray(typeReports[0].objectReports[0].errorReports)
+        ) {
+            return {
+                error: true,
+                msg: {
+                    id: 'init',
+                    text:
+                        typeReports[0].objectReports[0].errorReports[0].message,
+                    date: new Date(),
+                },
+                typeReports: data,
+            }
+        }
+
+        return {
+            msg: {
+                id: 'completed',
+                text: 'Import:Done',
+                date: new Date(),
+            },
+            typeReports: data,
+        }
+    }
+
     return { error: true }
 }
 

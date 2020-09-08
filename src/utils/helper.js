@@ -108,7 +108,15 @@ const errorGenerator = setProgress => message => {
     }
 }
 
-const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
+const uploadFile = ({
+    url,
+    file,
+    format,
+    type,
+    isAsync,
+    setProgress,
+    addEntry,
+}) => {
     setProgress(1)
     const errF = errorGenerator(setProgress)
 
@@ -120,7 +128,20 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
                 type,
                 onResponse: ({ error, id, msg, typeReports }) => {
                     let entry
-                    if (error && msg) {
+                    if (!isAsync) {
+                        // we are done
+                        entry = {
+                            id: new Date().getTime(),
+                            level: 'INFO',
+                            created: new Date(),
+                            lastUpdated: new Date(),
+                            completed: true,
+                            events: [msg],
+                            summary: typeReports,
+                            error: error,
+                            importType: type,
+                        }
+                    } else if (error && msg) {
                         // error but we have a message
                         entry = {
                             id: new Date().getTime(),

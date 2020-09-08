@@ -58,6 +58,7 @@ const onImport = ({
             file: files[0],
             format: format,
             type: 'METADATA_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('metadata', id, { ...entry, jobDetails: values }),
