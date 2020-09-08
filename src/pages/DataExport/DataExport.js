@@ -8,7 +8,7 @@ import {
     IncludeChildren,
     DataSetPicker,
     Format,
-    formatAdxOptions,
+    formatOptions,
     defaultFormatOption,
     Compression,
     defaultCompressionOption,
@@ -90,7 +90,7 @@ const DataExport = () => {
                                 <StartDate />
                                 <EndDate />
                             </Dates>
-                            <Format availableFormats={formatAdxOptions} />
+                            <Format availableFormats={formatOptions} />
                             <Compression />
                         </BasicOptions>
                         <MoreOptions>
