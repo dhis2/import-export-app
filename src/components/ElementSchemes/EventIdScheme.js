@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { SingleSelectFieldFF } from '@dhis2/ui'
 
+import { StyledField } from '../index'
 import { optionsPropType } from '../../utils/options'
-import { SelectField } from '../index'
 
 const EventIdScheme = ({ name, label, eventIdSchemeOptions, dataTest }) => {
     return (
-        <SelectField
+        <StyledField
+            component={SingleSelectFieldFF}
             name={name}
             label={label}
             options={eventIdSchemeOptions}
-            dense
             dataTest={dataTest}
         />
     )

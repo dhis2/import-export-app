@@ -7,11 +7,11 @@ const compressionOptions = [
     { value: 'gz', label: i18n.t('GZip') },
     { value: '', label: i18n.t('Uncompressed') },
 ]
-const defaultCompressionOption = compressionOptions[0]
+const defaultCompressionOption = compressionOptions[0].value
 
 const NAME = 'compression'
 const DATATEST = 'input-compression'
-const LABEL = i18n.t('Compression')
+const LABEL = i18n.t('Compression mode')
 
 const Compression = () => (
     <RadioGroupField

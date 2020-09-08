@@ -5,10 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-06-09T09:41:35.316Z\n"
-"PO-Revision-Date: 2020-06-09T09:41:35.316Z\n"
+"POT-Creation-Date: 2020-09-08T12:41:08.381Z\n"
+"PO-Revision-Date: 2020-09-08T12:41:08.381Z\n"
 
 msgid "Something went wrong when loading the current user!"
+msgstr ""
+
+msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
@@ -40,34 +43,40 @@ msgstr ""
 msgid "Please select a file"
 msgstr ""
 
-msgid "Will do a test run without importing any data into the database"
+msgid "A dry run tests the import settings without importing any data"
 msgstr ""
 
-msgid "Dry run"
+msgid "Start dry run"
 msgstr ""
 
-msgid "Import"
+msgid "Start import"
 msgstr ""
 
-msgid "Any"
+msgid "Any user"
 msgstr ""
 
-msgid "Current"
+msgid "Current user"
 msgstr ""
 
 msgid "None"
 msgstr ""
 
-msgid "Provided"
+msgid "Selected users"
 msgstr ""
 
 msgid "Assigned user mode"
 msgstr ""
 
-msgid "All"
+msgid "Do not import"
+msgstr ""
+
+msgid "Import"
 msgstr ""
 
 msgid "Atomic mode"
+msgstr ""
+
+msgid "Whether to import objects even if some references do not exist"
 msgstr ""
 
 msgid "Class key"
@@ -82,25 +91,28 @@ msgstr ""
 msgid "Uncompressed"
 msgstr ""
 
-msgid "Compression"
+msgid "Compression mode"
 msgstr ""
 
-msgid "Uid"
+msgid "UID"
 msgstr ""
 
-msgid "Code"
+msgid "CODE"
 msgstr ""
 
-msgid "Name"
+msgid "NAME"
 msgstr ""
 
 msgid "Data element ID scheme"
 msgstr ""
 
-msgid "Data sets"
+msgid "Which data sets should be included in export?"
 msgstr ""
 
-msgid "Filter data sets by name"
+msgid "Filter data sets"
+msgstr ""
+
+msgid "Selected data sets"
 msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
@@ -115,34 +127,49 @@ msgstr ""
 msgid "End date"
 msgstr ""
 
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
 msgid "Event ID scheme"
 msgstr ""
 
-msgid "Export"
+msgid "Select a file to import values from"
 msgstr ""
 
-msgid "File"
+msgid "Is the first row a header row?"
 msgstr ""
 
 msgid "First row is header"
 msgstr ""
 
-msgid "Auto"
+msgid "A header row will be ignored during import"
 msgstr ""
 
-msgid "Object"
+msgid "Auto (recommended)"
+msgstr ""
+
+msgid "Object (debugging purposes)"
 msgstr ""
 
 msgid "Flush mode"
 msgstr ""
 
-msgid "True"
+msgid "Controls when to flush the internal cache"
 msgstr ""
 
-msgid "False"
+msgid "All"
 msgstr ""
 
-msgid "Follow up status"
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Not marked for follow-up"
+msgstr ""
+
+msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
@@ -163,37 +190,49 @@ msgstr ""
 msgid "JSONP"
 msgstr ""
 
+msgid "What format is the data to import?"
+msgstr ""
+
+msgid "What format should the data be exported as?"
+msgstr ""
+
 msgid "ID scheme"
 msgstr ""
 
-msgid "UID"
+msgid "Auto"
 msgstr ""
 
 msgid "Identifier"
 msgstr ""
 
-msgid "Errors"
+msgid "Identifier scheme to use for reference matching"
 msgstr ""
 
-msgid "Full"
+msgid "Only include reports for objects that have errors"
 msgstr ""
 
-msgid "Debug"
+msgid "Reports for all objects imported"
+msgstr ""
+
+msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
 
 msgid "Import report mode"
 msgstr ""
 
-msgid "New and updates"
+msgid "Controls what should be reported after the import is done"
 msgstr ""
 
-msgid "New only"
+msgid "Import new values and update existing"
 msgstr ""
 
-msgid "Updates only"
+msgid "Import new values only"
 msgstr ""
 
-msgid "Delete"
+msgid "Only update existing values, ignore new values"
+msgstr ""
+
+msgid "Remove values not included in uploaded file"
 msgstr ""
 
 msgid "Import strategy"
@@ -202,37 +241,52 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include children"
+msgid "Include first level units"
+msgstr ""
+
+msgid "Include the first level of organisation units inside selections"
 msgstr ""
 
 msgid "Include deleted"
 msgstr ""
 
-msgid "Selected organisation unit"
+msgid "Include deleted data in export"
 msgstr ""
 
-msgid "Include children of organisation unit"
+msgid "Only include selected organisation unit"
 msgstr ""
 
-msgid "Include descendants of organisation unit"
+msgid "Include the first level of units inside selections"
 msgstr ""
 
-msgid "Inclusion"
+msgid "Include all units inside selections"
 msgstr ""
 
-msgid "Non Null"
+msgid "How should organisation units inside the selections be included?"
 msgstr ""
 
-msgid "Always"
+msgid "Includes properties which are not null"
 msgstr ""
 
-msgid "Non Empty"
+msgid "Include all properties"
+msgstr ""
+
+msgid "Include non-empty properties"
 msgstr ""
 
 msgid "Inclusion strategy"
 msgstr ""
 
+msgid "Controls which properties to include"
+msgstr ""
+
 msgid "Async"
+msgstr ""
+
+msgid "Asynchronous import"
+msgstr ""
+
+msgid "Controls whether the import is done asynchronously"
 msgstr ""
 
 msgid "Last updated duration"
@@ -241,25 +295,34 @@ msgstr ""
 msgid "Last updated end date"
 msgstr ""
 
-msgid "Start and end date"
+msgid "Do not filter by last updated date"
 msgstr ""
 
-msgid "Duration"
+msgid "Start/end dates"
 msgstr ""
 
-msgid "Filter by last updated"
+msgid "Time since last updated"
+msgstr ""
+
+msgid "Filter by last updated date"
 msgstr ""
 
 msgid "Last updated start date"
 msgstr ""
 
-msgid "Merge"
+msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
 
-msgid "Replace"
+msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Merge mode"
+msgstr ""
+
+msgid "Strategy to take when merging two objects"
+msgstr ""
+
+msgid "Data sets"
 msgstr ""
 
 msgid "Programs"
@@ -283,16 +346,13 @@ msgstr ""
 msgid "One object must be selected"
 msgstr ""
 
+msgid "Object"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
 msgid "Organisation unit ID scheme"
-msgstr ""
-
-msgid "Selected organisation units"
-msgstr ""
-
-msgid "Include children of selected organisation units"
-msgstr ""
-
-msgid "Include descendants of selected organisation unit"
 msgstr ""
 
 msgid "Data view organisation units associated with the current user"
@@ -304,28 +364,34 @@ msgstr ""
 msgid "All organisation units in the system"
 msgstr ""
 
-msgid "Organisation unit selection mode"
-msgstr ""
-
-msgid "Organisation unit"
+msgid "Organisation unit(s) to export data from"
 msgstr ""
 
 msgid "Preheat cache"
 msgstr ""
 
-msgid "Faster for large imports"
+msgid "Preheat cache to make large imports faster"
 msgstr ""
 
-msgid "Reference"
+msgid "Large imports will be processed faster but will consume more resources"
+msgstr ""
+
+msgid "Intelligent scan"
 msgstr ""
 
 msgid "Preheat mode"
 msgstr ""
 
-msgid "Program end date"
+msgid "Controls the level of preheating that should be done"
 msgstr ""
 
-msgid "Filter programs by name"
+msgid "Program to export events from"
+msgstr ""
+
+msgid "Filter programs"
+msgstr ""
+
+msgid "Selected programs"
 msgstr ""
 
 msgid "Something went wrong when loading the programs!"
@@ -337,10 +403,13 @@ msgstr ""
 msgid "One program must be selected"
 msgstr ""
 
-msgid "Program stage"
+msgid "Which program stage should be included?"
 msgstr ""
 
-msgid "Program start date"
+msgid "Start date"
+msgstr ""
+
+msgid "All statuses"
 msgstr ""
 
 msgid "Active"
@@ -352,10 +421,13 @@ msgstr ""
 msgid "Cancelled"
 msgstr ""
 
-msgid "Program status"
+msgid "Include only entities with status"
 msgstr ""
 
 msgid "Skip audit"
+msgstr ""
+
+msgid "Skip audit, meaning audit values will not be generated"
 msgstr ""
 
 msgid "Improves performance at the cost of ability to audit changes"
@@ -364,16 +436,29 @@ msgstr ""
 msgid "Skip exisiting check"
 msgstr ""
 
-msgid "Faster, but unsafe"
+msgid "Skip checks for existing data values"
+msgstr ""
+
+msgid ""
+"Improves performance and should only be used for empty databases or when "
+"the data values to import do not exist already"
 msgstr ""
 
 msgid "Skip sharing"
 msgstr ""
 
+msgid "Skip sharing and access settings"
+msgstr ""
+
+msgid ""
+"Skip sharing properties, do not merge sharing when doing updates, and do "
+"not add user group access when creating new objects"
+msgstr ""
+
 msgid "Skip validation"
 msgstr ""
 
-msgid "Start date"
+msgid "Skip validation for import (not recommended)"
 msgstr ""
 
 msgid "Strategy"
@@ -382,7 +467,7 @@ msgstr ""
 msgid "Program"
 msgstr ""
 
-msgid "Tracked entity"
+msgid "Tracked entity type"
 msgstr ""
 
 msgid "Filter by"
@@ -394,6 +479,9 @@ msgstr ""
 msgid "Filter tracked entity types by name"
 msgstr ""
 
+msgid "Selected tracked entity types"
+msgstr ""
+
 msgid "Something went wrong when loading the tracked entity types!"
 msgstr ""
 
@@ -403,10 +491,10 @@ msgstr ""
 msgid "One tracked entity type must be selected"
 msgstr ""
 
-msgid "Users"
+msgid "Which users should be used?"
 msgstr ""
 
-msgid "Filter users by name"
+msgid "Filter users"
 msgstr ""
 
 msgid "Something went wrong when loading the users!"
@@ -457,6 +545,9 @@ msgstr ""
 msgid "Conflicts"
 msgstr ""
 
+msgid "Dry run"
+msgstr ""
+
 msgid "Messages"
 msgstr ""
 
@@ -499,16 +590,16 @@ msgstr ""
 msgid "Type count"
 msgstr ""
 
-msgid "more options"
-msgstr ""
-
-msgid "Something went wrong when loading the organisation units!"
+msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
 msgstr ""
 
 msgid "One organisation unit must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the organisation units!"
 msgstr ""
 
 msgid "One program stage must be selected"
@@ -524,12 +615,6 @@ msgid "Select None"
 msgstr ""
 
 msgid "At least one schema must be selected"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "Clear all"
 msgstr ""
 
 msgid "Data import"
@@ -565,6 +650,9 @@ msgstr ""
 msgid "Job overview"
 msgstr ""
 
+msgid "Export"
+msgstr ""
+
 msgid "Yes"
 msgstr ""
 
@@ -583,7 +671,15 @@ msgstr ""
 msgid "Something went wrong when loading the program stages"
 msgstr ""
 
-msgid "Export data values as ADX XML, DFX 2 XML, JSON or CSV files."
+msgid ""
+"Export metadata, such as data elements and organisation units, in DXF 2 "
+"format."
+msgstr ""
+
+msgid "Date range to export data for"
+msgstr ""
+
+msgid "Export data"
 msgstr ""
 
 msgid "HTTP error when fetching data"
@@ -592,14 +688,21 @@ msgstr ""
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
 
-msgid ""
-"Export event data for programs, stages and tracked entities in the DXF 2 "
-"format."
+msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
+msgstr ""
+
+msgid "Export event data for programs, stages and tracked entities in DXF 2 format."
+msgstr ""
+
+msgid "Export events"
 msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
+msgstr ""
+
+msgid "Supported file types: JSON, CSV, and XML."
 msgstr ""
 
 msgid ""
@@ -611,13 +714,19 @@ msgid "An overview of all import jobs started this session."
 msgstr ""
 
 msgid ""
-"Export metadata like data sets and programs including related metadata "
-"objects in the XML or JSON format."
+"Export metadata dependencies, such as data sets and programs, including "
+"related metadata objects, in XML or JSON format."
+msgstr ""
+
+msgid "Export metadata dependencies"
 msgstr ""
 
 msgid ""
-"Export meta data like data elements and organisation units in the XML, JSON "
+"Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
+msgstr ""
+
+msgid "Export metadata"
 msgstr ""
 
 msgid ""
@@ -631,7 +740,16 @@ msgstr ""
 msgid "Tracked entity instances export"
 msgstr ""
 
-msgid "Export tracked entity instances in the XML, JSON, JSONP or CSV format."
+msgid "Export tracked entity instances in XML, JSON, JSONP or CSV format."
+msgstr ""
+
+msgid "Program to export from"
+msgstr ""
+
+msgid "Enrollment date range"
+msgstr ""
+
+msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "HTTP error when fetching tracked entity instances"
@@ -644,6 +762,9 @@ msgid "Tracked entity instances import"
 msgstr ""
 
 msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
+msgid "Supported file types: JSON and XML."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"

@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 
+import { getMimeType } from './mime'
 import { getUploadXHR } from './xhr'
 
 const trimString = (length, string) =>
@@ -31,6 +32,13 @@ const jsDateToString = date =>
         .toString()
         .padStart(2, 0)}
 `
+// some parameters take the long version of the compression type
+const compressionToName = compression => {
+    if (compression === 'gz') {
+        return 'gzip'
+    }
+    return compression
+}
 
 const blobType = (format, compression) => {
     if (compression === 'gzip') {
@@ -38,12 +46,7 @@ const blobType = (format, compression) => {
     } else if (compression === 'zip') {
         return `application/${format}+zip`
     }
-
-    if (format === 'xml') {
-        return 'application/xml'
-    } else if (format === 'json') {
-        return 'application/json'
-    }
+    return getMimeType(format)
 }
 
 const createBlob = (contents, format, compression = 'none') => {
@@ -105,7 +108,15 @@ const errorGenerator = setProgress => message => {
     }
 }
 
-const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
+const uploadFile = ({
+    url,
+    file,
+    format,
+    type,
+    isAsync,
+    setProgress,
+    addEntry,
+}) => {
     setProgress(1)
     const errF = errorGenerator(setProgress)
 
@@ -117,7 +128,20 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
                 type,
                 onResponse: ({ error, id, msg, typeReports }) => {
                     let entry
-                    if (error && msg) {
+                    if (!isAsync) {
+                        // we are done
+                        entry = {
+                            id: new Date().getTime(),
+                            level: 'INFO',
+                            created: new Date(),
+                            lastUpdated: new Date(),
+                            completed: true,
+                            events: [msg],
+                            summary: typeReports,
+                            error: error,
+                            importType: type,
+                        }
+                    } else if (error && msg) {
                         // error but we have a message
                         entry = {
                             id: new Date().getTime(),
@@ -215,4 +239,5 @@ export {
     pathToId,
     trimString,
     uploadFile,
+    compressionToName,
 }

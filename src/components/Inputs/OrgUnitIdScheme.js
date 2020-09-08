@@ -7,7 +7,7 @@ const orgUnitIdSchemeOptions = [
     { value: 'CODE', label: i18n.t('Code') },
     { value: 'NAME', label: i18n.t('Name') },
 ]
-const defaultOrgUnitIdSchemeOption = orgUnitIdSchemeOptions[0]
+const defaultOrgUnitIdSchemeOption = orgUnitIdSchemeOptions[0].value
 
 const NAME = 'orgUnitIdScheme'
 const DATATEST = 'input-org-unit-id-scheme'

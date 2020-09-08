@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Field } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import { Schemas } from '../index'
+const { Field } = ReactFinalForm
 
 const SINGLE_SCHEMA_VALIDATOR = checkedSchemas =>
     checkedSchemas.length == 0

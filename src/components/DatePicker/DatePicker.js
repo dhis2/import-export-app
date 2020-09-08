@@ -1,19 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { InputField } from '@dhis2/ui-core'
+import { InputField } from '@dhis2/ui'
 
 import { jsDateToISO8601 } from '../../utils/helper'
-import { FormField } from '../index'
 
-const DatePicker = ({
-    name,
-    error,
-    label,
-    date,
-    onChange,
-    dataTest,
-    required = true,
-}) => {
+const DatePicker = ({ name, error, label, date, onChange, dataTest }) => {
     const onChangeHelper = ({ value }) => {
         if (!value) {
             onChange(value)
@@ -25,18 +16,17 @@ const DatePicker = ({
     const value = date && jsDateToISO8601(date)
 
     return (
-        <FormField label={label} dataTest={dataTest}>
-            <InputField
-                type="date"
-                name={name}
-                value={value}
-                onChange={onChangeHelper}
-                required={required}
-                inputWidth="200px"
-                error={!!error}
-                validationText={error}
-            />
-        </FormField>
+        <InputField
+            type="date"
+            name={name}
+            value={value}
+            label={label}
+            onChange={onChangeHelper}
+            inputWidth="200px"
+            error={!!error}
+            validationText={error}
+            dataTest={dataTest}
+        />
     )
 }
 
@@ -48,7 +38,6 @@ DatePicker.propTypes = {
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     error: PropTypes.string,
-    required: PropTypes.bool,
 }
 
 export { DatePicker }

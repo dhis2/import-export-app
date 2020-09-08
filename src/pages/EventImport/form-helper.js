@@ -24,11 +24,11 @@ const onImport = ({
         'skipFirst=true',
         'async=true',
         `dryRun=${dryRun}`,
-        `dataElementIdScheme=${dataElementIdScheme.value}`,
-        `orgUnitIdScheme=${orgUnitIdScheme.value}`,
-        `eventIdScheme=${eventIdScheme.value}`,
-        `idScheme=${idScheme.value}`,
-        `payloadFormat=${format.value}`,
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `eventIdScheme=${eventIdScheme}`,
+        `idScheme=${idScheme}`,
+        `payloadFormat=${format}`,
     ].join('&')
     const url = `${apiBaseUrl}${endpoint}?${params}`
 
@@ -36,7 +36,7 @@ const onImport = ({
         await uploadFile({
             url,
             file: files[0],
-            format: format.value,
+            format: format,
             type: 'EVENT_IMPORT',
             setProgress,
             addEntry: (id, entry) =>

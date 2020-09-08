@@ -47,7 +47,11 @@ const Summary = ({ summary }) => {
             importCount={importCount}
             status={summary.status}
             description={summary.description}
-            conflicts={summary.conflicts}
+            conflicts={
+                summary.conflicts &&
+                (summary.conflicts.length || null) &&
+                summary.conflicts
+            }
             id={i18n.t('Overview')}
         />
     )
@@ -69,7 +73,7 @@ const Summary = ({ summary }) => {
             : null
 
     return (
-        <div data-test="job-summary-summary">
+        <div data-test="job-summary-summary" className={styles.container}>
             {overviewSummary}
             <div className={styles.rest} data-test="job-summary-summary-rest">
                 {allSummaries}

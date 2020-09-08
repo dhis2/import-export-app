@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../index'
 import { optionsPropType } from '../../utils/options'
@@ -21,16 +22,19 @@ const formatJsonpOptions = [
     ...formatOptions,
     { value: 'jsonp', label: i18n.t('JSONP') },
 ]
-const defaultFormatOption = formatOptions[0]
+const defaultFormatOption = formatOptions[0].value
 
 const NAME = 'format'
 const DATATEST = 'input-format'
-const LABEL = i18n.t('Format')
+const IMPORT_LABEL = i18n.t('What format is the data to import?')
+const EXPORT_LABEL = i18n.t('What format should the data be exported as?')
 
-const Format = ({ availableFormats }) => (
+const typeToLabel = type => (type === 'import' ? IMPORT_LABEL : EXPORT_LABEL)
+
+const Format = ({ availableFormats, type }) => (
     <RadioGroupField
         name={NAME}
-        label={LABEL}
+        label={typeToLabel(type)}
         options={availableFormats}
         dataTest={DATATEST}
     />
@@ -38,6 +42,7 @@ const Format = ({ availableFormats }) => (
 
 Format.propTypes = {
     availableFormats: optionsPropType.isRequired,
+    type: PropTypes.oneOf(['import', 'export']),
 }
 
 export {

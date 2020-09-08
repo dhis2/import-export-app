@@ -16,7 +16,7 @@ const props = {
     name: 'format',
     label: 'Format',
     options: options,
-    checked: options[0],
+    checked: options[0].value,
     setValue: setValue,
     dataTest: 'radio-group-format',
 }
@@ -32,7 +32,7 @@ test('clicking on an option triggers setValue', () => {
     expect(def).toHaveTextContent('Def')
     fireEvent.click(def)
     expect(setValue).toHaveBeenCalledTimes(1)
-    expect(setValue).toHaveBeenCalledWith({ value: 'b', label: 'Def' })
+    expect(setValue).toHaveBeenCalledWith('b')
 })
 
 it('matches snapshot', () => {
