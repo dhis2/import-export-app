@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-08T08:37:49.603Z\n"
-"PO-Revision-Date: 2020-09-08T08:37:49.603Z\n"
+"POT-Creation-Date: 2020-09-08T09:23:12.320Z\n"
+"PO-Revision-Date: 2020-09-08T09:23:12.320Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -593,9 +593,6 @@ msgstr ""
 msgid "Advanced options"
 msgstr ""
 
-msgid "Something went wrong when loading the organisation units!"
-msgstr ""
-
 msgid "At least one organisation unit must be selected"
 msgstr ""
 
@@ -618,12 +615,6 @@ msgid "Select None"
 msgstr ""
 
 msgid "At least one schema must be selected"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "Clear all"
 msgstr ""
 
 msgid "Data import"

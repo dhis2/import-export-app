@@ -1,10 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useDataQuery } from '@dhis2/app-runtime'
+import { CircularLoader, Help } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
-import { ReactFinalForm } from '@dhis2/ui'
+import { ReactFinalForm, OrganisationUnitTree } from '@dhis2/ui'
 
-import { OrgUnitTree } from '../index'
 const { Field } = ReactFinalForm
+
+const rootQuery = {
+    roots: {
+        resource: 'organisationUnits',
+        params: {
+            filter: 'level:eq:1',
+            fields: 'id',
+            paging: 'false',
+        },
+    },
+}
 
 const SINGLE_ORG_VALIDATOR = selectedOrgUnits =>
     selectedOrgUnits.length == 0
@@ -16,14 +28,42 @@ const SINGLE_EXACT_ORG_VALIDATOR = selectedOrgUnits =>
         ? i18n.t('One organisation unit must be selected')
         : undefined
 
-const Wrapper = ({ input: { value, onChange }, meta, ...rest }) => (
-    <OrgUnitTree
-        meta={meta}
-        selected={value}
-        setSelected={onChange}
-        {...rest}
-    />
-)
+const Wrapper = ({
+    input: { value, onChange },
+    meta,
+    multiSelect,
+    ...rest
+}) => {
+    const { loading, data, error } = useDataQuery(rootQuery)
+
+    return (
+        <>
+            {loading && <CircularLoader />}
+            {error && (
+                <Help error>
+                    {i18n.t(
+                        'Something went wrong when loading the organisation units!'
+                    )}
+                </Help>
+            )}
+            {data && (
+                <OrganisationUnitTree
+                    onChange={({ selected }) => {
+                        onChange(selected)
+                    }}
+                    selected={value}
+                    roots={data.roots.organisationUnits.map(ou => ou.id)}
+                    {...rest}
+                    singleSelection={!multiSelect}
+                />
+            )}
+
+            {(meta.touched || !meta.pristine) && meta.error && (
+                <Help error>{meta.error}</Help>
+            )}
+        </>
+    )
+}
 
 Wrapper.propTypes = {
     input: PropTypes.shape({
@@ -35,6 +75,7 @@ Wrapper.propTypes = {
         pristine: PropTypes.bool,
         touched: PropTypes.bool,
     }).isRequired,
+    multiSelect: PropTypes.bool,
 }
 
 const OrgUnitTreeField = ({ name, validator, ...rest }) => {
