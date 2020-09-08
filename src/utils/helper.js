@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 
+import { getMimeType } from './mime'
 import { getUploadXHR } from './xhr'
 
 const trimString = (length, string) =>
@@ -45,12 +46,7 @@ const blobType = (format, compression) => {
     } else if (compression === 'zip') {
         return `application/${format}+zip`
     }
-
-    if (format === 'xml') {
-        return 'application/xml'
-    } else if (format === 'json') {
-        return 'application/json'
-    }
+    return getMimeType(format)
 }
 
 const createBlob = (contents, format, compression = 'none') => {

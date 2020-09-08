@@ -1,4 +1,5 @@
 import { locationAssign, compressionToName } from '../../utils/helper'
+import { getMimeType } from '../../utils/mime'
 import i18n from '@dhis2/d2-i18n'
 
 import { FORM_ERROR } from '../../utils/final-form'
@@ -12,35 +13,6 @@ import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
-
-const dataValueSetQuery = {
-    sets: {
-        resource: 'dataValueSets',
-        params: ({
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            includeDeleted,
-            children,
-            startDate,
-            endDate,
-            orgUnit,
-            dataSet,
-            format,
-        }) => ({
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            includeDeleted,
-            children,
-            startDate,
-            endDate,
-            orgUnit,
-            dataSet,
-            format,
-        }),
-    },
-}
 
 const valuesToParams = ({
     selectedOrgUnits,
@@ -69,52 +41,30 @@ const valuesToParams = ({
         `compression=${compressionToName(compression)}`,
     ].join('&')
 
-const onExport = (baseUrl, engine) => async values => {
-    const {
-        selectedOrgUnits,
-        includeChildren,
-        selectedDataSets,
-        format,
-        compression,
-        startDate,
-        endDate,
-        includeDeleted,
-        dataElementIdScheme,
-        orgUnitIdScheme,
-        idScheme,
-    } = values
+const onExport = baseUrl => async values => {
+    const { format, compression } = values
+
+    const apiBaseUrl = `${baseUrl}/api/`
+    const endpoint = `dataValueSets`
+    const downloadUrlParams = valuesToParams(values)
+    const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
 
     // if compression is set we can redirect to the appropriate URL
     // and set the compression parameter
     if (compression) {
-        const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = `dataValueSets`
-        const downloadUrlParams = valuesToParams(values)
-        const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
         locationAssign(url)
         return
     }
 
-    // fetch data
+    // fetch data and create blob
     try {
-        const { sets } = await engine.query(dataValueSetQuery, {
-            variables: {
-                dataElementIdScheme: dataElementIdScheme,
-                orgUnitIdScheme: orgUnitIdScheme,
-                idScheme: idScheme,
-                includeDeleted: includeDeleted.toString(),
-                children: includeChildren.toString(),
-                startDate: jsDateToISO8601(startDate),
-                endDate: jsDateToISO8601(endDate),
-                orgUnit: selectedOrgUnits.map(o => pathToId(o)),
-                dataSet: selectedDataSets,
-                format: format,
-            },
+        const data = await fetch(url, {
+            Accept: getMimeType(format),
         })
-        const dataStr = format === 'json' ? JSON.stringify(sets) : sets
+        const dataStr = await data.text()
         const filename = `data.${format}`
-        const url = createBlob(dataStr, format)
-        downloadBlob(url, filename)
+        const downloadUrl = createBlob(dataStr, format)
+        downloadBlob(downloadUrl, filename)
     } catch (error) {
         const errors = [
             {
