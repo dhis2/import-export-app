@@ -1,20 +1,26 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { FileUpload as FileUploadGeneric } from '../index'
 import { SINGLE_FILE_VALIDATOR } from '../FileUpload/FileUpload'
 
 const NAME = 'files'
-const LABEL = i18n.t('File')
+const LABEL = i18n.t('Select a file to import values from')
 const DATATEST = 'input-file-upload'
 const VALIDATOR = SINGLE_FILE_VALIDATOR
 
-const FileUpload = () => (
+const FileUpload = ({ helpText }) => (
     <FileUploadGeneric
         name={NAME}
         label={LABEL}
         validator={VALIDATOR}
         dataTest={DATATEST}
+        helpText={helpText}
     />
 )
+
+FileUpload.propTypes = {
+    helpText: PropTypes.string,
+}
 
 export { FileUpload }

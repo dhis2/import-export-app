@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { AlertBar } from '@dhis2/ui-core'
+import { AlertBar } from '@dhis2/ui'
 
 import styles from './FormAlerts.module.css'
 

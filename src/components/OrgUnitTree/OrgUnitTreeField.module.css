@@ -1,0 +1,5 @@
+.wrapper {
+    background-color: white;
+    display: inline-block;
+    padding: 0 var(--spacers-dp48) 0 0;
+}

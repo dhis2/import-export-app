@@ -1,7 +1,7 @@
 import React from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import {
     Format,
@@ -18,10 +18,12 @@ import {
 import { Page, MetadataDependencyExportIcon } from '../../components/index'
 import { onExport } from './form-helper'
 
+const { Form } = ReactFinalForm
+
 // PAGE INFO
 const PAGE_NAME = i18n.t('Metadata dependency export')
 const PAGE_DESCRIPTION = i18n.t(
-    'Export metadata like data sets and programs including related metadata objects in the XML or JSON format.'
+    'Export metadata dependencies, such as data sets and programs, including related metadata objects, in XML or JSON format.'
 )
 const PAGE_ICON = <MetadataDependencyExportIcon />
 
@@ -54,7 +56,9 @@ const MetadataDependencyExport = () => {
                         <Format availableFormats={formatNoCsvOptions} />
                         <Compression />
                         <SkipSharing />
-                        <ExportButton />
+                        <ExportButton
+                            label={i18n.t('Export metadata dependencies')}
+                        />
                     </form>
                 )}
             />

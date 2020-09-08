@@ -24,27 +24,23 @@ const onExport = baseUrl => values => {
     // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `events`
-    const endpointExtension = compression.value
-        ? `${format.value}.${compression.value}`
-        : format.value
+    const endpointExtension = compression ? `${format}.${compression}` : format
     const filename = `${endpoint}.${endpointExtension}`
     const downloadUrlParams = [
         'links=false',
         'skipPaging=true',
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,
-        `program=${selectedPrograms[0]}`,
+        `program=${selectedPrograms}`,
         `includeDeleted=${includeDeleted}`,
-        `dataElementIdScheme=${dataElementIdScheme.value}`,
-        `orgUnitIdScheme=${orgUnitIdScheme.value}`,
-        `idScheme=${idScheme.value}`,
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `idScheme=${idScheme}`,
         `attachment=${filename}`,
         `startDate=${jsDateToISO8601(startDate)}`,
         `endDate=${jsDateToISO8601(endDate)}`,
-        `ouMode=${inclusion.value}`,
-        `format=${format.value}`,
-        programStage.value != ALL_VALUE
-            ? `programStage=${programStage.value}`
-            : '',
+        `ouMode=${inclusion}`,
+        `format=${format}`,
+        programStage != ALL_VALUE ? `programStage=${programStage}` : '',
     ]
         .filter(s => s != '')
         .join('&')

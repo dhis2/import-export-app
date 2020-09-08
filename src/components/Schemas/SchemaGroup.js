@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Checkbox } from '@dhis2/ui-core'
+import { Checkbox } from '@dhis2/ui'
 
 import styles from './Schemas.module.css'
 

@@ -1,9 +1,10 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
-import { Field, FileInput } from '@dhis2/ui-forms'
+import { ReactFinalForm, FileInputFieldFF } from '@dhis2/ui'
 
 import { FormField } from '../index'
+const { Field } = ReactFinalForm
 
 const SINGLE_FILE_VALIDATOR = files =>
     !files || files.length == 0 ? i18n.t('Please select a file') : undefined
@@ -13,6 +14,7 @@ const FileUpload = ({
     required,
     name,
     label,
+    helpText,
     accept = '*',
     validator,
     dataTest,
@@ -20,13 +22,14 @@ const FileUpload = ({
     return (
         <FormField label={label} required={required} dataTest={dataTest}>
             <Field
-                component={FileInput}
+                component={FileInputFieldFF}
                 name={name}
                 accept={accept}
                 required={required}
                 initialValue={initialValue}
                 validate={validator}
                 dataTest={`${dataTest}-fileinput`}
+                helpText={helpText}
             />
         </FormField>
     )
@@ -37,6 +40,7 @@ FileUpload.propTypes = {
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     accept: PropTypes.string,
+    helpText: PropTypes.string,
     initialValue: PropTypes.instanceOf(File),
     required: PropTypes.bool,
     validator: PropTypes.func,

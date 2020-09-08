@@ -10,7 +10,7 @@ exports[`matches snapshot 1`] = `
       data-test="dhis2-uicore-tablehead"
     >
       <tr
-        class="jsx-2163445633 "
+        class="jsx-3124144591 zebraStriping"
         data-test="dhis2-uicore-tablerowhead"
       >
         <th
@@ -31,7 +31,7 @@ exports[`matches snapshot 1`] = `
       data-test="dhis2-uicore-tablebody"
     >
       <tr
-        class="jsx-2163445633 "
+        class="jsx-3124144591 zebraStriping"
         data-test="dhis2-uicore-tablerow"
       >
         <td

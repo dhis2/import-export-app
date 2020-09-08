@@ -1,7 +1,7 @@
 import React from 'react'
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import {
     Format,
@@ -16,6 +16,7 @@ import {
     defaultProgramStatusOption,
     FollowUpStatus,
     defaultFollowUpStatusOption,
+    Dates,
     ProgramStartDate,
     ProgramEndDate,
     ProgramPicker,
@@ -43,13 +44,21 @@ import {
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs/index'
-import { Page, MoreOptions, TEIIcon } from '../../components/index'
+import {
+    Page,
+    MoreOptions,
+    BasicOptions,
+    SchemeContainer,
+    TEIIcon,
+} from '../../components/index'
 import { onExport, validate } from './form-helper'
+
+const { Form } = ReactFinalForm
 
 // PAGE INFO
 const PAGE_NAME = i18n.t('Tracked entity instances export')
 const PAGE_DESCRIPTION = i18n.t(
-    'Export tracked entity instances in the XML, JSON, JSONP or CSV format.'
+    'Export tracked entity instances in XML, JSON, JSONP or CSV format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -80,8 +89,8 @@ const initialValues = {
 }
 
 const TEIExport = () => {
-    const engine = useDataEngine()
-    const onSubmit = onExport(engine)
+    const { baseUrl } = useConfig()
+    const onSubmit = onExport(baseUrl)
 
     return (
         <Page
@@ -96,43 +105,61 @@ const TEIExport = () => {
                 validate={validate}
                 subscription={{ values: true, submitError: true }}
                 render={({ handleSubmit, form, values, submitError }) => {
-                    const showProgramFilters =
-                        values.teiTypeFilter.value == 'PROGRAM'
-                    const showTEFilters = values.teiTypeFilter.value == 'TE'
-                    const showLUDates = values.lastUpdatedFilter.value == 'DATE'
+                    const showProgramFilters = values.teiTypeFilter == 'PROGRAM'
+                    const showTEFilters = values.teiTypeFilter == 'TE'
+                    const showLUDates = values.lastUpdatedFilter == 'DATE'
                     const showLUDuration =
-                        values.lastUpdatedFilter.value == 'DURATION'
-                    const showUserPicker =
-                        values.assignedUserMode.value == 'PROVIDED'
+                        values.lastUpdatedFilter == 'DURATION'
+                    const showUserPicker = values.assignedUserMode == 'PROVIDED'
 
                     return (
                         <form onSubmit={handleSubmit}>
-                            <OrgUnitTree />
-                            <OrgUnitMode />
-                            <TEITypeFilter />
-                            <ProgramPicker show={showProgramFilters} />
-                            <ProgramStatus show={showProgramFilters} />
-                            <FollowUpStatus show={showProgramFilters} />
-                            <ProgramStartDate show={showProgramFilters} />
-                            <ProgramEndDate show={showProgramFilters} />
-                            <TETypePicker show={showTEFilters} />
-                            <Format availableFormats={formatJsonpOptions} />
-                            <Compression />
+                            <BasicOptions>
+                                <OrgUnitTree />
+                                <OrgUnitMode />
+                                <TEITypeFilter />
+                                <ProgramPicker
+                                    label={i18n.t('Program to export from')}
+                                    show={showProgramFilters}
+                                />
+                                <ProgramStatus show={showProgramFilters} />
+                                <FollowUpStatus show={showProgramFilters} />
+                                <Dates
+                                    label={i18n.t('Enrollment date range')}
+                                    show={showProgramFilters}
+                                >
+                                    <ProgramStartDate
+                                        show={showProgramFilters}
+                                    />
+                                    <ProgramEndDate show={showProgramFilters} />
+                                </Dates>
+                                <TETypePicker show={showTEFilters} />
+                                <Format availableFormats={formatJsonpOptions} />
+                                <Compression />
+                            </BasicOptions>
                             <MoreOptions>
                                 <LastUpdatedFilter />
-                                <LastUpdatedStartDate show={showLUDates} />
-                                <LastUpdatedEndDate show={showLUDates} />
+                                <Dates show={showLUDates}>
+                                    <LastUpdatedStartDate show={showLUDates} />
+                                    <LastUpdatedEndDate show={showLUDates} />
+                                </Dates>
                                 <LastUpdatedDuration show={showLUDuration} />
                                 <AssignedUserMode />
                                 <UserPicker show={showUserPicker} />
                                 <IncludeDeleted />
                                 <IncludeAllAttributes />
-                                <DataElementIdScheme />
-                                <EventIdScheme />
-                                <OrgUnitIdScheme />
-                                <IdScheme />
+                                <SchemeContainer>
+                                    <DataElementIdScheme />
+                                    <EventIdScheme />
+                                    <OrgUnitIdScheme />
+                                    <IdScheme />
+                                </SchemeContainer>
                             </MoreOptions>
-                            <ExportButton />
+                            <ExportButton
+                                label={i18n.t(
+                                    'Export tracked entity instances'
+                                )}
+                            />
                             <FormAlerts alerts={submitError} />
                         </form>
                     )

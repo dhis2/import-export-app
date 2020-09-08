@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
@@ -13,6 +13,8 @@ import {
 import { Page, GMLIcon } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
+
+const { Form } = ReactFinalForm
 
 // PAGE INFO
 const PAGE_NAME = i18n.t('GML import')

@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import { ResourcePickerField } from '../index'
 import { resourceTypes } from '../ResourcePicker/resourceTypes'
 
 const NAME = 'selectedUsers'
 const DATATEST = 'input-user-picker'
-const LABEL = i18n.t('Users')
+const LABEL = i18n.t('Which users should be used?')
 const LISTNAME = 'userPicker'
-const FILTERLABEL = i18n.t('Filter users by name')
+const FILTERLABEL = i18n.t('Filter users')
+const SELECTEDLABEL = i18n.t('Selected users')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the users!')
 const RESOURCETYPE = resourceTypes.USER
 
@@ -36,6 +37,7 @@ const UserPicker = ({ multiSelect, show, ...rest }) => {
                 listName={LISTNAME}
                 label={LABEL}
                 filterLabel={FILTERLABEL}
+                selectedLabel={SELECTEDLABEL}
                 dataTest={DATATEST}
                 multiSelect={multiSelect}
                 validator={validator}

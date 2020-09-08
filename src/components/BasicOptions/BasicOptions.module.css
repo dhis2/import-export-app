@@ -1,0 +1,14 @@
+.container {
+    margin-bottom: var(--spacers-dp48);
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--colors-grey900);
+    margin-bottom: var(--spacers-dp4);
+}
+
+.header {
+    margin: var(--spacers-dp8) 0;
+}

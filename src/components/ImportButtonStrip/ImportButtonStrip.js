@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Button, ButtonStrip, Help } from '@dhis2/ui-core'
+import { Button, ButtonStrip, Help } from '@dhis2/ui'
 
 import styles from './ImportButtonStrip.module.css'
 const DRYRUN_HELPTEXT = i18n.t(
-    'Will do a test run without importing any data into the database'
+    'A dry run tests the import settings without importing any data'
 )
 
 const ImportButtonStrip = ({
@@ -15,7 +15,7 @@ const ImportButtonStrip = ({
     dataTest,
 }) => {
     return (
-        <div data-test={dataTest}>
+        <div className={styles.container} data-test={dataTest}>
             <ButtonStrip dataTest={`${dataTest}-button-strip`}>
                 <Button
                     primary
@@ -24,7 +24,7 @@ const ImportButtonStrip = ({
                     dataTest={dryRunDataTest}
                     className={styles.dryRun}
                 >
-                    {i18n.t('Dry run')}
+                    {i18n.t('Start dry run')}
                 </Button>
                 <Button
                     secondary
@@ -32,12 +32,10 @@ const ImportButtonStrip = ({
                     onClick={() => form.change('dryRun', false)}
                     dataTest={importDataTest}
                 >
-                    {i18n.t('Import')}
+                    {i18n.t('Start import')}
                 </Button>
             </ButtonStrip>
-            <Help dataTest={`${dataTest}-help`}>{`${i18n.t(
-                'Dry run'
-            )}: ${DRYRUN_HELPTEXT}`}</Help>
+            <Help dataTest={`${dataTest}-help`}>{DRYRUN_HELPTEXT}</Help>
         </div>
     )
 }
