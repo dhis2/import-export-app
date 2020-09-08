@@ -10,6 +10,7 @@ import { categoryTypes } from '../../utils/tasks'
 import { JobSummary } from '../index'
 import { categoryTypesObj, jobToPath } from './helper'
 import { MenuLabel } from './MenuLabel/MenuLabel'
+import { ChipContainer } from './ChipContainer'
 
 const JobOverview = ({
     activeTypes,
@@ -58,10 +59,7 @@ const JobOverview = ({
         <div className={styles.container} data-test="job-overview-container">
             <div className={styles.items} data-test="job-overview-tasks">
                 <Menu className={styles.Menu}>
-                    <div
-                        className={styles.chips}
-                        data-test="job-overview-chips"
-                    >
+                    <ChipContainer>
                         {categoryTypes.map(({ key, importType, label }) => (
                             <Chip
                                 onClick={() => onChipClick(importType)}
@@ -72,7 +70,7 @@ const JobOverview = ({
                                 {label}
                             </Chip>
                         ))}
-                    </div>
+                    </ChipContainer>
                     {filteredTasks.map(t => (
                         <MenuItem
                             key={`job-overview-tasks-${t.id}`}

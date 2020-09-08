@@ -2,62 +2,72 @@
 
 exports[`matches snapshot when not toggled 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="container"
     data-test="more-options"
   >
-    <div
+    <header
       class="header"
       data-test="more-options-header"
     >
       <svg
-        data-test="icon-plus"
-        style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-        viewBox="0 0 24 24"
+        class="jsx-4098137027 chevronHidden"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-        />
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
+          class="jsx-4098137027"
+          d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
         />
       </svg>
-      more options
-    </div>
+      <h2
+        class="label"
+      >
+        Advanced options
+      </h2>
+    </header>
+    <div
+      class="jsx-1555285825 jsx-876534464 "
+      data-test="dhis2-uicore-divider"
+    />
     <div
       class="children"
       data-test="more-options-children"
     />
-  </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`matches snapshot when toggled 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="container"
     data-test="more-options"
   >
-    <div
+    <header
       class="header"
       data-test="more-options-header"
     >
       <svg
-        data-test="icon-minus"
-        style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-        viewBox="0 0 24 24"
+        class="jsx-4098137027 chevronVisible"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 13H5v-2h14v2z"
-        />
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
+          class="jsx-4098137027"
+          d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
         />
       </svg>
-      more options
-    </div>
+      <h2
+        class="label"
+      >
+        Advanced options
+      </h2>
+    </header>
+    <div
+      class="jsx-1555285825 jsx-876534464 "
+      data-test="dhis2-uicore-divider"
+    />
     <div
       class="children"
       data-test="more-options-children"
@@ -66,35 +76,40 @@ exports[`matches snapshot when toggled 1`] = `
         Child paragraph
       </p>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`matches snapshot when toggled and different label 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="container"
     data-test="more-options"
   >
-    <div
+    <header
       class="header"
       data-test="more-options-header"
     >
       <svg
-        data-test="icon-minus"
-        style="width: 24px; height: 24px; display: inline-block; fill: current-color; user-select: none;"
-        viewBox="0 0 24 24"
+        class="jsx-4098137027 chevronVisible"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 13H5v-2h14v2z"
-        />
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
+          class="jsx-4098137027"
+          d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
         />
       </svg>
-      Details
-    </div>
+      <h2
+        class="label"
+      >
+        Details
+      </h2>
+    </header>
+    <div
+      class="jsx-1555285825 jsx-876534464 "
+      data-test="dhis2-uicore-divider"
+    />
     <div
       class="children"
       data-test="more-options-children"
@@ -103,6 +118,6 @@ exports[`matches snapshot when toggled and different label 1`] = `
         Child paragraph
       </p>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;
