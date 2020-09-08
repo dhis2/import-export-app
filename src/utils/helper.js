@@ -31,6 +31,13 @@ const jsDateToString = date =>
         .toString()
         .padStart(2, 0)}
 `
+// some parameters take the long version of the compression type
+const compressionToName = compression => {
+    if (compression === 'gz') {
+        return 'gzip'
+    }
+    return compression
+}
 
 const blobType = (format, compression) => {
     if (compression === 'gzip') {
@@ -215,4 +222,5 @@ export {
     pathToId,
     trimString,
     uploadFile,
+    compressionToName,
 }

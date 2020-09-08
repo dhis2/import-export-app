@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 
@@ -63,8 +63,9 @@ const initialValues = {
 }
 
 const DataExport = () => {
+    const { baseUrl } = useConfig()
     const engine = useDataEngine()
-    const onSubmit = onExport(engine)
+    const onSubmit = onExport(baseUrl, engine)
 
     return (
         <Page

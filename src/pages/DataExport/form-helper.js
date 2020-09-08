@@ -1,5 +1,5 @@
+import { locationAssign, compressionToName } from '../../utils/helper'
 import i18n from '@dhis2/d2-i18n'
-import JSZip from 'jszip'
 
 import { FORM_ERROR } from '../../utils/final-form'
 import {
@@ -42,7 +42,34 @@ const dataValueSetQuery = {
     },
 }
 
-const onExport = engine => async values => {
+const valuesToParams = ({
+    selectedOrgUnits,
+    includeChildren,
+    selectedDataSets,
+    format,
+    compression,
+    startDate,
+    endDate,
+    includeDeleted,
+    dataElementIdScheme,
+    orgUnitIdScheme,
+    idScheme,
+}) =>
+    [
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `idScheme=${idScheme}`,
+        `includeDeleted=${includeDeleted}`,
+        `children=${includeChildren}`,
+        `startDate=${jsDateToISO8601(startDate)}`,
+        `endDate=${jsDateToISO8601(endDate)}`,
+        `orgUnit=${selectedOrgUnits.map(o => pathToId(o))}`,
+        `dataSet=${selectedDataSets}`,
+        `format=${format}`,
+        `compression=${compressionToName(compression)}`,
+    ].join('&')
+
+const onExport = (baseUrl, engine) => async values => {
     const {
         selectedOrgUnits,
         includeChildren,
@@ -56,6 +83,17 @@ const onExport = engine => async values => {
         orgUnitIdScheme,
         idScheme,
     } = values
+
+    // if compression is set we can redirect to the appropriate URL
+    // and set the compression parameter
+    if (compression) {
+        const apiBaseUrl = `${baseUrl}/api/`
+        const endpoint = `dataValueSets`
+        const downloadUrlParams = valuesToParams(values)
+        const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
+        locationAssign(url)
+        return
+    }
 
     // fetch data
     try {
@@ -75,17 +113,8 @@ const onExport = engine => async values => {
         })
         const dataStr = format === 'json' ? JSON.stringify(sets) : sets
         const filename = `data.${format}`
-        if (compression !== '') {
-            const zip = new JSZip()
-            zip.file(filename, dataStr)
-            zip.generateAsync({ type: 'blob' }).then(content => {
-                const url = URL.createObjectURL(content)
-                downloadBlob(url, `${filename}.${compression}`)
-            })
-        } else {
-            const url = createBlob(dataStr, format)
-            downloadBlob(url, filename)
-        }
+        const url = createBlob(dataStr, format)
+        downloadBlob(url, filename)
     } catch (error) {
         const errors = [
             {
