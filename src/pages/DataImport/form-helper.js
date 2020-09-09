@@ -1,6 +1,8 @@
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
 
+const isAsync = true
+
 const onImport = ({
     baseUrl,
     setProgress,
@@ -25,7 +27,7 @@ const onImport = ({
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = 'dataValueSets.json'
     const params = [
-        'async=true',
+        `async=${isAsync}`,
         `dryRun=${dryRun}`,
         `strategy=${strategy}`,
         `preheatCache=${preheatCache}`,
@@ -47,6 +49,7 @@ const onImport = ({
             file: files[0],
             format: format,
             type: 'DATAVALUE_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('data', id, { ...entry, jobDetails: values }),
