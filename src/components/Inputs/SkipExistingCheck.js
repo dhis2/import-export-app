@@ -5,6 +5,8 @@ import { FormField } from '../index'
 
 const { Field } = ReactFinalForm
 
+const defaultSkipExistingCheckOption = false
+
 const NAME = 'skipExistingCheck'
 const DATATEST = 'input-skip-exisiting-check'
 const SHORT_LABEL = i18n.t('Skip exisiting check')
@@ -26,4 +28,4 @@ const SkipExistingCheck = () => (
     </FormField>
 )
 
-export { SkipExistingCheck }
+export { SkipExistingCheck, defaultSkipExistingCheckOption }

@@ -5,6 +5,8 @@ import { FormField } from '../index'
 
 const { Field } = ReactFinalForm
 
+const defaultSkipSharingOption = false
+
 const NAME = 'skipSharing'
 const DATATEST = 'input-skip-sharing'
 const SHORT_LABEL = i18n.t('Skip sharing')
@@ -26,4 +28,4 @@ const SkipSharing = () => (
     </FormField>
 )
 
-export { SkipSharing }
+export { SkipSharing, defaultSkipSharingOption }

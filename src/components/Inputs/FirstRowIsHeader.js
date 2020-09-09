@@ -6,6 +6,8 @@ import { FormField } from '../index'
 
 const { Field } = ReactFinalForm
 
+const defaultFirstRowIsHeaderOption = false
+
 const NAME = 'firstRowIsHeader'
 const DATATEST = 'input-first-row-is-header'
 const SHORT_LABEL = i18n.t('Is the first row a header row?')
@@ -30,4 +32,4 @@ FirstRowIsHeader.propTypes = {
     show: PropTypes.bool.isRequired,
 }
 
-export { FirstRowIsHeader }
+export { FirstRowIsHeader, defaultFirstRowIsHeaderOption }
