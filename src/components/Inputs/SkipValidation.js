@@ -4,6 +4,7 @@ import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
 import { FormField } from '../index'
 
 const { Field } = ReactFinalForm
+const defaultSkipValidationOption = false
 
 const NAME = 'skipValidation'
 const DATATEST = 'input-skip-validation'
@@ -22,4 +23,4 @@ const SkipValidation = () => (
     </FormField>
 )
 
-export { SkipValidation }
+export { SkipValidation, defaultSkipValidationOption }
