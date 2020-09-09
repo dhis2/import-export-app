@@ -5,6 +5,8 @@ import { FormField } from '../index'
 
 const { Field } = ReactFinalForm
 
+const defaultSkipAuditOption = false
+
 const NAME = 'skipAudit'
 const DATATEST = 'input-has-authority-to-skip-audit'
 const SHORT_LABEL = i18n.t('Skip audit')
@@ -26,4 +28,4 @@ const SkipAudit = () => (
     </FormField>
 )
 
-export { SkipAudit }
+export { SkipAudit, defaultSkipAuditOption }
