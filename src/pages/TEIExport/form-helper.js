@@ -63,7 +63,7 @@ const valuesToParams = ({
 
     if (teiTypeFilter == 'PROGRAM') {
         minParams.program = selectedPrograms
-        if (minParams.programStatus) {
+        if (programStatus) {
             // programStatus = ALL is now the same
             // as not providing a value for this param at all
             minParams.programStatus = programStatus
