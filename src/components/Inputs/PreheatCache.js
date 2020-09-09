@@ -5,6 +5,8 @@ import { FormField } from '../index'
 
 const { Field } = ReactFinalForm
 
+const defaultPreheatCacheOption = false
+
 const NAME = 'preheatCache'
 const DATATEST = 'input-preheat-cache'
 const SHORT_LABEL = i18n.t('Preheat cache')
@@ -26,4 +28,4 @@ const PreheatCache = () => (
     </FormField>
 )
 
-export { PreheatCache }
+export { PreheatCache, defaultPreheatCacheOption }

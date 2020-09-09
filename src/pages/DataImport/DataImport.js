@@ -4,18 +4,22 @@ import { useConfig } from '@dhis2/app-runtime'
 import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
-import { getPrevJobDetails } from '../../utils/helper'
+import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
 import {
     FileUpload,
     Format,
     formatAdxPdfOptions,
     defaultFormatOption,
     FirstRowIsHeader,
+    defaultFirstRowIsHeaderOption,
     Strategy,
     defaultStrategyOption,
     PreheatCache,
+    defaultPreheatCacheOption,
     SkipAudit,
+    defaultSkipAuditOption,
     SkipExistingCheck,
+    defaultSkipExistingCheckOption,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
     IdScheme,
@@ -50,15 +54,27 @@ const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     strategy: prevJobDetails.strategy || defaultStrategyOption,
-    firstRowIsHeader: !!prevJobDetails.firstRowIsHeader,
-    preheatCache: !!prevJobDetails.preheatCache,
-    skipAudit: !!prevJobDetails.skipAudit,
+    firstRowIsHeader: getInitialBoolValue(
+        prevJobDetails.firstRowIsHeader,
+        defaultFirstRowIsHeaderOption
+    ),
+    preheatCache: getInitialBoolValue(
+        prevJobDetails.preheatCache,
+        defaultPreheatCacheOption
+    ),
+    skipAudit: getInitialBoolValue(
+        prevJobDetails.skipAudit,
+        defaultSkipAuditOption
+    ),
     dataElementIdScheme:
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
     idScheme: prevJobDetails.idScheme || defaultIdSchemeOption,
-    skipExistingCheck: !!prevJobDetails.skipExistingCheck,
+    skipExistingCheck: getInitialBoolValue(
+        prevJobDetails.skipExistingCheck,
+        defaultSkipExistingCheckOption
+    ),
 })
 
 const DataImport = () => {

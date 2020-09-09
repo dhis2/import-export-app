@@ -5,6 +5,8 @@ import { FormField } from '../index'
 
 const { Field } = ReactFinalForm
 
+const defaultIsAsyncOption = true
+
 const NAME = 'isAsync'
 const DATATEST = 'input-is-async'
 const SHORT_LABEL = i18n.t('Async')
@@ -24,4 +26,4 @@ const IsAsync = () => (
     </FormField>
 )
 
-export { IsAsync }
+export { IsAsync, defaultIsAsyncOption }
