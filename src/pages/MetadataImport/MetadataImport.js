@@ -4,13 +4,14 @@ import { useConfig } from '@dhis2/app-runtime'
 import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
-import { getPrevJobDetails } from '../../utils/helper'
+import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
 import {
     FileUpload,
     Format,
     formatOptions,
     defaultFormatOption,
     FirstRowIsHeader,
+    defaultFirstRowIsHeaderOption,
     ClassKey,
     Identifier,
     defaultIdentifierOption,
@@ -27,8 +28,11 @@ import {
     FlushMode,
     defaultFlushModeOption,
     SkipSharing,
+    defaultSkipSharingOption,
     SkipValidation,
+    defaultSkipValidationOption,
     IsAsync,
+    defaultIsAsyncOption,
     InclusionStrategy,
     defaultInclusionStrategyOption,
     ImportButtonStrip,
@@ -61,15 +65,24 @@ const createInitialValues = prevJobDetails => ({
     preheatMode: prevJobDetails.preheatMode || defaultPreheatModeOption,
     importStrategy:
         prevJobDetails.importStrategy || defaultImportStrategyOption,
-    firstRowIsHeader: !!prevJobDetails.firstRowIsHeader,
+    firstRowIsHeader: getInitialBoolValue(
+        prevJobDetails.firstRowIsHeader,
+        defaultFirstRowIsHeaderOption
+    ),
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
     mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
     inclusionStrategy:
         prevJobDetails.inclusionStrategy || defaultInclusionStrategyOption,
-    skipSharing: !!prevJobDetails.skipSharing,
-    skipValidation: !!prevJobDetails.skipValidation,
-    isAsync: !prevJobDetails.isAsync,
+    skipSharing: getInitialBoolValue(
+        prevJobDetails.skipSharing,
+        defaultSkipSharingOption
+    ),
+    skipValidation: getInitialBoolValue(
+        prevJobDetails.skipValidation,
+        defaultSkipValidationOption
+    ),
+    isAsync: getInitialBoolValue(prevJobDetails.isAsync, defaultIsAsyncOption),
 })
 
 const MetadataImport = () => {

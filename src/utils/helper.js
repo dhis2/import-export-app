@@ -228,11 +228,19 @@ const getPrevJobDetails = (query, tasks) => {
     return job.jobDetails
 }
 
+const getInitialBoolValue = (prevValue, defaultValue) => {
+    if (prevValue === null || prevValue === undefined) {
+        return defaultValue
+    }
+    return prevValue
+}
+
 export {
     createBlob,
     downloadBlob,
     fetchAttributes,
     getPrevJobDetails,
+    getInitialBoolValue,
     locationAssign,
     jsDateToISO8601,
     jsDateToString,

@@ -10,12 +10,18 @@ export {
     formatJsonpOptions,
     defaultFormatOption,
 } from './Format'
-export { FirstRowIsHeader } from './FirstRowIsHeader'
+export {
+    FirstRowIsHeader,
+    defaultFirstRowIsHeaderOption,
+} from './FirstRowIsHeader'
 export { ClassKey } from './ClassKey'
 export { Strategy, defaultStrategyOption } from './Strategy'
-export { PreheatCache } from './PreheatCache'
-export { SkipAudit } from './SkipAudit'
-export { SkipExistingCheck } from './SkipExistingCheck'
+export { PreheatCache, defaultPreheatCacheOption } from './PreheatCache'
+export { SkipAudit, defaultSkipAuditOption } from './SkipAudit'
+export {
+    SkipExistingCheck,
+    defaultSkipExistingCheckOption,
+} from './SkipExistingCheck'
 export { Identifier, defaultIdentifierOption } from './Identifier'
 export {
     ImportReportMode,
@@ -30,9 +36,9 @@ export {
     InclusionStrategy,
     defaultInclusionStrategyOption,
 } from './InclusionStrategy'
-export { SkipSharing } from './SkipSharing'
-export { SkipValidation } from './SkipValidation'
-export { IsAsync } from './IsAsync'
+export { SkipSharing, defaultSkipSharingOption } from './SkipSharing'
+export { SkipValidation, defaultSkipValidationOption } from './SkipValidation'
+export { IsAsync, defaultIsAsyncOption } from './IsAsync'
 export { OrgUnitTree } from './OrgUnitTree'
 export { DataSetPicker } from './DataSetPicker'
 export { ProgramPicker } from './ProgramPicker'
