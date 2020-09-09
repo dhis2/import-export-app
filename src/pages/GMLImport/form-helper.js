@@ -1,6 +1,8 @@
 import { FORM_ERROR } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
 
+const isAsync = true
+
 const onImport = ({
     baseUrl,
     setProgress,
@@ -21,6 +23,7 @@ const onImport = ({
             file: files[0],
             format: 'gml',
             type: 'GML_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('gml', id, { ...entry, jobDetails: values }),

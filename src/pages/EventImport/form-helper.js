@@ -1,6 +1,8 @@
 import { FORM_ERROR } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
 
+const isAsync = true
+
 const onImport = ({
     baseUrl,
     setProgress,
@@ -22,7 +24,7 @@ const onImport = ({
     const endpoint = 'events.json'
     const params = [
         'skipFirst=true',
-        'async=true',
+        `async=${isAsync}`,
         `dryRun=${dryRun}`,
         `dataElementIdScheme=${dataElementIdScheme}`,
         `orgUnitIdScheme=${orgUnitIdScheme}`,
@@ -38,6 +40,7 @@ const onImport = ({
             file: files[0],
             format: format,
             type: 'EVENT_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('event', id, { ...entry, jobDetails: values }),
