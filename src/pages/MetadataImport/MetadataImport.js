@@ -132,7 +132,7 @@ const MetadataImport = () => {
                             <Identifier />
                             <ImportReportMode />
                             <PreheatMode />
-                            <ImportStrategy />
+                            <ImportStrategy value={values.importStrategy} />
                             <AtomicMode />
                             <MergeMode />
                         </BasicOptions>

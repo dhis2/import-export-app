@@ -9,3 +9,7 @@
 .vertical div {
     padding-bottom: var(--spacers-dp8);
 }
+
+.children {
+    margin-left: var(--spacers-dp32);
+}
