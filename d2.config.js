@@ -1,6 +1,6 @@
 const config = {
     type: 'app',
-    name: 'import-export-app',
+    name: 'import-export',
     title: 'Import/Export',
     coreApp: true,
 
