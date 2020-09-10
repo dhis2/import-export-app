@@ -30,7 +30,10 @@ const Summary = ({ summary }) => {
         }
         const { stats, messages } = typeReportParse(summary.typeReports)
         return (
-            <div data-test="job-summary-summary">
+            <div
+                data-test="job-summary-summary"
+                className={styles.typeReportSummary}
+            >
                 <TypeReportSummary
                     overviewStats={overviewStats}
                     stats={stats}
