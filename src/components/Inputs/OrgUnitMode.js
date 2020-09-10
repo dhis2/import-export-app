@@ -7,31 +7,33 @@ import { RadioGroupField } from '../index'
 const orgUnitSelectionModeOptions = [
     {
         value: 'SELECTED',
-        label: i18n.t('Only include selected organisation unit'),
+        label: i18n.t('SELECTED: Only include selected organisation unit'),
     },
     {
         value: 'CHILDREN',
-        label: i18n.t('Include the first level of units inside selections'),
+        label: i18n.t(
+            'CHILDREN: Include the first level of units inside selections'
+        ),
     },
     {
         value: 'DESCENDANTS',
-        label: i18n.t('Include all units inside selections'),
+        label: i18n.t('DESCENDANTS: Include all units inside selections'),
     },
     {
         value: 'ACCESSIBLE',
         label: i18n.t(
-            'Data view organisation units associated with the current user'
+            'ACCESSIBLE: Data view organisation units associated with the current user'
         ),
     },
     {
         value: 'CAPTURE',
         label: i18n.t(
-            'Data capture organisation units associated with the current user'
+            'CAPTURE: Data capture organisation units associated with the current user'
         ),
     },
     {
         value: 'ALL',
-        label: i18n.t('All organisation units in the system'),
+        label: i18n.t('ALL: All organisation units in the system'),
     },
 ]
 const defaultOrgUnitSelectionModeOption = orgUnitSelectionModeOptions[0].value
