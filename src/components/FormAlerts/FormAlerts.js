@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { AlertBar } from '@dhis2/ui'
-
-import styles from './FormAlerts.module.css'
+import { AlertStack, AlertBar } from '@dhis2/ui'
 
 const FormAlerts = ({ alerts, dataTest }) => {
     const [bars, setBars] = useState([])
@@ -16,7 +14,7 @@ const FormAlerts = ({ alerts, dataTest }) => {
                     info={a.info}
                     critical={a.critical}
                     success={a.success}
-                    duration={8000}
+                    duration={5000}
                 >
                     {a.message}
                 </AlertBar>
@@ -27,11 +25,7 @@ const FormAlerts = ({ alerts, dataTest }) => {
 
     if (bars.length == 0) return null
 
-    return (
-        <div className={styles.container} data-test={dataTest}>
-            {bars}
-        </div>
-    )
+    return <AlertStack data-test={dataTest}>{bars}</AlertStack>
 }
 
 FormAlerts.propTypes = {
