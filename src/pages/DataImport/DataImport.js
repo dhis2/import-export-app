@@ -113,7 +113,7 @@ const DataImport = () => {
                                 type="import"
                             />
                             <FirstRowIsHeader show={values.format == 'csv'} />
-                            <Strategy />
+                            <Strategy value={values.strategy} />
                             <PreheatCache />
                             <WithAuthority pred={hasAuthorityToSkipAudit}>
                                 <SkipAudit />

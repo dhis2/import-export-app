@@ -15,6 +15,7 @@ const RadioGroup = ({
     setValue,
     vertical,
     helpText,
+    children,
     dataTest,
 }) => {
     return (
@@ -40,6 +41,7 @@ const RadioGroup = ({
                 ))}
             </div>
             {helpText && <Help>{helpText}</Help>}
+            {children && <div className={styles.children}>{children}</div>}
         </FormField>
     )
 }
@@ -51,6 +53,7 @@ RadioGroup.propTypes = {
     name: PropTypes.string.isRequired,
     options: optionsPropType.isRequired,
     setValue: PropTypes.func.isRequired,
+    children: PropTypes.node,
     helpText: PropTypes.string,
     vertical: PropTypes.bool,
 }
