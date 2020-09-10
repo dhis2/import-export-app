@@ -1,4 +1,4 @@
-import { FORM_ERROR } from '../../utils/final-form'
+import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
 
 const onImport = ({
@@ -51,6 +51,7 @@ const onImport = ({
             addEntry: (id, entry) =>
                 addTask('data', id, { ...entry, jobDetails: values }),
         })
+        return jobStartedMessage
     } catch (e) {
         const errors = [e]
         return { [FORM_ERROR]: errors }
