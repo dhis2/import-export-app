@@ -120,7 +120,7 @@ const TEIImport = () => {
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 subscription={{ values: true, submitError: true }}
-                render={({ handleSubmit, form, submitError }) => (
+                render={({ handleSubmit, values, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
                             <FileUpload
@@ -138,7 +138,7 @@ const TEIImport = () => {
                             <Identifier />
                             <ImportReportMode />
                             <PreheatMode />
-                            <ImportStrategy />
+                            <ImportStrategy value={values.importStrategy} />
                             <AtomicMode />
                             <MergeMode />
                         </BasicOptions>
