@@ -5,16 +5,18 @@ import { RadioGroupField } from '../index'
 const importReportModeOptions = [
     {
         value: 'ERRORS',
-        label: i18n.t('Only include reports for objects that have errors'),
+        label: i18n.t(
+            'ERRORS: Only include reports for objects that have errors'
+        ),
     },
     {
         value: 'FULL',
-        label: i18n.t('Reports for all objects imported'),
+        label: i18n.t('FULL: Reports for all objects imported'),
     },
     {
         value: 'DEBUG',
         label: i18n.t(
-            'Reports for all objects imported along with their names (if available)'
+            'DEBUG: Reports for all objects imported along with their names (if available)'
         ),
     },
 ]
