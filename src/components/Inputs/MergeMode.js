@@ -6,13 +6,19 @@ const mergeModeOptions = [
     {
         value: 'MERGE',
         label: i18n.t(
-            'MERGE: Only overwrite the old property if the new property value is not-null'
+            'MERGE: Only overwrite the old property if the new property value is not-null',
+            {
+                nsSeparator: '>',
+            }
         ),
     },
     {
         value: 'REPLACE',
         label: i18n.t(
-            'REPLACE: Overwrite regardless of whether the new property value is null'
+            'REPLACE: Overwrite regardless of whether the new property value is null',
+            {
+                nsSeparator: '>',
+            }
         ),
     },
 ]

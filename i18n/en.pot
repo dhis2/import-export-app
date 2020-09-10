@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-08T12:41:08.381Z\n"
-"PO-Revision-Date: 2020-09-08T12:41:08.381Z\n"
+"POT-Creation-Date: 2020-09-10T10:48:32.415Z\n"
+"PO-Revision-Date: 2020-09-10T10:48:32.415Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -208,13 +208,15 @@ msgstr ""
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
 
-msgid "Only include reports for objects that have errors"
+msgid "ERRORS: Only include reports for objects that have errors"
 msgstr ""
 
-msgid "Reports for all objects imported"
+msgid "FULL: Reports for all objects imported"
 msgstr ""
 
-msgid "Reports for all objects imported along with their names (if available)"
+msgid ""
+"DEBUG: Reports for all objects imported along with their names (if "
+"available)"
 msgstr ""
 
 msgid "Import report mode"
@@ -223,16 +225,24 @@ msgstr ""
 msgid "Controls what should be reported after the import is done"
 msgstr ""
 
-msgid "Import new values and update existing"
+msgid "MERGE: Import new values and update existing"
 msgstr ""
 
-msgid "Import new values only"
+msgid "APPEND: Import new values only"
 msgstr ""
 
-msgid "Only update existing values, ignore new values"
+msgid "UPDATE: Only update existing values, ignore new values"
 msgstr ""
 
-msgid "Remove values not included in uploaded file"
+msgid "DELETE: Remove values included in uploaded file"
+msgstr ""
+
+msgid "Data will be deleted"
+msgstr ""
+
+msgid ""
+"Values in the uploaded file will be deleted from the database. Make sure "
+"this is the correct action; it cannot be undone."
 msgstr ""
 
 msgid "Import strategy"
@@ -253,25 +263,25 @@ msgstr ""
 msgid "Include deleted data in export"
 msgstr ""
 
-msgid "Only include selected organisation unit"
+msgid "SELECTED: Only include selected organisation unit"
 msgstr ""
 
-msgid "Include the first level of units inside selections"
+msgid "CHILDREN: Include the first level of units inside selections"
 msgstr ""
 
-msgid "Include all units inside selections"
+msgid "DESCENDANTS: Include all units inside selections"
 msgstr ""
 
 msgid "How should organisation units inside the selections be included?"
 msgstr ""
 
-msgid "Includes properties which are not null"
+msgid "NON NULL: Includes properties which are not null"
 msgstr ""
 
-msgid "Include all properties"
+msgid "ALWAYS: Include all properties"
 msgstr ""
 
-msgid "Include non-empty properties"
+msgid "NON EMPTY: Include non-empty properties"
 msgstr ""
 
 msgid "Inclusion strategy"
@@ -310,10 +320,10 @@ msgstr ""
 msgid "Last updated start date"
 msgstr ""
 
-msgid "Only overwrite the old property if the new property value is not-null"
+msgid "MERGE: Only overwrite the old property if the new property value is not-null"
 msgstr ""
 
-msgid "Overwrite regardless of whether the new property value is null"
+msgid "REPLACE: Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Merge mode"
@@ -355,13 +365,13 @@ msgstr ""
 msgid "Organisation unit ID scheme"
 msgstr ""
 
-msgid "Data view organisation units associated with the current user"
+msgid "ACCESSIBLE: Data view organisation units associated with the current user"
 msgstr ""
 
-msgid "Data capture organisation units associated with the current user"
+msgid "CAPTURE: Data capture organisation units associated with the current user"
 msgstr ""
 
-msgid "All organisation units in the system"
+msgid "ALL: All organisation units in the system"
 msgstr ""
 
 msgid "Organisation unit(s) to export data from"
@@ -376,7 +386,7 @@ msgstr ""
 msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
 
-msgid "Intelligent scan"
+msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "Preheat mode"
@@ -765,6 +775,9 @@ msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
 
 msgid "Supported file types: JSON and XML."
+msgstr ""
+
+msgid "Job started."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
