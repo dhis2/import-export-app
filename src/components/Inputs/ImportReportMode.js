@@ -6,17 +6,25 @@ const importReportModeOptions = [
     {
         value: 'ERRORS',
         label: i18n.t(
-            'ERRORS: Only include reports for objects that have errors'
+            'ERRORS: Only include reports for objects that have errors',
+            {
+                nsSeparator: '>',
+            }
         ),
     },
     {
         value: 'FULL',
-        label: i18n.t('FULL: Reports for all objects imported'),
+        label: i18n.t('FULL: Reports for all objects imported', {
+            nsSeparator: '>',
+        }),
     },
     {
         value: 'DEBUG',
         label: i18n.t(
-            'DEBUG: Reports for all objects imported along with their names (if available)'
+            'DEBUG: Reports for all objects imported along with their names (if available)',
+            {
+                nsSeparator: '>',
+            }
         ),
     },
 ]
