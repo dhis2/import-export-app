@@ -74,6 +74,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
       data-test="dhis2-uicore-divider"
     />
     <div
+      class="typeReportSummary"
       data-test="job-summary-summary"
     >
       <div>

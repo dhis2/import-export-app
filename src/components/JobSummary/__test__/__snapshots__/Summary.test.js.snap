@@ -456,6 +456,7 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
 exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
 <DocumentFragment>
   <div
+    class="typeReportSummary"
     data-test="job-summary-summary"
   >
     <div>
