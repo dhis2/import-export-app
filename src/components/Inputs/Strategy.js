@@ -17,7 +17,7 @@ const strategyOptions = [
     },
     {
         value: 'DELETE',
-        label: i18n.t('Remove values not included in uploaded file'),
+        label: i18n.t('DELETE: Remove values included in uploaded file'),
     },
 ]
 const defaultStrategyOption = strategyOptions[0].value
