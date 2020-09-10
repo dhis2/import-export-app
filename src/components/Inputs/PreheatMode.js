@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { RadioGroupField } from '../index'
 
 const preheatModeOptions = [
-    { value: 'REFERENCE', label: i18n.t('Intelligent scan') },
+    { value: 'REFERENCE', label: i18n.t('Intelligent scan (reference)') },
     { value: 'ALL', label: i18n.t('All') },
     { value: 'NONE', label: i18n.t('None') },
 ]

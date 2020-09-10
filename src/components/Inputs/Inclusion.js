@@ -5,15 +5,17 @@ import { RadioGroupField } from '../index'
 const inclusionOptions = [
     {
         value: 'SELECTED',
-        label: i18n.t('Only include selected organisation unit'),
+        label: i18n.t('SELECTED: Only include selected organisation unit'),
     },
     {
         value: 'CHILDREN',
-        label: i18n.t('Include the first level of units inside selections'),
+        label: i18n.t(
+            'CHILDREN: Include the first level of units inside selections'
+        ),
     },
     {
         value: 'DESCENDANTS',
-        label: i18n.t('Include all units inside selections'),
+        label: i18n.t('DESCENDANTS: Include all units inside selections'),
     },
 ]
 const defaultInclusionOption = inclusionOptions[0].value
