@@ -5,15 +5,15 @@ import { RadioGroupField } from '../index'
 const inclusionStrategyOptions = [
     {
         value: 'NON_NULL',
-        label: i18n.t('Includes properties which are not null'),
+        label: i18n.t('NON NULL: Includes properties which are not null'),
     },
     {
         value: 'ALWAYS',
-        label: i18n.t('Include all properties'),
+        label: i18n.t('ALWAYS: Include all properties'),
     },
     {
         value: 'NON_EMPTY',
-        label: i18n.t('Include non-empty properties'),
+        label: i18n.t('NON EMPTY: Include non-empty properties'),
     },
 ]
 const defaultInclusionStrategyOption = inclusionStrategyOptions[0].value

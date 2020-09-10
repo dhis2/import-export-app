@@ -5,15 +5,15 @@ import { RadioGroupField } from '../index'
 const strategyOptions = [
     {
         value: 'NEW_AND_UPDATES',
-        label: i18n.t('Import new values and update existing'),
+        label: i18n.t('MERGE: Import new values and update existing'),
     },
     {
         value: 'NEW',
-        label: i18n.t('Import new values only'),
+        label: i18n.t('APPEND: Import new values only'),
     },
     {
         value: 'UPDATES',
-        label: i18n.t('Only update existing values, ignore new values'),
+        label: i18n.t('UPDATE: Only update existing values, ignore new values'),
     },
     {
         value: 'DELETE',
