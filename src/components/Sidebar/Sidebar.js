@@ -3,7 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
-import { Divider, Menu, MenuItem, MenuSectionHeader } from '@dhis2/ui'
+import { Divider, Menu, MenuItem } from '@dhis2/ui'
 
 import styles from './Sidebar.module.css'
 import {
@@ -16,6 +16,8 @@ import {
     TEIIcon,
     TasksIcon,
 } from '../index'
+import { ImportMenuSectionHeader } from './ImportMenuSectionHeader'
+import { ExportMenuSectionHeader } from './ExportMenuSectionHeader'
 
 const dataImportPage = {
     name: i18n.t('Data import'),
@@ -141,11 +143,7 @@ const Sidebar = () => {
 
     return (
         <Menu className={styles.Menu}>
-            <MenuSectionHeader
-                className={styles.sectionTitle}
-                label={i18n.t('Import')}
-                noDivider
-            />
+            <ImportMenuSectionHeader />
             {importPages.map(({ icon, name, code, path }) => {
                 const active = pathname == path
                 return (
@@ -159,10 +157,7 @@ const Sidebar = () => {
                     />
                 )
             })}
-            <MenuSectionHeader
-                className={styles.sectionTitle}
-                label={i18n.t('Export')}
-            />
+            <ExportMenuSectionHeader />
             {exportPages.map(({ icon, name, code, path }) => {
                 const active = pathname == path
                 return (
