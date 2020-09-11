@@ -7,30 +7,24 @@ import { RadioGroupField } from '../index'
 const importStrategyOptions = [
     {
         value: 'CREATE_AND_UPDATE',
-        label: i18n.t('MERGE: Import new values and update existing', {
-            nsSeparator: '>',
-        }),
+        label: i18n.t('Import new values and update existing'),
+        prefix: i18n.t('Merge'),
     },
     {
         value: 'CREATE',
-        label: i18n.t('APPEND: Import new values only', {
-            nsSeparator: '>',
-        }),
+        label: i18n.t('Import new values only'),
+        prefix: i18n.t('Append'),
     },
     {
         value: 'UPDATES',
-        label: i18n.t(
-            'UPDATE: Only update existing values, ignore new values',
-            {
-                nsSeparator: '>',
-            }
-        ),
+        label: i18n.t('Only update existing values, ignore new values'),
+        prefix: i18n.t('Update'),
     },
     {
         value: 'DELETE',
-        label: i18n.t('DELETE: Remove values included in uploaded file', {
-            nsSeparator: '>',
-        }),
+        label: i18n.t('Remove values included in uploaded file'),
+        prefix: i18n.t('Delete'),
+        type: 'critical',
     },
 ]
 const defaultImportStrategyOption = importStrategyOptions[0].value
