@@ -1,0 +1,19 @@
+.sectionTitle {
+    background-color: inherit !important;
+}
+
+.sectionTitle h6 {
+    font-size: 16px !important;
+    color: var(--colors-grey900);
+    padding: var(--spacers-dp16) var(--spacers-dp24) var(--spacers-dp12);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: var(--spacers-dp8);
+    color: var(--colors-grey700);
+}
