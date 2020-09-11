@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-11T12:57:56.718Z\n"
-"PO-Revision-Date: 2020-09-11T12:57:56.718Z\n"
+"POT-Creation-Date: 2020-09-11T15:34:18.083Z\n"
+"PO-Revision-Date: 2020-09-11T15:34:18.083Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -630,6 +630,9 @@ msgstr ""
 msgid "At least one schema must be selected"
 msgstr ""
 
+msgid "Export"
+msgstr ""
+
 msgid "Data import"
 msgstr ""
 
@@ -661,9 +664,6 @@ msgid "TEI export"
 msgstr ""
 
 msgid "Job overview"
-msgstr ""
-
-msgid "Export"
 msgstr ""
 
 msgid "Yes"

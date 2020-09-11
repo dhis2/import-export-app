@@ -4,7 +4,7 @@ exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <svg
     data-test="icon-metadataimport"
-    style="width: 48px; height: 48px; display: inline-block; fill: current-color; user-select: none;"
+    style="width: 48px; height: 48px; display: inline-block; fill: currentColor; color: currentColor; user-select: none;"
     viewBox="0 0 24 24"
   >
     <path

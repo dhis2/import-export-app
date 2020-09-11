@@ -1,8 +1,10 @@
 export {
     DataIcon,
     EventIcon,
+    ExportIcon,
     GMLIcon,
     LogoIcon,
+    ImportIcon,
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
