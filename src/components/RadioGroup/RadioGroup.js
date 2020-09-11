@@ -3,9 +3,33 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { Help, Radio } from '@dhis2/ui'
 
-import { optionsPropType } from '../../utils/options'
 import { FormField } from '../index'
 import styles from './RadioGroup.module.css'
+
+const Label = ({ label, prefix, type }) => {
+    if (!prefix) {
+        return label
+    }
+
+    return (
+        <span>
+            <span
+                className={cx(styles.prefix, {
+                    [styles.prefixCritical]: type === 'critical',
+                })}
+            >
+                {prefix}
+            </span>
+            {label}
+        </span>
+    )
+}
+
+Label.propTypes = {
+    label: PropTypes.string.isRequired,
+    prefix: PropTypes.string,
+    type: PropTypes.oneOf(['critical']),
+}
 
 const RadioGroup = ({
     name,
@@ -31,7 +55,13 @@ const RadioGroup = ({
                         <Radio
                             name={name}
                             value={o.value}
-                            label={o.label}
+                            label={
+                                <Label
+                                    label={o.label}
+                                    prefix={o.prefix}
+                                    type={o.type}
+                                />
+                            }
                             checked={o.value == checked}
                             onChange={() => setValue(o.value)}
                             dataTest={`${dataTest}-${o.value}`}
@@ -51,7 +81,14 @@ RadioGroup.propTypes = {
     dataTest: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    options: optionsPropType.isRequired,
+    options: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            value: PropTypes.string.isRequired,
+            prefix: PropTypes.string,
+            type: PropTypes.oneOf(['critical']),
+        })
+    ).isRequired,
     setValue: PropTypes.func.isRequired,
     children: PropTypes.node,
     helpText: PropTypes.string,

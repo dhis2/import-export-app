@@ -13,3 +13,17 @@
 .children {
     margin-left: var(--spacers-dp32);
 }
+
+.prefix {
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--colors-grey800);
+    background: var(--colors-grey300);
+    padding: 1px 4px;
+    margin-right: 4px;
+}
+
+.prefixCritical {
+    color: var(--colors-red800);
+    background: var(--colors-red050);
+}
