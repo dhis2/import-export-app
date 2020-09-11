@@ -16,8 +16,8 @@ import {
     defaultImportReportModeOption,
     PreheatMode,
     defaultPreheatModeOption,
-    ImportStrategy,
-    defaultImportStrategyOption,
+    Strategy,
+    defaultStrategyOption,
     AtomicMode,
     defaultAtomicModeOption,
     MergeMode,
@@ -69,8 +69,7 @@ const createInitialValues = prevJobDetails => ({
     importReportMode:
         prevJobDetails.importReportMode || defaultImportReportModeOption,
     preheatMode: prevJobDetails.preheatMode || defaultPreheatModeOption,
-    importStrategy:
-        prevJobDetails.importStrategy || defaultImportStrategyOption,
+    strategy: prevJobDetails.strategy || defaultStrategyOption,
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
     mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
@@ -147,7 +146,7 @@ const TEIImport = () => {
                             <Identifier />
                             <ImportReportMode />
                             <PreheatMode />
-                            <ImportStrategy value={values.importStrategy} />
+                            <Strategy value={values.strategy} />
                             <AtomicMode />
                             <MergeMode />
                         </BasicOptions>
