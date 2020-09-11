@@ -51,6 +51,7 @@ const valuesToParams = ({
         orgUnitIdScheme: orgUnitIdScheme,
         idScheme: idScheme,
         assignedUserMode: assignedUserMode,
+        download: 'true',
     }
 
     if (compression) {
@@ -112,8 +113,9 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
 
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `trackedEntityInstances`
+    const endpointExtension = compression ? `${format}.${compression}` : format
     const downloadUrlParams = valuesToParams(values)
-    const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
+    const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
 
     // if compression is set we can redirect to the appropriate URL
     // and set the compression parameter
