@@ -28,6 +28,7 @@ const valuesToParams = ({
     idScheme,
 }) =>
     [
+        `download=true`,
         `dataElementIdScheme=${dataElementIdScheme}`,
         `orgUnitIdScheme=${orgUnitIdScheme}`,
         `idScheme=${idScheme}`,
@@ -41,7 +42,9 @@ const valuesToParams = ({
         `compression=${compressionToName(compression)}`,
     ].join('&')
 
-const onExport = baseUrl => async values => {
+const onExport = (baseUrl, setExportEnabled) => async values => {
+    setExportEnabled(false)
+
     const { format, compression } = values
 
     const apiBaseUrl = `${baseUrl}/api/`
@@ -52,6 +55,7 @@ const onExport = baseUrl => async values => {
     // if compression is set we can redirect to the appropriate URL
     // and set the compression parameter
     if (compression) {
+        setTimeout(() => setExportEnabled(true), 5000)
         locationAssign(url)
         return
     }
@@ -60,6 +64,7 @@ const onExport = baseUrl => async values => {
     try {
         const data = await fetch(url, {
             Accept: getMimeType(format),
+            credentials: 'include',
         })
         const dataStr = await data.text()
         const filename = `data.${format}`
@@ -78,6 +83,8 @@ const onExport = baseUrl => async values => {
         console.error('DataExport onExport error: ', error)
 
         return { [FORM_ERROR]: errors }
+    } finally {
+        setExportEnabled(true)
     }
 }
 
