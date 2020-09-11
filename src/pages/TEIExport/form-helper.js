@@ -105,7 +105,9 @@ const valuesToParams = ({
         .join('&')
 }
 
-const onExport = baseUrl => async values => {
+const onExport = (baseUrl, setExportEnabled) => async values => {
+    setExportEnabled(false)
+
     const { format, compression } = values
 
     const apiBaseUrl = `${baseUrl}/api/`
@@ -116,6 +118,7 @@ const onExport = baseUrl => async values => {
     // if compression is set we can redirect to the appropriate URL
     // and set the compression parameter
     if (compression) {
+        setTimeout(() => setExportEnabled(true), 5000)
         locationAssign(url)
         return
     }
@@ -124,6 +127,7 @@ const onExport = baseUrl => async values => {
     try {
         const teis = await fetch(url, {
             Accept: getMimeType(format),
+            credentials: 'include',
         })
         const teiStr = await teis.text()
         const filename = `trackedEntityInstances.${format}`
@@ -142,6 +146,8 @@ const onExport = baseUrl => async values => {
         console.error('TEIExport onExport error: ', error)
 
         return { [FORM_ERROR]: errors }
+    } finally {
+        setExportEnabled(true)
     }
 }
 

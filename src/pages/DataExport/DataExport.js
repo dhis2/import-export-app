@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
@@ -63,8 +63,9 @@ const initialValues = {
 }
 
 const DataExport = () => {
+    const [exportEnabled, setExportEnabled] = useState(true)
     const { baseUrl } = useConfig()
-    const onSubmit = onExport(baseUrl)
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
@@ -101,7 +102,10 @@ const DataExport = () => {
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>
-                        <ExportButton label={i18n.t('Export data')} />
+                        <ExportButton
+                            label={i18n.t('Export data')}
+                            disabled={!exportEnabled}
+                        />
                         <FormAlerts alerts={submitError} />
                     </form>
                 )}

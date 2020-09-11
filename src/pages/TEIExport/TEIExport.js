@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
@@ -89,8 +89,9 @@ const initialValues = {
 }
 
 const TEIExport = () => {
+    const [exportEnabled, setExportEnabled] = useState(true)
     const { baseUrl } = useConfig()
-    const onSubmit = onExport(baseUrl)
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
@@ -159,6 +160,7 @@ const TEIExport = () => {
                                 label={i18n.t(
                                     'Export tracked entity instances'
                                 )}
+                                disabled={!exportEnabled}
                             />
                             <FormAlerts alerts={submitError} />
                         </form>
