@@ -7,48 +7,37 @@ import { RadioGroupField } from '../index'
 const orgUnitSelectionModeOptions = [
     {
         value: 'SELECTED',
-        label: i18n.t('SELECTED: Only include selected organisation unit', {
-            nsSeparator: '>',
-        }),
+        label: i18n.t('Only include selected organisation unit'),
+        prefix: i18n.t('Selected'),
     },
     {
         value: 'CHILDREN',
-        label: i18n.t(
-            'CHILDREN: Include the first level of units inside selections',
-            {
-                nsSeparator: '>',
-            }
-        ),
+        label: i18n.t('Include the first level of units inside selections'),
+        prefix: i18n.t('Directly below'),
     },
     {
         value: 'DESCENDANTS',
-        label: i18n.t('DESCENDANTS: Include all units inside selections', {
-            nsSeparator: '>',
-        }),
+        label: i18n.t('Include all units inside selections'),
+        prefix: i18n.t('All below'),
     },
     {
         value: 'ACCESSIBLE',
         label: i18n.t(
-            'ACCESSIBLE: Data view organisation units associated with the current user',
-            {
-                nsSeparator: '>',
-            }
+            'Data view organisation units associated with the current user'
         ),
+        prefix: i18n.t('Accessible'),
     },
     {
         value: 'CAPTURE',
         label: i18n.t(
-            'CAPTURE: Data capture organisation units associated with the current user',
-            {
-                nsSeparator: '>',
-            }
+            'Data capture organisation units associated with the current user'
         ),
+        prefix: i18n.t('Capture'),
     },
     {
         value: 'ALL',
-        label: i18n.t('ALL: All organisation units in the system', {
-            nsSeparator: '>',
-        }),
+        label: i18n.t('All organisation units in the system'),
+        prefix: i18n.t('All'),
     },
 ]
 const defaultOrgUnitSelectionModeOption = orgUnitSelectionModeOptions[0].value

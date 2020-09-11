@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-11T15:34:18.083Z\n"
-"PO-Revision-Date: 2020-09-11T15:34:18.083Z\n"
+"POT-Creation-Date: 2020-09-11T17:40:48.035Z\n"
+"PO-Revision-Date: 2020-09-11T17:40:48.035Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -211,15 +211,22 @@ msgstr ""
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
 
-msgid "ERRORS: Only include reports for objects that have errors"
+msgid "Only include reports for objects that have errors"
 msgstr ""
 
-msgid "FULL: Reports for all objects imported"
+msgid "Errors"
 msgstr ""
 
-msgid ""
-"DEBUG: Reports for all objects imported along with their names (if "
-"available)"
+msgid "Reports for all objects imported"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Reports for all objects imported along with their names (if available)"
+msgstr ""
+
+msgid "Debug"
 msgstr ""
 
 msgid "Import report mode"
@@ -228,16 +235,28 @@ msgstr ""
 msgid "Controls what should be reported after the import is done"
 msgstr ""
 
-msgid "MERGE: Import new values and update existing"
+msgid "Import new values and update existing"
 msgstr ""
 
-msgid "APPEND: Import new values only"
+msgid "Merge"
 msgstr ""
 
-msgid "UPDATE: Only update existing values, ignore new values"
+msgid "Import new values only"
 msgstr ""
 
-msgid "DELETE: Remove values included in uploaded file"
+msgid "Append"
+msgstr ""
+
+msgid "Only update existing values, ignore new values"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Remove values included in uploaded file"
+msgstr ""
+
+msgid "Delete"
 msgstr ""
 
 msgid "Data will be deleted"
@@ -266,25 +285,43 @@ msgstr ""
 msgid "Include deleted data in export"
 msgstr ""
 
-msgid "SELECTED: Only include selected organisation unit"
+msgid "Only include selected organisation unit"
 msgstr ""
 
-msgid "CHILDREN: Include the first level of units inside selections"
+msgid "Selected"
 msgstr ""
 
-msgid "DESCENDANTS: Include all units inside selections"
+msgid "Include the first level of units inside selections"
+msgstr ""
+
+msgid "Directly below"
+msgstr ""
+
+msgid "Include all units inside selections"
+msgstr ""
+
+msgid "All below"
 msgstr ""
 
 msgid "How should organisation units inside the selections be included?"
 msgstr ""
 
-msgid "NON NULL: Includes properties which are not null"
+msgid "Includes properties which are not null"
 msgstr ""
 
-msgid "ALWAYS: Include all properties"
+msgid "Non null"
 msgstr ""
 
-msgid "NON EMPTY: Include non-empty properties"
+msgid "Include all properties"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Include non-empty properties"
+msgstr ""
+
+msgid "Non empty"
 msgstr ""
 
 msgid "Inclusion strategy"
@@ -323,10 +360,13 @@ msgstr ""
 msgid "Last updated start date"
 msgstr ""
 
-msgid "MERGE: Only overwrite the old property if the new property value is not-null"
+msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
 
-msgid "REPLACE: Overwrite regardless of whether the new property value is null"
+msgid "Overwrite regardless of whether the new property value is null"
+msgstr ""
+
+msgid "Replace"
 msgstr ""
 
 msgid "Merge mode"
@@ -368,13 +408,19 @@ msgstr ""
 msgid "Organisation unit ID scheme"
 msgstr ""
 
-msgid "ACCESSIBLE: Data view organisation units associated with the current user"
+msgid "Data view organisation units associated with the current user"
 msgstr ""
 
-msgid "CAPTURE: Data capture organisation units associated with the current user"
+msgid "Accessible"
 msgstr ""
 
-msgid "ALL: All organisation units in the system"
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "Capture"
+msgstr ""
+
+msgid "All organisation units in the system"
 msgstr ""
 
 msgid "Organisation unit(s) to export data from"
