@@ -47,9 +47,7 @@ const onExport = (baseUrl, setExportEnabled) => values => {
         .filter(s => s != '')
         .join('&')
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-
-    setTimeout(() => setExportEnabled(true), 5000)
-    locationAssign(url)
+    locationAssign(url, setExportEnabled)
 }
 
 const validate = values => ({
