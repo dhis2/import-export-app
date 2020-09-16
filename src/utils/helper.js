@@ -210,12 +210,27 @@ const uploadFile = ({
     })
 }
 
+const downloadWindowTitle = i18n.t('Loading exported data')
+const downloadWindowHtml = `
+<div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; color: rgb(33, 41, 52)">
+    <p>${downloadWindowTitle}</p>
+</div>
+`
+
 // call stub function if available
-const locationAssign = url => {
+const locationAssign = (url, setExportEnabled) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
-        window.location = url
+        const downloadWindow = window.open(url, '_blank')
+
+        downloadWindow.document.title = downloadWindowTitle
+        downloadWindow.document.body.innerHTML = downloadWindowHtml // does not work in Chrome
+
+        const enableExport = () => setExportEnabled(true)
+        downloadWindow.onbeforeunload = enableExport
+        downloadWindow.onabort = enableExport
+        downloadWindow.onerror = enableExport
     }
 }
 

@@ -45,6 +45,7 @@ const MetadataDependencyExport = () => {
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            loading={!exportEnabled}
             dataTest="page-export-metadata-dependency"
         >
             <Form

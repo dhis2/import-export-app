@@ -12,9 +12,7 @@ const onExport = (baseUrl, setExportEnabled) => values => {
     const schemaParams = checkedSchemas.map(name => `${name}=true`).join('&')
     const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-
-    locationAssign(url)
-    setTimeout(() => setExportEnabled(true), 5000)
+    locationAssign(url, setExportEnabled)
 }
 
 export { onExport }

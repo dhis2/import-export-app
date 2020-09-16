@@ -120,8 +120,7 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
     // if compression is set we can redirect to the appropriate URL
     // and set the compression parameter
     if (compression) {
-        setTimeout(() => setExportEnabled(true), 5000)
-        locationAssign(url)
+        locationAssign(url, setExportEnabled)
         return
     }
 
