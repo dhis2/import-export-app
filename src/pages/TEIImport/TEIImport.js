@@ -28,8 +28,6 @@ import {
     defaultSkipSharingOption,
     SkipValidation,
     defaultSkipValidationOption,
-    IsAsync,
-    defaultIsAsyncOption,
     InclusionStrategy,
     defaultInclusionStrategyOption,
     ImportButtonStrip,
@@ -83,7 +81,9 @@ const createInitialValues = prevJobDetails => ({
         prevJobDetails.skipValidation,
         defaultSkipValidationOption
     ),
-    isAsync: getInitialBoolValue(prevJobDetails.isAsync, defaultIsAsyncOption),
+    // disable async until it is fully implemented for this resource
+    // (expected 2.36)
+    isAsync: false,
     dataElementIdScheme:
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
@@ -154,7 +154,6 @@ const TEIImport = () => {
                             <FlushMode />
                             <SkipSharing />
                             <SkipValidation />
-                            <IsAsync />
                             <InclusionStrategy />
                             <SchemeContainer>
                                 <DataElementIdScheme />
