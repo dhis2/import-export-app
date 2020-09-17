@@ -10,7 +10,7 @@ import {
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index'
-import { Page, GMLIcon } from '../../components/index'
+import { Page, GMLIcon, ValidationSummary } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
@@ -65,6 +65,7 @@ const GMLImport = () => {
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>

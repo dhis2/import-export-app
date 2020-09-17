@@ -15,7 +15,11 @@ import {
     SkipSharing,
     ExportButton,
 } from '../../components/Inputs/index'
-import { Page, MetadataDependencyExportIcon } from '../../components/index'
+import {
+    Page,
+    MetadataDependencyExportIcon,
+    ValidationSummary,
+} from '../../components/index'
 import { onExport } from './form-helper'
 
 const { Form } = ReactFinalForm
@@ -51,6 +55,9 @@ const MetadataDependencyExport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
+                subscription={{
+                    values: true,
+                }}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <ObjectType />
@@ -58,6 +65,7 @@ const MetadataDependencyExport = () => {
                         <Format availableFormats={formatNoCsvOptions} />
                         <Compression />
                         <SkipSharing />
+                        <ValidationSummary />
                         <ExportButton
                             label={i18n.t('Export metadata dependencies')}
                             disabled={!exportEnabled}
