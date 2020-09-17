@@ -32,6 +32,7 @@ import {
     BasicOptions,
     SchemeContainer,
     EventIcon,
+    ValidationSummary,
 } from '../../components/index'
 import { onExport, validate } from './form-helper'
 
@@ -81,7 +82,9 @@ const EventExport = () => {
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true }}
+                subscription={{
+                    values: true,
+                }}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
@@ -109,6 +112,7 @@ const EventExport = () => {
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>
+                        <ValidationSummary />
                         <ExportButton
                             label={i18n.t('Export events')}
                             disabled={!exportEnabled}

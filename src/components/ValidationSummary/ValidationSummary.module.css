@@ -1,0 +1,7 @@
+.container {
+    margin-bottom: var(--spacers-dp24);
+}
+
+.errors {
+    padding-left: var(--spacers-dp12);
+}

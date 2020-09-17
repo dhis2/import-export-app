@@ -13,7 +13,11 @@ import {
     SkipSharing,
     ExportButton,
 } from '../../components/Inputs/index'
-import { Page, MetadataExportIcon } from '../../components/index'
+import {
+    Page,
+    MetadataExportIcon,
+    ValidationSummary,
+} from '../../components/index'
 import { onExport } from './form-helper'
 
 const { Form } = ReactFinalForm
@@ -54,6 +58,7 @@ const MetadataExport = () => {
                         <Format availableFormats={formatOptions} />
                         <Compression />
                         <SkipSharing />
+                        <ValidationSummary />
                         <ExportButton
                             label={i18n.t('Export metadata')}
                             disabled={!exportEnabled}
