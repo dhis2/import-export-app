@@ -43,6 +43,7 @@ import {
     MetadataImportIcon,
     MoreOptions,
     BasicOptions,
+    ValidationSummary,
 } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
@@ -120,7 +121,10 @@ const MetadataImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
@@ -156,6 +160,7 @@ const MetadataImport = () => {
                             <IsAsync />
                             <InclusionStrategy />
                         </MoreOptions>
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>

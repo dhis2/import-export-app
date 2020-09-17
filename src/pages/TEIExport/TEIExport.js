@@ -48,6 +48,7 @@ import {
     BasicOptions,
     SchemeContainer,
     TEIIcon,
+    ValidationSummary,
 } from '../../components/index'
 import { onExport, validate } from './form-helper'
 
@@ -104,7 +105,10 @@ const TEIExport = () => {
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, values, submitError }) => {
                     const showProgramFilters = values.teiTypeFilter == 'PROGRAM'
                     const showTEFilters = values.teiTypeFilter == 'TE'
@@ -154,6 +158,7 @@ const TEIExport = () => {
                                     <IdScheme />
                                 </SchemeContainer>
                             </MoreOptions>
+                            <ValidationSummary />
                             <ExportButton
                                 label={i18n.t(
                                     'Export tracked entity instances'
