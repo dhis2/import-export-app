@@ -31,6 +31,7 @@ import {
     BasicOptions,
     SchemeContainer,
     DataIcon,
+    ValidationSummary,
 } from '../../components/index'
 import { onExport, validate } from './form-helper'
 
@@ -79,7 +80,10 @@ const DataExport = () => {
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
@@ -103,6 +107,7 @@ const DataExport = () => {
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>
+                        <ValidationSummary />
                         <ExportButton
                             label={i18n.t('Export data')}
                             disabled={!exportEnabled}

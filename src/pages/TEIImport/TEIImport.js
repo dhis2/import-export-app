@@ -47,6 +47,7 @@ import {
     MoreOptions,
     SchemeContainer,
     BasicOptions,
+    ValidationSummary,
 } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
@@ -127,7 +128,10 @@ const TEIImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, values, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
@@ -162,6 +166,7 @@ const TEIImport = () => {
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>
