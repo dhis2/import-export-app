@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-17T12:32:26.012Z\n"
-"PO-Revision-Date: 2020-09-17T12:32:26.012Z\n"
+"POT-Creation-Date: 2020-09-18T13:18:23.717Z\n"
+"PO-Revision-Date: 2020-09-18T13:18:23.717Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -741,9 +741,6 @@ msgstr ""
 msgid "Export data"
 msgstr ""
 
-msgid "HTTP error when fetching data"
-msgstr ""
-
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
 
@@ -799,7 +796,7 @@ msgstr ""
 msgid "Tracked entity instances export"
 msgstr ""
 
-msgid "Export tracked entity instances in XML, JSON, JSONP or CSV format."
+msgid "Export tracked entity instances in XML, JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -809,9 +806,6 @@ msgid "Enrollment date range"
 msgstr ""
 
 msgid "Export tracked entity instances"
-msgstr ""
-
-msgid "HTTP error when fetching tracked entity instances"
 msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"

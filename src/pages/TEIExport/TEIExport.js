@@ -5,7 +5,7 @@ import { ReactFinalForm } from '@dhis2/ui'
 
 import {
     Format,
-    formatJsonpOptions,
+    formatOptions,
     defaultFormatOption,
     OrgUnitTree,
     OrgUnitMode,
@@ -21,8 +21,6 @@ import {
     ProgramEndDate,
     ProgramPicker,
     TETypePicker,
-    Compression,
-    defaultCompressionOption,
     LastUpdatedFilter,
     defaultLastUpdatedFilterOption,
     LastUpdatedStartDate,
@@ -58,7 +56,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 const PAGE_NAME = i18n.t('Tracked entity instances export')
 const PAGE_DESCRIPTION = i18n.t(
-    'Export tracked entity instances in XML, JSON, JSONP or CSV format.'
+    'Export tracked entity instances in XML, JSON or CSV format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -74,7 +72,7 @@ const initialValues = {
     followUpStatus: defaultFollowUpStatusOption,
     programStartDate: '',
     programEndDate: '',
-    compression: defaultCompressionOption,
+    compression: '', // disable compression until it is properly implemented in the backend
     lastUpdatedFilter: defaultLastUpdatedFilterOption,
     lastUpdatedStartDate: '',
     lastUpdatedEndDate: '',
@@ -136,8 +134,7 @@ const TEIExport = () => {
                                     <ProgramEndDate show={showProgramFilters} />
                                 </Dates>
                                 <TETypePicker show={showTEFilters} />
-                                <Format availableFormats={formatJsonpOptions} />
-                                <Compression />
+                                <Format availableFormats={formatOptions} />
                             </BasicOptions>
                             <MoreOptions>
                                 <LastUpdatedFilter />

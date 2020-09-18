@@ -1,45 +1,40 @@
-import { locationAssign, compressionToName } from '../../utils/helper'
-import { getMimeType } from '../../utils/mime'
+import { locationAssign } from '../../utils/helper'
 import i18n from '@dhis2/d2-i18n'
 
-import { FORM_ERROR } from '../../utils/final-form'
-import {
-    createBlob,
-    downloadBlob,
-    jsDateToISO8601,
-    pathToId,
-} from '../../utils/helper'
+import { jsDateToISO8601, pathToId } from '../../utils/helper'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
 
 // calculate minimum set of parameters based on given filters
-const valuesToParams = ({
-    selectedOrgUnits,
-    selectedUsers,
-    selectedPrograms,
-    selectedTETypes,
-    ouMode,
-    format,
-    compression,
-    includeDeleted,
-    includeAllAttributes,
-    dataElementIdScheme,
-    eventIdScheme,
-    orgUnitIdScheme,
-    idScheme,
-    assignedUserMode,
-    teiTypeFilter,
-    programStatus,
-    followUpStatus,
-    programStartDate,
-    programEndDate,
-    lastUpdatedFilter,
-    lastUpdatedStartDate,
-    lastUpdatedEndDate,
-    lastUpdatedDuration,
-}) => {
+const valuesToParams = (
+    {
+        selectedOrgUnits,
+        selectedUsers,
+        selectedPrograms,
+        selectedTETypes,
+        ouMode,
+        format,
+        includeDeleted,
+        includeAllAttributes,
+        dataElementIdScheme,
+        eventIdScheme,
+        orgUnitIdScheme,
+        idScheme,
+        assignedUserMode,
+        teiTypeFilter,
+        programStatus,
+        followUpStatus,
+        programStartDate,
+        programEndDate,
+        lastUpdatedFilter,
+        lastUpdatedStartDate,
+        lastUpdatedEndDate,
+        lastUpdatedDuration,
+    },
+    filename
+) => {
     const minParams = {
         ou: selectedOrgUnits.map(o => pathToId(o)).join(';'),
         ouMode: ouMode,
@@ -51,11 +46,7 @@ const valuesToParams = ({
         orgUnitIdScheme: orgUnitIdScheme,
         idScheme: idScheme,
         assignedUserMode: assignedUserMode,
-        download: 'true',
-    }
-
-    if (compression) {
-        minParams.compression = compressionToName(compression)
+        attachment: filename,
     }
 
     if (assignedUserMode == 'PROVIDED') {
@@ -109,47 +100,15 @@ const valuesToParams = ({
 const onExport = (baseUrl, setExportEnabled) => async values => {
     setExportEnabled(false)
 
-    const { format, compression } = values
+    const { format } = values
 
+    // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `trackedEntityInstances`
-    const endpointExtension = compression ? `${format}.${compression}` : format
-    const downloadUrlParams = valuesToParams(values)
-    const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-
-    // if compression is set we can redirect to the appropriate URL
-    // and set the compression parameter
-    if (compression) {
-        locationAssign(url, setExportEnabled)
-        return
-    }
-
-    // fetch data and create blob
-    try {
-        const teis = await fetch(url, {
-            Accept: getMimeType(format),
-            credentials: 'include',
-        })
-        const teiStr = await teis.text()
-        const filename = `trackedEntityInstances.${format}`
-        const downloadUrl = createBlob(teiStr, format)
-        downloadBlob(downloadUrl, filename)
-    } catch (error) {
-        const errors = [
-            {
-                id: `http-${new Date().getTime()}`,
-                critical: true,
-                message: `${i18n.t(
-                    'HTTP error when fetching tracked entity instances'
-                )}. ${error.message}`,
-            },
-        ]
-        console.error('TEIExport onExport error: ', error)
-
-        return { [FORM_ERROR]: errors }
-    } finally {
-        setExportEnabled(true)
-    }
+    const filename = `${endpoint}.${format}`
+    const downloadUrlParams = valuesToParams(values, filename)
+    const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`
+    locationAssign(url, setExportEnabled)
 }
 
 const validate = values => {
