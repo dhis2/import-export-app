@@ -1,34 +1,28 @@
 import { locationAssign, compressionToName } from '../../utils/helper'
-import { getMimeType } from '../../utils/mime'
-import i18n from '@dhis2/d2-i18n'
 
-import { FORM_ERROR } from '../../utils/final-form'
-import {
-    createBlob,
-    downloadBlob,
-    jsDateToISO8601,
-    pathToId,
-} from '../../utils/helper'
+import { jsDateToISO8601, pathToId } from '../../utils/helper'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
 
-const valuesToParams = ({
-    selectedOrgUnits,
-    includeChildren,
-    selectedDataSets,
-    format,
-    compression,
-    startDate,
-    endDate,
-    includeDeleted,
-    dataElementIdScheme,
-    orgUnitIdScheme,
-    idScheme,
-}) =>
+const valuesToParams = (
+    {
+        selectedOrgUnits,
+        includeChildren,
+        selectedDataSets,
+        format,
+        compression,
+        startDate,
+        endDate,
+        includeDeleted,
+        dataElementIdScheme,
+        orgUnitIdScheme,
+        idScheme,
+    },
+    filename
+) =>
     [
-        `download=true`,
         `dataElementIdScheme=${dataElementIdScheme}`,
         `orgUnitIdScheme=${orgUnitIdScheme}`,
         `idScheme=${idScheme}`,
@@ -39,52 +33,25 @@ const valuesToParams = ({
         `orgUnit=${selectedOrgUnits.map(o => pathToId(o))}`,
         `dataSet=${selectedDataSets}`,
         `format=${format}`,
-        `compression=${compressionToName(compression)}`,
-    ].join('&')
+        compression ? `compression=${compressionToName(compression)}` : '',
+        `attachment=${filename}`,
+    ]
+        .filter(s => s != '')
+        .join('&')
 
 const onExport = (baseUrl, setExportEnabled) => async values => {
     setExportEnabled(false)
 
     const { format, compression } = values
 
+    // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `dataValueSets`
-    const downloadUrlParams = valuesToParams(values)
+    const fileExtension = compression ? `${format}.${compression}` : format
+    const filename = `${endpoint}.${fileExtension}`
+    const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
-
-    // if compression is set we can redirect to the appropriate URL
-    // and set the compression parameter
-    if (compression) {
-        locationAssign(url, setExportEnabled)
-        return
-    }
-
-    // fetch data and create blob
-    try {
-        const data = await fetch(url, {
-            Accept: getMimeType(format),
-            credentials: 'include',
-        })
-        const dataStr = await data.text()
-        const filename = `data.${format}`
-        const downloadUrl = createBlob(dataStr, format)
-        downloadBlob(downloadUrl, filename)
-    } catch (error) {
-        const errors = [
-            {
-                id: `http-${new Date().getTime()}`,
-                critical: true,
-                message: `${i18n.t('HTTP error when fetching data')}. ${
-                    error.message
-                }`,
-            },
-        ]
-        console.error('DataExport onExport error: ', error)
-
-        return { [FORM_ERROR]: errors }
-    } finally {
-        setExportEnabled(true)
-    }
+    locationAssign(url, setExportEnabled)
 }
 
 const validate = values => ({
