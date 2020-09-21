@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-18T13:18:23.717Z\n"
-"PO-Revision-Date: 2020-09-18T13:18:23.717Z\n"
+"POT-Creation-Date: 2020-09-21T10:23:12.685Z\n"
+"PO-Revision-Date: 2020-09-21T10:23:12.685Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -421,6 +421,12 @@ msgid "Capture"
 msgstr ""
 
 msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Manually select organisation units from list"
+msgstr ""
+
+msgid "Which organisation units should be included?"
 msgstr ""
 
 msgid "Organisation unit(s) to export data from"

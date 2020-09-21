@@ -63,7 +63,11 @@ export {
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
 } from './OrgUnitIdScheme'
-export { OrgUnitMode, defaultOrgUnitSelectionModeOption } from './OrgUnitMode'
+export {
+    OrgUnitMode,
+    defaultOrgUnitSelectionModeOption,
+    OU_MODE_MANUAL_VALUE,
+} from './OrgUnitMode'
 export { TEITypeFilter, defaultTEITypeFilterOption } from './TEITypeFilter'
 export { ProgramStatus, defaultProgramStatusOption } from './ProgramStatus'
 export { FollowUpStatus, defaultFollowUpStatusOption } from './FollowUpStatus'

@@ -2,6 +2,7 @@ import { locationAssign } from '../../utils/helper'
 import i18n from '@dhis2/d2-i18n'
 
 import { jsDateToISO8601, pathToId } from '../../utils/helper'
+import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
@@ -15,6 +16,7 @@ const valuesToParams = (
         selectedPrograms,
         selectedTETypes,
         ouMode,
+        inclusion,
         format,
         includeDeleted,
         includeAllAttributes,
@@ -36,7 +38,6 @@ const valuesToParams = (
     filename
 ) => {
     const minParams = {
-        ou: selectedOrgUnits.map(o => pathToId(o)).join(';'),
         ouMode: ouMode,
         format: format,
         includeDeleted: includeDeleted.toString(),
@@ -47,6 +48,13 @@ const valuesToParams = (
         idScheme: idScheme,
         assignedUserMode: assignedUserMode,
         attachment: filename,
+    }
+
+    // include selected org.units only when manual selection is selected
+    // ouMode is then stored in the `inclusion` field
+    if (ouMode === OU_MODE_MANUAL_VALUE) {
+        minParams.ou = selectedOrgUnits.map(o => pathToId(o)).join(';')
+        minParams.ouMode = inclusion
     }
 
     if (assignedUserMode == 'PROVIDED') {
@@ -108,6 +116,7 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
     const filename = `${endpoint}.${format}`
     const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`
+
     locationAssign(url, setExportEnabled)
 }
 
