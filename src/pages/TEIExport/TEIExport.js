@@ -7,9 +7,9 @@ import {
     Format,
     formatOptions,
     defaultFormatOption,
-    OrgUnitTree,
     OrgUnitMode,
     defaultOrgUnitSelectionModeOption,
+    defaultInclusionOption,
     TEITypeFilter,
     defaultTEITypeFilterOption,
     ProgramStatus,
@@ -67,6 +67,7 @@ const initialValues = {
     selectedUsers: [],
     format: defaultFormatOption,
     ouMode: defaultOrgUnitSelectionModeOption,
+    inclusion: defaultInclusionOption,
     teiTypeFilter: defaultTEITypeFilterOption,
     programStatus: defaultProgramStatusOption,
     followUpStatus: defaultFollowUpStatusOption,
@@ -115,8 +116,7 @@ const TEIExport = () => {
                     return (
                         <form onSubmit={handleSubmit}>
                             <BasicOptions>
-                                <OrgUnitTree />
-                                <OrgUnitMode />
+                                <OrgUnitMode value={values.ouMode} />
                                 <TEITypeFilter />
                                 <ProgramPicker
                                     label={i18n.t('Program to export from')}

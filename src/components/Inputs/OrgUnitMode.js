@@ -1,25 +1,13 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { UserContext } from '../../contexts/index'
 import { hasAuthorityToSelectAllOrgUnits } from '../WithAuthority/predicates'
 import { RadioGroupField } from '../index'
+import { OrgUnitTree, Inclusion } from './index'
 
+const OU_MODE_MANUAL_VALUE = ':MANUAL:'
 const orgUnitSelectionModeOptions = [
-    {
-        value: 'SELECTED',
-        label: i18n.t('Only include selected organisation unit'),
-        prefix: i18n.t('Selected'),
-    },
-    {
-        value: 'CHILDREN',
-        label: i18n.t('Include the first level of units inside selections'),
-        prefix: i18n.t('Directly below'),
-    },
-    {
-        value: 'DESCENDANTS',
-        label: i18n.t('Include all units inside selections'),
-        prefix: i18n.t('All below'),
-    },
     {
         value: 'ACCESSIBLE',
         label: i18n.t(
@@ -39,16 +27,18 @@ const orgUnitSelectionModeOptions = [
         label: i18n.t('All organisation units in the system'),
         prefix: i18n.t('All'),
     },
+    {
+        value: OU_MODE_MANUAL_VALUE,
+        label: i18n.t('Manually select organisation units from list'),
+    },
 ]
-const defaultOrgUnitSelectionModeOption = orgUnitSelectionModeOptions[0].value
+const defaultOrgUnitSelectionModeOption = orgUnitSelectionModeOptions[3].value
 
 const NAME = 'ouMode'
 const DATATEST = 'input-ouMode'
-const LABEL = i18n.t(
-    'How should organisation units inside the selections be included?'
-)
+const LABEL = i18n.t('Which organisation units should be included?')
 
-const OrgUnitMode = () => {
+const OrgUnitMode = ({ value }) => {
     const user = useContext(UserContext)
     const canSelectAllOrgUnits = user
         ? hasAuthorityToSelectAllOrgUnits(user.authorities)
@@ -64,8 +54,19 @@ const OrgUnitMode = () => {
             options={options}
             dataTest={DATATEST}
             vertical
-        />
+        >
+            {value === OU_MODE_MANUAL_VALUE && (
+                <>
+                    <OrgUnitTree />
+                    <Inclusion />
+                </>
+            )}
+        </RadioGroupField>
     )
 }
 
-export { OrgUnitMode, defaultOrgUnitSelectionModeOption }
+OrgUnitMode.propTypes = {
+    value: PropTypes.string.isRequired,
+}
+
+export { OrgUnitMode, defaultOrgUnitSelectionModeOption, OU_MODE_MANUAL_VALUE }
