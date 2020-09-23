@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
@@ -13,7 +13,11 @@ import {
     SkipSharing,
     ExportButton,
 } from '../../components/Inputs/index'
-import { Page, MetadataExportIcon } from '../../components/index'
+import {
+    Page,
+    MetadataExportIcon,
+    ValidationSummary,
+} from '../../components/index'
 import { onExport } from './form-helper'
 
 const { Form } = ReactFinalForm
@@ -33,14 +37,16 @@ const initialValues = {
 }
 
 const MetadataExport = () => {
+    const [exportEnabled, setExportEnabled] = useState(true)
     const { baseUrl } = useConfig()
-    const onSubmit = onExport(baseUrl)
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            loading={!exportEnabled}
             dataTest="page-export-metadata"
         >
             <Form
@@ -52,7 +58,11 @@ const MetadataExport = () => {
                         <Format availableFormats={formatOptions} />
                         <Compression />
                         <SkipSharing />
-                        <ExportButton label={i18n.t('Export metadata')} />
+                        <ValidationSummary />
+                        <ExportButton
+                            label={i18n.t('Export metadata')}
+                            disabled={!exportEnabled}
+                        />
                     </form>
                 )}
             />

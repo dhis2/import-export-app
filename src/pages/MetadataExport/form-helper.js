@@ -1,6 +1,8 @@
 import { locationAssign } from '../../utils/helper'
 
-const onExport = baseUrl => values => {
+const onExport = (baseUrl, setExportEnabled) => values => {
+    setExportEnabled(false)
+
     const { checkedSchemas, format, compression, skipSharing } = values
 
     // generate download url
@@ -10,7 +12,7 @@ const onExport = baseUrl => values => {
     const schemaParams = checkedSchemas.map(name => `${name}=true`).join('&')
     const downloadUrlParams = `skipSharing=${skipSharing}&download=true&${schemaParams}`
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-    locationAssign(url)
+    locationAssign(url, setExportEnabled)
 }
 
 export { onExport }

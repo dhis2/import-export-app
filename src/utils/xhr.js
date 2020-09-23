@@ -66,17 +66,31 @@ const extractIdAndMessage = xhr => {
     }
 
     if (typeof response !== 'undefined') {
-        return {
-            id: response.id,
-            msg: {
-                id: 'init',
-                text: message,
-                date: new Date(response.created),
-            },
+        if (response.id) {
+            // the response will contain an `id` if the import was asynchronous
+            return {
+                id: response.id,
+                msg: {
+                    id: 'init',
+                    text: message,
+                    date: new Date(response.created),
+                },
+            }
+        } else {
+            // the response will contain a report inside the response if the
+            // import was synchronous
+            return {
+                msg: {
+                    id: 'completed',
+                    text: 'Import:Done',
+                    date: new Date(),
+                },
+                typeReports: response,
+            }
         }
     }
 
-    // sync metadata, tei import
+    // sync metadata import
     if (typeReports) {
         if (
             Array.isArray(typeReports) &&

@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 
-import { getMimeType } from './mime'
 import { getUploadXHR } from './xhr'
 
 const trimString = (length, string) =>
@@ -38,30 +37,6 @@ const compressionToName = compression => {
         return 'gzip'
     }
     return compression
-}
-
-const blobType = (format, compression) => {
-    if (compression === 'gzip') {
-        return `application/${format}+gzip`
-    } else if (compression === 'zip') {
-        return `application/${format}+zip`
-    }
-    return getMimeType(format)
-}
-
-const createBlob = (contents, format, compression = 'none') => {
-    return URL.createObjectURL(
-        new Blob([contents], { type: blobType(format, compression) })
-    )
-}
-
-const downloadBlob = (url, filename) => {
-    const link = document.createElement('a')
-    link.href = url
-    link.setAttribute('download', filename)
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
 }
 
 const fetchAttributes = async (apiBaseUrl, attribute) => {
@@ -210,12 +185,27 @@ const uploadFile = ({
     })
 }
 
+const downloadWindowTitle = i18n.t('Loading exported data')
+const downloadWindowHtml = `
+<div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; color: rgb(33, 41, 52)">
+    <p>${downloadWindowTitle}</p>
+</div>
+`
+
 // call stub function if available
-const locationAssign = url => {
+const locationAssign = (url, setExportEnabled) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
-        window.location = url
+        const downloadWindow = window.open(url, '_blank')
+
+        downloadWindow.document.title = downloadWindowTitle
+        downloadWindow.document.body.innerHTML = downloadWindowHtml // does not work in Chrome
+
+        const enableExport = () => setExportEnabled(true)
+        downloadWindow.onbeforeunload = enableExport
+        downloadWindow.onabort = enableExport
+        downloadWindow.onerror = enableExport
     }
 }
 
@@ -236,8 +226,6 @@ const getInitialBoolValue = (prevValue, defaultValue) => {
 }
 
 export {
-    createBlob,
-    downloadBlob,
     fetchAttributes,
     getPrevJobDetails,
     getInitialBoolValue,

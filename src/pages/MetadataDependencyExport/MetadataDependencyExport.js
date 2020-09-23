@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
@@ -15,7 +15,11 @@ import {
     SkipSharing,
     ExportButton,
 } from '../../components/Inputs/index'
-import { Page, MetadataDependencyExportIcon } from '../../components/index'
+import {
+    Page,
+    MetadataDependencyExportIcon,
+    ValidationSummary,
+} from '../../components/index'
 import { onExport } from './form-helper'
 
 const { Form } = ReactFinalForm
@@ -36,19 +40,24 @@ const initialValues = {
 }
 
 const MetadataDependencyExport = () => {
+    const [exportEnabled, setExportEnabled] = useState(true)
     const { baseUrl } = useConfig()
-    const onSubmit = onExport(baseUrl)
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            loading={!exportEnabled}
             dataTest="page-export-metadata-dependency"
         >
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
+                subscription={{
+                    values: true,
+                }}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
                         <ObjectType />
@@ -56,8 +65,10 @@ const MetadataDependencyExport = () => {
                         <Format availableFormats={formatNoCsvOptions} />
                         <Compression />
                         <SkipSharing />
+                        <ValidationSummary />
                         <ExportButton
                             label={i18n.t('Export metadata dependencies')}
+                            disabled={!exportEnabled}
                         />
                     </form>
                 )}

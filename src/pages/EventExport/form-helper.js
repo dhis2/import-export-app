@@ -5,7 +5,9 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
 
-const onExport = baseUrl => values => {
+const onExport = (baseUrl, setExportEnabled) => values => {
+    setExportEnabled(false)
+
     const {
         selectedOrgUnits,
         selectedPrograms,
@@ -45,7 +47,7 @@ const onExport = baseUrl => values => {
         .filter(s => s != '')
         .join('&')
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-    locationAssign(url)
+    locationAssign(url, setExportEnabled)
 }
 
 const validate = values => ({

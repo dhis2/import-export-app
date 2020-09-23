@@ -16,8 +16,8 @@ import {
     defaultImportReportModeOption,
     PreheatMode,
     defaultPreheatModeOption,
-    ImportStrategy,
-    defaultImportStrategyOption,
+    Strategy,
+    defaultStrategyOption,
     AtomicMode,
     defaultAtomicModeOption,
     MergeMode,
@@ -28,8 +28,6 @@ import {
     defaultSkipSharingOption,
     SkipValidation,
     defaultSkipValidationOption,
-    IsAsync,
-    defaultIsAsyncOption,
     InclusionStrategy,
     defaultInclusionStrategyOption,
     ImportButtonStrip,
@@ -49,6 +47,7 @@ import {
     MoreOptions,
     SchemeContainer,
     BasicOptions,
+    ValidationSummary,
 } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
@@ -69,8 +68,7 @@ const createInitialValues = prevJobDetails => ({
     importReportMode:
         prevJobDetails.importReportMode || defaultImportReportModeOption,
     preheatMode: prevJobDetails.preheatMode || defaultPreheatModeOption,
-    importStrategy:
-        prevJobDetails.importStrategy || defaultImportStrategyOption,
+    strategy: prevJobDetails.strategy || defaultStrategyOption,
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
     mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
@@ -84,7 +82,9 @@ const createInitialValues = prevJobDetails => ({
         prevJobDetails.skipValidation,
         defaultSkipValidationOption
     ),
-    isAsync: getInitialBoolValue(prevJobDetails.isAsync, defaultIsAsyncOption),
+    // disable async until it is fully implemented for this resource
+    // (expected 2.36)
+    isAsync: false,
     dataElementIdScheme:
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
@@ -128,7 +128,10 @@ const TEIImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, values, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
@@ -147,7 +150,7 @@ const TEIImport = () => {
                             <Identifier />
                             <ImportReportMode />
                             <PreheatMode />
-                            <ImportStrategy value={values.importStrategy} />
+                            <Strategy value={values.strategy} />
                             <AtomicMode />
                             <MergeMode />
                         </BasicOptions>
@@ -155,7 +158,6 @@ const TEIImport = () => {
                             <FlushMode />
                             <SkipSharing />
                             <SkipValidation />
-                            <IsAsync />
                             <InclusionStrategy />
                             <SchemeContainer>
                                 <DataElementIdScheme />
@@ -164,6 +166,7 @@ const TEIImport = () => {
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>

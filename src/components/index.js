@@ -1,8 +1,10 @@
 export {
     DataIcon,
     EventIcon,
+    ExportIcon,
     GMLIcon,
     LogoIcon,
+    ImportIcon,
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
@@ -44,3 +46,4 @@ export { ResourcePickerField } from './ResourcePicker/ResourcePickerField'
 export { BasicOptions } from './BasicOptions/BasicOptions'
 export { SchemeContainer } from './ElementSchemes/SchemeContainer'
 export { StyledField } from './StyledField/StyledField'
+export { ValidationSummary } from './ValidationSummary/ValidationSummary'

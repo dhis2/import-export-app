@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
@@ -31,6 +31,7 @@ import {
     BasicOptions,
     SchemeContainer,
     DataIcon,
+    ValidationSummary,
 } from '../../components/index'
 import { onExport, validate } from './form-helper'
 
@@ -63,21 +64,26 @@ const initialValues = {
 }
 
 const DataExport = () => {
+    const [exportEnabled, setExportEnabled] = useState(true)
     const { baseUrl } = useConfig()
-    const onSubmit = onExport(baseUrl)
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            loading={!exportEnabled}
             dataTest="page-export-data"
         >
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
@@ -101,7 +107,11 @@ const DataExport = () => {
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>
-                        <ExportButton label={i18n.t('Export data')} />
+                        <ValidationSummary />
+                        <ExportButton
+                            label={i18n.t('Export data')}
+                            disabled={!exportEnabled}
+                        />
                         <FormAlerts alerts={submitError} />
                     </form>
                 )}

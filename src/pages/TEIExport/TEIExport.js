@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 
 import {
     Format,
-    formatJsonpOptions,
+    formatOptions,
     defaultFormatOption,
-    OrgUnitTree,
     OrgUnitMode,
     defaultOrgUnitSelectionModeOption,
+    defaultInclusionOption,
     TEITypeFilter,
     defaultTEITypeFilterOption,
     ProgramStatus,
@@ -21,8 +21,6 @@ import {
     ProgramEndDate,
     ProgramPicker,
     TETypePicker,
-    Compression,
-    defaultCompressionOption,
     LastUpdatedFilter,
     defaultLastUpdatedFilterOption,
     LastUpdatedStartDate,
@@ -50,6 +48,7 @@ import {
     BasicOptions,
     SchemeContainer,
     TEIIcon,
+    ValidationSummary,
 } from '../../components/index'
 import { onExport, validate } from './form-helper'
 
@@ -58,7 +57,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 const PAGE_NAME = i18n.t('Tracked entity instances export')
 const PAGE_DESCRIPTION = i18n.t(
-    'Export tracked entity instances in XML, JSON, JSONP or CSV format.'
+    'Export tracked entity instances in XML, JSON or CSV format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -69,12 +68,13 @@ const initialValues = {
     selectedUsers: [],
     format: defaultFormatOption,
     ouMode: defaultOrgUnitSelectionModeOption,
+    inclusion: defaultInclusionOption,
     teiTypeFilter: defaultTEITypeFilterOption,
     programStatus: defaultProgramStatusOption,
     followUpStatus: defaultFollowUpStatusOption,
     programStartDate: '',
     programEndDate: '',
-    compression: defaultCompressionOption,
+    compression: '', // disable compression until it is properly implemented in the backend
     lastUpdatedFilter: defaultLastUpdatedFilterOption,
     lastUpdatedStartDate: '',
     lastUpdatedEndDate: '',
@@ -89,21 +89,26 @@ const initialValues = {
 }
 
 const TEIExport = () => {
+    const [exportEnabled, setExportEnabled] = useState(true)
     const { baseUrl } = useConfig()
-    const onSubmit = onExport(baseUrl)
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            loading={!exportEnabled}
             dataTest="page-export-tei"
         >
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, values, submitError }) => {
                     const showProgramFilters = values.teiTypeFilter == 'PROGRAM'
                     const showTEFilters = values.teiTypeFilter == 'TE'
@@ -115,8 +120,7 @@ const TEIExport = () => {
                     return (
                         <form onSubmit={handleSubmit}>
                             <BasicOptions>
-                                <OrgUnitTree />
-                                <OrgUnitMode />
+                                <OrgUnitMode value={values.ouMode} />
                                 <TEITypeFilter />
                                 <ProgramPicker
                                     label={i18n.t('Program to export from')}
@@ -134,8 +138,7 @@ const TEIExport = () => {
                                     <ProgramEndDate show={showProgramFilters} />
                                 </Dates>
                                 <TETypePicker show={showTEFilters} />
-                                <Format availableFormats={formatJsonpOptions} />
-                                <Compression />
+                                <Format availableFormats={formatOptions} />
                             </BasicOptions>
                             <MoreOptions>
                                 <LastUpdatedFilter />
@@ -155,10 +158,12 @@ const TEIExport = () => {
                                     <IdScheme />
                                 </SchemeContainer>
                             </MoreOptions>
+                            <ValidationSummary />
                             <ExportButton
                                 label={i18n.t(
                                     'Export tracked entity instances'
                                 )}
+                                disabled={!exportEnabled}
                             />
                             <FormAlerts alerts={submitError} />
                         </form>
