@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "موجودہ صارف"
 
 msgid "None"
 msgstr "کوئی نہں"
@@ -122,7 +122,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr ""
+msgstr "منتخب ڈیٹا سیٹ"
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -254,13 +254,13 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr ""
+msgstr "شامل کریں"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr ""
+msgstr "اپڈیٹ"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "منتخب"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -358,7 +358,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "شروع / ختم تاریخیں"
 
 msgid "Time since last updated"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "قبضہ"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -466,7 +466,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr ""
+msgstr "منتخب کردہ پروگرام"
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -542,7 +542,7 @@ msgid "Program"
 msgstr "پروگرام"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "ٹریک کردہ ادارے کی قسم"
 
 msgid "Filter by"
 msgstr ""
