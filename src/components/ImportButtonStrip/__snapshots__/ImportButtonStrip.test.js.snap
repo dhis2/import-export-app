@@ -14,7 +14,7 @@ exports[`matches snapshot 1`] = `
         class="jsx-71743532 box"
       >
         <button
-          class="jsx-1653853836 dryRun primary"
+          class="jsx-3288231115 dryRun primary"
           data-test="import-strip-dry-run-btn"
           type="submit"
         >
@@ -25,7 +25,7 @@ exports[`matches snapshot 1`] = `
         class="jsx-71743532 box"
       >
         <button
-          class="jsx-1653853836 secondary"
+          class="jsx-3288231115 secondary"
           data-test="import-strip-import-btn"
           type="submit"
         >
