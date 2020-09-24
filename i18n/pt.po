@@ -127,7 +127,7 @@ msgid "Object type"
 msgstr "Tipo de objecto"
 
 msgid "Compression"
-msgstr ""
+msgstr "Compressão"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -145,7 +145,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 msgid "ID scheme"
 msgstr ""
@@ -331,7 +331,7 @@ msgid "Data element groups"
 msgstr "Grupos de Elementos de Dados"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Conjuntos de opções"
 
 msgid "[ All program stages]"
 msgstr ""
