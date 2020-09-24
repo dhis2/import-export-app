@@ -97,7 +97,7 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Compression"
-msgstr ""
+msgstr "Compressão"
 
 msgid "Uid"
 msgstr ""
@@ -154,7 +154,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 msgid "UID"
 msgstr ""
@@ -238,7 +238,7 @@ msgid "Data element groups"
 msgstr "Grupos de Elementos de Dados"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Conjuntos de opções"
 
 msgid "Object type"
 msgstr "Tipo de objecto"
@@ -265,7 +265,7 @@ msgid "[ All program stages]"
 msgstr ""
 
 msgid "Program stages"
-msgstr ""
+msgstr "Estagios do programa"
 
 msgid "Loading programStage options..."
 msgstr ""
