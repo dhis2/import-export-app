@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { AlertStack, AlertBar } from '@dhis2/ui'
 
-const FormAlerts = ({ alerts, dataTest }) => {
-    const [bars, setBars] = useState([])
-
-    useEffect(() => {
-        if (alerts) {
-            const newBars = alerts.map(a => (
+const FormAlerts = ({ alerts, dataTest }) => (
+    <AlertStack data-test={dataTest}>
+        {alerts &&
+            alerts.map(a => (
                 <AlertBar
                     key={`alert-${a.id}`}
                     warning={a.warning}
@@ -18,15 +16,9 @@ const FormAlerts = ({ alerts, dataTest }) => {
                 >
                     {a.message}
                 </AlertBar>
-            ))
-            setBars(newBars)
-        }
-    }, [alerts])
-
-    if (bars.length == 0) return null
-
-    return <AlertStack data-test={dataTest}>{bars}</AlertStack>
-}
+            ))}
+    </AlertStack>
+)
 
 FormAlerts.propTypes = {
     dataTest: PropTypes.string.isRequired,
