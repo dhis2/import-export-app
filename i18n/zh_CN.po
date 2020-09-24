@@ -1,14 +1,14 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2020
 # easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-09-17T21:11:04.970Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "当前用户"
 
 msgid "None"
 msgstr "没有"
@@ -122,7 +122,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr ""
+msgstr "选择的数据集"
 
 msgid "Something went wrong when loading the data sets!"
 msgstr "载入当前数据集发生错误"
@@ -254,13 +254,13 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr ""
+msgstr "附加"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "选择的"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "捕获"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -466,7 +466,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr ""
+msgstr "已选项目组"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "载入项目发生错误"
@@ -542,7 +542,7 @@ msgid "Program"
 msgstr "项目"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "跟踪实体类型"
 
 msgid "Filter by"
 msgstr ""

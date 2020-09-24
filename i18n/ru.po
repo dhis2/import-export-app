@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "Текущий пользователь"
 
 msgid "None"
 msgstr "Не известное значение"
@@ -122,7 +122,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr ""
+msgstr "Выбранные наборы данных"
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -254,13 +254,13 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr ""
+msgstr "Добавить"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr ""
+msgstr "Обновить"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "Выбранный"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -358,7 +358,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "Дата начала / окончания"
 
 msgid "Time since last updated"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "Сбор"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -466,7 +466,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr ""
+msgstr "Выбранные программы"
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -542,7 +542,7 @@ msgid "Program"
 msgstr "Program"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "Тип отслеживаемого объекта"
 
 msgid "Filter by"
 msgstr ""
@@ -757,7 +757,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr ""
+msgstr "Экспортировать данные"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -770,7 +770,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr ""
+msgstr "Экспорт событий"
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -802,7 +802,7 @@ msgid ""
 msgstr ""
 
 msgid "Export metadata"
-msgstr ""
+msgstr "Экспортировать мета данные"
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "

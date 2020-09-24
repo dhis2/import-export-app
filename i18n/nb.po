@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "Nåværende bruker"
 
 msgid "None"
 msgstr "Ingen"
@@ -122,7 +122,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr ""
+msgstr "Valgte datasett"
 
 msgid "Something went wrong when loading the data sets!"
 msgstr "Noe gikk galt ved lasting av datasettene!"
@@ -254,13 +254,13 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr ""
+msgstr "Legg til"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr ""
+msgstr "Oppdater"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "Valgt"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -358,7 +358,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "Start/slutt-datoer"
 
 msgid "Time since last updated"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "Registrer"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -466,7 +466,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr ""
+msgstr "Valgte programmer"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "Noe gikk galt ved lasting av programmer!"
@@ -542,7 +542,7 @@ msgid "Program"
 msgstr "Program"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "Sporet enhetstype"
 
 msgid "Filter by"
 msgstr "Filtrer etter"
@@ -757,7 +757,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr ""
+msgstr "Eksporter data"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -771,7 +771,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr ""
+msgstr "Eksporter hendelser"
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -807,7 +807,7 @@ msgid ""
 msgstr ""
 
 msgid "Export metadata"
-msgstr ""
+msgstr "Eksporter metadata"
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
