@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-17T21:11:04.970Z\n"
+"POT-Creation-Date: 2020-09-25T12:32:54.628Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -74,6 +74,12 @@ msgid "Selected users"
 msgstr ""
 
 msgid "Assigned user mode"
+msgstr ""
+
+msgid "Filter by assigned user mode"
+msgstr ""
+
+msgid "Filter tracked entity instances with events assigned to specific users"
 msgstr ""
 
 msgid "Do not import"
