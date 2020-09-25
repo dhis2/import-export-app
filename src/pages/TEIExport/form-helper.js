@@ -24,6 +24,7 @@ const valuesToParams = (
         eventIdScheme,
         orgUnitIdScheme,
         idScheme,
+        assignedUserModeFilter,
         assignedUserMode,
         teiTypeFilter,
         programStatus,
@@ -46,7 +47,6 @@ const valuesToParams = (
         eventIdScheme: eventIdScheme,
         orgUnitIdScheme: orgUnitIdScheme,
         idScheme: idScheme,
-        assignedUserMode: assignedUserMode,
         attachment: filename,
     }
 
@@ -55,6 +55,10 @@ const valuesToParams = (
     if (ouMode === OU_MODE_MANUAL_VALUE) {
         minParams.ou = selectedOrgUnits.map(o => pathToId(o)).join(';')
         minParams.ouMode = inclusion
+    }
+
+    if (assignedUserModeFilter) {
+        minParams.assignedUserMode = assignedUserMode
     }
 
     if (assignedUserMode == 'PROVIDED') {
