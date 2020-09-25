@@ -120,8 +120,10 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
     const filename = `${endpoint}.${format}`
     const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`
-
     locationAssign(url, setExportEnabled)
+
+    // log for debugging purposes
+    console.log('tei-export:', { url, params: downloadUrlParams })
 }
 
 const validate = values => {
