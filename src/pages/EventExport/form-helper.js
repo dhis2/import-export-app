@@ -48,6 +48,9 @@ const onExport = (baseUrl, setExportEnabled) => values => {
         .join('&')
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
     locationAssign(url, setExportEnabled)
+
+    // log for debugging purposes
+    console.log('event-export:', { url, params: downloadUrlParams })
 }
 
 const validate = values => ({
