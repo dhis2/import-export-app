@@ -52,6 +52,9 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
     const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
     locationAssign(url, setExportEnabled)
+
+    // log for debugging purposes
+    console.log('data-export:', { url, params: downloadUrlParams })
 }
 
 const validate = values => ({
