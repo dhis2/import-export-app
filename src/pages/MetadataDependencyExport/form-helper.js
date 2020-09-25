@@ -12,6 +12,12 @@ const onExport = (baseUrl, setExportEnabled) => values => {
     const downloadUrlParams = `skipSharing=${skipSharing}&download=true`
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
     locationAssign(url, setExportEnabled)
+
+    // log for debugging purposes
+    console.log('metadata-dependency-export:', {
+        url,
+        params: downloadUrlParams,
+    })
 }
 
 export { onExport }
