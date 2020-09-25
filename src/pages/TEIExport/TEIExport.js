@@ -26,7 +26,6 @@ import {
     LastUpdatedStartDate,
     LastUpdatedEndDate,
     LastUpdatedDuration,
-    AssignedUserModeFilter,
     AssignedUserMode,
     defaultAssignedUserModeOption,
     UserPicker,
@@ -117,7 +116,6 @@ const TEIExport = () => {
                     const showLUDates = values.lastUpdatedFilter == 'DATE'
                     const showLUDuration =
                         values.lastUpdatedFilter == 'DURATION'
-                    const showAssignedUserMode = values.assignedUserModeFilter
                     const showUserPicker = values.assignedUserMode == 'PROVIDED'
 
                     return (
@@ -150,8 +148,7 @@ const TEIExport = () => {
                                     <LastUpdatedEndDate show={showLUDates} />
                                 </Dates>
                                 <LastUpdatedDuration show={showLUDuration} />
-                                <AssignedUserModeFilter />
-                                <AssignedUserMode show={showAssignedUserMode} />
+                                <AssignedUserMode />
                                 <UserPicker show={showUserPicker} />
                                 <IncludeDeleted />
                                 <IncludeAllAttributes />
