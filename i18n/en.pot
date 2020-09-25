@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-17T21:11:04.970Z\n"
-"PO-Revision-Date: 2020-09-17T21:11:04.970Z\n"
+"POT-Creation-Date: 2020-09-25T12:32:54.628Z\n"
+"PO-Revision-Date: 2020-09-25T12:32:54.628Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -65,6 +65,12 @@ msgid "Selected users"
 msgstr ""
 
 msgid "Assigned user mode"
+msgstr ""
+
+msgid "Filter by assigned user mode"
+msgstr ""
+
+msgid "Filter tracked entity instances with events assigned to specific users"
 msgstr ""
 
 msgid "Do not import"
