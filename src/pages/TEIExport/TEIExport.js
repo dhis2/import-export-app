@@ -28,7 +28,6 @@ import {
     LastUpdatedDuration,
     AssignedUserMode,
     defaultAssignedUserModeOption,
-    UserPicker,
     IncludeDeleted,
     IncludeAllAttributes,
     DataElementIdScheme,
@@ -116,7 +115,6 @@ const TEIExport = () => {
                     const showLUDates = values.lastUpdatedFilter == 'DATE'
                     const showLUDuration =
                         values.lastUpdatedFilter == 'DURATION'
-                    const showUserPicker = values.assignedUserMode == 'PROVIDED'
 
                     return (
                         <form onSubmit={handleSubmit}>
@@ -149,7 +147,6 @@ const TEIExport = () => {
                                 </Dates>
                                 <LastUpdatedDuration show={showLUDuration} />
                                 <AssignedUserMode />
-                                <UserPicker show={showUserPicker} />
                                 <IncludeDeleted />
                                 <IncludeAllAttributes />
                                 <SchemeContainer>
