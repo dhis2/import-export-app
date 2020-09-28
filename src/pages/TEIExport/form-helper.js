@@ -59,10 +59,10 @@ const valuesToParams = (
 
     if (assignedUserModeFilter) {
         minParams.assignedUserMode = assignedUserMode
-    }
 
-    if (assignedUserMode == 'PROVIDED') {
-        minParams.assignedUser = selectedUsers.join(';')
+        if (assignedUserMode == 'PROVIDED') {
+            minParams.assignedUser = selectedUsers.join(';')
+        }
     }
 
     if (teiTypeFilter == 'PROGRAM') {
