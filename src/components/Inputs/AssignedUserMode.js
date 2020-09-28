@@ -2,6 +2,7 @@ import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
 import { FormField, RadioGroupField } from '../index'
+import { UserPicker } from './index'
 
 const { useField, Field } = ReactFinalForm
 
@@ -25,8 +26,12 @@ const DATATEST = 'input-assigned-user-mode'
 const LABEL = i18n.t('Assigned user(s)')
 
 const AssignedUserMode = () => {
-    const { input } = useField(FILTER_NAME)
-    const { value: showOptions } = input
+    const { input: filterInput } = useField(FILTER_NAME)
+    const { value: showOptions } = filterInput
+
+    const { input: userInput } = useField(NAME)
+    const { value: userMode } = userInput
+    const showUserPicker = userMode === 'PROVIDED'
 
     return (
         <>
@@ -51,6 +56,7 @@ const AssignedUserMode = () => {
                             dataTest={DATATEST}
                             label={LABEL}
                         />
+                        <UserPicker show={showUserPicker} />
                     </div>
                 )}
             </FormField>
