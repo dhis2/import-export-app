@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-25T12:32:54.628Z\n"
+"POT-Creation-Date: 2020-09-28T15:45:11.663Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -67,19 +67,19 @@ msgstr ""
 msgid "Current user"
 msgstr "موجودہ صارف"
 
-msgid "None"
-msgstr "کوئی نہں"
+msgid "No user/unassigned"
+msgstr ""
 
 msgid "Selected users"
 msgstr ""
 
-msgid "Assigned user mode"
+msgid "Filter by assigned user"
 msgstr ""
 
-msgid "Filter by assigned user mode"
+msgid "Export only instances with events assigned to specific users"
 msgstr ""
 
-msgid "Filter tracked entity instances with events assigned to specific users"
+msgid "Assigned user(s)"
 msgstr ""
 
 msgid "Do not import"
@@ -458,6 +458,9 @@ msgstr ""
 
 msgid "Intelligent scan (reference)"
 msgstr ""
+
+msgid "None"
+msgstr "کوئی نہں"
 
 msgid "Preheat mode"
 msgstr ""
