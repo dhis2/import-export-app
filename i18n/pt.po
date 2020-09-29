@@ -64,7 +64,7 @@ msgid "No"
 msgstr "Não"
 
 msgid "Async"
-msgstr ""
+msgstr "Async"
 
 msgid "All"
 msgstr "Tudo"
@@ -73,7 +73,7 @@ msgid "None"
 msgstr "Nenhum"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Modelo atômico"
 
 msgid "Include descendants of organisation unit"
 msgstr ""
@@ -85,22 +85,22 @@ msgid "Children"
 msgstr ""
 
 msgid "Class key"
-msgstr ""
+msgstr "Chave de classe"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Descomprimido"
 
 msgid "Compression"
 msgstr "Compressão"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Código"
@@ -121,7 +121,7 @@ msgid "Loading organisation unit id scheme options..."
 msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "Algo deu errado ao carregar os conjuntos de dados!"
 
 msgid "Dry run"
 msgstr ""
@@ -136,7 +136,7 @@ msgid "Event id scheme"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "A primeira linha é o cabeçalho"
 
 msgid "Auto"
 msgstr "Automatico "
@@ -145,19 +145,19 @@ msgid "Object"
 msgstr "Objeto"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Modo de descarga"
 
 msgid "PDF"
 msgstr "PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
 msgstr "Formato"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr "Identificador"
@@ -166,13 +166,13 @@ msgid "Errors"
 msgstr "Erros"
 
 msgid "Full"
-msgstr ""
+msgstr "Cheio"
 
 msgid "Debug"
-msgstr ""
+msgstr "Depurar"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Modo de importação de relatorios "
 
 msgid "New and updates"
 msgstr ""
@@ -187,10 +187,10 @@ msgid "Delete"
 msgstr "Apagar"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Estrategia de importação "
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Incluir apagados "
 
 msgid "Include children of organisation unit"
 msgstr ""
@@ -202,13 +202,13 @@ msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Sempre"
 
 msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Estratégia de inclusão"
 
 msgid "Merge"
 msgstr "Associar"
@@ -217,7 +217,7 @@ msgid "Replace"
 msgstr "Substituir"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Modo de fusão "
 
 msgid "Loading Object options..."
 msgstr ""
@@ -253,13 +253,13 @@ msgid "Yes (faster for large imports)"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Cache de pré-aquecimento"
 
 msgid "Reference"
 msgstr "Referência"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Modo de pré-aquecimento"
 
 msgid "[ All program stages]"
 msgstr ""
@@ -277,7 +277,7 @@ msgid "Loading program options..."
 msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "Algo deu errado ao carregar os programas!"
 
 msgid "Error"
 msgstr "Erro"
@@ -382,7 +382,7 @@ msgid "Category ID scheme"
 msgstr ""
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "ID do esquema do elemento de dado"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -391,7 +391,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID esquema "
 
 msgid "Report Mode"
 msgstr ""
