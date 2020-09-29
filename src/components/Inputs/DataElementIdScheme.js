@@ -3,9 +3,9 @@ import i18n from '@dhis2/d2-i18n'
 import { DataElementIdScheme as DataElementIdSchemeGeneric } from '../index'
 
 const dataElementIdSchemeOptions = [
-    { value: 'UID', label: i18n.t('UID') },
-    { value: 'CODE', label: i18n.t('CODE') },
-    { value: 'NAME', label: i18n.t('NAME') },
+    { value: 'UID', label: i18n.t('Uid') },
+    { value: 'CODE', label: i18n.t('Code') },
+    { value: 'NAME', label: i18n.t('Name') },
 ]
 const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0].value
 
