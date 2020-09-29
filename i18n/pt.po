@@ -109,7 +109,7 @@ msgid "Summary"
 msgstr ""
 
 msgid "Async"
-msgstr ""
+msgstr "Async"
 
 msgid "Atomic Mode"
 msgstr ""
@@ -127,7 +127,7 @@ msgid "Compression"
 msgstr "Compressão"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "ID do esquema do elemento de dado"
 
 msgid "Dry run"
 msgstr ""
@@ -145,7 +145,7 @@ msgid "Format"
 msgstr "Formato"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID esquema "
 
 msgid "Identifier"
 msgstr "Identificador"
@@ -157,7 +157,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Incluir apagados "
 
 msgid "Inclusion"
 msgstr ""
@@ -178,7 +178,7 @@ msgid "Org unit ID scheme"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Cache de pré-aquecimento"
 
 msgid "Preheat Mode"
 msgstr ""
@@ -220,7 +220,7 @@ msgid "No"
 msgstr "Não"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Code"
 msgstr "Código"
@@ -259,10 +259,10 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "Cheio"
 
 msgid "Debug"
-msgstr ""
+msgstr "Depurar"
 
 msgid "Reference"
 msgstr "Referência"
@@ -301,7 +301,7 @@ msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Sempre"
 
 msgid "Non Empty"
 msgstr ""
@@ -310,13 +310,13 @@ msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Descomprimido"
 
 msgid "Category combination"
 msgstr "Combinações de categoria"
