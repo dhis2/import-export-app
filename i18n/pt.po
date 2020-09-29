@@ -67,7 +67,7 @@ msgid "No"
 msgstr "Não"
 
 msgid "Async"
-msgstr ""
+msgstr "Async"
 
 msgid "All"
 msgstr "Tudo"
@@ -76,13 +76,13 @@ msgid "None"
 msgstr "Nenhum"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Modelo atômico"
 
 msgid "Class key"
-msgstr ""
+msgstr "Chave de classe"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Código"
@@ -103,7 +103,7 @@ msgid "Event id scheme"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "A primeira linha é o cabeçalho"
 
 msgid "Auto"
 msgstr "Automatico "
@@ -112,19 +112,19 @@ msgid "Object"
 msgstr "Objeto"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Modo de descarga"
 
 msgid "PDF"
 msgstr "PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
 msgstr "Formato"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr "Identificador"
@@ -133,13 +133,13 @@ msgid "Errors"
 msgstr "Erros"
 
 msgid "Full"
-msgstr ""
+msgstr "Cheio"
 
 msgid "Debug"
-msgstr ""
+msgstr "Depurar"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Modo de importação de relatorios "
 
 msgid "New and updates"
 msgstr ""
@@ -154,19 +154,19 @@ msgid "Delete"
 msgstr "Apagar"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Estrategia de importação "
 
 msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Sempre"
 
 msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Estratégia de inclusão"
 
 msgid "Merge"
 msgstr "Associar"
@@ -175,7 +175,7 @@ msgid "Replace"
 msgstr "Substituir"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Modo de fusão "
 
 msgid "Org unit id scheme"
 msgstr ""
@@ -187,13 +187,13 @@ msgid "Yes (faster for large imports)"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Cache de pré-aquecimento"
 
 msgid "Reference"
 msgstr "Referência"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Modo de pré-aquecimento"
 
 msgid "Error"
 msgstr "Erro"
@@ -289,7 +289,7 @@ msgid "Compression"
 msgstr "Compressão"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "ID do esquema do elemento de dado"
 
 msgid "End date"
 msgstr "Data Final"
@@ -301,7 +301,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID esquema "
 
 msgid "Report Mode"
 msgstr ""
@@ -310,7 +310,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Incluir apagados "
 
 msgid "Inclusion"
 msgstr ""
@@ -388,13 +388,13 @@ msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Descomprimido"
 
 msgid "Category combination"
 msgstr "Combinações de categoria"
