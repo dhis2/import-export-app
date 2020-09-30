@@ -19,34 +19,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "Utilizador não está logado"
 
 msgid "Import Error"
-msgstr ""
+msgstr "Erro ao importar "
 
 msgid "Go Back"
-msgstr ""
+msgstr "Voltar"
 
 msgid "Required"
 msgstr "Exigido"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "Escolha o ficheiro para carregar "
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "Filtrar conjunto de dados  atraves do nome "
 
 msgid "Select All"
-msgstr ""
+msgstr "Selecionar todos "
 
 msgid "Clear All"
-msgstr ""
+msgstr "Limpar todos "
 
 msgid "Data sets"
 msgstr "Agregação de Dados"
 
 msgid "more options"
-msgstr ""
+msgstr "Mais opções "
 
 msgid "JSON"
 msgstr "JSON"
@@ -58,7 +58,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr ""
+msgstr "Selecione nenhum"
 
 msgid "Yes"
 msgstr "Sim"
@@ -97,7 +97,7 @@ msgid "Loading data element id scheme options..."
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "Dry run"
 
 msgid "Event id scheme"
 msgstr ""
@@ -145,10 +145,10 @@ msgid "New and updates"
 msgstr ""
 
 msgid "New only"
-msgstr ""
+msgstr "Apenas novo"
 
 msgid "Updates only"
-msgstr ""
+msgstr "Apenas actualizações"
 
 msgid "Delete"
 msgstr "Apagar"
@@ -157,13 +157,13 @@ msgid "Import strategy"
 msgstr "Estrategia de importação "
 
 msgid "Non Null"
-msgstr ""
+msgstr "Não Nulo"
 
 msgid "Always"
 msgstr "Sempre"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "Não vazio "
 
 msgid "Inclusion strategy"
 msgstr "Estratégia de inclusão"
@@ -184,7 +184,7 @@ msgid "Loading organisation unit id scheme options..."
 msgstr ""
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "Sim (mais rápido para grandes importações)"
 
 msgid "Preheat cache"
 msgstr "Cache de pré-aquecimento"
@@ -202,25 +202,25 @@ msgid "Report mode"
 msgstr ""
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Pular auditoria"
 
 msgid "Skip check (fast)"
-msgstr ""
+msgstr "Pular verificação (rápido)"
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "Verifique (seguro, recomendado)"
 
 msgid "Skip existing check"
 msgstr ""
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Pular partilhas "
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Pular validação"
 
 msgid "Strategy"
-msgstr ""
+msgstr "Estratégia"
 
 msgid "Id scheme"
 msgstr ""
@@ -230,6 +230,7 @@ msgstr ""
 
 msgid "view messages received on using import/export forms."
 msgstr ""
+"Visualizar mensagens recebidas usando formulario de exportação e importação"
 
 msgid "Import"
 msgstr "Imprtar"
@@ -241,13 +242,13 @@ msgid "Created"
 msgstr "Criado"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Apagado"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorado"
 
 msgid "Updated"
-msgstr ""
+msgstr "Actualizado"
 
 msgid "Total"
 msgstr "Total"
@@ -256,31 +257,31 @@ msgid "Type"
 msgstr "Tipo"
 
 msgid "Type Count"
-msgstr ""
+msgstr "Tipo de conta "
 
 msgid "Messages"
 msgstr "Mensagens"
 
 msgid "Summaries"
-msgstr ""
+msgstr "Resumos "
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Conflitos "
 
 msgid "Import Summary"
-msgstr ""
+msgstr "Resumo de importação"
 
 msgid "Summary"
-msgstr ""
+msgstr "Resumo"
 
 msgid "Atomic Mode"
-msgstr ""
+msgstr "Modo atomico "
 
 msgid "Category ID scheme"
-msgstr ""
+msgstr "Categoria de ID do esquema "
 
 msgid "Children"
-msgstr ""
+msgstr "Crianças "
 
 msgid "Object type"
 msgstr "Tipo de objecto"
@@ -295,49 +296,49 @@ msgid "End date"
 msgstr "Data Final"
 
 msgid "Event ID Scheme"
-msgstr ""
+msgstr "ID do esquema do evento"
 
 msgid "Flush Mode"
-msgstr ""
+msgstr "Modo de descarga"
 
 msgid "ID scheme"
 msgstr "ID esquema "
 
 msgid "Report Mode"
-msgstr ""
+msgstr "Modo de Relatório"
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "Estrategia de importação "
 
 msgid "Include deleted"
 msgstr "Incluir apagados "
 
 msgid "Inclusion"
-msgstr ""
+msgstr "Inclusão "
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "Estrategia de inclusão "
 
 msgid "Merge Mode"
-msgstr ""
+msgstr "Modo de fusão"
 
 msgid "Organisation unit"
 msgstr "Unidade organizacional"
 
 msgid "Org unit ID scheme"
-msgstr ""
+msgstr "ID de esquema da unidade organizacional "
 
 msgid "Preheat Mode"
-msgstr ""
+msgstr "Modo de pré-aquecimento"
 
 msgid "Program Stages"
-msgstr ""
+msgstr "Estagio de programa "
 
 msgid "Programs"
 msgstr "Programas"
 
 msgid "Schemas"
-msgstr ""
+msgstr "Esquema"
 
 msgid "Data Sets"
 msgstr "Ficha"
@@ -346,31 +347,31 @@ msgid "Sharing"
 msgstr "Partilha"
 
 msgid "Existing record check"
-msgstr ""
+msgstr "Verificação de registro existente"
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "Pular compartilhamento"
 
 msgid "Skip Validation"
-msgstr ""
+msgstr "Pular validação "
 
 msgid "Start date"
 msgstr "Data Início"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "Inclui descendentes da unidade organizacional"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "Unidade organizacional selecionada "
 
 msgid "New and Updates"
-msgstr ""
+msgstr "Novo e atualizações"
 
 msgid "AUTO"
-msgstr ""
+msgstr "AUTO"
 
 msgid "Create and Update"
-msgstr ""
+msgstr "Criar e actualizar"
 
 msgid "Create"
 msgstr "Criar"
@@ -379,13 +380,13 @@ msgid "Update"
 msgstr "Actualizar"
 
 msgid "With sharing"
-msgstr ""
+msgstr "Com compartilhamento"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "Sem compartilhar"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "Incluir filhos da unidade organizacional"
 
 msgid "Zip"
 msgstr "Zip"
@@ -409,63 +410,71 @@ msgid "Option sets"
 msgstr "Conjuntos de opções"
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[ Todos estagios de programa]"
 
 msgid "Import/Export"
 msgstr "Importar-Exportar"
 
 msgid "Data Export"
-msgstr ""
+msgstr "Exportação de Dados"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Exportar valores de dados. Esta é a função de exportação regular que exporta"
+" dados para o formato de intercâmbio DHIS 2 chamado DXF 2."
 
 msgid "Loading options..."
 msgstr "Carregando opções ..."
 
 msgid "Event Export"
-msgstr ""
+msgstr "Exportação de Evento"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"Exporte dados de eventos para programas, estágios e entidades rastreadas no "
+"formato DXF 2."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "Exportação de Metadados"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
 msgstr ""
+"Exporte metadados como elementos de dados e unidades de organização para o "
+"formato de intercâmbio DHIS 2 padrão."
 
 msgid "Meta Data Export"
-msgstr ""
+msgstr "Exportação de metadados"
 
 msgid "Metadata Dependency Export"
-msgstr ""
+msgstr "Exportação de Dependência de Metadados"
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
 msgstr ""
+"Exporte metadados como conjuntos de dados e programas, incluindo objetos de "
+"metadados relacionados."
 
 msgid "Metadata Export with Dependencies"
-msgstr ""
+msgstr "Exportação de metadados com dependências"
 
 msgid "Import / Export"
-msgstr ""
+msgstr "Importação / Exportação"
 
 msgid "Import or Export DHIS2 data."
-msgstr ""
+msgstr "Importar ou exportar dados DHIS2."
 
 msgid "An unknown error occurred"
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "Ocorreu um erro desconhecido. Por favor, tente novamente mais tarde"
 
 msgid "Data Import"
 msgstr "Importação de dados"
@@ -474,32 +483,40 @@ msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
 "is the standard exchange format for DHIS 2."
 msgstr ""
+"Importe valores de dados nos formatos DXF 2 XML, JSON, CSV e PDF. DXF 2 é o "
+"formato de troca padrão para DHIS 2."
 
 msgid "Event Import"
-msgstr ""
+msgstr "Eventos importados "
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"Importe eventos para programas, etapas e entidades rastreadas no formato DXF"
+" 2."
 
 msgid "GML Import"
-msgstr ""
+msgstr "Importação de GML"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"Importe dados geográficos para unidades de organização usando o formato GML."
+" GML é uma gramática XML para expressar características geográficas."
 
 msgid "Couldn't load classKey options"
 msgstr ""
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "Importação de metadados "
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Importe metadados como elementos de dados e unidades de organização usando o"
+" formato de troca DHIS 2 padrão chamado DXF 2."
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "Parece que não havia dados no arquivo enviado."
