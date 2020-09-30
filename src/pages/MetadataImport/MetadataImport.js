@@ -51,8 +51,8 @@ import { onImport } from './form-helper'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Metadata import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Metadata import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import metadata like data elements and organisation units using the DXF 2 format.'
 )
 const PAGE_ICON = <MetadataImportIcon />
