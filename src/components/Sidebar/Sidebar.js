@@ -143,6 +143,12 @@ const Sidebar = () => {
 
     return (
         <Menu className={styles.Menu}>
+            <SidebarItem
+                name={i18n.t('Overview')}
+                path={'/'}
+                code={'home'}
+                active={pathname == '/'}
+            />
             <ImportMenuSectionHeader />
             {importPages.map(({ icon, name, code, path }) => {
                 const active = pathname == path

@@ -25,8 +25,8 @@ import { onExport } from './form-helper'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Metadata dependency export')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Metadata dependency export')
+export const PAGE_DESCRIPTION = i18n.t(
     'Export metadata dependencies, such as data sets and programs, including related metadata objects, in XML or JSON format.'
 )
 const PAGE_ICON = <MetadataDependencyExportIcon />
