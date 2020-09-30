@@ -33,8 +33,8 @@ import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Event import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Event import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import events for programs, stages and tracked entities using the DXF 2 format.'
 )
 const PAGE_ICON = <EventIcon />
