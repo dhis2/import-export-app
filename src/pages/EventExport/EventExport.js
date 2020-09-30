@@ -39,8 +39,8 @@ import { onExport, validate } from './form-helper'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Event export')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Event export')
+export const PAGE_DESCRIPTION = i18n.t(
     'Export event data for programs, stages and tracked entities in DXF 2 format.'
 )
 const PAGE_ICON = <EventIcon />

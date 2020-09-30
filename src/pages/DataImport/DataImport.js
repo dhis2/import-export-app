@@ -45,8 +45,8 @@ import { onImport } from './form-helper'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Data import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Data import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
 )
 const PAGE_ICON = <DataIcon />

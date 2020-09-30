@@ -17,8 +17,8 @@ import { onImport } from './form-helper'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('GML import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('GML import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
 )
 const PAGE_ICON = <GMLIcon />
