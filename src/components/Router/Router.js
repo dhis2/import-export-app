@@ -13,12 +13,14 @@ import {
     TEIExport,
     TEIImport,
     JobOverview,
+    Home,
 } from '../../pages'
 
 const Router = () => {
     return (
         <ScrollToTop>
             <Switch>
+                <Route exact path="/" component={Home} />
                 <Route path="/import/data" component={DataImport} />
                 <Route path="/import/event" component={EventImport} />
                 <Route path="/import/gml" component={GMLImport} />
@@ -33,7 +35,7 @@ const Router = () => {
                 <Route path="/export/metadata" component={MetadataExport} />
                 <Route path="/export/tei" component={TEIExport} />
                 <Route path="/utils/job-overview" component={JobOverview} />
-                <Redirect from="*" to="/import/data" />
+                <Redirect from="*" to="/" />
             </Switch>
         </ScrollToTop>
     )

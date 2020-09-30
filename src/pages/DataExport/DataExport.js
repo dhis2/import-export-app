@@ -38,8 +38,8 @@ import { onExport, validate } from './form-helper'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Data export')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Data export')
+export const PAGE_DESCRIPTION = i18n.t(
     'Export metadata, such as data elements and organisation units, in DXF 2 format.'
 )
 const PAGE_ICON = <DataIcon />

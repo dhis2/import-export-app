@@ -55,8 +55,8 @@ import { onImport } from './form-helper'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Tracked entity instances import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Tracked entity instances import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import tracked entity instances from JSON or XML files.'
 )
 const PAGE_ICON = <TEIIcon />
