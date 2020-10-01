@@ -14,7 +14,7 @@ exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = 
         <span
           class="label"
         >
-          Summary #Overview
+          Summary
         </span>
         <table
           class="jsx-2430604489 "
@@ -170,7 +170,7 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
         <span
           class="label"
         >
-          Summary #Overview
+          Summary
         </span>
         <table
           class="jsx-2430604489 "
@@ -468,7 +468,7 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
           <span
             class="label"
           >
-            Summary #Overview
+            Summary
           </span>
           <table
             class="jsx-2430604489 "
@@ -562,7 +562,7 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
         <span
           class="label"
         >
-          Type count
+          Details by type
         </span>
         <table
           class="jsx-2430604489 "
@@ -756,7 +756,7 @@ exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
         <span
           class="label"
         >
-          Summary #Overview
+          Summary
         </span>
         <table
           class="jsx-2430604489 "

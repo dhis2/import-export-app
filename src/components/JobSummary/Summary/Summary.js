@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 
 import styles from './Summary.module.css'
 import { typeReportParse } from '../helper'
@@ -55,7 +54,6 @@ const Summary = ({ summary }) => {
                 (summary.conflicts.length || null) &&
                 summary.conflicts
             }
-            id={i18n.t('Overview')}
         />
     )
     const allSummaries =
