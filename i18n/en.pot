@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-10-01T09:54:04.640Z\n"
-"PO-Revision-Date: 2020-10-01T09:54:04.640Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
+"PO-Revision-Date: 2020-10-05T08:18:24.656Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -655,9 +655,6 @@ msgstr ""
 msgid "Details by type"
 msgstr ""
 
-msgid "Overview"
-msgstr ""
-
 msgid "Advanced options"
 msgstr ""
 
@@ -719,6 +716,9 @@ msgid "TEI export"
 msgstr ""
 
 msgid "Job overview"
+msgstr ""
+
+msgid "Overview"
 msgstr ""
 
 msgid "Yes"

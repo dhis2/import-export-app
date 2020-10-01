@@ -46,12 +46,12 @@ const JobOverview = ({
     // set selected job to first job if
     // first time user visits the job overview page
     useEffect(() => {
-        if (!selectedJob && allTasks.length > 0) {
+        if (selectedJob === undefined && allTasks.length > 0) {
             setSelectedJob(allTasks[0])
         }
     }, [])
 
-    if (!selectedJob) {
+    if (allTasks.length === 0) {
         return <p>{i18n.t('No jobs started yet.')}</p>
     }
 
@@ -74,7 +74,7 @@ const JobOverview = ({
                     {filteredTasks.map(t => (
                         <MenuItem
                             key={`job-overview-tasks-${t.id}`}
-                            active={selectedJob.id == t.id}
+                            active={selectedJob && selectedJob.id === t.id}
                             label={<MenuLabel task={t} />}
                             onClick={() => setSelectedJob(t)}
                             icon={categoryTypesObj[t.importType].icon}
@@ -83,15 +83,19 @@ const JobOverview = ({
                 </Menu>
             </div>
             <div className={styles.summary} data-test="job-overview-summary">
-                <JobSummary
-                    task={selectedJob}
-                    dataTest="job-summary-container"
-                    showFileDetails={false}
-                    showJobDetails={true}
-                />
-                <Link to={jobToPath(selectedJob)}>
-                    <Button primary>{i18n.t('Recreate job')}</Button>
-                </Link>
+                {selectedJob && (
+                    <>
+                        <JobSummary
+                            task={selectedJob}
+                            dataTest="job-summary-container"
+                            showFileDetails={false}
+                            showJobDetails={true}
+                        />
+                        <Link to={jobToPath(selectedJob)}>
+                            <Button primary>{i18n.t('Recreate job')}</Button>
+                        </Link>
+                    </>
+                )}
             </div>
         </div>
     )
