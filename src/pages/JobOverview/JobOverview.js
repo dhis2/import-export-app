@@ -13,8 +13,14 @@ const JobOverview = () => {
     const { jobOverview, updateJobOverview } = useContext(TaskContext)
 
     const setActiveTypes = types => {
+        const selectedJob = jobOverview.selectedJob
+        const job =
+            selectedJob && types.includes(selectedJob.importType)
+                ? selectedJob
+                : null
         updateJobOverview({
             activeTypes: types,
+            selectedJob: job,
         })
     }
     const setSelectedJob = job => {
