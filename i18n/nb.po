@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-28T15:45:11.663Z\n"
+"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -109,14 +109,14 @@ msgstr "Ikke komprimert"
 msgid "Compression mode"
 msgstr ""
 
-msgid "UID"
-msgstr "UID"
+msgid "Uid"
+msgstr "Uid"
 
-msgid "CODE"
-msgstr ""
+msgid "Code"
+msgstr "Kode"
 
-msgid "NAME"
-msgstr ""
+msgid "Name"
+msgstr "Navn"
 
 msgid "Data element ID scheme"
 msgstr "ID-element for dataelement"
@@ -141,12 +141,6 @@ msgstr "Et datasett må merkes"
 
 msgid "End date"
 msgstr "Sluttdato"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Kode"
 
 msgid "Event ID scheme"
 msgstr "Hendelse ID-ordning"
@@ -216,6 +210,9 @@ msgstr ""
 
 msgid "ID scheme"
 msgstr "ID ordning"
+
+msgid "UID"
+msgstr "UID"
 
 msgid "Auto"
 msgstr "Auto"
@@ -416,9 +413,6 @@ msgstr "Et objekt må merkes"
 
 msgid "Object"
 msgstr "Objekt"
-
-msgid "Name"
-msgstr "Navn"
 
 msgid "Organisation unit ID scheme"
 msgstr "Organisasjonsenhet ID ordning"
@@ -799,6 +793,36 @@ msgstr ""
 "Importer geografiske data for organisasjonsenheter ved bruk av GML-format. "
 "GML er en XML-grammatikk for å uttrykke geografiske funksjoner."
 
+msgid "Overview: Import/Export"
+msgstr ""
+
+msgid "Import or export DHIS2 data."
+msgstr ""
+
+msgid "Export metadata dependencies"
+msgstr ""
+
+msgid "Export metadata"
+msgstr "Eksporter metadata"
+
+msgid "Export tracked entity instances"
+msgstr ""
+
+msgid "Import data"
+msgstr ""
+
+msgid "Import events"
+msgstr ""
+
+msgid "Import GML"
+msgstr ""
+
+msgid "Import metadata"
+msgstr ""
+
+msgid "Import tracked entity instances"
+msgstr ""
+
 msgid "An overview of all import jobs started this session."
 msgstr "En oversikt over alle importjobber som ble startet i denne sesjonen."
 
@@ -807,16 +831,10 @@ msgid ""
 "related metadata objects, in XML or JSON format."
 msgstr ""
 
-msgid "Export metadata dependencies"
-msgstr ""
-
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr ""
-
-msgid "Export metadata"
-msgstr "Eksporter metadata"
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
@@ -838,9 +856,6 @@ msgid "Program to export from"
 msgstr ""
 
 msgid "Enrollment date range"
-msgstr ""
-
-msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"

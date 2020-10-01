@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-28T15:45:11.663Z\n"
+"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -109,14 +109,14 @@ msgstr "ان کمپریس"
 msgid "Compression mode"
 msgstr ""
 
-msgid "UID"
-msgstr "یو۔ای۔ڈی"
-
-msgid "CODE"
+msgid "Uid"
 msgstr ""
 
-msgid "NAME"
-msgstr ""
+msgid "Code"
+msgstr "کوڈ"
+
+msgid "Name"
+msgstr "نام"
 
 msgid "Data element ID scheme"
 msgstr "ڈیٹا ائ۔ڈی سکیم"
@@ -141,12 +141,6 @@ msgstr ""
 
 msgid "End date"
 msgstr "تاریخ اختتام"
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "کوڈ"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -216,6 +210,9 @@ msgstr ""
 
 msgid "ID scheme"
 msgstr "ائ۔ڈی سکیم"
+
+msgid "UID"
+msgstr "یو۔ای۔ڈی"
 
 msgid "Auto"
 msgstr ""
@@ -416,9 +413,6 @@ msgstr ""
 
 msgid "Object"
 msgstr "اؤبجیکٹ"
-
-msgid "Name"
-msgstr "نام"
 
 msgid "Organisation unit ID scheme"
 msgstr ""
@@ -794,6 +788,36 @@ msgid ""
 "an XML grammar for expressing geographical features."
 msgstr ""
 
+msgid "Overview: Import/Export"
+msgstr ""
+
+msgid "Import or export DHIS2 data."
+msgstr ""
+
+msgid "Export metadata dependencies"
+msgstr ""
+
+msgid "Export metadata"
+msgstr ""
+
+msgid "Export tracked entity instances"
+msgstr ""
+
+msgid "Import data"
+msgstr ""
+
+msgid "Import events"
+msgstr ""
+
+msgid "Import GML"
+msgstr ""
+
+msgid "Import metadata"
+msgstr ""
+
+msgid "Import tracked entity instances"
+msgstr ""
+
 msgid "An overview of all import jobs started this session."
 msgstr ""
 
@@ -802,15 +826,9 @@ msgid ""
 "related metadata objects, in XML or JSON format."
 msgstr ""
 
-msgid "Export metadata dependencies"
-msgstr ""
-
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
-msgstr ""
-
-msgid "Export metadata"
 msgstr ""
 
 msgid ""
@@ -831,9 +849,6 @@ msgid "Program to export from"
 msgstr ""
 
 msgid "Enrollment date range"
-msgstr ""
-
-msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-28T15:45:11.663Z\n"
+"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -111,14 +111,14 @@ msgstr "غير مضغوط"
 msgid "Compression mode"
 msgstr ""
 
-msgid "UID"
-msgstr "UID"
-
-msgid "CODE"
+msgid "Uid"
 msgstr ""
 
-msgid "NAME"
-msgstr ""
+msgid "Code"
+msgstr "الرمز"
+
+msgid "Name"
+msgstr "الاسم"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -143,12 +143,6 @@ msgstr "يجب تحديد مجموعة بيانات واحدة"
 
 msgid "End date"
 msgstr "تاريخ النهاية"
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "الرمز"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -218,6 +212,9 @@ msgstr ""
 
 msgid "ID scheme"
 msgstr ""
+
+msgid "UID"
+msgstr "UID"
 
 msgid "Auto"
 msgstr "تلقائي"
@@ -418,9 +415,6 @@ msgstr "يجب تحديد كائن واحد على الأقل"
 
 msgid "Object"
 msgstr "الكائن"
-
-msgid "Name"
-msgstr "الاسم"
 
 msgid "Organisation unit ID scheme"
 msgstr ""
@@ -800,6 +794,36 @@ msgstr ""
 "استيراد البيانات الجغرافية للوحدات التنظيمية باستخدام تنسيق GML. GML عبارة "
 "عن قواعد XML للتعبير عن المعالم الجغرافية."
 
+msgid "Overview: Import/Export"
+msgstr ""
+
+msgid "Import or export DHIS2 data."
+msgstr ""
+
+msgid "Export metadata dependencies"
+msgstr ""
+
+msgid "Export metadata"
+msgstr "تصدير بيانات وصفية"
+
+msgid "Export tracked entity instances"
+msgstr ""
+
+msgid "Import data"
+msgstr ""
+
+msgid "Import events"
+msgstr ""
+
+msgid "Import GML"
+msgstr ""
+
+msgid "Import metadata"
+msgstr ""
+
+msgid "Import tracked entity instances"
+msgstr ""
+
 msgid "An overview of all import jobs started this session."
 msgstr "نظرة عامة على جميع مهام الاستيراد التي بدأت في هذه الجلسة."
 
@@ -808,16 +832,10 @@ msgid ""
 "related metadata objects, in XML or JSON format."
 msgstr ""
 
-msgid "Export metadata dependencies"
-msgstr ""
-
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr ""
-
-msgid "Export metadata"
-msgstr "تصدير بيانات وصفية"
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
@@ -838,9 +856,6 @@ msgid "Program to export from"
 msgstr ""
 
 msgid "Enrollment date range"
-msgstr ""
-
-msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"
