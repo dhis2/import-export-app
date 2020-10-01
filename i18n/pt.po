@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-28T15:45:11.663Z\n"
+"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -118,14 +118,14 @@ msgstr "Descomprimido"
 msgid "Compression mode"
 msgstr "Modo de compressão"
 
-msgid "UID"
-msgstr "UID"
+msgid "Uid"
+msgstr "Uid"
 
-msgid "CODE"
-msgstr "CODIGO"
+msgid "Code"
+msgstr "Código"
 
-msgid "NAME"
-msgstr "NOME"
+msgid "Name"
+msgstr "Nome"
 
 msgid "Data element ID scheme"
 msgstr "ID do esquema do elemento de dado"
@@ -150,12 +150,6 @@ msgstr "Um conjunto de dados deve ser selecionado"
 
 msgid "End date"
 msgstr "Data Final"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Código"
 
 msgid "Event ID scheme"
 msgstr "Esquema de ID de evento"
@@ -225,6 +219,9 @@ msgstr "Com qual formato os dados devem ser exportados?"
 
 msgid "ID scheme"
 msgstr "ID esquema "
+
+msgid "UID"
+msgstr "UID"
 
 msgid "Auto"
 msgstr "Automatico "
@@ -434,9 +431,6 @@ msgstr "Um objeto deve ser selecionado"
 
 msgid "Object"
 msgstr "Objecto"
-
-msgid "Name"
-msgstr "Nome"
 
 msgid "Organisation unit ID scheme"
 msgstr "Esquema de ID de unidade organizacional"
@@ -832,6 +826,36 @@ msgstr ""
 "Importe dados geográficos para unidades organizacionais usando o formato "
 "GML. GML é uma gramática XML para expressar características geográficas."
 
+msgid "Overview: Import/Export"
+msgstr ""
+
+msgid "Import or export DHIS2 data."
+msgstr ""
+
+msgid "Export metadata dependencies"
+msgstr "Exportar dependências de metadados"
+
+msgid "Export metadata"
+msgstr "Exportar Meta-Dados"
+
+msgid "Export tracked entity instances"
+msgstr "Exportar instâncias de entidades rastreadas"
+
+msgid "Import data"
+msgstr ""
+
+msgid "Import events"
+msgstr ""
+
+msgid "Import GML"
+msgstr ""
+
+msgid "Import metadata"
+msgstr ""
+
+msgid "Import tracked entity instances"
+msgstr ""
+
 msgid "An overview of all import jobs started this session."
 msgstr ""
 "Uma visão geral de todos os trabalhos de importação iniciou esta sessão."
@@ -843,18 +867,12 @@ msgstr ""
 "Exporte dependências de metadados, como conjuntos de dados e programas, "
 "incluindo objetos de metadados relacionados, no formato XML ou JSON."
 
-msgid "Export metadata dependencies"
-msgstr "Exportar dependências de metadados"
-
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr ""
 "Exporte metadados, como elementos de dados e unidades de organizacionais, em"
 " formato XML, JSON ou CSV"
-
-msgid "Export metadata"
-msgstr "Exportar Meta-Dados"
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
@@ -878,9 +896,6 @@ msgstr "Programa para exportar de"
 
 msgid "Enrollment date range"
 msgstr "Período de inscrição"
-
-msgid "Export tracked entity instances"
-msgstr "Exportar instâncias de entidades rastreadas"
 
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""

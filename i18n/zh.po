@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-28T15:45:11.663Z\n"
+"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -111,13 +111,13 @@ msgstr "无压缩"
 msgid "Compression mode"
 msgstr "压缩方式"
 
-msgid "UID"
-msgstr "UID"
+msgid "Uid"
+msgstr "Uid"
 
-msgid "CODE"
-msgstr "编码"
+msgid "Code"
+msgstr "代码"
 
-msgid "NAME"
+msgid "Name"
 msgstr "名称"
 
 msgid "Data element ID scheme"
@@ -143,12 +143,6 @@ msgstr "必须选择应该数据集"
 
 msgid "End date"
 msgstr "结束日期"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "代码"
 
 msgid "Event ID scheme"
 msgstr "事件ID方案"
@@ -218,6 +212,9 @@ msgstr "数据应以什么格式导出？"
 
 msgid "ID scheme"
 msgstr "ID方案"
+
+msgid "UID"
+msgstr "UID"
 
 msgid "Auto"
 msgstr "自动"
@@ -418,9 +415,6 @@ msgstr "必须选择一个对象"
 
 msgid "Object"
 msgstr "对象"
-
-msgid "Name"
-msgstr "名称"
 
 msgid "Organisation unit ID scheme"
 msgstr "机构ID方案"
@@ -796,6 +790,36 @@ msgid ""
 "an XML grammar for expressing geographical features."
 msgstr "使用GML格式导入机构的地理空间数据"
 
+msgid "Overview: Import/Export"
+msgstr ""
+
+msgid "Import or export DHIS2 data."
+msgstr ""
+
+msgid "Export metadata dependencies"
+msgstr "导出元数据依赖性"
+
+msgid "Export metadata"
+msgstr "导出元数据"
+
+msgid "Export tracked entity instances"
+msgstr "导出跟踪随访的实体实例"
+
+msgid "Import data"
+msgstr ""
+
+msgid "Import events"
+msgstr ""
+
+msgid "Import GML"
+msgstr ""
+
+msgid "Import metadata"
+msgstr ""
+
+msgid "Import tracked entity instances"
+msgstr ""
+
 msgid "An overview of all import jobs started this session."
 msgstr "该会话开始的所有导入作业概要"
 
@@ -804,16 +828,10 @@ msgid ""
 "related metadata objects, in XML or JSON format."
 msgstr "以XML或JSON格式导出元数据依赖性，例如数据集和程序，包括相关的元数据对象。"
 
-msgid "Export metadata dependencies"
-msgstr "导出元数据依赖性"
-
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr "以XML，JSON或CSV格式导出元数据，例如数据元素和组织单位。"
-
-msgid "Export metadata"
-msgstr "导出元数据"
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
@@ -834,9 +852,6 @@ msgstr "从项目中导出"
 
 msgid "Enrollment date range"
 msgstr "注册日期范围"
-
-msgid "Export tracked entity instances"
-msgstr "导出跟踪随访的实体实例"
 
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "至少选择一个最近更新的日期字段"
