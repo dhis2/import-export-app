@@ -44,7 +44,7 @@ describe('summary for a GML job', () => {
 
     test('events are showing', () => {
         const { getByDataTest } = renderJobSummary(gmlJob, props)
-        const events = getByDataTest('job-summary-events')
+        const events = getByDataTest('job-summary-log')
         expect(events).toBeInTheDocument()
         expect(events).toBeVisible()
     })
@@ -70,7 +70,7 @@ describe('summary for a data import job with conflicts', () => {
     test('overview summary is showing', () => {
         const { getByDataTest } = renderJobSummary(dataJob, props)
         const overviewSummary = getByDataTest('job-summary-single-summary')
-        expect(overviewSummary).toHaveTextContent(i18n.t('Overview'))
+        expect(overviewSummary).toHaveTextContent(i18n.t('Summary'))
     })
 
     test('conflicts are showing', () => {
@@ -90,7 +90,7 @@ describe('summary for a data import job with conflicts', () => {
 
     test('events are showing', () => {
         const { getByDataTest } = renderJobSummary(dataJob, props)
-        const events = getByDataTest('job-summary-events')
+        const events = getByDataTest('job-summary-log')
         expect(events).toBeInTheDocument()
         expect(events).toBeVisible()
     })
