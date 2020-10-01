@@ -18,7 +18,7 @@ const TypeCount = ({ stats }) => {
     if (stats.length == 0) return null
     return (
         <FormField
-            label={`${i18n.t('Type count')}`}
+            label={`${i18n.t('Details by type')}`}
             dataTest="job-summary-type-count"
             name="typeCount"
         >
