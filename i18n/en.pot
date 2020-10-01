@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
-"PO-Revision-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-01T09:54:04.640Z\n"
+"PO-Revision-Date: 2020-10-01T09:54:04.640Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -592,18 +592,6 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-msgid "Events"
-msgstr ""
-
-msgid "Time"
-msgstr ""
-
-msgid "Message"
-msgstr ""
-
-msgid "ID"
-msgstr ""
-
 msgid "Job summary"
 msgstr ""
 
@@ -614,6 +602,18 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Dry run"
+msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "ID"
 msgstr ""
 
 msgid "Messages"
@@ -652,10 +652,10 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-msgid "Overview"
+msgid "Details by type"
 msgstr ""
 
-msgid "Type count"
+msgid "Overview"
 msgstr ""
 
 msgid "Advanced options"
