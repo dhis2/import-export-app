@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { Events } from '../Events/Events'
+import { Log } from '../Log/Log'
 
 const props = {
     events: [
@@ -25,6 +25,6 @@ const props = {
 }
 
 it(`matches snapshot`, () => {
-    const { asFragment } = render(<Events {...props} />)
+    const { asFragment } = render(<Log {...props} />)
     expect(asFragment()).toMatchSnapshot()
 })

@@ -86,7 +86,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
             <span
               class="label"
             >
-              Summary #Overview
+              Summary
             </span>
             <table
               class="jsx-2430604489 "
@@ -180,7 +180,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
           <span
             class="label"
           >
-            Type count
+            Details by type
           </span>
           <table
             class="jsx-2430604489 "
@@ -362,12 +362,12 @@ exports[`summary for a GML job matches snapshot 1`] = `
     >
       <div
         class="container"
-        data-test="job-summary-events"
+        data-test="job-summary-log"
       >
         <span
           class="label"
         >
-          Events
+          Log
         </span>
         <table
           class="jsx-2430604489 "
@@ -598,7 +598,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
           <span
             class="label"
           >
-            Summary #Overview
+            Summary
           </span>
           <table
             class="jsx-2430604489 "
@@ -850,12 +850,12 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
     >
       <div
         class="container"
-        data-test="job-summary-events"
+        data-test="job-summary-log"
       >
         <span
           class="label"
         >
-          Events
+          Log
         </span>
         <table
           class="jsx-2430604489 "

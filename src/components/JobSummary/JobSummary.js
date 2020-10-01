@@ -5,7 +5,7 @@ import { Divider, Tag } from '@dhis2/ui'
 
 import styles from './JobSummary.module.css'
 import { jsDateToString } from '../../utils/helper'
-import { Events } from './Events/Events'
+import { Log } from './Log/Log'
 import { Summary } from './Summary/Summary'
 import { Details } from './Details/Details'
 
@@ -84,7 +84,7 @@ const JobSummary = ({
                 <Summary summary={task.summary} />
             )}
             <div className={styles.events}>
-                <Events events={task.events} />
+                <Log events={task.events} />
             </div>
             {showJobDetails && (
                 <div className={styles.jobDetails}>

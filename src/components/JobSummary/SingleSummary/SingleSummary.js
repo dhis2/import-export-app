@@ -18,7 +18,7 @@ import { FormField } from '../../index'
 const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
     <div>
         <FormField
-            label={`${i18n.t('Summary')} #${id}`}
+            label={id ? `${i18n.t('Summary')} #${id}` : i18n.t('Summary')}
             dataTest="job-summary-single-summary"
             name="summary"
         >
@@ -81,7 +81,6 @@ const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
 )
 
 SingleSummary.propTypes = {
-    id: PropTypes.string.isRequired,
     importCount: statsPropType.isRequired,
     conflicts: PropTypes.arrayOf(
         PropTypes.exact({
@@ -90,6 +89,7 @@ SingleSummary.propTypes = {
         })
     ),
     description: PropTypes.string,
+    id: PropTypes.string,
     status: PropTypes.string,
 }
 
