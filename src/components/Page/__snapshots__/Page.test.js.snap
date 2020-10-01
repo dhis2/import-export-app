@@ -222,7 +222,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
               <span
                 class="label"
               >
-                Summary #Overview
+                Summary
               </span>
               <table
                 class="jsx-2430604489 "
@@ -366,12 +366,12 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
         >
           <div
             class="container"
-            data-test="job-summary-events"
+            data-test="job-summary-log"
           >
             <span
               class="label"
             >
-              Events
+              Log
             </span>
             <table
               class="jsx-2430604489 "

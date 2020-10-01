@@ -9,7 +9,7 @@ exports[`matches snapshot 1`] = `
     <span
       class="label"
     >
-      Type count
+      Details by type
     </span>
     <table
       class="jsx-2430604489 "

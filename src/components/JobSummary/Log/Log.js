@@ -14,12 +14,12 @@ import {
 import { jsDateToString } from '../../../utils/helper'
 import { FormField } from '../../index'
 
-const Events = ({ events }) => {
+const Log = ({ events }) => {
     return (
         <FormField
-            label={`${i18n.t('Events')}`}
-            dataTest="job-summary-events"
-            name="events"
+            label={`${i18n.t('Log')}`}
+            dataTest="job-summary-log"
+            name="log"
         >
             <Table>
                 <TableHead>
@@ -32,7 +32,7 @@ const Events = ({ events }) => {
                 <TableBody>
                     {(events || null) &&
                         events.map((e, i) => (
-                            <TableRow key={`job-summary-events-${e.id}-${i}`}>
+                            <TableRow key={`job-summary-log-${e.id}-${i}`}>
                                 <TableCell>{jsDateToString(e.date)}</TableCell>
                                 <TableCell>{e.text}</TableCell>
                                 <TableCell>{e.id}</TableCell>
@@ -50,8 +50,8 @@ const eventPropType = PropTypes.shape({
     text: PropTypes.string.isRequired,
 })
 
-Events.propTypes = {
+Log.propTypes = {
     events: PropTypes.arrayOf(eventPropType),
 }
 
-export { Events }
+export { Log }
