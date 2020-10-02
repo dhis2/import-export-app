@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# 晓东 林 <13981924470@126.com>, 2020
 # easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -806,16 +806,16 @@ msgid "Export tracked entity instances"
 msgstr "导出跟踪随访的实体实例"
 
 msgid "Import data"
-msgstr ""
+msgstr "导入数据"
 
 msgid "Import events"
-msgstr ""
+msgstr "导入事件"
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr ""
+msgstr "导入元数据"
 
 msgid "Import tracked entity instances"
 msgstr ""

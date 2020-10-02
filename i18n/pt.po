@@ -1,8 +1,8 @@
 # 
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# phil_dhis2, 2020
 # Ge Joao <gsimango@saudigitus.org>, 2020
 # 
 msgid ""
@@ -842,16 +842,16 @@ msgid "Export tracked entity instances"
 msgstr "Exportar instâncias de entidades rastreadas"
 
 msgid "Import data"
-msgstr ""
+msgstr "Importar valores"
 
 msgid "Import events"
-msgstr ""
+msgstr "Importar eventos"
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr ""
+msgstr "Importar Meta-Dados"
 
 msgid "Import tracked entity instances"
 msgstr ""
