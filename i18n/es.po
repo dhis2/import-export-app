@@ -2,16 +2,16 @@
 # Translators:
 # Marta Vila <marta@dhis2.org>, 2020
 # ericbp <ericbarredap@gmail.com>, 2020
-# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
+# phil_dhis2, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020\n"
+"Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -807,7 +807,7 @@ msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr ""
+msgstr "Importar datos"
 
 msgid "Import events"
 msgstr ""
@@ -816,7 +816,7 @@ msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr ""
+msgstr "Importar Meta-Datos"
 
 msgid "Import tracked entity instances"
 msgstr ""

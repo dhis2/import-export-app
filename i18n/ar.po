@@ -810,16 +810,16 @@ msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr ""
+msgstr "استيراد بيانات"
 
 msgid "Import events"
-msgstr ""
+msgstr "استيراد احداث"
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr ""
+msgstr "استيراد بيانات وصفية"
 
 msgid "Import tracked entity instances"
 msgstr ""
