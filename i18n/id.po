@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -604,18 +604,6 @@ msgstr "Kunci"
 msgid "Value"
 msgstr "Nilai"
 
-msgid "Events"
-msgstr "Event"
-
-msgid "Time"
-msgstr ""
-
-msgid "Message"
-msgstr "Pesan"
-
-msgid "ID"
-msgstr ""
-
 msgid "Job summary"
 msgstr ""
 
@@ -626,6 +614,18 @@ msgid "Conflicts"
 msgstr "Konflik"
 
 msgid "Dry run"
+msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr "Pesan"
+
+msgid "ID"
 msgstr ""
 
 msgid "Messages"
@@ -664,10 +664,7 @@ msgstr "Diperbarui"
 msgid "Total"
 msgstr "Total"
 
-msgid "Overview"
-msgstr ""
-
-msgid "Type count"
+msgid "Details by type"
 msgstr ""
 
 msgid "Advanced options"
@@ -731,6 +728,9 @@ msgid "TEI export"
 msgstr ""
 
 msgid "Job overview"
+msgstr ""
+
+msgid "Overview"
 msgstr ""
 
 msgid "Yes"

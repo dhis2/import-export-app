@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -602,18 +602,6 @@ msgstr ""
 msgid "Value"
 msgstr "Giá trị"
 
-msgid "Events"
-msgstr "Sự kiện"
-
-msgid "Time"
-msgstr "Thời gian"
-
-msgid "Message"
-msgstr "Tin nhẳn"
-
-msgid "ID"
-msgstr "Định danh"
-
 msgid "Job summary"
 msgstr ""
 
@@ -625,6 +613,18 @@ msgstr ""
 
 msgid "Dry run"
 msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr "Thời gian"
+
+msgid "Message"
+msgstr "Tin nhẳn"
+
+msgid "ID"
+msgstr "Định danh"
 
 msgid "Messages"
 msgstr "Tin nhắn"
@@ -662,10 +662,7 @@ msgstr ""
 msgid "Total"
 msgstr "Tổng số"
 
-msgid "Overview"
-msgstr ""
-
-msgid "Type count"
+msgid "Details by type"
 msgstr ""
 
 msgid "Advanced options"
@@ -729,6 +726,9 @@ msgid "TEI export"
 msgstr ""
 
 msgid "Job overview"
+msgstr ""
+
+msgid "Overview"
 msgstr ""
 
 msgid "Yes"

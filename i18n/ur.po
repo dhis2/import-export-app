@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -601,18 +601,6 @@ msgstr ""
 msgid "Value"
 msgstr "قدر"
 
-msgid "Events"
-msgstr "تقریبات"
-
-msgid "Time"
-msgstr "وقت"
-
-msgid "Message"
-msgstr "Ù¾ÛØºØ§Ù"
-
-msgid "ID"
-msgstr "شناخت"
-
 msgid "Job summary"
 msgstr ""
 
@@ -624,6 +612,18 @@ msgstr ""
 
 msgid "Dry run"
 msgstr "ڈرائے رن"
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr "وقت"
+
+msgid "Message"
+msgstr "Ù¾ÛØºØ§Ù"
+
+msgid "ID"
+msgstr "شناخت"
 
 msgid "Messages"
 msgstr "پیغامات"
@@ -661,10 +661,7 @@ msgstr ""
 msgid "Total"
 msgstr "کُل"
 
-msgid "Overview"
-msgstr ""
-
-msgid "Type count"
+msgid "Details by type"
 msgstr ""
 
 msgid "Advanced options"
@@ -728,6 +725,9 @@ msgid "TEI export"
 msgstr ""
 
 msgid "Job overview"
+msgstr ""
+
+msgid "Overview"
 msgstr ""
 
 msgid "Yes"

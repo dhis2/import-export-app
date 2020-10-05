@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -607,18 +607,6 @@ msgstr "Clé"
 msgid "Value"
 msgstr "Valeur"
 
-msgid "Events"
-msgstr "Événements"
-
-msgid "Time"
-msgstr "Heure"
-
-msgid "Message"
-msgstr "Message"
-
-msgid "ID"
-msgstr "Id"
-
 msgid "Job summary"
 msgstr ""
 
@@ -630,6 +618,18 @@ msgstr ""
 
 msgid "Dry run"
 msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr "Heure"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "ID"
+msgstr "Id"
 
 msgid "Messages"
 msgstr "Messages"
@@ -667,10 +667,7 @@ msgstr ""
 msgid "Total"
 msgstr "Total"
 
-msgid "Overview"
-msgstr "Général"
-
-msgid "Type count"
+msgid "Details by type"
 msgstr ""
 
 msgid "Advanced options"
@@ -735,6 +732,9 @@ msgstr ""
 
 msgid "Job overview"
 msgstr ""
+
+msgid "Overview"
+msgstr "Général"
 
 msgid "Yes"
 msgstr "Oui"
