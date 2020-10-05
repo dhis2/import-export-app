@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -603,18 +603,6 @@ msgstr ""
 msgid "Value"
 msgstr "القيمة"
 
-msgid "Events"
-msgstr "الأحداث"
-
-msgid "Time"
-msgstr "الوقت"
-
-msgid "Message"
-msgstr "الرسالة"
-
-msgid "ID"
-msgstr "المعرف"
-
 msgid "Job summary"
 msgstr "خلاصة المهمة"
 
@@ -626,6 +614,18 @@ msgstr "تعارضات"
 
 msgid "Dry run"
 msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr "الوقت"
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "ID"
+msgstr "المعرف"
 
 msgid "Messages"
 msgstr "الرسائل"
@@ -663,10 +663,7 @@ msgstr "تم تحديثه"
 msgid "Total"
 msgstr "الإجمالي"
 
-msgid "Overview"
-msgstr "نظرة عامة"
-
-msgid "Type count"
+msgid "Details by type"
 msgstr ""
 
 msgid "Advanced options"
@@ -731,6 +728,9 @@ msgstr ""
 
 msgid "Job overview"
 msgstr "نظرة عامة على المهمة"
+
+msgid "Overview"
+msgstr "نظرة عامة"
 
 msgid "Yes"
 msgstr "نعم"

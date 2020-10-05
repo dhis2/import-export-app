@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -601,18 +601,6 @@ msgstr ""
 msgid "Value"
 msgstr "值"
 
-msgid "Events"
-msgstr "事件"
-
-msgid "Time"
-msgstr "时间"
-
-msgid "Message"
-msgstr "消息"
-
-msgid "ID"
-msgstr "Id"
-
 msgid "Job summary"
 msgstr ""
 
@@ -624,6 +612,18 @@ msgstr "冲突"
 
 msgid "Dry run"
 msgstr "空运行"
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Message"
+msgstr "消息"
+
+msgid "ID"
+msgstr "Id"
 
 msgid "Messages"
 msgstr "消息"
@@ -661,10 +661,7 @@ msgstr "更新的"
 msgid "Total"
 msgstr "总共"
 
-msgid "Overview"
-msgstr "概要"
-
-msgid "Type count"
+msgid "Details by type"
 msgstr ""
 
 msgid "Advanced options"
@@ -729,6 +726,9 @@ msgstr ""
 
 msgid "Job overview"
 msgstr ""
+
+msgid "Overview"
+msgstr "概要"
 
 msgid "Yes"
 msgstr "Yes"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-30T15:40:42.897Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -601,18 +601,6 @@ msgstr "Nøkkel"
 msgid "Value"
 msgstr "Verdi"
 
-msgid "Events"
-msgstr "Hendelser"
-
-msgid "Time"
-msgstr "Klokkeslett"
-
-msgid "Message"
-msgstr "Melding"
-
-msgid "ID"
-msgstr "ID"
-
 msgid "Job summary"
 msgstr "Jobbsammendrag"
 
@@ -624,6 +612,18 @@ msgstr "Konflikter"
 
 msgid "Dry run"
 msgstr "Testkjøring"
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr "Klokkeslett"
+
+msgid "Message"
+msgstr "Melding"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "Meldinger"
@@ -661,11 +661,8 @@ msgstr "Oppdatert"
 msgid "Total"
 msgstr "Totalt"
 
-msgid "Overview"
-msgstr "Oversikt"
-
-msgid "Type count"
-msgstr "Type teller"
+msgid "Details by type"
+msgstr ""
 
 msgid "Advanced options"
 msgstr ""
@@ -729,6 +726,9 @@ msgstr ""
 
 msgid "Job overview"
 msgstr "Jobboversikt"
+
+msgid "Overview"
+msgstr "Oversikt"
 
 msgid "Yes"
 msgstr "Ja"
