@@ -1,19 +1,18 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Ibatov <ibatovk@who.int>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
-"Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
+"Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Something went wrong when loading the current user!"
@@ -65,7 +64,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "ຜູ້ໃຊ້ປະຈຸບັນ"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -86,7 +85,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "Import"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
@@ -113,10 +112,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "ລະຫັດ"
+msgstr "Код"
 
 msgid "Name"
-msgstr "ຊື່"
+msgstr "Исми"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -128,7 +127,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Selected data sets"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -140,10 +139,10 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "ວັນທີສຸດທ້າຍ"
+msgstr "Якунланиш санаси"
 
 msgid "Event ID scheme"
-msgstr ""
+msgstr "Тадбир ID схемаси"
 
 msgid "Loading export..."
 msgstr ""
@@ -173,7 +172,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "ທັງໝົດ"
+msgstr "Барчаси"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -212,13 +211,13 @@ msgid "ID scheme"
 msgstr ""
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Auto"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identifier"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
@@ -227,7 +226,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "ຜິດພາດ"
+msgstr "Хатоликлар"
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -251,25 +250,25 @@ msgid "Import new values and update existing"
 msgstr ""
 
 msgid "Merge"
-msgstr "Merge"
+msgstr ""
 
 msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Append"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "ປັບປຸງ"
+msgstr "Янгилаш"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "ລົບ"
+msgstr "Ўчириш"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -301,7 +300,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "ເລືອກ"
+msgstr "Танланган"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -361,7 +360,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "ວັນເລີ້ມຕົ້ນ/ວັນສິ້ນສຸດ"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -379,7 +378,7 @@ msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Replace"
-msgstr "ແທນທີ່"
+msgstr "Алмаштиринг"
 
 msgid "Merge mode"
 msgstr ""
@@ -388,31 +387,31 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "ແບບຟອມ"
+msgstr "Маълумотлар тўплами"
 
 msgid "Programs"
-msgstr "ສາຍງານ"
+msgstr ""
 
 msgid "Category combination"
-msgstr "Category Combination"
+msgstr "Категориялар комбинацияси"
 
 msgid "Dashboard"
-msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
+msgstr "Бошқарув панели"
 
 msgid "Data element groups"
-msgstr "Data Element Groups"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "Object type"
+msgstr ""
 
 msgid "One object must be selected"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "Объект"
 
 msgid "Organisation unit ID scheme"
 msgstr ""
@@ -427,7 +426,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "ເລືອກແລ້ວ"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -454,7 +453,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "ບໍ່ມີ"
+msgstr "Йўқ"
 
 msgid "Preheat mode"
 msgstr ""
@@ -463,13 +462,13 @@ msgid "Controls the level of preheating that should be done"
 msgstr ""
 
 msgid "Program to export events from"
-msgstr ""
+msgstr "Тадбирларни экспорт қилиш дастури"
 
 msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Selected programs"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -484,19 +483,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "ວັນທີເລີ່ມຕົ້ນ"
+msgstr "Бошланиш санаси"
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "ທີ່ຍັງນໍາໃຊ້ຢູ່"
+msgstr "Фаол"
 
 msgid "Completed"
-msgstr "ສໍາເລັດແລ້ວ"
+msgstr "бажарилди"
 
 msgid "Cancelled"
-msgstr "ຍົກເລີກແລ້ວ"
+msgstr "Бекор қилинди"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -542,13 +541,13 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr "Программа"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "Кузатувдаги объект тури"
 
 msgid "Filter by"
-msgstr ""
+msgstr "Бўйича фильтр"
 
 msgid "Tracked entity types"
 msgstr ""
@@ -590,22 +589,22 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "ກໍາລັງດໍາເນີນການ"
+msgstr "Жараёнда"
 
 msgid "Job details"
 msgstr ""
 
 msgid "Key"
-msgstr ""
+msgstr "Калит"
 
 msgid "Value"
-msgstr "Value"
+msgstr "Қиймат"
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "ເກີດການຜິດພາດ"
+msgstr "Хато"
 
 msgid "Conflicts"
 msgstr ""
@@ -617,19 +616,19 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "Вақт"
 
 msgid "Message"
-msgstr "ຂໍ້ຄວາມ"
+msgstr "Хабар"
 
 msgid "ID"
-msgstr "ລະຫັດ"
+msgstr "ID"
 
 msgid "Messages"
-msgstr "ຂໍ້ຄວາມ"
+msgstr "Хабарлар"
 
 msgid "Type"
-msgstr "ປະເພດ"
+msgstr "Тури"
 
 msgid "Property"
 msgstr ""
@@ -638,16 +637,16 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "ສະຖານະ"
+msgstr "Статус"
 
 msgid "Description"
-msgstr "ລາຍລະອຽດ"
+msgstr "Тавсиф"
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "ສ້າງແລ້ວ"
+msgstr "Яратилди"
 
 msgid "Deleted"
 msgstr ""
@@ -659,7 +658,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "ລວມ"
+msgstr "Жами"
 
 msgid "Details by type"
 msgstr ""
@@ -692,13 +691,13 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "ໂອນຂໍ້ມູນອອກ"
+msgstr "Экспорт"
 
 msgid "Data import"
 msgstr ""
 
 msgid "Event import"
-msgstr ""
+msgstr "Тадбир импорти"
 
 msgid "GML import"
 msgstr ""
@@ -713,7 +712,7 @@ msgid "Data export"
 msgstr ""
 
 msgid "Event export"
-msgstr ""
+msgstr "Тадбир экспорти"
 
 msgid "Metadata dependency export"
 msgstr ""
@@ -731,10 +730,10 @@ msgid "Overview"
 msgstr ""
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr "Ҳа"
 
 msgid "No"
-msgstr "ບໍ່"
+msgstr "Йўқ"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -771,14 +770,18 @@ msgstr ""
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
+"Дастурлар, босқичлар ва кузатувдаги объект маълумотларини DXF 2 форматида "
+"экспорт қилиш"
 
 msgid "Export events"
-msgstr ""
+msgstr "Тадбирни экспорт қилиш"
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
+"Дастурлар, босқичлар ва кузатувдаги объект маълумотларини DXF 2 форматида "
+"импорт қилиш"
 
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr ""
@@ -873,16 +876,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "ຂໍ້ມູນ"
+msgstr "Маълумот"
 
 msgid "Event"
-msgstr "ເຫດການ"
+msgstr "Тадбир"
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "ໂຄງຮ່າງຖານຂໍ້ມູນ"
+msgstr "Метадата"
 
 msgid "TEI"
-msgstr "ຈໍານວນກໍລະນີທີ່ປ້ອນເຂົ້າ"
+msgstr ""

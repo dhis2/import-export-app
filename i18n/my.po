@@ -1,5 +1,6 @@
 # 
 # Translators:
+# Aung Kyi Min <AungKyi.Min@savethechildren.org>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 
@@ -9,11 +10,11 @@ msgstr ""
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
-"Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
+"Language: my\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Something went wrong when loading the current user!"
@@ -65,7 +66,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "ຜູ້ໃຊ້ປະຈຸບັນ"
+msgstr "လက်ရှိအသုံးပြုနေသူ"
 
 msgid "No user/unassigned"
 msgstr ""
@@ -86,7 +87,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "Import"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
@@ -113,10 +114,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "ລະຫັດ"
+msgstr "ကုဒ်"
 
 msgid "Name"
-msgstr "ຊື່"
+msgstr "အမည်"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -128,7 +129,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Selected data sets"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -140,7 +141,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "ວັນທີສຸດທ້າຍ"
+msgstr "ပြီးဆုံးသည့်ရက်စွဲ"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -173,7 +174,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "ທັງໝົດ"
+msgstr "အားလုံး"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -185,13 +186,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "ADX"
 msgstr ""
@@ -218,7 +219,7 @@ msgid "Auto"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identifier"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
@@ -227,7 +228,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "ຜິດພາດ"
+msgstr ""
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -251,25 +252,25 @@ msgid "Import new values and update existing"
 msgstr ""
 
 msgid "Merge"
-msgstr "Merge"
+msgstr "ပေါင်းစည်းပါ"
 
 msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Append"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "ປັບປຸງ"
+msgstr "‌နောက်ဆုံးသတင်းကိုရစေခြင်း"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "ລົບ"
+msgstr "ဖျက်ဆီးသည်"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -301,7 +302,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "ເລືອກ"
+msgstr "‌ရွေးချယ်ထားပြီး"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -361,7 +362,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "ວັນເລີ້ມຕົ້ນ/ວັນສິ້ນສຸດ"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -379,7 +380,7 @@ msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Replace"
-msgstr "ແທນທີ່"
+msgstr ""
 
 msgid "Merge mode"
 msgstr ""
@@ -388,25 +389,25 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "ແບບຟອມ"
+msgstr "စီမံချက်"
 
 msgid "Programs"
-msgstr "ສາຍງານ"
+msgstr "Programs"
 
 msgid "Category combination"
-msgstr "Category Combination"
+msgstr "category များ ပေါင်းစည်းခြင်း"
 
 msgid "Dashboard"
-msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
+msgstr "အချက်အလက်များလေ့လာဆန်းစစ်ခြင်း"
 
 msgid "Data element groups"
-msgstr "Data Element Groups"
+msgstr "စာတိုင်အုပ်စု"
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "Object type"
+msgstr ""
 
 msgid "One object must be selected"
 msgstr ""
@@ -427,7 +428,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "ເລືອກແລ້ວ"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -454,7 +455,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "ບໍ່ມີ"
+msgstr "တစ်ခုမှမဟုတ်"
 
 msgid "Preheat mode"
 msgstr ""
@@ -469,7 +470,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Selected programs"
+msgstr "Selected Program"
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -484,19 +485,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "ວັນທີເລີ່ມຕົ້ນ"
+msgstr "စတင်သည့်ရက်စွဲ"
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "ທີ່ຍັງນໍາໃຊ້ຢູ່"
+msgstr "လုပ်ဆောင်နိုင်သည်"
 
 msgid "Completed"
-msgstr "ສໍາເລັດແລ້ວ"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "ຍົກເລີກແລ້ວ"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -542,7 +543,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
@@ -590,7 +591,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "ກໍາລັງດໍາເນີນການ"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -599,13 +600,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Value"
+msgstr "တန်ဖိုး"
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "ເກີດການຜິດພາດ"
+msgstr "အမှား"
 
 msgid "Conflicts"
 msgstr ""
@@ -620,16 +621,16 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "ຂໍ້ຄວາມ"
+msgstr "သတင်း"
 
 msgid "ID"
-msgstr "ລະຫັດ"
+msgstr "အိုင်ဒီ"
 
 msgid "Messages"
-msgstr "ຂໍ້ຄວາມ"
+msgstr "သတင်းများ"
 
 msgid "Type"
-msgstr "ປະເພດ"
+msgstr "ပုံစံ"
 
 msgid "Property"
 msgstr ""
@@ -638,16 +639,16 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "ສະຖານະ"
+msgstr "အခြေအနေ"
 
 msgid "Description"
-msgstr "ລາຍລະອຽດ"
+msgstr "ဖော်ပြချက်"
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "ສ້າງແລ້ວ"
+msgstr ""
 
 msgid "Deleted"
 msgstr ""
@@ -659,7 +660,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "ລວມ"
+msgstr ""
 
 msgid "Details by type"
 msgstr ""
@@ -692,7 +693,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "ໂອນຂໍ້ມູນອອກ"
+msgstr ""
 
 msgid "Data import"
 msgstr ""
@@ -728,13 +729,13 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "အကျဥ်း"
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr "Yes"
 
 msgid "No"
-msgstr "ບໍ່"
+msgstr "Nr"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -873,16 +874,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "ຂໍ້ມູນ"
+msgstr "အချက်အလက်"
 
 msgid "Event"
-msgstr "ເຫດການ"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "ໂຄງຮ່າງຖານຂໍ້ມູນ"
+msgstr ""
 
 msgid "TEI"
-msgstr "ຈໍານວນກໍລະນີທີ່ປ້ອນເຂົ້າ"
+msgstr ""
