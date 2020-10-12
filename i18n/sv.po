@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-17T21:11:04.970Z\n"
+"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -65,15 +65,21 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "Nuvarande användaren"
 
-msgid "None"
-msgstr "Ingen"
+msgid "No user/unassigned"
+msgstr ""
 
 msgid "Selected users"
 msgstr ""
 
-msgid "Assigned user mode"
+msgid "Filter by assigned user"
+msgstr ""
+
+msgid "Export only instances with events assigned to specific users"
+msgstr ""
+
+msgid "Assigned user(s)"
 msgstr ""
 
 msgid "Do not import"
@@ -103,14 +109,14 @@ msgstr ""
 msgid "Compression mode"
 msgstr ""
 
-msgid "UID"
+msgid "Uid"
 msgstr ""
 
-msgid "CODE"
-msgstr ""
+msgid "Code"
+msgstr "Koda"
 
-msgid "NAME"
-msgstr ""
+msgid "Name"
+msgstr "Namn"
 
 msgid "Data element ID scheme"
 msgstr "Dataelement ID schema"
@@ -135,12 +141,6 @@ msgstr ""
 
 msgid "End date"
 msgstr "Slutdatum"
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "Koda"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -211,6 +211,9 @@ msgstr ""
 msgid "ID scheme"
 msgstr ""
 
+msgid "UID"
+msgstr ""
+
 msgid "Auto"
 msgstr ""
 
@@ -260,7 +263,7 @@ msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr ""
+msgstr "Uppdatera"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
@@ -298,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "Vald"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -358,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "Start/slutdatum"
 
 msgid "Time since last updated"
 msgstr ""
@@ -411,9 +414,6 @@ msgstr ""
 msgid "Object"
 msgstr "Objektmeny"
 
-msgid "Name"
-msgstr "Namn"
-
 msgid "Organisation unit ID scheme"
 msgstr ""
 
@@ -452,6 +452,9 @@ msgstr ""
 
 msgid "Intelligent scan (reference)"
 msgstr ""
+
+msgid "None"
+msgstr "Ingen"
 
 msgid "Preheat mode"
 msgstr ""
@@ -598,18 +601,6 @@ msgstr ""
 msgid "Value"
 msgstr "Värde"
 
-msgid "Events"
-msgstr "Händelser"
-
-msgid "Time"
-msgstr ""
-
-msgid "Message"
-msgstr "Meddelande"
-
-msgid "ID"
-msgstr "id"
-
 msgid "Job summary"
 msgstr ""
 
@@ -621,6 +612,18 @@ msgstr "Konflikter"
 
 msgid "Dry run"
 msgstr "Torrkörning"
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr "Meddelande"
+
+msgid "ID"
+msgstr "id"
 
 msgid "Messages"
 msgstr "Meddelanden"
@@ -658,10 +661,7 @@ msgstr "Uppdaterad"
 msgid "Total"
 msgstr "Totalt"
 
-msgid "Overview"
-msgstr ""
-
-msgid "Type count"
+msgid "Details by type"
 msgstr ""
 
 msgid "Advanced options"
@@ -727,6 +727,9 @@ msgstr ""
 msgid "Job overview"
 msgstr ""
 
+msgid "Overview"
+msgstr ""
+
 msgid "Yes"
 msgstr "Ja"
 
@@ -785,6 +788,36 @@ msgid ""
 "an XML grammar for expressing geographical features."
 msgstr ""
 
+msgid "Overview: Import/Export"
+msgstr ""
+
+msgid "Import or export DHIS2 data."
+msgstr ""
+
+msgid "Export metadata dependencies"
+msgstr ""
+
+msgid "Export metadata"
+msgstr ""
+
+msgid "Export tracked entity instances"
+msgstr ""
+
+msgid "Import data"
+msgstr ""
+
+msgid "Import events"
+msgstr ""
+
+msgid "Import GML"
+msgstr ""
+
+msgid "Import metadata"
+msgstr ""
+
+msgid "Import tracked entity instances"
+msgstr ""
+
 msgid "An overview of all import jobs started this session."
 msgstr ""
 
@@ -793,15 +826,9 @@ msgid ""
 "related metadata objects, in XML or JSON format."
 msgstr ""
 
-msgid "Export metadata dependencies"
-msgstr ""
-
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
-msgstr ""
-
-msgid "Export metadata"
 msgstr ""
 
 msgid ""
@@ -822,9 +849,6 @@ msgid "Program to export from"
 msgstr ""
 
 msgid "Enrollment date range"
-msgstr ""
-
-msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"
