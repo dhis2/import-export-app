@@ -190,7 +190,7 @@ msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
-msgstr ""
+msgstr "Маълумотлар тўплами"
 
 msgid "Sharing"
 msgstr "Улашиш"
