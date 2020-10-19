@@ -415,7 +415,7 @@ msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
-msgstr ""
+msgstr "Маълумотлар тўплами"
 
 msgid "Existing record check"
 msgstr ""
