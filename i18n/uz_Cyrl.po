@@ -360,7 +360,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "Бошланиш/Тугаш вақтлари"
 
 msgid "Time since last updated"
 msgstr ""
@@ -879,7 +879,7 @@ msgid "Data"
 msgstr "Маълумот"
 
 msgid "Event"
-msgstr "Тадбир"
+msgstr "Ҳодиса/Тадбир"
 
 msgid "GML"
 msgstr ""
