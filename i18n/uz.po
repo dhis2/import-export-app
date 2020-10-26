@@ -445,7 +445,7 @@ msgid "Gzip"
 msgstr ""
 
 msgid "Import/Export"
-msgstr ""
+msgstr "Импорт/Экспорт"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
