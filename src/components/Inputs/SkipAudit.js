@@ -1,16 +1,31 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { Switch } from '../index'
+import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
+import { FormField } from '../index'
+
+const { Field } = ReactFinalForm
+
+const defaultSkipAuditOption = false
 
 const NAME = 'skipAudit'
 const DATATEST = 'input-has-authority-to-skip-audit'
-const LABEL = i18n.t('Skip audit')
+const SHORT_LABEL = i18n.t('Skip audit')
+const LABEL = i18n.t('Skip audit, meaning audit values will not be generated')
 const HELPTEXT = i18n.t(
     'Improves performance at the cost of ability to audit changes'
 )
 
 const SkipAudit = () => (
-    <Switch name={NAME} label={LABEL} dataTest={DATATEST} help={HELPTEXT} />
+    <FormField label={SHORT_LABEL} dataTest={DATATEST}>
+        <Field
+            type="checkbox"
+            component={CheckboxFieldFF}
+            name={NAME}
+            label={LABEL}
+            helpText={HELPTEXT}
+            dataTest={`${DATATEST}-sf`}
+        />
+    </FormField>
 )
 
-export { SkipAudit }
+export { SkipAudit, defaultSkipAuditOption }

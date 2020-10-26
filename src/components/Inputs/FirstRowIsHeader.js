@@ -1,17 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Switch } from '../index'
+import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
+import { FormField } from '../index'
+
+const { Field } = ReactFinalForm
+
+const defaultFirstRowIsHeaderOption = false
 
 const NAME = 'firstRowIsHeader'
 const DATATEST = 'input-first-row-is-header'
+const SHORT_LABEL = i18n.t('Is the first row a header row?')
 const LABEL = i18n.t('First row is header')
+const HELPTEXT = i18n.t('A header row will be ignored during import')
 
 const FirstRowIsHeader = ({ show }) =>
-    show && <Switch name={NAME} label={LABEL} dataTest={DATATEST} />
+    show && (
+        <FormField label={SHORT_LABEL} dataTest={DATATEST}>
+            <Field
+                type="checkbox"
+                component={CheckboxFieldFF}
+                name={NAME}
+                label={LABEL}
+                helpText={HELPTEXT}
+                dataTest={`${DATATEST}-sf`}
+            />
+        </FormField>
+    )
 
 FirstRowIsHeader.propTypes = {
     show: PropTypes.bool.isRequired,
 }
 
-export { FirstRowIsHeader }
+export { FirstRowIsHeader, defaultFirstRowIsHeaderOption }

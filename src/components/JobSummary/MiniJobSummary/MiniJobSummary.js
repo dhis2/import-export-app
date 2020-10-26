@@ -13,6 +13,7 @@ const MiniJobSummary = ({ task, dataTest }) => {
             <MoreOptions
                 label={i18n.t('View summary of recently started import job')}
                 dataTest={`${dataTest}-MoreOptions`}
+                noBottomMargin
             >
                 <JobSummary task={task} dataTest={`${dataTest}-JobSummary`} />
             </MoreOptions>

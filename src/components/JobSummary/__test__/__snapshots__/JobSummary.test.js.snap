@@ -74,6 +74,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
       data-test="dhis2-uicore-divider"
     />
     <div
+      class="typeReportSummary"
       data-test="job-summary-summary"
     >
       <div>
@@ -85,7 +86,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
             <span
               class="label"
             >
-              Summary #Overview
+              Summary
             </span>
             <table
               class="jsx-2430604489 "
@@ -95,7 +96,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablehead"
               >
                 <tr
-                  class="jsx-2163445633 "
+                  class="jsx-3124144591 zebraStriping"
                   data-test="dhis2-uicore-tablerowhead"
                 >
                   <th
@@ -134,7 +135,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablebody"
               >
                 <tr
-                  class="jsx-2163445633 "
+                  class="jsx-3124144591 zebraStriping"
                   data-test="dhis2-uicore-tablerow"
                 >
                   <td
@@ -179,7 +180,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
           <span
             class="label"
           >
-            Type count
+            Details by type
           </span>
           <table
             class="jsx-2430604489 "
@@ -189,7 +190,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablehead"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
@@ -234,7 +235,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablebody"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -294,7 +295,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablehead"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
@@ -327,7 +328,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablebody"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -361,12 +362,12 @@ exports[`summary for a GML job matches snapshot 1`] = `
     >
       <div
         class="container"
-        data-test="job-summary-events"
+        data-test="job-summary-log"
       >
         <span
           class="label"
         >
-          Events
+          Log
         </span>
         <table
           class="jsx-2430604489 "
@@ -376,7 +377,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
             data-test="dhis2-uicore-tablehead"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
@@ -403,7 +404,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
             data-test="dhis2-uicore-tablebody"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -450,7 +451,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
             data-test="dhis2-uicore-tablehead"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
@@ -471,7 +472,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
             data-test="dhis2-uicore-tablebody"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -488,7 +489,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -586,6 +587,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
       data-test="dhis2-uicore-divider"
     />
     <div
+      class="container"
       data-test="job-summary-summary"
     >
       <div>
@@ -596,7 +598,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
           <span
             class="label"
           >
-            Summary #Overview
+            Summary
           </span>
           <table
             class="jsx-2430604489 "
@@ -606,7 +608,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablehead"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
@@ -627,7 +629,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablebody"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -653,7 +655,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablehead"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
@@ -692,7 +694,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablebody"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -746,7 +748,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablehead"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
@@ -767,7 +769,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablebody"
             >
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -784,7 +786,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 </td>
               </tr>
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -801,7 +803,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 </td>
               </tr>
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -818,7 +820,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 </td>
               </tr>
               <tr
-                class="jsx-2163445633 "
+                class="jsx-3124144591 zebraStriping"
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
@@ -848,12 +850,12 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
     >
       <div
         class="container"
-        data-test="job-summary-events"
+        data-test="job-summary-log"
       >
         <span
           class="label"
         >
-          Events
+          Log
         </span>
         <table
           class="jsx-2430604489 "
@@ -863,7 +865,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
             data-test="dhis2-uicore-tablehead"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
@@ -890,7 +892,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
             data-test="dhis2-uicore-tablebody"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -914,7 +916,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -938,7 +940,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -962,7 +964,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1009,7 +1011,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
             data-test="dhis2-uicore-tablehead"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
@@ -1030,7 +1032,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
             data-test="dhis2-uicore-tablebody"
           >
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1047,7 +1049,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1064,7 +1066,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1081,7 +1083,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1098,7 +1100,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1115,7 +1117,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1132,7 +1134,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1149,7 +1151,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1166,7 +1168,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1183,7 +1185,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td
@@ -1200,7 +1202,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               </td>
             </tr>
             <tr
-              class="jsx-2163445633 "
+              class="jsx-3124144591 zebraStriping"
               data-test="dhis2-uicore-tablerow"
             >
               <td

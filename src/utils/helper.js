@@ -31,34 +31,12 @@ const jsDateToString = date =>
         .toString()
         .padStart(2, 0)}
 `
-
-const blobType = (format, compression) => {
-    if (compression === 'gzip') {
-        return `application/${format}+gzip`
-    } else if (compression === 'zip') {
-        return `application/${format}+zip`
+// some parameters take the long version of the compression type
+const compressionToName = compression => {
+    if (compression === 'gz') {
+        return 'gzip'
     }
-
-    if (format === 'xml') {
-        return 'application/xml'
-    } else if (format === 'json') {
-        return 'application/json'
-    }
-}
-
-const createBlob = (contents, format, compression = 'none') => {
-    return URL.createObjectURL(
-        new Blob([contents], { type: blobType(format, compression) })
-    )
-}
-
-const downloadBlob = (url, filename) => {
-    const link = document.createElement('a')
-    link.href = url
-    link.setAttribute('download', filename)
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
+    return compression
 }
 
 const fetchAttributes = async (apiBaseUrl, attribute) => {
@@ -105,7 +83,15 @@ const errorGenerator = setProgress => message => {
     }
 }
 
-const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
+const uploadFile = ({
+    url,
+    file,
+    format,
+    type,
+    isAsync,
+    setProgress,
+    addEntry,
+}) => {
     setProgress(1)
     const errF = errorGenerator(setProgress)
 
@@ -117,7 +103,20 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
                 type,
                 onResponse: ({ error, id, msg, typeReports }) => {
                     let entry
-                    if (error && msg) {
+                    if (!isAsync) {
+                        // we are done
+                        entry = {
+                            id: new Date().getTime(),
+                            level: 'INFO',
+                            created: new Date(),
+                            lastUpdated: new Date(),
+                            completed: true,
+                            events: [msg],
+                            summary: typeReports,
+                            error: error,
+                            importType: type,
+                        }
+                    } else if (error && msg) {
                         // error but we have a message
                         entry = {
                             id: new Date().getTime(),
@@ -186,12 +185,27 @@ const uploadFile = ({ url, file, format, type, setProgress, addEntry }) => {
     })
 }
 
+const downloadWindowTitle = i18n.t('Loading exported data')
+const downloadWindowHtml = `
+<div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; color: rgb(33, 41, 52)">
+    <p>${downloadWindowTitle}</p>
+</div>
+`
+
 // call stub function if available
-const locationAssign = url => {
+const locationAssign = (url, setExportEnabled) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
-        window.location = url
+        const downloadWindow = window.open(url, '_blank')
+
+        downloadWindow.document.title = downloadWindowTitle
+        downloadWindow.document.body.innerHTML = downloadWindowHtml // does not work in Chrome
+
+        const enableExport = () => setExportEnabled(true)
+        downloadWindow.onbeforeunload = enableExport
+        downloadWindow.onabort = enableExport
+        downloadWindow.onerror = enableExport
     }
 }
 
@@ -204,15 +218,22 @@ const getPrevJobDetails = (query, tasks) => {
     return job.jobDetails
 }
 
+const getInitialBoolValue = (prevValue, defaultValue) => {
+    if (prevValue === null || prevValue === undefined) {
+        return defaultValue
+    }
+    return prevValue
+}
+
 export {
-    createBlob,
-    downloadBlob,
     fetchAttributes,
     getPrevJobDetails,
+    getInitialBoolValue,
     locationAssign,
     jsDateToISO8601,
     jsDateToString,
     pathToId,
     trimString,
     uploadFile,
+    compressionToName,
 }

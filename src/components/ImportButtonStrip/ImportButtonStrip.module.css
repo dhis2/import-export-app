@@ -1,3 +1,7 @@
+.container {
+    margin-bottom: var(--spacers-dp24);
+}
+
 .dryRun {
     margin-left: 0 !important;
 }

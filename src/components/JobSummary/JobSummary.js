@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Divider, Tag } from '@dhis2/ui-core'
+import { Divider, Tag } from '@dhis2/ui'
 
 import styles from './JobSummary.module.css'
 import { jsDateToString } from '../../utils/helper'
-import { Events } from './Events/Events'
+import { Log } from './Log/Log'
 import { Summary } from './Summary/Summary'
 import { Details } from './Details/Details'
 
@@ -44,9 +44,11 @@ const Tags = ({ jobDetails, task }) => (
                 {i18n.t('Error')}
             </Tag>
         )}
-        {task.summary && task.summary.conflicts && (
-            <Tag negative>{i18n.t('Conflicts')}</Tag>
-        )}
+        {task.summary &&
+            task.summary.conflicts &&
+            (task.summary.conflicts.length || null) && (
+                <Tag negative>{i18n.t('Conflicts')}</Tag>
+            )}
         {jobDetails.dryRun && (
             <Tag neutral bold>
                 {i18n.t('Dry run')}
@@ -82,7 +84,7 @@ const JobSummary = ({
                 <Summary summary={task.summary} />
             )}
             <div className={styles.events}>
-                <Events events={task.events} />
+                <Log events={task.events} />
             </div>
             {showJobDetails && (
                 <div className={styles.jobDetails}>

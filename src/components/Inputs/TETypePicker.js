@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import { ResourcePickerField } from '../index'
 import { resourceTypes } from '../ResourcePicker/resourceTypes'
 
 const NAME = 'selectedTETypes'
 const DATATEST = 'input-te-type-picker'
 const LABEL = i18n.t('Tracked entity types')
-const LISTNAME = 'teTypePicker'
+const LISTNAME = 'selectedTETypes'
 const FILTERLABEL = i18n.t('Filter tracked entity types by name')
+const SELECTEDLABEL = i18n.t('Selected tracked entity types')
 const ERRORMESSAGE = i18n.t(
     'Something went wrong when loading the tracked entity types!'
 )
@@ -21,7 +22,7 @@ const SINGLE_TETYPE_VALIDATOR = selectedTypes =>
         : undefined
 
 const SINGLE_EXACT_TETYPE_VALIDATOR = selectedTypes =>
-    selectedTypes.length != 1
+    !selectedTypes
         ? i18n.t('One tracked entity type must be selected')
         : undefined
 
@@ -40,6 +41,7 @@ const TETypePicker = ({ multiSelect, show, ...rest }) => {
                 listName={LISTNAME}
                 label={LABEL}
                 filterLabel={FILTERLABEL}
+                selectedLabel={SELECTEDLABEL}
                 dataTest={DATATEST}
                 multiSelect={multiSelect}
                 validator={validator}

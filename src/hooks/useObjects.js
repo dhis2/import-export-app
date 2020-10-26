@@ -21,15 +21,15 @@ const useObjects = (type, setSelected) => {
     useEffect(() => {
         setLoading(true)
         setSelected(undefined)
-        engine.query(listQuery(type.value), {
+        engine.query(listQuery(type), {
             onComplete: data => {
-                const list = data.data[type.value]
+                const list = data.data[type]
                 const formattedList = list.map(e => ({
                     value: e.id,
                     label: e.displayName,
                 }))
                 setObjects(formattedList)
-                setSelected(formattedList[0])
+                setSelected(formattedList[0].value)
                 setLoading(false)
             },
             onError: error => {

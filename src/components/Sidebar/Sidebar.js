@@ -1,11 +1,11 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
-import { Divider, Menu, MenuItem } from '@dhis2/ui-core'
+import { Divider, Menu, MenuItem } from '@dhis2/ui'
 
 import styles from './Sidebar.module.css'
-import { StyledLink } from '../index'
 import {
     DataIcon,
     EventIcon,
@@ -16,6 +16,8 @@ import {
     TEIIcon,
     TasksIcon,
 } from '../index'
+import { ImportMenuSectionHeader } from './ImportMenuSectionHeader'
+import { ExportMenuSectionHeader } from './ExportMenuSectionHeader'
 
 const dataImportPage = {
     name: i18n.t('Data import'),
@@ -109,21 +111,27 @@ const jobOverviewPage = {
     icon: <TasksIcon />,
 }
 
-const SidebarItem = ({ name, path, code, icon, active, className }) => (
-    <StyledLink to={path} dataTest={`sidebar-link-${code}`}>
+const SidebarItem = ({ name, path, code, active, className }) => {
+    const history = useHistory()
+    const navigateToPath = () => history.push(path)
+
+    return (
         <MenuItem
             active={active}
-            icon={icon}
+            onClick={navigateToPath}
             label={name}
-            className={className}
+            className={cx(className, {
+                [styles.sidebarItem]: !active,
+                [styles.sidebarItemActive]: active,
+            })}
+            dataTest={`sidebar-link-${code}`}
         />
-    </StyledLink>
-)
+    )
+}
 
 SidebarItem.propTypes = {
     active: PropTypes.bool.isRequired,
     code: PropTypes.string.isRequired,
-    icon: PropTypes.node.isRequired,
     name: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
     className: PropTypes.string,
@@ -135,7 +143,13 @@ const Sidebar = () => {
 
     return (
         <Menu className={styles.Menu}>
-            <h3 className={styles.sectionTitle}>{i18n.t('Import')}</h3>
+            <SidebarItem
+                name={i18n.t('Overview')}
+                path={'/'}
+                code={'home'}
+                active={pathname == '/'}
+            />
+            <ImportMenuSectionHeader />
             {importPages.map(({ icon, name, code, path }) => {
                 const active = pathname == path
                 return (
@@ -149,8 +163,7 @@ const Sidebar = () => {
                     />
                 )
             })}
-            <Divider />
-            <h3 className={styles.sectionTitle}>{i18n.t('Export')}</h3>
+            <ExportMenuSectionHeader />
             {exportPages.map(({ icon, name, code, path }) => {
                 const active = pathname == path
                 return (

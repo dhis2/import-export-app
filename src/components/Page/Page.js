@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import {
     Card,
+    CenteredContent,
     CircularLoader,
     ComponentCover,
     LinearLoader,
-} from '@dhis2/ui-core'
+} from '@dhis2/ui'
 
 import styles from './Page.module.css'
 import { JobSummary, MiniJobSummary } from '../index'
@@ -13,9 +15,9 @@ import { JobSummary, MiniJobSummary } from '../index'
 const Page = ({
     title,
     desc,
-    icon,
     summaryTask,
     showFullSummaryTask = false,
+    limitWidth = true,
     children,
     loading = false,
     dataTest,
@@ -28,35 +30,41 @@ const Page = ({
         )
 
     return (
-        <div className={styles.container} data-test={dataTest}>
-            <div className={styles.header}>
-                <span className={styles.iconAndTitle}>
-                    <span className={styles.icon}>{icon}</span>
-                    <span className={styles.title}>{title}</span>
-                </span>
+        <div
+            className={cx(styles.container, {
+                [styles.limitedWidth]: limitWidth,
+            })}
+            data-test={dataTest}
+        >
+            <header className={styles.header}>
+                <h1 className={styles.title}>{title}</h1>
                 <p className={styles.desc}>{desc}</p>
-            </div>
+            </header>
             {summaryTask && (
                 <Card className={styles.preBody}>
-                    <div className={styles.content}>
-                        {showFullSummaryTask ? (
-                            <JobSummary
-                                task={summaryTask}
-                                dataTest="job-summary-container"
-                            />
-                        ) : (
-                            <MiniJobSummary
-                                task={summaryTask}
-                                dataTest="mini-job-summary-container"
-                            />
-                        )}
-                    </div>
+                    {showFullSummaryTask ? (
+                        <JobSummary
+                            task={summaryTask}
+                            dataTest="job-summary-container"
+                        />
+                    ) : (
+                        <MiniJobSummary
+                            task={summaryTask}
+                            dataTest="mini-job-summary-container"
+                        />
+                    )}
                 </Card>
             )}
-            <Card>
-                {!!loading && <ComponentCover>{loadingEl}</ComponentCover>}
-                <div className={styles.content}>{children}</div>
-            </Card>
+            <div className={styles.content}>
+                {!!loading && (
+                    <div className={styles.loading}>
+                        <ComponentCover translucent>
+                            <CenteredContent>{loadingEl}</CenteredContent>
+                        </ComponentCover>
+                    </div>
+                )}
+                {children}
+            </div>
         </div>
     )
 }
@@ -66,8 +74,8 @@ Page.propTypes = {
         .isRequired,
     dataTest: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
-    icon: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
+    limitWidth: PropTypes.bool,
     loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
     showFullSummaryTask: PropTypes.bool,
     summaryTask: PropTypes.object,

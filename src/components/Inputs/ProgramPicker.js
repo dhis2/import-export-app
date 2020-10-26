@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { hasValue, composeValidators } from '@dhis2/ui-forms'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import { ResourcePickerField } from '../index'
 import { resourceTypes } from '../ResourcePicker/resourceTypes'
 
 const NAME = 'selectedPrograms'
-const LABEL = i18n.t('Programs')
+const LABEL = i18n.t('Program to export events from')
 const DATATEST = 'input-program-picker'
-const LISTNAME = 'programPicker'
-const FILTERLABEL = i18n.t('Filter programs by name')
+const LISTNAME = 'selectedPrograms'
+const FILTERLABEL = i18n.t('Filter programs')
+const SELECTEDLABEL = i18n.t('Selected programs')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the programs!')
 const RESOURCETYPE = resourceTypes.PROGRAM
 
@@ -19,11 +20,9 @@ const SINGLE_PROGRAM_VALIDATOR = selectedPrograms =>
         : undefined
 
 const SINGLE_EXACT_PROGRAM_VALIDATOR = selectedPrograms =>
-    selectedPrograms.length != 1
-        ? i18n.t('One program must be selected')
-        : undefined
+    !selectedPrograms ? i18n.t('One program must be selected') : undefined
 
-const ProgramPicker = ({ multiSelect, show, ...rest }) => {
+const ProgramPicker = ({ multiSelect, label, show, ...rest }) => {
     const programValidator = multiSelect
         ? SINGLE_PROGRAM_VALIDATOR
         : SINGLE_EXACT_PROGRAM_VALIDATOR
@@ -31,30 +30,34 @@ const ProgramPicker = ({ multiSelect, show, ...rest }) => {
 
     return (
         show && (
-            <ResourcePickerField
-                name={NAME}
-                resourceType={RESOURCETYPE}
-                errorMessage={ERRORMESSAGE}
-                listName={LISTNAME}
-                label={LABEL}
-                filterLabel={FILTERLABEL}
-                dataTest={DATATEST}
-                multiSelect={multiSelect}
-                validator={validator}
-                withActions={false}
-                autoSelectFirst={true}
-                {...rest}
-            />
+            <div style={{ maxWidth: '480px' }}>
+                <ResourcePickerField
+                    name={NAME}
+                    resourceType={RESOURCETYPE}
+                    errorMessage={ERRORMESSAGE}
+                    listName={LISTNAME}
+                    label={label}
+                    filterLabel={FILTERLABEL}
+                    selectedLabel={SELECTEDLABEL}
+                    dataTest={DATATEST}
+                    multiSelect={multiSelect}
+                    validator={validator}
+                    autoSelectFirst
+                    {...rest}
+                />
+            </div>
         )
     )
 }
 
 ProgramPicker.defaultProps = {
+    label: LABEL,
     multiSelect: false,
     show: true,
 }
 
 ProgramPicker.propTypes = {
+    label: PropTypes.string,
     multiSelect: PropTypes.bool,
     show: PropTypes.bool,
 }

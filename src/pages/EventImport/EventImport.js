@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
@@ -21,16 +21,25 @@ import {
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index'
-import { Page, MoreOptions, EventIcon } from '../../components/index'
+import {
+    Page,
+    MoreOptions,
+    BasicOptions,
+    SchemeContainer,
+    EventIcon,
+    ValidationSummary,
+} from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
 // PAGE INFO
-const PAGE_NAME = i18n.t('Event import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Event import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import events for programs, stages and tracked entities using the DXF 2 format.'
 )
 const PAGE_ICON = <EventIcon />
+
+const { Form } = ReactFinalForm
 
 const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
@@ -78,17 +87,35 @@ const EventImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
-                        <Format availableFormats={formatOptions} />
+                        <BasicOptions>
+                            <FileUpload
+                                helpText={i18n.t(
+                                    'Supported file types: JSON, CSV, and XML.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
+                                )}
+                            />
+                            <Format
+                                availableFormats={formatOptions}
+                                type="import"
+                            />
+                        </BasicOptions>
                         <MoreOptions>
-                            <EventIdScheme />
-                            <DataElementIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
+                            <SchemeContainer>
+                                <EventIdScheme />
+                                <DataElementIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </SchemeContainer>
                         </MoreOptions>
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>

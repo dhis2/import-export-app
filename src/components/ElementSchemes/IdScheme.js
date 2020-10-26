@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
+import { SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
+import { StyledField } from '../index'
 import { optionsPropType } from '../../utils/options'
 import { fetchAttributes } from '../../utils/helper'
-import { SelectField } from '../index'
 
 const attributeFoundIn = (attribute, collection) =>
     !!collection.find(({ value }) => value === attribute.value)
@@ -59,7 +60,8 @@ const IdScheme = ({ name, label, idSchemeOptions, dataTest }) => {
 
     const options = [...idSchemeOptions, ...schemes]
     return (
-        <SelectField
+        <StyledField
+            component={SingleSelectFieldFF}
             name={name}
             label={label}
             options={options}
@@ -67,7 +69,6 @@ const IdScheme = ({ name, label, idSchemeOptions, dataTest }) => {
             loading={loading}
             validationText={validationText}
             error={!!error}
-            dense
         />
     )
 }

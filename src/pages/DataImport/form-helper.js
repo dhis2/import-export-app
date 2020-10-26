@@ -1,5 +1,7 @@
-import { FORM_ERROR } from '../../utils/final-form'
+import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
+
+const isAsync = true
 
 const onImport = ({
     baseUrl,
@@ -25,16 +27,16 @@ const onImport = ({
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = 'dataValueSets.json'
     const params = [
-        'async=true',
+        `async=${isAsync}`,
         `dryRun=${dryRun}`,
-        `strategy=${strategy.value}`,
+        `strategy=${strategy}`,
         `preheatCache=${preheatCache}`,
         `skipAudit=${skipAudit}`,
-        `dataElementIdScheme=${dataElementIdScheme.value}`,
-        `orgUnitIdScheme=${orgUnitIdScheme.value}`,
-        `idScheme=${idScheme.value}`,
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `idScheme=${idScheme}`,
         `skipExistingCheck=${skipExistingCheck}`,
-        `format=${format.value}`,
+        `format=${format}`,
         format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
     ]
         .filter(s => s != '')
@@ -45,12 +47,14 @@ const onImport = ({
         await uploadFile({
             url,
             file: files[0],
-            format: format.value,
+            format: format,
             type: 'DATAVALUE_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('data', id, { ...entry, jobDetails: values }),
         })
+        return jobStartedMessage
     } catch (e) {
         const errors = [e]
         return { [FORM_ERROR]: errors }

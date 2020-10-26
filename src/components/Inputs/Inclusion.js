@@ -5,22 +5,27 @@ import { RadioGroupField } from '../index'
 const inclusionOptions = [
     {
         value: 'SELECTED',
-        label: i18n.t('Selected organisation unit'),
+        label: i18n.t('Only include selected organisation unit'),
+        prefix: i18n.t('Selected'),
     },
     {
         value: 'CHILDREN',
-        label: i18n.t('Include children of organisation unit'),
+        label: i18n.t('Include the first level of units inside selections'),
+        prefix: i18n.t('Directly below'),
     },
     {
         value: 'DESCENDANTS',
-        label: i18n.t('Include descendants of organisation unit'),
+        label: i18n.t('Include all units inside selections'),
+        prefix: i18n.t('All below'),
     },
 ]
-const defaultInclusionOption = inclusionOptions[0]
+const defaultInclusionOption = inclusionOptions[0].value
 
 const NAME = 'inclusion'
 const DATATEST = 'input-inclusion'
-const LABEL = i18n.t('Inclusion')
+const LABEL = i18n.t(
+    'How should organisation units inside the selections be included?'
+)
 
 const Inclusion = () => (
     <RadioGroupField
@@ -28,6 +33,7 @@ const Inclusion = () => (
         label={LABEL}
         options={inclusionOptions}
         dataTest={DATATEST}
+        vertical
     />
 )
 

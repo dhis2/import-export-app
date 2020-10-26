@@ -1,17 +1,18 @@
-import React from 'react'
-import { useDataEngine } from '@dhis2/app-runtime'
+import React, { useState } from 'react'
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import {
     OrgUnitTree,
     IncludeChildren,
     DataSetPicker,
     Format,
-    formatAdxOptions,
+    formatOptions,
     defaultFormatOption,
     Compression,
     defaultCompressionOption,
+    Dates,
     StartDate,
     EndDate,
     IncludeDeleted,
@@ -24,13 +25,22 @@ import {
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs/index'
-import { Page, MoreOptions, DataIcon } from '../../components/index'
+import {
+    Page,
+    MoreOptions,
+    BasicOptions,
+    SchemeContainer,
+    DataIcon,
+    ValidationSummary,
+} from '../../components/index'
 import { onExport, validate } from './form-helper'
 
+const { Form } = ReactFinalForm
+
 // PAGE INFO
-const PAGE_NAME = i18n.t('Data export')
-const PAGE_DESCRIPTION = i18n.t(
-    'Export data values as ADX XML, DFX 2 XML, JSON or CSV files.'
+export const PAGE_NAME = i18n.t('Data export')
+export const PAGE_DESCRIPTION = i18n.t(
+    'Export metadata, such as data elements and organisation units, in DXF 2 format.'
 )
 const PAGE_ICON = <DataIcon />
 
@@ -54,37 +64,54 @@ const initialValues = {
 }
 
 const DataExport = () => {
-    const engine = useDataEngine()
-    const onSubmit = onExport(engine)
+    const [exportEnabled, setExportEnabled] = useState(true)
+    const { baseUrl } = useConfig()
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            loading={!exportEnabled}
             dataTest="page-export-data"
         >
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <OrgUnitTree />
-                        <IncludeChildren />
-                        <DataSetPicker />
-                        <Format availableFormats={formatAdxOptions} />
-                        <Compression />
-                        <StartDate />
-                        <EndDate />
+                        <BasicOptions>
+                            <OrgUnitTree />
+                            <IncludeChildren />
+                            <DataSetPicker />
+                            <Dates
+                                label={i18n.t('Date range to export data for')}
+                            >
+                                <StartDate />
+                                <EndDate />
+                            </Dates>
+                            <Format availableFormats={formatOptions} />
+                            <Compression />
+                        </BasicOptions>
                         <MoreOptions>
                             <IncludeDeleted />
-                            <DataElementIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
+                            <SchemeContainer>
+                                <DataElementIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </SchemeContainer>
                         </MoreOptions>
-                        <ExportButton />
+                        <ValidationSummary />
+                        <ExportButton
+                            label={i18n.t('Export data')}
+                            disabled={!exportEnabled}
+                        />
                         <FormAlerts alerts={submitError} />
                     </form>
                 )}

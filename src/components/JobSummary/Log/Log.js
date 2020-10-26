@@ -9,17 +9,17 @@ import {
     TableRow,
     TableRowHead,
     TableCellHead,
-} from '@dhis2/ui-core'
+} from '@dhis2/ui'
 
 import { jsDateToString } from '../../../utils/helper'
 import { FormField } from '../../index'
 
-const Events = ({ events }) => {
+const Log = ({ events }) => {
     return (
         <FormField
-            label={`${i18n.t('Events')}`}
-            dataTest="job-summary-events"
-            name="events"
+            label={`${i18n.t('Log')}`}
+            dataTest="job-summary-log"
+            name="log"
         >
             <Table>
                 <TableHead>
@@ -30,13 +30,14 @@ const Events = ({ events }) => {
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
-                    {events.map((e, i) => (
-                        <TableRow key={`job-summary-events-${e.id}-${i}`}>
-                            <TableCell>{jsDateToString(e.date)}</TableCell>
-                            <TableCell>{e.text}</TableCell>
-                            <TableCell>{e.id}</TableCell>
-                        </TableRow>
-                    ))}
+                    {(events || null) &&
+                        events.map((e, i) => (
+                            <TableRow key={`job-summary-log-${e.id}-${i}`}>
+                                <TableCell>{jsDateToString(e.date)}</TableCell>
+                                <TableCell>{e.text}</TableCell>
+                                <TableCell>{e.id}</TableCell>
+                            </TableRow>
+                        ))}
                 </TableBody>
             </Table>
         </FormField>
@@ -49,8 +50,8 @@ const eventPropType = PropTypes.shape({
     text: PropTypes.string.isRequired,
 })
 
-Events.propTypes = {
-    events: PropTypes.arrayOf(eventPropType).isRequired,
+Log.propTypes = {
+    events: PropTypes.arrayOf(eventPropType),
 }
 
-export { Events }
+export { Log }

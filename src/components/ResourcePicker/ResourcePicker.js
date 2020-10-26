@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
-import { CircularLoader, Help } from '@dhis2/ui-core'
+import {
+    ReactFinalForm,
+    SingleSelectFieldFF,
+    Transfer,
+    CircularLoader,
+    Help,
+} from '@dhis2/ui'
 
+import styles from './ResourcePicker.module.css'
 import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
 import { resourceTypes } from './resourceTypes'
-import { FormField, SelectableList } from '../index'
+import { FormField } from '../index'
+
+const { Field } = ReactFinalForm
 
 const resourceToQuery = resourceType => {
     if (resourceType == resourceTypes.DATASET) {
@@ -29,11 +38,11 @@ const ResourcePicker = ({
     meta,
     multiSelect,
     withFilter,
-    withActions,
     autoSelectFirst,
     dataTest,
     listName,
     filterLabel,
+    selectedLabel,
     errorMessage,
 }) => {
     const [list, setList] = useState([])
@@ -56,8 +65,10 @@ const ResourcePicker = ({
             }))
             setList(list)
 
-            if (autoSelectFirst) {
-                setSelected([list[0].value])
+            if (autoSelectFirst && list.length) {
+                setSelected({
+                    selected: multiSelect ? [list[0].value] : list[0].value,
+                })
             }
         },
         onError: error => {
@@ -72,24 +83,39 @@ const ResourcePicker = ({
         <FormField label={label} dataTest={dataTest}>
             {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
             {error && (
-                <div data-test={`${dataTest}-error`}>
+                <Help error data-test={`${dataTest}-error`}>
                     <p>{errorMessage}</p>
                     <p>{error.message}</p>
-                </div>
+                </Help>
             )}
-            {showList && (
-                <SelectableList
-                    name={listName}
-                    label={filterLabel}
-                    selected={selected}
-                    setSelected={setSelected}
-                    multiSelect={multiSelect}
-                    list={list}
-                    withFilter={withFilter}
-                    withActions={withActions}
-                    dataTest={`${dataTest}-list`}
-                />
-            )}
+            {showList &&
+                (multiSelect ? (
+                    <Transfer
+                        name={listName}
+                        label={filterLabel}
+                        selected={selected}
+                        onChange={setSelected}
+                        options={list}
+                        filterable={withFilter}
+                        filterPlaceholder={filterLabel}
+                        rightHeader={
+                            <p className={styles.selectedLabel}>
+                                {selectedLabel}
+                            </p>
+                        }
+                        dataTest={`${dataTest}-list`}
+                        loading={loading}
+                    />
+                ) : (
+                    <Field
+                        component={SingleSelectFieldFF}
+                        name={listName}
+                        options={list}
+                        filterable={withFilter}
+                        dataTest={`${dataTest}-select`}
+                        loading={loading}
+                    />
+                ))}
             {(meta.touched || !meta.pristine) && meta.error && (
                 <Help error>{meta.error}</Help>
             )}
@@ -105,18 +131,20 @@ ResourcePicker.propTypes = {
     listName: PropTypes.string.isRequired,
     meta: PropTypes.object.isRequired,
     resourceType: PropTypes.number.isRequired,
-    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selected: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
+    selectedLabel: PropTypes.string.isRequired,
     setSelected: PropTypes.func.isRequired,
     autoSelectFirst: PropTypes.bool,
     multiSelect: PropTypes.bool,
-    withActions: PropTypes.bool,
     withFilter: PropTypes.bool,
 }
 
 ResourcePicker.defaultProps = {
     multiSelect: true,
     withFilter: true,
-    withActions: true,
 }
 
 export { ResourcePicker }

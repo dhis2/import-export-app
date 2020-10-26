@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
-import { getPrevJobDetails } from '../../utils/helper'
+import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
 import {
     FileUpload,
     Format,
@@ -16,8 +16,8 @@ import {
     defaultImportReportModeOption,
     PreheatMode,
     defaultPreheatModeOption,
-    ImportStrategy,
-    defaultImportStrategyOption,
+    Strategy,
+    defaultStrategyOption,
     AtomicMode,
     defaultAtomicModeOption,
     MergeMode,
@@ -25,8 +25,9 @@ import {
     FlushMode,
     defaultFlushModeOption,
     SkipSharing,
+    defaultSkipSharingOption,
     SkipValidation,
-    IsAsync,
+    defaultSkipValidationOption,
     InclusionStrategy,
     defaultInclusionStrategyOption,
     ImportButtonStrip,
@@ -40,13 +41,22 @@ import {
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
 } from '../../components/Inputs/index'
-import { Page, TEIIcon, MoreOptions } from '../../components/index'
+import {
+    Page,
+    TEIIcon,
+    MoreOptions,
+    SchemeContainer,
+    BasicOptions,
+    ValidationSummary,
+} from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
+const { Form } = ReactFinalForm
+
 // PAGE INFO
-const PAGE_NAME = i18n.t('Tracked entity instances import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Tracked entity instances import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import tracked entity instances from JSON or XML files.'
 )
 const PAGE_ICON = <TEIIcon />
@@ -58,16 +68,23 @@ const createInitialValues = prevJobDetails => ({
     importReportMode:
         prevJobDetails.importReportMode || defaultImportReportModeOption,
     preheatMode: prevJobDetails.preheatMode || defaultPreheatModeOption,
-    importStrategy:
-        prevJobDetails.importStrategy || defaultImportStrategyOption,
+    strategy: prevJobDetails.strategy || defaultStrategyOption,
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
     mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
     inclusionStrategy:
         prevJobDetails.inclusionStrategy || defaultInclusionStrategyOption,
-    skipSharing: !!prevJobDetails.skipSharing,
-    skipValidation: !!prevJobDetails.skipValidation,
-    isAsync: !prevJobDetails.isAsync,
+    skipSharing: getInitialBoolValue(
+        prevJobDetails.skipSharing,
+        defaultSkipSharingOption
+    ),
+    skipValidation: getInitialBoolValue(
+        prevJobDetails.skipValidation,
+        defaultSkipValidationOption
+    ),
+    // disable async until it is fully implemented for this resource
+    // (expected 2.36)
+    isAsync: false,
     dataElementIdScheme:
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
@@ -111,28 +128,45 @@ const TEIImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true, submitError: true }}
-                render={({ handleSubmit, form, submitError }) => (
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
+                render={({ handleSubmit, values, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
-                        <Format availableFormats={formatNoCsvOptions} />
-                        <Identifier />
-                        <ImportReportMode />
-                        <PreheatMode />
-                        <ImportStrategy />
-                        <AtomicMode />
-                        <MergeMode />
+                        <BasicOptions>
+                            <FileUpload
+                                helpText={i18n.t(
+                                    'Supported file types: JSON and XML.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
+                                )}
+                            />
+                            <Format
+                                availableFormats={formatNoCsvOptions}
+                                type="import"
+                            />
+                            <Identifier />
+                            <ImportReportMode />
+                            <PreheatMode />
+                            <Strategy value={values.strategy} />
+                            <AtomicMode />
+                            <MergeMode />
+                        </BasicOptions>
                         <MoreOptions>
                             <FlushMode />
                             <SkipSharing />
                             <SkipValidation />
-                            <IsAsync />
                             <InclusionStrategy />
-                            <DataElementIdScheme />
-                            <EventIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
+                            <SchemeContainer>
+                                <DataElementIdScheme />
+                                <EventIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </SchemeContainer>
                         </MoreOptions>
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>

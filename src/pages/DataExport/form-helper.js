@@ -1,49 +1,13 @@
-import i18n from '@dhis2/d2-i18n'
-import JSZip from 'jszip'
+import { locationAssign, compressionToName } from '../../utils/helper'
 
-import { FORM_ERROR } from '../../utils/final-form'
-import {
-    createBlob,
-    downloadBlob,
-    jsDateToISO8601,
-    pathToId,
-} from '../../utils/helper'
+import { jsDateToISO8601, pathToId } from '../../utils/helper'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
 
-const dataValueSetQuery = {
-    sets: {
-        resource: 'dataValueSets',
-        params: ({
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            includeDeleted,
-            children,
-            startDate,
-            endDate,
-            orgUnit,
-            dataSet,
-            format,
-        }) => ({
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-            includeDeleted,
-            children,
-            startDate,
-            endDate,
-            orgUnit,
-            dataSet,
-            format,
-        }),
-    },
-}
-
-const onExport = engine => async values => {
-    const {
+const valuesToParams = (
+    {
         selectedOrgUnits,
         includeChildren,
         selectedDataSets,
@@ -55,51 +19,42 @@ const onExport = engine => async values => {
         dataElementIdScheme,
         orgUnitIdScheme,
         idScheme,
-    } = values
+    },
+    filename
+) =>
+    [
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `idScheme=${idScheme}`,
+        `includeDeleted=${includeDeleted}`,
+        `children=${includeChildren}`,
+        `startDate=${jsDateToISO8601(startDate)}`,
+        `endDate=${jsDateToISO8601(endDate)}`,
+        `orgUnit=${selectedOrgUnits.map(o => pathToId(o))}`,
+        `dataSet=${selectedDataSets}`,
+        `format=${format}`,
+        compression ? `compression=${compressionToName(compression)}` : '',
+        `attachment=${filename}`,
+    ]
+        .filter(s => s != '')
+        .join('&')
 
-    // fetch data
-    try {
-        const { sets } = await engine.query(dataValueSetQuery, {
-            variables: {
-                dataElementIdScheme: dataElementIdScheme.value,
-                orgUnitIdScheme: orgUnitIdScheme.value,
-                idScheme: idScheme.value,
-                includeDeleted: includeDeleted.toString(),
-                children: includeChildren.toString(),
-                startDate: jsDateToISO8601(startDate),
-                endDate: jsDateToISO8601(endDate),
-                orgUnit: selectedOrgUnits.map(o => pathToId(o)),
-                dataSet: selectedDataSets,
-                format: format.value,
-            },
-        })
-        const dataStr = format.value === 'json' ? JSON.stringify(sets) : sets
-        const filename = `data.${format.value}`
-        if (compression.value !== '') {
-            const zip = new JSZip()
-            zip.file(filename, dataStr)
-            zip.generateAsync({ type: 'blob' }).then(content => {
-                const url = URL.createObjectURL(content)
-                downloadBlob(url, `${filename}.${compression.value}`)
-            })
-        } else {
-            const url = createBlob(dataStr, format.value)
-            downloadBlob(url, filename)
-        }
-    } catch (error) {
-        const errors = [
-            {
-                id: `http-${new Date().getTime()}`,
-                critical: true,
-                message: `${i18n.t('HTTP error when fetching data')}. ${
-                    error.message
-                }`,
-            },
-        ]
-        console.error('DataExport onExport error: ', error)
+const onExport = (baseUrl, setExportEnabled) => async values => {
+    setExportEnabled(false)
 
-        return { [FORM_ERROR]: errors }
-    }
+    const { format, compression } = values
+
+    // generate URL and redirect
+    const apiBaseUrl = `${baseUrl}/api/`
+    const endpoint = `dataValueSets`
+    const fileExtension = compression ? `${format}.${compression}` : format
+    const filename = `${endpoint}.${fileExtension}`
+    const downloadUrlParams = valuesToParams(values, filename)
+    const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
+    locationAssign(url, setExportEnabled)
+
+    // log for debugging purposes
+    console.log('data-export:', { url, params: downloadUrlParams })
 }
 
 const validate = values => ({

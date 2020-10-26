@@ -1,7 +1,12 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
-import i18n from '@dhis2/d2-i18n'
-import { CssReset, CircularLoader, ScreenCover } from '@dhis2/ui-core'
+import i18n from './locales'
+import {
+    CssVariables,
+    CssReset,
+    CircularLoader,
+    ScreenCover,
+} from '@dhis2/ui-core'
 
 import { TaskContext } from './contexts/'
 import { UserContext } from './contexts/'
@@ -20,6 +25,7 @@ const App = () => {
     return (
         <>
             <CssReset />
+            <CssVariables spacers colors />
             {loading && (
                 <ScreenCover dataTest="app-screen-cover">
                     <CircularLoader dataTest="app-loader" />
@@ -50,9 +56,9 @@ const App = () => {
                                 <div className={styles.sidebar}>
                                     <Sidebar />
                                 </div>
-                                <div className={styles.content}>
+                                <main className={styles.content}>
                                     <Router />
-                                </div>
+                                </main>
                             </div>
                         </TaskContext.Provider>
                     </UserContext.Provider>

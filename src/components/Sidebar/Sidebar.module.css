@@ -1,16 +1,15 @@
-.Menu {
-    height: 100%;
+.Menu {}
+
+.sidebarItem {
+   background-color: var(--colors-grey200) !important;
 }
 
-.sectionTitle {
-    padding: 0px 24px;
-    line-height: 1.15;
+.sidebarItem:hover {
+   background-color: var(--colors-grey400) !important;
 }
 
-.jobOverview {
-    background-color: rgba(255, 195, 36, 1.0);
+.sidebarItemActive {
+   background-color: var(--colors-grey400) !important;
 }
 
-.jobOverview:hover {
-    background-color: rgba(255, 195, 36, 0.5) !important;
-}
+.jobOverview {}

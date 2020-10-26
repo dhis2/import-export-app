@@ -1,21 +1,25 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
-import { getPrevJobDetails } from '../../utils/helper'
+import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
 import {
     FileUpload,
     Format,
     formatAdxPdfOptions,
     defaultFormatOption,
     FirstRowIsHeader,
+    defaultFirstRowIsHeaderOption,
     Strategy,
     defaultStrategyOption,
     PreheatCache,
+    defaultPreheatCacheOption,
     SkipAudit,
+    defaultSkipAuditOption,
     SkipExistingCheck,
+    defaultSkipExistingCheckOption,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
     IdScheme,
@@ -29,15 +33,20 @@ import { hasAuthorityToSkipAudit } from '../../components/WithAuthority/predicat
 import {
     Page,
     WithAuthority,
+    BasicOptions,
     MoreOptions,
+    SchemeContainer,
     DataIcon,
+    ValidationSummary,
 } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
+const { Form } = ReactFinalForm
+
 // PAGE INFO
-const PAGE_NAME = i18n.t('Data import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('Data import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
 )
 const PAGE_ICON = <DataIcon />
@@ -46,15 +55,27 @@ const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     strategy: prevJobDetails.strategy || defaultStrategyOption,
-    firstRowIsHeader: !!prevJobDetails.firstRowIsHeader,
-    preheatCache: !!prevJobDetails.preheatCache,
-    skipAudit: !!prevJobDetails.skipAudit,
+    firstRowIsHeader: getInitialBoolValue(
+        prevJobDetails.firstRowIsHeader,
+        defaultFirstRowIsHeaderOption
+    ),
+    preheatCache: getInitialBoolValue(
+        prevJobDetails.preheatCache,
+        defaultPreheatCacheOption
+    ),
+    skipAudit: getInitialBoolValue(
+        prevJobDetails.skipAudit,
+        defaultSkipAuditOption
+    ),
     dataElementIdScheme:
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
     idScheme: prevJobDetails.idScheme || defaultIdSchemeOption,
-    skipExistingCheck: !!prevJobDetails.skipExistingCheck,
+    skipExistingCheck: getInitialBoolValue(
+        prevJobDetails.skipExistingCheck,
+        defaultSkipExistingCheckOption
+    ),
 })
 
 const DataImport = () => {
@@ -92,23 +113,41 @@ const DataImport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                subscription={{ values: true, submitError: true }}
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
                 render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
-                        <Format availableFormats={formatAdxPdfOptions} />
-                        <FirstRowIsHeader show={values.format.value == 'csv'} />
-                        <Strategy />
-                        <PreheatCache />
-                        <WithAuthority pred={hasAuthorityToSkipAudit}>
-                            <SkipAudit />
-                        </WithAuthority>
+                        <BasicOptions>
+                            <FileUpload
+                                helpText={i18n.t(
+                                    'Supported file types: JSON, CSV, XML, ADX and PDF.',
+                                    {
+                                        nsSeparator: '>',
+                                    }
+                                )}
+                            />
+                            <Format
+                                availableFormats={formatAdxPdfOptions}
+                                type="import"
+                            />
+                            <FirstRowIsHeader show={values.format == 'csv'} />
+                            <Strategy value={values.strategy} />
+                            <PreheatCache />
+                            <WithAuthority pred={hasAuthorityToSkipAudit}>
+                                <SkipAudit />
+                            </WithAuthority>
+                        </BasicOptions>
                         <MoreOptions>
-                            <DataElementIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
+                            <SchemeContainer>
+                                <DataElementIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </SchemeContainer>
                             <SkipExistingCheck />
                         </MoreOptions>
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>

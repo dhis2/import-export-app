@@ -14,8 +14,8 @@ const programStageQuery = {
     },
 }
 
-const ALL_VALUE = ''
-const ALL_LABEL = `[ ${i18n.t('All program stages')} ]`
+const ALL_VALUE = 'ALL'
+const ALL_LABEL = i18n.t('All program stages')
 
 const useProgramStages = (program, setSelected) => {
     const engine = useDataEngine()
@@ -49,7 +49,7 @@ const useProgramStages = (program, setSelected) => {
                         },
                         ...formattedList,
                     ])
-                    setSelected({ value: ALL_VALUE, label: ALL_LABEL })
+                    setSelected(ALL_VALUE)
                     setLoading(false)
                 },
                 onError: error => {

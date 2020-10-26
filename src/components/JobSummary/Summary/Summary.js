@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 
 import styles from './Summary.module.css'
 import { typeReportParse } from '../helper'
@@ -30,7 +29,10 @@ const Summary = ({ summary }) => {
         }
         const { stats, messages } = typeReportParse(summary.typeReports)
         return (
-            <div data-test="job-summary-summary">
+            <div
+                data-test="job-summary-summary"
+                className={styles.typeReportSummary}
+            >
                 <TypeReportSummary
                     overviewStats={overviewStats}
                     stats={stats}
@@ -47,8 +49,11 @@ const Summary = ({ summary }) => {
             importCount={importCount}
             status={summary.status}
             description={summary.description}
-            conflicts={summary.conflicts}
-            id={i18n.t('Overview')}
+            conflicts={
+                summary.conflicts &&
+                (summary.conflicts.length || null) &&
+                summary.conflicts
+            }
         />
     )
     const allSummaries =
@@ -69,7 +74,7 @@ const Summary = ({ summary }) => {
             : null
 
     return (
-        <div data-test="job-summary-summary">
+        <div data-test="job-summary-summary" className={styles.container}>
             {overviewSummary}
             <div className={styles.rest} data-test="job-summary-summary-rest">
                 {allSummaries}

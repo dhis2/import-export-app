@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Field } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import { DatePicker } from '../index'
+const { Field } = ReactFinalForm
 
 const OPTIONAL_DATE_VALIDATOR = date =>
     date ? DATE_VALIDATOR(date) : undefined

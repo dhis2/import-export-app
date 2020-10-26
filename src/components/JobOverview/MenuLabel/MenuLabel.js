@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import styles from './MenuLabel.module.css'
-import { jsDateToString, trimString } from '../../../utils/helper'
+import { jsDateToString } from '../../../utils/helper'
 
 const MenuLabel = ({ task }) => {
     return (
@@ -12,7 +12,9 @@ const MenuLabel = ({ task }) => {
             data-test={`job-overview-menu-label-${task.id}`}
         >
             <div className={styles.status}>
-                <span>{trimString(15, task.jobDetails.files[0].name)}</span>
+                <span className={styles.filename}>
+                    {task.jobDetails.files[0].name}
+                </span>
                 <br />
                 <span>
                     {task.completed

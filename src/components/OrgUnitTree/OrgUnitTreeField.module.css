@@ -1,0 +1,7 @@
+.wrapper {
+    background-color: white;
+    max-height: var(--spacers-dp512);
+    overflow: auto;
+    display: inline-block;
+    padding: 0 var(--spacers-dp48) 0 0;
+}

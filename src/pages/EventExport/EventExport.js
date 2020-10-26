@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 
 import {
     OrgUnitTree,
@@ -11,6 +11,7 @@ import {
     defaultFormatOption,
     Compression,
     defaultCompressionOption,
+    Dates,
     StartDate,
     EndDate,
     IncludeDeleted,
@@ -25,20 +26,29 @@ import {
     IdScheme,
     defaultIdSchemeOption,
 } from '../../components/Inputs/index'
-import { Page, MoreOptions, EventIcon } from '../../components/index'
+import {
+    Page,
+    MoreOptions,
+    BasicOptions,
+    SchemeContainer,
+    EventIcon,
+    ValidationSummary,
+} from '../../components/index'
 import { onExport, validate } from './form-helper'
 
+const { Form } = ReactFinalForm
+
 // PAGE INFO
-const PAGE_NAME = i18n.t('Event export')
-const PAGE_DESCRIPTION = i18n.t(
-    'Export event data for programs, stages and tracked entities in the DXF 2 format.'
+export const PAGE_NAME = i18n.t('Event export')
+export const PAGE_DESCRIPTION = i18n.t(
+    'Export event data for programs, stages and tracked entities in DXF 2 format.'
 )
 const PAGE_ICON = <EventIcon />
 
 const today = new Date()
 const initialValues = {
     selectedOrgUnits: [],
-    selectedPrograms: [],
+    selectedPrograms: '',
     programStage: undefined,
     format: defaultFormatOption,
     compression: defaultCompressionOption,
@@ -56,41 +66,57 @@ const initialValues = {
 }
 
 const EventExport = () => {
+    const [exportEnabled, setExportEnabled] = useState(true)
     const { baseUrl } = useConfig()
-    const onSubmit = onExport(baseUrl)
+    const onSubmit = onExport(baseUrl, setExportEnabled)
 
     return (
         <Page
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            loading={!exportEnabled}
             dataTest="page-export-data"
         >
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 validate={validate}
-                subscription={{ values: true }}
+                subscription={{
+                    values: true,
+                }}
                 render={({ handleSubmit, form, values }) => (
                     <form onSubmit={handleSubmit}>
-                        <OrgUnitTree multiSelect={false} />
-                        <ProgramPicker autoSelectFirst />
-                        <ProgramStages
-                            selectedPrograms={values.selectedPrograms}
-                            form={form}
-                        />
-                        <StartDate />
-                        <EndDate />
-                        <Format availableFormats={formatOptions} />
-                        <Compression />
+                        <BasicOptions>
+                            <OrgUnitTree multiSelect={false} />
+                            <Inclusion />
+                            <ProgramPicker autoSelectFirst />
+                            <ProgramStages
+                                selectedProgram={values.selectedPrograms}
+                                form={form}
+                            />
+                            <Dates
+                                label={i18n.t('Date range to export data for')}
+                            >
+                                <StartDate />
+                                <EndDate />
+                            </Dates>
+                            <Format availableFormats={formatOptions} />
+                            <Compression />
+                        </BasicOptions>
                         <MoreOptions>
                             <IncludeDeleted />
-                            <DataElementIdScheme />
-                            <OrgUnitIdScheme />
-                            <IdScheme />
-                            <Inclusion />
+                            <SchemeContainer>
+                                <DataElementIdScheme />
+                                <OrgUnitIdScheme />
+                                <IdScheme />
+                            </SchemeContainer>
                         </MoreOptions>
-                        <ExportButton />
+                        <ValidationSummary />
+                        <ExportButton
+                            label={i18n.t('Export events')}
+                            disabled={!exportEnabled}
+                        />
                     </form>
                 )}
             />

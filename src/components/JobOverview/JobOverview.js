@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Button, Chip, Menu, MenuItem } from '@dhis2/ui-core'
+import { Button, Chip, Menu, MenuItem } from '@dhis2/ui'
 
 import styles from './JobOverview.module.css'
 import { TaskContext } from '../../contexts/'
@@ -10,6 +10,7 @@ import { categoryTypes } from '../../utils/tasks'
 import { JobSummary } from '../index'
 import { categoryTypesObj, jobToPath } from './helper'
 import { MenuLabel } from './MenuLabel/MenuLabel'
+import { ChipContainer } from './ChipContainer'
 
 const JobOverview = ({
     activeTypes,
@@ -45,12 +46,12 @@ const JobOverview = ({
     // set selected job to first job if
     // first time user visits the job overview page
     useEffect(() => {
-        if (!selectedJob && allTasks.length > 0) {
+        if (selectedJob === undefined && allTasks.length > 0) {
             setSelectedJob(allTasks[0])
         }
     }, [])
 
-    if (!selectedJob) {
+    if (allTasks.length === 0) {
         return <p>{i18n.t('No jobs started yet.')}</p>
     }
 
@@ -58,10 +59,7 @@ const JobOverview = ({
         <div className={styles.container} data-test="job-overview-container">
             <div className={styles.items} data-test="job-overview-tasks">
                 <Menu className={styles.Menu}>
-                    <div
-                        className={styles.chips}
-                        data-test="job-overview-chips"
-                    >
+                    <ChipContainer>
                         {categoryTypes.map(({ key, importType, label }) => (
                             <Chip
                                 onClick={() => onChipClick(importType)}
@@ -72,11 +70,11 @@ const JobOverview = ({
                                 {label}
                             </Chip>
                         ))}
-                    </div>
+                    </ChipContainer>
                     {filteredTasks.map(t => (
                         <MenuItem
                             key={`job-overview-tasks-${t.id}`}
-                            active={selectedJob.id == t.id}
+                            active={selectedJob && selectedJob.id === t.id}
                             label={<MenuLabel task={t} />}
                             onClick={() => setSelectedJob(t)}
                             icon={categoryTypesObj[t.importType].icon}
@@ -85,15 +83,19 @@ const JobOverview = ({
                 </Menu>
             </div>
             <div className={styles.summary} data-test="job-overview-summary">
-                <JobSummary
-                    task={selectedJob}
-                    dataTest="job-summary-container"
-                    showFileDetails={false}
-                    showJobDetails={true}
-                />
-                <Link to={jobToPath(selectedJob)}>
-                    <Button primary>{i18n.t('Recreate job')}</Button>
-                </Link>
+                {selectedJob && (
+                    <>
+                        <JobSummary
+                            task={selectedJob}
+                            dataTest="job-summary-container"
+                            showFileDetails={false}
+                            showJobDetails={true}
+                        />
+                        <Link to={jobToPath(selectedJob)}>
+                            <Button primary>{i18n.t('Recreate job')}</Button>
+                        </Link>
+                    </>
+                )}
             </div>
         </div>
     )

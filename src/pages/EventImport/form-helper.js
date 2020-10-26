@@ -1,5 +1,7 @@
-import { FORM_ERROR } from '../../utils/final-form'
+import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
+
+const isAsync = true
 
 const onImport = ({
     baseUrl,
@@ -22,13 +24,13 @@ const onImport = ({
     const endpoint = 'events.json'
     const params = [
         'skipFirst=true',
-        'async=true',
+        `async=${isAsync}`,
         `dryRun=${dryRun}`,
-        `dataElementIdScheme=${dataElementIdScheme.value}`,
-        `orgUnitIdScheme=${orgUnitIdScheme.value}`,
-        `eventIdScheme=${eventIdScheme.value}`,
-        `idScheme=${idScheme.value}`,
-        `payloadFormat=${format.value}`,
+        `dataElementIdScheme=${dataElementIdScheme}`,
+        `orgUnitIdScheme=${orgUnitIdScheme}`,
+        `eventIdScheme=${eventIdScheme}`,
+        `idScheme=${idScheme}`,
+        `payloadFormat=${format}`,
     ].join('&')
     const url = `${apiBaseUrl}${endpoint}?${params}`
 
@@ -36,12 +38,14 @@ const onImport = ({
         await uploadFile({
             url,
             file: files[0],
-            format: format.value,
+            format: format,
             type: 'EVENT_IMPORT',
+            isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
                 addTask('event', id, { ...entry, jobDetails: values }),
         })
+        return jobStartedMessage
     } catch (e) {
         const errors = [e]
         return { [FORM_ERROR]: errors }

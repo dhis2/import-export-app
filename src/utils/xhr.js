@@ -66,13 +66,58 @@ const extractIdAndMessage = xhr => {
     }
 
     if (typeof response !== 'undefined') {
+        if (response.id) {
+            // the response will contain an `id` if the import was asynchronous
+            return {
+                id: response.id,
+                msg: {
+                    id: 'init',
+                    text: message,
+                    date: new Date(response.created),
+                },
+            }
+        } else {
+            // the response will contain a report inside the response if the
+            // import was synchronous
+            return {
+                msg: {
+                    id: 'completed',
+                    text: 'Import:Done',
+                    date: new Date(),
+                },
+                typeReports: response,
+            }
+        }
+    }
+
+    // sync metadata import
+    if (typeReports) {
+        if (
+            Array.isArray(typeReports) &&
+            typeReports[0] &&
+            Array.isArray(typeReports[0].objectReports) &&
+            typeReports[0].objectReports[0] &&
+            Array.isArray(typeReports[0].objectReports[0].errorReports)
+        ) {
+            return {
+                error: true,
+                msg: {
+                    id: 'init',
+                    text:
+                        typeReports[0].objectReports[0].errorReports[0].message,
+                    date: new Date(),
+                },
+                typeReports: data,
+            }
+        }
+
         return {
-            id: response.id,
             msg: {
-                id: 'init',
-                text: message,
-                date: new Date(response.created),
+                id: 'completed',
+                text: 'Import:Done',
+                date: new Date(),
             },
+            typeReports: data,
         }
     }
 

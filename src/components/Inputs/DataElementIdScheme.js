@@ -7,7 +7,7 @@ const dataElementIdSchemeOptions = [
     { value: 'CODE', label: i18n.t('Code') },
     { value: 'NAME', label: i18n.t('Name') },
 ]
-const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0]
+const defaultDataElementIdSchemeOption = dataElementIdSchemeOptions[0].value
 
 const NAME = 'dataElementIdScheme'
 const DATATEST = 'input-data-element-id-scheme'

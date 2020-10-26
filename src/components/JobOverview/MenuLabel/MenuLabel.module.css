@@ -1,12 +1,27 @@
 .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .status {
-    min-width: 100px;
+    min-width: 120px;
+}
+
+.filename {
+    display: inline-block;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .date {
     margin-left: 20px;
+}
+
+@media (min-width: 1200px) {
+    .filename {
+        width: 120px;
+    }
 }

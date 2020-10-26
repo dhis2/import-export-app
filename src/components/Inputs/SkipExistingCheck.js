@@ -1,14 +1,31 @@
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { Switch } from '../index'
+import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
+import { FormField } from '../index'
+
+const { Field } = ReactFinalForm
+
+const defaultSkipExistingCheckOption = false
 
 const NAME = 'skipExistingCheck'
 const DATATEST = 'input-skip-exisiting-check'
-const LABEL = i18n.t('Skip exisiting check')
-const HELPTEXT = i18n.t('Faster, but unsafe')
-
-const SkipExistingCheck = () => (
-    <Switch name={NAME} label={LABEL} dataTest={DATATEST} help={HELPTEXT} />
+const SHORT_LABEL = i18n.t('Skip exisiting check')
+const LABEL = i18n.t('Skip checks for existing data values')
+const HELPTEXT = i18n.t(
+    'Improves performance and should only be used for empty databases or when the data values to import do not exist already'
 )
 
-export { SkipExistingCheck }
+const SkipExistingCheck = () => (
+    <FormField label={SHORT_LABEL} dataTest={DATATEST}>
+        <Field
+            type="checkbox"
+            component={CheckboxFieldFF}
+            name={NAME}
+            label={LABEL}
+            helpText={HELPTEXT}
+            dataTest={`${DATATEST}-sf`}
+        />
+    </FormField>
+)
+
+export { SkipExistingCheck, defaultSkipExistingCheckOption }

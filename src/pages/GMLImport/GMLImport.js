@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConfig } from '@dhis2/app-runtime'
-import { Form } from '@dhis2/ui-forms'
+import { ReactFinalForm } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import { getPrevJobDetails } from '../../utils/helper'
@@ -10,13 +10,15 @@ import {
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index'
-import { Page, GMLIcon } from '../../components/index'
+import { Page, GMLIcon, ValidationSummary } from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { onImport } from './form-helper'
 
+const { Form } = ReactFinalForm
+
 // PAGE INFO
-const PAGE_NAME = i18n.t('GML import')
-const PAGE_DESCRIPTION = i18n.t(
+export const PAGE_NAME = i18n.t('GML import')
+export const PAGE_DESCRIPTION = i18n.t(
     'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
 )
 const PAGE_ICON = <GMLIcon />
@@ -63,6 +65,7 @@ const GMLImport = () => {
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
+                        <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>
