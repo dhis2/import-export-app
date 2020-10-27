@@ -1,20 +1,20 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T12:36:50.482Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: km\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -26,7 +26,7 @@ msgid "Go Back"
 msgstr ""
 
 msgid "Required"
-msgstr "Exigido"
+msgstr "ទាមទារ"
 
 msgid "Choose a file to upload"
 msgstr ""
@@ -41,7 +41,7 @@ msgid "Clear All"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Agregação de Dados"
+msgstr ""
 
 msgid "more options"
 msgstr ""
@@ -59,19 +59,19 @@ msgid "Select None"
 msgstr ""
 
 msgid "Yes"
-msgstr "Sim"
+msgstr "បាទ/ចាស"
 
 msgid "No"
-msgstr "nenhum"
+msgstr "ទេ"
 
 msgid "Async"
 msgstr ""
 
 msgid "All"
-msgstr "Tudo"
+msgstr "ទាំងអស់"
 
 msgid "None"
-msgstr "Nenhum"
+msgstr "គ្មាន"
 
 msgid "Atomic mode"
 msgstr ""
@@ -83,10 +83,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Código"
+msgstr ""
 
 msgid "Name"
-msgstr "Nome"
+msgstr "ឈ្មោះ"
 
 msgid "Data element id scheme"
 msgstr ""
@@ -125,7 +125,7 @@ msgid "UID"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identificador"
+msgstr ""
 
 msgid "Errors"
 msgstr ""
@@ -149,7 +149,7 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
-msgstr "Apagar"
+msgstr "​លុប​"
 
 msgid "Import strategy"
 msgstr ""
@@ -167,7 +167,7 @@ msgid "Inclusion strategy"
 msgstr ""
 
 msgid "Merge"
-msgstr "Associar"
+msgstr ""
 
 msgid "Replace"
 msgstr ""
@@ -188,13 +188,13 @@ msgid "Preheat cache"
 msgstr ""
 
 msgid "Reference"
-msgstr "Referência"
+msgstr "សេចក្ដី​យោង"
 
 msgid "Preheat mode"
 msgstr ""
 
 msgid "Error"
-msgstr "Erro"
+msgstr "កំហុសបច្ចេកទេស"
 
 msgid "Report mode"
 msgstr ""
@@ -230,10 +230,10 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr "Imprtar"
+msgstr ""
 
 msgid "Export"
-msgstr "Exportar"
+msgstr ""
 
 msgid "Created"
 msgstr ""
@@ -251,13 +251,13 @@ msgid "Total"
 msgstr ""
 
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
-msgstr "Mensagens"
+msgstr "សារ"
 
 msgid "Summaries"
 msgstr ""
@@ -281,7 +281,7 @@ msgid "Children"
 msgstr ""
 
 msgid "Object type"
-msgstr "Tipo de objecto"
+msgstr ""
 
 msgid "Compression"
 msgstr ""
@@ -290,7 +290,7 @@ msgid "Data element ID scheme"
 msgstr ""
 
 msgid "End date"
-msgstr "Data de término"
+msgstr "កាល​បរិច្ឆេទ​បញ្ចប់​"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -320,7 +320,7 @@ msgid "Merge Mode"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "Unidade organizacional"
+msgstr "ផ្នែក​នៃ​អង្គការ"
 
 msgid "Org unit ID scheme"
 msgstr ""
@@ -332,13 +332,13 @@ msgid "Program Stages"
 msgstr ""
 
 msgid "Programs"
-msgstr "Programas"
+msgstr ""
 
 msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
-msgstr "Conjunto de Dados"
+msgstr "ទិន្នន័យឈុត"
 
 msgid "Sharing"
 msgstr ""
@@ -353,7 +353,7 @@ msgid "Skip Validation"
 msgstr ""
 
 msgid "Start date"
-msgstr "Data de início"
+msgstr "កាលបរិច្ឆេទ​ចាប់ផ្ដើម​"
 
 msgid "Include descendants of organisation unit"
 msgstr ""
@@ -371,10 +371,10 @@ msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr "Criar"
+msgstr "​បង្កើត"
 
 msgid "Update"
-msgstr "Actualizar"
+msgstr "ធ្វើ​បច្ចុប្បន្នភាព"
 
 msgid "With sharing"
 msgstr ""
@@ -395,13 +395,13 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
-msgstr "Combinações de categoria"
+msgstr "Category Combination"
 
 msgid "Dashboard"
-msgstr "Gráficos"
+msgstr "ផ្ទាំងចម្រោះ​សង្ខេបព័ត៌មាន"
 
 msgid "Data element groups"
-msgstr "Grupos de Elementos de Dados"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
@@ -410,7 +410,7 @@ msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
-msgstr "Importar-Exportar"
+msgstr "បញ្ចេញ-បញ្ចូលទិន្នន័យ"
 
 msgid "Data Export"
 msgstr ""
