@@ -22,7 +22,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Сана хато"
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -64,7 +64,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "Жорий фойдаланувчи"
 
 msgid "No user/unassigned"
 msgstr ""
@@ -426,7 +426,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "Назоратга олиш"
 
 msgid "All organisation units in the system"
 msgstr ""
