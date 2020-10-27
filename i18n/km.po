@@ -2,20 +2,19 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# Wanda <wanda@frontlineaids.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-04-28T06:03:53.764Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
-"Last-Translator: Wanda <wanda@frontlineaids.org>, 2020\n"
-"Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: km\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -27,7 +26,7 @@ msgid "Go Back"
 msgstr ""
 
 msgid "Required"
-msgstr "Обов'язкове"
+msgstr "ទាមទារ"
 
 msgid "Choose a file to upload"
 msgstr ""
@@ -42,34 +41,34 @@ msgid "Clear All"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Набори даних"
+msgstr ""
 
 msgid "more options"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "Yes"
-msgstr "Так"
+msgstr "បាទ/ចាស"
 
 msgid "No"
-msgstr "Ні"
+msgstr "ទេ"
 
 msgid "Async"
 msgstr ""
 
 msgid "All"
-msgstr "Всі"
+msgstr "ទាំងអស់"
 
 msgid "None"
-msgstr "Жодного"
+msgstr "គ្មាន"
 
 msgid "Atomic mode"
 msgstr ""
@@ -102,10 +101,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Код"
+msgstr ""
 
 msgid "Name"
-msgstr "Ім'я"
+msgstr "ឈ្មោះ"
 
 msgid "Data element id scheme"
 msgstr ""
@@ -129,7 +128,7 @@ msgid "EndDate"
 msgstr ""
 
 msgid "End date"
-msgstr "Кінцева дата"
+msgstr "កាល​បរិច្ឆេទ​បញ្ចប់​"
 
 msgid "Event id scheme"
 msgstr ""
@@ -162,7 +161,7 @@ msgid "Identifier"
 msgstr ""
 
 msgid "Errors"
-msgstr "Помилки"
+msgstr ""
 
 msgid "Full"
 msgstr ""
@@ -183,7 +182,7 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
-msgstr "Видалити"
+msgstr "​លុប​"
 
 msgid "Import strategy"
 msgstr ""
@@ -213,7 +212,7 @@ msgid "Merge"
 msgstr ""
 
 msgid "Replace"
-msgstr "Замінити"
+msgstr ""
 
 msgid "Merge mode"
 msgstr ""
@@ -225,16 +224,16 @@ msgid "Something went wrong when loading the object!"
 msgstr ""
 
 msgid "Programs"
-msgstr "Програми"
+msgstr ""
 
 msgid "Category combination"
-msgstr "Комбінація категорій"
+msgstr "Category Combination"
 
 msgid "Dashboard"
-msgstr "Інформаційна панель - дашборд"
+msgstr "ផ្ទាំងចម្រោះ​សង្ខេបព័ត៌មាន"
 
 msgid "Data element groups"
-msgstr "Групи елементів даних"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
@@ -243,7 +242,7 @@ msgid "Object type"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "Організаційний підрозділ"
+msgstr "ផ្នែក​នៃ​អង្គការ"
 
 msgid "Org unit id scheme"
 msgstr ""
@@ -255,7 +254,7 @@ msgid "Preheat cache"
 msgstr ""
 
 msgid "Reference"
-msgstr "Посилання"
+msgstr "សេចក្ដី​យោង"
 
 msgid "Preheat mode"
 msgstr ""
@@ -279,7 +278,7 @@ msgid "Something went wrong when loading the programs!"
 msgstr ""
 
 msgid "Error"
-msgstr "Помилка"
+msgstr "កំហុសបច្ចេកទេស"
 
 msgid "Report mode"
 msgstr ""
@@ -294,7 +293,7 @@ msgid "Without sharing"
 msgstr ""
 
 msgid "Sharing"
-msgstr "Спільний доступ"
+msgstr ""
 
 msgid "Skip audit"
 msgstr ""
@@ -318,7 +317,7 @@ msgid "StartDate"
 msgstr ""
 
 msgid "Start date"
-msgstr "Початкова дата"
+msgstr "កាលបរិច្ឆេទ​ចាប់ផ្ដើម​"
 
 msgid "Strategy"
 msgstr ""
@@ -336,10 +335,10 @@ msgid "Import"
 msgstr ""
 
 msgid "Export"
-msgstr "Експортувати"
+msgstr ""
 
 msgid "Created"
-msgstr "Створено"
+msgstr ""
 
 msgid "Deleted"
 msgstr ""
@@ -351,16 +350,16 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "Підсумок"
+msgstr ""
 
 msgid "Type"
-msgstr "Тип"
+msgstr ""
 
 msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
-msgstr "Повідомлення"
+msgstr "សារ"
 
 msgid "Summaries"
 msgstr ""
@@ -417,7 +416,7 @@ msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
-msgstr ""
+msgstr "ទិន្នន័យឈុត"
 
 msgid "Existing record check"
 msgstr ""
@@ -438,16 +437,16 @@ msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr "Створити"
+msgstr "​បង្កើត"
 
 msgid "Update"
-msgstr "Оновити"
+msgstr "ធ្វើ​បច្ចុប្បន្នភាព"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Import/Export"
-msgstr "Імпорт-Експорт"
+msgstr "បញ្ចេញ-បញ្ចូលទិន្នន័យ"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
