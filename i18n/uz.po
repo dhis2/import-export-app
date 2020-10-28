@@ -85,7 +85,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr ""
+msgstr "Импорт"
 
 msgid "Atomic mode"
 msgstr ""
@@ -390,7 +390,7 @@ msgid "Data sets"
 msgstr "Маълумотлар тўплами"
 
 msgid "Programs"
-msgstr ""
+msgstr "Дастурлар"
 
 msgid "Category combination"
 msgstr "Категориялар комбинацияси"
