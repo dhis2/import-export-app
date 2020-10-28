@@ -223,7 +223,7 @@ msgid "Something went wrong when loading the object!"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Дастурлар"
 
 msgid "Category combination"
 msgstr "Категориялар комбинацияси"
@@ -331,7 +331,7 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr ""
+msgstr "Импорт"
 
 msgid "Export"
 msgstr "Экспорт"
