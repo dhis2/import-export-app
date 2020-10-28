@@ -229,7 +229,7 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr ""
+msgstr "Импорт"
 
 msgid "Export"
 msgstr "Экспорт"
@@ -331,7 +331,7 @@ msgid "Program Stages"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Дастурлар"
 
 msgid "Schemas"
 msgstr ""
