@@ -885,7 +885,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Метадата"
+msgstr "МетаМаълумот"
 
 msgid "TEI"
 msgstr ""
