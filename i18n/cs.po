@@ -40,7 +40,7 @@ msgid "Clear All"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Datové sady"
 
 msgid "more options"
 msgstr ""
@@ -67,7 +67,7 @@ msgid "Async"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 msgid "None"
 msgstr ""
