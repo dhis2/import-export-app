@@ -172,7 +172,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -387,7 +387,7 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Datové sady"
 
 msgid "Programs"
 msgstr ""
@@ -622,7 +622,7 @@ msgid "Message"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Messages"
 msgstr ""
@@ -637,7 +637,7 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Stav"
 
 msgid "Description"
 msgstr ""
