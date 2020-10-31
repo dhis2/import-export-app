@@ -34,7 +34,7 @@ msgid "Clear All"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Datové sady"
 
 msgid "Choose a file to upload"
 msgstr ""
@@ -268,7 +268,7 @@ msgid "Reference"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 msgid "None"
 msgstr ""
