@@ -541,7 +541,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Tracked entity type"
 msgstr ""
@@ -872,7 +872,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 msgid "Event"
 msgstr ""
