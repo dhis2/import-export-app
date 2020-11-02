@@ -322,7 +322,7 @@ msgid "Category combination"
 msgstr ""
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Ovládací panel"
 
 msgid "Data element groups"
 msgstr ""
