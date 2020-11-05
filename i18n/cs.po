@@ -226,7 +226,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "Chyby"
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -492,7 +492,7 @@ msgid "Active"
 msgstr ""
 
 msgid "Completed"
-msgstr ""
+msgstr "Dokončeno"
 
 msgid "Cancelled"
 msgstr ""
@@ -733,7 +733,7 @@ msgid "Yes"
 msgstr "Ano"
 
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 msgid "There are errors on this page"
 msgstr ""
