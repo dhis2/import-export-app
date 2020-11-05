@@ -58,7 +58,7 @@ msgid "Yes"
 msgstr "Ano"
 
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 msgid "Async"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Identifier"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "Chyby"
 
 msgid "Full"
 msgstr ""
