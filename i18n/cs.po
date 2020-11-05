@@ -100,7 +100,7 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "Chyby"
 
 msgid "Import Summary"
 msgstr ""
@@ -217,7 +217,7 @@ msgid "Yes"
 msgstr "Ano"
 
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 msgid "UID"
 msgstr ""

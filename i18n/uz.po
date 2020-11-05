@@ -325,7 +325,7 @@ msgid "Dashboard"
 msgstr "Бошқарув панели"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Маълумотлар элементи гуруҳлари"
 
 msgid "Option sets"
 msgstr ""
