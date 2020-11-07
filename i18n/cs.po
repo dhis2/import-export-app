@@ -112,7 +112,7 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr ""
+msgstr "Kód"
 
 msgid "Name"
 msgstr "Název"
@@ -211,7 +211,7 @@ msgid "ID scheme"
 msgstr ""
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Auto"
 msgstr ""
@@ -393,7 +393,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Category combination"
-msgstr ""
+msgstr "Kombinace kategorie"
 
 msgid "Dashboard"
 msgstr "Ovládací panel"
@@ -453,7 +453,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr ""
+msgstr "Žádný"
 
 msgid "Preheat mode"
 msgstr ""
@@ -616,7 +616,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "Čas"
 
 msgid "Message"
 msgstr ""
@@ -646,7 +646,7 @@ msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Vytvořeno"
 
 msgid "Deleted"
 msgstr ""
