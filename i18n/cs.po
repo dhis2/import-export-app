@@ -67,7 +67,7 @@ msgid "All"
 msgstr "Vše"
 
 msgid "None"
-msgstr ""
+msgstr "Žádný"
 
 msgid "Atomic mode"
 msgstr ""
@@ -100,7 +100,7 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr ""
+msgstr "Kód"
 
 msgid "Name"
 msgstr "Název"
@@ -154,7 +154,7 @@ msgid "Format"
 msgstr ""
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr ""
@@ -226,7 +226,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Category combination"
-msgstr ""
+msgstr "Kombinace kategorie"
 
 msgid "Dashboard"
 msgstr "Ovládací panel"
@@ -337,7 +337,7 @@ msgid "Export"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Vytvořeno"
 
 msgid "Deleted"
 msgstr ""
