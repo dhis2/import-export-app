@@ -489,7 +489,7 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Aktivní"
 
 msgid "Completed"
 msgstr "Dokončeno"
