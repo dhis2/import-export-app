@@ -67,7 +67,7 @@ msgid "Export"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Vytvořeno"
 
 msgid "Deleted"
 msgstr ""
@@ -217,10 +217,10 @@ msgid "No"
 msgstr "Ne"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Code"
-msgstr ""
+msgstr "Kód"
 
 msgid "Name"
 msgstr "Název"
@@ -268,7 +268,7 @@ msgid "All"
 msgstr "Vše"
 
 msgid "None"
-msgstr ""
+msgstr "Žádný"
 
 msgid "Create and Update"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
-msgstr ""
+msgstr "Kombinace kategorie"
 
 msgid "Dashboard"
 msgstr "Ovládací panel"
