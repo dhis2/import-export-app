@@ -127,7 +127,7 @@ msgid "EndDate"
 msgstr ""
 
 msgid "End date"
-msgstr ""
+msgstr "Datum ukončení"
 
 msgid "Event id scheme"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "StartDate"
 msgstr ""
 
 msgid "Start date"
-msgstr ""
+msgstr "Datum začátku"
 
 msgid "Strategy"
 msgstr ""
@@ -349,7 +349,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Celkem"
 
 msgid "Type"
 msgstr "Typ"
@@ -436,7 +436,7 @@ msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 msgid "Update"
 msgstr "Aktualizovat"
