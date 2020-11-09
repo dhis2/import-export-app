@@ -82,7 +82,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Celkem"
 
 msgid "Type"
 msgstr "Typ"
@@ -133,7 +133,7 @@ msgid "Dry run"
 msgstr ""
 
 msgid "End date"
-msgstr ""
+msgstr "Datum ukončení"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -208,7 +208,7 @@ msgid "Skip Validation"
 msgstr ""
 
 msgid "Start date"
-msgstr ""
+msgstr "Datum začátku"
 
 msgid "Strategy"
 msgstr ""
@@ -277,7 +277,7 @@ msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 msgid "Update"
 msgstr "Aktualizovat"
@@ -345,7 +345,7 @@ msgid ""
 msgstr ""
 
 msgid "Loading options..."
-msgstr ""
+msgstr "Možnosti načítání ..."
 
 msgid "Event Export"
 msgstr ""
