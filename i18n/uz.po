@@ -759,7 +759,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr ""
+msgstr "Маълумотларни экспорт қилиш"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -801,22 +801,22 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr ""
+msgstr "МетаМаълумотларни экспорт қилиш"
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr ""
+msgstr "Маълумотларни импорт қилиш"
 
 msgid "Import events"
-msgstr ""
+msgstr "Ҳодиса/Тадбирларни импорт қилиш"
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr ""
+msgstr "МатаМаълумотни импорт қилиш"
 
 msgid "Import tracked entity instances"
 msgstr ""
