@@ -139,7 +139,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr ""
+msgstr "Datum ukončení"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -360,7 +360,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "Datum zahájení / ukončení"
 
 msgid "Time since last updated"
 msgstr ""
@@ -483,7 +483,7 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr ""
+msgstr "Datum začátku"
 
 msgid "All statuses"
 msgstr ""
@@ -495,7 +495,7 @@ msgid "Completed"
 msgstr "Dokončeno"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Zrušeno"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -658,7 +658,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Celkem"
 
 msgid "Details by type"
 msgstr ""
@@ -881,7 +881,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 msgid "TEI"
 msgstr ""
