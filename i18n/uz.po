@@ -265,7 +265,7 @@ msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr ""
+msgstr "Маълумот"
 
 msgid "All"
 msgstr "Барчаси"
