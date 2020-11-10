@@ -193,7 +193,7 @@ msgid "Data Sets"
 msgstr ""
 
 msgid "Sharing"
-msgstr ""
+msgstr "Sdílení"
 
 msgid "Existing record check"
 msgstr ""
@@ -283,7 +283,7 @@ msgid "Merge"
 msgstr ""
 
 msgid "Replace"
-msgstr ""
+msgstr "Nahradit"
 
 msgid "Auto"
 msgstr ""
