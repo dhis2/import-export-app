@@ -25,7 +25,7 @@ msgid "Go Back"
 msgstr ""
 
 msgid "Required"
-msgstr ""
+msgstr "Vyžadováno"
 
 msgid "Choose a file to upload"
 msgstr ""
@@ -211,7 +211,7 @@ msgid "Merge"
 msgstr ""
 
 msgid "Replace"
-msgstr ""
+msgstr "Nahradit"
 
 msgid "Merge mode"
 msgstr ""
@@ -292,7 +292,7 @@ msgid "Without sharing"
 msgstr ""
 
 msgid "Sharing"
-msgstr ""
+msgstr "Sdílení"
 
 msgid "Skip audit"
 msgstr ""
