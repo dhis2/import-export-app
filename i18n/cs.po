@@ -40,7 +40,7 @@ msgid "Choose a file to upload"
 msgstr ""
 
 msgid "Required"
-msgstr ""
+msgstr "Vyžadováno"
 
 msgid "more options"
 msgstr ""
@@ -196,7 +196,7 @@ msgid "Data Sets"
 msgstr ""
 
 msgid "Sharing"
-msgstr ""
+msgstr "Sdílení"
 
 msgid "Existing record check"
 msgstr ""
@@ -286,7 +286,7 @@ msgid "Merge"
 msgstr ""
 
 msgid "Replace"
-msgstr ""
+msgstr "Nahradit"
 
 msgid "Auto"
 msgstr ""
