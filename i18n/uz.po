@@ -187,7 +187,7 @@ msgid "Preheat cache"
 msgstr ""
 
 msgid "Reference"
-msgstr ""
+msgstr "Маълумот"
 
 msgid "Preheat mode"
 msgstr ""
