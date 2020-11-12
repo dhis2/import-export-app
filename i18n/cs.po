@@ -16,34 +16,34 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "uživatel není přihlášen"
 
 msgid "Import Error"
-msgstr ""
+msgstr "Chyba importu"
 
 msgid "Go Back"
-msgstr ""
+msgstr "Zpět"
 
 msgid "Required"
 msgstr "Vyžadováno"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "Vyberte soubor, který chcete nahrát"
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "filtrovat datové sady podle názvu"
 
 msgid "Select All"
 msgstr "Vybrat vše"
 
 msgid "Clear All"
-msgstr ""
+msgstr "Vymazat vše"
 
 msgid "Data sets"
 msgstr "Datové sady"
 
 msgid "more options"
-msgstr ""
+msgstr "více možností"
 
 msgid "JSON"
 msgstr "JSON"
@@ -55,7 +55,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr ""
+msgstr "Vyberte Žádný"
 
 msgid "Yes"
 msgstr "Ano"
@@ -64,7 +64,7 @@ msgid "No"
 msgstr "Ne"
 
 msgid "Async"
-msgstr ""
+msgstr "Async"
 
 msgid "All"
 msgstr "Vše"
@@ -73,13 +73,13 @@ msgid "None"
 msgstr "Žádný"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Atomický režim"
 
 msgid "Class key"
-msgstr ""
+msgstr "Klíč třídy"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Kód"
@@ -88,19 +88,19 @@ msgid "Name"
 msgstr "Název"
 
 msgid "Data element id scheme"
-msgstr ""
+msgstr "Schéma ID datového prvku"
 
 msgid "Loading data element id scheme options..."
-msgstr ""
+msgstr "Načítání možností schématu ID datového prvku ..."
 
 msgid "Dry run"
-msgstr ""
+msgstr "Testovací spuštění"
 
 msgid "Event id scheme"
-msgstr ""
+msgstr "Schéma ID události"
 
 msgid "First row is header"
-msgstr ""
+msgstr "První řádek je záhlaví"
 
 msgid "Auto"
 msgstr "Automaticky"
@@ -109,142 +109,142 @@ msgid "Object"
 msgstr "Objekt"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Vyplachovací režim"
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
-msgstr ""
+msgstr "Formát"
 
 msgid "UID"
 msgstr "UID"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Identifikátor"
 
 msgid "Errors"
 msgstr "Chyby"
 
 msgid "Full"
-msgstr ""
+msgstr "Úplný"
 
 msgid "Debug"
-msgstr ""
+msgstr "Ladit"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Režim importu zprávy"
 
 msgid "New and updates"
-msgstr ""
+msgstr "Nové a aktualizace"
 
 msgid "New only"
-msgstr ""
+msgstr "Pouze nové"
 
 msgid "Updates only"
-msgstr ""
+msgstr "Pouze aktualizace"
 
 msgid "Delete"
 msgstr "Smazat"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Importní strategie"
 
 msgid "Non Null"
-msgstr ""
+msgstr "Ne prázdné"
 
 msgid "Always"
-msgstr ""
+msgstr "Vždy"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "Není prázdný"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Strategie začleňování"
 
 msgid "Merge"
-msgstr ""
+msgstr "Spojit"
 
 msgid "Replace"
 msgstr "Nahradit"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Režim sloučení"
 
 msgid "Org unit id scheme"
-msgstr ""
+msgstr "Schéma ID organizační jednotky"
 
 msgid "Loading organisation unit id scheme options..."
-msgstr ""
+msgstr "Načítání možností schématu ID organizační jednotky ..."
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "Ano (rychlejší pro velké importy)"
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Připravte mezipaměť"
 
 msgid "Reference"
-msgstr ""
+msgstr "Odkaz"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Režim předehřátí"
 
 msgid "Error"
 msgstr "Chyba"
 
 msgid "Report mode"
-msgstr ""
+msgstr "Režim hlášení zpráv"
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Přeskočit audit"
 
 msgid "Skip check (fast)"
-msgstr ""
+msgstr "Přeskočit kontrolu (rychlé)"
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "Zkontrolovat (bezpečné, doporučeno)"
 
 msgid "Skip existing check"
-msgstr ""
+msgstr "Přeskočit stávající kontrolu"
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Přeskočit sdílení"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Přeskočit ověření"
 
 msgid "Strategy"
-msgstr ""
+msgstr "Strategie"
 
 msgid "Id scheme"
-msgstr ""
+msgstr "ID schéma"
 
 msgid "Logger"
-msgstr ""
+msgstr "Logger"
 
 msgid "view messages received on using import/export forms."
-msgstr ""
+msgstr "zobrazit zprávy přijaté pomocí formulářů pro import / export."
 
 msgid "Import"
-msgstr ""
+msgstr "Import"
 
 msgid "Export"
-msgstr ""
+msgstr "Export"
 
 msgid "Created"
 msgstr "Vytvořeno"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Smazáno"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorováno"
 
 msgid "Updated"
-msgstr ""
+msgstr "Aktualizováno"
 
 msgid "Total"
 msgstr "Celkem"
@@ -253,121 +253,121 @@ msgid "Type"
 msgstr "Typ"
 
 msgid "Type Count"
-msgstr ""
+msgstr "Počet typů"
 
 msgid "Messages"
 msgstr "Zprávy"
 
 msgid "Summaries"
-msgstr ""
+msgstr "Shrnutí"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Konflikty"
 
 msgid "Import Summary"
-msgstr ""
+msgstr "Souhrn importu"
 
 msgid "Summary"
-msgstr ""
+msgstr "souhrn"
 
 msgid "Atomic Mode"
-msgstr ""
+msgstr "Atomický režim"
 
 msgid "Category ID scheme"
-msgstr ""
+msgstr "Schéma ID kategorie"
 
 msgid "Children"
-msgstr ""
+msgstr "Podřazené"
 
 msgid "Object type"
-msgstr ""
+msgstr "Typ objektu"
 
 msgid "Compression"
-msgstr ""
+msgstr "Komprese"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Schéma ID datového prvku"
 
 msgid "End date"
 msgstr "Datum ukončení"
 
 msgid "Event ID Scheme"
-msgstr ""
+msgstr "Schéma ID události"
 
 msgid "Flush Mode"
-msgstr ""
+msgstr "Proplachovací režim"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID schéma"
 
 msgid "Report Mode"
-msgstr ""
+msgstr "Režim hlášení zpráv"
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "Strategie importu"
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Včetně smazaných"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "Zařazení"
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "Strategie začleňování"
 
 msgid "Merge Mode"
-msgstr ""
+msgstr "Režim sloučení"
 
 msgid "Organisation unit"
 msgstr "Organizační jednotka"
 
 msgid "Org unit ID scheme"
-msgstr ""
+msgstr "Schéma ID organizační jednotky"
 
 msgid "Preheat Mode"
-msgstr ""
+msgstr "Režim předehřátí"
 
 msgid "Program Stages"
-msgstr ""
+msgstr "Fáze programu"
 
 msgid "Programs"
-msgstr ""
+msgstr "Programy"
 
 msgid "Schemas"
-msgstr ""
+msgstr "Schémata"
 
 msgid "Data Sets"
-msgstr ""
+msgstr "Datové Sady"
 
 msgid "Sharing"
 msgstr "Sdílení"
 
 msgid "Existing record check"
-msgstr ""
+msgstr "Kontrola stávajících záznamů"
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "Přeskočit sdílení"
 
 msgid "Skip Validation"
-msgstr ""
+msgstr "Přeskočit ověření"
 
 msgid "Start date"
 msgstr "Datum začátku"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "Zahrnout potomky organizační jednotky"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "Vybraná organizační jednotka"
 
 msgid "New and Updates"
-msgstr ""
+msgstr "Nové a Aktualizace"
 
 msgid "AUTO"
-msgstr ""
+msgstr "AUTO"
 
 msgid "Create and Update"
-msgstr ""
+msgstr "Vytvořit a aktualizovat"
 
 msgid "Create"
 msgstr "Vytvořit"
@@ -376,22 +376,22 @@ msgid "Update"
 msgstr "Aktualizovat"
 
 msgid "With sharing"
-msgstr ""
+msgstr "Se sdílením"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "Bez sdílení"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "Zahrnout podřazené organizačních jednotek"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "Gzip"
-msgstr ""
+msgstr "Gzip"
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Nekomprimovaný"
 
 msgid "Category combination"
 msgstr "Kombinace kategorie"
@@ -400,103 +400,118 @@ msgid "Dashboard"
 msgstr "Ovládací panel"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Skupiny datových prvků"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Sady možností"
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[Všechny fáze programu]"
 
 msgid "Import/Export"
-msgstr ""
+msgstr "Import/Export"
 
 msgid "Data Export"
-msgstr ""
+msgstr "Export dat"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Exportujte hodnoty dat. Toto je funkce běžného exportu, která exportuje data"
+" do výměnného formátu DHIS 2 s názvem DXF 2."
 
 msgid "Loading options..."
 msgstr "Možnosti načítání ..."
 
 msgid "Event Export"
-msgstr ""
+msgstr "Export událostí"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"Exportujte data událostí pro programy, fáze a sledované entity ve formátu "
+"DXF 2."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "Export metadat"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
 msgstr ""
+"Exportujte metadata, jako jsou datové prvky a organizační jednotky, do "
+"standardního výměnného formátu DHIS 2."
 
 msgid "Meta Data Export"
-msgstr ""
+msgstr "Meta Data Export"
 
 msgid "Metadata Dependency Export"
-msgstr ""
+msgstr "Export závislostí metadat"
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
 msgstr ""
+"Exportujte metadata, jako jsou datové sady a programy, včetně souvisejících "
+"objektů metadat."
 
 msgid "Metadata Export with Dependencies"
-msgstr ""
+msgstr "Export metadat se závislostmi"
 
 msgid "Import / Export"
-msgstr ""
+msgstr "Import / Export"
 
 msgid "Import or Export DHIS2 data."
-msgstr ""
+msgstr "Importujte nebo exportujte data DHIS2."
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "Nastala neznámá chyba"
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "Nastala neznámá chyba. Prosím zkuste to znovu později"
 
 msgid "Data Import"
-msgstr ""
+msgstr "Import dat"
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
 "is the standard exchange format for DHIS 2."
 msgstr ""
+"Importujte datové hodnoty do formátovacích formátů DXF 2 XML, JSON, CSV a "
+"PDF. DXF 2 je standardní formát výměny pro DHIS 2."
 
 msgid "Event Import"
-msgstr ""
+msgstr "Import událostí"
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"Importujte události pro programy, fáze a sledované entity ve formátu DXF 2."
 
 msgid "GML Import"
-msgstr ""
+msgstr "GML Import"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"Importujte geografická data pro organizační jednotky pomocí formátu GML. GML"
+" je gramatika XML pro vyjádření geografických rysů."
 
 msgid "Couldn't load classKey options"
-msgstr ""
+msgstr "Možnosti classKey se nepodařilo načíst"
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "Import metadat"
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Importujte metadata, jako jsou datové prvky a organizační jednotky, pomocí "
+"standardního výměnného formátu DHIS 2 s názvem DXF 2."
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "Zdá se, že v nahraném souboru nebyla žádná data."
