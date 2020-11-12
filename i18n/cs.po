@@ -184,13 +184,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "ADX"
 msgstr ""
@@ -214,7 +214,7 @@ msgid "UID"
 msgstr "UID"
 
 msgid "Auto"
-msgstr ""
+msgstr "Automaticky"
 
 msgid "Identifier"
 msgstr ""
@@ -595,7 +595,7 @@ msgid "Job details"
 msgstr ""
 
 msgid "Key"
-msgstr ""
+msgstr "Klíč"
 
 msgid "Value"
 msgstr "Hodnota"
@@ -619,7 +619,7 @@ msgid "Time"
 msgstr "Čas"
 
 msgid "Message"
-msgstr ""
+msgstr "Zpráva"
 
 msgid "ID"
 msgstr "ID"
@@ -682,7 +682,7 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "Vybrat vše"
 
 msgid "Select None"
 msgstr ""
