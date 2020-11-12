@@ -203,7 +203,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "JSONP"
 msgstr ""
