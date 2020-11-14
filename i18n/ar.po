@@ -199,7 +199,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "بي دي إف PDF"
 
 msgid "JSONP"
 msgstr ""
