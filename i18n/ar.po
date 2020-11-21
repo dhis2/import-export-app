@@ -553,7 +553,7 @@ msgid "Filter by"
 msgstr "تصفية حسب"
 
 msgid "Tracked entity types"
-msgstr ""
+msgstr "أنواع الكيانات المتعقبة"
 
 msgid "Filter tracked entity types by name"
 msgstr ""
