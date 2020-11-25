@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -616,7 +616,7 @@ msgid "Dry run"
 msgstr "空运行"
 
 msgid "Log"
-msgstr ""
+msgstr "日志记录"
 
 msgid "Time"
 msgstr "时间"
@@ -664,7 +664,7 @@ msgid "Total"
 msgstr "总共"
 
 msgid "Details by type"
-msgstr ""
+msgstr "按类型的详细信息"
 
 msgid "Advanced options"
 msgstr "高级选项"
@@ -791,10 +791,10 @@ msgid ""
 msgstr "使用GML格式导入机构的地理空间数据"
 
 msgid "Overview: Import/Export"
-msgstr ""
+msgstr "概述：导入/导出"
 
 msgid "Import or export DHIS2 data."
-msgstr ""
+msgstr "导入或导出DHIS2数据。"
 
 msgid "Export metadata dependencies"
 msgstr "导出元数据依赖性"
@@ -812,13 +812,13 @@ msgid "Import events"
 msgstr "导入事件"
 
 msgid "Import GML"
-msgstr ""
+msgstr "导入GML"
 
 msgid "Import metadata"
 msgstr "导入元数据"
 
 msgid "Import tracked entity instances"
-msgstr ""
+msgstr "导入跟踪的实体实例"
 
 msgid "An overview of all import jobs started this session."
 msgstr "该会话开始的所有导入作业概要"
