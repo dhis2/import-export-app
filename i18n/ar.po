@@ -87,10 +87,10 @@ msgid "Class key"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
 msgstr "غير مضغوط"
@@ -150,7 +150,7 @@ msgid "PDF"
 msgstr "بي دي إف PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
 msgstr "التنسيق"
