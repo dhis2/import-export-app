@@ -21,7 +21,7 @@ msgid "Something went wrong when loading the current user!"
 msgstr "حدث خطأ أثناء تحميل المستخدم الحالي"
 
 msgid "Basic options"
-msgstr ""
+msgstr "الخيارات الأساسية"
 
 msgid "Invalid date"
 msgstr "تاريخ غير صالح"
@@ -33,7 +33,7 @@ msgid "End date must be after start date"
 msgstr "يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "مدة غير صحيحة"
 
 msgid "Format"
 msgstr "التنسيق"
@@ -55,16 +55,16 @@ msgid "Please select a file"
 msgstr "يرجى تحديد ملف"
 
 msgid "A dry run tests the import settings without importing any data"
-msgstr ""
+msgstr "يختبر التشغيل الجاف إعدادات الاستيراد بدون استيراد أي بيانات فعليًا"
 
 msgid "Start dry run"
-msgstr ""
+msgstr "ابدأ التشغيل الجاف"
 
 msgid "Start import"
-msgstr ""
+msgstr "ابدأ الاستيراد"
 
 msgid "Any user"
-msgstr ""
+msgstr "أي مستخدم"
 
 msgid "Current user"
 msgstr "المستخدم الحالي"
@@ -73,10 +73,10 @@ msgid "No user/unassigned"
 msgstr ""
 
 msgid "Selected users"
-msgstr ""
+msgstr "المستخدمون المختارون"
 
 msgid "Filter by assigned user"
-msgstr ""
+msgstr "تصفية حسب المستخدم المعين"
 
 msgid "Export only instances with events assigned to specific users"
 msgstr ""
@@ -85,7 +85,7 @@ msgid "Assigned user(s)"
 msgstr ""
 
 msgid "Do not import"
-msgstr ""
+msgstr "لا تستورد"
 
 msgid "Import"
 msgstr "استيراد"
@@ -100,16 +100,16 @@ msgid "Class key"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
 msgstr "غير مضغوط"
 
 msgid "Compression mode"
-msgstr ""
+msgstr "وضع الضغط"
 
 msgid "Uid"
 msgstr ""
@@ -151,19 +151,19 @@ msgid "Loading export..."
 msgstr ""
 
 msgid "Select a file to import values from"
-msgstr ""
+msgstr "حدد ملفًا لاستيراد القيم منه"
 
 msgid "Is the first row a header row?"
-msgstr ""
+msgstr "هل الصف الأول هو صف الرأس؟"
 
 msgid "First row is header"
 msgstr "الصف الأول هو عناوين الأعمدة"
 
 msgid "A header row will be ignored during import"
-msgstr ""
+msgstr "سيتم تجاهل صف الرأس أثناء الاستيراد"
 
 msgid "Auto (recommended)"
-msgstr ""
+msgstr "تلقائي (موصى به)"
 
 msgid "Object (debugging purposes)"
 msgstr ""
@@ -196,19 +196,19 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "PDF"
 msgstr "بي دي إف PDF"
 
 msgid "JSONP"
-msgstr ""
+msgstr "JSONP"
 
 msgid "What format is the data to import?"
-msgstr ""
+msgstr "ما هو تنسيق البيانات المراد استيرادها؟"
 
 msgid "What format should the data be exported as?"
-msgstr ""
+msgstr "ما هو التنسيق الذي يجب أن يتم تصدير البيانات به؟"
 
 msgid "ID scheme"
 msgstr ""
@@ -226,13 +226,13 @@ msgid "Identifier scheme to use for reference matching"
 msgstr ""
 
 msgid "Only include reports for objects that have errors"
-msgstr ""
+msgstr "قم فقط بتضمين تقارير الكائنات التي بها أخطاء"
 
 msgid "Errors"
 msgstr "اخطاء"
 
 msgid "Reports for all objects imported"
-msgstr ""
+msgstr "تقارير جميع الكائنات التي تم استيرادها"
 
 msgid "Full"
 msgstr "كامل"
@@ -250,75 +250,77 @@ msgid "Controls what should be reported after the import is done"
 msgstr ""
 
 msgid "Import new values and update existing"
-msgstr ""
+msgstr "استيراد القيم الجديدة وتحديث الموجودة مسبقًا"
 
 msgid "Merge"
 msgstr "دمج"
 
 msgid "Import new values only"
-msgstr ""
+msgstr "استيراد القيم الجديدة فقط"
 
 msgid "Append"
 msgstr "إلحاق"
 
 msgid "Only update existing values, ignore new values"
-msgstr ""
+msgstr "قم بتحديث القيم الموجودة فقط ، وتجاهل القيم الجديدة"
 
 msgid "Update"
 msgstr "تحديث"
 
 msgid "Remove values included in uploaded file"
-msgstr ""
+msgstr "قم بإزالة القيم المضمنة في الملف الذي تم تحميله"
 
 msgid "Delete"
 msgstr "حذف"
 
 msgid "Data will be deleted"
-msgstr ""
+msgstr "سيتم حذف البيانات"
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
 msgstr ""
+"سيتم حذف القيم الموجودة في الملف الذي تم تحميله من قاعدة البيانات. تأكد من "
+"أن هذا هو الإجراء الصحيح الذي تريده ؛ لا يمكن التراجع."
 
 msgid "Import strategy"
 msgstr "استراتيجية الاستيراد"
 
 msgid "Include all attributes"
-msgstr ""
+msgstr "قم بتضمين كافة السمات"
 
 msgid "Include first level units"
-msgstr ""
+msgstr "تضمين وحدات المستوى الأول"
 
 msgid "Include the first level of organisation units inside selections"
-msgstr ""
+msgstr "قم بتضمين المستوى الأول من الوحدات التنظيمية داخل التحديدات"
 
 msgid "Include deleted"
 msgstr "تضمين ماتم حذفه"
 
 msgid "Include deleted data in export"
-msgstr ""
+msgstr "تضمين البيانات المحذوفة في التصدير"
 
 msgid "Only include selected organisation unit"
-msgstr ""
+msgstr "قم بتضمين الوحدة التنظيمية المحددة فقط"
 
 msgid "Selected"
 msgstr "محدد"
 
 msgid "Include the first level of units inside selections"
-msgstr ""
+msgstr "قم بتضمين المستوى الأول من الوحدات داخل التحديدات"
 
 msgid "Directly below"
 msgstr ""
 
 msgid "Include all units inside selections"
-msgstr ""
+msgstr "قم بتضمين جميع الوحدات داخل التحديدات"
 
 msgid "All below"
-msgstr ""
+msgstr "كل ماهو أدنى"
 
 msgid "How should organisation units inside the selections be included?"
-msgstr ""
+msgstr "كيف يجب تضمين الوحدات التنظيمية داخل التحديدات؟"
 
 msgid "Includes properties which are not null"
 msgstr ""
@@ -336,43 +338,43 @@ msgid "Include non-empty properties"
 msgstr ""
 
 msgid "Non empty"
-msgstr ""
+msgstr "غير فارغ"
 
 msgid "Inclusion strategy"
 msgstr "استراتيجية الإدماج"
 
 msgid "Controls which properties to include"
-msgstr ""
+msgstr "يتحكم في الخصائص المراد تضمينها"
 
 msgid "Async"
 msgstr "غير متزامن"
 
 msgid "Asynchronous import"
-msgstr ""
+msgstr "استيراد غير متزامن"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr ""
+msgstr "يتحكم في ما إذا كان الاستيراد يتم بشكل غير متزامن"
 
 msgid "Last updated duration"
-msgstr ""
+msgstr "مدة آخر تحديث"
 
 msgid "Last updated end date"
-msgstr ""
+msgstr "تاريخ انتهاء آخر تحديث"
 
 msgid "Do not filter by last updated date"
-msgstr ""
+msgstr "عدم التصفية حسب تاريخ آخر تحديث"
 
 msgid "Start/end dates"
 msgstr "تواريخ- البدء-الانتهاء"
 
 msgid "Time since last updated"
-msgstr ""
+msgstr "الوقت منذ آخر تحديث"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "التصفية حسب تاريخ آخر تحديث"
 
 msgid "Last updated start date"
-msgstr ""
+msgstr "تاريخ بدء آخر تحديث"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
@@ -387,7 +389,7 @@ msgid "Merge mode"
 msgstr "اسلوب الدمج"
 
 msgid "Strategy to take when merging two objects"
-msgstr ""
+msgstr "الإستراتيجية التي يتم اتخاذها عند دمج كائنين"
 
 msgid "Data sets"
 msgstr "حزم البيانات"
@@ -423,7 +425,7 @@ msgid "Data view organisation units associated with the current user"
 msgstr ""
 
 msgid "Accessible"
-msgstr ""
+msgstr "يمكن الوصول إليه"
 
 msgid "Data capture organisation units associated with the current user"
 msgstr ""
@@ -432,16 +434,16 @@ msgid "Capture"
 msgstr "التقاط"
 
 msgid "All organisation units in the system"
-msgstr ""
+msgstr "جميع الوحدات التنظيمية في النظام"
 
 msgid "Manually select organisation units from list"
-msgstr ""
+msgstr "حدد الوحدات التنظيمية يدويًا من القائمة"
 
 msgid "Which organisation units should be included?"
-msgstr ""
+msgstr "ما هي الوحدات التنظيمية التي يجب تضمينها؟"
 
 msgid "Organisation unit(s) to export data from"
-msgstr ""
+msgstr "وحدة (وحدات) تنظيمية لتصدير البيانات منها"
 
 msgid "Preheat cache"
 msgstr ""
@@ -451,6 +453,8 @@ msgstr ""
 
 msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
+"ستتم معالجة عمليات الإستيراد الكبيرة بشكل أسرع ولكنها ستستهلك المزيد من "
+"الموارد"
 
 msgid "Intelligent scan (reference)"
 msgstr ""
@@ -527,12 +531,14 @@ msgid "Skip sharing"
 msgstr "تجنب حالة المشاركة"
 
 msgid "Skip sharing and access settings"
-msgstr ""
+msgstr "تخطي إعدادات المشاركة والوصول"
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
 msgstr ""
+"تخطي خصائص المشاركة ، ولا تدمج المشاركة عند إجراء التحديثات ، ولا تضف "
+"معلومات وصول مجموعة مستخدمين عند إنشاء كائنات جديدة"
 
 msgid "Skip validation"
 msgstr "تجنب عملية التحقق"
@@ -556,34 +562,34 @@ msgid "Tracked entity types"
 msgstr "أنواع الكيانات المتعقبة"
 
 msgid "Filter tracked entity types by name"
-msgstr ""
+msgstr "تصفية أنواع الكيانات المتعقبة حسب الاسم"
 
 msgid "Selected tracked entity types"
 msgstr ""
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr ""
+msgstr "حدث خطأ ما عند تحميل أنواع الكيانات المتعقبة!"
 
 msgid "At least one tracked entity type must be selected"
-msgstr ""
+msgstr "يجب تحديد نوع كيان متتبع واحد على الأقل"
 
 msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Which users should be used?"
-msgstr ""
+msgstr "أي المستخدمين يجب استخدامهم؟"
 
 msgid "Filter users"
-msgstr ""
+msgstr "تصفية المستخدمين"
 
 msgid "Something went wrong when loading the users!"
-msgstr ""
+msgstr "حدث خطأ ما عند تحميل المستخدمين!"
 
 msgid "At least one user must be selected"
-msgstr ""
+msgstr "يجب تحديد مستخدم واحد على الأقل"
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "يجب تحديد مستخدم واحد"
 
 msgid "No jobs started yet."
 msgstr "لم تبدأ أي مهام حتى الآن."
@@ -616,7 +622,7 @@ msgid "Dry run"
 msgstr "تجريب دون حفظ فعلي للبيانات المستوردة"
 
 msgid "Log"
-msgstr ""
+msgstr "السجل"
 
 msgid "Time"
 msgstr "الوقت"
@@ -664,10 +670,10 @@ msgid "Total"
 msgstr "الإجمالي"
 
 msgid "Details by type"
-msgstr ""
+msgstr "التفاصيل حسب النوع"
 
 msgid "Advanced options"
-msgstr ""
+msgstr "خيارات متقدمة"
 
 msgid "At least one organisation unit must be selected"
 msgstr "يجب تحديد وحدة تنظيمية واحدة على الأقل"
@@ -739,7 +745,7 @@ msgid "No"
 msgstr "لا"
 
 msgid "There are errors on this page"
-msgstr ""
+msgstr "هناك أخطاء في هذه الصفحة"
 
 msgid "Something went wrong when loading the class keys"
 msgstr "حدث خطأ ما عند تحميل class keys"
