@@ -103,7 +103,7 @@ msgid "First row is header"
 msgstr ""
 
 msgid "Auto"
-msgstr ""
+msgstr "Авто"
 
 msgid "Object"
 msgstr "Объект"

@@ -117,7 +117,7 @@ msgid "PDF"
 msgstr "بي دي إف PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
 msgstr "التنسيق"
@@ -387,7 +387,7 @@ msgid "Include children of organisation unit"
 msgstr "تضمين الوحدات الفرعية الأبناء من الوحدة التنظيمية"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "Gzip"
 msgstr ""
