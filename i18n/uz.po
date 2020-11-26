@@ -286,7 +286,7 @@ msgid "Replace"
 msgstr "Алмаштиринг"
 
 msgid "Auto"
-msgstr ""
+msgstr "Авто"
 
 msgid "With sharing"
 msgstr ""
