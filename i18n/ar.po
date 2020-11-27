@@ -79,10 +79,10 @@ msgid "Filter by assigned user"
 msgstr "تصفية حسب المستخدم المعين"
 
 msgid "Export only instances with events assigned to specific users"
-msgstr ""
+msgstr "تصدير النسخ ذات الأحداث المعينة لمستخدمين محددين فقط"
 
 msgid "Assigned user(s)"
-msgstr ""
+msgstr "مستخدم (مستخدمون) معينون"
 
 msgid "Do not import"
 msgstr "لا تستورد"
@@ -148,7 +148,7 @@ msgid "Event ID scheme"
 msgstr ""
 
 msgid "Loading export..."
-msgstr ""
+msgstr "جارٍ تحميل التصدير ..."
 
 msgid "Select a file to import values from"
 msgstr "حدد ملفًا لاستيراد القيم منه"
@@ -178,13 +178,13 @@ msgid "All"
 msgstr "الجميع"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "مُعلَّم للمتابعة"
 
 msgid "Not marked for follow-up"
-msgstr ""
+msgstr "غير مُعلَّم للمتابعة"
 
 msgid "Include only entities with follow-up status"
-msgstr ""
+msgstr "تضمين الكيانات ذات حالة المتابعة فقط"
 
 msgid "JSON"
 msgstr "JSON"
@@ -238,7 +238,7 @@ msgid "Full"
 msgstr "كامل"
 
 msgid "Reports for all objects imported along with their names (if available)"
-msgstr ""
+msgstr "تقارير عن كل العناصر المستوردة مع أسمائها (إن وجدت)"
 
 msgid "Debug"
 msgstr ""
@@ -247,7 +247,7 @@ msgid "Import report mode"
 msgstr "اسلوب تقرير الاستيراد"
 
 msgid "Controls what should be reported after the import is done"
-msgstr ""
+msgstr "يتحكم في ما يجب التقرير عنه بعد إتمام الاستيراد"
 
 msgid "Import new values and update existing"
 msgstr "استيراد القيم الجديدة وتحديث الموجودة مسبقًا"
@@ -323,19 +323,19 @@ msgid "How should organisation units inside the selections be included?"
 msgstr "كيف يجب تضمين الوحدات التنظيمية داخل التحديدات؟"
 
 msgid "Includes properties which are not null"
-msgstr ""
+msgstr "يشمل الخصائص التي ليست null"
 
 msgid "Non null"
 msgstr ""
 
 msgid "Include all properties"
-msgstr ""
+msgstr "تضمين كل الخصائص"
 
 msgid "Always"
 msgstr "دائماً"
 
 msgid "Include non-empty properties"
-msgstr ""
+msgstr "تضمين الخصائص غير الفارغة"
 
 msgid "Non empty"
 msgstr "غير فارغ"
@@ -469,10 +469,10 @@ msgid "Controls the level of preheating that should be done"
 msgstr ""
 
 msgid "Program to export events from"
-msgstr ""
+msgstr "البرنامج الذي يتم تصدير الأحداث منه"
 
 msgid "Filter programs"
-msgstr ""
+msgstr "تصفية البرامج"
 
 msgid "Selected programs"
 msgstr "البرامج المحددة"
@@ -775,7 +775,7 @@ msgstr ""
 "استيراد قيم البيانات من ملفات ADX XML أو DXF 2 XML أو JSON أو CSV أو PDF."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr ""
+msgstr "أنواع الملفات المدعومة: JSON و CSV و XML و ADX و PDF."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -791,7 +791,7 @@ msgstr ""
 "استيراد الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr ""
+msgstr "أنواع الملفات المدعومة: JSON و CSV و XML."
 
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
@@ -801,10 +801,10 @@ msgstr ""
 "عن قواعد XML للتعبير عن المعالم الجغرافية."
 
 msgid "Overview: Import/Export"
-msgstr ""
+msgstr "نظرة عامة: الاستيراد / التصدير"
 
 msgid "Import or export DHIS2 data."
-msgstr ""
+msgstr "استيراد أو تصدير بيانات DHIS2."
 
 msgid "Export metadata dependencies"
 msgstr ""
@@ -813,7 +813,7 @@ msgid "Export metadata"
 msgstr "تصدير بيانات وصفية"
 
 msgid "Export tracked entity instances"
-msgstr ""
+msgstr "تصدير نسخ الكيانات المتعقبة"
 
 msgid "Import data"
 msgstr "استيراد بيانات"
@@ -822,13 +822,13 @@ msgid "Import events"
 msgstr "استيراد احداث"
 
 msgid "Import GML"
-msgstr ""
+msgstr "استيراد GML"
 
 msgid "Import metadata"
 msgstr "استيراد بيانات وصفية"
 
 msgid "Import tracked entity instances"
-msgstr ""
+msgstr "استيراد نسخ الكيانات المتعقبة"
 
 msgid "An overview of all import jobs started this session."
 msgstr "نظرة عامة على جميع مهام الاستيراد التي بدأت في هذه الجلسة."
@@ -865,7 +865,7 @@ msgid "Enrollment date range"
 msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"
-msgstr ""
+msgstr "يجب تحديد حقل تاريخ واحد على الأقل من حقول \"آخر تحديث\""
 
 msgid "Tracked entity instances import"
 msgstr ""
@@ -874,7 +874,7 @@ msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
 
 msgid "Supported file types: JSON and XML."
-msgstr ""
+msgstr "أنواع الملفات المدعومة: JSON و XML."
 
 msgid "Job started."
 msgstr ""
@@ -883,7 +883,7 @@ msgid "An unknown error occurred. Please try again later"
 msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
 
 msgid "Loading exported data"
-msgstr ""
+msgstr "تحميل البيانات المصدرة"
 
 msgid "Data"
 msgstr "بيانات"
@@ -892,7 +892,7 @@ msgid "Event"
 msgstr "حدث"
 
 msgid "GML"
-msgstr ""
+msgstr "GML"
 
 msgid "Metadata"
 msgstr "البيانات الوصفية"
