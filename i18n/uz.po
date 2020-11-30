@@ -70,7 +70,7 @@ msgid "None"
 msgstr "Йўқ"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Ҳаволаларни баъзи бирлари етишмасада, объектни импорт қилмоқчимисиз"
 
 msgid "Include descendants of organisation unit"
 msgstr ""
@@ -82,22 +82,22 @@ msgid "Children"
 msgstr ""
 
 msgid "Class key"
-msgstr ""
+msgstr "Синф калити"
 
 msgid "Zip"
-msgstr ""
+msgstr "Почта индекси"
 
 msgid "GZip"
-msgstr ""
+msgstr "G-почта индекси"
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Сиқилмаган"
 
 msgid "Compression"
 msgstr ""
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Код"
@@ -118,7 +118,7 @@ msgid "Loading organisation unit id scheme options..."
 msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "Маълумотлар тўпламларини юклашда кўзда тутилмаган хатолик юз берди!"
 
 msgid "Dry run"
 msgstr ""
@@ -133,7 +133,7 @@ msgid "Event id scheme"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "Биринчи қатор-Сарлавҳа"
 
 msgid "Auto"
 msgstr "Авто"
@@ -145,31 +145,31 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
-msgstr ""
+msgstr "Форматлаш"
 
 msgid "UID"
 msgstr "UID"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Идентификатор"
 
 msgid "Errors"
 msgstr "Хатоликлар"
 
 msgid "Full"
-msgstr ""
+msgstr "Тўлиқ"
 
 msgid "Debug"
-msgstr ""
+msgstr "Носозликларни тузатиш"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Ҳисобот режимини импорт қилиш"
 
 msgid "New and updates"
 msgstr ""
@@ -184,10 +184,10 @@ msgid "Delete"
 msgstr "Ўчириш"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Импорт стратегияси"
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Қўшимчалар ўчирилди"
 
 msgid "Include children of organisation unit"
 msgstr ""
@@ -208,7 +208,7 @@ msgid "Inclusion strategy"
 msgstr ""
 
 msgid "Merge"
-msgstr ""
+msgstr "Бирлаштириш"
 
 msgid "Replace"
 msgstr "Алмаштиринг"
@@ -379,7 +379,7 @@ msgid "Category ID scheme"
 msgstr ""
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Маълумотлар элементи идентификатори схемаси"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -388,7 +388,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "Идентификатор схемаси"
 
 msgid "Report Mode"
 msgstr ""
