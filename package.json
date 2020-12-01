@@ -13,7 +13,7 @@
     "prestart": "npm run localize",
     "prebuild": "npm run localize",
     "pretest": "npm run localize",
-    "lint:style": "d2-style js check --all",
+    "lint": "d2-style js check",
     "cypress:start": "BROWSER=none yarn start",
     "cypress:envtest": "node ./scripts/check_env_vars.js",
     "cypress:browser": "cypress open --config baseUrl=http://localhost:3000,defaultCommandTimeout=15000",
@@ -65,13 +65,8 @@
   "husky": {
     "hooks": {
       "commit-msg": "d2-style commit check",
-      "pre-commit": "d2-style js apply"
+      "pre-commit": "d2-style js check"
     }
-  },
-  "greenkeeper": {
-    "ignore": [
-      "d2"
-    ]
   },
   "jest": {
     "snapshotSerializers": [
