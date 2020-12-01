@@ -73,13 +73,13 @@ msgid "None"
 msgstr "Йўқ"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Ҳаволаларни баъзи бирлари етишмасада, объектни импорт қилмоқчимисиз"
 
 msgid "Class key"
-msgstr ""
+msgstr "Синф калити"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Код"
@@ -100,7 +100,7 @@ msgid "Event id scheme"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "Биринчи қатор-Сарлавҳа"
 
 msgid "Auto"
 msgstr "Авто"
@@ -112,31 +112,31 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
-msgstr ""
+msgstr "Форматлаш"
 
 msgid "UID"
 msgstr "UID"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Идентификатор"
 
 msgid "Errors"
 msgstr "Хатоликлар"
 
 msgid "Full"
-msgstr ""
+msgstr "Тўлиқ"
 
 msgid "Debug"
-msgstr ""
+msgstr "Носозликларни тузатиш"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Ҳисобот режимини импорт қилиш"
 
 msgid "New and updates"
 msgstr ""
@@ -151,7 +151,7 @@ msgid "Delete"
 msgstr "Ўчириш"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Импорт стратегияси"
 
 msgid "Non Null"
 msgstr ""
@@ -166,7 +166,7 @@ msgid "Inclusion strategy"
 msgstr ""
 
 msgid "Merge"
-msgstr ""
+msgstr "Бирлаштириш"
 
 msgid "Replace"
 msgstr "Алмаштиринг"
@@ -286,7 +286,7 @@ msgid "Compression"
 msgstr ""
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Маълумотлар элементи идентификатори схемаси"
 
 msgid "End date"
 msgstr "Якунланиш санаси"
@@ -298,7 +298,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "Идентификатор схемаси"
 
 msgid "Report Mode"
 msgstr ""
@@ -307,7 +307,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Қўшимчалар ўчирилди"
 
 msgid "Inclusion"
 msgstr ""
@@ -385,13 +385,13 @@ msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Почта индекси"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Сиқилмаган"
 
 msgid "Category combination"
 msgstr "Категориялар комбинацияси"
