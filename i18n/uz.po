@@ -127,7 +127,7 @@ msgid "Compression"
 msgstr ""
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Маълумотлар элементи идентификатори схемаси"
 
 msgid "Dry run"
 msgstr ""
@@ -142,13 +142,13 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Форматлаш"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "Идентификатор схемаси"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Идентификатор"
 
 msgid "Report Mode"
 msgstr ""
@@ -157,7 +157,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Қўшимчалар ўчирилди"
 
 msgid "Inclusion"
 msgstr ""
@@ -259,10 +259,10 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "Тўлиқ"
 
 msgid "Debug"
-msgstr ""
+msgstr "Носозликларни тузатиш"
 
 msgid "Reference"
 msgstr "Маълумот"
@@ -283,7 +283,7 @@ msgid "Update"
 msgstr "Янгилаш"
 
 msgid "Merge"
-msgstr ""
+msgstr "Бирлаштириш"
 
 msgid "Replace"
 msgstr "Алмаштиринг"
@@ -310,13 +310,13 @@ msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Почта индекси"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Сиқилмаган"
 
 msgid "Category combination"
 msgstr "Категориялар комбинацияси"
