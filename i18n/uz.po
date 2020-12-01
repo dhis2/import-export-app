@@ -465,7 +465,7 @@ msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Data Import"
-msgstr ""
+msgstr "Маълумотлар импорти"
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
