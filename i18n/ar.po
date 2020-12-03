@@ -60,7 +60,7 @@ msgid "Logger"
 msgstr ""
 
 msgid "view messages received on using import/export forms."
-msgstr ""
+msgstr "عرض الرسائل المستلمة باستخدام نماذج الاستيراد / التصدير."
 
 msgid "Import"
 msgstr "استيراد"
@@ -312,7 +312,7 @@ msgid "Zip"
 msgstr "Zip"
 
 msgid "Gzip"
-msgstr ""
+msgstr "Gzip"
 
 msgid "Uncompressed"
 msgstr "غير مضغوط"
@@ -336,6 +336,8 @@ msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
+"تصدير قيم البيانات. هذه هي وظيفة التصدير العادية التي تصدر البيانات إلى "
+"تنسيق تبادل DHIS 2 المسمى DXF 2."
 
 msgid "Loading options..."
 msgstr "تحميل الخيارات..."
@@ -360,7 +362,7 @@ msgstr ""
 "القياسي لـ  DHIS 2."
 
 msgid "Meta Data Export"
-msgstr ""
+msgstr "تصدير البيانات الوصفية"
 
 msgid "Metadata Dependency Export"
 msgstr ""
@@ -379,7 +381,7 @@ msgid "Import / Export"
 msgstr "استيراد / تصدير"
 
 msgid "Import or Export DHIS2 data."
-msgstr ""
+msgstr "استيراد أو تصدير بيانات DHIS2."
 
 msgid "Data Import"
 msgstr "استيراد البيانات"
