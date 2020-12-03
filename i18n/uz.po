@@ -16,34 +16,34 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "Фойдаланувчи тизимга кирмаган"
 
 msgid "Import Error"
-msgstr ""
+msgstr "Импортда хатолик"
 
 msgid "Go Back"
-msgstr ""
+msgstr "Ортга қайтиш"
 
 msgid "Required"
 msgstr "Мажбурий"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "Юклаш учун файлни танланг"
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "Маълумотлар тўпламларини номлари бўйича фильтрлаш"
 
 msgid "Select All"
-msgstr ""
+msgstr "Барчасини танлаш"
 
 msgid "Clear All"
-msgstr ""
+msgstr "Барчасини тозалаш"
 
 msgid "Data sets"
 msgstr "Маълумотлар тўплами"
 
 msgid "more options"
-msgstr ""
+msgstr "кўпроқ вариантлар"
 
 msgid "JSON"
 msgstr "JSON"
@@ -61,7 +61,7 @@ msgid "No"
 msgstr "Йўқ"
 
 msgid "Async"
-msgstr ""
+msgstr "Асинхрон"
 
 msgid "All"
 msgstr "Барчаси"
@@ -73,13 +73,13 @@ msgid "Atomic mode"
 msgstr "Ҳаволаларни баъзи бирлари етишмасада, объектни импорт қилмоқчимисиз"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "Ташкилий бўлим авлодларини ҳам киритинг"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "Танланган ташкилий бўлим"
 
 msgid "Children"
-msgstr ""
+msgstr "Болалар"
 
 msgid "Class key"
 msgstr "Синф калити"
@@ -94,7 +94,7 @@ msgid "Uncompressed"
 msgstr "Сиқилмаган"
 
 msgid "Compression"
-msgstr ""
+msgstr "Сиқиш"
 
 msgid "Uid"
 msgstr "Uid"
@@ -106,31 +106,31 @@ msgid "Name"
 msgstr "Исми"
 
 msgid "Data element id scheme"
-msgstr ""
+msgstr "Маълумотлар элементи ID схемаси"
 
 msgid "Loading data element id scheme options..."
-msgstr ""
+msgstr "Маълумотлар элементи ID схемаси параметрлари юкланмоқда..."
 
 msgid "Data sets filter"
-msgstr ""
+msgstr "Маълумотлар тўплами фильтри"
 
 msgid "Loading organisation unit id scheme options..."
-msgstr ""
+msgstr "Ташкилий бўлимнинг ID схемаси параметрлари юкланмоқда..."
 
 msgid "Something went wrong when loading the data sets!"
 msgstr "Маълумотлар тўпламларини юклашда кўзда тутилмаган хатолик юз берди!"
 
 msgid "Dry run"
-msgstr ""
+msgstr "Синовдан ўтказиш"
 
 msgid "EndDate"
-msgstr ""
+msgstr "Тугаш Санаси"
 
 msgid "End date"
 msgstr "Якунланиш санаси"
 
 msgid "Event id scheme"
-msgstr ""
+msgstr "Ҳодиса/тадбир ID схемаси"
 
 msgid "First row is header"
 msgstr "Биринчи қатор-Сарлавҳа"
@@ -142,7 +142,7 @@ msgid "Object"
 msgstr "Объект"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Тозалаш режими"
 
 msgid "PDF"
 msgstr "PDF"
@@ -172,13 +172,13 @@ msgid "Import report mode"
 msgstr "Ҳисобот режимини импорт қилиш"
 
 msgid "New and updates"
-msgstr ""
+msgstr "Янги ва янгиланишлар"
 
 msgid "New only"
-msgstr ""
+msgstr "Фақат янги"
 
 msgid "Updates only"
-msgstr ""
+msgstr "Фақат янгиланишлар"
 
 msgid "Delete"
 msgstr "Ўчириш"
@@ -190,22 +190,22 @@ msgid "Include deleted"
 msgstr "Қўшимчалар ўчирилди"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "Ташкилий бўлим авлодларини ҳам қўшиб қўйинг"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "Киритиш"
 
 msgid "Non Null"
-msgstr ""
+msgstr "Ноль эмас"
 
 msgid "Always"
-msgstr ""
+msgstr "Доимо"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "Бўш эмас"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Қўшиш стратегияси"
 
 msgid "Merge"
 msgstr "Бирлаштириш"
@@ -214,13 +214,13 @@ msgid "Replace"
 msgstr "Алмаштиринг"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Бирлашиш режими"
 
 msgid "Loading Object options..."
-msgstr ""
+msgstr "Объект параметрлари юкланмоқда..."
 
 msgid "Something went wrong when loading the object!"
-msgstr ""
+msgstr "Объектни юкланишда хатолик юз берди!"
 
 msgid "Programs"
 msgstr "Дастурлар"
@@ -235,100 +235,100 @@ msgid "Data element groups"
 msgstr "Маълумотлар элементи гуруҳлари"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Вариантлар тўплами"
 
 msgid "Object type"
-msgstr ""
+msgstr "Объект тури"
 
 msgid "Organisation unit"
 msgstr "Ташкилий бирлик"
 
 msgid "Org unit id scheme"
-msgstr ""
+msgstr "Ташкилий бўлим ID схемаси"
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "Ҳа (ҳажмли импорт учун тезлаштириш)"
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Кешни тезлаштириш"
 
 msgid "Reference"
 msgstr "Маълумот"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Тезлаштириш режими"
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[Дастурнинг барча босқичлари]"
 
 msgid "Program stages"
-msgstr ""
+msgstr "Дастур босқичлари"
 
 msgid "Loading programStage options..."
-msgstr ""
+msgstr "Дастур босқичлари вариантлари юкланмоқда..."
 
 msgid "Something went wrong when loading the programStages!"
-msgstr ""
+msgstr "Дастур босқичлари ни юклашда хатолик юз берди!"
 
 msgid "Loading program options..."
-msgstr ""
+msgstr "Дастур вариантлари юкланмоқда..."
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "Дастурларни юклашда хатолик юз берди!"
 
 msgid "Error"
 msgstr "Хато"
 
 msgid "Report mode"
-msgstr ""
+msgstr "Ҳисобот режими"
 
 msgid "Select None"
-msgstr ""
+msgstr "Танлов йўқ"
 
 msgid "With sharing"
-msgstr ""
+msgstr "Улашиб"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "Улашмасдан"
 
 msgid "Sharing"
 msgstr "Улашиш"
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Аудитни ўтказиб юбориш"
 
 msgid "Skip check (fast)"
-msgstr ""
+msgstr "Ўтказиб юбориш (тезлаштириш учун)"
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "Текширинг (хавфсиз, тавсия этилган)"
 
 msgid "Skip existing check"
-msgstr ""
+msgstr "Мавжуд текширувни ўтказиб юбориш"
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Улашишни ўтказиб юбориш"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Таҳлилни ўтказиб юбориш"
 
 msgid "StartDate"
-msgstr ""
+msgstr "Бошланиш Санаси"
 
 msgid "Start date"
 msgstr "Бошланиш санаси"
 
 msgid "Strategy"
-msgstr ""
+msgstr "Стратегия"
 
 msgid "Id scheme"
-msgstr ""
+msgstr "ID схема"
 
 msgid "Logger"
-msgstr ""
+msgstr "Рўйхатдан ўтувчи"
 
 msgid "view messages received on using import/export forms."
-msgstr ""
+msgstr "импорт/экспорт шакллари ёрдамида олинган хабарларни кўриш."
 
 msgid "Import"
 msgstr "Импорт"
@@ -340,13 +340,13 @@ msgid "Created"
 msgstr "Яратилди"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Ўчириб ташланган"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Эътиборсиз қолдирилди"
 
 msgid "Updated"
-msgstr ""
+msgstr "Янгиланди"
 
 msgid "Total"
 msgstr "Жами"
@@ -355,85 +355,85 @@ msgid "Type"
 msgstr "Тури"
 
 msgid "Type Count"
-msgstr ""
+msgstr "Саноқ Тури"
 
 msgid "Messages"
 msgstr "Хабарлар"
 
 msgid "Summaries"
-msgstr ""
+msgstr "Хулоса"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Можаролар"
 
 msgid "Import Summary"
-msgstr ""
+msgstr "Импортнинг қисқача тафсилоти"
 
 msgid "Summary"
-msgstr ""
+msgstr "Хулоса"
 
 msgid "Atomic Mode"
-msgstr ""
+msgstr "Атомик режим"
 
 msgid "Category ID scheme"
-msgstr ""
+msgstr "Категория ID схемаси"
 
 msgid "Data element ID scheme"
 msgstr "Маълумотлар элементи идентификатори схемаси"
 
 msgid "Event ID Scheme"
-msgstr ""
+msgstr "Ҳодиса/тадбир ID Схемаси"
 
 msgid "Flush Mode"
-msgstr ""
+msgstr "Тозалаш режими"
 
 msgid "ID scheme"
 msgstr "Идентификатор схемаси"
 
 msgid "Report Mode"
-msgstr ""
+msgstr "Ҳисобот режими"
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "Стратегия импорти"
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "Қўшилиш стратегияси"
 
 msgid "Merge Mode"
-msgstr ""
+msgstr "Бирлаштириш стратегияси"
 
 msgid "Org unit ID scheme"
-msgstr ""
+msgstr "Ташкилий бўлим ID схемаси"
 
 msgid "Preheat Mode"
-msgstr ""
+msgstr "Олдиндан тезлаштириш режими"
 
 msgid "Program Stages"
-msgstr ""
+msgstr "Дастур босқичлари"
 
 msgid "Schemas"
-msgstr ""
+msgstr "Схемалар"
 
 msgid "Data Sets"
 msgstr "Маълумотлар тўплами"
 
 msgid "Existing record check"
-msgstr ""
+msgstr "Мавжуд ёзувларни текшириш"
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "Улашишни ўтказиб юбориш"
 
 msgid "Skip Validation"
-msgstr ""
+msgstr "Валидацияни ўтказиб юбориш"
 
 msgid "New and Updates"
-msgstr ""
+msgstr "Янги ва янгиланишлар"
 
 msgid "AUTO"
-msgstr ""
+msgstr "АВТО"
 
 msgid "Create and Update"
-msgstr ""
+msgstr "Яратиш ва Янгилаш"
 
 msgid "Create"
 msgstr "Яратиш"
@@ -442,54 +442,62 @@ msgid "Update"
 msgstr "Янгилаш"
 
 msgid "Gzip"
-msgstr ""
+msgstr "Gzip"
 
 msgid "Import/Export"
 msgstr "Импорт/Экспорт"
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "Номаълум хатолик юз берди. Илтимос, кейинроқ қайта уриниб кўринг."
 
 msgid "Data Export"
-msgstr ""
+msgstr "Маълумотларни экспорт қилиш"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Маълумотлар қийматларини экспорт қилиш. Бу DXF 2 деб номланган DHIS2 флмашув"
+" форматида маълумотларни экспорт қиладиган мунтазам экспорт функцияси."
 
 msgid "Event Export"
-msgstr ""
+msgstr "Ҳодиса/тадбирлар Экспорти"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"DXF 2 форматидаги дастурлар, босқичлар ва кузатувдаги объектлар учун "
+"ҳодиса/тадбир маълумотларини экспорт қилиш."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "МетаМаълумотлар экспорти"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
 msgstr ""
+"Маълумот элементлари ва ташкилий бўлимлар каби МетаМаълумотларнистандарт "
+"DHIS2 алмашинув форматида экспорт қилиш"
 
 msgid "Metadata Dependency Export"
-msgstr ""
+msgstr "МетаМаълумотларни ўзаро боғлиқликда экспорт қилиш"
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
 msgstr ""
+"Маълумотлар тўпламлари ва дастурлар каби МетаМаълумотларни экспорт қилинг, "
+"шу билан боғлиқ МетаМаълумотлар объектлари."
 
 msgid "Import / Export"
-msgstr ""
+msgstr "Импорт / Экспорт"
 
 msgid "Import or Export DHIS2 data."
-msgstr ""
+msgstr "DHIS2  маълумотларини Импорт ёки Экспорт қилиш."
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "Номаълум хатолик юз берди"
 
 msgid "Data Import"
 msgstr "Маълумотлар импорти"
@@ -498,32 +506,42 @@ msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
 "is the standard exchange format for DHIS 2."
 msgstr ""
+"DXF 2 XML, JSON, CSV ва PDF форматидаги маълумотларнинг қийматларини импорт "
+"қилинг. DXF 2 - DHIS2 учун стандарт алмашинув формати."
 
 msgid "Event Import"
-msgstr ""
+msgstr "Ҳодиса/Тадбирни импорт қилиш"
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"DXF 2 форматидаги дастурлар, босқичлар ва кузатувдаги объектлар учун "
+"тадбирларни импорт қилиш."
 
 msgid "GML Import"
-msgstr ""
+msgstr "GML импорт"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"GML форматидан фойдаланган ҳолда ташкилий бўлимлари учун географик "
+"маълумотларни импорт қилиш. GML - бу географик хусусиятларни ифодалаш учун "
+"XML грамматикаси."
 
 msgid "Couldn't load classKey options"
-msgstr ""
+msgstr "Cbya rfkbnb gfhfvtnhkfhbyb .rkf, ,okvflb"
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "VtnfVf]kevjnkfh bvgjhnb"
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
 msgstr ""
+"DXF 2 деб номланган стандарт DHIS2 алмашув форматидан фойдаланган ҳолда "
+"маълумотлар элементлари ва ташкилий бўлимлар каби МетаМаълумотларни импорт "
+"қилиш."
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "Юкланган файлда маълумотлар йўқ эди."
