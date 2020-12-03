@@ -70,7 +70,7 @@ msgid "Current user"
 msgstr "المستخدم الحالي"
 
 msgid "No user/unassigned"
-msgstr ""
+msgstr "لا يوجد مستخدم / غير معين"
 
 msgid "Selected users"
 msgstr "المستخدمون المختارون"
@@ -124,10 +124,10 @@ msgid "Data element ID scheme"
 msgstr ""
 
 msgid "Which data sets should be included in export?"
-msgstr ""
+msgstr "ما هي مجموعات البيانات التي يجب تضمينها في التصدير؟"
 
 msgid "Filter data sets"
-msgstr ""
+msgstr "تصفية مجموعات البيانات"
 
 msgid "Selected data sets"
 msgstr "حزم البيانات المحددة"
@@ -311,7 +311,7 @@ msgid "Include the first level of units inside selections"
 msgstr "قم بتضمين المستوى الأول من الوحدات داخل التحديدات"
 
 msgid "Directly below"
-msgstr ""
+msgstr "مباشرة أدناه"
 
 msgid "Include all units inside selections"
 msgstr "قم بتضمين جميع الوحدات داخل التحديدات"
@@ -378,9 +378,11 @@ msgstr "تاريخ بدء آخر تحديث"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
+"الكتابة فوق الخاصية القديمة فقط إذا كانت قيمة الخاصية الجديدة ليست خالية "
+"null"
 
 msgid "Overwrite regardless of whether the new property value is null"
-msgstr ""
+msgstr "الكتابة فوق بغض النظر عما إذا كانت قيمة الخاصية الجديدة خالية null"
 
 msgid "Replace"
 msgstr "استبدال"
@@ -422,13 +424,13 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Data view organisation units associated with the current user"
-msgstr ""
+msgstr "وحدات تنظيم عرض البيانات المرتبطة بالمستخدم الحالي"
 
 msgid "Accessible"
 msgstr "يمكن الوصول إليه"
 
 msgid "Data capture organisation units associated with the current user"
-msgstr ""
+msgstr "وحدات تنظيم جمع البيانات المرتبطة بالمستخدم الحالي"
 
 msgid "Capture"
 msgstr "التقاط"
@@ -487,7 +489,7 @@ msgid "One program must be selected"
 msgstr "يجب تحديد برنامج واحد"
 
 msgid "Which program stage should be included?"
-msgstr ""
+msgstr "ما هي مرحلة البرنامج التي يجب تضمينها؟"
 
 msgid "Start date"
 msgstr "تاريخ البداية"
@@ -511,7 +513,7 @@ msgid "Skip audit"
 msgstr "تجاهل التدقيق"
 
 msgid "Skip audit, meaning audit values will not be generated"
-msgstr ""
+msgstr "تخطي التدقيق ، مما يعني أنه لن يتم إنشاء قيم التدقيق"
 
 msgid "Improves performance at the cost of ability to audit changes"
 msgstr "يحسن الأداء على حساب القدرة على مراجعة التغييرات"
@@ -520,12 +522,14 @@ msgid "Skip exisiting check"
 msgstr ""
 
 msgid "Skip checks for existing data values"
-msgstr ""
+msgstr "تخطي عمليات التحقق من قيم البيانات الموجودة مسبقًا"
 
 msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
 msgstr ""
+"يعمل على تحسين الأداء ويجب استخدامه فقط لقواعد البيانات الفارغة أو عندما "
+"تكون قيم البيانات المراد استيرادها غير موجودة مسبقًا"
 
 msgid "Skip sharing"
 msgstr "تجنب حالة المشاركة"
@@ -763,9 +767,11 @@ msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
 msgstr ""
+"تصدير البيانات الوصفية ، مثل عناصر البيانات والوحدات التنظيمية ، بتنسيق DXF "
+"2."
 
 msgid "Date range to export data for"
-msgstr ""
+msgstr "النطاق الزمني لتصدير البيانات فيه"
 
 msgid "Export data"
 msgstr "تصدير بيانات"
@@ -868,10 +874,10 @@ msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "يجب تحديد حقل تاريخ واحد على الأقل من حقول \"آخر تحديث\""
 
 msgid "Tracked entity instances import"
-msgstr ""
+msgstr "استيراد نسخ الكيان المتعقبة"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr ""
+msgstr "استيراد نسخ الكيانات المتعقبة من ملفات JSON أو XML."
 
 msgid "Supported file types: JSON and XML."
 msgstr "أنواع الملفات المدعومة: JSON و XML."
