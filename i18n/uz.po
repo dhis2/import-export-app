@@ -148,7 +148,7 @@ msgid "Updates only"
 msgstr "Фақат янгиланишлар"
 
 msgid "Delete"
-msgstr "Ўчириш"
+msgstr "Ўчириб ташлаш"
 
 msgid "Import strategy"
 msgstr "Импорт стратегияси"
