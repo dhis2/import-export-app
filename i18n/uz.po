@@ -244,7 +244,7 @@ msgid "Updates only"
 msgstr "Фақат янгиланишлар"
 
 msgid "Delete"
-msgstr "Ўчириш"
+msgstr "Ўчириб ташлаш"
 
 msgid "Skip check (fast)"
 msgstr "Ўтказиб юбориш (тезлаштириш учун)"
