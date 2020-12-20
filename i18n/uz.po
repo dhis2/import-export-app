@@ -280,17 +280,17 @@ msgid "Remove values included in uploaded file"
 msgstr "Юкланган файлдан қўшимча киритилган қийматларни олиб ташлаш"
 
 msgid "Delete"
-msgstr "Ўчириш"
+msgstr "Ўчириб ташлаш"
 
 msgid "Data will be deleted"
-msgstr "Маълумотлар ўчирилади"
+msgstr "Маълумотлар ўчириб ташланади"
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
 msgstr ""
-"Юкланган файлдаги қийматлар маълумотлар базасидан ўчирилади. Бу тўғри "
-"ҳаракат эканлигига ишонч ҳосил қилинг; амалга ошгач маълумотни қайтариб "
+"Юкланган файлдаги қийматлар маълумотлар базасидан ўчириб ташланади. Бу тўғри"
+" ҳаракат эканлигига ишонч ҳосил қилинг; амалга ошгач маълумотни қайтариб "
 "бўлмайди"
 
 msgid "Import strategy"
@@ -512,7 +512,7 @@ msgid "Active"
 msgstr "Фаол"
 
 msgid "Completed"
-msgstr "бажарилди"
+msgstr "Тўлдирилди"
 
 msgid "Cancelled"
 msgstr "Бекор қилинди"
