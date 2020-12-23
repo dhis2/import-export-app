@@ -684,7 +684,7 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "Chọn tất cả"
 
 msgid "Select None"
 msgstr ""
