@@ -1,25 +1,19 @@
 # 
 # Translators:
-# Marta Vila <marta@dhis2.org>, 2020
-# Pablo Pajuelo Cabezas <ppajuelo@quadram.mobi>, 2020
-# ericbp <ericbarredap@gmail.com>, 2020
-# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2020-12-22 22:18+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
-"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ar_IQ\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -70,7 +64,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Usuario actual"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -91,7 +85,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "Importar"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
@@ -118,10 +112,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Código"
+msgstr ""
 
 msgid "Name"
-msgstr "Nombre"
+msgstr "الاسم"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -133,7 +127,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Conjuntos de datos seleccionados"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -145,7 +139,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "Fecha final"
+msgstr ""
 
 msgid "Event ID scheme"
 msgstr ""
@@ -178,7 +172,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "Todos"
+msgstr "الجميع"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -190,13 +184,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "ADX"
 msgstr ""
@@ -223,7 +217,7 @@ msgid "Auto"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identificador"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
@@ -232,7 +226,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "Errores"
+msgstr "اخطاء"
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -256,25 +250,25 @@ msgid "Import new values and update existing"
 msgstr ""
 
 msgid "Merge"
-msgstr "Mezclar"
+msgstr ""
 
 msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Añadido"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "Actualizar"
+msgstr "تحديث"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "حذف"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -306,7 +300,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Seleccionado"
+msgstr "محدد"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -366,7 +360,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Fechas de inicio y fin"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -384,7 +378,7 @@ msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Replace"
-msgstr "Reemplazar"
+msgstr ""
 
 msgid "Merge mode"
 msgstr ""
@@ -393,25 +387,25 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Sets de datos"
+msgstr "حزم البيانات"
 
 msgid "Programs"
-msgstr "Programas"
+msgstr ""
 
 msgid "Category combination"
-msgstr "Combinacion de categoria"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Tablero"
+msgstr "لوحة المعلومات"
 
 msgid "Data element groups"
-msgstr "Grupos de elementos de datos"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "Tipo de objeto"
+msgstr ""
 
 msgid "One object must be selected"
 msgstr ""
@@ -432,7 +426,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Capturar"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -459,7 +453,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "Ninguno"
+msgstr "لا شيء"
 
 msgid "Preheat mode"
 msgstr ""
@@ -474,7 +468,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Programas seleccionados"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -489,19 +483,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "Fecha inicial"
+msgstr ""
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Activo"
+msgstr "فعال"
 
 msgid "Completed"
-msgstr "Completado"
+msgstr "مكتمل"
 
 msgid "Cancelled"
-msgstr "Cancelar"
+msgstr "تم الإلغاء"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -547,10 +541,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr "البرنامج"
 
 msgid "Tracked entity type"
-msgstr "Tipo de entidad registrada"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
@@ -595,7 +589,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "En proceso"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -604,13 +598,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Valor"
+msgstr "القيمة"
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Error"
+msgstr "خطأ"
 
 msgid "Conflicts"
 msgstr ""
@@ -622,19 +616,19 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "الوقت"
 
 msgid "Message"
-msgstr "Mensaje"
+msgstr ""
 
 msgid "ID"
-msgstr "Identificador"
+msgstr ""
 
 msgid "Messages"
-msgstr "Mensajes"
+msgstr "الرسائل"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 msgid "Property"
 msgstr ""
@@ -643,16 +637,16 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Estado"
+msgstr "الحالة"
 
 msgid "Description"
-msgstr "Descripción"
+msgstr "الوصف"
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "Creado"
+msgstr "تم الإنشاء"
 
 msgid "Deleted"
 msgstr ""
@@ -664,7 +658,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "Total"
+msgstr ""
 
 msgid "Details by type"
 msgstr ""
@@ -673,7 +667,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Debe seleccionar al menos una unidad organizativa."
+msgstr ""
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -697,7 +691,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "Exportar"
+msgstr ""
 
 msgid "Data import"
 msgstr ""
@@ -733,13 +727,13 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "General"
+msgstr ""
 
 msgid "Yes"
-msgstr "Sí"
+msgstr "نعم"
 
 msgid "No"
-msgstr "No"
+msgstr "لا"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -765,7 +759,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Exportar datos"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -803,13 +797,13 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Exportar Meta-Datos"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Importar datos"
+msgstr ""
 
 msgid "Import events"
 msgstr ""
@@ -818,7 +812,7 @@ msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Importar Meta-Datos"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -878,16 +872,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Datos"
+msgstr "البيانات"
 
 msgid "Event"
-msgstr "Evento"
+msgstr "الحدث"
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Metadatos"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""

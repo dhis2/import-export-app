@@ -1,10 +1,6 @@
 # 
 # Translators:
-# Marta Vila <marta@dhis2.org>, 2020
-# Pablo Pajuelo Cabezas <ppajuelo@quadram.mobi>, 2020
-# ericbp <ericbarredap@gmail.com>, 2020
-# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# Aung Kyi Min <AungKyi.Min@savethechildren.org>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 
@@ -14,12 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2020-12-22 22:18+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
-"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: my\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -70,7 +66,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Usuario actual"
+msgstr "လက်ရှိအသုံးပြုနေသူ"
 
 msgid "No user/unassigned"
 msgstr ""
@@ -91,7 +87,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "Importar"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
@@ -118,10 +114,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Código"
+msgstr "ကုဒ်"
 
 msgid "Name"
-msgstr "Nombre"
+msgstr "အမည်"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -133,7 +129,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Conjuntos de datos seleccionados"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -145,7 +141,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "Fecha final"
+msgstr "End date"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -178,7 +174,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "Todos"
+msgstr "အားလုံး"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -190,13 +186,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "ADX"
 msgstr ""
@@ -223,7 +219,7 @@ msgid "Auto"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identificador"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
@@ -232,7 +228,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "Errores"
+msgstr ""
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -256,25 +252,25 @@ msgid "Import new values and update existing"
 msgstr ""
 
 msgid "Merge"
-msgstr "Mezclar"
+msgstr "ပေါင်းစည်းပါ"
 
 msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Añadido"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "Actualizar"
+msgstr "‌နောက်ဆုံးသတင်းကိုရစေခြင်း"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "ဖျက်ဆီးသည်"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -306,7 +302,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Seleccionado"
+msgstr "‌ရွေးချယ်ထားပြီး"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -366,7 +362,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Fechas de inicio y fin"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -384,7 +380,7 @@ msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Replace"
-msgstr "Reemplazar"
+msgstr ""
 
 msgid "Merge mode"
 msgstr ""
@@ -393,25 +389,25 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Sets de datos"
+msgstr "စီမံချက်"
 
 msgid "Programs"
-msgstr "Programas"
+msgstr "Programs"
 
 msgid "Category combination"
-msgstr "Combinacion de categoria"
+msgstr "category များ ပေါင်းစည်းခြင်း"
 
 msgid "Dashboard"
-msgstr "Tablero"
+msgstr "အချက်အလက်များလေ့လာဆန်းစစ်ခြင်း"
 
 msgid "Data element groups"
-msgstr "Grupos de elementos de datos"
+msgstr "စာတိုင်အုပ်စု"
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "Tipo de objeto"
+msgstr ""
 
 msgid "One object must be selected"
 msgstr ""
@@ -432,7 +428,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Capturar"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -459,7 +455,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "Ninguno"
+msgstr "တစ်ခုမှမဟုတ်"
 
 msgid "Preheat mode"
 msgstr ""
@@ -474,7 +470,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Programas seleccionados"
+msgstr "Selected Program"
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -489,19 +485,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "Fecha inicial"
+msgstr "Start date"
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Activo"
+msgstr "လုပ်ဆောင်နိုင်သည်"
 
 msgid "Completed"
-msgstr "Completado"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Cancelar"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -547,10 +543,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Tipo de entidad registrada"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
@@ -595,7 +591,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "En proceso"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -604,13 +600,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Valor"
+msgstr "တန်ဖိုး"
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Error"
+msgstr "အမှား"
 
 msgid "Conflicts"
 msgstr ""
@@ -625,16 +621,16 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "Mensaje"
+msgstr "သတင်း"
 
 msgid "ID"
-msgstr "Identificador"
+msgstr "အိုင်ဒီ"
 
 msgid "Messages"
-msgstr "Mensajes"
+msgstr "သတင်းများ"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr "ပုံစံ"
 
 msgid "Property"
 msgstr ""
@@ -643,16 +639,16 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Estado"
+msgstr "အခြေအနေ"
 
 msgid "Description"
-msgstr "Descripción"
+msgstr "ဖော်ပြချက်"
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "Creado"
+msgstr ""
 
 msgid "Deleted"
 msgstr ""
@@ -664,7 +660,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "Total"
+msgstr ""
 
 msgid "Details by type"
 msgstr ""
@@ -673,7 +669,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Debe seleccionar al menos una unidad organizativa."
+msgstr ""
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -697,7 +693,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "Exportar"
+msgstr ""
 
 msgid "Data import"
 msgstr ""
@@ -733,10 +729,10 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "General"
+msgstr "အကျဥ်း"
 
 msgid "Yes"
-msgstr "Sí"
+msgstr "မှန်"
 
 msgid "No"
 msgstr "No"
@@ -765,7 +761,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Exportar datos"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -803,13 +799,13 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Exportar Meta-Datos"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Importar datos"
+msgstr ""
 
 msgid "Import events"
 msgstr ""
@@ -818,7 +814,7 @@ msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Importar Meta-Datos"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -878,16 +874,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Datos"
+msgstr "အချက်အလက်"
 
 msgid "Event"
-msgstr "Evento"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Metadatos"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""
