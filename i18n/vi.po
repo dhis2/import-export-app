@@ -36,7 +36,7 @@ msgid "filter data sets by name"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "Chọn tất cả"
 
 msgid "Clear All"
 msgstr ""
