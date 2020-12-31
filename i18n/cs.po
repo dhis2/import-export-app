@@ -55,7 +55,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr "Vyberte Žádný"
+msgstr "Zrušit výběr"
 
 msgid "Yes"
 msgstr "Ano"
