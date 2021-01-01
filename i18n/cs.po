@@ -283,7 +283,7 @@ msgid "Report mode"
 msgstr "Režim hlášení zpráv"
 
 msgid "Select None"
-msgstr "Vyberte Žádný"
+msgstr "Zrušit výběr"
 
 msgid "With sharing"
 msgstr "Se sdílením"
