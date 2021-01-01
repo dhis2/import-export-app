@@ -696,7 +696,7 @@ msgid "Select All"
 msgstr "Vybrat vše"
 
 msgid "Select None"
-msgstr "Vyberte Žádný"
+msgstr "Zrušit výběr"
 
 msgid "At least one schema must be selected"
 msgstr "Musí být vybráno alespoň jedno schéma"
