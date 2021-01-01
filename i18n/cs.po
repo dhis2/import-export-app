@@ -52,7 +52,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr "Vyberte Žádný"
+msgstr "Zrušit výběr"
 
 msgid "Logger"
 msgstr "Logger"
