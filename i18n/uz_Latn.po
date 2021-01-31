@@ -1,0 +1,530 @@
+# 
+# Translators:
+# Yury Rogachev <yury@dhis2.org>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-28T06:03:53.764Z\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Latn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "user is not logged in"
+msgstr ""
+
+msgid "Import Error"
+msgstr ""
+
+msgid "Go Back"
+msgstr ""
+
+msgid "Required"
+msgstr "Majburiy"
+
+msgid "Choose a file to upload"
+msgstr ""
+
+msgid "filter data sets by name"
+msgstr ""
+
+msgid "Select All"
+msgstr "Barchasini tanlash"
+
+msgid "Clear All"
+msgstr ""
+
+msgid "Data sets"
+msgstr "Maʼlumotlar toʼplami"
+
+msgid "more options"
+msgstr ""
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "XML"
+msgstr "XML"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Yes"
+msgstr "Ҳа"
+
+msgid "No"
+msgstr "Йўқ"
+
+msgid "Async"
+msgstr "Аsinxron"
+
+msgid "All"
+msgstr "Barchasi"
+
+msgid "None"
+msgstr "Йўқ"
+
+msgid "Atomic mode"
+msgstr "Аtomar rejim"
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Class key"
+msgstr "Sinf kaliti"
+
+msgid "Zip"
+msgstr "Pochta indeksi"
+
+msgid "GZip"
+msgstr "G-pochta indeksi"
+
+msgid "Uncompressed"
+msgstr "Siqilmagan arxiv"
+
+msgid "Compression"
+msgstr ""
+
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Kod"
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+"Maʼlumotlar toʼplamlarini yuklashda koʼzda tutilmagan xatolik yuz berdi!"
+
+msgid "Dry run"
+msgstr "Sinovdan oʼtkazish"
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr "Yakunlanish sanasi"
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr "Birinchi qator-Sarlavha"
+
+msgid "Auto"
+msgstr "Аvto"
+
+msgid "Object"
+msgstr "Obʼekt"
+
+msgid "Flush mode"
+msgstr "Tozalash rejimi"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "ADX"
+msgstr "ADX"
+
+msgid "Format"
+msgstr "Formatlash"
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr "Identifikator"
+
+msgid "Errors"
+msgstr "Xatoliklar"
+
+msgid "Full"
+msgstr "Toʼliq"
+
+msgid "Debug"
+msgstr "Nosozliklarni tuzatish"
+
+msgid "Import report mode"
+msgstr "Hisobot rejimini import qilish"
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "Oʼchirib tashlash"
+
+msgid "Import strategy"
+msgstr "Import strategiyasi"
+
+msgid "Include deleted"
+msgstr "Qoʼshimchalar oʼchirildi"
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr "Doimo"
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr "Qoʼshish strategiyasi"
+
+msgid "Merge"
+msgstr "Birlashtirish"
+
+msgid "Replace"
+msgstr "Аlmashtiring"
+
+msgid "Merge mode"
+msgstr "Birlashish rejimi"
+
+msgid "Loading Object options..."
+msgstr ""
+
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr "Dasturlar"
+
+msgid "Category combination"
+msgstr "Kategoriyalar kombinatsiyasi"
+
+msgid "Dashboard"
+msgstr "Boshqaruv paneli"
+
+msgid "Data element groups"
+msgstr "Maʼlumotlar elementi guruhlari"
+
+msgid "Option sets"
+msgstr "Variantlar toʼplami"
+
+msgid "Object type"
+msgstr "Obʼekt turi"
+
+msgid "Organisation unit"
+msgstr "Ташкилий бирлик"
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr "Keshni tezlashtirish"
+
+msgid "Reference"
+msgstr "Maʼlumot"
+
+msgid "Preheat mode"
+msgstr "Tezlashtirish rejimi"
+
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "Program stages"
+msgstr ""
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr "Dasturlarni yuklashda xatolik yuz berdi!"
+
+msgid "Error"
+msgstr "Xatolik"
+
+msgid "Report mode"
+msgstr ""
+
+msgid "Select None"
+msgstr "Tanlov yoʼq"
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
+msgid "Sharing"
+msgstr "Ulashish"
+
+msgid "Skip audit"
+msgstr "Аuditni oʼtkazib yuborish"
+
+msgid "Skip check (fast)"
+msgstr ""
+
+msgid "Check (safe, recommended)"
+msgstr ""
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr "Ulashishni oʼtkazib yuborish"
+
+msgid "Skip validation"
+msgstr "Tahlilni oʼtkazib yuborish"
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr "Boshlanish sanasi"
+
+msgid "Strategy"
+msgstr "Strategiya"
+
+msgid "Id scheme"
+msgstr ""
+
+msgid "Logger"
+msgstr ""
+
+msgid "view messages received on using import/export forms."
+msgstr ""
+
+msgid "Import"
+msgstr "Import"
+
+msgid "Export"
+msgstr "Eksport"
+
+msgid "Created"
+msgstr "Yaratilgan"
+
+msgid "Deleted"
+msgstr "Oʼchirib tashlangan"
+
+msgid "Ignored"
+msgstr "Eʼtiborsiz qoldirildi"
+
+msgid "Updated"
+msgstr "Yangilandi"
+
+msgid "Total"
+msgstr "Jami"
+
+msgid "Type"
+msgstr "Turi"
+
+msgid "Type Count"
+msgstr ""
+
+msgid "Messages"
+msgstr "Xabarlar"
+
+msgid "Summaries"
+msgstr ""
+
+msgid "Conflicts"
+msgstr "Mojarolar"
+
+msgid "Import Summary"
+msgstr ""
+
+msgid "Summary"
+msgstr "Xulosa"
+
+msgid "Atomic Mode"
+msgstr ""
+
+msgid "Category ID scheme"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr "Maʼlumotlar elementi identifikatori sxemasi"
+
+msgid "Event ID Scheme"
+msgstr ""
+
+msgid "Flush Mode"
+msgstr ""
+
+msgid "ID scheme"
+msgstr "Identifikator sxemasi"
+
+msgid "Report Mode"
+msgstr ""
+
+msgid "Import Strategy"
+msgstr ""
+
+msgid "Inclusion Strategy"
+msgstr ""
+
+msgid "Merge Mode"
+msgstr ""
+
+msgid "Org unit ID scheme"
+msgstr ""
+
+msgid "Preheat Mode"
+msgstr ""
+
+msgid "Program Stages"
+msgstr ""
+
+msgid "Schemas"
+msgstr ""
+
+msgid "Data Sets"
+msgstr ""
+
+msgid "Existing record check"
+msgstr ""
+
+msgid "Skip Sharing"
+msgstr ""
+
+msgid "Skip Validation"
+msgstr ""
+
+msgid "New and Updates"
+msgstr ""
+
+msgid "AUTO"
+msgstr ""
+
+msgid "Create and Update"
+msgstr ""
+
+msgid "Create"
+msgstr "Яратиш"
+
+msgid "Update"
+msgstr "Янгилаш"
+
+msgid "Gzip"
+msgstr ""
+
+msgid "Import/Export"
+msgstr "Import/Eksport"
+
+msgid "An unknown error occurred. Please try again later"
+msgstr "Nomaʼlum xatolik yuz berdi. Iltimos, keyinroq qayta urinib koʼring."
+
+msgid "Data Export"
+msgstr ""
+
+msgid ""
+"Export data values. This is the regular export function which exports data "
+"to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "Event Export"
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid "Metadata Export"
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+
+msgid "Metadata Dependency Export"
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects."
+msgstr ""
+
+msgid "Import / Export"
+msgstr ""
+
+msgid "Import or Export DHIS2 data."
+msgstr ""
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "Data Import"
+msgstr "Maʼlumotlar importi"
+
+msgid ""
+"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
+"is the standard exchange format for DHIS 2."
+msgstr ""
+
+msgid "Event Import"
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr ""
+
+msgid "GML Import"
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "Couldn't load classKey options"
+msgstr ""
+
+msgid "Metadata Import"
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the standard"
+" DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "It seems like there was no data in the uploaded file."
+msgstr ""
