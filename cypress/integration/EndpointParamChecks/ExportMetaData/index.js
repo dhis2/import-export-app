@@ -1,8 +1,8 @@
 import '../common/settingFormValues'
 import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const schemasApi = /api\/\d{2}\/schemas\?fields=metadata,collectionName,displayName,klass/
-const dataApi = /api\/metadata\.(json|xml|csv)(\.(zip|gzip))?/
+const schemasApi = /\/schemas\?fields=metadata,collectionName,displayName,klass/
+const dataApi = /\/metadata\.(json|xml|csv)(\.(zip|gzip))?/
 
 Before(() => {
     cy.server()
@@ -14,7 +14,7 @@ Before(() => {
 })
 
 Given('the user is on the meta data export page', () => {
-    cy.visitPage('export', 'metadata')
+    cy.visitPage('export', 'Metadata')
 })
 
 Given('all schemas have been selected', () => {

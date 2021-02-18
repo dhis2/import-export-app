@@ -1,6 +1,6 @@
 const selectAllDataSets = () => {
     cy.get(
-        '[data-test="input-data-set-picker-list-actions-select-all"]'
+        '[data-test="input-data-set-picker-list-actions-addall"]'
     ).click()
     return cy
 }

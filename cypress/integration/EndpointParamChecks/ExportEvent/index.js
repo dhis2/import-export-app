@@ -1,10 +1,10 @@
 import '../common/settingFormValues'
 import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const orgUnitsFirstLevelApi = /api\/\d{2}\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
-const orgUnitsRootApi = /api\/\d{2}\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
-const programsApi = /api\/\d{2}\/programs\?/
-const programStagesApi = /api\/\d{2}\/programs\/[a-zA-Z0-9]+/
+const orgUnitsFirstLevelApi = /\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
+const orgUnitsRootApi = /\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
+const programsApi = /\/programs\?/
+const programStagesApi = /\/programs\/[a-zA-Z0-9]+/
 
 Before(() => {
     cy.server()
@@ -31,28 +31,29 @@ Before(() => {
 })
 
 Given('the user is on the event export page', () => {
-    cy.visitPage('export', 'event')
+    cy.visitPage('export', 'Event')
     cy.wait('@programsXHR')
     cy.wait('@programStagesXHR')
 })
 
 const sierraId = 'ImspTQPwCqd'
 Given('the Sierra Leone org unit has been selected', () => {
-    cy.get(`[data-test="input-org-unit-tree-tree-/${sierraId}"] label`).click()
+    cy.get(`[data-test="input-org-unit-tree"] [data-test="input-org-unit-tree-node-label"]:contains("Sierra Leone")`).click()
     cy.get('@defaultData').then(defaultData => {
         cy.wrap({ ...defaultData, orgUnit: sierraId }).as('defaultData')
     })
 })
 
 Given('the user expands the root level of the org unit tree', () => {
-    cy.get(`[data-test="input-org-unit-tree-tree-/${sierraId}-toggle"]`).click()
+    cy.get('[data-test="input-org-unit-tree-node-toggle"]').first().click()
 })
 
 const boId = 'O6uvpzGd5pu'
 When('the user selects the "Bo" org unit', () => {
-    cy.get(
-        `[data-test="input-org-unit-tree-tree-/${sierraId}/${boId}"] label`
-    ).click()
+    cy
+        .get(`[data-test="input-org-unit-tree"] [data-test="input-org-unit-tree-node-label"]:contains("Bo")`)
+        .filter((index, el) => Cypress.$(el).text().match(/Bo$/))
+        .click()
 
     cy.get('@defaultData').then(defaultData => {
         const orgUnit = `${boId}`
@@ -105,6 +106,8 @@ Then('the download request is sent with the right parameters', () => {
                         delete updatedExpected.programStage
                     }
 
+                    console.log('actual', actual)
+                    console.log('updatedExpected', updatedExpected)
                     expect(actual).to.deep.equal(updatedExpected)
                 }
             )

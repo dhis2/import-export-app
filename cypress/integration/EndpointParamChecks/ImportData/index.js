@@ -26,7 +26,7 @@ Before(() => {
 })
 
 Given('the user is on the data import page', () => {
-    cy.visitPage('import', 'data')
+    cy.visitPage('import', 'Data')
 })
 
 Then('the upload request is sent with the right parameters', () => {

@@ -5,18 +5,18 @@ Feature: The user should be able to export events
         Given the user is on the event export page
         And the more options are visible
         And the following options are set
-            | name                | value       |
-            | program             | lxAQ7Zs9VYR |
-            | programStages       |             |
-            | idScheme            | UID         |
-            | dataElementIdScheme | UID         |
-            | orgUnitIdScheme     | UID         |
-            | startDate           | 2020-01-03  |
-            | endDate             | 2020-01-05  |
-            | format              | json        |
-            | compression         | zip         |
-            | includeDeleted      | false       |
-            | inclusion           | SELECTED    |
+            | name                | value       | label                                     |
+            | program             | lxAQ7Zs9VYR | Antenatal care visit                      |
+            | programStages       | dBwrot7S420 | Antenatal care visit - Program rules demo |
+            | idScheme            | UID         | Uid                                       |
+            | dataElementIdScheme | UID         | Uid                                       |
+            | orgUnitIdScheme     | UID         | Uid                                       |
+            | startDate           | 2020-01-03  |                                           |
+            | endDate             | 2020-01-05  |                                           |
+            | format              | json        |                                           |
+            | compression         | zip         |                                           |
+            | includeDeleted      | false       |                                           |
+            | inclusion           | SELECTED    |                                           |
         And the Sierra Leone org unit has been selected
 
     Scenario: The user submits the form with the default values
@@ -30,27 +30,28 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different program
-        Given the "program" input is set to "IpHINAT79UW"
+        Given the "program" input is set to "Child Programme"
+        And the "programStages" input is set to "Antenatal care visit - Program rules demo"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different program stage
-        Given the "programStages" input is set to "dBwrot7S420"
+        Given the "programStages" input is set to "Antenatal care visit - Program rules demo"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
-        Given the "idScheme" input is set to "CODE"
+        Given the "idScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different data element id scheme
-        Given the "dataElementIdScheme" input is set to "CODE"
+        Given the "dataElementIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different org unit id scheme
-        Given the "orgUnitIdScheme" input is set to "CODE"
+        Given the "orgUnitIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

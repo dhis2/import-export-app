@@ -26,7 +26,7 @@ Before(() => {
 })
 
 Given('the user is on the meta data import page', () => {
-    cy.visitPage('import', 'metadata')
+    cy.visitPage('import', 'Metadata')
 })
 
 Then('the upload request is sent with the right parameters', () => {

@@ -1,7 +1,6 @@
 import { Before, Given, When } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.login()
     cy.stubHeaderBar()
 })
 
@@ -22,5 +21,25 @@ When('the import form is submitted as a dry run', () => {
 })
 
 When('the export form is submitted', () => {
+    const winOpenResponse = {
+        document: {
+            title: '',
+            body: {
+                innerHTML: '',
+            }
+        },
+        onbeforeunload: cy.stub(),
+        onabort: undefined,
+        onerror: undefined,
+    }
+
+    cy.wrap(winOpenResponse).as('winOpenResponse')
+    cy.window().then(win => {
+        cy.stub(win, 'open', () => winOpenResponse).as('winOpenStub')
+    })
+
     cy.get('[data-test="input-export-submit"]').click()
+    cy.get('@winOpenResponse').then(response => {
+        response.onbeforeunload()
+    })
 })

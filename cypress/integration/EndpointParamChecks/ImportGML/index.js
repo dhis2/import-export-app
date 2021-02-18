@@ -14,7 +14,7 @@ Before(() => {
 })
 
 Given('the user is on the gml page', () => {
-    cy.visitPage('import', 'gml')
+    cy.visitPage('import', 'GML')
 })
 
 Then('the upload request is sent with the right parameters', () => {

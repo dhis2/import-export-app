@@ -26,7 +26,7 @@ Before(() => {
 })
 
 Given('the user is on the event page', () => {
-    cy.visitPage('import', 'event')
+    cy.visitPage('import', 'Event')
 })
 
 Then('the upload request is sent with the right parameters', () => {

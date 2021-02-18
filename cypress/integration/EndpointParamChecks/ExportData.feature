@@ -5,16 +5,16 @@ Feature: The user should be able to export data
         Given the user is on the data export page
         And the more options are visible
         And the following options are set
-            | name                | value      |
-            | children            | true       |
-            | startDate           | 2020-01-03 |
-            | endDate             | 2020-01-05 |
-            | format              | json       |
-            | compression         | zip        |
-            | includeDeleted      | false      |
-            | dataElementIdScheme | UID        |
-            | orgUnitIdScheme     | UID        |
-            | idScheme            | UID        |
+            | name                | value      | label |
+            | children            | true       |       |
+            | startDate           | 2020-01-03 |       |
+            | endDate             | 2020-01-05 |       |
+            | format              | json       |       |
+            | compression         | zip        |       |
+            | includeDeleted      | false      |       |
+            | dataElementIdScheme | UID        | Uid   |
+            | orgUnitIdScheme     | UID        | Uid   |
+            | idScheme            | UID        | Uid   |
         And the Sierra Leone org unit has been selected
         And the first data set has been selected
 
@@ -23,14 +23,14 @@ Feature: The user should be able to export data
         Then the download request is sent with the right parameters
 
     Scenario: The user selects multiple org units
-        Given the user expands the root level of the org unit tree
-        When the user selects the "Bo" org unit
+        When the user expands the root level of the org unit tree
+        And the user selects the "Bo" org unit
         And the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects all data sets
         Given all data sets have been selected
-        And the export form is submitted
+        When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects "Selected organisation unit" as children
@@ -64,16 +64,16 @@ Feature: The user should be able to export data
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different data element id scheme
-        Given the "dataElementIdScheme" input is set to "CODE"
+        Given the "dataElementIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different org unit id scheme
-        Given the "orgUnitIdScheme" input is set to "CODE"
+        Given the "orgUnitIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
-        Given the "idScheme" input is set to "CODE"
+        Given the "idScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
