@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/dhis2/import-export-app/compare/v1.0.11...v1.0.12) (2021-02-19)
+
+
+### Bug Fixes
+
+* **import metadata:** remove preheat mode ([5cfe8bf](https://github.com/dhis2/import-export-app/commit/5cfe8bf3a14149ea63e272f5ccfcee3ad7939701))
+
 ## [1.0.11](https://github.com/dhis2/import-export-app/compare/v1.0.10...v1.0.11) (2021-02-15)
 
 
