@@ -5,19 +5,19 @@ Feature: The user should be able to export tracked entity instances
         Given the user is on the tracked entity instances export page
         And the more options are visible
         And the following options are set
-            | name                 | value      |
-            | ouMode               | SELECTED   |
-            | teiTypeFilter        | NONE       |
-            | format               | json       |
-            | compression          | zip        |
-            | lastUpdatedFilter    | NONE       |
-            | assignedUserMode     | ANY        |
-            | includeDeleted       | false      |
-            | includeAllAttributes | false      |
-            | dataElementIdScheme  | UID        |
-            | eventIdScheme        | UID        |
-            | orgUnitIdScheme      | UID        |
-            | idScheme             | UID        |
+            | name                   | value      | label |
+            | ouMode                 | :MANUAL:   |       |
+            | teiTypeFilter          | NONE       |       |
+            | format                 | json       |       |
+            | lastUpdatedFilter      | NONE       |       |
+            | assignedUserModeFilter | true       |       |
+            | assignedUserMode       | ANY        |       |
+            | includeDeleted         | false      |       |
+            | includeAllAttributes   | false      |       |
+            | dataElementIdScheme    | UID        | Uid   |
+            | eventIdScheme          | UID        | Uid   |
+            | orgUnitIdScheme        | UID        | Uid   |
+            | idScheme               | UID        | Uid   |
         And the Sierra Leone org unit has been selected
 
     Scenario: The user submits the form with the default values
@@ -26,23 +26,18 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user selects multiple org units
         When the user expands the root level of the org unit tree
-        When the user selects the "Bo" org unit
+        And the user selects the "Bo" org unit
         And the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects "Include children of selected organisation units"
               as organisation unit selection mode
-        Given the "ouMode" input is set to "CHILDREN"
+        Given the "ouMode" input is set to "CAPTURE"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different format
         Given the "format" input is set to "xml"
-        When the export form is submitted
-        Then the download request is sent with the right parameters
-
-    Scenario: The user selects a no compression
-        Given the "compression" input is set to ""
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -57,38 +52,37 @@ Feature: The user should be able to export tracked entity instances
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different data element id scheme
-        Given the "dataElementIdScheme" input is set to "CODE"
+        Given the "dataElementIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different event id scheme
-        Given the "eventIdScheme" input is set to "CODE"
+        Given the "eventIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different org unit id scheme
-        Given the "orgUnitIdScheme" input is set to "CODE"
+        Given the "orgUnitIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
-        Given the "idScheme" input is set to "CODE"
+        Given the "idScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user filters by a program
         Given the "teiTypeFilter" input is set to "PROGRAM"
-        And the "program" input is set to "IpHINAT79UW"
-        And the 'programStatus' input is set to 'ALL'
-        And the 'programStatus' input is set to 'ALL'
+        And the "program" input is set to "Child Programme"
+        # programStatus "All" has value ''
+        And the 'programStatus' input is set to ''
         And the 'followUpStatus' input is set to 'ALL'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user filters by a program status
         Given the "teiTypeFilter" input is set to "PROGRAM"
-        And the "program" input is set to "IpHINAT79UW"
-        And the 'programStatus' input is set to 'ALL'
+        And the "program" input is set to "Child Programme"
         And the 'programStatus' input is set to 'ACTIVE'
         And the 'followUpStatus' input is set to 'ALL'
         When the export form is submitted
@@ -96,18 +90,16 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user filters by a program follow up status
         Given the "teiTypeFilter" input is set to "PROGRAM"
-        And the "program" input is set to "IpHINAT79UW"
-        And the 'programStatus' input is set to 'ALL'
-        And the 'programStatus' input is set to 'ALL'
+        And the "program" input is set to "Child Programme"
+        And the 'programStatus' input is set to ''
         And the 'followUpStatus' input is set to 'TRUE'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user filters by a program start date
         Given the "teiTypeFilter" input is set to "PROGRAM"
-        And the "program" input is set to "IpHINAT79UW"
-        And the 'programStatus' input is set to 'ALL'
-        And the 'programStatus' input is set to 'ALL'
+        And the "program" input is set to "Child Programme"
+        And the 'programStatus' input is set to ''
         And the 'followUpStatus' input is set to 'ALL'
         And the 'programStartDate' input is set to '2019-12-12'
         When the export form is submitted
@@ -115,9 +107,8 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user filters by a program end date
         Given the "teiTypeFilter" input is set to "PROGRAM"
-        And the "program" input is set to "IpHINAT79UW"
-        And the 'programStatus' input is set to 'ALL'
-        And the 'programStatus' input is set to 'ALL'
+        And the "program" input is set to "Child Programme"
+        And the 'programStatus' input is set to ''
         And the 'followUpStatus' input is set to 'ALL'
         And the 'programEndDate' input is set to '2019-12-12'
         When the export form is submitted
@@ -125,7 +116,7 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user filters by a tracked entity
         Given the "teiTypeFilter" input is set to "TE"
-        And the "trackedEntity" input is set to "UinS6TQnkUi"
+        And the "trackedEntity" input is set to "Person"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -154,6 +145,6 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user filters by a provided user
         Given the "assignedUserMode" input is set to "PROVIDED"
-        And the "assignedUser" input is set to "DXyJmlo9rge"
+        And the "assignedUser" input is set to "John Barnes"
         When the export form is submitted
         Then the download request is sent with the right parameters

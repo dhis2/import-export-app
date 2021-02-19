@@ -5,9 +5,7 @@ const loginUrl = Cypress.env('dhis2_base_url')
 const getKeyBySide = side => (side === 'org units' ? 'orgUnit' : 'dataElement')
 
 Given('the user is on the data {word} page', type => {
-    cy.visitWhenStubbed(`/`)
-        .get(`[data-test="sidebar-link-data-${type}"]`)
-        .click({ force: true })
+    cy.visitPage(type, 'Data')
 })
 
 Given(

@@ -6,24 +6,23 @@ Feature: The user should be able to import tracked entity instances
         And the more options are visible
         And a file has been selected
         And the following options are set
-            | name                | value             |
-            | format              | json              |
-            | importMode          | COMMIT            |
-            | identifier          | UID               |
-            | importReportMode    | ERRORS            |
-            | preheatMode         | REFERENCE         |
-            | importStrategy      | CREATE_AND_UPDATE |
-            | atomicMode          | ALL               |
-            | mergeMode           | MERGE             |
-            | flushMode           | AUTO              |
-            | skipSharing         | false             |
-            | skipValidation      | false             |
-            | async               | true              |
-            | inclusionStrategy   | NON_NULL          |
-            | dataElementIdScheme | UID               |
-            | eventIdScheme       | UID               |
-            | idScheme            | UID               |
-            | orgUnitIdScheme     | UID               |
+            | name                | value             | label |
+            | format              | json              |       |
+            | importMode          | COMMIT            |       |
+            | identifier          | UID               |       |
+            | importReportMode    | ERRORS            |       |
+            | preheatMode         | REFERENCE         |       |
+            | strategy            | NEW_AND_UPDATES   |       |
+            | atomicMode          | ALL               |       |
+            | mergeMode           | MERGE             |       |
+            | flushMode           | AUTO              |       |
+            | skipSharing         | false             |       |
+            | skipValidation      | false             |       |
+            | inclusionStrategy   | NON_NULL          |       |
+            | dataElementIdScheme | UID               | Uid   |
+            | eventIdScheme       | UID               | Uid   |
+            | idScheme            | UID               | Uid   |
+            | orgUnitIdScheme     | UID               | Uid   |
 
     Scenario: The user submits the form with the default values
         When the import form is submitted
@@ -54,8 +53,8 @@ Feature: The user should be able to import tracked entity instances
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
-    Scenario: The user selects a different import strategy
-        Given the "importStrategy" input is set to "CREATE"
+    Scenario: The user selects a different strategy
+        Given the "strategy" input is set to "NEW"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
@@ -84,32 +83,27 @@ Feature: The user should be able to import tracked entity instances
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
-    Scenario: The user selects async to be false
-        Given the "async" input is set to "false"
-        When the import form is submitted
-        Then the upload request is sent with the right parameters
-
     Scenario: The user selects a different inclusion strategy
         Given the "inclusionStrategy" input is set to "ALWAYS"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different data element id scheme
-        Given the "dataElementIdScheme" input is set to "CODE"
+        Given the "dataElementIdScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different event id scheme
-        Given the "eventIdScheme" input is set to "CODE"
+        Given the "eventIdScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
-        Given the "idScheme" input is set to "CODE"
+        Given the "idScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different org unit id scheme
-        Given the "orgUnitIdScheme" input is set to "CODE"
+        Given the "orgUnitIdScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters

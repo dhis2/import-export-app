@@ -26,13 +26,16 @@ Before(() => {
 })
 
 Given('the user is on the tracked entity instances import page', () => {
-    cy.visitPage('import', 'tei')
+    cy.visitPage('import', 'TEI')
 })
 
 Then('the upload request is sent with the right parameters', () => {
     cy.wait('@uploadXHR').then(xhr => {
         cy.getComparisonData(xhr.url).then(({ actual, expected }) => {
-            expect(actual).to.deep.equal(expected)
+            expect(actual).to.deep.equal({
+                ...expected,
+                async: "false",
+            })
         })
     })
 })

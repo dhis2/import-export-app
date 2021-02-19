@@ -1,11 +1,11 @@
 import '../common/settingFormValues'
 import { Before, Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
-const dataSetsApi = /api\/\d{2}\/dataSets\?fields=id,displayName&paging=false/
-const orgUnitsFirstLevelApi = /api\/\d{2}\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
-const orgUnitsRootApi = /api\/\d{2}\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
-const schemasApi = /api\/\d{2}\/schemas.json\?fields=metadata,collectionName,displayName,klass/
-const dataApi = /api\/\d{2}\/dataValueSets/
+const dataSetsApi = /\/dataSets\?fields=id,displayName&paging=false/
+const orgUnitsFirstLevelApi = /\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
+const orgUnitsRootApi = /\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
+const schemasApi = /\/schemas.json\?fields=metadata,collectionName,displayName,klass/
+const dataApi = /\/dataValueSets/
 
 Before(() => {
     cy.server()
@@ -25,20 +25,19 @@ Before(() => {
         fixture: 'orgUnitsFirstLevel',
     }).as('orgUnitsFirstLevelXHR')
 
-    cy.route({
-        url: dataApi,
-        status: 404,
-        response: {},
+    cy.intercept(dataApi, {
+        statusCode: 404,
+        body: '',
     }).as('downloadXHR')
 })
 
 Given('the user is on the data export page', () => {
-    cy.visitPage('export', 'data')
+    cy.visitPage('export', 'Data')
 })
 
 const sierraId = 'ImspTQPwCqd'
 Given('the Sierra Leone org unit has been selected', () => {
-    cy.get(`[data-test="input-org-unit-tree-tree-/${sierraId}"] label`).click()
+    cy.get(`[data-test="input-org-unit-tree"] label:contains("Sierra Leone")`).click()
     cy.get('@defaultData').then(defaultData => {
         cy.wrap({ ...defaultData, orgUnit: sierraId }).as('defaultData')
     })
@@ -46,8 +45,11 @@ Given('the Sierra Leone org unit has been selected', () => {
 
 Given('the first data set has been selected', () => {
     cy.fixture('dataSets').then(({ dataSets }) => {
-        const [{ id }] = dataSets
-        cy.selectCheckbox('dataSetPicker', id)
+        const [{ id, displayName }] = dataSets
+
+        cy.get(
+            `[data-test="input-data-set-picker"] [data-test="dhis2-uicore-transferoption"]:contains("${displayName}")`
+        ).dblclick()
 
         cy.get('@defaultData').then(defaultData => {
             cy.wrap({ ...defaultData, dataSet: id }).as('defaultData')
@@ -55,15 +57,16 @@ Given('the first data set has been selected', () => {
     })
 })
 
-Given('the user expands the root level of the org unit tree', () => {
-    cy.get(`[data-test="input-org-unit-tree-tree-/${sierraId}-toggle"]`).click()
+When('the user expands the root level of the org unit tree', () => {
+    cy.get('[data-test="input-org-unit-tree-node-toggle"]').first().click()
 })
 
 const boId = 'O6uvpzGd5pu'
 When('the user selects the "Bo" org unit', () => {
-    cy.get(
-        `[data-test="input-org-unit-tree-tree-/${sierraId}/${boId}"] label`
-    ).click()
+    cy
+        .get(`[data-test="input-org-unit-tree"] label:contains("Bo")`)
+        .filter((index, el) => Cypress.$(el).text().match(/Bo$/))
+        .click()
 
     cy.get('@defaultData').then(defaultData => {
         const orgUnit = `${defaultData.orgUnit},${boId}`
@@ -82,11 +85,21 @@ Given('all data sets have been selected', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.wait('@downloadXHR').then(xhr => {
-        cy.getComparisonData(xhr.url).then(
+    cy.window().then(win => {
+        expect(win.open).to.be.calledOnce
+        const requestUrl = win.open.getCall(0).args[0]
+
+        cy.getComparisonData(requestUrl).then(
             ({ actual, expected: allExpected }) => {
                 const { compression, ...expected } = allExpected
-                expect(actual).to.deep.equal(expected)
+                console.log('actual', actual)
+                console.log('expected', expected)
+
+                const expectedEntries = Object.entries(expected)
+                for (const [name, value] of expectedEntries) {
+                    expect(actual[name]).to.deep.equal(value)
+                }
+
             }
         )
     })

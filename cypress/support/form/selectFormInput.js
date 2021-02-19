@@ -1,4 +1,11 @@
+import { nameToDataTest } from './helpers/nameToDataTest'
+
+const transferInputs = [
+    'assignedUser',
+]
+
 const switchInputs = [
+    'assignedUserModeFilter',
     'async',
     'children',
     'includeAllAttributes',
@@ -11,7 +18,6 @@ const switchInputs = [
 ]
 
 const radioInputs = [
-    'assignedUser',
     'assignedUserMode',
     'atomicMode',
     'compression',
@@ -27,12 +33,10 @@ const radioInputs = [
     'mergeMode',
     'ouMode',
     'preheatMode',
-    'program',
     'programStatus',
     'sharing',
     'strategy',
     'teiTypeFilter',
-    'trackedEntity',
 ]
 
 const ignoreInputs = ['dryRun', 'importMode']
@@ -42,9 +46,11 @@ const selectInputs = [
     'eventIdScheme',
     'orgUnitIdScheme',
     'idScheme',
+    'program',
     'programStages',
     'objectType',
     'objectList',
+    'trackedEntity',
 ]
 
 const dateInputs = [
@@ -58,71 +64,50 @@ const dateInputs = [
 
 const textInputs = ['lastUpdatedDuration']
 
-const nameToDataTest = name => {
-    switch (name) {
-        case 'assignedUser':
-            return 'userPicker'
-
-        case 'async':
-            return 'isAsync'
-
-        case 'children':
-            return 'includeChildren'
-
-        case 'dataElementIdScheme':
-            return 'input-data-element-id-scheme'
-
-        case 'eventIdScheme':
-            return 'input-event-id-scheme'
-
-        case 'orgUnitIdScheme':
-            return 'input-org-unit-id-scheme'
-
-        case 'idScheme':
-            return 'input-id-scheme'
-
-        case 'program':
-            return 'programPicker'
-
-        case 'programStages':
-            return 'input-program-stage-select'
-
-        case 'objectType':
-            return 'input-object-type'
-
-        case 'objectList':
-            return 'input-object-select'
-
-        case 'trackedEntity':
-            return 'teTypePicker'
-
-        default:
-            return name
-    }
-}
-
 /**
- * @param {string} name
- * @param {string} value
+ * @param {Object} args
+ * @param {string} args.name
+ * @param {string} args.value
+ * @param {string} args.label
  */
-const selectFormInput = ({ name, value }) => {
-    if (switchInputs.includes(name)) {
-        const dataTest = nameToDataTest(name)
-        cy.selectSwitch(dataTest, value)
-    } else if (radioInputs.includes(name)) {
-        const dataTest = nameToDataTest(name)
-        cy.selectRadio(dataTest, value)
-    } else if (selectInputs.includes(name)) {
-        const dataTest = nameToDataTest(name)
-        cy.selectSelect(dataTest, value)
-    } else if (dateInputs.includes(name)) {
-        cy.selectDate(name, value)
-    } else if (textInputs.includes(name)) {
-        cy.selectText(name, value)
-    } else if (ignoreInputs.includes(name)) {
-    } else {
-        throw new Error(`Step needs to handle "${name}"`)
+const selectFormInput = ({ name, value, label }) => {
+    const dataTest = nameToDataTest(name)
+
+    if (transferInputs.includes(name)) {
+        cy.selectTransfer(dataTest, value)
+        return cy.getValuesOfTransfer(dataTest)
     }
+
+    if (switchInputs.includes(name)) {
+        cy.selectSwitch(dataTest, value)
+        return cy.wrap(value)
+    }
+
+    if (radioInputs.includes(name)) {
+        cy.selectRadio(dataTest, value)
+        return cy.wrap(value)
+    }
+
+    if (selectInputs.includes(name)) {
+        cy.selectSelect(dataTest, label)
+        return cy.getValueOfSelect(dataTest)
+    }
+
+    if (dateInputs.includes(name)) {
+        cy.selectDate(name, value)
+        return cy.wrap(value)
+    }
+
+    if (textInputs.includes(name)) {
+        cy.selectText(name, value)
+        return cy.wrap(value)
+    }
+
+    if (ignoreInputs.includes(name)) {
+        return cy.wrap(value)
+    }
+
+    throw new Error(`Step needs to handle "${name}"`)
 }
 
 Cypress.Commands.add('selectFormInput', selectFormInput)

@@ -12,11 +12,11 @@ Given('a unique attribute is associated with organisation units', () => {
 })
 
 Given('the user is on the data import page', () => {
-    cy.visitPage('import', 'data')
+    cy.visitPage('import', 'Data')
 })
 
 Given('the user is on the data export page', () => {
-    cy.visitPage('export', 'data')
+    cy.visitPage('export', 'Data')
 })
 
 Then(

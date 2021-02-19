@@ -4,24 +4,25 @@ Feature: The user should be able to meta data dependency events
     Background:
         Given the user is on the meta data dependency export page
         And the following options are set
-            | name        | value       |
-            | objectType  | dataSets    |
-            | objectList  | lyLU2wR22tC |
-            | format      | json        |
-            | compression | zip         |
-            | skipSharing | false       |
+            | name        | value       | label               |
+            | objectType  | dataSets    | Data sets           |
+            | objectList  | lyLU2wR22tC | ART monthly summary |
+            | format      | json        |                     |
+            | compression | zip         |                     |
+            | skipSharing | false       |                     |
 
     Scenario: The user submits the form with the default values
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different object type
-        Given the "objectType" input is set to "programs"
+        Given the "objectType" input is set to "Programs"
+        And the "objectList" input is set to "Antenatal care visit"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different object list
-        Given the "objectList" input is set to "BfMAe6Itzgt"
+        Given the "objectList" input is set to "TB/HIV (VCCT) monthly summary"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

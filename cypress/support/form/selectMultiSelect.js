@@ -1,7 +1,7 @@
-const selectSelect = (dataTest, label) => {
+const selectMultiSelect = (dataTest, label) => {
     const inputSelector = `[data-test="${dataTest}"]`
-    const curValueSelector = `${inputSelector} [data-test="dhis2-uicore-singleselect"]`
-    const valSelector = `[data-test="dhis2-uicore-singleselectoption"]:contains("${label}")`
+    const curValueSelector = `${inputSelector} [data-test="dhis2-uicore-multiselect"]`
+    const valSelector = `[data-test="dhis2-uicore-multiselectoption"]:contains("${label}")`
     const backdropSelector = `[data-test="dhis2-uicore-backdrop"]`
 
     cy.get(curValueSelector).then($curValueElement => {
@@ -16,4 +16,4 @@ const selectSelect = (dataTest, label) => {
     return cy
 }
 
-Cypress.Commands.add('selectSelect', selectSelect)
+Cypress.Commands.add('selectMultiSelect', selectMultiSelect)

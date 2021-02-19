@@ -6,16 +6,16 @@ Feature: The user should be able to import meta data
         And the more options are visible
         And a file has been selected
         And the following options are set
-            | name                | value           |
-            | format              | json            |
-            | dryRun              | false           |
-            | strategy            | NEW_AND_UPDATES |
-            | preheatCache        | false           |
-            | skipAudit           | false           |
-            | dataElementIdScheme | UID             |
-            | orgUnitIdScheme     | UID             |
-            | idScheme            | UID             |
-            | skipExistingCheck   | false           |
+            | name                | value           | label |
+            | format              | json            |       |
+            | dryRun              | false           |       |
+            | strategy            | NEW_AND_UPDATES |       |
+            | preheatCache        | false           |       |
+            | skipAudit           | false           |       |
+            | dataElementIdScheme | UID             | Uid   |
+            | orgUnitIdScheme     | UID             | Uid   |
+            | idScheme            | UID             | Uid   |
+            | skipExistingCheck   | false           |       |
 
     Scenario: The user submits the form with the default values
         When the import form is submitted
@@ -47,17 +47,17 @@ Feature: The user should be able to import meta data
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different data element id scheme
-        Given the "dataElementIdScheme" input is set to "CODE"
+        Given the "dataElementIdScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different org unit id scheme
-        Given the "orgUnitIdScheme" input is set to "CODE"
+        Given the "orgUnitIdScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
-        Given the "idScheme" input is set to "CODE"
+        Given the "idScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 

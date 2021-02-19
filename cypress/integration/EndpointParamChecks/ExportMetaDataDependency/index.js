@@ -1,9 +1,9 @@
 import '../common/settingFormValues'
 import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const dataSetsApi = /api\/\d{2}\/dataSets\?/
-const programsApi = /api\/\d{2}\/programs\?/
-const eventApi = /api\/([a-zA-Z0-9]+\/){2}metadata/
+const dataSetsApi = /\/dataSets\?/
+const programsApi = /\/programs\?/
+const eventApi = /\/([a-zA-Z0-9]+\/){2}metadata/
 
 Before(() => {
     cy.server()
@@ -26,7 +26,7 @@ Before(() => {
 })
 
 Given('the user is on the meta data dependency export page', () => {
-    cy.visitPage('export', 'metadata-dependency')
+    cy.visitPage('export', 'Metadata dependency')
     cy.wait('@dataSetsXHR')
 })
 
