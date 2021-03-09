@@ -1,17 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Carwoto Sa'an <carwoto@gmail.com>, 2020
-# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2019
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,7 +129,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Data set yang dipilih"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -272,7 +270,7 @@ msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Hapus"
+msgstr "hapus"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -304,7 +302,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Terpilih"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -364,7 +362,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Tanggal dimulai/berakhir"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -394,7 +392,7 @@ msgid "Data sets"
 msgstr "Data set"
 
 msgid "Programs"
-msgstr "Program"
+msgstr "Program-program"
 
 msgid "Category combination"
 msgstr "Kombinasi kategori"
@@ -406,10 +404,10 @@ msgid "Data element groups"
 msgstr "Grup data elemen"
 
 msgid "Option sets"
-msgstr "Set opsi"
+msgstr ""
 
 msgid "Object type"
-msgstr "Tipe objek"
+msgstr "Tipe Obyek"
 
 msgid "One object must be selected"
 msgstr ""
@@ -472,7 +470,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Program terpilih"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -487,19 +485,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "Tanggal mulai"
+msgstr "Tanggal dimulai"
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Aktif"
+msgstr ""
 
 msgid "Completed"
-msgstr "Selesai"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Dibatalkan"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -545,7 +543,7 @@ msgid "Strategy"
 msgstr "Strategi"
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
@@ -593,22 +591,22 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "Dalam proses"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
 
 msgid "Key"
-msgstr "Kunci"
+msgstr ""
 
 msgid "Value"
-msgstr "Nilai"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Error"
+msgstr ""
 
 msgid "Conflicts"
 msgstr "Konflik"
@@ -623,7 +621,7 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "Pesan"
+msgstr ""
 
 msgid "ID"
 msgstr ""
@@ -641,10 +639,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 msgid "Description"
-msgstr "Deskripsi"
+msgstr ""
 
 msgid "Summary"
 msgstr "Ringkasan"
@@ -876,16 +874,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Data"
+msgstr ""
 
 msgid "Event"
-msgstr "Kejadian"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Metadata"
+msgstr ""
 
 msgid "TEI"
 msgstr ""

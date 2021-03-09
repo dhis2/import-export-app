@@ -1,14 +1,14 @@
 # 
 # Translators:
 # 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2021
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr "无效的的日期"
+msgstr ""
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "当前用户"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -89,19 +89,19 @@ msgid "Import"
 msgstr "导入"
 
 msgid "Atomic mode"
-msgstr "原子化模式"
+msgstr ""
 
 msgid "Whether to import objects even if some references do not exist"
 msgstr ""
 
 msgid "Class key"
-msgstr "分类键值"
+msgstr ""
 
 msgid "Zip"
 msgstr "Zip"
 
 msgid "GZip"
-msgstr "GZip"
+msgstr ""
 
 msgid "Uncompressed"
 msgstr "无压缩"
@@ -110,7 +110,7 @@ msgid "Compression mode"
 msgstr ""
 
 msgid "Uid"
-msgstr "Uid"
+msgstr ""
 
 msgid "Code"
 msgstr "代码"
@@ -128,10 +128,10 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "选择的数据集"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr "载入当前数据集发生错误"
+msgstr ""
 
 msgid "At least one data set must be selected"
 msgstr ""
@@ -155,7 +155,7 @@ msgid "Is the first row a header row?"
 msgstr ""
 
 msgid "First row is header"
-msgstr "第一行是表头"
+msgstr ""
 
 msgid "A header row will be ignored during import"
 msgstr ""
@@ -167,7 +167,7 @@ msgid "Object (debugging purposes)"
 msgstr ""
 
 msgid "Flush mode"
-msgstr "缓存刷新模式"
+msgstr ""
 
 msgid "Controls when to flush the internal cache"
 msgstr ""
@@ -194,10 +194,10 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr "ADX"
+msgstr ""
 
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 msgid "JSONP"
 msgstr ""
@@ -242,7 +242,7 @@ msgid "Debug"
 msgstr "调试"
 
 msgid "Import report mode"
-msgstr "导入报表模式"
+msgstr ""
 
 msgid "Controls what should be reported after the import is done"
 msgstr ""
@@ -257,7 +257,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "附加"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -280,7 +280,7 @@ msgid ""
 msgstr ""
 
 msgid "Import strategy"
-msgstr "导入策略"
+msgstr ""
 
 msgid "Include all attributes"
 msgstr ""
@@ -301,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "选择的"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -337,7 +337,7 @@ msgid "Non empty"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr "包括策略"
+msgstr ""
 
 msgid "Controls which properties to include"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "开始-结束日期"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -382,7 +382,7 @@ msgid "Replace"
 msgstr "替换"
 
 msgid "Merge mode"
-msgstr "合并模式"
+msgstr ""
 
 msgid "Strategy to take when merging two objects"
 msgstr ""
@@ -403,7 +403,7 @@ msgid "Data element groups"
 msgstr "数据元组"
 
 msgid "Option sets"
-msgstr "选项集"
+msgstr ""
 
 msgid "Object type"
 msgstr "对象类型"
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "捕获"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -457,7 +457,7 @@ msgid "None"
 msgstr "没有"
 
 msgid "Preheat mode"
-msgstr "预热模式"
+msgstr ""
 
 msgid "Controls the level of preheating that should be done"
 msgstr ""
@@ -469,10 +469,10 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "已选项目组"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr "载入项目发生错误"
+msgstr ""
 
 msgid "At least one program must be selected"
 msgstr ""
@@ -490,19 +490,19 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "活跃的"
+msgstr ""
 
 msgid "Completed"
-msgstr "已完成"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "取消"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
 
 msgid "Skip audit"
-msgstr "跳过审计"
+msgstr ""
 
 msgid "Skip audit, meaning audit values will not be generated"
 msgstr ""
@@ -522,7 +522,7 @@ msgid ""
 msgstr ""
 
 msgid "Skip sharing"
-msgstr "跳过共享"
+msgstr ""
 
 msgid "Skip sharing and access settings"
 msgstr ""
@@ -533,7 +533,7 @@ msgid ""
 msgstr ""
 
 msgid "Skip validation"
-msgstr "跳过验证"
+msgstr ""
 
 msgid "Skip validation for import (not recommended)"
 msgstr ""
@@ -542,16 +542,16 @@ msgid "Strategy"
 msgstr "策略"
 
 msgid "Program"
-msgstr "项目"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "跟踪实体类型"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
 
 msgid "Tracked entity types"
-msgstr "跟踪实体类型"
+msgstr ""
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -590,22 +590,22 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "进行中"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
 
 msgid "Key"
-msgstr "键值"
+msgstr ""
 
 msgid "Value"
-msgstr "值"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "错误"
+msgstr ""
 
 msgid "Conflicts"
 msgstr "冲突"
@@ -617,13 +617,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "时间"
+msgstr ""
 
 msgid "Message"
-msgstr "消息"
+msgstr ""
 
 msgid "ID"
-msgstr "Id"
+msgstr ""
 
 msgid "Messages"
 msgstr "消息"
@@ -638,10 +638,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "状态"
+msgstr ""
 
 msgid "Description"
-msgstr "描述"
+msgstr ""
 
 msgid "Summary"
 msgstr "摘要"
@@ -668,7 +668,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "至少得选择一个机构"
+msgstr ""
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -728,7 +728,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "概要"
+msgstr ""
 
 msgid "Yes"
 msgstr "Yes"
@@ -760,7 +760,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "导出数据"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -773,7 +773,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "导出事件"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -798,22 +798,22 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "导出元数据"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "导入数据"
+msgstr ""
 
 msgid "Import events"
-msgstr "导入事件"
+msgstr ""
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "导入元数据"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -867,22 +867,22 @@ msgid "Job started."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr "发生未知错误，请稍后再试"
+msgstr ""
 
 msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "数据"
+msgstr ""
 
 msgid "Event"
-msgstr "事件"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "元数据"
+msgstr ""
 
 msgid "TEI"
-msgstr "跟踪实体"
+msgstr ""

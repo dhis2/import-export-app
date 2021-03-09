@@ -1,15 +1,14 @@
 # 
 # Translators:
-# Aung Kyi Min <AungKyi.Min@savethechildren.org>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "လက်ရှိအသုံးပြုနေသူ"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -302,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "‌ရွေးချယ်ထားပြီး"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -470,7 +469,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Selected Program"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -491,7 +490,7 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "လုပ်ဆောင်နိုင်သည်"
+msgstr ""
 
 msgid "Completed"
 msgstr ""
@@ -600,13 +599,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "တန်ဖိုး"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "အမှား"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -621,10 +620,10 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "သတင်း"
+msgstr ""
 
 msgid "ID"
-msgstr "အိုင်ဒီ"
+msgstr ""
 
 msgid "Messages"
 msgstr "သတင်းများ"
@@ -639,10 +638,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "အခြေအနေ"
+msgstr ""
 
 msgid "Description"
-msgstr "ဖော်ပြချက်"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
@@ -729,7 +728,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "အကျဥ်း"
+msgstr ""
 
 msgid "Yes"
 msgstr "Yes"
@@ -874,7 +873,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "အချက်အလက်"
+msgstr ""
 
 msgid "Event"
 msgstr ""

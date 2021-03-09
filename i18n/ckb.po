@@ -1,16 +1,14 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Antonia Bezenchek <antonia@informa.pro>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Asos <aso.rezaiy@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2019
 # KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
@@ -266,7 +264,7 @@ msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "نوێ کردنەوە"
+msgstr "نويَ كردنةوة"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
@@ -493,10 +491,10 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "چاڵاک"
+msgstr ""
 
 msgid "Completed"
-msgstr "تەواوبوو"
+msgstr ""
 
 msgid "Cancelled"
 msgstr ""
@@ -545,7 +543,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "پرۆگرام"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
@@ -602,13 +600,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "بةها"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "هەڵە"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -620,7 +618,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "کات"
+msgstr ""
 
 msgid "Message"
 msgstr ""
@@ -641,7 +639,7 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "پێگە"
+msgstr ""
 
 msgid "Description"
 msgstr ""
@@ -885,7 +883,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "داتا پەیوەندیدارەکان"
+msgstr ""
 
 msgid "TEI"
 msgstr ""

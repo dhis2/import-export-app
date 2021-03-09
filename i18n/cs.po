@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: trendspotter, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -16,102 +16,100 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr "Při načítání aktuálního uživatele se něco pokazilo!"
+msgstr ""
 
 msgid "Basic options"
-msgstr "Základní možnosti"
+msgstr ""
 
 msgid "Invalid date"
-msgstr "Neplatné datum"
+msgstr ""
 
 msgid "Start date must be before end date"
-msgstr "Datum zahájení musí být před datem ukončení"
+msgstr ""
 
 msgid "End date must be after start date"
-msgstr "Datum ukončení musí být po datu zahájení"
+msgstr ""
 
 msgid "Invalid duration"
-msgstr "Neplatné trvání"
+msgstr ""
 
 msgid "Format"
 msgstr "Formát"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
-msgstr "Při načítání dalších schémat ID datových prvků se něco pokazilo"
+msgstr ""
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr "Při načítání dalších schémat ID se něco pokazilo"
+msgstr ""
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
-"Při načítání dalších schémat ID další organizační jednotky se něco pokazilo"
 
 msgid "Please select a file"
-msgstr "Vyberte soubor"
+msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
-msgstr "Spuštění nanečisto testuje nastavení importu bez importu dat"
+msgstr ""
 
 msgid "Start dry run"
-msgstr "Spustit nanečisto"
+msgstr ""
 
 msgid "Start import"
-msgstr "Zahájit import"
+msgstr ""
 
 msgid "Any user"
-msgstr "Libovolný uživatel"
+msgstr ""
 
 msgid "Current user"
-msgstr "Současný uživatel"
+msgstr ""
 
 msgid "No user/unassigned"
-msgstr "Žádný uživatel / nepřiřazeno"
+msgstr ""
 
 msgid "Selected users"
-msgstr "Vybraní uživatelé"
+msgstr ""
 
 msgid "Filter by assigned user"
-msgstr "Filtrování podle přiřazeného uživatele"
+msgstr ""
 
 msgid "Export only instances with events assigned to specific users"
 msgstr ""
-"Exportujte pouze instance s událostmi přiřazenými konkrétním uživatelům"
 
 msgid "Assigned user(s)"
-msgstr "Přiřazení uživatel(é)"
+msgstr ""
 
 msgid "Do not import"
-msgstr "Neimportovat"
+msgstr ""
 
 msgid "Import"
 msgstr "Import"
 
 msgid "Atomic mode"
-msgstr "Atomický režim"
+msgstr ""
 
 msgid "Whether to import objects even if some references do not exist"
-msgstr "Zda importovat objekty, i když některé odkazy neexistují"
+msgstr ""
 
 msgid "Class key"
-msgstr "Klíč třídy"
+msgstr ""
 
 msgid "Zip"
 msgstr "Zip"
 
 msgid "GZip"
-msgstr "GZip"
+msgstr ""
 
 msgid "Uncompressed"
 msgstr "Nekomprimovaný"
 
 msgid "Compression mode"
-msgstr "Režim komprese"
+msgstr ""
 
 msgid "Uid"
-msgstr "Uid"
+msgstr ""
 
 msgid "Code"
 msgstr "Kód"
@@ -123,67 +121,67 @@ msgid "Data element ID scheme"
 msgstr "Schéma ID datového prvku"
 
 msgid "Which data sets should be included in export?"
-msgstr "Které datové sady by měly být zahrnuty do exportu?"
+msgstr ""
 
 msgid "Filter data sets"
-msgstr "Filtrování datových sad"
+msgstr ""
 
 msgid "Selected data sets"
-msgstr "Vybrané datové sady"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr "Při načítání datových sad se něco pokazilo!"
+msgstr ""
 
 msgid "At least one data set must be selected"
-msgstr "Musí být vybrán alespoň jeden soubor dat"
+msgstr ""
 
 msgid "One data set must be selected"
-msgstr "Musí být vybrána jedna sada dat"
+msgstr ""
 
 msgid "End date"
 msgstr "Datum ukončení"
 
 msgid "Event ID scheme"
-msgstr "Schéma ID události"
+msgstr ""
 
 msgid "Loading export..."
-msgstr "Načítání exportu ..."
+msgstr ""
 
 msgid "Select a file to import values from"
-msgstr "Vyberte soubor, ze kterého chcete importovat hodnoty"
+msgstr ""
 
 msgid "Is the first row a header row?"
-msgstr "Je první řádek řádkem záhlaví?"
+msgstr ""
 
 msgid "First row is header"
-msgstr "První řádek je záhlaví"
+msgstr ""
 
 msgid "A header row will be ignored during import"
-msgstr "Řádek záhlaví bude během importu ignorován"
+msgstr ""
 
 msgid "Auto (recommended)"
-msgstr "Auto (doporučeno)"
+msgstr ""
 
 msgid "Object (debugging purposes)"
-msgstr "Objekt (pro účely ladění)"
+msgstr ""
 
 msgid "Flush mode"
-msgstr "Vyplachovací režim"
+msgstr ""
 
 msgid "Controls when to flush the internal cache"
-msgstr "Určuje, kdy má být vyprázdněna interní mezipaměť"
+msgstr ""
 
 msgid "All"
 msgstr "Vše"
 
 msgid "Marked for follow-up"
-msgstr "Označeno pro další sledování"
+msgstr ""
 
 msgid "Not marked for follow-up"
-msgstr "Není označeno pro další sledování"
+msgstr ""
 
 msgid "Include only entities with follow-up status"
-msgstr "Zahrnout pouze entity se stavem sledování"
+msgstr ""
 
 msgid "JSON"
 msgstr "JSON"
@@ -195,19 +193,19 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr "ADX"
+msgstr ""
 
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 msgid "JSONP"
-msgstr "JSONP"
+msgstr ""
 
 msgid "What format is the data to import?"
-msgstr "Jaký formát jsou data k importu?"
+msgstr ""
 
 msgid "What format should the data be exported as?"
-msgstr "V jakém formátu mají být data exportována?"
+msgstr ""
 
 msgid "ID scheme"
 msgstr "ID schéma"
@@ -222,176 +220,171 @@ msgid "Identifier"
 msgstr "Identifikátor"
 
 msgid "Identifier scheme to use for reference matching"
-msgstr "Schéma identifikátorů, které se má použít pro porovnávání referencí"
+msgstr ""
 
 msgid "Only include reports for objects that have errors"
-msgstr "Zahrnout pouze zprávy pro objekty, které obsahují chyby"
+msgstr ""
 
 msgid "Errors"
 msgstr "Chyby"
 
 msgid "Reports for all objects imported"
-msgstr "Zprávy pro všechny importované objekty"
+msgstr ""
 
 msgid "Full"
 msgstr "Úplný"
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
-"Zprávy o všech importovaných objektech spolu s jejich názvy (jsou-li k "
-"dispozici)"
 
 msgid "Debug"
 msgstr "Ladit"
 
 msgid "Import report mode"
-msgstr "Režim importu zprávy"
+msgstr ""
 
 msgid "Controls what should be reported after the import is done"
-msgstr "Řídí, co má být nahlášeno po dokončení importu"
+msgstr ""
 
 msgid "Import new values and update existing"
-msgstr "Importujte nové hodnoty a aktualizujte stávající"
+msgstr ""
 
 msgid "Merge"
 msgstr "Spojit"
 
 msgid "Import new values only"
-msgstr "Importujte pouze nové hodnoty"
+msgstr ""
 
 msgid "Append"
-msgstr "Přidat"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
-msgstr "Aktualizujte pouze stávající hodnoty, nové hodnoty ignorujte"
+msgstr ""
 
 msgid "Update"
 msgstr "Aktualizovat"
 
 msgid "Remove values included in uploaded file"
-msgstr "Odebrat hodnoty obsažené v nahraném souboru"
+msgstr ""
 
 msgid "Delete"
 msgstr "Smazat"
 
 msgid "Data will be deleted"
-msgstr "Data budou smazána"
+msgstr ""
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
 msgstr ""
-"Hodnoty v nahraném souboru budou z databáze odstraněny. Ujistěte se, že jde "
-"o správnou akci; to nelze vrátit zpět."
 
 msgid "Import strategy"
-msgstr "Importní strategie"
+msgstr ""
 
 msgid "Include all attributes"
-msgstr "Zahrnout všechny atributy"
+msgstr ""
 
 msgid "Include first level units"
-msgstr "Zahrnout jednotky první úrovně"
+msgstr ""
 
 msgid "Include the first level of organisation units inside selections"
-msgstr "Zahrňte první úroveň organizačních jednotek do výběrů"
+msgstr ""
 
 msgid "Include deleted"
 msgstr "Včetně smazaných"
 
 msgid "Include deleted data in export"
-msgstr "Zahrnout smazaná data do exportu"
+msgstr ""
 
 msgid "Only include selected organisation unit"
-msgstr "Zahrnout pouze vybranou organizační jednotku"
+msgstr ""
 
 msgid "Selected"
-msgstr "Vybráno"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
-msgstr "Zahrnout první úroveň jednotek do výběrů"
+msgstr ""
 
 msgid "Directly below"
-msgstr "Přímo níže"
+msgstr ""
 
 msgid "Include all units inside selections"
-msgstr "Zahrnout všechny jednotky do výběrů"
+msgstr ""
 
 msgid "All below"
-msgstr "Vše níže"
+msgstr ""
 
 msgid "How should organisation units inside the selections be included?"
-msgstr "Jak by měly být zahrnuty organizační jednotky do výběru?"
+msgstr ""
 
 msgid "Includes properties which are not null"
-msgstr "Zahrnuje vlastnosti, které nejsou null"
+msgstr ""
 
 msgid "Non null"
-msgstr "Nejsou null"
+msgstr ""
 
 msgid "Include all properties"
-msgstr "Zahrnout všechny vlastnosti"
+msgstr ""
 
 msgid "Always"
 msgstr "Vždy"
 
 msgid "Include non-empty properties"
-msgstr "Zahrnout neprázdné vlastnosti"
+msgstr ""
 
 msgid "Non empty"
-msgstr "Není prázdné"
+msgstr ""
 
 msgid "Inclusion strategy"
-msgstr "Strategie začleňování"
+msgstr ""
 
 msgid "Controls which properties to include"
-msgstr "Určuje, které vlastnosti mají být zahrnuty"
+msgstr ""
 
 msgid "Async"
 msgstr "Async"
 
 msgid "Asynchronous import"
-msgstr "Asynchronní import"
+msgstr ""
 
 msgid "Controls whether the import is done asynchronously"
-msgstr "Určuje, zda se import provádí asynchronně"
+msgstr ""
 
 msgid "Last updated duration"
-msgstr "Trvání poslední aktualizace"
+msgstr ""
 
 msgid "Last updated end date"
-msgstr "Datum poslední aktualizace"
+msgstr ""
 
 msgid "Do not filter by last updated date"
-msgstr "Nefiltrovat podle data poslední aktualizace"
+msgstr ""
 
 msgid "Start/end dates"
-msgstr "Datum zahájení / ukončení"
+msgstr ""
 
 msgid "Time since last updated"
-msgstr "Čas od poslední aktualizace"
+msgstr ""
 
 msgid "Filter by last updated date"
-msgstr "Filtrovat podle data poslední aktualizace"
+msgstr ""
 
 msgid "Last updated start date"
-msgstr "Datum poslední aktualizace"
+msgstr ""
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
-"Pouze přepsat starou vlastnost, pokud nová hodnota vlastnosti není null"
 
 msgid "Overwrite regardless of whether the new property value is null"
-msgstr "Přepsat bez ohledu na to, zda je nová hodnota vlastnosti null"
+msgstr ""
 
 msgid "Replace"
 msgstr "Nahradit"
 
 msgid "Merge mode"
-msgstr "Režim sloučení"
+msgstr ""
 
 msgid "Strategy to take when merging two objects"
-msgstr "Strategie, kterou je třeba použít při slučování dvou objektů"
+msgstr ""
 
 msgid "Data sets"
 msgstr "Datové sady"
@@ -409,213 +402,209 @@ msgid "Data element groups"
 msgstr "Skupiny datových prvků"
 
 msgid "Option sets"
-msgstr "Sady možností"
+msgstr ""
 
 msgid "Object type"
 msgstr "Typ objektu"
 
 msgid "One object must be selected"
-msgstr "Musí být vybrán jeden objekt"
+msgstr ""
 
 msgid "Object"
 msgstr "Objekt"
 
 msgid "Organisation unit ID scheme"
-msgstr "Schéma ID organizační jednotky"
+msgstr ""
 
 msgid "Data view organisation units associated with the current user"
-msgstr "Zobrazení dat Organizační jednotky přidružené k aktuálnímu uživateli"
+msgstr ""
 
 msgid "Accessible"
-msgstr "Přístupné"
+msgstr ""
 
 msgid "Data capture organisation units associated with the current user"
-msgstr "Organizační jednotky pro sběr dat přidružené k aktuálnímu uživateli"
+msgstr ""
 
 msgid "Capture"
-msgstr "Sběr dat"
+msgstr ""
 
 msgid "All organisation units in the system"
-msgstr "Všechny organizační jednotky v systému"
+msgstr ""
 
 msgid "Manually select organisation units from list"
-msgstr "Ručně vyberte organizační jednotky ze seznamu"
+msgstr ""
 
 msgid "Which organisation units should be included?"
-msgstr "Které organizační jednotky by měly být zahrnuty?"
+msgstr ""
 
 msgid "Organisation unit(s) to export data from"
-msgstr "Organizační jednotka(y), ze kterých chcete exportovat data"
+msgstr ""
 
 msgid "Preheat cache"
-msgstr "Připravit mezipaměť"
+msgstr "Připravte mezipaměť"
 
 msgid "Preheat cache to make large imports faster"
-msgstr "Předehřejte mezipaměť, aby se velké importy načetly rychleji"
+msgstr ""
 
 msgid "Large imports will be processed faster but will consume more resources"
-msgstr "Velké importy budou zpracovány rychleji, ale spotřebují více zdrojů"
+msgstr ""
 
 msgid "Intelligent scan (reference)"
-msgstr "Inteligentní skenování (reference)"
+msgstr ""
 
 msgid "None"
 msgstr "Žádný"
 
 msgid "Preheat mode"
-msgstr "Režim předehřátí"
+msgstr ""
 
 msgid "Controls the level of preheating that should be done"
-msgstr "Řídí úroveň předehřátí, která by měla být provedena"
+msgstr ""
 
 msgid "Program to export events from"
-msgstr "Program pro export událostí z"
+msgstr ""
 
 msgid "Filter programs"
-msgstr "Filtrovat programy"
+msgstr ""
 
 msgid "Selected programs"
-msgstr "Vybrané programy"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr "Při načítání programů se něco pokazilo!"
+msgstr ""
 
 msgid "At least one program must be selected"
-msgstr "Musí být vybrán alespoň jeden program"
+msgstr ""
 
 msgid "One program must be selected"
-msgstr "Musí být vybrán jeden program"
+msgstr ""
 
 msgid "Which program stage should be included?"
-msgstr "Která fáze programu by měla být zahrnuta?"
+msgstr ""
 
 msgid "Start date"
 msgstr "Datum začátku"
 
 msgid "All statuses"
-msgstr "Všechny stavy"
+msgstr ""
 
 msgid "Active"
-msgstr "Aktivní"
+msgstr ""
 
 msgid "Completed"
-msgstr "Dokončeno"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Zrušeno"
+msgstr ""
 
 msgid "Include only entities with status"
-msgstr "Zahrnout pouze entity se stavem"
+msgstr ""
 
 msgid "Skip audit"
-msgstr "Přeskočit audit"
+msgstr ""
 
 msgid "Skip audit, meaning audit values will not be generated"
-msgstr "Přeskočit audit, což znamená, že hodnoty auditu nebudou generovány"
+msgstr ""
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr "Zlepšuje výkon za cenu schopnosti auditovat změny"
+msgstr ""
 
 msgid "Skip exisiting check"
-msgstr "Přeskočit stávající kontrolu"
+msgstr ""
 
 msgid "Skip checks for existing data values"
-msgstr "Přeskočit kontroly existujících datových hodnot"
+msgstr ""
 
 msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
 msgstr ""
-"Zlepšuje výkon a měl by být použit pouze pro prázdné databáze nebo v "
-"případě, že hodnoty dat k importu již neexistují"
 
 msgid "Skip sharing"
-msgstr "Přeskočit sdílení"
+msgstr ""
 
 msgid "Skip sharing and access settings"
-msgstr "Přeskočit sdílení a nastavení přístupu"
+msgstr ""
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
 msgstr ""
-"Přeskočit vlastnosti sdílení, nesloučit sdílení při provádění aktualizací a "
-"nepřidávat přístup ke skupině uživatelů při vytváření nových objektů"
 
 msgid "Skip validation"
-msgstr "Přeskočit ověření"
+msgstr ""
 
 msgid "Skip validation for import (not recommended)"
-msgstr "Přeskočit ověření pro import (nedoporučuje se)"
+msgstr ""
 
 msgid "Strategy"
 msgstr "Strategie"
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Typ trasované entity"
+msgstr ""
 
 msgid "Filter by"
-msgstr "Filtrovat podle"
+msgstr ""
 
 msgid "Tracked entity types"
-msgstr "typy trasovaných entit"
+msgstr ""
 
 msgid "Filter tracked entity types by name"
-msgstr "Filtrování typů trasovaných entit podle názvu"
+msgstr ""
 
 msgid "Selected tracked entity types"
-msgstr "Vybrané typy trasovaných entit"
+msgstr ""
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr "Při načítání trasovaných typů entit se něco pokazilo!"
+msgstr ""
 
 msgid "At least one tracked entity type must be selected"
-msgstr "Musí být vybrán alespoň jeden typ trasované entity"
+msgstr ""
 
 msgid "One tracked entity type must be selected"
-msgstr "Musí být vybrán jeden typ trasované entity"
+msgstr ""
 
 msgid "Which users should be used?"
-msgstr "Kteří uživatelé by se měli použít?"
+msgstr ""
 
 msgid "Filter users"
-msgstr "Filtrovat uživatele"
+msgstr ""
 
 msgid "Something went wrong when loading the users!"
-msgstr "Při načítání uživatelů se něco pokazilo!"
+msgstr ""
 
 msgid "At least one user must be selected"
-msgstr "Musí být vybrán alespoň jeden uživatel"
+msgstr ""
 
 msgid "One user must be selected"
-msgstr "Musí být vybrán jeden uživatel"
+msgstr ""
 
 msgid "No jobs started yet."
-msgstr "Zatím nebyly zahájeny žádné úlohy."
+msgstr ""
 
 msgid "Recreate job"
-msgstr "Znovu vytvořit úlohu"
+msgstr ""
 
 msgid "In progress"
-msgstr "Probíhá"
+msgstr ""
 
 msgid "Job details"
-msgstr "Podrobnosti o práci"
+msgstr ""
 
 msgid "Key"
-msgstr "Klíč"
+msgstr ""
 
 msgid "Value"
-msgstr "Hodnota"
+msgstr ""
 
 msgid "Job summary"
-msgstr "Shrnutí úlohy"
+msgstr ""
 
 msgid "Error"
-msgstr "Chyba"
+msgstr ""
 
 msgid "Conflicts"
 msgstr "Konflikty"
@@ -624,16 +613,16 @@ msgid "Dry run"
 msgstr "Testovací spuštění"
 
 msgid "Log"
-msgstr "Protokol"
+msgstr ""
 
 msgid "Time"
-msgstr "Čas"
+msgstr ""
 
 msgid "Message"
-msgstr "Zpráva"
+msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Messages"
 msgstr "Zprávy"
@@ -642,19 +631,19 @@ msgid "Type"
 msgstr "Typ"
 
 msgid "Property"
-msgstr "Vlastnictví"
+msgstr ""
 
 msgid "View summary of recently started import job"
-msgstr "Zobrazit souhrn nedávno zahájené úlohy importu"
+msgstr ""
 
 msgid "Status"
-msgstr "Stav"
+msgstr ""
 
 msgid "Description"
-msgstr "Popis"
+msgstr ""
 
 msgid "Summary"
-msgstr "Souhrn"
+msgstr "souhrn"
 
 msgid "Created"
 msgstr "Vytvořeno"
@@ -672,25 +661,25 @@ msgid "Total"
 msgstr "Celkem"
 
 msgid "Details by type"
-msgstr "Podrobnosti podle typu"
+msgstr ""
 
 msgid "Advanced options"
-msgstr "Pokročilé možnosti"
+msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Musí být vybrána alespoň jedna organizační jednotka"
+msgstr ""
 
 msgid "One organisation unit must be selected"
-msgstr "Musí být vybrána jedna organizační jednotka"
+msgstr ""
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr "Při načítání organizačních jednotek se něco pokazilo!"
+msgstr ""
 
 msgid "One program stage must be selected"
-msgstr "Musí být vybrána jedna programová fáze"
+msgstr ""
 
 msgid "Something went wrong when loading the schemas!"
-msgstr "Při načítání schémat se něco pokazilo!"
+msgstr ""
 
 msgid "Select All"
 msgstr "Vybrat vše"
@@ -699,46 +688,46 @@ msgid "Select None"
 msgstr "Zrušit výběr"
 
 msgid "At least one schema must be selected"
-msgstr "Musí být vybráno alespoň jedno schéma"
+msgstr ""
 
 msgid "Export"
 msgstr "Export"
 
 msgid "Data import"
-msgstr "Import dat"
+msgstr ""
 
 msgid "Event import"
-msgstr "Import událostí"
+msgstr ""
 
 msgid "GML import"
-msgstr "GML import"
+msgstr ""
 
 msgid "Metadata import"
-msgstr "Import metadat"
+msgstr ""
 
 msgid "TEI import"
-msgstr "TEI import"
+msgstr ""
 
 msgid "Data export"
-msgstr "Export dat"
+msgstr ""
 
 msgid "Event export"
-msgstr "Export událostí"
+msgstr ""
 
 msgid "Metadata dependency export"
-msgstr "Export závislosti metadat"
+msgstr ""
 
 msgid "Metadata export"
-msgstr "Export metadat"
+msgstr ""
 
 msgid "TEI export"
-msgstr "Export TEI"
+msgstr ""
 
 msgid "Job overview"
-msgstr "Přehled úloh"
+msgstr ""
 
 msgid "Overview"
-msgstr "Přehled"
+msgstr ""
 
 msgid "Yes"
 msgstr "Ano"
@@ -747,167 +736,152 @@ msgid "No"
 msgstr "Ne"
 
 msgid "There are errors on this page"
-msgstr "Na této stránce jsou chyby"
+msgstr ""
 
 msgid "Something went wrong when loading the class keys"
-msgstr "Při načítání klíčů třídy se něco pokazilo"
+msgstr ""
 
 msgid "Something went wrong when loading the objects"
-msgstr "Při načítání objektů se něco pokazilo"
+msgstr ""
 
 msgid "All program stages"
-msgstr "Všechny fáze programu"
+msgstr ""
 
 msgid "Something went wrong when loading the program stages"
-msgstr "Při načítání fází programu se něco pokazilo"
+msgstr ""
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
 msgstr ""
-"Exportujte metadata, jako jsou datové prvky a organizační jednotky, ve "
-"formátu DXF 2."
 
 msgid "Date range to export data for"
-msgstr "Časové období, pro které chcete exportovat data"
+msgstr ""
 
 msgid "Export data"
-msgstr "Exportovat data"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
-"Importujte datové hodnoty ze souborů ADX XML, DXF 2 XML, JSON, CSV nebo PDF."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr "Podporované typy souborů: JSON, CSV, XML, ADX a PDF."
+msgstr ""
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
-"Exportujte data událostí pro programy, fáze a sledované entity ve formátu "
-"DXF 2."
 
 msgid "Export events"
-msgstr "Exportovat události"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
-"Importujte události pro programy, fáze a trasované entity pomocí formátu DXF"
-" 2."
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr "Podporované typy souborů: JSON, CSV a XML."
+msgstr ""
 
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
 msgstr ""
-"Importujte geografická data pro organizační jednotky pomocí formátu GML. GML"
-" je gramatika XML pro vyjádření geografických vlastností."
 
 msgid "Overview: Import/Export"
-msgstr "Přehled: Import / Export"
+msgstr ""
 
 msgid "Import or export DHIS2 data."
-msgstr "Import nebo export DHIS2 dat."
+msgstr ""
 
 msgid "Export metadata dependencies"
-msgstr "Exportovat závislosti metadat"
+msgstr ""
 
 msgid "Export metadata"
-msgstr "Exportovat metadata"
+msgstr ""
 
 msgid "Export tracked entity instances"
-msgstr "Exportujte instance sledovaných entit"
+msgstr ""
 
 msgid "Import data"
-msgstr "Import dat"
+msgstr ""
 
 msgid "Import events"
-msgstr "Import události"
+msgstr ""
 
 msgid "Import GML"
-msgstr "Import GML"
+msgstr ""
 
 msgid "Import metadata"
-msgstr "Import metadat"
+msgstr ""
 
 msgid "Import tracked entity instances"
-msgstr "Import instance trasovaných entit"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
-msgstr "Tuto relaci zahájil přehled všech úloh importu."
+msgstr ""
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in XML or JSON format."
 msgstr ""
-"Exportujte závislosti metadat, jako jsou datové sady a programy, včetně "
-"souvisejících objektů metadat, ve formátu XML nebo JSON."
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr ""
-"Exportujte metadata, jako jsou datové prvky a organizační jednotky, ve "
-"formátu XML, JSON nebo CSV."
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
 "format."
 msgstr ""
-"Importujte metadata jako datové prvky a organizační jednotky pomocí formátu "
-"DXF 2."
 
 msgid "A class key must be selected"
-msgstr "Musí být vybrán klíč třídy"
+msgstr ""
 
 msgid "Tracked entity instances export"
-msgstr "Export instancí trasovaných entit"
+msgstr ""
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr "Exportujte instance sledovaných entit ve formátu XML, JSON nebo CSV."
+msgstr ""
 
 msgid "Program to export from"
-msgstr "Program pro export z"
+msgstr ""
 
 msgid "Enrollment date range"
-msgstr "Časový rozsah období zápisu"
+msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"
-msgstr "Musí být zadáno alespoň jedno z polí s datem „poslední aktualizace“"
+msgstr ""
 
 msgid "Tracked entity instances import"
-msgstr "Import instance trasovaných entit"
+msgstr ""
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr "Importujte instance trasovaných entit ze souborů JSON nebo XML."
+msgstr ""
 
 msgid "Supported file types: JSON and XML."
-msgstr "Podporované typy souborů: JSON a XML."
+msgstr ""
 
 msgid "Job started."
-msgstr "Úloha začala."
+msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr "Nastala neznámá chyba. Prosím zkuste to znovu později"
+msgstr ""
 
 msgid "Loading exported data"
-msgstr "Načítání exportovaných dat"
+msgstr ""
 
 msgid "Data"
-msgstr "Data"
+msgstr ""
 
 msgid "Event"
-msgstr "Událost"
+msgstr ""
 
 msgid "GML"
-msgstr "GML"
+msgstr ""
 
 msgid "Metadata"
-msgstr "Metadata"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""

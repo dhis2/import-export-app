@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
 "MIME-Version: 1.0\n"
@@ -489,7 +489,7 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Active"
+msgstr ""
 
 msgid "Completed"
 msgstr ""
@@ -604,7 +604,7 @@ msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Error"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -619,7 +619,7 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "Message"
+msgstr ""
 
 msgid "ID"
 msgstr ""
@@ -637,10 +637,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 msgid "Summary"
 msgstr ""

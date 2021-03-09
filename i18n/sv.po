@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Nuvarande användaren"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -263,13 +263,13 @@ msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "Uppdatera"
+msgstr "Uppdatering"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Ta bort"
+msgstr "Radera"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -301,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Vald"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Start/slutdatum"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -388,7 +388,7 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Dataset"
+msgstr "dataset"
 
 msgid "Programs"
 msgstr "program"
@@ -397,7 +397,7 @@ msgid "Category combination"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "Instrumentbräda"
+msgstr "instrumentbräda"
 
 msgid "Data element groups"
 msgstr "Dataelementgrupper"
@@ -490,13 +490,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Aktiva"
+msgstr ""
 
 msgid "Completed"
-msgstr "Avklarad"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Avbruten"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -542,13 +542,13 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
 
 msgid "Filter by"
-msgstr "Filtrera med"
+msgstr ""
 
 msgid "Tracked entity types"
 msgstr ""
@@ -599,13 +599,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Värde"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Fel"
+msgstr ""
 
 msgid "Conflicts"
 msgstr "Konflikter"
@@ -620,13 +620,13 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "Meddelande"
+msgstr ""
 
 msgid "ID"
-msgstr "id"
+msgstr ""
 
 msgid "Messages"
-msgstr "Meddelanden"
+msgstr "meddelanden"
 
 msgid "Type"
 msgstr "Typ"
@@ -638,10 +638,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 msgid "Description"
-msgstr "Beskrivning"
+msgstr ""
 
 msgid "Summary"
 msgstr "Uppsummering"
@@ -873,7 +873,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Data"
+msgstr ""
 
 msgid "Event"
 msgstr ""
@@ -882,7 +882,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Metadata"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""

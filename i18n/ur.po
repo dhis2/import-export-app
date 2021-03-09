@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "موجودہ صارف"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -86,7 +86,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "اِیمپورٹ"
+msgstr "درآمد کریں"
 
 msgid "Atomic mode"
 msgstr ""
@@ -128,7 +128,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "منتخب ڈیٹا سیٹ"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -140,7 +140,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "تاریخ اختتام"
+msgstr "آخری تاریخ"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -185,13 +185,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "جے۔سو۔ن"
+msgstr "JSON"
 
 msgid "CSV"
-msgstr "سی۔ایس۔وی"
+msgstr "CSV"
 
 msgid "XML"
-msgstr "ایکس۔ایم۔ایل"
+msgstr "XML"
 
 msgid "ADX"
 msgstr ""
@@ -257,7 +257,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "شامل کریں"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -301,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "منتخب"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "شروع / ختم تاریخیں"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -391,22 +391,22 @@ msgid "Data sets"
 msgstr "ڈیٹا سیٹس"
 
 msgid "Programs"
-msgstr "پروگرامس"
+msgstr "پروگرامز"
 
 msgid "Category combination"
 msgstr "قسم کا مجموعہ"
 
 msgid "Dashboard"
-msgstr "ڈیشپورڈ"
+msgstr "ڈیشبورڈ"
 
 msgid "Data element groups"
-msgstr "ڈیٹا عناصر کا گروہ"
+msgstr "ڈیٹا عناصر کے گروپ"
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "اؤبجیکٹ ٹائپ"
+msgstr "آبجیکٹ کی قسم"
 
 msgid "One object must be selected"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "قبضہ"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -469,7 +469,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "منتخب کردہ پروگرام"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -484,19 +484,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "تاریخ آغاز"
+msgstr "تاریخ آغاز"
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "فعال"
+msgstr ""
 
 msgid "Completed"
-msgstr "مکمل"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "منسوخ"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -542,10 +542,10 @@ msgid "Strategy"
 msgstr "حکمت عملی"
 
 msgid "Program"
-msgstr "پروگرام"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "ٹریک کردہ ادارے کی قسم"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
@@ -590,7 +590,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "کام جاری ہے"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -599,13 +599,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "قدر"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "غلطی"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -617,13 +617,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "وقت"
+msgstr ""
 
 msgid "Message"
-msgstr "Ù¾ÛØºØ§Ù"
+msgstr ""
 
 msgid "ID"
-msgstr "شناخت"
+msgstr ""
 
 msgid "Messages"
 msgstr "پیغامات"
@@ -638,10 +638,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "حالت"
+msgstr ""
 
 msgid "Description"
-msgstr "تفصیلات"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
@@ -692,7 +692,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "ایکسپورٹ"
+msgstr "برآمد کریں"
 
 msgid "Data import"
 msgstr ""
@@ -873,16 +873,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "ڈیٹا"
+msgstr ""
 
 msgid "Event"
-msgstr "تقریب"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "میٹا ڈیٹا"
+msgstr ""
 
 msgid "TEI"
 msgstr ""

@@ -1,14 +1,13 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2020
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,7 +64,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "អ្នកកំពុងប្រើប្រាស់"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -301,7 +300,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "បាន​ជ្រើស"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -493,10 +492,10 @@ msgid "Active"
 msgstr ""
 
 msgid "Completed"
-msgstr "បានបញ្ចប់"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "បានលុបចោល"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -599,13 +598,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "តម្លៃ"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "កំហុសបច្ចេកទេស"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -620,10 +619,10 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "សារ"
+msgstr ""
 
 msgid "ID"
-msgstr "​លេខ​សម្គាល់"
+msgstr ""
 
 msgid "Messages"
 msgstr "សារ"
@@ -638,10 +637,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "ស្ថានភាព"
+msgstr ""
 
 msgid "Description"
-msgstr "ការ​ពិពណ៌នា"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
@@ -728,7 +727,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "ទិដ្ឋភាពទូទៅ"
+msgstr ""
 
 msgid "Yes"
 msgstr "បាទ/ចាស"
@@ -873,7 +872,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Data"
+msgstr ""
 
 msgid "Event"
 msgstr ""
@@ -882,7 +881,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "ទិន្នន័យ"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""

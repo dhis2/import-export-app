@@ -1,20 +1,18 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
+# Bram Piot <bram.piot@gmail.com>, 2019
 # Djibril Dione <dione.djibril@gmail.com>, 2019
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Bram Piot <bram.piot@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2020
-# Edem Kossi <ekossi@hispwca.org>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Yao Selom SAKA <saka.yao@yahoo.fr>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Yao Selom SAKA <saka.yao@yahoo.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +70,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Utilisateur actuel"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -135,7 +133,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Ensembles de données sélectionnés"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -204,7 +202,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 msgid "JSONP"
 msgstr ""
@@ -264,7 +262,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Ajouter"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -308,7 +306,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Sélectionné"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -368,7 +366,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Dates début-fin"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -434,7 +432,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Saisie"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -476,7 +474,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Programmes sélectionnés"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -497,13 +495,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Actif"
+msgstr ""
 
 msgid "Completed"
-msgstr "Terminé"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Annulé"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -549,13 +547,13 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Programme"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Type d'entité suivie"
+msgstr ""
 
 msgid "Filter by"
-msgstr "Filtrer par"
+msgstr ""
 
 msgid "Tracked entity types"
 msgstr ""
@@ -597,22 +595,22 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "En cours"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
 
 msgid "Key"
-msgstr "Clé"
+msgstr ""
 
 msgid "Value"
-msgstr "Valeur"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Erreur"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -624,13 +622,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Heure"
+msgstr ""
 
 msgid "Message"
-msgstr "Message"
+msgstr ""
 
 msgid "ID"
-msgstr "Id"
+msgstr ""
 
 msgid "Messages"
 msgstr "Messages"
@@ -645,16 +643,16 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Statut"
+msgstr ""
 
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "Créé"
+msgstr "Créé le"
 
 msgid "Deleted"
 msgstr ""
@@ -675,7 +673,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Au moins une unité d'organisation doit être sélectionnée"
+msgstr ""
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -735,7 +733,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "Général"
+msgstr ""
 
 msgid "Yes"
 msgstr "Oui"
@@ -767,7 +765,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Exporter données"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -780,7 +778,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "Exporter évènements"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -805,22 +803,22 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Exporter Méta-Données"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Importer données"
+msgstr ""
 
 msgid "Import events"
-msgstr "Importer évènements"
+msgstr ""
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Importer Méta-Données"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -880,16 +878,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Données"
+msgstr ""
 
 msgid "Event"
-msgstr "Evènement"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Méta-données"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""

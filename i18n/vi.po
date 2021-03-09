@@ -1,14 +1,14 @@
 # 
 # Translators:
+# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2020
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr "Ngày không hợp lệ"
+msgstr ""
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -66,7 +66,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Người dùng hiện tại"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -129,7 +129,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Tập Dữ Liệu đã chọn"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -258,7 +258,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Thêm vào"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -302,7 +302,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Đã chọn"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -362,7 +362,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Ngày bắt đầu/kết thúc"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -428,7 +428,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Ghi"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -470,7 +470,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Chương trình đã chọn"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -491,13 +491,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Hoạt động"
+msgstr ""
 
 msgid "Completed"
-msgstr "Hoàn tất"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Đã hủy"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -543,10 +543,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Chương trình"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Tracked entity type"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
@@ -591,7 +591,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "Đang tiến hành"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -600,13 +600,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Giá trị"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Lỗi"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -618,13 +618,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Thời gian"
+msgstr ""
 
 msgid "Message"
-msgstr "Tin nhẳn"
+msgstr ""
 
 msgid "ID"
-msgstr "Định danh"
+msgstr ""
 
 msgid "Messages"
 msgstr "Tin nhắn"
@@ -639,10 +639,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Tình trạng"
+msgstr ""
 
 msgid "Description"
-msgstr "Miêu tả"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
@@ -761,7 +761,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Xuất dữ liệu"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -774,7 +774,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "Xuất sự kiện"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -799,22 +799,22 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Xuất dữ liệu mô tả"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Nhập dữ liệu"
+msgstr ""
 
 msgid "Import events"
-msgstr "Nhập sự kiện"
+msgstr ""
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Nhập dữ liệu mô tả"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -874,16 +874,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Lấy dữ liệu"
+msgstr ""
 
 msgid "Event"
-msgstr "Sự Kiện"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Siêu dữ liệu"
+msgstr ""
 
 msgid "TEI"
-msgstr "THỰC THỂ THEO DÕI"
+msgstr ""

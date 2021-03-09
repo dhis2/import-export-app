@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "ຜູ້ໃຊ້ປະຈຸບັນ"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -128,7 +128,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Selected data sets"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -257,7 +257,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Append"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -301,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "ເລືອກ"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "ວັນເລີ້ມຕົ້ນ/ວັນສິ້ນສຸດ"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "ເລືອກແລ້ວ"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -469,7 +469,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Selected programs"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -490,13 +490,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "ທີ່ຍັງນໍາໃຊ້ຢູ່"
+msgstr ""
 
 msgid "Completed"
-msgstr "ສໍາເລັດແລ້ວ"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "ຍົກເລີກແລ້ວ"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -542,7 +542,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
@@ -590,7 +590,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "ກໍາລັງດໍາເນີນການ"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -599,13 +599,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Value"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "ເກີດການຜິດພາດ"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -620,10 +620,10 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "ຂໍ້ຄວາມ"
+msgstr ""
 
 msgid "ID"
-msgstr "ລະຫັດ"
+msgstr ""
 
 msgid "Messages"
 msgstr "ຂໍ້ຄວາມ"
@@ -638,10 +638,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "ສະຖານະ"
+msgstr ""
 
 msgid "Description"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
@@ -873,16 +873,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "ຂໍ້ມູນ"
+msgstr ""
 
 msgid "Event"
-msgstr "ເຫດການ"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "ໂຄງຮ່າງຖານຂໍ້ມູນ"
+msgstr ""
 
 msgid "TEI"
-msgstr "ຈໍານວນກໍລະນີທີ່ປ້ອນເຂົ້າ"
+msgstr ""

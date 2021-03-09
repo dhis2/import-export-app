@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +64,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "استفاده کننده کنونی"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -127,7 +127,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "مجموعه های انتخاب شده اطلاعات"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -256,7 +256,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "یکجا کردن"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -300,7 +300,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "انتخاب شده"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -360,7 +360,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "د پیل او پای نېټې"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -426,7 +426,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "گرفتن"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -468,7 +468,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "گروپ های انتخاب شده"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -489,10 +489,10 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "فعال"
+msgstr ""
 
 msgid "Completed"
-msgstr "تکمیل شد"
+msgstr ""
 
 msgid "Cancelled"
 msgstr ""
@@ -541,7 +541,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "برنامه"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
@@ -589,7 +589,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "در حال پیشرفت"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -598,13 +598,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "مقدار"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "خطا"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -616,13 +616,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "اوقات"
+msgstr ""
 
 msgid "Message"
-msgstr "پیام"
+msgstr ""
 
 msgid "ID"
-msgstr "آی دی"
+msgstr ""
 
 msgid "Messages"
 msgstr "پیام ها"
@@ -637,10 +637,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "وضعیت"
+msgstr ""
 
 msgid "Description"
-msgstr "شرح"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
@@ -730,7 +730,7 @@ msgid "Overview"
 msgstr ""
 
 msgid "Yes"
-msgstr "بله"
+msgstr "بلی"
 
 msgid "No"
 msgstr "نخیر"
@@ -759,7 +759,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "صادر نمودن اطلاعات"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -772,7 +772,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "صادر نمودن رویداد ها"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -797,22 +797,22 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "صادر نمودن فرا اطلاعات"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "وارد نمودن اطلاعات"
+msgstr ""
 
 msgid "Import events"
-msgstr "وارد نمودن رویداد ها"
+msgstr ""
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "وارد نمودن فرا اطلاعات"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -872,10 +872,10 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "دیتا"
+msgstr ""
 
 msgid "Event"
-msgstr "رویداد"
+msgstr ""
 
 msgid "GML"
 msgstr ""
