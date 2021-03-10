@@ -17,8 +17,6 @@ import {
     defaultIdentifierOption,
     ImportReportMode,
     defaultImportReportModeOption,
-    PreheatMode,
-    defaultPreheatModeOption,
     ImportStrategy,
     defaultImportStrategyOption,
     AtomicMode,
@@ -63,7 +61,6 @@ const createInitialValues = prevJobDetails => ({
     identifier: prevJobDetails.identifier || defaultIdentifierOption,
     importReportMode:
         prevJobDetails.importReportMode || defaultImportReportModeOption,
-    preheatMode: prevJobDetails.preheatMode || defaultPreheatModeOption,
     importStrategy:
         prevJobDetails.importStrategy || defaultImportStrategyOption,
     firstRowIsHeader: getInitialBoolValue(
@@ -148,7 +145,6 @@ const MetadataImport = () => {
                             />
                             <Identifier />
                             <ImportReportMode />
-                            <PreheatMode />
                             <ImportStrategy value={values.importStrategy} />
                             <AtomicMode />
                             <MergeMode />
