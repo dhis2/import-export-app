@@ -11,7 +11,6 @@ Feature: The user should be able to import meta data
             | importMode        | COMMIT            |
             | identifier        | UID               |
             | importReportMode  | ERRORS            |
-            | preheatMode       | REFERENCE         |
             | importStrategy    | CREATE_AND_UPDATE |
             | atomicMode        | ALL               |
             | mergeMode         | MERGE             |
@@ -42,11 +41,6 @@ Feature: The user should be able to import meta data
 
     Scenario: The user selects a different import report mode
         Given the "importReportMode" input is set to "FULL"
-        When the import form is submitted
-        Then the upload request is sent with the right parameters
-
-    Scenario: The user selects a different preheat mode
-        Given the "preheatMode" input is set to "ALL"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
