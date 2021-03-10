@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Текущий пользователь"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -116,7 +116,7 @@ msgid "Code"
 msgstr "Код"
 
 msgid "Name"
-msgstr "Имя"
+msgstr "Название"
 
 msgid "Data element ID scheme"
 msgstr "ID схема элемента данных"
@@ -128,7 +128,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Выбранные наборы данных"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -197,7 +197,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 msgid "JSONP"
 msgstr ""
@@ -257,7 +257,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Добавить"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -301,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Выбранный"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Дата начала / окончания"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -394,7 +394,7 @@ msgid "Programs"
 msgstr "Программы"
 
 msgid "Category combination"
-msgstr "Комбинация категории"
+msgstr "Комбинация категорий"
 
 msgid "Dashboard"
 msgstr "Информационная панель"
@@ -403,7 +403,7 @@ msgid "Data element groups"
 msgstr "Группы элементов данных"
 
 msgid "Option sets"
-msgstr "Наборы опций"
+msgstr ""
 
 msgid "Object type"
 msgstr "Тип объекта"
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Сбор"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -469,7 +469,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Выбранные программы"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -490,13 +490,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Действующий"
+msgstr ""
 
 msgid "Completed"
-msgstr "Завершенный"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Отмененный"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -542,16 +542,16 @@ msgid "Strategy"
 msgstr "Стратегия"
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Тип отслеживаемого объекта"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
 
 msgid "Tracked entity types"
-msgstr "Типы отслеживаемых объектов"
+msgstr ""
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -590,7 +590,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "Выполняется"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -599,13 +599,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Значение"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Ошибка"
+msgstr ""
 
 msgid "Conflicts"
 msgstr "Конфликты"
@@ -617,13 +617,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Время"
+msgstr ""
 
 msgid "Message"
-msgstr "Сообщение"
+msgstr ""
 
 msgid "ID"
-msgstr "Ид"
+msgstr ""
 
 msgid "Messages"
 msgstr "Сообщения"
@@ -638,10 +638,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Статус"
+msgstr ""
 
 msgid "Description"
-msgstr "Описание"
+msgstr ""
 
 msgid "Summary"
 msgstr "Сводная информация"
@@ -659,7 +659,7 @@ msgid "Updated"
 msgstr "Обновлено"
 
 msgid "Total"
-msgstr "Итог"
+msgstr "Всего"
 
 msgid "Details by type"
 msgstr ""
@@ -760,7 +760,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Экспортировать данные"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -773,7 +773,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "Экспорт событий"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -798,22 +798,22 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Экспортировать мета данные"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Импортировать данные"
+msgstr ""
 
 msgid "Import events"
-msgstr "Импорт событий"
+msgstr ""
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Импортировать мета данные"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -873,16 +873,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Данные"
+msgstr ""
 
 msgid "Event"
-msgstr "Событие"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Метаданные"
+msgstr ""
 
 msgid "TEI"
 msgstr ""

@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2019-09-02 07:17+0000\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr "Noe gikk galt ved lasting av gjeldende bruker!"
+msgstr ""
 
 msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr "Ugyldig dato"
+msgstr ""
 
 msgid "Start date must be before end date"
-msgstr "Startdato må være før sluttdato"
+msgstr ""
 
 msgid "End date must be after start date"
-msgstr "Sluttdato må være etter startdato"
+msgstr ""
 
 msgid "Invalid duration"
 msgstr ""
@@ -39,18 +39,18 @@ msgstr "Format"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
-msgstr "Noe gikk galt da du lastet inn ID-ordningene for ekstra dataelementer"
+msgstr ""
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr "Noe gikk galt da du lastet inn de ekstra ID-ordningene"
+msgstr ""
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
-msgstr "Noe gikk galt da du lastet inn ID-ordningene for organisasjonsenheten"
+msgstr ""
 
 msgid "Please select a file"
-msgstr "Vennligst velg en fil"
+msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Nåværende bruker"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -89,19 +89,19 @@ msgid "Import"
 msgstr "Importer"
 
 msgid "Atomic mode"
-msgstr "Atomisk modus"
+msgstr ""
 
 msgid "Whether to import objects even if some references do not exist"
 msgstr ""
 
 msgid "Class key"
-msgstr "Klassenøkkel"
+msgstr ""
 
 msgid "Zip"
 msgstr "Zip"
 
 msgid "GZip"
-msgstr "GZip"
+msgstr ""
 
 msgid "Uncompressed"
 msgstr "Ikke komprimert"
@@ -110,7 +110,7 @@ msgid "Compression mode"
 msgstr ""
 
 msgid "Uid"
-msgstr "Uid"
+msgstr ""
 
 msgid "Code"
 msgstr "Kode"
@@ -128,22 +128,22 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Valgte datasett"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
-msgstr "Noe gikk galt ved lasting av datasettene!"
+msgstr ""
 
 msgid "At least one data set must be selected"
-msgstr "Minst ett av datasettene må merkes"
+msgstr ""
 
 msgid "One data set must be selected"
-msgstr "Et datasett må merkes"
+msgstr ""
 
 msgid "End date"
 msgstr "Sluttdato"
 
 msgid "Event ID scheme"
-msgstr "Hendelse ID-ordning"
+msgstr ""
 
 msgid "Loading export..."
 msgstr ""
@@ -155,7 +155,7 @@ msgid "Is the first row a header row?"
 msgstr ""
 
 msgid "First row is header"
-msgstr "Første rad er overskrift"
+msgstr ""
 
 msgid "A header row will be ignored during import"
 msgstr ""
@@ -167,7 +167,7 @@ msgid "Object (debugging purposes)"
 msgstr ""
 
 msgid "Flush mode"
-msgstr "Flushmodus"
+msgstr ""
 
 msgid "Controls when to flush the internal cache"
 msgstr ""
@@ -194,10 +194,10 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr "ADX"
+msgstr ""
 
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 msgid "JSONP"
 msgstr ""
@@ -242,7 +242,7 @@ msgid "Debug"
 msgstr "Feilsøking"
 
 msgid "Import report mode"
-msgstr "Importer rapportmodus"
+msgstr ""
 
 msgid "Controls what should be reported after the import is done"
 msgstr ""
@@ -257,7 +257,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Legg til"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -280,7 +280,7 @@ msgid ""
 msgstr ""
 
 msgid "Import strategy"
-msgstr "Importer strategi"
+msgstr ""
 
 msgid "Include all attributes"
 msgstr ""
@@ -301,7 +301,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Valgt"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -337,7 +337,7 @@ msgid "Non empty"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr "Inkluderingsstrategi"
+msgstr ""
 
 msgid "Controls which properties to include"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Start/slutt-datoer"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -382,7 +382,7 @@ msgid "Replace"
 msgstr "Erstatt"
 
 msgid "Merge mode"
-msgstr "Slå sammen modus"
+msgstr ""
 
 msgid "Strategy to take when merging two objects"
 msgstr ""
@@ -403,19 +403,19 @@ msgid "Data element groups"
 msgstr "Dataelementgrupper"
 
 msgid "Option sets"
-msgstr "Alternativsett"
+msgstr ""
 
 msgid "Object type"
 msgstr "Objekttype"
 
 msgid "One object must be selected"
-msgstr "Et objekt må merkes"
+msgstr ""
 
 msgid "Object"
 msgstr "Objekt"
 
 msgid "Organisation unit ID scheme"
-msgstr "Organisasjonsenhet ID ordning"
+msgstr ""
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Registrer"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -457,7 +457,7 @@ msgid "None"
 msgstr "Ingen"
 
 msgid "Preheat mode"
-msgstr "Forvarmmodus"
+msgstr ""
 
 msgid "Controls the level of preheating that should be done"
 msgstr ""
@@ -469,16 +469,16 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Valgte programmer"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr "Noe gikk galt ved lasting av programmer!"
+msgstr ""
 
 msgid "At least one program must be selected"
-msgstr "Minst et program må merkes"
+msgstr ""
 
 msgid "One program must be selected"
-msgstr "Et program må merkes"
+msgstr ""
 
 msgid "Which program stage should be included?"
 msgstr ""
@@ -490,28 +490,28 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Aktiv"
+msgstr ""
 
 msgid "Completed"
-msgstr "Fullført"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Kansellert"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
 
 msgid "Skip audit"
-msgstr "Hopp over tilsyn"
+msgstr ""
 
 msgid "Skip audit, meaning audit values will not be generated"
 msgstr ""
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr "Forbedrer ytelsen til bekostning av evnen til å revidere endringer"
+msgstr ""
 
 msgid "Skip exisiting check"
-msgstr "Hopp over eksisterende sjekk"
+msgstr ""
 
 msgid "Skip checks for existing data values"
 msgstr ""
@@ -522,7 +522,7 @@ msgid ""
 msgstr ""
 
 msgid "Skip sharing"
-msgstr "Hopp over deling"
+msgstr ""
 
 msgid "Skip sharing and access settings"
 msgstr ""
@@ -533,7 +533,7 @@ msgid ""
 msgstr ""
 
 msgid "Skip validation"
-msgstr "Hopp over validering"
+msgstr ""
 
 msgid "Skip validation for import (not recommended)"
 msgstr ""
@@ -542,16 +542,16 @@ msgid "Strategy"
 msgstr "Strategi"
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Sporet enhetstype"
+msgstr ""
 
 msgid "Filter by"
-msgstr "Filtrer etter"
+msgstr ""
 
 msgid "Tracked entity types"
-msgstr "Sporet enhetstyper"
+msgstr ""
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -584,28 +584,28 @@ msgid "One user must be selected"
 msgstr ""
 
 msgid "No jobs started yet."
-msgstr "Ingen jobber startet ennå."
+msgstr ""
 
 msgid "Recreate job"
-msgstr "Gjenskap jobben"
+msgstr ""
 
 msgid "In progress"
-msgstr "Pågående"
+msgstr ""
 
 msgid "Job details"
-msgstr "Jobbdetaljer"
+msgstr ""
 
 msgid "Key"
-msgstr "Nøkkel"
+msgstr ""
 
 msgid "Value"
-msgstr "Verdi"
+msgstr ""
 
 msgid "Job summary"
-msgstr "Jobbsammendrag"
+msgstr ""
 
 msgid "Error"
-msgstr "Feil"
+msgstr ""
 
 msgid "Conflicts"
 msgstr "Konflikter"
@@ -617,13 +617,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Klokkeslett"
+msgstr ""
 
 msgid "Message"
-msgstr "Melding"
+msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Messages"
 msgstr "Meldinger"
@@ -632,16 +632,16 @@ msgid "Type"
 msgstr "Type"
 
 msgid "Property"
-msgstr "Egenskap"
+msgstr ""
 
 msgid "View summary of recently started import job"
-msgstr "Vis sammendrag av nylige startede importjobber"
+msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 msgid "Description"
-msgstr "Beskrivelse"
+msgstr ""
 
 msgid "Summary"
 msgstr "Sammendrag"
@@ -668,19 +668,19 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Minst en organisasjonsenhet må merkes"
+msgstr ""
 
 msgid "One organisation unit must be selected"
-msgstr "En organisasjonsenhet må merkes"
+msgstr ""
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr "Noe gikk galt ved lasting av organisasjonsenheter!"
+msgstr ""
 
 msgid "One program stage must be selected"
-msgstr "En programfase må merkes"
+msgstr ""
 
 msgid "Something went wrong when loading the schemas!"
-msgstr "Noe gikk galt ved lasting av skjemaene!"
+msgstr ""
 
 msgid "Select All"
 msgstr "Velg alle"
@@ -689,46 +689,46 @@ msgid "Select None"
 msgstr "Velg ingen"
 
 msgid "At least one schema must be selected"
-msgstr "Minst et skjema må merkes"
+msgstr ""
 
 msgid "Export"
 msgstr "Eksporter"
 
 msgid "Data import"
-msgstr "Dataimport"
+msgstr ""
 
 msgid "Event import"
-msgstr "Hendelseimport"
+msgstr ""
 
 msgid "GML import"
-msgstr "GML import"
+msgstr ""
 
 msgid "Metadata import"
-msgstr "Metadataimport"
+msgstr ""
 
 msgid "TEI import"
 msgstr ""
 
 msgid "Data export"
-msgstr "Dataeksport"
+msgstr ""
 
 msgid "Event export"
-msgstr "Hendelseeksport"
+msgstr ""
 
 msgid "Metadata dependency export"
-msgstr "Metadataeksport med avhengigheter"
+msgstr ""
 
 msgid "Metadata export"
-msgstr "Metadataeksport"
+msgstr ""
 
 msgid "TEI export"
 msgstr ""
 
 msgid "Job overview"
-msgstr "Jobboversikt"
+msgstr ""
 
 msgid "Overview"
-msgstr "Oversikt"
+msgstr ""
 
 msgid "Yes"
 msgstr "Ja"
@@ -740,16 +740,16 @@ msgid "There are errors on this page"
 msgstr ""
 
 msgid "Something went wrong when loading the class keys"
-msgstr "Noe gikk galt da ved lasting av klassetastene"
+msgstr ""
 
 msgid "Something went wrong when loading the objects"
-msgstr "Noe gikk galt ved lasting av objektene"
+msgstr ""
 
 msgid "All program stages"
-msgstr "Alle programfaser"
+msgstr ""
 
 msgid "Something went wrong when loading the program stages"
-msgstr "Noe gikk galt ved lasting av programfasene"
+msgstr ""
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
@@ -760,11 +760,10 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Eksporter data"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
-"Importer dataverdier fra ADX XML, DXF 2 XML, JSON, CSV eller PDF filer."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr ""
@@ -774,14 +773,12 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "Eksporter hendelser"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
-"Importer hendelsesdata for programmer, faser og sporede enheter i DXF 2 "
-"format."
 
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr ""
@@ -790,8 +787,6 @@ msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
 msgstr ""
-"Importer geografiske data for organisasjonsenheter ved bruk av GML-format. "
-"GML er en XML-grammatikk for å uttrykke geografiske funksjoner."
 
 msgid "Overview: Import/Export"
 msgstr ""
@@ -803,28 +798,28 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Eksporter metadata"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Importer data"
+msgstr ""
 
 msgid "Import events"
-msgstr "Importer hendelser"
+msgstr ""
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Importer metadata"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
 
 msgid "An overview of all import jobs started this session."
-msgstr "En oversikt over alle importjobber som ble startet i denne sesjonen."
+msgstr ""
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
@@ -840,11 +835,9 @@ msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
 "format."
 msgstr ""
-"Importer metadata som dataelementer og organisasjonsenheter ved bruk av DXF "
-"2-format."
 
 msgid "A class key must be selected"
-msgstr "En klassetast må merkes"
+msgstr ""
 
 msgid "Tracked entity instances export"
 msgstr ""
@@ -874,22 +867,22 @@ msgid "Job started."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr "En ukjent feil oppsto. Vennligst prøv igjen senere"
+msgstr ""
 
 msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Data"
+msgstr ""
 
 msgid "Event"
-msgstr "Hendelse"
+msgstr ""
 
 msgid "GML"
-msgstr "GML"
+msgstr ""
 
 msgid "Metadata"
-msgstr "Metadata"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""
