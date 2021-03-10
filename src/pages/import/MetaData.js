@@ -23,7 +23,6 @@ import { InclusionStrategy } from '../../components/Inputs/InclusionStrategy'
 import { MergeMode } from '../../components/Inputs/MergeMode'
 import { MetadataImportIcon } from '../../components/Icon'
 import { MoreOptions } from '../../components/FormSections/MoreOptions'
-import { PreheatMode } from '../../components/Inputs/PreheatMode'
 import { Progress } from '../../components/Loading/Progress'
 import { SkipSharing } from '../../components/Inputs/SkipSharing'
 import { SkipValidation } from '../../components/Inputs/SkipValidation'
@@ -88,7 +87,6 @@ export const MetaDataImport = () => {
 
                             <Identifier />
                             <ImportReportMode />
-                            <PreheatMode />
                             <ImportStrategy />
                             <AtomicMode />
                             <MergeMode />
