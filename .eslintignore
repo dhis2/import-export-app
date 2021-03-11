@@ -1,2 +1,3 @@
 cypress/*
 coverage/*
+src/locales/*
