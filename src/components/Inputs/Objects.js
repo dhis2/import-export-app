@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { hasValue, composeValidators } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
+import { hasValue, composeValidators } from '@dhis2/ui'
 import { SingleSelectFieldFF } from '@dhis2/ui'
-
-import { StyledField } from '../index'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { useObjects } from '../../hooks/index'
+import { StyledField } from '../index'
 
 const SINGLE_EXACT_OBJECT_VALIDATOR = object =>
     !object ? i18n.t('One object must be selected') : undefined

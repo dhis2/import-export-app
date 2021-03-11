@@ -1,7 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { Checkbox } from '@dhis2/ui'
-
+import PropTypes from 'prop-types'
+import React from 'react'
 import styles from './Schemas.module.css'
 
 const SchemaGroup = ({ label, schemas, toggleSchema, dataTest }) => (

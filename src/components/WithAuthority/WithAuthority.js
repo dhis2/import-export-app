@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-
 import { UserContext } from '../../contexts/index'
 
 const WithAuthority = ({ pred, children }) => {

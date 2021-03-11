@@ -1,7 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
-
+import PropTypes from 'prop-types'
+import React from 'react'
 import { Select } from '../index'
 const { Field } = ReactFinalForm
 

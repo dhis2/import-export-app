@@ -1,14 +1,14 @@
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
+import React from 'react'
+import { Router } from 'react-router-dom'
 import { render, fireEvent, cleanup } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { tasksState, allJobs } from './data'
-import { TaskContext } from '../../../contexts/'
 import { JobOverview } from '../../'
+import { TaskContext } from '../../../contexts/'
 import { MenuLabel } from '../MenuLabel/MenuLabel'
+import { tasksState, allJobs } from './data'
 
 afterEach(() => {
     cleanup()

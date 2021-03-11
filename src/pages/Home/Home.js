@@ -1,9 +1,8 @@
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-
+import React from 'react'
 import { Page } from '../../components/index'
-import { HomeCard } from './HomeCard'
 import styles from './Home.module.css'
+import { HomeCard } from './HomeCard'
 import { importPages, exportPages } from './pages'
 
 // PAGE INFO

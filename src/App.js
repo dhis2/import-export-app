@@ -1,20 +1,18 @@
-import React from 'react'
-import { HashRouter } from 'react-router-dom'
-import i18n from './locales'
 import {
     CssVariables,
     CssReset,
     CircularLoader,
     ComponentCover,
 } from '@dhis2/ui'
-
-import { TaskContext } from './contexts/'
-import { UserContext } from './contexts/'
-import { useUser, useTasks } from './hooks/'
-
+import React from 'react'
+import { HashRouter } from 'react-router-dom'
 import styles from './App.module.css'
 import { Sidebar } from './components/'
 import { Router } from './components/'
+import { UserContext } from './contexts/'
+import { TaskContext } from './contexts/'
+import { useUser, useTasks } from './hooks/'
+import i18n from './locales'
 
 const App = () => {
     const { tasks, addTask, jobOverview, updateJobOverview } = useTasks()

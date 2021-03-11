@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
+import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
 import { UserContext } from '../../contexts/index'
-import { hasAuthorityToSelectAllOrgUnits } from '../WithAuthority/predicates'
 import { RadioGroupField } from '../index'
+import { hasAuthorityToSelectAllOrgUnits } from '../WithAuthority/predicates'
 import { OrgUnitTree, Inclusion } from './index'
 
 const OU_MODE_MANUAL_VALUE = ':MANUAL:'

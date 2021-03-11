@@ -37,8 +37,5 @@
         "@dhis2/ui": "^6.5.5",
         "classnames": "^2.2.6",
         "react-router-dom": "^5.2.0"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
     }
 }

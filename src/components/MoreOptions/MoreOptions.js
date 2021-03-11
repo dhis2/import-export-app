@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 import { Divider, IconChevronRight24 } from '@dhis2/ui'
-
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 import styles from './MoreOptions.module.css'
 
 const MoreOptions = ({

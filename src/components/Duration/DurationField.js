@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { InputField } from '@dhis2/ui'
 import { ReactFinalForm } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { FormField } from '../index'
 
 const { Field } = ReactFinalForm

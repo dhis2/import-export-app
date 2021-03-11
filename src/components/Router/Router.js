@@ -1,6 +1,5 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import { ScrollToTop } from '../Router/ScrollToTop'
 import {
     DataImport,
     DataExport,
@@ -15,6 +14,7 @@ import {
     JobOverview,
     Home,
 } from '../../pages'
+import { ScrollToTop } from '../Router/ScrollToTop'
 
 const Router = () => {
     return (

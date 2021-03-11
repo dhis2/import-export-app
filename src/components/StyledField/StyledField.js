@@ -1,5 +1,5 @@
-import React from 'react'
 import { ReactFinalForm } from '@dhis2/ui'
+import React from 'react'
 import styles from './StyledField.module.css'
 
 const { Field } = ReactFinalForm

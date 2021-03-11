@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
-
+import React, { useState } from 'react'
+import {
+    Page,
+    MoreOptions,
+    BasicOptions,
+    SchemeContainer,
+    DataIcon,
+    ValidationSummary,
+} from '../../components/index'
 import {
     OrgUnitTree,
     IncludeChildren,
@@ -25,14 +32,6 @@ import {
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs/index'
-import {
-    Page,
-    MoreOptions,
-    BasicOptions,
-    SchemeContainer,
-    DataIcon,
-    ValidationSummary,
-} from '../../components/index'
 import { onExport, validate } from './form-helper'
 
 const { Form } = ReactFinalForm

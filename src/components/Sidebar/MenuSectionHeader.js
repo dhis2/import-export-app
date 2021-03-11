@@ -1,7 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { MenuSectionHeader as UIHeader } from '@dhis2/ui'
-
+import PropTypes from 'prop-types'
+import React from 'react'
 import styles from './MenuSectionHeader.module.css'
 
 const MenuSectionHeader = ({ label, children }) => (
