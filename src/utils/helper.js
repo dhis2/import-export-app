@@ -1,5 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-
 import { getUploadXHR } from './xhr'
 
 const trimString = (length, string) =>
@@ -14,10 +13,7 @@ const pathToId = path => {
 const jsDateToISO8601 = date =>
     `${date.getFullYear().toString()}-${(date.getMonth() + 1)
         .toString()
-        .padStart(2, 0)}-${date
-        .getDate()
-        .toString()
-        .padStart(2, 0)}`
+        .padStart(2, 0)}-${date.getDate().toString().padStart(2, 0)}`
 
 const jsDateToString = date =>
     `${jsDateToISO8601(date)} ${date
@@ -26,10 +22,7 @@ const jsDateToString = date =>
         .padStart(2, 0)}:${date
         .getMinutes()
         .toString()
-        .padStart(2, 0)}:${date
-        .getSeconds()
-        .toString()
-        .padStart(2, 0)}
+        .padStart(2, 0)}:${date.getSeconds().toString().padStart(2, 0)}
 `
 // some parameters take the long version of the compression type
 const compressionToName = compression => {

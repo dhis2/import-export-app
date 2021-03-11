@@ -77,6 +77,9 @@ jobs:
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
             - name: Lint
+              run: yarn d2-app-scripts i18n generate
+
+            - name: Lint
               run: yarn lint
 
     test:

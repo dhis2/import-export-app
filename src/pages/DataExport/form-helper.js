@@ -1,10 +1,9 @@
-import { locationAssign, compressionToName } from '../../utils/helper'
-
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
+import { locationAssign, compressionToName } from '../../utils/helper'
+import { jsDateToISO8601, pathToId } from '../../utils/helper'
 
 const valuesToParams = (
     {

@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
-
-import styles from './ProgramStages.module.css'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { useProgramStages } from '../../hooks/index'
 import { StyledField } from '../index'
+import styles from './ProgramStages.module.css'
 
 const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
     !programStage ? i18n.t('One program stage must be selected') : undefined

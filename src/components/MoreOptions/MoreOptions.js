@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
-import { Divider } from '@dhis2/ui'
-import { ChevronRight } from '@dhis2/ui-icons'
-
+import { Divider, IconChevronRight24 } from '@dhis2/ui'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 import styles from './MoreOptions.module.css'
 
 const MoreOptions = ({
@@ -30,12 +28,14 @@ const MoreOptions = ({
                 onClick={onToggle}
                 data-test={`${dataTest}-header`}
             >
-                <ChevronRight
+                <div
                     className={cx({
                         [styles.chevronHidden]: hidden,
                         [styles.chevronVisible]: !hidden,
                     })}
-                />
+                >
+                    <IconChevronRight24 />
+                </div>
                 <h2 className={styles.label}>{label}</h2>
             </header>
             <Divider />

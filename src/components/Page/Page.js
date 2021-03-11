@@ -1,6 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
 import {
     Card,
     CenteredContent,
@@ -8,9 +5,11 @@ import {
     ComponentCover,
     LinearLoader,
 } from '@dhis2/ui'
-
-import styles from './Page.module.css'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { JobSummary, MiniJobSummary } from '../index'
+import styles from './Page.module.css'
 
 const Page = ({
     title,

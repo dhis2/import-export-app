@@ -1,10 +1,9 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-
+import React from 'react'
 import { statsPropType, messagesPropType } from '../helper'
+import { Messages } from '../Messages/Messages'
 import { SingleSummary } from '../SingleSummary/SingleSummary'
 import { TypeCount, typeCountStatsPropTypeObj } from '../TypeCount/TypeCount'
-import { Messages } from '../Messages/Messages'
 
 const TypeReportSummary = ({ overviewStats, stats, messages }) => {
     return (

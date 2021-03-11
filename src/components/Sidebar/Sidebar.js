@@ -1,11 +1,9 @@
-import React from 'react'
-import { useLocation, useHistory } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
 import i18n from '@dhis2/d2-i18n'
 import { Divider, Menu, MenuItem } from '@dhis2/ui'
-
-import styles from './Sidebar.module.css'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { useLocation, useHistory } from 'react-router-dom'
 import {
     DataIcon,
     EventIcon,
@@ -16,8 +14,9 @@ import {
     TEIIcon,
     TasksIcon,
 } from '../index'
-import { ImportMenuSectionHeader } from './ImportMenuSectionHeader'
 import { ExportMenuSectionHeader } from './ExportMenuSectionHeader'
+import { ImportMenuSectionHeader } from './ImportMenuSectionHeader'
+import styles from './Sidebar.module.css'
 
 const dataImportPage = {
     name: i18n.t('Data import'),

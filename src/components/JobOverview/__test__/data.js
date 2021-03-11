@@ -292,7 +292,7 @@ export const tasksState = {
         },
     },
     gml: {
-        '1581512432380': {
+        1581512432380: {
             id: 1581512432380,
             level: 'INFO',
             created: new Date('2020-02-12T13:00:32.380'),

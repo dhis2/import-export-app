@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui'
-import { DurationField } from '../index'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { DURATION_VALIDATOR } from '../Duration/DurationField'
+import { DurationField } from '../index'
 
 const NAME = 'lastUpdatedDuration'
 const DATATEST = 'input-last-updated-duration'

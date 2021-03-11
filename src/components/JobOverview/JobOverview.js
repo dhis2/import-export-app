@@ -1,16 +1,15 @@
-import React, { useContext, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Button, Chip, Menu, MenuItem } from '@dhis2/ui'
-
-import styles from './JobOverview.module.css'
+import PropTypes from 'prop-types'
+import React, { useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { TaskContext } from '../../contexts/'
 import { categoryTypes } from '../../utils/tasks'
 import { JobSummary } from '../index'
-import { categoryTypesObj, jobToPath } from './helper'
-import { MenuLabel } from './MenuLabel/MenuLabel'
 import { ChipContainer } from './ChipContainer'
+import { categoryTypesObj, jobToPath } from './helper'
+import styles from './JobOverview.module.css'
+import { MenuLabel } from './MenuLabel/MenuLabel'
 
 const JobOverview = ({
     activeTypes,
