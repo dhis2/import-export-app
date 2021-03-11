@@ -1,9 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-
-import styles from './MenuLabel.module.css'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { jsDateToString } from '../../../utils/helper'
+import styles from './MenuLabel.module.css'
 
 const MenuLabel = ({ task }) => {
     return (

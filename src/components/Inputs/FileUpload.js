@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { FileUpload as FileUploadGeneric } from '../index'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { SINGLE_FILE_VALIDATOR } from '../FileUpload/FileUpload'
+import { FileUpload as FileUploadGeneric } from '../index'
 
 const NAME = 'files'
 const LABEL = i18n.t('Select a file to import values from')

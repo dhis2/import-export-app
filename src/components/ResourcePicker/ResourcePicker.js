@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
 import {
     ReactFinalForm,
@@ -8,11 +6,12 @@ import {
     CircularLoader,
     Help,
 } from '@dhis2/ui'
-
-import styles from './ResourcePicker.module.css'
-import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
-import { resourceTypes } from './resourceTypes'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 import { FormField } from '../index'
+import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
+import styles from './ResourcePicker.module.css'
+import { resourceTypes } from './resourceTypes'
 
 const { Field } = ReactFinalForm
 

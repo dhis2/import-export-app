@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
-
+import React, { useState } from 'react'
+import {
+    Page,
+    MetadataExportIcon,
+    ValidationSummary,
+} from '../../components/index'
 import {
     Format,
     formatOptions,
@@ -13,11 +17,6 @@ import {
     SkipSharing,
     ExportButton,
 } from '../../components/Inputs/index'
-import {
-    Page,
-    MetadataExportIcon,
-    ValidationSummary,
-} from '../../components/index'
 import { onExport } from './form-helper'
 
 const { Form } = ReactFinalForm

@@ -1,5 +1,5 @@
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 

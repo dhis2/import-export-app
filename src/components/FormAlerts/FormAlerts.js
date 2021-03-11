@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { AlertStack, AlertBar } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const FormAlerts = ({ alerts, dataTest }) => (
     <AlertStack data-test={dataTest}>

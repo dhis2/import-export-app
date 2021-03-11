@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import {
     Table,
@@ -10,9 +8,10 @@ import {
     TableRowHead,
     TableCellHead,
 } from '@dhis2/ui'
-
-import { statsPropTypeObj } from '../helper'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { FormField } from '../../index'
+import { statsPropTypeObj } from '../helper'
 
 const TypeCount = ({ stats }) => {
     if (stats.length == 0) return null

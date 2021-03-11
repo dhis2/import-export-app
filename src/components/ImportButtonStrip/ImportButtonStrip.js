@@ -1,8 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Button, ButtonStrip, Help } from '@dhis2/ui'
-
+import PropTypes from 'prop-types'
+import React from 'react'
 import styles from './ImportButtonStrip.module.css'
 const DRYRUN_HELPTEXT = i18n.t(
     'A dry run tests the import settings without importing any data'

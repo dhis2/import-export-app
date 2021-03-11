@@ -1,12 +1,11 @@
-import { locationAssign } from '../../utils/helper'
 import i18n from '@dhis2/d2-i18n'
-
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
-import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
+import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index'
+import { locationAssign } from '../../utils/helper'
+import { jsDateToISO8601, pathToId } from '../../utils/helper'
 
 // calculate minimum set of parameters based on given filters
 const valuesToParams = (
