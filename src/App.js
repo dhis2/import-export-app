@@ -5,8 +5,8 @@ import {
     CssVariables,
     CssReset,
     CircularLoader,
-    ScreenCover,
-} from '@dhis2/ui-core'
+    ComponentCover,
+} from '@dhis2/ui'
 
 import { TaskContext } from './contexts/'
 import { UserContext } from './contexts/'
@@ -27,9 +27,9 @@ const App = () => {
             <CssReset />
             <CssVariables spacers colors />
             {loading && (
-                <ScreenCover dataTest="app-screen-cover">
+                <ComponentCover dataTest="app-screen-cover">
                     <CircularLoader dataTest="app-loader" />
-                </ScreenCover>
+                </ComponentCover>
             )}
             {error && (
                 <div data-test="app-error">

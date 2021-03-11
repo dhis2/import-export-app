@@ -26,10 +26,10 @@
     margin-right: 5px;
 }
 
-.chevronHidden {
+.chevronHidden svg {
     transform: rotate(90deg);
 }
 
-.chevronVisible {
+.chevronVisible svg {
     transform: rotate(-90deg);
 }
