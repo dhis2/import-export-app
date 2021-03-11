@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2020
+# Ibatov <ibatovk@who.int>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,22 +16,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "Жорий фойдаланувчини юклашда кўзда тутилмаган хатолик юз берди"
 
 msgid "Basic options"
-msgstr ""
+msgstr "Асосий вариантлар"
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Сана хато"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "Бошланиш санаси якунланиш санасидан олдинда бўлиши лозим"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "Якунланиш санаси бошланиш санасидан кейинда бўлиши лозим"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "Давомийлиги нотўғри"
 
 msgid "Format"
 msgstr "Форматлаш"
@@ -39,77 +39,85 @@ msgstr "Форматлаш"
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
+"Маълумотлар элементлари идентификаторининг қўшимча схемаларини юклашда "
+"хатолик юз берди "
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr ""
+msgstr "Қўшимча схемалар идентификаторини юклашда хатолик юз берди "
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
+"Қўшимча ташкилий бўлимлар идентификаторининг схемаларини юклашда хатолик юз "
+"берди "
 
 msgid "Please select a file"
-msgstr ""
+msgstr "Илтимос, файлни танланг"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
+"Синов тести ҳеч қандай маълумотни импорт қилмасдан импорт параметрларини "
+"синаб кўради"
 
 msgid "Start dry run"
-msgstr ""
+msgstr "Синовни бошлаш"
 
 msgid "Start import"
-msgstr ""
+msgstr "Импортни бошлаш"
 
 msgid "Any user"
-msgstr ""
+msgstr "Исталган фойдаланувчи"
 
 msgid "Current user"
-msgstr ""
+msgstr "Жорий фойдаланувчи"
 
 msgid "No user/unassigned"
-msgstr ""
+msgstr "Фойдаланувчи йўқ/тайинланмаган"
 
 msgid "Selected users"
-msgstr ""
+msgstr "Танланган фойдаланувчилар"
 
 msgid "Filter by assigned user"
-msgstr ""
+msgstr "Тайинланган фойдаланувчи бўйича фильтрлаш"
 
 msgid "Export only instances with events assigned to specific users"
 msgstr ""
+"Фақат маълум фойдаланувчиларга тайинланган ҳодиса/тадбирлар билан экспорт "
+"қилиш"
 
 msgid "Assigned user(s)"
-msgstr ""
+msgstr "Тайинланган фойдаланувчи(лар)"
 
 msgid "Do not import"
-msgstr ""
+msgstr "Импорт қилинмасин"
 
 msgid "Import"
 msgstr "Импорт"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Атомар режим"
 
 msgid "Whether to import objects even if some references do not exist"
-msgstr ""
+msgstr "Ҳаволаларни баъзи бирлари етишмасада, объектни импорт қилмоқчимисиз"
 
 msgid "Class key"
-msgstr ""
+msgstr "Синф калити"
 
 msgid "Zip"
 msgstr "Почта индекси"
 
 msgid "GZip"
-msgstr ""
+msgstr "G-почта индекси"
 
 msgid "Uncompressed"
 msgstr "Сиқилмаган"
 
 msgid "Compression mode"
-msgstr ""
+msgstr "Архивни сиқиш режими"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Код"
@@ -121,67 +129,67 @@ msgid "Data element ID scheme"
 msgstr "Маълумотлар элементи идентификатори схемаси"
 
 msgid "Which data sets should be included in export?"
-msgstr ""
+msgstr "Экспорт учун қайси маълумотлар тўпламини киритиш керак?"
 
 msgid "Filter data sets"
-msgstr ""
+msgstr "Маълумотлар тўпламини фильтрлаш"
 
 msgid "Selected data sets"
-msgstr ""
+msgstr "Танланган маълумотлар тўпламлари"
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "Маълумотлар тўпламларини юклашда кўзда тутилмаган хатолик юз берди!"
 
 msgid "At least one data set must be selected"
-msgstr ""
+msgstr "Камида битта маълумотлар тўплами танланган бўлиши лозим"
 
 msgid "One data set must be selected"
-msgstr ""
+msgstr "Бирта маълумотлар тўплами танланган бўлиши лозим"
 
 msgid "End date"
 msgstr "Якунланиш санаси"
 
 msgid "Event ID scheme"
-msgstr ""
+msgstr "Тадбир ID схемаси"
 
 msgid "Loading export..."
-msgstr ""
+msgstr "Экспорт юкланмоқда ..."
 
 msgid "Select a file to import values from"
-msgstr ""
+msgstr "...дан қийматлар импортини сақлаш учун файлни танланг"
 
 msgid "Is the first row a header row?"
-msgstr ""
+msgstr "Биринчи қатор Сарлавҳа қаторими?"
 
 msgid "First row is header"
-msgstr ""
+msgstr "Биринчи қатор-Сарлавҳа"
 
 msgid "A header row will be ignored during import"
-msgstr ""
+msgstr "Импорт жараёнида биринчи қатор истисно қилинади"
 
 msgid "Auto (recommended)"
-msgstr ""
+msgstr "Авто (тавсия этилади)"
 
 msgid "Object (debugging purposes)"
-msgstr ""
+msgstr "Объект (созлаш учун)"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Тозалаш режими"
 
 msgid "Controls when to flush the internal cache"
-msgstr ""
+msgstr "Ички буферни тозалашга кетган вақтни назорат қилади"
 
 msgid "All"
 msgstr "Барчаси"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Кузатув учун белгиланган"
 
 msgid "Not marked for follow-up"
-msgstr ""
+msgstr "Кузатув учун белгиланмаган"
 
 msgid "Include only entities with follow-up status"
-msgstr ""
+msgstr "Фақат кузатув мақомига эга бўлган шахсларни киритиш"
 
 msgid "JSON"
 msgstr "JSON"
@@ -193,19 +201,19 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "JSONP"
-msgstr ""
+msgstr "JSONP"
 
 msgid "What format is the data to import?"
-msgstr ""
+msgstr "Импорт қилинадиган маълумотлар қандай форматда бўлиши лозим?"
 
 msgid "What format should the data be exported as?"
-msgstr ""
+msgstr "Экспорт қилинадиган маълумотлар қандай формат сифатида бўлиши лозим?"
 
 msgid "ID scheme"
 msgstr "Идентификатор схемаси"
@@ -220,171 +228,179 @@ msgid "Identifier"
 msgstr "Идентификатор"
 
 msgid "Identifier scheme to use for reference matching"
-msgstr ""
+msgstr "Маълумотларни мослаштириш учун фойдаланиладиган идентификатор схемаси"
 
 msgid "Only include reports for objects that have errors"
-msgstr ""
+msgstr "Фақатгина хатоси бўлган объектлар учун ҳисоботларни қўшинг"
 
 msgid "Errors"
 msgstr "Хатоликлар"
 
 msgid "Reports for all objects imported"
-msgstr ""
+msgstr "Импорт қилинадиган барча объектлар учун ҳисоботлар"
 
 msgid "Full"
 msgstr "Тўлиқ"
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
+"Импорт қилинган барча объектлар учун ҳисоботлар, уларнинг номлари билан "
+"бирга (агар мавжуд бўлса)"
 
 msgid "Debug"
 msgstr "Носозликларни тузатиш"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Ҳисобот режимини импорт қилиш"
 
 msgid "Controls what should be reported after the import is done"
 msgstr ""
+"Импорт қилинганидан кейин хабар қилиниши керак бўлган ахборотни бошқариш"
 
 msgid "Import new values and update existing"
-msgstr ""
+msgstr "Янги қадриятларни импорт қилинг ва мавжудларини янгиланг"
 
 msgid "Merge"
 msgstr "Бирлаштириш"
 
 msgid "Import new values only"
-msgstr ""
+msgstr "Фақат янги қийматларни импорт қилиш"
 
 msgid "Append"
-msgstr ""
+msgstr "Қўшиш"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
+"Фақат мавжуд қийматларни янгиланг, янги қийматларни ўзгаришсиз қолдиринг"
 
 msgid "Update"
 msgstr "Янгилаш"
 
 msgid "Remove values included in uploaded file"
-msgstr ""
+msgstr "Юкланган файлдан қўшимча киритилган қийматларни олиб ташлаш"
 
 msgid "Delete"
 msgstr "Ўчириб ташлаш"
 
 msgid "Data will be deleted"
-msgstr ""
+msgstr "Маълумотлар ўчириб ташланади"
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
 msgstr ""
+"Юкланган файлдаги қийматлар маълумотлар базасидан ўчириб ташланади. Бу тўғри"
+" ҳаракат эканлигига ишонч ҳосил қилинг; амалга ошгач маълумотни қайтариб "
+"бўлмайди"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Импорт стратегияси"
 
 msgid "Include all attributes"
-msgstr ""
+msgstr "Барча атрибутларни қўшинг"
 
 msgid "Include first level units"
-msgstr ""
+msgstr "Биринчи даражали бўлимларни қўшинг"
 
 msgid "Include the first level of organisation units inside selections"
-msgstr ""
+msgstr "Танловлар ичида биринчи даражадаги ташкилий бўлимларни киритинг"
 
 msgid "Include deleted"
 msgstr "Қўшимчалар ўчирилди"
 
 msgid "Include deleted data in export"
-msgstr ""
+msgstr "Ўчирилган маълумотларни экспортга қўшиш"
 
 msgid "Only include selected organisation unit"
-msgstr ""
+msgstr "Фақатгина танланган ташкилий бўлимларни киритинг"
 
 msgid "Selected"
-msgstr ""
+msgstr "Танланган"
 
 msgid "Include the first level of units inside selections"
-msgstr ""
+msgstr "Танловлар ичидаги бўлимларни биринчи даражасини қўшинг"
 
 msgid "Directly below"
-msgstr ""
+msgstr "Тўғридан-тўғри қуйида"
 
 msgid "Include all units inside selections"
-msgstr ""
+msgstr "Танлов ичидаги барча бўлимларни қўшинг"
 
 msgid "All below"
-msgstr ""
+msgstr "Қуйидагиларнинг барчаси"
 
 msgid "How should organisation units inside the selections be included?"
-msgstr ""
+msgstr "Ташкилий бўлимларни танланганлар қаторига қандай қўшиб мумкин?"
 
 msgid "Includes properties which are not null"
-msgstr ""
+msgstr "Нолга тенг бўлмаган хусусиятлиларни қаторга қўшади"
 
 msgid "Non null"
-msgstr ""
+msgstr "Нолга тенг эмас"
 
 msgid "Include all properties"
-msgstr ""
+msgstr "Барча хусусиятларни қўшиш"
 
 msgid "Always"
 msgstr "Доимо"
 
 msgid "Include non-empty properties"
-msgstr ""
+msgstr "Хусусияти бўш бўлмаганларни қўшиш"
 
 msgid "Non empty"
-msgstr ""
+msgstr "Бўш эмас"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Қўшиш стратегияси"
 
 msgid "Controls which properties to include"
-msgstr ""
+msgstr "Қандай хусусиятлиларни қўшишни бошқаради"
 
 msgid "Async"
 msgstr "Асинхрон"
 
 msgid "Asynchronous import"
-msgstr ""
+msgstr "Асинхрон импорт"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr ""
+msgstr "Асинхрон импортнинг бажарилишини аниқлаштириб туради"
 
 msgid "Last updated duration"
-msgstr ""
+msgstr "Охирги янгиланиш давомийлиги"
 
 msgid "Last updated end date"
-msgstr ""
+msgstr "Охирги янгиланиш тугаш санаси"
 
 msgid "Do not filter by last updated date"
-msgstr ""
+msgstr "Охирги янгиланиш санаси бўйича фильтрланмасин"
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "Бошланиш/Тугаш вақтлари"
 
 msgid "Time since last updated"
-msgstr ""
+msgstr "Охирги янгиланишдан ўтган вақт"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "Охирги янгиланиш санаси бўйича фильтрлаш"
 
 msgid "Last updated start date"
-msgstr ""
+msgstr "Охирги янгиланиш бошланиш санаси"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
+"Фақатгина янги қиймат нолга тенг бўлмаган тақдирда, эски қайдни қайта ёзиш"
 
 msgid "Overwrite regardless of whether the new property value is null"
-msgstr ""
+msgstr "Янги қиймат нолга тенг бўлган тақдирда ҳам, қайдни қайта ёзиш"
 
 msgid "Replace"
 msgstr "Алмаштиринг"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Бирлашиш режими"
 
 msgid "Strategy to take when merging two objects"
-msgstr ""
+msgstr "Икки объектни бирлаштириш стратегияси"
 
 msgid "Data sets"
 msgstr "Маълумотлар тўплами"
@@ -402,209 +418,218 @@ msgid "Data element groups"
 msgstr "Маълумотлар элементи гуруҳлари"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Вариантлар тўплами"
 
 msgid "Object type"
 msgstr "Объект тури"
 
 msgid "One object must be selected"
-msgstr ""
+msgstr "Бир объектни танлаш талаб қилинади"
 
 msgid "Object"
 msgstr "Объект"
 
 msgid "Organisation unit ID scheme"
-msgstr ""
+msgstr "Ташкилий бўлимни идентификациялаш схемаси"
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
+"Жорий фойдаланувчи билан боғлиқ ташкилий бўлимлар маълумотларини кўздан "
+"кечириш"
 
 msgid "Accessible"
-msgstr ""
+msgstr "Кириш мумкин"
 
 msgid "Data capture organisation units associated with the current user"
 msgstr ""
+"Жорий фойдаланувчи билан боғлиқ ташкилий бўлимлар маълумотларини йиғиш"
 
 msgid "Capture"
-msgstr ""
+msgstr "Назоратга олиш"
 
 msgid "All organisation units in the system"
-msgstr ""
+msgstr "Барча ташкилий бўлимлар тизимда"
 
 msgid "Manually select organisation units from list"
-msgstr ""
+msgstr "Ташкилий бўлимларни рўйхатдан танлаб чиқиш"
 
 msgid "Which organisation units should be included?"
-msgstr ""
+msgstr "Қайси ташкилий бўлимлар киритилиши лозим?"
 
 msgid "Organisation unit(s) to export data from"
-msgstr ""
+msgstr "...дан ташкилий бўлимлар маълумотларини экспорт қилиш"
 
 msgid "Preheat cache"
 msgstr "Кешни тезлаштириш"
 
 msgid "Preheat cache to make large imports faster"
-msgstr ""
+msgstr "Катта ҳажмдаги импортни тезроқ қилиш учун кешни тезлаштириш"
 
 msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
+"Катта ҳажмдаги импорт тезроқ ишлаши учун кўпроқ ресурсларни истеъмол қилади"
 
 msgid "Intelligent scan (reference)"
-msgstr ""
+msgstr "Ақлли сканер (маълумотнома)"
 
 msgid "None"
 msgstr "Йўқ"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Тезлаштириш режими"
 
 msgid "Controls the level of preheating that should be done"
-msgstr ""
+msgstr "Амалга оширилиши мумкин бўлган тезлашиш даражасини назорат қилади"
 
 msgid "Program to export events from"
-msgstr ""
+msgstr "Тадбирларни экспорт қилиш дастури"
 
 msgid "Filter programs"
-msgstr ""
+msgstr "Дастурларни фильтрлаш"
 
 msgid "Selected programs"
-msgstr ""
+msgstr "Танланган дастурлар"
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "Дастурларни юклашда хатолик юз берди!"
 
 msgid "At least one program must be selected"
-msgstr ""
+msgstr "Камида битта дастур танланиши керак"
 
 msgid "One program must be selected"
-msgstr ""
+msgstr "Битта дастур танланиши керак"
 
 msgid "Which program stage should be included?"
-msgstr ""
+msgstr "Дастурнинг қайси босқичи киритилиши керак?"
 
 msgid "Start date"
 msgstr "Бошланиш санаси"
 
 msgid "All statuses"
-msgstr ""
+msgstr "Барча ҳолатлар"
 
 msgid "Active"
-msgstr ""
+msgstr "Фаол"
 
 msgid "Completed"
-msgstr ""
+msgstr "Тўлдирилди"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Бекор қилинди"
 
 msgid "Include only entities with status"
-msgstr ""
+msgstr "Фақатгина мақомга эга бўлган шахсларни киритиш"
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Аудитни ўтказиб юбориш"
 
 msgid "Skip audit, meaning audit values will not be generated"
-msgstr ""
+msgstr "Аудитни ўтказиб юборинг, яъни аудит қийматлари ҳосил бўлмайди"
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr ""
+msgstr "Ўзгаришларни текшириш қобилияти эвазига иш фаолиятини яхшилайди"
 
 msgid "Skip exisiting check"
-msgstr ""
+msgstr "Мавжуд таҳлилни ўтказиб юбориш"
 
 msgid "Skip checks for existing data values"
-msgstr ""
+msgstr "Мавжуд маълумотлар қиймати таҳлилини ўтказиб юбориш"
 
 msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
 msgstr ""
+"Иш самарадорлигини оширади ва фақат бўш маълумотлар базаларида ёки импорт "
+"қилинадиган маълумотлар қийматлари мавжуд бўлмаганда ишлатилиши керак"
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Улашишни ўтказиб юбориш"
 
 msgid "Skip sharing and access settings"
-msgstr ""
+msgstr "Улашиш ва кириш созламаларини ўтказиб юбориш"
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
 msgstr ""
+"Умумий хусусиятларни ўтказиб юборинг, ҳамжиҳат ишлатиладиган объектларни "
+"бирлаштирманг ва янги объектлар яратишда фойдаланувчи гуруҳига киришни "
+"қўшманг"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Таҳлилни ўтказиб юбориш"
 
 msgid "Skip validation for import (not recommended)"
-msgstr ""
+msgstr "Импорт учун таҳлилни ўтказиб юбориш (тавсия этилмайди)"
 
 msgid "Strategy"
 msgstr "Стратегия"
 
 msgid "Program"
-msgstr ""
+msgstr "Дастур"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "Кузатувдаги объект тури"
 
 msgid "Filter by"
-msgstr ""
+msgstr "Бўйича фильтр"
 
 msgid "Tracked entity types"
-msgstr ""
+msgstr "Кузатувдаги объект турлари"
 
 msgid "Filter tracked entity types by name"
-msgstr ""
+msgstr "Кузатилаётган шахс турларини номлари бўйича филтрланг"
 
 msgid "Selected tracked entity types"
-msgstr ""
+msgstr "Танланган кузатувдаги объект турлари"
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr ""
+msgstr "Кузатилаётган объект турларини юклашда хатолик юз берди!"
 
 msgid "At least one tracked entity type must be selected"
-msgstr ""
+msgstr "Камида битта кузатувдаги объект тури танланиши керак"
 
 msgid "One tracked entity type must be selected"
-msgstr ""
+msgstr "Битта кузатувдаги объект тури танланиши керак"
 
 msgid "Which users should be used?"
-msgstr ""
+msgstr "Қайси фойдаланувчилардан фойдаланиш керак?"
 
 msgid "Filter users"
-msgstr ""
+msgstr "Фойдаланувчиларни фильтрлаш"
 
 msgid "Something went wrong when loading the users!"
-msgstr ""
+msgstr "Фойдаланувчиларни юклашда хатолик юз берди!"
 
 msgid "At least one user must be selected"
-msgstr ""
+msgstr "Камида битта фойдаланувчи танланиши керак"
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "Битта фойдаланувчи танланиши керак"
 
 msgid "No jobs started yet."
-msgstr ""
+msgstr "Ҳали ҳам иш бошлангани йўқ."
 
 msgid "Recreate job"
-msgstr ""
+msgstr "Фаолиятни қайта тиклаш"
 
 msgid "In progress"
-msgstr ""
+msgstr "Жараёнда"
 
 msgid "Job details"
-msgstr ""
+msgstr "Фаолият тафсилотлари"
 
 msgid "Key"
-msgstr ""
+msgstr "Калит"
 
 msgid "Value"
-msgstr ""
+msgstr "Қиймат"
 
 msgid "Job summary"
-msgstr ""
+msgstr "Фаолият ҳақида қисқача маълумот"
 
 msgid "Error"
-msgstr ""
+msgstr "Хатолик"
 
 msgid "Conflicts"
 msgstr "Можаролар"
@@ -613,16 +638,16 @@ msgid "Dry run"
 msgstr "Синовдан ўтказиш"
 
 msgid "Log"
-msgstr ""
+msgstr "Кириш"
 
 msgid "Time"
-msgstr ""
+msgstr "Вақт"
 
 msgid "Message"
-msgstr ""
+msgstr "Хабар"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Messages"
 msgstr "Хабарлар"
@@ -631,16 +656,16 @@ msgid "Type"
 msgstr "Тури"
 
 msgid "Property"
-msgstr ""
+msgstr "Хусусият"
 
 msgid "View summary of recently started import job"
-msgstr ""
+msgstr "Яқинда бошланган импорт фаолиятининг хулосасини кўриб чиқиш"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "Description"
-msgstr ""
+msgstr "Тавсиф"
 
 msgid "Summary"
 msgstr "Хулоса"
@@ -661,25 +686,25 @@ msgid "Total"
 msgstr "Жами"
 
 msgid "Details by type"
-msgstr ""
+msgstr "Тури бўйича тафсилотлар"
 
 msgid "Advanced options"
-msgstr ""
+msgstr "Мураккаб вариантлар"
 
 msgid "At least one organisation unit must be selected"
-msgstr ""
+msgstr "Камида битта ташкилий бўлим танланиши керак"
 
 msgid "One organisation unit must be selected"
-msgstr ""
+msgstr "Битта ташкилий бўлим танланиши керак"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr ""
+msgstr "Ташкилий бўлимларни юклашда хатолик юз берди!"
 
 msgid "One program stage must be selected"
-msgstr ""
+msgstr "Дастурни битта босқичи танланиши керак"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr ""
+msgstr "Схемаларни юклашда хатолик юз берди!"
 
 msgid "Select All"
 msgstr "Барчасини танлаш"
@@ -688,46 +713,46 @@ msgid "Select None"
 msgstr "Танлов йўқ"
 
 msgid "At least one schema must be selected"
-msgstr ""
+msgstr "Камида битта схема танланиши керак"
 
 msgid "Export"
 msgstr "Экспорт"
 
 msgid "Data import"
-msgstr ""
+msgstr "Маълумотлар импорти"
 
 msgid "Event import"
-msgstr ""
+msgstr "Тадбир импорти"
 
 msgid "GML import"
-msgstr ""
+msgstr "GML импорти"
 
 msgid "Metadata import"
-msgstr ""
+msgstr "МетаМаълумот импорти"
 
 msgid "TEI import"
-msgstr ""
+msgstr "ЕУШ импорти"
 
 msgid "Data export"
-msgstr ""
+msgstr "Маълумотлар экспорти"
 
 msgid "Event export"
-msgstr ""
+msgstr "Тадбир экспорти"
 
 msgid "Metadata dependency export"
-msgstr ""
+msgstr "МетаМаълумотлар ўзаро боғлиқлиги экспорти"
 
 msgid "Metadata export"
-msgstr ""
+msgstr "МетаМаълумотлар экспорти"
 
 msgid "TEI export"
-msgstr ""
+msgstr "TEI экспорти"
 
 msgid "Job overview"
-msgstr ""
+msgstr "Бўш ўринлар маълумоти"
 
 msgid "Overview"
-msgstr ""
+msgstr "Қисқача кўздан кечириш"
 
 msgid "Yes"
 msgstr "Ҳа"
@@ -736,152 +761,173 @@ msgid "No"
 msgstr "Йўқ"
 
 msgid "There are errors on this page"
-msgstr ""
+msgstr "Ушбу саҳифада хатолик мавжуд"
 
 msgid "Something went wrong when loading the class keys"
-msgstr ""
+msgstr "Синф калитларини юклашда хатолик юз берди"
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "Объектларни юклашда хатолик юз берди"
 
 msgid "All program stages"
-msgstr ""
+msgstr "Дастур барча босқичлари"
 
 msgid "Something went wrong when loading the program stages"
-msgstr ""
+msgstr "Дастур босқичларини юклашда хатолик юз берди"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
 msgstr ""
+"Маълумотлар элементлари ва ташкилий бўлимлар каби МетаМаълумотларни DXF 2 "
+"форматида экспорт қилинг."
 
 msgid "Date range to export data for"
-msgstr ""
+msgstr "Маълумотларни экспорт қилиш учун давр оралиғидаги саналар"
 
 msgid "Export data"
-msgstr ""
+msgstr "Маълумотларни экспорт қилиш"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
+"DX XML, DXF 2 XML, JSON, CSV ёки PDF файлларидан маълумотлар қийматларини "
+"импорт қилиш."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr ""
+msgstr "Қўллаб-қувватланадиган файл турлари: JSON, CSV, XML, ADX ва PDF"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
+"Дастурлар, босқичлар ва кузатувдаги объект маълумотларини DXF 2 форматида "
+"экспорт қилиш"
 
 msgid "Export events"
-msgstr ""
+msgstr "Тадбирни экспорт қилиш"
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
+"Дастурлар, босқичлар ва кузатувдаги объект маълумотларини DXF 2 форматида "
+"импорт қилиш"
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr ""
+msgstr "Қўллаб-қувватланадиган файл турлари: JSON, CSV, ва XML."
 
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
 msgstr ""
+"GML форматидан фойдаланган ҳолда ташкилий бўлимлари учун географик "
+"маълумотларни импорт қилиш. GML - бу географик хусусиятларни ифодалаш учун "
+"XML грамматикаси."
 
 msgid "Overview: Import/Export"
-msgstr ""
+msgstr "Қисқача кўриб чиқиш: Импорт / Экспорт"
 
 msgid "Import or export DHIS2 data."
-msgstr ""
+msgstr "DHIS2 маълумотларини импорт ёки экспорт қилиш."
 
 msgid "Export metadata dependencies"
-msgstr ""
+msgstr "Ўзаро боғлиқ МетаМаълумотларни экспорт қилиш"
 
 msgid "Export metadata"
-msgstr ""
+msgstr "МетаМаълумотларни экспорт қилиш"
 
 msgid "Export tracked entity instances"
-msgstr ""
+msgstr "Кузатувдаги шахс нусхаларини экспорт қилиш"
 
 msgid "Import data"
-msgstr ""
+msgstr "Маълумотларни импорт қилиш"
 
 msgid "Import events"
-msgstr ""
+msgstr "Ҳодиса/Тадбирларни импорт қилиш"
 
 msgid "Import GML"
-msgstr ""
+msgstr "GMLга импорт қилиш"
 
 msgid "Import metadata"
-msgstr ""
+msgstr "МетаМаълумотни импорт қилиш"
 
 msgid "Import tracked entity instances"
-msgstr ""
+msgstr "Кузатувдаги шахс нусхаларини импорт қилиш"
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
+"Ушбу сессиянинг барча импорт фаолияти ҳақида умумий маълумот берилиши "
+"бошлади."
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in XML or JSON format."
 msgstr ""
+"Маълумотлар тўпламлари ва дастурлари, шу билан боғлиқ метамаълумотлар "
+"объектларини ўз ичига олган МетаМаълумотларни ўзаро боғлиқ XML ёки JSON "
+"форматида экспорт қилиш"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr ""
+"Маълумот элементлари ва ташкилот ва ташкилот бирликлари каби маълумотларни "
+"XML, JSON ёки CSV форматида экспорт қилиш."
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
 "format."
 msgstr ""
+"DXF 2форматидан фойдаланган ҳолда маълумотлар элементлари ва ташкилий "
+"бўлимлар каби МетаМаълумотларни импорт қилиш."
 
 msgid "A class key must be selected"
-msgstr ""
+msgstr "Синф калити тайинланиши керак"
 
 msgid "Tracked entity instances export"
-msgstr ""
+msgstr "Кузатувдаги шахс нусхаларини экспорт қилиш"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
 msgstr ""
+"XML, JSON ёки CSV форматида кузатувдаги объект нусхаларини экспорт қилиш."
 
 msgid "Program to export from"
-msgstr ""
+msgstr "Экспорт қилиш дастури"
 
 msgid "Enrollment date range"
-msgstr ""
+msgstr "Рўйхатдан ўтказилган давр оралиқ саналари"
 
 msgid "At least one of the 'last updated' date fields must be specified"
-msgstr ""
+msgstr "\"Охирги янгиланган\" сана майдонларидан камида биттаси кўрсатилиши керак"
 
 msgid "Tracked entity instances import"
-msgstr ""
+msgstr "шахс нусхаларини импорт қилиш"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr ""
+msgstr "Кузатувдаги шахс нусхаларини JSON ёки XML файлларидан импорт қилиш."
 
 msgid "Supported file types: JSON and XML."
-msgstr ""
+msgstr "Қўллаб-қувватланадиган файл турлари: JSON ва XML"
 
 msgid "Job started."
-msgstr ""
+msgstr "Фаолият бошланди."
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "Номаълум хатолик юз берди. Илтимос, кейинроқ қайта уриниб кўринг."
 
 msgid "Loading exported data"
-msgstr ""
+msgstr "Экспорт қилинган маълумотлар юкланмоқда"
 
 msgid "Data"
-msgstr ""
+msgstr "Маълумот"
 
 msgid "Event"
-msgstr ""
+msgstr "Ҳодиса/Тадбир"
 
 msgid "GML"
-msgstr ""
+msgstr "GML"
 
 msgid "Metadata"
-msgstr ""
+msgstr "МетаМаълумот"
 
 msgid "TEI"
-msgstr ""
+msgstr "TEI"
