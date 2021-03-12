@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/dhis2/import-export-app/compare/v1.0.12...v1.0.13) (2021-03-12)
+
+
+### Bug Fixes
+
+* upgrade to @dhis2/cli-app-scripts@6 (DHIS2-9893) ([#1006](https://github.com/dhis2/import-export-app/issues/1006)) ([28e9fec](https://github.com/dhis2/import-export-app/commit/28e9fec084fdfb8464515bba84674efec8e64f56))
+
 ## [1.0.12](https://github.com/dhis2/import-export-app/compare/v1.0.11...v1.0.12) (2021-02-19)
 
 
