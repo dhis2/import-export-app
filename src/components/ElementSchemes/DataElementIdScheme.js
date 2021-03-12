@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
 import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
-
-import { StyledField } from '../index'
+import React, { useEffect, useState } from 'react'
 import { fetchAttributes } from '../../utils/helper'
 import { optionsPropType } from '../../utils/options'
+import { StyledField } from '../index'
 
 const DataElementIdScheme = ({
     name,

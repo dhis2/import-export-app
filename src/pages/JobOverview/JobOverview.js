@@ -1,13 +1,12 @@
-import React, { useContext } from 'react'
 import i18n from '@dhis2/d2-i18n'
-
-import styles from './JobOverview.module.css'
-import { TaskContext } from '../../contexts/index'
+import React, { useContext } from 'react'
 import {
     JobOverview as JobOverviewComponent,
     Page,
     TasksIcon,
 } from '../../components/index'
+import { TaskContext } from '../../contexts/index'
+import styles from './JobOverview.module.css'
 
 const JobOverview = () => {
     const { jobOverview, updateJobOverview } = useContext(TaskContext)

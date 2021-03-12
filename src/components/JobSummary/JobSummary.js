@@ -1,13 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { Divider, Tag } from '@dhis2/ui'
-
-import styles from './JobSummary.module.css'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { jsDateToString } from '../../utils/helper'
+import { Details } from './Details/Details'
+import styles from './JobSummary.module.css'
 import { Log } from './Log/Log'
 import { Summary } from './Summary/Summary'
-import { Details } from './Details/Details'
 
 const Header = ({ jobDetails, task, showFileDetails }) => (
     <div className={styles.header}>

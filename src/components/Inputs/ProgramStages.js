@@ -1,6 +1,6 @@
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui'
+import React from 'react'
 import { ProgramStages as ProgramStagesGeneric } from '../'
 import { SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR } from '../ProgramStages/ProgramStages'
 

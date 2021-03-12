@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import {
     Table,
@@ -10,10 +8,11 @@ import {
     TableRowHead,
     TableCellHead,
 } from '@dhis2/ui'
-
+import PropTypes from 'prop-types'
+import React from 'react'
+import { FormField } from '../../index'
 import { statsPropType } from '../helper'
 import { SingleStatusTable } from '../SingleStatusTable/SingleStatusTable'
-import { FormField } from '../../index'
 
 const SingleSummary = ({ importCount, status, description, conflicts, id }) => (
     <div>

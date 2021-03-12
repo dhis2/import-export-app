@@ -1,5 +1,5 @@
-import React from 'react'
 import { hasValue, composeValidators } from '@dhis2/ui'
+import React from 'react'
 import { SchemasField } from '../index'
 import { SINGLE_SCHEMA_VALIDATOR } from '../Schemas/SchemasField'
 

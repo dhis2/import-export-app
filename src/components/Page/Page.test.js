@@ -2,9 +2,9 @@ import React from 'react'
 import { render } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 
-import { allJobs } from '../JobOverview/__test__/data'
 import { LogoIcon } from '../'
 import { Page } from '../index'
+import { allJobs } from '../JobOverview/__test__/data'
 
 const dataJob = allJobs.find(j => j.importType == 'DATAVALUE_IMPORT')
 

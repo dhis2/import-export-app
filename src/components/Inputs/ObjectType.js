@@ -1,6 +1,6 @@
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
+import React from 'react'
 import { StyledField } from '../index'
 
 const objectTypeOptions = [

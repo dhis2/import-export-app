@@ -1,10 +1,17 @@
+import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useConfig } from '@dhis2/app-runtime'
-import { ReactFinalForm } from '@dhis2/ui'
-import i18n from '@dhis2/d2-i18n'
-
-import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
+import {
+    Page,
+    WithAuthority,
+    BasicOptions,
+    MoreOptions,
+    SchemeContainer,
+    DataIcon,
+    ValidationSummary,
+} from '../../components/index'
 import {
     FileUpload,
     Format,
@@ -30,16 +37,8 @@ import {
     FormAlerts,
 } from '../../components/Inputs/index'
 import { hasAuthorityToSkipAudit } from '../../components/WithAuthority/predicates'
-import {
-    Page,
-    WithAuthority,
-    BasicOptions,
-    MoreOptions,
-    SchemeContainer,
-    DataIcon,
-    ValidationSummary,
-} from '../../components/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
+import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
 import { onImport } from './form-helper'
 
 const { Form } = ReactFinalForm

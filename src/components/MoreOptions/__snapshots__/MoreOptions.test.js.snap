@@ -10,16 +10,21 @@ exports[`matches snapshot when not toggled 1`] = `
       class="header"
       data-test="more-options-header"
     >
-      <svg
-        class="jsx-4098137027 chevronHidden"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="chevronHidden"
       >
-        <path
-          class="jsx-4098137027"
-          d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
-        />
-      </svg>
+        <svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.293 6.293a1 1 0 011.32-.083l.094.083 5 5a1 1 0 01.083 1.32l-.083.094-5 5a1 1 0 01-1.497-1.32l.083-.094L13.585 12 9.293 7.707a1 1 0 01-.083-1.32z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
       <h2
         class="label"
       >
@@ -48,16 +53,21 @@ exports[`matches snapshot when toggled 1`] = `
       class="header"
       data-test="more-options-header"
     >
-      <svg
-        class="jsx-4098137027 chevronVisible"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="chevronVisible"
       >
-        <path
-          class="jsx-4098137027"
-          d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
-        />
-      </svg>
+        <svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.293 6.293a1 1 0 011.32-.083l.094.083 5 5a1 1 0 01.083 1.32l-.083.094-5 5a1 1 0 01-1.497-1.32l.083-.094L13.585 12 9.293 7.707a1 1 0 01-.083-1.32z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
       <h2
         class="label"
       >
@@ -90,16 +100,21 @@ exports[`matches snapshot when toggled and different label 1`] = `
       class="header"
       data-test="more-options-header"
     >
-      <svg
-        class="jsx-4098137027 chevronVisible"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="chevronVisible"
       >
-        <path
-          class="jsx-4098137027"
-          d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
-        />
-      </svg>
+        <svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.293 6.293a1 1 0 011.32-.083l.094.083 5 5a1 1 0 01.083 1.32l-.083.094-5 5a1 1 0 01-1.497-1.32l.083-.094L13.585 12 9.293 7.707a1 1 0 01-.083-1.32z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
       <h2
         class="label"
       >
