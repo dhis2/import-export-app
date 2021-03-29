@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Djibril Dione <dione.djibril@gmail.com>, 2019
-# Yao Selom SAKA <saka.yao@yahoo.fr>, 2020
+# Yao Selom SAKA <ysaka@hispwca.org>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
