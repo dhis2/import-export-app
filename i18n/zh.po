@@ -3,14 +3,14 @@
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2020
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgid "End date must be after start date"
 msgstr "结束日期必须晚于起始日期"
 
 msgid "Invalid duration"
-msgstr "无效的期间"
+msgstr "无效的持续时间"
 
 msgid "Format"
 msgstr "格式"
@@ -52,7 +52,7 @@ msgid ""
 msgstr "载入额外的机构ID方案出错"
 
 msgid "Please select a file"
-msgstr "请选择应该文件"
+msgstr "请选择一个文件"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr "试运行测试导入设置，而不导入任何数据"
@@ -91,7 +91,7 @@ msgid "Import"
 msgstr "导入"
 
 msgid "Atomic mode"
-msgstr "原子化模式"
+msgstr "原子模式"
 
 msgid "Whether to import objects even if some references do not exist"
 msgstr "是否导入对象，即使某些引用不存在"
@@ -136,10 +136,10 @@ msgid "Something went wrong when loading the data sets!"
 msgstr "载入当前数据集发生错误"
 
 msgid "At least one data set must be selected"
-msgstr "至少选择应该数据集"
+msgstr "至少必须选择一个数据集"
 
 msgid "One data set must be selected"
-msgstr "必须选择应该数据集"
+msgstr "必须选择一个数据集"
 
 msgid "End date"
 msgstr "结束日期"
