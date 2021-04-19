@@ -25,25 +25,25 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement de l'utilisateur actuel!"
 
 msgid "Basic options"
-msgstr ""
+msgstr "Infos de base"
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Date invalide"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "La date de début doit être antérieure à la date de fin"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "La date de fin doit être postérieure à la date de début"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "Durée invalide"
 
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
