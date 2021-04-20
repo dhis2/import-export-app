@@ -7,7 +7,7 @@
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2020
-# Yao Selom SAKA <ysaka@hispwca.org>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # 
 msgid ""
@@ -72,7 +72,7 @@ msgid "No"
 msgstr "Non"
 
 msgid "Async"
-msgstr ""
+msgstr "Asynchrone"
 
 msgid "All"
 msgstr "Tout"
@@ -81,13 +81,13 @@ msgid "None"
 msgstr "Aucun"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Mode atomique"
 
 msgid "Class key"
-msgstr ""
+msgstr "Clé de classe"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Code"
@@ -108,28 +108,28 @@ msgid "Event id scheme"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "La première ligne est l'en-tête"
 
 msgid "Auto"
 msgstr "Auto"
 
 msgid "Object"
-msgstr ""
+msgstr "Objet"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Mode de rinçage"
 
 msgid "PDF"
 msgstr "PDF"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "Format"
 msgstr "Format"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr "Identifiant"
@@ -138,13 +138,13 @@ msgid "Errors"
 msgstr "Erreurs"
 
 msgid "Full"
-msgstr ""
+msgstr "Plein"
 
 msgid "Debug"
-msgstr ""
+msgstr "Déboguer"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Importer le mode de rapport"
 
 msgid "New and updates"
 msgstr ""
@@ -159,19 +159,19 @@ msgid "Delete"
 msgstr "Supprimer"
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Stratégie d'importation"
 
 msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Toujours"
 
 msgid "Non Empty"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Stratégie d'inclusion"
 
 msgid "Merge"
 msgstr "Fusionner"
@@ -180,7 +180,7 @@ msgid "Replace"
 msgstr "Remplacer"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Mode de fusion"
 
 msgid "Org unit id scheme"
 msgstr ""
@@ -192,7 +192,7 @@ msgid "Yes (faster for large imports)"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Préchauffer le cache"
 
 msgid "Reference"
 msgstr "Reférence"
@@ -294,7 +294,7 @@ msgid "Compression"
 msgstr ""
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Schéma d'ID des éléments de données"
 
 msgid "End date"
 msgstr "Date de fin"
@@ -306,7 +306,7 @@ msgid "Flush Mode"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "Schéma d'ID"
 
 msgid "Report Mode"
 msgstr ""
@@ -315,7 +315,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Inclure supprimé"
 
 msgid "Inclusion"
 msgstr ""
@@ -393,13 +393,13 @@ msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Non compressé"
 
 msgid "Category combination"
 msgstr "Combinaison de Catégories"
@@ -411,7 +411,7 @@ msgid "Data element groups"
 msgstr "Groupes d'éléments de données"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Ensembles d'options"
 
 msgid "[ All program stages]"
 msgstr ""
