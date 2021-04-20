@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Djibril Dione <dione.djibril@gmail.com>, 2019
-# Yao Selom SAKA <ysaka@hispwca.org>, 2020
+# Yao Selom Saka <ysaka@hispwca.org>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
@@ -47,77 +47,86 @@ msgstr "Format"
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
+"Une erreur s'est produite lors du chargement des schémas de l'ID de "
+"l'élément de données supplémentaire"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr ""
+"Une erreur s'est produite lors du chargement des schémas d'ID "
+"supplémentaires"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
+"Une erreur s'est produite lors du chargement des schémas d'ID d'unité "
+"organisation supplémentaires"
 
 msgid "Please select a file"
-msgstr ""
+msgstr "Veuillez sélectionner un fichier"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
+"Un dry run teste les paramètres d'importation sans importer de données"
 
 msgid "Start dry run"
-msgstr ""
+msgstr "Commencer l’exécution sans effet"
 
 msgid "Start import"
-msgstr ""
+msgstr "Lancer l'importation"
 
 msgid "Any user"
-msgstr ""
+msgstr "Aucun utilisateur"
 
 msgid "Current user"
 msgstr "Utilisateur actuel"
 
 msgid "No user/unassigned"
-msgstr ""
+msgstr "Aucun utilisateur/non attribué"
 
 msgid "Selected users"
-msgstr ""
+msgstr "Utilisateurs sélectionnés"
 
 msgid "Filter by assigned user"
-msgstr ""
+msgstr "Filtrer par utilisateur assigné"
 
 msgid "Export only instances with events assigned to specific users"
 msgstr ""
+"Exporter uniquement les instances avec des événements attribués à des "
+"utilisateurs spécifiques"
 
 msgid "Assigned user(s)"
-msgstr ""
+msgstr "Utilisateur(s) affecté(s)"
 
 msgid "Do not import"
-msgstr ""
+msgstr "Ne pas importer"
 
 msgid "Import"
 msgstr "Importer"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Mode atomique"
 
 msgid "Whether to import objects even if some references do not exist"
-msgstr ""
+msgstr "Soit importer des objets même si certaines références n'existent pas"
 
 msgid "Class key"
-msgstr ""
+msgstr "Clé de classe"
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Non compressé"
 
 msgid "Compression mode"
-msgstr ""
+msgstr "Mode de compression"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Code"
@@ -126,58 +135,58 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Schéma d'ID des éléments de données"
 
 msgid "Which data sets should be included in export?"
-msgstr ""
+msgstr "Quels ensembles de données doivent être inclus dans l'exportation?"
 
 msgid "Filter data sets"
-msgstr ""
+msgstr "Filtrer les ensembles de données"
 
 msgid "Selected data sets"
 msgstr "Ensembles de données sélectionnés"
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des ensembles de données"
 
 msgid "At least one data set must be selected"
-msgstr ""
+msgstr "Au moins un ensemble de données doit être sélectionné"
 
 msgid "One data set must be selected"
-msgstr ""
+msgstr "Un ensemble de données doit être sélectionné"
 
 msgid "End date"
 msgstr "Date de fin"
 
 msgid "Event ID scheme"
-msgstr ""
+msgstr "Schéma d'ID d'événement"
 
 msgid "Loading export..."
-msgstr ""
+msgstr "Chargement de l'exportation ..."
 
 msgid "Select a file to import values from"
-msgstr ""
+msgstr "Sélectionnez un fichier à partir duquel importer les valeurs"
 
 msgid "Is the first row a header row?"
-msgstr ""
+msgstr "La première ligne est-elle une ligne d'en-tête?"
 
 msgid "First row is header"
-msgstr ""
+msgstr "La première ligne est l'en-tête"
 
 msgid "A header row will be ignored during import"
-msgstr ""
+msgstr "Une ligne d'en-tête sera ignorée lors de l'importation"
 
 msgid "Auto (recommended)"
-msgstr ""
+msgstr "Auto (recommandé)"
 
 msgid "Object (debugging purposes)"
-msgstr ""
+msgstr "Objet (à des fins de débogage)"
 
 msgid "Flush mode"
-msgstr ""
+msgstr "Mode de rinçage"
 
 msgid "Controls when to flush the internal cache"
-msgstr ""
+msgstr "Contrôle quand vider le cache interne"
 
 msgid "All"
 msgstr "Tout"
@@ -186,10 +195,10 @@ msgid "Marked for follow-up"
 msgstr "Marqué pour suivi"
 
 msgid "Not marked for follow-up"
-msgstr ""
+msgstr "Non marqué pour suivi"
 
 msgid "Include only entities with follow-up status"
-msgstr ""
+msgstr "Inclure uniquement les entités avec un statut de suivi"
 
 msgid "JSON"
 msgstr "JSON"
@@ -201,25 +210,25 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "PDF"
 msgstr "PDF"
 
 msgid "JSONP"
-msgstr ""
+msgstr "JSONP"
 
 msgid "What format is the data to import?"
-msgstr ""
+msgstr "Quel est le format des données à importer?"
 
 msgid "What format should the data be exported as?"
-msgstr ""
+msgstr "En quel format les données doivent-elles être exportées?"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "Schéma d'ID"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Auto"
 msgstr "Auto"
@@ -228,171 +237,182 @@ msgid "Identifier"
 msgstr "Identifiant"
 
 msgid "Identifier scheme to use for reference matching"
-msgstr ""
+msgstr "Schéma d'identifiant à utiliser pour la correspondance des références"
 
 msgid "Only include reports for objects that have errors"
-msgstr ""
+msgstr "N'incluez que les rapports pour les objets comportant des erreurs"
 
 msgid "Errors"
 msgstr "Erreurs"
 
 msgid "Reports for all objects imported"
-msgstr ""
+msgstr "Rapports tous les objets importés"
 
 msgid "Full"
-msgstr ""
+msgstr "Plein"
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
+"Rapports pour tous les objets importés avec leurs noms (si disponible)"
 
 msgid "Debug"
-msgstr ""
+msgstr "Déboguer"
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Importer le mode de rapport"
 
 msgid "Controls what should be reported after the import is done"
-msgstr ""
+msgstr "Contrôle ce qui doit être rapporté une fois l'importation terminée"
 
 msgid "Import new values and update existing"
-msgstr ""
+msgstr "Importez de nouvelles valeurs et mettez à jour les valeurs existantes"
 
 msgid "Merge"
 msgstr "Fusionner"
 
 msgid "Import new values only"
-msgstr ""
+msgstr "Importer uniquement de nouvelles valeurs"
 
 msgid "Append"
 msgstr "Ajouter"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
+"Mettre à jour uniquement les valeurs existantes, ignorer les nouvelles "
+"valeurs"
 
 msgid "Update"
 msgstr "Mettre à jour"
 
 msgid "Remove values included in uploaded file"
-msgstr ""
+msgstr "Supprimer les valeurs incluses dans le fichier téléchargé"
 
 msgid "Delete"
 msgstr "Supprimer"
 
 msgid "Data will be deleted"
-msgstr ""
+msgstr "Les données seront supprimées"
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
 msgstr ""
+"Les valeurs du fichier téléchargé seront supprimées de la base de données. "
+"Assurez-vous que c'est la bonne action; elle ne peut pas être annulé."
 
 msgid "Import strategy"
-msgstr ""
+msgstr "Stratégie d'importation"
 
 msgid "Include all attributes"
-msgstr ""
+msgstr "Inclure tous les attributs"
 
 msgid "Include first level units"
-msgstr ""
+msgstr "Inclure les unités de premier niveau"
 
 msgid "Include the first level of organisation units inside selections"
-msgstr ""
+msgstr "Inclure le premier niveau d'unités d'organisation dans les sélections"
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Inclure supprimé"
 
 msgid "Include deleted data in export"
-msgstr ""
+msgstr "Inclure les données supprimées dans l'exportation"
 
 msgid "Only include selected organisation unit"
-msgstr ""
+msgstr "Inclure uniquement l'unité organisationnelle sélectionnée"
 
 msgid "Selected"
 msgstr "Sélectionné"
 
 msgid "Include the first level of units inside selections"
-msgstr ""
+msgstr "Inclure le premier niveau d'unités dans les sélections"
 
 msgid "Directly below"
-msgstr ""
+msgstr "Directement en dessous"
 
 msgid "Include all units inside selections"
-msgstr ""
+msgstr "Inclure toutes les unités dans les sélections"
 
 msgid "All below"
-msgstr ""
+msgstr "Tout en dessous"
 
 msgid "How should organisation units inside the selections be included?"
 msgstr ""
+"Comment les unités organisationnelles doivent-elles être incluses dans les "
+"sélections?"
 
 msgid "Includes properties which are not null"
-msgstr ""
+msgstr "Inclut les propriétés qui ne sont pas nulles"
 
 msgid "Non null"
-msgstr ""
+msgstr "Non nul"
 
 msgid "Include all properties"
-msgstr ""
+msgstr "Inclure toutes les propriétés"
 
 msgid "Always"
-msgstr ""
+msgstr "Toujours"
 
 msgid "Include non-empty properties"
-msgstr ""
+msgstr "Inclure les propriétés non vides"
 
 msgid "Non empty"
-msgstr ""
+msgstr "Non vide"
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Stratégie d'inclusion"
 
 msgid "Controls which properties to include"
-msgstr ""
+msgstr "Contrôle les propriétés à inclure"
 
 msgid "Async"
-msgstr ""
+msgstr "Asynchrone"
 
 msgid "Asynchronous import"
-msgstr ""
+msgstr "Importation asynchrone"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr ""
+msgstr "Contrôle si l'importation est effectuée de manière asynchrone"
 
 msgid "Last updated duration"
-msgstr ""
+msgstr "Durée de la dernière mise à jour"
 
 msgid "Last updated end date"
-msgstr ""
+msgstr "Date de fin de la dernière mise à jour"
 
 msgid "Do not filter by last updated date"
-msgstr ""
+msgstr "Ne pas filtrer par date de dernière mise à jour"
 
 msgid "Start/end dates"
 msgstr "Dates début-fin"
 
 msgid "Time since last updated"
-msgstr ""
+msgstr "Temps depuis la dernière mise à jour"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "Filtrer par date de dernière mise à jour"
 
 msgid "Last updated start date"
-msgstr ""
+msgstr "Date de début de la dernière mise à jour"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
+"Ne remplace l'ancienne propriété que si la valeur de la nouvelle propriété "
+"n'est pas nulle"
 
 msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
+"Remplacer indépendamment du fait que la nouvelle valeur de propriété soit "
+"nulle"
 
 msgid "Replace"
 msgstr "Remplacer"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Mode de fusion"
 
 msgid "Strategy to take when merging two objects"
-msgstr ""
+msgstr "Stratégie à adopter lors de la fusion de deux objets"
 
 msgid "Data sets"
 msgstr "Ensembles de données"
@@ -410,46 +430,49 @@ msgid "Data element groups"
 msgstr "Groupes d'éléments de données"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Ensembles d'options"
 
 msgid "Object type"
 msgstr "Type d'objet"
 
 msgid "One object must be selected"
-msgstr ""
+msgstr "Un objet doit être sélectionné"
 
 msgid "Object"
-msgstr ""
+msgstr "Objet"
 
 msgid "Organisation unit ID scheme"
-msgstr ""
+msgstr "Schéma d'ID d'unité organisation"
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
+"Vue des données d'unités d'organisation associés à l'utilisateur actuel"
 
 msgid "Accessible"
-msgstr ""
+msgstr "Accessible"
 
 msgid "Data capture organisation units associated with the current user"
 msgstr ""
+"Capture de données d'unités d'organisation associées à l'utilisateur actuel"
 
 msgid "Capture"
 msgstr "Saisie"
 
 msgid "All organisation units in the system"
-msgstr ""
+msgstr "Toutes les unités d'organisation du système"
 
 msgid "Manually select organisation units from list"
-msgstr ""
+msgstr "Sélectionner manuellement les unités d'organisation dans la liste"
 
 msgid "Which organisation units should be included?"
-msgstr ""
+msgstr "Quelles unités organisationnelles devraient être incluses?"
 
 msgid "Organisation unit(s) to export data from"
 msgstr ""
+"Unité(s) organisationnelle(s) à partir de laquelle exporter les données"
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Préchauffer le cache"
 
 msgid "Preheat cache to make large imports faster"
 msgstr ""
