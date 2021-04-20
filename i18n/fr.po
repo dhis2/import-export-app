@@ -6,7 +6,7 @@
 # Djibril Dione <dione.djibril@gmail.com>, 2019
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# Yao Selom SAKA <ysaka@hispwca.org>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # 
 msgid ""
@@ -113,7 +113,7 @@ msgid "Summary"
 msgstr ""
 
 msgid "Async"
-msgstr ""
+msgstr "Asynchrone"
 
 msgid "Atomic Mode"
 msgstr ""
@@ -131,7 +131,7 @@ msgid "Compression"
 msgstr ""
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Schéma d'ID des éléments de données"
 
 msgid "Dry run"
 msgstr ""
@@ -149,7 +149,7 @@ msgid "Format"
 msgstr "Format"
 
 msgid "ID scheme"
-msgstr ""
+msgstr "Schéma d'ID"
 
 msgid "Identifier"
 msgstr "Identifiant"
@@ -161,7 +161,7 @@ msgid "Import Strategy"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Inclure supprimé"
 
 msgid "Inclusion"
 msgstr ""
@@ -173,7 +173,7 @@ msgid "Merge Mode"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "Objet"
 
 msgid "Organisation unit"
 msgstr "Unité d'organisation"
@@ -182,7 +182,7 @@ msgid "Org unit ID scheme"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr ""
+msgstr "Préchauffer le cache"
 
 msgid "Preheat Mode"
 msgstr ""
@@ -224,7 +224,7 @@ msgid "No"
 msgstr "Non"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Code"
 msgstr "Code"
@@ -263,10 +263,10 @@ msgid "AUTO"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "Plein"
 
 msgid "Debug"
-msgstr ""
+msgstr "Déboguer"
 
 msgid "Reference"
 msgstr "Reférence"
@@ -305,7 +305,7 @@ msgid "Non Null"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Toujours"
 
 msgid "Non Empty"
 msgstr ""
@@ -314,13 +314,13 @@ msgid "Include children of organisation unit"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "Gzip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Non compressé"
 
 msgid "Category combination"
 msgstr "Combinaison de Catégories"
