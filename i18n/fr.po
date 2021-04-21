@@ -24,34 +24,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "user is not logged in"
-msgstr ""
+msgstr "L'utilisateur n'est pas connecté"
 
 msgid "Import Error"
-msgstr ""
+msgstr "Erreur d'importation"
 
 msgid "Go Back"
-msgstr ""
+msgstr "Précédent"
 
 msgid "Required"
 msgstr "Réquis"
 
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "Choisir un fichier à télécharger"
 
 msgid "filter data sets by name"
-msgstr ""
+msgstr "filtrer les ensembles de données par nom"
 
 msgid "Select All"
 msgstr "Sélectionner Tout"
 
 msgid "Clear All"
-msgstr ""
+msgstr "Tout effacer"
 
 msgid "Data sets"
 msgstr "Ensembles de données"
 
 msgid "more options"
-msgstr ""
+msgstr "Plus d'options"
 
 msgid "JSON"
 msgstr "JSON"
@@ -63,7 +63,7 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "Select None"
-msgstr ""
+msgstr "Ne rien sélectionner"
 
 msgid "Yes"
 msgstr "Oui"
@@ -102,7 +102,7 @@ msgid "Loading data element id scheme options..."
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "Exécution littérale"
 
 msgid "Event id scheme"
 msgstr ""
@@ -150,10 +150,10 @@ msgid "New and updates"
 msgstr ""
 
 msgid "New only"
-msgstr ""
+msgstr "Nouveau seulement"
 
 msgid "Updates only"
-msgstr ""
+msgstr "Mises à jour uniquement"
 
 msgid "Delete"
 msgstr "Supprimer"
@@ -162,13 +162,13 @@ msgid "Import strategy"
 msgstr "Stratégie d'importation"
 
 msgid "Non Null"
-msgstr ""
+msgstr "Non nul"
 
 msgid "Always"
 msgstr "Toujours"
 
 msgid "Non Empty"
-msgstr ""
+msgstr "Non vide"
 
 msgid "Inclusion strategy"
 msgstr "Stratégie d'inclusion"
@@ -189,7 +189,7 @@ msgid "Loading organisation unit id scheme options..."
 msgstr ""
 
 msgid "Yes (faster for large imports)"
-msgstr ""
+msgstr "Oui (plus rapide pour les grandes importations)"
 
 msgid "Preheat cache"
 msgstr "Préchauffer le cache"
@@ -198,7 +198,7 @@ msgid "Reference"
 msgstr "Reférence"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Mode préchauffage"
 
 msgid "Error"
 msgstr "Erreur"
@@ -207,34 +207,36 @@ msgid "Report mode"
 msgstr ""
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Ignorer l'audit"
 
 msgid "Skip check (fast)"
-msgstr ""
+msgstr "Sauter la vérification (rapide)"
 
 msgid "Check (safe, recommended)"
-msgstr ""
+msgstr "Vérifier (sûr, recommandé)"
 
 msgid "Skip existing check"
 msgstr ""
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Ignorer le partage"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Ignorer la validation"
 
 msgid "Strategy"
-msgstr ""
+msgstr "Stratégie"
 
 msgid "Id scheme"
 msgstr ""
 
 msgid "Logger"
-msgstr ""
+msgstr "Enregistreur"
 
 msgid "view messages received on using import/export forms."
 msgstr ""
+"Afficher les messages reçus sur l'utilisation des formulaires d'importation "
+"/ exportation."
 
 msgid "Import"
 msgstr "Importer"
@@ -246,13 +248,13 @@ msgid "Created"
 msgstr "Créé le"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Supprimé"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignoré"
 
 msgid "Updated"
-msgstr ""
+msgstr "Mise à jour"
 
 msgid "Total"
 msgstr "Total"
@@ -261,37 +263,37 @@ msgid "Type"
 msgstr "Type"
 
 msgid "Type Count"
-msgstr ""
+msgstr "Nombre de types"
 
 msgid "Messages"
 msgstr "Messages"
 
 msgid "Summaries"
-msgstr ""
+msgstr "Résumés"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Conflits"
 
 msgid "Import Summary"
-msgstr ""
+msgstr "Résumé de l'importation"
 
 msgid "Summary"
-msgstr ""
+msgstr "Résumé"
 
 msgid "Atomic Mode"
-msgstr ""
+msgstr "Mode atomique"
 
 msgid "Category ID scheme"
-msgstr ""
+msgstr "Schéma d'ID de catégorie"
 
 msgid "Children"
-msgstr ""
+msgstr "Enfants"
 
 msgid "Object type"
 msgstr "Type d'objet"
 
 msgid "Compression"
-msgstr ""
+msgstr "Compression"
 
 msgid "Data element ID scheme"
 msgstr "Schéma d'ID des éléments de données"
@@ -300,7 +302,7 @@ msgid "End date"
 msgstr "Date de fin"
 
 msgid "Event ID Scheme"
-msgstr ""
+msgstr "Schéma d'ID d'événement"
 
 msgid "Flush Mode"
 msgstr ""
@@ -309,40 +311,40 @@ msgid "ID scheme"
 msgstr "Schéma d'ID"
 
 msgid "Report Mode"
-msgstr ""
+msgstr "Mode rapport"
 
 msgid "Import Strategy"
-msgstr ""
+msgstr "Stratégie d'importation"
 
 msgid "Include deleted"
 msgstr "Inclure supprimé"
 
 msgid "Inclusion"
-msgstr ""
+msgstr "Inclusion"
 
 msgid "Inclusion Strategy"
-msgstr ""
+msgstr "Stratégie d'inclusion"
 
 msgid "Merge Mode"
-msgstr ""
+msgstr "Mode fusion"
 
 msgid "Organisation unit"
 msgstr "Unité d'organisation"
 
 msgid "Org unit ID scheme"
-msgstr ""
+msgstr "Schéma d'ID d'unité organisation"
 
 msgid "Preheat Mode"
-msgstr ""
+msgstr "Mode préchauffage"
 
 msgid "Program Stages"
-msgstr ""
+msgstr "Étapes du programme"
 
 msgid "Programs"
 msgstr "Programmes"
 
 msgid "Schemas"
-msgstr ""
+msgstr "Schémas"
 
 msgid "Data Sets"
 msgstr "Ensembles de données"
@@ -351,31 +353,31 @@ msgid "Sharing"
 msgstr "Partage"
 
 msgid "Existing record check"
-msgstr ""
+msgstr "Vérification des enregistrements existants"
 
 msgid "Skip Sharing"
-msgstr ""
+msgstr "Ignorer le partage"
 
 msgid "Skip Validation"
-msgstr ""
+msgstr "Ignorer la validation"
 
 msgid "Start date"
 msgstr "Date de début"
 
 msgid "Include descendants of organisation unit"
-msgstr ""
+msgstr "Inclure les descendants de l'unité organisation"
 
 msgid "Selected organisation unit"
-msgstr ""
+msgstr "Unité d'organisation sélectionnée"
 
 msgid "New and Updates"
-msgstr ""
+msgstr "Nouveau et mises à jour"
 
 msgid "AUTO"
-msgstr ""
+msgstr "AUTO"
 
 msgid "Create and Update"
-msgstr ""
+msgstr "Créer et mettre à jour"
 
 msgid "Create"
 msgstr "Créer"
@@ -384,19 +386,19 @@ msgid "Update"
 msgstr "Mettre à jour"
 
 msgid "With sharing"
-msgstr ""
+msgstr "Avec partage"
 
 msgid "Without sharing"
-msgstr ""
+msgstr "Sans partage"
 
 msgid "Include children of organisation unit"
-msgstr ""
+msgstr "Inclure les enfants de l'unité d'organisation"
 
 msgid "Zip"
 msgstr "Zip"
 
 msgid "Gzip"
-msgstr ""
+msgstr "Gzip"
 
 msgid "Uncompressed"
 msgstr "Non compressé"
@@ -414,43 +416,50 @@ msgid "Option sets"
 msgstr "Ensembles d'options"
 
 msgid "[ All program stages]"
-msgstr ""
+msgstr "[Toutes les étapes du programme]"
 
 msgid "Import/Export"
 msgstr "Importer-Exporter"
 
 msgid "Data Export"
-msgstr ""
+msgstr "Exportation de données"
 
 msgid ""
 "Export data values. This is the regular export function which exports data "
 "to the DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Exporter les valeurs de données. Il s'agit de la fonction d'exportation "
+"régulière qui exporte les données au DHIS 2 au format d'échange appelé DXF "
+"2."
 
 msgid "Loading options..."
 msgstr "Chargement des options..."
 
 msgid "Event Export"
-msgstr ""
+msgstr "Exportation d'événement"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in the DXF 2 "
 "format."
 msgstr ""
+"Exporter les données d'événements pour les programmes, les étapes et les "
+"entités suivies au format DXF 2."
 
 msgid "Metadata Export"
-msgstr ""
+msgstr "Exportation de métadonnées"
 
 msgid ""
 "Export meta data like data elements and organisation units to the standard "
 "DHIS 2 exchange format."
 msgstr ""
+"Exportez les métadonnées telles que les éléments de données et les unités "
+"d'organisation au format d'échange standard de DHIS 2."
 
 msgid "Meta Data Export"
-msgstr ""
+msgstr "Exportation de métadonnées"
 
 msgid "Metadata Dependency Export"
-msgstr ""
+msgstr "Exportation des dépendances des métadonnées"
 
 msgid ""
 "Export metadata like data sets and programs including related metadata "
@@ -470,7 +479,7 @@ msgid "An unknown error occurred"
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "Une erreur inconnue est survenue. Veuillez réessayer plus tard"
 
 msgid "Data Import"
 msgstr ""
