@@ -477,49 +477,51 @@ msgid "Preheat cache"
 msgstr "Préchauffer le cache"
 
 msgid "Preheat cache to make large imports faster"
-msgstr ""
+msgstr "Préchauffez le cache pour accélérer les grandes importations"
 
 msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
+"Les grandes importations seront exécutées plus rapidement mais consommeront "
+"plus de ressources"
 
 msgid "Intelligent scan (reference)"
-msgstr ""
+msgstr "Scan intelligent (référence)"
 
 msgid "None"
 msgstr "Aucun"
 
 msgid "Preheat mode"
-msgstr ""
+msgstr "Mode préchauffage"
 
 msgid "Controls the level of preheating that should be done"
-msgstr ""
+msgstr "Contrôle le niveau de préchauffage à effectuer"
 
 msgid "Program to export events from"
-msgstr ""
+msgstr "Programme pour exporter des événements à partir de"
 
 msgid "Filter programs"
-msgstr ""
+msgstr "Filtrer les programmes"
 
 msgid "Selected programs"
 msgstr "Programmes sélectionnés"
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des programmes!"
 
 msgid "At least one program must be selected"
-msgstr ""
+msgstr "Au moins un programme doit être sélectionné"
 
 msgid "One program must be selected"
-msgstr ""
+msgstr "Un programme doit être sélectionné"
 
 msgid "Which program stage should be included?"
-msgstr ""
+msgstr "Quelle étape du programme devrait être incluse?"
 
 msgid "Start date"
 msgstr "Date de début"
 
 msgid "All statuses"
-msgstr ""
+msgstr "Tous les statuts"
 
 msgid "Active"
 msgstr "Actif"
@@ -531,47 +533,57 @@ msgid "Cancelled"
 msgstr "Annulé"
 
 msgid "Include only entities with status"
-msgstr ""
+msgstr "Inclure uniquement les entités avec un statut"
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Ignorer l'audit"
 
 msgid "Skip audit, meaning audit values will not be generated"
 msgstr ""
+"Ignorer l'audit, ce qui signifie que les valeurs d'audit ne seront pas "
+"générées"
 
 msgid "Improves performance at the cost of ability to audit changes"
 msgstr ""
+"Améliore les performances au détriment de la capacité à auditer les "
+"changements"
 
 msgid "Skip exisiting check"
-msgstr ""
+msgstr "Ignorer la vérification existant"
 
 msgid "Skip checks for existing data values"
-msgstr ""
+msgstr "Ignorer les vérifications des valeurs de données existantes"
 
 msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
 msgstr ""
+"Améliore les performances et ne doit être utilisé que pour les bases de "
+"données vides ou lorsque les valeurs de données à importer n'existent pas "
+"déjà"
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Ignorer le partage"
 
 msgid "Skip sharing and access settings"
-msgstr ""
+msgstr "Ignorer les paramètres de partage et d’accès"
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
 msgstr ""
+"Ignorer les propriétés de partage, ne pas fusionner le partage lors des "
+"mises à jour, et n'ajouter aucun accès aux groupes d'utilisateurs lors de la"
+" création de nouveaux objets"
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Ignorer la validation"
 
 msgid "Skip validation for import (not recommended)"
-msgstr ""
+msgstr "Ignorer la validation pour l'importation (non recommandé)"
 
 msgid "Strategy"
-msgstr ""
+msgstr "Stratégie"
 
 msgid "Program"
 msgstr "Programme"
@@ -583,49 +595,50 @@ msgid "Filter by"
 msgstr "Filtrer par"
 
 msgid "Tracked entity types"
-msgstr ""
+msgstr "Types d'entité suivie"
 
 msgid "Filter tracked entity types by name"
-msgstr ""
+msgstr "Filtrer les types d'entité suivie par nom"
 
 msgid "Selected tracked entity types"
-msgstr ""
+msgstr "Types d'entité suivie sélectionnés"
 
 msgid "Something went wrong when loading the tracked entity types!"
 msgstr ""
+"Une erreur s'est produite lors du chargement des types d'entité suivie!"
 
 msgid "At least one tracked entity type must be selected"
-msgstr ""
+msgstr "Au moins un type d'entité suivie doit être sélectionné"
 
 msgid "One tracked entity type must be selected"
-msgstr ""
+msgstr "Un type d'entité suivie doit être sélectionné"
 
 msgid "Which users should be used?"
-msgstr ""
+msgstr "Quels utilisateurs doivent être utilisés?"
 
 msgid "Filter users"
-msgstr ""
+msgstr "Filtrer les utilisateurs"
 
 msgid "Something went wrong when loading the users!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des utilisateurs!"
 
 msgid "At least one user must be selected"
-msgstr ""
+msgstr "Au moins un utilisateur doit être sélectionné"
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "Un utilisateur doit être sélectionné"
 
 msgid "No jobs started yet."
-msgstr ""
+msgstr "Aucune tâche n'a encore commencé."
 
 msgid "Recreate job"
-msgstr ""
+msgstr "Recréer la tâche"
 
 msgid "In progress"
 msgstr "En cours"
 
 msgid "Job details"
-msgstr ""
+msgstr "Détails de la tâche"
 
 msgid "Key"
 msgstr "Clé"
@@ -634,19 +647,19 @@ msgid "Value"
 msgstr "Valeur"
 
 msgid "Job summary"
-msgstr ""
+msgstr "Résumé de la tâche"
 
 msgid "Error"
 msgstr "Erreur"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Conflits"
 
 msgid "Dry run"
-msgstr ""
+msgstr "Exécution littérale"
 
 msgid "Log"
-msgstr ""
+msgstr "Log"
 
 msgid "Time"
 msgstr "Heure"
@@ -664,10 +677,10 @@ msgid "Type"
 msgstr "Type"
 
 msgid "Property"
-msgstr ""
+msgstr "Propriété"
 
 msgid "View summary of recently started import job"
-msgstr ""
+msgstr "Afficher le résumé de la tâche d'importation récemment lancée"
 
 msgid "Status"
 msgstr "Statut"
@@ -676,88 +689,88 @@ msgid "Description"
 msgstr "Description"
 
 msgid "Summary"
-msgstr ""
+msgstr "Résumé"
 
 msgid "Created"
 msgstr "Créé"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Supprimé"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignoré"
 
 msgid "Updated"
-msgstr ""
+msgstr "Mise à jour"
 
 msgid "Total"
 msgstr "Total"
 
 msgid "Details by type"
-msgstr ""
+msgstr "Détails par type"
 
 msgid "Advanced options"
-msgstr ""
+msgstr "Options avancées"
 
 msgid "At least one organisation unit must be selected"
 msgstr "Au moins une unité d'organisation doit être sélectionnée"
 
 msgid "One organisation unit must be selected"
-msgstr ""
+msgstr "Une unité d'organisation doit être sélectionnée"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des unités organisation!"
 
 msgid "One program stage must be selected"
-msgstr ""
+msgstr "Une étape du programme doit être sélectionnée"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des schémas!"
 
 msgid "Select All"
 msgstr "Sélectionner Tout"
 
 msgid "Select None"
-msgstr ""
+msgstr "Ne rien sélectionner"
 
 msgid "At least one schema must be selected"
-msgstr ""
+msgstr "Au moins un schéma doit être sélectionné"
 
 msgid "Export"
 msgstr "Exporter"
 
 msgid "Data import"
-msgstr ""
+msgstr "Importation de données"
 
 msgid "Event import"
-msgstr ""
+msgstr "Importation d'événements"
 
 msgid "GML import"
-msgstr ""
+msgstr "Importation GML"
 
 msgid "Metadata import"
-msgstr ""
+msgstr "Importation de métadonnées"
 
 msgid "TEI import"
-msgstr ""
+msgstr "Importation TEI"
 
 msgid "Data export"
-msgstr ""
+msgstr "Exportation de données"
 
 msgid "Event export"
-msgstr ""
+msgstr "Exportation d'événements"
 
 msgid "Metadata dependency export"
-msgstr ""
+msgstr "Exportation des dépendances de métadonnées"
 
 msgid "Metadata export"
-msgstr ""
+msgstr "Exportation de métadonnées"
 
 msgid "TEI export"
-msgstr ""
+msgstr "Exportation TEI"
 
 msgid "Job overview"
-msgstr ""
+msgstr "Aperçu de tâche"
 
 msgid "Overview"
 msgstr "Général"
@@ -769,40 +782,46 @@ msgid "No"
 msgstr "Non"
 
 msgid "There are errors on this page"
-msgstr ""
+msgstr "Il y a des erreurs sur cette page"
 
 msgid "Something went wrong when loading the class keys"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des clés de classe"
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des objets"
 
 msgid "All program stages"
-msgstr ""
+msgstr "Toutes les étapes du programme"
 
 msgid "Something went wrong when loading the program stages"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des étapes du programme"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
 msgstr ""
+"Exportez les métadonnées, telles que les éléments de données et les unités "
+"d'organisation, au format DXF 2."
 
 msgid "Date range to export data for"
-msgstr ""
+msgstr "Plage de dates pour laquelle exporter les données"
 
 msgid "Export data"
 msgstr "Exporter données"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
+"Importer des valeurs de données à partir de fichiers ADX XML, DXF 2 XML, "
+"JSON, CSV ou PDF."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr ""
+msgstr "Types de fichiers supportés: JSON, CSV, XML, ADX et PDF."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
+"Exportez les données d'événements pour les programmes, les étapes et les "
+"entités suivies au format DXF 2."
 
 msgid "Export events"
 msgstr "Exporter évènements"
@@ -811,29 +830,34 @@ msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
+"Importez des événements pour des programmes, des étapes et des entités "
+"suivies en utilisant le format DXF 2."
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr ""
+msgstr "Types de fichiers supportés: JSON, CSV et XML. "
 
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
 msgstr ""
+"Importez des données géographiques pour les unités d'organisation en "
+"utilisant le format GML. GML est une grammaire XML pour exprimer des "
+"caractéristiques géographiques."
 
 msgid "Overview: Import/Export"
-msgstr ""
+msgstr "Vue d'ensemble: importation / exportation"
 
 msgid "Import or export DHIS2 data."
-msgstr ""
+msgstr "Importer ou exporter des données DHIS2."
 
 msgid "Export metadata dependencies"
-msgstr ""
+msgstr "Exporter les dépendances de métadonnées"
 
 msgid "Export metadata"
 msgstr "Exporter Méta-Données"
 
 msgid "Export tracked entity instances"
-msgstr ""
+msgstr "Exporter les instances d'entités suivies"
 
 msgid "Import data"
 msgstr "Importer données"
@@ -842,67 +866,76 @@ msgid "Import events"
 msgstr "Importer évènements"
 
 msgid "Import GML"
-msgstr ""
+msgstr "Importer GML"
 
 msgid "Import metadata"
 msgstr "Importer Méta-Données"
 
 msgid "Import tracked entity instances"
-msgstr ""
+msgstr "Importer les instances d'entités suivies"
 
 msgid "An overview of all import jobs started this session."
-msgstr ""
+msgstr "Un aperçu de toutes les tâches d'importation a démarré cette session."
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in XML or JSON format."
 msgstr ""
+"Exportez les dépendances de métadonnées, telles que les ensembles de données"
+" et les programmes, y compris les objets de métadonnées associés, au format "
+"XML ou JSON."
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr ""
+"Exportez les métadonnées, telles que les éléments de données et les unités "
+"d'organisation, au format XML, JSON ou CSV."
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
 "format."
 msgstr ""
+"Importer des métadonnées telles que des éléments de données et des unités "
+"d'organisation en utilisant le format DXF 2."
 
 msgid "A class key must be selected"
-msgstr ""
+msgstr "Une clé de classe doit être sélectionnée"
 
 msgid "Tracked entity instances export"
-msgstr ""
+msgstr "Exportation d'instances d'entités suivies"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr ""
+msgstr "Exportez les instances d'entités suivies au format XML, JSON ou CSV."
 
 msgid "Program to export from"
-msgstr ""
+msgstr "Programme à exporter depuis"
 
 msgid "Enrollment date range"
-msgstr ""
+msgstr "Plage de dates d'inscription"
 
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
+"Au moins un des champs de date de 'dernière mise à jour' doit être spécifié"
 
 msgid "Tracked entity instances import"
-msgstr ""
+msgstr "Importation d'instances d'entités suivies"
 
 msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
+"Importer des instances d'entités suivies à partir de fichiers JSON ou XML."
 
 msgid "Supported file types: JSON and XML."
-msgstr ""
+msgstr "Types de fichiers supportés: JSON et XML."
 
 msgid "Job started."
-msgstr ""
+msgstr "La tâche a commencé."
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
+msgstr "Une erreur inconnue est survenue. Veuillez réessayer plus tard"
 
 msgid "Loading exported data"
-msgstr ""
+msgstr "Chargement des données exportées"
 
 msgid "Data"
 msgstr "Données"
@@ -911,7 +944,7 @@ msgid "Event"
 msgstr "Evènement"
 
 msgid "GML"
-msgstr ""
+msgstr "GML"
 
 msgid "Metadata"
 msgstr "Méta-données"
