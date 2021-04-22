@@ -744,7 +744,7 @@ msgid "Event import"
 msgstr "Importation d'événements"
 
 msgid "GML import"
-msgstr "Importation GML"
+msgstr "Importation au format GML"
 
 msgid "Metadata import"
 msgstr "Importation de métadonnées"
