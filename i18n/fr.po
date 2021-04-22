@@ -185,7 +185,7 @@ msgid "Object (debugging purposes)"
 msgstr "Objet (à des fins de débogage)"
 
 msgid "Flush mode"
-msgstr "Mode de vidange"
+msgstr "Mode flusher"
 
 msgid "Controls when to flush the internal cache"
 msgstr "Contrôle quand vider le cache interne"
