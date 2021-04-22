@@ -113,16 +113,16 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Data element id scheme"
-msgstr ""
+msgstr "Schéma d'id des éléments de données"
 
 msgid "Loading data element id scheme options..."
-msgstr ""
+msgstr "Chargement des options de schéma d'id d'élément de données ..."
 
 msgid "Data sets filter"
-msgstr ""
+msgstr "Filtre des ensembles de données"
 
 msgid "Loading organisation unit id scheme options..."
-msgstr ""
+msgstr "Chargement des options de schéma d'ID d'unité d'organisation ..."
 
 msgid "Something went wrong when loading the data sets!"
 msgstr "Une erreur s'est produite lors du chargement des ensembles de données"
@@ -131,13 +131,13 @@ msgid "Dry run"
 msgstr "Exécution littérale"
 
 msgid "EndDate"
-msgstr ""
+msgstr "Date de fin"
 
 msgid "End date"
 msgstr "Date de fin"
 
 msgid "Event id scheme"
-msgstr ""
+msgstr "Schéma d'id d'événement"
 
 msgid "First row is header"
 msgstr "La première ligne est l'en-tête"
@@ -179,7 +179,7 @@ msgid "Import report mode"
 msgstr "Importer le mode de rapport"
 
 msgid "New and updates"
-msgstr ""
+msgstr "Nouveau et mises à jour"
 
 msgid "New only"
 msgstr "Nouveau seulement"
@@ -224,10 +224,10 @@ msgid "Merge mode"
 msgstr "Mode de fusion"
 
 msgid "Loading Object options..."
-msgstr ""
+msgstr "Chargement des options d'objet ..."
 
 msgid "Something went wrong when loading the object!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement de l'objet!"
 
 msgid "Programs"
 msgstr "Programmes"
@@ -251,7 +251,7 @@ msgid "Organisation unit"
 msgstr "Unité d'organisation"
 
 msgid "Org unit id scheme"
-msgstr ""
+msgstr "Schéma d'id d'unité organisation"
 
 msgid "Yes (faster for large imports)"
 msgstr "Oui (plus rapide pour les grandes importations)"
@@ -269,16 +269,16 @@ msgid "[ All program stages]"
 msgstr "[Toutes les étapes du programme]"
 
 msgid "Program stages"
-msgstr ""
+msgstr "Les étapes du programme"
 
 msgid "Loading programStage options..."
-msgstr ""
+msgstr "Chargement des options d'étape de programme ..."
 
 msgid "Something went wrong when loading the programStages!"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement du programmeStages!"
 
 msgid "Loading program options..."
-msgstr ""
+msgstr "Chargement des options du programme ..."
 
 msgid "Something went wrong when loading the programs!"
 msgstr "Une erreur s'est produite lors du chargement des programmes!"
@@ -287,7 +287,7 @@ msgid "Error"
 msgstr "Erreur"
 
 msgid "Report mode"
-msgstr ""
+msgstr "Mode rapport"
 
 msgid "Select None"
 msgstr "Ne rien sélectionner"
@@ -311,7 +311,7 @@ msgid "Check (safe, recommended)"
 msgstr "Vérifier (sûr, recommandé)"
 
 msgid "Skip existing check"
-msgstr ""
+msgstr "Ignorer la vérification existant"
 
 msgid "Skip sharing"
 msgstr "Ignorer le partage"
@@ -320,7 +320,7 @@ msgid "Skip validation"
 msgstr "Ignorer la validation"
 
 msgid "StartDate"
-msgstr ""
+msgstr "Date de début"
 
 msgid "Start date"
 msgstr "Date de début"
@@ -329,7 +329,7 @@ msgid "Strategy"
 msgstr "Stratégie"
 
 msgid "Id scheme"
-msgstr ""
+msgstr "Schéma d'id"
 
 msgid "Logger"
 msgstr "Enregistreur"
@@ -394,7 +394,7 @@ msgid "Event ID Scheme"
 msgstr "Schéma d'ID d'événement"
 
 msgid "Flush Mode"
-msgstr ""
+msgstr "Mode flusher"
 
 msgid "ID scheme"
 msgstr "Schéma d'ID"
@@ -497,49 +497,60 @@ msgid ""
 "Export metadata like data sets and programs including related metadata "
 "objects."
 msgstr ""
+"Exportez des métadonnées telles que des ensembles de données et des "
+"programmes comprenant des objets de métadonnées associés."
 
 msgid "Import / Export"
-msgstr ""
+msgstr "Import / Export"
 
 msgid "Import or Export DHIS2 data."
-msgstr ""
+msgstr "Importer ou exporter des données DHIS2."
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "Une erreur inconnue est survenue"
 
 msgid "Data Import"
-msgstr ""
+msgstr "Importation de données"
 
 msgid ""
 "Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
 "is the standard exchange format for DHIS 2."
 msgstr ""
+"Importez les valeurs de données sur les formats DXF 2 XML, JSON, CSV et PDF."
+" DXF 2 est le format d'échange standard pour DHIS 2."
 
 msgid "Event Import"
-msgstr ""
+msgstr "Importation d'événement"
 
 msgid ""
 "Import events for programs, stages and tracked entities in the DXF 2 format."
 msgstr ""
+"Importez des événements pour les programmes, les étapes et les entités "
+"suivies au format DXF 2."
 
 msgid "GML Import"
-msgstr ""
+msgstr "Importation au format GML"
 
 msgid ""
 "Import geographic data for organisation units using GML format. GML is an "
 "XML grammar for expressing geographical features."
 msgstr ""
+"Importez des données géographiques pour les unités organisation au format "
+"GML. GML est une grammaire XML pour exprimer des caractéristiques "
+"géographiques."
 
 msgid "Couldn't load classKey options"
-msgstr ""
+msgstr "Impossible de charger les options classKey"
 
 msgid "Metadata Import"
-msgstr ""
+msgstr "Importation de métadonnées"
 
 msgid ""
 "Import metadata like data elements and organisation units using the standard"
 " DHIS 2 exchange format called DXF 2."
 msgstr ""
+"Importez des métadonnées telles que des éléments de données et des unités "
+"d'organisation à l'aide du format d'échange standard de DHIS 2 appelé DXF 2."
 
 msgid "It seems like there was no data in the uploaded file."
-msgstr ""
+msgstr "Il semble qu'il n'y avait aucune donnée dans le fichier téléchargé."
