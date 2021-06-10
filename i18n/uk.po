@@ -550,7 +550,7 @@ msgid "Tracked entity type"
 msgstr "Тип відстежуваного явища"
 
 msgid "Filter by"
-msgstr ""
+msgstr "Фільтр за"
 
 msgid "Tracked entity types"
 msgstr ""
