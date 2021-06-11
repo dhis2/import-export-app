@@ -414,7 +414,7 @@ msgid "One object must be selected"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "Об'єки"
 
 msgid "Organisation unit ID scheme"
 msgstr ""
