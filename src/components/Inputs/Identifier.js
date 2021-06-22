@@ -5,7 +5,6 @@ import { RadioGroupField } from '../index'
 const identifierOptions = [
     { value: 'UID', label: i18n.t('UID') },
     { value: 'CODE', label: i18n.t('Code') },
-    { value: 'AUTO', label: i18n.t('Auto') },
 ]
 const defaultIdentifierOption = identifierOptions[0].value
 
