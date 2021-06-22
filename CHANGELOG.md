@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dhis2/import-export-app/compare/v1.0.25...v1.1.0) (2021-06-22)
+
+
+### Features
+
+* **metadata import:** remove "AUTO" option, closes DHIS2-10385 ([#1114](https://github.com/dhis2/import-export-app/issues/1114)) ([a5fb925](https://github.com/dhis2/import-export-app/commit/a5fb925d91fd62d84452bb2675b099ce729e5662))
+
 ## [1.0.25](https://github.com/dhis2/import-export-app/compare/v1.0.24...v1.0.25) (2021-06-11)
 
 
