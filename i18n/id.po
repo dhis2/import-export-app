@@ -431,7 +431,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "Ambil"
 
 msgid "All organisation units in the system"
 msgstr ""
