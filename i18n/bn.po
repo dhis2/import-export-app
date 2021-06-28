@@ -227,7 +227,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "ভুলগুলো"
 
 msgid "Reports for all objects imported"
 msgstr ""
