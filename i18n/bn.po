@@ -161,7 +161,7 @@ msgid "Identifier"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "ভুলগুলো"
 
 msgid "Full"
 msgstr ""
