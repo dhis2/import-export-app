@@ -113,10 +113,16 @@ const jobOverviewPage = {
 const SidebarItem = ({ name, path, code, active, className }) => {
     const history = useHistory()
     const navigateToPath = () => history.push(path)
+    const href = history.createHref({
+        pathname: path,
+        search: '',
+        hash: '',
+    })
 
     return (
         <MenuItem
             active={active}
+            href={href}
             onClick={navigateToPath}
             label={name}
             className={cx(className, {
