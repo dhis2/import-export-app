@@ -31,11 +31,11 @@ exports[`matches snapshot when loading(bool) and no summary task 1`] = `
           data-test="dhis2-uicore-componentcover"
         >
           <div
-            class="jsx-761413583 centered-content middle"
+            class="jsx-498096601 center middle"
             data-test="dhis2-uicore-centeredcontent"
           >
             <div
-              class="jsx-761413583 centered-inner-content"
+              class="jsx-498096601 center-inner-content"
             >
               <div
                 class="jsx-19995197 "
@@ -99,11 +99,11 @@ exports[`matches snapshot when loading(number) and no summary task 1`] = `
           data-test="dhis2-uicore-componentcover"
         >
           <div
-            class="jsx-761413583 centered-content middle"
+            class="jsx-498096601 center middle"
             data-test="dhis2-uicore-centeredcontent"
           >
             <div
-              class="jsx-761413583 centered-inner-content"
+              class="jsx-498096601 center-inner-content"
             >
               <div
                 class="jsx-1195089001 jsx-1880179825 "
@@ -184,7 +184,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
           data-test="job-summary-tags"
         >
           <div
-            class="jsx-2033284162 positive"
+            class="jsx-2158248971 positive"
             data-test="dhis2-uicore-tag"
           >
             <span
@@ -195,7 +195,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
             </span>
           </div>
           <div
-            class="jsx-2033284162 neutral bold"
+            class="jsx-2158248971 neutral bold"
             data-test="dhis2-uicore-tag"
           >
             <span
