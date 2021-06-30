@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dhis2/import-export-app/compare/v1.1.3...v1.2.0) (2021-06-30)
+
+
+### Features
+
+* add href to sidebar items ([41af322](https://github.com/dhis2/import-export-app/commit/41af322693d605cef7221fb637981035d0fb487c))
+
 ## [1.1.3](https://github.com/dhis2/import-export-app/compare/v1.1.2...v1.1.3) (2021-06-29)
 
 
