@@ -1,0 +1,529 @@
+# 
+# Translators:
+# Cherise Beek <cherise.beek@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-28T06:03:53.764Z\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Cherise Beek <cherise.beek@gmail.com>, 2021\n"
+"Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "user is not logged in"
+msgstr ""
+
+msgid "Import Error"
+msgstr ""
+
+msgid "Go Back"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Choose a file to upload"
+msgstr ""
+
+msgid "filter data sets by name"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Clear All"
+msgstr ""
+
+msgid "Data sets"
+msgstr ""
+
+msgid "more options"
+msgstr ""
+
+msgid "JSON"
+msgstr ""
+
+msgid "XML"
+msgstr ""
+
+msgid "CSV"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Include descendants of organisation unit"
+msgstr ""
+
+msgid "Selected organisation unit"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Data element id scheme"
+msgstr ""
+
+msgid "Loading data element id scheme options..."
+msgstr ""
+
+msgid "Data sets filter"
+msgstr ""
+
+msgid "Loading organisation unit id scheme options..."
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "EndDate"
+msgstr ""
+
+msgid "End date"
+msgstr ""
+
+msgid "Event id scheme"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Errors"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "New and updates"
+msgstr ""
+
+msgid "New only"
+msgstr ""
+
+msgid "Updates only"
+msgstr ""
+
+msgid "Delete"
+msgstr "Verwijderen"
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
+msgid "Include children of organisation unit"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "Non Null"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Non Empty"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Loading Object options..."
+msgstr ""
+
+msgid "Something went wrong when loading the object!"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr ""
+
+msgid "Org unit id scheme"
+msgstr ""
+
+msgid "Yes (faster for large imports)"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "[ All program stages]"
+msgstr ""
+
+msgid "Program stages"
+msgstr ""
+
+msgid "Loading programStage options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programStages!"
+msgstr ""
+
+msgid "Loading program options..."
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Report mode"
+msgstr ""
+
+msgid "Select None"
+msgstr ""
+
+msgid "With sharing"
+msgstr ""
+
+msgid "Without sharing"
+msgstr ""
+
+msgid "Sharing"
+msgstr ""
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip check (fast)"
+msgstr ""
+
+msgid "Check (safe, recommended)"
+msgstr ""
+
+msgid "Skip existing check"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "StartDate"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Id scheme"
+msgstr ""
+
+msgid "Logger"
+msgstr ""
+
+msgid "view messages received on using import/export forms."
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Ignored"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Type Count"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "Summaries"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Import Summary"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Atomic Mode"
+msgstr ""
+
+msgid "Category ID scheme"
+msgstr ""
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Event ID Scheme"
+msgstr ""
+
+msgid "Flush Mode"
+msgstr ""
+
+msgid "ID scheme"
+msgstr ""
+
+msgid "Report Mode"
+msgstr ""
+
+msgid "Import Strategy"
+msgstr ""
+
+msgid "Inclusion Strategy"
+msgstr ""
+
+msgid "Merge Mode"
+msgstr ""
+
+msgid "Org unit ID scheme"
+msgstr ""
+
+msgid "Preheat Mode"
+msgstr ""
+
+msgid "Program Stages"
+msgstr ""
+
+msgid "Schemas"
+msgstr ""
+
+msgid "Data Sets"
+msgstr ""
+
+msgid "Existing record check"
+msgstr ""
+
+msgid "Skip Sharing"
+msgstr ""
+
+msgid "Skip Validation"
+msgstr ""
+
+msgid "New and Updates"
+msgstr ""
+
+msgid "AUTO"
+msgstr ""
+
+msgid "Create and Update"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Update"
+msgstr "Bijwerken"
+
+msgid "Gzip"
+msgstr ""
+
+msgid "Import/Export"
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
+msgid "Data Export"
+msgstr ""
+
+msgid ""
+"Export data values. This is the regular export function which exports data "
+"to the DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "Event Export"
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in the DXF 2 "
+"format."
+msgstr ""
+
+msgid "Metadata Export"
+msgstr ""
+
+msgid ""
+"Export meta data like data elements and organisation units to the standard "
+"DHIS 2 exchange format."
+msgstr ""
+
+msgid "Metadata Dependency Export"
+msgstr ""
+
+msgid ""
+"Export metadata like data sets and programs including related metadata "
+"objects."
+msgstr ""
+
+msgid "Import / Export"
+msgstr ""
+
+msgid "Import or Export DHIS2 data."
+msgstr ""
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "Data Import"
+msgstr ""
+
+msgid ""
+"Import data values on the DXF 2 XML, JSON, CSV and PDF formatrant s. DXF 2 "
+"is the standard exchange format for DHIS 2."
+msgstr ""
+
+msgid "Event Import"
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities in the DXF 2 format."
+msgstr ""
+
+msgid "GML Import"
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using GML format. GML is an "
+"XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "Couldn't load classKey options"
+msgstr ""
+
+msgid "Metadata Import"
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the standard"
+" DHIS 2 exchange format called DXF 2."
+msgstr ""
+
+msgid "It seems like there was no data in the uploaded file."
+msgstr ""
