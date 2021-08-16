@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
-"PO-Revision-Date: 2020-10-05T08:18:24.656Z\n"
+"POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
+"PO-Revision-Date: 2021-08-16T13:04:21.582Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -203,9 +203,6 @@ msgid "ID scheme"
 msgstr ""
 
 msgid "UID"
-msgstr ""
-
-msgid "Auto"
 msgstr ""
 
 msgid "Identifier"

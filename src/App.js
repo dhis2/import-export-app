@@ -1,3 +1,5 @@
+import './locales'
+
 import {
     CssVariables,
     CssReset,
