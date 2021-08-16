@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/dhis2/import-export-app/compare/v1.2.1...v1.2.2) (2021-08-16)
+
+
+### Bug Fixes
+
+* ensure locales are imported before components ([8bcb3fb](https://github.com/dhis2/import-export-app/commit/8bcb3fb276ad83e669f913cab1e854c715c4083d))
+
 ## [1.2.1](https://github.com/dhis2/import-export-app/compare/v1.2.0...v1.2.1) (2021-08-12)
 
 
