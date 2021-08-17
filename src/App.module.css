@@ -14,8 +14,6 @@ body {
 .sidebar {
     grid-column: sidebar;
     background-color: var(--colors-grey200);
-    overflow: auto;
-    position: fixed;
     height: 100%;
 }
 
