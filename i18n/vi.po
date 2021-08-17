@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
+"POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -214,9 +214,6 @@ msgstr ""
 
 msgid "UID"
 msgstr ""
-
-msgid "Auto"
-msgstr "Tự động"
 
 msgid "Identifier"
 msgstr "Ký hiệu nhận dạng (ID)"
