@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
+"POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -223,9 +223,6 @@ msgstr "Identifikator sxemasi"
 
 msgid "UID"
 msgstr ""
-
-msgid "Auto"
-msgstr "Аvto"
 
 msgid "Identifier"
 msgstr "Identifikator"
