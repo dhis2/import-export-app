@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
+"POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -217,9 +217,6 @@ msgstr "Skema ID"
 
 msgid "UID"
 msgstr ""
-
-msgid "Auto"
-msgstr "Otomatis"
 
 msgid "Identifier"
 msgstr "Pengenal"
