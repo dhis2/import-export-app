@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T08:18:24.656Z\n"
+"POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -229,9 +229,6 @@ msgstr "Schéma d'ID"
 
 msgid "UID"
 msgstr "UID"
-
-msgid "Auto"
-msgstr "Auto"
 
 msgid "Identifier"
 msgstr "Identifiant"
