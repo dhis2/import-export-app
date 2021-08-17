@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/dhis2/import-export-app/compare/v1.2.3...v1.2.4) (2021-08-17)
+
+
+### Bug Fixes
+
+* apply text wrapping to navigation bar items ([a728ef3](https://github.com/dhis2/import-export-app/commit/a728ef369fe745146778e446812f96e9b8d4f8dc))
+
 ## [1.2.3](https://github.com/dhis2/import-export-app/compare/v1.2.2...v1.2.3) (2021-08-17)
 
 
