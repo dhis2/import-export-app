@@ -1,14 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Somkhit Bouavong <bouavongk@gmail.com>, 2021
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2021-09-04 00:01+0000\n"
+"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -394,7 +396,7 @@ msgid "Category combination"
 msgstr "Category Combination"
 
 msgid "Dashboard"
-msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
+msgstr "ກະດານຂ່າວ"
 
 msgid "Data element groups"
 msgstr "Data Element Groups"
@@ -626,7 +628,7 @@ msgid "Messages"
 msgstr "ຂໍ້ຄວາມ"
 
 msgid "Type"
-msgstr "ປະເພດ"
+msgstr "Type"
 
 msgid "Property"
 msgstr ""
@@ -728,10 +730,10 @@ msgid "Overview"
 msgstr ""
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr "ມີ"
 
 msgid "No"
-msgstr "ບໍ່"
+msgstr "ບໍ່ມີ"
 
 msgid "There are errors on this page"
 msgstr ""

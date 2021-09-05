@@ -1,20 +1,20 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
-# Djibril Dione <dione.djibril@gmail.com>, 2019
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Bram Piot <bram.piot@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2020
-# Edem Kossi <ekossi@hispwca.org>, 2020
-# Yao Selom Saka <ysaka@hispwca.org>, 2020
+# Edem Kossi <ekossi@hispwca.org>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2021
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Bram Piot <bram.piot@gmail.com>, 2021
+# Djibril Dione <dione.djibril@gmail.com>, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2021-09-04 00:01+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -419,13 +419,13 @@ msgid "Programs"
 msgstr "Programmes"
 
 msgid "Category combination"
-msgstr "Combinaison de Catégories"
+msgstr "Combinaison de catégories"
 
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
 msgid "Data element groups"
-msgstr "Groupes d'éléments de données"
+msgstr "Groupes d'élément de données"
 
 msgid "Option sets"
 msgstr "Ensembles d'options"
@@ -742,7 +742,7 @@ msgid "Event import"
 msgstr "Importation d'événements"
 
 msgid "GML import"
-msgstr "Importation GML"
+msgstr "Importation au format GML"
 
 msgid "Metadata import"
 msgstr "Importation de métadonnées"
@@ -943,7 +943,7 @@ msgid "GML"
 msgstr "GML"
 
 msgid "Metadata"
-msgstr "Méta-données"
+msgstr "Métadonnées"
 
 msgid "TEI"
 msgstr "TEI"
