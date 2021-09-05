@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Wanda <wanda@frontlineaids.org>, 2020
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Wanda <wanda@frontlineaids.org>, 2021
 # Nadiia <semchuk@aph.org.ua>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"PO-Revision-Date: 2021-09-04 00:01+0000\n"
 "Last-Translator: Nadiia <semchuk@aph.org.ua>, 2021\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -396,7 +396,7 @@ msgid "Category combination"
 msgstr "Комбінація категорій"
 
 msgid "Dashboard"
-msgstr "Інформаційна панель (дашборд)"
+msgstr "Інформаційна панель - дашборд"
 
 msgid "Data element groups"
 msgstr "Групи елементів даних"
@@ -489,7 +489,7 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Активне"
+msgstr "Активно"
 
 msgid "Completed"
 msgstr "Завершено"
@@ -544,7 +544,7 @@ msgid "Program"
 msgstr "Програма"
 
 msgid "Tracked entity type"
-msgstr "Тип відстежуваного явища"
+msgstr "Тип об'єкту, що відстежується"
 
 msgid "Filter by"
 msgstr "Фільтр за"
@@ -640,7 +640,7 @@ msgid "Status"
 msgstr "Статус"
 
 msgid "Description"
-msgstr "Змалювання"
+msgstr "Опис"
 
 msgid "Summary"
 msgstr ""
@@ -658,7 +658,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "Підсумок"
+msgstr "Всього"
 
 msgid "Details by type"
 msgstr ""
