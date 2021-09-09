@@ -32,7 +32,7 @@ const Schemas = ({
     const [schemaGroups, setSchemaGroups] = useState(undefined)
     const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined)
     const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined)
-    const { error, loading } = useDataQuery(schemaQuery, {
+    const { error, fetching } = useDataQuery(schemaQuery, {
         onComplete: data => {
             const schemas = data.schemas.schemas
             const filteredSchemas = filterOutExcludedSchemas(
@@ -97,11 +97,11 @@ const Schemas = ({
         propagateCheckedSchemas(updatedSchemaGroups)
     }
 
-    const showSchemas = !loading && !error
+    const showSchemas = !fetching && !error
 
     return (
         <div className={styles.container} data-test={dataTest}>
-            {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
+            {fetching && <CircularLoader dataTest={`${dataTest}-loading`} />}
             {error && (
                 <div data-test={`${dataTest}-error`}>
                     <p>

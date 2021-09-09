@@ -55,7 +55,7 @@ const ResourcePicker = ({
         return null
     }
 
-    const { loading } = useDataQuery(query, {
+    const { fetching } = useDataQuery(query, {
         onComplete: data => {
             const elements = data[resourceName][resourceName]
             const list = elements.map(({ id, displayName }) => ({
@@ -76,11 +76,11 @@ const ResourcePicker = ({
         },
     })
 
-    const showList = !loading && !error
+    const showList = !fetching && !error
 
     return (
         <FormField label={label} dataTest={dataTest}>
-            {loading && <CircularLoader dataTest={`${dataTest}-loading`} />}
+            {fetching && <CircularLoader dataTest={`${dataTest}-loading`} />}
             {error && (
                 <Help error data-test={`${dataTest}-error`}>
                     <p>{errorMessage}</p>
@@ -103,7 +103,7 @@ const ResourcePicker = ({
                             </p>
                         }
                         dataTest={`${dataTest}-list`}
-                        loading={loading}
+                        loading={fetching}
                     />
                 ) : (
                     <Field
@@ -112,7 +112,7 @@ const ResourcePicker = ({
                         options={list}
                         filterable={withFilter}
                         dataTest={`${dataTest}-select`}
-                        loading={loading}
+                        loading={fetching}
                     />
                 ))}
             {(meta.touched || !meta.pristine) && meta.error && (
