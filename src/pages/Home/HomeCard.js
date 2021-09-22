@@ -1,5 +1,5 @@
-import { PropTypes } from '@dhis2/prop-types'
 import { Card } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './HomeCard.module.css'
