@@ -38,24 +38,10 @@ exports[`matches snapshot when loading(bool) and no summary task 1`] = `
               class="jsx-498096601 center-inner-content"
             >
               <div
-                class="jsx-19995197 "
+                class="jsx-1838964138 "
                 data-test="dhis2-uicore-circularloader"
                 role="progressbar"
-              >
-                <svg
-                  class="jsx-19995197"
-                  viewBox="22 22 44 44"
-                >
-                  <circle
-                    class="jsx-19995197 circle"
-                    cx="44"
-                    cy="44"
-                    fill="none"
-                    r="20.2"
-                    stroke-width="3.6"
-                  />
-                </svg>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -106,12 +92,12 @@ exports[`matches snapshot when loading(number) and no summary task 1`] = `
               class="jsx-498096601 center-inner-content"
             >
               <div
-                class="jsx-1195089001 jsx-1880179825 "
+                class="jsx-3127531794 jsx-1918124637 "
                 data-test="dhis2-uicore-linearloader"
                 role="progressbar"
               >
                 <div
-                  class="jsx-1191682544 jsx-689354218"
+                  class="jsx-1191682544 jsx-3620677350 "
                 />
               </div>
             </div>
@@ -184,7 +170,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
           data-test="job-summary-tags"
         >
           <div
-            class="jsx-2158248971 positive"
+            class="jsx-72316749 positive"
             data-test="dhis2-uicore-tag"
           >
             <span
@@ -195,7 +181,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
             </span>
           </div>
           <div
-            class="jsx-2158248971 neutral bold"
+            class="jsx-72316749 neutral bold"
             data-test="dhis2-uicore-tag"
           >
             <span
