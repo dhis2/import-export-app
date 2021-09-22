@@ -36,7 +36,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
       data-test="job-summary-tags"
     >
       <div
-        class="jsx-2158248971 positive"
+        class="jsx-72316749 positive"
         data-test="dhis2-uicore-tag"
       >
         <span
@@ -47,7 +47,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="jsx-2158248971 negative bold"
+        class="jsx-72316749 negative bold"
         data-test="dhis2-uicore-tag"
       >
         <span
@@ -58,7 +58,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="jsx-2158248971 neutral bold"
+        class="jsx-72316749 neutral bold"
         data-test="dhis2-uicore-tag"
       >
         <span
@@ -549,7 +549,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
       data-test="job-summary-tags"
     >
       <div
-        class="jsx-2158248971 positive"
+        class="jsx-72316749 positive"
         data-test="dhis2-uicore-tag"
       >
         <span
@@ -560,7 +560,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="jsx-2158248971 negative"
+        class="jsx-72316749 negative"
         data-test="dhis2-uicore-tag"
       >
         <span
@@ -571,7 +571,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="jsx-2158248971 neutral bold"
+        class="jsx-72316749 neutral bold"
         data-test="dhis2-uicore-tag"
       >
         <span
