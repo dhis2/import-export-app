@@ -3411,10 +3411,17 @@
     i18next "^10.3"
     moment "^2.24.0"
 
-"@dhis2/prop-types@^1.0.0", "@dhis2/prop-types@^1.6.4":
+"@dhis2/prop-types@^1.6.4":
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-1.6.4.tgz#ec4d256c9440d4d00071524422a727c61ddaa6f6"
   integrity sha512-qkVj8OuyjDmSxzYDlCWZllvC9hIbrIImMp79/U5CVsIRbjUF0zA/tfbv4rWnsWALmwEHOQFbzl5GnO5D8RNneA==
+  dependencies:
+    prop-types "^15"
+
+"@dhis2/prop-types@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-2.0.4.tgz#3c20194f73c70c86ccdeba1e392da7ca30a36ea3"
+  integrity sha512-/NwFBUzlWlVCYBmD6ejlLA1/S6ime61r7611v8Zg6X5Hvbnhsq3qbpkgrKy3IvS7iZZWb4SVlpsweDmbWNRxbA==
   dependencies:
     prop-types "^15"
 
