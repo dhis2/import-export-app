@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/dhis2/import-export-app/compare/v1.2.5...v1.2.6) (2021-09-23)
+
+
+### Bug Fixes
+
+* **deps:** add @dhis2/prop-types as direct dependency ([2e8035d](https://github.com/dhis2/import-export-app/commit/2e8035db8df0d9990c2adf122d0c5dc8b64c9ff8))
+
 ## [1.2.5](https://github.com/dhis2/import-export-app/compare/v1.2.4...v1.2.5) (2021-08-31)
 
 
