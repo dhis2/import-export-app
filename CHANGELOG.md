@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/dhis2/import-export-app/compare/v1.2.6...v1.2.7) (2021-12-10)
+
+
+### Bug Fixes
+
+* **schemas component:** use "useEffect" instead of "onComplete" ([a554260](https://github.com/dhis2/import-export-app/commit/a5542603b705e6dd0e3b27293db6bafb2e0d711a))
+
 ## [1.2.6](https://github.com/dhis2/import-export-app/compare/v1.2.5...v1.2.6) (2021-09-23)
 
 
