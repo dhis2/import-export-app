@@ -2,7 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, ButtonStrip, CircularLoader, Help } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     filterOutExcludedSchemas,
     formatSchemas,
@@ -31,9 +31,13 @@ const Schemas = ({
 }) => {
     const [schemaGroups, setSchemaGroups] = useState(undefined)
     const [schemaGroupLabels, setSchemaGroupLabels] = useState(undefined)
-    const [schemaGroupOrder, setSchemaGroupOrder] = useState(undefined)
-    const { error, fetching } = useDataQuery(schemaQuery, {
-        onComplete: data => {
+    const [schemaGroupOrder, setSchemaGroupOrder] = useState([])
+    const { error, fetching, data } = useDataQuery(schemaQuery, {
+        onError: console.error,
+    })
+
+    useEffect(() => {
+        if (!fetching && data) {
             const schemas = data.schemas.schemas
             const filteredSchemas = filterOutExcludedSchemas(
                 excludeSchemas,
@@ -48,11 +52,8 @@ const Schemas = ({
             setSchemaGroupOrder(getGroupOrder(groups))
             setSchemaGroupLabels(getGroupLabels(groups))
             propagateCheckedSchemas(groups)
-        },
-        onError: error => {
-            console.error('Schemas error: ', error)
-        },
-    })
+        }
+    }, [fetching, data])
 
     const propagateCheckedSchemas = updatedSchemaGroups => {
         setCheckedSchemas(
