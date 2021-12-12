@@ -583,7 +583,7 @@ msgid "One user must be selected"
 msgstr "必须选择一个用户"
 
 msgid "No jobs started yet."
-msgstr "还没有起到的作业"
+msgstr "还没有已启动的任务"
 
 msgid "Recreate job"
 msgstr "重新创建作业"
