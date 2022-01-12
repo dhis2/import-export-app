@@ -2,6 +2,7 @@ import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import {
     DataImport,
+    EarthEngineImport,
     DataExport,
     EventExport,
     EventImport,
@@ -22,6 +23,7 @@ const Router = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/import/data" component={DataImport} />
+                <Route path="/import/earthengine" component={EarthEngineImport} />
                 <Route path="/import/event" component={EventImport} />
                 <Route path="/import/gml" component={GMLImport} />
                 <Route path="/import/metadata" component={MetadataImport} />
