@@ -1,29 +1,40 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import SelectField from '../../core/SelectField'
-import NumberField from '../../core/NumberField'
+import { SingleSelect, SingleSelectOption } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import NumberField from './NumberField'
 import styles from './styles/NumberPrecision.module.css'
+
+const ORIGINAL = 'original'
+const CUSTOM = 'custom'
 
 const NumberPrecision = ({ precision, onChange }) => {
     const [useOriginal, setUseOriginal] = useState(precision === undefined)
 
+    const precisionChanged = ({ selected }) => {
+        setUseOriginal(selected === ORIGINAL)
+        onChange(selected === ORIGINAL ? undefined : 0)
+    }
+
     return (
         <div className={styles.row}>
-            <SelectField
+            <SingleSelect
                 label={i18n.t('Number precision')}
-                items={[
-                    { id: 'original', name: i18n.t('Use original value') },
-                    { id: 'custom', name: i18n.t('Custom value') },
-                ]}
-                value={useOriginal ? 'original' : 'custom'}
-                onChange={({ id }) => {
-                    setUseOriginal(id === 'original')
-                    onChange(id === 'original' ? undefined : 0)
-                }}
+                selected={useOriginal ? ORIGINAL : CUSTOM}
+                onChange={precisionChanged}
                 className={styles.select}
-                dense
-            />
+            >
+                <SingleSelectOption
+                    label={i18n.t('Use original value')}
+                    key="original"
+                    value="original"
+                />
+                <SingleSelectOption
+                    label={i18n.t('Custom value')}
+                    key="custom"
+                    value="custom"
+                />
+            </SingleSelect>
             <NumberField
                 label={i18n.t('Decimals')}
                 value={useOriginal ? undefined : precision}
@@ -39,8 +50,8 @@ const NumberPrecision = ({ precision, onChange }) => {
 }
 
 NumberPrecision.propTypes = {
-    precision: PropTypes.number,
     onChange: PropTypes.func.isRequired,
+    precision: PropTypes.number,
 }
 
 export default NumberPrecision
