@@ -2,6 +2,11 @@ import i18n from '@dhis2/d2-i18n'
 
 const EARTH_ENGINE_LAYER = 'earthEngine'
 
+export const POPULATION_AGE_GROUPS_ID =
+    'WorldPop/GP/100m/pop_age_sex_cons_unadj'
+
+export const ELEVATION_ID = 'USGS/SRTMGL1_003'
+
 const getDefaultFilters = ({ id, name, year }) => [
     {
         type: 'eq',
@@ -42,7 +47,7 @@ export const getEarthEngineLayers = () => [
     },
     {
         layer: EARTH_ENGINE_LAYER,
-        datasetId: 'WorldPop/GP/100m/pop_age_sex_cons_unadj',
+        datasetId: POPULATION_AGE_GROUPS_ID,
         name: i18n.t('Population age groups'),
         unit: i18n.t('people per hectare'),
         description: i18n.t(
@@ -219,7 +224,7 @@ export const getEarthEngineLayers = () => [
     },
     {
         layer: EARTH_ENGINE_LAYER,
-        datasetId: 'USGS/SRTMGL1_003',
+        datasetId: ELEVATION_ID,
         name: i18n.t('Elevation'),
         unit: i18n.t('meters'),
         description: i18n.t('Elevation above sea-level.'),
