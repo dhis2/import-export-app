@@ -14,6 +14,10 @@ const formatAdxOptions = [
     ...formatOptions,
     { value: 'adx', label: i18n.t('ADX') },
 ]
+const formatAdxXMLOptions = [
+    ...formatOptions,
+    { value: 'adx+xml', label: i18n.t('ADX') },
+]
 const formatAdxPdfOptions = [
     ...formatAdxOptions,
     { value: 'pdf', label: i18n.t('PDF') },
@@ -50,6 +54,7 @@ export {
     formatOptions,
     formatNoCsvOptions,
     formatAdxOptions,
+    formatAdxXMLOptions,
     formatAdxPdfOptions,
     formatJsonpOptions,
     defaultFormatOption,

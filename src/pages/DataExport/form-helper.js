@@ -2,7 +2,11 @@ import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
-import { locationAssign, compressionToName } from '../../utils/helper'
+import {
+    locationAssign,
+    compressionToName,
+    fileFormatToFileExtension,
+} from '../../utils/helper'
 import { jsDateToISO8601, pathToId } from '../../utils/helper'
 
 const valuesToParams = (
@@ -31,7 +35,7 @@ const valuesToParams = (
         `endDate=${jsDateToISO8601(endDate)}`,
         `orgUnit=${selectedOrgUnits.map(o => pathToId(o))}`,
         `dataSet=${selectedDataSets}`,
-        `format=${format}`,
+        `format=${encodeURIComponent(format)}`,
         compression ? `compression=${compressionToName(compression)}` : '',
         `attachment=${filename}`,
     ]
@@ -46,7 +50,9 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
     // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `dataValueSets`
-    const fileExtension = compression ? `${format}.${compression}` : format
+    const fileExtension = compression
+        ? `${fileFormatToFileExtension(format)}.${compression}`
+        : fileFormatToFileExtension(format)
     const filename = `${endpoint}.${fileExtension}`
     const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
