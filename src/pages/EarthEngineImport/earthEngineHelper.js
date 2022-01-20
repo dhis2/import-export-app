@@ -51,7 +51,6 @@ const getWorkerInstance = async engine => {
             const EarthEngineWorker = await loadEarthEngineWorker(
                 getAuthToken(engine)
             )
-            // console.log('here EEWOrker', EarthEngineWorker)
             return await new EarthEngineWorker()
         })()
 
@@ -59,7 +58,7 @@ const getWorkerInstance = async engine => {
 }
 
 export const getPeriods = async (eeId, engine) => {
-    const { periodType } = getEarthEngineLayer(eeId)
+    const { periodType, filters } = getEarthEngineLayer(eeId)
 
     const getPeriod = ({ id, properties }) => {
         const year = new Date(properties['system:time_start']).getFullYear()
@@ -72,9 +71,26 @@ export const getPeriods = async (eeId, engine) => {
     const eeWorker = await getWorkerInstance(engine)
 
     const { features } = await eeWorker.getPeriods(eeId)
-    return features
-        .map(getPeriod)
-        .map(({ name, year }) => ({ label: name, value: year.toString() }))
+    return features.map(getPeriod).map(p => {
+        const period = filters(p)
+        return { label: p.name, value: p.year.toString(), ...period[0] }
+    })
+}
+
+// export const getAggregations = eeId => {
+//     return 'getAggregations'
+// }
+export const getAggregations = async (engine, config) => {
+    const aggregations = { name: 'jen' }
+    // const eeWorker = await getWorkerInstance(engine)
+
+    // const aggregations = await eeWorker
+    //     .setOptions(eeConfig)
+    //     .getAggregations(eeId)
+
+    // console.log('aggregations', aggregations)
+
+    return aggregations
 }
 
 // Returns auth token for EE API as a promise
@@ -107,12 +123,6 @@ export const getAuthToken = engine => () => {
                 )
             )
         }
-
-        // const res = {
-        //     token_type: 'Bearer',
-        //     ...token,
-        // }
-        // console.log('yo got here', res)
 
         resolve({
             token_type: 'Bearer',

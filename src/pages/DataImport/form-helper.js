@@ -43,6 +43,7 @@ const onImport = ({
         .join('&')
     const url = `${apiBaseUrl}${endpoint}?${params}`
 
+    console.log('url', url)
     try {
         await uploadFile({
             url,

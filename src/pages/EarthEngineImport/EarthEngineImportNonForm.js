@@ -1,42 +1,28 @@
 import { useDataQuery, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-// import { loadEarthEngineWorker } from '@dhis2/maps-gl'
 import {
-    // ReactFinalForm,
-    // SingleSelectFieldFF,
-    // composeValidators,
-    // createEqualTo,
-    // hasValue,
+    OrgUnitDimension,
+    apiFetchOrganisationUnitRoots,
+} from '@dhis2/analytics'
+import {
     SingleSelectField as SingleSelect,
     SingleSelectOption,
+    Button,
+    ComponentCover,
+    CenteredContent,
+    CircularLoader,
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
-import {
-    Page,
-    // WithAuthority,
-    // BasicOptions,
-    // MoreOptions,
-    // SchemeContainer,
-    // DataIcon,
-    // ValidationSummary,
-} from '../../components/index'
-import { ImportButtonStrip } from '../../components/Inputs/index'
-import { getPeriods } from './earthEngineHelper'
+import { Page } from '../../components/index'
+import { getPeriods, getAggregations } from './earthEngineHelper'
+import getEarthEngineConfig from './earthEngineLoader'
 import {
     getEarthEngineLayers,
-    getEarthEngineLayer,
     ELEVATION_ID,
     POPULATION_AGE_GROUPS_ID,
 } from './earthEngines'
 import NumberPrecisionSelect from './NumberPrecisionSelect'
 import styles from './styles/EarthEngineImport.module.css'
-
-const alertValues = values => {
-    const formattedValuesString = JSON.stringify(values, null, 2)
-    alert(formattedValuesString)
-}
-
-let workerPromise
 
 const dataSetQuery = {
     datasets: {
@@ -56,22 +42,28 @@ const eeLayers = getEarthEngineLayers()
     }))
 
 const EarthEngineImport = () => {
+    const [orgUnits, setOrgUnits] = useState([])
+    const [rootOrgUnits, setRootOrgUnits] = useState(null)
+    const [eeData, setEeData] = useState(null)
     const [eeLayer, setEeLayer] = useState(eeLayers[0].value)
-    const [currentDS, setCurrentDS] = useState(null)
-    const [currentDE, setCurrentDE] = useState(null)
+    const [currentDS, setCurrentDS] = useState('')
+    const [currentDE, setCurrentDE] = useState('')
     const [dataSets, setDataSets] = useState([])
     const [dataSetElements, setDataSetElements] = useState([])
     const [periods, setPeriods] = useState([])
-    const [period, setPeriod] = useState(null)
+    const [period, setPeriod] = useState('')
     const engine = useDataEngine()
     const { loading, data, error } = useDataQuery(dataSetQuery)
 
     useEffect(() => {
-        const generatePeriods = async () => {
+        const fetchData = async () => {
             const periodsForLayer = await getPeriods(eeLayer, engine)
             setPeriods(periodsForLayer)
+
+            const orgUnits = await apiFetchOrganisationUnitRoots(engine)
+            setRootOrgUnits(orgUnits.map(ou => ou.id))
         }
-        generatePeriods()
+        fetchData()
     }, [])
 
     useEffect(() => {
@@ -95,7 +87,7 @@ const EarthEngineImport = () => {
             } else {
                 periodsForLayer = await getPeriods(eeLayer, engine)
             }
-            setPeriod(null)
+            setPeriod('')
             setPeriods(periodsForLayer)
 
             if ([POPULATION_AGE_GROUPS_ID, ELEVATION_ID].includes(eeLayer)) {
@@ -118,10 +110,33 @@ const EarthEngineImport = () => {
         setDataSetElements(dsElements)
     }
 
+    const orgUnitsSelected = ({ items }) => setOrgUnits(items)
     const dataElementChanged = ({ selected }) => setCurrentDE(selected)
     const numberPrecisionChanged = ({ selected }) => console.log(selected)
     const layerChanged = async ({ selected }) => setEeLayer(selected)
     const periodChanged = ({ selected }) => setPeriod(selected)
+
+    const showData = async () => {
+        const displayProperty = 'NAME'
+
+        const config = {
+            id: eeLayer,
+            rows: orgUnits,
+            filter: periods.find(p => period === p.name),
+        }
+
+        const eeConfig = await getEarthEngineConfig(
+            config,
+            engine,
+            displayProperty
+        )
+        console.log('eeConfig final', eeConfig)
+        // const res = getAggregations()
+        // setEeData(res)
+        getAggregations(engine, eeConfig).then(aggregations =>
+            setEeData(JSON.stringify(aggregations))
+        )
+    }
 
     return (
         <Page
@@ -171,6 +186,25 @@ const EarthEngineImport = () => {
                 </div>
 
                 <div className={styles.row}>
+                    <div className={styles.orgUnitContainer}>
+                        {!rootOrgUnits ? (
+                            <ComponentCover translucent>
+                                <CenteredContent>
+                                    <CircularLoader />
+                                </CenteredContent>
+                            </ComponentCover>
+                        ) : (
+                            <OrgUnitDimension
+                                roots={rootOrgUnits}
+                                selected={orgUnits}
+                                onSelect={orgUnitsSelected}
+                                showUserOrgUnits={false}
+                            />
+                        )}
+                    </div>
+                </div>
+
+                <div className={styles.row}>
                     <SingleSelect
                         name="dataset"
                         label="Data Set"
@@ -213,8 +247,16 @@ const EarthEngineImport = () => {
                     />
                 </div>
 
+                {eeData && (
+                    <div className={styles.row}>
+                        <p>{eeData}</p>
+                    </div>
+                )}
+
                 <div className={styles.row}>
-                    <ImportButtonStrip />
+                    <Button name="showData" onClick={showData} value="default">
+                        Fetch EE data
+                    </Button>
                 </div>
             </div>
         </Page>

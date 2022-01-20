@@ -1,3 +1,9 @@
 .row {
     margin-bottom: 4px;
 }
+
+.orgUnitContainer {
+    /* height: 500px; */
+    position: relative;
+    /* width: 800px; */
+}
