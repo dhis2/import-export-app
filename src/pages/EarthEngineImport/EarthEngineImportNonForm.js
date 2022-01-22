@@ -1,9 +1,9 @@
-import { useDataQuery, useDataEngine } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import {
     OrgUnitDimension,
     apiFetchOrganisationUnitRoots,
 } from '@dhis2/analytics'
+import { useDataQuery, useDataEngine, useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     SingleSelectField as SingleSelect,
     SingleSelectOption,
@@ -14,14 +14,22 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { Page } from '../../components/index'
-import { getPeriods, getAggregations } from './earthEngineHelper'
+// import DataPreview from './DataPreview'
+import {
+    getPeriods,
+    getAggregations,
+    fetchUserSettings,
+} from './earthEngineHelper'
 import getEarthEngineConfig from './earthEngineLoader'
 import {
     getEarthEngineLayers,
-    ELEVATION_ID,
-    POPULATION_AGE_GROUPS_ID,
+    getEarthEngineLayer,
+    POPULATION_DATASET_ID,
+    POPULATION_AGE_GROUPS_DATASET_ID,
 } from './earthEngines'
+import { getAggregationTypes } from './getAggregationTypes'
 import NumberPrecisionSelect from './NumberPrecisionSelect'
+import { postDataWithEngine, postDataWithFetch } from './postData'
 import styles from './styles/EarthEngineImport.module.css'
 
 const dataSetQuery = {
@@ -35,13 +43,43 @@ const dataSetQuery = {
 }
 
 const eeLayers = getEarthEngineLayers()
-    .filter(({ legacy }) => !legacy)
+    .filter(({ datasetId }) => {
+        return [
+            POPULATION_AGE_GROUPS_DATASET_ID,
+            POPULATION_DATASET_ID,
+        ].includes(datasetId)
+    })
     .map(({ name, datasetId }) => ({
         label: name,
         value: datasetId,
     }))
 
+const getAggregationTypesForLayer = id => {
+    const types = [
+        { value: 'min', label: i18n.t('Min') },
+        { value: 'max', label: i18n.t('Max') },
+        { value: 'mean', label: i18n.t('Mean') },
+        { value: 'median', label: i18n.t('Median') },
+        { value: 'sum', label: i18n.t('Sum') },
+        {
+            value: 'stdDev',
+            // label: i18n.t('Standard deviation'),
+            label: i18n.t('Std dev'),
+        },
+        { value: 'variance', label: i18n.t('Variance') },
+    ]
+    const aggs = getEarthEngineLayer(id).aggregations || getAggregationTypes()
+
+    return types.filter(type => aggs.includes(type.value))
+}
+
+const getFirstDefaultAggregation = id => {
+    const defAggregations = getEarthEngineLayer(id).defaultAggregations
+    return Array.isArray(defAggregations) ? defAggregations[0] : defAggregations
+}
+
 const EarthEngineImport = () => {
+    const [displayNameProperty, setDisplayNameProperty] = useState(null)
     const [orgUnits, setOrgUnits] = useState([])
     const [rootOrgUnits, setRootOrgUnits] = useState(null)
     const [eeData, setEeData] = useState(null)
@@ -52,7 +90,9 @@ const EarthEngineImport = () => {
     const [dataSetElements, setDataSetElements] = useState([])
     const [periods, setPeriods] = useState([])
     const [period, setPeriod] = useState('')
+    const [aggregation, setAggregation] = useState('')
     const engine = useDataEngine()
+    const { baseUrl } = useConfig()
     const { loading, data, error } = useDataQuery(dataSetQuery)
 
     useEffect(() => {
@@ -62,6 +102,9 @@ const EarthEngineImport = () => {
 
             const orgUnits = await apiFetchOrganisationUnitRoots(engine)
             setRootOrgUnits(orgUnits.map(ou => ou.id))
+
+            const userSettings = await fetchUserSettings(engine)
+            setDisplayNameProperty(userSettings.keyAnalysisDisplayProperty)
         }
         fetchData()
     }, [])
@@ -72,6 +115,7 @@ const EarthEngineImport = () => {
                 data.datasets.dataSets.map(({ id, name, dataSetElements }) => ({
                     label: name,
                     value: id,
+                    id,
                     dataSetElements,
                 }))
             )
@@ -81,21 +125,18 @@ const EarthEngineImport = () => {
     useEffect(() => {
         const updatePeriod = async () => {
             let periodsForLayer
-            if (eeLayer === ELEVATION_ID) {
-                const currentYear = new Date().getFullYear().toString()
-                periodsForLayer = [{ label: currentYear, value: currentYear }]
-            } else {
-                periodsForLayer = await getPeriods(eeLayer, engine)
-            }
-            setPeriod('')
+            // if (eeLayer === ELEVATION_ID) {
+            //     const currentYear = new Date().getFullYear().toString()
+            //     periodsForLayer = [{ label: currentYear, value: currentYear }]
+            // } else {
+            periodsForLayer = await getPeriods(eeLayer, engine)
+            // }
             setPeriods(periodsForLayer)
-
-            if ([POPULATION_AGE_GROUPS_ID, ELEVATION_ID].includes(eeLayer)) {
-                setPeriod(periodsForLayer[0].value)
-            }
+            setPeriod(periodsForLayer[0].value)
         }
 
         updatePeriod()
+        setAggregation(getFirstDefaultAggregation(eeLayer))
     }, [eeLayer])
 
     const dataSetChanged = ({ selected }) => {
@@ -104,38 +145,73 @@ const EarthEngineImport = () => {
             ({ dataElement }) => ({
                 label: dataElement.name,
                 value: dataElement.id,
+                id: dataElement.id,
             })
         )
         setCurrentDS(selected)
         setDataSetElements(dsElements)
     }
 
-    const orgUnitsSelected = ({ items }) => setOrgUnits(items)
+    const orgUnitsSelected = selected => setOrgUnits(selected.items)
     const dataElementChanged = ({ selected }) => setCurrentDE(selected)
     const numberPrecisionChanged = ({ selected }) => console.log(selected)
-    const layerChanged = async ({ selected }) => setEeLayer(selected)
+    const layerChanged = async ({ selected }) => {
+        setPeriod('')
+        setAggregation('')
+        setEeLayer(selected)
+    }
     const periodChanged = ({ selected }) => setPeriod(selected)
+    const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
 
     const showData = async () => {
-        const displayProperty = 'NAME'
-
-        const config = {
+        const data = {
             id: eeLayer,
             rows: orgUnits,
-            filter: periods.find(p => period === p.name),
+            filter: periods.filter(p => period === p.name),
+            aggregationType: [aggregation],
         }
-
-        const eeConfig = await getEarthEngineConfig(
-            config,
+        const config = await getEarthEngineConfig(
+            data,
             engine,
-            displayProperty
+            displayNameProperty
         )
-        console.log('eeConfig final', eeConfig)
-        // const res = getAggregations()
-        // setEeData(res)
-        getAggregations(engine, eeConfig).then(aggregations =>
-            setEeData(JSON.stringify(aggregations))
+        // getAggregations(engine, config)
+        //     .then(aggregations => setEeData(JSON.stringify(aggregations)))
+        //     .catch(e => {
+        //         // TODO handle the error in a better way
+        //         console.log('something went wrong', e)
+        //     })
+    }
+
+    const importData = async () => {
+        const data = {
+            id: eeLayer,
+            rows: orgUnits,
+            filter: periods.filter(p => period === p.name),
+            aggregationType: [aggregation],
+        }
+        const config = await getEarthEngineConfig(
+            data,
+            engine,
+            displayNameProperty
         )
+
+        const aggregations = await getAggregations(engine, config)
+        setEeData(JSON.stringify(aggregations))
+        // await postDataWithEngine(engine, {data: aggregations, dataSet: currentDS, dataElement: currentDE, period, orgUnits})
+        await postDataWithFetch({
+            data: aggregations,
+            // dataSet: currentDS,
+            dataElement: currentDE,
+            period,
+            orgUnits,
+            valueType: aggregation,
+            baseUrl,
+        })
+        // .catch(e => {
+        //     // TODO handle the error in a better way
+        //     console.log('something went wrong', e)
+        // })
     }
 
     return (
@@ -186,7 +262,28 @@ const EarthEngineImport = () => {
                 </div>
 
                 <div className={styles.row}>
+                    <SingleSelect
+                        name="aggregationTypes"
+                        label="Aggregation type"
+                        className={styles.aggregationTypes}
+                        onChange={aggregationTypeChanged}
+                        selected={aggregation}
+                    >
+                        {getAggregationTypesForLayer(eeLayer).map(
+                            ({ label, value }, i) => (
+                                <SingleSelectOption
+                                    key={`${value}-${i}`}
+                                    value={value}
+                                    label={label}
+                                />
+                            )
+                        )}
+                    </SingleSelect>
+                </div>
+
+                <div className={styles.row}>
                     <div className={styles.orgUnitContainer}>
+                        <p>{i18n.t('Organisation units')}</p>
                         {!rootOrgUnits ? (
                             <ComponentCover translucent>
                                 <CenteredContent>
@@ -204,6 +301,7 @@ const EarthEngineImport = () => {
                     </div>
                 </div>
 
+                <hr />
                 <div className={styles.row}>
                     <SingleSelect
                         name="dataset"
@@ -247,15 +345,30 @@ const EarthEngineImport = () => {
                     />
                 </div>
 
+                <hr />
+
                 {eeData && (
                     <div className={styles.row}>
                         <p>{eeData}</p>
+                        {/* <DataPreview
+                            dataSet={dataSets.find(ds => ds.id === currentDS)}
+                            orgUnits={orgUnits}
+                            period={period}
+                            valueType={aggregation}
+                            dataElement={dataSetElements.find(
+                                de => de.id === currentDE
+                            )}
+                            data={eeData}
+                        /> */}
                     </div>
                 )}
 
                 <div className={styles.row}>
-                    <Button name="showData" onClick={showData} value="default">
-                        Fetch EE data
+                    <Button name="preview" onClick={showData} value="default">
+                        Preview
+                    </Button>
+                    <Button name="import" onClick={importData} value="default">
+                        Import
                     </Button>
                 </div>
             </div>

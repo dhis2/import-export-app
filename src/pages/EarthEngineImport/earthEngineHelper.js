@@ -2,6 +2,9 @@ import i18n from '@dhis2/d2-i18n'
 import { loadEarthEngineWorker } from '@dhis2/maps-gl'
 import { getEarthEngineLayer } from './earthEngines'
 
+const DEFAULT_LOCALE = 'en'
+const fallbackDateFormat = dateString => dateString.substr(0, 10)
+
 const hasIntlSupport = typeof global.Intl !== 'undefined' && Intl.DateTimeFormat
 const dateLocale = locale =>
     locale && locale.includes('_') ? locale.replace('_', '-') : locale
@@ -12,33 +15,38 @@ const toDate = date => {
     return new Date(date)
 }
 
-const formatLocaleDate = (dateString, locale, showYear = true) =>
+const userSettingsQuery = {
+    resource: 'userSettings',
+    params: {
+        key: ['keyAnalysisDisplayProperty'],
+    },
+}
+
+export const fetchUserSettings = async engine => {
+    const { userSettings } = await engine.query({
+        userSettings: userSettingsQuery,
+    })
+
+    return userSettings
+}
+
+const formatLocaleDate = dateString =>
     hasIntlSupport
-        ? new Intl.DateTimeFormat(
-              dateLocale(locale || i18n.language || DEFAULT_LOCALE),
-              {
-                  year: showYear ? 'numeric' : undefined,
-                  month: 'short',
-                  day: 'numeric',
-              }
-          ).format(toDate(dateString))
+        ? new Intl.DateTimeFormat(dateLocale(i18n.language || DEFAULT_LOCALE), {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+          }).format(toDate(dateString))
         : fallbackDateFormat(dateString)
 
-const formatStartEndDate = (startDate, endDate, locale, showYear) => {
-    const loc = locale || i18n.language || DEFAULT_LOCALE
-    return `${formatLocaleDate(startDate, loc, showYear)} - ${formatLocaleDate(
-        endDate,
-        locale,
-        showYear
-    )}`
+const formatStartEndDate = (startDate, endDate) => {
+    return `${formatLocaleDate(startDate)} - ${formatLocaleDate(endDate)}`
 }
 
 const getStartEndDate = data =>
     formatStartEndDate(
         data['system:time_start'],
-        data['system:time_end'], // - 7200001, // Minus 2 hrs to end the day before
-        null,
-        false
+        data['system:time_end'] // - 7200001, // Minus 2 hrs to end the day before
     )
 
 let workerPromise
@@ -72,23 +80,14 @@ export const getPeriods = async (eeId, engine) => {
 
     const { features } = await eeWorker.getPeriods(eeId)
     return features.map(getPeriod).map(p => {
-        const period = filters(p)
-        return { label: p.name, value: p.year.toString(), ...period[0] }
+        const period = filters ? filters(p)[0] : p
+        return { label: p.name, value: p.year.toString(), ...period }
     })
 }
 
-// export const getAggregations = eeId => {
-//     return 'getAggregations'
-// }
 export const getAggregations = async (engine, config) => {
-    const aggregations = { name: 'jen' }
-    // const eeWorker = await getWorkerInstance(engine)
-
-    // const aggregations = await eeWorker
-    //     .setOptions(eeConfig)
-    //     .getAggregations(eeId)
-
-    // console.log('aggregations', aggregations)
+    const eeWorker = await getWorkerInstance(engine)
+    const aggregations = await eeWorker.getAggregations(config)
 
     return aggregations
 }

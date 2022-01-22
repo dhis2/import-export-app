@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-12T10:27:31.518Z\n"
-"PO-Revision-Date: 2022-01-12T10:27:31.518Z\n"
+"POT-Creation-Date: 2022-01-20T11:53:47.491Z\n"
+"PO-Revision-Date: 2022-01-20T11:53:47.491Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -769,11 +769,44 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
 
+msgid "Current value"
+msgstr "Current value"
+
+msgid "New value"
+msgstr "New value"
+
 msgid "Earth Engine Import"
 msgstr "Earth Engine Import"
 
 msgid "Import Earth Engine data"
 msgstr "Import Earth Engine data"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Mean"
+msgstr "Mean"
+
+msgid "Median"
+msgstr "Median"
+
+msgid "Sum"
+msgstr "Sum"
+
+msgid "Standard deviation"
+msgstr "Standard deviation"
+
+msgid "Std dev"
+msgstr "Std dev"
+
+msgid "Variance"
+msgstr "Variance"
+
+msgid "Organisation units"
+msgstr "Organisation units"
 
 msgid "Number precision"
 msgstr "Number precision"

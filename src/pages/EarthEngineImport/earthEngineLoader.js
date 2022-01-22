@@ -16,7 +16,6 @@ const getGeoFeaturesQuery = (ouIds, displayProperty) => ({
 
 // Returns a promise
 const getEarthEngineConfig = async (config, engine, displayProperty) => {
-    console.log('getEarthEngineConfig start with', config)
     const orgUnitIds = config.rows.map(row => row.id)
     let features
 
@@ -25,7 +24,10 @@ const getEarthEngineConfig = async (config, engine, displayProperty) => {
             return previousValue.concat(`${currentValue};`)
         }, 'ou:')
 
-        const query = getGeoFeaturesQuery(ouIdsString, displayProperty)
+        const query = getGeoFeaturesQuery(
+            ouIdsString,
+            displayProperty.toUpperCase()
+        )
         const geoFeatures = await engine.query({ geoFeatures: query })
         features = toGeoJson(geoFeatures.geoFeatures)
 

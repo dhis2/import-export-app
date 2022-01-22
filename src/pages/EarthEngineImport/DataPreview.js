@@ -1,3 +1,4 @@
+import { useDataEngine } from '@dhis2/app-runtime'
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
@@ -10,11 +11,24 @@ import {
     TableRow,
     TableCell,
 } from '@dhis2/ui'
-import { numberPrecision, getPropNmae } from '.util'
+// import { numberPrecision, getPropName } from '.util'
 import styles from './styles/DataPreview.module.css'
+
+const getDataValueSetsQuery = (dataSetId, period, ous) => ({
+    resource: 'dataValueSets',
+    params: {
+        dataSet: dataSetId,
+        period: period,
+        orgUnit: ous,
+    },
+})
+
+// const ous = data.map(({ id }) => `orgUnit=${id}`).join('&')
+// const url = `/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ous}`
 
 const DataPreview = ({
     dataSet,
+    orgUnits,
     period,
     valueType,
     dataElement,
@@ -24,12 +38,14 @@ const DataPreview = ({
 }) => {
     const [currentValues, setCurrentValues] = useState({})
     const valueFormat = numberPrecision(precision)
+    const engine = useDataEngine()
 
     useEffect(() => {
-        const orgUnits = data.map(({ id }) => `orgUnit=${id}`).join('&')
+        const ous = data.map(({ id }) => `orgUnit=${id}`).join('&')
 
         // TODO: Possible to specify dataElement.id?
-        const url = `/dataValueSets?dataSet=${dataSet.id}&period=${period.id}&${orgUnits}`
+        // const url = `/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ouParam}`
+        const query = getDataValueSetsQuery(dataSet.id, period, ous)
 
         apiFetch(url).then(({ dataValues = [] }) =>
             setCurrentValues(
@@ -85,13 +101,18 @@ const DataPreview = ({
 }
 
 DataPreview.propTypes = {
-    period: PropTypes.object.isRequired,
+    period: PropTypes.string.isRequired,
     valueType: PropTypes.object.isRequired,
     dataSet: PropTypes.object.isRequired,
     dataElement: PropTypes.object.isRequired,
     data: PropTypes.array.isRequired,
     precision: PropTypes.number,
     name: PropTypes.string,
+}
+
+DataPreview.defaultValues = {
+    precision: 1,
+    name: '',
 }
 
 export default DataPreview
