@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/dhis2/import-export-app/compare/v1.2.8...v1.2.9) (2022-01-28)
+
+
+### Bug Fixes
+
+* add adx to data export options ([f35806e](https://github.com/dhis2/import-export-app/commit/f35806ef64393c6f449cd252b3d830b65c3daae9))
+
 ## [1.2.8](https://github.com/dhis2/import-export-app/compare/v1.2.7...v1.2.8) (2021-12-13)
 
 
