@@ -15,7 +15,7 @@ import {
     IncludeChildren,
     DataSetPicker,
     Format,
-    formatOptions,
+    formatAdxXMLOptions,
     defaultFormatOption,
     Compression,
     defaultCompressionOption,
@@ -95,7 +95,7 @@ const DataExport = () => {
                                 <StartDate />
                                 <EndDate />
                             </Dates>
-                            <Format availableFormats={formatOptions} />
+                            <Format availableFormats={formatAdxXMLOptions} />
                             <Compression />
                         </BasicOptions>
                         <MoreOptions>

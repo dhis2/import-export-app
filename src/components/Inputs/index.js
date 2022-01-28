@@ -6,6 +6,7 @@ export {
     formatOptions,
     formatNoCsvOptions,
     formatAdxOptions,
+    formatAdxXMLOptions,
     formatAdxPdfOptions,
     formatJsonpOptions,
     defaultFormatOption,
