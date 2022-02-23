@@ -8,9 +8,7 @@ const { Field } = ReactFinalForm
 const NAME = 'includeChildren'
 const DATATEST = 'input-include-children'
 const SHORT_LABEL = i18n.t('Include first level units')
-const LABEL = i18n.t(
-    'Include the first level of organisation units inside selections'
-)
+const LABEL = i18n.t('Include descendants of selected organisation units')
 
 const IncludeChildren = () => (
     <FormField label={SHORT_LABEL} dataTest={DATATEST}>
