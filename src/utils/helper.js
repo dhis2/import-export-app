@@ -32,6 +32,13 @@ const compressionToName = compression => {
     return compression
 }
 
+const fileFormatToFileExtension = format => {
+    if (format === 'adx+xml') {
+        return 'xml'
+    }
+    return format
+}
+
 const fetchAttributes = async (apiBaseUrl, attribute) => {
     const fetcher = url =>
         fetch(url, { credentials: 'include' })
@@ -229,4 +236,5 @@ export {
     trimString,
     uploadFile,
     compressionToName,
+    fileFormatToFileExtension,
 }
