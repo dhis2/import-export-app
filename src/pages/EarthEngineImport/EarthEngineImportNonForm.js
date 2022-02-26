@@ -11,6 +11,7 @@ import {
     ComponentCover,
     CenteredContent,
     CircularLoader,
+    Divider,
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { Page } from '../../components/index'
@@ -28,7 +29,7 @@ import {
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from './earthEngines'
 import { getAggregationTypes } from './getAggregationTypes'
-import NumberPrecisionSelect from './NumberPrecisionSelect'
+// import NumberPrecisionSelect from './NumberPrecisionSelect'
 import { postDataWithEngine, postDataWithFetch } from './postData'
 import styles from './styles/EarthEngineImport.module.css'
 
@@ -78,6 +79,17 @@ const getFirstDefaultAggregation = id => {
     return Array.isArray(defAggregations) ? defAggregations[0] : defAggregations
 }
 
+const roundings = [
+    { label: i18n.t("Don't round source values"), value: 'noround' },
+    { label: i18n.t('Round to 0 decimal places'), value: 'round0' },
+    { label: i18n.t('Round to 1 decimal place'), value: 'round1' },
+    { label: i18n.t('Round to 2 decimal places'), value: 'round2' },
+    { label: i18n.t('Round to 3 decimal places'), value: 'round3' },
+    { label: i18n.t('Round to 4 decimal places'), value: 'round4' },
+    { label: i18n.t('Round to 5 decimal places'), value: 'round5' },
+    { label: i18n.t('Round to 6 decimal places'), value: 'round6' },
+]
+
 const EarthEngineImport = () => {
     const [displayNameProperty, setDisplayNameProperty] = useState(null)
     const [orgUnits, setOrgUnits] = useState([])
@@ -91,6 +103,7 @@ const EarthEngineImport = () => {
     const [periods, setPeriods] = useState([])
     const [period, setPeriod] = useState('')
     const [aggregation, setAggregation] = useState('')
+    const [rounding, setRounding] = useState('noround')
     const engine = useDataEngine()
     const { baseUrl } = useConfig()
     const { loading, data, error } = useDataQuery(dataSetQuery)
@@ -125,12 +138,7 @@ const EarthEngineImport = () => {
     useEffect(() => {
         const updatePeriod = async () => {
             let periodsForLayer
-            // if (eeLayer === ELEVATION_ID) {
-            //     const currentYear = new Date().getFullYear().toString()
-            //     periodsForLayer = [{ label: currentYear, value: currentYear }]
-            // } else {
             periodsForLayer = await getPeriods(eeLayer, engine)
-            // }
             setPeriods(periodsForLayer)
             setPeriod(periodsForLayer[0].value)
         }
@@ -154,7 +162,9 @@ const EarthEngineImport = () => {
 
     const orgUnitsSelected = selected => setOrgUnits(selected.items)
     const dataElementChanged = ({ selected }) => setCurrentDE(selected)
-    const numberPrecisionChanged = ({ selected }) => console.log(selected)
+    const roundingChanged = ({ selected }) => {
+        setRounding(selected)
+    }
     const layerChanged = async ({ selected }) => {
         setPeriod('')
         setAggregation('')
@@ -216,8 +226,10 @@ const EarthEngineImport = () => {
 
     return (
         <Page
-            title={i18n.t('Earth Engine Import')}
-            desc={i18n.t('Import Earth Engine data')}
+            title={i18n.t('Earth Engine import')}
+            desc={i18n.t(
+                'Import Earth Engine data to data sets and data elements'
+            )}
             // icon={PAGE_ICON}
             // loading={progress}
             dataTest="page-import-earthengine"
@@ -225,13 +237,19 @@ const EarthEngineImport = () => {
             // showFullSummaryTask={showFullSummaryTask}
         >
             <div>
+                <h2>{i18n.t('Earth Engine source')}</h2>
+                <Divider />
                 <div className={styles.row}>
                     <SingleSelect
                         name="eelayer"
-                        label="Earth Engine"
+                        label={i18n.t('Earth Engine data set')}
                         className={styles.eelayer}
                         selected={eeLayer}
                         onChange={layerChanged}
+                        inputWidth="350px"
+                        helpText={i18n.t(
+                            'Not all Earth Engine data sets are available yet.'
+                        )}
                     >
                         {eeLayers.map(({ label, value }) => (
                             <SingleSelectOption
@@ -246,10 +264,14 @@ const EarthEngineImport = () => {
                 <div className={styles.row}>
                     <SingleSelect
                         name="periods"
-                        label="Periods"
+                        label={i18n.t('Period')}
                         className={styles.periods}
                         onChange={periodChanged}
                         selected={period}
+                        inputWidth="200px"
+                        helpText={i18n.t(
+                            'Data from Earth Engine will be imported for this period.'
+                        )}
                     >
                         {periods.map(({ label, value }, i) => (
                             <SingleSelectOption
@@ -263,11 +285,58 @@ const EarthEngineImport = () => {
 
                 <div className={styles.row}>
                     <SingleSelect
+                        name="rounding"
+                        label={i18n.t('Value rounding')}
+                        className={styles.rounding}
+                        onChange={roundingChanged}
+                        selected={rounding}
+                        inputWidth="300px"
+                    >
+                        {roundings.map(({ label, value }, i) => (
+                            <SingleSelectOption
+                                key={`${value}-${i}`}
+                                value={value}
+                                label={label}
+                            />
+                        ))}
+                    </SingleSelect>
+                </div>
+
+                <h2>{i18n.t('Organisation units')}</h2>
+                <Divider />
+                <div className={styles.row}>
+                    <div className={styles.orgUnitContainer}>
+                        {!rootOrgUnits ? (
+                            <ComponentCover>
+                                <CenteredContent>
+                                    <CircularLoader />
+                                </CenteredContent>
+                            </ComponentCover>
+                        ) : (
+                            <OrgUnitDimension
+                                className="jennifer"
+                                roots={rootOrgUnits}
+                                selected={orgUnits}
+                                onSelect={orgUnitsSelected}
+                                showUserOrgUnits={false}
+                            />
+                        )}
+                    </div>
+                </div>
+
+                <h2>{i18n.t('Import setup')}</h2>
+                <Divider />
+                <div className={styles.row}>
+                    <SingleSelect
                         name="aggregationTypes"
                         label="Aggregation type"
                         className={styles.aggregationTypes}
                         onChange={aggregationTypeChanged}
                         selected={aggregation}
+                        inputWidth="200px"
+                        helpText={i18n.t(
+                            'How the values will be aggregated for output and analysis.'
+                        )}
                     >
                         {getAggregationTypesForLayer(eeLayer).map(
                             ({ label, value }, i) => (
@@ -280,28 +349,6 @@ const EarthEngineImport = () => {
                         )}
                     </SingleSelect>
                 </div>
-
-                <div className={styles.row}>
-                    <div className={styles.orgUnitContainer}>
-                        <p>{i18n.t('Organisation units')}</p>
-                        {!rootOrgUnits ? (
-                            <ComponentCover translucent>
-                                <CenteredContent>
-                                    <CircularLoader />
-                                </CenteredContent>
-                            </ComponentCover>
-                        ) : (
-                            <OrgUnitDimension
-                                roots={rootOrgUnits}
-                                selected={orgUnits}
-                                onSelect={orgUnitsSelected}
-                                showUserOrgUnits={false}
-                            />
-                        )}
-                    </div>
-                </div>
-
-                <hr />
                 <div className={styles.row}>
                     <SingleSelect
                         name="dataset"
@@ -323,10 +370,11 @@ const EarthEngineImport = () => {
                 <div className={styles.row}>
                     <SingleSelect
                         name="dataelement"
-                        label="Data Element"
+                        label={i18n.t('Destination data element')}
                         className={styles.dataelement}
                         selected={currentDE}
                         onChange={dataElementChanged}
+                        inputWidth="350px"
                     >
                         {dataSetElements.map(({ label, value }) => (
                             <SingleSelectOption
@@ -338,14 +386,7 @@ const EarthEngineImport = () => {
                     </SingleSelect>
                 </div>
 
-                <div className={styles.row}>
-                    <NumberPrecisionSelect
-                        onChange={numberPrecisionChanged}
-                        precision={1}
-                    />
-                </div>
-
-                <hr />
+                <Divider />
 
                 {eeData && (
                     <div className={styles.row}>

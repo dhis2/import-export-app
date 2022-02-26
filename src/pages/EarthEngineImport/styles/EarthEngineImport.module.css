@@ -3,7 +3,13 @@
 }
 
 .orgUnitContainer {
-    /* height: 500px; */
+    height: 463px; /* height of filled container */
     position: relative;
-    /* width: 800px; */
 }
+
+h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* OrgUnitDimension overrides */
