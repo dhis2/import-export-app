@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-20T11:53:47.491Z\n"
-"PO-Revision-Date: 2022-01-20T11:53:47.491Z\n"
+"POT-Creation-Date: 2022-02-26T19:06:22.267Z\n"
+"PO-Revision-Date: 2022-02-26T19:06:22.267Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -805,8 +805,80 @@ msgstr "Std dev"
 msgid "Variance"
 msgstr "Variance"
 
+msgid "Don't round source values"
+msgstr "Don't round source values"
+
+msgid "Round to 0 decimal places"
+msgstr "Round to 0 decimal places"
+
+msgid "Round to 1 decimal place"
+msgstr "Round to 1 decimal place"
+
+msgid "Round to 2 decimal places"
+msgstr "Round to 2 decimal places"
+
+msgid "Round to 3 decimal places"
+msgstr "Round to 3 decimal places"
+
+msgid "Round to 4 decimal places"
+msgstr "Round to 4 decimal places"
+
+msgid "Round to 5 decimal places"
+msgstr "Round to 5 decimal places"
+
+msgid "Round to 6 decimal places"
+msgstr "Round to 6 decimal places"
+
+msgid "Import Earth Engine data to data sets and data elements"
+msgstr "Import Earth Engine data to data sets and data elements"
+
+msgid "Earth Engine source"
+msgstr "Earth Engine source"
+
+msgid "Earth Engine data set"
+msgstr "Earth Engine data set"
+
+msgid "Not all Earth Engine data sets are available yet."
+msgstr "Not all Earth Engine data sets are available yet."
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Data from Earth Engine will be imported for this period."
+msgstr "Data from Earth Engine will be imported for this period."
+
+msgid "Value rounding"
+msgstr "Value rounding"
+
 msgid "Organisation units"
 msgstr "Organisation units"
+
+msgid "Import setup"
+msgstr "Import setup"
+
+msgid "How the values will be aggregated for output and analysis."
+msgstr "How the values will be aggregated for output and analysis."
+
+msgid "Data Set"
+msgstr "Data Set"
+
+msgid "Select data set to filter data elements"
+msgstr "Select data set to filter data elements"
+
+msgid "Destination data element"
+msgstr "Destination data element"
+
+msgid "Band name"
+msgstr "Band name"
+
+msgid "Band description"
+msgstr "Band description"
+
+msgid "Category option combination"
+msgstr "Category option combination"
+
+msgid "No match found"
+msgstr "No match found"
 
 msgid "Number precision"
 msgstr "Number precision"

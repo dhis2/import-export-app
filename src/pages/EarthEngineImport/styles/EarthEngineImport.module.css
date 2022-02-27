@@ -12,4 +12,8 @@ h2 {
     font-weight: 500;
 }
 
+.set {
+    display: flex;
+}
+
 /* OrgUnitDimension overrides */

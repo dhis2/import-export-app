@@ -2,6 +2,7 @@ import {
     OrgUnitDimension,
     apiFetchOrganisationUnitRoots,
 } from '@dhis2/analytics'
+import cx from 'classnames'
 import { useDataQuery, useDataEngine, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
@@ -29,8 +30,8 @@ import {
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from './earthEngines'
 import { getAggregationTypes } from './getAggregationTypes'
-// import NumberPrecisionSelect from './NumberPrecisionSelect'
 import { postDataWithEngine, postDataWithFetch } from './postData'
+import MappingTable from './MapGenderAgeGroupsTable'
 import styles from './styles/EarthEngineImport.module.css'
 
 const dataSetQuery = {
@@ -42,6 +43,8 @@ const dataSetQuery = {
         },
     },
 }
+
+const NO_VALUE = ''
 
 const eeLayers = getEarthEngineLayers()
     .filter(({ datasetId }) => {
@@ -91,19 +94,25 @@ const roundings = [
 ]
 
 const EarthEngineImport = () => {
+    // options
     const [displayNameProperty, setDisplayNameProperty] = useState(null)
-    const [orgUnits, setOrgUnits] = useState([])
     const [rootOrgUnits, setRootOrgUnits] = useState(null)
-    const [eeData, setEeData] = useState(null)
-    const [eeLayer, setEeLayer] = useState(eeLayers[0].value)
-    const [currentDS, setCurrentDS] = useState('')
-    const [currentDE, setCurrentDE] = useState('')
+    const [periods, setPeriods] = useState([])
     const [dataSets, setDataSets] = useState([])
     const [dataSetElements, setDataSetElements] = useState([])
-    const [periods, setPeriods] = useState([])
-    const [period, setPeriod] = useState('')
-    const [aggregation, setAggregation] = useState('')
+
+    // user selections
+    const [eeLayer, setEeLayer] = useState(eeLayers[1].value)
+    const [period, setPeriod] = useState(NO_VALUE)
+    const [orgUnits, setOrgUnits] = useState([])
+    const [currentDS, setCurrentDS] = useState(NO_VALUE)
+    const [currentDE, setCurrentDE] = useState(NO_VALUE)
+    const [aggregation, setAggregation] = useState(NO_VALUE)
     const [rounding, setRounding] = useState('noround')
+
+    // resulting data
+    const [eeData, setEeData] = useState(null)
+
     const engine = useDataEngine()
     const { baseUrl } = useConfig()
     const { loading, data, error } = useDataQuery(dataSetQuery)
@@ -161,13 +170,15 @@ const EarthEngineImport = () => {
     }
 
     const orgUnitsSelected = selected => setOrgUnits(selected.items)
-    const dataElementChanged = ({ selected }) => setCurrentDE(selected)
-    const roundingChanged = ({ selected }) => {
-        setRounding(selected)
+    const roundingChanged = ({ selected }) => setRounding(selected)
+
+    const dataElementChanged = ({ selected }) => {
+        setCurrentDE(selected)
     }
+
     const layerChanged = async ({ selected }) => {
-        setPeriod('')
-        setAggregation('')
+        setPeriod(NO_VALUE)
+        setAggregation(NO_VALUE)
         setEeLayer(selected)
     }
     const periodChanged = ({ selected }) => setPeriod(selected)
@@ -185,6 +196,9 @@ const EarthEngineImport = () => {
             engine,
             displayNameProperty
         )
+
+        const aggregations = await getAggregations(engine, config)
+        setEeData(JSON.stringify(aggregations))
         // getAggregations(engine, config)
         //     .then(aggregations => setEeData(JSON.stringify(aggregations)))
         //     .catch(e => {
@@ -349,13 +363,17 @@ const EarthEngineImport = () => {
                         )}
                     </SingleSelect>
                 </div>
-                <div className={styles.row}>
+                <div className={cx(styles.row, styles.set)}>
                     <SingleSelect
                         name="dataset"
-                        label="Data Set"
+                        label={i18n.t('Data Set')}
                         className={styles.dataset}
                         onChange={dataSetChanged}
                         selected={currentDS}
+                        inputWidth="300px"
+                        helpText={i18n.t(
+                            'Select data set to filter data elements'
+                        )}
                     >
                         {dataSets.map(({ label, value }) => (
                             <SingleSelectOption
@@ -365,9 +383,6 @@ const EarthEngineImport = () => {
                             />
                         ))}
                     </SingleSelect>
-                </div>
-
-                <div className={styles.row}>
                     <SingleSelect
                         name="dataelement"
                         label={i18n.t('Destination data element')}
@@ -386,13 +401,17 @@ const EarthEngineImport = () => {
                     </SingleSelect>
                 </div>
 
+                <div className={styles.row}>
+                    {eeLayer && currentDE && <MappingTable layerId={eeLayer} />}
+                </div>
+
                 <Divider />
 
-                {eeData && (
+                {/* {eeData && (
                     <div className={styles.row}>
                         <p>{eeData}</p>
-                        {/* <DataPreview
-                            dataSet={dataSets.find(ds => ds.id === currentDS)}
+                        <DataPreview
+                            // dataSet={dataSets.find(ds => ds.id === currentDS)}
                             orgUnits={orgUnits}
                             period={period}
                             valueType={aggregation}
@@ -400,9 +419,9 @@ const EarthEngineImport = () => {
                                 de => de.id === currentDE
                             )}
                             data={eeData}
-                        /> */}
+                        />
                     </div>
-                )}
+                )} */}
 
                 <div className={styles.row}>
                     <Button name="preview" onClick={showData} value="default">
