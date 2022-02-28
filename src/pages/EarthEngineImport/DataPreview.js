@@ -1,6 +1,4 @@
-import { useDataEngine } from '@dhis2/app-runtime'
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Table,
@@ -11,20 +9,30 @@ import {
     TableRow,
     TableCell,
 } from '@dhis2/ui'
-// import { numberPrecision, getPropName } from '.util'
+import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
 import styles from './styles/DataPreview.module.css'
+import { numberPrecision, getPropName } from './util'
 
-const getDataValueSetsQuery = (dataSetId, period, ous) => ({
-    resource: 'dataValueSets',
-    params: {
-        dataSet: dataSetId,
-        period: period,
-        orgUnit: ous,
-    },
-})
+const fetchCurrentValues = async url => {
+    console.log('url', url)
+    const fetcher = url =>
+        fetch(url, { credentials: 'include' })
+            .then(resp => {
+                if (resp.status >= 200 && resp.status < 300) {
+                    return Promise.resolve(resp.json())
+                } else {
+                    throw resp
+                }
+            })
+            .catch(resp => {
+                const error = new Error(resp.statusText || resp.status)
+                console.error(`fetchCurrentValues error: `, error)
+                return Promise.reject(error)
+            })
 
-// const ous = data.map(({ id }) => `orgUnit=${id}`).join('&')
-// const url = `/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ous}`
+    return await fetcher(url).catch(error => Promise.reject(error))
+}
 
 const DataPreview = ({
     dataSet,
@@ -34,40 +42,43 @@ const DataPreview = ({
     dataElement,
     data,
     precision,
-    name,
+    // name,
 }) => {
-    const [currentValues, setCurrentValues] = useState({})
     const valueFormat = numberPrecision(precision)
-    const engine = useDataEngine()
+    const [formattedData, setFormattedData] = useState([])
+    const { baseUrl } = useConfig()
 
     useEffect(() => {
-        const ous = data.map(({ id }) => `orgUnit=${id}`).join('&')
+        const fetchCurrVals = async (url, parsedData) => {
+            const { dataValues } = await fetchCurrentValues(url)
+            const newArr = parsedData.map(d => {
+                const val = dataValues.find(v => v.orgUnit === d.ouId)
 
-        // TODO: Possible to specify dataElement.id?
-        // const url = `/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ouParam}`
-        const query = getDataValueSetsQuery(dataSet.id, period, ous)
+                return val ? { ...d, current: val.value } : d
+            })
 
-        apiFetch(url).then(({ dataValues = [] }) =>
-            setCurrentValues(
-                dataValues
-                    .filter(d => d.dataElement === dataElement.id)
-                    .reduce(
-                        (obj, { orgUnit, value }) => ({
-                            ...obj,
-                            [orgUnit]: Number(value),
-                        }),
-                        {}
-                    )
-            )
+            setFormattedData(newArr)
+        }
+
+        const parsedData = Object.entries(JSON.parse(data)).map(entry => {
+            const ouId = entry[0]
+            const ouName = orgUnits.find(ou => ou.id === ouId).name
+            return { ouId, ouName, value: entry[1][valueType] }
+        })
+
+        const ous = parsedData.map(({ ouId }) => `orgUnit=${ouId}`).join('&')
+
+        fetchCurrVals(
+            `${baseUrl}/api/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ous}`,
+            parsedData
         )
-        // .catch(console.error); // TODO
     }, [dataSet, dataElement, period, data])
 
     return (
         <Table dense className={styles.table}>
             <TableHead>
                 <TableRowHead>
-                    <TableCellHead dense>{i18n.t('Name')}</TableCellHead>
+                    <TableCellHead dense>{i18n.t('Org Unit')}</TableCellHead>
                     <TableCellHead dense className={styles.right}>
                         {i18n.t('Current value')}
                     </TableCellHead>
@@ -77,20 +88,19 @@ const DataPreview = ({
                 </TableRowHead>
             </TableHead>
             <TableBody>
-                {data.map(({ properties }) => {
-                    const { id, name: orgUnit } = properties
-                    const current = currentValues[id]
-                    const propName = getPropName(valueType.id, name)
-                    const value = valueFormat(properties[propName])
+                {formattedData.map(({ ouId, ouName, value, current }) => {
+                    // const propName = getPropName(valueType, name)
+                    // const value = valueFormat(properties[propName])
+                    const val = valueFormat(value)
 
                     return (
-                        <TableRow key={id}>
-                            <TableCell dense>{orgUnit}</TableCell>
+                        <TableRow key={ouId}>
+                            <TableCell dense>{ouName}</TableCell>
                             <TableCell dense className={styles.current}>
                                 {current !== undefined ? current : ''}
                             </TableCell>
                             <TableCell dense className={styles.right}>
-                                {value}
+                                {val}
                             </TableCell>
                         </TableRow>
                     )
@@ -101,13 +111,14 @@ const DataPreview = ({
 }
 
 DataPreview.propTypes = {
-    period: PropTypes.string.isRequired,
-    valueType: PropTypes.object.isRequired,
-    dataSet: PropTypes.object.isRequired,
     dataElement: PropTypes.object.isRequired,
-    data: PropTypes.array.isRequired,
+    dataSet: PropTypes.object.isRequired,
+    orgUnits: PropTypes.array.isRequired,
+    period: PropTypes.string.isRequired,
+    valueType: PropTypes.string.isRequired,
+    data: PropTypes.string,
+    // name: PropTypes.string,
     precision: PropTypes.number,
-    name: PropTypes.string,
 }
 
 DataPreview.defaultValues = {

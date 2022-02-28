@@ -16,6 +16,8 @@ import {
 } from '@dhis2/ui'
 import { getEarthEngineLayer } from './earthEngines.js'
 
+const styles = {}
+
 const categoryOptionCombosQuery = {
     data: {
         resource: 'categoryOptionCombos',

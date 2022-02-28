@@ -1,46 +1,14 @@
 import { apiFetch } from './apiFetch'
-
-export const query = {
-    resource: 'dataValueSets',
-    type: 'create',
-    data: ({ data }) => data,
-}
-
-export const postDataWithEngine = async (dataEngine, data) => {
-    console.log('postDataValueSet', data)
-    const dataValues = data.map(d => ({
-        dataElement: dataElement.id,
-        period: period,
-        orgUnit: d.id,
-        value: valueFormat(d.properties[propName]),
-    }))
-    const { response } = await dataEngine.mutate(createDashboardMutation, {
-        variables: {
-            data: generatePayload({}, data),
-        },
-    })
-
-    return response.uid
-}
-
-// Rounds a number to d decimals
-const numberPrecision = d => {
-    const m = Math.pow(10, d)
-    return n => Math.round(n * m) / m
-}
+import { numberPrecision } from './util'
 
 export const postDataWithFetch = ({
+    baseUrl,
     data,
-    // dataSet,
     dataElement,
     period,
     valueType,
-    baseUrl,
-    // precision,
-    // name,
+    precision,
 }) => {
-    const precision = 1
-
     const roundFn = numberPrecision(precision)
 
     const dataValuesArray = Object.entries(data).map(d => {
@@ -59,7 +27,7 @@ export const postDataWithFetch = ({
         dataValues: dataValuesArray,
     }
 
-    // console.log('dataValuesArray', dataValuesArray)
+    console.log('dataValuesArray', dataValuesArray)
 
     return apiFetch(
         `${baseUrl}/api/dataValueSets`,

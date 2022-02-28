@@ -13,10 +13,11 @@ import {
     CenteredContent,
     CircularLoader,
     Divider,
+    NoticeBox,
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { Page } from '../../components/index'
-// import DataPreview from './DataPreview'
+import DataPreview from './DataPreview'
 import {
     getPeriods,
     getAggregations,
@@ -30,7 +31,7 @@ import {
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from './earthEngines'
 import { getAggregationTypes } from './getAggregationTypes'
-import { postDataWithEngine, postDataWithFetch } from './postData'
+import { postDataWithFetch } from './postData'
 import MappingTable from './MapGenderAgeGroupsTable'
 import styles from './styles/EarthEngineImport.module.css'
 
@@ -83,15 +84,50 @@ const getFirstDefaultAggregation = id => {
 }
 
 const roundings = [
-    { label: i18n.t("Don't round source values"), value: 'noround' },
-    { label: i18n.t('Round to 0 decimal places'), value: 'round0' },
-    { label: i18n.t('Round to 1 decimal place'), value: 'round1' },
-    { label: i18n.t('Round to 2 decimal places'), value: 'round2' },
-    { label: i18n.t('Round to 3 decimal places'), value: 'round3' },
-    { label: i18n.t('Round to 4 decimal places'), value: 'round4' },
-    { label: i18n.t('Round to 5 decimal places'), value: 'round5' },
-    { label: i18n.t('Round to 6 decimal places'), value: 'round6' },
+    {
+        label: i18n.t("Don't round source values"),
+        value: 'noround',
+        rValue: undefined,
+    },
+    {
+        label: i18n.t('Round to 0 decimal places'),
+        value: 'round0',
+        rValue: 0,
+    },
+    {
+        label: i18n.t('Round to 1 decimal place'),
+        value: 'round1',
+        rValue: 1,
+    },
+    {
+        label: i18n.t('Round to 2 decimal places'),
+        value: 'round2',
+        rValue: 2,
+    },
+    {
+        label: i18n.t('Round to 3 decimal places'),
+        value: 'round3',
+        rValue: 3,
+    },
+    {
+        label: i18n.t('Round to 4 decimal places'),
+        value: 'round4',
+        rValue: 4,
+    },
+    {
+        label: i18n.t('Round to 5 decimal places'),
+        value: 'round5',
+        rValue: 5,
+    },
+    {
+        label: i18n.t('Round to 6 decimal places'),
+        value: 'round6',
+        rValue: 6,
+    },
 ]
+
+const getPrecision = rounding =>
+    roundings.find(r => r.value === rounding).rValue
 
 const EarthEngineImport = () => {
     // options
@@ -102,7 +138,7 @@ const EarthEngineImport = () => {
     const [dataSetElements, setDataSetElements] = useState([])
 
     // user selections
-    const [eeLayer, setEeLayer] = useState(eeLayers[1].value)
+    const [eeLayer, setEeLayer] = useState(eeLayers[0].value)
     const [period, setPeriod] = useState(NO_VALUE)
     const [orgUnits, setOrgUnits] = useState([])
     const [currentDS, setCurrentDS] = useState(NO_VALUE)
@@ -110,8 +146,9 @@ const EarthEngineImport = () => {
     const [aggregation, setAggregation] = useState(NO_VALUE)
     const [rounding, setRounding] = useState('noround')
 
-    // resulting data
+    // resulting data and display options
     const [eeData, setEeData] = useState(null)
+    const [showPreview, setShowPreview] = useState(false)
 
     const engine = useDataEngine()
     const { baseUrl } = useConfig()
@@ -185,6 +222,7 @@ const EarthEngineImport = () => {
     const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
 
     const showData = async () => {
+        setShowPreview(true)
         const data = {
             id: eeLayer,
             rows: orgUnits,
@@ -197,14 +235,12 @@ const EarthEngineImport = () => {
             displayNameProperty
         )
 
-        const aggregations = await getAggregations(engine, config)
-        setEeData(JSON.stringify(aggregations))
-        // getAggregations(engine, config)
-        //     .then(aggregations => setEeData(JSON.stringify(aggregations)))
-        //     .catch(e => {
-        //         // TODO handle the error in a better way
-        //         console.log('something went wrong', e)
-        //     })
+        getAggregations(engine, config)
+            .then(aggregations => setEeData(JSON.stringify(aggregations)))
+            .catch(e => {
+                // TODO handle the error in a better way
+                console.log('something went wrong', e)
+            })
     }
 
     const importData = async () => {
@@ -214,6 +250,10 @@ const EarthEngineImport = () => {
             filter: periods.filter(p => period === p.name),
             aggregationType: [aggregation],
         }
+
+        if (eeLayer === POPULATION_AGE_GROUPS_DATASET_ID) {
+            data.band = ['M_0', 'F_0']
+        }
         const config = await getEarthEngineConfig(
             data,
             engine,
@@ -222,21 +262,19 @@ const EarthEngineImport = () => {
 
         const aggregations = await getAggregations(engine, config)
         setEeData(JSON.stringify(aggregations))
-        // await postDataWithEngine(engine, {data: aggregations, dataSet: currentDS, dataElement: currentDE, period, orgUnits})
-        await postDataWithFetch({
+        console.log('post data', aggregations)
+
+        postDataWithFetch({
+            baseUrl,
             data: aggregations,
-            // dataSet: currentDS,
             dataElement: currentDE,
             period,
-            orgUnits,
             valueType: aggregation,
-            baseUrl,
+            precision: getPrecision(rounding),
         })
-        // .catch(e => {
-        //     // TODO handle the error in a better way
-        //     console.log('something went wrong', e)
-        // })
     }
+
+    console.log('eeData', eeData)
 
     return (
         <Page
@@ -328,7 +366,6 @@ const EarthEngineImport = () => {
                             </ComponentCover>
                         ) : (
                             <OrgUnitDimension
-                                className="jennifer"
                                 roots={rootOrgUnits}
                                 selected={orgUnits}
                                 onSelect={orgUnitsSelected}
@@ -402,16 +439,28 @@ const EarthEngineImport = () => {
                 </div>
 
                 <div className={styles.row}>
-                    {eeLayer && currentDE && <MappingTable layerId={eeLayer} />}
+                    {eeLayer === POPULATION_AGE_GROUPS_DATASET_ID && (
+                        <>
+                            <NoticeBox
+                                title={i18n.t(
+                                    'Import bands to category option combinations'
+                                )}
+                            >
+                                {i18n.t(
+                                    'Earth Engine data set "Population age groups" has disaggregation bands. Choose the category option combinations to import each band into.'
+                                )}
+                            </NoticeBox>
+                            <MappingTable layerId={eeLayer} />
+                        </>
+                    )}
                 </div>
 
                 <Divider />
 
-                {/* {eeData && (
+                {eeData && showPreview && (
                     <div className={styles.row}>
-                        <p>{eeData}</p>
                         <DataPreview
-                            // dataSet={dataSets.find(ds => ds.id === currentDS)}
+                            dataSet={dataSets.find(ds => ds.id === currentDS)}
                             orgUnits={orgUnits}
                             period={period}
                             valueType={aggregation}
@@ -419,17 +468,38 @@ const EarthEngineImport = () => {
                                 de => de.id === currentDE
                             )}
                             data={eeData}
+                            precision={getPrecision(rounding)}
                         />
                     </div>
-                )} */}
+                )}
 
                 <div className={styles.row}>
-                    <Button name="preview" onClick={showData} value="default">
-                        Preview
-                    </Button>
-                    <Button name="import" onClick={importData} value="default">
-                        Import
-                    </Button>
+                    {!showPreview ? (
+                        <>
+                            <Button
+                                name="preview"
+                                onClick={showData}
+                                value="default"
+                            >
+                                {i18n.t('Preview import summary')}
+                            </Button>
+                            <Button
+                                name="import"
+                                onClick={importData}
+                                value="default"
+                            >
+                                {i18n.t('Import without previewing')}
+                            </Button>
+                        </>
+                    ) : (
+                        <Button
+                            name="import"
+                            onClick={importData}
+                            value="default"
+                        >
+                            {i18n.t('Import')}
+                        </Button>
+                    )}
                 </div>
             </div>
         </Page>

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-26T19:06:22.267Z\n"
-"PO-Revision-Date: 2022-02-26T19:06:22.267Z\n"
+"POT-Creation-Date: 2022-02-28T07:18:32.075Z\n"
+"PO-Revision-Date: 2022-02-28T07:18:32.075Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -769,17 +769,14 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
 
+msgid "Org Unit"
+msgstr "Org Unit"
+
 msgid "Current value"
 msgstr "Current value"
 
 msgid "New value"
 msgstr "New value"
-
-msgid "Earth Engine Import"
-msgstr "Earth Engine Import"
-
-msgid "Import Earth Engine data"
-msgstr "Import Earth Engine data"
 
 msgid "Min"
 msgstr "Min"
@@ -868,6 +865,22 @@ msgstr "Select data set to filter data elements"
 msgid "Destination data element"
 msgstr "Destination data element"
 
+msgid "Import bands to category option combinations"
+msgstr "Import bands to category option combinations"
+
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation bands. "
+"Choose the category option combinations to import each band into."
+msgstr ""
+"Earth Engine data set \"Population age groups\" has disaggregation bands. "
+"Choose the category option combinations to import each band into."
+
+msgid "Preview import summary"
+msgstr "Preview import summary"
+
+msgid "Import without previewing"
+msgstr "Import without previewing"
+
 msgid "Band name"
 msgstr "Band name"
 
@@ -879,18 +892,6 @@ msgstr "Category option combination"
 
 msgid "No match found"
 msgstr "No match found"
-
-msgid "Number precision"
-msgstr "Number precision"
-
-msgid "Use original value"
-msgstr "Use original value"
-
-msgid "Custom value"
-msgstr "Custom value"
-
-msgid "Decimals"
-msgstr "Decimals"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr "Cannot get authorization token for Google Earth Engine."
