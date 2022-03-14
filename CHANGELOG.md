@@ -1,3 +1,10 @@
+## [1.2.12](https://github.com/dhis2/import-export-app/compare/v1.2.11...v1.2.12) (2022-03-14)
+
+
+### Bug Fixes
+
+* update descent orgUnit message [DHIS2-11265] ([ef370d6](https://github.com/dhis2/import-export-app/commit/ef370d6a291a0e0b21cf0ad9b9397e324967a82d))
+
 ## [1.2.11](https://github.com/dhis2/import-export-app/compare/v1.2.10...v1.2.11) (2022-03-06)
 
 
