@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Hamza Assada <7amza.it@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
+# Hamza Assada <7amza.it@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"PO-Revision-Date: 2022-04-20 10:18+0000\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,10 +115,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "الرمز"
+msgstr "الكود"
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "الإسم"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -226,7 +226,7 @@ msgid "Only include reports for objects that have errors"
 msgstr "قم فقط بتضمين تقارير الكائنات التي بها أخطاء"
 
 msgid "Errors"
-msgstr "اخطاء"
+msgstr "أخطاء"
 
 msgid "Reports for all objects imported"
 msgstr "تقارير جميع الكائنات التي تم استيرادها"
@@ -498,7 +498,7 @@ msgid "Active"
 msgstr "فعال"
 
 msgid "Completed"
-msgstr "اكتمل"
+msgstr "المكتملة"
 
 msgid "Cancelled"
 msgstr "تم الإلغاء"
@@ -632,7 +632,7 @@ msgid "Message"
 msgstr "الرسالة"
 
 msgid "ID"
-msgstr "المعرف"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "الرسائل"
