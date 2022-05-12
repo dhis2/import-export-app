@@ -47,10 +47,10 @@ msgid "more options"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
 msgstr ""
@@ -269,7 +269,7 @@ msgid "Reference"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "None"
 msgstr "Geen"
@@ -290,7 +290,7 @@ msgid "Replace"
 msgstr ""
 
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 msgid "With sharing"
 msgstr ""
