@@ -13,7 +13,7 @@ const NAME = 'programStage'
 const LABEL = i18n.t('Which program stage should be included?')
 const DATATEST = 'input-program-stage-select'
 
-const ProgramStages = props => (
+const ProgramStages = (props) => (
     <ProgramStagesGeneric
         name={NAME}
         label={LABEL}

@@ -4,8 +4,7 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
 import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index'
-import { locationAssign } from '../../utils/helper'
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
+import { locationAssign, jsDateToISO8601, pathToId } from '../../utils/helper'
 
 // calculate minimum set of parameters based on given filters
 const valuesToParams = (
@@ -52,7 +51,7 @@ const valuesToParams = (
     // include selected org.units only when manual selection is selected
     // ouMode is then stored in the `inclusion` field
     if (ouMode === OU_MODE_MANUAL_VALUE) {
-        minParams.ou = selectedOrgUnits.map(o => pathToId(o)).join(';')
+        minParams.ou = selectedOrgUnits.map((o) => pathToId(o)).join(';')
         minParams.ouMode = inclusion
     }
 
@@ -89,9 +88,8 @@ const valuesToParams = (
 
     if (lastUpdatedFilter == 'DATE') {
         if (lastUpdatedStartDate) {
-            minParams.lastUpdatedStartDate = jsDateToISO8601(
-                lastUpdatedStartDate
-            )
+            minParams.lastUpdatedStartDate =
+                jsDateToISO8601(lastUpdatedStartDate)
         }
 
         if (lastUpdatedEndDate) {
@@ -104,11 +102,11 @@ const valuesToParams = (
     }
 
     return Object.keys(minParams)
-        .map(param => `${param}=${minParams[param]}`)
+        .map((param) => `${param}=${minParams[param]}`)
         .join('&')
 }
 
-const onExport = (baseUrl, setExportEnabled) => async values => {
+const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
 
     const { format } = values
@@ -125,7 +123,7 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
     console.log('tei-export:', { url, params: downloadUrlParams })
 }
 
-const validate = values => {
+const validate = (values) => {
     const errors = {}
 
     if (

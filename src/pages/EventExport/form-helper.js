@@ -5,7 +5,7 @@ import {
 import { ALL_VALUE } from '../../hooks/useProgramStages'
 import { jsDateToISO8601, locationAssign, pathToId } from '../../utils/helper'
 
-const onExport = (baseUrl, setExportEnabled) => values => {
+const onExport = (baseUrl, setExportEnabled) => (values) => {
     setExportEnabled(false)
 
     const {
@@ -44,7 +44,7 @@ const onExport = (baseUrl, setExportEnabled) => values => {
         `format=${format}`,
         programStage != ALL_VALUE ? `programStage=${programStage}` : '',
     ]
-        .filter(s => s != '')
+        .filter((s) => s != '')
         .join('&')
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
     locationAssign(url, setExportEnabled)
@@ -53,7 +53,7 @@ const onExport = (baseUrl, setExportEnabled) => values => {
     console.log('event-export:', { url, params: downloadUrlParams })
 }
 
-const validate = values => ({
+const validate = (values) => ({
     startDate: DATE_BEFORE_VALIDATOR(values.startDate, values.endDate),
     endDate: DATE_AFTER_VALIDATOR(values.endDate, values.startDate),
 })

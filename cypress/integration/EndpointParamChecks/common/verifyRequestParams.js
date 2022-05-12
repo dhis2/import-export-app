@@ -1,7 +1,7 @@
 import { Then } from 'cypress-cucumber-preprocessor/steps'
 
 Then('the upload request is sent with the right parameters', () => {
-    cy.wait('@uploadXHR').then(xhr => {
+    cy.wait('@uploadXHR').then((xhr) => {
         cy.getComparisonData(xhr.url).then(({ actual, expected }) => {
             expect(actual).to.deep.equal(expected)
         })
@@ -9,7 +9,7 @@ Then('the upload request is sent with the right parameters', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.window().then(win => {
+    cy.window().then((win) => {
         expect(win.assign).to.be.calledOnce
 
         const call = win.assign.getCall(0)

@@ -6,8 +6,9 @@ import {
     locationAssign,
     compressionToName,
     fileFormatToFileExtension,
+    jsDateToISO8601,
+    pathToId,
 } from '../../utils/helper'
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
 
 const valuesToParams = (
     {
@@ -33,16 +34,16 @@ const valuesToParams = (
         `children=${includeChildren}`,
         `startDate=${jsDateToISO8601(startDate)}`,
         `endDate=${jsDateToISO8601(endDate)}`,
-        `orgUnit=${selectedOrgUnits.map(o => pathToId(o))}`,
+        `orgUnit=${selectedOrgUnits.map((o) => pathToId(o))}`,
         `dataSet=${selectedDataSets}`,
         `format=${encodeURIComponent(format)}`,
         compression ? `compression=${compressionToName(compression)}` : '',
         `attachment=${filename}`,
     ]
-        .filter(s => s != '')
+        .filter((s) => s != '')
         .join('&')
 
-const onExport = (baseUrl, setExportEnabled) => async values => {
+const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
 
     const { format, compression } = values
@@ -62,7 +63,7 @@ const onExport = (baseUrl, setExportEnabled) => async values => {
     console.log('data-export:', { url, params: downloadUrlParams })
 }
 
-const validate = values => ({
+const validate = (values) => ({
     startDate: DATE_BEFORE_VALIDATOR(values.startDate, values.endDate),
     endDate: DATE_AFTER_VALIDATOR(values.endDate, values.startDate),
 })

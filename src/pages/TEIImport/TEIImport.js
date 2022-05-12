@@ -60,7 +60,7 @@ export const PAGE_DESCRIPTION = i18n.t(
 )
 const PAGE_ICON = <TEIIcon />
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     identifier: prevJobDetails.identifier || defaultIdentifierOption,

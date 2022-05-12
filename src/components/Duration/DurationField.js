@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { InputField } from '@dhis2/ui'
-import { ReactFinalForm } from '@dhis2/ui'
+import { InputField, ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { FormField } from '../index'
@@ -10,7 +9,7 @@ const { Field } = ReactFinalForm
 // (\d+d)?: one or more numbers followed by d; d for days
 // rest of the capturing groups are similar to the one described above
 const durationRegex = /^(\d+d)?(\d+h)?(\d+m)?(\d+s)?$/
-const DURATION_VALIDATOR = duration =>
+const DURATION_VALIDATOR = (duration) =>
     !duration || duration.match(durationRegex)
         ? undefined
         : i18n.t('Invalid duration')

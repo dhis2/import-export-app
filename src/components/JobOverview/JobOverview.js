@@ -19,9 +19,9 @@ const JobOverview = ({
 }) => {
     const { tasks } = useContext(TaskContext)
 
-    const onChipClick = key => {
+    const onChipClick = (key) => {
         if (activeTypes.includes(key)) {
-            setActiveTypes([...activeTypes].filter(k => k != key))
+            setActiveTypes([...activeTypes].filter((k) => k != key))
         } else {
             setActiveTypes([...activeTypes, key])
         }
@@ -30,15 +30,19 @@ const JobOverview = ({
     // all tasks sorted by type, createdAt (descending)
     const allTasks = categoryTypes
         .map(({ key: type }) =>
-            Object.keys(tasks[type]).map(id => tasks[type][id])
+            Object.keys(tasks[type]).map((id) => tasks[type][id])
         )
         .flat()
         .sort((a, b) => {
-            if (a.importType > b.importType) return -1
-            if (a.createdAt > b.createdAt) return -1
+            if (a.importType > b.importType) {
+                return -1
+            }
+            if (a.createdAt > b.createdAt) {
+                return -1
+            }
         })
 
-    const filteredTasks = allTasks.filter(t =>
+    const filteredTasks = allTasks.filter((t) =>
         activeTypes.includes(t.importType)
     )
 
@@ -70,7 +74,7 @@ const JobOverview = ({
                             </Chip>
                         ))}
                     </ChipContainer>
-                    {filteredTasks.map(t => (
+                    {filteredTasks.map((t) => (
                         <MenuItem
                             key={`job-overview-tasks-${t.id}`}
                             active={selectedJob && selectedJob.id === t.id}

@@ -14,12 +14,12 @@ const SELECTEDLABEL = i18n.t('Selected programs')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the programs!')
 const RESOURCETYPE = resourceTypes.PROGRAM
 
-const SINGLE_PROGRAM_VALIDATOR = selectedPrograms =>
+const SINGLE_PROGRAM_VALIDATOR = (selectedPrograms) =>
     selectedPrograms.length == 0
         ? i18n.t('At least one program must be selected')
         : undefined
 
-const SINGLE_EXACT_PROGRAM_VALIDATOR = selectedPrograms =>
+const SINGLE_EXACT_PROGRAM_VALIDATOR = (selectedPrograms) =>
     !selectedPrograms ? i18n.t('One program must be selected') : undefined
 
 const ProgramPicker = ({ multiSelect, label, show, ...rest }) => {

@@ -13,7 +13,9 @@ import { FormField } from '../../index'
 import { messagesPropType } from '../helper'
 
 const Messages = ({ messages }) => {
-    if (messages.length == 0) return null
+    if (messages.length == 0) {
+        return null
+    }
     return (
         <FormField
             label={`${i18n.t('Messages')}`}

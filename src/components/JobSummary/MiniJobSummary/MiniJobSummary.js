@@ -5,7 +5,9 @@ import { MoreOptions } from '../../index'
 import { JobSummary } from '../JobSummary'
 
 const MiniJobSummary = ({ task, dataTest }) => {
-    if (!task) return null
+    if (!task) {
+        return null
+    }
 
     return (
         <div data-test={dataTest}>

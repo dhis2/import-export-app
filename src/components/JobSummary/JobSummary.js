@@ -67,7 +67,9 @@ const JobSummary = ({
     showJobDetails = false,
     dataTest,
 }) => {
-    if (!task) return null
+    if (!task) {
+        return null
+    }
     const { jobDetails } = task
 
     return (

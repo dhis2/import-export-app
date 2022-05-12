@@ -55,21 +55,21 @@ const Schemas = ({
         }
     }, [fetching, data])
 
-    const propagateCheckedSchemas = updatedSchemaGroups => {
+    const propagateCheckedSchemas = (updatedSchemaGroups) => {
         setCheckedSchemas(
             Object.keys(updatedSchemaGroups).reduce(
                 (acc, groupName) => [
                     ...acc,
                     ...updatedSchemaGroups[groupName]
-                        .filter(s => s.checked)
-                        .map(s => s.name),
+                        .filter((s) => s.checked)
+                        .map((s) => s.name),
                 ],
                 []
             )
         )
     }
 
-    const onSelectGeneric = val => () => {
+    const onSelectGeneric = (val) => () => {
         const updatedSchemaGroups = Object.keys(schemaGroups).reduce(
             (acc, groupName) => ({
                 ...acc,
@@ -84,7 +84,7 @@ const Schemas = ({
         propagateCheckedSchemas(updatedSchemaGroups)
     }
 
-    const toggleSchema = schemaGroup => ind => {
+    const toggleSchema = (schemaGroup) => (ind) => {
         const updatedGroup = [...schemaGroups[schemaGroup]]
         updatedGroup[ind] = {
             ...updatedGroup[ind],
@@ -131,7 +131,7 @@ const Schemas = ({
                     </ButtonStrip>
 
                     <div className={styles.formControl}>
-                        {schemaGroupOrder.map(groupKey => {
+                        {schemaGroupOrder.map((groupKey) => {
                             const label = schemaGroupLabels[groupKey]
 
                             return (

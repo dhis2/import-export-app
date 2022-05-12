@@ -4,7 +4,7 @@ const selectSelect = (dataTest, label) => {
     const valSelector = `[data-test="dhis2-uicore-singleselectoption"]:contains("${label}")`
     const backdropSelector = `[data-test="dhis2-uicore-backdrop"]`
 
-    cy.get(curValueSelector).then($curValueElement => {
+    cy.get(curValueSelector).then(($curValueElement) => {
         const curValue = $curValueElement.text()
 
         if (label === curValue) return

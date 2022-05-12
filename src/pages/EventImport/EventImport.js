@@ -40,7 +40,7 @@ const PAGE_ICON = <EventIcon />
 
 const { Form } = ReactFinalForm
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     dataElementIdScheme:

@@ -14,7 +14,9 @@ import { FormField } from '../../index'
 import { statsPropTypeObj } from '../helper'
 
 const TypeCount = ({ stats }) => {
-    if (stats.length == 0) return null
+    if (stats.length == 0) {
+        return null
+    }
     return (
         <FormField
             label={`${i18n.t('Details by type')}`}

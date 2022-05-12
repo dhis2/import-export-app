@@ -5,7 +5,7 @@ import React from 'react'
 import { FormField } from '../index'
 const { Field } = ReactFinalForm
 
-const SINGLE_FILE_VALIDATOR = files =>
+const SINGLE_FILE_VALIDATOR = (files) =>
     !files || files.length == 0 ? i18n.t('Please select a file') : undefined
 
 const FileUpload = ({

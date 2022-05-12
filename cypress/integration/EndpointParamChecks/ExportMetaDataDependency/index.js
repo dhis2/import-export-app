@@ -31,7 +31,7 @@ Given('the user is on the meta data dependency export page', () => {
 })
 
 When('the export form is submitted', () => {
-    cy.window().then(win => {
+    cy.window().then((win) => {
         const locationAssignStub = cy.stub().as('locationAssign')
         win.locationAssign = locationAssignStub
         cy.get('[data-test="input-export-submit"]').click()
@@ -39,8 +39,8 @@ When('the export form is submitted', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.window().then(win => {
-        cy.get('@locationAssign').then(locationAssignStub => {
+    cy.window().then((win) => {
+        cy.get('@locationAssign').then((locationAssignStub) => {
             expect(locationAssignStub).to.be.calledOnce
             const call = locationAssignStub.getCall(0)
             const url = call.args[0]

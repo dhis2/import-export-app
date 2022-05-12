@@ -6,7 +6,7 @@ import { UserContext } from '../../contexts/index'
 import { WithAuthority } from '../index'
 
 const rejectAllPredicate = () => false
-const testPredicate = authorities => authorities.includes('TEST')
+const testPredicate = (authorities) => authorities.includes('TEST')
 
 const renderContext = (contextValue, props) =>
     render(

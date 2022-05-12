@@ -1,6 +1,6 @@
 import { locationAssign } from '../../utils/helper'
 
-const onExport = (baseUrl, setExportEnabled) => values => {
+const onExport = (baseUrl, setExportEnabled) => (values) => {
     setExportEnabled(false)
 
     const { objectType, object, format, compression, skipSharing } = values

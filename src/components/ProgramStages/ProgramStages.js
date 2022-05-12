@@ -6,7 +6,7 @@ import { useProgramStages } from '../../hooks/index'
 import { StyledField } from '../index'
 import styles from './ProgramStages.module.css'
 
-const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
+const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = (programStage) =>
     !programStage ? i18n.t('One program stage must be selected') : undefined
 
 const ProgramStages = ({
@@ -17,7 +17,7 @@ const ProgramStages = ({
     validator,
     dataTest,
 }) => {
-    const setProgramStage = val => form.change(name, val)
+    const setProgramStage = (val) => form.change(name, val)
 
     const {
         loading: programStagesLoading,

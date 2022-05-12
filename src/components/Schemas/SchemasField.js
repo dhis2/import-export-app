@@ -5,7 +5,7 @@ import React from 'react'
 import { Schemas } from '../index'
 const { Field } = ReactFinalForm
 
-const SINGLE_SCHEMA_VALIDATOR = checkedSchemas =>
+const SINGLE_SCHEMA_VALIDATOR = (checkedSchemas) =>
     checkedSchemas.length == 0
         ? i18n.t('At least one schema must be selected')
         : undefined

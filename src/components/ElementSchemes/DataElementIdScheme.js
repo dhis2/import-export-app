@@ -20,8 +20,8 @@ const DataElementIdScheme = ({
 
     useEffect(() => {
         fetchAttributes(`${baseUrl}/api/`, 'dataElementAttribute')
-            .then(attributes => setSchemes(attributes))
-            .catch(error => setError(error))
+            .then((attributes) => setSchemes(attributes))
+            .catch((error) => setError(error))
         setLoading(false)
     }, [])
 

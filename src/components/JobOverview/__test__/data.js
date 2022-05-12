@@ -170,23 +170,19 @@ export const tasksState = {
                 conflicts: [
                     {
                         object: 'V6L425pT3A0',
-                        value:
-                            'Category option combo not found or not accessible for writing data',
+                        value: 'Category option combo not found or not accessible for writing data',
                     },
                     {
                         object: 'Prlt0C1RF0s',
-                        value:
-                            'Category option combo not found or not accessible for writing data',
+                        value: 'Category option combo not found or not accessible for writing data',
                     },
                     {
                         object: 'hEFKSsPV5et',
-                        value:
-                            'Category option combo not found or not accessible for writing data',
+                        value: 'Category option combo not found or not accessible for writing data',
                     },
                     {
                         object: 'psbwp3CQEhs',
-                        value:
-                            'Category option combo not found or not accessible for writing data',
+                        value: 'Category option combo not found or not accessible for writing data',
                     },
                 ],
                 dataSetComplete: 'false',
@@ -301,8 +297,7 @@ export const tasksState = {
             events: [
                 {
                     id: 'init',
-                    text:
-                        'Failed to validate job runtime - `GML import failed: Content is not allowed in prolog. On line 1 column 1.`',
+                    text: 'Failed to validate job runtime - `GML import failed: Content is not allowed in prolog. On line 1 column 1.`',
                     date: new Date('2020-02-12T13:00:32.380'),
                 },
             ],
@@ -327,8 +322,7 @@ export const tasksState = {
                         },
                         objectReports: [
                             {
-                                klass:
-                                    'org.hisp.dhis.dxf2.gml.DefaultGmlImportService',
+                                klass: 'org.hisp.dhis.dxf2.gml.DefaultGmlImportService',
                                 index: 0,
                                 errorReports: [
                                     {
@@ -572,5 +566,7 @@ export const jobOverviewState = {
 }
 
 export const allJobs = ['data', 'event', 'gml', 'metadata', 'tei']
-    .map(type => Object.keys(tasksState[type]).map(id => tasksState[type][id]))
+    .map((type) =>
+        Object.keys(tasksState[type]).map((id) => tasksState[type][id])
+    )
     .flat()

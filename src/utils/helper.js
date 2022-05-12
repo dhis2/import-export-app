@@ -4,35 +4,35 @@ import { getUploadXHR } from './xhr'
 const trimString = (length, string) =>
     string.length > length ? string.substring(0, length - 3) + '...' : string
 
-const pathToId = path => {
+const pathToId = (path) => {
     const pathSplit = path.split('/')
     const orgId = pathSplit[pathSplit.length - 1]
     return orgId
 }
 
-const jsDateToISO8601 = date =>
+const jsDateToISO8601 = (date) =>
     `${date.getFullYear().toString()}-${(date.getMonth() + 1)
         .toString()
         .padStart(2, 0)}-${date.getDate().toString().padStart(2, 0)}`
 
-const jsDateToString = date =>
+const jsDateToString = (date) =>
     `${jsDateToISO8601(date)} ${date
         .getHours()
         .toString()
-        .padStart(2, 0)}:${date
-        .getMinutes()
+        .padStart(2, 0)}:${date.getMinutes().toString().padStart(2, 0)}:${date
+        .getSeconds()
         .toString()
-        .padStart(2, 0)}:${date.getSeconds().toString().padStart(2, 0)}
+        .padStart(2, 0)}
 `
 // some parameters take the long version of the compression type
-const compressionToName = compression => {
+const compressionToName = (compression) => {
     if (compression === 'gz') {
         return 'gzip'
     }
     return compression
 }
 
-const fileFormatToFileExtension = format => {
+const fileFormatToFileExtension = (format) => {
     if (format === 'adx+xml') {
         return 'xml'
     }
@@ -40,16 +40,16 @@ const fileFormatToFileExtension = format => {
 }
 
 const fetchAttributes = async (apiBaseUrl, attribute) => {
-    const fetcher = url =>
+    const fetcher = (url) =>
         fetch(url, { credentials: 'include' })
-            .then(resp => {
+            .then((resp) => {
                 if (resp.status >= 200 && resp.status < 300) {
                     return Promise.resolve(resp.json())
                 } else {
                     throw resp
                 }
             })
-            .catch(resp => {
+            .catch((resp) => {
                 const error = new Error(resp.statusText || resp.status)
                 console.error(
                     `fetchAttributes ${attribute} fetch error: `,
@@ -62,7 +62,7 @@ const fetchAttributes = async (apiBaseUrl, attribute) => {
     const filters = `unique:eq:true&filter=${attribute}:eq:true`
     const url = `${apiBaseUrl}attributes.json?paging=false&fields=${fields}&filter=${filters}`
 
-    const json = await fetcher(url).catch(error => Promise.reject(error))
+    const json = await fetcher(url).catch((error) => Promise.reject(error))
     return json.attributes.map(({ id, displayName }) => ({
         value: `ATTRIBUTE:${id}`,
         label: displayName,
@@ -73,7 +73,7 @@ const genericErrorMessage = i18n.t(
     'An unknown error occurred. Please try again later'
 )
 
-const errorGenerator = setProgress => message => {
+const errorGenerator = (setProgress) => (message) => {
     const timestamp = new Date().getTime()
     setProgress(0)
     return {
@@ -163,7 +163,7 @@ const uploadFile = ({
                     setProgress(0)
                     resolve({})
                 },
-                onError: ev => {
+                onError: (ev) => {
                     let message
                     try {
                         const response = JSON.parse(ev.target.response)
@@ -210,10 +210,14 @@ const locationAssign = (url, setExportEnabled) => {
 }
 
 const getPrevJobDetails = (query, tasks) => {
-    if (!query || !query.id) return {}
+    if (!query || !query.id) {
+        return {}
+    }
 
     const job = tasks[query.id]
-    if (!job) return {}
+    if (!job) {
+        return {}
+    }
 
     return job.jobDetails
 }

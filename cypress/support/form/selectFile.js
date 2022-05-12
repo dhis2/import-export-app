@@ -14,7 +14,7 @@ function hexStringToByte(str) {
 const selectFile = (dataTest, fileType, fixture) => {
     return cy
         .fixture(fixture, 'hex')
-        .then(fileHex => {
+        .then((fileHex) => {
             const fileBytes = hexStringToByte(fileHex)
             const fileName = fixture.replace(/.+\//g, '')
             const testFile = new File([fileBytes], fileName, {
@@ -25,9 +25,9 @@ const selectFile = (dataTest, fileType, fixture) => {
 
             return dataTransfer.files
         })
-        .then(files => {
+        .then((files) => {
             cy.get(`[data-test="${dataTest}"] input`).as('element')
-            cy.get('@element').then($el => ($el[0].files = files))
+            cy.get('@element').then(($el) => ($el[0].files = files))
             cy.get('@element').trigger('change', { force: true })
             return cy
         })

@@ -22,7 +22,7 @@ export const PAGE_DESCRIPTION = i18n.t(
 )
 const PAGE_ICON = <GMLIcon />
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
 })
 

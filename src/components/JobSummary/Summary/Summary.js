@@ -5,7 +5,7 @@ import { SingleSummary } from '../SingleSummary/SingleSummary'
 import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary'
 import styles from './Summary.module.css'
 
-const extractStats = summary => {
+const extractStats = (summary) => {
     if (summary.responseType == 'ImportSummaries') {
         const { imported, deleted, ignored, updated, total } = summary
         return { imported, deleted, ignored, updated, total }
