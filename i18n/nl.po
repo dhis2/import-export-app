@@ -47,10 +47,10 @@ msgid "more options"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "CSV"
 msgstr ""
@@ -65,7 +65,7 @@ msgid "Async"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "None"
 msgstr "Geen"
@@ -137,7 +137,7 @@ msgid "First row is header"
 msgstr ""
 
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 msgid "Object"
 msgstr ""
