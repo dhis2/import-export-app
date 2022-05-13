@@ -173,7 +173,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -185,13 +185,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "CSV"
 msgstr ""
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "ADX"
 msgstr ""
@@ -215,7 +215,7 @@ msgid "UID"
 msgstr ""
 
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 msgid "Identifier"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr ""
+msgstr "Start-/einddatums"
 
 msgid "Time since last updated"
 msgstr ""
@@ -490,13 +490,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Actief"
 
 msgid "Completed"
-msgstr ""
+msgstr "Voltooid"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Geannuleerd"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -623,7 +623,7 @@ msgid "Message"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Messages"
 msgstr ""
