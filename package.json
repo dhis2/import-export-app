@@ -9,7 +9,7 @@
         "start": "d2-app-scripts start",
         "test": "d2-app-scripts test",
         "prettier-write": "prettier \"./src/{**/*,*}.js\" --write",
-        "lint:js": "d2-style js check",
+        "lint:js": "d2-style check js",
         "lint:text": "d2-style text check",
         "lint:staged": "yarn lint:js --staged && yarn lint:text --staged",
         "lint": "yarn lint:js && yarn lint:text",
