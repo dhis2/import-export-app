@@ -23,7 +23,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Ongeldige datum"
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -65,7 +65,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "Huidige gebruiker"
 
 msgid "No user/unassigned"
 msgstr ""
@@ -188,7 +188,7 @@ msgid "JSON"
 msgstr "JSON"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "XML"
 msgstr "XML"
