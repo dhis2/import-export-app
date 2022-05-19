@@ -50,7 +50,7 @@ msgid "XML"
 msgstr "XML"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "Select None"
 msgstr ""
