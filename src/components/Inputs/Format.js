@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { optionsPropType } from '../../utils/options'
-import { RadioGroupField } from '../index'
+import { optionsPropType } from '../../utils/options.js'
+import { RadioGroupField } from '../index.js'
 
 const formatOptions = [
     { value: 'json', label: i18n.t('JSON') },

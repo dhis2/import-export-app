@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormField } from '../index'
+import { FormField } from '../index.js'
 
 const DATATEST = 'input-dates'
 

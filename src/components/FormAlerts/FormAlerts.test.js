@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { FormAlerts } from '../index'
+import { FormAlerts } from '../index.js'
 
 const alerts = [
     { id: '0', message: 'Alert 0 - info', info: true },

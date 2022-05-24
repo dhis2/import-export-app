@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, fireEvent, cleanup } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { RadioGroup } from '../index'
+import { RadioGroup } from '../index.js'
 
 const options = [
     { value: 'a', label: 'Abc' },

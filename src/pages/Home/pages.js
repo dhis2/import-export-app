@@ -3,44 +3,44 @@ import i18n from '@dhis2/d2-i18n'
 import {
     PAGE_NAME as DATA_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as DATA_EXPORT_DESCRIPTION,
-} from '../DataExport/DataExport'
+} from '../DataExport/DataExport.js'
 import {
     PAGE_NAME as DATA_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as DATA_IMPORT_DESCRIPTION,
-} from '../DataImport/DataImport'
+} from '../DataImport/DataImport.js'
 import {
     PAGE_NAME as EVENT_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as EVENT_EXPORT_DESCRIPTION,
-} from '../EventExport/EventExport'
+} from '../EventExport/EventExport.js'
 import {
     PAGE_NAME as EVENT_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as EVENT_IMPORT_DESCRIPTION,
-} from '../EventImport/EventImport'
+} from '../EventImport/EventImport.js'
 import {
     PAGE_NAME as GML_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as GML_IMPORT_DESCRIPTION,
-} from '../GMLImport/GMLImport'
+} from '../GMLImport/GMLImport.js'
 import {
     PAGE_NAME as METADATA_DEPENDENCY_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_DEPENDENCY_EXPORT_DESCRIPTION,
-} from '../MetadataDependencyExport/MetadataDependencyExport'
+} from '../MetadataDependencyExport/MetadataDependencyExport.js'
 import {
     PAGE_NAME as METADATA_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_EXPORT_DESCRIPTION,
-} from '../MetadataExport/MetadataExport'
+} from '../MetadataExport/MetadataExport.js'
 import {
     PAGE_NAME as METADATA_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_IMPORT_DESCRIPTION,
-} from '../MetadataImport/MetadataImport'
+} from '../MetadataImport/MetadataImport.js'
 import {
     PAGE_NAME as TEI_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as TEI_EXPORT_DESCRIPTION,
-} from '../TEIExport/TEIExport'
+} from '../TEIExport/TEIExport.js'
 // import pages
 import {
     PAGE_NAME as TEI_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as TEI_IMPORT_DESCRIPTION,
-} from '../TEIImport/TEIImport'
+} from '../TEIImport/TEIImport.js'
 
 const capitalizeFirstLetter = (string) =>
     string.charAt(0).toUpperCase() + string.slice(1)

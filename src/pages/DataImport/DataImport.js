@@ -11,7 +11,7 @@ import {
     SchemeContainer,
     DataIcon,
     ValidationSummary,
-} from '../../components/index'
+} from '../../components/index.js'
 import {
     FileUpload,
     Format,
@@ -35,11 +35,11 @@ import {
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { hasAuthorityToSkipAudit } from '../../components/WithAuthority/predicates'
-import { TaskContext, getNewestTask } from '../../contexts/index'
-import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
-import { onImport } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { hasAuthorityToSkipAudit } from '../../components/WithAuthority/predicates.js'
+import { TaskContext, getNewestTask } from '../../contexts/index.js'
+import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper.js'
+import { onImport } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 

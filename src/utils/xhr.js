@@ -1,4 +1,4 @@
-import { getMimeType } from './mime'
+import { getMimeType } from './mime.js'
 
 const getUploadXHR = ({
     url,

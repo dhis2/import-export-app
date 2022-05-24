@@ -4,8 +4,8 @@ import {
     JobOverview as JobOverviewComponent,
     Page,
     TasksIcon,
-} from '../../components/index'
-import { TaskContext } from '../../contexts/index'
+} from '../../components/index.js'
+import { TaskContext } from '../../contexts/index.js'
 import styles from './JobOverview.module.css'
 
 const JobOverview = () => {

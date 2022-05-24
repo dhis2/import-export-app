@@ -2,7 +2,7 @@ import { Help, Radio } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormField } from '../index'
+import { FormField } from '../index.js'
 import styles from './RadioGroup.module.css'
 
 const Label = ({ label, prefix, type }) => {

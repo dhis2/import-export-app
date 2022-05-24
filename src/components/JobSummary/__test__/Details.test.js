@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { allJobs } from '../../JobOverview/__test__/data'
-import { Details } from '../Details/Details'
+import { allJobs } from '../../JobOverview/__test__/data.js'
+import { Details } from '../Details/Details.js'
 
 const props = {
     details: allJobs[0].jobDetails,

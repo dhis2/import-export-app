@@ -2,9 +2,13 @@ import i18n from '@dhis2/d2-i18n'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker/DatePickerField'
-import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index'
-import { locationAssign, jsDateToISO8601, pathToId } from '../../utils/helper'
+} from '../../components/DatePicker/DatePickerField.js'
+import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
+import {
+    locationAssign,
+    jsDateToISO8601,
+    pathToId,
+} from '../../utils/helper.js'
 
 // calculate minimum set of parameters based on given filters
 const valuesToParams = (

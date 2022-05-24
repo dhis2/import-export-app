@@ -6,7 +6,7 @@ import {
     Page,
     MetadataExportIcon,
     ValidationSummary,
-} from '../../components/index'
+} from '../../components/index.js'
 import {
     Format,
     formatOptions,
@@ -16,8 +16,8 @@ import {
     defaultCompressionOption,
     SkipSharing,
     ExportButton,
-} from '../../components/Inputs/index'
-import { onExport } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { onExport } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 

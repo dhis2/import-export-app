@@ -2,8 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useClassKeys } from '../../hooks/index'
-import { StyledField } from '../index'
+import { useClassKeys } from '../../hooks/index.js'
+import { StyledField } from '../index.js'
 
 const NAME = 'classKey'
 const LABEL = i18n.t('Class key')

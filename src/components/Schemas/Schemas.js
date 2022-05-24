@@ -9,8 +9,8 @@ import {
     getSchemaGroups,
     getGroupLabels,
     getGroupOrder,
-} from './helper'
-import { SchemaGroup } from './SchemaGroup'
+} from './helper.js'
+import { SchemaGroup } from './SchemaGroup.js'
 import styles from './Schemas.module.css'
 
 const schemaQuery = {

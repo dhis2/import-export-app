@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { allJobs } from '../../JobOverview/__test__/data'
-import { Summary } from '../Summary/Summary'
+import { allJobs } from '../../JobOverview/__test__/data.js'
+import { Summary } from '../Summary/Summary.js'
 
 describe('different job type summaries', () => {
     const oneOfEach = [

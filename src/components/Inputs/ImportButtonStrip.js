@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ImportButtonStrip as ImportButtonStripGeneric } from '../index'
+import { ImportButtonStrip as ImportButtonStripGeneric } from '../index.js'
 
 const DRYRUNDATATEST = 'input-dry-run'
 const IMPORTDATATEST = 'input-import-submit'

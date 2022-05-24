@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { getUploadXHR } from './xhr'
+import { getUploadXHR } from './xhr.js'
 
 const trimString = (length, string) =>
     string.length > length ? string.substring(0, length - 3) + '...' : string

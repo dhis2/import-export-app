@@ -13,9 +13,9 @@ import {
     MetadataImportIcon,
     TEIIcon,
     TasksIcon,
-} from '../index'
-import { ExportMenuSectionHeader } from './ExportMenuSectionHeader'
-import { ImportMenuSectionHeader } from './ImportMenuSectionHeader'
+} from '../index.js'
+import { ExportMenuSectionHeader } from './ExportMenuSectionHeader.js'
+import { ImportMenuSectionHeader } from './ImportMenuSectionHeader.js'
 import styles from './Sidebar.module.css'
 
 const dataImportPage = {

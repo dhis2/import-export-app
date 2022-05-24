@@ -1,7 +1,7 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Select } from '../index'
+import { Select } from '../index.js'
 const { Field } = ReactFinalForm
 
 const Wrapper = ({ input: { value, onChange }, meta, inputName, ...rest }) => (

@@ -8,10 +8,15 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { FormField } from '../index'
-import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
+import { FormField } from '../index.js'
+import {
+    dataSetQuery,
+    programQuery,
+    TETypeQuery,
+    userQuery,
+} from './queries.js'
 import styles from './ResourcePicker.module.css'
-import { resourceTypes } from './resourceTypes'
+import { resourceTypes } from './resourceTypes.js'
 
 const { Field } = ReactFinalForm
 

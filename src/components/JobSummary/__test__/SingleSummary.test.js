@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { SingleSummary } from '../SingleSummary/SingleSummary'
+import { SingleSummary } from '../SingleSummary/SingleSummary.js'
 
 const props = {
     importCount: { imported: 1, deleted: 2, ignored: 3, updated: 4, total: 10 },

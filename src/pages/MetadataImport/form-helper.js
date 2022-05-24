@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
-import { uploadFile } from '../../utils/helper'
+import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
+import { uploadFile } from '../../utils/helper.js'
 
 const onImport =
     ({ baseUrl, setProgress, addTask, setShowFullSummaryTask }) =>

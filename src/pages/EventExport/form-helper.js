@@ -1,9 +1,13 @@
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker/DatePickerField'
-import { ALL_VALUE } from '../../hooks/useProgramStages'
-import { jsDateToISO8601, locationAssign, pathToId } from '../../utils/helper'
+} from '../../components/DatePicker/DatePickerField.js'
+import { ALL_VALUE } from '../../hooks/useProgramStages.js'
+import {
+    jsDateToISO8601,
+    locationAssign,
+    pathToId,
+} from '../../utils/helper.js'
 
 const onExport = (baseUrl, setExportEnabled) => (values) => {
     setExportEnabled(false)
