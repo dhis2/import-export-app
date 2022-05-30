@@ -89,3 +89,5 @@ export {
 export { UserPicker } from './UserPicker'
 export { IncludeAllAttributes } from './IncludeAllAttributes'
 export { Dates } from './Dates'
+export { GeojsonProperty } from './GeojsonProperty'
+export { GeojsonAttributePicker } from './GeojsonAttributePicker'

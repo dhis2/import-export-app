@@ -9,7 +9,13 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { FormField } from '../index'
-import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
+import {
+    dataSetQuery,
+    programQuery,
+    TETypeQuery,
+    userQuery,
+    geojsonAttributesQuery,
+} from './queries'
 import styles from './ResourcePicker.module.css'
 import { resourceTypes } from './resourceTypes'
 
@@ -24,6 +30,11 @@ const resourceToQuery = resourceType => {
         return { resourceName: 'trackedEntityTypes', query: TETypeQuery }
     } else if (resourceType == resourceTypes.USER) {
         return { resourceName: 'users', query: userQuery }
+    } else if (resourceType == resourceTypes.GEOJSON_ATTRIBUTE) {
+        return {
+            resourceName: 'attributes',
+            query: geojsonAttributesQuery,
+        }
     }
 
     return { error: `Unkown resource type: ${resourceType}` }

@@ -5,11 +5,17 @@ import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
     Page,
+    MoreOptions,
+    SchemeContainer,
     GMLIcon, // TODO
     ValidationSummary,
 } from '../../components/index'
 import {
     FileUpload,
+    OrgUnitIdScheme,
+    GeojsonProperty,
+    GeojsonAttributePicker,
+    defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index'
@@ -28,6 +34,8 @@ const PAGE_ICON = <GMLIcon />
 
 const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
+    orgUnitIdScheme:
+        prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
 })
 
 const GeojsonImport = () => {
@@ -69,6 +77,13 @@ const GeojsonImport = () => {
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <FileUpload />
+                        <MoreOptions>
+                            <SchemeContainer>
+                                <GeojsonProperty />
+                                <OrgUnitIdScheme />
+                            </SchemeContainer>
+                            <GeojsonAttributePicker show={true} />
+                        </MoreOptions>
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />

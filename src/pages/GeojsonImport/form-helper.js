@@ -12,13 +12,26 @@ const onImport = ({
     addTask,
     setShowFullSummaryTask,
 }) => async values => {
-    const { dryRun, files } = values
+    const { dryRun, files, orgUnitIdScheme } = values
 
     // send xhr
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = 'organisationUnits/geometry'
-    const params = `dryRun=${dryRun}`
-    const url = `${apiBaseUrl}${endpoint}?${params}`
+    const params = {
+        dryRun,
+        geoJsonId: false,
+        geoJsonProperty: 'name',
+        orgUnitProperty: 'name',
+    }
+    const url = `${apiBaseUrl}${endpoint}?${Object.keys(params)
+        .map(key => `${key}=${params[key]}`)
+        .join('&')}`
+
+    console.log('onImport', orgUnitIdScheme)
+
+    // Error:
+    // http://localhost:8080/api/organisationUnits/geometry?dryRun=true&orgUnitProperty=code
+    // http://localhost:8080/api/organisationUnits/geometry?dryRun=true&geoJsonId=false&geoJsonProperty=id&orgUnitProperty=code [no content]
 
     try {
         await uploadFile({
