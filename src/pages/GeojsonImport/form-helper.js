@@ -1,7 +1,10 @@
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
 
-const isAsync = true
+// const isAsync = true
+const isAsync = false
+
+// https://github.com/dhis2/dhis2-docs/pull/1006
 
 const onImport = ({
     baseUrl,
@@ -13,20 +16,20 @@ const onImport = ({
 
     // send xhr
     const apiBaseUrl = `${baseUrl}/api/`
-    const endpoint = 'metadata/gml.json'
-    const params = [`dryRun=${dryRun}`, 'format=json'].join('&')
+    const endpoint = 'organisationUnits/geometry'
+    const params = `dryRun=${dryRun}`
     const url = `${apiBaseUrl}${endpoint}?${params}`
 
     try {
         await uploadFile({
             url,
             file: files[0],
-            format: 'gml',
-            type: 'GML_IMPORT',
+            format: 'geojson',
+            type: 'GEOJSON_IMPORT',
             isAsync: isAsync,
             setProgress,
             addEntry: (id, entry) =>
-                addTask('gml', id, { ...entry, jobDetails: values }),
+                addTask('geojson', id, { ...entry, jobDetails: values }),
         })
         return jobStartedMessage
     } catch (e) {

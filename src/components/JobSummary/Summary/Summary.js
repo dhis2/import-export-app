@@ -19,7 +19,7 @@ const extractStats = summary => {
     }
 }
 
-const Summary = ({ summary }) => {
+const Summary = ({ summary, importType }) => {
     // gml import type object return
     if (summary.typeReports) {
         const overviewStats = {
@@ -45,6 +45,7 @@ const Summary = ({ summary }) => {
 
     const overviewSummary = (
         <SingleSummary
+            importType={importType}
             importCount={importCount}
             status={summary.status}
             description={summary.description}
@@ -62,6 +63,7 @@ const Summary = ({ summary }) => {
                   return (
                       <SingleSummary
                           key={`single-summary-${i}`}
+                          importType={importType}
                           importCount={importCount}
                           status={s.status}
                           description={s.description}
@@ -84,6 +86,7 @@ const Summary = ({ summary }) => {
 
 Summary.propTypes = {
     summary: PropTypes.object.isRequired,
+    importType: PropTypes.string,
 }
 
 export { Summary }

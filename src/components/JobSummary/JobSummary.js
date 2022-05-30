@@ -80,7 +80,7 @@ const JobSummary = ({
             <Tags jobDetails={jobDetails} task={task} />
             <Divider />
             {task.completed && task.summary && (
-                <Summary summary={task.summary} />
+                <Summary summary={task.summary} importType={task.importType} />
             )}
             <div className={styles.events}>
                 <Log events={task.events} />
