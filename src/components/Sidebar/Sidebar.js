@@ -32,6 +32,13 @@ const eventImportPage = {
     path: '/import/event',
 }
 
+const geojsonImportPage = {
+    name: i18n.t('GeoJSON import'),
+    code: 'geojson-import',
+    icon: <GMLIcon />, // TODO
+    path: '/import/geojson',
+}
+
 const gmlImportPage = {
     name: i18n.t('GML import'),
     code: 'gml-import',
@@ -90,6 +97,7 @@ const teiExportPage = {
 const importPages = [
     dataImportPage,
     eventImportPage,
+    geojsonImportPage,
     gmlImportPage,
     metadataImportPage,
     teiImportPage,

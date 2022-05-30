@@ -22,6 +22,12 @@ const categoryTypes = [
         label: i18n.t('Event'),
     },
     {
+        key: 'geojson',
+        importType: 'GEOJSON_IMPORT',
+        icon: <GMLIcon />,
+        label: i18n.t('GeoJSON'),
+    },
+    {
         key: 'gml',
         importType: 'GML_IMPORT',
         icon: <GMLIcon />,

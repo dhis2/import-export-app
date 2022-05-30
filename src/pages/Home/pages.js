@@ -17,6 +17,10 @@ import {
     PAGE_DESCRIPTION as EVENT_IMPORT_DESCRIPTION,
 } from '../EventImport/EventImport'
 import {
+    PAGE_NAME as GEOJSON_IMPORT_PAGE_NAME,
+    PAGE_DESCRIPTION as GEOJSON_IMPORT_DESCRIPTION,
+} from '../GeojsonImport/GeojsonImport'
+import {
     PAGE_NAME as GML_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as GML_IMPORT_DESCRIPTION,
 } from '../GMLImport/GMLImport'
@@ -94,6 +98,12 @@ const importPages = capitalizePages([
         description: EVENT_IMPORT_DESCRIPTION,
         linkText: i18n.t('Import events'),
         to: '/import/event',
+    },
+    {
+        name: GEOJSON_IMPORT_PAGE_NAME,
+        description: GEOJSON_IMPORT_DESCRIPTION,
+        linkText: i18n.t('Import GeoJSON'),
+        to: '/import/geojson',
     },
     {
         name: GML_IMPORT_PAGE_NAME,
