@@ -12,22 +12,34 @@ const onImport = ({
     addTask,
     setShowFullSummaryTask,
 }) => async values => {
-    const { dryRun, files, orgUnitIdScheme } = values
+    const {
+        dryRun,
+        files,
+        // orgUnitIdScheme,
+        useAttribute,
+        // geojsonProperty,
+        geojsonAttribute,
+    } = values
 
     // send xhr
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = 'organisationUnits/geometry'
     const params = {
         dryRun,
-        geoJsonId: false,
-        geoJsonProperty: 'name',
-        orgUnitProperty: 'name',
+        // geoJsonId: false,
+        // geoJsonProperty: 'name',
+        // orgUnitProperty: 'name',
     }
+
+    if (useAttribute && geojsonAttribute) {
+        console.log('attributeId', geojsonAttribute)
+    }
+
     const url = `${apiBaseUrl}${endpoint}?${Object.keys(params)
         .map(key => `${key}=${params[key]}`)
         .join('&')}`
 
-    console.log('onImport', orgUnitIdScheme)
+    console.log('onImport', values)
 
     // Error:
     // http://localhost:8080/api/organisationUnits/geometry?dryRun=true&orgUnitProperty=code

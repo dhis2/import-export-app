@@ -5,15 +5,12 @@ import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
     Page,
-    MoreOptions,
-    SchemeContainer,
     GMLIcon, // TODO
     ValidationSummary,
 } from '../../components/index'
 import {
     FileUpload,
-    OrgUnitIdScheme,
-    GeojsonProperty,
+    GeojsonPropertyMatch,
     GeojsonAttributePicker,
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
@@ -28,7 +25,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('GeoJSON import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import geographic data for organisation units using the GeoJSON format. GeoJSON is a common format for expressing geographical features.'
+    'Import geographic data for organisation units using the GeoJSON format. This import can also be used for associated geometries or catchment areas.'
 )
 const PAGE_ICON = <GMLIcon />
 
@@ -76,14 +73,13 @@ const GeojsonImport = () => {
                 initialValues={initialValues}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
-                        <MoreOptions>
-                            <SchemeContainer>
-                                <GeojsonProperty />
-                                <OrgUnitIdScheme />
-                            </SchemeContainer>
-                            <GeojsonAttributePicker show={true} />
-                        </MoreOptions>
+                        <FileUpload
+                            helpText={i18n.t(
+                                'GeoJSON feature id should match the organsation unit id, or match by a feature property below.'
+                            )}
+                        />
+                        <GeojsonPropertyMatch />
+                        <GeojsonAttributePicker />
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />

@@ -31,10 +31,7 @@ const resourceToQuery = resourceType => {
     } else if (resourceType == resourceTypes.USER) {
         return { resourceName: 'users', query: userQuery }
     } else if (resourceType == resourceTypes.GEOJSON_ATTRIBUTE) {
-        return {
-            resourceName: 'attributes',
-            query: geojsonAttributesQuery,
-        }
+        return { resourceName: 'attributes', query: geojsonAttributesQuery }
     }
 
     return { error: `Unkown resource type: ${resourceType}` }

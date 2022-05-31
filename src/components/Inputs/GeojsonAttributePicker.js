@@ -1,10 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import {
-    ReactFinalForm,
-    CheckboxFieldFF,
-    hasValue,
-    composeValidators,
-} from '@dhis2/ui'
+import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { ResourcePickerField } from '../index'
@@ -13,7 +8,7 @@ import { resourceTypes } from '../ResourcePicker/resourceTypes'
 const { useField, Field } = ReactFinalForm
 
 const USE_ATTRIBUTE_NAME = 'useAttribute'
-const USE_ATTRIBUTE_LABEL = i18n.t('Store as associated geometry')
+const USE_ATTRIBUTE_LABEL = i18n.t('Import as associated geometry')
 const USE_ATTRIBUTE_DATATEST = 'input-use-attribute'
 
 const NAME = 'geojsonAttribute'
@@ -25,13 +20,10 @@ const SELECTEDLABEL = i18n.t('Selected programs')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the attributes!')
 const RESOURCETYPE = resourceTypes.GEOJSON_ATTRIBUTE
 
-const SINGLE_PROGRAM_VALIDATOR = selectedPrograms =>
-    selectedPrograms.length == 0
-        ? i18n.t('At least one program must be selected')
+const VALIDATOR = (selectedAttributes = []) =>
+    selectedAttributes.length === 0
+        ? i18n.t('One attribute must be selected')
         : undefined
-
-const SINGLE_EXACT_PROGRAM_VALIDATOR = selectedPrograms =>
-    !selectedPrograms ? i18n.t('One program must be selected') : undefined
 
 const GeojsonAttributePicker = ({
     multiSelect,
@@ -42,13 +34,8 @@ const GeojsonAttributePicker = ({
     const { input: checkbox } = useField(USE_ATTRIBUTE_NAME)
     const { value: useAttribute } = checkbox
 
-    const programValidator = multiSelect
-        ? SINGLE_PROGRAM_VALIDATOR
-        : SINGLE_EXACT_PROGRAM_VALIDATOR
-    const validator = composeValidators(hasValue, programValidator)
-
     return (
-        <>
+        <div style={{ maxWidth: '420px', paddingBottom: '24px' }}>
             <Field
                 type="checkbox"
                 component={CheckboxFieldFF}
@@ -57,7 +44,19 @@ const GeojsonAttributePicker = ({
                 dataTest={`${USE_ATTRIBUTE_DATATEST}-sf`}
             />
             {useAttribute && (
-                <div style={{ maxWidth: '360px', paddingTop: '16px' }}>
+                <div style={{ paddingLeft: '29px' }}>
+                    <p
+                        style={{
+                            color: 'rgb(74, 87, 104)',
+                            fontSize: '12px',
+                            lineHeight: '16px',
+                            margin: '4px 0 16px',
+                        }}
+                    >
+                        {i18n.t(
+                            'Associated geometry import requires an attribute of type "GeoJSON" applied to "Organisation unit". It can be defined in the Maintenance app.'
+                        )}
+                    </p>
                     <ResourcePickerField
                         name={NAME}
                         resourceType={RESOURCETYPE}
@@ -69,13 +68,13 @@ const GeojsonAttributePicker = ({
                         selectedLabel={SELECTEDLABEL}
                         dataTest={DATATEST}
                         multiSelect={multiSelect}
-                        validator={validator}
+                        validator={VALIDATOR}
                         autoSelectFirst
                         {...rest}
                     />
                 </div>
             )}
-        </>
+        </div>
     )
 }
 
