@@ -274,7 +274,7 @@ msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr ""
+msgstr "Creare"
 
 msgid "Update"
 msgstr "Actualizare"
