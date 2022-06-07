@@ -44,7 +44,6 @@ const onReadyStateChange = ({ xhr, type, onResponse, onError }) => {
 
 const extractIdAndMessage = xhr => {
     const data = JSON.parse(xhr.responseText)
-
     const { message, status, typeReports, response } = data
 
     if (status && status === 'ERROR') {
