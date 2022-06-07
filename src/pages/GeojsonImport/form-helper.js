@@ -1,8 +1,8 @@
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
 import { uploadFile } from '../../utils/helper'
 
-// const isAsync = true
-const isAsync = false
+// TODO: should we support async mode?
+const isAsync = true
 
 // https://github.com/dhis2/dhis2-docs/pull/1006
 
@@ -15,31 +15,33 @@ const onImport = ({
     const {
         dryRun,
         files,
-        // orgUnitIdScheme,
+        matchProperty,
+        geojsonProperty,
+        orgUnitIdScheme,
         useAttribute,
-        // geojsonProperty,
         geojsonAttribute,
     } = values
 
     // send xhr
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = 'organisationUnits/geometry'
-    const params = {
-        dryRun,
-        // geoJsonId: false,
-        // geoJsonProperty: 'name',
-        // orgUnitProperty: 'name',
+    const params = { dryRun, async: isAsync }
+
+    if (matchProperty && geojsonProperty && orgUnitIdScheme) {
+        params.geoJsonId = false
+        params.geoJsonProperty = geojsonProperty
+        params.orgUnitProperty = orgUnitIdScheme
     }
 
     if (useAttribute && geojsonAttribute) {
-        console.log('attributeId', geojsonAttribute)
+        params.attributeId = geojsonAttribute
     }
 
     const url = `${apiBaseUrl}${endpoint}?${Object.keys(params)
         .map(key => `${key}=${params[key]}`)
         .join('&')}`
 
-    console.log('onImport', values)
+    console.log('onImport', url, params)
 
     // Error:
     // http://localhost:8080/api/organisationUnits/geometry?dryRun=true&orgUnitProperty=code
@@ -59,6 +61,7 @@ const onImport = ({
         return jobStartedMessage
     } catch (e) {
         const errors = [e]
+        console.log('error', e)
         return { [FORM_ERROR]: errors }
     } finally {
         setShowFullSummaryTask(true)

@@ -64,6 +64,7 @@ export {
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
 } from './OrgUnitIdScheme'
+export { OrgUnitIdSchemeCore } from './OrgUnitIdSchemeCore'
 export {
     OrgUnitMode,
     defaultOrgUnitSelectionModeOption,

@@ -101,7 +101,9 @@ const uploadFile = ({
                 url,
                 upload: file,
                 type,
-                onResponse: ({ error, id, msg, typeReports }) => {
+                onResponse: response => {
+                    const { error, id, msg, typeReports } = response
+
                     let entry
                     if (!isAsync) {
                         // we are done

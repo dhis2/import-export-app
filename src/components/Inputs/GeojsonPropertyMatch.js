@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF, InputFieldFF } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../index'
-import { OrgUnitIdScheme } from './index'
+import { OrgUnitIdSchemeCore } from './index'
 
 const { useField, Field } = ReactFinalForm
 
@@ -42,7 +42,7 @@ const GeojsonPropertyMatch = () => {
                         helpText={HELPTEXT}
                         dataTest={`${DATATEST}-sf`}
                     />
-                    <OrgUnitIdScheme />
+                    <OrgUnitIdSchemeCore />
                 </div>
             )}
         </div>

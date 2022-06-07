@@ -99,6 +99,8 @@ const createFetchSummary = (engine, setTasks) => async (type, id, task) => {
         },
     })
 
+    console.log('summary', type, id, task, jobSummaryQuery, summary)
+
     if (error) {
         console.error('fetchSummary error: ', error)
         return
