@@ -2,6 +2,7 @@ export {
     DataIcon,
     EventIcon,
     ExportIcon,
+    GeojsonIcon,
     GMLIcon,
     LogoIcon,
     ImportIcon,

@@ -3,11 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import {
-    Page,
-    GMLIcon, // TODO
-    ValidationSummary,
-} from '../../components/index'
+import { Page, GeojsonIcon, ValidationSummary } from '../../components/index'
 import {
     FileUpload,
     GeojsonPropertyMatch,
@@ -27,7 +23,7 @@ export const PAGE_NAME = i18n.t('GeoJSON import')
 export const PAGE_DESCRIPTION = i18n.t(
     'Import geographic data for organisation units using the GeoJSON format. This import can also be used for associated geometries or catchment areas.'
 )
-const PAGE_ICON = <GMLIcon />
+const PAGE_ICON = <GeojsonIcon />
 
 const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,

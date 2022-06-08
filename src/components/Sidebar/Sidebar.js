@@ -7,6 +7,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import {
     DataIcon,
     EventIcon,
+    GeojsonIcon,
     GMLIcon,
     MetadataDependencyExportIcon,
     MetadataExportIcon,
@@ -35,7 +36,7 @@ const eventImportPage = {
 const geojsonImportPage = {
     name: i18n.t('GeoJSON import'),
     code: 'geojson-import',
-    icon: <GMLIcon />, // TODO
+    icon: <GeojsonIcon />,
     path: '/import/geojson',
 }
 
