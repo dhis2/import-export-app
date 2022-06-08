@@ -30,8 +30,8 @@ import {
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from './modules/earthEngines'
+import { getAggregationTypes } from './modules/getAggregationTypes'
 import { getRoundings, getPrecision } from './modules/rounding'
-// import { getAggregationTypes } from './getAggregationTypes'
 // import { postDataWithFetch } from './postData'
 // import MappingTable from './MapGenderAgeGroupsTable'
 import styles from './styles/EarthEngineImport.module.css'
@@ -60,24 +60,24 @@ const eeLayers = getEarthEngineLayers()
         value: datasetId,
     }))
 
-// const getAggregationTypesForLayer = id => {
-//     const types = [
-//         { value: 'min', label: i18n.t('Min') },
-//         { value: 'max', label: i18n.t('Max') },
-//         { value: 'mean', label: i18n.t('Mean') },
-//         { value: 'median', label: i18n.t('Median') },
-//         { value: 'sum', label: i18n.t('Sum') },
-//         {
-//             value: 'stdDev',
-//             // label: i18n.t('Standard deviation'),
-//             label: i18n.t('Std dev'),
-//         },
-//         { value: 'variance', label: i18n.t('Variance') },
-//     ]
-//     const aggs = getEarthEngineLayer(id).aggregations || getAggregationTypes()
+const getAggregationTypesForLayer = id => {
+    const types = [
+        { value: 'min', label: i18n.t('Min') },
+        { value: 'max', label: i18n.t('Max') },
+        { value: 'mean', label: i18n.t('Mean') },
+        { value: 'median', label: i18n.t('Median') },
+        { value: 'sum', label: i18n.t('Sum') },
+        {
+            value: 'stdDev',
+            // label: i18n.t('Standard deviation'),
+            label: i18n.t('Std dev'),
+        },
+        { value: 'variance', label: i18n.t('Variance') },
+    ]
+    const aggs = getEarthEngineLayer(id).aggregations || getAggregationTypes()
 
-//     return types.filter(type => aggs.includes(type.value))
-// }
+    return types.filter(type => aggs.includes(type.value))
+}
 
 // const getFirstDefaultAggregation = id => {
 //     const defAggregations = getEarthEngineLayer(id).defaultAggregations
@@ -333,8 +333,7 @@ const EarthEngineImport = () => {
                 <h2>{i18n.t('Import setup')}</h2>
                 <Divider />
                 <div className={styles.row}>
-                    <div>Aggregation selector goes here</div>
-                    {/* <SingleSelect
+                    <SingleSelect
                         name="aggregationTypes"
                         label="Aggregation type"
                         className={styles.aggregationTypes}
@@ -354,7 +353,7 @@ const EarthEngineImport = () => {
                                 />
                             )
                         )}
-                    </SingleSelect> */}
+                    </SingleSelect>
                 </div>
                 <div className={cx(styles.row, styles.set)}>
                     <SingleSelect
