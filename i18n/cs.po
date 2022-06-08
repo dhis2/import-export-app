@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Jiří Podhorecký <jirka.p@volny.cz>, 2020
+# trendspotter <jirka.p@volny.cz>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
+"POT-Creation-Date: 2022-02-23T12:38:25.348Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2020\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -290,8 +290,8 @@ msgstr "Zahrnout všechny atributy"
 msgid "Include first level units"
 msgstr "Zahrnout jednotky první úrovně"
 
-msgid "Include the first level of organisation units inside selections"
-msgstr "Zahrňte první úroveň organizačních jednotek do výběrů"
+msgid "Include descendants of selected organisation units"
+msgstr "Zahrnout potomky vybraných organizačních jednotek"
 
 msgid "Include deleted"
 msgstr "Včetně smazaných"

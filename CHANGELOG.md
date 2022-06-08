@@ -1,3 +1,87 @@
+## [1.2.22](https://github.com/dhis2/import-export-app/compare/v1.2.21...v1.2.22) (2022-06-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8bc37b0](https://github.com/dhis2/import-export-app/commit/8bc37b01e5be631bf7b58ba52f482576264f62cc))
+
+## [1.2.21](https://github.com/dhis2/import-export-app/compare/v1.2.20...v1.2.21) (2022-05-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([33db927](https://github.com/dhis2/import-export-app/commit/33db9274e203be920e0659c42da91c138d101636))
+
+## [1.2.20](https://github.com/dhis2/import-export-app/compare/v1.2.19...v1.2.20) (2022-05-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([43e994e](https://github.com/dhis2/import-export-app/commit/43e994e4f32a9667870f272d4d556c2d1d8f0206))
+
+## [1.2.19](https://github.com/dhis2/import-export-app/compare/v1.2.18...v1.2.19) (2022-05-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0641b58](https://github.com/dhis2/import-export-app/commit/0641b58d497e91f9cdc1b0a71af1de66b40ea80b))
+
+## [1.2.18](https://github.com/dhis2/import-export-app/compare/v1.2.17...v1.2.18) (2022-05-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c0a17c1](https://github.com/dhis2/import-export-app/commit/c0a17c140e7b7eef5758ee3002bfb9289a5e983e))
+
+## [1.2.17](https://github.com/dhis2/import-export-app/compare/v1.2.16...v1.2.17) (2022-05-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([455c265](https://github.com/dhis2/import-export-app/commit/455c2651f25973a480bd233ad2cf81c45195e321))
+
+## [1.2.16](https://github.com/dhis2/import-export-app/compare/v1.2.15...v1.2.16) (2022-04-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2263127](https://github.com/dhis2/import-export-app/commit/22631270206b30b0ec943d27c79d2910a426333e))
+
+## [1.2.15](https://github.com/dhis2/import-export-app/compare/v1.2.14...v1.2.15) (2022-03-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([111c46e](https://github.com/dhis2/import-export-app/commit/111c46ec641c93fe352fa04e119b28181811b579))
+
+## [1.2.14](https://github.com/dhis2/import-export-app/compare/v1.2.13...v1.2.14) (2022-03-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5309091](https://github.com/dhis2/import-export-app/commit/53090911527208a2893165ea85a7d49793f6c761))
+
+## [1.2.13](https://github.com/dhis2/import-export-app/compare/v1.2.12...v1.2.13) (2022-03-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8d89408](https://github.com/dhis2/import-export-app/commit/8d8940836c009f4501fd7396f0398bff67d19689))
+
+## [1.2.12](https://github.com/dhis2/import-export-app/compare/v1.2.11...v1.2.12) (2022-03-14)
+
+
+### Bug Fixes
+
+* update descent orgUnit message [DHIS2-11265] ([ef370d6](https://github.com/dhis2/import-export-app/commit/ef370d6a291a0e0b21cf0ad9b9397e324967a82d))
+
+## [1.2.11](https://github.com/dhis2/import-export-app/compare/v1.2.10...v1.2.11) (2022-03-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1fca847](https://github.com/dhis2/import-export-app/commit/1fca847bf270ae078dcd9d0a7df6b11f648c4128))
+
 ## [1.2.10](https://github.com/dhis2/import-export-app/compare/v1.2.9...v1.2.10) (2022-02-15)
 
 
