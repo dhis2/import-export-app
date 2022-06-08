@@ -176,6 +176,10 @@ const EarthEngineImport = () => {
     const periodChanged = ({ selected }) => setPeriod(selected)
     const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
 
+    const showData = () => {
+        setShowPreview(true)
+        console.log('clicked to show data')
+    }
     // const showData = async () => {
     //     setShowPreview(true)
     //     const data = {
@@ -198,6 +202,7 @@ const EarthEngineImport = () => {
     //         })
     // }
 
+    const importData = () => console.log('clicked to import data')
     // const importData = async () => {
     //     const data = {
     //         id: eeLayer,
@@ -428,7 +433,7 @@ const EarthEngineImport = () => {
                     </div>
                 )}
 
-                {/* <div className={styles.row}>
+                <div className={styles.row}>
                     {!showPreview ? (
                         <>
                             <Button
@@ -455,7 +460,7 @@ const EarthEngineImport = () => {
                             {i18n.t('Import')}
                         </Button>
                     )}
-                </div> */}
+                </div>
             </div>
         </Page>
     )
