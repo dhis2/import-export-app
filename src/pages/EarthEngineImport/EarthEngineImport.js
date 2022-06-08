@@ -18,6 +18,7 @@ import cx from 'classnames'
 import React, { useState, useEffect } from 'react'
 import { Page } from '../../components/index'
 import { DataPreview } from './components/DataPreview'
+import { MappingTable } from './components/MapGenderAgeGroupsTable'
 // import {
 //     getPeriods,
 //     getAggregations,
@@ -33,7 +34,6 @@ import {
 import { getAggregationTypes } from './modules/getAggregationTypes'
 import { getRoundings, getPrecision } from './modules/rounding'
 // import { postDataWithFetch } from './postData'
-// import MappingTable from './MapGenderAgeGroupsTable'
 import styles from './styles/EarthEngineImport.module.css'
 
 const dataSetQuery = {
@@ -171,7 +171,7 @@ const EarthEngineImport = () => {
     const layerChanged = async ({ selected }) => {
         setPeriod(NO_VALUE)
         setAggregation(NO_VALUE)
-        // setEeLayer(selected)
+        setEeLayer(selected)
     }
     const periodChanged = ({ selected }) => setPeriod(selected)
     const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
@@ -393,7 +393,7 @@ const EarthEngineImport = () => {
                     </SingleSelect>
                 </div>
 
-                {/* <div className={styles.row}>
+                <div className={styles.row}>
                     {eeLayer === POPULATION_AGE_GROUPS_DATASET_ID && (
                         <>
                             <NoticeBox
@@ -408,7 +408,7 @@ const EarthEngineImport = () => {
                             <MappingTable layerId={eeLayer} />
                         </>
                     )}
-                </div> */}
+                </div>
 
                 <Divider />
 
