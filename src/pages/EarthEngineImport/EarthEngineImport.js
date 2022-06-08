@@ -31,6 +31,7 @@ import {
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from './modules/earthEngines'
+import { fetchUserSettings } from './modules/fetchUserSettings'
 import { getAggregationTypes } from './modules/getAggregationTypes'
 import { getRoundings, getPrecision } from './modules/rounding'
 // import { postDataWithFetch } from './postData'
@@ -86,7 +87,7 @@ const getAggregationTypesForLayer = id => {
 
 const EarthEngineImport = () => {
     // options
-    // const [displayNameProperty, setDisplayNameProperty] = useState(null)
+    const [displayNameProperty, setDisplayNameProperty] = useState(null)
     const [rootOrgUnits, setRootOrgUnits] = useState(null)
     const [periods, setPeriods] = useState([])
     const [dataSets, setDataSets] = useState([])
@@ -117,8 +118,8 @@ const EarthEngineImport = () => {
             const orgUnits = await apiFetchOrganisationUnitRoots(engine)
             setRootOrgUnits(orgUnits.map(ou => ou.id))
 
-            // const userSettings = await fetchUserSettings(engine)
-            // setDisplayNameProperty(userSettings.keyAnalysisDisplayProperty)
+            const userSettings = await fetchUserSettings(engine)
+            setDisplayNameProperty(userSettings.keyAnalysisDisplayProperty)
         }
         fetchData()
     }, [])

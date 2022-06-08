@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-08T09:56:13.901Z\n"
-"PO-Revision-Date: 2022-06-08T09:56:13.901Z\n"
+"POT-Creation-Date: 2022-06-08T10:38:55.773Z\n"
+"PO-Revision-Date: 2022-06-08T10:38:55.773Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -847,6 +847,28 @@ msgstr "Preview import summary"
 
 msgid "Import without previewing"
 msgstr "Import without previewing"
+
+msgid "Band name"
+msgstr "Band name"
+
+msgid "Band description"
+msgstr "Band description"
+
+msgid "Category option combination"
+msgstr "Category option combination"
+
+msgid "No match found"
+msgstr "No match found"
+
+msgid "Cannot get authorization token for Google Earth Engine."
+msgstr "Cannot get authorization token for Google Earth Engine."
+
+msgid ""
+"This layer requires a Google Earth Engine account. Check the DHIS2 "
+"documentation for more information."
+msgstr ""
+"This layer requires a Google Earth Engine account. Check the DHIS2 "
+"documentation for more information."
 
 msgid "Population"
 msgstr "Population"
