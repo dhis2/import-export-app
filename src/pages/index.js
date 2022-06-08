@@ -4,6 +4,7 @@ export { MetadataDependencyExport } from './MetadataDependencyExport/MetadataDep
 export { JobOverview } from './JobOverview/JobOverview'
 export { GMLImport } from './GMLImport/GMLImport'
 export { EventImport } from './EventImport/EventImport'
+export { EarthEngineImport } from './EarthEngineImport/EarthEngineImport'
 export { EventExport } from './EventExport/EventExport'
 export { DataImport } from './DataImport/DataImport'
 export { DataExport } from './DataExport/DataExport'

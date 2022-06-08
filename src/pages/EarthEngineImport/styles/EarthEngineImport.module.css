@@ -1,0 +1,18 @@
+.row {
+    margin-bottom: 4px;
+}
+
+.orgUnitContainer {
+    height: 463px;
+    /* height of filled container */
+    position: relative;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.set {
+    display: flex;
+}
