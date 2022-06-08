@@ -302,7 +302,7 @@ export const tasksState = {
                 {
                     id: 'init',
                     text:
-                        'Failed to validate job runtime - `GML import failed: Content is not allowed in prolog. On line 1 column 1.`',
+                        'Failed to validate job runtime - `GeoJSON import failed.`',
                     date: new Date('2020-02-12T13:00:34.380'),
                 },
             ],
@@ -317,7 +317,8 @@ export const tasksState = {
                 },
                 typeReports: [
                     {
-                        klass: 'org.hisp.dhis.dxf2.gml.DefaultGmlImportService',
+                        klass:
+                            'org.hisp.dhis.dxf2.geojson.DefaultGeoJsonService',
                         stats: {
                             created: 0,
                             updated: 0,
@@ -328,14 +329,14 @@ export const tasksState = {
                         objectReports: [
                             {
                                 klass:
-                                    'org.hisp.dhis.dxf2.gml.DefaultGmlImportService',
+                                    'org.hisp.dhis.dxf2.geojson.DefaultGeoJsonService',
                                 index: 0,
                                 errorReports: [
                                     {
                                         message:
-                                            'Failed to validate job runtime - `GML import failed: Content is not allowed in prolog. On line 1 column 1.`',
+                                            'Failed to validate job runtime - `GeoJSON import failed.`',
                                         mainKlass:
-                                            'org.hisp.dhis.dxf2.gml.DefaultGmlImportService',
+                                            'org.hisp.dhis.dxf2.geojson.DefaultGeoJsonService',
                                         errorCode: 'E7010',
                                     },
                                 ],
