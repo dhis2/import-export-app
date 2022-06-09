@@ -127,7 +127,7 @@ msgid "EndDate"
 msgstr ""
 
 msgid "End date"
-msgstr ""
+msgstr "Data de sfîrșit"
 
 msgid "Event id scheme"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "StartDate"
 msgstr ""
 
 msgid "Start date"
-msgstr ""
+msgstr "Data de început"
 
 msgid "Strategy"
 msgstr ""
