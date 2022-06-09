@@ -1,6 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 // import { loadEarthEngineWorker } from '@dhis2/maps-gl'
-import { getEarthEngineLayer } from './earthEngines'
+import { getEarthEngineLayer } from './earthEngines.js'
+import { getMockAggregations } from './mockAggregations.js'
+import { getMockPeriods } from './mockPeriods.js'
 
 const DEFAULT_LOCALE = 'en'
 const fallbackDateFormat = dateString => dateString.substr(0, 10)
@@ -52,44 +54,33 @@ const getWorkerInstance = async engine => {
 
 export const getPeriods = async (eeId, engine) => {
     const { periodType, filters } = getEarthEngineLayer(eeId)
-    console.log('periodType', periodType, filters)
 
-    return [
-        {
-            label: 'Period 2018',
-            value: '2018',
-            name: 'period2018',
-        },
-        {
-            label: 'Period 2019',
-            value: '2019',
-            name: 'period2019',
-        },
-    ]
+    const getPeriod = ({ id, properties }) => {
+        const year = new Date(properties['system:time_start']).getFullYear()
+        const name =
+            periodType === 'Yearly' ? String(year) : getStartEndDate(properties)
 
-    // const getPeriod = ({ id, properties }) => {
-    //     const year = new Date(properties['system:time_start']).getFullYear()
-    //     const name =
-    //         periodType === 'Yearly' ? String(year) : getStartEndDate(properties)
-
-    //     return { id, name, year }
-    // }
+        return { id, name, year }
+    }
 
     // const eeWorker = await getWorkerInstance(engine)
-
     // const { features } = await eeWorker.getPeriods(eeId)
-    // return features.map(getPeriod).map(p => {
-    //     const period = filters ? filters(p)[0] : p
-    //     return { label: p.name, value: p.year.toString(), ...period }
-    // })
+    const features = getMockPeriods(eeId)
+
+    return features.map(getPeriod).map(p => {
+        const period = filters ? filters(p)[0] : p
+        return { label: p.name, value: p.year.toString(), ...period }
+    })
 }
 
-// export const getAggregations = async (engine, config) => {
-//     const eeWorker = await getWorkerInstance(engine)
-//     const aggregations = await eeWorker.getAggregations(config)
+export const getAggregations = async (engine, config) => {
+    // const eeWorker = await getWorkerInstance(engine)
+    // const aggregations = await eeWorker.getAggregations(config)
 
-//     return aggregations
-// }
+    const aggregations = getMockAggregations(config)
+
+    return aggregations
+}
 
 // Returns auth token for EE API as a promise
 export const getAuthToken = engine => () => {

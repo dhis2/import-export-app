@@ -1,5 +1,4 @@
 export const fetchCurrentValues = async url => {
-    console.log('fetchCurrentValues with url', url)
     const fetcher = url =>
         fetch(url, { credentials: 'include' })
             .then(resp => {

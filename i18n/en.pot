@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-09T07:04:30.462Z\n"
-"PO-Revision-Date: 2022-06-09T07:04:30.462Z\n"
+"POT-Creation-Date: 2022-06-09T11:18:15.196Z\n"
+"PO-Revision-Date: 2022-06-09T11:18:15.196Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -831,6 +831,9 @@ msgstr "Select data set to filter data elements"
 
 msgid "Destination data element"
 msgstr "Destination data element"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "The data element where Earth Engine data will be added"
 
 msgid "Import bands to category option combinations"
 msgstr "Import bands to category option combinations"

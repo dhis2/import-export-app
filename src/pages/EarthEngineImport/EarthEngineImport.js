@@ -21,11 +21,8 @@ import { fetchUserSettings } from './api/fetchUserSettings'
 import { DataPreview } from './components/DataPreview'
 import { MappingTable } from './components/MapGenderAgeGroupsTable'
 import styles from './styles/EarthEngineImport.module.css'
-import {
-    getPeriods,
-    //     getAggregations,
-} from './util/earthEngineHelper'
-// import getEarthEngineConfig from './util/earthEngineLoader'
+import { getPeriods, getAggregations } from './util/earthEngineHelper'
+import getEarthEngineConfig from './util/earthEngineLoader'
 import {
     getEarthEngineLayers,
     getEarthEngineLayer,
@@ -33,7 +30,7 @@ import {
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from './util/earthEngines'
 import { getAggregationTypes } from './util/getAggregationTypes'
-// import { postDataWithFetch } from './util/postData'
+import { postDataWithFetch } from './util/postData'
 import { getRoundings, getPrecision } from './util/rounding'
 
 const dataSetQuery = {
@@ -79,10 +76,10 @@ const getAggregationTypesForLayer = id => {
     return types.filter(type => aggs.includes(type.value))
 }
 
-// const getFirstDefaultAggregation = id => {
-//     const defAggregations = getEarthEngineLayer(id).defaultAggregations
-//     return Array.isArray(defAggregations) ? defAggregations[0] : defAggregations
-// }
+const getFirstDefaultAggregation = id => {
+    const defAggregations = getEarthEngineLayer(id).defaultAggregations
+    return Array.isArray(defAggregations) ? defAggregations[0] : defAggregations
+}
 
 const EarthEngineImport = () => {
     // options
@@ -136,17 +133,16 @@ const EarthEngineImport = () => {
         }
     }, [data])
 
-    // useEffect(() => {
-    //     const updatePeriod = async () => {
-    //         let periodsForLayer
-    //         periodsForLayer = await getPeriods(eeLayer, engine)
-    //         setPeriods(periodsForLayer)
-    //         setPeriod(periodsForLayer[0].value)
-    //     }
+    useEffect(() => {
+        const updatePeriod = async () => {
+            const periodsForLayer = await getPeriods(eeLayer, engine)
+            setPeriods(periodsForLayer)
+            setPeriod(periodsForLayer[0].value)
+        }
 
-    //     updatePeriod()
-    //     setAggregation(getFirstDefaultAggregation(eeLayer))
-    // }, [eeLayer])
+        updatePeriod()
+        setAggregation(getFirstDefaultAggregation(eeLayer))
+    }, [eeLayer])
 
     const dataSetChanged = ({ selected }) => {
         const selectedDataSet = dataSets.find(s => s.value == selected)
@@ -176,63 +172,68 @@ const EarthEngineImport = () => {
     const periodChanged = ({ selected }) => setPeriod(selected)
     const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
 
-    const showData = () => {
+    const showData = async () => {
         setShowPreview(true)
-        console.log('clicked to show data')
+        const data = {
+            id: eeLayer,
+            rows: orgUnits,
+            filter: periods.filter(p => period === p.name),
+            aggregationType: [aggregation],
+        }
+        const config = await getEarthEngineConfig(
+            data,
+            engine,
+            displayNameProperty
+        )
+
+        getAggregations(engine, config)
+            .then(aggregations => {
+                setEeData(JSON.stringify(aggregations))
+            })
+            .catch(e => {
+                // TODO handle the error in a better way
+                console.log('something went wrong', e)
+            })
     }
-    // const showData = async () => {
-    //     setShowPreview(true)
-    //     const data = {
-    //         id: eeLayer,
-    //         rows: orgUnits,
-    //         filter: periods.filter(p => period === p.name),
-    //         aggregationType: [aggregation],
-    //     }
-    //     const config = await getEarthEngineConfig(
-    //         data,
-    //         engine,
-    //         displayNameProperty
-    //     )
 
-    //     getAggregations(engine, config)
-    //         .then(aggregations => setEeData(JSON.stringify(aggregations)))
-    //         .catch(e => {
-    //             // TODO handle the error in a better way
-    //             console.log('something went wrong', e)
-    //         })
-    // }
+    const clearEeData = () => {
+        console.log('clearEeData')
+        setShowPreview(false)
+        setEeData(null)
+        window.scrollTo(0, 0)
+    }
 
-    const importData = () => console.log('clicked to import data')
-    // const importDataReal = async () => {
-    //     const data = {
-    //         id: eeLayer,
-    //         rows: orgUnits,
-    //         filter: periods.filter(p => period === p.name),
-    //         aggregationType: [aggregation],
-    //     }
+    // const importData = () => console.log('clicked to import data')
+    const importData = async () => {
+        const data = {
+            id: eeLayer,
+            rows: orgUnits,
+            filter: periods.filter(p => period === p.name),
+            aggregationType: [aggregation],
+        }
 
-    //     if (eeLayer === POPULATION_AGE_GROUPS_DATASET_ID) {
-    //         data.band = ['M_0', 'F_0']
-    //     }
-    //     const config = await getEarthEngineConfig(
-    //         data,
-    //         engine,
-    //         displayNameProperty
-    //     )
+        if (eeLayer === POPULATION_AGE_GROUPS_DATASET_ID) {
+            data.band = ['M_0', 'F_0']
+        }
+        const config = await getEarthEngineConfig(
+            data,
+            engine,
+            displayNameProperty
+        )
 
-    //     const aggregations = await getAggregations(engine, config)
-    //     setEeData(JSON.stringify(aggregations))
-    //     console.log('post data', aggregations)
+        const aggregations = await getAggregations(engine, config)
+        setEeData(JSON.stringify(aggregations))
+        console.log('post data', aggregations)
 
-    //     postDataWithFetch({
-    //         baseUrl,
-    //         data: aggregations,
-    //         dataElement: currentDE,
-    //         period,
-    //         valueType: aggregation,
-    //         precision: getPrecision(rounding),
-    //     })
-    // }
+        postDataWithFetch({
+            baseUrl,
+            data: aggregations,
+            dataElement: currentDE,
+            period,
+            valueType: aggregation,
+            precision: getPrecision(rounding),
+        })
+    }
 
     // console.log('eeData', eeData)
 
@@ -365,8 +366,8 @@ const EarthEngineImport = () => {
                         name="dataset"
                         label={i18n.t('Data Set')}
                         className={styles.dataset}
-                        onChange={dataSetChanged}
                         selected={currentDS}
+                        onChange={dataSetChanged}
                         inputWidth="300px"
                         helpText={i18n.t(
                             'Select data set to filter data elements'
@@ -387,6 +388,9 @@ const EarthEngineImport = () => {
                         selected={currentDE}
                         onChange={dataElementChanged}
                         inputWidth="350px"
+                        helpText={i18n.t(
+                            'The data element where Earth Engine data will be added'
+                        )}
                     >
                         {dataSetElements.map(({ label, value }) => (
                             <SingleSelectOption
@@ -452,13 +456,22 @@ const EarthEngineImport = () => {
                             </Button>
                         </>
                     ) : (
-                        <Button
-                            name="import"
-                            onClick={importData}
-                            value="default"
-                        >
-                            {i18n.t('Import')}
-                        </Button>
+                        <>
+                            <Button
+                                name="import"
+                                onClick={importData}
+                                value="default"
+                            >
+                                {i18n.t('Import')}
+                            </Button>
+                            <Button
+                                name="make-changes"
+                                onClick={clearEeData}
+                                value="default"
+                            >
+                                {i18n.t('Make changes to selections')}
+                            </Button>
+                        </>
                     )}
                 </div>
             </div>

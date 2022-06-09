@@ -28,35 +28,40 @@ const DataPreview = ({
     dataElement,
     data,
     precision,
-    // name,
 }) => {
-    const valueFormat = getPrecisionFn(precision)
     const [formattedData, setFormattedData] = useState([])
     const { baseUrl } = useConfig()
 
-    useEffect(() => {
-        const fetchCurrVals = async (url, parsedData) => {
-            const { dataValues } = await fetchCurrentValues(url)
-            const newArr = parsedData.map(d => {
-                const val = dataValues.find(v => v.orgUnit === d.ouId)
+    const getValueWithPrecision = getPrecisionFn(precision)
 
-                return val ? { ...d, current: val.value } : d
+    useEffect(() => {
+        const fetchCurrVals = async (url, orgUnitsFromData) => {
+            const { dataValues } = await fetchCurrentValues(url)
+            const newArr = orgUnitsFromData.map(ou => {
+                const val = dataValues.find(v => v.orgUnit === ou.ouId)
+
+                return val ? { ...ou, current: val.value } : ou
             })
 
             setFormattedData(newArr)
         }
 
-        const parsedData = Object.entries(JSON.parse(data)).map(entry => {
+        const orgUnitsFromData = Object.entries(JSON.parse(data)).map(entry => {
             const ouId = entry[0]
-            const ouName = orgUnits.find(ou => ou.id === ouId).name
+
+            //TODO handle missing name better, or does it need handling at all?
+            const ouName =
+                orgUnits.find(ou => ou.id === ouId)?.name || 'no-name OU'
             return { ouId, ouName, value: entry[1][valueType] }
         })
 
-        const ous = parsedData.map(({ ouId }) => `orgUnit=${ouId}`).join('&')
+        const ouQueryParams = orgUnitsFromData
+            .map(({ ouId }) => `orgUnit=${ouId}`)
+            .join('&')
 
         fetchCurrVals(
-            `${baseUrl}/api/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ous}`,
-            parsedData
+            `${baseUrl}/api/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ouQueryParams}`,
+            orgUnitsFromData
         )
     }, [dataSet, dataElement, period, data])
 
@@ -75,9 +80,7 @@ const DataPreview = ({
             </TableHead>
             <TableBody>
                 {formattedData.map(({ ouId, ouName, value, current }) => {
-                    // const propName = getPropName(valueType, name)
-                    // const value = valueFormat(properties[propName])
-                    const val = valueFormat(value)
+                    const val = getValueWithPrecision(value)
 
                     return (
                         <TableRow key={ouId}>
@@ -103,13 +106,7 @@ DataPreview.propTypes = {
     period: PropTypes.string.isRequired,
     valueType: PropTypes.string.isRequired,
     data: PropTypes.string,
-    // name: PropTypes.string,
     precision: PropTypes.number,
-}
-
-DataPreview.defaultValues = {
-    precision: 1,
-    name: '',
 }
 
 export default DataPreview

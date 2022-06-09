@@ -11,28 +11,23 @@ export const postDataWithFetch = ({
 }) => {
     const getValueWithPrecision = getPrecisionFn(precision)
 
-    const dataValuesArray = Object.entries(data).map(d => {
-        const orgUnit = d[0]
-        const value = getValueWithPrecision(d[1][valueType])
-
+    const dataValues = Object.entries(data).map(([orgUnit, valueSet]) => {
         return {
             dataElement,
             period,
             orgUnit,
-            value,
+            value: getValueWithPrecision(valueSet[valueType]),
         }
     })
 
-    const dataValues = {
-        dataValues: dataValuesArray,
-    }
-
-    console.log('dataValuesArray', dataValuesArray)
-
-    return apiFetch(
-        `${baseUrl}/api/dataValueSets`,
-        'POST',
-        dataValues
-    ).then(response => response.json())
+    return apiFetch(`${baseUrl}/api/dataValueSets`, 'POST', {
+        dataValues,
+    })
+        .then(response => {
+            return response.json()
+        })
+        .catch(error => {
+            console.log('error', error)
+        })
     // .then(setResponse)
 }

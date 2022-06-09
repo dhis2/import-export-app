@@ -1,5 +1,6 @@
 // import i18n from '@dhis2/d2-i18n'
 import { getEarthEngineLayer } from './earthEngines'
+import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
 import { toGeoJson } from './toGeoJson'
 // import {
 //     defaultEarthEngineOptions,
