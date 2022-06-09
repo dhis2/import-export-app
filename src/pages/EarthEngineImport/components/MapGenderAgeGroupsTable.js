@@ -14,7 +14,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import { getEarthEngineLayer } from '../modules/earthEngines.js'
+import { getEarthEngineLayer } from '../util/earthEngines.js'
 
 const styles = {}
 

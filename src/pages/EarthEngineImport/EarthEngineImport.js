@@ -17,25 +17,24 @@ import {
 import cx from 'classnames'
 import React, { useState, useEffect } from 'react'
 import { Page } from '../../components/index'
+import { fetchUserSettings } from './api/fetchUserSettings'
 import { DataPreview } from './components/DataPreview'
 import { MappingTable } from './components/MapGenderAgeGroupsTable'
-// import {
-//     getPeriods,
-//     getAggregations,
-//     fetchUserSettings,
-// } from './earthEngineHelper'
-// import getEarthEngineConfig from './earthEngineLoader'
+import styles from './styles/EarthEngineImport.module.css'
+import {
+    getPeriods,
+    //     getAggregations,
+} from './util/earthEngineHelper'
+// import getEarthEngineConfig from './util/earthEngineLoader'
 import {
     getEarthEngineLayers,
     getEarthEngineLayer,
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
-} from './modules/earthEngines'
-import { fetchUserSettings } from './modules/fetchUserSettings'
-import { getAggregationTypes } from './modules/getAggregationTypes'
-import { getRoundings, getPrecision } from './modules/rounding'
-// import { postDataWithFetch } from './postData'
-import styles from './styles/EarthEngineImport.module.css'
+} from './util/earthEngines'
+import { getAggregationTypes } from './util/getAggregationTypes'
+// import { postDataWithFetch } from './util/postData'
+import { getRoundings, getPrecision } from './util/rounding'
 
 const dataSetQuery = {
     datasets: {
@@ -112,8 +111,8 @@ const EarthEngineImport = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            // const periodsForLayer = await getPeriods(eeLayer, engine)
-            // setPeriods(periodsForLayer)
+            const periodsForLayer = await getPeriods(eeLayer, engine)
+            setPeriods(periodsForLayer)
 
             const orgUnits = await apiFetchOrganisationUnitRoots(engine)
             setRootOrgUnits(orgUnits.map(ou => ou.id))
@@ -204,7 +203,7 @@ const EarthEngineImport = () => {
     // }
 
     const importData = () => console.log('clicked to import data')
-    // const importData = async () => {
+    // const importDataReal = async () => {
     //     const data = {
     //         id: eeLayer,
     //         rows: orgUnits,
@@ -249,7 +248,7 @@ const EarthEngineImport = () => {
             // summaryTask={getNewestTask(dataTasks)}
             // showFullSummaryTask={showFullSummaryTask}
         >
-            <div>
+            <div className={styles.container}>
                 <h2>{i18n.t('Earth Engine source')}</h2>
                 <Divider />
                 <div className={styles.row}>

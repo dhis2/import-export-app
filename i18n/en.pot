@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-08T10:38:55.773Z\n"
-"PO-Revision-Date: 2022-06-08T10:38:55.773Z\n"
+"POT-Creation-Date: 2022-06-09T07:04:30.462Z\n"
+"PO-Revision-Date: 2022-06-09T07:04:30.462Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -847,6 +847,15 @@ msgstr "Preview import summary"
 
 msgid "Import without previewing"
 msgstr "Import without previewing"
+
+msgid "Org Unit"
+msgstr "Org Unit"
+
+msgid "Current value"
+msgstr "Current value"
+
+msgid "New value"
+msgstr "New value"
 
 msgid "Band name"
 msgstr "Band name"
