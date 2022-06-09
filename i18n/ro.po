@@ -289,7 +289,7 @@ msgid "Data element ID scheme"
 msgstr ""
 
 msgid "End date"
-msgstr ""
+msgstr "Data de sfîrșit"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -352,7 +352,7 @@ msgid "Skip Validation"
 msgstr ""
 
 msgid "Start date"
-msgstr ""
+msgstr "Data de început"
 
 msgid "Include descendants of organisation unit"
 msgstr ""
