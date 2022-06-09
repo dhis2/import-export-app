@@ -139,7 +139,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr ""
+msgstr "Data de sfîrșit"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -297,7 +297,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "Selectat"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -480,7 +480,7 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr ""
+msgstr "Data de început"
 
 msgid "All statuses"
 msgstr ""
@@ -538,7 +538,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Tracked entity type"
 msgstr ""
