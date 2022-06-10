@@ -309,11 +309,11 @@ const EarthEngineImportForm = () => {
                         {currentDS
                             ? dataSets[
                                   currentDS
-                              ].dataSetElements.map(({ dataElement }) => (
+                              ].dataElements.map(({ id, name }) => (
                                   <SingleSelectOption
-                                      key={dataElement.id}
-                                      value={dataElement.id}
-                                      label={dataElement.name}
+                                      key={id}
+                                      value={id}
+                                      label={name}
                                   />
                               ))
                             : null}
@@ -346,10 +346,8 @@ const EarthEngineImportForm = () => {
                             orgUnits={orgUnits}
                             period={period}
                             valueType={aggregation}
-                            dataElement={dataSets[
-                                currentDS
-                            ].dataSetElements.find(
-                                ({ dataElement: de }) => de.id === currentDE
+                            dataElement={dataSets[currentDS].dataElements.find(
+                                ({ id }) => id === currentDE
                             )}
                             data={eeData}
                             precision={getPrecision(rounding)}

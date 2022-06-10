@@ -46,8 +46,14 @@ const providerDataTransformation = ({
         },
         rootOrgUnits: rootOrgUnits.organisationUnits?.map(ou => ou.id) || [],
         dataSets: dataSets.dataSets.reduce((acc, curr) => {
+            const dataElements = curr.dataSetElements.map(
+                ({ dataElement }) => ({
+                    id: dataElement.id,
+                    name: dataElement.name,
+                })
+            )
             const key = curr.id
-            acc[key] = curr
+            acc[key] = { id: curr.id, name: curr.name, dataElements }
             return acc
         }, {}),
     }
