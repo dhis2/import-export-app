@@ -19,11 +19,13 @@ import { getPeriods, getAggregations } from '../util/earthEngineHelper'
 import getEarthEngineConfig from '../util/earthEngineLoader'
 import {
     getEarthEngineLayers,
-    getEarthEngineLayer,
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines'
-import { getAggregationTypesForLayer } from '../util/getAggregationTypes'
+import {
+    getAggregationOptions,
+    getDefaultAggregation,
+} from '../util/getAggregationOptions'
 import { postDataWithFetch } from '../util/postData'
 import { getRoundings, getPrecision } from '../util/rounding'
 import { DataPreview } from './DataPreview'
@@ -44,11 +46,6 @@ const eeLayers = getEarthEngineLayers()
         value: datasetId,
     }))
 
-const getFirstDefaultAggregation = id => {
-    const defAggregations = getEarthEngineLayer(id).defaultAggregations
-    return Array.isArray(defAggregations) ? defAggregations[0] : defAggregations
-}
-
 const EarthEngineImportForm = () => {
     const { rootOrgUnits, userSettings, dataSets } = useCachedDataQuery()
 
@@ -57,7 +54,7 @@ const EarthEngineImportForm = () => {
     const [dataSetElements, setDataSetElements] = useState([])
 
     // user selections
-    const [eeLayer, setEeLayer] = useState(eeLayers[0].value)
+    const [eeId, setEeId] = useState(eeLayers[0].value)
     const [period, setPeriod] = useState(NO_VALUE)
     const [orgUnits, setOrgUnits] = useState([])
     const [currentDS, setCurrentDS] = useState(NO_VALUE)
@@ -74,7 +71,7 @@ const EarthEngineImportForm = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const periodsForLayer = await getPeriods(eeLayer, engine)
+            const periodsForLayer = await getPeriods(eeId, engine)
             setPeriods(periodsForLayer)
         }
         fetchData()
@@ -82,14 +79,14 @@ const EarthEngineImportForm = () => {
 
     useEffect(() => {
         const updatePeriod = async () => {
-            const periodsForLayer = await getPeriods(eeLayer, engine)
+            const periodsForLayer = await getPeriods(eeId, engine)
             setPeriods(periodsForLayer)
             setPeriod(periodsForLayer[0].value)
         }
 
         updatePeriod()
-        setAggregation(getFirstDefaultAggregation(eeLayer))
-    }, [eeLayer])
+        setAggregation(getDefaultAggregation(eeId))
+    }, [eeId])
 
     const dataSetChanged = ({ selected }) => {
         const selectedDataSet = dataSets.find(s => s.id == selected)
@@ -115,7 +112,7 @@ const EarthEngineImportForm = () => {
     const layerChanged = async ({ selected }) => {
         setPeriod(NO_VALUE)
         setAggregation(NO_VALUE)
-        setEeLayer(selected)
+        setEeId(selected)
     }
     const periodChanged = ({ selected }) => setPeriod(selected)
     const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
@@ -123,7 +120,7 @@ const EarthEngineImportForm = () => {
     const showData = async () => {
         setShowPreview(true)
         const data = {
-            id: eeLayer,
+            id: eeId,
             rows: orgUnits,
             filter: periods.filter(p => period === p.name),
             aggregationType: [aggregation],
@@ -154,13 +151,13 @@ const EarthEngineImportForm = () => {
     // const importData = () => console.log('clicked to import data')
     const importData = async () => {
         const data = {
-            id: eeLayer,
+            id: eeId,
             rows: orgUnits,
             filter: periods.filter(p => period === p.name),
             aggregationType: [aggregation],
         }
 
-        if (eeLayer === POPULATION_AGE_GROUPS_DATASET_ID) {
+        if (eeId === POPULATION_AGE_GROUPS_DATASET_ID) {
             data.band = ['M_0', 'F_0']
         }
         const config = await getEarthEngineConfig(
@@ -202,7 +199,7 @@ const EarthEngineImportForm = () => {
                         name="eelayer"
                         label={i18n.t('Earth Engine data set')}
                         className={styles.eelayer}
-                        selected={eeLayer}
+                        selected={eeId}
                         onChange={layerChanged}
                         inputWidth="350px"
                         helpText={i18n.t(
@@ -295,21 +292,19 @@ const EarthEngineImportForm = () => {
                             'How the values will be aggregated for output and analysis.'
                         )}
                     >
-                        {getAggregationTypesForLayer(eeLayer).map(
-                            ({ label, value }, i) => (
-                                <SingleSelectOption
-                                    key={`${value}-${i}`}
-                                    value={value}
-                                    label={label}
-                                />
-                            )
-                        )}
+                        {getAggregationOptions(eeId).map(({ name, id }, i) => (
+                            <SingleSelectOption
+                                key={`${id}-${i}`}
+                                value={id}
+                                label={name}
+                            />
+                        ))}
                     </SingleSelect>
                 </div>
                 <div className={cx(styles.row, styles.set)}>
                     <SingleSelect
                         name="dataset"
-                        label={i18n.t('Data Set')}
+                        label={i18n.t('Data set')}
                         className={styles.dataset}
                         selected={currentDS}
                         onChange={dataSetChanged}
@@ -348,7 +343,7 @@ const EarthEngineImportForm = () => {
                 </div>
 
                 <div className={styles.row}>
-                    {eeLayer === POPULATION_AGE_GROUPS_DATASET_ID && (
+                    {eeId === POPULATION_AGE_GROUPS_DATASET_ID && (
                         <>
                             <NoticeBox
                                 title={i18n.t(
@@ -359,7 +354,7 @@ const EarthEngineImportForm = () => {
                                     'Earth Engine data set "Population age groups" has disaggregation bands. Choose the category option combinations to import each band into.'
                                 )}
                             </NoticeBox>
-                            <MappingTable layerId={eeLayer} />
+                            <MappingTable layerId={eeId} />
                         </>
                     )}
                 </div>
@@ -389,6 +384,7 @@ const EarthEngineImportForm = () => {
                                 name="preview"
                                 onClick={showData}
                                 value="default"
+                                className={styles.leftButton}
                             >
                                 {i18n.t('Preview import summary')}
                             </Button>
@@ -406,6 +402,7 @@ const EarthEngineImportForm = () => {
                                 name="import"
                                 onClick={importData}
                                 value="default"
+                                className={styles.leftButton}
                             >
                                 {i18n.t('Import')}
                             </Button>
