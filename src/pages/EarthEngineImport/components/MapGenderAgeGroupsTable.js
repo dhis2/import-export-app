@@ -14,9 +14,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import { getEarthEngineLayer } from '../util/earthEngines.js'
-
-const styles = {}
+import { getEarthEngineConfigs } from '../util/earthEngines.js'
 
 const categoryOptionCombosQuery = {
     data: {
@@ -28,7 +26,7 @@ const categoryOptionCombosQuery = {
     },
 }
 
-const MappingTable = ({ layerId }) => {
+const MappingTable = ({ eeId }) => {
     const [bands, setBands] = useState([])
     const [cocs, setCocs] = useState([])
     const [completeRows, setCompleteRows] = useState({})
@@ -37,9 +35,8 @@ const MappingTable = ({ layerId }) => {
 
     useEffect(() => {
         // get category option combos
-        const bandsForLayer = getEarthEngineLayer(layerId)?.bands || []
-        setBands(bandsForLayer)
-    }, [layerId])
+        setBands(getEarthEngineConfigs(eeId)?.bands || [])
+    }, [eeId])
 
     useEffect(() => {
         engine.query(categoryOptionCombosQuery, {
@@ -64,14 +61,14 @@ const MappingTable = ({ layerId }) => {
     }
 
     return (
-        <Table dense className={styles.table}>
+        <Table dense>
             <TableHead>
                 <TableRowHead>
                     <TableCellHead dense>{i18n.t('Band name')}</TableCellHead>
                     <TableCellHead dense>
                         {i18n.t('Band description')}
                     </TableCellHead>
-                    <TableCellHead dense className={styles.right}>
+                    <TableCellHead dense>
                         {i18n.t('Category option combination')}
                     </TableCellHead>
                 </TableRowHead>
@@ -83,13 +80,10 @@ const MappingTable = ({ layerId }) => {
                     return (
                         <TableRow key={id}>
                             <TableCell dense>{id}</TableCell>
-                            <TableCell dense className={styles.current}>
-                                {name}
-                            </TableCell>
-                            <TableCell dense className={styles.right}>
+                            <TableCell dense>{name}</TableCell>
+                            <TableCell dense>
                                 <SingleSelect
                                     name="cocs"
-                                    className={styles.eelayer}
                                     selected={completeRows[id]?.cocId || ''}
                                     onChange={({ selected }) =>
                                         ccoChanged({
@@ -123,7 +117,7 @@ const MappingTable = ({ layerId }) => {
 }
 
 MappingTable.propTypes = {
-    layerId: PropTypes.string,
+    eeId: PropTypes.string,
 }
 
 export { MappingTable }

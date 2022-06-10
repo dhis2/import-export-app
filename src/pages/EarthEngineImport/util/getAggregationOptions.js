@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { getEarthEngineLayer } from './earthEngines'
-//TODO This function should be centralized somewhere - maybe analytics?
+import { getEarthEngineConfigs } from './earthEngines'
 
 const AGGREGATION_TYPE_MIN = 'min'
 const AGGREGATION_TYPE_MAX = 'max'
@@ -22,7 +21,7 @@ const ALL_AGGREGATION_TYPES = [
 
 export const getAggregationOptions = id => {
     const aggregationTypesForEeId =
-        getEarthEngineLayer(id).aggregations || ALL_AGGREGATION_TYPES
+        getEarthEngineConfigs(id).aggregations || ALL_AGGREGATION_TYPES
 
     const types = [
         { id: AGGREGATION_TYPE_MIN, name: i18n.t('Min') },
@@ -41,7 +40,7 @@ export const getAggregationOptions = id => {
 }
 
 export const getDefaultAggregation = id => {
-    const defaultAggregations = getEarthEngineLayer(id).defaultAggregations
+    const defaultAggregations = getEarthEngineConfigs(id).defaultAggregations
     return Array.isArray(defaultAggregations)
         ? defaultAggregations[0]
         : defaultAggregations

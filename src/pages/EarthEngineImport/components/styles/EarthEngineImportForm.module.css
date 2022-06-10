@@ -2,7 +2,7 @@
     margin-bottom: var(--spacers-dp24);
 }
 .row {
-    margin-bottom: 4px;
+    margin-bottom: var(--spacers-dp4);
 }
 
 .orgUnitContainer {

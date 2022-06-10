@@ -18,7 +18,7 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { getPeriods, getAggregations } from '../util/earthEngineHelper'
 import getEarthEngineConfig from '../util/earthEngineLoader'
 import {
-    getEarthEngineLayers,
+    getEarthEngineConfigs,
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines'
@@ -30,21 +30,17 @@ import { postDataWithFetch } from '../util/postData'
 import { getRoundings, getPrecision } from '../util/rounding'
 import { DataPreview } from './DataPreview'
 import { MappingTable } from './MapGenderAgeGroupsTable'
-import styles from './styles/EarthEngineImport.module.css'
+import styles from './styles/EarthEngineImportForm.module.css'
 
 const NO_VALUE = ''
 
-const eeLayers = getEarthEngineLayers()
-    .filter(({ datasetId }) => {
-        return [
-            POPULATION_AGE_GROUPS_DATASET_ID,
-            POPULATION_DATASET_ID,
-        ].includes(datasetId)
-    })
-    .map(({ name, datasetId }) => ({
-        label: name,
-        value: datasetId,
-    }))
+const eeList = getEarthEngineConfigs([
+    POPULATION_AGE_GROUPS_DATASET_ID,
+    POPULATION_DATASET_ID,
+]).map(({ name, datasetId }) => ({
+    label: name,
+    value: datasetId,
+}))
 
 const EarthEngineImportForm = () => {
     const { rootOrgUnits, userSettings, dataSets } = useCachedDataQuery()
@@ -54,7 +50,7 @@ const EarthEngineImportForm = () => {
     const [dataSetElements, setDataSetElements] = useState([])
 
     // user selections
-    const [eeId, setEeId] = useState(eeLayers[0].value)
+    const [eeId, setEeId] = useState(eeList[0].value)
     const [period, setPeriod] = useState(NO_VALUE)
     const [orgUnits, setOrgUnits] = useState([])
     const [currentDS, setCurrentDS] = useState(NO_VALUE)
@@ -71,17 +67,17 @@ const EarthEngineImportForm = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const periodsForLayer = await getPeriods(eeId, engine)
-            setPeriods(periodsForLayer)
+            const eePeriods = await getPeriods(eeId, engine)
+            setPeriods(eePeriods)
         }
         fetchData()
     }, [])
 
     useEffect(() => {
         const updatePeriod = async () => {
-            const periodsForLayer = await getPeriods(eeId, engine)
-            setPeriods(periodsForLayer)
-            setPeriod(periodsForLayer[0].value)
+            const eePeriods = await getPeriods(eeId, engine)
+            setPeriods(eePeriods)
+            setPeriod(eePeriods[0].value)
         }
 
         updatePeriod()
@@ -109,7 +105,7 @@ const EarthEngineImportForm = () => {
         setCurrentDE(selected)
     }
 
-    const layerChanged = async ({ selected }) => {
+    const eeDatasetChanged = async ({ selected }) => {
         setPeriod(NO_VALUE)
         setAggregation(NO_VALUE)
         setEeId(selected)
@@ -196,17 +192,16 @@ const EarthEngineImportForm = () => {
                 <Divider />
                 <div className={styles.row}>
                     <SingleSelect
-                        name="eelayer"
+                        name="eeDataset"
                         label={i18n.t('Earth Engine data set')}
-                        className={styles.eelayer}
                         selected={eeId}
-                        onChange={layerChanged}
+                        onChange={eeDatasetChanged}
                         inputWidth="350px"
                         helpText={i18n.t(
                             'Not all Earth Engine data sets are available yet.'
                         )}
                     >
-                        {eeLayers.map(({ label, value }) => (
+                        {eeList.map(({ label, value }) => (
                             <SingleSelectOption
                                 key={value}
                                 value={value}
@@ -220,7 +215,6 @@ const EarthEngineImportForm = () => {
                     <SingleSelect
                         name="periods"
                         label={i18n.t('Period')}
-                        className={styles.periods}
                         onChange={periodChanged}
                         selected={period}
                         inputWidth="200px"
@@ -242,7 +236,6 @@ const EarthEngineImportForm = () => {
                     <SingleSelect
                         name="rounding"
                         label={i18n.t('Value rounding')}
-                        className={styles.rounding}
                         onChange={roundingChanged}
                         selected={rounding}
                         inputWidth="300px"
@@ -284,7 +277,6 @@ const EarthEngineImportForm = () => {
                     <SingleSelect
                         name="aggregationTypes"
                         label="Aggregation type"
-                        className={styles.aggregationTypes}
                         onChange={aggregationTypeChanged}
                         selected={aggregation}
                         inputWidth="200px"
@@ -305,7 +297,6 @@ const EarthEngineImportForm = () => {
                     <SingleSelect
                         name="dataset"
                         label={i18n.t('Data set')}
-                        className={styles.dataset}
                         selected={currentDS}
                         onChange={dataSetChanged}
                         inputWidth="300px"
@@ -324,7 +315,6 @@ const EarthEngineImportForm = () => {
                     <SingleSelect
                         name="dataelement"
                         label={i18n.t('Destination data element')}
-                        className={styles.dataelement}
                         selected={currentDE}
                         onChange={dataElementChanged}
                         inputWidth="350px"
@@ -354,7 +344,7 @@ const EarthEngineImportForm = () => {
                                     'Earth Engine data set "Population age groups" has disaggregation bands. Choose the category option combinations to import each band into.'
                                 )}
                             </NoticeBox>
-                            <MappingTable layerId={eeId} />
+                            <MappingTable eeId={eeId} />
                         </>
                     )}
                 </div>

@@ -15,11 +15,6 @@ import { fetchCurrentValues } from '../api/fetchCurrentValues.js'
 import { getPrecisionFn } from '../util/getPrecisionFn.js'
 import styles from './styles/DataPreview.module.css'
 
-export const getPropName = (valueType = '', layerName = '') => {
-    const firstWord = layerName.replace(/ .*/, '')
-    return `${valueType}${firstWord}`
-}
-
 const DataPreview = ({
     dataSet,
     orgUnits,

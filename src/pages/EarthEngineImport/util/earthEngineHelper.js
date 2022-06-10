@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 // import { loadEarthEngineWorker } from '@dhis2/maps-gl'
-import { getEarthEngineLayer } from './earthEngines.js'
+import { getEarthEngineConfigs } from './earthEngines.js'
 import { getMockAggregations } from './mockAggregations.js'
 import { getMockPeriods } from './mockPeriods.js'
 
@@ -53,7 +53,7 @@ const getWorkerInstance = async engine => {
 }
 
 export const getPeriods = async (eeId, engine) => {
-    const { periodType, filters } = getEarthEngineLayer(eeId)
+    const { periodType, filters } = getEarthEngineConfigs(eeId)
 
     const getPeriod = ({ id, properties }) => {
         const year = new Date(properties['system:time_start']).getFullYear()
@@ -107,7 +107,7 @@ export const getAuthToken = engine => () => {
             reject(
                 new Error(
                     i18n.t(
-                        'This layer requires a Google Earth Engine account. Check the DHIS2 documentation for more information.'
+                        'Requires a Google Earth Engine account. Check the DHIS2 documentation for more information.'
                     )
                 )
             )

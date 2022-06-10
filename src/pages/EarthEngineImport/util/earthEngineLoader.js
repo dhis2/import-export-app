@@ -1,5 +1,5 @@
 // import i18n from '@dhis2/d2-i18n'
-import { getEarthEngineLayer } from './earthEngines'
+import { getEarthEngineConfigs } from './earthEngines'
 import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
 import { toGeoJson } from './toGeoJson'
 // import {
@@ -37,7 +37,7 @@ const getEarthEngineConfig = async (config, engine, displayProperty) => {
         // }
     }
 
-    const dataset = getEarthEngineLayer(config.id)
+    const dataset = getEarthEngineConfigs(config.id)
 
     const data =
         Array.isArray(features) && features.length ? features : undefined

@@ -18,7 +18,7 @@ const getDefaultFilters = ({ id, name, year }) => [
     },
 ]
 
-export const getEarthEngineLayers = () => [
+const getEarthEngineLayers = () => [
     {
         layer: EARTH_ENGINE_LAYER,
         datasetId: POPULATION_DATASET_ID,
@@ -467,5 +467,12 @@ export const getEarthEngineLayers = () => [
     },
 ]
 
-export const getEarthEngineLayer = id =>
-    getEarthEngineLayers().find(l => l.datasetId === id)
+export const getEarthEngineConfigs = eeIds => {
+    if (Array.isArray(eeIds)) {
+        return getEarthEngineLayers().filter(({ datasetId }) => {
+            return eeIds.includes(datasetId)
+        })
+    }
+
+    return getEarthEngineLayers().find(l => l.datasetId === eeIds)
+}
