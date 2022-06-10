@@ -17244,7 +17244,7 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
 simple-assign@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/simple-assign/-/simple-assign-0.1.0.tgz#17fd3066a5f3d7738f50321bb0f14ca281cc4baa"
-  integrity sha1-F/0wZqXz13OPUDIbsPFMooHMS6o=
+  integrity sha512-otdSSQzuVsmDoe5MnSm4ZgHd5sl0ak6A1CTjW1R/DUHQ8xoZuU1NUzf9x6n9Dvp3nxpvW51WNMQ/7rQ9432xDg==
 
 simple-concat@^1.0.0:
   version "1.0.0"
@@ -17988,7 +17988,7 @@ svgo@^1.0.0, svgo@^1.2.2:
 symbol-observable@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
-  integrity sha1-g0D8RwLDEi310iKI+IKD9RPT/dQ=
+  integrity sha512-Kb3PrPYz4HanVF1LVGuAdW6LoVgIwjUYJGzFe7NDrBLCN4lsV/5J0MFurV+ygS4bRVwrCEt2c7MQ1R2a72oJDw==
 
 symbol-observable@1.2.0, symbol-observable@^1.0.4, symbol-observable@^1.1.0:
   version "1.2.0"

@@ -27,7 +27,7 @@ const getEarthEngineConfig = async (config, engine, displayProperty) => {
 
         const query = getGeoFeaturesQuery(
             ouIdsString,
-            displayProperty.toUpperCase()
+            displayProperty.toUpperCase() // NAME|SHORTNAME
         )
         const geoFeatures = await engine.query({ geoFeatures: query })
         features = toGeoJson(geoFeatures.geoFeatures)

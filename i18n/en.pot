@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-09T11:18:15.196Z\n"
-"PO-Revision-Date: 2022-06-09T11:18:15.196Z\n"
+"POT-Creation-Date: 2022-06-10T07:36:51.543Z\n"
+"PO-Revision-Date: 2022-06-10T07:36:51.543Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -769,6 +769,15 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
 
+msgid "Org Unit"
+msgstr "Org Unit"
+
+msgid "Current value"
+msgstr "Current value"
+
+msgid "New value"
+msgstr "New value"
+
 msgid "Min"
 msgstr "Min"
 
@@ -851,14 +860,8 @@ msgstr "Preview import summary"
 msgid "Import without previewing"
 msgstr "Import without previewing"
 
-msgid "Org Unit"
-msgstr "Org Unit"
-
-msgid "Current value"
-msgstr "Current value"
-
-msgid "New value"
-msgstr "New value"
+msgid "Make changes to selections"
+msgstr "Make changes to selections"
 
 msgid "Band name"
 msgstr "Band name"
@@ -871,6 +874,12 @@ msgstr "Category option combination"
 
 msgid "No match found"
 msgstr "No match found"
+
+msgid "This app could not retrieve required data."
+msgstr "This app could not retrieve required data."
+
+msgid "Network error"
+msgstr "Network error"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr "Cannot get authorization token for Google Earth Engine."

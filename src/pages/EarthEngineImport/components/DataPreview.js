@@ -35,9 +35,9 @@ const DataPreview = ({
     const getValueWithPrecision = getPrecisionFn(precision)
 
     useEffect(() => {
-        const fetchCurrVals = async (url, orgUnitsFromData) => {
+        const fetchCurrVals = async (url, normalizedData) => {
             const { dataValues } = await fetchCurrentValues(url)
-            const newArr = orgUnitsFromData.map(ou => {
+            const newArr = normalizedData.map(ou => {
                 const val = dataValues.find(v => v.orgUnit === ou.ouId)
 
                 return val ? { ...ou, current: val.value } : ou
@@ -46,22 +46,22 @@ const DataPreview = ({
             setFormattedData(newArr)
         }
 
-        const orgUnitsFromData = Object.entries(JSON.parse(data)).map(entry => {
-            const ouId = entry[0]
+        const normalizedData = Object.entries(JSON.parse(data)).map(
+            ([ouId, valueSet]) => {
+                //TODO handle missing name better, or does it need handling at all?
+                const ouName =
+                    orgUnits.find(ou => ou.id === ouId)?.name || 'no-name OU'
+                return { ouId, ouName, value: valueSet[valueType] }
+            }
+        )
 
-            //TODO handle missing name better, or does it need handling at all?
-            const ouName =
-                orgUnits.find(ou => ou.id === ouId)?.name || 'no-name OU'
-            return { ouId, ouName, value: entry[1][valueType] }
-        })
-
-        const ouQueryParams = orgUnitsFromData
+        const ouQueryParams = normalizedData
             .map(({ ouId }) => `orgUnit=${ouId}`)
             .join('&')
 
         fetchCurrVals(
             `${baseUrl}/api/dataValueSets?dataSet=${dataSet.id}&period=${period}&${ouQueryParams}`,
-            orgUnitsFromData
+            normalizedData
         )
     }, [dataSet, dataElement, period, data])
 
