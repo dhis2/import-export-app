@@ -21,7 +21,7 @@ const ALL_AGGREGATION_TYPES = [
 
 export const getAggregationOptions = id => {
     const aggregationTypesForEeId =
-        getEarthEngineConfigs(id).aggregations || ALL_AGGREGATION_TYPES
+        getEarthEngineConfigs(id)?.aggregations || ALL_AGGREGATION_TYPES
 
     const types = [
         { id: AGGREGATION_TYPE_MIN, name: i18n.t('Min') },

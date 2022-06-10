@@ -47,10 +47,9 @@ const EarthEngineImportForm = () => {
 
     // options
     const [periods, setPeriods] = useState([])
-    const [dataSetElements, setDataSetElements] = useState([])
 
     // user selections
-    const [eeId, setEeId] = useState(eeList[0].value)
+    const [eeId, setEeId] = useState(NO_VALUE)
     const [period, setPeriod] = useState(NO_VALUE)
     const [orgUnits, setOrgUnits] = useState([])
     const [currentDS, setCurrentDS] = useState(NO_VALUE)
@@ -66,52 +65,35 @@ const EarthEngineImportForm = () => {
     const { baseUrl } = useConfig()
 
     useEffect(() => {
-        const fetchData = async () => {
+        const initializePeriods = async () => {
             const eePeriods = await getPeriods(eeId, engine)
             setPeriods(eePeriods)
-        }
-        fetchData()
-    }, [])
-
-    useEffect(() => {
-        const updatePeriod = async () => {
-            const eePeriods = await getPeriods(eeId, engine)
-            setPeriods(eePeriods)
-            setPeriod(eePeriods[0].value)
+            if (eePeriods.length === 1) {
+                setPeriod(eePeriods[0].value)
+            }
         }
 
-        updatePeriod()
-        setAggregation(getDefaultAggregation(eeId))
+        if (eeId) {
+            initializePeriods()
+            setAggregation(getDefaultAggregation(eeId))
+        }
     }, [eeId])
-
-    const dataSetChanged = ({ selected }) => {
-        const selectedDataSet = dataSets.find(s => s.id == selected)
-        const dsElements = selectedDataSet.dataSetElements.map(
-            ({ dataElement }) => ({
-                label: dataElement.name,
-                value: dataElement.id,
-                id: dataElement.id,
-            })
-        )
-        setCurrentDS(selected)
-        setCurrentDE(NO_VALUE)
-        setDataSetElements(dsElements)
-    }
-
-    const orgUnitsSelected = selected => setOrgUnits(selected.items)
-    const roundingChanged = ({ selected }) => setRounding(selected)
-
-    const dataElementChanged = ({ selected }) => {
-        setCurrentDE(selected)
-    }
 
     const eeDatasetChanged = async ({ selected }) => {
         setPeriod(NO_VALUE)
         setAggregation(NO_VALUE)
         setEeId(selected)
     }
+    const orgUnitsSelected = selected => setOrgUnits(selected.items)
+    const roundingChanged = ({ selected }) => setRounding(selected)
     const periodChanged = ({ selected }) => setPeriod(selected)
     const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
+
+    const dataSetChanged = ({ selected }) => {
+        setCurrentDS(selected)
+        setCurrentDE(NO_VALUE)
+    }
+    const dataElementChanged = ({ selected }) => setCurrentDE(selected)
 
     const showData = async () => {
         setShowPreview(true)
@@ -146,7 +128,7 @@ const EarthEngineImportForm = () => {
 
     // const importData = () => console.log('clicked to import data')
     const importData = async () => {
-        const data = {
+        const eeOptions = {
             id: eeId,
             rows: orgUnits,
             filter: periods.filter(p => period === p.name),
@@ -154,20 +136,20 @@ const EarthEngineImportForm = () => {
         }
 
         if (eeId === POPULATION_AGE_GROUPS_DATASET_ID) {
-            data.band = ['M_0', 'F_0']
+            eeOptions.band = ['M_0', 'F_0']
         }
         const config = await getEarthEngineConfig(
-            data,
+            eeOptions,
             engine,
             userSettings.keyAnalysisDisplayProperty
         )
 
-        const aggregations = await getAggregations(engine, config)
-        setEeData(JSON.stringify(aggregations))
+        const data = await getAggregations(engine, config)
+        setEeData(JSON.stringify(data))
 
         postDataWithFetch({
             baseUrl,
-            data: aggregations,
+            data,
             dataElement: currentDE,
             period,
             valueType: aggregation,
@@ -304,13 +286,15 @@ const EarthEngineImportForm = () => {
                             'Select data set to filter data elements'
                         )}
                     >
-                        {dataSets.map(({ name: label, id: value }) => (
-                            <SingleSelectOption
-                                key={value}
-                                value={value}
-                                label={label}
-                            />
-                        ))}
+                        {Object.values(dataSets).map(
+                            ({ name: label, id: value }) => (
+                                <SingleSelectOption
+                                    key={value}
+                                    value={value}
+                                    label={label}
+                                />
+                            )
+                        )}
                     </SingleSelect>
                     <SingleSelect
                         name="dataelement"
@@ -322,13 +306,17 @@ const EarthEngineImportForm = () => {
                             'The data element where Earth Engine data will be added'
                         )}
                     >
-                        {dataSetElements.map(({ label, value }) => (
-                            <SingleSelectOption
-                                key={value}
-                                value={value}
-                                label={label}
-                            />
-                        ))}
+                        {currentDS
+                            ? dataSets[
+                                  currentDS
+                              ].dataSetElements.map(({ dataElement }) => (
+                                  <SingleSelectOption
+                                      key={dataElement.id}
+                                      value={dataElement.id}
+                                      label={dataElement.name}
+                                  />
+                              ))
+                            : null}
                     </SingleSelect>
                 </div>
 
@@ -354,12 +342,14 @@ const EarthEngineImportForm = () => {
                 {eeData && showPreview && (
                     <div className={styles.row}>
                         <DataPreview
-                            dataSet={dataSets.find(ds => ds.id === currentDS)}
+                            dataSet={dataSets[currentDS]}
                             orgUnits={orgUnits}
                             period={period}
                             valueType={aggregation}
-                            dataElement={dataSetElements.find(
-                                de => de.id === currentDE
+                            dataElement={dataSets[
+                                currentDS
+                            ].dataSetElements.find(
+                                ({ dataElement: de }) => de.id === currentDE
                             )}
                             data={eeData}
                             precision={getPrecision(rounding)}
