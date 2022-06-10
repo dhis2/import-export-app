@@ -23,7 +23,7 @@ import {
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines'
-import { getAggregationTypes } from '../util/getAggregationTypes'
+import { getAggregationTypesForLayer } from '../util/getAggregationTypes'
 import { postDataWithFetch } from '../util/postData'
 import { getRoundings, getPrecision } from '../util/rounding'
 import { DataPreview } from './DataPreview'
@@ -43,25 +43,6 @@ const eeLayers = getEarthEngineLayers()
         label: name,
         value: datasetId,
     }))
-
-const getAggregationTypesForLayer = id => {
-    const types = [
-        { value: 'min', label: i18n.t('Min') },
-        { value: 'max', label: i18n.t('Max') },
-        { value: 'mean', label: i18n.t('Mean') },
-        { value: 'median', label: i18n.t('Median') },
-        { value: 'sum', label: i18n.t('Sum') },
-        {
-            value: 'stdDev',
-            // label: i18n.t('Standard deviation'),
-            label: i18n.t('Std dev'),
-        },
-        { value: 'variance', label: i18n.t('Variance') },
-    ]
-    const aggs = getEarthEngineLayer(id).aggregations || getAggregationTypes()
-
-    return types.filter(type => aggs.includes(type.value))
-}
 
 const getFirstDefaultAggregation = id => {
     const defAggregations = getEarthEngineLayer(id).defaultAggregations
@@ -120,6 +101,7 @@ const EarthEngineImportForm = () => {
             })
         )
         setCurrentDS(selected)
+        setCurrentDE(NO_VALUE)
         setDataSetElements(dsElements)
     }
 
