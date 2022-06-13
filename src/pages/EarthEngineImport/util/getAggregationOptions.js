@@ -41,6 +41,8 @@ export const getAggregationOptions = id => {
 
 export const getDefaultAggregation = id => {
     const defaultAggregations = getEarthEngineConfigs(id).defaultAggregations
+
+    //TODO if 'sum' is in the default aggregations, use that, otherwise el[0]
     return Array.isArray(defaultAggregations)
         ? defaultAggregations[0]
         : defaultAggregations

@@ -28,6 +28,7 @@ import {
 } from '../util/getAggregationOptions'
 import { postDataWithFetch } from '../util/postData'
 import { getRoundings, getPrecision } from '../util/rounding'
+import { Tooltip } from './ButtonTooltip.js'
 import { DataPreview } from './DataPreview'
 import { MappingTable } from './MapGenderAgeGroupsTable'
 import styles from './styles/EarthEngineImportForm.module.css'
@@ -43,6 +44,8 @@ const eeList = getEarthEngineConfigs([
 }))
 
 const EarthEngineImportForm = () => {
+    const engine = useDataEngine()
+    const { baseUrl } = useConfig()
     const { rootOrgUnits, userSettings, dataSets } = useCachedDataQuery()
 
     // options
@@ -52,17 +55,14 @@ const EarthEngineImportForm = () => {
     const [eeId, setEeId] = useState(NO_VALUE)
     const [period, setPeriod] = useState(NO_VALUE)
     const [orgUnits, setOrgUnits] = useState([])
-    const [currentDS, setCurrentDS] = useState(NO_VALUE)
-    const [currentDE, setCurrentDE] = useState(NO_VALUE)
-    const [aggregation, setAggregation] = useState(NO_VALUE)
     const [rounding, setRounding] = useState('noround')
+    const [aggregation, setAggregation] = useState(NO_VALUE)
+    const [dataSet, setDataSet] = useState(NO_VALUE)
+    const [dataElement, setDataElement] = useState(NO_VALUE)
 
     // resulting data and display options
     const [eeData, setEeData] = useState(null)
     const [showPreview, setShowPreview] = useState(false)
-
-    const engine = useDataEngine()
-    const { baseUrl } = useConfig()
 
     useEffect(() => {
         const initializePeriods = async () => {
@@ -90,10 +90,10 @@ const EarthEngineImportForm = () => {
     const aggregationTypeChanged = ({ selected }) => setAggregation(selected)
 
     const dataSetChanged = ({ selected }) => {
-        setCurrentDS(selected)
-        setCurrentDE(NO_VALUE)
+        setDataSet(selected)
+        setDataElement(NO_VALUE)
     }
-    const dataElementChanged = ({ selected }) => setCurrentDE(selected)
+    const dataElementChanged = ({ selected }) => setDataElement(selected)
 
     const showData = async () => {
         setShowPreview(true)
@@ -117,6 +117,10 @@ const EarthEngineImportForm = () => {
                 // TODO handle the error in a better way
                 console.log('something went wrong', e)
             })
+    }
+
+    const isMissingRequiredInputs = () => {
+        return !eeId || !period || !orgUnits || !aggregation || !dataElement
     }
 
     const clearEeData = () => {
@@ -150,7 +154,7 @@ const EarthEngineImportForm = () => {
         postDataWithFetch({
             baseUrl,
             data,
-            dataElement: currentDE,
+            dataElement: dataElement,
             period,
             valueType: aggregation,
             precision: getPrecision(rounding),
@@ -279,36 +283,34 @@ const EarthEngineImportForm = () => {
                     <SingleSelect
                         name="dataset"
                         label={i18n.t('Data set')}
-                        selected={currentDS}
+                        selected={dataSet}
                         onChange={dataSetChanged}
                         inputWidth="300px"
                         helpText={i18n.t(
                             'Select data set to filter data elements'
                         )}
                     >
-                        {Object.values(dataSets).map(
-                            ({ name: label, id: value }) => (
-                                <SingleSelectOption
-                                    key={value}
-                                    value={value}
-                                    label={label}
-                                />
-                            )
-                        )}
+                        {Object.values(dataSets).map(({ name, id }) => (
+                            <SingleSelectOption
+                                key={id}
+                                value={id}
+                                label={name}
+                            />
+                        ))}
                     </SingleSelect>
                     <SingleSelect
                         name="dataelement"
                         label={i18n.t('Destination data element')}
-                        selected={currentDE}
+                        selected={dataElement}
                         onChange={dataElementChanged}
                         inputWidth="350px"
                         helpText={i18n.t(
                             'The data element where Earth Engine data will be added'
                         )}
                     >
-                        {currentDS
+                        {dataSet
                             ? dataSets[
-                                  currentDS
+                                  dataSet
                               ].dataElements.map(({ id, name }) => (
                                   <SingleSelectOption
                                       key={id}
@@ -342,12 +344,12 @@ const EarthEngineImportForm = () => {
                 {eeData && showPreview && (
                     <div className={styles.row}>
                         <DataPreview
-                            dataSet={dataSets[currentDS]}
+                            dataSet={dataSets[dataSet]}
                             orgUnits={orgUnits}
                             period={period}
                             valueType={aggregation}
-                            dataElement={dataSets[currentDS].dataElements.find(
-                                ({ id }) => id === currentDE
+                            dataElement={dataSets[dataSet].dataElements.find(
+                                ({ id }) => id === dataElement
                             )}
                             data={eeData}
                             precision={getPrecision(rounding)}
@@ -356,27 +358,45 @@ const EarthEngineImportForm = () => {
                 )}
 
                 <div className={styles.row}>
-                    {!showPreview ? (
+                    {!showPreview || !eeData ? (
                         <>
-                            <Button
-                                name="preview"
-                                onClick={showData}
-                                value="default"
-                                className={styles.leftButton}
+                            <Tooltip
+                                content={i18n.t(
+                                    "Some required options haven't been selected"
+                                )}
+                                disabled={isMissingRequiredInputs()}
                             >
-                                {i18n.t('Preview import summary')}
-                            </Button>
-                            <Button
-                                name="import"
-                                onClick={importData}
-                                value="default"
+                                <Button
+                                    primary
+                                    name="preview"
+                                    onClick={showData}
+                                    value="default"
+                                    className={styles.leftButton}
+                                    disabled={isMissingRequiredInputs()}
+                                >
+                                    {i18n.t('Preview import summary')}
+                                </Button>
+                            </Tooltip>
+                            <Tooltip
+                                content={i18n.t(
+                                    "Some required options haven't been selected"
+                                )}
+                                disabled={isMissingRequiredInputs()}
                             >
-                                {i18n.t('Import without previewing')}
-                            </Button>
+                                <Button
+                                    name="import"
+                                    onClick={importData}
+                                    value="default"
+                                    disabled={isMissingRequiredInputs()}
+                                >
+                                    {i18n.t('Import without previewing')}
+                                </Button>
+                            </Tooltip>
                         </>
                     ) : (
                         <>
                             <Button
+                                primary
                                 name="import"
                                 onClick={importData}
                                 value="default"
