@@ -83,7 +83,7 @@ const DataExport = () => {
                     values: true,
                     submitError: true,
                 }}
-                render={({ handleSubmit, form, submitError }) => (
+                render={({ handleSubmit, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
                             <OrgUnitTree />

@@ -7,7 +7,7 @@ import {
     Help,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FormField } from '../index.js'
 import {
     dataSetQuery,
@@ -57,12 +57,7 @@ const ResourcePicker = ({
         query,
     } = resourceToQuery(resourceType)
 
-    if (resourceError) {
-        console.error(`ResourcePicker: ${resourceError}`)
-        return null
-    }
-
-    const { fetching } = useDataQuery(query, {
+    const { fetching, called, refetch } = useDataQuery(query, {
         onComplete: (data) => {
             const elements = data[resourceName][resourceName]
             const list = elements.map(({ id, displayName }) => ({
@@ -81,9 +76,21 @@ const ResourcePicker = ({
             setError(error)
             console.error(`ResourcePicker(${resourceName}) error: `, error)
         },
+        lazy: true,
     })
 
-    const showList = !fetching && !error
+    useEffect(() => {
+        if (!resourceError) {
+            refetch()
+        }
+    }, [refetch, resourceError])
+
+    if (resourceError) {
+        console.error(`ResourePicker: ${resourceError}`)
+        return null
+    }
+
+    const showList = called && !fetching && !error
 
     return (
         <FormField label={label} dataTest={dataTest}>

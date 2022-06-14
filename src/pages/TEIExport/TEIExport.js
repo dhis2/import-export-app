@@ -108,7 +108,7 @@ const TEIExport = () => {
                     values: true,
                     submitError: true,
                 }}
-                render={({ handleSubmit, form, values, submitError }) => {
+                render={({ handleSubmit, values, submitError }) => {
                     const showProgramFilters = values.teiTypeFilter == 'PROGRAM'
                     const showTEFilters = values.teiTypeFilter == 'TE'
                     const showLUDates = values.lastUpdatedFilter == 'DATE'

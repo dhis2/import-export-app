@@ -51,7 +51,7 @@ const MetadataExport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                render={({ handleSubmit, form }) => (
+                render={({ handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
                         <Schemas />
                         <Format availableFormats={formatOptions} />
