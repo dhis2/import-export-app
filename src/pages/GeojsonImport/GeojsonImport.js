@@ -38,7 +38,7 @@ const GeojsonImport = () => {
     } = useContext(TaskContext)
 
     // recreating a previously run job
-    const query = useLocation().query
+    const { query } = useLocation()
 
     const prevJobDetails = getPrevJobDetails(query, geojsonTasks)
     const initialValues = createInitialValues(prevJobDetails)
