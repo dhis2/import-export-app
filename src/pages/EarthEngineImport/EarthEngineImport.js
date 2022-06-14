@@ -25,7 +25,8 @@ const query = {
     dataSets: {
         resource: 'dataSets',
         params: {
-            fields: 'id,name,dataSetElements[dataElement[name,id]]',
+            fields:
+                'id,displayName~rename(name),dataSetElements[dataElement[id,displayName~rename(name)]]',
             paging: 'false',
         },
     },

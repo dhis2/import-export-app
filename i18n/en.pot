@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-10T07:36:51.543Z\n"
-"PO-Revision-Date: 2022-06-10T07:36:51.543Z\n"
+"POT-Creation-Date: 2022-06-14T06:37:29.268Z\n"
+"PO-Revision-Date: 2022-06-14T06:37:29.268Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -778,30 +778,6 @@ msgstr "Current value"
 msgid "New value"
 msgstr "New value"
 
-msgid "Min"
-msgstr "Min"
-
-msgid "Max"
-msgstr "Max"
-
-msgid "Mean"
-msgstr "Mean"
-
-msgid "Median"
-msgstr "Median"
-
-msgid "Sum"
-msgstr "Sum"
-
-msgid "Standard deviation"
-msgstr "Standard deviation"
-
-msgid "Std dev"
-msgstr "Std dev"
-
-msgid "Variance"
-msgstr "Variance"
-
 msgid "Import Earth Engine data to data sets and data elements"
 msgstr "Import Earth Engine data to data sets and data elements"
 
@@ -832,8 +808,8 @@ msgstr "Import setup"
 msgid "How the values will be aggregated for output and analysis."
 msgstr "How the values will be aggregated for output and analysis."
 
-msgid "Data Set"
-msgstr "Data Set"
+msgid "Data set"
+msgstr "Data set"
 
 msgid "Select data set to filter data elements"
 msgstr "Select data set to filter data elements"
@@ -853,6 +829,9 @@ msgid ""
 msgstr ""
 "Earth Engine data set \"Population age groups\" has disaggregation bands. "
 "Choose the category option combinations to import each band into."
+
+msgid "Some required options haven't been selected"
+msgstr "Some required options haven't been selected"
 
 msgid "Preview import summary"
 msgstr "Preview import summary"
@@ -885,11 +864,11 @@ msgid "Cannot get authorization token for Google Earth Engine."
 msgstr "Cannot get authorization token for Google Earth Engine."
 
 msgid ""
-"This layer requires a Google Earth Engine account. Check the DHIS2 "
-"documentation for more information."
+"Requires a Google Earth Engine account. Check the DHIS2 documentation for "
+"more information."
 msgstr ""
-"This layer requires a Google Earth Engine account. Check the DHIS2 "
-"documentation for more information."
+"Requires a Google Earth Engine account. Check the DHIS2 documentation for "
+"more information."
 
 msgid "Population"
 msgstr "Population"
@@ -1123,6 +1102,27 @@ msgid ""
 msgstr ""
 "Light intensity from cities, towns, and other sites with persistent "
 "lighting, including gas flares."
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Mean"
+msgstr "Mean"
+
+msgid "Median"
+msgstr "Median"
+
+msgid "Sum"
+msgstr "Sum"
+
+msgid "Std dev"
+msgstr "Std dev"
+
+msgid "Variance"
+msgstr "Variance"
 
 msgid "Don't round source values"
 msgstr "Don't round source values"

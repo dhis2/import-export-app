@@ -35,7 +35,6 @@
         "@dhis2/analytics": "^21.7.0",
         "@dhis2/app-runtime": "^3.2.0",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/maps-gl": "^3.4.4",
         "@dhis2/prop-types": "^1.0.0",
         "@dhis2/ui": "^7.1.1",
         "classnames": "^2.2.6",
