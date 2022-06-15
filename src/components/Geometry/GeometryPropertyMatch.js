@@ -34,7 +34,7 @@ const GeometryPropertyMatch = () => {
                 dataTest={`${MATCH_PROPERTY_DATATEST}-sf`}
             />
             {matchProperty && (
-                <div style={{ paddingTop: '16px', paddingLeft: '29px' }}>
+                <div style={styles.indent}>
                     <StyledField
                         type="text"
                         component={InputFieldFF}
