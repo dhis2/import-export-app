@@ -51,10 +51,18 @@ const providerDataTransformation = ({
                 ({ dataElement }) => ({
                     id: dataElement.id,
                     name: dataElement.name,
+                    value: dataElement.id,
+                    label: dataElement.name,
                 })
             )
             const key = curr.id
-            acc[key] = { id: curr.id, name: curr.name, dataElements }
+            acc[key] = {
+                id: curr.id,
+                name: curr.name,
+                label: curr.name,
+                value: curr.id,
+                dataElements,
+            }
             return acc
         }, {}),
     }

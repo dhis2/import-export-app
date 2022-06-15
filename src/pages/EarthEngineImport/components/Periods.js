@@ -18,6 +18,7 @@ const Periods = ({ form }) => {
     )
 
     if (loading || error) {
+        //TODO spinner when loading state
         return null
     }
 
@@ -28,7 +29,7 @@ const Periods = ({ form }) => {
                 name="period"
                 label={i18n.t('Period')}
                 options={periods}
-                dataTest="input-aggregation-type"
+                dataTest="input-period-type"
                 helpText={i18n.t(
                     'Data from Earth Engine will be imported for this period.'
                 )}

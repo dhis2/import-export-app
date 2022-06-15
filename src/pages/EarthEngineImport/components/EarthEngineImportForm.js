@@ -2,8 +2,6 @@ import { useDataEngine, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     ReactFinalForm,
-    SingleSelectField as SingleSelect,
-    SingleSelectOption,
     Button,
     Divider,
     // NoticeBox,
@@ -18,7 +16,9 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 // import { postDataWithFetch } from '../util/postData'
 import { AggregationType } from './AggregationType'
 import { Tooltip } from './ButtonTooltip.js'
+import { DataElements } from './DataElements'
 import { DataPreview } from './DataPreview'
+import { DataSets } from './DataSets'
 import { EarthEngineId } from './EarthEngineId'
 // import { MappingTable } from './MapGenderAgeGroupsTable'
 import { OrganisationUnits } from './OrganisationUnits'
@@ -26,22 +26,12 @@ import { Periods } from './Periods'
 import { Rounding, defaultRoundingOption } from './Rounding'
 import styles from './styles/EarthEngineImportForm.module.css'
 
-const NO_VALUE = ''
-
 const { Form } = ReactFinalForm
 
 const EarthEngineImportForm = () => {
     const engine = useDataEngine()
     const { baseUrl } = useConfig()
     const { userSettings, dataSets } = useCachedDataQuery()
-
-    // user selections
-    const [period, setPeriod] = useState(NO_VALUE)
-    const [orgUnits, setOrgUnits] = useState([])
-    const [rounding, setRounding] = useState('noround')
-    const [aggregation, setAggregation] = useState(NO_VALUE)
-    const [dataSet, setDataSet] = useState(NO_VALUE)
-    const [dataElement, setDataElement] = useState(NO_VALUE)
 
     // resulting data and display options
     const [eeData, setEeData] = useState(null)
@@ -52,13 +42,6 @@ const EarthEngineImportForm = () => {
         setAggregation(NO_VALUE)
         // setEeId(selected)
     }
-    const orgUnitsSelected = selected => setOrgUnits(selected.items)
-
-    const dataSetChanged = ({ selected }) => {
-        setDataSet(selected)
-        setDataElement(NO_VALUE)
-    }
-    const dataElementChanged = ({ selected }) => setDataElement(selected)
 
     const showData = async () => {
         console.log('showData')
@@ -132,6 +115,8 @@ const EarthEngineImportForm = () => {
     const initialValues = {
         rounding: defaultRoundingOption,
         organisationUnits: [],
+        dataSets: null,
+        dataElements: null,
     }
 
     const onSubmit = () => console.log('submit')
@@ -159,56 +144,15 @@ const EarthEngineImportForm = () => {
                             <EarthEngineId />
                             <Periods form={form} />
                             <Rounding />
-
                             <h2>{i18n.t('Organisation units')}</h2>
                             <Divider />
                             <OrganisationUnits />
                             <h2>{i18n.t('Import setup')}</h2>
                             <Divider />
                             <AggregationType />
-                            <div className={cx(styles.row, styles.set)}>
-                                <SingleSelect
-                                    name="dataset"
-                                    label={i18n.t('Data set')}
-                                    selected={dataSet}
-                                    onChange={dataSetChanged}
-                                    inputWidth="300px"
-                                    helpText={i18n.t(
-                                        'Select data set to filter data elements'
-                                    )}
-                                >
-                                    {Object.values(dataSets).map(
-                                        ({ name, id }) => (
-                                            <SingleSelectOption
-                                                key={id}
-                                                value={id}
-                                                label={name}
-                                            />
-                                        )
-                                    )}
-                                </SingleSelect>
-                                <SingleSelect
-                                    name="dataelement"
-                                    label={i18n.t('Destination data element')}
-                                    selected={dataElement}
-                                    onChange={dataElementChanged}
-                                    inputWidth="350px"
-                                    helpText={i18n.t(
-                                        'The data element where Earth Engine data will be added'
-                                    )}
-                                >
-                                    {dataSet
-                                        ? dataSets[
-                                              dataSet
-                                          ].dataElements.map(({ id, name }) => (
-                                              <SingleSelectOption
-                                                  key={id}
-                                                  value={id}
-                                                  label={name}
-                                              />
-                                          ))
-                                        : null}
-                                </SingleSelect>
+                            <div className={cx(styles.set)}>
+                                <DataSets />
+                                <DataElements />
                             </div>
 
                             {/* <div className={styles.row}>
