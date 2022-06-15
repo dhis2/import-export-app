@@ -3,27 +3,30 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Page, GeojsonIcon, ValidationSummary } from '../../components/index'
+import {
+    GeometryFormat,
+    GeometryPropertyMatch,
+    GeometryAttributePicker,
+} from '../../components/Geometry/'
+import { Page, GeometryIcon, ValidationSummary } from '../../components/index'
 import {
     FileUpload,
-    GeojsonPropertyMatch,
-    GeojsonAttributePicker,
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index'
 import { TaskContext, getNewestTask } from '../../contexts/index'
 import { getPrevJobDetails } from '../../utils/helper'
-import { onImport } from './form-helper'
+import { onImport } from './geojson-helper'
 
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-export const PAGE_NAME = i18n.t('GeoJSON import')
+export const PAGE_NAME = i18n.t('Organisation unit geometry import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import geographic data for organisation units using the GeoJSON format. This import can also be used for associated geometries or catchment areas.'
+    'Import geographic data for organisation units. GeoJSON is the recommend format and can also be used for associated geometries or catchment areas.'
 )
-const PAGE_ICON = <GeojsonIcon />
+export const PAGE_ICON = <GeometryIcon />
 
 const createInitialValues = prevJobDetails => ({
     files: prevJobDetails.files,
@@ -31,7 +34,7 @@ const createInitialValues = prevJobDetails => ({
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
 })
 
-const GeojsonImport = () => {
+const GeometryImport = () => {
     const {
         tasks: { geojson: geojsonTasks },
         addTask,
@@ -64,6 +67,7 @@ const GeojsonImport = () => {
             summaryTask={getNewestTask(geojsonTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
+            <GeometryFormat format="geojson" />
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
@@ -74,8 +78,8 @@ const GeojsonImport = () => {
                                 'GeoJSON feature id should match the organsation unit id, or match by a feature property below.'
                             )}
                         />
-                        <GeojsonPropertyMatch />
-                        <GeojsonAttributePicker />
+                        <GeometryPropertyMatch />
+                        <GeometryAttributePicker />
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
@@ -86,4 +90,4 @@ const GeojsonImport = () => {
     )
 }
 
-export { GeojsonImport }
+export { GeometryImport }

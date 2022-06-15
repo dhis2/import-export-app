@@ -3,8 +3,7 @@ import React from 'react'
 import {
     DataIcon,
     EventIcon,
-    GeojsonIcon,
-    GMLIcon,
+    GeometryIcon,
     MetadataImportIcon,
     TEIIcon,
 } from '../components/Icon/Icon'
@@ -25,13 +24,13 @@ const categoryTypes = [
     {
         key: 'geojson',
         importType: 'GEOJSON_IMPORT',
-        icon: <GeojsonIcon />,
+        icon: <GeometryIcon />,
         label: i18n.t('GeoJSON'),
     },
     {
         key: 'gml',
         importType: 'GML_IMPORT',
-        icon: <GMLIcon />,
+        icon: <GeometryIcon />,
         label: i18n.t('GML'),
     },
     {

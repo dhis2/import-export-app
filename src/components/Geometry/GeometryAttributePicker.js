@@ -2,8 +2,9 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ResourcePickerField } from '../index'
+import { ResourcePickerField } from '../'
 import { resourceTypes } from '../ResourcePicker/resourceTypes'
+import styles from './GeometryAttributePicker.module.css'
 
 const { useField, Field } = ReactFinalForm
 
@@ -25,7 +26,11 @@ const VALIDATOR = (selectedAttributes = []) =>
         ? i18n.t('One attribute must be selected')
         : undefined
 
-const GeojsonAttributePicker = ({
+const HELPTEXT = i18n.t(
+    'Associated geometry import requires an attribute of type "GeoJSON" applied to "Organisation unit". It can be defined in the Maintenance app.'
+)
+
+const GeometryAttributePicker = ({
     multiSelect,
     label,
     withFilter,
@@ -35,7 +40,7 @@ const GeojsonAttributePicker = ({
     const { value: useAttribute } = checkbox
 
     return (
-        <div style={{ maxWidth: '420px', paddingBottom: '24px' }}>
+        <div className={styles.container}>
             <Field
                 type="checkbox"
                 component={CheckboxFieldFF}
@@ -44,19 +49,8 @@ const GeojsonAttributePicker = ({
                 dataTest={`${USE_ATTRIBUTE_DATATEST}-sf`}
             />
             {useAttribute && (
-                <div style={{ paddingLeft: '29px' }}>
-                    <p
-                        style={{
-                            color: 'rgb(74, 87, 104)',
-                            fontSize: '12px',
-                            lineHeight: '16px',
-                            margin: '4px 0 16px',
-                        }}
-                    >
-                        {i18n.t(
-                            'Associated geometry import requires an attribute of type "GeoJSON" applied to "Organisation unit". It can be defined in the Maintenance app.'
-                        )}
-                    </p>
+                <div className={styles.indent}>
+                    <p className={styles.help}>{HELPTEXT}</p>
                     <ResourcePickerField
                         name={NAME}
                         resourceType={RESOURCETYPE}
@@ -78,16 +72,16 @@ const GeojsonAttributePicker = ({
     )
 }
 
-GeojsonAttributePicker.defaultProps = {
+GeometryAttributePicker.defaultProps = {
     label: LABEL,
     multiSelect: false,
     withFilter: false,
 }
 
-GeojsonAttributePicker.propTypes = {
+GeometryAttributePicker.propTypes = {
     label: PropTypes.string,
     multiSelect: PropTypes.bool,
     withFilter: PropTypes.bool,
 }
 
-export { GeojsonAttributePicker }
+export { GeometryAttributePicker }

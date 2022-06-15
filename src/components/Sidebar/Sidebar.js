@@ -7,8 +7,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import {
     DataIcon,
     EventIcon,
-    GeojsonIcon,
-    GMLIcon,
+    GeometryIcon,
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
@@ -33,18 +32,11 @@ const eventImportPage = {
     path: '/import/event',
 }
 
-const geojsonImportPage = {
-    name: i18n.t('GeoJSON import'),
-    code: 'geojson-import',
-    icon: <GeojsonIcon />,
-    path: '/import/geojson',
-}
-
-const gmlImportPage = {
-    name: i18n.t('GML import'),
-    code: 'gml-import',
-    icon: <GMLIcon />,
-    path: '/import/gml',
+const geometryImportPage = {
+    name: i18n.t('Org unit geometry import'),
+    code: 'geometry-import',
+    icon: <GeometryIcon />,
+    path: '/import/geometry',
 }
 
 const metadataImportPage = {
@@ -98,8 +90,7 @@ const teiExportPage = {
 const importPages = [
     dataImportPage,
     eventImportPage,
-    geojsonImportPage,
-    gmlImportPage,
+    geometryImportPage,
     metadataImportPage,
     teiImportPage,
 ]
@@ -165,7 +156,10 @@ const Sidebar = () => {
             />
             <ImportMenuSectionHeader />
             {importPages.map(({ icon, name, code, path }) => {
-                const active = pathname == path
+                const active =
+                    pathname == path ||
+                    (pathname === '/import/gml' && path === '/import/geometry')
+
                 return (
                     <SidebarItem
                         name={name}

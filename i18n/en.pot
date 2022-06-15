@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-08T12:39:38.049Z\n"
-"PO-Revision-Date: 2022-06-08T12:39:38.049Z\n"
+"POT-Creation-Date: 2022-06-15T11:58:47.689Z\n"
+"PO-Revision-Date: 2022-06-15T11:58:47.689Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -44,6 +44,37 @@ msgstr ""
 
 msgid "Please select a file"
 msgstr "Please select a file"
+
+msgid "Import as associated geometry"
+msgstr "Import as associated geometry"
+
+msgid "Store geometry as value of attribute"
+msgstr "Store geometry as value of attribute"
+
+msgid "Selected programs"
+msgstr "Selected programs"
+
+msgid "Something went wrong when loading the attributes!"
+msgstr "Something went wrong when loading the attributes!"
+
+msgid "One attribute must be selected"
+msgstr "One attribute must be selected"
+
+msgid ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" "
+"applied to \"Organisation unit\". It can be defined in the Maintenance app."
+msgstr ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" "
+"applied to \"Organisation unit\". It can be defined in the Maintenance app."
+
+msgid "Match GeoJSON property to organisation unit scheme"
+msgstr "Match GeoJSON property to organisation unit scheme"
+
+msgid "GeoJSON property name"
+msgstr "GeoJSON property name"
+
+msgid "GeoJSON feature property that holds the organisation unit identifier"
+msgstr "GeoJSON feature property that holds the organisation unit identifier"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr "A dry run tests the import settings without importing any data"
@@ -200,37 +231,6 @@ msgstr "What format is the data to import?"
 
 msgid "What format should the data be exported as?"
 msgstr "What format should the data be exported as?"
-
-msgid "Import as associated geometry"
-msgstr "Import as associated geometry"
-
-msgid "Store geometry as value of attribute"
-msgstr "Store geometry as value of attribute"
-
-msgid "Selected programs"
-msgstr "Selected programs"
-
-msgid "Something went wrong when loading the attributes!"
-msgstr "Something went wrong when loading the attributes!"
-
-msgid "One attribute must be selected"
-msgstr "One attribute must be selected"
-
-msgid ""
-"Associated geometry import requires an attribute of type \"GeoJSON\" "
-"applied to \"Organisation unit\". It can be defined in the Maintenance app."
-msgstr ""
-"Associated geometry import requires an attribute of type \"GeoJSON\" "
-"applied to \"Organisation unit\". It can be defined in the Maintenance app."
-
-msgid "Match GeoJSON property to organisation unit scheme"
-msgstr "Match GeoJSON property to organisation unit scheme"
-
-msgid "GeoJSON property name"
-msgstr "GeoJSON property name"
-
-msgid "GeoJSON feature property that holds the organisation unit identifier"
-msgstr "GeoJSON feature property that holds the organisation unit identifier"
 
 msgid "ID scheme"
 msgstr "ID scheme"
@@ -730,8 +730,8 @@ msgstr "Data import"
 msgid "Event import"
 msgstr "Event import"
 
-msgid "GeoJSON import"
-msgstr "GeoJSON import"
+msgid "Org unit geometry import"
+msgstr "Org unit geometry import"
 
 msgid "GML import"
 msgstr "GML import"
@@ -819,19 +819,15 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Supported file types: JSON, CSV, and XML."
 
-msgid ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
-msgstr ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
+msgid "Organisation unit geometry import"
+msgstr "Organisation unit geometry import"
 
 msgid ""
-"Import geographic data for organisation units using the GeoJSON format. "
-"This import can also be used for associated geometries or catchment areas."
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
 msgstr ""
-"Import geographic data for organisation units using the GeoJSON format. "
-"This import can also be used for associated geometries or catchment areas."
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
 
 msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
@@ -863,9 +859,6 @@ msgstr "Import events"
 
 msgid "Import GeoJSON"
 msgstr "Import GeoJSON"
-
-msgid "Import GML"
-msgstr "Import GML"
 
 msgid "Import metadata"
 msgstr "Import metadata"

@@ -1,0 +1,15 @@
+.container {
+    max-width: 420px;
+    padding-bottom: var(--spacers-dp24);
+}
+
+.indent {
+    padding-left: 29px; 
+}
+
+.help {
+    color: rgb(74, 87, 104);
+    font-size: 12px;
+    line-height: 16px;
+    margin: var(--spacers-dp4) 0 var(--spacers-dp24);
+}
