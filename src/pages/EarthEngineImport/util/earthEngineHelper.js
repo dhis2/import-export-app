@@ -67,10 +67,12 @@ export const getPeriods = async (eeId, engine) => {
     // const { features } = await eeWorker.getPeriods(eeId)
     const features = getMockPeriods(eeId)
 
-    return features.map(getPeriod).map(p => {
+    const periods = features.map(getPeriod).map(p => {
         const period = filters ? filters(p)[0] : p
         return { label: p.name, value: p.year.toString(), ...period }
     })
+
+    return Promise.resolve(periods)
 }
 
 export const getAggregations = async (engine, config) => {
@@ -83,7 +85,7 @@ export const getAggregations = async (engine, config) => {
 }
 
 // Returns auth token for EE API as a promise
-export const getAuthToken = engine => () => {
+const getAuthToken = engine => () => {
     const googleTokenQuery = {
         data: { resource: 'tokens/google' },
     }
