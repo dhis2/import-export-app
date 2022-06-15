@@ -2,9 +2,12 @@ import '../common/settingFormValues'
 import { Before, Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
 const dataSetsApi = /\/dataSets\?fields=id,displayName&paging=false/
-const orgUnitsFirstLevelApi = /\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
-const orgUnitsRootApi = /\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
-const schemasApi = /\/schemas.json\?fields=metadata,collectionName,displayName,klass/
+const orgUnitsFirstLevelApi =
+    /\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
+const orgUnitsRootApi =
+    /\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
+const schemasApi =
+    /\/schemas.json\?fields=metadata,collectionName,displayName,klass/
 const dataApi = /\/dataValueSets/
 
 Before(() => {
@@ -37,8 +40,10 @@ Given('the user is on the data export page', () => {
 
 const sierraId = 'ImspTQPwCqd'
 Given('the Sierra Leone org unit has been selected', () => {
-    cy.get(`[data-test="input-org-unit-tree"] label:contains("Sierra Leone")`).click()
-    cy.get('@defaultData').then(defaultData => {
+    cy.get(
+        `[data-test="input-org-unit-tree"] label:contains("Sierra Leone")`
+    ).click()
+    cy.get('@defaultData').then((defaultData) => {
         cy.wrap({ ...defaultData, orgUnit: sierraId }).as('defaultData')
     })
 })
@@ -51,7 +56,7 @@ Given('the first data set has been selected', () => {
             `[data-test="input-data-set-picker"] [data-test="dhis2-uicore-transferoption"]:contains("${displayName}")`
         ).dblclick()
 
-        cy.get('@defaultData').then(defaultData => {
+        cy.get('@defaultData').then((defaultData) => {
             cy.wrap({ ...defaultData, dataSet: id }).as('defaultData')
         })
     })
@@ -63,12 +68,11 @@ When('the user expands the root level of the org unit tree', () => {
 
 const boId = 'O6uvpzGd5pu'
 When('the user selects the "Bo" org unit', () => {
-    cy
-        .get(`[data-test="input-org-unit-tree"] label:contains("Bo")`)
+    cy.get(`[data-test="input-org-unit-tree"] label:contains("Bo")`)
         .filter((index, el) => Cypress.$(el).text().match(/Bo$/))
         .click()
 
-    cy.get('@defaultData').then(defaultData => {
+    cy.get('@defaultData').then((defaultData) => {
         const orgUnit = `${defaultData.orgUnit},${boId}`
         cy.wrap({ ...defaultData, orgUnit }).as('defaultData')
     })
@@ -76,7 +80,7 @@ When('the user selects the "Bo" org unit', () => {
 
 Given('all data sets have been selected', () => {
     cy.selectAllDataSets()
-    cy.get('@defaultData').then(defaultData => {
+    cy.get('@defaultData').then((defaultData) => {
         cy.fixture('dataSets').then(({ dataSets }) => {
             const dataSet = dataSets.map(({ id }) => id).join(',')
             cy.wrap({ ...defaultData, dataSet }).as('defaultData')
@@ -85,7 +89,7 @@ Given('all data sets have been selected', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.window().then(win => {
+    cy.window().then((win) => {
         expect(win.open).to.be.calledOnce
         const requestUrl = win.open.getCall(0).args[0]
 
@@ -99,7 +103,6 @@ Then('the download request is sent with the right parameters', () => {
                 for (const [name, value] of expectedEntries) {
                     expect(actual[name]).to.deep.equal(value)
                 }
-
             }
         )
     })

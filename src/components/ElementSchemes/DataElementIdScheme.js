@@ -3,9 +3,9 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { fetchAttributes } from '../../utils/helper'
-import { optionsPropType } from '../../utils/options'
-import { StyledField } from '../index'
+import { fetchAttributes } from '../../utils/helper.js'
+import { optionsPropType } from '../../utils/options.js'
+import { StyledField } from '../index.js'
 
 const DataElementIdScheme = ({
     name,
@@ -20,8 +20,8 @@ const DataElementIdScheme = ({
 
     useEffect(() => {
         fetchAttributes(`${baseUrl}/api/`, 'dataElementAttribute')
-            .then(attributes => setSchemes(attributes))
-            .catch(error => setError(error))
+            .then((attributes) => setSchemes(attributes))
+            .catch((error) => setError(error))
         setLoading(false)
     }, [])
 

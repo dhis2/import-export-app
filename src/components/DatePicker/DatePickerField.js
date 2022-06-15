@@ -2,12 +2,12 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { DatePicker } from '../index'
+import { DatePicker } from '../index.js'
 const { Field } = ReactFinalForm
 
-const OPTIONAL_DATE_VALIDATOR = date =>
+const OPTIONAL_DATE_VALIDATOR = (date) =>
     date ? DATE_VALIDATOR(date) : undefined
-const DATE_VALIDATOR = date =>
+const DATE_VALIDATOR = (date) =>
     new Date(date) == 'Invalid Date' ? i18n.t('Invalid date') : undefined
 const DATE_BEFORE_VALIDATOR = (date1, date2) =>
     date1 > date2 ? i18n.t('Start date must be before end date') : undefined

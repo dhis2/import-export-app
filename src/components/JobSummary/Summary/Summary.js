@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { typeReportParse } from '../helper'
-import { SingleSummary } from '../SingleSummary/SingleSummary'
-import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary'
+import { typeReportParse } from '../helper.js'
+import { SingleSummary } from '../SingleSummary/SingleSummary.js'
+import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary.js'
 import styles from './Summary.module.css'
 
-const extractStats = summary => {
+const extractStats = (summary) => {
     if (summary.responseType == 'ImportSummaries') {
         const { imported, deleted, ignored, updated, total } = summary
         return { imported, deleted, ignored, updated, total }

@@ -6,13 +6,13 @@ import styles from './ValidationSummary.module.css'
 
 const { useFormState } = ReactFinalForm
 
-const transformErrors = errors =>
+const transformErrors = (errors) =>
     Object.entries(errors)
         .map(([key, value]) => ({
             name: key,
             label: value,
         }))
-        .filter(error => error.label)
+        .filter((error) => error.label)
 
 const Error = ({ label }) => <li>{label}</li>
 
@@ -22,7 +22,9 @@ const ValidationSummary = () => {
     const { errors, submitFailed } = useFormState()
     const errorList = transformErrors(errors)
 
-    if (!submitFailed || !errorList.length) return null
+    if (!submitFailed || !errorList.length) {
+        return null
+    }
 
     return (
         <NoticeBox

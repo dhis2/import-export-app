@@ -3,15 +3,15 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Page, GMLIcon, ValidationSummary } from '../../components/index'
+import { Page, GMLIcon, ValidationSummary } from '../../components/index.js'
 import {
     FileUpload,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { TaskContext, getNewestTask } from '../../contexts/index'
-import { getPrevJobDetails } from '../../utils/helper'
-import { onImport } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { TaskContext, getNewestTask } from '../../contexts/index.js'
+import { getPrevJobDetails } from '../../utils/helper.js'
+import { onImport } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 
@@ -22,7 +22,7 @@ export const PAGE_DESCRIPTION = i18n.t(
 )
 const PAGE_ICON = <GMLIcon />
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
 })
 

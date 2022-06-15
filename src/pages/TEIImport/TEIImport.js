@@ -10,7 +10,7 @@ import {
     SchemeContainer,
     BasicOptions,
     ValidationSummary,
-} from '../../components/index'
+} from '../../components/index.js'
 import {
     FileUpload,
     Format,
@@ -46,10 +46,10 @@ import {
     defaultIdSchemeOption,
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
-} from '../../components/Inputs/index'
-import { TaskContext, getNewestTask } from '../../contexts/index'
-import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper'
-import { onImport } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { TaskContext, getNewestTask } from '../../contexts/index.js'
+import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper.js'
+import { onImport } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 
@@ -60,7 +60,7 @@ export const PAGE_DESCRIPTION = i18n.t(
 )
 const PAGE_ICON = <TEIIcon />
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     identifier: prevJobDetails.identifier || defaultIdentifierOption,

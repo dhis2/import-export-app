@@ -24,12 +24,12 @@ Then(
     () => {
         cy.showMoreOptions()
         cy.wait(['@orgUnitAttributesXHR'])
-            .then(xhr => xhr.response.body)
+            .then((xhr) => xhr.response.body)
             .then(({ attributes }) => {
                 cy.get('[data-test="input-org-unit-id-scheme"]').click()
                 cy.get(
                     '[data-test="dhis2-uicore-select-menu-menuwrapper"]'
-                ).then($selectMenu => {
+                ).then(($selectMenu) => {
                     attributes.forEach(({ id }) => {
                         expect(
                             $selectMenu

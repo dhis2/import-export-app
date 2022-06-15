@@ -2,7 +2,7 @@
  * Group and sort schemas
  * ======================
  */
-const groupSchemas = schemas =>
+const groupSchemas = (schemas) =>
     schemas.reduce((groups, schema) => {
         const { group } = schema
 
@@ -15,7 +15,7 @@ const groupSchemas = schemas =>
         }
     }, {})
 
-const combineSingleItemGroups = groups => {
+const combineSingleItemGroups = (groups) => {
     const groupNames = Object.keys(groups)
 
     return groupNames.reduce(
@@ -50,13 +50,15 @@ const combineSingleItemGroups = groups => {
  * If a match is found, that match will be returned
  */
 function findLabelByLowerCaseComparison(groupKey, schemas) {
-    const isGroupKeyMatchingLowerCaseSchemaName = schemaName =>
+    const isGroupKeyMatchingLowerCaseSchemaName = (schemaName) =>
         groupKey === schemaName.toLowerCase()
 
     return schemas.reduce((foundLabel, { name: schemaName, displayName }) => {
         // do not try to compare anything if a label already
         // has been found
-        if (foundLabel) return foundLabel
+        if (foundLabel) {
+            return foundLabel
+        }
 
         if (isGroupKeyMatchingLowerCaseSchemaName(schemaName)) {
             return displayName
@@ -66,7 +68,7 @@ function findLabelByLowerCaseComparison(groupKey, schemas) {
     }, '')
 }
 
-const ucFirst = str => str[0].toUpperCase() + str.substr(1)
+const ucFirst = (str) => str[0].toUpperCase() + str.substr(1)
 
 /**
  * This function will go through all schemas
@@ -77,7 +79,7 @@ const ucFirst = str => str[0].toUpperCase() + str.substr(1)
  * and the result returned
  */
 function findKeyByCamelCaseComparison(groupKey, schemas) {
-    const isGroupKeyInSchemaName = schemaName =>
+    const isGroupKeyInSchemaName = (schemaName) =>
         schemaName.includes(groupKey) && schemaName.indexOf(groupKey) === 0
 
     // Will return either a label or an empty string
@@ -85,7 +87,9 @@ function findKeyByCamelCaseComparison(groupKey, schemas) {
     return schemas.reduce((foundLabel, { name: schemaName }) => {
         // do not try to compare anything if a label already
         // has been found
-        if (foundLabel) return foundLabel
+        if (foundLabel) {
+            return foundLabel
+        }
 
         const lowerCaseSchemaName = schemaName.toLowerCase()
 
@@ -117,13 +121,13 @@ function extractGroupLabelFromSchemas(groupKey, schemas) {
     )
 }
 
-const getSchemaGroups = schemas => {
+const getSchemaGroups = (schemas) => {
     const groups = groupSchemas(schemas)
     const combinedGroups = combineSingleItemGroups(groups)
     return combinedGroups
 }
 
-const getGroupLabels = schemaGroups => {
+const getGroupLabels = (schemaGroups) => {
     return Object.entries(schemaGroups).reduce(
         (groupLabels, [groupKey, schemas]) => {
             const label = extractGroupLabelFromSchemas(groupKey, schemas)
@@ -137,7 +141,7 @@ const getGroupLabels = schemaGroups => {
     )
 }
 
-const getGroupOrder = schemas => {
+const getGroupOrder = (schemas) => {
     const groupKeys = Object.keys(schemas)
     groupKeys.sort()
     return groupKeys
@@ -145,10 +149,11 @@ const getGroupOrder = schemas => {
 
 const filterOutExcludedSchemas = (excludedSchemas, schemas) =>
     schemas.filter(
-        schema => schema.metadata && !excludedSchemas.has(schema.collectionName)
+        (schema) =>
+            schema.metadata && !excludedSchemas.has(schema.collectionName)
     )
 
-const groupName = klass => {
+const groupName = (klass) => {
     const group = klass.split('.')
     group.pop()
 
@@ -160,7 +165,7 @@ const groupName = klass => {
 }
 
 const formatSchemas = (schemas, checkedByDefault) =>
-    schemas.map(schema => ({
+    schemas.map((schema) => ({
         checked: checkedByDefault,
         label: schema.displayName,
         name: schema.collectionName,

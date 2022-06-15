@@ -1,7 +1,11 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { CircularLoader, Help } from '@dhis2/ui'
-import { ReactFinalForm, OrganisationUnitTree } from '@dhis2/ui'
+import {
+    CircularLoader,
+    Help,
+    ReactFinalForm,
+    OrganisationUnitTree,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './OrgUnitTreeField.module.css'
@@ -18,12 +22,12 @@ const rootQuery = {
     },
 }
 
-const SINGLE_ORG_VALIDATOR = selectedOrgUnits =>
+const SINGLE_ORG_VALIDATOR = (selectedOrgUnits) =>
     selectedOrgUnits.length == 0
         ? i18n.t('At least one organisation unit must be selected')
         : undefined
 
-const SINGLE_EXACT_ORG_VALIDATOR = selectedOrgUnits =>
+const SINGLE_EXACT_ORG_VALIDATOR = (selectedOrgUnits) =>
     selectedOrgUnits.length != 1
         ? i18n.t('One organisation unit must be selected')
         : undefined
@@ -53,7 +57,7 @@ const Wrapper = ({
                             onChange(selected)
                         }}
                         selected={value}
-                        roots={data.roots.organisationUnits.map(ou => ou.id)}
+                        roots={data.roots.organisationUnits.map((ou) => ou.id)}
                         {...rest}
                         singleSelection={!multiSelect}
                     />

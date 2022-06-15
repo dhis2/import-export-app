@@ -1,6 +1,6 @@
-import { locationAssign } from '../../utils/helper'
+import { locationAssign } from '../../utils/helper.js'
 
-const onExport = (baseUrl, setExportEnabled) => values => {
+const onExport = (baseUrl, setExportEnabled) => (values) => {
     setExportEnabled(false)
 
     const { objectType, object, format, compression, skipSharing } = values

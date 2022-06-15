@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { Select } from '../index'
+import { Select } from '../index.js'
 
 const options = [
     { value: 'a', label: 'Abc' },

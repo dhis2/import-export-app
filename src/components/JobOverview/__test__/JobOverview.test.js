@@ -3,12 +3,12 @@ import { createMemoryHistory } from 'history'
 import React from 'react'
 import { Router } from 'react-router-dom'
 import { render, fireEvent, cleanup } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { JobOverview } from '../../'
-import { TaskContext } from '../../../contexts/'
-import { MenuLabel } from '../MenuLabel/MenuLabel'
-import { tasksState, allJobs } from './data'
+import { TaskContext } from '../../../contexts/index.js'
+import { JobOverview } from '../../index.js'
+import { MenuLabel } from '../MenuLabel/MenuLabel.js'
+import { tasksState, allJobs } from './data.js'
 
 afterEach(() => {
     cleanup()
@@ -70,7 +70,7 @@ test('should show list of jobs started', async () => {
     expect(jobOverviewContainer).toContainElement(jobSummaryContainer)
 
     // all events of selected job should be showing
-    selectedJob.events.forEach(e =>
+    selectedJob.events.forEach((e) =>
         expect(jobSummaryContainer).toHaveTextContent(e.text)
     )
 
@@ -100,7 +100,7 @@ test('import type filters should filter jobs', async () => {
     // minus the number of "METADATA_IMPORTA" type jobs
     const listElements = getAllByDataTest(/job-overview-menu-label-*/)
     expect(listElements).toHaveLength(
-        allJobs.filter(j => j.importType != 'METADATA_IMPORT').length
+        allJobs.filter((j) => j.importType != 'METADATA_IMPORT').length
     )
 
     // click on another job should trigger setSelectedJob function
@@ -109,7 +109,7 @@ test('import type filters should filter jobs', async () => {
     expect(setSelectedJob).toHaveBeenCalledTimes(1)
     expect(setSelectedJob).toHaveBeenCalledWith(
         allJobs.find(
-            j =>
+            (j) =>
                 j.importType == 'EVENT_IMPORT' &&
                 j.jobDetails.files[0].name == 'event1.json'
         )

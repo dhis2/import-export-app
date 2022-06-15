@@ -2,8 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ResourcePickerField } from '../index'
-import { resourceTypes } from '../ResourcePicker/resourceTypes'
+import { ResourcePickerField } from '../index.js'
+import { resourceTypes } from '../ResourcePicker/resourceTypes.js'
 
 const NAME = 'selectedPrograms'
 const LABEL = i18n.t('Program to export events from')
@@ -14,12 +14,12 @@ const SELECTEDLABEL = i18n.t('Selected programs')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the programs!')
 const RESOURCETYPE = resourceTypes.PROGRAM
 
-const SINGLE_PROGRAM_VALIDATOR = selectedPrograms =>
+const SINGLE_PROGRAM_VALIDATOR = (selectedPrograms) =>
     selectedPrograms.length == 0
         ? i18n.t('At least one program must be selected')
         : undefined
 
-const SINGLE_EXACT_PROGRAM_VALIDATOR = selectedPrograms =>
+const SINGLE_EXACT_PROGRAM_VALIDATOR = (selectedPrograms) =>
     !selectedPrograms ? i18n.t('One program must be selected') : undefined
 
 const ProgramPicker = ({ multiSelect, label, show, ...rest }) => {

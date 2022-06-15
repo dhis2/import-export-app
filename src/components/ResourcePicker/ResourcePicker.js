@@ -7,15 +7,20 @@ import {
     Help,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
-import { FormField } from '../index'
-import { dataSetQuery, programQuery, TETypeQuery, userQuery } from './queries'
+import React, { useState, useEffect } from 'react'
+import { FormField } from '../index.js'
+import {
+    dataSetQuery,
+    programQuery,
+    TETypeQuery,
+    userQuery,
+} from './queries.js'
 import styles from './ResourcePicker.module.css'
-import { resourceTypes } from './resourceTypes'
+import { resourceTypes } from './resourceTypes.js'
 
 const { Field } = ReactFinalForm
 
-const resourceToQuery = resourceType => {
+const resourceToQuery = (resourceType) => {
     if (resourceType == resourceTypes.DATASET) {
         return { resourceName: 'dataSets', query: dataSetQuery }
     } else if (resourceType == resourceTypes.PROGRAM) {
@@ -46,17 +51,14 @@ const ResourcePicker = ({
 }) => {
     const [list, setList] = useState([])
     const [error, setError] = useState(undefined)
-    const { error: resourceError, resourceName, query } = resourceToQuery(
-        resourceType
-    )
+    const {
+        error: resourceError,
+        resourceName,
+        query,
+    } = resourceToQuery(resourceType)
 
-    if (resourceError) {
-        console.error(`ResourcePicker: ${resourceError}`)
-        return null
-    }
-
-    const { fetching } = useDataQuery(query, {
-        onComplete: data => {
+    const { fetching, called, refetch } = useDataQuery(query, {
+        onComplete: (data) => {
             const elements = data[resourceName][resourceName]
             const list = elements.map(({ id, displayName }) => ({
                 value: id,
@@ -70,13 +72,25 @@ const ResourcePicker = ({
                 })
             }
         },
-        onError: error => {
+        onError: (error) => {
             setError(error)
             console.error(`ResourcePicker(${resourceName}) error: `, error)
         },
+        lazy: true,
     })
 
-    const showList = !fetching && !error
+    useEffect(() => {
+        if (!resourceError) {
+            refetch()
+        }
+    }, [refetch, resourceError])
+
+    if (resourceError) {
+        console.error(`ResourePicker: ${resourceError}`)
+        return null
+    }
+
+    const showList = called && !fetching && !error
 
     return (
         <FormField label={label} dataTest={dataTest}>

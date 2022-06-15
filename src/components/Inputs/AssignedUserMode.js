@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
 import React from 'react'
-import { FormField, RadioGroupField } from '../index'
-import { UserPicker } from './index'
+import { FormField, RadioGroupField } from '../index.js'
+import { UserPicker } from './index.js'
 
 const { useField, Field } = ReactFinalForm
 

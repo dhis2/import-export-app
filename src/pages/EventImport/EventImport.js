@@ -10,7 +10,7 @@ import {
     SchemeContainer,
     EventIcon,
     ValidationSummary,
-} from '../../components/index'
+} from '../../components/index.js'
 import {
     FileUpload,
     Format,
@@ -26,10 +26,10 @@ import {
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { TaskContext, getNewestTask } from '../../contexts/index'
-import { getPrevJobDetails } from '../../utils/helper'
-import { onImport } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { TaskContext, getNewestTask } from '../../contexts/index.js'
+import { getPrevJobDetails } from '../../utils/helper.js'
+import { onImport } from './form-helper.js'
 
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Event import')
@@ -40,7 +40,7 @@ const PAGE_ICON = <EventIcon />
 
 const { Form } = ReactFinalForm
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     dataElementIdScheme:

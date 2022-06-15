@@ -1,9 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import { Page } from '../../components/index'
+import { Page } from '../../components/index.js'
 import styles from './Home.module.css'
-import { HomeCard } from './HomeCard'
-import { importPages, exportPages } from './pages'
+import { HomeCard } from './HomeCard.js'
+import { importPages, exportPages } from './pages.js'
 
 // PAGE INFO
 const PAGE_NAME = i18n.t('Overview: Import/Export', {

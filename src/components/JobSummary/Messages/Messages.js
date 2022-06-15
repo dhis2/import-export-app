@@ -9,11 +9,13 @@ import {
     TableCellHead,
 } from '@dhis2/ui'
 import React from 'react'
-import { FormField } from '../../index'
-import { messagesPropType } from '../helper'
+import { FormField } from '../../index.js'
+import { messagesPropType } from '../helper.js'
 
 const Messages = ({ messages }) => {
-    if (messages.length == 0) return null
+    if (messages.length == 0) {
+        return null
+    }
     return (
         <FormField
             label={`${i18n.t('Messages')}`}

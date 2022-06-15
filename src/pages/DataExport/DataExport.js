@@ -9,7 +9,7 @@ import {
     SchemeContainer,
     DataIcon,
     ValidationSummary,
-} from '../../components/index'
+} from '../../components/index.js'
 import {
     OrgUnitTree,
     IncludeChildren,
@@ -31,8 +31,8 @@ import {
     defaultOrgUnitIdSchemeOption,
     ExportButton,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { onExport, validate } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { onExport, validate } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 
@@ -83,7 +83,7 @@ const DataExport = () => {
                     values: true,
                     submitError: true,
                 }}
-                render={({ handleSubmit, form, submitError }) => (
+                render={({ handleSubmit, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
                             <OrgUnitTree />

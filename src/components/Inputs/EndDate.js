@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui'
 import React from 'react'
-import { DATE_VALIDATOR } from '../DatePicker/DatePickerField'
-import { DatePickerField } from '../index'
+import { DATE_VALIDATOR } from '../DatePicker/DatePickerField.js'
+import { DatePickerField } from '../index.js'
 
 const NAME = 'endDate'
 const DATATEST = 'input-end-date'

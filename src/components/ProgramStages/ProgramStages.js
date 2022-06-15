@@ -2,11 +2,11 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useProgramStages } from '../../hooks/index'
-import { StyledField } from '../index'
+import { useProgramStages } from '../../hooks/index.js'
+import { StyledField } from '../index.js'
 import styles from './ProgramStages.module.css'
 
-const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = programStage =>
+const SINGLE_EXACT_PROGRAMSTAGE_VALIDATOR = (programStage) =>
     !programStage ? i18n.t('One program stage must be selected') : undefined
 
 const ProgramStages = ({
@@ -17,7 +17,7 @@ const ProgramStages = ({
     validator,
     dataTest,
 }) => {
-    const setProgramStage = val => form.change(name, val)
+    const setProgramStage = (val) => form.change(name, val)
 
     const {
         loading: programStagesLoading,
