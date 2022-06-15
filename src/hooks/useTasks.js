@@ -30,64 +30,61 @@ const defaultJobOverview = {
 }
 const defaultRefetchPeriod = 2000
 
-const createFetchEvents = (engine, setTasks, fetchSummary) => (
-    type,
-    id,
-    task
-) => {
-    const fetchEvents = async () => {
-        if (task.completed) {
-            return
-        }
-
-        const newTask = { ...task }
-        const { events, error } = await engine.query(jobEventQuery, {
-            variables: {
-                type: task.importType,
-                taskId: task.id,
-            },
-        })
-
-        if (error) {
-            console.error('fetchEvents error: ', error)
-            return
-        }
-
-        if (events && events.length) {
-            const newEvents = events
-                .filter(e => !task.events.some(te => te.id == e.uid))
-                .map(e => ({
-                    id: e.uid,
-                    level: e.level,
-                    text: e.message,
-                    date: new Date(e.time),
-                }))
-            const errorEvent = newEvents.find(e => e.level == 'ERROR')
-            if (errorEvent) {
-                newTask.error = errorEvent.text
+const createFetchEvents =
+    (engine, setTasks, fetchSummary) => (type, id, task) => {
+        const fetchEvents = async () => {
+            if (task.completed) {
+                return
             }
-            newTask.events = [...newTask.events, ...newEvents.reverse()]
-            newTask.completed = events[0].completed
+
+            const newTask = { ...task }
+            const { events, error } = await engine.query(jobEventQuery, {
+                variables: {
+                    type: task.importType,
+                    taskId: task.id,
+                },
+            })
+
+            if (error) {
+                console.error('fetchEvents error: ', error)
+                return
+            }
+
+            if (events && events.length) {
+                const newEvents = events
+                    .filter((e) => !task.events.some((te) => te.id == e.uid))
+                    .map((e) => ({
+                        id: e.uid,
+                        level: e.level,
+                        text: e.message,
+                        date: new Date(e.time),
+                    }))
+                const errorEvent = newEvents.find((e) => e.level == 'ERROR')
+                if (errorEvent) {
+                    newTask.error = errorEvent.text
+                }
+                newTask.events = [...newTask.events, ...newEvents.reverse()]
+                newTask.completed = events[0].completed
+            }
+
+            newTask.lastUpdated = new Date()
+
+            if (!newTask.completed) {
+                setTimeout(
+                    () => fetchEvents(type, id, newTask),
+                    defaultRefetchPeriod
+                )
+            } else {
+                fetchSummary(type, id, newTask)
+            }
+
+            setTasks((tasks) => ({
+                ...tasks,
+                [type]: { ...tasks[type], [id]: newTask },
+            }))
         }
-
-        newTask.lastUpdated = new Date()
-
-        if (!newTask.completed) {
-            setTimeout(
-                () => fetchEvents(type, id, newTask),
-                defaultRefetchPeriod
-            )
-        } else {
-            fetchSummary(type, id, newTask)
-        }
-
-        setTasks(tasks => ({
-            ...tasks,
-            [type]: { ...tasks[type], [id]: newTask },
-        }))
+        fetchEvents()
     }
-    fetchEvents()
-}
 
 const createFetchSummary = (engine, setTasks) => async (type, id, task) => {
     const newTask = { ...task }
@@ -109,22 +106,22 @@ const createFetchSummary = (engine, setTasks) => async (type, id, task) => {
     }
 
     newTask.summary = summary
-    setTasks(tasks => ({
+    setTasks((tasks) => ({
         ...tasks,
         [type]: { ...tasks[type], [id]: newTask },
     }))
 }
 
 const createAddTask = (setTasks, fetchEvents) => (type, id, entry) => {
-    setTasks(tasks => ({
+    setTasks((tasks) => ({
         ...tasks,
         [type]: { ...tasks[type], [id]: entry },
     }))
     fetchEvents(type, id, entry)
 }
 
-const createUpdateJobOverview = setJobOverview => val => {
-    setJobOverview(jobOverview => ({
+const createUpdateJobOverview = (setJobOverview) => (val) => {
+    setJobOverview((jobOverview) => ({
         ...jobOverview,
         ...val,
     }))

@@ -5,7 +5,7 @@ import React from 'react'
 import { useObjects } from '../../hooks/index.js'
 import { StyledField } from '../index.js'
 
-const SINGLE_EXACT_OBJECT_VALIDATOR = object =>
+const SINGLE_EXACT_OBJECT_VALIDATOR = (object) =>
     !object ? i18n.t('One object must be selected') : undefined
 
 const NAME = 'object'
@@ -14,7 +14,7 @@ const VALIDATOR = composeValidators(hasValue, SINGLE_EXACT_OBJECT_VALIDATOR)
 const DATATEST = 'input-object-select'
 
 const Objects = ({ objectType, form }) => {
-    const setObjectListSelected = val => form.change(NAME, val)
+    const setObjectListSelected = (val) => form.change(NAME, val)
 
     const {
         loading: objectsLoading,

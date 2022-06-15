@@ -5,9 +5,9 @@ import '@testing-library/jest-dom/extend-expect'
 import { LogoIcon, Page } from '../index.js'
 import { allJobs } from '../JobOverview/__test__/data.js'
 
-const dataJob = allJobs.find(j => j.importType == 'DATAVALUE_IMPORT')
+const dataJob = allJobs.find((j) => j.importType == 'DATAVALUE_IMPORT')
 
-const renderPage = props =>
+const renderPage = (props) =>
     render(
         <Page {...props}>
             <p>Child paragraph</p>

@@ -16,12 +16,12 @@ const ERRORMESSAGE = i18n.t(
 )
 const RESOURCETYPE = resourceTypes.TETYPE
 
-const SINGLE_TETYPE_VALIDATOR = selectedTypes =>
+const SINGLE_TETYPE_VALIDATOR = (selectedTypes) =>
     selectedTypes.length == 0
         ? i18n.t('At least one tracked entity type must be selected')
         : undefined
 
-const SINGLE_EXACT_TETYPE_VALIDATOR = selectedTypes =>
+const SINGLE_EXACT_TETYPE_VALIDATOR = (selectedTypes) =>
     !selectedTypes
         ? i18n.t('One tracked entity type must be selected')
         : undefined

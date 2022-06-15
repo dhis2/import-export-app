@@ -22,7 +22,7 @@ const GeometryFormat = ({ format = 'geojson' }) => {
 
     const onChange = ({ value }) => {
         if (value !== format) {
-            const { path } = geometryFormats.find(f => f.value === value)
+            const { path } = geometryFormats.find((f) => f.value === value)
             history.push(path)
         }
     }

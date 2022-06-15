@@ -11,7 +11,7 @@ import styles from './JobOverview.module.css'
 const JobOverview = () => {
     const { jobOverview, updateJobOverview } = useContext(TaskContext)
 
-    const setActiveTypes = types => {
+    const setActiveTypes = (types) => {
         const selectedJob = jobOverview.selectedJob
         const job =
             selectedJob && types.includes(selectedJob.importType)
@@ -22,7 +22,7 @@ const JobOverview = () => {
             selectedJob: job,
         })
     }
-    const setSelectedJob = job => {
+    const setSelectedJob = (job) => {
         updateJobOverview({
             selectedJob: job,
         })

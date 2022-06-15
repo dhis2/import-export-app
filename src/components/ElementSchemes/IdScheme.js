@@ -23,11 +23,11 @@ const IdScheme = ({ name, label, idSchemeOptions, dataTest }) => {
             const dataElementAttributes = await fetchAttributes(
                 `${baseUrl}/api/`,
                 'dataElementAttribute'
-            ).catch(error => (err = error))
+            ).catch((error) => (err = error))
             const organisationUnitAttributes = await fetchAttributes(
                 `${baseUrl}/api/`,
                 'organisationUnitAttribute'
-            ).catch(error => (err = error))
+            ).catch((error) => (err = error))
 
             setError(err)
 

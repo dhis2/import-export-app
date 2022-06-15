@@ -24,7 +24,7 @@ const Select = ({
     filterable,
     initialFocus,
 }) => {
-    const optionEls = options.map(o => (
+    const optionEls = options.map((o) => (
         <SingleSelectOption key={o.value} value={o.value} label={o.label} />
     ))
 

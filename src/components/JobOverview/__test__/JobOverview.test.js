@@ -72,7 +72,7 @@ test('should show list of jobs started', async () => {
     expect(jobOverviewContainer).toContainElement(jobSummaryContainer)
 
     // all events of selected job should be showing
-    selectedJob.events.forEach(e =>
+    selectedJob.events.forEach((e) =>
         expect(jobSummaryContainer).toHaveTextContent(e.text)
     )
 
@@ -107,7 +107,7 @@ test('import type filters should filter jobs', async () => {
     // minus the number of "METADATA_IMPORTA" type jobs
     const listElements = getAllByDataTest(/job-overview-menu-label-*/)
     expect(listElements).toHaveLength(
-        allJobs.filter(j => j.importType != 'METADATA_IMPORT').length
+        allJobs.filter((j) => j.importType != 'METADATA_IMPORT').length
     )
 
     // click on another job should trigger setSelectedJob function
@@ -116,7 +116,7 @@ test('import type filters should filter jobs', async () => {
     expect(setSelectedJob).toHaveBeenCalledTimes(1)
     expect(setSelectedJob).toHaveBeenCalledWith(
         allJobs.find(
-            j =>
+            (j) =>
                 j.importType == 'EVENT_IMPORT' &&
                 j.jobDetails.files[0].name == 'event1.json'
         )

@@ -21,7 +21,7 @@ import { resourceTypes } from './resourceTypes.js'
 
 const { Field } = ReactFinalForm
 
-const resourceToQuery = resourceType => {
+const resourceToQuery = (resourceType) => {
     if (resourceType == resourceTypes.DATASET) {
         return { resourceName: 'dataSets', query: dataSetQuery }
     } else if (resourceType == resourceTypes.PROGRAM) {
@@ -54,12 +54,14 @@ const ResourcePicker = ({
 }) => {
     const [list, setList] = useState([])
     const [error, setError] = useState(undefined)
-    const { error: resourceError, resourceName, query } = resourceToQuery(
-        resourceType
-    )
+    const {
+        error: resourceError,
+        resourceName,
+        query,
+    } = resourceToQuery(resourceType)
 
     const { fetching, called, refetch } = useDataQuery(query, {
-        onComplete: data => {
+        onComplete: (data) => {
             const elements = data[resourceName][resourceName]
             const list = elements.map(({ id, displayName }) => ({
                 value: id,
@@ -73,7 +75,7 @@ const ResourcePicker = ({
                 })
             }
         },
-        onError: error => {
+        onError: (error) => {
             setError(error)
             console.error(`ResourcePicker(${resourceName}) error: `, error)
         },

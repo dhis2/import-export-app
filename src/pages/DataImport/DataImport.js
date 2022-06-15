@@ -50,7 +50,7 @@ export const PAGE_DESCRIPTION = i18n.t(
 )
 const PAGE_ICON = <DataIcon />
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     strategy: prevJobDetails.strategy || defaultStrategyOption,

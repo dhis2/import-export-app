@@ -18,7 +18,7 @@ const renderJobSummary = (task, props) => {
 }
 
 describe('summary for a GML job', () => {
-    const gmlJob = allJobs.find(j => j.importType == 'GML_IMPORT')
+    const gmlJob = allJobs.find((j) => j.importType == 'GML_IMPORT')
 
     test('type count is showing', () => {
         const { getByDataTest } = renderJobSummary(gmlJob, props)
@@ -64,7 +64,7 @@ describe('summary for a GML job', () => {
 
 describe('summary for a data import job with conflicts', () => {
     const dataJob = allJobs.find(
-        j => j.importType == 'DATAVALUE_IMPORT' && j.summary.conflicts
+        (j) => j.importType == 'DATAVALUE_IMPORT' && j.summary.conflicts
     )
 
     test('overview summary is showing', () => {

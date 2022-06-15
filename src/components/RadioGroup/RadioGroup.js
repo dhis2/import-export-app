@@ -49,7 +49,7 @@ const RadioGroup = ({
                     [styles.horizontal]: !vertical,
                 })}
             >
-                {options.map(o => (
+                {options.map((o) => (
                     <div key={o.value}>
                         <Radio
                             name={name}

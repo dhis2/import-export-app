@@ -10,7 +10,7 @@ const LABEL = i18n.t('Class key')
 const DATATEST = 'input-class-key'
 
 const ClassKey = ({ form, prevValue, show = true }) => {
-    const setClassKey = val => form.change(NAME, val)
+    const setClassKey = (val) => form.change(NAME, val)
 
     const {
         loading: classKeysLoading,

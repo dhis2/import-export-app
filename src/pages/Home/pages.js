@@ -42,12 +42,12 @@ import {
     PAGE_DESCRIPTION as TEI_IMPORT_DESCRIPTION,
 } from '../TEIImport/TEIImport.js'
 
-const capitalizeFirstLetter = string =>
+const capitalizeFirstLetter = (string) =>
     string.charAt(0).toUpperCase() + string.slice(1)
-const capitalizeName = name =>
+const capitalizeName = (name) =>
     name.split(' ').map(capitalizeFirstLetter).join(' ')
-const capitalizePages = pages =>
-    pages.map(p => ({ ...p, name: capitalizeName(p.name) }))
+const capitalizePages = (pages) =>
+    pages.map((p) => ({ ...p, name: capitalizeName(p.name) }))
 
 const exportPages = capitalizePages([
     {

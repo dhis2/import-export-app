@@ -14,12 +14,12 @@ const SELECTEDLABEL = i18n.t('Selected data sets')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the data sets!')
 const RESOURCETYPE = resourceTypes.DATASET
 
-const SINGLE_DATASET_VALIDATOR = selectedDataSets =>
+const SINGLE_DATASET_VALIDATOR = (selectedDataSets) =>
     selectedDataSets.length == 0
         ? i18n.t('At least one data set must be selected')
         : undefined
 
-const SINGLE_EXACT_DATASET_VALIDATOR = selectedDataSets =>
+const SINGLE_EXACT_DATASET_VALIDATOR = (selectedDataSets) =>
     selectedDataSets.length != 1
         ? i18n.t('One data set must be selected')
         : undefined

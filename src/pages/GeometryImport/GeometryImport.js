@@ -28,7 +28,7 @@ export const PAGE_DESCRIPTION = i18n.t(
 )
 export const PAGE_ICON = <GeometryIcon />
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,

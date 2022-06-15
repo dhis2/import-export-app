@@ -15,8 +15,8 @@ const OrgUnitIdScheme = ({ name, label, orgUnitIdSchemeOptions, dataTest }) => {
 
     useEffect(() => {
         fetchAttributes(`${baseUrl}/api/`, 'organisationUnitAttribute')
-            .then(attributes => setSchemes(attributes))
-            .catch(error => setError(error))
+            .then((attributes) => setSchemes(attributes))
+            .catch((error) => setError(error))
         setLoading(false)
     }, [])
 

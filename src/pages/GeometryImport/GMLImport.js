@@ -16,7 +16,7 @@ import { onImport } from './gml-helper'
 
 const { Form } = ReactFinalForm
 
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
 })
 

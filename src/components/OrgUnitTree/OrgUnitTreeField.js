@@ -22,12 +22,12 @@ const rootQuery = {
     },
 }
 
-const SINGLE_ORG_VALIDATOR = selectedOrgUnits =>
+const SINGLE_ORG_VALIDATOR = (selectedOrgUnits) =>
     selectedOrgUnits.length == 0
         ? i18n.t('At least one organisation unit must be selected')
         : undefined
 
-const SINGLE_EXACT_ORG_VALIDATOR = selectedOrgUnits =>
+const SINGLE_EXACT_ORG_VALIDATOR = (selectedOrgUnits) =>
     selectedOrgUnits.length != 1
         ? i18n.t('One organisation unit must be selected')
         : undefined
@@ -57,7 +57,7 @@ const Wrapper = ({
                             onChange(selected)
                         }}
                         selected={value}
-                        roots={data.roots.organisationUnits.map(ou => ou.id)}
+                        roots={data.roots.organisationUnits.map((ou) => ou.id)}
                         {...rest}
                         singleSelection={!multiSelect}
                     />

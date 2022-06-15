@@ -2,7 +2,7 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { useState, useEffect } from 'react'
 
-const listQuery = resource => ({
+const listQuery = (resource) => ({
     data: {
         resource: resource,
         fields: 'id,displayName',
@@ -22,9 +22,9 @@ const useObjects = (type, setSelected) => {
         setLoading(true)
         setSelected(undefined)
         engine.query(listQuery(type), {
-            onComplete: data => {
+            onComplete: (data) => {
                 const list = data.data[type]
-                const formattedList = list.map(e => ({
+                const formattedList = list.map((e) => ({
                     value: e.id,
                     label: e.displayName,
                 }))
@@ -32,7 +32,7 @@ const useObjects = (type, setSelected) => {
                 setSelected(formattedList[0].value)
                 setLoading(false)
             },
-            onError: error => {
+            onError: (error) => {
                 setError(error)
                 console.error('useObjects error: ', error)
             },
