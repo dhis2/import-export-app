@@ -1,4 +1,3 @@
-import { OrgUnitDimension } from '@dhis2/analytics'
 import { useDataEngine, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
@@ -6,27 +5,25 @@ import {
     SingleSelectField as SingleSelect,
     SingleSelectOption,
     Button,
-    ComponentCover,
-    CenteredContent,
-    CircularLoader,
     Divider,
-    NoticeBox,
+    // NoticeBox,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import React, { useState } from 'react'
 import { Page } from '../../../components/index'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { getAggregations } from '../util/earthEngineHelper'
-import getEarthEngineConfig from '../util/earthEngineLoader'
-import { POPULATION_AGE_GROUPS_DATASET_ID } from '../util/earthEngines'
-import { postDataWithFetch } from '../util/postData'
+// import { getAggregations } from '../util/earthEngineHelper'
+// import getEarthEngineConfig from '../util/earthEngineLoader'
+// import { POPULATION_AGE_GROUPS_DATASET_ID } from '../util/earthEngines'
+// import { postDataWithFetch } from '../util/postData'
 import { AggregationType } from './AggregationType'
 import { Tooltip } from './ButtonTooltip.js'
 import { DataPreview } from './DataPreview'
 import { EarthEngineId } from './EarthEngineId'
-import { MappingTable } from './MapGenderAgeGroupsTable'
+// import { MappingTable } from './MapGenderAgeGroupsTable'
+import { OrganisationUnits } from './OrganisationUnits'
 import { Periods } from './Periods'
-import { Rounding, getPrecision, defaultRoundingOption } from './Rounding'
+import { Rounding, defaultRoundingOption } from './Rounding'
 import styles from './styles/EarthEngineImportForm.module.css'
 
 const NO_VALUE = ''
@@ -36,7 +33,7 @@ const { Form } = ReactFinalForm
 const EarthEngineImportForm = () => {
     const engine = useDataEngine()
     const { baseUrl } = useConfig()
-    const { rootOrgUnits, userSettings, dataSets } = useCachedDataQuery()
+    const { userSettings, dataSets } = useCachedDataQuery()
 
     // user selections
     const [period, setPeriod] = useState(NO_VALUE)
@@ -128,12 +125,13 @@ const EarthEngineImportForm = () => {
         //     dataElement: dataElement,
         //     period,
         //     valueType: aggregation,
-        //     precision: getPrecision(rounding),
+        //     precision: rounding,
         // })
     }
 
     const initialValues = {
         rounding: defaultRoundingOption,
+        organisationUnits: [],
     }
 
     const onSubmit = () => console.log('submit')
@@ -164,25 +162,7 @@ const EarthEngineImportForm = () => {
 
                             <h2>{i18n.t('Organisation units')}</h2>
                             <Divider />
-                            <div className={styles.row}>
-                                <div className={styles.orgUnitContainer}>
-                                    {!rootOrgUnits ? (
-                                        <ComponentCover>
-                                            <CenteredContent>
-                                                <CircularLoader />
-                                            </CenteredContent>
-                                        </ComponentCover>
-                                    ) : (
-                                        <OrgUnitDimension
-                                            roots={rootOrgUnits}
-                                            selected={orgUnits}
-                                            onSelect={orgUnitsSelected}
-                                            showUserOrgUnits={false}
-                                        />
-                                    )}
-                                </div>
-                            </div>
-
+                            <OrganisationUnits />
                             <h2>{i18n.t('Import setup')}</h2>
                             <Divider />
                             <AggregationType />
@@ -263,7 +243,7 @@ const EarthEngineImportForm = () => {
                                             ({ id }) => id === dataElement
                                         )}
                                         data={eeData}
-                                        precision={getPrecision(rounding)}
+                                        precision={rounding}
                                     />
                                 </div>
                             )}

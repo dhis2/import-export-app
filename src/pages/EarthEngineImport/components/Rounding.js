@@ -6,50 +6,49 @@ import { StyledField } from '../../../components/index'
 const roundings = [
     {
         label: i18n.t("Don't round source values"),
-        value: 'noround',
-        rValue: undefined,
+        value: '-1',
     },
     {
         label: i18n.t('Round to 0 decimal places'),
-        value: 'round0',
-        rValue: 0,
+        value: '0',
     },
     {
         label: i18n.t('Round to 1 decimal place'),
-        value: 'round1',
-        rValue: 1,
+        value: '1',
     },
     {
         label: i18n.t('Round to 2 decimal places'),
-        value: 'round2',
-        rValue: 2,
+        value: '2',
     },
     {
         label: i18n.t('Round to 3 decimal places'),
-        value: 'round3',
-        rValue: 3,
+        value: '3',
     },
     {
         label: i18n.t('Round to 4 decimal places'),
-        value: 'round4',
-        rValue: 4,
+        value: '4',
     },
     {
         label: i18n.t('Round to 5 decimal places'),
-        value: 'round5',
-        rValue: 5,
+        value: '5',
     },
     {
         label: i18n.t('Round to 6 decimal places'),
-        value: 'round6',
-        rValue: 6,
+        value: '6',
     },
 ]
 
 const defaultRoundingOption = roundings[0].value
 
-const getPrecision = rounding =>
-    roundings.find(r => r.value === rounding).rValue
+// Returns a function that will return a value with the given precision
+const getPrecisionFn = numDecimals => {
+    const decimals = parseInt(numDecimals)
+    if (decimals === -1) {
+        return n => n
+    }
+    const m = Math.pow(10, decimals)
+    return n => Math.round(n * m) / m
+}
 
 const Rounding = () => (
     <div style={{ maxWidth: '300px' }}>
@@ -65,4 +64,4 @@ const Rounding = () => (
     </div>
 )
 
-export { Rounding, getPrecision, defaultRoundingOption }
+export { Rounding, getPrecisionFn, defaultRoundingOption }

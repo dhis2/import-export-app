@@ -1,5 +1,5 @@
 import { apiFetch } from '../api/apiFetch.js'
-import { getPrecisionFn } from './getPrecisionFn.js'
+import { getPrecisionFn } from '../components/Rounding'
 
 export const postDataWithFetch = ({
     baseUrl,

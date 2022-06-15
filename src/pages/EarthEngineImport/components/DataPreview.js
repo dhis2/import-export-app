@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import { fetchCurrentValues } from '../api/fetchCurrentValues.js'
-import { getPrecisionFn } from '../util/getPrecisionFn.js'
+import { getPrecisionFn } from './Rounding'
 import styles from './styles/DataPreview.module.css'
 
 const DataPreview = ({
