@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { ResourcePickerField } from '../index.js'
@@ -48,26 +49,28 @@ const GeometryAttributePicker = ({
                 label={USE_ATTRIBUTE_LABEL}
                 dataTest={`${USE_ATTRIBUTE_DATATEST}-sf`}
             />
-            {useAttribute && (
-                <div className={styles.indent}>
-                    <p className={styles.help}>{HELPTEXT}</p>
-                    <ResourcePickerField
-                        name={NAME}
-                        resourceType={RESOURCETYPE}
-                        errorMessage={ERRORMESSAGE}
-                        listName={LISTNAME}
-                        label={label}
-                        withFilter={withFilter}
-                        filterLabel={FILTERLABEL}
-                        selectedLabel={SELECTEDLABEL}
-                        dataTest={DATATEST}
-                        multiSelect={multiSelect}
-                        validator={VALIDATOR}
-                        autoSelectFirst
-                        {...rest}
-                    />
-                </div>
-            )}
+            <div
+                className={cx(styles.indent, {
+                    [styles.hidden]: !useAttribute,
+                })}
+            >
+                <p className={styles.help}>{HELPTEXT}</p>
+                <ResourcePickerField
+                    name={NAME}
+                    resourceType={RESOURCETYPE}
+                    errorMessage={ERRORMESSAGE}
+                    listName={LISTNAME}
+                    label={label}
+                    withFilter={withFilter}
+                    filterLabel={FILTERLABEL}
+                    selectedLabel={SELECTEDLABEL}
+                    dataTest={DATATEST}
+                    multiSelect={multiSelect}
+                    validator={VALIDATOR}
+                    autoSelectFirst
+                    {...rest}
+                />
+            </div>
         </div>
     )
 }

@@ -13,3 +13,7 @@
     line-height: 16px;
     margin: var(--spacers-dp4) 0 var(--spacers-dp24);
 }
+
+.hidden {
+    display: none;
+}
