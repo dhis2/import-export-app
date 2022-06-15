@@ -8,14 +8,14 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import { FormField } from '../index'
+import { FormField } from '../index.js'
 import {
     dataSetQuery,
     programQuery,
     TETypeQuery,
     userQuery,
     geojsonAttributesQuery,
-} from './queries'
+} from './queries.js'
 import styles from './ResourcePicker.module.css'
 import { resourceTypes } from './resourceTypes.js'
 

@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF, InputFieldFF } from '@dhis2/ui'
 import React from 'react'
-import { StyledField } from '../'
-import { OrgUnitIdSchemeCore } from '../Inputs/'
+import { StyledField } from '../index.js'
+import { OrgUnitIdSchemeCore } from '../Inputs/index.js'
 import styles from './GeometryPropertyMatch.module.css'
 
 const { useField, Field } = ReactFinalForm

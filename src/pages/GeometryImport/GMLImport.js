@@ -2,17 +2,17 @@ import { useConfig } from '@dhis2/app-runtime'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { GeometryFormat } from '../../components/Geometry/'
-import { Page, ValidationSummary } from '../../components/index'
+import { GeometryFormat } from '../../components/Geometry/index.js'
+import { Page, ValidationSummary } from '../../components/index.js'
 import {
     FileUpload,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { TaskContext, getNewestTask } from '../../contexts/index'
-import { getPrevJobDetails } from '../../utils/helper'
-import { PAGE_NAME, PAGE_DESCRIPTION, PAGE_ICON } from './GeometryImport'
-import { onImport } from './gml-helper'
+} from '../../components/Inputs/index.js'
+import { TaskContext, getNewestTask } from '../../contexts/index.js'
+import { getPrevJobDetails } from '../../utils/helper.js'
+import { PAGE_NAME, PAGE_DESCRIPTION, PAGE_ICON } from './GeometryImport.js'
+import { onImport } from './gml-helper.js'
 
 const { Form } = ReactFinalForm
 

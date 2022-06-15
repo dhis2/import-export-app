@@ -7,17 +7,21 @@ import {
     GeometryFormat,
     GeometryPropertyMatch,
     GeometryAttributePicker,
-} from '../../components/Geometry/'
-import { Page, GeometryIcon, ValidationSummary } from '../../components/index'
+} from '../../components/Geometry/index.js'
+import {
+    Page,
+    GeometryIcon,
+    ValidationSummary,
+} from '../../components/index.js'
 import {
     FileUpload,
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { TaskContext, getNewestTask } from '../../contexts/index'
-import { getPrevJobDetails } from '../../utils/helper'
-import { onImport } from './geojson-helper'
+} from '../../components/Inputs/index.js'
+import { TaskContext, getNewestTask } from '../../contexts/index.js'
+import { getPrevJobDetails } from '../../utils/helper.js'
+import { onImport } from './geojson-helper.js'
 
 const { Form } = ReactFinalForm
 

@@ -19,7 +19,7 @@ import {
 import {
     PAGE_NAME as GEOMETRY_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as GEOMETRY_IMPORT_DESCRIPTION,
-} from '../GeometryImport/GeometryImport'
+} from '../GeometryImport/GeometryImport.js'
 import {
     PAGE_NAME as METADATA_DEPENDENCY_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_DEPENDENCY_EXPORT_DESCRIPTION,

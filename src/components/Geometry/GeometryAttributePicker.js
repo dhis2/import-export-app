@@ -2,8 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ResourcePickerField } from '../'
-import { resourceTypes } from '../ResourcePicker/resourceTypes'
+import { ResourcePickerField } from '../index.js'
+import { resourceTypes } from '../ResourcePicker/resourceTypes.js'
 import styles from './GeometryAttributePicker.module.css'
 
 const { useField, Field } = ReactFinalForm

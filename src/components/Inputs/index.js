@@ -69,8 +69,8 @@ export { IdScheme, defaultIdSchemeOption } from './IdScheme.js'
 export {
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
-} from './OrgUnitIdScheme'
-export { OrgUnitIdSchemeCore } from './OrgUnitIdSchemeCore'
+} from './OrgUnitIdScheme.js'
+export { OrgUnitIdSchemeCore } from './OrgUnitIdSchemeCore.js'
 export {
     OrgUnitMode,
     defaultOrgUnitSelectionModeOption,

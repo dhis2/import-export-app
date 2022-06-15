@@ -1,3 +1,3 @@
-export { GeometryFormat } from './GeometryFormat'
-export { GeometryPropertyMatch } from './GeometryPropertyMatch'
-export { GeometryAttributePicker } from './GeometryAttributePicker'
+export { GeometryFormat } from './GeometryFormat.js'
+export { GeometryPropertyMatch } from './GeometryPropertyMatch.js'
+export { GeometryAttributePicker } from './GeometryAttributePicker.js'
