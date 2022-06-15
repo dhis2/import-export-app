@@ -1,4 +1,4 @@
-import { locationAssign } from '../../utils/helper'
+import { locationAssign } from '../../utils/helper.js'
 
 const onExport = (baseUrl, setExportEnabled) => values => {
     setExportEnabled(false)

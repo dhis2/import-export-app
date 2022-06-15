@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { DatePicker } from '../index'
+import { DatePicker } from '../index.js'
 const { Field } = ReactFinalForm
 
 const OPTIONAL_DATE_VALIDATOR = date =>

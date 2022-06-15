@@ -10,7 +10,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormField } from '../../index'
+import { FormField } from '../../index.js'
 
 const valueToString = value => {
     if (value instanceof File) {

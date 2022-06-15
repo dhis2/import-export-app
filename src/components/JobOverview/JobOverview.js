@@ -3,13 +3,13 @@ import { Button, Chip, Menu, MenuItem } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { TaskContext } from '../../contexts/'
-import { categoryTypes } from '../../utils/tasks'
-import { JobSummary } from '../index'
-import { ChipContainer } from './ChipContainer'
-import { categoryTypesObj, jobToPath } from './helper'
+import { TaskContext } from '../../contexts/index.js'
+import { categoryTypes } from '../../utils/tasks.js'
+import { JobSummary } from '../index.js'
+import { ChipContainer } from './ChipContainer.js'
+import { categoryTypesObj, jobToPath } from './helper.js'
 import styles from './JobOverview.module.css'
-import { MenuLabel } from './MenuLabel/MenuLabel'
+import { MenuLabel } from './MenuLabel/MenuLabel.js'
 
 const JobOverview = ({
     activeTypes,
@@ -34,8 +34,12 @@ const JobOverview = ({
         )
         .flat()
         .sort((a, b) => {
-            if (a.importType > b.importType) return -1
-            if (a.createdAt > b.createdAt) return -1
+            if (a.importType > b.importType) {
+                return -1
+            }
+            if (a.createdAt > b.createdAt) {
+                return -1
+            }
         })
 
     const filteredTasks = allTasks.filter(t =>

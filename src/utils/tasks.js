@@ -6,7 +6,7 @@ import {
     GeometryIcon,
     MetadataImportIcon,
     TEIIcon,
-} from '../components/Icon/Icon'
+} from '../components/Icon/Icon.js'
 
 const categoryTypes = [
     {

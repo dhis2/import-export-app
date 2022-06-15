@@ -1,6 +1,6 @@
 import qs from 'query-string'
 
-const getComparisonData = url => {
+const getComparisonData = (url) => {
     return cy
         .getAliases('@defaultData', '@changedData')
         .then(([defaultData, changedData]) => {

@@ -20,8 +20,8 @@ Given('the user is on the meta data export page', () => {
 Given('all schemas have been selected', () => {
     cy.get(`[data-test="input-schemas-select-all"]`).click()
 
-    cy.get('@changedData').then(changedData => {
-        cy.get('[name^="schemas."]').then($inputs => {
+    cy.get('@changedData').then((changedData) => {
+        cy.get('[name^="schemas."]').then(($inputs) => {
             const updates = $inputs.toArray().reduce((curUpdates, input) => {
                 const $input = Cypress.$(input)
                 const name = $input.attr('name')
@@ -40,8 +40,8 @@ Given('all schemas have been selected', () => {
 Given('the schemas are all deselected', () => {
     cy.get(`[data-test="input-schemas-select-none"]`).click()
 
-    cy.get('@changedData').then(changedData => {
-        cy.get('[name^="schemas."]').then($inputs => {
+    cy.get('@changedData').then((changedData) => {
+        cy.get('[name^="schemas."]').then(($inputs) => {
             const updates = $inputs.toArray().reduce(
                 (curUpdates, input) => {
                     const $input = Cypress.$(input)
@@ -61,13 +61,13 @@ Given('the schemas are all deselected', () => {
 
 Given('the category option schema is selected', () => {
     cy.toggleCheckbox('schemas.categoryOptions')
-    cy.get('@changedData').then(changedData => {
+    cy.get('@changedData').then((changedData) => {
         cy.wrap({ ...changedData, categoryOptions: 'true' }).as('changedData')
     })
 })
 
 When('the export form is submitted', () => {
-    cy.window().then(win => {
+    cy.window().then((win) => {
         const locationAssignStub = cy.stub().as('locationAssign')
         win.locationAssign = locationAssignStub
         cy.get('[data-test="input-export-submit"]').click()
@@ -75,16 +75,16 @@ When('the export form is submitted', () => {
 })
 
 Then('the download request is not sent', () => {
-    cy.window().then(win => {
-        cy.get('@locationAssign').then(locationAssignStub => {
+    cy.window().then((win) => {
+        cy.get('@locationAssign').then((locationAssignStub) => {
             expect(locationAssignStub).not.to.be.called
         })
     })
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.window().then(win => {
-        cy.get('@locationAssign').then(locationAssignStub => {
+    cy.window().then((win) => {
+        cy.get('@locationAssign').then((locationAssignStub) => {
             expect(locationAssignStub).to.be.calledOnce
             const call = locationAssignStub.getCall(0)
             const url = call.args[0]

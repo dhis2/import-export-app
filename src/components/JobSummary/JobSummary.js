@@ -2,11 +2,11 @@ import i18n from '@dhis2/d2-i18n'
 import { Divider, Tag } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { jsDateToString } from '../../utils/helper'
-import { Details } from './Details/Details'
+import { jsDateToString } from '../../utils/helper.js'
+import { Details } from './Details/Details.js'
 import styles from './JobSummary.module.css'
-import { Log } from './Log/Log'
-import { Summary } from './Summary/Summary'
+import { Log } from './Log/Log.js'
+import { Summary } from './Summary/Summary.js'
 
 const Header = ({ jobDetails, task, showFileDetails }) => (
     <div className={styles.header}>
@@ -67,7 +67,9 @@ const JobSummary = ({
     showJobDetails = false,
     dataTest,
 }) => {
-    if (!task) return null
+    if (!task) {
+        return null
+    }
     const { jobDetails } = task
 
     return (

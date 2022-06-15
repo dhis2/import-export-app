@@ -1,7 +1,7 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { RadioGroup } from '../index'
+import { RadioGroup } from '../index.js'
 const { Field } = ReactFinalForm
 
 const Wrapper = ({

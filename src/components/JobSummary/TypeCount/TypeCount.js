@@ -10,11 +10,13 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormField } from '../../index'
-import { statsPropTypeObj } from '../helper'
+import { FormField } from '../../index.js'
+import { statsPropTypeObj } from '../helper.js'
 
 const TypeCount = ({ stats }) => {
-    if (stats.length == 0) return null
+    if (stats.length == 0) {
+        return null
+    }
     return (
         <FormField
             label={`${i18n.t('Details by type')}`}

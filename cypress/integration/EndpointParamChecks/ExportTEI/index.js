@@ -2,9 +2,12 @@ import '../common/settingFormValues'
 import { Before, Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
 const programsApi = /\/programs\?fields=id,displayName&paging=false/
-const orgUnitsFirstLevelApi = /\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
-const orgUnitsRootApi = /\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
-const trackedEntityTypesApi = /\/trackedEntityTypes\?fields=id,displayName&paging=false/
+const orgUnitsFirstLevelApi =
+    /\/organisationUnits\/ImspTQPwCqd\?fields=children\[id,displayName,path,children::isNotEmpty\]&paging=false/
+const orgUnitsRootApi =
+    /\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
+const trackedEntityTypesApi =
+    /\/trackedEntityTypes\?fields=id,displayName&paging=false/
 const usersApi = /\/users\?fields=id,displayName&paging=false/
 const trackedEntityInstancesApi = /\/trackedEntityInstances/
 
@@ -48,8 +51,10 @@ Given('the user is on the tracked entity instances export page', () => {
 
 const sierraId = 'ImspTQPwCqd'
 Given('the Sierra Leone org unit has been selected', () => {
-    cy.get(`[data-test="input-org-unit-tree"] label:contains("Sierra Leone")`).click()
-    cy.get('@defaultData').then(defaultData => {
+    cy.get(
+        `[data-test="input-org-unit-tree"] label:contains("Sierra Leone")`
+    ).click()
+    cy.get('@defaultData').then((defaultData) => {
         cy.wrap({ ...defaultData, orgUnit: sierraId }).as('defaultData')
     })
 })
@@ -60,19 +65,18 @@ Given('the user expands the root level of the org unit tree', () => {
 
 const boId = 'O6uvpzGd5pu'
 When('the user selects the "Bo" org unit', () => {
-    cy
-        .get(`[data-test="input-org-unit-tree"] label:contains("Bo")`)
+    cy.get(`[data-test="input-org-unit-tree"] label:contains("Bo")`)
         .filter((index, el) => Cypress.$(el).text().match(/Bo$/))
         .click()
 
-    cy.get('@defaultData').then(defaultData => {
+    cy.get('@defaultData').then((defaultData) => {
         const orgUnit = `${defaultData.orgUnit},${boId}`
         cy.wrap({ ...defaultData, orgUnit }).as('defaultData')
     })
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.window().then(win => {
+    cy.window().then((win) => {
         expect(win.open).to.be.calledOnce
         const requestUrl = win.open.getCall(0).args[0]
 
@@ -95,12 +99,15 @@ Then('the download request is sent with the right parameters', () => {
 
                 const expected = {
                     ...rest,
-                    ...(rest.ouMode === ':MANUAL:' ? { ou: orgUnit.replace(',', ';') } : {}),
+                    ...(rest.ouMode === ':MANUAL:'
+                        ? { ou: orgUnit.replace(',', ';') }
+                        : {}),
                     ...(programStatus !== '' ? { programStatus } : {}),
-                    ...(assignedUser ? { assignedUser: assignedUser.join(';') } : {}),
-                    ouMode: rest.ouMode === ':MANUAL:'
-                        ? 'SELECTED'
-                        : rest.ouMode
+                    ...(assignedUser
+                        ? { assignedUser: assignedUser.join(';') }
+                        : {}),
+                    ouMode:
+                        rest.ouMode === ':MANUAL:' ? 'SELECTED' : rest.ouMode,
                 }
 
                 const expectedEntries = Object.entries(expected)
@@ -108,7 +115,6 @@ Then('the download request is sent with the right parameters', () => {
                 for (const [name, value] of expectedEntries) {
                     expect(actual[name]).to.deep.equal(value)
                 }
-
             }
         )
     })

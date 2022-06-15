@@ -9,7 +9,7 @@ import {
     SchemeContainer,
     TEIIcon,
     ValidationSummary,
-} from '../../components/index'
+} from '../../components/index.js'
 import {
     Format,
     formatOptions,
@@ -47,8 +47,8 @@ import {
     defaultOrgUnitIdSchemeOption,
     ExportButton,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { onExport, validate } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { onExport, validate } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 
@@ -108,7 +108,7 @@ const TEIExport = () => {
                     values: true,
                     submitError: true,
                 }}
-                render={({ handleSubmit, form, values, submitError }) => {
+                render={({ handleSubmit, values, submitError }) => {
                     const showProgramFilters = values.teiTypeFilter == 'PROGRAM'
                     const showTEFilters = values.teiTypeFilter == 'TE'
                     const showLUDates = values.lastUpdatedFilter == 'DATE'

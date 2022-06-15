@@ -1,4 +1,4 @@
-export const nameToDataTest = name => {
+export const nameToDataTest = (name) => {
     switch (name) {
         case 'assignedUserModeFilter':
             return 'assignedUserModeFilter'

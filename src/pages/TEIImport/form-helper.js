@@ -1,5 +1,5 @@
-import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form'
-import { uploadFile } from '../../utils/helper'
+import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
+import { uploadFile } from '../../utils/helper.js'
 
 const onImport = ({
     baseUrl,

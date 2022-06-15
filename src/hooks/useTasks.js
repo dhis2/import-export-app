@@ -1,6 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import { useState } from 'react'
-import { allCategories } from '../utils/tasks'
+import { allCategories } from '../utils/tasks.js'
 
 const jobEventQuery = {
     events: {

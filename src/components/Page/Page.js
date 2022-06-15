@@ -8,7 +8,7 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { JobSummary, MiniJobSummary } from '../index'
+import { JobSummary, MiniJobSummary } from '../index.js'
 import styles from './Page.module.css'
 
 const Page = ({

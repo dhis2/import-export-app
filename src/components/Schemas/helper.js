@@ -56,7 +56,9 @@ function findLabelByLowerCaseComparison(groupKey, schemas) {
     return schemas.reduce((foundLabel, { name: schemaName, displayName }) => {
         // do not try to compare anything if a label already
         // has been found
-        if (foundLabel) return foundLabel
+        if (foundLabel) {
+            return foundLabel
+        }
 
         if (isGroupKeyMatchingLowerCaseSchemaName(schemaName)) {
             return displayName
@@ -85,7 +87,9 @@ function findKeyByCamelCaseComparison(groupKey, schemas) {
     return schemas.reduce((foundLabel, { name: schemaName }) => {
         // do not try to compare anything if a label already
         // has been found
-        if (foundLabel) return foundLabel
+        if (foundLabel) {
+            return foundLabel
+        }
 
         const lowerCaseSchemaName = schemaName.toLowerCase()
 

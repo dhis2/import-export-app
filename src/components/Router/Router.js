@@ -14,8 +14,8 @@ import {
     TEIImport,
     JobOverview,
     Home,
-} from '../../pages'
-import { ScrollToTop } from '../Router/ScrollToTop'
+} from '../../pages/index.js'
+import { ScrollToTop } from '../Router/ScrollToTop.js'
 
 const Router = () => {
     return (

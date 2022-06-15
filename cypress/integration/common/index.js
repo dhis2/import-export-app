@@ -26,7 +26,7 @@ When('the export form is submitted', () => {
             title: '',
             body: {
                 innerHTML: '',
-            }
+            },
         },
         onbeforeunload: cy.stub(),
         onabort: undefined,
@@ -34,12 +34,12 @@ When('the export form is submitted', () => {
     }
 
     cy.wrap(winOpenResponse).as('winOpenResponse')
-    cy.window().then(win => {
+    cy.window().then((win) => {
         cy.stub(win, 'open', () => winOpenResponse).as('winOpenStub')
     })
 
     cy.get('[data-test="input-export-submit"]').click()
-    cy.get('@winOpenResponse').then(response => {
+    cy.get('@winOpenResponse').then((response) => {
         response.onbeforeunload()
     })
 })

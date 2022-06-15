@@ -2,9 +2,10 @@ import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const loginUrl = Cypress.env('dhis2_base_url')
 
-const getKeyBySide = side => (side === 'org units' ? 'orgUnit' : 'dataElement')
+const getKeyBySide = (side) =>
+    side === 'org units' ? 'orgUnit' : 'dataElement'
 
-Given('the user is on the data {word} page', type => {
+Given('the user is on the data {word} page', (type) => {
     cy.visitPage(type, 'Data')
 })
 
@@ -44,15 +45,15 @@ Given(
 Then('it should not be an option in the id scheme input', () => {
     cy.showMoreOptions()
     cy.wait('@attributesXHR')
-        .then(attributesXHR => {
+        .then((attributesXHR) => {
             const { attributes } = attributesXHR.response.body
             return attributes
         })
-        .then(nonCommonAttributes => {
+        .then((nonCommonAttributes) => {
             // check for existence in DOM
             cy.get('[data-test="input-id-scheme"]').click()
             cy.get('[data-test="dhis2-uicore-select-menu-menuwrapper"]').then(
-                $selectMenu => {
+                ($selectMenu) => {
                     nonCommonAttributes.forEach(({ id }) => {
                         expect(
                             $selectMenu
@@ -97,7 +98,7 @@ Then('it should be a selectable option in the id scheme input', () => {
                 orgUnit: orgUnitAttributes.attributes,
             }
         })
-        .then(attributes => {
+        .then((attributes) => {
             // find common attributes
             const commonAttributes = attributes.orgUnit.filter(
                 ({ id }) =>
@@ -110,11 +111,11 @@ Then('it should be a selectable option in the id scheme input', () => {
 
             return commonAttributes
         })
-        .then(attributes => {
+        .then((attributes) => {
             // check for existence in DOM
             cy.get('[data-test="input-id-scheme"]').click()
             cy.get('[data-test="dhis2-uicore-select-menu-menuwrapper"]').then(
-                $selectMenu => {
+                ($selectMenu) => {
                     attributes.forEach(({ id }) => {
                         expect(
                             $selectMenu

@@ -1,7 +1,11 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { CircularLoader, Help } from '@dhis2/ui'
-import { ReactFinalForm, OrganisationUnitTree } from '@dhis2/ui'
+import {
+    CircularLoader,
+    Help,
+    ReactFinalForm,
+    OrganisationUnitTree,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './OrgUnitTreeField.module.css'

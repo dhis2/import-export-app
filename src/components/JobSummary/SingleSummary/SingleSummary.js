@@ -10,9 +10,9 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormField } from '../../index'
-import { statsPropType } from '../helper'
-import { SingleStatusTable } from '../SingleStatusTable/SingleStatusTable'
+import { FormField } from '../../index.js'
+import { statsPropType } from '../helper.js'
+import { SingleStatusTable } from '../SingleStatusTable/SingleStatusTable.js'
 
 const SingleSummary = ({
     importType,

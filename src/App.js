@@ -1,5 +1,3 @@
-import './locales'
-
 import {
     CssVariables,
     CssReset,
@@ -9,12 +7,10 @@ import {
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
 import styles from './App.module.css'
-import { Sidebar } from './components/'
-import { Router } from './components/'
-import { UserContext } from './contexts/'
-import { TaskContext } from './contexts/'
-import { useUser, useTasks } from './hooks/'
-import i18n from './locales'
+import { Sidebar, Router } from './components/index.js'
+import { UserContext, TaskContext } from './contexts/index.js'
+import { useUser, useTasks } from './hooks/index.js'
+import i18n from './locales/index.js'
 
 const App = () => {
     const { tasks, addTask, jobOverview, updateJobOverview } = useTasks()

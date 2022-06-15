@@ -1,13 +1,14 @@
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker/DatePickerField'
+} from '../../components/DatePicker/DatePickerField.js'
 import {
     locationAssign,
     compressionToName,
     fileFormatToFileExtension,
-} from '../../utils/helper'
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
+    jsDateToISO8601,
+    pathToId,
+} from '../../utils/helper.js'
 
 const valuesToParams = (
     {

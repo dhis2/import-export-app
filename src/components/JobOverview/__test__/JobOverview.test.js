@@ -3,12 +3,12 @@ import { createMemoryHistory } from 'history'
 import React from 'react'
 import { Router } from 'react-router-dom'
 import { render, fireEvent, cleanup } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { JobOverview } from '../../'
-import { TaskContext } from '../../../contexts/'
-import { MenuLabel } from '../MenuLabel/MenuLabel'
-import { tasksState, allJobs } from './data'
+import { TaskContext } from '../../../contexts/index.js'
+import { JobOverview } from '../../index.js'
+import { MenuLabel } from '../MenuLabel/MenuLabel.js'
+import { tasksState, allJobs } from './data.js'
 
 afterEach(() => {
     cleanup()

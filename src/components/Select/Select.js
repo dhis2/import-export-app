@@ -1,8 +1,8 @@
 import { SingleSelectField, SingleSelectOption, Help } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { optionPropType, optionsPropType } from '../../utils/options'
-import { FormField } from '../index'
+import { optionPropType, optionsPropType } from '../../utils/options.js'
+import { FormField } from '../index.js'
 import styles from './Select.module.css'
 
 const Select = ({

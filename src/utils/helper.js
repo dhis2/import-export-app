@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { getUploadXHR } from './xhr'
+import { getUploadXHR } from './xhr.js'
 
 const trimString = (length, string) =>
     string.length > length ? string.substring(0, length - 3) + '...' : string
@@ -210,10 +210,14 @@ const locationAssign = (url, setExportEnabled) => {
 }
 
 const getPrevJobDetails = (query, tasks) => {
-    if (!query || !query.id) return {}
+    if (!query || !query.id) {
+        return {}
+    }
 
     const job = tasks[query.id]
-    if (!job) return {}
+    if (!job) {
+        return {}
+    }
 
     return job.jobDetails
 }

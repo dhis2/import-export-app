@@ -22,7 +22,9 @@ const ValidationSummary = () => {
     const { errors, submitFailed } = useFormState()
     const errorList = transformErrors(errors)
 
-    if (!submitFailed || !errorList.length) return null
+    if (!submitFailed || !errorList.length) {
+        return null
+    }
 
     return (
         <NoticeBox

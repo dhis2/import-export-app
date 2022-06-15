@@ -1,11 +1,13 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { MoreOptions } from '../../index'
-import { JobSummary } from '../JobSummary'
+import { MoreOptions } from '../../index.js'
+import { JobSummary } from '../JobSummary.js'
 
 const MiniJobSummary = ({ task, dataTest }) => {
-    if (!task) return null
+    if (!task) {
+        return null
+    }
 
     return (
         <div data-test={dataTest}>

@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Schemas } from '../index'
+import { Schemas } from '../index.js'
 const { Field } = ReactFinalForm
 
 const SINGLE_SCHEMA_VALIDATOR = checkedSchemas =>

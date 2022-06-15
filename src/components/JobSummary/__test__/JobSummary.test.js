@@ -1,10 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { allJobs } from '../../JobOverview/__test__/data'
-import { JobSummary } from '../JobSummary'
+import { allJobs } from '../../JobOverview/__test__/data.js'
+import { JobSummary } from '../JobSummary.js'
 
 const props = {
     showFileDetails: true,

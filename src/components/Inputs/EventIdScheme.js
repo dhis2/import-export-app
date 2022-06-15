@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import { EventIdScheme as EventIdSchemeGeneric } from '../index'
+import { EventIdScheme as EventIdSchemeGeneric } from '../index.js'
 
 const eventIdSchemeOptions = [
     { value: 'UID', label: i18n.t('Uid') },
