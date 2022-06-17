@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-15T11:30:32.555Z\n"
-"PO-Revision-Date: 2022-06-15T11:30:32.555Z\n"
+"POT-Creation-Date: 2022-06-16T06:51:55.099Z\n"
+"PO-Revision-Date: 2022-06-16T06:51:55.099Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -796,6 +796,12 @@ msgstr "Aggregation type"
 msgid "How the values will be aggregated for output and analysis."
 msgstr "How the values will be aggregated for output and analysis."
 
+msgid "Data element"
+msgstr "Data element"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "The data element where Earth Engine data will be added"
+
 msgid "Org Unit"
 msgstr "Org Unit"
 
@@ -804,6 +810,12 @@ msgstr "Current value"
 
 msgid "New value"
 msgstr "New value"
+
+msgid "Data set"
+msgstr "Data set"
+
+msgid "Choose data set."
+msgstr "Choose data set."
 
 msgid "Earth Engine data set"
 msgstr "Earth Engine data set"
@@ -822,18 +834,6 @@ msgstr "Organisation units"
 
 msgid "Import setup"
 msgstr "Import setup"
-
-msgid "Data set"
-msgstr "Data set"
-
-msgid "Select data set to filter data elements"
-msgstr "Select data set to filter data elements"
-
-msgid "Destination data element"
-msgstr "Destination data element"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr "The data element where Earth Engine data will be added"
 
 msgid "Import bands to category option combinations"
 msgstr "Import bands to category option combinations"
