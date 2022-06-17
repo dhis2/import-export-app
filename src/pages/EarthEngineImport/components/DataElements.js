@@ -30,6 +30,7 @@ const DataElements = () => {
                 )}
                 // validationText={validationText}
                 filled
+                filterable
                 initialFocus
             />
         </div>
