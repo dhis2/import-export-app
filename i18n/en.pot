@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-16T06:51:55.099Z\n"
-"PO-Revision-Date: 2022-06-16T06:51:55.099Z\n"
+"POT-Creation-Date: 2022-06-20T08:07:55.090Z\n"
+"PO-Revision-Date: 2022-06-20T08:07:55.090Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -796,6 +796,12 @@ msgstr "Aggregation type"
 msgid "How the values will be aggregated for output and analysis."
 msgstr "How the values will be aggregated for output and analysis."
 
+msgid "Data element category"
+msgstr "Data element category"
+
+msgid "The category"
+msgstr "The category"
+
 msgid "Data element"
 msgstr "Data element"
 
@@ -835,16 +841,6 @@ msgstr "Organisation units"
 msgid "Import setup"
 msgstr "Import setup"
 
-msgid "Import bands to category option combinations"
-msgstr "Import bands to category option combinations"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation bands. "
-"Choose the category option combinations to import each band into."
-msgstr ""
-"Earth Engine data set \"Population age groups\" has disaggregation bands. "
-"Choose the category option combinations to import each band into."
-
 msgid "Some required options haven't been selected"
 msgstr "Some required options haven't been selected"
 
@@ -856,6 +852,16 @@ msgstr "Import without previewing"
 
 msgid "Make changes to selections"
 msgstr "Make changes to selections"
+
+msgid "Import bands to category option combinations"
+msgstr "Import bands to category option combinations"
+
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation bands. "
+"Choose the category option combinations to import each band into."
+msgstr ""
+"Earth Engine data set \"Population age groups\" has disaggregation bands. "
+"Choose the category option combinations to import each band into."
 
 msgid "Band name"
 msgstr "Band name"

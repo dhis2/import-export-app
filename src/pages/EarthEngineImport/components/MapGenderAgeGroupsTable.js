@@ -1,123 +1,120 @@
-import { useDataEngine } from '@dhis2/app-runtime'
+// import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
+    ReactFinalForm,
     Table,
     TableHead,
     TableRowHead,
     TableCellHead,
     TableBody,
-    TableRow,
-    TableCell,
-    SingleSelect,
-    SingleSelectOption,
+    NoticeBox,
     // Button,
 } from '@dhis2/ui'
-import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
+import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { getEarthEngineConfigs } from '../util/earthEngines.js'
+import { MappingTableRow } from './MappingTableRow.js'
 
-const categoryOptionCombosQuery = {
-    data: {
-        resource: 'categoryOptionCombos',
-        fields: 'id,name,displayName',
-        params: {
-            paging: 'true',
-        },
-    },
-}
+const { useField } = ReactFinalForm
 
-const MappingTable = ({ eeId }) => {
-    const [bands, setBands] = useState([])
-    const [cocs, setCocs] = useState([])
+const MappingTable = () => {
+    const { input: eeInput } = useField('earthEngineId')
+    const { value: earthEngineId } = eeInput
+    const { input: deInput } = useField('dataElements')
+    const { value: dataElementId } = deInput
+
+    const [bands, setBands] = useState(undefined)
     const [completeRows, setCompleteRows] = useState({})
     const [cocIdsSelected, setCocIdsSelected] = useState([])
-    const engine = useDataEngine()
+
+    const { dataElements } = useCachedDataQuery()
+    const { input: categoryInput } = useField('dataElementCategory')
+    const { value: categoryId } = categoryInput
 
     useEffect(() => {
-        // get category option combos
-        setBands(getEarthEngineConfigs(eeId)?.bands || [])
-    }, [eeId])
+        setBands(getEarthEngineConfigs(earthEngineId)?.bands)
+    }, [earthEngineId])
 
-    useEffect(() => {
-        engine.query(categoryOptionCombosQuery, {
-            onComplete: data => {
-                setCocs(data.data.categoryOptionCombos)
-            },
-            onError: error => {
-                // setError(error)
-                console.error('categoryOptionCombos error: ', error)
-            },
-        })
-    }, [])
+    // useEffect(() => {
+    //     if (dataElementId) {
+    //         engine.query(categoryOptionCombosQuery, {
+    //             variables: {
+    //                 id: dataElementId,
+    //             },
+    //             onComplete: ({ data }) => {
+    //                 setCatOptComboList(
+    //                     data.categoryCombo.categories[0].categoryOptions
+    //                 )
+    //             },
+    //             onError: error => {
+    //                 // setError(error)
+    //                 console.error('categoryOptionCombos error: ', error)
+    //             },
+    //         })
+    //     }
+    // }, [dataElementId])
 
-    if (!bands.length) {
+    if (!bands || !dataElementId || !categoryId) {
         return null
     }
 
-    const ccoChanged = row => {
-        setCompleteRows({ ...completeRows, [row.id]: row })
+    const catOptComboList = dataElements
+        .find(({ id }) => id === dataElementId)
+        .categoryCombo.categories.find(({ id }) => id === categoryId)
+        .categoryOptions.map(({ id, name }) => {
+            return {
+                value: id,
+                label: name,
+            }
+        })
+
+    const cocSelected = ({ bandId, cocId }) => {
+        setCompleteRows({ ...completeRows, [bandId]: cocId })
         const prevCocIds = Object.values(completeRows).map(({ cocId }) => cocId)
-        setCocIdsSelected([...prevCocIds, row.cocId])
+        setCocIdsSelected([...prevCocIds, cocId])
     }
 
     return (
-        <Table dense>
-            <TableHead>
-                <TableRowHead>
-                    <TableCellHead dense>{i18n.t('Band name')}</TableCellHead>
-                    <TableCellHead dense>
-                        {i18n.t('Band description')}
-                    </TableCellHead>
-                    <TableCellHead dense>
-                        {i18n.t('Category option combination')}
-                    </TableCellHead>
-                </TableRowHead>
-            </TableHead>
-            <TableBody>
-                {bands.map(band => {
-                    const { id, name } = band
-
-                    return (
-                        <TableRow key={id}>
-                            <TableCell dense>{id}</TableCell>
-                            <TableCell dense>{name}</TableCell>
-                            <TableCell dense>
-                                <SingleSelect
-                                    name="cocs"
-                                    selected={completeRows[id]?.cocId || ''}
-                                    onChange={({ selected }) =>
-                                        ccoChanged({
-                                            id,
-                                            name,
-                                            cocId: selected,
-                                        })
-                                    }
-                                    inputWidth="150px"
-                                    filterable
-                                    noMatchText={i18n.t('No match found')}
-                                >
-                                    {cocs.map(({ id: ccoId, displayName }) => (
-                                        <SingleSelectOption
-                                            key={ccoId}
-                                            value={ccoId}
-                                            label={displayName}
-                                            disabled={cocIdsSelected.includes(
-                                                ccoId
-                                            )}
-                                        />
-                                    ))}
-                                </SingleSelect>
-                            </TableCell>
-                        </TableRow>
-                    )
-                })}
-            </TableBody>
-        </Table>
+        <>
+            <NoticeBox
+                title={i18n.t('Import bands to category option combinations')}
+            >
+                {i18n.t(
+                    'Earth Engine data set "Population age groups" has disaggregation bands. Choose the category option combinations to import each band into.'
+                )}
+            </NoticeBox>
+            <Table dense>
+                <TableHead>
+                    <TableRowHead>
+                        <TableCellHead dense>
+                            {i18n.t('Band name')}
+                        </TableCellHead>
+                        <TableCellHead dense>
+                            {i18n.t('Band description')}
+                        </TableCellHead>
+                        <TableCellHead dense>
+                            {i18n.t('Category option combination')}
+                        </TableCellHead>
+                    </TableRowHead>
+                </TableHead>
+                <TableBody>
+                    {bands.map(({ id, name }) => {
+                        return (
+                            <MappingTableRow
+                                key={id}
+                                bandId={id}
+                                bandName={name}
+                                selected={completeRows[id]}
+                                setSelected={cocSelected}
+                                catOptComboList={catOptComboList}
+                                cocIdsSelected={cocIdsSelected}
+                            />
+                        )
+                    })}
+                </TableBody>
+            </Table>
+        </>
     )
-}
-
-MappingTable.propTypes = {
-    eeId: PropTypes.string,
 }
 
 export { MappingTable }

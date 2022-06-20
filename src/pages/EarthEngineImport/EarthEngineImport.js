@@ -22,12 +22,13 @@ const query = {
             paging: false,
         },
     },
-    dataSets: {
-        resource: 'dataSets',
+    dataElements: {
+        resource: 'dataElements',
         params: {
             fields:
-                'id,displayName~rename(name),dataSetElements[dataElement[id,displayName~rename(name)]]',
-            paging: 'false',
+                'id,displayName~rename(name),categoryCombo[categories[id,displayName~rename(name),categoryOptions[id,displayName~rename(name)]]]',
+            filter: 'domainType:eq:AGGREGATE',
+            paging: false,
         },
     },
 }
@@ -35,7 +36,7 @@ const query = {
 const providerDataTransformation = ({
     userSettings,
     rootOrgUnits,
-    dataSets,
+    dataElements,
 }) => {
     return {
         userSettings: {
@@ -46,25 +47,13 @@ const providerDataTransformation = ({
                     : 'displayShortName',
         },
         rootOrgUnits: rootOrgUnits.organisationUnits?.map(ou => ou.id) || [],
-        dataSets: dataSets.dataSets.reduce((acc, curr) => {
-            const dataElements = curr.dataSetElements.map(
-                ({ dataElement }) => ({
-                    id: dataElement.id,
-                    name: dataElement.name,
-                    value: dataElement.id,
-                    label: dataElement.name,
-                })
-            )
-            const key = curr.id
-            acc[key] = {
-                id: curr.id,
-                name: curr.name,
-                label: curr.name,
-                value: curr.id,
-                dataElements,
+        dataElements: dataElements.dataElements.map(de => {
+            return {
+                ...de,
+                value: de.id,
+                label: de.name,
             }
-            return acc
-        }, {}),
+        }),
     }
 }
 

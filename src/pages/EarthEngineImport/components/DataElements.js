@@ -1,21 +1,11 @@
 import i18n from '@dhis2/d2-i18n'
-import { ReactFinalForm, SingleSelectFieldFF } from '@dhis2/ui'
+import { SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 
-const { useField } = ReactFinalForm
-
 const DataElements = () => {
-    const { dataSets } = useCachedDataQuery()
-    const { input } = useField('dataSets')
-    const { value: dataSetId } = input
-
-    if (!dataSets) {
-        return null
-    }
-
-    const dataElements = dataSets[dataSetId]?.dataElements || []
+    const { dataElements } = useCachedDataQuery()
 
     return (
         <div style={{ maxWidth: '300px', width: '300px' }}>
