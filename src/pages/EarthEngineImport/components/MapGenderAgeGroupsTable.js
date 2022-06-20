@@ -1,4 +1,3 @@
-// import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     ReactFinalForm,
@@ -8,9 +7,8 @@ import {
     TableCellHead,
     TableBody,
     NoticeBox,
-    // Button,
 } from '@dhis2/ui'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { getEarthEngineConfigs } from '../util/earthEngines.js'
 import { MappingTableRow } from './MappingTableRow.js'
@@ -23,7 +21,6 @@ const MappingTable = () => {
     const { input: deInput } = useField('dataElements')
     const { value: dataElementId } = deInput
 
-    const [bands, setBands] = useState(undefined)
     const [completeRows, setCompleteRows] = useState({})
     const [cocIdsSelected, setCocIdsSelected] = useState([])
 
@@ -31,28 +28,7 @@ const MappingTable = () => {
     const { input: categoryInput } = useField('dataElementCategory')
     const { value: categoryId } = categoryInput
 
-    useEffect(() => {
-        setBands(getEarthEngineConfigs(earthEngineId)?.bands)
-    }, [earthEngineId])
-
-    // useEffect(() => {
-    //     if (dataElementId) {
-    //         engine.query(categoryOptionCombosQuery, {
-    //             variables: {
-    //                 id: dataElementId,
-    //             },
-    //             onComplete: ({ data }) => {
-    //                 setCatOptComboList(
-    //                     data.categoryCombo.categories[0].categoryOptions
-    //                 )
-    //             },
-    //             onError: error => {
-    //                 // setError(error)
-    //                 console.error('categoryOptionCombos error: ', error)
-    //             },
-    //         })
-    //     }
-    // }, [dataElementId])
+    const bands = getEarthEngineConfigs(earthEngineId)?.bands
 
     if (!bands || !dataElementId || !categoryId) {
         return null

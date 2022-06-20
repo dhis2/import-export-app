@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-20T08:07:55.090Z\n"
-"PO-Revision-Date: 2022-06-20T08:07:55.090Z\n"
+"POT-Creation-Date: 2022-06-20T19:08:19.289Z\n"
+"PO-Revision-Date: 2022-06-20T19:08:19.289Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -817,12 +817,6 @@ msgstr "Current value"
 msgid "New value"
 msgstr "New value"
 
-msgid "Data set"
-msgstr "Data set"
-
-msgid "Choose data set."
-msgstr "Choose data set."
-
 msgid "Earth Engine data set"
 msgstr "Earth Engine data set"
 
@@ -938,6 +932,12 @@ msgstr "people per hectare"
 
 msgid "Estimated number of people living in an area."
 msgstr "Estimated number of people living in an area."
+
+msgid "Boys 0 - 1 years"
+msgstr "Boys 0 - 1 years"
+
+msgid "Boys 1 - 4 years"
+msgstr "Boys 1 - 4 years"
 
 msgid "Population age groups"
 msgstr "Population age groups"
