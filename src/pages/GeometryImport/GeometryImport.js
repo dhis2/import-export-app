@@ -3,38 +3,51 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Page, GMLIcon, ValidationSummary } from '../../components/index.js'
+import {
+    GeometryFormat,
+    GeometryPropertyMatch,
+    GeometryAttributePicker,
+} from '../../components/Geometry/index.js'
+import {
+    Page,
+    GeometryIcon,
+    ValidationSummary,
+} from '../../components/index.js'
 import {
     FileUpload,
+    defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { getPrevJobDetails } from '../../utils/helper.js'
-import { onImport } from './form-helper.js'
+import { onImport } from './geojson-helper.js'
 
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-export const PAGE_NAME = i18n.t('GML import')
+export const PAGE_NAME = i18n.t('Organisation unit geometry import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
+    'Import geographic data for organisation units. GeoJSON is the recommend format and can also be used for associated geometries or catchment areas.'
 )
-const PAGE_ICON = <GMLIcon />
+export const PAGE_ICON = <GeometryIcon />
 
 const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
+    orgUnitIdScheme:
+        prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
 })
 
-const GMLImport = () => {
+const GeometryImport = () => {
     const {
-        tasks: { gml: gmlTasks },
+        tasks: { geojson: geojsonTasks },
         addTask,
     } = useContext(TaskContext)
 
     // recreating a previously run job
-    const query = useLocation().query
-    const prevJobDetails = getPrevJobDetails(query, gmlTasks)
+    const { query } = useLocation()
+
+    const prevJobDetails = getPrevJobDetails(query, geojsonTasks)
     const initialValues = createInitialValues(prevJobDetails)
 
     const [progress, setProgress] = useState(0)
@@ -54,16 +67,23 @@ const GMLImport = () => {
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
             loading={progress}
-            dataTest="page-import-gml"
-            summaryTask={getNewestTask(gmlTasks)}
+            dataTest="page-import-geojson"
+            summaryTask={getNewestTask(geojsonTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
+            <GeometryFormat format="geojson" />
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
+                        <FileUpload
+                            helpText={i18n.t(
+                                'GeoJSON feature id should match the organsation unit id, or match by a feature property below.'
+                            )}
+                        />
+                        <GeometryPropertyMatch />
+                        <GeometryAttributePicker />
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
@@ -74,4 +94,4 @@ const GMLImport = () => {
     )
 }
 
-export { GMLImport }
+export { GeometryImport }

@@ -5,6 +5,7 @@ import {
     DataExport,
     EventExport,
     EventImport,
+    GeometryImport,
     GMLImport,
     MetadataDependencyExport,
     MetadataExport,
@@ -23,6 +24,7 @@ const Router = () => {
                 <Route exact path="/" component={Home} />
                 <Route path="/import/data" component={DataImport} />
                 <Route path="/import/event" component={EventImport} />
+                <Route path="/import/geometry" component={GeometryImport} />
                 <Route path="/import/gml" component={GMLImport} />
                 <Route path="/import/metadata" component={MetadataImport} />
                 <Route path="/import/tei" component={TEIImport} />

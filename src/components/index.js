@@ -2,7 +2,7 @@ export {
     DataIcon,
     EventIcon,
     ExportIcon,
-    GMLIcon,
+    GeometryIcon,
     LogoIcon,
     ImportIcon,
     MetadataDependencyExportIcon,

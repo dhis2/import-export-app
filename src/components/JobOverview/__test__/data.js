@@ -287,6 +287,65 @@ export const tasksState = {
             },
         },
     },
+    geojson: {
+        1581512432381: {
+            id: 1581512432381,
+            level: 'INFO',
+            created: new Date('2020-02-12T13:00:34.380'),
+            lastUpdated: new Date('2020-02-12T13:00:34.380'),
+            completed: true,
+            events: [
+                {
+                    id: 'init',
+                    text: 'Failed to validate job runtime - `GeoJSON import failed.`',
+                    date: new Date('2020-02-12T13:00:34.380'),
+                },
+            ],
+            summary: {
+                status: 'ERROR',
+                stats: {
+                    created: 0,
+                    updated: 0,
+                    deleted: 0,
+                    ignored: 0,
+                    total: 0,
+                },
+                typeReports: [
+                    {
+                        klass: 'org.hisp.dhis.dxf2.geojson.DefaultGeoJsonService',
+                        stats: {
+                            created: 0,
+                            updated: 0,
+                            deleted: 0,
+                            ignored: 0,
+                            total: 0,
+                        },
+                        objectReports: [
+                            {
+                                klass: 'org.hisp.dhis.dxf2.geojson.DefaultGeoJsonService',
+                                index: 0,
+                                errorReports: [
+                                    {
+                                        message:
+                                            'Failed to validate job runtime - `GeoJSON import failed.`',
+                                        mainKlass:
+                                            'org.hisp.dhis.dxf2.geojson.DefaultGeoJsonService',
+                                        errorCode: 'E7010',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            error: true,
+            importType: 'GEOJSON_IMPORT',
+            jobDetails: {
+                files: [new File([], 'geojson1.json')],
+                dryRun: true,
+            },
+        },
+    },
     gml: {
         1581512432380: {
             id: 1581512432380,
@@ -459,6 +518,7 @@ export const jobOverviewState = {
         activeTypes: [
             'DATAVALUE_IMPORT',
             'EVENT_IMPORT',
+            'GEOJSON_IMPORT',
             'GML_IMPORT',
             'METADATA_IMPORT',
         ],
@@ -565,7 +625,7 @@ export const jobOverviewState = {
     },
 }
 
-export const allJobs = ['data', 'event', 'gml', 'metadata', 'tei']
+export const allJobs = ['data', 'event', 'geojson', 'gml', 'metadata', 'tei']
     .map((type) =>
         Object.keys(tasksState[type]).map((id) => tasksState[type][id])
     )

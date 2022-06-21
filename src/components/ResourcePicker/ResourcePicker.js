@@ -14,6 +14,7 @@ import {
     programQuery,
     TETypeQuery,
     userQuery,
+    geojsonAttributesQuery,
 } from './queries.js'
 import styles from './ResourcePicker.module.css'
 import { resourceTypes } from './resourceTypes.js'
@@ -29,6 +30,8 @@ const resourceToQuery = (resourceType) => {
         return { resourceName: 'trackedEntityTypes', query: TETypeQuery }
     } else if (resourceType == resourceTypes.USER) {
         return { resourceName: 'users', query: userQuery }
+    } else if (resourceType == resourceTypes.GEOJSON_ATTRIBUTE) {
+        return { resourceName: 'attributes', query: geojsonAttributesQuery }
     }
 
     return { error: `Unkown resource type: ${resourceType}` }

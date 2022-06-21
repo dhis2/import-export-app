@@ -3,6 +3,7 @@ const mapping = {
     xml: 'application/xml',
     csv: 'application/csv',
     gml: 'application/xml',
+    geojson: 'application/json',
     adx: 'application/adx+xml',
     pdf: 'application/pdf',
 }

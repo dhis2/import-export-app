@@ -26,18 +26,15 @@ exports[`matches snapshot 1`] = `
         data-test="dhis2-uicore-box"
       >
         <div
-          class="jsx-3353877153 jsx-2133963083 input"
+          class="jsx-3353877153 jsx-2422099811 input"
           data-test="dhis2-uicore-input"
         >
           <input
-            class="jsx-3353877153 jsx-2133963083 "
+            class="jsx-3353877153 jsx-2422099811 "
             id="file"
             name="file"
             type="date"
             value="2020-02-10"
-          />
-          <div
-            class="jsx-3353877153 jsx-2133963083 status-icon"
           />
         </div>
       </div>

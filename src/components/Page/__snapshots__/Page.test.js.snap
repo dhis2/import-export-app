@@ -133,7 +133,7 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
       </p>
     </header>
     <div
-      class="jsx-3536470681 preBody"
+      class="jsx-574779348 preBody"
       data-test="dhis2-uicore-card"
     >
       <div
@@ -527,7 +527,7 @@ exports[`matches snapshot when not loading and a mini summary task 1`] = `
       </p>
     </header>
     <div
-      class="jsx-3536470681 preBody"
+      class="jsx-574779348 preBody"
       data-test="dhis2-uicore-card"
     >
       <div

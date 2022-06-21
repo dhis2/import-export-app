@@ -17,9 +17,9 @@ import {
     PAGE_DESCRIPTION as EVENT_IMPORT_DESCRIPTION,
 } from '../EventImport/EventImport.js'
 import {
-    PAGE_NAME as GML_IMPORT_PAGE_NAME,
-    PAGE_DESCRIPTION as GML_IMPORT_DESCRIPTION,
-} from '../GMLImport/GMLImport.js'
+    PAGE_NAME as GEOMETRY_IMPORT_PAGE_NAME,
+    PAGE_DESCRIPTION as GEOMETRY_IMPORT_DESCRIPTION,
+} from '../GeometryImport/GeometryImport.js'
 import {
     PAGE_NAME as METADATA_DEPENDENCY_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_DEPENDENCY_EXPORT_DESCRIPTION,
@@ -96,10 +96,10 @@ const importPages = capitalizePages([
         to: '/import/event',
     },
     {
-        name: GML_IMPORT_PAGE_NAME,
-        description: GML_IMPORT_DESCRIPTION,
-        linkText: i18n.t('Import GML'),
-        to: '/import/gml',
+        name: GEOMETRY_IMPORT_PAGE_NAME,
+        description: GEOMETRY_IMPORT_DESCRIPTION,
+        linkText: i18n.t('Import GeoJSON'),
+        to: '/import/geometry',
     },
     {
         name: METADATA_IMPORT_PAGE_NAME,

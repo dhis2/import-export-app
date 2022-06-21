@@ -38,6 +38,7 @@ test('should show "no jobs started" message when no jobs', async () => {
         data: {},
         event: {},
         gml: {},
+        geojson: {},
         metadata: {},
         tei: {},
     }
@@ -55,6 +56,7 @@ test('should show list of jobs started', async () => {
         activeTypes: [
             'DATAVALUE_IMPORT',
             'EVENT_IMPORT',
+            'GEOJSON_IMPORT',
             'GML_IMPORT',
             'METADATA_IMPORT',
         ],
@@ -89,7 +91,12 @@ test('import type filters should filter jobs', async () => {
         contextValue,
         {
             ...props,
-            activeTypes: ['DATAVALUE_IMPORT', 'EVENT_IMPORT', 'GML_IMPORT'],
+            activeTypes: [
+                'DATAVALUE_IMPORT',
+                'EVENT_IMPORT',
+                'GEOJSON_IMPORT',
+                'GML_IMPORT',
+            ],
             selectedJob,
             setSelectedJob,
             setActiveTypes,
@@ -122,6 +129,7 @@ test('import type filters should filter jobs', async () => {
     expect(setActiveTypes).toHaveBeenCalledWith([
         'DATAVALUE_IMPORT',
         'EVENT_IMPORT',
+        'GEOJSON_IMPORT',
         'GML_IMPORT',
         'METADATA_IMPORT',
     ])

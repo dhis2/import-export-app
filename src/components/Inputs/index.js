@@ -70,6 +70,7 @@ export {
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
 } from './OrgUnitIdScheme.js'
+export { OrgUnitIdSchemeCore } from './OrgUnitIdSchemeCore.js'
 export {
     OrgUnitMode,
     defaultOrgUnitSelectionModeOption,

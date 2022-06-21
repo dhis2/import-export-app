@@ -22,7 +22,7 @@
         "cy:run": "d2-utils-cypress run --appStart 'yarn cy:start'"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^8.0.1",
+        "@dhis2/cli-app-scripts": "^8.3.3",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/cli-utils-cypress": "^7.0.0",
         "@dhis2/cypress-commands": "^7.0.0",
@@ -32,10 +32,10 @@
         "query-string": "^6.12.1"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^3.2.0",
+        "@dhis2/app-runtime": "^3.4.4",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/prop-types": "^1.0.0",
-        "@dhis2/ui": "^7.1.1",
+        "@dhis2/prop-types": "^3.1.2",
+        "@dhis2/ui": "^7.16.3",
         "classnames": "^2.2.6",
         "react-router-dom": "^5.2.0"
     }
