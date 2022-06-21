@@ -1,21 +1,19 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# Oscar Mesones Lapouble <oscar.lapouble@gmail.com>, 2021
+# Valeriu Plesca <vplesca@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-12-19T10:07:59.315Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Oscar Mesones Lapouble <oscar.lapouble@gmail.com>, 2021\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
+"Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2022\n"
+"Language-Team: Romanian (https://www.transifex.com/hisp-uio/teams/100509/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 msgid "user is not logged in"
 msgstr ""
@@ -36,13 +34,13 @@ msgid "Clear All"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Agregação de Dados"
+msgstr ""
 
 msgid "Choose a file to upload"
 msgstr ""
 
 msgid "Required"
-msgstr "Exigido"
+msgstr ""
 
 msgid "more options"
 msgstr ""
@@ -66,10 +64,10 @@ msgid "view messages received on using import/export forms."
 msgstr ""
 
 msgid "Import"
-msgstr "Imprtar"
+msgstr ""
 
 msgid "Export"
-msgstr "Exportar"
+msgstr ""
 
 msgid "Created"
 msgstr ""
@@ -87,13 +85,13 @@ msgid "Total"
 msgstr ""
 
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 msgid "Type Count"
 msgstr ""
 
 msgid "Messages"
-msgstr "Mensagens"
+msgstr ""
 
 msgid "Summaries"
 msgstr ""
@@ -102,7 +100,7 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Errors"
-msgstr "Erros"
+msgstr "Erori"
 
 msgid "Import Summary"
 msgstr ""
@@ -123,7 +121,7 @@ msgid "Children"
 msgstr ""
 
 msgid "Object type"
-msgstr "Tipo de objecto"
+msgstr ""
 
 msgid "Compression"
 msgstr ""
@@ -135,7 +133,7 @@ msgid "Dry run"
 msgstr ""
 
 msgid "End date"
-msgstr "Data de término"
+msgstr "Data de sfîrșit"
 
 msgid "Event ID Scheme"
 msgstr ""
@@ -150,7 +148,7 @@ msgid "ID scheme"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identificador"
+msgstr ""
 
 msgid "Report Mode"
 msgstr ""
@@ -174,7 +172,7 @@ msgid "Object"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "Unidade organizacional"
+msgstr "Unitate organizațională"
 
 msgid "Org unit ID scheme"
 msgstr ""
@@ -189,13 +187,13 @@ msgid "Program Stages"
 msgstr ""
 
 msgid "Programs"
-msgstr "Programas"
+msgstr ""
 
 msgid "Schemas"
 msgstr ""
 
 msgid "Data Sets"
-msgstr "Conjunto de Dados"
+msgstr ""
 
 msgid "Sharing"
 msgstr ""
@@ -210,25 +208,25 @@ msgid "Skip Validation"
 msgstr ""
 
 msgid "Start date"
-msgstr "Data de início"
+msgstr "Data de început"
 
 msgid "Strategy"
 msgstr ""
 
 msgid "Yes"
-msgstr "Sim"
+msgstr "Da"
 
 msgid "No"
-msgstr "nenhum"
+msgstr "Nu"
 
 msgid "UID"
 msgstr ""
 
 msgid "Code"
-msgstr "Código"
+msgstr ""
 
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 msgid "Include descendants of organisation unit"
 msgstr ""
@@ -249,7 +247,7 @@ msgid "Updates only"
 msgstr ""
 
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Lichidare"
 
 msgid "Skip check (fast)"
 msgstr ""
@@ -267,25 +265,25 @@ msgid "Debug"
 msgstr ""
 
 msgid "Reference"
-msgstr "Referência"
+msgstr ""
 
 msgid "All"
-msgstr "Tudo"
+msgstr ""
 
 msgid "None"
-msgstr "Nenhum"
+msgstr ""
 
 msgid "Create and Update"
 msgstr ""
 
 msgid "Create"
-msgstr "Criar"
+msgstr "Creare"
 
 msgid "Update"
-msgstr "Actualizar"
+msgstr "Actualizare"
 
 msgid "Merge"
-msgstr "Associar"
+msgstr ""
 
 msgid "Replace"
 msgstr ""
@@ -321,13 +319,13 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Category combination"
-msgstr "Combinações de categoria"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Gráficos"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Grupos de Elementos de Dados"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
@@ -336,7 +334,7 @@ msgid "[ All program stages]"
 msgstr ""
 
 msgid "Import/Export"
-msgstr "Importar-Exportar"
+msgstr ""
 
 msgid "Data Export"
 msgstr ""
