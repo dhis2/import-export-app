@@ -1,3 +1,22 @@
+# [1.3.0](https://github.com/dhis2/import-export-app/compare/v1.2.23...v1.3.0) (2022-06-21)
+
+
+### Bug Fixes
+
+* async import ([52f1936](https://github.com/dhis2/import-export-app/commit/52f193602c20ec6b04bffb029bd451c6619cd4ac))
+* component class name ([e5abe36](https://github.com/dhis2/import-export-app/commit/e5abe36cc6e0b8f29d456771eac6a1ef146b1a42))
+* hide and show associated geometry attribute select ([3b36943](https://github.com/dhis2/import-export-app/commit/3b36943d7458d5b6fca6401257865148c70de561))
+
+
+### Features
+
+* geojson attribute picker ([6158786](https://github.com/dhis2/import-export-app/commit/615878694ba3f6abee95a409adcbfbef6ede3787))
+* geojson import icon ([1c65de5](https://github.com/dhis2/import-export-app/commit/1c65de525697f5a711db8a41f65fcacbf7eebf45))
+* geojson import job summary ([e761818](https://github.com/dhis2/import-export-app/commit/e7618180dd7ab45cbc47931f7203c5c114b3325f))
+* geojson import page setup ([3320632](https://github.com/dhis2/import-export-app/commit/3320632b5942a799322bfc29162e4010e2ee6a62))
+* geojson property match ([81c4e80](https://github.com/dhis2/import-export-app/commit/81c4e8086f7e1ce9fea658284ed2e9223e02b220))
+* org unit core id scheme select ([534451d](https://github.com/dhis2/import-export-app/commit/534451ddc5b7abe42470891e7b4ad55de0b1ce65))
+
 ## [1.2.23](https://github.com/dhis2/import-export-app/compare/v1.2.22...v1.2.23) (2022-06-09)
 
 
