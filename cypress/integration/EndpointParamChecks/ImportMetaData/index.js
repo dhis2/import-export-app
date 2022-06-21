@@ -30,7 +30,7 @@ Given('the user is on the meta data import page', () => {
 })
 
 Then('the upload request is sent with the right parameters', () => {
-    cy.wait('@uploadXHR').then(xhr => {
+    cy.wait('@uploadXHR').then((xhr) => {
         cy.getComparisonData(xhr.url).then(({ actual, expected }) => {
             expect(actual).to.deep.equal(expected)
         })

@@ -5,7 +5,7 @@ import React from 'react'
 const FormAlerts = ({ alerts, dataTest }) => (
     <AlertStack data-test={dataTest}>
         {alerts &&
-            alerts.map(a => (
+            alerts.map((a) => (
                 <AlertBar
                     key={`alert-${a.id}`}
                     warning={a.warning}

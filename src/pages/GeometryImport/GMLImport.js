@@ -1,28 +1,22 @@
 import { useConfig } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Page, GMLIcon, ValidationSummary } from '../../components/index'
+import { GeometryFormat } from '../../components/Geometry/index.js'
+import { Page, ValidationSummary } from '../../components/index.js'
 import {
     FileUpload,
     ImportButtonStrip,
     FormAlerts,
-} from '../../components/Inputs/index'
-import { TaskContext, getNewestTask } from '../../contexts/index'
-import { getPrevJobDetails } from '../../utils/helper'
-import { onImport } from './form-helper'
+} from '../../components/Inputs/index.js'
+import { TaskContext, getNewestTask } from '../../contexts/index.js'
+import { getPrevJobDetails } from '../../utils/helper.js'
+import { PAGE_NAME, PAGE_DESCRIPTION, PAGE_ICON } from './GeometryImport.js'
+import { onImport } from './gml-helper.js'
 
 const { Form } = ReactFinalForm
 
-// PAGE INFO
-export const PAGE_NAME = i18n.t('GML import')
-export const PAGE_DESCRIPTION = i18n.t(
-    'Import geographic data for organisation units using the GML format. GML is an XML grammar for expressing geographical features.'
-)
-const PAGE_ICON = <GMLIcon />
-
-const createInitialValues = prevJobDetails => ({
+const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
 })
 
@@ -33,7 +27,7 @@ const GMLImport = () => {
     } = useContext(TaskContext)
 
     // recreating a previously run job
-    const query = useLocation().query
+    const { query } = useLocation()
     const prevJobDetails = getPrevJobDetails(query, gmlTasks)
     const initialValues = createInitialValues(prevJobDetails)
 
@@ -58,6 +52,7 @@ const GMLImport = () => {
             summaryTask={getNewestTask(gmlTasks)}
             showFullSummaryTask={showFullSummaryTask}
         >
+            <GeometryFormat format="gml" />
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}

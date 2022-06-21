@@ -2,10 +2,10 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, FileInputFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormField } from '../index'
+import { FormField } from '../index.js'
 const { Field } = ReactFinalForm
 
-const SINGLE_FILE_VALIDATOR = files =>
+const SINGLE_FILE_VALIDATOR = (files) =>
     !files || files.length == 0 ? i18n.t('Please select a file') : undefined
 
 const FileUpload = ({

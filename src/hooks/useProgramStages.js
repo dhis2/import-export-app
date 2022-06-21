@@ -36,9 +36,9 @@ const useProgramStages = (program, setSelected) => {
                 variables: {
                     id: program,
                 },
-                onComplete: data => {
+                onComplete: (data) => {
                     const list = data.data.programStages
-                    const formattedList = list.map(e => ({
+                    const formattedList = list.map((e) => ({
                         value: e.id,
                         label: e.displayName,
                     }))
@@ -52,7 +52,7 @@ const useProgramStages = (program, setSelected) => {
                     setSelected(ALL_VALUE)
                     setLoading(false)
                 },
-                onError: error => {
+                onError: (error) => {
                     setError(error)
                     console.error('useProgramStages error: ', error)
                 },

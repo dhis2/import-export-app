@@ -7,15 +7,15 @@ import { useLocation, useHistory } from 'react-router-dom'
 import {
     DataIcon,
     EventIcon,
-    GMLIcon,
+    GeometryIcon,
     MetadataDependencyExportIcon,
     MetadataExportIcon,
     MetadataImportIcon,
     TEIIcon,
     TasksIcon,
-} from '../index'
-import { ExportMenuSectionHeader } from './ExportMenuSectionHeader'
-import { ImportMenuSectionHeader } from './ImportMenuSectionHeader'
+} from '../index.js'
+import { ExportMenuSectionHeader } from './ExportMenuSectionHeader.js'
+import { ImportMenuSectionHeader } from './ImportMenuSectionHeader.js'
 import styles from './Sidebar.module.css'
 
 const dataImportPage = {
@@ -39,11 +39,11 @@ const eeImportPage = {
     path: '/import/earthengine',
 }
 
-const gmlImportPage = {
-    name: i18n.t('GML import'),
-    code: 'gml-import',
-    icon: <GMLIcon />,
-    path: '/import/gml',
+const geometryImportPage = {
+    name: i18n.t('Org unit geometry import'),
+    code: 'geometry-import',
+    icon: <GeometryIcon />,
+    path: '/import/geometry',
 }
 
 const metadataImportPage = {
@@ -98,7 +98,7 @@ const importPages = [
     dataImportPage,
     eventImportPage,
     eeImportPage,
-    gmlImportPage,
+    geometryImportPage,
     metadataImportPage,
     teiImportPage,
 ]
@@ -164,7 +164,10 @@ const Sidebar = () => {
             />
             <ImportMenuSectionHeader />
             {importPages.map(({ icon, name, code, path }) => {
-                const active = pathname == path
+                const active =
+                    pathname == path ||
+                    (pathname === '/import/gml' && path === '/import/geometry')
+
                 return (
                     <SidebarItem
                         name={name}

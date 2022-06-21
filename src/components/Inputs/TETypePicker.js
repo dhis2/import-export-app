@@ -2,8 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ResourcePickerField } from '../index'
-import { resourceTypes } from '../ResourcePicker/resourceTypes'
+import { ResourcePickerField } from '../index.js'
+import { resourceTypes } from '../ResourcePicker/resourceTypes.js'
 
 const NAME = 'selectedTETypes'
 const DATATEST = 'input-te-type-picker'
@@ -16,12 +16,12 @@ const ERRORMESSAGE = i18n.t(
 )
 const RESOURCETYPE = resourceTypes.TETYPE
 
-const SINGLE_TETYPE_VALIDATOR = selectedTypes =>
+const SINGLE_TETYPE_VALIDATOR = (selectedTypes) =>
     selectedTypes.length == 0
         ? i18n.t('At least one tracked entity type must be selected')
         : undefined
 
-const SINGLE_EXACT_TETYPE_VALIDATOR = selectedTypes =>
+const SINGLE_EXACT_TETYPE_VALIDATOR = (selectedTypes) =>
     !selectedTypes
         ? i18n.t('One tracked entity type must be selected')
         : undefined

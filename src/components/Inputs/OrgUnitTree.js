@@ -2,11 +2,11 @@ import i18n from '@dhis2/d2-i18n'
 import { hasValue, composeValidators } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { OrgUnitTreeField, FormField } from '../index'
+import { OrgUnitTreeField, FormField } from '../index.js'
 import {
     SINGLE_ORG_VALIDATOR,
     SINGLE_EXACT_ORG_VALIDATOR,
-} from '../OrgUnitTree/OrgUnitTreeField'
+} from '../OrgUnitTree/OrgUnitTreeField.js'
 
 const NAME = 'selectedOrgUnits'
 const LABEL = i18n.t('Organisation unit(s) to export data from')

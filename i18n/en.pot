@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-20T19:08:19.289Z\n"
-"PO-Revision-Date: 2022-06-20T19:08:19.289Z\n"
+"POT-Creation-Date: 2022-06-21T09:47:42.209Z\n"
+"PO-Revision-Date: 2022-06-21T09:47:42.209Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -44,6 +44,37 @@ msgstr ""
 
 msgid "Please select a file"
 msgstr "Please select a file"
+
+msgid "Import as associated geometry"
+msgstr "Import as associated geometry"
+
+msgid "Store geometry as value of attribute"
+msgstr "Store geometry as value of attribute"
+
+msgid "Selected programs"
+msgstr "Selected programs"
+
+msgid "Something went wrong when loading the attributes!"
+msgstr "Something went wrong when loading the attributes!"
+
+msgid "One attribute must be selected"
+msgstr "One attribute must be selected"
+
+msgid ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" "
+"applied to \"Organisation unit\". It can be defined in the Maintenance app."
+msgstr ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" "
+"applied to \"Organisation unit\". It can be defined in the Maintenance app."
+
+msgid "Match GeoJSON property to organisation unit scheme"
+msgstr "Match GeoJSON property to organisation unit scheme"
+
+msgid "GeoJSON property name"
+msgstr "GeoJSON property name"
+
+msgid "GeoJSON feature property that holds the organisation unit identifier"
+msgstr "GeoJSON feature property that holds the organisation unit identifier"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr "A dry run tests the import settings without importing any data"
@@ -409,6 +440,9 @@ msgstr "Object"
 msgid "Organisation unit ID scheme"
 msgstr "Organisation unit ID scheme"
 
+msgid "Id"
+msgstr "Id"
+
 msgid "Data view organisation units associated with the current user"
 msgstr "Data view organisation units associated with the current user"
 
@@ -459,9 +493,6 @@ msgstr "Program to export events from"
 
 msgid "Filter programs"
 msgstr "Filter programs"
-
-msgid "Selected programs"
-msgstr "Selected programs"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "Something went wrong when loading the programs!"
@@ -657,6 +688,9 @@ msgstr "Updated"
 msgid "Total"
 msgstr "Total"
 
+msgid "Indexes"
+msgstr "Indexes"
+
 msgid "Details by type"
 msgstr "Details by type"
 
@@ -699,8 +733,8 @@ msgstr "Event import"
 msgid "Earth Engine import"
 msgstr "Earth Engine import"
 
-msgid "GML import"
-msgstr "GML import"
+msgid "Org unit geometry import"
+msgstr "Org unit geometry import"
 
 msgid "Metadata import"
 msgstr "Metadata import"
@@ -796,6 +830,18 @@ msgstr "Aggregation type"
 msgid "How the values will be aggregated for output and analysis."
 msgstr "How the values will be aggregated for output and analysis."
 
+msgid "Some required options haven't been selected"
+msgstr "Some required options haven't been selected"
+
+msgid "Preview import summary"
+msgstr "Preview import summary"
+
+msgid "Import without previewing"
+msgstr "Import without previewing"
+
+msgid "Make changes to selections"
+msgstr "Make changes to selections"
+
 msgid "Data element category"
 msgstr "Data element category"
 
@@ -834,18 +880,6 @@ msgstr "Organisation units"
 
 msgid "Import setup"
 msgstr "Import setup"
-
-msgid "Some required options haven't been selected"
-msgstr "Some required options haven't been selected"
-
-msgid "Preview import summary"
-msgstr "Preview import summary"
-
-msgid "Import without previewing"
-msgstr "Import without previewing"
-
-msgid "Make changes to selections"
-msgstr "Make changes to selections"
 
 msgid "Import bands to category option combinations"
 msgstr "Import bands to category option combinations"
@@ -932,12 +966,6 @@ msgstr "people per hectare"
 
 msgid "Estimated number of people living in an area."
 msgstr "Estimated number of people living in an area."
-
-msgid "Boys 0 - 1 years"
-msgstr "Boys 0 - 1 years"
-
-msgid "Boys 1 - 4 years"
-msgstr "Boys 1 - 4 years"
 
 msgid "Population age groups"
 msgstr "Population age groups"
@@ -1179,12 +1207,22 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Supported file types: JSON, CSV, and XML."
 
+msgid "Organisation unit geometry import"
+msgstr "Organisation unit geometry import"
+
 msgid ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
 msgstr ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
+
+msgid ""
+"GeoJSON feature id should match the organsation unit id, or match by a "
+"feature property below."
+msgstr ""
+"GeoJSON feature id should match the organsation unit id, or match by a "
+"feature property below."
 
 msgid "Overview: Import/Export"
 msgstr "Overview: Import/Export"
@@ -1207,8 +1245,8 @@ msgstr "Import data"
 msgid "Import events"
 msgstr "Import events"
 
-msgid "Import GML"
-msgstr "Import GML"
+msgid "Import GeoJSON"
+msgstr "Import GeoJSON"
 
 msgid "Import metadata"
 msgstr "Import metadata"
@@ -1281,6 +1319,9 @@ msgstr "Data"
 
 msgid "Event"
 msgstr "Event"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "GML"
 msgstr "GML"

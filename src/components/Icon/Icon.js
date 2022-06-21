@@ -60,7 +60,7 @@ export const EventIcon = ({ width, height }) => (
     </svg>
 )
 
-export const GMLIcon = ({ width, height }) => (
+export const GeometryIcon = ({ width, height }) => (
     <svg
         viewBox="0 0 24 24"
         style={createStyle(width, height)}
@@ -139,7 +139,7 @@ const iconPropTypes = {
 
 DataIcon.propTypes = iconPropTypes
 EventIcon.propTypes = iconPropTypes
-GMLIcon.propTypes = iconPropTypes
+GeometryIcon.propTypes = iconPropTypes
 LogoIcon.propTypes = iconPropTypes
 MetadataDependencyExportIcon.propTypes = iconPropTypes
 MetadataExportIcon.propTypes = iconPropTypes

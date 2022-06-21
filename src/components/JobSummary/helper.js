@@ -11,16 +11,16 @@ const statsPropTypeObj = {
 
 const statsPropType = PropTypes.exact(statsPropTypeObj)
 
-const getClassName = c => {
+const getClassName = (c) => {
     const s = c.split('.')
     return s[s.length - 1]
 }
 
-const typeReportParse = report => {
+const typeReportParse = (report) => {
     let allStats = []
     const allMessages = []
 
-    Object.keys(report).forEach(i => {
+    Object.keys(report).forEach((i) => {
         const { klass, objectReports, stats } = report[i]
 
         allStats = [
@@ -32,11 +32,11 @@ const typeReportParse = report => {
         ]
 
         objectReports &&
-            objectReports.forEach(r => {
+            objectReports.forEach((r) => {
                 const { uid, errorReports } = r
 
                 errorReports &&
-                    errorReports.forEach(e => {
+                    errorReports.forEach((e) => {
                         allMessages.push({
                             uid,
                             type: getClassName(e.mainKlass),

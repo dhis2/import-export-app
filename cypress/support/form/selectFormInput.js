@@ -1,8 +1,6 @@
 import { nameToDataTest } from './helpers/nameToDataTest'
 
-const transferInputs = [
-    'assignedUser',
-]
+const transferInputs = ['assignedUser']
 
 const switchInputs = [
     'assignedUserModeFilter',

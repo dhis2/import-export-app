@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { typeReportParse } from '../helper'
-import { SingleSummary } from '../SingleSummary/SingleSummary'
-import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary'
+import { typeReportParse } from '../helper.js'
+import { SingleSummary } from '../SingleSummary/SingleSummary.js'
+import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary.js'
 import styles from './Summary.module.css'
 
-const extractStats = summary => {
+const extractStats = (summary) => {
     if (summary.responseType == 'ImportSummaries') {
         const { imported, deleted, ignored, updated, total } = summary
         return { imported, deleted, ignored, updated, total }
@@ -19,7 +19,7 @@ const extractStats = summary => {
     }
 }
 
-const Summary = ({ summary }) => {
+const Summary = ({ summary, importType }) => {
     // gml import type object return
     if (summary.typeReports) {
         const overviewStats = {
@@ -45,6 +45,7 @@ const Summary = ({ summary }) => {
 
     const overviewSummary = (
         <SingleSummary
+            importType={importType}
             importCount={importCount}
             status={summary.status}
             description={summary.description}
@@ -62,6 +63,7 @@ const Summary = ({ summary }) => {
                   return (
                       <SingleSummary
                           key={`single-summary-${i}`}
+                          importType={importType}
                           importCount={importCount}
                           status={s.status}
                           description={s.description}
@@ -84,6 +86,7 @@ const Summary = ({ summary }) => {
 
 Summary.propTypes = {
     summary: PropTypes.object.isRequired,
+    importType: PropTypes.string,
 }
 
 export { Summary }

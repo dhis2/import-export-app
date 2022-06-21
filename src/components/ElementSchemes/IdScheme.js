@@ -3,9 +3,9 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import { fetchAttributes } from '../../utils/helper'
-import { optionsPropType } from '../../utils/options'
-import { StyledField } from '../index'
+import { fetchAttributes } from '../../utils/helper.js'
+import { optionsPropType } from '../../utils/options.js'
+import { StyledField } from '../index.js'
 
 const attributeFoundIn = (attribute, collection) =>
     !!collection.find(({ value }) => value === attribute.value)
@@ -23,11 +23,11 @@ const IdScheme = ({ name, label, idSchemeOptions, dataTest }) => {
             const dataElementAttributes = await fetchAttributes(
                 `${baseUrl}/api/`,
                 'dataElementAttribute'
-            ).catch(error => (err = error))
+            ).catch((error) => (err = error))
             const organisationUnitAttributes = await fetchAttributes(
                 `${baseUrl}/api/`,
                 'organisationUnitAttribute'
-            ).catch(error => (err = error))
+            ).catch((error) => (err = error))
 
             setError(err)
 

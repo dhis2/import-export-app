@@ -38,4 +38,24 @@ const userQuery = {
     },
 }
 
-export { dataSetQuery, programQuery, TETypeQuery, userQuery }
+const geojsonAttributesQuery = {
+    attributes: {
+        resource: 'attributes',
+        params: {
+            fields: 'id,displayName',
+            filter: [
+                'valueType:eq:GEOJSON',
+                'organisationUnitAttribute:eq:true',
+            ],
+            paging: 'false',
+        },
+    },
+}
+
+export {
+    dataSetQuery,
+    programQuery,
+    TETypeQuery,
+    userQuery,
+    geojsonAttributesQuery,
+}

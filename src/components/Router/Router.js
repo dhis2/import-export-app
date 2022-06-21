@@ -6,6 +6,7 @@ import {
     EventExport,
     EventImport,
     EarthEngineImport,
+    GeometryImport,
     GMLImport,
     MetadataDependencyExport,
     MetadataExport,
@@ -14,8 +15,8 @@ import {
     TEIImport,
     JobOverview,
     Home,
-} from '../../pages'
-import { ScrollToTop } from '../Router/ScrollToTop'
+} from '../../pages/index.js'
+import { ScrollToTop } from '../Router/ScrollToTop.js'
 
 const Router = () => {
     return (
@@ -28,6 +29,7 @@ const Router = () => {
                     path="/import/earthengine"
                     component={EarthEngineImport}
                 />
+                <Route path="/import/geometry" component={GeometryImport} />
                 <Route path="/import/gml" component={GMLImport} />
                 <Route path="/import/metadata" component={MetadataImport} />
                 <Route path="/import/tei" component={TEIImport} />

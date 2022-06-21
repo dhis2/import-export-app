@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect.js'
 
-import { ImportButtonStrip } from '../index'
+import { ImportButtonStrip } from '../index.js'
 
 const props = {
     dataTest: 'import-strip',
