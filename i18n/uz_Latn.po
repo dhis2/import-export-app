@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-23T12:38:25.348Z\n"
+"POT-Creation-Date: 2022-06-15T14:40:23.418Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -54,6 +54,35 @@ msgstr ""
 
 msgid "Please select a file"
 msgstr "Iltimos, faylni tanlang"
+
+msgid "Import as associated geometry"
+msgstr ""
+
+msgid "Store geometry as value of attribute"
+msgstr ""
+
+msgid "Selected programs"
+msgstr "Tanlangan dasturlar"
+
+msgid "Something went wrong when loading the attributes!"
+msgstr ""
+
+msgid "One attribute must be selected"
+msgstr ""
+
+msgid ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" applied"
+" to \"Organisation unit\". It can be defined in the Maintenance app."
+msgstr ""
+
+msgid "Match GeoJSON property to organisation unit scheme"
+msgstr ""
+
+msgid "GeoJSON property name"
+msgstr ""
+
+msgid "GeoJSON feature property that holds the organisation unit identifier"
+msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -434,6 +463,9 @@ msgstr "Obʼekt"
 msgid "Organisation unit ID scheme"
 msgstr "Tashkiliy boʼlimni identifikatsiyalash sxemasi"
 
+msgid "Id"
+msgstr ""
+
 msgid "Data view organisation units associated with the current user"
 msgstr ""
 "Joriy foydalanuvchi bilan bogʼliq tashkiliy boʼlimlar maʼlumotlarini koʼzdan"
@@ -490,9 +522,6 @@ msgstr "Tadbirlarni eksport qilish dasturi"
 
 msgid "Filter programs"
 msgstr "Dasturlarni filtrlash"
-
-msgid "Selected programs"
-msgstr "Tanlangan dasturlar"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "Dasturlarni yuklashda xatolik yuz berdi!"
@@ -691,6 +720,9 @@ msgstr "Yangilandi"
 msgid "Total"
 msgstr "Jami"
 
+msgid "Indexes"
+msgstr ""
+
 msgid "Details by type"
 msgstr "Turi boʼyicha tafsilotlar"
 
@@ -730,8 +762,8 @@ msgstr "Maʼlumotlar importi"
 msgid "Event import"
 msgstr "Tadbir importi"
 
-msgid "GML import"
-msgstr "GML importi"
+msgid "Org unit geometry import"
+msgstr ""
 
 msgid "Metadata import"
 msgstr "MetaMaʼlumot importi"
@@ -821,13 +853,18 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Qoʼllab-quvvatlanadigan fayl turlari: JSON, CSV, va XML."
 
-msgid ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
+msgid "Organisation unit geometry import"
 msgstr ""
-"GML formatidan foydalangan holda tashkiliy boʼlimlari uchun geografik "
-"maʼlumotlarni import qilish. GML - bu geografik xususiyatlarni ifodalash "
-"uchun XML grammatikasi."
+
+msgid ""
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
+msgstr ""
+
+msgid ""
+"GeoJSON feature id should match the organsation unit id, or match by a "
+"feature property below."
+msgstr ""
 
 msgid "Overview: Import/Export"
 msgstr "Qisqacha koʼrib chiqish: Import / Eksport"
@@ -850,8 +887,8 @@ msgstr "Maʼlumotlarni import qilish"
 msgid "Import events"
 msgstr "Hodisa/Tadbirlarni import qilish"
 
-msgid "Import GML"
-msgstr "GMLga import qilish"
+msgid "Import GeoJSON"
+msgstr ""
 
 msgid "Import metadata"
 msgstr "MetaMaʼlumotni import qilish"
@@ -930,6 +967,9 @@ msgstr "Маълумот"
 
 msgid "Event"
 msgstr "Hodisa/Tadbir"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "GML"
 msgstr "GML"

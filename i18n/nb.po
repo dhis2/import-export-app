@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-23T12:38:25.348Z\n"
+"POT-Creation-Date: 2022-06-15T14:40:23.418Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -51,6 +51,35 @@ msgstr "Noe gikk galt da du lastet inn ID-ordningene for organisasjonsenheten"
 
 msgid "Please select a file"
 msgstr "Vennligst velg en fil"
+
+msgid "Import as associated geometry"
+msgstr ""
+
+msgid "Store geometry as value of attribute"
+msgstr ""
+
+msgid "Selected programs"
+msgstr "Valgte programmer"
+
+msgid "Something went wrong when loading the attributes!"
+msgstr ""
+
+msgid "One attribute must be selected"
+msgstr ""
+
+msgid ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" applied"
+" to \"Organisation unit\". It can be defined in the Maintenance app."
+msgstr ""
+
+msgid "Match GeoJSON property to organisation unit scheme"
+msgstr ""
+
+msgid "GeoJSON property name"
+msgstr ""
+
+msgid "GeoJSON feature property that holds the organisation unit identifier"
+msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -414,6 +443,9 @@ msgstr "Objekt"
 msgid "Organisation unit ID scheme"
 msgstr "Organisasjonsenhet ID ordning"
 
+msgid "Id"
+msgstr ""
+
 msgid "Data view organisation units associated with the current user"
 msgstr ""
 
@@ -464,9 +496,6 @@ msgstr ""
 
 msgid "Filter programs"
 msgstr ""
-
-msgid "Selected programs"
-msgstr "Valgte programmer"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "Noe gikk galt ved lasting av programmer!"
@@ -658,6 +687,9 @@ msgstr "Oppdatert"
 msgid "Total"
 msgstr "Totalt"
 
+msgid "Indexes"
+msgstr ""
+
 msgid "Details by type"
 msgstr ""
 
@@ -697,8 +729,8 @@ msgstr "Dataimport"
 msgid "Event import"
 msgstr "Hendelseimport"
 
-msgid "GML import"
-msgstr "GML import"
+msgid "Org unit geometry import"
+msgstr ""
 
 msgid "Metadata import"
 msgstr "Metadataimport"
@@ -783,12 +815,18 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr ""
 
-msgid ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
+msgid "Organisation unit geometry import"
 msgstr ""
-"Importer geografiske data for organisasjonsenheter ved bruk av GML-format. "
-"GML er en XML-grammatikk for å uttrykke geografiske funksjoner."
+
+msgid ""
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
+msgstr ""
+
+msgid ""
+"GeoJSON feature id should match the organsation unit id, or match by a "
+"feature property below."
+msgstr ""
 
 msgid "Overview: Import/Export"
 msgstr ""
@@ -811,7 +849,7 @@ msgstr "Importer data"
 msgid "Import events"
 msgstr "Importer hendelser"
 
-msgid "Import GML"
+msgid "Import GeoJSON"
 msgstr ""
 
 msgid "Import metadata"
@@ -881,6 +919,9 @@ msgstr "Data"
 
 msgid "Event"
 msgstr "Hendelse"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "GML"
 msgstr "GML"
