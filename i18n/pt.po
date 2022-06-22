@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-23T12:38:25.348Z\n"
+"POT-Creation-Date: 2022-06-15T14:40:23.418Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -57,6 +57,35 @@ msgstr ""
 
 msgid "Please select a file"
 msgstr "Selecione um arquivo"
+
+msgid "Import as associated geometry"
+msgstr ""
+
+msgid "Store geometry as value of attribute"
+msgstr ""
+
+msgid "Selected programs"
+msgstr "Programa seleccionados"
+
+msgid "Something went wrong when loading the attributes!"
+msgstr ""
+
+msgid "One attribute must be selected"
+msgstr ""
+
+msgid ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" applied"
+" to \"Organisation unit\". It can be defined in the Maintenance app."
+msgstr ""
+
+msgid "Match GeoJSON property to organisation unit scheme"
+msgstr ""
+
+msgid "GeoJSON property name"
+msgstr ""
+
+msgid "GeoJSON feature property that holds the organisation unit identifier"
+msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -431,6 +460,9 @@ msgstr "Objecto"
 msgid "Organisation unit ID scheme"
 msgstr "Esquema de ID de unidade organizacional"
 
+msgid "Id"
+msgstr ""
+
 msgid "Data view organisation units associated with the current user"
 msgstr ""
 "Unidades de organização de visualização de dados associadas ao usuário atual"
@@ -485,9 +517,6 @@ msgstr "Programa para exportar eventos de"
 
 msgid "Filter programs"
 msgstr "Filtrar programas "
-
-msgid "Selected programs"
-msgstr "Programa seleccionados"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "Algo deu errado ao carregar os programas!"
@@ -686,6 +715,9 @@ msgstr "Actualizado"
 msgid "Total"
 msgstr "Total"
 
+msgid "Indexes"
+msgstr ""
+
 msgid "Details by type"
 msgstr ""
 
@@ -725,8 +757,8 @@ msgstr "Importação de dados "
 msgid "Event import"
 msgstr "Importação de eventos "
 
-msgid "GML import"
-msgstr "Importação de GML"
+msgid "Org unit geometry import"
+msgstr ""
 
 msgid "Metadata import"
 msgstr "Importação de metadados "
@@ -815,12 +847,18 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Tipos de ficheiro suportado: JSON, CSV, and XML."
 
-msgid ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
+msgid "Organisation unit geometry import"
 msgstr ""
-"Importe dados geográficos para unidades organizacionais usando o formato "
-"GML. GML é uma gramática XML para expressar características geográficas."
+
+msgid ""
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
+msgstr ""
+
+msgid ""
+"GeoJSON feature id should match the organsation unit id, or match by a "
+"feature property below."
+msgstr ""
 
 msgid "Overview: Import/Export"
 msgstr ""
@@ -843,7 +881,7 @@ msgstr "Importar valores"
 msgid "Import events"
 msgstr "Importar eventos"
 
-msgid "Import GML"
+msgid "Import GeoJSON"
 msgstr ""
 
 msgid "Import metadata"
@@ -921,6 +959,9 @@ msgstr "Dados"
 
 msgid "Event"
 msgstr "Evento"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "GML"
 msgstr "GML"
