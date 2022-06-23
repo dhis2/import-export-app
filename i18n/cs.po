@@ -450,7 +450,7 @@ msgid "Organisation unit ID scheme"
 msgstr "Schéma ID organizační jednotky"
 
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 msgid "Data view organisation units associated with the current user"
 msgstr "Zobrazení dat Organizační jednotky přidružené k aktuálnímu uživateli"
@@ -939,7 +939,7 @@ msgid "Event"
 msgstr "Událost"
 
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 msgid "GML"
 msgstr "GML"

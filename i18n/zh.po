@@ -1,16 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
 # easylin <lin_xd@126.com>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-15T14:40:23.418Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -446,7 +446,7 @@ msgid "Organisation unit ID scheme"
 msgstr "机构ID方案"
 
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 msgid "Data view organisation units associated with the current user"
 msgstr "当前用户的机构数据查看"
@@ -918,7 +918,7 @@ msgid "Event"
 msgstr "事件"
 
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 msgid "GML"
 msgstr "GML"
