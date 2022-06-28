@@ -35,7 +35,7 @@
         "@dhis2/app-runtime": "^3.4.4",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "^3.1.2",
-        "@dhis2/ui": "^7.16.3",
+        "@dhis2/ui": "^8.4.3",
         "classnames": "^2.2.6",
         "react-router-dom": "^5.2.0"
     }
