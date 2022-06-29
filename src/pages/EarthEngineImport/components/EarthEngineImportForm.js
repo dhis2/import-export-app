@@ -6,10 +6,10 @@ import {
     Divider,
     // NoticeBox,
 } from '@dhis2/ui'
-import cx from 'classnames'
+// import cx from 'classnames'
 import React, { useState } from 'react'
 import { Page } from '../../../components/index'
-import { FormAlerts } from '../../../components/Inputs/index'
+import { FormAlerts, ImportButtonStrip } from '../../../components/Inputs/index'
 import { onImport } from '../form-helper'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 // import { getAggregations } from '../util/earthEngineHelper'
@@ -17,7 +17,7 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 // import { POPULATION_AGE_GROUPS_DATASET_ID } from '../util/earthEngines'
 // import { postDataWithFetch } from '../util/postData'
 import { AggregationType } from './AggregationType'
-import { Tooltip } from './ButtonTooltip.js'
+// import { Tooltip } from './ButtonTooltip.js'
 import { DataElementCategory } from './DataElementCategory'
 import { DataElements } from './DataElements'
 import { DataPreview } from './DataPreview'
@@ -38,32 +38,14 @@ const EarthEngineImportForm = () => {
     const { userSettings } = useCachedDataQuery()
 
     // resulting data and display options
-    const [eeData, setEeData] = useState(null)
+    // const [eeData, setEeData] = useState(null)
     const [showPreview, setShowPreview] = useState(false)
 
-    const showData = async () => {
-        console.log('showData')
-        // setShowPreview(true)
-        // const data = {
-        //     id: eeId,
-        //     rows: orgUnits,
-        //     filter: periods.filter(p => period === p.name),
-        //     aggregationType: [aggregation],
-        // }
-        // const config = await getEarthEngineConfig(
-        //     data,
-        //     engine,
-        //     userSettings.keyAnalysisDisplayProperty
-        // )
-
-        // getAggregations(engine, config)
-        //     .then(aggregations => {
-        //         setEeData(JSON.stringify(aggregations))
-        //     })
-        //     .catch(e => {
-        //         // TODO handle the error in a better way
-        //         console.log('something went wrong', e)
-        //     })
+    const showData = e => {
+        console.log('e', e)
+        e.preventDefault()
+        e.stopPropagation()
+        setShowPreview(true)
     }
 
     const isMissingRequiredInputs = () => {
@@ -73,7 +55,7 @@ const EarthEngineImportForm = () => {
 
     const clearEeData = () => {
         setShowPreview(false)
-        setEeData(null)
+        // setEeData(null)
         window.scrollTo(0, 0)
     }
 
@@ -125,82 +107,8 @@ const EarthEngineImportForm = () => {
                         <DataElementCategory />
                         <MappingTable />
                         <Divider />
-                        {/* {eeData && showPreview && (
-                            <div className={styles.row}>
-                                <DataPreview
-                                    orgUnits={orgUnits}
-                                    period={period}
-                                    valueType={aggregation}
-                                    dataElement={dataSets[
-                                        dataSet
-                                    ].dataElements.find(
-                                        ({ id }) => id === dataElement
-                                    )}
-                                    data={eeData}
-                                    precision={rounding}
-                                />
-                            </div>
-                        )} */}
-                        <div className={styles.row}>
-                            {!showPreview || !eeData ? (
-                                <>
-                                    <Tooltip
-                                        content={i18n.t(
-                                            "Some required options haven't been selected"
-                                        )}
-                                        disabled={isMissingRequiredInputs()}
-                                    >
-                                        <Button
-                                            primary
-                                            name="preview"
-                                            onClick={showData}
-                                            value="default"
-                                            className={styles.leftButton}
-                                            disabled={isMissingRequiredInputs()}
-                                        >
-                                            {i18n.t('Preview import summary')}
-                                        </Button>
-                                    </Tooltip>
-                                    <Tooltip
-                                        content={i18n.t(
-                                            "Some required options haven't been selected"
-                                        )}
-                                        disabled={isMissingRequiredInputs()}
-                                    >
-                                        <Button
-                                            name="import"
-                                            onClick={onImport}
-                                            value="default"
-                                            disabled={isMissingRequiredInputs()}
-                                        >
-                                            {i18n.t(
-                                                'Import without previewing'
-                                            )}
-                                        </Button>
-                                    </Tooltip>
-                                </>
-                            ) : (
-                                <>
-                                    <Button
-                                        primary
-                                        name="import"
-                                        onClick={onImport}
-                                        value="default"
-                                        className={styles.leftButton}
-                                    >
-                                        {i18n.t('Import')}
-                                    </Button>
-                                    <Button
-                                        name="make-changes"
-                                        onClick={clearEeData}
-                                        value="default"
-                                    >
-                                        {i18n.t('Make changes to selections')}
-                                    </Button>
-                                </>
-                            )}
-                        </div>
-                        {/* <ImportButtonStrip form={form} /> */}
+                        <DataPreview />
+                        <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>
                 )}

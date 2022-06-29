@@ -24,6 +24,10 @@ const DataElementCategory = () => {
             }
         })
 
+    if (categories.length <= 1) {
+        return null
+    }
+
     return (
         <div style={{ maxWidth: '300px', width: '300px' }}>
             <StyledField

@@ -10,17 +10,14 @@ const { useField } = ReactFinalForm
 const Periods = ({ form }) => {
     const { input } = useField('earthEngineId')
     const { value: earthEngineId } = input
-    const setSelected = val => form.change('period', val)
+    const setSelected = (val) => form.change('period', val)
 
-    const { loading, error, validationText, periods } = usePeriods(
+    const { /*loading, error,*/ validationText, periods } = usePeriods(
         earthEngineId,
         setSelected
     )
 
-    if (loading || error) {
-        //TODO spinner when loading state
-        return null
-    }
+    // TODO - handle error
 
     return (
         <div style={{ maxWidth: '200px' }}>

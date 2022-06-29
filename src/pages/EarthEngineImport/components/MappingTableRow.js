@@ -2,48 +2,36 @@ import i18n from '@dhis2/d2-i18n'
 import {
     TableRow,
     TableCell,
-    SingleSelectField,
-    SingleSelectOption,
+    SingleSelectFieldFF,
+    // SingleSelectField,
+    // SingleSelectOption,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { StyledField } from '../../../components/index'
 
 const MappingTableRow = ({
     bandId,
     bandName,
-    selected,
-    setSelected,
+    // selected,
+    // setSelected,
     catOptComboList,
-    cocIdsSelected,
+    // cocIdsSelected,
 }) => {
-    const usedCocIds = cocIdsSelected.filter(cocId => cocId !== selected)
+    // const usedCocIds = cocIdsSelected.filter(cocId => cocId !== selected)
     return (
         <TableRow>
             <TableCell dense>{bandId}</TableCell>
             <TableCell dense>{bandName}</TableCell>
             <TableCell dense>
-                <SingleSelectField
+                <StyledField
+                    component={SingleSelectFieldFF}
                     name={`band-${bandId}`}
-                    selected={selected || ''}
-                    onChange={({ selected }) =>
-                        setSelected({
-                            bandId: bandId,
-                            cocId: selected,
-                        })
-                    }
                     inputWidth="150px"
                     filterable
                     noMatchText={i18n.t('No match found')}
-                >
-                    {catOptComboList.map(({ label, value }) => (
-                        <SingleSelectOption
-                            key={value}
-                            value={value}
-                            label={label}
-                            disabled={usedCocIds.includes(value)}
-                        />
-                    ))}
-                </SingleSelectField>
+                    options={catOptComboList}
+                />
             </TableCell>
         </TableRow>
     )
@@ -59,3 +47,25 @@ MappingTableRow.propTypes = {
 }
 
 export { MappingTableRow }
+// ;<SingleSelectField
+//     name={`band-${bandId}`}
+//     selected={selected || ''}
+//     onChange={({ selected }) =>
+//         setSelected({
+//             bandId: bandId,
+//             cocId: selected,
+//         })
+//     }
+//     inputWidth="150px"
+//     filterable
+//     noMatchText={i18n.t('No match found')}
+// >
+//     {catOptComboList.map(({ label, value }) => (
+//         <SingleSelectOption
+//             key={value}
+//             value={value}
+//             label={label}
+//             disabled={usedCocIds.includes(value)}
+//         />
+//     ))}
+// </SingleSelectField>

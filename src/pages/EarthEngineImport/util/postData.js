@@ -6,28 +6,31 @@ export const postDataWithFetch = ({
     data,
     dataElement,
     period,
-    valueType,
+    aggregationType,
     precision,
 }) => {
     const getValueWithPrecision = getPrecisionFn(precision)
+    console.log('aaa')
 
     const dataValues = Object.entries(data).map(([orgUnit, valueSet]) => {
         return {
             dataElement,
             period,
             orgUnit,
-            value: getValueWithPrecision(valueSet[valueType]),
+            value: getValueWithPrecision(valueSet[aggregationType]),
         }
     })
 
-    return apiFetch(`${baseUrl}/api/dataValueSets`, 'POST', {
-        dataValues,
-    })
-        .then(response => {
-            return response.json()
-        })
-        .catch(error => {
-            console.log('error', error)
-        })
-    // .then(setResponse)
+    console.log('dataValue', dataValues)
+
+    // return apiFetch(`${baseUrl}/api/dataValueSets`, 'POST', {
+    //     dataValues,
+    // })
+    //     .then(response => {
+    //         return response.json()
+    //     })
+    //     .catch(error => {
+    //         console.log('error', error)
+    //     })
+    // // .then(setResponse)
 }

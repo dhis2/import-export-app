@@ -1,23 +1,23 @@
 import i18n from '@dhis2/d2-i18n'
-// import { loadEarthEngineWorker } from '@dhis2/maps-gl'
+import { loadEarthEngineWorker } from '@dhis2/maps-gl'
 import { getEarthEngineConfigs } from './earthEngines.js'
-import { getMockAggregations } from './mockAggregations.js'
-import { getMockPeriods } from './mockPeriods.js'
+// import { getMockAggregations } from './mockAggregations.js'
+// import { getMockPeriods } from './mockPeriods.js'
 
 const DEFAULT_LOCALE = 'en'
-const fallbackDateFormat = dateString => dateString.substr(0, 10)
+const fallbackDateFormat = (dateString) => dateString.substr(0, 10)
 
 const hasIntlSupport = typeof global.Intl !== 'undefined' && Intl.DateTimeFormat
-const dateLocale = locale =>
+const dateLocale = (locale) =>
     locale && locale.includes('_') ? locale.replace('_', '-') : locale
-const toDate = date => {
+const toDate = (date) => {
     if (Array.isArray(date)) {
         return new Date(date[0], date[1], date[2])
     }
     return new Date(date)
 }
 
-const formatLocaleDate = dateString =>
+const formatLocaleDate = (dateString) =>
     hasIntlSupport
         ? new Intl.DateTimeFormat(dateLocale(i18n.language || DEFAULT_LOCALE), {
               year: 'numeric',
@@ -30,7 +30,7 @@ const formatStartEndDate = (startDate, endDate) => {
     return `${formatLocaleDate(startDate)} - ${formatLocaleDate(endDate)}`
 }
 
-const getStartEndDate = data =>
+const getStartEndDate = (data) =>
     formatStartEndDate(
         data['system:time_start'],
         data['system:time_end'] // - 7200001, // Minus 2 hrs to end the day before
@@ -39,7 +39,7 @@ const getStartEndDate = data =>
 let workerPromise
 
 // Load EE worker and set token
-const getWorkerInstance = async engine => {
+const getWorkerInstance = async (engine) => {
     workerPromise =
         workerPromise ||
         (async () => {
@@ -63,11 +63,11 @@ export const getPeriods = async (eeId, engine) => {
         return { id, name, year }
     }
 
-    // const eeWorker = await getWorkerInstance(engine)
-    // const { features } = await eeWorker.getPeriods(eeId)
-    const features = getMockPeriods(eeId)
+    const eeWorker = await getWorkerInstance(engine)
+    const { features } = await eeWorker.getPeriods(eeId)
+    // const features = getMockPeriods(eeId)
 
-    const periods = features.map(getPeriod).map(p => {
+    const periods = features.map(getPeriod).map((p) => {
         const period = filters ? filters(p)[0] : p
         return { label: p.name, value: p.year.toString(), ...period }
     })
@@ -76,16 +76,16 @@ export const getPeriods = async (eeId, engine) => {
 }
 
 export const getAggregations = async (engine, config) => {
-    // const eeWorker = await getWorkerInstance(engine)
-    // const aggregations = await eeWorker.getAggregations(config)
+    const eeWorker = await getWorkerInstance(engine)
+    const aggregations = await eeWorker.getAggregations(config)
 
-    const aggregations = getMockAggregations(config)
+    // const aggregations = getMockAggregations(config)
 
     return aggregations
 }
 
 // Returns auth token for EE API as a promise
-const getAuthToken = engine => () => {
+const getAuthToken = (engine) => () => {
     const googleTokenQuery = {
         data: { resource: 'tokens/google' },
     }

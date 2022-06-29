@@ -20,13 +20,13 @@ const MappingTable = () => {
     const { value: earthEngineId } = eeInput
     const { input: deInput } = useField('dataElements')
     const { value: dataElementId } = deInput
+    const { input: categoryInput } = useField('dataElementCategory')
+    const { value: categoryId } = categoryInput
 
     const [completeRows, setCompleteRows] = useState({})
     const [cocIdsSelected, setCocIdsSelected] = useState([])
 
     const { dataElements } = useCachedDataQuery()
-    const { input: categoryInput } = useField('dataElementCategory')
-    const { value: categoryId } = categoryInput
 
     const bands = getEarthEngineConfigs(earthEngineId)?.bands
 

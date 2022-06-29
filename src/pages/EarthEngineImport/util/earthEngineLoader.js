@@ -1,11 +1,11 @@
 // import i18n from '@dhis2/d2-i18n'
 import { getEarthEngineConfigs } from './earthEngines'
-import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
+// import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
 import { toGeoJson } from './toGeoJson'
-// import {
-//     defaultEarthEngineOptions,
-//     getEarthEngineOptions,
-// } from '@dhis2/maps-gl/'
+import {
+    defaultEarthEngineOptions,
+    getEarthEngineOptions,
+} from '@dhis2/maps-gl/'
 
 const getGeoFeaturesQuery = (ouIds, displayProperty) => ({
     resource: 'geoFeatures',
@@ -17,7 +17,7 @@ const getGeoFeaturesQuery = (ouIds, displayProperty) => ({
 
 // Returns a promise
 const getEarthEngineConfig = async (config, engine, displayProperty) => {
-    const orgUnitIds = config.rows.map(row => row.id)
+    const orgUnitIds = config.rows.map((row) => row.id)
     let features
 
     if (orgUnitIds && orgUnitIds.length) {

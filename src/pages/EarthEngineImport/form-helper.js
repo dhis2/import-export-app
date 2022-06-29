@@ -10,7 +10,7 @@ const postDataWithFetch = ({
     data,
     dataElement,
     period,
-    valueType,
+    aggregationType,
     precision,
 }) => {
     const getValueWithPrecision = getPrecisionFn(precision)
@@ -20,9 +20,11 @@ const postDataWithFetch = ({
             dataElement,
             period,
             orgUnit,
-            value: getValueWithPrecision(valueSet[valueType]),
+            value: getValueWithPrecision(valueSet[aggregationType]),
         }
     })
+
+    console.log('dataValues', dataValues)
 
     return apiFetch(`${baseUrl}/api/dataValueSets`, 'POST', {
         dataValues,
@@ -33,7 +35,7 @@ const postDataWithFetch = ({
         .catch(error => {
             console.log('error', error)
         })
-    // .then(setResponse)
+        .then(setResponse)
 }
 
 const onImport = ({
@@ -45,23 +47,20 @@ const onImport = ({
     // addTask,
     // setShowFullSummaryTask,
 }) => async values => {
-    console.log('onImport')
     const {
         earthEngineId,
         organisationUnits,
         period,
-        aggregation,
+        aggregationType,
         dataElements,
         rounding,
     } = values
-
-    console.log('values', values)
 
     const eeOptions = {
         id: earthEngineId,
         rows: organisationUnits,
         filter: periods.filter(p => period === p.name),
-        aggregationType: [aggregation],
+        aggregationType: [aggregationType],
     }
 
     if (earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID) {
@@ -74,17 +73,15 @@ const onImport = ({
     )
 
     const data = await getAggregations(engine, config)
-    console.log('data', data)
-    // setEeData(JSON.stringify(data))
 
-    // postDataWithFetch({
-    //     baseUrl,
-    //     data,
-    //     dataElement: dataElements,
-    //     period,
-    //     valueType: aggregation,
-    //     precision: rounding,
-    // })
+    postDataWithFetch({
+        baseUrl,
+        data,
+        dataElement: dataElements,
+        period,
+        aggregationType,
+        precision: rounding,
+    })
 }
 
 export { onImport }
