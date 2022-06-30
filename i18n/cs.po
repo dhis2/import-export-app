@@ -53,33 +53,36 @@ msgid "Please select a file"
 msgstr "Vyberte soubor"
 
 msgid "Import as associated geometry"
-msgstr ""
+msgstr "Importovat jako přidruženou geometrii"
 
 msgid "Store geometry as value of attribute"
-msgstr ""
+msgstr "Uložit geometrii jako hodnotu atributu"
 
 msgid "Selected programs"
 msgstr "Vybrané programy"
 
 msgid "Something went wrong when loading the attributes!"
-msgstr ""
+msgstr "Při načítání atributů se něco pokazilo!"
 
 msgid "One attribute must be selected"
-msgstr ""
+msgstr "Musí být vybrán jeden atribut"
 
 msgid ""
 "Associated geometry import requires an attribute of type \"GeoJSON\" applied"
 " to \"Organisation unit\". It can be defined in the Maintenance app."
 msgstr ""
+"Import související geometrie vyžaduje atribut typu „GeoJSON“ aplikovaný na "
+"„Organizační jednotku“. Lze jej definovat v aplikaci Údržba."
 
 msgid "Match GeoJSON property to organisation unit scheme"
-msgstr ""
+msgstr "Přiřaďte vlastnost GeoJSON schématu organizační jednotky"
 
 msgid "GeoJSON property name"
-msgstr ""
+msgstr "Název vlastnosti GeoJSON"
 
 msgid "GeoJSON feature property that holds the organisation unit identifier"
 msgstr ""
+"Vlastnost funkce GeoJSON, která obsahuje identifikátor organizační jednotky"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr "Spuštění nanečisto testuje nastavení importu bez importu dat"
@@ -698,7 +701,7 @@ msgid "Total"
 msgstr "Celkem"
 
 msgid "Indexes"
-msgstr ""
+msgstr "Indexy"
 
 msgid "Details by type"
 msgstr "Podrobnosti podle typu"
@@ -740,7 +743,7 @@ msgid "Event import"
 msgstr "Import událostí"
 
 msgid "Org unit geometry import"
-msgstr ""
+msgstr "Import geometrie organizační jednotky"
 
 msgid "Metadata import"
 msgstr "Import metadat"
@@ -830,17 +833,21 @@ msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Podporované typy souborů: JSON, CSV a XML."
 
 msgid "Organisation unit geometry import"
-msgstr ""
+msgstr "Import geometrie organizační jednotky"
 
 msgid ""
 "Import geographic data for organisation units. GeoJSON is the recommend "
 "format and can also be used for associated geometries or catchment areas."
 msgstr ""
+"Importujte geografická data pro organizační jednotky. GeoJSON je doporučený "
+"formát a lze jej také použít pro související geometrie nebo povodí."
 
 msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
 "feature property below."
 msgstr ""
+"ID funkce GeoJSON by se mělo shodovat s id organizační jednotky nebo se "
+"shodovat s vlastností funkce níže."
 
 msgid "Overview: Import/Export"
 msgstr "Přehled: Import / Export"
@@ -864,7 +871,7 @@ msgid "Import events"
 msgstr "Import události"
 
 msgid "Import GeoJSON"
-msgstr ""
+msgstr "Import GeoJSON"
 
 msgid "Import metadata"
 msgstr "Import metadat"
