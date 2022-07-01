@@ -10,7 +10,10 @@ import {
 } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { getEarthEngineConfigs } from '../util/earthEngines.js'
+import {
+    getEarthEngineConfigs,
+    POPULATION_AGE_GROUPS_DATASET_ID,
+} from '../util/earthEngines.js'
 import { MappingTableRow } from './MappingTableRow.js'
 
 const { useField } = ReactFinalForm
@@ -18,26 +21,29 @@ const { useField } = ReactFinalForm
 const MappingTable = () => {
     const { input: eeInput } = useField('earthEngineId')
     const { value: earthEngineId } = eeInput
-    const { input: deInput } = useField('dataElements')
+    const { input: deInput } = useField('dataElement')
     const { value: dataElementId } = deInput
-    const { input: categoryInput } = useField('dataElementCategory')
-    const { value: categoryId } = categoryInput
+    // const { input: categoryInput } = useField('dataElementCategory')
+    // const { value: categoryId } = categoryInput
 
     const [completeRows, setCompleteRows] = useState({})
     const [cocIdsSelected, setCocIdsSelected] = useState([])
 
     const { dataElements } = useCachedDataQuery()
 
+    if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID) {
+        return null
+    }
+
     const bands = getEarthEngineConfigs(earthEngineId)?.bands
 
-    if (!bands || !dataElementId || !categoryId) {
+    if (!bands || !dataElementId) {
         return null
     }
 
     const catOptComboList = dataElements
         .find(({ id }) => id === dataElementId)
-        .categoryCombo.categories.find(({ id }) => id === categoryId)
-        .categoryOptions.map(({ id, name }) => {
+        .categoryCombo.categoryOptionCombos.map(({ id, name }) => {
             return {
                 value: id,
                 label: name,

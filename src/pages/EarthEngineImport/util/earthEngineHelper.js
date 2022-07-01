@@ -78,7 +78,6 @@ export const getPeriods = async (eeId, engine) => {
 export const getAggregations = async (engine, config) => {
     const eeWorker = await getWorkerInstance(engine)
     const aggregations = await eeWorker.getAggregations(config)
-
     // const aggregations = getMockAggregations(config)
 
     return aggregations

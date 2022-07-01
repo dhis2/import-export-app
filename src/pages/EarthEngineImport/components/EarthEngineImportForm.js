@@ -18,7 +18,7 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 // import { postDataWithFetch } from '../util/postData'
 import { AggregationType } from './AggregationType'
 // import { Tooltip } from './ButtonTooltip.js'
-import { DataElementCategory } from './DataElementCategory'
+// import { DataElementCategory } from './DataElementCategory'
 import { DataElements } from './DataElements'
 import { DataPreview } from './DataPreview'
 import { EarthEngineId } from './EarthEngineId'
@@ -26,8 +26,8 @@ import { MappingTable } from './MapGenderAgeGroupsTable'
 import { OrganisationUnits } from './OrganisationUnits'
 import { Periods } from './Periods'
 import { Rounding, defaultRoundingOption } from './Rounding'
-import styles from './styles/EarthEngineImportForm.module.css'
 import { usePeriods } from './usePeriods'
+// import styles from './styles/EarthEngineImportForm.module.css'
 
 const { Form } = ReactFinalForm
 
@@ -41,7 +41,7 @@ const EarthEngineImportForm = () => {
     // const [eeData, setEeData] = useState(null)
     const [showPreview, setShowPreview] = useState(false)
 
-    const showData = e => {
+    const showData = (e) => {
         console.log('e', e)
         e.preventDefault()
         e.stopPropagation()
@@ -62,7 +62,7 @@ const EarthEngineImportForm = () => {
     const initialValues = {
         rounding: defaultRoundingOption,
         organisationUnits: [],
-        dataElements: null,
+        dataElement: null,
     }
 
     const onSubmit = onImport({
@@ -104,7 +104,7 @@ const EarthEngineImportForm = () => {
                         <Divider />
                         <AggregationType />
                         <DataElements />
-                        <DataElementCategory />
+                        {/* <DataElementCategory /> */}
                         <MappingTable />
                         <Divider />
                         <DataPreview />

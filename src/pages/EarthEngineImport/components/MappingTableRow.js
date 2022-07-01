@@ -19,6 +19,7 @@ const MappingTableRow = ({
     // cocIdsSelected,
 }) => {
     // const usedCocIds = cocIdsSelected.filter(cocId => cocId !== selected)
+
     return (
         <TableRow>
             <TableCell dense>{bandId}</TableCell>
@@ -26,7 +27,7 @@ const MappingTableRow = ({
             <TableCell dense>
                 <StyledField
                     component={SingleSelectFieldFF}
-                    name={`band-${bandId}`}
+                    name={bandId}
                     inputWidth="150px"
                     filterable
                     noMatchText={i18n.t('No match found')}
@@ -47,25 +48,3 @@ MappingTableRow.propTypes = {
 }
 
 export { MappingTableRow }
-// ;<SingleSelectField
-//     name={`band-${bandId}`}
-//     selected={selected || ''}
-//     onChange={({ selected }) =>
-//         setSelected({
-//             bandId: bandId,
-//             cocId: selected,
-//         })
-//     }
-//     inputWidth="150px"
-//     filterable
-//     noMatchText={i18n.t('No match found')}
-// >
-//     {catOptComboList.map(({ label, value }) => (
-//         <SingleSelectOption
-//             key={value}
-//             value={value}
-//             label={label}
-//             disabled={usedCocIds.includes(value)}
-//         />
-//     ))}
-// </SingleSelectField>

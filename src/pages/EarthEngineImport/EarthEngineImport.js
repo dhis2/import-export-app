@@ -25,8 +25,7 @@ const query = {
     dataElements: {
         resource: 'dataElements',
         params: {
-            fields:
-                'id,displayName~rename(name),categoryCombo[categories[id,displayName~rename(name),categoryOptions[id,displayName~rename(name)]]]',
+            fields: 'id,displayName~rename(name),categoryCombo[categoryOptionCombos[id,displayName~rename(name)]]',
             filter: 'domainType:eq:AGGREGATE',
             paging: false,
         },
@@ -46,8 +45,8 @@ const providerDataTransformation = ({
                     ? 'displayName'
                     : 'displayShortName',
         },
-        rootOrgUnits: rootOrgUnits.organisationUnits?.map(ou => ou.id) || [],
-        dataElements: dataElements.dataElements.map(de => {
+        rootOrgUnits: rootOrgUnits.organisationUnits?.map((ou) => ou.id) || [],
+        dataElements: dataElements.dataElements.map((de) => {
             return {
                 ...de,
                 value: de.id,

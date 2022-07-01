@@ -70,10 +70,10 @@ const getEarthEngineLayers = () => [
                 id: 'M_1',
                 name: i18n.t('Men 1 - 4 years'),
             },
-            // {
-            //     id: 'M_5',
-            //     name: i18n.t('Men 5 - 9 years'),
-            // },
+            {
+                id: 'M_5',
+                name: i18n.t('Men 5 - 9 years'),
+            },
             // {
             //     id: 'M_10',
             //     name: i18n.t('Men 10 - 14 years'),
@@ -134,18 +134,18 @@ const getEarthEngineLayers = () => [
             //     id: 'M_80',
             //     name: i18n.t('Men 80 years and above'),
             // },
-            // {
-            //     id: 'F_0',
-            //     name: i18n.t('Women 0 - 1 years'),
-            // },
-            // {
-            //     id: 'F_1',
-            //     name: i18n.t('Women 1 - 4 years'),
-            // },
-            // {
-            //     id: 'F_5',
-            //     name: i18n.t('Women 5 - 9 years'),
-            // },
+            {
+                id: 'F_0',
+                name: i18n.t('Women 0 - 1 years'),
+            },
+            {
+                id: 'F_1',
+                name: i18n.t('Women 1 - 4 years'),
+            },
+            {
+                id: 'F_5',
+                name: i18n.t('Women 5 - 9 years'),
+            },
             // {
             //     id: 'F_10',
             //     name: i18n.t('Women 10 - 14 years'),
@@ -467,12 +467,12 @@ const getEarthEngineLayers = () => [
     },
 ]
 
-export const getEarthEngineConfigs = eeIds => {
+export const getEarthEngineConfigs = (eeIds) => {
     if (Array.isArray(eeIds)) {
         return getEarthEngineLayers().filter(({ datasetId }) => {
             return eeIds.includes(datasetId)
         })
     }
 
-    return getEarthEngineLayers().find(l => l.datasetId === eeIds)
+    return getEarthEngineLayers().find((l) => l.datasetId === eeIds)
 }

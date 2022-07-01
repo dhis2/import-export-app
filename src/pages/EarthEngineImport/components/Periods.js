@@ -12,12 +12,15 @@ const Periods = ({ form }) => {
     const { value: earthEngineId } = input
     const setSelected = (val) => form.change('period', val)
 
-    const { /*loading, error,*/ validationText, periods } = usePeriods(
+    const { loading, error, validationText, periods } = usePeriods(
         earthEngineId,
         setSelected
     )
 
     // TODO - handle error
+    if (loading || error) {
+        return null
+    }
 
     return (
         <div style={{ maxWidth: '200px' }}>

@@ -8,7 +8,7 @@ const { useField } = ReactFinalForm
 
 const DataElementCategory = () => {
     const { dataElements } = useCachedDataQuery()
-    const { input } = useField('dataElements')
+    const { input } = useField('dataElement')
     const { value: dataElementId } = input
 
     if (!dataElementId || !dataElements) {

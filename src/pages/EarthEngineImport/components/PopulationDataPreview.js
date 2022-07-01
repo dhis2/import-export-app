@@ -28,8 +28,8 @@ const PopulationDataPreview = () => {
     const { value: orgUnits } = orgUnitInput
     const { input: roundingInput } = useField('rounding')
     const { value: precision } = roundingInput
-    const { input: dataElementsInput } = useField('dataElements')
-    const { value: dataElement } = dataElementsInput
+    const { input: dataElementInput } = useField('dataElement')
+    const { value: dataElementId } = dataElementInput
     const { input: periodInput } = useField('period')
     const { value: period } = periodInput
     const { input: aggTypeInput } = useField('aggregationType')
@@ -37,7 +37,7 @@ const PopulationDataPreview = () => {
     // data: PropTypes.string,
 
     const [eeData, setEeData] = useState(null)
-    const [formattedData, setFormattedData] = useState([])
+    const [tableData, setTableData] = useState([])
     const { baseUrl } = useConfig()
     const { periods } = usePeriods(earthEngineId, Function.prototype)
     const { userSettings } = useCachedDataQuery()
@@ -52,7 +52,7 @@ const PopulationDataPreview = () => {
             const eeOptions = {
                 id: earthEngineId,
                 rows: orgUnits,
-                filter: periods.filter(p => period === p.name),
+                filter: periods.filter((p) => period === p.name),
                 aggregationType: [aggregationType],
             }
 
@@ -71,7 +71,7 @@ const PopulationDataPreview = () => {
             orgUnits &&
             aggregationType &&
             precision &&
-            dataElement
+            dataElementId
         ) {
             fetchEeAggregations()
         }
@@ -81,48 +81,51 @@ const PopulationDataPreview = () => {
         orgUnits,
         aggregationType,
         precision,
-        dataElement,
+        dataElementId,
     ])
 
     useEffect(() => {
-        const fetchCurrVals = async (url, normalizedData) => {
+        const fetchCurrVals = async (url, newEEData) => {
             const { dataValues } = await fetchCurrentValues(url)
-            const newArr = normalizedData.map(ou => {
-                const val = dataValues.find(v => v.orgUnit === ou.ouId)
+            const currentValues = dataValues.filter(
+                (v) => v.dataElement === dataElementId
+            )
+            const newArr = newEEData.map(({ ouId, ouName, value }) => {
+                const current = currentValues.find((v) => v.orgUnit === ouId)
 
-                return val ? { ...ou, current: val.value } : ou
+                return { ouId, ouName, value, current: current?.value }
             })
 
-            setFormattedData(newArr)
+            setTableData(newArr)
         }
 
-        if (eeData && orgUnits && period && dataElement) {
+        if (eeData && orgUnits && period && dataElementId) {
             // const normalizedData = Object.entries(JSON.parse(eeData)).map(
             const normalizedData = Object.entries(eeData).map(
                 ([ouId, valueSet]) => {
                     //TODO handle missing name better, or does it need handling at all?
                     const ouName =
-                        orgUnits.find(ou => ou.id === ouId)?.name ||
+                        orgUnits.find((ou) => ou.id === ouId)?.name ||
                         'no-name OU'
                     return { ouId, ouName, value: valueSet[aggregationType] }
                 }
             )
 
-            const dataElementGroupId = 'sP7jTt3YGBb'
+            //TODO add a selector for this
+            const dataElementGroupId = 'VZ4MxIbOCXd' // Earth engine populations
 
             const ouQueryParams = normalizedData
                 .map(({ ouId }) => `orgUnit=${ouId}`)
                 .join('&')
 
-            // console.log('period', period, periods)
             fetchCurrVals(
                 `${baseUrl}/api/dataValueSets?dataElementGroup=${dataElementGroupId}&period=${period}&${ouQueryParams}`,
                 normalizedData
             )
         }
-    }, [dataElement, period, eeData, orgUnits])
+    }, [dataElementId, period, eeData, orgUnits])
 
-    if (!formattedData.length) {
+    if (!tableData.length) {
         return null
     }
 
@@ -140,7 +143,7 @@ const PopulationDataPreview = () => {
                 </TableRowHead>
             </TableHead>
             <TableBody>
-                {formattedData.map(({ ouId, ouName, value, current }) => {
+                {tableData.map(({ ouId, ouName, value, current }) => {
                     const val = getValueWithPrecision(value)
 
                     return (

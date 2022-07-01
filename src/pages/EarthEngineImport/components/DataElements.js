@@ -11,7 +11,7 @@ const DataElements = () => {
         <div style={{ maxWidth: '300px', width: '300px' }}>
             <StyledField
                 component={SingleSelectFieldFF}
-                name="dataElements"
+                name="dataElement"
                 label={i18n.t('Data element')}
                 options={dataElements}
                 dataTest="input-data-elements"

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-21T09:49:05.087Z\n"
-"PO-Revision-Date: 2022-06-21T09:49:05.087Z\n"
+"POT-Creation-Date: 2022-06-30T13:15:04.521Z\n"
+"PO-Revision-Date: 2022-06-30T13:15:04.521Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -905,6 +905,9 @@ msgstr "Data from Earth Engine will be imported for this period."
 
 msgid "Org Unit"
 msgstr "Org Unit"
+
+msgid "Cat option combo"
+msgstr "Cat option combo"
 
 msgid "Current value"
 msgstr "Current value"
