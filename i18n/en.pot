@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-07-01T09:56:00.979Z\n"
-"PO-Revision-Date: 2022-07-01T09:56:00.979Z\n"
+"POT-Creation-Date: 2022-07-01T14:53:01.168Z\n"
+"PO-Revision-Date: 2022-07-01T14:53:01.168Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -842,11 +842,11 @@ msgstr "Import without previewing"
 msgid "Make changes to selections"
 msgstr "Make changes to selections"
 
-msgid "Data element category"
-msgstr "Data element category"
+msgid "Data element group"
+msgstr "Data element group"
 
-msgid "The category"
-msgstr "The category"
+msgid "Data element groups containing current values"
+msgstr "Data element groups containing current values"
 
 msgid "Data element"
 msgstr "Data element"
@@ -941,6 +941,9 @@ msgstr "Round to 6 decimal places"
 
 msgid "Value rounding"
 msgstr "Value rounding"
+
+msgid "Something went wrong when fetching the EE aggregations"
+msgstr "Something went wrong when fetching the EE aggregations"
 
 msgid "Something went wrong when loading the Earth Engine periods"
 msgstr "Something went wrong when loading the Earth Engine periods"
