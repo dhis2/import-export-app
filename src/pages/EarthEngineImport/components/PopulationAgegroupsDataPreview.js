@@ -47,6 +47,8 @@ const PopulationAgegroupsDataPreview = () => {
     const { value: cocF1 } = f1Input
     const { input: f5Input } = useField('F_5')
     const { value: cocF5 } = f5Input
+    const { input: degInput } = useField('dataElementGroup')
+    const { value: dataElementGroupId } = degInput
 
     const [eeData, setEeData] = useState(null)
     const [tableData, setTableData] = useState([])
@@ -73,7 +75,7 @@ const PopulationAgegroupsDataPreview = () => {
                 rows: orgUnits,
                 filter: periods.filter((p) => period === p.name),
                 aggregationType: [aggregationType],
-                band: ['M_0', 'F_0', 'M_1', 'F_1', 'M_5', 'F_5'],
+                band: Object.keys(bandMap),
             }
 
             const config = await getEarthEngineConfig(
@@ -98,6 +100,7 @@ const PopulationAgegroupsDataPreview = () => {
                 return acc
             }, [])
 
+            console.log('structuredData', structuredData)
             setEeData(structuredData)
         }
 
@@ -151,6 +154,7 @@ const PopulationAgegroupsDataPreview = () => {
             orgUnits &&
             period &&
             dataElementId &&
+            dataElementGroupId &&
             cocM0 &&
             cocM1 &&
             cocM5 &&
@@ -165,9 +169,6 @@ const PopulationAgegroupsDataPreview = () => {
                 return { ouId, ouName, bandId, value }
             })
 
-            //TODO add a selector for this
-            const dataElementGroupId = 'VZ4MxIbOCXd' // Earth engine populations
-
             const ouQueryParams = normalizedData
                 .map(({ ouId }) => `orgUnit=${ouId}`)
                 .join('&')
@@ -179,6 +180,7 @@ const PopulationAgegroupsDataPreview = () => {
         }
     }, [
         dataElementId,
+        dataElementGroupId,
         period,
         eeData,
         orgUnits,

@@ -2,9 +2,8 @@ import { useDataEngine, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     ReactFinalForm,
-    Button,
+    // Button,
     Divider,
-    // NoticeBox,
 } from '@dhis2/ui'
 // import cx from 'classnames'
 import React, { useState } from 'react'
@@ -12,14 +11,10 @@ import { Page } from '../../../components/index'
 import { FormAlerts, ImportButtonStrip } from '../../../components/Inputs/index'
 import { onImport } from '../form-helper'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-// import { getAggregations } from '../util/earthEngineHelper'
-// import getEarthEngineConfig from '../util/earthEngineLoader'
-// import { POPULATION_AGE_GROUPS_DATASET_ID } from '../util/earthEngines'
-// import { postDataWithFetch } from '../util/postData'
 import { AggregationType } from './AggregationType'
 // import { Tooltip } from './ButtonTooltip.js'
-// import { DataElementCategory } from './DataElementCategory'
 import { DataElements } from './DataElements'
+import { DataElementGroup } from './DataElementGroup.js'
 import { DataPreview } from './DataPreview'
 import { EarthEngineId } from './EarthEngineId'
 import { MappingTable } from './MapGenderAgeGroupsTable'
@@ -38,7 +33,6 @@ const EarthEngineImportForm = () => {
     const { userSettings } = useCachedDataQuery()
 
     // resulting data and display options
-    // const [eeData, setEeData] = useState(null)
     const [showPreview, setShowPreview] = useState(false)
 
     const showData = (e) => {
@@ -104,7 +98,7 @@ const EarthEngineImportForm = () => {
                         <Divider />
                         <AggregationType />
                         <DataElements />
-                        {/* <DataElementCategory /> */}
+                        <DataElementGroup />
                         <MappingTable />
                         <Divider />
                         <DataPreview />

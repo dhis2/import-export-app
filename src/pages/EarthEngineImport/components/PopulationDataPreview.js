@@ -34,6 +34,8 @@ const PopulationDataPreview = () => {
     const { value: period } = periodInput
     const { input: aggTypeInput } = useField('aggregationType')
     const { value: aggregationType } = aggTypeInput
+    const { input: degInput } = useField('dataElementGroup')
+    const { value: dataElementGroupId } = degInput
     // data: PropTypes.string,
 
     const [eeData, setEeData] = useState(null)
@@ -99,7 +101,13 @@ const PopulationDataPreview = () => {
             setTableData(newArr)
         }
 
-        if (eeData && orgUnits && period && dataElementId) {
+        if (
+            eeData &&
+            orgUnits &&
+            period &&
+            dataElementId &&
+            dataElementGroupId
+        ) {
             const normalizedData = Object.entries(eeData).map(
                 ([ouId, valueSet]) => {
                     //TODO handle missing name better, or does it need handling at all?
@@ -110,9 +118,6 @@ const PopulationDataPreview = () => {
                 }
             )
 
-            //TODO add a selector for this
-            const dataElementGroupId = 'VZ4MxIbOCXd' // Earth engine populations
-
             const ouQueryParams = normalizedData
                 .map(({ ouId }) => `orgUnit=${ouId}`)
                 .join('&')
@@ -122,7 +127,7 @@ const PopulationDataPreview = () => {
                 normalizedData
             )
         }
-    }, [dataElementId, period, eeData, orgUnits])
+    }, [dataElementId, dataElementGroupId, period, eeData, orgUnits])
 
     if (!tableData.length) {
         return null

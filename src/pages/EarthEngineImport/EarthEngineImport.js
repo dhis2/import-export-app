@@ -30,12 +30,20 @@ const query = {
             paging: false,
         },
     },
+    dataElementGroups: {
+        resource: 'dataElementGroups',
+        params: {
+            fields: 'id,displayName~rename(name)',
+            paging: false,
+        },
+    },
 }
 
 const providerDataTransformation = ({
     userSettings,
     rootOrgUnits,
     dataElements,
+    dataElementGroups,
 }) => {
     return {
         userSettings: {
@@ -51,6 +59,13 @@ const providerDataTransformation = ({
                 ...de,
                 value: de.id,
                 label: de.name,
+            }
+        }),
+        dataElementGroups: dataElementGroups.dataElementGroups.map((deg) => {
+            return {
+                ...deg,
+                value: deg.id,
+                label: deg.name,
             }
         }),
     }
