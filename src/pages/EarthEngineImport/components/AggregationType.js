@@ -12,7 +12,7 @@ const AGGREGATION_TYPE_SUM = 'sum'
 const AGGREGATION_TYPE_STDDEV = 'stdDev'
 const AGGREGATION_TYPE_VARIANCE = 'variance'
 
-const ALL_AGGREGATION_TYPES = [
+export const ALL_AGGREGATION_TYPES = [
     AGGREGATION_TYPE_MIN,
     AGGREGATION_TYPE_MAX,
     AGGREGATION_TYPE_MEAN,
@@ -22,7 +22,7 @@ const ALL_AGGREGATION_TYPES = [
     AGGREGATION_TYPE_VARIANCE,
 ]
 
-const getAggregationOptions = id => {
+const getAggregationOptions = (id) => {
     const aggregationTypesForEeId =
         getEarthEngineConfigs(id)?.aggregations || ALL_AGGREGATION_TYPES
 
@@ -39,10 +39,10 @@ const getAggregationOptions = id => {
         { value: AGGREGATION_TYPE_VARIANCE, label: i18n.t('Variance') },
     ]
 
-    return types.filter(type => aggregationTypesForEeId.includes(type.value))
+    return types.filter((type) => aggregationTypesForEeId.includes(type.value))
 }
 
-export const getDefaultAggregation = eeId => {
+export const getDefaultAggregation = (eeId) => {
     const defaultAggregations = getEarthEngineConfigs(eeId).defaultAggregations
 
     //TODO if 'sum' is in the default aggregations, use that, otherwise el[0]

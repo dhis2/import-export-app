@@ -14,8 +14,7 @@ const DataPreview = () => {
         return <PopulationDataPreview />
     }
 
-    return null
-    // return <PopulationAgegroupsDataPreview />
+    return <PopulationAgegroupsDataPreview />
 }
 
 export { DataPreview }

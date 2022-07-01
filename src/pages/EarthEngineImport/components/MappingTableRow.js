@@ -19,7 +19,6 @@ const MappingTableRow = ({
     // cocIdsSelected,
 }) => {
     // const usedCocIds = cocIdsSelected.filter(cocId => cocId !== selected)
-
     return (
         <TableRow>
             <TableCell dense>{bandId}</TableCell>

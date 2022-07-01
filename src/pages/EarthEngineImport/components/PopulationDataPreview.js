@@ -100,7 +100,6 @@ const PopulationDataPreview = () => {
         }
 
         if (eeData && orgUnits && period && dataElementId) {
-            // const normalizedData = Object.entries(JSON.parse(eeData)).map(
             const normalizedData = Object.entries(eeData).map(
                 ([ouId, valueSet]) => {
                     //TODO handle missing name better, or does it need handling at all?

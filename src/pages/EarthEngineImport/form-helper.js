@@ -21,11 +21,8 @@ const postDataWithFetch = ({
     console.log('post, cocMap', cocMap)
 
     if (cocMap) {
-        dataValues = Object.entries(data).reduce((prev, curr) => {
+        dataValues = Object.entries(data).reduce((acc, curr) => {
             const [orgUnit, valueSet] = curr
-            // const vals = Object.entries(valueSet)
-
-            // debugger
             Object.entries(valueSet).forEach(([bandId, rawValue]) => {
                 const ds = {
                     dataElement,
@@ -35,19 +32,13 @@ const postDataWithFetch = ({
                     value: getValueWithPrecision(rawValue),
                 }
 
-                prev.push(ds)
+                acc.push(ds)
             })
 
-            console.log('prev', prev)
-            // prev.concat(tmpSet)
-
-            // console.log('tmpSet', tmpSet)
-
-            return prev
+            return acc
         }, [])
     } else {
         dataValues = Object.entries(data).map(([orgUnit, valueSet]) => {
-            // console.log('reg pop data', data)
             return {
                 dataElement,
                 period,
@@ -128,7 +119,7 @@ const onImport =
         )
 
         const data = await getAggregations(engine, config)
-        console.log('and now the data', data)
+        console.log('and now the data', config, data)
 
         postDataWithFetch({
             baseUrl,
