@@ -1,4 +1,3 @@
-import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Table,
@@ -8,91 +7,20 @@ import {
     TableBody,
     TableRow,
     TableCell,
-    ReactFinalForm,
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
-import { fetchCurrentValues } from '../api/fetchCurrentValues.js'
-import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { getAggregations } from '../util/earthEngineHelper'
-import getEarthEngineConfig from '../util/earthEngineLoader'
-import { getPrecisionFn } from './Rounding'
 import styles from './styles/DataPreview.module.css'
-import { usePeriods } from './usePeriods.js'
-
-const { useField } = ReactFinalForm
+import { useFetchAggregations } from './useFetchAggregations.js'
+import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const PopulationDataPreview = () => {
-    const { input: earthEngineIdInput } = useField('earthEngineId')
-    const { value: earthEngineId } = earthEngineIdInput
-    const { input: orgUnitInput } = useField('organisationUnits')
-    const { value: orgUnits } = orgUnitInput
-    const { input: roundingInput } = useField('rounding')
-    const { value: precision } = roundingInput
-    const { input: dataElementInput } = useField('dataElement')
-    const { value: dataElementId } = dataElementInput
-    const { input: periodInput } = useField('period')
-    const { value: period } = periodInput
-    const { input: aggTypeInput } = useField('aggregationType')
-    const { value: aggregationType } = aggTypeInput
-    const { input: degInput } = useField('dataElementGroup')
-    const { value: dataElementGroupId } = degInput
-    // data: PropTypes.string,
-
-    const [eeData, setEeData] = useState(null)
+    const { eeData } = useFetchAggregations()
     const [tableData, setTableData] = useState([])
-    const { baseUrl } = useConfig()
-    const { periods } = usePeriods(earthEngineId, Function.prototype)
-    const { userSettings } = useCachedDataQuery()
-
-    const engine = useDataEngine()
-
-    const getValueWithPrecision = getPrecisionFn(precision)
+    const { currentValues } = useFetchCurrentValues(eeData)
 
     useEffect(() => {
-        const fetchEeAggregations = async () => {
-            // fetch the ee data and display it.
-            const eeOptions = {
-                id: earthEngineId,
-                rows: orgUnits,
-                filter: periods.filter((p) => period === p.name),
-                aggregationType: [aggregationType],
-            }
-
-            const config = await getEarthEngineConfig(
-                eeOptions,
-                engine,
-                userSettings.keyAnalysisDisplayProperty
-            )
-
-            const data = await getAggregations(engine, config)
-            setEeData(data)
-        }
-        if (
-            earthEngineId &&
-            period &&
-            orgUnits &&
-            aggregationType &&
-            precision &&
-            dataElementId
-        ) {
-            fetchEeAggregations()
-        }
-    }, [
-        earthEngineId,
-        period,
-        orgUnits,
-        aggregationType,
-        precision,
-        dataElementId,
-    ])
-
-    useEffect(() => {
-        const fetchCurrVals = async (url, newEEData) => {
-            const { dataValues } = await fetchCurrentValues(url)
-            const currentValues = dataValues.filter(
-                (v) => v.dataElement === dataElementId
-            )
-            const newArr = newEEData.map(({ ouId, ouName, value }) => {
+        if (currentValues && eeData) {
+            const newArr = eeData.map(({ ouId, ouName, value }) => {
                 const current = currentValues.find((v) => v.orgUnit === ouId)
 
                 return { ouId, ouName, value, current: current?.value }
@@ -100,34 +28,7 @@ const PopulationDataPreview = () => {
 
             setTableData(newArr)
         }
-
-        if (
-            eeData &&
-            orgUnits &&
-            period &&
-            dataElementId &&
-            dataElementGroupId
-        ) {
-            const normalizedData = Object.entries(eeData).map(
-                ([ouId, valueSet]) => {
-                    //TODO handle missing name better, or does it need handling at all?
-                    const ouName =
-                        orgUnits.find((ou) => ou.id === ouId)?.name ||
-                        'no-name OU'
-                    return { ouId, ouName, value: valueSet[aggregationType] }
-                }
-            )
-
-            const ouQueryParams = normalizedData
-                .map(({ ouId }) => `orgUnit=${ouId}`)
-                .join('&')
-
-            fetchCurrVals(
-                `${baseUrl}/api/dataValueSets?dataElementGroup=${dataElementGroupId}&period=${period}&${ouQueryParams}`,
-                normalizedData
-            )
-        }
-    }, [dataElementId, dataElementGroupId, period, eeData, orgUnits])
+    }, [currentValues, eeData])
 
     if (!tableData.length) {
         return null
@@ -148,16 +49,14 @@ const PopulationDataPreview = () => {
             </TableHead>
             <TableBody>
                 {tableData.map(({ ouId, ouName, value, current }) => {
-                    const val = getValueWithPrecision(value)
-
                     return (
                         <TableRow key={ouId}>
                             <TableCell dense>{ouName}</TableCell>
                             <TableCell dense className={styles.current}>
-                                {current !== undefined ? current : ''}
+                                {current || ''}
                             </TableCell>
                             <TableCell dense className={styles.right}>
-                                {val}
+                                {value}
                             </TableCell>
                         </TableRow>
                     )
