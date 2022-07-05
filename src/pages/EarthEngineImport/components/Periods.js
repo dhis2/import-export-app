@@ -1,26 +1,31 @@
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, SingleSelectFieldFF } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React from 'react'
-import { StyledField } from '../../../components/index'
-import { usePeriods } from './usePeriods'
+import React, { useCallback, useEffect } from 'react'
+import { StyledField } from '../../../components/index.js'
+import { usePeriods } from './usePeriods.js'
 
 const { useField } = ReactFinalForm
 
 const Periods = ({ form }) => {
     const { input } = useField('earthEngineId')
     const { value: earthEngineId } = input
-    const setSelected = (val) => form.change('period', val)
+    const { validationText, periods } = usePeriods(earthEngineId)
 
-    const { loading, error, validationText, periods } = usePeriods(
-        earthEngineId,
-        setSelected
-    )
+    // const setSelected = useCallback((val) => form.change('period', val), [form])
 
-    // TODO - handle error
-    if (loading || error) {
-        return null
-    }
+    useEffect(() => {
+        // console.log(
+        //     'earthEngineId changed, set period undefined',
+        //     earthEngineId
+        // )
+        // setSelected(undefined)
+        form.change('period', undefined)
+        if (periods.length === 1) {
+            form.change('period', periods[0].value)
+            // setSelected(periods[0].value)
+        }
+    }, [earthEngineId, periods])
 
     return (
         <div style={{ maxWidth: '200px' }}>

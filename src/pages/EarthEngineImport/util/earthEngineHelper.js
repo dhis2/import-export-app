@@ -65,7 +65,6 @@ export const getPeriods = async (eeId, engine) => {
 
     const eeWorker = await getWorkerInstance(engine)
     const { features } = await eeWorker.getPeriods(eeId)
-    // const features = getMockPeriods(eeId)
 
     const periods = features.map(getPeriod).map((p) => {
         const period = filters ? filters(p)[0] : p

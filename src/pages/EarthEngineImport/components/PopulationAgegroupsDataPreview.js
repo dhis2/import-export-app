@@ -11,11 +11,11 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
+import { getPrecisionFn } from './Rounding.js'
+import styles from './styles/DataPreview.module.css'
+import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { useFetchAggregations } from './useFetchAggregations.js'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
-import { useCatOptComboSelections } from './useCatOptComboSelections.js'
-import { getPrecisionFn } from './Rounding'
-import styles from './styles/DataPreview.module.css'
 
 const { useField } = ReactFinalForm
 
@@ -29,7 +29,7 @@ const PopulationAgegroupsDataPreview = () => {
     const { dataElements } = useCachedDataQuery()
 
     const { eeData } = useFetchAggregations()
-    const { bandMap } = useCatOptComboSelections()
+    const { bandMap, allBandsSelected } = useCatOptComboSelections()
     const { currentValues } = useFetchCurrentValues(eeData)
 
     const getValueWithPrecision = getPrecisionFn(precision)
@@ -64,7 +64,7 @@ const PopulationAgegroupsDataPreview = () => {
         }
     }, [currentValues, eeData])
 
-    if (!tableData.length) {
+    if (!tableData.length || !allBandsSelected) {
         return null
     }
 

@@ -469,9 +469,9 @@ const getEarthEngineLayers = () => [
 
 export const getEarthEngineConfigs = (eeIds) => {
     if (Array.isArray(eeIds)) {
-        return getEarthEngineLayers().filter(({ datasetId }) => {
-            return eeIds.includes(datasetId)
-        })
+        return getEarthEngineLayers().filter(({ datasetId }) =>
+            eeIds.includes(datasetId)
+        )
     }
 
     return getEarthEngineLayers().find((l) => l.datasetId === eeIds)

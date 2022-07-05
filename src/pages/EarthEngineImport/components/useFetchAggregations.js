@@ -3,12 +3,12 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { getAggregations } from '../util/earthEngineHelper'
-import getEarthEngineConfig from '../util/earthEngineLoader'
-import { getPrecisionFn } from './Rounding'
-import { usePeriods } from './usePeriods.js'
-import { useCatOptComboSelections } from './useCatOptComboSelections.js'
+import { getAggregations } from '../util/earthEngineHelper.js'
+import getEarthEngineConfig from '../util/earthEngineLoader.js'
 import { ALL_AGGREGATION_TYPES } from './AggregationType.js'
+import { getPrecisionFn } from './Rounding.js'
+import { useCatOptComboSelections } from './useCatOptComboSelections.js'
+import { usePeriods } from './usePeriods.js'
 
 const { useField } = ReactFinalForm
 
@@ -46,6 +46,8 @@ const useFetchAggregations = () => {
                 filter: periods.filter((p) => period === p.name),
                 aggregationType: [aggregationType],
             }
+
+            console.log('eeOptions', eeOptions)
 
             if (bandMap) {
                 eeOptions.band = Object.keys(bandMap)

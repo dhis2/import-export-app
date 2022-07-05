@@ -1,11 +1,11 @@
 // import i18n from '@dhis2/d2-i18n'
-import { getEarthEngineConfigs } from './earthEngines'
-// import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
-import { toGeoJson } from './toGeoJson'
 import {
     defaultEarthEngineOptions,
     getEarthEngineOptions,
 } from '@dhis2/maps-gl/'
+import { getEarthEngineConfigs } from './earthEngines.js'
+// import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
+import { toGeoJson } from './toGeoJson.js'
 
 const getGeoFeaturesQuery = (ouIds, displayProperty) => ({
     resource: 'geoFeatures',

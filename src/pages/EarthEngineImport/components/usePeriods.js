@@ -1,9 +1,9 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { useState, useEffect } from 'react'
-import { getPeriods } from '../util/earthEngineHelper'
+import { getPeriods } from '../util/earthEngineHelper.js'
 
-const usePeriods = (eeId, setSelected) => {
+const usePeriods = (eeId) => {
     const engine = useDataEngine()
     const [error /*, setError*/] = useState(undefined)
     const [loading, setLoading] = useState(true)
@@ -11,23 +11,20 @@ const usePeriods = (eeId, setSelected) => {
 
     useEffect(() => {
         const asyncGetPeriods = async () => {
-            if (eeId) {
-                const p = await getPeriods(eeId, engine)
-                setPeriods(p)
-                setLoading(false)
-                if (p.length === 1) {
-                    setSelected(p[0].value)
-                }
-            }
+            const p = await getPeriods(eeId, engine)
+            setPeriods(p)
+            setLoading(false)
         }
 
+        //TODO - might need to track
+        // if (!periods.length) {
         if (eeId) {
             setLoading(true)
             asyncGetPeriods()
-            setSelected(undefined)
-        } else {
-            setLoading(false)
         }
+        // } else {
+        // setLoading(false)
+        // }
     }, [eeId])
 
     const validationText =
