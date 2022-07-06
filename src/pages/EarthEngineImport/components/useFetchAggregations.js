@@ -10,25 +10,22 @@ import { getPrecisionFn } from './Rounding.js'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { usePeriods } from './usePeriods.js'
 
-const { useField } = ReactFinalForm
+// const { useField } = ReactFinalForm
+const { useField, useFormState } = ReactFinalForm
 
 const useFetchAggregations = () => {
-    const { input: earthEngineIdInput } = useField('earthEngineId')
-    const { value: eeId } = earthEngineIdInput
-    const { input: orgUnitInput } = useField('organisationUnits')
-    const { value: orgUnits } = orgUnitInput
-    const { input: roundingInput } = useField('rounding')
-    const { value: precision } = roundingInput
-    const { input: dataElementInput } = useField('dataElement')
-    const { value: dataElementId } = dataElementInput
-    const { input: periodInput } = useField('period')
-    const { value: period } = periodInput
-    const { input: aggTypeInput } = useField('aggregationType')
-    const { value: aggregationType } = aggTypeInput
+    const { values } = useFormState()
+    const {
+        earthEngineId,
+        organisationUnits,
+        rounding,
+        dataElement,
+        period,
+        aggregationType,
+    } = values
 
     const { bandMap } = useCatOptComboSelections()
-
-    const { periods } = usePeriods(eeId, Function.prototype)
+    const { periods } = usePeriods(earthEngineId)
     const { userSettings } = useCachedDataQuery()
     const engine = useDataEngine()
 
@@ -36,18 +33,16 @@ const useFetchAggregations = () => {
     const [loading, setLoading] = useState(false)
     const [eeData, setEeData] = useState(null)
 
-    const getValueWithPrecision = getPrecisionFn(precision)
+    const getValueWithPrecision = getPrecisionFn(rounding)
 
     useEffect(() => {
         const fetchEeAggregations = async () => {
             const eeOptions = {
-                id: eeId,
-                rows: orgUnits,
+                id: earthEngineId,
+                rows: organisationUnits,
                 filter: periods.filter((p) => period === p.name),
                 aggregationType: [aggregationType],
             }
-
-            console.log('eeOptions', eeOptions)
 
             if (bandMap) {
                 eeOptions.band = Object.keys(bandMap)
@@ -66,7 +61,7 @@ const useFetchAggregations = () => {
                         Object.entries(valueSet).forEach(
                             ([bandId, rawValue]) => {
                                 if (!ALL_AGGREGATION_TYPES.includes(bandId)) {
-                                    const ouName = orgUnits.find(
+                                    const ouName = organisationUnits.find(
                                         (ou) => ou.id === ouId
                                     )?.name
                                     acc.push({
@@ -79,7 +74,7 @@ const useFetchAggregations = () => {
                             }
                         )
                     } else {
-                        const ouName = orgUnits.find(
+                        const ouName = organisationUnits.find(
                             (ou) => ou.id === ouId
                         )?.name
                         acc.push({
@@ -98,17 +93,24 @@ const useFetchAggregations = () => {
             setEeData(structuredData)
         }
         if (
-            eeId &&
+            earthEngineId &&
             period &&
-            orgUnits &&
+            organisationUnits &&
             aggregationType &&
-            precision &&
-            dataElementId &&
+            rounding &&
+            dataElement &&
             aggregationType
         ) {
             fetchEeAggregations()
         }
-    }, [eeId, period, orgUnits, aggregationType, precision, dataElementId])
+    }, [
+        earthEngineId,
+        period,
+        organisationUnits,
+        aggregationType,
+        rounding,
+        dataElement,
+    ])
 
     const validationText =
         error &&

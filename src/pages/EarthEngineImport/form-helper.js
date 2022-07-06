@@ -2,10 +2,7 @@ import { apiFetch } from './api/apiFetch.js'
 import { getPrecisionFn } from './components/Rounding.js'
 import { getAggregations } from './util/earthEngineHelper.js'
 import getEarthEngineConfig from './util/earthEngineLoader.js'
-import {
-    POPULATION_AGE_GROUPS_DATASET_ID,
-    getEarthEngineConfigs,
-} from './util/earthEngines.js'
+import { getEarthEngineConfigs } from './util/earthEngines.js'
 import { EEPeriods } from './util/EEPeriods.js'
 import { getCocMap } from './util/getCocMap.js'
 
@@ -32,6 +29,7 @@ const onImport =
         const allBands = getEarthEngineConfigs(earthEngineId).bands
         const bands = allBands ? allBands.map((b) => b.id) : null
 
+        //TODO replace EEPeriods with periods provided by the usePeriods hook
         const eeOptions = {
             id: earthEngineId,
             rows: organisationUnits,
@@ -47,7 +45,6 @@ const onImport =
         )
 
         const data = await getAggregations(engine, config)
-        console.log('aggregations', data)
         const cocMap = getCocMap(earthEngineId, rest)
 
         const getValueWithPrecision = getPrecisionFn(rounding)

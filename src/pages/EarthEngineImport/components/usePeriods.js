@@ -16,7 +16,7 @@ const usePeriods = (eeId) => {
             setLoading(false)
         }
 
-        //TODO - might need to track
+        //TODO - might need to track change in eeId with useRef
         // if (!periods.length) {
         if (eeId) {
             setLoading(true)
