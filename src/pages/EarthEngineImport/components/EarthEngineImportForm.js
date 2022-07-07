@@ -2,17 +2,18 @@ import { useDataEngine, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider } from '@dhis2/ui'
 // import cx from 'classnames'
-import React, { useState } from 'react'
-import { Page } from '../../../components/index.js'
+import React, { useState, useContext } from 'react'
+import { Page, DataIcon } from '../../../components/index.js'
 import {
     FormAlerts,
     ImportButtonStrip,
 } from '../../../components/Inputs/index.js'
+import { TaskContext, getNewestTask } from '../../../contexts/index.js'
 import { onImport } from '../form-helper.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { AggregationType } from './AggregationType.js'
 // import { Tooltip } from './ButtonTooltip.js'
-import { DataElementGroup } from './DataElementGroup.js'
+// import { DataElementGroup } from './DataElementGroup.js'
 import { DataElements } from './DataElements.js'
 import { DataPreview } from './DataPreview.js'
 import { EarthEngineId } from './EarthEngineId.js'
@@ -25,31 +26,39 @@ import { Rounding, defaultRoundingOption } from './Rounding.js'
 
 const { Form } = ReactFinalForm
 
+const PAGE_ICON = <DataIcon />
+
 const EarthEngineImportForm = () => {
+    const {
+        tasks: { earthengine: earthengineTasks },
+        addTask,
+    } = useContext(TaskContext)
     const engine = useDataEngine()
     const { baseUrl } = useConfig()
     const { userSettings } = useCachedDataQuery()
 
     // resulting data and display options
-    const [showPreview, setShowPreview] = useState(false)
+    // const [showPreview, setShowPreview] = useState(false)
+    const [progress, setProgress] = useState(0)
+    const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
 
-    const showData = (e) => {
-        console.log('e', e)
-        e.preventDefault()
-        e.stopPropagation()
-        setShowPreview(true)
-    }
+    // const showData = (e) => {
+    //     console.log('e', e)
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     setShowPreview(true)
+    // }
 
-    const isMissingRequiredInputs = () => {
-        return false
-        // return !eeId || !period || !orgUnits || !aggregation || !dataElement
-    }
+    // const isMissingRequiredInputs = () => {
+    //     return false
+    //     // return !eeId || !period || !orgUnits || !aggregation || !dataElement
+    // }
 
-    const clearEeData = () => {
-        setShowPreview(false)
-        // setEeData(null)
-        window.scrollTo(0, 0)
-    }
+    // const clearEeData = () => {
+    //     setShowPreview(false)
+    //     // setEeData(null)
+    //     window.scrollTo(0, 0)
+    // }
 
     const initialValues = {
         rounding: defaultRoundingOption,
@@ -61,9 +70,9 @@ const EarthEngineImportForm = () => {
         engine,
         baseUrl,
         userSettings,
-        // setProgress,
-        // addTask,
-        // setShowFullSummaryTask,
+        setProgress,
+        addTask,
+        setShowFullSummaryTask,
     })
 
     return (
@@ -72,11 +81,12 @@ const EarthEngineImportForm = () => {
             desc={i18n.t(
                 'Import Earth Engine data to data sets and data elements'
             )}
-            // icon={PAGE_ICON}
-            // loading={progress}
+            icon={PAGE_ICON}
+            loading={progress}
             dataTest="page-import-earthengine"
-            // summaryTask={getNewestTask(dataTasks)}
-            // showFullSummaryTask={showFullSummaryTask}
+            summaryTask={getNewestTask(earthengineTasks)}
+            showFullSummaryTask={showFullSummaryTask}
+            showFileDetails={false}
         >
             <Form
                 onSubmit={onSubmit}
@@ -95,7 +105,7 @@ const EarthEngineImportForm = () => {
                         <Divider />
                         <AggregationType />
                         <DataElements />
-                        <DataElementGroup />
+                        {/* <DataElementGroup /> */}
                         <MappingTable />
                         <Divider />
                         <DataPreview />

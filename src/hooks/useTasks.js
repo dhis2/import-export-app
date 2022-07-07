@@ -20,6 +20,7 @@ const defaultTasks = {
     data: {},
     event: {},
     gml: {},
+    earthengine: {},
     geojson: {},
     metadata: {},
     tei: {},
