@@ -10,8 +10,7 @@ import { getPrecisionFn } from './Rounding.js'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { usePeriods } from './usePeriods.js'
 
-// const { useField } = ReactFinalForm
-const { useField, useFormState } = ReactFinalForm
+const { useFormState } = ReactFinalForm
 
 const useFetchAggregations = () => {
     const { values } = useFormState()
