@@ -4,7 +4,7 @@ import { Layer, CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { createContext, useContext } from 'react'
 
-// This provider is available in @dhis2/analytics@^23
+// TODO This provider is available in @dhis2/analytics@^23
 
 const CachedDataQueryCtx = createContext({})
 

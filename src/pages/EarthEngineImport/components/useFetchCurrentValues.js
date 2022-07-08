@@ -2,22 +2,41 @@ import { useConfig } from '@dhis2/app-runtime'
 import { ReactFinalForm } from '@dhis2/ui'
 import { useState, useEffect } from 'react'
 import { POPULATION_AGE_GROUPS_DATASET_ID } from '../util/earthEngines.js'
-import { fetchCurrentValues } from '../api/fetchCurrentValues.js'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 
-const { useField } = ReactFinalForm
+const { useFormState } = ReactFinalForm
+
+// TODO - replace with useDataQuery when it supports repeating param list
+// (e.g., orgUnit=O6uvpzGd5pu&orgUnit=fdc6uOvgoji)
+const fetchCurrentValues = async (url) => {
+    const fetcher = (url) =>
+        fetch(url, { credentials: 'include' })
+            .then((resp) => {
+                if (resp.status >= 200 && resp.status < 300) {
+                    return Promise.resolve(resp.json())
+                } else {
+                    throw resp
+                }
+            })
+            .catch((resp) => {
+                const error = new Error(resp.statusText || resp.status)
+                console.error(`fetchCurrentValues error: `, error)
+                return Promise.reject(error)
+            })
+
+    return await fetcher(url).catch((error) => Promise.reject(error))
+}
 
 const useFetchCurrentValues = (eeData) => {
-    const { input: earthEngineIdInput } = useField('earthEngineId')
-    const { value: eeId } = earthEngineIdInput
-    const { input: orgUnitInput } = useField('organisationUnits')
-    const { value: orgUnits } = orgUnitInput
-    const { input: periodInput } = useField('period')
-    const { value: period } = periodInput
-    const { input: dataElementInput } = useField('dataElement')
-    const { value: dataElementId } = dataElementInput
-    const { input: degInput } = useField('dataElementGroup')
-    const { value: dataElementGroupId } = degInput
+    const { values } = useFormState()
+    const {
+        earthEngineId,
+        organisationUnits,
+        dataElement: dataElementId,
+        dataElementGroup: dataElementGroupId,
+        period,
+    } = values
+
     const { allBandsSelected } = useCatOptComboSelections()
 
     const [currentValues, setCurrentValues] = useState([])
@@ -34,15 +53,15 @@ const useFetchCurrentValues = (eeData) => {
 
         if (
             eeData &&
-            orgUnits &&
+            organisationUnits &&
             period &&
             dataElementId &&
             dataElementGroupId
         ) {
             if (
-                (eeId === POPULATION_AGE_GROUPS_DATASET_ID &&
+                (earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID &&
                     allBandsSelected) ||
-                eeId !== POPULATION_AGE_GROUPS_DATASET_ID
+                earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID
             ) {
                 const ouQueryParams = eeData
                     .map(({ ouId }) => `orgUnit=${ouId}`)
@@ -54,12 +73,14 @@ const useFetchCurrentValues = (eeData) => {
             }
         }
     }, [
+        earthEngineId,
         dataElementId,
         dataElementGroupId,
         period,
         eeData,
-        orgUnits,
+        organisationUnits,
         allBandsSelected,
+        baseUrl,
     ])
 
     return { currentValues }

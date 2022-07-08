@@ -1,16 +1,14 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider } from '@dhis2/ui'
-// import cx from 'classnames'
 import React, { useState, useContext } from 'react'
 import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts, ImportButtonStrip } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { AggregationType } from './components/AggregationType.js'
-// import { Tooltip } from './ButtonTooltip.js'
-// import { DataElementGroup } from './DataElementGroup.js'
+import { DataElementGroup } from './components/DataElementGroup.js'
 import { DataElements } from './components/DataElements.js'
-// import { DataPreview } from './DataPreview.js'
+import { DataPreview } from './components/DataPreview.js'
 import { EarthEngineId } from './components/EarthEngineId.js'
 import { MappingTable } from './components/MapGenderAgeGroupsTable.js'
 import { OrganisationUnits } from './components/OrganisationUnits.js'
@@ -100,8 +98,8 @@ const EarthEngineImportForm = () => {
                         <DataElements />
                         <MappingTable />
                         <Divider />
-                        {/* <DataElementGroup /> */}
-                        {/* <DataPreview /> */}
+                        <DataElementGroup />
+                        <DataPreview />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
                     </form>
