@@ -1,5 +1,5 @@
 import React from 'react'
-import { EarthEngineImportForm } from './components/EarthEngineImportForm.js'
+import { EarthEngineImportForm } from './EarthEngineImportForm.js'
 import { CachedDataQueryProvider } from './util/CachedQueryProvider.js'
 
 export const USER_SETTINGS_DISPLAY_PROPERTY = 'keyAnalysisDisplayProperty'
