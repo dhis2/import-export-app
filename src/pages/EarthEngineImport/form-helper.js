@@ -1,4 +1,5 @@
 // import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
+import { genericErrorMessage } from '../../utils/helper.js'
 import { extractIdAndMessage } from '../../utils/xhr.js'
 import { getPrecisionFn } from './components/Rounding.js'
 import { getAggregations } from './util/earthEngineHelper.js'
@@ -86,14 +87,17 @@ const onImport =
         }
 
         engine.mutate(mutation, {
-            onComplete: (res) => {
-                const { id, error, msg, typeReports } = extractIdAndMessage(res)
-                console.log('completed POST', id, error, msg, typeReports)
+            onComplete: (resp) => {
+                console.log('onComplete, resp', resp)
+                const { id, error, msg, typeReports } =
+                    extractIdAndMessage(resp)
+
+                const currentDate = new Date()
 
                 const entry = {
-                    id: id || new Date().getTime(),
-                    created: new Date(),
-                    lastUpdated: new Date(),
+                    id: id || currentDate.getTime(),
+                    created: currentDate,
+                    lastUpdated: currentDate,
                     importType: 'DATAVALUE_IMPORT',
                     level: error ? 'ERROR' : 'INFO',
                     completed: Boolean(!isAsync || error),
@@ -111,56 +115,13 @@ const onImport =
                 setShowFullSummaryTask(true)
             },
             onError: (err) => {
-                console.log('POST failed', err)
-                // TODO - from /util/helper onError
+                // 404 - err is a string
+                console.log('err', err)
+                const message = err?.length ? err : genericErrorMessage
+                console.error('uploadJson error', message)
+                // reject(errF(message))
             },
         })
-
-        // const apiUrl = `${baseUrl}/api/dataValueSets`
-        // const params = { dryRun, async: isAsync }
-
-        // const paramsString = Object.keys(params)
-        //     .map((key) => `${key}=${params[key]}`)
-        //     .join('&')
-
-        // const url = `${apiUrl}?${paramsString}`
-
-        // return apiFetch(url, 'POST', {
-        //     dataValues,
-        // })
-        //     .then(() => {
-        //         // const res = response.body
-        //         // console.log('here', res)
-        //         // return res
-        //         setShowFullSummaryTask(true)
-        //     })
-        //     .catch((error) => {
-        //         console.log('Abc error', error)
-        //         const errorArr = [error]
-        //         return { [FORM_ERROR]: errorArr }
-        //     })
-
-        // try {
-        //     await uploadJson({
-        //         url,
-        //         data: { dataValues },
-        //         format: 'json',
-        //         type: 'DATAVALUE_IMPORT',
-        //         isAsync,
-        //         setProgress,
-        //         addEntry: (id, entry) => {
-        //             return addTask('earthengine', id, {
-        //                 ...entry,
-        //                 jobDetails: values,
-        //             })
-        //         },
-        //     })
-        // } catch (e) {
-        //     const errors = [e]
-        //     return { [FORM_ERROR]: errors }
-        // } finally {
-        //     setShowFullSummaryTask(true)
-        // }
     }
 
 export { onImport }

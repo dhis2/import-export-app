@@ -1,4 +1,4 @@
-import { useDataEngine, useConfig } from '@dhis2/app-runtime'
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider } from '@dhis2/ui'
 // import cx from 'classnames'
@@ -15,7 +15,7 @@ import { AggregationType } from './AggregationType.js'
 // import { Tooltip } from './ButtonTooltip.js'
 // import { DataElementGroup } from './DataElementGroup.js'
 import { DataElements } from './DataElements.js'
-import { DataPreview } from './DataPreview.js'
+// import { DataPreview } from './DataPreview.js'
 import { EarthEngineId } from './EarthEngineId.js'
 import { MappingTable } from './MapGenderAgeGroupsTable.js'
 import { OrganisationUnits } from './OrganisationUnits.js'
@@ -26,15 +26,12 @@ import { Rounding, defaultRoundingOption } from './Rounding.js'
 
 const { Form } = ReactFinalForm
 
-const PAGE_ICON = <DataIcon />
-
 const EarthEngineImportForm = () => {
     const {
         tasks: { earthengine: earthengineTasks },
         addTask,
     } = useContext(TaskContext)
     const engine = useDataEngine()
-    const { baseUrl } = useConfig()
     const { userSettings } = useCachedDataQuery()
 
     // resulting data and display options
@@ -68,7 +65,6 @@ const EarthEngineImportForm = () => {
 
     const onSubmit = onImport({
         engine,
-        baseUrl,
         userSettings,
         setProgress,
         addTask,
@@ -81,7 +77,7 @@ const EarthEngineImportForm = () => {
             desc={i18n.t(
                 'Import Earth Engine data to data sets and data elements'
             )}
-            icon={PAGE_ICON}
+            icon={<DataIcon />}
             loading={progress}
             dataTest="page-import-earthengine"
             summaryTask={getNewestTask(earthengineTasks)}
@@ -105,12 +101,11 @@ const EarthEngineImportForm = () => {
                         <Divider />
                         <AggregationType />
                         <DataElements />
-                        {/* <DataElementGroup /> */}
                         <MappingTable />
                         <Divider />
-                        <DataPreview />
+                        {/* <DataElementGroup /> */}
+                        {/* <DataPreview /> */}
                         <ImportButtonStrip form={form} />
-                        {/* <ActionButtons form={form} /> */}
                         <FormAlerts alerts={submitError} />
                     </form>
                 )}
