@@ -11,7 +11,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { getPrecisionFn } from './Rounding.js'
+import { getPrecisionFn } from '../util/getPrecisionFn.js'
 import styles from './styles/DataPreview.module.css'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { useFetchAggregations } from './useFetchAggregations.js'

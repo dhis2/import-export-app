@@ -1,12 +1,12 @@
 // import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { genericErrorMessage } from '../../utils/helper.js'
 import { extractIdAndMessage } from '../../utils/xhr.js'
-import { getPrecisionFn } from './components/Rounding.js'
 import { getAggregations } from './util/earthEngineHelper.js'
 import getEarthEngineConfig from './util/earthEngineLoader.js'
 import { getEarthEngineConfigs } from './util/earthEngines.js'
 import { EEPeriods } from './util/EEPeriods.js'
 import { getCocMap } from './util/getCocMap.js'
+import { getPrecisionFn } from './util/getPrecisionFn.js'
 
 const isAsync = true
 

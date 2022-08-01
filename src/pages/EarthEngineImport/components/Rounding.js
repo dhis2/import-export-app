@@ -40,16 +40,6 @@ const roundings = [
 
 const defaultRoundingOption = roundings[0].value
 
-// Returns a function that will return a value with the given precision
-const getPrecisionFn = (numDecimals) => {
-    const decimals = parseInt(numDecimals)
-    if (decimals === -1) {
-        return (n) => n
-    }
-    const m = Math.pow(10, decimals)
-    return (n) => Math.round(n * m) / m
-}
-
 const Rounding = () => (
     <div style={{ maxWidth: '300px' }}>
         <StyledField
@@ -64,4 +54,4 @@ const Rounding = () => (
     </div>
 )
 
-export { Rounding, getPrecisionFn, defaultRoundingOption }
+export { Rounding, defaultRoundingOption }
