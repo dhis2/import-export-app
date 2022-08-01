@@ -25,7 +25,7 @@ const usePeriods = (eeId) => {
         // } else {
         // setLoading(false)
         // }
-    }, [eeId])
+    }, [eeId, engine])
 
     const validationText =
         error &&
