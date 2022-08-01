@@ -2,8 +2,6 @@ import React from 'react'
 import { EarthEngineImportForm } from './EarthEngineImportForm.js'
 import { CachedDataQueryProvider } from './util/CachedQueryProvider.js'
 
-export const USER_SETTINGS_DISPLAY_PROPERTY = 'keyAnalysisDisplayProperty'
-
 export const DERIVED_USER_SETTINGS_DISPLAY_NAME_PROPERTY =
     'DERIVED_USER_SETTINGS_DISPLAY_NAME_PROPERTY'
 
@@ -11,7 +9,7 @@ const query = {
     userSettings: {
         resource: 'userSettings',
         params: {
-            key: [USER_SETTINGS_DISPLAY_PROPERTY],
+            key: 'keyAnalysisDisplayProperty',
         },
     },
     rootOrgUnits: {
@@ -46,13 +44,7 @@ const providerDataTransformation = ({
     dataElementGroups,
 }) => {
     return {
-        userSettings: {
-            ...userSettings,
-            [DERIVED_USER_SETTINGS_DISPLAY_NAME_PROPERTY]:
-                userSettings[USER_SETTINGS_DISPLAY_PROPERTY] === 'name'
-                    ? 'displayName'
-                    : 'displayShortName',
-        },
+        displayProperty: userSettings.keyAnalysisDisplayProperty,
         rootOrgUnits: rootOrgUnits.organisationUnits?.map((ou) => ou.id) || [],
         dataElements: dataElements.dataElements.map((de) => {
             return {

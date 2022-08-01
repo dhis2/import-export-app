@@ -11,7 +11,13 @@ import { getCocMap } from './util/getCocMap.js'
 const isAsync = true
 
 const onImport =
-    ({ engine, userSettings, setProgress, addTask, setShowFullSummaryTask }) =>
+    ({
+        engine,
+        displayProperty,
+        setProgress,
+        addTask,
+        setShowFullSummaryTask,
+    }) =>
     async (values) => {
         const {
             dryRun,
@@ -39,7 +45,7 @@ const onImport =
         const config = await getEarthEngineConfig(
             eeOptions,
             engine,
-            userSettings.keyAnalysisDisplayProperty
+            displayProperty
         )
 
         const data = await getAggregations(engine, config)

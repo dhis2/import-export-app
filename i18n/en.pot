@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-07-05T09:00:08.760Z\n"
-"PO-Revision-Date: 2022-07-05T09:00:08.760Z\n"
+"POT-Creation-Date: 2022-08-01T09:39:09.419Z\n"
+"PO-Revision-Date: 2022-08-01T09:39:09.419Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -803,6 +803,18 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
 
+msgid "Import Earth Engine data to data sets and data elements"
+msgstr "Import Earth Engine data to data sets and data elements"
+
+msgid "Earth Engine source"
+msgstr "Earth Engine source"
+
+msgid "Organisation units"
+msgstr "Organisation units"
+
+msgid "Import setup"
+msgstr "Import setup"
+
 msgid "Min"
 msgstr "Min"
 
@@ -859,18 +871,6 @@ msgstr "Earth Engine data set"
 
 msgid "Not all Earth Engine data sets are available yet."
 msgstr "Not all Earth Engine data sets are available yet."
-
-msgid "Import Earth Engine data to data sets and data elements"
-msgstr "Import Earth Engine data to data sets and data elements"
-
-msgid "Earth Engine source"
-msgstr "Earth Engine source"
-
-msgid "Organisation units"
-msgstr "Organisation units"
-
-msgid "Import setup"
-msgstr "Import setup"
 
 msgid "Import bands to category option combinations"
 msgstr "Import bands to category option combinations"

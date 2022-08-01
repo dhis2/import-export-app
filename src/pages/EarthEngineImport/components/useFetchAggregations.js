@@ -25,10 +25,10 @@ const useFetchAggregations = () => {
 
     const { bandMap } = useCatOptComboSelections()
     const { periods } = usePeriods(earthEngineId)
-    const { userSettings } = useCachedDataQuery()
+    const { displayProperty } = useCachedDataQuery()
     const engine = useDataEngine()
 
-    const [error, setError] = useState(undefined)
+    const [error, setError] = useState(undefined) // TODO unused properties
     const [loading, setLoading] = useState(false)
     const [eeData, setEeData] = useState(null)
 
@@ -50,7 +50,7 @@ const useFetchAggregations = () => {
             const config = await getEarthEngineConfig(
                 eeOptions,
                 engine,
-                userSettings.keyAnalysisDisplayProperty
+                displayProperty
             )
 
             const data = await getAggregations(engine, config)
@@ -109,6 +109,11 @@ const useFetchAggregations = () => {
         aggregationType,
         rounding,
         dataElement,
+        displayProperty,
+        engine,
+        // bandMap,
+        // periods,
+        // getValueWithPrecision
     ])
 
     const validationText =

@@ -27,7 +27,7 @@ const EarthEngineImportForm = () => {
         addTask,
     } = useContext(TaskContext)
     const engine = useDataEngine()
-    const { userSettings } = useCachedDataQuery()
+    const { displayProperty } = useCachedDataQuery()
 
     // resulting data and display options
     // const [showPreview, setShowPreview] = useState(false)
@@ -60,7 +60,7 @@ const EarthEngineImportForm = () => {
 
     const onSubmit = onImport({
         engine,
-        userSettings,
+        displayProperty,
         setProgress,
         addTask,
         setShowFullSummaryTask,
