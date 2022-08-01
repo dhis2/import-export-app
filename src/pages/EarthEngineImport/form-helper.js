@@ -30,8 +30,9 @@ const onImport =
             ...rest
         } = values
 
-        const allBands = getEarthEngineConfigs(earthEngineId).bands
-        const bands = allBands ? allBands.map((b) => b.id) : null
+        const bands = getEarthEngineConfigs(earthEngineId)?.bands?.map(
+            (b) => b.id
+        )
 
         //TODO replace EEPeriods with periods provided by the usePeriods hook
         const eeOptions = {
