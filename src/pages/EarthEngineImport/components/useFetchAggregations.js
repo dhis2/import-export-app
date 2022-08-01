@@ -1,7 +1,7 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { getAggregations } from '../util/earthEngineHelper.js'
 import getEarthEngineConfig from '../util/earthEngineLoader.js'
@@ -32,9 +32,11 @@ const useFetchAggregations = () => {
     const [loading, setLoading] = useState(false)
     const [eeData, setEeData] = useState(null)
 
-    const getValueWithPrecision = useCallback(() => {
-        getPrecisionFn(rounding)
-    }, [rounding])
+    // const getValueWithPrecision = useCallback(() => {
+    //     getPrecisionFn(rounding)
+    // }, [rounding])
+
+    const getValueWithPrecision = getPrecisionFn(rounding)
 
     useEffect(() => {
         const fetchEeAggregations = async () => {
@@ -56,6 +58,7 @@ const useFetchAggregations = () => {
             )
 
             const data = await getAggregations(engine, config)
+
             const structuredData = Object.entries(data).reduce(
                 (acc, [ouId, valueSet]) => {
                     if (bandMap) {
@@ -115,7 +118,7 @@ const useFetchAggregations = () => {
         engine,
         // bandMap,
         // periods,
-        getValueWithPrecision,
+        // getValueWithPrecision,
     ])
 
     const validationText =
