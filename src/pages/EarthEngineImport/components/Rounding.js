@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
-import { StyledField } from '../../../components/index'
+import { StyledField } from '../../../components/index.js'
 
 const roundings = [
     {
@@ -41,13 +41,13 @@ const roundings = [
 const defaultRoundingOption = roundings[0].value
 
 // Returns a function that will return a value with the given precision
-const getPrecisionFn = numDecimals => {
+const getPrecisionFn = (numDecimals) => {
     const decimals = parseInt(numDecimals)
     if (decimals === -1) {
-        return n => n
+        return (n) => n
     }
     const m = Math.pow(10, decimals)
-    return n => Math.round(n * m) / m
+    return (n) => Math.round(n * m) / m
 }
 
 const Rounding = () => (

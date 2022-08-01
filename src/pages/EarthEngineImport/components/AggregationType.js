@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
-import { StyledField } from '../../../components/index'
-import { getEarthEngineConfigs } from '../util/earthEngines'
+import { StyledField } from '../../../components/index.js'
+import { getEarthEngineConfigs } from '../util/earthEngines.js'
 
 const AGGREGATION_TYPE_MIN = 'min'
 const AGGREGATION_TYPE_MAX = 'max'

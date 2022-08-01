@@ -1,12 +1,12 @@
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
-import { StyledField } from '../../../components/index'
+import { StyledField } from '../../../components/index.js'
 import {
     getEarthEngineConfigs,
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
-} from '../util/earthEngines'
+} from '../util/earthEngines.js'
 
 const eeList = getEarthEngineConfigs([
     POPULATION_AGE_GROUPS_DATASET_ID,

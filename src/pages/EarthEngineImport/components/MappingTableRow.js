@@ -8,7 +8,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { StyledField } from '../../../components/index'
+import { StyledField } from '../../../components/index.js'
 
 const MappingTableRow = ({
     bandId,
@@ -41,9 +41,9 @@ MappingTableRow.propTypes = {
     bandId: PropTypes.string.isRequired,
     bandName: PropTypes.string.isRequired,
     catOptComboList: PropTypes.array.isRequired,
-    cocIdsSelected: PropTypes.array.isRequired,
-    setSelected: PropTypes.func.isRequired,
-    selected: PropTypes.string,
+    // cocIdsSelected: PropTypes.array.isRequired,
+    // setSelected: PropTypes.func.isRequired,
+    // selected: PropTypes.string,
 }
 
 export { MappingTableRow }
