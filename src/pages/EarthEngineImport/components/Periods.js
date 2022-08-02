@@ -7,12 +7,12 @@ import { usePeriods } from './usePeriods.js'
 
 const { useField } = ReactFinalForm
 
-const Periods = ({ form }) => {
+const Periods = ({ formChange }) => {
     const { input } = useField('earthEngineId')
     const { value: earthEngineId } = input
     const { validationText, periods } = usePeriods(earthEngineId)
 
-    // const setSelected = useCallback((val) => form.change('period', val), [form])
+    // const setSelected = useCallback((val) => formChange('period', val), [form])
 
     useEffect(() => {
         // console.log(
@@ -20,12 +20,12 @@ const Periods = ({ form }) => {
         //     earthEngineId
         // )
         // setSelected(undefined)
-        form.change('period', undefined)
+        formChange('period', undefined)
         if (periods.length === 1) {
-            form.change('period', periods[0].value)
+            formChange('period', periods[0].value)
             // setSelected(periods[0].value)
         }
-    }, [earthEngineId, periods])
+    }, [earthEngineId, periods, formChange])
 
     return (
         <div style={{ maxWidth: '200px' }}>
@@ -46,7 +46,7 @@ const Periods = ({ form }) => {
 }
 
 Periods.propTypes = {
-    form: PropTypes.object.isRequired,
+    formChange: PropTypes.func.isRequired,
 }
 
 export { Periods }

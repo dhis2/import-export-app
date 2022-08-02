@@ -86,7 +86,7 @@ const EarthEngineImportForm = () => {
                         <h2>{i18n.t('Earth Engine source')}</h2>
                         <Divider />
                         <EarthEngineId />
-                        <Periods form={form} />
+                        <Periods formChange={form.change} />
                         <Rounding />
                         <h2>{i18n.t('Organisation units')}</h2>
                         <Divider />
