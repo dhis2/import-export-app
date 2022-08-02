@@ -6,7 +6,6 @@ import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts, ImportButtonStrip } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { AggregationType } from './components/AggregationType.js'
-import { DataElementGroup } from './components/DataElementGroup.js'
 import { DataElements } from './components/DataElements.js'
 import { DataPreview } from './components/DataPreview.js'
 import { EarthEngineId } from './components/EarthEngineId.js'
@@ -98,7 +97,6 @@ const EarthEngineImportForm = () => {
                         <DataElements />
                         <MappingTable />
                         <Divider />
-                        <DataElementGroup />
                         <DataPreview />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />

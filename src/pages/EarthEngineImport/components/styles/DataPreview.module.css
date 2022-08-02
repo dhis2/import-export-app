@@ -1,3 +1,11 @@
+.container {
+    padding-bottom: var(--spacers-dp16);
+}
+
+.indent {
+    padding-left: 29px;
+    padding-top: var(--spacers-dp16);
+}
 .table th {
     white-space: nowrap;
 }

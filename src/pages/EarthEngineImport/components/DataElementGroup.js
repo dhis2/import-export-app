@@ -1,13 +1,17 @@
 import i18n from '@dhis2/d2-i18n'
-import { SingleSelectFieldFF } from '@dhis2/ui'
+import { ReactFinalForm, SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 
+const { useField } = ReactFinalForm
+
 const DataElementGroup = () => {
     const { dataElementGroups } = useCachedDataQuery()
+    const { input } = useField('earthEngineId')
+    const { value: earthEngineId } = input
 
-    if (!dataElementGroups) {
+    if (!dataElementGroups || !earthEngineId) {
         return null
     }
 
