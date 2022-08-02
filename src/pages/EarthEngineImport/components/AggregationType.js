@@ -69,7 +69,6 @@ const AggregationType = () => {
                     'How the values will be aggregated for output and analysis.'
                 )}
                 filled
-                initialFocus
             />
         </div>
     )

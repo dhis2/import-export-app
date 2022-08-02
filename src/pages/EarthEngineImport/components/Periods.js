@@ -40,7 +40,6 @@ const Periods = ({ form }) => {
                 )}
                 validationText={validationText}
                 filled
-                initialFocus
             />
         </div>
     )

@@ -29,7 +29,6 @@ const DataElementGroup = () => {
                 // validationText={validationText}
                 filled
                 filterable
-                initialFocus
             />
         </div>
     )

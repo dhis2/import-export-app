@@ -49,7 +49,6 @@ const Rounding = () => (
             options={roundings}
             dataTest="input-rounding"
             filled
-            initialFocus
         />
     </div>
 )
