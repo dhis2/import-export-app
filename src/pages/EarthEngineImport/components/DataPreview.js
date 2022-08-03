@@ -2,7 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
 import React from 'react'
 import { POPULATION_DATASET_ID } from '../util/earthEngines.js'
-import { DataElementGroup } from './DataElementGroup.js'
 import { PopulationAgegroupsDataPreview } from './PopulationAgegroupsDataPreview.js'
 import { PopulationDataPreview } from './PopulationDataPreview.js'
 import styles from './styles/DataPreview.module.css'
@@ -25,7 +24,6 @@ const DataPreview = () => {
             />
             {showDataPreview && (
                 <div className={styles.indent}>
-                    <DataElementGroup />
                     {earthEngineId === POPULATION_DATASET_ID ? (
                         <PopulationDataPreview />
                     ) : (

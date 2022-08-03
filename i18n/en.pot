@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-01T09:39:09.419Z\n"
-"PO-Revision-Date: 2022-08-01T09:39:09.419Z\n"
+"POT-Creation-Date: 2022-08-03T09:42:41.729Z\n"
+"PO-Revision-Date: 2022-08-03T09:42:41.729Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -865,6 +865,9 @@ msgstr "Data element"
 
 msgid "The data element where Earth Engine data will be added"
 msgstr "The data element where Earth Engine data will be added"
+
+msgid "Show data preview"
+msgstr "Show data preview"
 
 msgid "Earth Engine data set"
 msgstr "Earth Engine data set"

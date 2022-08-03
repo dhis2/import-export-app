@@ -1,6 +1,7 @@
 import { useConfig } from '@dhis2/app-runtime'
 import { ReactFinalForm } from '@dhis2/ui'
 import { useState, useEffect } from 'react'
+import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { POPULATION_AGE_GROUPS_DATASET_ID } from '../util/earthEngines.js'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 
@@ -33,15 +34,16 @@ const useFetchCurrentValues = (eeData) => {
         earthEngineId,
         organisationUnits,
         dataElement: dataElementId,
-        dataElementGroup: dataElementGroupId,
         period,
     } = values
 
     const { allBandsSelected } = useCatOptComboSelections()
-
+    const { dataElements } = useCachedDataQuery()
     const [currentValues, setCurrentValues] = useState([])
-
     const { baseUrl } = useConfig()
+
+    const dataElement = dataElements.find((el) => el.id === dataElementId)
+    const dataElementGroupId = dataElement.dataElementGroups[0].id
 
     useEffect(() => {
         const fetchCurrVals = async (url) => {

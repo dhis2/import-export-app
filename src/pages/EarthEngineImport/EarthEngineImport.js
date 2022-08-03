@@ -23,15 +23,8 @@ const query = {
     dataElements: {
         resource: 'dataElements',
         params: {
-            fields: 'id,displayName~rename(name),categoryCombo[categoryOptionCombos[id,displayName~rename(name)]]',
+            fields: 'id,displayName~rename(name),categoryCombo[categoryOptionCombos[id,displayName~rename(name)]],dataElementGroups',
             filter: 'domainType:eq:AGGREGATE',
-            paging: false,
-        },
-    },
-    dataElementGroups: {
-        resource: 'dataElementGroups',
-        params: {
-            fields: 'id,displayName~rename(name)',
             paging: false,
         },
     },
@@ -41,7 +34,6 @@ const providerDataTransformation = ({
     userSettings,
     rootOrgUnits,
     dataElements,
-    dataElementGroups,
 }) => {
     return {
         displayProperty: userSettings.keyAnalysisDisplayProperty,
@@ -51,13 +43,6 @@ const providerDataTransformation = ({
                 ...de,
                 value: de.id,
                 label: de.name,
-            }
-        }),
-        dataElementGroups: dataElementGroups.dataElementGroups.map((deg) => {
-            return {
-                ...deg,
-                value: deg.id,
-                label: deg.name,
             }
         }),
     }
