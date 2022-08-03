@@ -96,8 +96,9 @@ const MappingTable = () => {
                                     <StyledField
                                         component={SingleSelectFieldFF}
                                         name={bandId}
-                                        inputWidth="150px"
+                                        inputWidth="250px"
                                         filterable
+                                        clearable
                                         noMatchText={i18n.t('No match found')}
                                         options={getCatComboOptions(bandId)}
                                     />
