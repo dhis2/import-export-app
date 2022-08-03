@@ -6,54 +6,61 @@ import {
     TableRowHead,
     TableCellHead,
     TableBody,
+    TableRow,
+    TableCell,
     NoticeBox,
+    SingleSelectFieldFF,
 } from '@dhis2/ui'
-import React, { useState } from 'react'
+import React from 'react'
+import { StyledField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import {
     getEarthEngineConfigs,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
-import { MappingTableRow } from './MappingTableRow.js'
 
-const { useField } = ReactFinalForm
+const { useFormState } = ReactFinalForm
 
 const MappingTable = () => {
-    const { input: eeInput } = useField('earthEngineId')
-    const { value: earthEngineId } = eeInput
-    const { input: deInput } = useField('dataElement')
-    const { value: dataElementId } = deInput
-    // const { input: categoryInput } = useField('dataElementCategory')
-    // const { value: categoryId } = categoryInput
-
-    const [completeRows, setCompleteRows] = useState({})
-    const [cocIdsSelected, setCocIdsSelected] = useState([])
+    const { values } = useFormState()
+    /* eslint-disable no-unused-vars */
+    const {
+        earthEngineId,
+        dataElement: dataElementId,
+        organisationUnits, //not used
+        rounding, //not used
+        period, //not used
+        aggregationType, //not used
+        ...usedCocs
+    } = values
+    /* eslint-enable no-unused-vars */
 
     const { dataElements } = useCachedDataQuery()
 
-    if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID) {
+    if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
         return null
     }
 
     const bands = getEarthEngineConfigs(earthEngineId)?.bands
 
-    if (!bands || !dataElementId) {
+    if (!bands) {
         return null
     }
 
-    const catOptComboList = dataElements
-        .find(({ id }) => id === dataElementId)
-        .categoryCombo.categoryOptionCombos.map(({ id, name }) => {
-            return {
-                value: id,
-                label: name,
-            }
-        })
+    const getCatComboOptions = (bandId) => {
+        const unavailableCocs = Object.entries(usedCocs)
+            .filter((entry) => entry[0] !== bandId)
+            .map((entry) => entry[1])
 
-    const cocSelected = ({ bandId, cocId }) => {
-        setCompleteRows({ ...completeRows, [bandId]: cocId })
-        const prevCocIds = Object.values(completeRows).map(({ cocId }) => cocId)
-        setCocIdsSelected([...prevCocIds, cocId])
+        return dataElements
+            .find(({ id }) => id === dataElementId)
+            .categoryCombo.categoryOptionCombos.map(({ id, name }) => {
+                return {
+                    value: id,
+                    label: name,
+                    disabled: unavailableCocs.indexOf(id) !== -1,
+                }
+            })
     }
 
     return (
@@ -80,17 +87,22 @@ const MappingTable = () => {
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
-                    {bands.map(({ id, name }) => {
+                    {bands.map(({ id: bandId, name }) => {
                         return (
-                            <MappingTableRow
-                                key={id}
-                                bandId={id}
-                                bandName={name}
-                                selected={completeRows[id]}
-                                setSelected={cocSelected}
-                                catOptComboList={catOptComboList}
-                                cocIdsSelected={cocIdsSelected}
-                            />
+                            <TableRow key={`row-${bandId}`}>
+                                <TableCell dense>{bandId}</TableCell>
+                                <TableCell dense>{name}</TableCell>
+                                <TableCell dense>
+                                    <StyledField
+                                        component={SingleSelectFieldFF}
+                                        name={bandId}
+                                        inputWidth="150px"
+                                        filterable
+                                        noMatchText={i18n.t('No match found')}
+                                        options={getCatComboOptions(bandId)}
+                                    />
+                                </TableCell>
+                            </TableRow>
                         )
                     })}
                 </TableBody>
