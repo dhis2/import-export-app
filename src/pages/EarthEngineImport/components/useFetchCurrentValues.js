@@ -42,6 +42,8 @@ const useFetchCurrentValues = (eeData) => {
     const [currentValues, setCurrentValues] = useState([])
     const { baseUrl } = useConfig()
 
+    // TODO there could be a lot of dataElements. Possible to make this more efficient
+    // by fetching more info about the dataElement?
     const dataElement = dataElements.find((el) => el.id === dataElementId)
     const dataElementGroupId = dataElement.dataElementGroups[0].id
 

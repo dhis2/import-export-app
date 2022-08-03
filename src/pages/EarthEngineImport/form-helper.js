@@ -29,12 +29,13 @@ const onImport =
             ...rest
         } = values
 
+        setProgress(true)
+
+        // Get the EE data again - TODO - use data retrieved during preview
         const bands = getEarthEngineConfigs(earthEngineId)?.bands?.map(
             (b) => b.id
         )
-
         const eePeriods = await getPeriods(earthEngineId, engine)
-
         const eeOptions = {
             id: earthEngineId,
             rows: organisationUnits,
@@ -42,14 +43,13 @@ const onImport =
             aggregationType: [aggregationType],
             band: bands,
         }
-
         const config = await getEarthEngineConfig(
             eeOptions,
             engine,
             displayProperty
         )
-
         const data = await getAggregations(engine, config)
+
         const cocMap = getCocMap(earthEngineId, rest)
 
         const getValueWithPrecision = getPrecisionFn(rounding)
@@ -93,6 +93,7 @@ const onImport =
 
         engine.mutate(mutation, {
             onComplete: (resp) => {
+                setProgress(false)
                 console.log('onComplete, resp', resp)
                 const { id, error, msg, typeReports } =
                     extractIdAndMessage(resp)
@@ -120,6 +121,7 @@ const onImport =
                 setShowFullSummaryTask(true)
             },
             onError: (err) => {
+                setProgress(false)
                 // 404 - err is a string
                 console.log('err', err)
                 const message = err?.length ? err : genericErrorMessage

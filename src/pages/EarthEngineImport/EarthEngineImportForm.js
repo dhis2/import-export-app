@@ -29,27 +29,8 @@ const EarthEngineImportForm = () => {
     const { displayProperty } = useCachedDataQuery()
 
     // resulting data and display options
-    // const [showPreview, setShowPreview] = useState(false)
-    const [progress, setProgress] = useState(0)
+    const [progress, setProgress] = useState(false)
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
-
-    // const showData = (e) => {
-    //     console.log('e', e)
-    //     e.preventDefault()
-    //     e.stopPropagation()
-    //     setShowPreview(true)
-    // }
-
-    // const isMissingRequiredInputs = () => {
-    //     return false
-    //     // return !eeId || !period || !orgUnits || !aggregation || !dataElement
-    // }
-
-    // const clearEeData = () => {
-    //     setShowPreview(false)
-    //     // setEeData(null)
-    //     window.scrollTo(0, 0)
-    // }
 
     const initialValues = {
         rounding: defaultRoundingOption,
