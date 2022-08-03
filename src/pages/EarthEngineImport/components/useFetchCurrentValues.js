@@ -63,6 +63,7 @@ const useFetchCurrentValues = (eeData) => {
                     allBandsSelected) ||
                 earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID
             ) {
+                //TODO FIX - only add the ouId if it hasn't already been added?
                 const ouQueryParams = eeData
                     .map(({ ouId }) => `orgUnit=${ouId}`)
                     .join('&')
