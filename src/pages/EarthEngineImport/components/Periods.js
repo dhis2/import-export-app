@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { ReactFinalForm, SingleSelectFieldFF } from '@dhis2/ui'
+import { ReactFinalForm, SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { StyledField } from '../../../components/index.js'
@@ -40,6 +40,7 @@ const Periods = ({ formChange }) => {
                 )}
                 validationText={validationText}
                 filled
+                validate={hasValue}
             />
         </div>
     )

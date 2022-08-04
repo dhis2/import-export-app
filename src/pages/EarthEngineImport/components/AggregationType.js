@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { ReactFinalForm, SingleSelectFieldFF } from '@dhis2/ui'
+import { ReactFinalForm, SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
 import { getEarthEngineConfigs } from '../util/earthEngines.js'
@@ -69,6 +69,7 @@ const AggregationType = () => {
                     'How the values will be aggregated for output and analysis.'
                 )}
                 filled
+                validate={hasValue}
             />
         </div>
     )

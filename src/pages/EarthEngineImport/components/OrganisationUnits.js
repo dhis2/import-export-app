@@ -6,7 +6,8 @@ import {
     CenteredContent,
     CircularLoader,
     Help,
-    /*hasValue, composeValidators*/
+    hasValue,
+    composeValidators,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -16,16 +17,11 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 const { Field } = ReactFinalForm
 
 const LABEL = i18n.t('Organisation unit(s) to import data to')
-//TODO
-// const SINGLE_ORG_VALIDATOR = selectedOrgUnits =>
-//     selectedOrgUnits.length == 0
-//         ? i18n.t('At least one organisation unit must be selected')
-//         : undefined
 
-// const SINGLE_EXACT_ORG_VALIDATOR = selectedOrgUnits =>
-//     selectedOrgUnits.length != 1
-//         ? i18n.t('One organisation unit must be selected')
-//         : undefined
+const AT_LEAST_ONE_ORG_VALIDATOR = (selectedOrgUnits) =>
+    selectedOrgUnits.length == 0
+        ? i18n.t('At least one organisation unit must be selected')
+        : undefined
 
 const Wrapper = ({ input: { value, onChange }, meta }) => {
     const { rootOrgUnits } = useCachedDataQuery()
@@ -78,16 +74,14 @@ Wrapper.propTypes = {
 }
 
 const OrganisationUnits = () => {
-    // const orgValidator = multiSelect
-    //     ? SINGLE_ORG_VALIDATOR
-    //     : SINGLE_EXACT_ORG_VALIDATOR
-    // const validator = composeValidators(hasValue, orgValidator)
+    const validator = composeValidators(hasValue, AT_LEAST_ONE_ORG_VALIDATOR)
 
     return (
         <FormField label={LABEL} dataTest="input-organisationUnits-formField">
             <Field
                 component={Wrapper}
-                name="organisationUnits" /* validate={validator}*/
+                name="organisationUnits"
+                validate={validator}
             />
         </FormField>
     )

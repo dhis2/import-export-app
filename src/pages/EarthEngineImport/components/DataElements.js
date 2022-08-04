@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { SingleSelectFieldFF } from '@dhis2/ui'
+import { SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
@@ -21,6 +21,7 @@ const DataElements = () => {
                 // validationText={validationText}
                 filled
                 filterable
+                validate={hasValue}
             />
         </div>
     )
