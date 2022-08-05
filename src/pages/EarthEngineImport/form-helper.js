@@ -1,85 +1,53 @@
 // import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { genericErrorMessage } from '../../utils/helper.js'
 import { extractIdAndMessage } from '../../utils/xhr.js'
-import { getAggregations, getPeriods } from './util/earthEngineHelper.js'
-import getEarthEngineConfig from './util/earthEngineLoader.js'
-import { getEarthEngineConfigs } from './util/earthEngines.js'
-import { getCocMap } from './util/getCocMap.js'
-import { getPrecisionFn } from './util/getPrecisionFn.js'
 
 const isAsync = true
 
 const onImport =
-    ({
-        engine,
-        displayProperty,
-        setProgress,
-        addTask,
-        setShowFullSummaryTask,
-    }) =>
+    ({ engine, setProgress, addTask, setShowFullSummaryTask }) =>
     async (values) => {
+        /* eslint-disable no-unused-vars */
         const {
             dryRun,
+            eeData,
+            dataElementId,
             earthEngineId,
-            organisationUnits,
             period,
+            organisationUnits,
             aggregationType,
             dataElement,
             rounding,
-            ...rest
+            ...bandCocs
         } = values
+        /* eslint-enable no-unused-vars */
 
         setProgress(true)
 
-        // Get the EE data again - TODO - use data retrieved during preview
-        const bands = getEarthEngineConfigs(earthEngineId)?.bands?.map(
-            (b) => b.id
-        )
-        const eePeriods = await getPeriods(earthEngineId, engine)
-        const eeOptions = {
-            id: earthEngineId,
-            rows: organisationUnits,
-            filter: eePeriods.filter((p) => period === p.name),
-            aggregationType: [aggregationType],
-            band: bands,
-        }
-        const config = await getEarthEngineConfig(
-            eeOptions,
-            engine,
-            displayProperty
-        )
-        const data = await getAggregations(engine, config)
-
-        const cocMap = getCocMap(earthEngineId, rest)
-
-        const getValueWithPrecision = getPrecisionFn(rounding)
-
         let dataValues
 
-        if (cocMap) {
-            dataValues = Object.entries(data).reduce((acc, curr) => {
-                const [orgUnit, valueSet] = curr
-                Object.entries(valueSet).forEach(([bandId, rawValue]) => {
-                    const ds = {
-                        dataElement,
-                        period,
-                        orgUnit,
-                        categoryOptionCombo: cocMap[bandId],
-                        value: getValueWithPrecision(rawValue),
-                    }
+        if (Object.keys(bandCocs).length) {
+            dataValues = eeData.reduce((acc, curr) => {
+                const { ouId, bandId, value } = curr
+                const ds = {
+                    dataElement: dataElementId,
+                    period,
+                    orgUnit: ouId,
+                    categoryOptionCombo: bandCocs[bandId],
+                    value,
+                }
 
-                    acc.push(ds)
-                })
+                acc.push(ds)
 
                 return acc
             }, [])
         } else {
-            dataValues = Object.entries(data).map(([orgUnit, valueSet]) => {
+            dataValues = eeData.map(({ ouId, value }) => {
                 return {
-                    dataElement,
+                    dataElement: dataElementId,
                     period,
-                    orgUnit,
-                    value: getValueWithPrecision(valueSet[aggregationType]),
+                    orgUnit: ouId,
+                    value,
                 }
             })
         }
@@ -94,7 +62,6 @@ const onImport =
         engine.mutate(mutation, {
             onComplete: (resp) => {
                 setProgress(false)
-                console.log('onComplete, resp', resp)
                 const { id, error, msg, typeReports } =
                     extractIdAndMessage(resp)
 

@@ -1,12 +1,10 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider, Button } from '@dhis2/ui'
-import PropTypes from 'prop-types'
 import React, { useState, useContext } from 'react'
 import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts, ImportButtonStrip } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
-import { ActionButtons } from './components/ActionButtons.js'
 import {
     ALL_AGGREGATION_TYPES,
     AggregationType,
@@ -23,8 +21,6 @@ import { useCachedDataQuery } from './util/CachedQueryProvider.js'
 import { getPeriods, getAggregations } from './util/earthEngineHelper.js'
 import getEarthEngineConfig from './util/earthEngineLoader.js'
 import { getPrecisionFn } from './util/getPrecisionFn.js'
-// import { getEarthEngineConfigs } from './util/earthEngines.js'
-// import styles from './styles/EarthEngineImportForm.module.css'
 
 const { Form, FormSpy } = ReactFinalForm
 
@@ -49,17 +45,16 @@ const EarthEngineImportForm = () => {
     }
 
     const showPreview = async (formValues) => {
+        //TODO - when the form changes and the preview is already showing, the preview needs to be removed.
         const {
             earthEngineId,
             organisationUnits,
             period,
             rounding,
-            dataElement: deId, // have to keep this out of bandCocs
+            dataElement: deId,
             aggregationType,
             ...bandCocs
         } = formValues
-        // console.log('showPreview with', formValues)
-        console.log('deId', deId)
 
         const getValueWithPrecision = getPrecisionFn(rounding)
 
@@ -120,65 +115,16 @@ const EarthEngineImportForm = () => {
         setEeData(structuredData)
     }
 
-    // const setInternalFormState = ({ values, valid }) => {
-    //     if (!valid) {
-    //         return
-    //     }
-
-    //     const {
-    //         earthEngineId,
-    //         organisationUnits,
-    //         period,
-    //         rounding,
-    //         dataElement,
-    //         aggregationType,
-    //         ...bandCocs
-    //     } = values
-
-    //     const bands = getEarthEngineConfigs(earthEngineId)?.bands || []
-    //     console.log(
-    //         'form changed',
-    //         earthEngineId,
-    //         organisationUnits,
-    //         period,
-    //         rounding,
-    //         dataElement,
-    //         aggregationType,
-    //         Object.keys(bandCocs).length,
-    //         bands.length
-    //     )
-
-    //     if (
-    //         earthEngineId &&
-    //         organisationUnits &&
-    //         period &&
-    //         rounding &&
-    //         dataElement &&
-    //         aggregationType &&
-    //         Object.keys(bandCocs).length === bands.length
-    //     ) {
-    //         console.log('congrats you can generate data now')
-    //         if (!formIsValid) {
-    //             setFormIsValid(true)
-    //         }
-    //         setEeConfig(values)
-    //     } else {
-    //         if (formIsValid) {
-    //             setFormIsValid(false)
-    //         }
-    //         if (eeConfig !== null) {
-    //             setEeConfig(null)
-    //         }
-    //     }
-    // }
-
-    const onSubmit = onImport({
+    const onImportInternal = onImport({
         engine,
-        displayProperty,
         setProgress,
         addTask,
         setShowFullSummaryTask,
     })
+
+    const onSubmit = (values) => {
+        onImportInternal({ dataElementId, eeData, ...values })
+    }
 
     return (
         <Page
@@ -225,13 +171,15 @@ const EarthEngineImportForm = () => {
                                 </Button>
                             )}
                         </FormSpy>
-                        {eeData.length ? (
+                        {dataElementId && eeData.length ? (
                             <DataPreview
                                 dataElementId={dataElementId}
                                 eeData={eeData}
                             />
                         ) : null}
-                        {eeData.length ? <ActionButtons form={form} /> : null}
+                        {dataElementId && eeData.length ? (
+                            <ImportButtonStrip form={form} />
+                        ) : null}
                         <FormAlerts alerts={submitError} />
                     </form>
                 )}

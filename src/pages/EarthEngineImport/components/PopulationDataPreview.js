@@ -14,7 +14,6 @@ import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const PopulationDataPreview = ({ eeData }) => {
-    console.log('eeData', eeData)
     const [tableData, setTableData] = useState([])
     const { currentValues } = useFetchCurrentValues(eeData)
 
