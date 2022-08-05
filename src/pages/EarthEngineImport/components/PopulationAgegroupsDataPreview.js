@@ -7,32 +7,20 @@ import {
     TableBody,
     TableRow,
     TableCell,
-    ReactFinalForm,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { getPrecisionFn } from '../util/getPrecisionFn.js'
 import styles from './styles/DataPreview.module.css'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
-import { useFetchAggregations } from './useFetchAggregations.js'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
-const { useField } = ReactFinalForm
-
-const PopulationAgegroupsDataPreview = () => {
-    const { input: roundingInput } = useField('rounding')
-    const { value: precision } = roundingInput
-    const { input: dataElementInput } = useField('dataElement')
-    const { value: dataElementId } = dataElementInput
-
+const PopulationAgegroupsDataPreview = (props) => {
+    const { dataElementId, eeData } = props
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
-
-    const { eeData } = useFetchAggregations()
-    const { bandMap, allBandsSelected } = useCatOptComboSelections()
+    const { bandMap } = useCatOptComboSelections()
     const { currentValues } = useFetchCurrentValues(eeData)
-
-    const getValueWithPrecision = getPrecisionFn(precision)
 
     useEffect(() => {
         if (currentValues && eeData) {
@@ -44,8 +32,9 @@ const PopulationAgegroupsDataPreview = () => {
                     .find((v) => v.categoryOptionCombo === cocId)
 
                 // find the name of the cat option combo from dataElements
-                const cocs = dataElements.find(({ id }) => id === dataElementId)
-                    .categoryCombo.categoryOptionCombos
+                const cocs =
+                    dataElements.find(({ id }) => id === dataElementId)
+                        .categoryCombo?.categoryOptionCombos || []
 
                 const categoryOptionCombo = cocs.find(
                     (coc) => coc.id === cocId
@@ -62,9 +51,9 @@ const PopulationAgegroupsDataPreview = () => {
 
             setTableData(newArr)
         }
-    }, [currentValues, eeData])
+    }, [currentValues, eeData, dataElementId])
 
-    if (!tableData.length || !allBandsSelected) {
+    if (!tableData.length) {
         return null
     }
 
@@ -100,7 +89,7 @@ const PopulationAgegroupsDataPreview = () => {
                                     {current || ''}
                                 </TableCell>
                                 <TableCell dense className={styles.right}>
-                                    {getValueWithPrecision(value)}
+                                    {value}
                                 </TableCell>
                             </TableRow>
                         )
@@ -109,6 +98,11 @@ const PopulationAgegroupsDataPreview = () => {
             </TableBody>
         </Table>
     )
+}
+
+PopulationAgegroupsDataPreview.propTypes = {
+    dataElementId: PropTypes.string,
+    eeData: PropTypes.array,
 }
 
 export { PopulationAgegroupsDataPreview }

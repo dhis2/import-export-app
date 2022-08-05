@@ -1,35 +1,22 @@
-import i18n from '@dhis2/d2-i18n'
-import { ReactFinalForm, CheckboxFieldFF } from '@dhis2/ui'
+import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { POPULATION_DATASET_ID } from '../util/earthEngines.js'
 import { PopulationAgegroupsDataPreview } from './PopulationAgegroupsDataPreview.js'
 import { PopulationDataPreview } from './PopulationDataPreview.js'
 import styles from './styles/DataPreview.module.css'
 
-const { useField, Field } = ReactFinalForm
+const { useField } = ReactFinalForm
 
-const DataPreview = () => {
+const DataPreview = (props) => {
     const { input: eeInput } = useField('earthEngineId')
     const { value: earthEngineId } = eeInput
-    const { input } = useField('showDataPreview')
-    const { value: showDataPreview } = input
 
     return (
-        <div className={styles.container}>
-            <Field
-                type="checkbox"
-                component={CheckboxFieldFF}
-                name="showDataPreview"
-                label={i18n.t('Show data preview')}
-            />
-            {showDataPreview && (
-                <div className={styles.indent}>
-                    {earthEngineId === POPULATION_DATASET_ID ? (
-                        <PopulationDataPreview />
-                    ) : (
-                        <PopulationAgegroupsDataPreview />
-                    )}
-                </div>
+        <div className={styles.indent}>
+            {earthEngineId === POPULATION_DATASET_ID ? (
+                <PopulationDataPreview {...props} />
+            ) : (
+                <PopulationAgegroupsDataPreview {...props} />
             )}
         </div>
     )

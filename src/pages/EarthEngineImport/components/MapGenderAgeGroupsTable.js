@@ -10,6 +10,7 @@ import {
     TableCell,
     NoticeBox,
     SingleSelectFieldFF,
+    hasValue,
 } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
@@ -23,6 +24,8 @@ const { useFormState } = ReactFinalForm
 
 const MappingTable = () => {
     const { values } = useFormState()
+    const { dataElements } = useCachedDataQuery()
+
     /* eslint-disable no-unused-vars */
     const {
         earthEngineId,
@@ -34,8 +37,6 @@ const MappingTable = () => {
         ...usedCocs
     } = values
     /* eslint-enable no-unused-vars */
-
-    const { dataElements } = useCachedDataQuery()
 
     if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
         return null
@@ -101,6 +102,7 @@ const MappingTable = () => {
                                         clearable
                                         noMatchText={i18n.t('No match found')}
                                         options={getCatComboOptions(bandId)}
+                                        validate={hasValue}
                                     />
                                 </TableCell>
                             </TableRow>

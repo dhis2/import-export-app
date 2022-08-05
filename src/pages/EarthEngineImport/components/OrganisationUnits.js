@@ -16,13 +16,6 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 
 const { Field } = ReactFinalForm
 
-const LABEL = i18n.t('Organisation unit(s) to import data to')
-
-const AT_LEAST_ONE_ORG_VALIDATOR = (selectedOrgUnits) =>
-    selectedOrgUnits.length == 0
-        ? i18n.t('At least one organisation unit must be selected')
-        : undefined
-
 const Wrapper = ({ input: { value, onChange }, meta }) => {
     const { rootOrgUnits } = useCachedDataQuery()
     const error = null //TODO - should be error from failed org units query
@@ -73,11 +66,19 @@ Wrapper.propTypes = {
     }).isRequired,
 }
 
+const AT_LEAST_ONE_ORG_VALIDATOR = (selectedOrgUnits) =>
+    selectedOrgUnits.length == 0
+        ? i18n.t('At least one organisation unit must be selected')
+        : undefined
+
 const OrganisationUnits = () => {
     const validator = composeValidators(hasValue, AT_LEAST_ONE_ORG_VALIDATOR)
 
     return (
-        <FormField label={LABEL} dataTest="input-organisationUnits-formField">
+        <FormField
+            label={i18n.t('Organisation unit(s) to import data to')}
+            dataTest="input-organisationUnits-formField"
+        >
             <Field
                 component={Wrapper}
                 name="organisationUnits"

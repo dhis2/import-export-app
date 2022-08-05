@@ -8,13 +8,13 @@ import {
     TableRow,
     TableCell,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import styles from './styles/DataPreview.module.css'
-import { useFetchAggregations } from './useFetchAggregations.js'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
-const PopulationDataPreview = () => {
-    const { eeData } = useFetchAggregations()
+const PopulationDataPreview = ({ eeData }) => {
+    console.log('eeData', eeData)
     const [tableData, setTableData] = useState([])
     const { currentValues } = useFetchCurrentValues(eeData)
 
@@ -64,6 +64,10 @@ const PopulationDataPreview = () => {
             </TableBody>
         </Table>
     )
+}
+
+PopulationDataPreview.propTypes = {
+    eeData: PropTypes.array,
 }
 
 export { PopulationDataPreview }
