@@ -15,7 +15,7 @@ import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const PopulationDataPreview = ({ eeData }) => {
     const [tableData, setTableData] = useState([])
-    const { currentValues } = useFetchCurrentValues(eeData)
+    const { currentValues } = useFetchCurrentValues()
 
     useEffect(() => {
         if (currentValues && eeData) {

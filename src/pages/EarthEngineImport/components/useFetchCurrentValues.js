@@ -26,7 +26,7 @@ const fetchCurrentValues = async (url) => {
     return await fetcher(url).catch((error) => Promise.reject(error))
 }
 
-const useFetchCurrentValues = (eeData) => {
+const useFetchCurrentValues = () => {
     const { values } = useFormState()
     const {
         earthEngineId,
@@ -53,15 +53,13 @@ const useFetchCurrentValues = (eeData) => {
         }
 
         if (
-            eeData &&
             organisationUnits &&
             period &&
             dataElementId &&
             dataElementGroupId
         ) {
-            //TODO FIX - only add the ouId if it hasn't already been added?
-            const ouQueryParams = eeData
-                .map(({ ouId }) => `orgUnit=${ouId}`)
+            const ouQueryParams = organisationUnits
+                .map(({ id }) => `orgUnit=${id}`)
                 .join('&')
 
             fetchCurrVals(
@@ -73,7 +71,6 @@ const useFetchCurrentValues = (eeData) => {
         dataElementId,
         dataElementGroupId,
         period,
-        eeData,
         organisationUnits,
         baseUrl,
     ])

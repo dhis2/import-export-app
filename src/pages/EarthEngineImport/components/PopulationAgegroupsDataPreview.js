@@ -20,7 +20,7 @@ const PopulationAgegroupsDataPreview = (props) => {
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
     const { bandMap } = useCatOptComboSelections()
-    const { currentValues } = useFetchCurrentValues(eeData)
+    const { currentValues } = useFetchCurrentValues()
 
     useEffect(() => {
         if (currentValues && eeData) {
