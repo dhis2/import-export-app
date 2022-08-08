@@ -7,16 +7,15 @@ import { getEarthEngineConfigs } from './earthEngines.js'
 // import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
 import { toGeoJson } from './toGeoJson.js'
 
-const getGeoFeaturesQuery = (ouIds, displayProperty) => ({
+const getGeoFeaturesQuery = (ouIds) => ({
     resource: 'geoFeatures',
     params: {
         ou: ouIds,
-        displayProperty,
     },
 })
 
 // Returns a promise
-const getEarthEngineConfig = async (config, engine, displayProperty) => {
+const getEarthEngineConfig = async (config, engine) => {
     const orgUnitIds = config.rows.map((row) => row.id)
     let features
 
@@ -25,10 +24,7 @@ const getEarthEngineConfig = async (config, engine, displayProperty) => {
             return previousValue.concat(`${currentValue};`)
         }, 'ou:')
 
-        const query = getGeoFeaturesQuery(
-            ouIdsString,
-            displayProperty.toUpperCase() // NAME|SHORTNAME
-        )
+        const query = getGeoFeaturesQuery(ouIdsString)
         const geoFeatures = await engine.query({ geoFeatures: query })
         features = toGeoJson(geoFeatures.geoFeatures)
 

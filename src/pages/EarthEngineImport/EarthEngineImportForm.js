@@ -17,7 +17,6 @@ import { OrganisationUnits } from './components/OrganisationUnits.js'
 import { Periods } from './components/Periods.js'
 import { Rounding, defaultRoundingOption } from './components/Rounding.js'
 import { onImport } from './form-helper.js'
-import { useCachedDataQuery } from './util/CachedQueryProvider.js'
 import { getPeriods, getAggregations } from './util/earthEngineHelper.js'
 import getEarthEngineConfig from './util/earthEngineLoader.js'
 import { getPrecisionFn } from './util/getPrecisionFn.js'
@@ -30,7 +29,6 @@ const EarthEngineImportForm = () => {
         addTask,
     } = useContext(TaskContext)
     const engine = useDataEngine()
-    const { displayProperty } = useCachedDataQuery()
 
     // resulting data and display options
     const [progress, setProgress] = useState(false)
@@ -71,11 +69,7 @@ const EarthEngineImportForm = () => {
             eeOptions.band = Object.keys(bandCocs)
         }
 
-        const config = await getEarthEngineConfig(
-            eeOptions,
-            engine,
-            displayProperty
-        )
+        const config = await getEarthEngineConfig(eeOptions, engine)
 
         const data = await getAggregations(engine, config)
 
