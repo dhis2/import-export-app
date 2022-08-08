@@ -1,8 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { loadEarthEngineWorker } from '@dhis2/maps-gl'
 import { getEarthEngineConfigs } from './earthEngines.js'
-// import { getMockAggregations } from './mockAggregations.js'
-// import { getMockPeriods } from './mockPeriods.js'
 
 const DEFAULT_LOCALE = 'en'
 const fallbackDateFormat = (dateString) => dateString.substr(0, 10)
