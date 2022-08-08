@@ -32,6 +32,7 @@ const getEarthEngineConfig = async (config, engine, displayProperty) => {
         const geoFeatures = await engine.query({ geoFeatures: query })
         features = toGeoJson(geoFeatures.geoFeatures)
 
+        // TODO handle errors from geofeatures query
         // if (!features.length) {
         //     //handle error/feedback to user
         // }

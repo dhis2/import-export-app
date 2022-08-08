@@ -111,6 +111,7 @@ const EarthEngineImportForm = () => {
             []
         )
 
+        // important: set dataelementId before eeData to avoid endless re-renders
         setDataElementId(deId)
         setEeData(structuredData)
     }

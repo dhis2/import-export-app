@@ -27,6 +27,8 @@ const Periods = ({ formChange }) => {
         }
     }, [earthEngineId, periods, formChange])
 
+    // TODO - show spinner while periods are loading
+
     return (
         <div style={{ maxWidth: '200px' }}>
             <StyledField

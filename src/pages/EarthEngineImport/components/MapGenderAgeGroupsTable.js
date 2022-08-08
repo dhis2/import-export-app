@@ -34,7 +34,7 @@ const MappingTable = () => {
         rounding, //not used
         period, //not used
         aggregationType, //not used
-        ...usedCocs
+        ...bandCocs
     } = values
     /* eslint-enable no-unused-vars */
 
@@ -49,7 +49,7 @@ const MappingTable = () => {
     }
 
     const getCatComboOptions = (bandId) => {
-        const unavailableCocs = Object.entries(usedCocs)
+        const unavailableCocs = Object.entries(bandCocs)
             .filter((entry) => entry[0] !== bandId)
             .map((entry) => entry[1])
 
