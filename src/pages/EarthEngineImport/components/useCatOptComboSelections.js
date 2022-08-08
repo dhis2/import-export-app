@@ -10,17 +10,13 @@ const useCatOptComboSelections = () => {
     const config = getEarthEngineConfigs(eeId)
 
     if (!config?.bands) {
-        return { bandMap: null, allBandsSelected: null }
+        return { bandMap: null }
     }
 
     const bandCocMap = getCocMap(eeId, values)
-    const cocBandValues = Object.keys(values).filter((k) =>
-        Object.keys(bandCocMap).includes(k)
-    )
 
     return {
         bandMap: bandCocMap,
-        allBandsSelected: cocBandValues.length === config.bands.length,
     }
 }
 

@@ -27,20 +27,15 @@ const onImport =
         let dataValues
 
         if (Object.keys(bandCocs).length) {
-            dataValues = eeData.reduce((acc, curr) => {
-                const { ouId, bandId, value } = curr
-                const ds = {
+            dataValues = eeData.map(({ ouId, bandId, value }) => {
+                return {
                     dataElement: dataElementId,
                     period,
                     orgUnit: ouId,
                     categoryOptionCombo: bandCocs[bandId],
                     value,
                 }
-
-                acc.push(ds)
-
-                return acc
-            }, [])
+            })
         } else {
             dataValues = eeData.map(({ ouId, value }) => {
                 return {

@@ -2,8 +2,6 @@ import { useConfig } from '@dhis2/app-runtime'
 import { ReactFinalForm } from '@dhis2/ui'
 import { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-// import { POPULATION_AGE_GROUPS_DATASET_ID } from '../util/earthEngines.js'
-// import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 
 const { useFormState } = ReactFinalForm
 
@@ -37,7 +35,6 @@ const useFetchCurrentValues = (eeData) => {
         period,
     } = values
 
-    // const { allBandsSelected } = useCatOptComboSelections()
     const { dataElements } = useCachedDataQuery()
     const [currentValues, setCurrentValues] = useState([])
     const { baseUrl } = useConfig()
@@ -62,11 +59,6 @@ const useFetchCurrentValues = (eeData) => {
             dataElementId &&
             dataElementGroupId
         ) {
-            // if (
-            //     (earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID &&
-            //         allBandsSelected) ||
-            //     earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID
-            // ) {
             //TODO FIX - only add the ouId if it hasn't already been added?
             const ouQueryParams = eeData
                 .map(({ ouId }) => `orgUnit=${ouId}`)
@@ -75,7 +67,6 @@ const useFetchCurrentValues = (eeData) => {
             fetchCurrVals(
                 `${baseUrl}/api/dataValueSets?dataElementGroup=${dataElementGroupId}&period=${period}&${ouQueryParams}`
             )
-            // }
         }
     }, [
         earthEngineId,
@@ -84,7 +75,6 @@ const useFetchCurrentValues = (eeData) => {
         period,
         eeData,
         organisationUnits,
-        // allBandsSelected,
         baseUrl,
     ])
 
