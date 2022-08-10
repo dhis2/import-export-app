@@ -1,12 +1,13 @@
 import i18n from '@dhis2/d2-i18n'
 import {
-    Table,
-    TableHead,
-    TableRowHead,
-    TableCellHead,
-    TableBody,
-    TableRow,
-    TableCell,
+    DataTable,
+    DataTableHead,
+    DataTableBody,
+    DataTableRow,
+    DataTableCell,
+    DataTableColumnHeader,
+    DataTableFoot,
+    Pagination,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
@@ -15,12 +16,17 @@ import styles from './styles/DataPreview.module.css'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
+const DEFAULT_ROWS_PER_PAGE = 10
+
 const PopulationAgegroupsDataPreview = (props) => {
     const { dataElementId, eeData } = props
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
     const { bandMap } = useCatOptComboSelections()
     const { currentValues } = useFetchCurrentValues()
+    const [pageNo, setPageNo] = useState(1)
+    const [visibleRows, setVisibleRows] = useState([])
+    const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
 
     useEffect(() => {
         if (currentValues && eeData) {
@@ -53,50 +59,90 @@ const PopulationAgegroupsDataPreview = (props) => {
         }
     }, [currentValues, eeData, dataElementId])
 
+    useEffect(() => {
+        if (tableData.length) {
+            const start = (pageNo - 1) * rowsPerPage
+            const end = start + rowsPerPage
+
+            const crows = tableData.slice(start, end)
+            setVisibleRows(crows)
+        }
+    }, [tableData, rowsPerPage, pageNo])
+
     if (!tableData.length) {
         return null
     }
 
+    const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
+    const isLastPage = () => pageNo === getNumPages()
+    const getLastPageLength = () => tableData.length % rowsPerPage
+
     return (
-        <Table dense className={styles.table}>
-            <TableHead>
-                <TableRowHead>
-                    <TableCellHead dense>{i18n.t('Org Unit')}</TableCellHead>
-                    <TableCellHead dense>
+        <DataTable dense className={styles.table}>
+            <DataTableHead>
+                <DataTableRow>
+                    <DataTableColumnHeader dense>
+                        {i18n.t('Org Unit')}
+                    </DataTableColumnHeader>
+                    <DataTableColumnHeader dense>
                         {i18n.t('Category option combo')}
-                    </TableCellHead>
-                    <TableCellHead dense className={styles.right}>
+                    </DataTableColumnHeader>
+                    <DataTableColumnHeader dense className={styles.right}>
                         {i18n.t('Current value')}
-                    </TableCellHead>
-                    <TableCellHead dense className={styles.right}>
+                    </DataTableColumnHeader>
+                    <DataTableColumnHeader dense className={styles.right}>
                         {i18n.t('New value')}
-                    </TableCellHead>
-                </TableRowHead>
-            </TableHead>
-            <TableBody>
-                {tableData.map(
+                    </DataTableColumnHeader>
+                </DataTableRow>
+            </DataTableHead>
+            <DataTableBody>
+                {visibleRows.map(
                     (
                         { ouId, ouName, categoryOptionCombo, value, current },
                         i
                     ) => {
                         return (
-                            <TableRow key={`${ouId}-${i}`}>
-                                <TableCell dense>{ouName}</TableCell>
-                                <TableCell dense>
+                            <DataTableRow key={`${ouId}-${i}`}>
+                                <DataTableCell dense>{ouName}</DataTableCell>
+                                <DataTableCell dense>
                                     {categoryOptionCombo}
-                                </TableCell>
-                                <TableCell dense className={styles.current}>
+                                </DataTableCell>
+                                <DataTableCell dense className={styles.current}>
                                     {current || ''}
-                                </TableCell>
-                                <TableCell dense className={styles.right}>
+                                </DataTableCell>
+                                <DataTableCell dense className={styles.right}>
                                     {value}
-                                </TableCell>
-                            </TableRow>
+                                </DataTableCell>
+                            </DataTableRow>
                         )
                     }
                 )}
-            </TableBody>
-        </Table>
+            </DataTableBody>
+            <DataTableFoot>
+                <DataTableRow>
+                    <DataTableCell staticStyle>
+                        <div>
+                            <Pagination
+                                // disabled={fetching}
+                                page={pageNo}
+                                isLastPage={isLastPage()}
+                                onPageChange={setPageNo}
+                                onPageSizeChange={setRowsPerPage}
+                                pageSize={rowsPerPage}
+                                pageSizeSelectText={i18n.t(
+                                    'Select rows per page'
+                                )}
+                                total={tableData.length}
+                                pageLength={
+                                    isLastPage() ? getLastPageLength() : null
+                                }
+                                pageCount={getNumPages()}
+                            />
+                        </div>
+                    </DataTableCell>
+                </DataTableRow>
+            </DataTableFoot>
+        </DataTable>
     )
 }
 
