@@ -1,4 +1,9 @@
-import { ReactFinalForm } from '@dhis2/ui'
+import {
+    ReactFinalForm,
+    ComponentCover,
+    CenteredContent,
+    CircularLoader,
+} from '@dhis2/ui'
 import React from 'react'
 import { POPULATION_DATASET_ID } from '../util/earthEngines.js'
 import { PopulationAgegroupsDataPreview } from './PopulationAgegroupsDataPreview.js'
@@ -12,14 +17,35 @@ const DataPreview = (props) => {
     const { value: earthEngineId } = eeInput
 
     return (
-        <div className={styles.indent}>
-            {earthEngineId === POPULATION_DATASET_ID ? (
-                <PopulationDataPreview {...props} />
-            ) : (
-                <PopulationAgegroupsDataPreview {...props} />
+        <div className={styles.content}>
+            {!props.eeData.length && (
+                <div className={styles.loading}>
+                    <ComponentCover translucent>
+                        <CenteredContent>
+                            <CircularLoader />
+                        </CenteredContent>
+                    </ComponentCover>
+                </div>
             )}
+            <div className={styles.indent}>
+                {earthEngineId === POPULATION_DATASET_ID ? (
+                    <PopulationDataPreview {...props} />
+                ) : (
+                    <PopulationAgegroupsDataPreview {...props} />
+                )}
+            </div>
         </div>
     )
+
+    // return (
+    //     <div className={styles.indent}>
+    //         {earthEngineId === POPULATION_DATASET_ID ? (
+    //             <PopulationDataPreview {...props} />
+    //         ) : (
+    //             <PopulationAgegroupsDataPreview {...props} />
+    //         )}
+    //     </div>
+    // )
 }
 
 export { DataPreview }

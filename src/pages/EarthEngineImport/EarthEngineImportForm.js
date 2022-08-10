@@ -54,6 +54,9 @@ const EarthEngineImportForm = () => {
             ...bandCocs
         } = formValues
 
+        // important: set dataelementId before eeData to avoid endless re-renders
+        setDataElementId(deId)
+
         const getValueWithPrecision = getPrecisionFn(rounding)
 
         const periods = await getPeriods(earthEngineId, engine)
@@ -105,8 +108,6 @@ const EarthEngineImportForm = () => {
             []
         )
 
-        // important: set dataelementId before eeData to avoid endless re-renders
-        setDataElementId(deId)
         setEeData(structuredData)
     }
 
@@ -166,12 +167,12 @@ const EarthEngineImportForm = () => {
                                 </Button>
                             )}
                         </FormSpy>
-                        {dataElementId && eeData.length ? (
+                        {dataElementId && (
                             <DataPreview
                                 dataElementId={dataElementId}
                                 eeData={eeData}
                             />
-                        ) : null}
+                        )}
                         {dataElementId && eeData.length ? (
                             <ImportButtonStrip form={form} />
                         ) : null}
