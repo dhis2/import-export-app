@@ -64,7 +64,6 @@ const MappingTable = () => {
             }
         })
     }
-
     // TODO - this is a temporary function to make testing quicker
     const getProbableCocMatch = (bandId) => {
         // bandId F_1 = coc Female, 1 - 4 yr
@@ -75,14 +74,16 @@ const MappingTable = () => {
             if (cocAge === undefined) {
                 return false
             }
-            const ageGrp = cocAge.includes('<12m')
-                ? '0'
-                : cocAge.trim().charAt(0)
+
+            const ageGrp =
+                cocAge.includes('<12m') || cocAge.includes('<1y')
+                    ? '0'
+                    : cocAge.trim().split(' ')[0]
 
             return cocGender.charAt(0) === bandGender && ageGrp === bandAge
         })
 
-        return probableCoc.id
+        return probableCoc?.id || null
     }
 
     return (
