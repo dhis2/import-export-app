@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-05T14:06:01.304Z\n"
-"PO-Revision-Date: 2022-08-05T14:06:01.304Z\n"
+"POT-Creation-Date: 2022-08-11T06:52:49.711Z\n"
+"PO-Revision-Date: 2022-08-11T06:52:49.711Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -911,6 +911,9 @@ msgstr "Current value"
 
 msgid "New value"
 msgstr "New value"
+
+msgid "Select rows per page"
+msgstr "Select rows per page"
 
 msgid "Don't round source values"
 msgstr "Don't round source values"
