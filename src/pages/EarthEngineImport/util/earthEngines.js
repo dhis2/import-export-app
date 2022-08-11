@@ -70,10 +70,10 @@ const getEarthEngineLayers = () => [
                 id: 'M_1',
                 name: i18n.t('Men 1 - 4 years'),
             },
-            // {
-            //     id: 'M_5',
-            //     name: i18n.t('Men 5 - 9 years'),
-            // },
+            {
+                id: 'M_5',
+                name: i18n.t('Men 5 - 9 years'),
+            },
             // {
             //     id: 'M_10',
             //     name: i18n.t('Men 10 - 14 years'),
@@ -138,14 +138,14 @@ const getEarthEngineLayers = () => [
                 id: 'F_0',
                 name: i18n.t('Women 0 - 1 years'),
             },
-            // {
-            //     id: 'F_1',
-            //     name: i18n.t('Women 1 - 4 years'),
-            // },
-            // {
-            //     id: 'F_5',
-            //     name: i18n.t('Women 5 - 9 years'),
-            // },
+            {
+                id: 'F_1',
+                name: i18n.t('Women 1 - 4 years'),
+            },
+            {
+                id: 'F_5',
+                name: i18n.t('Women 5 - 9 years'),
+            },
             // {
             //     id: 'F_10',
             //     name: i18n.t('Women 10 - 14 years'),

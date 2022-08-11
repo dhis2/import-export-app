@@ -44,6 +44,9 @@ const MappingTable = () => {
 
     const bands = getEarthEngineConfigs(earthEngineId)?.bands
 
+    const cocs = dataElements.find(({ id }) => id === dataElementId)
+        .categoryCombo.categoryOptionCombos
+
     if (!bands) {
         return null
     }
@@ -53,15 +56,33 @@ const MappingTable = () => {
             .filter((entry) => entry[0] !== bandId)
             .map((entry) => entry[1])
 
-        return dataElements
-            .find(({ id }) => id === dataElementId)
-            .categoryCombo.categoryOptionCombos.map(({ id, name }) => {
-                return {
-                    value: id,
-                    label: name,
-                    disabled: unavailableCocs.indexOf(id) !== -1,
-                }
-            })
+        return cocs.map(({ id, name }) => {
+            return {
+                value: id,
+                label: name,
+                disabled: unavailableCocs.indexOf(id) !== -1,
+            }
+        })
+    }
+
+    // TODO - this is a temporary function to make testing quicker
+    const getProbableCocMatch = (bandId) => {
+        // bandId F_1 = coc Female, 1 - 4 yr
+        const [bandGender, bandAge] = bandId.split('_')
+
+        const probableCoc = cocs.find((coc) => {
+            const [cocGender, cocAge] = coc.name.split(',')
+            if (cocAge === undefined) {
+                return false
+            }
+            const ageGrp = cocAge.includes('<12m')
+                ? '0'
+                : cocAge.trim().charAt(0)
+
+            return cocGender.charAt(0) === bandGender && ageGrp === bandAge
+        })
+
+        return probableCoc.id
     }
 
     return (
@@ -100,6 +121,9 @@ const MappingTable = () => {
                                         inputWidth="250px"
                                         filterable
                                         clearable
+                                        initialValue={getProbableCocMatch(
+                                            bandId
+                                        )}
                                         noMatchText={i18n.t('No match found')}
                                         options={getCatComboOptions(bandId)}
                                         validate={hasValue}
