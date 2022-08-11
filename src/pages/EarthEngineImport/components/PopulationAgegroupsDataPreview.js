@@ -8,6 +8,7 @@ import {
     DataTableColumnHeader,
     DataTableFoot,
     Pagination,
+    ReactFinalForm,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
@@ -18,8 +19,11 @@ import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const DEFAULT_ROWS_PER_PAGE = 10
 
-const PopulationAgegroupsDataPreview = (props) => {
-    const { dataElementId, eeData } = props
+const { useField } = ReactFinalForm
+
+const PopulationAgegroupsDataPreview = ({ eeData }) => {
+    const { input } = useField('dataElement')
+    const { value: dataElementId } = input
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
     const { bandMap } = useCatOptComboSelections()
@@ -147,7 +151,6 @@ const PopulationAgegroupsDataPreview = (props) => {
 }
 
 PopulationAgegroupsDataPreview.propTypes = {
-    dataElementId: PropTypes.string,
     eeData: PropTypes.array,
 }
 

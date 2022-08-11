@@ -1,13 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-// import {
-//     Table,
-//     TableHead,
-//     TableRowHead,
-//     TableCellHead,
-//     TableBody,
-//     TableRow,
-//     TableCell,
-// } from '@dhis2/ui'
 import {
     DataTable,
     DataTableHead,

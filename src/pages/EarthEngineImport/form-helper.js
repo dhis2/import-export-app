@@ -7,20 +7,17 @@ const isAsync = true
 const onImport =
     ({ engine, setProgress, addTask, setShowFullSummaryTask }) =>
     async (values) => {
-        /* eslint-disable no-unused-vars */
         const {
             dryRun,
             eeData,
-            dataElementId,
-            earthEngineId,
             period,
-            organisationUnits,
-            aggregationType,
             dataElement,
-            rounding,
+            earthEngineId, //eslint-disable-line no-unused-vars
+            organisationUnits, //eslint-disable-line no-unused-vars
+            aggregationType, //eslint-disable-line no-unused-vars
+            rounding, //eslint-disable-line no-unused-vars
             ...bandCocs
         } = values
-        /* eslint-enable no-unused-vars */
 
         setProgress(true)
 
@@ -29,7 +26,7 @@ const onImport =
         if (Object.keys(bandCocs).length) {
             dataValues = eeData.map(({ ouId, bandId, value }) => {
                 return {
-                    dataElement: dataElementId,
+                    dataElement,
                     period,
                     orgUnit: ouId,
                     categoryOptionCombo: bandCocs[bandId],
@@ -39,7 +36,7 @@ const onImport =
         } else {
             dataValues = eeData.map(({ ouId, value }) => {
                 return {
-                    dataElement: dataElementId,
+                    dataElement,
                     period,
                     orgUnit: ouId,
                     value,

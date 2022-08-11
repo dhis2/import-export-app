@@ -18,7 +18,7 @@ const DataPreview = (props) => {
 
     return (
         <div className={styles.content}>
-            {!props.eeData.length && (
+            {props.fetching && (
                 <div className={styles.loading}>
                     <ComponentCover translucent>
                         <CenteredContent>

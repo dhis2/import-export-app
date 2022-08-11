@@ -26,17 +26,15 @@ const MappingTable = () => {
     const { values } = useFormState()
     const { dataElements } = useCachedDataQuery()
 
-    /* eslint-disable no-unused-vars */
     const {
         earthEngineId,
         dataElement: dataElementId,
-        organisationUnits, //not used
-        rounding, //not used
-        period, //not used
-        aggregationType, //not used
+        organisationUnits, //eslint-disable-line no-unused-vars
+        rounding, //eslint-disable-line no-unused-vars
+        period, //eslint-disable-line no-unused-vars
+        aggregationType, //eslint-disable-line no-unused-vars
         ...bandCocs
     } = values
-    /* eslint-enable no-unused-vars */
 
     if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
         return null
@@ -122,9 +120,9 @@ const MappingTable = () => {
                                         inputWidth="250px"
                                         filterable
                                         clearable
-                                        initialValue={getProbableCocMatch(
-                                            bandId
-                                        )}
+                                        // initialValue={getProbableCocMatch(
+                                        //     bandId
+                                        // )}
                                         noMatchText={i18n.t('No match found')}
                                         options={getCatComboOptions(bandId)}
                                         validate={hasValue}

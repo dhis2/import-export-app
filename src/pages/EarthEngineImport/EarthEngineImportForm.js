@@ -34,7 +34,8 @@ const EarthEngineImportForm = () => {
     const [progress, setProgress] = useState(false)
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const [eeData, setEeData] = useState([])
-    const [dataElementId, setDataElementId] = useState(null)
+    const [showPreview, setShowPreview] = useState(false)
+    const [fetching, setFetching] = useState(false)
 
     const initialValues = {
         rounding: defaultRoundingOption,
@@ -42,22 +43,21 @@ const EarthEngineImportForm = () => {
         dataElement: null,
     }
 
-    const showPreview = async (formValues) => {
+    const fetchEeData = async (formValues) => {
         //TODO - when the form changes and the preview is already showing, the preview needs to be removed.
         const {
             earthEngineId,
             organisationUnits,
             period,
             rounding,
-            dataElement: deId,
             aggregationType,
+            dataElement, //eslint-disable-line no-unused-vars
             ...bandCocs
         } = formValues
-
-        // important: set dataelementId before eeData to avoid endless re-renders
-        setDataElementId(deId)
-
         const getValueWithPrecision = getPrecisionFn(rounding)
+
+        setFetching(true)
+        setShowPreview(true)
 
         const periods = await getPeriods(earthEngineId, engine)
 
@@ -74,7 +74,23 @@ const EarthEngineImportForm = () => {
 
         const config = await getEarthEngineConfig(eeOptions, engine)
 
-        const data = await getAggregations(engine, config)
+        let data = {}
+        try {
+            data = await getAggregations(engine, config)
+        } catch (error) {
+            console.log('error thrown', error)
+            setEeData([])
+            setFetching(false)
+            setShowPreview(false)
+            const message = error.message || error
+
+            // if (message.includes('memory limit exceeded')) {
+            if (message.includes('Output of image computation is too large')) {
+                // show message to select fewer ous or bands
+            }
+
+            return
+        }
 
         const structuredData = Object.entries(data).reduce(
             (acc, [ouId, valueSet]) => {
@@ -109,6 +125,7 @@ const EarthEngineImportForm = () => {
         )
 
         setEeData(structuredData)
+        setFetching(false)
     }
 
     const onImportInternal = onImport({
@@ -119,7 +136,7 @@ const EarthEngineImportForm = () => {
     })
 
     const onSubmit = (values) => {
-        onImportInternal({ dataElementId, eeData, ...values })
+        onImportInternal({ eeData, ...values })
     }
 
     return (
@@ -160,20 +177,17 @@ const EarthEngineImportForm = () => {
                                 <Button
                                     primary
                                     type="button"
-                                    disabled={!valid}
-                                    onClick={() => showPreview(values)}
+                                    disabled={!valid || showPreview}
+                                    onClick={() => fetchEeData(values)}
                                 >
                                     {i18n.t('Preview before import')}
                                 </Button>
                             )}
                         </FormSpy>
-                        {dataElementId && (
-                            <DataPreview
-                                dataElementId={dataElementId}
-                                eeData={eeData}
-                            />
+                        {showPreview && (
+                            <DataPreview fetching={fetching} eeData={eeData} />
                         )}
-                        {dataElementId && eeData.length ? (
+                        {!fetching && eeData.length ? (
                             <ImportButtonStrip form={form} />
                         ) : null}
                         <FormAlerts alerts={submitError} />
