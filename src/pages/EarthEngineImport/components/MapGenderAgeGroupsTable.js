@@ -118,9 +118,9 @@ const MappingTable = () => {
                                         inputWidth="250px"
                                         filterable
                                         clearable
-                                        defaultValue={getProbableCocMatch(
-                                            bandId
-                                        )}
+                                        // defaultValue={getProbableCocMatch(
+                                        //     bandId
+                                        // )}
                                         noMatchText={i18n.t('No match found')}
                                         options={getCatComboOptions(bandId)}
                                     />

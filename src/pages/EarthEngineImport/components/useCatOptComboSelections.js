@@ -1,23 +1,33 @@
 import { ReactFinalForm } from '@dhis2/ui'
+import { useMemo } from 'react'
 import { getEarthEngineConfigs } from '../util/earthEngines.js'
-import { getCocMap } from '../util/getCocMap.js'
 
 const { useFormState } = ReactFinalForm
+
+const getCocMap = (eeId, values) => {
+    const config = getEarthEngineConfigs(eeId)
+    if (config?.bands) {
+        const bandIds = config.bands.map((b) => b.id)
+
+        return bandIds.reduce(
+            (acc, curr) => ({
+                [curr]: values[curr],
+                ...acc,
+            }),
+            {}
+        )
+    }
+
+    return null
+}
 
 const useCatOptComboSelections = () => {
     const { values } = useFormState()
     const eeId = values.earthEngineId
-    const config = getEarthEngineConfigs(eeId)
 
-    if (!config?.bands) {
-        return { bandMap: null }
-    }
+    const bandCocMap = useMemo(() => getCocMap(eeId, values), [eeId, values])
 
-    const bandCocMap = getCocMap(eeId, values)
-
-    return {
-        bandMap: bandCocMap,
-    }
+    return bandCocMap
 }
 
 export { useCatOptComboSelections }

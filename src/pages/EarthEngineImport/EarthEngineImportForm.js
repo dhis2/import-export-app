@@ -48,7 +48,7 @@ const EarthEngineImportForm = () => {
     }
 
     const fetchEeData = async (formValues) => {
-        //TODO - when the form changes and the preview is already showing, the preview needs to be removed.
+        //TODO - extract fn to get the form values to avoid no-unused-vars all over the place
         const {
             earthEngineId,
             organisationUnits,

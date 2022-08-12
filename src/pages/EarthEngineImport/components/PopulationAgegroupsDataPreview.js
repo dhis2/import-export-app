@@ -26,7 +26,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
     const { value: dataElementId } = input
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
-    const { bandMap } = useCatOptComboSelections()
+    const bandCocMap = useCatOptComboSelections()
     const { currentValues } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
     const [visibleRows, setVisibleRows] = useState([])
@@ -35,7 +35,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
     useEffect(() => {
         if (currentValues && eeData) {
             const newArr = eeData.map(({ ouId, ouName, bandId, value }) => {
-                const cocId = bandMap[bandId]
+                const cocId = bandCocMap[bandId]
 
                 const current = currentValues
                     .filter((v) => v.orgUnit === ouId)
@@ -61,7 +61,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
 
             setTableData(newArr)
         }
-    }, [currentValues, eeData, dataElementId])
+    }, [currentValues, eeData, dataElementId, dataElements, bandCocMap])
 
     useEffect(() => {
         if (tableData.length) {
