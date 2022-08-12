@@ -13,14 +13,13 @@ import {
     hasValue,
 } from '@dhis2/ui'
 import React from 'react'
-import { StyledField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import {
     getEarthEngineConfigs,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
 
-const { useFormState } = ReactFinalForm
+const { Field, useFormState } = ReactFinalForm
 
 const MappingTable = () => {
     const { values } = useFormState()
@@ -114,7 +113,7 @@ const MappingTable = () => {
                                 <TableCell dense>{bandId}</TableCell>
                                 <TableCell dense>{name}</TableCell>
                                 <TableCell dense>
-                                    <StyledField
+                                    <Field
                                         component={SingleSelectFieldFF}
                                         name={bandId}
                                         inputWidth="250px"
