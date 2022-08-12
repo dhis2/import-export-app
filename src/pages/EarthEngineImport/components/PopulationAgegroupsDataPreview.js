@@ -77,6 +77,11 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
         return null
     }
 
+    const updateTable = (newRowsPerPage) => {
+        setPageNo(1)
+        setRowsPerPage(newRowsPerPage)
+    }
+
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
     const isLastPage = () => pageNo === getNumPages()
     const getLastPageLength = () => tableData.length % rowsPerPage
@@ -131,7 +136,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
                                 page={pageNo}
                                 isLastPage={isLastPage()}
                                 onPageChange={setPageNo}
-                                onPageSizeChange={setRowsPerPage}
+                                onPageSizeChange={updateTable}
                                 pageSize={rowsPerPage}
                                 pageSizeSelectText={i18n.t(
                                     'Select rows per page'
