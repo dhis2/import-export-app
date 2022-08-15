@@ -14,7 +14,7 @@ const query = {
     dataElements: {
         resource: 'dataElements',
         params: {
-            fields: 'id,displayName~rename(name),categoryCombo[categoryOptionCombos[id,displayName~rename(name)]],dataElementGroups',
+            fields: 'id,displayName~rename(name),categoryCombo[categoryOptionCombos[id,code,displayName~rename(name)]],dataElementGroups',
             filter: 'domainType:eq:AGGREGATE',
             paging: false,
         },

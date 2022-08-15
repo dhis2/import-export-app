@@ -62,22 +62,7 @@ const MappingTable = () => {
     }
     // TODO - this is a temporary function to make testing quicker
     const getProbableCocMatch = (bandId) => {
-        // bandId F_1 = coc Female, 1 - 4 yr
-        const [bandGender, bandAge] = bandId.split('_')
-
-        const probableCoc = cocs.find((coc) => {
-            const [cocGender, cocAge] = coc.name.split(',')
-            if (cocAge === undefined) {
-                return false
-            }
-
-            const ageGrp =
-                cocAge.includes('<12m') || cocAge.includes('<1y')
-                    ? '0'
-                    : cocAge.trim().split(' ')[0]
-
-            return cocGender.charAt(0) === bandGender && ageGrp === bandAge
-        })
+        const probableCoc = cocs.find((coc) => coc.code === bandId)
 
         return probableCoc?.id || null
     }
@@ -118,9 +103,9 @@ const MappingTable = () => {
                                         inputWidth="250px"
                                         filterable
                                         clearable
-                                        // defaultValue={getProbableCocMatch(
-                                        //     bandId
-                                        // )}
+                                        defaultValue={getProbableCocMatch(
+                                            bandId
+                                        )}
                                         noMatchText={i18n.t('No match found')}
                                         options={getCatComboOptions(bandId)}
                                     />
