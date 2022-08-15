@@ -11,39 +11,59 @@ import {
     NoticeBox,
     SingleSelectFieldFF,
 } from '@dhis2/ui'
-import React from 'react'
+import PropTypes from 'prop-types'
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import {
     getEarthEngineConfigs,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
 
-const { Field, useFormState } = ReactFinalForm
+const { Field, useField, useFormState } = ReactFinalForm
 
-const MappingTable = () => {
+const NO_BANDS = []
+
+const MappingTable = ({ formChange }) => {
     const { values } = useFormState()
     const { dataElements } = useCachedDataQuery()
-
+    const { input } = useField('dataElement')
+    const { value: dataElementId } = input
     const {
         earthEngineId,
-        dataElement: dataElementId,
+        dataElement, //eslint-disable-line no-unused-vars
         organisationUnits, //eslint-disable-line no-unused-vars
         rounding, //eslint-disable-line no-unused-vars
         period, //eslint-disable-line no-unused-vars
         aggregationType, //eslint-disable-line no-unused-vars
         ...bandCocs
     } = values
+    const [cocs, setCocs] = useState([])
 
-    if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
-        return null
-    }
+    const bands = useMemo(
+        () => getEarthEngineConfigs(earthEngineId)?.bands || NO_BANDS,
+        [earthEngineId]
+    )
 
-    const bands = getEarthEngineConfigs(earthEngineId)?.bands
+    const resetSelectedCocs = useCallback(
+        () => bands.forEach(({ id }) => formChange(id, undefined)),
+        [formChange, bands]
+    )
 
-    const cocs = dataElements.find(({ id }) => id === dataElementId)
-        .categoryCombo.categoryOptionCombos
+    useEffect(() => {
+        if (dataElementId) {
+            const newCocs = dataElements.find(({ id }) => id === dataElementId)
+                .categoryCombo.categoryOptionCombos
 
-    if (!bands) {
+            resetSelectedCocs()
+            setCocs(newCocs)
+        }
+    }, [dataElementId, dataElements, resetSelectedCocs])
+
+    if (
+        earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID ||
+        !dataElementId ||
+        !bands
+    ) {
         return null
     }
 
@@ -117,6 +137,10 @@ const MappingTable = () => {
             </Table>
         </>
     )
+}
+
+MappingTable.propTypes = {
+    formChange: PropTypes.func,
 }
 
 export { MappingTable }
