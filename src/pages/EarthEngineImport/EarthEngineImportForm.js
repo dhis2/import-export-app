@@ -108,7 +108,7 @@ const EarthEngineImportForm = () => {
 
             if (message.includes('Output of image computation is too large')) {
                 msg =
-                    'The Earth Engine data set is too large. Try reducing the number of bands or number or organisation units'
+                    'The Earth Engine data set is too large. Try reducing the number of groups or organisation units'
             }
             setRequestFailedMessage(msg)
 

@@ -89,20 +89,20 @@ const MappingTable = ({ formChange }) => {
     return (
         <>
             <NoticeBox
-                title={i18n.t('Import bands to category option combinations')}
+                title={i18n.t('Import groups to category option combinations')}
             >
                 {i18n.t(
-                    'Earth Engine data set "Population age groups" has disaggregation bands. Choose the category option combinations to import each band into.'
+                    'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.'
                 )}
             </NoticeBox>
             <Table dense>
                 <TableHead>
                     <TableRowHead>
                         <TableCellHead dense>
-                            {i18n.t('Band name')}
+                            {i18n.t('Group name')}
                         </TableCellHead>
                         <TableCellHead dense>
-                            {i18n.t('Band description')}
+                            {i18n.t('Group description')}
                         </TableCellHead>
                         <TableCellHead dense>
                             {i18n.t('Category option combination')}

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-11T06:52:49.711Z\n"
-"PO-Revision-Date: 2022-08-11T06:52:49.711Z\n"
+"POT-Creation-Date: 2022-08-16T12:51:19.303Z\n"
+"PO-Revision-Date: 2022-08-16T12:51:19.303Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -818,6 +818,9 @@ msgstr "Import setup"
 msgid "Preview before import"
 msgstr "Preview before import"
 
+msgid "Sum"
+msgstr "Sum"
+
 msgid "Min"
 msgstr "Min"
 
@@ -829,9 +832,6 @@ msgstr "Mean"
 
 msgid "Median"
 msgstr "Median"
-
-msgid "Sum"
-msgstr "Sum"
 
 msgid "Std dev"
 msgstr "Std dev"
@@ -845,18 +845,6 @@ msgstr "Aggregation type"
 msgid "How the values will be aggregated for output and analysis."
 msgstr "How the values will be aggregated for output and analysis."
 
-msgid "Some required options haven't been selected"
-msgstr "Some required options haven't been selected"
-
-msgid "Preview import summary"
-msgstr "Preview import summary"
-
-msgid "Import without previewing"
-msgstr "Import without previewing"
-
-msgid "Make changes to selections"
-msgstr "Make changes to selections"
-
 msgid "Data element"
 msgstr "Data element"
 
@@ -869,21 +857,21 @@ msgstr "Earth Engine data set"
 msgid "Not all Earth Engine data sets are available yet."
 msgstr "Not all Earth Engine data sets are available yet."
 
-msgid "Import bands to category option combinations"
-msgstr "Import bands to category option combinations"
+msgid "Import groups to category option combinations"
+msgstr "Import groups to category option combinations"
 
 msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation bands. "
-"Choose the category option combinations to import each band into."
+"Earth Engine data set \"Population age groups\" has disaggregation groups. "
+"Choose the category option combinations to import each group into."
 msgstr ""
-"Earth Engine data set \"Population age groups\" has disaggregation bands. "
-"Choose the category option combinations to import each band into."
+"Earth Engine data set \"Population age groups\" has disaggregation groups. "
+"Choose the category option combinations to import each group into."
 
-msgid "Band name"
-msgstr "Band name"
+msgid "Group name"
+msgstr "Group name"
 
-msgid "Band description"
-msgstr "Band description"
+msgid "Group description"
+msgstr "Group description"
 
 msgid "Category option combination"
 msgstr "Category option combination"
