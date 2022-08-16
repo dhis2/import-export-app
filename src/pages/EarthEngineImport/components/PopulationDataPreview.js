@@ -85,7 +85,7 @@ const PopulationDataPreview = ({ eeData }) => {
             </DataTableBody>
             <DataTableFoot>
                 <DataTableRow>
-                    <DataTableCell staticStyle>
+                    <DataTableCell staticStyle colSpan={3}>
                         <div>
                             <Pagination
                                 // disabled={fetching}
