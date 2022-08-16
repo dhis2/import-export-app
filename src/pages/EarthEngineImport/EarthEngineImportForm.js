@@ -5,10 +5,7 @@ import React, { useState, useContext } from 'react'
 import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
-import {
-    ALL_AGGREGATION_TYPES,
-    AggregationType,
-} from './components/AggregationType.js'
+import { ALL_AGGREGATION_TYPES } from './components/AggregationType.js'
 import { DataElements } from './components/DataElements.js'
 import { DataPreview } from './components/DataPreview.js'
 import { EarthEngineId } from './components/EarthEngineId.js'
@@ -21,13 +18,15 @@ import styles from './EarthEngineImportForm.module.css'
 import { onImport } from './form-helper.js'
 import { getPeriods, getAggregations } from './util/earthEngineHelper.js'
 import getEarthEngineConfig from './util/earthEngineLoader.js'
-import { POPULATION_AGE_GROUPS_DATASET_ID } from './util/earthEngines.js'
+import {
+    POPULATION_AGE_GROUPS_DATASET_ID,
+    getDefaultAggregation,
+} from './util/earthEngines.js'
 import {
     EARTH_ENGINE_ID,
     PERIOD,
     ORGANISATION_UNITS,
     ROUNDING,
-    AGGREGATION_TYPE,
     DATA_ELEMENT_ID,
     BAND_COCS,
     getFormValues,
@@ -63,18 +62,18 @@ const EarthEngineImportForm = () => {
             organisationUnits,
             period,
             rounding,
-            aggregationType,
             ...bandCocs
         } = getFormValues(formValues, [
             EARTH_ENGINE_ID,
             ORGANISATION_UNITS,
             PERIOD,
             ROUNDING,
-            AGGREGATION_TYPE,
             BAND_COCS,
         ])
 
         const getValueWithPrecision = getPrecisionFn(rounding)
+
+        const aggregationType = getDefaultAggregation(earthEngineId)
 
         setDoSubmit(false)
         setFetching(true)
@@ -232,7 +231,6 @@ const EarthEngineImportForm = () => {
                             <OrganisationUnits />
                             <h2>{i18n.t('Import setup')}</h2>
                             <Divider />
-                            <AggregationType />
                             <DataElements />
                             <MappingTable formChange={form.change} />
                             <Divider />

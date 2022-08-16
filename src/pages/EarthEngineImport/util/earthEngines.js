@@ -476,3 +476,10 @@ export const getEarthEngineConfigs = (eeIds) => {
 
     return getEarthEngineLayers().find((l) => l.datasetId === eeIds)
 }
+
+export const getDefaultAggregation = (eeId) => {
+    const defaultAggregations = getEarthEngineConfigs(eeId).defaultAggregations
+    return Array.isArray(defaultAggregations)
+        ? defaultAggregations[0]
+        : defaultAggregations
+}
