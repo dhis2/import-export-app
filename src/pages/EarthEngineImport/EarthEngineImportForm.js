@@ -22,6 +22,16 @@ import { onImport } from './form-helper.js'
 import { getPeriods, getAggregations } from './util/earthEngineHelper.js'
 import getEarthEngineConfig from './util/earthEngineLoader.js'
 import { POPULATION_AGE_GROUPS_DATASET_ID } from './util/earthEngines.js'
+import {
+    EARTH_ENGINE_ID,
+    PERIOD,
+    ORGANISATION_UNITS,
+    ROUNDING,
+    AGGREGATION_TYPE,
+    DATA_ELEMENT_ID,
+    BAND_COCS,
+    getFormValues,
+} from './util/getFormValues.js'
 import { getPrecisionFn } from './util/getPrecisionFn.js'
 
 const { Form, FormSpy } = ReactFinalForm
@@ -42,22 +52,28 @@ const EarthEngineImportForm = () => {
     const [requestFailedMessage, setRequestFailedMessage] = useState(null)
 
     const initialValues = {
-        rounding: defaultRoundingOption,
-        organisationUnits: [],
-        dataElement: null,
+        [ROUNDING]: defaultRoundingOption,
+        [ORGANISATION_UNITS]: [],
+        [DATA_ELEMENT_ID]: null,
     }
 
     const fetchEeData = async (formValues) => {
-        //TODO - extract fn to get the form values to avoid no-unused-vars all over the place
         const {
             earthEngineId,
             organisationUnits,
             period,
             rounding,
             aggregationType,
-            dataElement, //eslint-disable-line no-unused-vars
             ...bandCocs
-        } = formValues
+        } = getFormValues(formValues, [
+            EARTH_ENGINE_ID,
+            ORGANISATION_UNITS,
+            PERIOD,
+            ROUNDING,
+            AGGREGATION_TYPE,
+            BAND_COCS,
+        ])
+
         const getValueWithPrecision = getPrecisionFn(rounding)
 
         setDoSubmit(false)
@@ -139,15 +155,11 @@ const EarthEngineImportForm = () => {
 
     const previewIsAllowed = ({ valid, values, modifiedSinceLastPreview }) => {
         // there should be at least one band for Population Age groups
-        const {
-            earthEngineId,
-            organisationUnits, //eslint-disable-line no-unused-vars
-            period, //eslint-disable-line no-unused-vars
-            rounding, //eslint-disable-line no-unused-vars
-            aggregationType, //eslint-disable-line no-unused-vars
-            dataElement, //eslint-disable-line no-unused-vars
-            ...bandCocs
-        } = values
+
+        const { earthEngineId, ...bandCocs } = getFormValues(values, [
+            EARTH_ENGINE_ID,
+            BAND_COCS,
+        ])
 
         const bandsValid =
             earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
@@ -158,7 +170,7 @@ const EarthEngineImportForm = () => {
             ? modifiedSinceLastPreview
             : true
 
-        return valid && bandsValid && otherCheck //&& showPreview
+        return valid && bandsValid && otherCheck
     }
 
     const onImportInternal = onImport({

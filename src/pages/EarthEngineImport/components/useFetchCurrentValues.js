@@ -28,12 +28,7 @@ const fetchCurrentValues = async (url) => {
 
 const useFetchCurrentValues = () => {
     const { values } = useFormState()
-    const {
-        earthEngineId,
-        organisationUnits,
-        dataElement: dataElementId,
-        period,
-    } = values
+    const { earthEngineId, organisationUnits, dataElementId, period } = values
 
     const { dataElements } = useCachedDataQuery()
     const [currentValues, setCurrentValues] = useState([])

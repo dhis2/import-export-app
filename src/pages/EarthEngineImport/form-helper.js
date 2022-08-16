@@ -1,23 +1,24 @@
 // import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { genericErrorMessage } from '../../utils/helper.js'
 import { extractIdAndMessage } from '../../utils/xhr.js'
+import {
+    PERIOD,
+    DATA_ELEMENT_ID,
+    BAND_COCS,
+    getFormValues,
+} from './util/getFormValues.js'
 
 const isAsync = true
 
 const onImport =
     ({ engine, setProgress, addTask, setShowFullSummaryTask }) =>
     async (values) => {
-        const {
-            dryRun,
-            eeData,
-            period,
-            dataElement,
-            earthEngineId, //eslint-disable-line no-unused-vars
-            organisationUnits, //eslint-disable-line no-unused-vars
-            aggregationType, //eslint-disable-line no-unused-vars
-            rounding, //eslint-disable-line no-unused-vars
-            ...bandCocs
-        } = values
+        const { dryRun, eeData, ...rest } = values
+        const { dataElementId, period, ...bandCocs } = getFormValues(rest, [
+            PERIOD,
+            DATA_ELEMENT_ID,
+            BAND_COCS,
+        ])
 
         setProgress(true)
 
@@ -26,7 +27,7 @@ const onImport =
         if (Object.keys(bandCocs).length) {
             dataValues = eeData.map(({ ouId, bandId, value }) => {
                 return {
-                    dataElement,
+                    dataElement: dataElementId,
                     period,
                     orgUnit: ouId,
                     categoryOptionCombo: bandCocs[bandId],
@@ -36,7 +37,7 @@ const onImport =
         } else {
             dataValues = eeData.map(({ ouId, value }) => {
                 return {
-                    dataElement,
+                    dataElement: dataElementId,
                     period,
                     orgUnit: ouId,
                     value,

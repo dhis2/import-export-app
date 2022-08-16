@@ -3,27 +3,20 @@ import { ReactFinalForm, SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { StyledField } from '../../../components/index.js'
+import { EARTH_ENGINE_ID, PERIOD } from '../util/getFormValues.js'
 import { usePeriods } from './usePeriods.js'
 
 const { useField } = ReactFinalForm
 
 const Periods = ({ formChange }) => {
-    const { input } = useField('earthEngineId')
+    const { input } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = input
     const { validationText, periods } = usePeriods(earthEngineId)
 
-    // const setSelected = useCallback((val) => formChange('period', val), [form])
-
     useEffect(() => {
-        // console.log(
-        //     'earthEngineId changed, set period undefined',
-        //     earthEngineId
-        // )
-        // setSelected(undefined)
-        formChange('period', undefined)
+        formChange(PERIOD, undefined)
         if (periods.length === 1) {
-            formChange('period', periods[0].value)
-            // setSelected(periods[0].value)
+            formChange(PERIOD, periods[0].value)
         }
     }, [earthEngineId, periods, formChange])
 
@@ -33,7 +26,7 @@ const Periods = ({ formChange }) => {
         <div style={{ maxWidth: '200px' }}>
             <StyledField
                 component={SingleSelectFieldFF}
-                name="period"
+                name={PERIOD}
                 label={i18n.t('Period')}
                 options={periods}
                 dataTest="input-period-type"

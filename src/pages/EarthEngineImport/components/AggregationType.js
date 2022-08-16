@@ -3,6 +3,7 @@ import { ReactFinalForm, SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
 import { getEarthEngineConfigs } from '../util/earthEngines.js'
+import { AGGREGATION_TYPE, EARTH_ENGINE_ID } from '../util/getFormValues.js'
 
 const AGGREGATION_TYPE_SUM = 'sum'
 const AGGREGATION_TYPE_MIN = 'min'
@@ -54,14 +55,14 @@ export const getDefaultAggregation = (eeId) => {
 const { useField } = ReactFinalForm
 
 const AggregationType = () => {
-    const { input } = useField('earthEngineId')
+    const { input } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = input
 
     return (
         <div style={{ maxWidth: '200px' }}>
             <StyledField
                 component={SingleSelectFieldFF}
-                name="aggregationType"
+                name={AGGREGATION_TYPE}
                 label={i18n.t('Aggregation type')}
                 options={getAggregationOptions(earthEngineId)}
                 dataTest="input-aggregation-type"

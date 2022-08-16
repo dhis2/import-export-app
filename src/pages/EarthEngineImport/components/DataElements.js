@@ -3,6 +3,7 @@ import { SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
+import { DATA_ELEMENT_ID } from '../util/getFormValues.js'
 
 const DataElements = () => {
     const { dataElements } = useCachedDataQuery()
@@ -11,7 +12,7 @@ const DataElements = () => {
         <div style={{ maxWidth: '300px', width: '300px' }}>
             <StyledField
                 component={SingleSelectFieldFF}
-                name="dataElement"
+                name={DATA_ELEMENT_ID}
                 label={i18n.t('Data element')}
                 options={dataElements}
                 dataTest="input-data-elements"

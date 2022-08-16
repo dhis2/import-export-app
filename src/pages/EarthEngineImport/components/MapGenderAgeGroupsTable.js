@@ -18,26 +18,25 @@ import {
     getEarthEngineConfigs,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
+import {
+    EARTH_ENGINE_ID,
+    BAND_COCS,
+    DATA_ELEMENT_ID,
+    getFormValues,
+} from '../util/getFormValues.js'
 
-const { Field, useField, useFormState } = ReactFinalForm
+const { Field, useFormState } = ReactFinalForm
 
 const NO_BANDS = []
 
 const MappingTable = ({ formChange }) => {
     const { values } = useFormState()
     const { dataElements } = useCachedDataQuery()
-    const { input } = useField('dataElement')
-    const { value: dataElementId } = input
-    const {
-        earthEngineId,
-        dataElement, //eslint-disable-line no-unused-vars
-        organisationUnits, //eslint-disable-line no-unused-vars
-        rounding, //eslint-disable-line no-unused-vars
-        period, //eslint-disable-line no-unused-vars
-        aggregationType, //eslint-disable-line no-unused-vars
-        ...bandCocs
-    } = values
     const [cocs, setCocs] = useState([])
+    const { earthEngineId, dataElementId, ...bandCocs } = getFormValues(
+        values,
+        [EARTH_ENGINE_ID, DATA_ELEMENT_ID, BAND_COCS]
+    )
 
     const bands = useMemo(
         () => getEarthEngineConfigs(earthEngineId)?.bands || NO_BANDS,

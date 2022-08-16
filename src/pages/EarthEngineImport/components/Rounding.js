@@ -2,6 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
+import { ROUNDING } from '../util/getFormValues.js'
 
 const roundings = [
     {
@@ -44,7 +45,7 @@ const Rounding = () => (
     <div style={{ maxWidth: '300px' }}>
         <StyledField
             component={SingleSelectFieldFF}
-            name="rounding"
+            name={ROUNDING}
             label={i18n.t('Value rounding')}
             options={roundings}
             dataTest="input-rounding"

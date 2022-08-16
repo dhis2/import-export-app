@@ -23,9 +23,12 @@ const getCocMap = (eeId, values) => {
 
 const useCatOptComboSelections = () => {
     const { values } = useFormState()
-    const eeId = values.earthEngineId
+    const earthEngineId = values.earthEngineId
 
-    const bandCocMap = useMemo(() => getCocMap(eeId, values), [eeId, values])
+    const bandCocMap = useMemo(
+        () => getCocMap(earthEngineId, values),
+        [earthEngineId, values]
+    )
 
     return bandCocMap
 }

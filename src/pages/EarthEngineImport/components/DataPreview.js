@@ -7,6 +7,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import { POPULATION_DATASET_ID } from '../util/earthEngines.js'
+import { EARTH_ENGINE_ID } from '../util/getFormValues.js'
 import { PopulationAgegroupsDataPreview } from './PopulationAgegroupsDataPreview.js'
 import { PopulationDataPreview } from './PopulationDataPreview.js'
 import styles from './styles/DataPreview.module.css'
@@ -14,7 +15,7 @@ import styles from './styles/DataPreview.module.css'
 const { useField } = ReactFinalForm
 
 const DataPreview = ({ modifiedSinceLastPreview, fetching, eeData }) => {
-    const { input: eeInput } = useField('earthEngineId')
+    const { input: eeInput } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = eeInput
 
     if (modifiedSinceLastPreview) {

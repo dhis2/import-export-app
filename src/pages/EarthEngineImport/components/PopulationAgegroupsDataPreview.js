@@ -13,6 +13,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
+import { DATA_ELEMENT_ID } from '../util/getFormValues.js'
 import styles from './styles/DataPreview.module.css'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
@@ -22,7 +23,7 @@ const DEFAULT_ROWS_PER_PAGE = 10
 const { useField } = ReactFinalForm
 
 const PopulationAgegroupsDataPreview = ({ eeData }) => {
-    const { input } = useField('dataElement')
+    const { input } = useField(DATA_ELEMENT_ID)
     const { value: dataElementId } = input
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()

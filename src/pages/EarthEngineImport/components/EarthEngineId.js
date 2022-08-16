@@ -7,6 +7,7 @@ import {
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
+import { EARTH_ENGINE_ID } from '../util/getFormValues.js'
 
 const eeList = getEarthEngineConfigs([
     POPULATION_AGE_GROUPS_DATASET_ID,
@@ -20,7 +21,7 @@ const EarthEngineId = () => (
     <div style={{ maxWidth: '350px' }}>
         <StyledField
             component={SingleSelectFieldFF}
-            name="earthEngineId"
+            name={EARTH_ENGINE_ID}
             label={i18n.t('Earth Engine data set')}
             options={eeList}
             dataTest="input-earthengine-id"
