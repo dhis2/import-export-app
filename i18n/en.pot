@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-16T12:51:19.303Z\n"
-"PO-Revision-Date: 2022-08-16T12:51:19.303Z\n"
+"POT-Creation-Date: 2022-08-16T16:19:04.296Z\n"
+"PO-Revision-Date: 2022-08-16T16:19:04.296Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -844,6 +844,12 @@ msgstr "Aggregation type"
 
 msgid "How the values will be aggregated for output and analysis."
 msgstr "How the values will be aggregated for output and analysis."
+
+msgid "Use associated geometry"
+msgstr "Use associated geometry"
+
+msgid "Some kind of help text"
+msgstr "Some kind of help text"
 
 msgid "Data element"
 msgstr "Data element"

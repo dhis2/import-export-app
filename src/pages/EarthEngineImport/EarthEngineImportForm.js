@@ -6,6 +6,7 @@ import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { ALL_AGGREGATION_TYPES } from './components/AggregationType.js'
+import { AssociatedGeometry } from './components/AssociatedGeometry.js'
 import { DataElements } from './components/DataElements.js'
 import { DataPreview } from './components/DataPreview.js'
 import { EarthEngineId } from './components/EarthEngineId.js'
@@ -26,6 +27,7 @@ import {
     EARTH_ENGINE_ID,
     PERIOD,
     ORGANISATION_UNITS,
+    ASSOCIATED_GEOMETRY,
     ROUNDING,
     DATA_ELEMENT_ID,
     BAND_COCS,
@@ -60,12 +62,14 @@ const EarthEngineImportForm = () => {
         const {
             earthEngineId,
             organisationUnits,
+            associatedGeometry,
             period,
             rounding,
             ...bandCocs
         } = getFormValues(formValues, [
             EARTH_ENGINE_ID,
             ORGANISATION_UNITS,
+            ASSOCIATED_GEOMETRY,
             PERIOD,
             ROUNDING,
             BAND_COCS,
@@ -80,6 +84,7 @@ const EarthEngineImportForm = () => {
         setRequestFailedMessage(null)
 
         let data = {}
+        let config = {}
         try {
             const periods = await getPeriods(earthEngineId, engine)
 
@@ -88,13 +93,14 @@ const EarthEngineImportForm = () => {
                 rows: organisationUnits,
                 filter: periods.filter((p) => period === p.name),
                 aggregationType: [aggregationType],
+                coordinateField: associatedGeometry,
             }
 
             if (Object.keys(bandCocs).length) {
                 eeOptions.band = Object.keys(bandCocs)
             }
 
-            const config = await getEarthEngineConfig(eeOptions, engine)
+            config = await getEarthEngineConfig(eeOptions, engine)
 
             data = await getAggregations(engine, config)
         } catch (error) {
@@ -103,24 +109,45 @@ const EarthEngineImportForm = () => {
             setFetching(false)
             const message = error.message || error
 
-            let msg =
+            let msg = i18n.t(
                 'An error occurred while trying to fetch Earth Engine data'
+            )
 
             if (message.includes('Output of image computation is too large')) {
-                msg =
+                msg = i18n.t(
                     'The Earth Engine data set is too large. Try reducing the number of groups or organisation units'
+                )
+            } else if (
+                message.includes(
+                    'Dimension is present in query without any valid dimension options: `ou`'
+                )
+            ) {
+                msg = i18n.t('The organisation units selection is invalid')
+            } else if (message.length) {
+                msg = msg.concat(`: ${message}`)
             }
             setRequestFailedMessage(msg)
 
             return
         }
 
+        const ous =
+            config.data?.map((d) => {
+                const { id, name, parentName } = d.properties
+                return {
+                    id,
+                    name,
+                    parentName,
+                }
+            }) || []
+
         const structuredData = Object.entries(data).reduce(
             (acc, [ouId, valueSet]) => {
                 if (Object.keys(bandCocs).length) {
                     Object.entries(valueSet).forEach(([bandId, rawValue]) => {
+                        // TODO add comment explaining the next line
                         if (!ALL_AGGREGATION_TYPES.includes(bandId)) {
-                            const ouName = organisationUnits.find(
+                            const ouName = ous.find(
                                 (ou) => ou.id === ouId
                             )?.name
                             acc.push({
@@ -132,9 +159,7 @@ const EarthEngineImportForm = () => {
                         }
                     })
                 } else {
-                    const ouName = organisationUnits.find(
-                        (ou) => ou.id === ouId
-                    )?.name
+                    const ouName = ous.find((ou) => ou.id === ouId)?.name
                     acc.push({
                         ouId,
                         ouName,
@@ -229,6 +254,7 @@ const EarthEngineImportForm = () => {
                             <h2>{i18n.t('Organisation units')}</h2>
                             <Divider />
                             <OrganisationUnits />
+                            <AssociatedGeometry />
                             <h2>{i18n.t('Import setup')}</h2>
                             <Divider />
                             <DataElements />

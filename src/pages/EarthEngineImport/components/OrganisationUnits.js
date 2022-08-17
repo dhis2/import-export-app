@@ -66,10 +66,15 @@ Wrapper.propTypes = {
     }).isRequired,
 }
 
-const AT_LEAST_ONE_ORG_VALIDATOR = (selectedOrgUnits) =>
-    selectedOrgUnits.length == 0
+const AT_LEAST_ONE_ORG_VALIDATOR = (selectedOrgUnits) => {
+    // confirm that there is at least one org unit from the tree, not just level
+    const realOrgUnits =
+        selectedOrgUnits.find((ou) => ou.id.indexOf('LEVEL') === -1) || []
+
+    return realOrgUnits.length == 0
         ? i18n.t('At least one organisation unit must be selected')
         : undefined
+}
 
 const OrganisationUnits = () => {
     const validator = composeValidators(hasValue, AT_LEAST_ONE_ORG_VALIDATOR)

@@ -37,7 +37,9 @@ const useFetchCurrentValues = () => {
     // TODO there could be a lot of dataElements. Possible to make this more efficient
     // by fetching more info about the dataElement?
     const dataElement = dataElements.find((el) => el.id === dataElementId)
-    const dataElementGroupId = dataElement?.dataElementGroups[0].id
+    // TODO - what if no dataElementGroup has been set up? probably an alert with a warning that
+    // current values couldn't be fetched
+    const dataElementGroupId = dataElement?.dataElementGroups[0]?.id
 
     useEffect(() => {
         const fetchCurrVals = async (url) => {

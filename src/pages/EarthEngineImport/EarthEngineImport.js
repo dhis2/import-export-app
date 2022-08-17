@@ -1,4 +1,5 @@
 import React from 'react'
+import { NO_ASSOCIATED_GEOMETRY } from './components/AssociatedGeometry.js'
 import { EarthEngineImportForm } from './EarthEngineImportForm.js'
 import { CachedDataQueryProvider } from './util/CachedQueryProvider.js'
 
@@ -19,9 +20,24 @@ const query = {
             paging: false,
         },
     },
+    associatedGeometry: {
+        resource: 'attributes',
+        params: {
+            fields: 'id,displayName~rename(name)',
+            filter: [
+                'valueType:eq:GEOJSON',
+                'organisationUnitAttribute:eq:true',
+            ],
+            paging: false,
+        },
+    },
 }
 
-const providerDataTransformation = ({ rootOrgUnits, dataElements }) => {
+const providerDataTransformation = ({
+    rootOrgUnits,
+    dataElements,
+    associatedGeometry,
+}) => {
     return {
         rootOrgUnits: rootOrgUnits.organisationUnits?.map((ou) => ou.id) || [],
         dataElements: dataElements.dataElements.map((de) => {
@@ -31,6 +47,17 @@ const providerDataTransformation = ({ rootOrgUnits, dataElements }) => {
                 label: de.name,
             }
         }),
+        associatedGeometry: [
+            { label: 'None', value: NO_ASSOCIATED_GEOMETRY },
+        ].concat(
+            associatedGeometry.attributes.map((ag) => {
+                return {
+                    ...ag,
+                    value: ag.id,
+                    label: ag.name,
+                }
+            })
+        ),
     }
 }
 

@@ -1,16 +1,17 @@
-// import i18n from '@dhis2/d2-i18n'
+import i18n from '@dhis2/d2-i18n'
 import {
     defaultEarthEngineOptions,
     getEarthEngineOptions,
 } from '@dhis2/maps-gl/'
+import { NO_ASSOCIATED_GEOMETRY } from '../components/AssociatedGeometry.js'
 import { getEarthEngineConfigs } from './earthEngines.js'
-// import { defaultEarthEngineOptions, getEarthEngineOptions } from './mapsGl.js'
 import { toGeoJson } from './toGeoJson.js'
 
-const getGeoFeaturesQuery = (ouIds) => ({
+const getGeoFeaturesQuery = (ouIds, coordinateField) => ({
     resource: 'geoFeatures',
     params: {
         ou: ouIds,
+        coordinateField,
     },
 })
 
@@ -24,14 +25,26 @@ const getEarthEngineConfig = async (config, engine) => {
             return previousValue.concat(`${currentValue};`)
         }, 'ou:')
 
-        const query = getGeoFeaturesQuery(ouIdsString)
-        const geoFeatures = await engine.query({ geoFeatures: query })
-        features = toGeoJson(geoFeatures.geoFeatures)
+        const coordinateField =
+            config.coordinateField !== NO_ASSOCIATED_GEOMETRY
+                ? config.coordinateField
+                : undefined
 
-        // TODO handle errors from geofeatures query
-        // if (!features.length) {
-        //     //handle error/feedback to user
-        // }
+        const query = getGeoFeaturesQuery(ouIdsString, coordinateField)
+
+        const geoFeatures = await engine.query({ geoFeatures: query })
+        // only polygons, no points
+        features = toGeoJson(
+            geoFeatures.geoFeatures.filter((gf) => gf.ty === 2)
+        )
+
+        if (!features.length) {
+            throw new Error(
+                i18n.t('No geofeatures found for selected organisation units')
+            )
+        }
+    } else {
+        throw new Error(i18n.t('No organisation units have been selected'))
     }
 
     const dataset = getEarthEngineConfigs(config.id)

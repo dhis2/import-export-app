@@ -24,6 +24,7 @@ const PopulationDataPreview = ({ eeData }) => {
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
 
     useEffect(() => {
+        // TODO - currentValues will always exist - maybe just an empty array though
         if (currentValues && eeData) {
             const newArr = eeData.map(({ ouId, ouName, value }) => {
                 const current = currentValues.find((v) => v.orgUnit === ouId)
@@ -85,7 +86,7 @@ const PopulationDataPreview = ({ eeData }) => {
             </DataTableBody>
             <DataTableFoot>
                 <DataTableRow>
-                    <DataTableCell staticStyle colSpan={3}>
+                    <DataTableCell staticStyle colSpan={'3'}>
                         <div>
                             <Pagination
                                 // disabled={fetching}

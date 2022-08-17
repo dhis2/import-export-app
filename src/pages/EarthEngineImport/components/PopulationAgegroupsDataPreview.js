@@ -130,7 +130,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
             </DataTableBody>
             <DataTableFoot>
                 <DataTableRow>
-                    <DataTableCell staticStyle colSpan={4}>
+                    <DataTableCell staticStyle colSpan={'4'}>
                         <div>
                             <Pagination
                                 // disabled={fetching}
