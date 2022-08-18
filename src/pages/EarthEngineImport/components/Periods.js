@@ -11,7 +11,7 @@ const { useField } = ReactFinalForm
 const Periods = ({ formChange }) => {
     const { input } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = input
-    const { validationText, periods } = usePeriods(earthEngineId)
+    const { loading, periods } = usePeriods(earthEngineId)
 
     useEffect(() => {
         formChange(PERIOD, undefined)
@@ -19,8 +19,6 @@ const Periods = ({ formChange }) => {
             formChange(PERIOD, periods[0].value)
         }
     }, [earthEngineId, periods, formChange])
-
-    // TODO - show spinner while periods are loading
 
     return (
         <div style={{ maxWidth: '200px' }}>
@@ -33,7 +31,9 @@ const Periods = ({ formChange }) => {
                 helpText={i18n.t(
                     'Data from Earth Engine will be imported for this period.'
                 )}
-                validationText={validationText}
+                loading={loading}
+                loadingText={i18n.t('Loading periods')}
+                empty={i18n.t('No periods found')}
                 filled
                 validate={hasValue}
             />
