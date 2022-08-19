@@ -1,7 +1,7 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider, Button } from '@dhis2/ui'
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef } from 'react'
 import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
@@ -51,6 +51,8 @@ const EarthEngineImportForm = () => {
     const [fetching, setFetching] = useState(false)
     const [doSubmit, setDoSubmit] = useState(false)
     const [requestFailedMessage, setRequestFailedMessage] = useState(null)
+
+    const hiddenTopElRef = useRef(null)
 
     const initialValues = {
         [ROUNDING]: defaultRoundingOption,
@@ -194,11 +196,16 @@ const EarthEngineImportForm = () => {
         return valid && bandsValid && otherCheck
     }
 
+    const wrappedSetShowFullSummaryTask = (val) => {
+        setShowFullSummaryTask(val)
+        hiddenTopElRef?.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+
     const onImportInternal = onImport({
         engine,
         setProgress,
         addTask,
-        setShowFullSummaryTask,
+        setShowFullSummaryTask: wrappedSetShowFullSummaryTask,
     })
 
     const onSubmit = (values) => {
@@ -224,99 +231,102 @@ const EarthEngineImportForm = () => {
     }
 
     return (
-        <Page
-            title={i18n.t('Earth Engine import')}
-            desc={i18n.t(
-                'Import Earth Engine data to data sets and data elements'
-            )}
-            icon={<DataIcon />}
-            loading={progress}
-            dataTest="page-import-earthengine"
-            summaryTask={getNewestTask(earthengineTasks)}
-            showFullSummaryTask={showFullSummaryTask}
-            showFileDetails={false}
-        >
-            <Form
-                onSubmit={onSubmit}
-                initialValues={initialValues}
-                keepDirtyOnReinitialize
-                render={({ handleSubmit, form, submitError }) => (
-                    <form onSubmit={handleSubmit}>
-                        <div className={styles.wrapper}>
-                            <h2>{i18n.t('Earth Engine source')}</h2>
-                            <Divider />
-                            <EarthEngineId />
-                            <Periods formChange={form.change} />
-                            <Rounding />
-                            <h2>{i18n.t('Organisation units')}</h2>
-                            <Divider />
-                            <OrganisationUnits />
-                            <AssociatedGeometry />
-                            <h2>{i18n.t('Import setup')}</h2>
-                            <Divider />
-                            <DataElements />
-                            <MappingTable formChange={form.change} />
-                            <Divider />
-                            <FormSpy
-                                subscription={{
-                                    values: true,
-                                    valid: true,
-                                    modifiedSinceLastSubmit: true,
-                                }}
-                            >
-                                {({
-                                    valid,
-                                    values,
-                                    modifiedSinceLastSubmit,
-                                }) => (
-                                    <Button
-                                        primary
-                                        type="submit"
-                                        disabled={
-                                            !previewIsAllowed({
-                                                valid,
-                                                values,
-                                                modifiedSinceLastPreview:
-                                                    modifiedSinceLastSubmit,
-                                            })
-                                        }
-                                        onClick={() => fetchEeData(values)}
-                                    >
-                                        {i18n.t('Preview before import')}
-                                    </Button>
-                                )}
-                            </FormSpy>
-                            <FormSpy
-                                subscription={{
-                                    modifiedSinceLastSubmit: true,
-                                }}
-                            >
-                                {({ modifiedSinceLastSubmit }) => (
-                                    <>
-                                        <DataPreview
-                                            modifiedSinceLastPreview={
-                                                modifiedSinceLastSubmit
-                                            }
-                                            fetching={fetching}
-                                            eeData={eeData}
-                                        />
-                                        <SubmitButtons
-                                            form={form}
-                                            modifiedSinceLastPreview={
-                                                modifiedSinceLastSubmit
-                                            }
-                                            fetching={fetching}
-                                            hasData={!!eeData.length}
-                                        />
-                                    </>
-                                )}
-                            </FormSpy>
-                            <FormAlerts alerts={getAlerts(submitError)} />
-                        </div>
-                    </form>
+        <>
+            <div ref={hiddenTopElRef} className={styles.hiddenTopElement}></div>
+            <Page
+                title={i18n.t('Earth Engine import')}
+                desc={i18n.t(
+                    'Import Earth Engine data to data sets and data elements'
                 )}
-            ></Form>
-        </Page>
+                icon={<DataIcon />}
+                loading={progress}
+                dataTest="page-import-earthengine"
+                summaryTask={getNewestTask(earthengineTasks)}
+                showFullSummaryTask={showFullSummaryTask}
+                showFileDetails={false}
+            >
+                <Form
+                    onSubmit={onSubmit}
+                    initialValues={initialValues}
+                    keepDirtyOnReinitialize
+                    render={({ handleSubmit, form, submitError }) => (
+                        <form onSubmit={handleSubmit}>
+                            <div className={styles.wrapper}>
+                                <h2>{i18n.t('Earth Engine source')}</h2>
+                                <Divider />
+                                <EarthEngineId />
+                                <Periods formChange={form.change} />
+                                <Rounding />
+                                <h2>{i18n.t('Organisation units')}</h2>
+                                <Divider />
+                                <OrganisationUnits />
+                                <AssociatedGeometry />
+                                <h2>{i18n.t('Import setup')}</h2>
+                                <Divider />
+                                <DataElements />
+                                <MappingTable formChange={form.change} />
+                                <Divider />
+                                <FormSpy
+                                    subscription={{
+                                        values: true,
+                                        valid: true,
+                                        modifiedSinceLastSubmit: true,
+                                    }}
+                                >
+                                    {({
+                                        valid,
+                                        values,
+                                        modifiedSinceLastSubmit,
+                                    }) => (
+                                        <Button
+                                            primary
+                                            type="submit"
+                                            disabled={
+                                                !previewIsAllowed({
+                                                    valid,
+                                                    values,
+                                                    modifiedSinceLastPreview:
+                                                        modifiedSinceLastSubmit,
+                                                })
+                                            }
+                                            onClick={() => fetchEeData(values)}
+                                        >
+                                            {i18n.t('Preview before import')}
+                                        </Button>
+                                    )}
+                                </FormSpy>
+                                <FormSpy
+                                    subscription={{
+                                        modifiedSinceLastSubmit: true,
+                                    }}
+                                >
+                                    {({ modifiedSinceLastSubmit }) => (
+                                        <>
+                                            <DataPreview
+                                                modifiedSinceLastPreview={
+                                                    modifiedSinceLastSubmit
+                                                }
+                                                fetching={fetching}
+                                                eeData={eeData}
+                                            />
+                                            <SubmitButtons
+                                                form={form}
+                                                modifiedSinceLastPreview={
+                                                    modifiedSinceLastSubmit
+                                                }
+                                                fetching={fetching}
+                                                hasData={!!eeData.length}
+                                            />
+                                        </>
+                                    )}
+                                </FormSpy>
+                                <FormAlerts alerts={getAlerts(submitError)} />
+                            </div>
+                        </form>
+                    )}
+                ></Form>
+            </Page>
+        </>
     )
 }
 
