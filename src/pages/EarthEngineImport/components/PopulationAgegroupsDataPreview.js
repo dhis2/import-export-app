@@ -11,7 +11,7 @@ import {
     ReactFinalForm,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { DATA_ELEMENT_ID } from '../util/getFormValues.js'
 import styles from './styles/DataPreview.module.css'
@@ -32,6 +32,8 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
     const [pageNo, setPageNo] = useState(1)
     const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
+
+    const tableRef = useRef(null)
 
     useEffect(() => {
         if (currentValues && eeData) {
@@ -61,6 +63,9 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
             })
 
             setTableData(newArr)
+            tableRef?.current?.scrollIntoView({
+                behavior: 'smooth',
+            })
         }
     }, [currentValues, eeData, dataElementId, dataElements, bandCocMap])
 
@@ -88,71 +93,89 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
     const getLastPageLength = () => tableData.length % rowsPerPage
 
     return (
-        <DataTable dense className={styles.table}>
-            <DataTableHead>
-                <DataTableRow>
-                    <DataTableColumnHeader dense>
-                        {i18n.t('Org Unit')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader dense>
-                        {i18n.t('Category option combo')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader dense className={styles.right}>
-                        {i18n.t('Current value')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader dense className={styles.right}>
-                        {i18n.t('New value')}
-                    </DataTableColumnHeader>
-                </DataTableRow>
-            </DataTableHead>
-            <DataTableBody>
-                {visibleRows.map(
-                    (
-                        { ouId, ouName, categoryOptionCombo, value, current },
-                        i
-                    ) => {
-                        return (
-                            <DataTableRow key={`${ouId}-${i}`}>
-                                <DataTableCell dense>{ouName}</DataTableCell>
-                                <DataTableCell dense>
-                                    {categoryOptionCombo}
-                                </DataTableCell>
-                                <DataTableCell dense className={styles.current}>
-                                    {current || ''}
-                                </DataTableCell>
-                                <DataTableCell dense className={styles.right}>
-                                    {value}
-                                </DataTableCell>
-                            </DataTableRow>
-                        )
-                    }
-                )}
-            </DataTableBody>
-            <DataTableFoot>
-                <DataTableRow>
-                    <DataTableCell staticStyle colSpan={'4'}>
-                        <div>
-                            <Pagination
-                                // disabled={fetching}
-                                page={pageNo}
-                                isLastPage={isLastPage()}
-                                onPageChange={setPageNo}
-                                onPageSizeChange={updateTable}
-                                pageSize={rowsPerPage}
-                                pageSizeSelectText={i18n.t(
-                                    'Select rows per page'
-                                )}
-                                total={tableData.length}
-                                pageLength={
-                                    isLastPage() ? getLastPageLength() : null
-                                }
-                                pageCount={getNumPages()}
-                            />
-                        </div>
-                    </DataTableCell>
-                </DataTableRow>
-            </DataTableFoot>
-        </DataTable>
+        <div ref={tableRef}>
+            <DataTable dense className={styles.table}>
+                <DataTableHead>
+                    <DataTableRow>
+                        <DataTableColumnHeader dense>
+                            {i18n.t('Org Unit')}
+                        </DataTableColumnHeader>
+                        <DataTableColumnHeader dense>
+                            {i18n.t('Category option combo')}
+                        </DataTableColumnHeader>
+                        <DataTableColumnHeader dense className={styles.right}>
+                            {i18n.t('Current value')}
+                        </DataTableColumnHeader>
+                        <DataTableColumnHeader dense className={styles.right}>
+                            {i18n.t('New value')}
+                        </DataTableColumnHeader>
+                    </DataTableRow>
+                </DataTableHead>
+                <DataTableBody>
+                    {visibleRows.map(
+                        (
+                            {
+                                ouId,
+                                ouName,
+                                categoryOptionCombo,
+                                value,
+                                current,
+                            },
+                            i
+                        ) => {
+                            return (
+                                <DataTableRow key={`${ouId}-${i}`}>
+                                    <DataTableCell dense>
+                                        {ouName}
+                                    </DataTableCell>
+                                    <DataTableCell dense>
+                                        {categoryOptionCombo}
+                                    </DataTableCell>
+                                    <DataTableCell
+                                        dense
+                                        className={styles.current}
+                                    >
+                                        {current || ''}
+                                    </DataTableCell>
+                                    <DataTableCell
+                                        dense
+                                        className={styles.right}
+                                    >
+                                        {value}
+                                    </DataTableCell>
+                                </DataTableRow>
+                            )
+                        }
+                    )}
+                </DataTableBody>
+                <DataTableFoot>
+                    <DataTableRow>
+                        <DataTableCell staticStyle colSpan={'4'}>
+                            <div>
+                                <Pagination
+                                    // disabled={fetching}
+                                    page={pageNo}
+                                    isLastPage={isLastPage()}
+                                    onPageChange={setPageNo}
+                                    onPageSizeChange={updateTable}
+                                    pageSize={rowsPerPage}
+                                    pageSizeSelectText={i18n.t(
+                                        'Select rows per page'
+                                    )}
+                                    total={tableData.length}
+                                    pageLength={
+                                        isLastPage()
+                                            ? getLastPageLength()
+                                            : null
+                                    }
+                                    pageCount={getNumPages()}
+                                />
+                            </div>
+                        </DataTableCell>
+                    </DataTableRow>
+                </DataTableFoot>
+            </DataTable>
+        </div>
     )
 }
 

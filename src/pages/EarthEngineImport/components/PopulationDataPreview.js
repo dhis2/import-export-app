@@ -10,7 +10,7 @@ import {
     Pagination,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
@@ -22,6 +22,7 @@ const PopulationDataPreview = ({ eeData }) => {
     const { currentValues } = useFetchCurrentValues()
     const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
+    const tableRef = useRef(null)
 
     useEffect(() => {
         // TODO - currentValues will always exist - maybe just an empty array though
@@ -33,6 +34,9 @@ const PopulationDataPreview = ({ eeData }) => {
             })
 
             setTableData(newArr)
+            tableRef?.current?.scrollIntoView({
+                behavior: 'smooth',
+            })
         }
     }, [currentValues, eeData])
 
@@ -55,60 +59,64 @@ const PopulationDataPreview = ({ eeData }) => {
     const getLastPageLength = () => tableData.length % rowsPerPage
 
     return (
-        <DataTable dense className={styles.table}>
-            <DataTableHead>
-                <DataTableRow>
-                    <DataTableColumnHeader dense>
-                        {i18n.t('Org Unit')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader dense className={styles.right}>
-                        {i18n.t('Current value')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader dense className={styles.right}>
-                        {i18n.t('New value')}
-                    </DataTableColumnHeader>
-                </DataTableRow>
-            </DataTableHead>
-            <DataTableBody>
-                {visibleRows.map(({ ouId, ouName, value, current }) => {
-                    return (
-                        <DataTableRow key={ouId}>
-                            <DataTableCell dense>{ouName}</DataTableCell>
-                            <DataTableCell dense className={styles.current}>
-                                {current || ''}
-                            </DataTableCell>
-                            <DataTableCell dense className={styles.right}>
-                                {value}
-                            </DataTableCell>
-                        </DataTableRow>
-                    )
-                })}
-            </DataTableBody>
-            <DataTableFoot>
-                <DataTableRow>
-                    <DataTableCell staticStyle colSpan={'3'}>
-                        <div>
-                            <Pagination
-                                // disabled={fetching}
-                                page={pageNo}
-                                isLastPage={isLastPage()}
-                                onPageChange={setPageNo}
-                                onPageSizeChange={setRowsPerPage}
-                                pageSize={rowsPerPage}
-                                pageSizeSelectText={i18n.t(
-                                    'Select rows per page'
-                                )}
-                                total={tableData.length}
-                                pageLength={
-                                    isLastPage() ? getLastPageLength() : null
-                                }
-                                pageCount={getNumPages()}
-                            />
-                        </div>
-                    </DataTableCell>
-                </DataTableRow>
-            </DataTableFoot>
-        </DataTable>
+        <div ref={tableRef}>
+            <DataTable dense className={styles.table}>
+                <DataTableHead>
+                    <DataTableRow>
+                        <DataTableColumnHeader dense>
+                            {i18n.t('Org Unit')}
+                        </DataTableColumnHeader>
+                        <DataTableColumnHeader dense className={styles.right}>
+                            {i18n.t('Current value')}
+                        </DataTableColumnHeader>
+                        <DataTableColumnHeader dense className={styles.right}>
+                            {i18n.t('New value')}
+                        </DataTableColumnHeader>
+                    </DataTableRow>
+                </DataTableHead>
+                <DataTableBody>
+                    {visibleRows.map(({ ouId, ouName, value, current }) => {
+                        return (
+                            <DataTableRow key={ouId}>
+                                <DataTableCell dense>{ouName}</DataTableCell>
+                                <DataTableCell dense className={styles.current}>
+                                    {current || ''}
+                                </DataTableCell>
+                                <DataTableCell dense className={styles.right}>
+                                    {value}
+                                </DataTableCell>
+                            </DataTableRow>
+                        )
+                    })}
+                </DataTableBody>
+                <DataTableFoot>
+                    <DataTableRow>
+                        <DataTableCell staticStyle colSpan={'3'}>
+                            <div>
+                                <Pagination
+                                    // disabled={fetching}
+                                    page={pageNo}
+                                    isLastPage={isLastPage()}
+                                    onPageChange={setPageNo}
+                                    onPageSizeChange={setRowsPerPage}
+                                    pageSize={rowsPerPage}
+                                    pageSizeSelectText={i18n.t(
+                                        'Select rows per page'
+                                    )}
+                                    total={tableData.length}
+                                    pageLength={
+                                        isLastPage()
+                                            ? getLastPageLength()
+                                            : null
+                                    }
+                                    pageCount={getNumPages()}
+                                />
+                            </div>
+                        </DataTableCell>
+                    </DataTableRow>
+                </DataTableFoot>
+            </DataTable>
+        </div>
     )
 }
 

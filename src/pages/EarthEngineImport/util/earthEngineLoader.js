@@ -1,8 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-import {
-    defaultEarthEngineOptions,
-    getEarthEngineOptions,
-} from '@dhis2/maps-gl/'
 import { NO_ASSOCIATED_GEOMETRY } from '../components/AssociatedGeometry.js'
 import { getEarthEngineConfigs } from './earthEngines.js'
 import { toGeoJson } from './toGeoJson.js'
@@ -15,9 +11,25 @@ const getGeoFeaturesQuery = (ouIds, coordinateField) => ({
     },
 })
 
+const earthEngineOptions = [
+    'format',
+    'aggregationType',
+    'band',
+    'bandReducer',
+    'buffer',
+    'data',
+    'datasetId',
+    'filter',
+    'legend',
+    'mask',
+    'methods',
+    'mosaic',
+    'params',
+]
+
 // Returns a promise
 const getEarthEngineConfig = async (config, engine) => {
-    const orgUnitIds = config.rows.map((row) => row.id)
+    const orgUnitIds = config.organisationUnits.map((ou) => ou.id)
     let features
 
     if (orgUnitIds && orgUnitIds.length) {
@@ -52,12 +64,23 @@ const getEarthEngineConfig = async (config, engine) => {
     const data =
         Array.isArray(features) && features.length ? features : undefined
 
-    return getEarthEngineOptions({
-        ...defaultEarthEngineOptions,
+    const cfg = {
         ...dataset,
-        ...config,
+        aggregationType: [config.aggregationType],
+        filter: config.periods.filter((p) => config.period === p.name),
+        band:
+            Object.keys(config.bandCocs).length && Object.keys(config.bandCocs),
         data,
-    })
+    }
+
+    const options = Object.keys(cfg)
+        .filter((option) => earthEngineOptions.includes(option))
+        .reduce((obj, key) => {
+            obj[key] = cfg[key]
+            return obj
+        }, {})
+
+    return options
 }
 
 export default getEarthEngineConfig

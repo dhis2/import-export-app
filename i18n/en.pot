@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-16T16:19:04.296Z\n"
-"PO-Revision-Date: 2022-08-16T16:19:04.296Z\n"
+"POT-Creation-Date: 2022-08-19T08:56:43.833Z\n"
+"PO-Revision-Date: 2022-08-19T08:56:43.833Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -803,6 +803,19 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
 
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr "An error occurred while trying to fetch Earth Engine data"
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+msgstr ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+
+msgid "The organisation units selection is invalid"
+msgstr "The organisation units selection is invalid"
+
 msgid "Import Earth Engine data to data sets and data elements"
 msgstr "Import Earth Engine data to data sets and data elements"
 
@@ -894,6 +907,12 @@ msgstr "Period"
 msgid "Data from Earth Engine will be imported for this period."
 msgstr "Data from Earth Engine will be imported for this period."
 
+msgid "Loading periods"
+msgstr "Loading periods"
+
+msgid "No periods found"
+msgstr "No periods found"
+
 msgid "Org Unit"
 msgstr "Org Unit"
 
@@ -936,9 +955,6 @@ msgstr "Round to 6 decimal places"
 msgid "Value rounding"
 msgstr "Value rounding"
 
-msgid "Something went wrong when loading the Earth Engine periods"
-msgstr "Something went wrong when loading the Earth Engine periods"
-
 msgid "This app could not retrieve required data."
 msgstr "This app could not retrieve required data."
 
@@ -954,6 +970,12 @@ msgid ""
 msgstr ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
+
+msgid "No geofeatures found for selected organisation units"
+msgstr "No geofeatures found for selected organisation units"
+
+msgid "No organisation units have been selected"
+msgstr "No organisation units have been selected"
 
 msgid "Population"
 msgstr "Population"

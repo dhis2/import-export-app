@@ -90,18 +90,15 @@ const EarthEngineImportForm = () => {
 
             const eeOptions = {
                 id: earthEngineId,
-                rows: organisationUnits,
-                filter: periods.filter((p) => period === p.name),
-                aggregationType: [aggregationType],
+                organisationUnits,
+                period,
+                periods,
+                aggregationType,
                 coordinateField: associatedGeometry,
-            }
-
-            if (Object.keys(bandCocs).length) {
-                eeOptions.band = Object.keys(bandCocs)
+                bandCocs,
             }
 
             config = await getEarthEngineConfig(eeOptions, engine)
-
             data = await getAggregations(engine, config)
         } catch (error) {
             console.log('Error while fetching Earth Engine data', error)

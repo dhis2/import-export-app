@@ -31,6 +31,7 @@ const getEarthEngineLayers = () => [
         img: 'images/population.png',
         defaultAggregations: ['sum', 'mean'],
         periodType: 'Yearly',
+        bandReducer: 'sum',
         filters: ({ id, name, year }) => [
             {
                 id,
@@ -60,6 +61,7 @@ const getEarthEngineLayers = () => [
             'https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop_age_sex_cons_unadj',
         img: 'images/population.png',
         periodType: 'Yearly',
+        bandReducer: 'sum',
         defaultAggregations: ['sum', 'mean'],
         bands: [
             {
