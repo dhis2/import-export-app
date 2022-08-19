@@ -30,7 +30,8 @@ const earthEngineOptions = [
 // Returns a promise
 const getEarthEngineConfig = async (config, engine) => {
     const orgUnitIds = config.organisationUnits.map((ou) => ou.id)
-    let features
+    let polygonFeatures
+    let pointOrgUnits
 
     if (orgUnitIds && orgUnitIds.length) {
         const ouIdsString = orgUnitIds.reduce((previousValue, currentValue) => {
@@ -45,16 +46,24 @@ const getEarthEngineConfig = async (config, engine) => {
         const query = getGeoFeaturesQuery(ouIdsString, coordinateField)
 
         const geoFeatures = await engine.query({ geoFeatures: query })
-        // only polygons, no points
-        features = toGeoJson(
+        // only polygons, no points to to the Earth Engine
+        polygonFeatures = toGeoJson(
             geoFeatures.geoFeatures.filter((gf) => gf.ty === 2)
         )
 
-        if (!features.length) {
+        if (!polygonFeatures.length) {
             throw new Error(
                 i18n.t('No geofeatures found for selected organisation units')
             )
         }
+
+        const pointFeatures =
+            toGeoJson(geoFeatures.geoFeatures.filter((gf) => gf.ty === 1)) || []
+
+        pointOrgUnits = pointFeatures.map(({ properties }) => ({
+            id: properties.id,
+            name: properties.name,
+        }))
     } else {
         throw new Error(i18n.t('No organisation units have been selected'))
     }
@@ -62,7 +71,9 @@ const getEarthEngineConfig = async (config, engine) => {
     const dataset = getEarthEngineConfigs(config.id)
 
     const data =
-        Array.isArray(features) && features.length ? features : undefined
+        Array.isArray(polygonFeatures) && polygonFeatures.length
+            ? polygonFeatures
+            : undefined
 
     const cfg = {
         ...dataset,
@@ -80,7 +91,7 @@ const getEarthEngineConfig = async (config, engine) => {
             return obj
         }, {})
 
-    return options
+    return { config: options, pointOrgUnits }
 }
 
 export default getEarthEngineConfig

@@ -61,6 +61,7 @@ const EarthEngineImportForm = () => {
     }
 
     const fetchEeData = async (formValues) => {
+        // TODO - getFormValues should only be for bandCocs (e.g. getBandCocFormValues)
         const {
             earthEngineId,
             organisationUnits,
@@ -85,8 +86,6 @@ const EarthEngineImportForm = () => {
         setFetching(true)
         setRequestFailedMessage(null)
 
-        let data = {}
-        let config = {}
         try {
             const periods = await getPeriods(earthEngineId, engine)
 
@@ -100,8 +99,68 @@ const EarthEngineImportForm = () => {
                 bandCocs,
             }
 
-            config = await getEarthEngineConfig(eeOptions, engine)
-            data = await getAggregations(engine, config)
+            const { config, pointOrgUnits } = await getEarthEngineConfig(
+                eeOptions,
+                engine
+            )
+
+            const data = await getAggregations(engine, config)
+
+            const polygonOus =
+                config.data?.map((d) => {
+                    const { id, name, parentName } = d.properties
+                    return {
+                        id,
+                        name,
+                        parentName,
+                    }
+                }) || []
+
+            const structuredData = Object.entries(data)
+                .reduce((acc, [ouId, valueSet]) => {
+                    if (Object.keys(bandCocs).length) {
+                        Object.entries(valueSet).forEach(
+                            ([bandId, rawValue]) => {
+                                // TODO add comment explaining the next line
+                                if (!ALL_AGGREGATION_TYPES.includes(bandId)) {
+                                    const ouName = polygonOus.find(
+                                        (ou) => ou.id === ouId
+                                    )?.name
+                                    acc.push({
+                                        ouId,
+                                        ouName,
+                                        bandId,
+                                        value: getValueWithPrecision(rawValue),
+                                    })
+                                }
+                            }
+                        )
+                    } else {
+                        const ouName = polygonOus.find(
+                            (ou) => ou.id === ouId
+                        )?.name
+                        acc.push({
+                            ouId,
+                            ouName,
+                            value: getValueWithPrecision(
+                                valueSet[aggregationType]
+                            ),
+                        })
+                    }
+
+                    return acc
+                }, [])
+                .concat(
+                    pointOrgUnits.map((ou) => ({
+                        ouId: ou.id,
+                        ouName: ou.name,
+                        value: 'No value for point OU',
+                    }))
+                )
+
+            setEeData(structuredData)
+            setFetching(false)
+            setDoSubmit(true)
         } catch (error) {
             console.log('Error while fetching Earth Engine data', error)
             setEeData([])
@@ -129,51 +188,6 @@ const EarthEngineImportForm = () => {
 
             return
         }
-
-        const ous =
-            config.data?.map((d) => {
-                const { id, name, parentName } = d.properties
-                return {
-                    id,
-                    name,
-                    parentName,
-                }
-            }) || []
-
-        const structuredData = Object.entries(data).reduce(
-            (acc, [ouId, valueSet]) => {
-                if (Object.keys(bandCocs).length) {
-                    Object.entries(valueSet).forEach(([bandId, rawValue]) => {
-                        // TODO add comment explaining the next line
-                        if (!ALL_AGGREGATION_TYPES.includes(bandId)) {
-                            const ouName = ous.find(
-                                (ou) => ou.id === ouId
-                            )?.name
-                            acc.push({
-                                ouId,
-                                ouName,
-                                bandId,
-                                value: getValueWithPrecision(rawValue),
-                            })
-                        }
-                    })
-                } else {
-                    const ouName = ous.find((ou) => ou.id === ouId)?.name
-                    acc.push({
-                        ouId,
-                        ouName,
-                        value: getValueWithPrecision(valueSet[aggregationType]),
-                    })
-                }
-
-                return acc
-            },
-            []
-        )
-
-        setEeData(structuredData)
-        setFetching(false)
-        setDoSubmit(true)
     }
 
     const previewIsAllowed = ({ valid, values, modifiedSinceLastPreview }) => {
