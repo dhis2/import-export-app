@@ -9,6 +9,7 @@ import {
     DataTableFoot,
     Pagination,
     ReactFinalForm,
+    Tag,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef } from 'react'
@@ -36,12 +37,12 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
     const tableRef = useRef(null)
 
     useEffect(() => {
-        if (currentValues && eeData) {
-            const newArr = eeData.map(({ ouId, ouName, bandId, value }) => {
-                const cocId = bandCocMap[bandId]
+        if (eeData) {
+            const newArr = eeData.map((d) => {
+                const cocId = bandCocMap[d.bandId]
 
                 const current = currentValues
-                    .filter((v) => v.orgUnit === ouId)
+                    .filter((v) => v.orgUnit === d.ouId)
                     .find((v) => v.categoryOptionCombo === cocId)
 
                 // find the name of the cat option combo from dataElements
@@ -54,11 +55,9 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
                 )?.name
 
                 return {
-                    ouId,
-                    ouName,
                     categoryOptionCombo,
-                    value,
                     current: current?.value,
+                    ...d,
                 }
             })
 
@@ -120,6 +119,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
                                 categoryOptionCombo,
                                 value,
                                 current,
+                                isNoValue,
                             },
                             i
                         ) => {
@@ -141,7 +141,11 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
                                         dense
                                         className={styles.right}
                                     >
-                                        {value}
+                                        {isNoValue ? (
+                                            <Tag negative>{value}</Tag>
+                                        ) : (
+                                            <span>{value}</span>
+                                        )}
                                     </DataTableCell>
                                 </DataTableRow>
                             )

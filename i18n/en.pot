@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-19T08:56:43.833Z\n"
-"PO-Revision-Date: 2022-08-19T08:56:43.833Z\n"
+"POT-Creation-Date: 2022-08-26T12:11:50.714Z\n"
+"PO-Revision-Date: 2022-08-26T12:11:50.714Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -802,6 +802,9 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
+
+msgid "Point org. unit - no value"
+msgstr "Point org. unit - no value"
 
 msgid "An error occurred while trying to fetch Earth Engine data"
 msgstr "An error occurred while trying to fetch Earth Engine data"

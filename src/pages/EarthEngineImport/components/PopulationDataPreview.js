@@ -8,6 +8,7 @@ import {
     DataTableColumnHeader,
     DataTableFoot,
     Pagination,
+    Tag,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef } from 'react'
@@ -25,12 +26,11 @@ const PopulationDataPreview = ({ eeData }) => {
     const tableRef = useRef(null)
 
     useEffect(() => {
-        // TODO - currentValues will always exist - maybe just an empty array though
-        if (currentValues && eeData) {
-            const newArr = eeData.map(({ ouId, ouName, value }) => {
-                const current = currentValues.find((v) => v.orgUnit === ouId)
+        if (eeData) {
+            const newArr = eeData.map((d) => {
+                const current = currentValues.find((v) => v.orgUnit === d.ouId)
 
-                return { ouId, ouName, value, current: current?.value }
+                return { current: current?.value, ...d }
             })
 
             setTableData(newArr)
@@ -75,19 +75,30 @@ const PopulationDataPreview = ({ eeData }) => {
                     </DataTableRow>
                 </DataTableHead>
                 <DataTableBody>
-                    {visibleRows.map(({ ouId, ouName, value, current }) => {
-                        return (
-                            <DataTableRow key={ouId}>
-                                <DataTableCell dense>{ouName}</DataTableCell>
-                                <DataTableCell dense className={styles.current}>
-                                    {current || ''}
-                                </DataTableCell>
-                                <DataTableCell dense className={styles.right}>
-                                    {value}
-                                </DataTableCell>
-                            </DataTableRow>
-                        )
-                    })}
+                    {visibleRows.map(
+                        ({ ouId, ouName, value, current, isNoValue }) => {
+                            return (
+                                <DataTableRow key={ouId}>
+                                    <DataTableCell dense>
+                                        {ouName}
+                                    </DataTableCell>
+                                    <DataTableCell
+                                        dense
+                                        className={styles.current}
+                                    >
+                                        {current || ''}
+                                    </DataTableCell>
+                                    <DataTableCell dense>
+                                        {isNoValue ? (
+                                            <Tag negative>{value}</Tag>
+                                        ) : (
+                                            <span>{value}</span>
+                                        )}
+                                    </DataTableCell>
+                                </DataTableRow>
+                            )
+                        }
+                    )}
                 </DataTableBody>
                 <DataTableFoot>
                     <DataTableRow>

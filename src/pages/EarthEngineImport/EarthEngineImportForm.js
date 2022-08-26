@@ -154,7 +154,8 @@ const EarthEngineImportForm = () => {
                     pointOrgUnits.map((ou) => ({
                         ouId: ou.id,
                         ouName: ou.name,
-                        value: 'No value for point OU',
+                        value: i18n.t('Point org. unit - no value'),
+                        isNoValue: true,
                     }))
                 )
 
