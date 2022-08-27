@@ -760,7 +760,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Огляд"
 
 msgid "Yes"
 msgstr "Так"
