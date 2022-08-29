@@ -280,7 +280,6 @@ const EarthEngineImportForm = () => {
                                 <Divider />
                                 <DataElements />
                                 <MappingTable formChange={form.change} />
-                                <Divider />
                                 <FormSpy
                                     subscription={{
                                         values: true,

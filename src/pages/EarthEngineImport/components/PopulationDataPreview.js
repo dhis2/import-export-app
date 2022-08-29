@@ -82,11 +82,10 @@ const PopulationDataPreview = ({ eeData }) => {
                                     <DataTableCell dense>
                                         {ouName}
                                     </DataTableCell>
-                                    <DataTableCell
-                                        dense
-                                        className={styles.current}
-                                    >
-                                        {current || ''}
+                                    <DataTableCell dense>
+                                        <span className={styles.current}>
+                                            {current || ''}
+                                        </span>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         {isNoValue ? (
