@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-26T12:11:50.714Z\n"
-"PO-Revision-Date: 2022-08-26T12:11:50.714Z\n"
+"POT-Creation-Date: 2022-08-29T12:01:43.787Z\n"
+"PO-Revision-Date: 2022-08-29T12:01:43.787Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -879,6 +879,15 @@ msgstr "Earth Engine data set"
 msgid "Not all Earth Engine data sets are available yet."
 msgstr "Not all Earth Engine data sets are available yet."
 
+msgid "Men 0 - 1 years"
+msgstr "Men 0 - 1 years"
+
+msgid "Men 1 - 4 years"
+msgstr "Men 1 - 4 years"
+
+msgid "Men 5 - 9 years"
+msgstr "Men 5 - 9 years"
+
 msgid "Import groups to category option combinations"
 msgstr "Import groups to category option combinations"
 
@@ -900,6 +909,9 @@ msgstr "Category option combination"
 
 msgid "No match found"
 msgstr "No match found"
+
+msgid "Choose coc"
+msgstr "Choose coc"
 
 msgid "Organisation unit(s) to import data to"
 msgstr "Organisation unit(s) to import data to"
@@ -994,15 +1006,6 @@ msgstr "Population age groups"
 
 msgid "Estimated number of people living in an area, grouped by age and gender."
 msgstr "Estimated number of people living in an area, grouped by age and gender."
-
-msgid "Men 0 - 1 years"
-msgstr "Men 0 - 1 years"
-
-msgid "Men 1 - 4 years"
-msgstr "Men 1 - 4 years"
-
-msgid "Men 5 - 9 years"
-msgstr "Men 5 - 9 years"
 
 msgid "Men 10 - 14 years"
 msgstr "Men 10 - 14 years"

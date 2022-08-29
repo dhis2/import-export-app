@@ -12,64 +12,72 @@ import {
     SingleSelectFieldFF,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
+import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import {
     getEarthEngineConfigs,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
-import {
-    EARTH_ENGINE_ID,
-    BAND_COCS,
-    DATA_ELEMENT_ID,
-    getFormValues,
-} from '../util/getFormValues.js'
+import { BAND_COCS } from '../util/getFormValues.js'
 
 const { Field, useFormState } = ReactFinalForm
 
-const NO_BANDS = []
+const internalBands = [
+    {
+        id: 'M_0',
+        name: i18n.t('Men 0 - 1 years'),
+    },
+    {
+        id: 'M_1',
+        name: i18n.t('Men 1 - 4 years'),
+    },
+    {
+        id: 'M_5',
+        name: i18n.t('Men 5 - 9 years'),
+    },
+]
 
-const MappingTable = ({ formChange }) => {
+const MappingTable = ({ formChange, push, pop }) => {
     const { values } = useFormState()
     const { dataElements } = useCachedDataQuery()
     const [cocs, setCocs] = useState([])
-    const { earthEngineId, dataElementId, ...bandCocs } = getFormValues(
-        values,
-        [EARTH_ENGINE_ID, DATA_ELEMENT_ID, BAND_COCS]
-    )
+    const { earthEngineId, dataElementId, bandCocs } = values
 
-    const bands = useMemo(
-        () => getEarthEngineConfigs(earthEngineId)?.bands || NO_BANDS,
-        [earthEngineId]
-    )
+    // const clearBandCocs = useCallback(
+    // fields.update
+    // () => bands.forEach(({ id }) => formChange(id, undefined)),
+    // [formChange, bands]
+    // )
 
-    const resetSelectedCocs = useCallback(
-        () => bands.forEach(({ id }) => formChange(id, undefined)),
-        [formChange, bands]
-    )
+    useEffect(() => {
+        internalBands.forEach((band) => {
+            push(BAND_COCS, {
+                bandId: band.id,
+                bandName: band.name,
+                coc: '',
+            })
+        })
+    }, [push])
 
     useEffect(() => {
         if (dataElementId) {
             const newCocs = dataElements.find(({ id }) => id === dataElementId)
                 .categoryCombo.categoryOptionCombos
 
-            resetSelectedCocs()
+            // clearBandCocs()
             setCocs(newCocs)
         }
-    }, [dataElementId, dataElements, resetSelectedCocs])
+    }, [dataElementId, dataElements])
 
-    if (
-        earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID ||
-        !dataElementId ||
-        !bands
-    ) {
+    if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
         return null
     }
 
-    const getCatComboOptions = (bandId) => {
-        const unavailableCocs = Object.entries(bandCocs)
-            .filter((entry) => entry[0] !== bandId)
-            .map((entry) => entry[1])
+    const getCatComboOptions = () => {
+        const unavailableCocs = bandCocs
+            .filter((bcoc) => bcoc.coc)
+            .map((bcoc) => bcoc.coc)
 
         return cocs.map(({ id, name }) => {
             return {
@@ -79,6 +87,7 @@ const MappingTable = ({ formChange }) => {
             }
         })
     }
+    const catComboOptions = getCatComboOptions()
 
     return (
         <>
@@ -104,25 +113,36 @@ const MappingTable = ({ formChange }) => {
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
-                    {bands.map(({ id: bandId, name }) => {
-                        return (
-                            <TableRow key={`row-${bandId}`}>
-                                <TableCell dense>{bandId}</TableCell>
-                                <TableCell dense>{name}</TableCell>
-                                <TableCell dense>
-                                    <Field
-                                        component={SingleSelectFieldFF}
-                                        name={bandId}
-                                        inputWidth="250px"
-                                        filterable
-                                        clearable
-                                        noMatchText={i18n.t('No match found')}
-                                        options={getCatComboOptions(bandId)}
-                                    />
-                                </TableCell>
-                            </TableRow>
-                        )
-                    })}
+                    <FieldArray name={BAND_COCS}>
+                        {({ fields }) =>
+                            fields.map((name, index) => (
+                                <TableRow key={`row-${index}`}>
+                                    <TableCell dense>
+                                        {fields.value[index].bandId}
+                                    </TableCell>
+                                    <TableCell dense>
+                                        {fields.value[index].bandName}
+                                    </TableCell>
+                                    <TableCell dense>
+                                        <Field
+                                            component={SingleSelectFieldFF}
+                                            name={`${name}.coc`}
+                                            inputWidth="250px"
+                                            filterable
+                                            clearable
+                                            noMatchText={i18n.t(
+                                                'No match found'
+                                            )}
+                                            placeholder={i18n.t(
+                                                'Choose category option combo'
+                                            )}
+                                            options={catComboOptions}
+                                        />
+                                    </TableCell>
+                                </TableRow>
+                            ))
+                        }
+                    </FieldArray>
                 </TableBody>
             </Table>
         </>

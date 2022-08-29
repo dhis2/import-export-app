@@ -1,6 +1,7 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider, Button } from '@dhis2/ui'
+import arrayMutators from 'final-form-arrays'
 import React, { useState, useContext, useRef } from 'react'
 import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts } from '../../components/Inputs/index.js'
@@ -68,15 +69,8 @@ const EarthEngineImportForm = () => {
             associatedGeometry,
             period,
             rounding,
-            ...bandCocs
-        } = getFormValues(formValues, [
-            EARTH_ENGINE_ID,
-            ORGANISATION_UNITS,
-            ASSOCIATED_GEOMETRY,
-            PERIOD,
-            ROUNDING,
-            BAND_COCS,
-        ])
+            bandCocs,
+        } = formValues
 
         const getValueWithPrecision = getPrecisionFn(rounding)
 
@@ -118,10 +112,10 @@ const EarthEngineImportForm = () => {
 
             const structuredData = Object.entries(data)
                 .reduce((acc, [ouId, valueSet]) => {
-                    if (Object.keys(bandCocs).length) {
+                    if (bandCocs.length) {
                         Object.entries(valueSet).forEach(
                             ([bandId, rawValue]) => {
-                                // TODO add comment explaining the next line
+                                // TODO add comment explaining the next line (bandId is mis-named?)
                                 if (!ALL_AGGREGATION_TYPES.includes(bandId)) {
                                     const ouName = polygonOus.find(
                                         (ou) => ou.id === ouId
@@ -264,7 +258,17 @@ const EarthEngineImportForm = () => {
                     onSubmit={onSubmit}
                     initialValues={initialValues}
                     keepDirtyOnReinitialize
-                    render={({ handleSubmit, form, submitError }) => (
+                    mutators={{
+                        ...arrayMutators,
+                    }}
+                    render={({
+                        handleSubmit,
+                        form,
+                        submitError,
+                        form: {
+                            mutators: { push, pop },
+                        },
+                    }) => (
                         <form onSubmit={handleSubmit}>
                             <div className={styles.wrapper}>
                                 <h2>{i18n.t('Earth Engine source')}</h2>
@@ -279,7 +283,11 @@ const EarthEngineImportForm = () => {
                                 <h2>{i18n.t('Import setup')}</h2>
                                 <Divider />
                                 <DataElements />
-                                <MappingTable formChange={form.change} />
+                                <MappingTable
+                                    formChange={form.change}
+                                    push={push}
+                                    pop={pop}
+                                />
                                 <FormSpy
                                     subscription={{
                                         values: true,
