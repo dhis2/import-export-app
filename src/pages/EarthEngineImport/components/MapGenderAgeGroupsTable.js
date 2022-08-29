@@ -79,12 +79,6 @@ const MappingTable = ({ formChange }) => {
             }
         })
     }
-    // TODO - this is a temporary function to make testing quicker
-    const getProbableCocMatch = (bandId) => {
-        const probableCoc = cocs.find((coc) => coc.code === bandId)
-
-        return probableCoc?.id || null
-    }
 
     return (
         <>
@@ -122,9 +116,6 @@ const MappingTable = ({ formChange }) => {
                                         inputWidth="250px"
                                         filterable
                                         clearable
-                                        defaultValue={getProbableCocMatch(
-                                            bandId
-                                        )}
                                         noMatchText={i18n.t('No match found')}
                                         options={getCatComboOptions(bandId)}
                                     />
