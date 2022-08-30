@@ -19,7 +19,7 @@ import {
     getEarthEngineConfigs,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
-import { BAND_COCS } from '../util/getFormValues.js'
+import { BAND_COCS } from '../util/formFieldConstants.js'
 
 const { Field, useFormState } = ReactFinalForm
 

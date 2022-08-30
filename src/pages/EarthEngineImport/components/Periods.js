@@ -3,7 +3,7 @@ import { ReactFinalForm, SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { StyledField } from '../../../components/index.js'
-import { EARTH_ENGINE_ID, PERIOD } from '../util/getFormValues.js'
+import { EARTH_ENGINE_ID, PERIOD } from '../util/formFieldConstants.js'
 import { usePeriods } from './usePeriods.js'
 
 const { useField } = ReactFinalForm

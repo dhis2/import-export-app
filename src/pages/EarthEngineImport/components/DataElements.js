@@ -3,7 +3,7 @@ import { SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { DATA_ELEMENT_ID } from '../util/getFormValues.js'
+import { DATA_ELEMENT_ID } from '../util/formFieldConstants.js'
 
 const DataElements = () => {
     const { dataElements } = useCachedDataQuery()

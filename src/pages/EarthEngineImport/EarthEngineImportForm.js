@@ -26,14 +26,11 @@ import {
 } from './util/earthEngines.js'
 import {
     EARTH_ENGINE_ID,
-    PERIOD,
     ORGANISATION_UNITS,
-    ASSOCIATED_GEOMETRY,
     ROUNDING,
     DATA_ELEMENT_ID,
     BAND_COCS,
-    getFormValues,
-} from './util/getFormValues.js'
+} from './util/formFieldConstants.js'
 import { getPrecisionFn } from './util/getPrecisionFn.js'
 
 const { Form, FormSpy } = ReactFinalForm
@@ -61,17 +58,14 @@ const EarthEngineImportForm = () => {
         [DATA_ELEMENT_ID]: null,
     }
 
-    const fetchEeData = async (formValues) => {
-        // TODO - getFormValues should only be for bandCocs (e.g. getBandCocFormValues)
-        const {
-            earthEngineId,
-            organisationUnits,
-            associatedGeometry,
-            period,
-            rounding,
-            bandCocs,
-        } = formValues
-
+    const fetchEeData = async ({
+        earthEngineId,
+        organisationUnits,
+        associatedGeometry,
+        period,
+        rounding,
+        bandCocs,
+    }) => {
         const getValueWithPrecision = getPrecisionFn(rounding)
 
         const aggregationType = getDefaultAggregation(earthEngineId)
@@ -187,15 +181,9 @@ const EarthEngineImportForm = () => {
 
     const previewIsAllowed = ({ valid, values, modifiedSinceLastPreview }) => {
         // there should be at least one band for Population Age groups
-
-        const { earthEngineId, ...bandCocs } = getFormValues(values, [
-            EARTH_ENGINE_ID,
-            BAND_COCS,
-        ])
-
         const bandsValid =
-            earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
-                ? Object.keys(bandCocs).length
+            values.earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
+                ? values.bandCocs?.length
                 : true
 
         const otherCheck = requestFailedMessage

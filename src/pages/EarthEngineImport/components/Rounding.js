@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
-import { ROUNDING } from '../util/getFormValues.js'
+import { ROUNDING } from '../util/formFieldConstants.js'
 
 const roundings = [
     {

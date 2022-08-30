@@ -7,7 +7,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import { POPULATION_DATASET_ID } from '../util/earthEngines.js'
-import { EARTH_ENGINE_ID } from '../util/getFormValues.js'
+import { EARTH_ENGINE_ID } from '../util/formFieldConstants.js'
 import { PopulationAgegroupsDataPreview } from './PopulationAgegroupsDataPreview.js'
 import { PopulationDataPreview } from './PopulationDataPreview.js'
 import styles from './styles/DataPreview.module.css'

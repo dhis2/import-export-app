@@ -79,8 +79,7 @@ const getEarthEngineConfig = async (config, engine) => {
         ...dataset,
         aggregationType: [config.aggregationType],
         filter: config.periods.filter((p) => config.period === p.name),
-        band:
-            Object.keys(config.bandCocs).length && Object.keys(config.bandCocs),
+        band: config.bandCocs.length && config.bandCocs.map((bc) => bc.bandId),
         data,
     }
 

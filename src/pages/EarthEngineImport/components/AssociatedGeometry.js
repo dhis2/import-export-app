@@ -3,7 +3,7 @@ import { SingleSelectFieldFF } from '@dhis2/ui'
 import React from 'react'
 import { StyledField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { ASSOCIATED_GEOMETRY } from '../util/getFormValues.js'
+import { ASSOCIATED_GEOMETRY } from '../util/formFieldConstants.js'
 
 export const NO_ASSOCIATED_GEOMETRY = 'Noassociatedgeometry'
 

@@ -14,7 +14,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { DATA_ELEMENT_ID } from '../util/getFormValues.js'
+import { DATA_ELEMENT_ID } from '../util/formFieldConstants.js'
 import styles from './styles/DataPreview.module.css'
 import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'

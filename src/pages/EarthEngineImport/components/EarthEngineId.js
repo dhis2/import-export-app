@@ -7,7 +7,7 @@ import {
     POPULATION_DATASET_ID,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
-import { EARTH_ENGINE_ID } from '../util/getFormValues.js'
+import { EARTH_ENGINE_ID } from '../util/formFieldConstants.js'
 
 const eeList = getEarthEngineConfigs([
     POPULATION_AGE_GROUPS_DATASET_ID,
