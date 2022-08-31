@@ -24,7 +24,10 @@ const earthEngineOptions = [
     'filter',
     'mosaic',
     'params',
+    'tileScale',
 ]
+
+const TILE_SCALE = 4
 
 // Returns a promise
 const getEarthEngineConfig = async (
@@ -88,6 +91,7 @@ const getEarthEngineConfig = async (
         ...earthEngines[earthEngineId],
         aggregationType: [aggregationType],
         filter: periods.filter((p) => period === p.name),
+        tileScale: TILE_SCALE,
         data,
     }
 
