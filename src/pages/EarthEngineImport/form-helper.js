@@ -21,7 +21,7 @@ const onImport =
                     orgUnit: ouId,
                     categoryOptionCombo: bandCocs.find(
                         (bc) => bc.bandId === bandId
-                    ),
+                    ).coc,
                     value,
                 }
             })
