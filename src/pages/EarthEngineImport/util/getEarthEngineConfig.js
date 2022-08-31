@@ -1,6 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
 import { NO_ASSOCIATED_GEOMETRY } from '../components/AssociatedGeometry.js'
-import { earthEngines } from './earthEngines.js'
+import {
+    earthEngines,
+    POPULATION_AGE_GROUPS_DATASET_ID,
+} from './earthEngines.js'
 import { toGeoJson } from './toGeoJson.js'
 
 const getGeoFeaturesQuery = (ouIds, coordinateField) => ({
@@ -26,9 +29,9 @@ const earthEngineOptions = [
 // Returns a promise
 const getEarthEngineConfig = async (
     {
+        earthEngineId,
         organisationUnits,
         coordinateField,
-        id,
         period,
         periods,
         aggregationType,
@@ -82,11 +85,16 @@ const getEarthEngineConfig = async (
             : undefined
 
     const cfg = {
-        ...earthEngines[id],
+        ...earthEngines[earthEngineId],
         aggregationType: [aggregationType],
         filter: periods.filter((p) => period === p.name),
-        band: bandCocs.length && bandCocs.map((bc) => bc.bandId),
         data,
+    }
+
+    const bandsWithCocs = bandCocs.filter((bc) => !!bc.coc)
+
+    if (earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID && bandsWithCocs) {
+        cfg.band = bandsWithCocs.map((bc) => bc.bandId)
     }
 
     const options = Object.keys(cfg)

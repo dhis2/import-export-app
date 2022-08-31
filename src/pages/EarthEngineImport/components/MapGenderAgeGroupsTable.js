@@ -23,54 +23,47 @@ import { BAND_COCS } from '../util/formFieldConstants.js'
 
 const { Field, useFormState } = ReactFinalForm
 
-const internalBands = [
-    {
-        id: 'M_0',
-        name: i18n.t('Men 0 - 1 years'),
-    },
-    {
-        id: 'M_1',
-        name: i18n.t('Men 1 - 4 years'),
-    },
-    {
-        id: 'M_5',
-        name: i18n.t('Men 5 - 9 years'),
-    },
-]
-
-const MappingTable = ({ formChange, push, update }) => {
+const MappingTable = ({ push, update, pop }) => {
     const { values } = useFormState()
     const { dataElements } = useCachedDataQuery()
     const [cocs, setCocs] = useState([])
-    const { earthEngineId, dataElementId, bandCocs = [] } = values
+    const { earthEngineId, dataElementId, bandCocs } = values
 
     useEffect(() => {
-        // getEarthEngineBands(POPULATION_AGE_GROUPS_DATASET_ID).forEach((band) =>
-        internalBands.forEach((band) =>
+        getEarthEngineBands(POPULATION_AGE_GROUPS_DATASET_ID).forEach((band) =>
             push(BAND_COCS, {
                 bandId: band.id,
                 bandName: band.name,
             })
         )
+
+        return function cleanup() {
+            const numBandCocs = getEarthEngineBands(
+                POPULATION_AGE_GROUPS_DATASET_ID
+            ).length
+
+            for (let i = 0; i < numBandCocs; ++i) {
+                pop(BAND_COCS)
+            }
+        }
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
-        console.log('clear the bandCocs', dataElementId)
-        if (dataElementId) {
+        bandCocs &&
             bandCocs.forEach((bc, index) => {
                 update(BAND_COCS, index, {
                     bandId: bc.bandId,
                     bandName: bc.bandName,
                 })
             })
-
+        if (dataElementId) {
             // TODO - will categoryCombo always be returned and with categoryOptionCombos?
             const newCocs = dataElements.find(({ id }) => id === dataElementId)
                 .categoryCombo.categoryOptionCombos
 
             setCocs(newCocs)
         }
-    }, [dataElementId])
+    }, [dataElementId]) // eslint-disable-line react-hooks/exhaustive-deps
 
     if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
         return null
@@ -154,9 +147,9 @@ const MappingTable = ({ formChange, push, update }) => {
 }
 
 MappingTable.propTypes = {
-    formChange: PropTypes.func,
     pop: PropTypes.func,
     push: PropTypes.func,
+    update: PropTypes.func,
 }
 
 export { MappingTable }

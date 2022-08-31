@@ -90,7 +90,7 @@ const EarthEngineImportForm = () => {
             const periods = await getPeriods(earthEngineId, engine)
 
             const eeOptions = {
-                id: earthEngineId,
+                earthEngineId,
                 organisationUnits,
                 period,
                 periods,
@@ -252,7 +252,6 @@ const EarthEngineImportForm = () => {
                 dataTest="page-import-earthengine"
                 summaryTask={getNewestTask(earthengineTasks)}
                 showFullSummaryTask={showFullSummaryTask}
-                showFileDetails={false}
             >
                 <Form
                     onSubmit={onSubmit}
@@ -266,7 +265,7 @@ const EarthEngineImportForm = () => {
                         form,
                         submitError,
                         form: {
-                            mutators: { push, update },
+                            mutators: { push, update, pop },
                         },
                     }) => (
                         <form onSubmit={handleSubmit}>
@@ -291,6 +290,7 @@ const EarthEngineImportForm = () => {
                                         formChange={form.change}
                                         push={push}
                                         update={update}
+                                        pop={pop}
                                     />
                                 </Condition>
                                 <FormSpy

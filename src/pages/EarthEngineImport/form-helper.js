@@ -7,7 +7,7 @@ const isAsync = true
 const onImport =
     ({ engine, setProgress, addTask, setShowFullSummaryTask }) =>
     async (values) => {
-        const { dryRun, eeData, dataElementId, period, bandCocs } = values
+        const { dryRun, eeData, dataElementId, period, bandCocs = [] } = values
 
         setProgress(true)
 
