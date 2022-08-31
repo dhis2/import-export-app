@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { NO_ASSOCIATED_GEOMETRY } from '../components/AssociatedGeometry.js'
-import { getEarthEngineConfigs } from './earthEngines.js'
+import { earthEngines } from './earthEngines.js'
 import { toGeoJson } from './toGeoJson.js'
 
 const getGeoFeaturesQuery = (ouIds, coordinateField) => ({
@@ -16,20 +16,27 @@ const earthEngineOptions = [
     'aggregationType',
     'band',
     'bandReducer',
-    'buffer',
-    'data',
     'datasetId',
+    'data',
     'filter',
-    'legend',
-    'mask',
-    'methods',
     'mosaic',
     'params',
 ]
 
 // Returns a promise
-const getEarthEngineConfig = async (config, engine) => {
-    const orgUnitIds = config.organisationUnits.map((ou) => ou.id)
+const getEarthEngineConfig = async (
+    {
+        organisationUnits,
+        coordinateField,
+        id,
+        period,
+        periods,
+        aggregationType,
+        bandCocs,
+    },
+    engine
+) => {
+    const orgUnitIds = organisationUnits.map((ou) => ou.id)
     let polygonFeatures
     let pointOrgUnits
 
@@ -38,15 +45,16 @@ const getEarthEngineConfig = async (config, engine) => {
             return previousValue.concat(`${currentValue};`)
         }, 'ou:')
 
-        const coordinateField =
-            config.coordinateField !== NO_ASSOCIATED_GEOMETRY
-                ? config.coordinateField
+        const coordField =
+            coordinateField !== NO_ASSOCIATED_GEOMETRY
+                ? coordinateField
                 : undefined
 
-        const query = getGeoFeaturesQuery(ouIdsString, coordinateField)
+        // TODO - memoize?
+        const query = getGeoFeaturesQuery(ouIdsString, coordField)
 
         const geoFeatures = await engine.query({ geoFeatures: query })
-        // only polygons, no points to to the Earth Engine
+        // only polygons, no points to the Earth Engine
         polygonFeatures = toGeoJson(
             geoFeatures.geoFeatures.filter((gf) => gf.ty === 2)
         )
@@ -68,18 +76,16 @@ const getEarthEngineConfig = async (config, engine) => {
         throw new Error(i18n.t('No organisation units have been selected'))
     }
 
-    const dataset = getEarthEngineConfigs(config.id)
-
     const data =
         Array.isArray(polygonFeatures) && polygonFeatures.length
             ? polygonFeatures
             : undefined
 
     const cfg = {
-        ...dataset,
-        aggregationType: [config.aggregationType],
-        filter: config.periods.filter((p) => config.period === p.name),
-        band: config.bandCocs.length && config.bandCocs.map((bc) => bc.bandId),
+        ...earthEngines[id],
+        aggregationType: [aggregationType],
+        filter: periods.filter((p) => period === p.name),
+        band: bandCocs.length && bandCocs.map((bc) => bc.bandId),
         data,
     }
 
@@ -93,4 +99,4 @@ const getEarthEngineConfig = async (config, engine) => {
     return { config: options, pointOrgUnits }
 }
 
-export default getEarthEngineConfig
+export { getEarthEngineConfig }

@@ -14,21 +14,18 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import { DATA_ELEMENT_ID } from '../util/formFieldConstants.js'
 import styles from './styles/DataPreview.module.css'
-import { useCatOptComboSelections } from './useCatOptComboSelections.js'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const DEFAULT_ROWS_PER_PAGE = 10
 
-const { useField } = ReactFinalForm
+const { useFormState } = ReactFinalForm
 
 const PopulationAgegroupsDataPreview = ({ eeData }) => {
-    const { input } = useField(DATA_ELEMENT_ID)
-    const { value: dataElementId } = input
+    const { values } = useFormState()
+    const { dataElementId, bandCocs } = values
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
-    const bandCocMap = useCatOptComboSelections()
     const { currentValues } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
     const [visibleRows, setVisibleRows] = useState([])
@@ -39,7 +36,8 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
     useEffect(() => {
         if (eeData) {
             const newArr = eeData.map((d) => {
-                const cocId = bandCocMap[d.bandId]
+                // TODO - probably not very performant - make a bandCoc map instead
+                const cocId = bandCocs.find((bc) => bc.bandId === d.bandId).coc
 
                 const current = currentValues
                     .filter((v) => v.orgUnit === d.ouId)
@@ -66,7 +64,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
                 behavior: 'smooth',
             })
         }
-    }, [currentValues, eeData, dataElementId, dataElements, bandCocMap])
+    }, [currentValues, eeData, dataElementId, dataElements, bandCocs])
 
     useEffect(() => {
         if (tableData.length) {

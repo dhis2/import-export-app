@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { loadEarthEngineWorker } from '@dhis2/maps-gl'
-import { getEarthEngineConfigs } from './earthEngines.js'
+import { earthEngines } from './earthEngines.js'
 
 const DEFAULT_LOCALE = 'en'
 const fallbackDateFormat = (dateString) => dateString.substr(0, 10)
@@ -51,7 +51,7 @@ const getWorkerInstance = async (engine) => {
 }
 
 export const getPeriods = async (eeId, engine) => {
-    const { periodType, filters } = getEarthEngineConfigs(eeId)
+    const { periodType, filters } = earthEngines[eeId]
 
     const getPeriod = ({ id, properties }) => {
         const year = new Date(properties['system:time_start']).getFullYear()

@@ -2,11 +2,11 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider, Button } from '@dhis2/ui'
 import arrayMutators from 'final-form-arrays'
+import PropTypes from 'prop-types'
 import React, { useState, useContext, useRef } from 'react'
 import { Page, DataIcon } from '../../components/index.js'
 import { FormAlerts } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
-import { ALL_AGGREGATION_TYPES } from './components/AggregationType.js'
 import { AssociatedGeometry } from './components/AssociatedGeometry.js'
 import { DataElements } from './components/DataElements.js'
 import { DataPreview } from './components/DataPreview.js'
@@ -19,21 +19,33 @@ import { SubmitButtons } from './components/SubmitButtons.js'
 import styles from './EarthEngineImportForm.module.css'
 import { onImport } from './form-helper.js'
 import { getPeriods, getAggregations } from './util/earthEngineHelper.js'
-import getEarthEngineConfig from './util/earthEngineLoader.js'
 import {
     POPULATION_AGE_GROUPS_DATASET_ID,
     getDefaultAggregation,
 } from './util/earthEngines.js'
 import {
-    EARTH_ENGINE_ID,
     ORGANISATION_UNITS,
     ROUNDING,
     DATA_ELEMENT_ID,
-    BAND_COCS,
+    EARTH_ENGINE_ID,
 } from './util/formFieldConstants.js'
+import { getEarthEngineConfig } from './util/getEarthEngineConfig.js'
 import { getPrecisionFn } from './util/getPrecisionFn.js'
+import { isAggregation } from './util/isAggregation.js'
 
-const { Form, FormSpy } = ReactFinalForm
+const { Form, Field, FormSpy } = ReactFinalForm
+
+const Condition = ({ when, is, children }) => (
+    <Field name={when} subscription={{ value: true }}>
+        {({ input: { value } }) => (value === is ? children : null)}
+    </Field>
+)
+
+Condition.propTypes = {
+    children: PropTypes.node,
+    is: PropTypes.string,
+    when: PropTypes.string,
+}
 
 const EarthEngineImportForm = () => {
     const {
@@ -42,7 +54,6 @@ const EarthEngineImportForm = () => {
     } = useContext(TaskContext)
     const engine = useDataEngine()
 
-    // resulting data and display options
     const [progress, setProgress] = useState(false)
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const [eeData, setEeData] = useState([])
@@ -50,6 +61,7 @@ const EarthEngineImportForm = () => {
     const [doSubmit, setDoSubmit] = useState(false)
     const [requestFailedMessage, setRequestFailedMessage] = useState(null)
 
+    // for scrolling to the Job summary which is placed at the top
     const hiddenTopElRef = useRef(null)
 
     const initialValues = {
@@ -64,7 +76,7 @@ const EarthEngineImportForm = () => {
         associatedGeometry,
         period,
         rounding,
-        bandCocs,
+        bandCocs = [],
     }) => {
         const getValueWithPrecision = getPrecisionFn(rounding)
 
@@ -109,8 +121,7 @@ const EarthEngineImportForm = () => {
                     if (bandCocs.length) {
                         Object.entries(valueSet).forEach(
                             ([bandId, rawValue]) => {
-                                // TODO add comment explaining the next line (bandId is mis-named?)
-                                if (!ALL_AGGREGATION_TYPES.includes(bandId)) {
+                                if (!isAggregation(bandId)) {
                                     const ouName = polygonOus.find(
                                         (ou) => ou.id === ouId
                                     )?.name
@@ -138,6 +149,7 @@ const EarthEngineImportForm = () => {
 
                     return acc
                 }, [])
+                // TODO - move this to DataPreview so it is not passed to earth engine
                 .concat(
                     pointOrgUnits.map((ou) => ({
                         ouId: ou.id,
@@ -183,7 +195,7 @@ const EarthEngineImportForm = () => {
         // there should be at least one band for Population Age groups
         const bandsValid =
             values.earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
-                ? values.bandCocs?.length
+                ? values.bandCocs?.length //TODO this is no longer sufficient - need to check the coc prop
                 : true
 
         const otherCheck = requestFailedMessage
@@ -254,7 +266,7 @@ const EarthEngineImportForm = () => {
                         form,
                         submitError,
                         form: {
-                            mutators: { push, pop },
+                            mutators: { push, update },
                         },
                     }) => (
                         <form onSubmit={handleSubmit}>
@@ -271,11 +283,16 @@ const EarthEngineImportForm = () => {
                                 <h2>{i18n.t('Import setup')}</h2>
                                 <Divider />
                                 <DataElements />
-                                <MappingTable
-                                    formChange={form.change}
-                                    push={push}
-                                    pop={pop}
-                                />
+                                <Condition
+                                    when={EARTH_ENGINE_ID}
+                                    is={POPULATION_AGE_GROUPS_DATASET_ID}
+                                >
+                                    <MappingTable
+                                        formChange={form.change}
+                                        push={push}
+                                        update={update}
+                                    />
+                                </Condition>
                                 <FormSpy
                                     subscription={{
                                         values: true,

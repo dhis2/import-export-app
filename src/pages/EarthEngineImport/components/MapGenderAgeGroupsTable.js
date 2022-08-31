@@ -12,11 +12,11 @@ import {
     SingleSelectFieldFF,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import {
-    getEarthEngineConfigs,
+    getEarthEngineBands,
     POPULATION_AGE_GROUPS_DATASET_ID,
 } from '../util/earthEngines.js'
 import { BAND_COCS } from '../util/formFieldConstants.js'
@@ -38,37 +38,39 @@ const internalBands = [
     },
 ]
 
-const MappingTable = ({ formChange, push, pop }) => {
+const MappingTable = ({ formChange, push, update }) => {
     const { values } = useFormState()
     const { dataElements } = useCachedDataQuery()
     const [cocs, setCocs] = useState([])
-    const { earthEngineId, dataElementId, bandCocs } = values
-
-    // const clearBandCocs = useCallback(
-    // fields.update
-    // () => bands.forEach(({ id }) => formChange(id, undefined)),
-    // [formChange, bands]
-    // )
+    const { earthEngineId, dataElementId, bandCocs = [] } = values
 
     useEffect(() => {
-        internalBands.forEach((band) => {
+        // getEarthEngineBands(POPULATION_AGE_GROUPS_DATASET_ID).forEach((band) =>
+        internalBands.forEach((band) =>
             push(BAND_COCS, {
                 bandId: band.id,
                 bandName: band.name,
-                coc: '',
             })
-        })
-    }, [push])
+        )
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
+        console.log('clear the bandCocs', dataElementId)
         if (dataElementId) {
+            bandCocs.forEach((bc, index) => {
+                update(BAND_COCS, index, {
+                    bandId: bc.bandId,
+                    bandName: bc.bandName,
+                })
+            })
+
+            // TODO - will categoryCombo always be returned and with categoryOptionCombos?
             const newCocs = dataElements.find(({ id }) => id === dataElementId)
                 .categoryCombo.categoryOptionCombos
 
-            // clearBandCocs()
             setCocs(newCocs)
         }
-    }, [dataElementId, dataElements])
+    }, [dataElementId])
 
     if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
         return null
@@ -76,8 +78,8 @@ const MappingTable = ({ formChange, push, pop }) => {
 
     const getCatComboOptions = () => {
         const unavailableCocs = bandCocs
-            .filter((bcoc) => bcoc.coc)
-            .map((bcoc) => bcoc.coc)
+            ? bandCocs.filter((bcoc) => bcoc.coc).map((bcoc) => bcoc.coc)
+            : []
 
         return cocs.map(({ id, name }) => {
             return {
@@ -115,32 +117,34 @@ const MappingTable = ({ formChange, push, pop }) => {
                 <TableBody>
                     <FieldArray name={BAND_COCS}>
                         {({ fields }) =>
-                            fields.map((name, index) => (
-                                <TableRow key={`row-${index}`}>
-                                    <TableCell dense>
-                                        {fields.value[index].bandId}
-                                    </TableCell>
-                                    <TableCell dense>
-                                        {fields.value[index].bandName}
-                                    </TableCell>
-                                    <TableCell dense>
-                                        <Field
-                                            component={SingleSelectFieldFF}
-                                            name={`${name}.coc`}
-                                            inputWidth="250px"
-                                            filterable
-                                            clearable
-                                            noMatchText={i18n.t(
-                                                'No match found'
-                                            )}
-                                            placeholder={i18n.t(
-                                                'Choose category option combo'
-                                            )}
-                                            options={catComboOptions}
-                                        />
-                                    </TableCell>
-                                </TableRow>
-                            ))
+                            fields.map((name, index) => {
+                                return (
+                                    <TableRow key={`row-${index}`}>
+                                        <TableCell dense>
+                                            {fields.value[index].bandId}
+                                        </TableCell>
+                                        <TableCell dense>
+                                            {fields.value[index].bandName}
+                                        </TableCell>
+                                        <TableCell dense>
+                                            <Field
+                                                component={SingleSelectFieldFF}
+                                                name={`${name}.coc`}
+                                                inputWidth="250px"
+                                                filterable
+                                                clearable
+                                                noMatchText={i18n.t(
+                                                    'No match found'
+                                                )}
+                                                placeholder={i18n.t(
+                                                    'Choose category option combo'
+                                                )}
+                                                options={catComboOptions}
+                                            />
+                                        </TableCell>
+                                    </TableRow>
+                                )
+                            })
                         }
                     </FieldArray>
                 </TableBody>
@@ -151,6 +155,8 @@ const MappingTable = ({ formChange, push, pop }) => {
 
 MappingTable.propTypes = {
     formChange: PropTypes.func,
+    pop: PropTypes.func,
+    push: PropTypes.func,
 }
 
 export { MappingTable }

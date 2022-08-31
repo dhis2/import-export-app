@@ -6,6 +6,7 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { DATA_ELEMENT_ID } from '../util/formFieldConstants.js'
 
 const DataElements = () => {
+    // TODO - clear the selection if earth engine id changes
     const { dataElements } = useCachedDataQuery()
 
     return (

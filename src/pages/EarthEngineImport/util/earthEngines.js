@@ -1,30 +1,14 @@
 import i18n from '@dhis2/d2-i18n'
 
-const EARTH_ENGINE_LAYER = 'earthEngine'
-
 export const POPULATION_AGE_GROUPS_DATASET_ID =
     'WorldPop/GP/100m/pop_age_sex_cons_unadj'
 
 export const POPULATION_DATASET_ID = 'WorldPop/GP/100m/pop'
 
-export const ELEVATION_ID = 'USGS/SRTMGL1_003'
-
-const getDefaultFilters = ({ id, name, year }) => [
-    {
-        type: 'eq',
-        arguments: ['system:index', String(id)],
-        name,
-        year,
-    },
-]
-
-const getEarthEngineLayers = () => [
-    {
-        layer: EARTH_ENGINE_LAYER,
+export const earthEngines = {
+    [POPULATION_DATASET_ID]: {
         datasetId: POPULATION_DATASET_ID,
         name: i18n.t('Population'),
-        unit: i18n.t('people per hectare'),
-        description: i18n.t('Estimated number of people living in an area.'),
         source: 'WorldPop / Google Earth Engine',
         sourceUrl:
             'https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop',
@@ -46,16 +30,10 @@ const getEarthEngineLayers = () => [
             max: 10,
             palette: '#fee5d9,#fcbba1,#fc9272,#fb6a4a,#de2d26,#a50f15', // Reds
         },
-        opacity: 0.9,
     },
-    {
-        layer: EARTH_ENGINE_LAYER,
+    [POPULATION_AGE_GROUPS_DATASET_ID]: {
         datasetId: POPULATION_AGE_GROUPS_DATASET_ID,
         name: i18n.t('Population age groups'),
-        unit: i18n.t('people per hectare'),
-        description: i18n.t(
-            'Estimated number of people living in an area, grouped by age and gender.'
-        ),
         source: 'WorldPop / Google Earth Engine',
         sourceUrl:
             'https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop_age_sex_cons_unadj',
@@ -224,264 +202,13 @@ const getEarthEngineLayers = () => [
             max: 10,
             palette: '#fee5d9,#fcbba1,#fc9272,#fb6a4a,#de2d26,#a50f15', // Reds
         },
-        opacity: 0.9,
     },
-    {
-        layer: EARTH_ENGINE_LAYER,
-        datasetId: ELEVATION_ID,
-        name: i18n.t('Elevation'),
-        unit: i18n.t('meters'),
-        description: i18n.t('Elevation above sea-level.'),
-        source: 'NASA / USGS / JPL-Caltech / Google Earth Engine',
-        sourceUrl:
-            'https://explorer.earthengine.google.com/#detail/USGS%2FSRTMGL1_003',
-        img: 'images/elevation.png',
-        aggregations: ['min', 'max', 'mean', 'median', 'stdDev', 'variance'],
-        defaultAggregations: ['min', 'max', 'mean'],
-        band: 'elevation',
-        params: {
-            min: 0,
-            max: 1500,
-            palette: '#ffffd4,#fee391,#fec44f,#fe9929,#d95f0e,#993404', // YlOrBr
-        },
-        opacity: 0.9,
-    },
-    {
-        layer: EARTH_ENGINE_LAYER,
-        datasetId: 'UCSB-CHG/CHIRPS/PENTAD',
-        name: i18n.t('Precipitation'),
-        unit: i18n.t('millimeter'),
-        description: i18n.t(
-            'Precipitation collected from satellite and weather stations on the ground. The values are in millimeters within 5 days periods. Updated monthly, during the 3rd week of the following month.'
-        ),
-        source: 'UCSB / CHG / Google Earth Engine',
-        sourceUrl:
-            'https://explorer.earthengine.google.com/#detail/UCSB-CHG%2FCHIRPS%2FPENTAD',
-        periodType: 'Custom',
-        band: 'precipitation',
-        aggregations: ['min', 'max', 'mean', 'median', 'stdDev', 'variance'],
-        defaultAggregations: ['min', 'max', 'mean'],
-        mask: true,
-        img: 'images/precipitation.png',
-        params: {
-            min: 0,
-            max: 100,
-            palette: '#eff3ff,#c6dbef,#9ecae1,#6baed6,#3182bd,#08519c', // Blues
-        },
-        opacity: 0.9,
-    },
-    {
-        layer: EARTH_ENGINE_LAYER,
-        datasetId: 'MODIS/006/MOD11A2',
-        name: i18n.t('Temperature'),
-        unit: i18n.t('°C during daytime'),
-        description: i18n.t(
-            'Land surface temperatures collected from satellite. Blank spots will appear in areas with a persistent cloud cover.'
-        ),
-        source: 'NASA LP DAAC / Google Earth Engine',
-        sourceUrl:
-            'https://explorer.earthengine.google.com/#detail/MODIS%2FMOD11A2',
-        img: 'images/temperature.png',
-        aggregations: ['min', 'max', 'mean', 'median', 'stdDev', 'variance'],
-        defaultAggregations: ['min', 'max', 'mean'],
-        periodType: 'Custom',
-        band: 'LST_Day_1km',
-        mask: true,
-        methods: {
-            toFloat: [],
-            multiply: [0.02],
-            subtract: [273.15],
-        },
-        params: {
-            min: 0,
-            max: 40,
-            palette:
-                '#fff5f0,#fee0d2,#fcbba1,#fc9272,#fb6a4a,#ef3b2c,#cb181d,#a50f15,#67000d', // Reds
-        },
-        opacity: 0.9,
-    },
-    {
-        layer: EARTH_ENGINE_LAYER,
-        datasetId: 'MODIS/006/MCD12Q1', // No longer in use: 'MODIS/051/MCD12Q1',
-        name: i18n.t('Landcover'),
-        description: i18n.t(
-            'Distinct landcover types collected from satellites.'
-        ),
-        source: 'NASA LP DAAC / Google Earth Engine',
-        sourceUrl:
-            'https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MCD12Q1',
-        periodType: 'Yearly',
-        band: 'LC_Type1',
-        filters: getDefaultFilters,
-        defaultAggregations: 'percentage',
-        legend: {
-            items: [
-                // http://www.eomf.ou.edu/static/IGBP.pdf
-                {
-                    id: 1,
-                    name: i18n.t('Evergreen Needleleaf forest'),
-                    color: '#162103',
-                },
-                {
-                    id: 2,
-                    name: i18n.t('Evergreen Broadleaf forest'),
-                    color: '#235123',
-                },
-                {
-                    id: 3,
-                    name: i18n.t('Deciduous Needleleaf forest'),
-                    color: '#399b38',
-                },
-                {
-                    id: 4,
-                    name: i18n.t('Deciduous Broadleaf forest'),
-                    color: '#38eb38',
-                },
-                {
-                    id: 5,
-                    name: i18n.t('Mixed forest'),
-                    color: '#39723b',
-                },
-                {
-                    id: 6,
-                    name: i18n.t('Closed shrublands'),
-                    color: '#6a2424',
-                },
-                {
-                    id: 7,
-                    name: i18n.t('Open shrublands'),
-                    color: '#c3a55f',
-                },
-                {
-                    id: 8,
-                    name: i18n.t('Woody savannas'),
-                    color: '#b76124',
-                },
-                {
-                    id: 9,
-                    name: i18n.t('Savannas'),
-                    color: '#d99125',
-                },
-                {
-                    id: 10,
-                    name: i18n.t('Grasslands'),
-                    color: '#92af1f',
-                },
-                {
-                    id: 11,
-                    name: i18n.t('Permanent wetlands'),
-                    color: '#10104c',
-                },
-                {
-                    id: 12,
-                    name: i18n.t('Croplands'),
-                    color: '#cdb400',
-                },
-                {
-                    id: 13,
-                    name: i18n.t('Urban and built-up'),
-                    color: '#cc0202',
-                },
-                {
-                    id: 14,
-                    name: i18n.t('Cropland/Natural vegetation mosaic'),
-                    color: '#332808',
-                },
-                {
-                    id: 15,
-                    name: i18n.t('Snow and ice'),
-                    color: '#d7cdcc',
-                },
-                {
-                    id: 16,
-                    name: i18n.t('Barren or sparsely vegetated'),
-                    color: '#f7e174',
-                },
-                {
-                    id: 17,
-                    name: i18n.t('Water'),
-                    color: '#aec3d6',
-                },
-            ],
-        },
-        mask: false,
-        popup: '{name}: {value}',
-        img: 'images/landcover.png',
-        opacity: 0.9,
-    },
-    {
-        layer: EARTH_ENGINE_LAYER,
-        legacy: true, // Kept for backward compability
-        datasetId: 'WorldPop/POP',
-        name: i18n.t('Population'),
-        unit: i18n.t('people per km²'),
-        description: i18n.t('Estimated number of people living in an area.'),
-        source: 'WorldPop / Google Earth Engine',
-        sourceUrl:
-            'https://explorer.earthengine.google.com/#detail/WorldPop%2FPOP',
-        img: 'images/population.png',
-        periodType: 'Yearly',
-        filters: ({ id, name, year }) => [
-            {
-                id,
-                name,
-                type: 'eq',
-                arguments: ['year', year],
-            },
-            {
-                type: 'eq',
-                arguments: ['UNadj', 'yes'],
-            },
-        ],
-        mosaic: true,
-        params: {
-            min: 0,
-            max: 1000,
-            palette: '#fee5d9,#fcbba1,#fc9272,#fb6a4a,#de2d26,#a50f15', // Reds
-        },
-        methods: {
-            multiply: [100], // Convert from people/hectare to people/km2
-        },
-        opacity: 0.9,
-    },
-    {
-        layer: EARTH_ENGINE_LAYER,
-        legacy: true, // Kept for backward compability
-        datasetId: 'NOAA/DMSP-OLS/NIGHTTIME_LIGHTS',
-        name: i18n.t('Nighttime lights'),
-        unit: i18n.t('light intensity'),
-        description: i18n.t(
-            'Light intensity from cities, towns, and other sites with persistent lighting, including gas flares.'
-        ),
-        source: 'NOAA / Google Earth Engine',
-        sourceUrl:
-            'https://explorer.earthengine.google.com/#detail/NOAA%2FDMSP-OLS%2FNIGHTTIME_LIGHTS',
-        periodType: 'Yearly',
-        band: 'stable_lights',
-        mask: true,
-        img: 'images/nighttime.png',
-        params: {
-            min: 0,
-            max: 63,
-            palette: '#ffffd4,#fee391,#fec44f,#fe9929,#ec7014,#cc4c02,#8c2d04', // YlOrBr
-        },
-        opacity: 0.9,
-    },
-]
-
-export const getEarthEngineConfigs = (eeIds) => {
-    if (Array.isArray(eeIds)) {
-        return getEarthEngineLayers().filter(({ datasetId }) =>
-            eeIds.includes(datasetId)
-        )
-    }
-
-    return getEarthEngineLayers().find((l) => l.datasetId === eeIds)
 }
 
-export const getDefaultAggregation = (eeId) => {
-    const defaultAggregations = getEarthEngineConfigs(eeId).defaultAggregations
-    return Array.isArray(defaultAggregations)
-        ? defaultAggregations[0]
-        : defaultAggregations
-}
+const NO_BANDS = []
+
+export const getEarthEngineBands = (eeId) =>
+    earthEngines[eeId].bands || NO_BANDS
+
+export const getDefaultAggregation = (eeId) =>
+    earthEngines[eeId].defaultAggregations[0]

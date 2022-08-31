@@ -31,6 +31,7 @@ const Periods = ({ formChange }) => {
                 helpText={i18n.t(
                     'Data from Earth Engine will be imported for this period.'
                 )}
+                placeholder={i18n.t('Select period')}
                 loading={loading}
                 loadingText={i18n.t('Loading periods')}
                 empty={i18n.t('No periods found')}
