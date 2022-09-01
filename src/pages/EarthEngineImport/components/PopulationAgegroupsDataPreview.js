@@ -49,7 +49,7 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
             acc[curr.id] = curr
             return acc
         }, {})
-    }, [dataElements, dataElementId])
+    }, [dataElementId, dataElements])
 
     useEffect(() => {
         if (eeData) {
@@ -78,14 +78,13 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
 
             setTableData(newArr)
         }
-    }, [currentValues, eeData, bandCocMap, pointOuRows, cocMap])
+    }, [currentValues, eeData, pointOuRows, bandCocMap, cocMap])
 
-    // useEffect(() => {
-    //     console.log('scroll to table Data effect')
-    //     tableRef?.current?.scrollIntoView({
-    //         behavior: 'smooth',
-    //     })
-    // }, [tableData, tableRef])
+    useEffect(() => {
+        tableRef?.current?.scrollIntoView({
+            behavior: 'smooth',
+        })
+    }, [tableData, tableRef])
 
     useEffect(() => {
         if (tableData.length) {

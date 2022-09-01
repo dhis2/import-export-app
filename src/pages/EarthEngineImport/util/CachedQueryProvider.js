@@ -1,20 +1,42 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Layer, CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 
 // TODO This provider is available in @dhis2/analytics@^23
 
 const CachedDataQueryCtx = createContext({})
 
-const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
-    const { data: rawData, ...rest } = useDataQuery(query)
-    const { error, loading } = rest
-    const data =
-        rawData && dataTransformation ? dataTransformation(rawData) : rawData
+const NO_DATA = {}
 
-    if (loading) {
+const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
+    const [data, setData] = useState(null)
+    const [error, setError] = useState(null)
+    const engine = useDataEngine()
+
+    useEffect(() => {
+        async function fetchData() {
+            await engine.query(query, {
+                onComplete: (resp) => {
+                    const dt = resp ? dataTransformation(resp) : NO_DATA
+                    setData(dt)
+                },
+                onError: (error) => {
+                    console.log(
+                        'Error',
+                        i18n.t('This app could not retrieve required data.'),
+                        error
+                    )
+                    setError(error)
+                    setData(NO_DATA)
+                },
+            })
+        }
+        fetchData()
+    }, [engine, dataTransformation, query])
+
+    if (!data && !error) {
         return (
             <Layer translucent>
                 <CenteredContent>

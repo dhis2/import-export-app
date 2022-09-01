@@ -185,16 +185,14 @@ const EarthEngineImportForm = () => {
         }
     }
 
-    const previewIsAllowed = ({ valid, values, modifiedSinceLastPreview }) => {
+    const previewIsAllowed = ({ valid, values, modifiedSinceLastSubmit }) => {
         // there should be at least one band for Population Age groups
         const bandsValid =
             values.earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
                 ? values.bandCocs?.find((bc) => !!bc.coc)
                 : true
 
-        const otherCheck = requestFailedMessage
-            ? modifiedSinceLastPreview
-            : true
+        const otherCheck = requestFailedMessage ? modifiedSinceLastSubmit : true
 
         return valid && bandsValid && otherCheck
     }
@@ -306,8 +304,7 @@ const EarthEngineImportForm = () => {
                                                 !previewIsAllowed({
                                                     valid,
                                                     values,
-                                                    modifiedSinceLastPreview:
-                                                        modifiedSinceLastSubmit,
+                                                    modifiedSinceLastSubmit,
                                                 })
                                             }
                                             onClick={() => fetchEeData(values)}

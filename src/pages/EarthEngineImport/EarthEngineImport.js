@@ -40,13 +40,11 @@ const providerDataTransformation = ({
 }) => {
     return {
         rootOrgUnits: rootOrgUnits.organisationUnits?.map((ou) => ou.id) || [],
-        dataElements: dataElements.dataElements.map((de) => {
-            return {
-                ...de,
-                value: de.id,
-                label: de.name,
-            }
-        }),
+        dataElements: dataElements.dataElements.map((de) => ({
+            ...de,
+            value: de.id,
+            label: de.name,
+        })),
         associatedGeometry: [
             { label: 'None', value: NO_ASSOCIATED_GEOMETRY },
         ].concat(
