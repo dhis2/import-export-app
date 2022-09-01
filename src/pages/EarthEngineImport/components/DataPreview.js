@@ -14,13 +14,9 @@ import styles from './styles/DataPreview.module.css'
 
 const { useField } = ReactFinalForm
 
-const DataPreview = ({ modifiedSinceLastPreview, fetching, eeData }) => {
-    const { input: eeInput } = useField(EARTH_ENGINE_ID)
-    const { value: earthEngineId } = eeInput
-
-    if (modifiedSinceLastPreview) {
-        return null
-    }
+const DataPreview = ({ fetching, eeData, pointOuRows }) => {
+    const { input } = useField(EARTH_ENGINE_ID)
+    const { value: earthEngineId } = input
 
     if (!fetching && !eeData.length) {
         return null
@@ -39,9 +35,15 @@ const DataPreview = ({ modifiedSinceLastPreview, fetching, eeData }) => {
             ) : (
                 <div className={styles.indent}>
                     {earthEngineId === POPULATION_DATASET_ID ? (
-                        <PopulationDataPreview eeData={eeData} />
+                        <PopulationDataPreview
+                            eeData={eeData}
+                            pointOuRows={pointOuRows}
+                        />
                     ) : (
-                        <PopulationAgegroupsDataPreview eeData={eeData} />
+                        <PopulationAgegroupsDataPreview
+                            eeData={eeData}
+                            pointOuRows={pointOuRows}
+                        />
                     )}
                 </div>
             )}
@@ -52,7 +54,7 @@ const DataPreview = ({ modifiedSinceLastPreview, fetching, eeData }) => {
 DataPreview.propTypes = {
     eeData: PropTypes.array,
     fetching: PropTypes.bool,
-    modifiedSinceLastPreview: PropTypes.bool,
+    pointOuRows: PropTypes.array,
 }
 
 export { DataPreview }

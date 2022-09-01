@@ -5,7 +5,7 @@ import arrayMutators from 'final-form-arrays'
 import PropTypes from 'prop-types'
 import React, { useState, useContext, useRef } from 'react'
 import { Page, DataIcon } from '../../components/index.js'
-import { FormAlerts } from '../../components/Inputs/index.js'
+import { FormAlerts, ImportButtonStrip } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { AssociatedGeometry } from './components/AssociatedGeometry.js'
 import { DataElements } from './components/DataElements.js'
@@ -15,7 +15,6 @@ import { MappingTable } from './components/MapGenderAgeGroupsTable.js'
 import { OrganisationUnits } from './components/OrganisationUnits.js'
 import { Periods } from './components/Periods.js'
 import { Rounding, defaultRoundingOption } from './components/Rounding.js'
-import { SubmitButtons } from './components/SubmitButtons.js'
 import styles from './EarthEngineImportForm.module.css'
 import { onImport } from './form-helper.js'
 import { getPeriods, getAggregations } from './util/earthEngineHelper.js'
@@ -57,6 +56,7 @@ const EarthEngineImportForm = () => {
     const [progress, setProgress] = useState(false)
     const [showFullSummaryTask, setShowFullSummaryTask] = useState(false)
     const [eeData, setEeData] = useState([])
+    const [pointOuRows, setPointOuRows] = useState(null)
     const [fetching, setFetching] = useState(false)
     const [doSubmit, setDoSubmit] = useState(false)
     const [requestFailedMessage, setRequestFailedMessage] = useState(null)
@@ -116,8 +116,8 @@ const EarthEngineImportForm = () => {
                     }
                 }) || []
 
-            const structuredData = Object.entries(data)
-                .reduce((acc, [ouId, valueSet]) => {
+            const structuredData = Object.entries(data).reduce(
+                (acc, [ouId, valueSet]) => {
                     if (bandCocs.length) {
                         Object.entries(valueSet).forEach(
                             ([bandId, rawValue]) => {
@@ -148,18 +148,12 @@ const EarthEngineImportForm = () => {
                     }
 
                     return acc
-                }, [])
-                // TODO - move this to DataPreview so it is not passed to earth engine
-                .concat(
-                    pointOrgUnits.map((ou) => ({
-                        ouId: ou.id,
-                        ouName: ou.name,
-                        value: i18n.t('Point org. unit - no value'),
-                        isNoValue: true,
-                    }))
-                )
+                },
+                []
+            )
 
             setEeData(structuredData)
+            setPointOuRows(pointOrgUnits)
             setFetching(false)
             setDoSubmit(true)
         } catch (error) {
@@ -195,7 +189,7 @@ const EarthEngineImportForm = () => {
         // there should be at least one band for Population Age groups
         const bandsValid =
             values.earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
-                ? values.bandCocs?.length //TODO this is no longer sufficient - need to check the coc prop
+                ? values.bandCocs?.find((bc) => !!bc.coc)
                 : true
 
         const otherCheck = requestFailedMessage
@@ -327,25 +321,28 @@ const EarthEngineImportForm = () => {
                                         modifiedSinceLastSubmit: true,
                                     }}
                                 >
-                                    {({ modifiedSinceLastSubmit }) => (
-                                        <>
+                                    {({ modifiedSinceLastSubmit }) =>
+                                        !modifiedSinceLastSubmit ? (
                                             <DataPreview
-                                                modifiedSinceLastPreview={
-                                                    modifiedSinceLastSubmit
-                                                }
                                                 fetching={fetching}
                                                 eeData={eeData}
+                                                pointOuRows={pointOuRows}
                                             />
-                                            <SubmitButtons
-                                                form={form}
-                                                modifiedSinceLastPreview={
-                                                    modifiedSinceLastSubmit
-                                                }
-                                                fetching={fetching}
-                                                hasData={!!eeData.length}
-                                            />
-                                        </>
-                                    )}
+                                        ) : null
+                                    }
+                                </FormSpy>
+                                <FormSpy
+                                    subscription={{
+                                        modifiedSinceLastSubmit: true,
+                                    }}
+                                >
+                                    {({ modifiedSinceLastSubmit }) =>
+                                        !modifiedSinceLastSubmit &&
+                                        !fetching &&
+                                        eeData?.length ? (
+                                            <ImportButtonStrip form={form} />
+                                        ) : null
+                                    }
                                 </FormSpy>
                                 <FormAlerts alerts={getAlerts(submitError)} />
                             </div>

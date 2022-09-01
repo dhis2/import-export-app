@@ -12,7 +12,7 @@ import {
     Tag,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
@@ -21,7 +21,7 @@ const DEFAULT_ROWS_PER_PAGE = 10
 
 const { useFormState } = ReactFinalForm
 
-const PopulationAgegroupsDataPreview = ({ eeData }) => {
+const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
     const { values } = useFormState()
     const { dataElementId, bandCocs } = values
     const [tableData, setTableData] = useState([])
@@ -33,38 +33,59 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
 
     const tableRef = useRef(null)
 
+    const bandCocMap = useMemo(() => {
+        return bandCocs.reduce((acc, curr) => {
+            acc[curr.bandId] = curr
+            return acc
+        }, {})
+    }, [bandCocs])
+
+    const cocMap = useMemo(() => {
+        const cocs =
+            dataElements.find(({ id }) => id === dataElementId).categoryCombo
+                ?.categoryOptionCombos || []
+
+        return cocs.reduce((acc, curr) => {
+            acc[curr.id] = curr
+            return acc
+        }, {})
+    }, [dataElements, dataElementId])
+
     useEffect(() => {
         if (eeData) {
-            const newArr = eeData.map((d) => {
-                // TODO - probably not very performant - make a bandCoc map instead
-                const cocId = bandCocs.find((bc) => bc.bandId === d.bandId).coc
+            const newArr = eeData
+                .map((d) => {
+                    const cocId = bandCocMap[d.bandId]?.coc
 
-                const current = currentValues
-                    .filter((v) => v.orgUnit === d.ouId)
-                    .find((v) => v.categoryOptionCombo === cocId)
+                    const current = currentValues
+                        .filter((v) => v.orgUnit === d.ouId)
+                        .find((v) => v.categoryOptionCombo === cocId)
 
-                // find the name of the cat option combo from dataElements
-                const cocs =
-                    dataElements.find(({ id }) => id === dataElementId)
-                        .categoryCombo?.categoryOptionCombos || []
-
-                const categoryOptionCombo = cocs.find(
-                    (coc) => coc.id === cocId
-                )?.name
-
-                return {
-                    categoryOptionCombo,
-                    current: current?.value,
-                    ...d,
-                }
-            })
+                    return {
+                        categoryOptionCombo: cocMap[cocId]?.name,
+                        current: current?.value,
+                        ...d,
+                    }
+                })
+                .concat(
+                    pointOuRows.map(({ id, name }) => ({
+                        ouId: id,
+                        ouName: name,
+                        value: i18n.t('Point org. unit - no value'),
+                        isNoValue: true,
+                    }))
+                )
 
             setTableData(newArr)
-            tableRef?.current?.scrollIntoView({
-                behavior: 'smooth',
-            })
         }
-    }, [currentValues, eeData, dataElementId, dataElements, bandCocs])
+    }, [currentValues, eeData, bandCocMap, pointOuRows, cocMap])
+
+    // useEffect(() => {
+    //     console.log('scroll to table Data effect')
+    //     tableRef?.current?.scrollIntoView({
+    //         behavior: 'smooth',
+    //     })
+    // }, [tableData, tableRef])
 
     useEffect(() => {
         if (tableData.length) {
@@ -182,6 +203,7 @@ const PopulationAgegroupsDataPreview = ({ eeData }) => {
 
 PopulationAgegroupsDataPreview.propTypes = {
     eeData: PropTypes.array,
+    pointOuRows: PropTypes.array,
 }
 
 export { PopulationAgegroupsDataPreview }

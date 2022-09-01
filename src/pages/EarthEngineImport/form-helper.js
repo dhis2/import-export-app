@@ -1,4 +1,4 @@
-// import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
+// import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js' // TODO
 import { genericErrorMessage } from '../../utils/helper.js'
 import { extractIdAndMessage } from '../../utils/xhr.js'
 
@@ -14,26 +14,21 @@ const onImport =
         let dataValues
 
         if (bandCocs.length) {
-            dataValues = eeData.map(({ ouId, bandId, value }) => {
-                return {
-                    dataElement: dataElementId,
-                    period,
-                    orgUnit: ouId,
-                    categoryOptionCombo: bandCocs.find(
-                        (bc) => bc.bandId === bandId
-                    ).coc,
-                    value,
-                }
-            })
+            dataValues = eeData.map(({ ouId, bandId, value }) => ({
+                dataElement: dataElementId,
+                period,
+                orgUnit: ouId,
+                categoryOptionCombo: bandCocs.find((bc) => bc.bandId === bandId)
+                    .coc,
+                value,
+            }))
         } else {
-            dataValues = eeData.map(({ ouId, value }) => {
-                return {
-                    dataElement: dataElementId,
-                    period,
-                    orgUnit: ouId,
-                    value,
-                }
-            })
+            dataValues = eeData.map(({ ouId, value }) => ({
+                dataElement: dataElementId,
+                period,
+                orgUnit: ouId,
+                value,
+            }))
         }
 
         const mutation = {

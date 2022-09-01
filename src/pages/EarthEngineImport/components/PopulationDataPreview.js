@@ -17,7 +17,7 @@ import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const DEFAULT_ROWS_PER_PAGE = 10
 
-const PopulationDataPreview = ({ eeData }) => {
+const PopulationDataPreview = ({ eeData, pointOuRows }) => {
     const [tableData, setTableData] = useState([])
     const [pageNo, setPageNo] = useState(1)
     const { currentValues } = useFetchCurrentValues()
@@ -27,18 +27,29 @@ const PopulationDataPreview = ({ eeData }) => {
 
     useEffect(() => {
         if (eeData) {
-            const newArr = eeData.map((d) => {
-                const current = currentValues.find((v) => v.orgUnit === d.ouId)
+            const newArr = eeData
+                .map((d) => {
+                    const current = currentValues.find(
+                        (v) => v.orgUnit === d.ouId
+                    )
 
-                return { current: current?.value, ...d }
-            })
+                    return { current: current?.value, ...d }
+                })
+                .concat(
+                    pointOuRows.map(({ id, name }) => ({
+                        ouId: id,
+                        ouName: name,
+                        value: i18n.t('Point org. unit - no value'),
+                        isNoValue: true,
+                    }))
+                )
 
             setTableData(newArr)
             tableRef?.current?.scrollIntoView({
                 behavior: 'smooth',
             })
         }
-    }, [currentValues, eeData])
+    }, [currentValues, eeData, pointOuRows])
 
     useEffect(() => {
         if (tableData.length) {
@@ -132,6 +143,7 @@ const PopulationDataPreview = ({ eeData }) => {
 
 PopulationDataPreview.propTypes = {
     eeData: PropTypes.array,
+    pointOuRows: PropTypes.array,
 }
 
 export { PopulationDataPreview }

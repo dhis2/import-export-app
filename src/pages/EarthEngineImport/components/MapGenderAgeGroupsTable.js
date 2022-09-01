@@ -12,7 +12,7 @@ import {
     SingleSelectFieldFF,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import {
