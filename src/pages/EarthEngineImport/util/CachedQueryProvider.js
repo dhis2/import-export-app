@@ -4,7 +4,7 @@ import { Layer, CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-// TODO This provider is available in @dhis2/analytics@^23
+// A similar version of this provider is available in @dhis2/analytics@^23
 
 const CachedDataQueryCtx = createContext({})
 
@@ -16,25 +16,21 @@ const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
     const engine = useDataEngine()
 
     useEffect(() => {
-        // TODO is it really necessary with async/await?
-        async function fetchData() {
-            await engine.query(query, {
-                onComplete: (resp) => {
-                    const dt = resp ? dataTransformation(resp) : NO_DATA
-                    setData(dt)
-                },
-                onError: (error) => {
-                    console.log(
-                        'Error',
-                        i18n.t('This app could not retrieve required data.'),
-                        error
-                    )
-                    setError(error)
-                    setData(NO_DATA)
-                },
-            })
-        }
-        fetchData()
+        engine.query(query, {
+            onComplete: (resp) => {
+                const dt = resp ? dataTransformation(resp) : NO_DATA
+                setData(dt)
+            },
+            onError: (error) => {
+                console.log(
+                    'Error',
+                    'The app could not retrieve required data.',
+                    error
+                )
+                setError(error)
+                setData(NO_DATA)
+            },
+        })
     }, [engine, dataTransformation, query])
 
     if (!data && !error) {
@@ -48,7 +44,7 @@ const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
     }
 
     if (error) {
-        const fallbackMsg = i18n.t('This app could not retrieve required data.')
+        const fallbackMsg = i18n.t('The app could not retrieve required data.')
 
         return (
             <NoticeBox error title={i18n.t('Network error')}>
