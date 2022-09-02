@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-31T15:22:38.769Z\n"
-"PO-Revision-Date: 2022-08-31T15:22:38.769Z\n"
+"POT-Creation-Date: 2022-09-02T09:09:37.397Z\n"
+"PO-Revision-Date: 2022-09-02T09:09:37.397Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -937,8 +937,8 @@ msgstr "Round to 6 decimal places"
 msgid "Value rounding"
 msgstr "Value rounding"
 
-msgid "This app could not retrieve required data."
-msgstr "This app could not retrieve required data."
+msgid "The app could not retrieve required data."
+msgstr "The app could not retrieve required data."
 
 msgid "Network error"
 msgstr "Network error"
@@ -1067,11 +1067,11 @@ msgstr "Women 75 - 79 years"
 msgid "Women 80 years and above"
 msgstr "Women 80 years and above"
 
-msgid "No geofeatures found for selected organisation units"
-msgstr "No geofeatures found for selected organisation units"
-
 msgid "No organisation units have been selected"
 msgstr "No organisation units have been selected"
+
+msgid "No geofeatures found for selected organisation units"
+msgstr "No geofeatures found for selected organisation units"
 
 msgid "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr "Export event data for programs, stages and tracked entities in DXF 2 format."

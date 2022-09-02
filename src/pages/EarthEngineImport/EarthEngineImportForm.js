@@ -45,6 +45,8 @@ Condition.propTypes = {
     when: PropTypes.string,
 }
 
+// TODO - spacing between sections and buttons
+
 const EarthEngineImportForm = () => {
     const {
         tasks: { earthengine: earthengineTasks },
