@@ -78,6 +78,7 @@ const EarthEngineImportForm = () => {
         rounding,
         bandCocs = [],
     }) => {
+        const selectedBandCocs = bandCocs.filter((bc) => !!bc.coc)
         const getValueWithPrecision = getPrecisionFn(rounding)
 
         const aggregationType = getDefaultAggregation(earthEngineId)
@@ -89,18 +90,16 @@ const EarthEngineImportForm = () => {
         try {
             const periods = await getPeriods(earthEngineId, engine)
 
-            const eeOptions = {
-                earthEngineId,
-                organisationUnits,
-                period,
-                periods,
-                aggregationType,
-                coordinateField: associatedGeometry,
-                bandCocs,
-            }
-
             const { config, pointOrgUnits } = await getEarthEngineConfig(
-                eeOptions,
+                {
+                    earthEngineId,
+                    organisationUnits,
+                    period,
+                    periods,
+                    aggregationType,
+                    associatedGeometry,
+                    selectedBandCocs,
+                },
                 engine
             )
 
@@ -118,17 +117,25 @@ const EarthEngineImportForm = () => {
 
             const structuredData = Object.entries(data).reduce(
                 (acc, [ouId, valueSet]) => {
-                    if (bandCocs.length) {
+                    if (selectedBandCocs.length === 1) {
+                        acc.push({
+                            ouId,
+                            ouName: polygonOus.find((ou) => ou.id === ouId)
+                                ?.name,
+                            bandId: selectedBandCocs[0].bandId,
+                            value: getValueWithPrecision(valueSet['sum']),
+                        })
+                    } else if (selectedBandCocs.length > 1) {
                         Object.entries(valueSet).forEach(
-                            ([bandId, rawValue]) => {
-                                if (!isAggregation(bandId)) {
+                            ([groupId, rawValue]) => {
+                                if (!isAggregation(groupId)) {
                                     const ouName = polygonOus.find(
                                         (ou) => ou.id === ouId
                                     )?.name
                                     acc.push({
                                         ouId,
                                         ouName,
-                                        bandId,
+                                        bandId: groupId,
                                         value: getValueWithPrecision(rawValue),
                                     })
                                 }
@@ -189,7 +196,7 @@ const EarthEngineImportForm = () => {
         // there should be at least one band for Population Age groups
         const bandsValid =
             values.earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
-                ? values.bandCocs?.find((bc) => !!bc.coc)
+                ? !!values.bandCocs?.find((bc) => !!bc.coc)
                 : true
 
         const otherCheck = requestFailedMessage ? modifiedSinceLastSubmit : true

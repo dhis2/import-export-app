@@ -16,6 +16,7 @@ const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
     const engine = useDataEngine()
 
     useEffect(() => {
+        // TODO is it really necessary with async/await?
         async function fetchData() {
             await engine.query(query, {
                 onComplete: (resp) => {

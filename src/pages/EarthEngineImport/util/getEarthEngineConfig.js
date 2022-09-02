@@ -14,7 +14,7 @@ const getGeoFeaturesQuery = (ouIds, coordinateField) => ({
     },
 })
 
-const earthEngineOptions = [
+const earthEngineParams = [
     'format',
     'aggregationType',
     'band',
@@ -29,86 +29,77 @@ const earthEngineOptions = [
 
 const TILE_SCALE = 4
 
-// Returns a promise
 const getEarthEngineConfig = async (
     {
         earthEngineId,
         organisationUnits,
-        coordinateField,
+        associatedGeometry,
         period,
         periods,
         aggregationType,
-        bandCocs,
+        selectedBandCocs,
     },
     engine
 ) => {
-    const orgUnitIds = organisationUnits.map((ou) => ou.id)
-    let polygonFeatures
-    let pointOrgUnits
-
-    if (orgUnitIds && orgUnitIds.length) {
-        const ouIdsString = orgUnitIds.reduce((previousValue, currentValue) => {
-            return previousValue.concat(`${currentValue};`)
-        }, 'ou:')
-
-        const coordField =
-            coordinateField !== NO_ASSOCIATED_GEOMETRY
-                ? coordinateField
-                : undefined
-
-        // TODO - memoize?
-        const query = getGeoFeaturesQuery(ouIdsString, coordField)
-
-        const geoFeatures = await engine.query({ geoFeatures: query })
-        // only polygons, no points to the Earth Engine
-        polygonFeatures = toGeoJson(
-            geoFeatures.geoFeatures.filter((gf) => gf.ty === 2)
-        )
-
-        if (!polygonFeatures.length) {
-            throw new Error(
-                i18n.t('No geofeatures found for selected organisation units')
-            )
-        }
-
-        const pointFeatures =
-            toGeoJson(geoFeatures.geoFeatures.filter((gf) => gf.ty === 1)) || []
-
-        pointOrgUnits = pointFeatures.map(({ properties }) => ({
-            id: properties.id,
-            name: properties.name,
-        }))
-    } else {
+    if (!organisationUnits || !organisationUnits.length) {
         throw new Error(i18n.t('No organisation units have been selected'))
     }
 
-    const data =
-        Array.isArray(polygonFeatures) && polygonFeatures.length
-            ? polygonFeatures
+    const orgUnitIds = organisationUnits.map((ou) => ou.id)
+
+    const ouIdsString = orgUnitIds.reduce((previousValue, currentValue) => {
+        return previousValue.concat(`${currentValue};`)
+    }, 'ou:')
+
+    const coordinateField =
+        associatedGeometry !== NO_ASSOCIATED_GEOMETRY
+            ? associatedGeometry
             : undefined
+
+    const query = getGeoFeaturesQuery(ouIdsString, coordinateField)
+
+    const geoFeatures = await engine.query({ geoFeatures: query })
+    // only polygons, no points to the Earth Engine
+    const polygonFeatures = toGeoJson(
+        geoFeatures.geoFeatures.filter((gf) => gf.ty === 2)
+    )
+
+    if (!polygonFeatures.length) {
+        throw new Error(
+            i18n.t('No geofeatures found for selected organisation units')
+        )
+    }
+
+    const pointFeatures =
+        toGeoJson(geoFeatures.geoFeatures.filter((gf) => gf.ty === 1)) || []
+
+    const pointOrgUnits = pointFeatures.map(({ properties }) => ({
+        id: properties.id,
+        name: properties.name,
+    }))
 
     const cfg = {
         ...earthEngines[earthEngineId],
         aggregationType: [aggregationType],
         filter: periods.filter((p) => period === p.name),
         tileScale: TILE_SCALE,
-        data,
+        data: polygonFeatures,
     }
 
-    const bandsWithCocs = bandCocs.filter((bc) => !!bc.coc)
-
-    if (earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID && bandsWithCocs) {
-        cfg.band = bandsWithCocs.map((bc) => bc.bandId)
+    if (
+        earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID &&
+        selectedBandCocs
+    ) {
+        cfg.band = selectedBandCocs.map((bc) => bc.bandId)
     }
 
-    const options = Object.keys(cfg)
-        .filter((option) => earthEngineOptions.includes(option))
-        .reduce((obj, key) => {
-            obj[key] = cfg[key]
-            return obj
-        }, {})
+    const config = Object.fromEntries(
+        earthEngineParams
+            .filter((key) => key in cfg)
+            .map((key) => [key, cfg[key]])
+    )
 
-    return { config: options, pointOrgUnits }
+    return { config, pointOrgUnits }
 }
 
 export { getEarthEngineConfig }
