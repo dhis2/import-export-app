@@ -228,16 +228,22 @@ const EarthEngineImportForm = () => {
                     }) => (
                         <form onSubmit={handleSubmit}>
                             <div className={styles.wrapper}>
-                                <h2>{i18n.t('Earth Engine source')}</h2>
+                                <h2 className={styles.sectionHeader}>
+                                    {i18n.t('Earth Engine source')}
+                                </h2>
                                 <Divider />
                                 <EarthEngineId />
                                 <Periods formChange={form.change} />
                                 <Rounding />
-                                <h2>{i18n.t('Organisation units')}</h2>
+                                <h2 className={styles.sectionHeader}>
+                                    {i18n.t('Organisation units')}
+                                </h2>
                                 <Divider />
                                 <OrganisationUnits />
                                 <AssociatedGeometry />
-                                <h2>{i18n.t('Import setup')}</h2>
+                                <h2 className={styles.sectionHeader}>
+                                    {i18n.t('Import setup')}
+                                </h2>
                                 <Divider />
                                 <DataElements />
                                 <Condition
@@ -264,6 +270,7 @@ const EarthEngineImportForm = () => {
                                         modifiedSinceLastSubmit,
                                     }) => (
                                         <Button
+                                            className={styles.buttonWrapper}
                                             primary
                                             type="submit"
                                             disabled={
@@ -303,7 +310,13 @@ const EarthEngineImportForm = () => {
                                         !modifiedSinceLastSubmit &&
                                         !fetching &&
                                         eeData?.length ? (
-                                            <ImportButtonStrip form={form} />
+                                            <div
+                                                className={styles.buttonWrapper}
+                                            >
+                                                <ImportButtonStrip
+                                                    form={form}
+                                                />
+                                            </div>
                                         ) : null
                                     }
                                 </FormSpy>

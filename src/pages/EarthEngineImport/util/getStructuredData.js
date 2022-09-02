@@ -18,6 +18,12 @@ const ALL_AGGREGATION_TYPES = [
     AGGREGATION_TYPE_VARIANCE,
 ]
 
+export const OU_ID = 'ouId'
+export const OU_NAME = 'ouName'
+export const BAND_ID = 'bandId'
+export const COC_ID = 'coc'
+export const VALUE = 'value'
+
 const isAggregation = (bandId) => ALL_AGGREGATION_TYPES.includes(bandId)
 
 const getStructuredData = ({
@@ -35,27 +41,27 @@ const getStructuredData = ({
 
         if (selectedBandCocs.length === 1) {
             acc.push({
-                ouId,
-                ouName,
-                bandId: selectedBandCocs[0].bandId,
-                value: getValueWithPrecision(valueSet[aggregationType]),
+                [OU_ID]: ouId,
+                [OU_NAME]: ouName,
+                [BAND_ID]: selectedBandCocs[0].bandId,
+                [VALUE]: getValueWithPrecision(valueSet[aggregationType]),
             })
         } else if (selectedBandCocs.length > 1) {
             Object.entries(valueSet).forEach(([groupId, rawValue]) => {
                 if (!isAggregation(groupId)) {
                     acc.push({
-                        ouId,
-                        ouName,
-                        bandId: groupId,
-                        value: getValueWithPrecision(rawValue),
+                        [OU_ID]: ouId,
+                        [OU_NAME]: ouName,
+                        [BAND_ID]: groupId,
+                        [VALUE]: getValueWithPrecision(rawValue),
                     })
                 }
             })
         } else {
             acc.push({
-                ouId,
-                ouName,
-                value: getValueWithPrecision(valueSet[aggregationType]),
+                [OU_ID]: ouId,
+                [OU_NAME]: ouName,
+                [VALUE]: getValueWithPrecision(valueSet[aggregationType]),
             })
         }
 

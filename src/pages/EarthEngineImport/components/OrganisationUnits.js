@@ -1,4 +1,3 @@
-import { OrgUnitDimension } from '@dhis2/analytics'
 import i18n from '@dhis2/d2-i18n'
 import {
     ReactFinalForm,
@@ -13,6 +12,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { FormField } from '../../../components/index.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
+import { OrgUnitDimension } from './OrgUnitDimension.js'
 
 const { Field } = ReactFinalForm
 

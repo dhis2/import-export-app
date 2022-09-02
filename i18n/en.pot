@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-09-02T09:09:37.397Z\n"
-"PO-Revision-Date: 2022-09-02T09:09:37.397Z\n"
+"POT-Creation-Date: 2022-09-02T14:44:37.105Z\n"
+"PO-Revision-Date: 2022-09-02T14:44:37.105Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -834,8 +834,8 @@ msgstr "Preview before import"
 msgid "Use associated geometry"
 msgstr "Use associated geometry"
 
-msgid "Some kind of help text"
-msgstr "Some kind of help text"
+msgid "Select associated geometry for selected organisation units"
+msgstr "Select associated geometry for selected organisation units"
 
 msgid "Data element"
 msgstr "Data element"
@@ -873,6 +873,18 @@ msgstr "No match found"
 
 msgid "Choose category option combo"
 msgstr "Choose category option combo"
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+
+msgid "Nothing selected"
+msgstr "Nothing selected"
+
+msgid "Select a level"
+msgstr "Select a level"
+
+msgid "Deselect all"
+msgstr "Deselect all"
 
 msgid "Organisation unit(s) to import data to"
 msgstr "Organisation unit(s) to import data to"

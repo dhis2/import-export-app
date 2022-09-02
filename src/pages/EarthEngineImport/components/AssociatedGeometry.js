@@ -18,7 +18,10 @@ const AssociatedGeometry = () => {
                 label={i18n.t('Use associated geometry')}
                 options={associatedGeometry}
                 dataTest="input-data-elements"
-                helpText={i18n.t('Some kind of help text')}
+                defaultValue={NO_ASSOCIATED_GEOMETRY}
+                helpText={i18n.t(
+                    'Select associated geometry for selected organisation units'
+                )}
                 filled
             />
         </div>

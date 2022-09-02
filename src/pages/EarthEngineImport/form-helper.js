@@ -1,6 +1,7 @@
 // import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js' // TODO
 import { genericErrorMessage } from '../../utils/helper.js'
 import { extractIdAndMessage } from '../../utils/xhr.js'
+import { OU_ID, BAND_ID, VALUE } from './util/getStructuredData.js'
 
 const isAsync = true
 
@@ -20,20 +21,21 @@ const onImport =
         let dataValues
 
         if (bandCocs.length) {
-            dataValues = eeData.map(({ ouId, bandId, value }) => ({
+            dataValues = eeData.map((d) => ({
                 dataElement,
                 period,
-                orgUnit: ouId,
-                categoryOptionCombo: bandCocs.find((bc) => bc.bandId === bandId)
-                    .coc,
-                value,
+                orgUnit: d[OU_ID],
+                categoryOptionCombo: bandCocs.find(
+                    (bc) => bc.bandId === d[BAND_ID]
+                ).coc,
+                value: d[VALUE],
             }))
         } else {
-            dataValues = eeData.map(({ ouId, value }) => ({
+            dataValues = eeData.map((d) => ({
                 dataElement,
                 period,
-                orgUnit: ouId,
-                value,
+                orgUnit: d[OU_ID],
+                value: d[VALUE],
             }))
         }
 

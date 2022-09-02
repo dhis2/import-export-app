@@ -3,6 +3,16 @@
     height: 1px;
 }
 
+.sectionHeader {
+    margin: 0;
+    font-size: 18px;
+    padding: 0;
+}
+
 .wrapper {
-    margin-bottom: 24px;
+    margin-bottom: var(--spacers-dp24);
+}
+
+.buttonWrapper {
+    margin-top: var(--spacers-dp8);
 }
