@@ -29,8 +29,7 @@ import {
     EARTH_ENGINE_ID,
 } from './util/formFieldConstants.js'
 import { getEarthEngineConfig } from './util/getEarthEngineConfig.js'
-import { getPrecisionFn } from './util/getPrecisionFn.js'
-import { isAggregation } from './util/isAggregation.js'
+import { getStructuredData } from './util/getStructuredData.js'
 
 const { Form, Field, FormSpy } = ReactFinalForm
 
@@ -79,7 +78,6 @@ const EarthEngineImportForm = () => {
         bandCocs = [],
     }) => {
         const selectedBandCocs = bandCocs.filter((bc) => !!bc.coc)
-        const getValueWithPrecision = getPrecisionFn(rounding)
 
         const aggregationType = getDefaultAggregation(earthEngineId)
 
@@ -94,10 +92,10 @@ const EarthEngineImportForm = () => {
                 {
                     earthEngineId,
                     organisationUnits,
+                    associatedGeometry,
                     period,
                     periods,
                     aggregationType,
-                    associatedGeometry,
                     selectedBandCocs,
                 },
                 engine
@@ -105,59 +103,18 @@ const EarthEngineImportForm = () => {
 
             const data = await getAggregations(engine, config)
 
-            const polygonOus =
-                config.data?.map((d) => {
-                    const { id, name, parentName } = d.properties
-                    return {
-                        id,
-                        name,
-                        parentName,
-                    }
-                }) || []
+            const ouIdNameMap = config.data?.reduce((acc, curr) => {
+                acc[curr.id] = curr.properties
+                return acc
+            }, {})
 
-            const structuredData = Object.entries(data).reduce(
-                (acc, [ouId, valueSet]) => {
-                    if (selectedBandCocs.length === 1) {
-                        acc.push({
-                            ouId,
-                            ouName: polygonOus.find((ou) => ou.id === ouId)
-                                ?.name,
-                            bandId: selectedBandCocs[0].bandId,
-                            value: getValueWithPrecision(valueSet['sum']),
-                        })
-                    } else if (selectedBandCocs.length > 1) {
-                        Object.entries(valueSet).forEach(
-                            ([groupId, rawValue]) => {
-                                if (!isAggregation(groupId)) {
-                                    const ouName = polygonOus.find(
-                                        (ou) => ou.id === ouId
-                                    )?.name
-                                    acc.push({
-                                        ouId,
-                                        ouName,
-                                        bandId: groupId,
-                                        value: getValueWithPrecision(rawValue),
-                                    })
-                                }
-                            }
-                        )
-                    } else {
-                        const ouName = polygonOus.find(
-                            (ou) => ou.id === ouId
-                        )?.name
-                        acc.push({
-                            ouId,
-                            ouName,
-                            value: getValueWithPrecision(
-                                valueSet[aggregationType]
-                            ),
-                        })
-                    }
-
-                    return acc
-                },
-                []
-            )
+            const structuredData = getStructuredData({
+                data,
+                selectedBandCocs,
+                ouIdNameMap,
+                rounding,
+                aggregationType,
+            })
 
             setEeData(structuredData)
             setPointOuRows(pointOrgUnits)

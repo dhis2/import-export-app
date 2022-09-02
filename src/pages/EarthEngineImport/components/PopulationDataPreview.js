@@ -115,7 +115,7 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                         <DataTableCell staticStyle colSpan={'3'}>
                             <div>
                                 <Pagination
-                                    // disabled={fetching}
+                                    // disabled={fetching} // TODO
                                     page={pageNo}
                                     isLastPage={isLastPage()}
                                     onPageChange={setPageNo}

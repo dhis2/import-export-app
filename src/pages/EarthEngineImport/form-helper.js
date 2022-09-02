@@ -7,7 +7,13 @@ const isAsync = true
 const onImport =
     ({ engine, setProgress, addTask, setShowFullSummaryTask }) =>
     async (values) => {
-        const { dryRun, eeData, dataElementId, period, bandCocs = [] } = values
+        const {
+            dryRun,
+            eeData,
+            dataElementId: dataElement,
+            period,
+            bandCocs = [],
+        } = values
 
         setProgress(true)
 
@@ -15,7 +21,7 @@ const onImport =
 
         if (bandCocs.length) {
             dataValues = eeData.map(({ ouId, bandId, value }) => ({
-                dataElement: dataElementId,
+                dataElement,
                 period,
                 orgUnit: ouId,
                 categoryOptionCombo: bandCocs.find((bc) => bc.bandId === bandId)
@@ -24,7 +30,7 @@ const onImport =
             }))
         } else {
             dataValues = eeData.map(({ ouId, value }) => ({
-                dataElement: dataElementId,
+                dataElement,
                 period,
                 orgUnit: ouId,
                 value,
