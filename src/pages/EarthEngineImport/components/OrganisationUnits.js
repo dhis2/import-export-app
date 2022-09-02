@@ -16,27 +16,20 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 
 const { Field } = ReactFinalForm
 
+// TODO - customized organisation units component from analytics
+
 const Wrapper = ({ input: { value, onChange }, meta }) => {
     const { rootOrgUnits } = useCachedDataQuery()
-    const error = null //TODO - should be error from failed org units query
 
     return (
         <>
-            {!rootOrgUnits && (
+            {!rootOrgUnits ? (
                 <ComponentCover>
                     <CenteredContent>
                         <CircularLoader />
                     </CenteredContent>
                 </ComponentCover>
-            )}
-            {error && (
-                <Help error>
-                    {i18n.t(
-                        'Something went wrong when loading the organisation units!'
-                    )}
-                </Help>
-            )}
-            {rootOrgUnits && (
+            ) : (
                 <div>
                     <OrgUnitDimension
                         roots={rootOrgUnits}

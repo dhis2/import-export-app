@@ -5,8 +5,6 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 
 const { useFormState } = ReactFinalForm
 
-// TODO - replace with useDataQuery when it supports repeating param list
-// (e.g., orgUnit=O6uvpzGd5pu&orgUnit=fdc6uOvgoji)
 const fetchCurrentValues = async (url) => {
     const fetcher = (url) =>
         fetch(url, { credentials: 'include' })
