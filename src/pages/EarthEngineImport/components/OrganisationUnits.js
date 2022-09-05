@@ -16,8 +16,6 @@ import { OrgUnitDimension } from './OrgUnitDimension.js'
 
 const { Field } = ReactFinalForm
 
-// TODO - customized organisation units component from analytics
-
 const Wrapper = ({ input: { value, onChange }, meta }) => {
     const { rootOrgUnits } = useCachedDataQuery()
 

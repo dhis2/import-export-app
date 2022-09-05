@@ -15,8 +15,9 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import styles from './styles/OrgUnitDimension.module.css'
 
+// This file has been copies and adapted from @dhis2/analytics OrgUnitDimension
+
 const formatList = (items) => {
-    // Wrap Intl.ListFormat in try/catch as DHIS2 locales are not always ISO 639 compliant
     try {
         const formatter = new Intl.ListFormat(i18n.language, {
             style: 'long',
