@@ -16,7 +16,6 @@ const Page = ({
     desc,
     summaryTask,
     showFullSummaryTask = false,
-    showFileDetails = true,
     limitWidth = true,
     children,
     loading = false,
@@ -46,13 +45,11 @@ const Page = ({
                         <JobSummary
                             task={summaryTask}
                             dataTest="job-summary-container"
-                            showFileDetails={showFileDetails}
                         />
                     ) : (
                         <MiniJobSummary
                             task={summaryTask}
                             dataTest="mini-job-summary-container"
-                            showFileDetails={showFileDetails}
                         />
                     )}
                 </Card>
@@ -79,7 +76,6 @@ Page.propTypes = {
     title: PropTypes.string.isRequired,
     limitWidth: PropTypes.bool,
     loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-    showFileDetails: PropTypes.bool,
     showFullSummaryTask: PropTypes.bool,
     summaryTask: PropTypes.object,
 }
