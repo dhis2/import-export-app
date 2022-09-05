@@ -85,6 +85,7 @@ const getAuthToken = (engine) => () => {
         data: { resource: 'tokens/google' },
     }
 
+    /* eslint-disable-next-line no-async-promise-executor */
     return new Promise(async (resolve, reject) => {
         const result = await engine
             .query(googleTokenQuery)
