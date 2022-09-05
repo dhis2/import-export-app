@@ -8,10 +8,10 @@ import styles from './JobSummary.module.css'
 import { Log } from './Log/Log.js'
 import { Summary } from './Summary/Summary.js'
 
-const Header = ({ jobDetails, task }) => (
+const Header = ({ jobDetails, task, showFileDetails }) => (
     <div className={styles.header}>
         <h3 className={styles.title}>{`${i18n.t('Job summary')}`}</h3>
-        {jobDetails?.files?.length && (
+        {showFileDetails && jobDetails?.files?.length && (
             <span className={styles.taskDetails}>
                 <span data-test="job-summary-filename">
                     {jobDetails.files[0].name}
@@ -28,6 +28,7 @@ const Header = ({ jobDetails, task }) => (
 Header.propTypes = {
     jobDetails: PropTypes.object.isRequired,
     task: PropTypes.object.isRequired,
+    showFileDetails: PropTypes.bool,
 }
 
 const Tags = ({ jobDetails, task }) => (
