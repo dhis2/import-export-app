@@ -1,4 +1,4 @@
-const sortByLevel = orgUnits => {
+const sortByLevel = (orgUnits) => {
     orgUnits.sort((a, b) => a.le - b.le)
     return orgUnits
 }
@@ -10,7 +10,7 @@ const TYPE_FEATURE = 'Feature'
 
 //Returns an array with all falsey values removed.
 //copied from lodash
-const compact = arr => {
+const compact = (arr) => {
     let resIndex = 0
     const result = []
 
@@ -26,9 +26,9 @@ const compact = arr => {
     return result
 }
 
-export const toGeoJson = organisationUnits =>
+export const toGeoJson = (organisationUnits) =>
     sortByLevel(organisationUnits)
-        .map(ou => {
+        .map((ou) => {
             const coord = JSON.parse(ou.co)
             let gpid = ''
             let gppg = ''
