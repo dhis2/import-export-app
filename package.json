@@ -22,7 +22,7 @@
         "cy:run": "d2-utils-cypress run --appStart 'yarn cy:start'"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "9.1.0-beta.1",
+        "@dhis2/cli-app-scripts": "^10.0.0",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/cli-utils-cypress": "^7.0.0",
         "@dhis2/cypress-commands": "^7.0.0",

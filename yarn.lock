@@ -2591,12 +2591,12 @@
     react-beautiful-dnd "^10.1.1"
     resize-observer-polyfill "^1.5.1"
 
-"@dhis2/app-adapter@9.1.0-beta.1":
-  version "9.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-adapter/-/app-adapter-9.1.0-beta.1.tgz#bc2f82f9ef78d4777ada3239d4da3fd03e568c74"
-  integrity sha512-z+Gn0qNefB+jVIRIFCiGuJcavbE38VQWVbPhKz2ovqEJ5Wr6V5qX/pt3cZ9mZjsz13Yn4iNTzKDuVc/WcX7xlg==
+"@dhis2/app-adapter@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-adapter/-/app-adapter-10.0.0.tgz#5e89add391373c0f84d717aa759f17081fec7ebf"
+  integrity sha512-qz74GPSkzaXbBNK09Brykwt8f4kPPPj+jOMjWBBF5hb03xomN6GAp+kjx3EOnpmQs2x1KHc0xgmU1cBuQK5wRw==
   dependencies:
-    "@dhis2/pwa" "9.1.0-beta.1"
+    "@dhis2/pwa" "10.0.0"
     moment "^2.24.0"
 
 "@dhis2/app-runtime@^3.2.3", "@dhis2/app-runtime@^3.4.4":
@@ -2633,15 +2633,15 @@
   dependencies:
     lodash "^4.17.21"
 
-"@dhis2/app-shell@9.1.0-beta.1":
-  version "9.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-shell/-/app-shell-9.1.0-beta.1.tgz#494f1543b11fc96ecae6ee3df89d0f731879056d"
-  integrity sha512-E4zW0UELxWWspLPUTOM9P4JoiG+dck8uLcYx/DFtCMIEOn6Tg4L6wff4tf1F08HqBh8oohKwQnffRFRkbbAWYw==
+"@dhis2/app-shell@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-shell/-/app-shell-10.0.0.tgz#ab18d169afed9efc681668aba592f17deb0ecf00"
+  integrity sha512-ehMDa+uq6ubH95/kEETW4GaED27EGnwHc52jiODNjbN8bNCEtgLDyuFKyqkt0mUygOa5Uwa+oAlmvrOj0fe2Ug==
   dependencies:
-    "@dhis2/app-adapter" "9.1.0-beta.1"
+    "@dhis2/app-adapter" "10.0.0"
     "@dhis2/app-runtime" "^3.2.3"
     "@dhis2/d2-i18n" "^1.1.0"
-    "@dhis2/pwa" "9.1.0-beta.1"
+    "@dhis2/pwa" "10.0.0"
     "@dhis2/ui" "^8.0.0"
     classnames "^2.2.6"
     moment "^2.29.1"
@@ -2654,10 +2654,10 @@
     typeface-roboto "^0.0.75"
     typescript "^3.6.3"
 
-"@dhis2/cli-app-scripts@9.1.0-beta.1":
-  version "9.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/cli-app-scripts/-/cli-app-scripts-9.1.0-beta.1.tgz#9a5150794edb2f4f3f04470a17cf80ca4a0f227d"
-  integrity sha512-pCnrSBeMukDPCPaT6aPpsPmYAJ5xJYkp6i90+Y7WhKO3VJ5+zXjOQ8FwJapOyeKMan0nadGkYLIrj5uZPj4/lg==
+"@dhis2/cli-app-scripts@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/cli-app-scripts/-/cli-app-scripts-10.0.0.tgz#7f813d8c809410e4f47d54fdc2d033e40326fc5a"
+  integrity sha512-BLNwREoXkb6huUWgnMNThYrSqPuM6Ik0qA7KMyhnQPRPRv+nkWMe130R4jmRenHAA5ub0aQgDpkNImoGv0l7NQ==
   dependencies:
     "@babel/core" "^7.6.2"
     "@babel/plugin-proposal-class-properties" "^7.8.3"
@@ -2666,7 +2666,7 @@
     "@babel/preset-env" "^7.14.7"
     "@babel/preset-react" "^7.0.0"
     "@babel/preset-typescript" "^7.6.0"
-    "@dhis2/app-shell" "9.1.0-beta.1"
+    "@dhis2/app-shell" "10.0.0"
     "@dhis2/cli-helpers-engine" "^3.2.0"
     "@jest/core" "^27.0.6"
     "@yarnpkg/lockfile" "^1.1.0"
@@ -2830,10 +2830,10 @@
   resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-3.1.2.tgz#65b8ad2da8cd2f72bc8b951049a6c9d1b97af3e9"
   integrity sha512-eM0jjLOWvtXWqSFp5YC4DHFpkP8Y1D2eUwGV7MBWjni+o27oesVan+oT7WHeOeLdlAd4acRJrnaaAyB4Ck1wGQ==
 
-"@dhis2/pwa@9.1.0-beta.1":
-  version "9.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/pwa/-/pwa-9.1.0-beta.1.tgz#d34815815067abc140a11eaa53105c4748256c7f"
-  integrity sha512-c3Kk0Xy+WD/vLhiekAnPrm2DwHnX1Qo5XXFTe9JDLRZvcD0XBJuRdRA0l7ExAUR1j+IROmoIGRFwhrZdCNs89A==
+"@dhis2/pwa@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/pwa/-/pwa-10.0.0.tgz#35dd1eba09d4e14016cab3f6dbf7b49a169c89ef"
+  integrity sha512-d4Rynv54mFNaOgigamgUqHWbcqg5n9Bn7JSncX0O8BvEE66db/JjkXo2ZKnnj3qimHEB3U4iR+IzfABSB2X7CQ==
   dependencies:
     idb "^6.0.0"
     workbox-core "^6.1.5"
