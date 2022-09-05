@@ -50,7 +50,7 @@ jobs:
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
             - name: Build
-              run: yarn build
+              run: yarn build --no-verify
 
             - uses: actions/upload-artifact@v2
               with:
