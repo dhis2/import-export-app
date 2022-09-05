@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# phil_dhis2, 2022
 # easylin <lin_xd@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-23T12:38:25.348Z\n"
+"POT-Creation-Date: 2022-06-15T14:40:23.418Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -53,6 +53,35 @@ msgstr "载入额外的机构ID方案出错"
 
 msgid "Please select a file"
 msgstr "请选择一个文件"
+
+msgid "Import as associated geometry"
+msgstr "导入为相关的空间几何形状"
+
+msgid "Store geometry as value of attribute"
+msgstr "将空间几何形状存储为属性值"
+
+msgid "Selected programs"
+msgstr "已选项目组"
+
+msgid "Something went wrong when loading the attributes!"
+msgstr "加载属性时出现问题！"
+
+msgid "One attribute must be selected"
+msgstr "必须选择一个属性"
+
+msgid ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" applied"
+" to \"Organisation unit\". It can be defined in the Maintenance app."
+msgstr "关联的空间几何形状导入需要应用于“组织机构”的“GeoJSON”类型的属性。它可以在维护应用中定义。"
+
+msgid "Match GeoJSON property to organisation unit scheme"
+msgstr "将 GeoJSON 属性与组织单位方案匹配"
+
+msgid "GeoJSON property name"
+msgstr "GeoJSON 属性名称"
+
+msgid "GeoJSON feature property that holds the organisation unit identifier"
+msgstr "持有组织机构标识符的 GeoJSON 特征属性"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr "试运行测试导入设置，而不导入任何数据"
@@ -416,6 +445,9 @@ msgstr "对象"
 msgid "Organisation unit ID scheme"
 msgstr "机构ID方案"
 
+msgid "Id"
+msgstr "Id"
+
 msgid "Data view organisation units associated with the current user"
 msgstr "当前用户的机构数据查看"
 
@@ -466,9 +498,6 @@ msgstr "从中导出事件的项目"
 
 msgid "Filter programs"
 msgstr "筛选项目"
-
-msgid "Selected programs"
-msgstr "已选项目组"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "载入项目发生错误"
@@ -660,6 +689,9 @@ msgstr "更新的"
 msgid "Total"
 msgstr "总共"
 
+msgid "Indexes"
+msgstr "索引"
+
 msgid "Details by type"
 msgstr "按类型的详细信息"
 
@@ -699,8 +731,8 @@ msgstr "数据导入"
 msgid "Event import"
 msgstr "事件导入"
 
-msgid "GML import"
-msgstr "GML导入"
+msgid "Org unit geometry import"
+msgstr "组织机构空间几何形状导入"
 
 msgid "Metadata import"
 msgstr "元数据导入"
@@ -782,10 +814,18 @@ msgstr "从DXF2格式导入项目、阶段和跟踪实体事件数据"
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "支持的文件类型：JSON，CSV和XML。"
 
+msgid "Organisation unit geometry import"
+msgstr "组织机构空间几何形状导入"
+
 msgid ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
-msgstr "使用GML格式导入机构的地理空间数据"
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
+msgstr "导入组织机构的地理数据。 GeoJSON 是推荐的格式，也可用于相关的几何图形或流域。"
+
+msgid ""
+"GeoJSON feature id should match the organsation unit id, or match by a "
+"feature property below."
+msgstr "GeoJSON 特征 id 应与组织机构id 匹配，或通过下面的特征属性匹配。"
 
 msgid "Overview: Import/Export"
 msgstr "概述：导入/导出"
@@ -808,8 +848,8 @@ msgstr "导入数据"
 msgid "Import events"
 msgstr "导入事件"
 
-msgid "Import GML"
-msgstr "导入GML"
+msgid "Import GeoJSON"
+msgstr "导入 GeoJSON"
 
 msgid "Import metadata"
 msgstr "导入元数据"
@@ -876,6 +916,9 @@ msgstr "数据"
 
 msgid "Event"
 msgstr "事件"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "GML"
 msgstr "GML"

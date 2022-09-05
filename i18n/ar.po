@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
 # Hamza Assada <7amza.it@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-23T12:38:25.348Z\n"
+"POT-Creation-Date: 2022-06-15T14:40:23.418Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,6 +53,35 @@ msgstr ""
 
 msgid "Please select a file"
 msgstr "يرجى تحديد ملف"
+
+msgid "Import as associated geometry"
+msgstr ""
+
+msgid "Store geometry as value of attribute"
+msgstr ""
+
+msgid "Selected programs"
+msgstr "البرامج المحددة"
+
+msgid "Something went wrong when loading the attributes!"
+msgstr ""
+
+msgid "One attribute must be selected"
+msgstr ""
+
+msgid ""
+"Associated geometry import requires an attribute of type \"GeoJSON\" applied"
+" to \"Organisation unit\". It can be defined in the Maintenance app."
+msgstr ""
+
+msgid "Match GeoJSON property to organisation unit scheme"
+msgstr ""
+
+msgid "GeoJSON property name"
+msgstr ""
+
+msgid "GeoJSON feature property that holds the organisation unit identifier"
+msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr "يختبر التشغيل الجاف إعدادات الاستيراد بدون استيراد أي بيانات فعليًا"
@@ -420,6 +449,9 @@ msgstr "الكائن"
 msgid "Organisation unit ID scheme"
 msgstr ""
 
+msgid "Id"
+msgstr "المعرف"
+
 msgid "Data view organisation units associated with the current user"
 msgstr "وحدات تنظيم عرض البيانات المرتبطة بالمستخدم الحالي"
 
@@ -472,9 +504,6 @@ msgstr "البرنامج الذي يتم تصدير الأحداث منه"
 
 msgid "Filter programs"
 msgstr "تصفية البرامج"
-
-msgid "Selected programs"
-msgstr "البرامج المحددة"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "حدث خطأ ما أثناء تحميل البرامج!"
@@ -670,6 +699,9 @@ msgstr "تم تحديثه"
 msgid "Total"
 msgstr "الإجمالي"
 
+msgid "Indexes"
+msgstr ""
+
 msgid "Details by type"
 msgstr "التفاصيل حسب النوع"
 
@@ -709,8 +741,8 @@ msgstr "استيراد البيانات"
 msgid "Event import"
 msgstr "استيراد الأحداث"
 
-msgid "GML import"
-msgstr "استيراد GML"
+msgid "Org unit geometry import"
+msgstr ""
 
 msgid "Metadata import"
 msgstr "استيراد البيانات الوصفية"
@@ -796,12 +828,18 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "أنواع الملفات المدعومة: JSON و CSV و XML."
 
-msgid ""
-"Import geographic data for organisation units using the GML format. GML is "
-"an XML grammar for expressing geographical features."
+msgid "Organisation unit geometry import"
 msgstr ""
-"استيراد البيانات الجغرافية للوحدات التنظيمية باستخدام تنسيق GML. GML عبارة "
-"عن قواعد XML للتعبير عن المعالم الجغرافية."
+
+msgid ""
+"Import geographic data for organisation units. GeoJSON is the recommend "
+"format and can also be used for associated geometries or catchment areas."
+msgstr ""
+
+msgid ""
+"GeoJSON feature id should match the organsation unit id, or match by a "
+"feature property below."
+msgstr ""
 
 msgid "Overview: Import/Export"
 msgstr "نظرة عامة: الاستيراد / التصدير"
@@ -824,8 +862,8 @@ msgstr "استيراد بيانات"
 msgid "Import events"
 msgstr "استيراد احداث"
 
-msgid "Import GML"
-msgstr "استيراد GML"
+msgid "Import GeoJSON"
+msgstr ""
 
 msgid "Import metadata"
 msgstr "استيراد بيانات وصفية"
@@ -893,6 +931,9 @@ msgstr "بيانات"
 
 msgid "Event"
 msgstr "حدث"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "GML"
 msgstr "GML"

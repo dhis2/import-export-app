@@ -1,3 +1,64 @@
+## [1.3.6](https://github.com/dhis2/import-export-app/compare/v1.3.5...v1.3.6) (2022-08-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d89b3cd](https://github.com/dhis2/import-export-app/commit/d89b3cd10fea02ace60d00732f8eeebf08b02f94))
+
+## [1.3.5](https://github.com/dhis2/import-export-app/compare/v1.3.4...v1.3.5) (2022-08-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([867b75a](https://github.com/dhis2/import-export-app/commit/867b75aa0692c135194a5ab26cbfc5d4f3cd6683))
+
+## [1.3.4](https://github.com/dhis2/import-export-app/compare/v1.3.3...v1.3.4) (2022-06-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([80a8116](https://github.com/dhis2/import-export-app/commit/80a8116dbe55397a4a9cfad24cd325cfad7ffcc4))
+
+## [1.3.3](https://github.com/dhis2/import-export-app/compare/v1.3.2...v1.3.3) (2022-06-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([eda0f18](https://github.com/dhis2/import-export-app/commit/eda0f18a8ecf1104f8ddcd17f0411c4a2d00b600))
+
+## [1.3.2](https://github.com/dhis2/import-export-app/compare/v1.3.1...v1.3.2) (2022-06-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([55e0a0c](https://github.com/dhis2/import-export-app/commit/55e0a0cf7029db3df920fbeb690a5be4c672dab2))
+
+## [1.3.1](https://github.com/dhis2/import-export-app/compare/v1.3.0...v1.3.1) (2022-06-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ba2c0c6](https://github.com/dhis2/import-export-app/commit/ba2c0c6a8639a4a15157f982ac8ffbca4e83793a))
+
+# [1.3.0](https://github.com/dhis2/import-export-app/compare/v1.2.23...v1.3.0) (2022-06-21)
+
+
+### Bug Fixes
+
+* async import ([52f1936](https://github.com/dhis2/import-export-app/commit/52f193602c20ec6b04bffb029bd451c6619cd4ac))
+* component class name ([e5abe36](https://github.com/dhis2/import-export-app/commit/e5abe36cc6e0b8f29d456771eac6a1ef146b1a42))
+* hide and show associated geometry attribute select ([3b36943](https://github.com/dhis2/import-export-app/commit/3b36943d7458d5b6fca6401257865148c70de561))
+
+
+### Features
+
+* geojson attribute picker ([6158786](https://github.com/dhis2/import-export-app/commit/615878694ba3f6abee95a409adcbfbef6ede3787))
+* geojson import icon ([1c65de5](https://github.com/dhis2/import-export-app/commit/1c65de525697f5a711db8a41f65fcacbf7eebf45))
+* geojson import job summary ([e761818](https://github.com/dhis2/import-export-app/commit/e7618180dd7ab45cbc47931f7203c5c114b3325f))
+* geojson import page setup ([3320632](https://github.com/dhis2/import-export-app/commit/3320632b5942a799322bfc29162e4010e2ee6a62))
+* geojson property match ([81c4e80](https://github.com/dhis2/import-export-app/commit/81c4e8086f7e1ce9fea658284ed2e9223e02b220))
+* org unit core id scheme select ([534451d](https://github.com/dhis2/import-export-app/commit/534451ddc5b7abe42470891e7b4ad55de0b1ce65))
+
 ## [1.2.23](https://github.com/dhis2/import-export-app/compare/v1.2.22...v1.2.23) (2022-06-09)
 
 
