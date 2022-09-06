@@ -1,3 +1,4 @@
+import { ouIdHelper } from '@dhis2/analytics'
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
@@ -58,9 +59,15 @@ const useFetchCurrentValues = () => {
                 .map(({ id }) => `orgUnit=${id}`)
                 .join('&')
 
-            fetchCurrVals(
-                `${baseUrl}/api/dataValueSets?dataElementGroup=${dataElementGroupId}&period=${period}&${ouQueryParams}`
+            const hasLevelPrefix = organisationUnits.find((ou) =>
+                ouIdHelper.hasLevelPrefix(ou.id)
             )
+            let url = `${baseUrl}/api/dataValueSets?dataElementGroup=${dataElementGroupId}&period=${period}&${ouQueryParams}`
+            if (hasLevelPrefix) {
+                url = url.concat('&children=true')
+            }
+
+            fetchCurrVals(url)
         } else {
             const missingDEG =
                 dataElementGroupId === undefined ? 'Data element group' : null
