@@ -57,13 +57,12 @@ const MappingTable = ({ push, update, pop }) => {
                 })
             })
         if (dataElementId) {
-            // TODO - will categoryCombo always be returned and with categoryOptionCombos?
             const newCocs = dataElements.find(({ id }) => id === dataElementId)
                 .categoryCombo.categoryOptionCombos
 
             setCocs(newCocs)
         }
-    }, [dataElementId]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [dataElementId, dataElements]) // eslint-disable-line react-hooks/exhaustive-deps
 
     if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
         return null

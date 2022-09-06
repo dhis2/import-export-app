@@ -1,4 +1,5 @@
 import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import { useState, useEffect } from 'react'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
@@ -30,10 +31,9 @@ const useFetchCurrentValues = () => {
 
     const { dataElements } = useCachedDataQuery()
     const [currentValues, setCurrentValues] = useState([])
+    const [error, setError] = useState(null)
     const { baseUrl } = useConfig()
 
-    // TODO there could be a lot of dataElements. Possible to make this more efficient
-    // by fetching more info about the dataElement?
     const dataElement = dataElements.find((el) => el.id === dataElementId)
     // TODO - what if no dataElementGroup has been set up? probably an alert with a warning that
     // current values couldn't be fetched
@@ -53,12 +53,28 @@ const useFetchCurrentValues = () => {
             dataElementId &&
             dataElementGroupId
         ) {
+            setError(null)
             const ouQueryParams = organisationUnits
                 .map(({ id }) => `orgUnit=${id}`)
                 .join('&')
 
             fetchCurrVals(
                 `${baseUrl}/api/dataValueSets?dataElementGroup=${dataElementGroupId}&period=${period}&${ouQueryParams}`
+            )
+        } else {
+            const missingDEG =
+                dataElementGroupId === undefined ? 'Data element group' : null
+            const missingPeriod = period === undefined ? 'Period' : null
+            const missingOus = !organisationUnits.length
+                ? 'Organisation units'
+                : null
+            const missingParams = [missingDEG, missingPeriod, missingOus]
+                .filter((m) => m !== null)
+                .join(', ')
+            setError(
+                i18n.t(
+                    `Could not fetch current values due to missing parameters: ${missingParams}`
+                )
             )
         }
     }, [
@@ -70,7 +86,7 @@ const useFetchCurrentValues = () => {
         baseUrl,
     ])
 
-    return { currentValues }
+    return { currentValues, error }
 }
 
 export { useFetchCurrentValues }

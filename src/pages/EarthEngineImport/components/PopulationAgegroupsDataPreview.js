@@ -10,6 +10,8 @@ import {
     Pagination,
     ReactFinalForm,
     Tag,
+    AlertStack,
+    AlertBar,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef, useMemo } from 'react'
@@ -26,7 +28,7 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
     const { dataElementId, bandCocs } = values
     const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
-    const { currentValues } = useFetchCurrentValues()
+    const { currentValues, error } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
     const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
@@ -196,6 +198,13 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                     </DataTableRow>
                 </DataTableFoot>
             </DataTable>
+            <AlertStack>
+                {error && (
+                    <AlertBar warning={true} duration={2000}>
+                        {error}
+                    </AlertBar>
+                )}
+            </AlertStack>
         </div>
     )
 }

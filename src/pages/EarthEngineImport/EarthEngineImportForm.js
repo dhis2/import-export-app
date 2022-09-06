@@ -45,8 +45,6 @@ Condition.propTypes = {
     when: PropTypes.string,
 }
 
-// TODO - spacing between sections and buttons
-
 const EarthEngineImportForm = () => {
     const {
         tasks: { earthengine: earthengineTasks },
@@ -218,112 +216,118 @@ const EarthEngineImportForm = () => {
                     mutators={{
                         ...arrayMutators,
                     }}
-                    render={({
-                        handleSubmit,
-                        form,
-                        submitError,
-                        form: {
-                            mutators: { push, update, pop },
-                        },
-                    }) => (
-                        <form onSubmit={handleSubmit}>
-                            <div className={styles.wrapper}>
-                                <h2 className={styles.sectionHeader}>
-                                    {i18n.t('Earth Engine source')}
-                                </h2>
-                                <Divider />
-                                <EarthEngineId />
-                                <Periods formChange={form.change} />
-                                <Rounding />
-                                <h2 className={styles.sectionHeader}>
-                                    {i18n.t('Organisation units')}
-                                </h2>
-                                <Divider />
-                                <OrganisationUnits />
-                                <AssociatedGeometry />
-                                <h2 className={styles.sectionHeader}>
-                                    {i18n.t('Import setup')}
-                                </h2>
-                                <Divider />
-                                <DataElements />
-                                <Condition
-                                    when={EARTH_ENGINE_ID}
-                                    is={POPULATION_AGE_GROUPS_DATASET_ID}
-                                >
-                                    <MappingTable
-                                        formChange={form.change}
-                                        push={push}
-                                        update={update}
-                                        pop={pop}
-                                    />
-                                </Condition>
-                                <FormSpy
-                                    subscription={{
-                                        values: true,
-                                        valid: true,
-                                        modifiedSinceLastSubmit: true,
-                                    }}
-                                >
-                                    {({
-                                        valid,
-                                        values,
-                                        modifiedSinceLastSubmit,
-                                    }) => (
-                                        <Button
-                                            className={styles.buttonWrapper}
-                                            primary
-                                            type="submit"
-                                            disabled={
-                                                !previewIsAllowed({
-                                                    valid,
-                                                    values,
-                                                    modifiedSinceLastSubmit,
-                                                })
-                                            }
-                                            onClick={() => fetchEeData(values)}
-                                        >
-                                            {i18n.t('Preview before import')}
-                                        </Button>
-                                    )}
-                                </FormSpy>
-                                <FormSpy
-                                    subscription={{
-                                        modifiedSinceLastSubmit: true,
-                                    }}
-                                >
-                                    {({ modifiedSinceLastSubmit }) =>
-                                        !modifiedSinceLastSubmit ? (
-                                            <DataPreview
-                                                fetching={fetching}
-                                                eeData={eeData}
-                                                pointOuRows={pointOuRows}
-                                            />
-                                        ) : null
-                                    }
-                                </FormSpy>
-                                <FormSpy
-                                    subscription={{
-                                        modifiedSinceLastSubmit: true,
-                                    }}
-                                >
-                                    {({ modifiedSinceLastSubmit }) =>
-                                        !modifiedSinceLastSubmit &&
-                                        !fetching &&
-                                        eeData?.length ? (
-                                            <div
+                    render={({ handleSubmit, submitError, form }) => {
+                        const {
+                            mutators: { push, pop, update },
+                        } = form
+                        return (
+                            <form onSubmit={handleSubmit}>
+                                <div className={styles.wrapper}>
+                                    <h2 className={styles.sectionHeader}>
+                                        {i18n.t('Earth Engine source')}
+                                    </h2>
+                                    <Divider />
+                                    <EarthEngineId />
+                                    <Periods formChange={form.change} />
+                                    <Rounding />
+                                    <h2 className={styles.sectionHeader}>
+                                        {i18n.t('Organisation units')}
+                                    </h2>
+                                    <Divider />
+                                    <OrganisationUnits />
+                                    <AssociatedGeometry />
+                                    <h2 className={styles.sectionHeader}>
+                                        {i18n.t('Import setup')}
+                                    </h2>
+                                    <Divider />
+                                    <DataElements />
+                                    <Condition
+                                        when={EARTH_ENGINE_ID}
+                                        is={POPULATION_AGE_GROUPS_DATASET_ID}
+                                    >
+                                        <MappingTable
+                                            formChange={form.change}
+                                            push={push}
+                                            update={update}
+                                            pop={pop}
+                                        />
+                                    </Condition>
+                                    <FormSpy
+                                        subscription={{
+                                            values: true,
+                                            valid: true,
+                                            modifiedSinceLastSubmit: true,
+                                        }}
+                                    >
+                                        {({
+                                            valid,
+                                            values,
+                                            modifiedSinceLastSubmit,
+                                        }) => (
+                                            <Button
                                                 className={styles.buttonWrapper}
+                                                primary
+                                                type="submit"
+                                                disabled={
+                                                    !previewIsAllowed({
+                                                        valid,
+                                                        values,
+                                                        modifiedSinceLastSubmit,
+                                                    })
+                                                }
+                                                onClick={() =>
+                                                    fetchEeData(values)
+                                                }
                                             >
-                                                <ImportButtonStrip
-                                                    form={form}
+                                                {i18n.t(
+                                                    'Preview before import'
+                                                )}
+                                            </Button>
+                                        )}
+                                    </FormSpy>
+                                    <FormSpy
+                                        subscription={{
+                                            modifiedSinceLastSubmit: true,
+                                        }}
+                                    >
+                                        {({ modifiedSinceLastSubmit }) =>
+                                            !modifiedSinceLastSubmit ? (
+                                                <DataPreview
+                                                    fetching={fetching}
+                                                    eeData={eeData}
+                                                    pointOuRows={pointOuRows}
                                                 />
-                                            </div>
-                                        ) : null
-                                    }
-                                </FormSpy>
-                                <FormAlerts alerts={getAlerts(submitError)} />
-                            </div>
-                        </form>
-                    )}
+                                            ) : null
+                                        }
+                                    </FormSpy>
+                                    <FormSpy
+                                        subscription={{
+                                            modifiedSinceLastSubmit: true,
+                                        }}
+                                    >
+                                        {({ modifiedSinceLastSubmit }) =>
+                                            !modifiedSinceLastSubmit &&
+                                            !fetching &&
+                                            eeData?.length ? (
+                                                <div
+                                                    className={
+                                                        styles.buttonWrapper
+                                                    }
+                                                >
+                                                    <ImportButtonStrip
+                                                        form={form}
+                                                    />
+                                                </div>
+                                            ) : null
+                                        }
+                                    </FormSpy>
+                                    <FormAlerts
+                                        alerts={getAlerts(submitError)}
+                                    />
+                                </div>
+                            </form>
+                        )
+                    }}
                 ></Form>
             </Page>
         </>
