@@ -13,7 +13,7 @@ import {
 import {
     FileUpload,
     Format,
-    formatOptions,
+    formatNoXmlOptions,
     defaultFormatOption,
     FirstRowIsHeader,
     defaultFirstRowIsHeaderOption,
@@ -133,7 +133,7 @@ const MetadataImport = () => {
                                 )}
                             />
                             <Format
-                                availableFormats={formatOptions}
+                                availableFormats={formatNoXmlOptions}
                                 type="import"
                             />
                             <FirstRowIsHeader show={values.format == 'csv'} />
