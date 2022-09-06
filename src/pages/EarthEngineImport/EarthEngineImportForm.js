@@ -15,6 +15,7 @@ import { MappingTable } from './components/MapGenderAgeGroupsTable.js'
 import { OrganisationUnits } from './components/OrganisationUnits.js'
 import { Periods } from './components/Periods.js'
 import { Rounding, defaultRoundingOption } from './components/Rounding.js'
+import { Tooltip } from './components/Tooltip.js'
 import styles from './EarthEngineImportForm.module.css'
 import { onImport } from './form-helper.js'
 import { getPeriods, getAggregations } from './util/earthEngineHelper.js'
@@ -262,25 +263,34 @@ const EarthEngineImportForm = () => {
                                             values,
                                             modifiedSinceLastSubmit,
                                         }) => (
-                                            <Button
-                                                className={styles.buttonWrapper}
-                                                primary
-                                                type="submit"
-                                                disabled={
-                                                    !previewIsAllowed({
-                                                        valid,
-                                                        values,
-                                                        modifiedSinceLastSubmit,
-                                                    })
-                                                }
-                                                onClick={() =>
-                                                    fetchEeData(values)
-                                                }
-                                            >
-                                                {i18n.t(
-                                                    'Preview before import'
+                                            <Tooltip
+                                                disabled={!valid}
+                                                content={i18n.t(
+                                                    'Some required fields are missing'
                                                 )}
-                                            </Button>
+                                            >
+                                                <Button
+                                                    className={
+                                                        styles.buttonWrapper
+                                                    }
+                                                    primary
+                                                    type="submit"
+                                                    disabled={
+                                                        !previewIsAllowed({
+                                                            valid,
+                                                            values,
+                                                            modifiedSinceLastSubmit,
+                                                        })
+                                                    }
+                                                    onClick={() =>
+                                                        fetchEeData(values)
+                                                    }
+                                                >
+                                                    {i18n.t(
+                                                        'Preview before import'
+                                                    )}
+                                                </Button>
+                                            </Tooltip>
                                         )}
                                     </FormSpy>
                                     <FormSpy

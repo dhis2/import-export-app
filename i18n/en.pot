@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-09-06T11:51:46.128Z\n"
-"PO-Revision-Date: 2022-09-06T11:51:46.128Z\n"
+"POT-Creation-Date: 2022-09-06T13:01:14.061Z\n"
+"PO-Revision-Date: 2022-09-06T13:01:14.061Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -827,6 +827,9 @@ msgstr "Organisation units"
 
 msgid "Import setup"
 msgstr "Import setup"
+
+msgid "Some required fields are missing"
+msgstr "Some required fields are missing"
 
 msgid "Preview before import"
 msgstr "Preview before import"
