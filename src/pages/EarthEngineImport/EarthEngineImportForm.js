@@ -200,9 +200,7 @@ const EarthEngineImportForm = () => {
             <div ref={hiddenTopElRef} className={styles.hiddenTopElement}></div>
             <Page
                 title={i18n.t('Earth Engine import')}
-                desc={i18n.t(
-                    'Import Earth Engine data to data sets and data elements'
-                )}
+                desc={i18n.t('Import Earth Engine data to data elements')}
                 icon={<DataIcon />}
                 loading={progress}
                 dataTest="page-import-earthengine"
