@@ -23,19 +23,16 @@ const DEFAULT_ROWS_PER_PAGE = 10
 
 const { useFormState } = ReactFinalForm
 
-// TODO - crash in pagination when the selected page is more than the new
-// number of pages when changing page length
-
 const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
     const { values } = useFormState()
     const { dataElementId, bandCocs } = values
-    const [tableData, setTableData] = useState([])
     const { dataElements } = useCachedDataQuery()
+
+    const [tableData, setTableData] = useState([])
     const { currentValues, error } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
     const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
-
     const tableRef = useRef(null)
 
     const bandCocMap = useMemo(() => {
@@ -179,7 +176,6 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                         <DataTableCell staticStyle colSpan={'4'}>
                             <div>
                                 <Pagination
-                                    // disabled={fetching}
                                     page={pageNo}
                                     isLastPage={isLastPage()}
                                     onPageChange={setPageNo}

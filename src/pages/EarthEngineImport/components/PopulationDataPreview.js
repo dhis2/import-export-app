@@ -21,8 +21,8 @@ const DEFAULT_ROWS_PER_PAGE = 10
 
 const PopulationDataPreview = ({ eeData, pointOuRows }) => {
     const [tableData, setTableData] = useState([])
-    const [pageNo, setPageNo] = useState(1)
     const { currentValues, error } = useFetchCurrentValues()
+    const [pageNo, setPageNo] = useState(1)
     const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
@@ -65,6 +65,10 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
 
     if (!tableData.length) {
         return null
+    }
+    const updateTable = (newRowsPerPage) => {
+        setPageNo(1)
+        setRowsPerPage(newRowsPerPage)
     }
 
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
@@ -117,11 +121,10 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                         <DataTableCell staticStyle colSpan={'3'}>
                             <div>
                                 <Pagination
-                                    // disabled={fetching} // TODO
                                     page={pageNo}
                                     isLastPage={isLastPage()}
                                     onPageChange={setPageNo}
-                                    onPageSizeChange={setRowsPerPage}
+                                    onPageSizeChange={updateTable}
                                     pageSize={rowsPerPage}
                                     pageSizeSelectText={i18n.t(
                                         'Select rows per page'
