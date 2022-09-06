@@ -23,6 +23,9 @@ const DEFAULT_ROWS_PER_PAGE = 10
 
 const { useFormState } = ReactFinalForm
 
+// TODO - crash in pagination when the selected page is more than the new
+// number of pages when changing page length
+
 const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
     const { values } = useFormState()
     const { dataElementId, bandCocs } = values

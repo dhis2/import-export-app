@@ -9,6 +9,8 @@ import {
     DataTableFoot,
     Pagination,
     Tag,
+    AlertStack,
+    AlertBar,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef } from 'react'
@@ -20,7 +22,7 @@ const DEFAULT_ROWS_PER_PAGE = 10
 const PopulationDataPreview = ({ eeData, pointOuRows }) => {
     const [tableData, setTableData] = useState([])
     const [pageNo, setPageNo] = useState(1)
-    const { currentValues } = useFetchCurrentValues()
+    const { currentValues, error } = useFetchCurrentValues()
     const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
@@ -137,6 +139,13 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                     </DataTableRow>
                 </DataTableFoot>
             </DataTable>
+            <AlertStack>
+                {error && (
+                    <AlertBar warning={true} duration={2000}>
+                        {error}
+                    </AlertBar>
+                )}
+            </AlertStack>
         </div>
     )
 }

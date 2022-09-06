@@ -36,8 +36,6 @@ const useFetchCurrentValues = () => {
     const { baseUrl } = useConfig()
 
     const dataElement = dataElements.find((el) => el.id === dataElementId)
-    // TODO - what if no dataElementGroup has been set up? probably an alert with a warning that
-    // current values couldn't be fetched
     const dataElementGroupId = dataElement?.dataElementGroups[0]?.id
 
     useEffect(() => {
