@@ -9,7 +9,7 @@ import {
 } from '../../components/index.js'
 import {
     Format,
-    formatOptions,
+    formatNoXmlOptions,
     defaultFormatOption,
     Schemas,
     Compression,
@@ -54,7 +54,7 @@ const MetadataExport = () => {
                 render={({ handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
                         <Schemas />
-                        <Format availableFormats={formatOptions} />
+                        <Format availableFormats={formatNoXmlOptions} />
                         <Compression />
                         <SkipSharing />
                         <ValidationSummary />
