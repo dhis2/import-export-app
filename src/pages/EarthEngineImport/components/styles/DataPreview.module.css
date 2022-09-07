@@ -1,0 +1,11 @@
+.indent {
+    padding-top: var(--spacers-dp16);
+}
+.table th {
+    white-space: nowrap;
+}
+
+.current {
+    color: #777;
+    text-decoration: line-through;
+}

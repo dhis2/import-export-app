@@ -11,7 +11,7 @@ import { Summary } from './Summary/Summary.js'
 const Header = ({ jobDetails, task, showFileDetails }) => (
     <div className={styles.header}>
         <h3 className={styles.title}>{`${i18n.t('Job summary')}`}</h3>
-        {showFileDetails && (
+        {showFileDetails && jobDetails?.files?.length && (
             <span className={styles.taskDetails}>
                 <span data-test="job-summary-filename">
                     {jobDetails.files[0].name}

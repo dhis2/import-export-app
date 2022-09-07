@@ -32,6 +32,13 @@ const eventImportPage = {
     path: '/import/event',
 }
 
+const eeImportPage = {
+    name: i18n.t('Earth Engine import'),
+    code: 'earthengine-import',
+    icon: <DataIcon />,
+    path: '/import/earthengine',
+}
+
 const geometryImportPage = {
     name: i18n.t('Org unit geometry import'),
     code: 'geometry-import',
@@ -90,6 +97,7 @@ const teiExportPage = {
 const importPages = [
     dataImportPage,
     eventImportPage,
+    eeImportPage,
     geometryImportPage,
     metadataImportPage,
     teiImportPage,

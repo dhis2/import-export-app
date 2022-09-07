@@ -34,7 +34,8 @@ const onReadyStateChange = ({ xhr, type, onResponse, onError }) => {
     return (e) => {
         const status = Math.floor(xhr.status / 100)
         if (xhr.readyState === 4 && status === 2) {
-            const idAndMsg = extractIdAndMessage(xhr)
+            const data = JSON.parse(xhr.responseText)
+            const idAndMsg = extractIdAndMessage(data)
             onResponse({ ...idAndMsg, type: type })
         } else if (xhr.readyState === 4) {
             onError(e)
@@ -42,8 +43,7 @@ const onReadyStateChange = ({ xhr, type, onResponse, onError }) => {
     }
 }
 
-const extractIdAndMessage = (xhr) => {
-    const data = JSON.parse(xhr.responseText)
+export const extractIdAndMessage = (data) => {
     const { message, status, typeReports, response } = data
 
     if (status && status === 'ERROR') {

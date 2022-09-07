@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-15T14:40:23.418Z\n"
-"PO-Revision-Date: 2022-06-15T14:40:23.418Z\n"
+"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
+"PO-Revision-Date: 2022-09-06T13:23:03.852Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -730,6 +730,9 @@ msgstr "Data import"
 msgid "Event import"
 msgstr "Event import"
 
+msgid "Earth Engine import"
+msgstr "Earth Engine import"
+
 msgid "Org unit geometry import"
 msgstr "Org unit geometry import"
 
@@ -799,6 +802,295 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr "An error occurred while trying to fetch Earth Engine data"
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+msgstr ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+
+msgid "The organisation units selection is invalid"
+msgstr "The organisation units selection is invalid"
+
+msgid ""
+"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
+"element"
+msgstr ""
+"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
+"element"
+
+msgid "Earth Engine source"
+msgstr "Earth Engine source"
+
+msgid "Organisation units"
+msgstr "Organisation units"
+
+msgid "Import setup"
+msgstr "Import setup"
+
+msgid "Some required fields are missing"
+msgstr "Some required fields are missing"
+
+msgid "Preview before import"
+msgstr "Preview before import"
+
+msgid "Use associated geometry"
+msgstr "Use associated geometry"
+
+msgid "Select associated geometry for selected organisation units"
+msgstr "Select associated geometry for selected organisation units"
+
+msgid "Data element"
+msgstr "Data element"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "The data element where Earth Engine data will be added"
+
+msgid "Earth Engine data set"
+msgstr "Earth Engine data set"
+
+msgid "Select earth engine data set"
+msgstr "Select earth engine data set"
+
+msgid "Import groups to category option combinations"
+msgstr "Import groups to category option combinations"
+
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. "
+"Choose the category option combinations to import each group into."
+msgstr ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. "
+"Choose the category option combinations to import each group into."
+
+msgid "Group name"
+msgstr "Group name"
+
+msgid "Group description"
+msgstr "Group description"
+
+msgid "Category option combination"
+msgstr "Category option combination"
+
+msgid "No match found"
+msgstr "No match found"
+
+msgid "Choose category option combo"
+msgstr "Choose category option combo"
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+
+msgid "Nothing selected"
+msgstr "Nothing selected"
+
+msgid "Select a level"
+msgstr "Select a level"
+
+msgid "Deselect all"
+msgstr "Deselect all"
+
+msgid "Organisation unit(s) to import data to"
+msgstr "Organisation unit(s) to import data to"
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Data from Earth Engine will be imported for this period."
+msgstr "Data from Earth Engine will be imported for this period."
+
+msgid "Select period"
+msgstr "Select period"
+
+msgid "Loading periods"
+msgstr "Loading periods"
+
+msgid "No periods found"
+msgstr "No periods found"
+
+msgid "Point org. unit - no value"
+msgstr "Point org. unit - no value"
+
+msgid "Org Unit"
+msgstr "Org Unit"
+
+msgid "Category option combo"
+msgstr "Category option combo"
+
+msgid "Current value"
+msgstr "Current value"
+
+msgid "New value"
+msgstr "New value"
+
+msgid "Select rows per page"
+msgstr "Select rows per page"
+
+msgid "Don't round source values"
+msgstr "Don't round source values"
+
+msgid "Round to 0 decimal places"
+msgstr "Round to 0 decimal places"
+
+msgid "Round to 1 decimal place"
+msgstr "Round to 1 decimal place"
+
+msgid "Round to 2 decimal places"
+msgstr "Round to 2 decimal places"
+
+msgid "Round to 3 decimal places"
+msgstr "Round to 3 decimal places"
+
+msgid "Round to 4 decimal places"
+msgstr "Round to 4 decimal places"
+
+msgid "Round to 5 decimal places"
+msgstr "Round to 5 decimal places"
+
+msgid "Round to 6 decimal places"
+msgstr "Round to 6 decimal places"
+
+msgid "Value rounding"
+msgstr "Value rounding"
+
+msgid "The app could not retrieve required data."
+msgstr "The app could not retrieve required data."
+
+msgid "Network error"
+msgstr "Network error"
+
+msgid "Cannot get authorization token for Google Earth Engine."
+msgstr "Cannot get authorization token for Google Earth Engine."
+
+msgid ""
+"Requires a Google Earth Engine account. Check the DHIS2 documentation for "
+"more information."
+msgstr ""
+"Requires a Google Earth Engine account. Check the DHIS2 documentation for "
+"more information."
+
+msgid "Population"
+msgstr "Population"
+
+msgid "Population age groups"
+msgstr "Population age groups"
+
+msgid "Men 0 - 1 years"
+msgstr "Men 0 - 1 years"
+
+msgid "Men 1 - 4 years"
+msgstr "Men 1 - 4 years"
+
+msgid "Men 5 - 9 years"
+msgstr "Men 5 - 9 years"
+
+msgid "Men 10 - 14 years"
+msgstr "Men 10 - 14 years"
+
+msgid "Men 15 - 19 years"
+msgstr "Men 15 - 19 years"
+
+msgid "Men 20 - 24 years"
+msgstr "Men 20 - 24 years"
+
+msgid "Men 25 - 29 years"
+msgstr "Men 25 - 29 years"
+
+msgid "Men 30 - 34 years"
+msgstr "Men 30 - 34 years"
+
+msgid "Men 35 - 39 years"
+msgstr "Men 35 - 39 years"
+
+msgid "Men 40 - 44 years"
+msgstr "Men 40 - 44 years"
+
+msgid "Men 45 - 49 years"
+msgstr "Men 45 - 49 years"
+
+msgid "Men 50 - 54 years"
+msgstr "Men 50 - 54 years"
+
+msgid "Men 55 - 59 years"
+msgstr "Men 55 - 59 years"
+
+msgid "Men 60 - 64 years"
+msgstr "Men 60 - 64 years"
+
+msgid "Men 65 - 69 years"
+msgstr "Men 65 - 69 years"
+
+msgid "Men 70 - 74 years"
+msgstr "Men 70 - 74 years"
+
+msgid "Men 75 - 79 years"
+msgstr "Men 75 - 79 years"
+
+msgid "Men 80 years and above"
+msgstr "Men 80 years and above"
+
+msgid "Women 0 - 1 years"
+msgstr "Women 0 - 1 years"
+
+msgid "Women 1 - 4 years"
+msgstr "Women 1 - 4 years"
+
+msgid "Women 5 - 9 years"
+msgstr "Women 5 - 9 years"
+
+msgid "Women 10 - 14 years"
+msgstr "Women 10 - 14 years"
+
+msgid "Women 15 - 19 years"
+msgstr "Women 15 - 19 years"
+
+msgid "Women 20 - 24 years"
+msgstr "Women 20 - 24 years"
+
+msgid "Women 25 - 29 years"
+msgstr "Women 25 - 29 years"
+
+msgid "Women 30 - 34 years"
+msgstr "Women 30 - 34 years"
+
+msgid "Women 35 - 39 years"
+msgstr "Women 35 - 39 years"
+
+msgid "Women 40 - 44 years"
+msgstr "Women 40 - 44 years"
+
+msgid "Women 45 - 49 years"
+msgstr "Women 45 - 49 years"
+
+msgid "Women 50 - 54 years"
+msgstr "Women 50 - 54 years"
+
+msgid "Women 55 - 59 years"
+msgstr "Women 55 - 59 years"
+
+msgid "Women 60 - 64 years"
+msgstr "Women 60 - 64 years"
+
+msgid "Women 65 - 69 years"
+msgstr "Women 65 - 69 years"
+
+msgid "Women 70 - 74 years"
+msgstr "Women 70 - 74 years"
+
+msgid "Women 75 - 79 years"
+msgstr "Women 75 - 79 years"
+
+msgid "Women 80 years and above"
+msgstr "Women 80 years and above"
+
+msgid "No organisation units have been selected"
+msgstr "No organisation units have been selected"
+
+msgid "No geofeatures found for selected organisation units"
+msgstr "No geofeatures found for selected organisation units"
 
 msgid "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr "Export event data for programs, stages and tracked entities in DXF 2 format."

@@ -1,0 +1,30 @@
+.orgUnitDimension {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    flex: 1;
+    border: 1px solid var(--colors-grey400);
+    border-radius: 2px;
+    margin-right: var(--spacers-dp8);
+
+}
+
+.right {
+    flex: 1;
+    width: 250px;
+}
+
+.summary {
+    margin-top: var(--spacers-dp8);
+}
+
+.summaryText {
+    color: var(--colors-grey800);
+    font-size: 14px;
+}
+
+.deselectButton {
+    margin-top: var(--spacers-dp8);
+}

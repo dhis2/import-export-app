@@ -69,7 +69,7 @@ const fetchAttributes = async (apiBaseUrl, attribute) => {
     }))
 }
 
-const genericErrorMessage = i18n.t(
+export const genericErrorMessage = i18n.t(
     'An unknown error occurred. Please try again later'
 )
 
