@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/dhis2/import-export-app/compare/v1.3.7...v1.4.0) (2022-09-07)
+
+
+### Features
+
+* import Earth Engine data for population ([#1457](https://github.com/dhis2/import-export-app/issues/1457)) ([3cbd173](https://github.com/dhis2/import-export-app/commit/3cbd173185681215701bb45d5239471b39bfda6c))
+
 ## [1.3.7](https://github.com/dhis2/import-export-app/compare/v1.3.6...v1.3.7) (2022-09-06)
 
 
