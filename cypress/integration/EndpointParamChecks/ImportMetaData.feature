@@ -24,11 +24,6 @@ Feature: The user should be able to import meta data
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
-    Scenario: The user selects a different format
-        Given the "format" input is set to "xml"
-        When the import form is submitted
-        Then the upload request is sent with the right parameters
-
     Scenario: The user selects a import mode
         Given the "importMode" input is set to "VALIDATE"
         When the import form is submitted as a dry run
