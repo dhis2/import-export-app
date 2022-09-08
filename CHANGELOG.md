@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/dhis2/import-export-app/compare/v1.4.1...v1.4.2) (2022-09-08)
+
+
+### Bug Fixes
+
+* **metadata:** use correct format names on metadata pages ([c52ece8](https://github.com/dhis2/import-export-app/commit/c52ece8d9c5407255484e81d909bbbd663d443ba))
+
 ## [1.4.1](https://github.com/dhis2/import-export-app/compare/v1.4.0...v1.4.1) (2022-09-08)
 
 
