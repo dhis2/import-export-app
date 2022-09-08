@@ -5,6 +5,7 @@ export {
     Format,
     formatOptions,
     formatNoCsvOptions,
+    formatNoXmlOptions,
     formatAdxOptions,
     formatAdxXMLOptions,
     formatAdxPdfOptions,

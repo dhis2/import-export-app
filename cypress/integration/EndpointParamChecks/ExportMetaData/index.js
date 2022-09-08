@@ -2,7 +2,7 @@ import '../common/settingFormValues'
 import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const schemasApi = /\/schemas\?fields=metadata,collectionName,displayName,klass/
-const dataApi = /\/metadata\.(json|xml|csv)(\.(zip|gzip))?/
+const dataApi = /\/metadata\.(json|csv)(\.(zip|gzip))?/
 
 Before(() => {
     cy.server()

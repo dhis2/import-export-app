@@ -9,7 +9,7 @@ import {
 } from '../../components/index.js'
 import {
     Format,
-    formatOptions,
+    formatNoXmlOptions,
     defaultFormatOption,
     Schemas,
     Compression,
@@ -24,7 +24,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Metadata export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export metadata, such as data elements and organisation units, in XML, JSON or CSV format.'
+    'Export metadata, such as data elements and organisation units, in JSON or CSV format.'
 )
 const PAGE_ICON = <MetadataExportIcon />
 
@@ -54,7 +54,7 @@ const MetadataExport = () => {
                 render={({ handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
                         <Schemas />
-                        <Format availableFormats={formatOptions} />
+                        <Format availableFormats={formatNoXmlOptions} />
                         <Compression />
                         <SkipSharing />
                         <ValidationSummary />

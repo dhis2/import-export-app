@@ -13,7 +13,7 @@ import {
 import {
     FileUpload,
     Format,
-    formatOptions,
+    formatNoXmlOptions,
     defaultFormatOption,
     FirstRowIsHeader,
     defaultFirstRowIsHeaderOption,
@@ -50,7 +50,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Metadata import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import metadata like data elements and organisation units using the DXF 2 format.'
+    'Import metadata like data elements and organisation units using the JSON and CSV format.'
 )
 const PAGE_ICON = <MetadataImportIcon />
 
@@ -126,14 +126,14 @@ const MetadataImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON, CSV, and XML.',
+                                    'Supported file types: JSON and CSV.',
                                     {
                                         nsSeparator: '>',
                                     }
                                 )}
                             />
                             <Format
-                                availableFormats={formatOptions}
+                                availableFormats={formatNoXmlOptions}
                                 type="import"
                             />
                             <FirstRowIsHeader show={values.format == 'csv'} />
