@@ -82,7 +82,7 @@ const SingleSummary = ({
                                 <TableCell>
                                     {importType !== 'GEOJSON_IMPORT'
                                         ? c.object
-                                        : c.indexes.join(',')}
+                                        : (c.indexes || []).join(',')}
                                 </TableCell>
                                 <TableCell>{c.value}</TableCell>
                             </TableRow>
