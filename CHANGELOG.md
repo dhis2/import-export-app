@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/dhis2/import-export-app/compare/v1.4.3...v1.4.4) (2022-09-13)
+
+
+### Bug Fixes
+
+* avoid app crash when GeoJSON file is invalid ([af09883](https://github.com/dhis2/import-export-app/commit/af09883efbaf0d3304c12fbb1ace4bba4a566e94))
+
 ## [1.4.3](https://github.com/dhis2/import-export-app/compare/v1.4.2...v1.4.3) (2022-09-09)
 
 
