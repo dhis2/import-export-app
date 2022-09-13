@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-09-07T13:45:08.268Z\n"
-"PO-Revision-Date: 2022-09-07T13:45:08.268Z\n"
+"POT-Creation-Date: 2022-09-13T11:01:01.500Z\n"
+"PO-Revision-Date: 2022-09-13T11:01:01.500Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -880,16 +880,6 @@ msgstr "No match found"
 
 msgid "Choose category option combo"
 msgstr "Choose category option combo"
-
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] "{{count}} org unit"
-msgstr[1] "{{count}} org units"
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] "{{count}} level"
-msgstr[1] "{{count}} levels"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
