@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
+"POT-Creation-Date: 2022-09-13T11:01:01.500Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -836,7 +836,7 @@ msgid "Earth Engine source"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organizační jednotky"
 
 msgid "Import setup"
 msgstr ""
@@ -848,13 +848,13 @@ msgid "Preview before import"
 msgstr ""
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "Použít přidruženou geometrii"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr ""
 
 msgid "Data element"
-msgstr ""
+msgstr "Datový prvek"
 
 msgid "The data element where Earth Engine data will be added"
 msgstr ""
@@ -874,16 +874,16 @@ msgid ""
 msgstr ""
 
 msgid "Group name"
-msgstr ""
+msgstr "Název Skupiny"
 
 msgid "Group description"
 msgstr ""
 
 msgid "Category option combination"
-msgstr ""
+msgstr "Kombinace možností kategorie"
 
 msgid "No match found"
-msgstr ""
+msgstr "Žádná shoda nenalezena"
 
 msgid "Choose category option combo"
 msgstr ""
@@ -892,28 +892,28 @@ msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Vybráno: {{commaSeparatedListOfOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Není vybráno nic"
 
 msgid "Select a level"
-msgstr ""
+msgstr "Vybrat úroveň"
 
 msgid "Deselect all"
-msgstr ""
+msgstr "Odznačit vše"
 
 msgid "Organisation unit(s) to import data to"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "Období"
 
 msgid "Data from Earth Engine will be imported for this period."
 msgstr ""
 
 msgid "Select period"
-msgstr ""
+msgstr "Vybrat období"
 
 msgid "Loading periods"
-msgstr ""
+msgstr "Načítání období"
 
 msgid "No periods found"
 msgstr ""
@@ -925,7 +925,7 @@ msgid "Org Unit"
 msgstr ""
 
 msgid "Category option combo"
-msgstr ""
+msgstr "Kombinace možnosti kategorie"
 
 msgid "Current value"
 msgstr ""
@@ -967,10 +967,10 @@ msgid "The app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Chyba sítě"
 
 msgid "Cannot get authorization token for Google Earth Engine."
-msgstr ""
+msgstr "Nelze získat autorizační token pro Google Earth Engine."
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
@@ -978,118 +978,118 @@ msgid ""
 msgstr ""
 
 msgid "Population"
-msgstr ""
+msgstr "Obyvatelstvo"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "Populační věkové skupiny"
 
 msgid "Men 0 - 1 years"
-msgstr ""
+msgstr "Muži 0 - 1 rok"
 
 msgid "Men 1 - 4 years"
-msgstr ""
+msgstr "Muži 1 - 4 roky"
 
 msgid "Men 5 - 9 years"
-msgstr ""
+msgstr "Muži 5 - 9 let"
 
 msgid "Men 10 - 14 years"
-msgstr ""
+msgstr "Muži 10 - 14 let"
 
 msgid "Men 15 - 19 years"
-msgstr ""
+msgstr "Muži 15 - 19 let"
 
 msgid "Men 20 - 24 years"
-msgstr ""
+msgstr "Muži 20 - 24 let"
 
 msgid "Men 25 - 29 years"
 msgstr "Muži 25 - 29 let"
 
 msgid "Men 30 - 34 years"
-msgstr ""
+msgstr "Muži 30 - 34 let"
 
 msgid "Men 35 - 39 years"
-msgstr ""
+msgstr "Muži 35 - 39 let"
 
 msgid "Men 40 - 44 years"
-msgstr ""
+msgstr "Muži 40 - 44 let"
 
 msgid "Men 45 - 49 years"
-msgstr ""
+msgstr "Muži 45 - 49 let"
 
 msgid "Men 50 - 54 years"
-msgstr ""
+msgstr "Muži 50 - 54 let"
 
 msgid "Men 55 - 59 years"
 msgstr "Muži od 55 do 59 let"
 
 msgid "Men 60 - 64 years"
-msgstr ""
+msgstr "Muži 60 - 64 let"
 
 msgid "Men 65 - 69 years"
-msgstr ""
+msgstr "Muži od 65 do 69 let"
 
 msgid "Men 70 - 74 years"
-msgstr ""
+msgstr "Muži 70 - 74 let"
 
 msgid "Men 75 - 79 years"
-msgstr ""
+msgstr "Muži 75 - 79 let"
 
 msgid "Men 80 years and above"
 msgstr "Muži od 80 let"
 
 msgid "Women 0 - 1 years"
-msgstr ""
+msgstr "Ženy 0 - 1 rok"
 
 msgid "Women 1 - 4 years"
-msgstr ""
+msgstr "Ženy 1 - 4 roky"
 
 msgid "Women 5 - 9 years"
 msgstr "Ženy 5 - 9 let"
 
 msgid "Women 10 - 14 years"
-msgstr ""
+msgstr "Ženy 10 - 14 let"
 
 msgid "Women 15 - 19 years"
-msgstr ""
+msgstr "Ženy 15 - 19 let"
 
 msgid "Women 20 - 24 years"
-msgstr ""
+msgstr "Ženy 20 - 24 let"
 
 msgid "Women 25 - 29 years"
-msgstr ""
+msgstr "Ženy 25 - 29 let"
 
 msgid "Women 30 - 34 years"
-msgstr ""
+msgstr "Ženy 30 - 34 let"
 
 msgid "Women 35 - 39 years"
-msgstr ""
+msgstr "Ženy 35 - 39 let"
 
 msgid "Women 40 - 44 years"
-msgstr ""
+msgstr "Ženy 40 - 44 let"
 
 msgid "Women 45 - 49 years"
-msgstr ""
+msgstr "Ženy 45 - 49 let"
 
 msgid "Women 50 - 54 years"
-msgstr ""
+msgstr "Ženy 50 - 54 let"
 
 msgid "Women 55 - 59 years"
 msgstr "Ženy 55 - 59 let"
 
 msgid "Women 60 - 64 years"
-msgstr ""
+msgstr "Ženy 60 - 64 let"
 
 msgid "Women 65 - 69 years"
-msgstr ""
+msgstr "Ženy 65 - 69 let"
 
 msgid "Women 70 - 74 years"
-msgstr ""
+msgstr "Ženy 70 - 74 let"
 
 msgid "Women 75 - 79 years"
-msgstr ""
+msgstr "Ženy 75 - 79 let"
 
 msgid "Women 80 years and above"
-msgstr ""
+msgstr "Ženy starší 80 let"
 
 msgid "No organisation units have been selected"
 msgstr ""
@@ -1174,18 +1174,17 @@ msgstr ""
 "souvisejících objektů metadat, ve formátu XML nebo JSON."
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
+"Export metadata, such as data elements and organisation units, in JSON or "
+"CSV format."
 msgstr ""
-"Exportujte metadata, jako jsou datové prvky a organizační jednotky, ve "
-"formátu XML, JSON nebo CSV."
 
 msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
-"format."
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
 msgstr ""
-"Importujte metadata jako datové prvky a organizační jednotky pomocí formátu "
-"DXF 2."
+
+msgid "Supported file types: JSON and CSV."
+msgstr ""
 
 msgid "A class key must be selected"
 msgstr "Musí být vybrán klíč třídy"
