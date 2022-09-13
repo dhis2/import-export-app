@@ -13,7 +13,7 @@ const MATCH_PROPERTY_LABEL = i18n.t(
 )
 const MATCH_PROPERTY_DATATEST = 'input-match-property'
 
-const NAME = 'geometryProperty'
+const NAME = 'geojsonProperty'
 const DATATEST = 'input-geometry-property'
 const LABEL = i18n.t('GeoJSON property name')
 const HELPTEXT = i18n.t(
