@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/dhis2/import-export-app/compare/v1.4.4...v1.4.5) (2022-09-13)
+
+
+### Bug Fixes
+
+* geojson property name should match input field ([533b534](https://github.com/dhis2/import-export-app/commit/533b534910f7a7c50bdb5edcc0816b1e25c5b210))
+
 ## [1.4.4](https://github.com/dhis2/import-export-app/compare/v1.4.3...v1.4.4) (2022-09-13)
 
 
