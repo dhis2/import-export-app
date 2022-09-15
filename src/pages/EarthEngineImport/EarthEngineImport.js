@@ -59,17 +59,13 @@ const providerDataTransformation = ({
     }
 }
 
-const EarthEngineImport = () => {
-    return (
-        <div>
-            <CachedDataQueryProvider
-                query={query}
-                dataTransformation={providerDataTransformation}
-            >
-                <EarthEngineImportForm />
-            </CachedDataQueryProvider>
-        </div>
-    )
-}
+const EarthEngineImport = () => (
+    <CachedDataQueryProvider
+        query={query}
+        dataTransformation={providerDataTransformation}
+    >
+        <EarthEngineImportForm />
+    </CachedDataQueryProvider>
+)
 
 export { EarthEngineImport }

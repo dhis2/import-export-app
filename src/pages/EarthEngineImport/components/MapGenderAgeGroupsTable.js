@@ -11,7 +11,6 @@ import {
     NoticeBox,
     SingleSelectFieldFF,
 } from '@dhis2/ui'
-import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
@@ -21,13 +20,16 @@ import {
 } from '../util/earthEngines.js'
 import { BAND_COCS } from '../util/formFieldConstants.js'
 
-const { Field, useFormState } = ReactFinalForm
+const { Field, useFormState, useForm } = ReactFinalForm
 
-const MappingTable = ({ push, update, pop }) => {
+const MappingTable = () => {
     const { values } = useFormState()
+    const form = useForm()
     const { dataElements } = useCachedDataQuery()
     const [cocs, setCocs] = useState([])
     const { earthEngineId, dataElementId, bandCocs } = values
+
+    const { push, update, pop } = form.mutators
 
     useEffect(() => {
         getEarthEngineBands(POPULATION_AGE_GROUPS_DATASET_ID).forEach((band) =>
@@ -143,12 +145,6 @@ const MappingTable = ({ push, update, pop }) => {
             </Table>
         </>
     )
-}
-
-MappingTable.propTypes = {
-    pop: PropTypes.func,
-    push: PropTypes.func,
-    update: PropTypes.func,
 }
 
 export { MappingTable }

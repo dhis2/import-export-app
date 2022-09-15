@@ -66,7 +66,9 @@ const getEarthEngineConfig = async (
 
     if (!polygonFeatures.length) {
         throw new Error(
-            i18n.t('No geofeatures found for selected organisation units')
+            i18n.t(
+                'No associated geometry found for selected organisation units'
+            )
         )
     }
 
