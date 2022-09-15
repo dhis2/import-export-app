@@ -13,7 +13,7 @@ import {
     AlertBar,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
@@ -23,7 +23,6 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
     const [tableData, setTableData] = useState([])
     const { currentValues, error } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
-    const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
 
@@ -53,14 +52,14 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
         }
     }, [currentValues, eeData, pointOuRows])
 
-    useEffect(() => {
-        if (tableData.length) {
-            const start = (pageNo - 1) * rowsPerPage
-            const end = start + rowsPerPage
-
-            const crows = tableData.slice(start, end)
-            setVisibleRows(crows)
+    const visibleRows = useMemo(() => {
+        if (!tableData.length) {
+            return []
         }
+        const start = (pageNo - 1) * rowsPerPage
+        const end = start + rowsPerPage
+
+        return tableData.slice(start, end)
     }, [tableData, rowsPerPage, pageNo])
 
     if (!tableData.length) {
