@@ -11,7 +11,6 @@ import {
     NoticeBox,
     SingleSelectFieldFF,
 } from '@dhis2/ui'
-import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
@@ -146,12 +145,6 @@ const MappingTable = () => {
             </Table>
         </>
     )
-}
-
-MappingTable.propTypes = {
-    pop: PropTypes.func,
-    push: PropTypes.func,
-    update: PropTypes.func,
 }
 
 export { MappingTable }

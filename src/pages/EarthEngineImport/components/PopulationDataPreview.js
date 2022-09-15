@@ -18,6 +18,7 @@ import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const DEFAULT_ROWS_PER_PAGE = 10
+const NO_ROWS = []
 
 const PopulationDataPreview = ({ eeData, pointOuRows }) => {
     const [tableData, setTableData] = useState([])
@@ -54,7 +55,7 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
 
     const visibleRows = useMemo(() => {
         if (!tableData.length) {
-            return []
+            return NO_ROWS
         }
         const start = (pageNo - 1) * rowsPerPage
         const end = start + rowsPerPage
