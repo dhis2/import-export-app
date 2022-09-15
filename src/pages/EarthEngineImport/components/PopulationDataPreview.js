@@ -13,17 +13,17 @@ import {
     AlertBar,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
 const DEFAULT_ROWS_PER_PAGE = 10
+const NO_ROWS = []
 
 const PopulationDataPreview = ({ eeData, pointOuRows }) => {
     const [tableData, setTableData] = useState([])
     const { currentValues, error } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
-    const [visibleRows, setVisibleRows] = useState([])
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
 
@@ -53,14 +53,14 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
         }
     }, [currentValues, eeData, pointOuRows])
 
-    useEffect(() => {
-        if (tableData.length) {
-            const start = (pageNo - 1) * rowsPerPage
-            const end = start + rowsPerPage
-
-            const crows = tableData.slice(start, end)
-            setVisibleRows(crows)
+    const visibleRows = useMemo(() => {
+        if (!tableData.length) {
+            return NO_ROWS
         }
+        const start = (pageNo - 1) * rowsPerPage
+        const end = start + rowsPerPage
+
+        return tableData.slice(start, end)
     }, [tableData, rowsPerPage, pageNo])
 
     if (!tableData.length) {
@@ -81,7 +81,7 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                 <DataTableHead>
                     <DataTableRow>
                         <DataTableColumnHeader dense>
-                            {i18n.t('Org Unit')}
+                            {i18n.t('Organisation Unit')}
                         </DataTableColumnHeader>
                         <DataTableColumnHeader dense className={styles.right}>
                             {i18n.t('Current value')}
