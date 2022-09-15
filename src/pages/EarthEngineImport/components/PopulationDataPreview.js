@@ -80,7 +80,7 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                 <DataTableHead>
                     <DataTableRow>
                         <DataTableColumnHeader dense>
-                            {i18n.t('Org Unit')}
+                            {i18n.t('Organisation Unit')}
                         </DataTableColumnHeader>
                         <DataTableColumnHeader dense className={styles.right}>
                             {i18n.t('Current value')}

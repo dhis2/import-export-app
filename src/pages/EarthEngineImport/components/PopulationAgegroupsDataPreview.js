@@ -117,7 +117,7 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                 <DataTableHead>
                     <DataTableRow>
                         <DataTableColumnHeader dense>
-                            {i18n.t('Org Unit')}
+                            {i18n.t('Organisation Unit')}
                         </DataTableColumnHeader>
                         <DataTableColumnHeader dense>
                             {i18n.t('Category option combo')}
