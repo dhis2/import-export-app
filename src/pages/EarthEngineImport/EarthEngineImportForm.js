@@ -246,12 +246,7 @@ const EarthEngineImportForm = () => {
                                         when={EARTH_ENGINE_ID}
                                         is={POPULATION_AGE_GROUPS_DATASET_ID}
                                     >
-                                        <MappingTable
-                                            formChange={form.change}
-                                            push={push}
-                                            update={update}
-                                            pop={pop}
-                                        />
+                                        <MappingTable />
                                     </Condition>
                                     <FormSpy
                                         subscription={{
