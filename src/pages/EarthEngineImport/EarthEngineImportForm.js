@@ -218,9 +218,6 @@ const EarthEngineImportForm = () => {
                         ...arrayMutators,
                     }}
                     render={({ handleSubmit, submitError, form }) => {
-                        const {
-                            mutators: { push, pop, update },
-                        } = form
                         return (
                             <form onSubmit={handleSubmit}>
                                 <div className={styles.wrapper}>
