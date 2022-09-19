@@ -1,9 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, SingleSelectFieldFF, hasValue } from '@dhis2/ui'
 import React, { useEffect } from 'react'
-import { StyledField } from '../../../components/index.js'
+import { StyledField, Tooltip } from '../../../components/index.js'
 import { EARTH_ENGINE_ID, PERIOD } from '../util/formFieldConstants.js'
-import { Tooltip } from './Tooltip.js'
 import { usePeriods } from './usePeriods.js'
 
 const { useField, useForm } = ReactFinalForm
