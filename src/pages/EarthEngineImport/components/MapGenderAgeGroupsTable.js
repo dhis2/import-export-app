@@ -83,6 +83,13 @@ const MappingTable = () => {
             }
         })
     }
+
+    const getProbableCocMatch = (bandId) => {
+        const probableCoc = cocs.find((coc) => coc.code === bandId)
+
+        return probableCoc?.id || null
+    }
+
     const catComboOptions = getCatComboOptions()
 
     return (
@@ -111,14 +118,14 @@ const MappingTable = () => {
                 <TableBody>
                     <FieldArray name={BAND_COCS}>
                         {({ fields }) =>
-                            fields.map((name, index) => {
+                            fields.map((name, i) => {
                                 return (
-                                    <TableRow key={`row-${index}`}>
+                                    <TableRow key={`row-${i}`}>
                                         <TableCell dense>
-                                            {fields.value[index].bandId}
+                                            {fields.value[i].bandId}
                                         </TableCell>
                                         <TableCell dense>
-                                            {fields.value[index].bandName}
+                                            {fields.value[i].bandName}
                                         </TableCell>
                                         <TableCell dense>
                                             <Field
@@ -127,6 +134,9 @@ const MappingTable = () => {
                                                 inputWidth="250px"
                                                 filterable
                                                 clearable
+                                                defaultValue={getProbableCocMatch(
+                                                    fields.value[i].bandId
+                                                )}
                                                 noMatchText={i18n.t(
                                                     'No match found'
                                                 )}
