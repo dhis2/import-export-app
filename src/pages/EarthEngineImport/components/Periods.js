@@ -1,49 +1,53 @@
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, SingleSelectFieldFF, hasValue } from '@dhis2/ui'
-import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
-import { StyledField } from '../../../components/index.js'
+import { StyledField, Tooltip } from '../../../components/index.js'
 import { EARTH_ENGINE_ID, PERIOD } from '../util/formFieldConstants.js'
 import { usePeriods } from './usePeriods.js'
 
-const { useField } = ReactFinalForm
+const { useField, useForm } = ReactFinalForm
 
-const Periods = ({ formChange }) => {
+const Periods = () => {
+    const { change } = useForm()
     const { input } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = input
     const { loading, periods } = usePeriods(earthEngineId)
 
     useEffect(() => {
-        formChange(PERIOD, undefined)
+        change(PERIOD, undefined)
         if (periods.length === 1) {
-            formChange(PERIOD, periods[0].value)
+            change(PERIOD, periods[0].value)
         }
-    }, [earthEngineId, periods, formChange])
+    }, [earthEngineId, periods, change])
 
     return (
         <div style={{ maxWidth: '200px' }}>
-            <StyledField
-                component={SingleSelectFieldFF}
-                name={PERIOD}
-                label={i18n.t('Period')}
-                options={periods}
-                dataTest="input-period-type"
-                helpText={i18n.t(
-                    'Data from Earth Engine will be imported for this period.'
+            <Tooltip
+                disabled={!earthEngineId}
+                content={i18n.t(
+                    'You must select an Earth Engine data set before selecting a period'
                 )}
-                placeholder={i18n.t('Select period')}
-                loading={loading}
-                loadingText={i18n.t('Loading periods')}
-                empty={i18n.t('No periods found')}
-                filled
-                validate={hasValue}
-            />
+            >
+                <StyledField
+                    component={SingleSelectFieldFF}
+                    name={PERIOD}
+                    label={i18n.t('Period')}
+                    options={periods}
+                    dataTest="input-period-type"
+                    helpText={i18n.t(
+                        'Data from Earth Engine will be imported for this period.'
+                    )}
+                    placeholder={i18n.t('Select period')}
+                    loading={loading}
+                    loadingText={i18n.t('Loading periods')}
+                    empty={i18n.t('No periods found')}
+                    filled
+                    validate={hasValue}
+                    disabled={!earthEngineId}
+                />
+            </Tooltip>
         </div>
     )
-}
-
-Periods.propTypes = {
-    formChange: PropTypes.func.isRequired,
 }
 
 export { Periods }
