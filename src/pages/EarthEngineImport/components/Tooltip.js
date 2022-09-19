@@ -5,7 +5,12 @@ import React from 'react'
 import styles from './styles/Tooltip.module.css'
 
 const Tooltip = ({ disabled, content, children }) => (
-    <UiTooltip content={content} openDelay={200} closeDelay={100}>
+    <UiTooltip
+        content={content}
+        openDelay={200}
+        closeDelay={100}
+        placement="right"
+    >
         {({ onMouseOver, onMouseOut, ref }) => (
             <span
                 className={cx(styles.span, disabled && styles.disabled)}

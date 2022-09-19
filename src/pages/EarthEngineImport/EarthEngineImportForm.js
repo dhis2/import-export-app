@@ -226,7 +226,7 @@ const EarthEngineImportForm = () => {
                                     </h2>
                                     <Divider />
                                     <EarthEngineId />
-                                    <Periods formChange={form.change} />
+                                    <Periods />
                                     <Rounding />
                                     <h2 className={styles.sectionHeader}>
                                         {i18n.t('Organisation units')}
