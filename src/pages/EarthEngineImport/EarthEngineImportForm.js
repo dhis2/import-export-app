@@ -170,7 +170,7 @@ const EarthEngineImportForm = () => {
                                             modifiedSinceLastSubmit,
                                         }) => {
                                             return !modifiedSinceLastSubmit &&
-                                                !fetching &&
+                                                !loading &&
                                                 eeData?.length ? (
                                                 <h2
                                                     className={
