@@ -3,7 +3,6 @@ import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import { useState, useEffect } from 'react'
-import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 
 const { useFormState } = ReactFinalForm
 
@@ -30,13 +29,9 @@ const useFetchCurrentValues = () => {
     const { values } = useFormState()
     const { earthEngineId, organisationUnits, dataElementId, period } = values
 
-    const { dataElements } = useCachedDataQuery()
     const [currentValues, setCurrentValues] = useState([])
     const [error, setError] = useState(null)
     const { baseUrl } = useConfig()
-
-    const dataElement = dataElements.find((el) => el.id === dataElementId)
-    const dataElementGroupId = dataElement?.dataElementGroups[0]?.id
 
     useEffect(() => {
         const fetchCurrVals = async (url) => {
@@ -46,12 +41,7 @@ const useFetchCurrentValues = () => {
             setCurrentValues(cv)
         }
 
-        if (
-            organisationUnits &&
-            period &&
-            dataElementId &&
-            dataElementGroupId
-        ) {
+        if (organisationUnits && period && dataElementId) {
             setError(null)
             const ouQueryParams = organisationUnits
                 .map(({ id }) => `orgUnit=${id}`)
@@ -60,20 +50,18 @@ const useFetchCurrentValues = () => {
             const hasLevelPrefix = organisationUnits.find((ou) =>
                 ouIdHelper.hasLevelPrefix(ou.id)
             )
-            let url = `${baseUrl}/api/dataValueSets?dataElementGroup=${dataElementGroupId}&period=${period}&${ouQueryParams}`
+            let url = `${baseUrl}/api/dataValueSets?dataElement=${dataElementId}&period=${period}&${ouQueryParams}`
             if (hasLevelPrefix) {
                 url = url.concat('&children=true')
             }
 
             fetchCurrVals(url)
         } else {
-            const missingDEG =
-                dataElementGroupId === undefined ? 'Data element group' : null
             const missingPeriod = period === undefined ? 'Period' : null
             const missingOus = !organisationUnits.length
                 ? 'Organisation units'
                 : null
-            const missingParams = [missingDEG, missingPeriod, missingOus]
+            const missingParams = [missingPeriod, missingOus]
                 .filter((m) => m !== null)
                 .join(', ')
             setError(
@@ -82,14 +70,7 @@ const useFetchCurrentValues = () => {
                 )
             )
         }
-    }, [
-        earthEngineId,
-        dataElementId,
-        dataElementGroupId,
-        period,
-        organisationUnits,
-        baseUrl,
-    ])
+    }, [earthEngineId, dataElementId, period, organisationUnits, baseUrl])
 
     return { currentValues, error }
 }
