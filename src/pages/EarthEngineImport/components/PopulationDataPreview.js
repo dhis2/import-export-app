@@ -126,9 +126,7 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                                     onPageChange={setPageNo}
                                     onPageSizeChange={updateTable}
                                     pageSize={rowsPerPage}
-                                    pageSizeSelectText={i18n.t(
-                                        'Select rows per page'
-                                    )}
+                                    pageSizeSelectText={i18n.t('Rows per page')}
                                     total={tableData.length}
                                     pageLength={
                                         isLastPage()
@@ -136,6 +134,24 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                                             : null
                                     }
                                     pageCount={getNumPages()}
+                                    pageSummaryText={({
+                                        firstItem,
+                                        lastItem,
+                                        page,
+                                        pageCount,
+                                        total,
+                                    }) =>
+                                        i18n.t(
+                                            'Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}',
+                                            {
+                                                firstItem,
+                                                lastItem,
+                                                page,
+                                                pageCount,
+                                                total,
+                                            }
+                                        )
+                                    }
                                 />
                             </div>
                         </DataTableCell>
