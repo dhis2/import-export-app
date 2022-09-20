@@ -32,6 +32,7 @@ const MappingTable = () => {
     const { push, update, pop } = form.mutators
 
     useEffect(() => {
+        console.log('effect 1')
         getEarthEngineBands(POPULATION_AGE_GROUPS_DATASET_ID).forEach((band) =>
             push(BAND_COCS, {
                 bandId: band.id,
@@ -48,7 +49,7 @@ const MappingTable = () => {
                 pop(BAND_COCS)
             }
         }
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [])
 
     useEffect(() => {
         bandCocs &&

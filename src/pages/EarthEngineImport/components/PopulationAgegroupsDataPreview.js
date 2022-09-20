@@ -19,12 +19,16 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
-const DEFAULT_ROWS_PER_PAGE = 10
 const NO_ROWS = []
 
 const { useFormState } = ReactFinalForm
 
-const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
+const PopulationAgegroupsDataPreview = ({
+    eeData,
+    pointOuRows,
+    rowsPerPage,
+    onRowsPerPageChanged,
+}) => {
     const { values } = useFormState()
     const { dataElementId, bandCocs } = values
     const { dataElements } = useCachedDataQuery()
@@ -32,7 +36,6 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
     const [tableData, setTableData] = useState([])
     const { currentValues, error } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
-    const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
 
     const bandCocMap = useMemo(() => {
@@ -104,7 +107,7 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
 
     const updateTable = (newRowsPerPage) => {
         setPageNo(1)
-        setRowsPerPage(newRowsPerPage)
+        onRowsPerPageChanged(newRowsPerPage)
     }
 
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
@@ -227,6 +230,8 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
 PopulationAgegroupsDataPreview.propTypes = {
     eeData: PropTypes.array,
     pointOuRows: PropTypes.array,
+    rowsPerPage: PropTypes.number,
+    onRowsPerPageChanged: PropTypes.func,
 }
 
 export { PopulationAgegroupsDataPreview }

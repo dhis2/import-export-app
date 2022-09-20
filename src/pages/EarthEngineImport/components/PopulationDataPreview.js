@@ -17,14 +17,17 @@ import React, { useState, useEffect, useMemo, useRef } from 'react'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
-const DEFAULT_ROWS_PER_PAGE = 10
 const NO_ROWS = []
 
-const PopulationDataPreview = ({ eeData, pointOuRows }) => {
+const PopulationDataPreview = ({
+    eeData,
+    pointOuRows,
+    rowsPerPage,
+    onRowsPerPageChanged,
+}) => {
     const [tableData, setTableData] = useState([])
     const { currentValues, error } = useFetchCurrentValues()
     const [pageNo, setPageNo] = useState(1)
-    const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
 
     useEffect(() => {
@@ -68,7 +71,7 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
     }
     const updateTable = (newRowsPerPage) => {
         setPageNo(1)
-        setRowsPerPage(newRowsPerPage)
+        onRowsPerPageChanged(newRowsPerPage)
     }
 
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
@@ -172,6 +175,8 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
 PopulationDataPreview.propTypes = {
     eeData: PropTypes.array,
     pointOuRows: PropTypes.array,
+    rowsPerPage: PropTypes.number,
+    onRowsPerPageChanged: PropTypes.func,
 }
 
 export { PopulationDataPreview }
