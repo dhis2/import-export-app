@@ -4,7 +4,7 @@ import { ReactFinalForm, Divider, Button } from '@dhis2/ui'
 import arrayMutators from 'final-form-arrays'
 import PropTypes from 'prop-types'
 import React, { useState, useContext, useRef } from 'react'
-import { Page, DataIcon } from '../../components/index.js'
+import { Page, DataIcon, Tooltip } from '../../components/index.js'
 import { FormAlerts, ImportButtonStrip } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { AssociatedGeometry } from './components/AssociatedGeometry.js'
@@ -15,7 +15,6 @@ import { MappingTable } from './components/MapGenderAgeGroupsTable.js'
 import { OrganisationUnits } from './components/OrganisationUnits.js'
 import { Periods } from './components/Periods.js'
 import { Rounding, defaultRoundingOption } from './components/Rounding.js'
-import { Tooltip } from './components/Tooltip.js'
 import { useEeData } from './components/useEeData.js'
 import styles from './EarthEngineImportForm.module.css'
 import { onImport } from './form-helper.js'
@@ -139,7 +138,7 @@ const EarthEngineImportForm = () => {
                                     </h2>
                                     <Divider />
                                     <EarthEngineId />
-                                    <Periods formChange={form.change} />
+                                    <Periods />
                                     <Rounding />
                                     <h2 className={styles.sectionHeader}>
                                         {i18n.t('Organisation units')}
@@ -169,36 +168,48 @@ const EarthEngineImportForm = () => {
                                             valid,
                                             values,
                                             modifiedSinceLastSubmit,
-                                        }) => (
-                                            <Tooltip
-                                                disabled={!valid}
-                                                content={i18n.t(
-                                                    'Some required fields are missing'
-                                                )}
-                                            >
-                                                <Button
+                                        }) => {
+                                            return !modifiedSinceLastSubmit &&
+                                                !fetching &&
+                                                eeData?.length ? (
+                                                <h2
                                                     className={
-                                                        styles.buttonWrapper
-                                                    }
-                                                    primary
-                                                    type="submit"
-                                                    disabled={
-                                                        !previewIsAllowed({
-                                                            valid,
-                                                            values,
-                                                            modifiedSinceLastSubmit,
-                                                        })
-                                                    }
-                                                    onClick={() =>
-                                                        fetchEeData(values)
+                                                        styles.sectionHeader
                                                     }
                                                 >
-                                                    {i18n.t(
-                                                        'Preview before import'
+                                                    {i18n.t('Data preview')}
+                                                </h2>
+                                            ) : (
+                                                <Tooltip
+                                                    disabled={!valid}
+                                                    content={i18n.t(
+                                                        'Some required fields are missing'
                                                     )}
-                                                </Button>
-                                            </Tooltip>
-                                        )}
+                                                >
+                                                    <Button
+                                                        className={
+                                                            styles.buttonWrapper
+                                                        }
+                                                        primary
+                                                        type="submit"
+                                                        disabled={
+                                                            !previewIsAllowed({
+                                                                valid,
+                                                                values,
+                                                                modifiedSinceLastSubmit,
+                                                            })
+                                                        }
+                                                        onClick={() =>
+                                                            fetchEeData(values)
+                                                        }
+                                                    >
+                                                        {i18n.t(
+                                                            'Preview before import'
+                                                        )}
+                                                    </Button>
+                                                </Tooltip>
+                                            )
+                                        }}
                                     </FormSpy>
                                     <FormSpy
                                         subscription={{
