@@ -14,17 +14,17 @@ import styles from './styles/DataPreview.module.css'
 
 const { useField } = ReactFinalForm
 
-const DataPreview = ({ fetching, eeData, pointOuRows }) => {
+const DataPreview = ({ loading, eeData, pointOuRows }) => {
     const { input } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = input
 
-    if (!fetching && !eeData.length) {
+    if (!loading && !eeData.length) {
         return null
     }
 
     return (
         <div className={styles.content}>
-            {fetching ? (
+            {loading ? (
                 <div className={styles.loading}>
                     <ComponentCover translucent>
                         <CenteredContent>
@@ -53,7 +53,7 @@ const DataPreview = ({ fetching, eeData, pointOuRows }) => {
 
 DataPreview.propTypes = {
     eeData: PropTypes.array,
-    fetching: PropTypes.bool,
+    loading: PropTypes.bool,
     pointOuRows: PropTypes.array,
 }
 
