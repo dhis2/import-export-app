@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-09-15T10:24:14.061Z\n"
-"PO-Revision-Date: 2022-09-15T10:24:14.061Z\n"
+"POT-Creation-Date: 2022-09-20T08:16:34.857Z\n"
+"PO-Revision-Date: 2022-09-20T08:16:34.857Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -832,6 +832,9 @@ msgstr "Organisation units"
 msgid "Import setup"
 msgstr "Import setup"
 
+msgid "Data preview"
+msgstr "Data preview"
+
 msgid "Some required fields are missing"
 msgstr "Some required fields are missing"
 
@@ -896,6 +899,9 @@ msgstr "Deselect all"
 msgid "Organisation unit(s) to import data to"
 msgstr "Organisation unit(s) to import data to"
 
+msgid "You must select an Earth Engine data set before selecting a period"
+msgstr "You must select an Earth Engine data set before selecting a period"
+
 msgid "Period"
 msgstr "Period"
 
@@ -926,8 +932,11 @@ msgstr "Current value"
 msgid "New value"
 msgstr "New value"
 
-msgid "Select rows per page"
-msgstr "Select rows per page"
+msgid "Rows per page"
+msgstr "Rows per page"
+
+msgid "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 
 msgid "Don't round source values"
 msgstr "Don't round source values"
