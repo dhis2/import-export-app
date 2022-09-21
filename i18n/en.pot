@@ -837,6 +837,9 @@ msgstr "Select associated geometry for selected organisation units"
 msgid "Data element"
 msgstr "Data element"
 
+msgid "Select data element"
+msgstr "Select data element"
+
 msgid "The data element where Earth Engine data will be added"
 msgstr "The data element where Earth Engine data will be added"
 
