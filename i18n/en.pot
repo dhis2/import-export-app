@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-09-20T08:16:34.857Z\n"
-"PO-Revision-Date: 2022-09-20T08:16:34.857Z\n"
+"POT-Creation-Date: 2022-09-20T12:27:39.828Z\n"
+"PO-Revision-Date: 2022-09-20T12:27:39.828Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -803,19 +803,6 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr "An error occurred while trying to fetch Earth Engine data"
-
-msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups "
-"or organisation units"
-msgstr ""
-"The Earth Engine data set is too large. Try reducing the number of groups "
-"or organisation units"
-
-msgid "The organisation units selection is invalid"
-msgstr "The organisation units selection is invalid"
-
 msgid ""
 "Import WorldPop population data from Google Earth Engine to a DHIS2 data "
 "element"
@@ -964,6 +951,19 @@ msgstr "Round to 6 decimal places"
 
 msgid "Value rounding"
 msgstr "Value rounding"
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr "An error occurred while trying to fetch Earth Engine data"
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+msgstr ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+
+msgid "The organisation units selection is invalid"
+msgstr "The organisation units selection is invalid"
 
 msgid "The app could not retrieve required data."
 msgstr "The app could not retrieve required data."
