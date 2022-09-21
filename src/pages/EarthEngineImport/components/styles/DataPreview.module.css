@@ -5,6 +5,10 @@
     white-space: nowrap;
 }
 
+.parentOuName {
+    color: var(--colors-grey600);
+}
+
 .current {
     color: #777;
     text-decoration: line-through;

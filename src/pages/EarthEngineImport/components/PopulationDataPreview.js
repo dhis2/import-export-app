@@ -42,8 +42,9 @@ const PopulationDataPreview = ({
                     return { current: current?.value, ...d }
                 })
                 .concat(
-                    pointOuRows.map(({ id, name }) => ({
+                    pointOuRows.map(({ id, parentName, name }) => ({
                         ouId: id,
+                        ouParentName: parentName,
                         ouName: name,
                         value: i18n.t('Point org. unit - no value'),
                         isNoValue: true,
@@ -51,11 +52,14 @@ const PopulationDataPreview = ({
                 )
 
             setTableData(newArr)
-            tableRef?.current?.scrollIntoView({
-                behavior: 'smooth',
-            })
         }
     }, [currentValues, eeData, pointOuRows])
+
+    useEffect(() => {
+        tableRef?.current?.scrollIntoView({
+            behavior: 'smooth',
+        })
+    }, [tableData, tableRef])
 
     const visibleRows = useMemo(() => {
         if (!tableData.length) {
@@ -93,11 +97,29 @@ const PopulationDataPreview = ({
                 </DataTableHead>
                 <DataTableBody>
                     {visibleRows.map(
-                        ({ ouId, ouName, value, current, isNoValue }) => {
+                        ({
+                            ouId,
+                            ouParentName,
+                            ouName,
+                            value,
+                            current,
+                            isNoValue,
+                        }) => {
                             return (
                                 <DataTableRow key={ouId}>
                                     <DataTableCell dense>
-                                        {ouName}
+                                        <>
+                                            {ouParentName && (
+                                                <span
+                                                    className={
+                                                        styles.parentOuName
+                                                    }
+                                                >
+                                                    {`${ouParentName} / `}
+                                                </span>
+                                            )}
+                                            <span>{ouName}</span>
+                                        </>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         <span className={styles.current}>
