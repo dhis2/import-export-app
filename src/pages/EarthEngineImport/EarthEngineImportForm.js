@@ -216,15 +216,16 @@ const EarthEngineImportForm = () => {
                                             modifiedSinceLastSubmit: true,
                                         }}
                                     >
-                                        {({ modifiedSinceLastSubmit }) =>
-                                            !modifiedSinceLastSubmit ? (
-                                                <DataPreview
-                                                    loading={loading}
-                                                    eeData={eeData}
-                                                    pointOuRows={pointOuRows}
-                                                />
-                                            ) : null
-                                        }
+                                        {({ modifiedSinceLastSubmit }) => (
+                                            <DataPreview
+                                                modifiedSinceLastSubmit={
+                                                    modifiedSinceLastSubmit
+                                                }
+                                                loading={loading}
+                                                eeData={eeData}
+                                                pointOuRows={pointOuRows}
+                                            />
+                                        )}
                                     </FormSpy>
                                     <FormSpy
                                         subscription={{

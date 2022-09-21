@@ -19,20 +19,24 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
-const DEFAULT_ROWS_PER_PAGE = 10
 const NO_ROWS = []
 
 const { useFormState } = ReactFinalForm
 
-const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
+const PopulationAgegroupsDataPreview = ({
+    eeData,
+    pointOuRows,
+    rowsPerPage,
+    pageNo,
+    onRowsPerPageChanged,
+    onPageChanged,
+}) => {
     const { values } = useFormState()
     const { dataElementId, bandCocs } = values
     const { dataElements } = useCachedDataQuery()
 
     const [tableData, setTableData] = useState([])
     const { currentValues, error } = useFetchCurrentValues()
-    const [pageNo, setPageNo] = useState(1)
-    const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
 
     const bandCocMap = useMemo(() => {
@@ -100,11 +104,6 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
 
     if (!tableData.length) {
         return null
-    }
-
-    const updateTable = (newRowsPerPage) => {
-        setPageNo(1)
-        setRowsPerPage(newRowsPerPage)
     }
 
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
@@ -178,8 +177,8 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                                 <Pagination
                                     page={pageNo}
                                     isLastPage={isLastPage()}
-                                    onPageChange={setPageNo}
-                                    onPageSizeChange={updateTable}
+                                    onPageChange={onPageChanged}
+                                    onPageSizeChange={onRowsPerPageChanged}
                                     pageSize={rowsPerPage}
                                     pageSizeSelectText={i18n.t('Rows per page')}
                                     total={tableData.length}
@@ -226,7 +225,11 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
 
 PopulationAgegroupsDataPreview.propTypes = {
     eeData: PropTypes.array,
+    pageNo: PropTypes.number,
     pointOuRows: PropTypes.array,
+    rowsPerPage: PropTypes.number,
+    onPageChanged: PropTypes.func,
+    onRowsPerPageChanged: PropTypes.func,
 }
 
 export { PopulationAgegroupsDataPreview }
