@@ -27,7 +27,7 @@ const DataPreview = ({
     const { input } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = input
 
-    const updateTable = (rows) => {
+    const updateTablePaging = (rows) => {
         setPageNo(1)
         setRowsPerPage(rows)
     }
@@ -58,7 +58,7 @@ const DataPreview = ({
                             pointOuRows={pointOuRows}
                             rowsPerPage={rowsPerPage}
                             pageNo={pageNo}
-                            onRowsPerPageChanged={updateTable}
+                            onRowsPerPageChanged={updateTablePaging}
                             onPageChanged={(n) => setPageNo(n)}
                         />
                     ) : (
@@ -67,7 +67,7 @@ const DataPreview = ({
                             pointOuRows={pointOuRows}
                             rowsPerPage={rowsPerPage}
                             pageNo={pageNo}
-                            onRowsPerPageChanged={updateTable}
+                            onRowsPerPageChanged={updateTablePaging}
                             onPageChanged={(n) => setPageNo(n)}
                         />
                     )}
