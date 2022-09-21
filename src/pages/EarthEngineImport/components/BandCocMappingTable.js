@@ -92,9 +92,8 @@ const BandCocMappingTable = () => {
                 </TableHead>
                 <TableBody>
                     <FieldArray name={BAND_COCS}>
-                        {({ fields }) => {
-                            console.log('fields.length', fields.length)
-                            return fields.map((name, i) => {
+                        {({ fields }) =>
+                            fields.map((name, i) => {
                                 return (
                                     <TableRow key={`row-${i}`}>
                                         <TableCell dense>
@@ -125,7 +124,7 @@ const BandCocMappingTable = () => {
                                     </TableRow>
                                 )
                             })
-                        }}
+                        }
                     </FieldArray>
                 </TableBody>
             </Table>
