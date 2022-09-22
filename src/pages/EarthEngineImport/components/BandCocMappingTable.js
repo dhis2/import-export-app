@@ -33,6 +33,9 @@ const BandCocMappingTable = () => {
         }
     }, [change])
 
+    // dataElementId is a dependency because if it changes then
+    // the BAND_COCS mapping is no longer valid. The mapped
+    // cocs are specific to the dataElementId.
     useEffect(() => {
         const dataSetBands = getEarthEngineBands(earthEngineId)
         change(BAND_COCS, dataSetBands)
