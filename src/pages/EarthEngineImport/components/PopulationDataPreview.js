@@ -23,11 +23,10 @@ const PopulationDataPreview = ({
     eeData,
     pointOuRows,
     rowsPerPage,
-    pageNo,
     onRowsPerPageChanged,
-    onPageChanged,
 }) => {
     const [tableData, setTableData] = useState([])
+    const [pageNo, setPageNo] = useState(1)
     const { currentValues, error } = useFetchCurrentValues()
     const tableRef = useRef(null)
 
@@ -74,6 +73,11 @@ const PopulationDataPreview = ({
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
     const isLastPage = () => pageNo === getNumPages()
     const getLastPageLength = () => tableData.length % rowsPerPage
+
+    const updateTablePaging = (rows) => {
+        setPageNo(1)
+        onRowsPerPageChanged(rows)
+    }
 
     return (
         <div ref={tableRef}>
@@ -123,8 +127,8 @@ const PopulationDataPreview = ({
                                 <Pagination
                                     page={pageNo}
                                     isLastPage={isLastPage()}
-                                    onPageChange={onPageChanged}
-                                    onPageSizeChange={onRowsPerPageChanged}
+                                    onPageChange={setPageNo}
+                                    onPageSizeChange={updateTablePaging}
                                     pageSize={rowsPerPage}
                                     pageSizeSelectText={i18n.t('Rows per page')}
                                     total={tableData.length}
@@ -171,10 +175,8 @@ const PopulationDataPreview = ({
 
 PopulationDataPreview.propTypes = {
     eeData: PropTypes.array,
-    pageNo: PropTypes.number,
     pointOuRows: PropTypes.array,
     rowsPerPage: PropTypes.number,
-    onPageChanged: PropTypes.func,
     onRowsPerPageChanged: PropTypes.func,
 }
 

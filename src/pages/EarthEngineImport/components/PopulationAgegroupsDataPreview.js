@@ -27,15 +27,14 @@ const PopulationAgegroupsDataPreview = ({
     eeData,
     pointOuRows,
     rowsPerPage,
-    pageNo,
     onRowsPerPageChanged,
-    onPageChanged,
 }) => {
     const { values } = useFormState()
     const { dataElementId, bandCocs } = values
     const { dataElements } = useCachedDataQuery()
 
     const [tableData, setTableData] = useState([])
+    const [pageNo, setPageNo] = useState(1)
     const { currentValues, error } = useFetchCurrentValues()
     const tableRef = useRef(null)
 
@@ -110,6 +109,11 @@ const PopulationAgegroupsDataPreview = ({
     const isLastPage = () => pageNo === getNumPages()
     const getLastPageLength = () => tableData.length % rowsPerPage
 
+    const updateTablePaging = (rows) => {
+        setPageNo(1)
+        onRowsPerPageChanged(rows)
+    }
+
     return (
         <div ref={tableRef}>
             <DataTable dense className={styles.table}>
@@ -177,8 +181,8 @@ const PopulationAgegroupsDataPreview = ({
                                 <Pagination
                                     page={pageNo}
                                     isLastPage={isLastPage()}
-                                    onPageChange={onPageChanged}
-                                    onPageSizeChange={onRowsPerPageChanged}
+                                    onPageChange={setPageNo}
+                                    onPageSizeChange={updateTablePaging}
                                     pageSize={rowsPerPage}
                                     pageSizeSelectText={i18n.t('Rows per page')}
                                     total={tableData.length}
@@ -225,10 +229,8 @@ const PopulationAgegroupsDataPreview = ({
 
 PopulationAgegroupsDataPreview.propTypes = {
     eeData: PropTypes.array,
-    pageNo: PropTypes.number,
     pointOuRows: PropTypes.array,
     rowsPerPage: PropTypes.number,
-    onPageChanged: PropTypes.func,
     onRowsPerPageChanged: PropTypes.func,
 }
 
