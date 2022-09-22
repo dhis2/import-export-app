@@ -26,7 +26,7 @@ const PopulationDataPreview = ({
     onRowsPerPageChanged,
 }) => {
     const [tableData, setTableData] = useState([])
-    const [pageNo, setPageNo] = useState(1)
+    const [page, setPage] = useState(1)
     const { currentValues, error } = useFetchCurrentValues()
     const tableRef = useRef(null)
 
@@ -60,22 +60,22 @@ const PopulationDataPreview = ({
         if (!tableData.length) {
             return NO_ROWS
         }
-        const start = (pageNo - 1) * rowsPerPage
+        const start = (page - 1) * rowsPerPage
         const end = start + rowsPerPage
 
         return tableData.slice(start, end)
-    }, [tableData, rowsPerPage, pageNo])
+    }, [tableData, rowsPerPage, page])
 
     if (!tableData.length) {
         return null
     }
 
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
-    const isLastPage = () => pageNo === getNumPages()
+    const isLastPage = () => page === getNumPages()
     const getLastPageLength = () => tableData.length % rowsPerPage
 
     const updateTablePaging = (rows) => {
-        setPageNo(1)
+        setPage(1)
         onRowsPerPageChanged(rows)
     }
 
@@ -125,9 +125,9 @@ const PopulationDataPreview = ({
                         <DataTableCell staticStyle colSpan={'3'}>
                             <div>
                                 <Pagination
-                                    page={pageNo}
+                                    page={page}
                                     isLastPage={isLastPage()}
-                                    onPageChange={setPageNo}
+                                    onPageChange={setPage}
                                     onPageSizeChange={updateTablePaging}
                                     pageSize={rowsPerPage}
                                     pageSizeSelectText={i18n.t('Rows per page')}
