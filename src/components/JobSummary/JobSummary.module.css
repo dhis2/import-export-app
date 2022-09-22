@@ -8,12 +8,16 @@
 }
 
 .taskDetails {
-    margin: 4px 0px 0px;
+    margin: var(--spacers-dp4) 0px 0px;
     font-size: 12px;
     line-height: 14px;
     color: rgb(74, 87, 104);
 }
 
+.tags {
+    margin-top: var(--spacers-dp4);
+}
+
 .tags > * {
-    margin-right: 10px;
+    margin-right: 6px;
 }
