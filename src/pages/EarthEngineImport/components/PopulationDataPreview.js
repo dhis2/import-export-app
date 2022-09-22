@@ -87,10 +87,10 @@ const PopulationDataPreview = ({
                         <DataTableColumnHeader dense>
                             {i18n.t('Organisation Unit')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense align="right">
+                        <DataTableColumnHeader dense>
                             {i18n.t('Current value')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense align="right">
+                        <DataTableColumnHeader dense>
                             {i18n.t('New value')}
                         </DataTableColumnHeader>
                     </DataTableRow>
@@ -121,12 +121,12 @@ const PopulationDataPreview = ({
                                             <span>{ouName}</span>
                                         </>
                                     </DataTableCell>
-                                    <DataTableCell dense align="right">
+                                    <DataTableCell dense>
                                         <span className={styles.current}>
                                             {current || ''}
                                         </span>
                                     </DataTableCell>
-                                    <DataTableCell dense align="right">
+                                    <DataTableCell dense>
                                         {isNoValue ? (
                                             <Tag negative>{value}</Tag>
                                         ) : (

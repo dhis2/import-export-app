@@ -122,10 +122,10 @@ const PopulationAgegroupsDataPreview = ({
                         <DataTableColumnHeader dense>
                             {i18n.t('Category option combo')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense align="right">
+                        <DataTableColumnHeader dense>
                             {i18n.t('Current value')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense align="right">
+                        <DataTableColumnHeader dense>
                             {i18n.t('New value')}
                         </DataTableColumnHeader>
                     </DataTableRow>
@@ -163,12 +163,12 @@ const PopulationAgegroupsDataPreview = ({
                                     <DataTableCell dense>
                                         {categoryOptionCombo}
                                     </DataTableCell>
-                                    <DataTableCell dense align="right">
+                                    <DataTableCell dense>
                                         <span className={styles.current}>
                                             {current || ''}
                                         </span>
                                     </DataTableCell>
-                                    <DataTableCell dense align="right">
+                                    <DataTableCell dense>
                                         {isNoValue ? (
                                             <Tag negative>{value}</Tag>
                                         ) : (
