@@ -41,7 +41,7 @@ const PopulationAgegroupsDataPreview = ({
 
     const bandCocMap = useMemo(() => {
         return bandCocs.reduce((acc, curr) => {
-            acc[curr.bandId] = curr
+            acc[curr.id] = curr
             return acc
         }, {})
     }, [bandCocs])
@@ -61,7 +61,7 @@ const PopulationAgegroupsDataPreview = ({
         if (eeData) {
             const newArr = eeData
                 .map((d) => {
-                    const cocId = bandCocMap[d.bandId]?.coc
+                    const cocId = bandCocMap[d.id]?.coc
 
                     const current = currentValues
                         .filter((v) => v.orgUnit === d.ouId)

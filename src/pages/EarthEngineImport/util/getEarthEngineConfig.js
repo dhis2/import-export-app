@@ -1,9 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { NO_ASSOCIATED_GEOMETRY } from '../components/AssociatedGeometry.js'
-import {
-    earthEngines,
-    POPULATION_AGE_GROUPS_DATASET_ID,
-} from './earthEngines.js'
+import { earthEngines, getEarthEngineBands } from './earthEngines.js'
 import { toGeoJson } from './toGeoJson.js'
 
 const getGeoFeaturesQuery = (ouIds, coordinateField) => ({
@@ -88,11 +85,8 @@ const getEarthEngineConfig = async (
         data: polygonFeatures,
     }
 
-    if (
-        earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID &&
-        selectedBandCocs
-    ) {
-        cfg.band = selectedBandCocs.map((bc) => bc.bandId)
+    if (getEarthEngineBands(earthEngineId).length && selectedBandCocs) {
+        cfg.band = selectedBandCocs.map((bc) => bc.id)
     }
 
     const config = Object.fromEntries(

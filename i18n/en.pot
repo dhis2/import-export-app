@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-09-20T12:27:39.828Z\n"
-"PO-Revision-Date: 2022-09-20T12:27:39.828Z\n"
+"POT-Creation-Date: 2022-09-21T12:12:01.489Z\n"
+"PO-Revision-Date: 2022-09-21T12:12:01.489Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -834,21 +834,6 @@ msgstr "Use associated geometry"
 msgid "Select associated geometry for selected organisation units"
 msgstr "Select associated geometry for selected organisation units"
 
-msgid "Data element"
-msgstr "Data element"
-
-msgid "Select data element"
-msgstr "Select data element"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr "The data element where Earth Engine data will be added"
-
-msgid "Earth Engine data set"
-msgstr "Earth Engine data set"
-
-msgid "Select earth engine data set"
-msgstr "Select earth engine data set"
-
 msgid "Import groups to category option combinations"
 msgstr "Import groups to category option combinations"
 
@@ -873,6 +858,21 @@ msgstr "No match found"
 
 msgid "Choose category option combo"
 msgstr "Choose category option combo"
+
+msgid "Data element"
+msgstr "Data element"
+
+msgid "Select data element"
+msgstr "Select data element"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "The data element where Earth Engine data will be added"
+
+msgid "Earth Engine data set"
+msgstr "Earth Engine data set"
+
+msgid "Select earth engine data set"
+msgstr "Select earth engine data set"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
