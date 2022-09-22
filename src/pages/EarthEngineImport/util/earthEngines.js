@@ -1,9 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 
-export const POPULATION_AGE_GROUPS_DATASET_ID =
+const POPULATION_DATASET_ID = 'WorldPop/GP/100m/pop'
+const POPULATION_AGE_GROUPS_DATASET_ID =
     'WorldPop/GP/100m/pop_age_sex_cons_unadj'
-
-export const POPULATION_DATASET_ID = 'WorldPop/GP/100m/pop'
 
 export const earthEngines = {
     [POPULATION_DATASET_ID]: {
@@ -208,7 +207,7 @@ export const earthEngines = {
 const NO_BANDS = []
 
 export const getEarthEngineBands = (eeId) =>
-    earthEngines[eeId].bands || NO_BANDS
+    earthEngines[eeId]?.bands || NO_BANDS
 
 export const getDefaultAggregation = (eeId) =>
     earthEngines[eeId].defaultAggregations[0]

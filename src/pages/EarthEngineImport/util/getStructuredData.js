@@ -21,7 +21,7 @@ const ALL_AGGREGATION_TYPES = [
 export const OU_ID = 'ouId'
 export const OU_PARENT_NAME = 'ouParentName'
 export const OU_NAME = 'ouName'
-export const BAND_ID = 'bandId'
+export const BAND_ID = 'id'
 export const COC_ID = 'coc'
 export const VALUE = 'value'
 
@@ -41,7 +41,7 @@ const getStructuredData = ({
                 [OU_ID]: ouId,
                 [OU_PARENT_NAME]: ouIdNameMap[ouId].parentName,
                 [OU_NAME]: ouIdNameMap[ouId].name,
-                [BAND_ID]: selectedBandCocs[0].bandId,
+                [BAND_ID]: selectedBandCocs[0].id,
                 [VALUE]: getValueWithPrecision(valueSet[aggregationType]),
             })
         } else if (selectedBandCocs.length > 1) {

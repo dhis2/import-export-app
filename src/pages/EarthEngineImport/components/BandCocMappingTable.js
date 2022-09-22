@@ -14,61 +14,39 @@ import {
 import React, { useState, useEffect } from 'react'
 import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
-import {
-    getEarthEngineBands,
-    POPULATION_AGE_GROUPS_DATASET_ID,
-} from '../util/earthEngines.js'
+import { getEarthEngineBands } from '../util/earthEngines.js'
 import { BAND_COCS } from '../util/formFieldConstants.js'
 
 const { Field, useFormState, useForm } = ReactFinalForm
 
-const MappingTable = () => {
+const BandCocMappingTable = () => {
     const { values } = useFormState()
-    const form = useForm()
+    const { change } = useForm()
     const { dataElements } = useCachedDataQuery()
     const [cocs, setCocs] = useState([])
     const { earthEngineId, dataElementId, bandCocs } = values
 
-    const { push, update, pop } = form.mutators
-
     useEffect(() => {
-        getEarthEngineBands(POPULATION_AGE_GROUPS_DATASET_ID).forEach((band) =>
-            push(BAND_COCS, {
-                bandId: band.id,
-                bandName: band.name,
-            })
-        )
-
+        //clear form bandCocs when this component is removed
         return function cleanup() {
-            const numBandCocs = getEarthEngineBands(
-                POPULATION_AGE_GROUPS_DATASET_ID
-            ).length
-
-            for (let i = 0; i < numBandCocs; ++i) {
-                pop(BAND_COCS)
-            }
+            change(BAND_COCS, [])
         }
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [change])
+
+    // dataElementId is a dependency because if it changes then
+    // the BAND_COCS mapping is no longer valid. The mapped
+    // cocs are specific to the dataElementId.
+    useEffect(() => {
+        const dataSetBands = getEarthEngineBands(earthEngineId)
+        change(BAND_COCS, dataSetBands)
+    }, [earthEngineId, dataElementId, change])
 
     useEffect(() => {
-        bandCocs &&
-            bandCocs.forEach((bc, index) => {
-                update(BAND_COCS, index, {
-                    bandId: bc.bandId,
-                    bandName: bc.bandName,
-                })
-            })
-        if (dataElementId) {
-            const newCocs = dataElements.find(({ id }) => id === dataElementId)
-                .categoryCombo.categoryOptionCombos
+        const newCocs = dataElements.find(({ id }) => id === dataElementId)
+            .categoryCombo.categoryOptionCombos
 
-            setCocs(newCocs)
-        }
-    }, [dataElementId, dataElements]) // eslint-disable-line react-hooks/exhaustive-deps
-
-    if (earthEngineId !== POPULATION_AGE_GROUPS_DATASET_ID || !dataElementId) {
-        return null
-    }
+        setCocs(newCocs)
+    }, [dataElementId, dataElements])
 
     const getCatComboOptions = () => {
         const unavailableCocs = bandCocs
@@ -122,10 +100,10 @@ const MappingTable = () => {
                                 return (
                                     <TableRow key={`row-${i}`}>
                                         <TableCell dense>
-                                            {fields.value[i].bandId}
+                                            {fields.value[i].id}
                                         </TableCell>
                                         <TableCell dense>
-                                            {fields.value[i].bandName}
+                                            {fields.value[i].name}
                                         </TableCell>
                                         <TableCell dense>
                                             <Field
@@ -135,7 +113,7 @@ const MappingTable = () => {
                                                 filterable
                                                 clearable
                                                 defaultValue={getProbableCocMatch(
-                                                    fields.value[i].bandId
+                                                    fields.value[i].id
                                                 )}
                                                 noMatchText={i18n.t(
                                                     'No match found'
@@ -157,4 +135,4 @@ const MappingTable = () => {
     )
 }
 
-export { MappingTable }
+export { BandCocMappingTable }

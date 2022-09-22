@@ -23,11 +23,10 @@ const PopulationDataPreview = ({
     eeData,
     pointOuRows,
     rowsPerPage,
-    pageNo,
     onRowsPerPageChanged,
-    onPageChanged,
 }) => {
     const [tableData, setTableData] = useState([])
+    const [page, setPage] = useState(1)
     const { currentValues, error } = useFetchCurrentValues()
     const tableRef = useRef(null)
 
@@ -65,19 +64,24 @@ const PopulationDataPreview = ({
         if (!tableData.length) {
             return NO_ROWS
         }
-        const start = (pageNo - 1) * rowsPerPage
+        const start = (page - 1) * rowsPerPage
         const end = start + rowsPerPage
 
         return tableData.slice(start, end)
-    }, [tableData, rowsPerPage, pageNo])
+    }, [tableData, rowsPerPage, page])
 
     if (!tableData.length) {
         return null
     }
 
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
-    const isLastPage = () => pageNo === getNumPages()
+    const isLastPage = () => page === getNumPages()
     const getLastPageLength = () => tableData.length % rowsPerPage
+
+    const updateTablePaging = (rows) => {
+        setPage(1)
+        onRowsPerPageChanged(rows)
+    }
 
     return (
         <div ref={tableRef}>
@@ -143,10 +147,10 @@ const PopulationDataPreview = ({
                         <DataTableCell staticStyle colSpan={'3'}>
                             <div>
                                 <Pagination
-                                    page={pageNo}
+                                    page={page}
                                     isLastPage={isLastPage()}
-                                    onPageChange={onPageChanged}
-                                    onPageSizeChange={onRowsPerPageChanged}
+                                    onPageChange={setPage}
+                                    onPageSizeChange={updateTablePaging}
                                     pageSize={rowsPerPage}
                                     pageSizeSelectText={i18n.t('Rows per page')}
                                     total={tableData.length}
@@ -193,10 +197,8 @@ const PopulationDataPreview = ({
 
 PopulationDataPreview.propTypes = {
     eeData: PropTypes.array,
-    pageNo: PropTypes.number,
     pointOuRows: PropTypes.array,
     rowsPerPage: PropTypes.number,
-    onPageChanged: PropTypes.func,
     onRowsPerPageChanged: PropTypes.func,
 }
 
