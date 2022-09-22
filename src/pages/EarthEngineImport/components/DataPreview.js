@@ -6,7 +6,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { POPULATION_DATASET_ID } from '../util/earthEngines.js'
+import { getEarthEngineBands } from '../util/earthEngines.js'
 import { EARTH_ENGINE_ID } from '../util/formFieldConstants.js'
 import { PopulationAgegroupsDataPreview } from './PopulationAgegroupsDataPreview.js'
 import { PopulationDataPreview } from './PopulationDataPreview.js'
@@ -52,7 +52,7 @@ const DataPreview = ({
                 </div>
             ) : (
                 <div className={styles.indent}>
-                    {earthEngineId === POPULATION_DATASET_ID ? (
+                    {!getEarthEngineBands(earthEngineId).length ? (
                         <PopulationDataPreview
                             eeData={eeData}
                             pointOuRows={pointOuRows}

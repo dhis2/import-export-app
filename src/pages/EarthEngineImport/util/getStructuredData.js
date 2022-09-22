@@ -20,7 +20,7 @@ const ALL_AGGREGATION_TYPES = [
 
 export const OU_ID = 'ouId'
 export const OU_NAME = 'ouName'
-export const BAND_ID = 'bandId'
+export const BAND_ID = 'id'
 export const COC_ID = 'coc'
 export const VALUE = 'value'
 
@@ -43,7 +43,7 @@ const getStructuredData = ({
             acc.push({
                 [OU_ID]: ouId,
                 [OU_NAME]: ouName,
-                [BAND_ID]: selectedBandCocs[0].bandId,
+                [BAND_ID]: selectedBandCocs[0].id,
                 [VALUE]: getValueWithPrecision(valueSet[aggregationType]),
             })
         } else if (selectedBandCocs.length > 1) {

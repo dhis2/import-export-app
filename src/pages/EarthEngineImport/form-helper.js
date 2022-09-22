@@ -25,9 +25,8 @@ const onImport =
                 dataElement,
                 period,
                 orgUnit: d[OU_ID],
-                categoryOptionCombo: bandCocs.find(
-                    (bc) => bc.bandId === d[BAND_ID]
-                ).coc,
+                categoryOptionCombo: bandCocs.find((bc) => bc.id === d[BAND_ID])
+                    .coc,
                 value: d[VALUE],
             }))
         } else {

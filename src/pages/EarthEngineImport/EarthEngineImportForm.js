@@ -2,23 +2,22 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm, Divider, Button } from '@dhis2/ui'
 import arrayMutators from 'final-form-arrays'
-import PropTypes from 'prop-types'
 import React, { useState, useContext, useRef } from 'react'
 import { Page, DataIcon, Tooltip } from '../../components/index.js'
 import { FormAlerts, ImportButtonStrip } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { AssociatedGeometry } from './components/AssociatedGeometry.js'
+import { BandCocMappingTable } from './components/BandCocMappingTable.js'
 import { DataElements } from './components/DataElements.js'
 import { DataPreview } from './components/DataPreview.js'
 import { EarthEngineId } from './components/EarthEngineId.js'
-import { MappingTable } from './components/MapGenderAgeGroupsTable.js'
 import { OrganisationUnits } from './components/OrganisationUnits.js'
 import { Periods } from './components/Periods.js'
 import { Rounding, defaultRoundingOption } from './components/Rounding.js'
 import { useEeData } from './components/useEeData.js'
 import styles from './EarthEngineImportForm.module.css'
 import { onImport } from './form-helper.js'
-import { POPULATION_AGE_GROUPS_DATASET_ID } from './util/earthEngines.js'
+import { getEarthEngineBands } from './util/earthEngines.js'
 import {
     ORGANISATION_UNITS,
     ROUNDING,
@@ -26,19 +25,7 @@ import {
     EARTH_ENGINE_ID,
 } from './util/formFieldConstants.js'
 
-const { Form, Field, FormSpy } = ReactFinalForm
-
-const Condition = ({ when, is, children }) => (
-    <Field name={when} subscription={{ value: true }}>
-        {({ input: { value } }) => (value === is ? children : null)}
-    </Field>
-)
-
-Condition.propTypes = {
-    children: PropTypes.node,
-    is: PropTypes.string,
-    when: PropTypes.string,
-}
+const { Form, FormSpy } = ReactFinalForm
 
 const EarthEngineImportForm = () => {
     const {
@@ -62,12 +49,16 @@ const EarthEngineImportForm = () => {
         [DATA_ELEMENT_ID]: null,
     }
 
+    const mappingTableShouldDisplay = ({ values }) =>
+        values &&
+        getEarthEngineBands(values[EARTH_ENGINE_ID]).length &&
+        values[DATA_ELEMENT_ID]
+
     const previewIsAllowed = ({ valid, values, modifiedSinceLastSubmit }) => {
-        // there should be at least one band for Population Age groups
-        const bandsValid =
-            values.earthEngineId === POPULATION_AGE_GROUPS_DATASET_ID
-                ? !!values.bandCocs?.find((bc) => !!bc.coc)
-                : true
+        // no preview until there are some valid bands
+        const bandsValid = getEarthEngineBands(values[EARTH_ENGINE_ID]).length
+            ? !!values.bandCocs?.find((bc) => !!bc.coc)
+            : true
 
         const modified = errorMessage ? modifiedSinceLastSubmit : true
 
@@ -151,12 +142,20 @@ const EarthEngineImportForm = () => {
                                     </h2>
                                     <Divider />
                                     <DataElements />
-                                    <Condition
-                                        when={EARTH_ENGINE_ID}
-                                        is={POPULATION_AGE_GROUPS_DATASET_ID}
+
+                                    <FormSpy
+                                        subscription={{
+                                            values: true,
+                                        }}
                                     >
-                                        <MappingTable />
-                                    </Condition>
+                                        {({ values }) =>
+                                            mappingTableShouldDisplay({
+                                                values,
+                                            }) ? (
+                                                <BandCocMappingTable />
+                                            ) : null
+                                        }
+                                    </FormSpy>
                                     <FormSpy
                                         subscription={{
                                             values: true,
