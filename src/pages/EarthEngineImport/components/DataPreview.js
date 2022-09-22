@@ -23,14 +23,8 @@ const DataPreview = ({
     modifiedSinceLastSubmit,
 }) => {
     const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
-    const [pageNo, setPageNo] = useState(1)
     const { input } = useField(EARTH_ENGINE_ID)
     const { value: earthEngineId } = input
-
-    const updateTablePaging = (rows) => {
-        setPageNo(1)
-        setRowsPerPage(rows)
-    }
 
     if (modifiedSinceLastSubmit) {
         return null
@@ -57,18 +51,14 @@ const DataPreview = ({
                             eeData={eeData}
                             pointOuRows={pointOuRows}
                             rowsPerPage={rowsPerPage}
-                            pageNo={pageNo}
-                            onRowsPerPageChanged={updateTablePaging}
-                            onPageChanged={(n) => setPageNo(n)}
+                            onRowsPerPageChanged={setRowsPerPage}
                         />
                     ) : (
                         <PopulationAgegroupsDataPreview
                             eeData={eeData}
                             pointOuRows={pointOuRows}
                             rowsPerPage={rowsPerPage}
-                            pageNo={pageNo}
-                            onRowsPerPageChanged={updateTablePaging}
-                            onPageChanged={(n) => setPageNo(n)}
+                            onRowsPerPageChanged={setRowsPerPage}
                         />
                     )}
                 </div>
