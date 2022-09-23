@@ -19,6 +19,7 @@ const ALL_AGGREGATION_TYPES = [
 ]
 
 export const OU_ID = 'ouId'
+export const OU_PARENT_NAME = 'ouParentName'
 export const OU_NAME = 'ouName'
 export const BAND_ID = 'id'
 export const COC_ID = 'coc'
@@ -35,14 +36,11 @@ const getStructuredData = ({
 }) => {
     const getValueWithPrecision = getPrecisionFn(rounding)
     return Object.entries(data).reduce((acc, [ouId, valueSet]) => {
-        const ouName = ouIdNameMap[ouId].parentName
-            ? `${ouIdNameMap[ouId].parentName}/${ouIdNameMap[ouId].name}`
-            : ouIdNameMap[ouId].name
-
         if (selectedBandCocs.length === 1) {
             acc.push({
                 [OU_ID]: ouId,
-                [OU_NAME]: ouName,
+                [OU_PARENT_NAME]: ouIdNameMap[ouId].parentName,
+                [OU_NAME]: ouIdNameMap[ouId].name,
                 [BAND_ID]: selectedBandCocs[0].id,
                 [VALUE]: getValueWithPrecision(valueSet[aggregationType]),
             })
@@ -51,7 +49,8 @@ const getStructuredData = ({
                 if (!isAggregation(groupId)) {
                     acc.push({
                         [OU_ID]: ouId,
-                        [OU_NAME]: ouName,
+                        [OU_PARENT_NAME]: ouIdNameMap[ouId].parentName,
+                        [OU_NAME]: ouIdNameMap[ouId].name,
                         [BAND_ID]: groupId,
                         [VALUE]: getValueWithPrecision(rawValue),
                     })
@@ -60,7 +59,8 @@ const getStructuredData = ({
         } else {
             acc.push({
                 [OU_ID]: ouId,
-                [OU_NAME]: ouName,
+                [OU_PARENT_NAME]: ouIdNameMap[ouId].parentName,
+                [OU_NAME]: ouIdNameMap[ouId].name,
                 [VALUE]: getValueWithPrecision(valueSet[aggregationType]),
             })
         }
