@@ -12,7 +12,7 @@ const Header = ({ jobDetails, task, showFileDetails }) => (
     <div className={styles.header}>
         <h3 className={styles.title}>{`${i18n.t('Job summary')}`}</h3>
         {showFileDetails && jobDetails?.files?.length && (
-            <span className={styles.taskDetails}>
+            <div className={styles.taskDetails}>
                 <span data-test="job-summary-filename">
                     {jobDetails.files[0].name}
                 </span>{' '}
@@ -20,7 +20,7 @@ const Header = ({ jobDetails, task, showFileDetails }) => (
                 <span data-test="job-summary-date">
                     {jsDateToString(task.created)}{' '}
                 </span>
-            </span>
+            </div>
         )}
     </div>
 )
