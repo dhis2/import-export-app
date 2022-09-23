@@ -16,6 +16,7 @@ import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { getEarthEngineBands } from '../util/earthEngines.js'
 import { BAND_COCS } from '../util/formFieldConstants.js'
+import styles from './styles/BandCocMappingTable.module.css'
 
 const { Field, useFormState, useForm } = ReactFinalForm
 
@@ -71,7 +72,7 @@ const BandCocMappingTable = () => {
     const catComboOptions = getCatComboOptions()
 
     return (
-        <>
+        <div className={styles.container}>
             <NoticeBox
                 title={i18n.t('Import groups to category option combinations')}
             >
@@ -131,7 +132,7 @@ const BandCocMappingTable = () => {
                     </FieldArray>
                 </TableBody>
             </Table>
-        </>
+        </div>
     )
 }
 
