@@ -64,7 +64,7 @@ const getEarthEngineConfig = async (
     if (!polygonFeatures.length) {
         throw new Error(
             i18n.t(
-                'It is not possible to get data from Earth Engine for point facilities. Select polygon organisation units or use a catchment area as associated geometry.”'
+                'It is not possible to get data from Earth Engine for point facilities. Select polygon organisation units or use a catchment area as associated geometry.'
             )
         )
     }
