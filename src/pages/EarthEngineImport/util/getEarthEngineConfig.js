@@ -64,7 +64,7 @@ const getEarthEngineConfig = async (
     if (!polygonFeatures.length) {
         throw new Error(
             i18n.t(
-                'No associated geometry found for selected organisation units'
+                'It is not possible to get data from Earth Engine for point facilities. Select polygon organisation units or use a catchment area as associated geometry.'
             )
         )
     }
@@ -75,6 +75,7 @@ const getEarthEngineConfig = async (
     const pointOrgUnits = pointFeatures.map(({ properties }) => ({
         id: properties.id,
         name: properties.name,
+        parentName: properties.parentName,
     }))
 
     const cfg = {

@@ -73,8 +73,9 @@ const PopulationAgegroupsDataPreview = ({
                     }
                 })
                 .concat(
-                    pointOuRows.map(({ id, name }) => ({
+                    pointOuRows.map(({ id, parentName, name }) => ({
                         ouId: id,
+                        ouParentName: parentName,
                         ouName: name,
                         value: i18n.t('Point org. unit - no value'),
                         isNoValue: true,
@@ -125,10 +126,10 @@ const PopulationAgegroupsDataPreview = ({
                         <DataTableColumnHeader dense>
                             {i18n.t('Category option combo')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense className={styles.right}>
+                        <DataTableColumnHeader dense>
                             {i18n.t('Current value')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense className={styles.right}>
+                        <DataTableColumnHeader dense>
                             {i18n.t('New value')}
                         </DataTableColumnHeader>
                     </DataTableRow>
@@ -138,6 +139,7 @@ const PopulationAgegroupsDataPreview = ({
                         (
                             {
                                 ouId,
+                                ouParentName,
                                 ouName,
                                 categoryOptionCombo,
                                 value,
@@ -149,7 +151,18 @@ const PopulationAgegroupsDataPreview = ({
                             return (
                                 <DataTableRow key={`${ouId}-${i}`}>
                                     <DataTableCell dense>
-                                        {ouName}
+                                        <>
+                                            {ouParentName && (
+                                                <span
+                                                    className={
+                                                        styles.parentOuName
+                                                    }
+                                                >
+                                                    {`${ouParentName} / `}
+                                                </span>
+                                            )}
+                                            <span>{ouName}</span>
+                                        </>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         {categoryOptionCombo}
@@ -159,10 +172,7 @@ const PopulationAgegroupsDataPreview = ({
                                             {current || ''}
                                         </span>
                                     </DataTableCell>
-                                    <DataTableCell
-                                        dense
-                                        className={styles.right}
-                                    >
+                                    <DataTableCell dense>
                                         {isNoValue ? (
                                             <Tag negative>{value}</Tag>
                                         ) : (
