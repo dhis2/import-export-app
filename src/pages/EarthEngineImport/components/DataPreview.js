@@ -45,7 +45,7 @@ const DataPreview = ({
                     </ComponentCover>
                 </div>
             ) : (
-                <div className={styles.indent}>
+                <>
                     {!getEarthEngineBands(earthEngineId).length ? (
                         <PopulationDataPreview
                             eeData={eeData}
@@ -61,7 +61,7 @@ const DataPreview = ({
                             onRowsPerPageChanged={setRowsPerPage}
                         />
                     )}
-                </div>
+                </>
             )}
         </div>
     )
