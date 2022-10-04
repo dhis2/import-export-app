@@ -1,3 +1,10 @@
+## [1.4.8](https://github.com/dhis2/import-export-app/compare/v1.4.7...v1.4.8) (2022-10-04)
+
+
+### Bug Fixes
+
+* patch webpack to support webworker importScripts with relative publicPath ([#1516](https://github.com/dhis2/import-export-app/issues/1516)) ([eedaa20](https://github.com/dhis2/import-export-app/commit/eedaa201e6347240aa5827df82aef8a21d0ad831))
+
 ## [1.4.7](https://github.com/dhis2/import-export-app/compare/v1.4.6...v1.4.7) (2022-09-15)
 
 
