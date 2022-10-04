@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-09-23T08:12:06.765Z\n"
-"PO-Revision-Date: 2022-09-23T08:12:06.765Z\n"
+"POT-Creation-Date: 2022-10-04T07:00:50.601Z\n"
+"PO-Revision-Date: 2022-10-04T07:00:50.602Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -973,6 +973,9 @@ msgstr "The app could not retrieve required data."
 
 msgid "Network error"
 msgstr "Network error"
+
+msgid "Cannot get authorization token for Google Earth Engine."
+msgstr "Cannot get authorization token for Google Earth Engine."
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
