@@ -9,7 +9,7 @@ import {
 } from '../../components/index.js'
 import {
     Format,
-    formatNoCsvOptions,
+    formatNoXmlNoCsvOptions,
     defaultFormatOption,
     Compression,
     defaultCompressionOption,
@@ -61,7 +61,7 @@ const MetadataDependencyExport = () => {
                     <form onSubmit={handleSubmit}>
                         <ObjectType />
                         <Objects objectType={values.objectType} form={form} />
-                        <Format availableFormats={formatNoCsvOptions} />
+                        <Format availableFormats={formatNoXmlNoCsvOptions} />
                         <Compression />
                         <SkipSharing />
                         <ValidationSummary />
