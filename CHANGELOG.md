@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/dhis2/import-export-app/compare/v1.4.8...v1.5.0) (2022-10-06)
+
+
+### Bug Fixes
+
+* **metadata dependency export:** remove "xml" from intro text ([6c11144](https://github.com/dhis2/import-export-app/commit/6c11144cdf84282428f3fafeb2ec2cdd0cd03244))
+
+
+### Features
+
+* **metadata export:** remove csv option and adjust intro text ([f8d05e6](https://github.com/dhis2/import-export-app/commit/f8d05e69471ed46d0f14c659c9d4cd64fd3e6de7))
+
 ## [1.4.8](https://github.com/dhis2/import-export-app/compare/v1.4.7...v1.4.8) (2022-10-04)
 
 
