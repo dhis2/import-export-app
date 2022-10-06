@@ -26,7 +26,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Metadata dependency export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export metadata dependencies, such as data sets and programs, including related metadata objects, in XML or JSON format.'
+    'Export metadata dependencies, such as data sets and programs, including related metadata objects, in JSON format.'
 )
 const PAGE_ICON = <MetadataDependencyExportIcon />
 
