@@ -4,7 +4,7 @@
 # Djibril Dione <dione.djibril@gmail.com>, 2019
 # Bram Piot <bram.piot@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# Yao Selom Saka <ysaka@hispwca.org>, 2020
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-13T11:01:01.500Z\n"
+"POT-Creation-Date: 2022-10-06T10:50:48.052Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -1197,15 +1197,12 @@ msgstr "Un aperçu de toutes les tâches d'importation a démarré cette session
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
+"related metadata objects, in JSON format."
 msgstr ""
-"Exportez les dépendances de métadonnées, telles que les ensembles de données"
-" et les programmes, y compris les objets de métadonnées associés, au format "
-"XML ou JSON."
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in JSON or "
-"CSV format."
+"Export metadata, such as data elements and organisation units, in JSON "
+"format."
 msgstr ""
 
 msgid ""
