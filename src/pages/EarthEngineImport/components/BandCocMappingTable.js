@@ -73,13 +73,17 @@ const BandCocMappingTable = () => {
 
     return (
         <div className={styles.container}>
-            <NoticeBox
-                title={i18n.t('Import groups to category option combinations')}
-            >
-                {i18n.t(
-                    'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.'
-                )}
-            </NoticeBox>
+            <div className={styles.noticeBox}>
+                <NoticeBox
+                    title={i18n.t(
+                        'Import groups to category option combinations'
+                    )}
+                >
+                    {i18n.t(
+                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.'
+                    )}
+                </NoticeBox>
+            </div>
             <Table dense>
                 <TableHead>
                     <TableRowHead>
