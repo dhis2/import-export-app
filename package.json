@@ -1,6 +1,6 @@
 {
     "name": "import-export-app",
-    "version": "1.4.7",
+    "version": "1.5.2",
     "description": "",
     "license": "BSD-3-Clause",
     "private": true,
@@ -19,7 +19,8 @@
         "format": "yarn format:js && yarn format:text",
         "cy:start": "BROWSER=none yarn start",
         "cy:open": "d2-utils-cypress open --appStart 'yarn cy:start'",
-        "cy:run": "d2-utils-cypress run --appStart 'yarn cy:start'"
+        "cy:run": "d2-utils-cypress run --appStart 'yarn cy:start'",
+        "postinstall": "patch-package"
     },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^10.0.0",
@@ -29,6 +30,7 @@
         "@dhis2/cypress-plugins": "^7.0.0",
         "@testing-library/jest-dom": "^5.8.0",
         "@testing-library/react": "^9.4.0",
+        "patch-package": "^6.4.7",
         "query-string": "^6.12.1"
     },
     "dependencies": {

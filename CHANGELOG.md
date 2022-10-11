@@ -1,3 +1,36 @@
+## [1.5.2](https://github.com/dhis2/import-export-app/compare/v1.5.1...v1.5.2) (2022-10-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a621450](https://github.com/dhis2/import-export-app/commit/a621450611b0db144fa3ea34f6922bf486f47c9c))
+
+## [1.5.1](https://github.com/dhis2/import-export-app/compare/v1.5.0...v1.5.1) (2022-10-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([75b1d3f](https://github.com/dhis2/import-export-app/commit/75b1d3fa9990059856bad7e31f45585ba74c145a))
+
+# [1.5.0](https://github.com/dhis2/import-export-app/compare/v1.4.8...v1.5.0) (2022-10-06)
+
+
+### Bug Fixes
+
+* **metadata dependency export:** remove "xml" from intro text ([6c11144](https://github.com/dhis2/import-export-app/commit/6c11144cdf84282428f3fafeb2ec2cdd0cd03244))
+
+
+### Features
+
+* **metadata export:** remove csv option and adjust intro text ([f8d05e6](https://github.com/dhis2/import-export-app/commit/f8d05e69471ed46d0f14c659c9d4cd64fd3e6de7))
+
+## [1.4.8](https://github.com/dhis2/import-export-app/compare/v1.4.7...v1.4.8) (2022-10-04)
+
+
+### Bug Fixes
+
+* patch webpack to support webworker importScripts with relative publicPath ([#1516](https://github.com/dhis2/import-export-app/issues/1516)) ([eedaa20](https://github.com/dhis2/import-export-app/commit/eedaa201e6347240aa5827df82aef8a21d0ad831))
+
 ## [1.4.7](https://github.com/dhis2/import-export-app/compare/v1.4.6...v1.4.7) (2022-09-15)
 
 

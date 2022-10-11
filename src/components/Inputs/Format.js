@@ -9,8 +9,13 @@ const formatOptions = [
     { value: 'csv', label: i18n.t('CSV') },
     { value: 'xml', label: i18n.t('XML') },
 ]
+
 const formatNoCsvOptions = formatOptions.filter((f) => f.value != 'csv')
 const formatNoXmlOptions = formatOptions.filter((f) => f.value != 'xml')
+const formatNoXmlNoCsvOptions = formatOptions.filter(
+    (f) => !['xml', 'csv'].includes(f.value)
+)
+
 const formatAdxOptions = [
     ...formatOptions,
     { value: 'adx', label: i18n.t('ADX') },
@@ -55,6 +60,7 @@ export {
     formatOptions,
     formatNoCsvOptions,
     formatNoXmlOptions,
+    formatNoXmlNoCsvOptions,
     formatAdxOptions,
     formatAdxXMLOptions,
     formatAdxPdfOptions,
