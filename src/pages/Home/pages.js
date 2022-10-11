@@ -9,6 +9,10 @@ import {
     PAGE_DESCRIPTION as DATA_IMPORT_DESCRIPTION,
 } from '../DataImport/DataImport.js'
 import {
+    PAGE_NAME as EARTH_ENGINE_IMPORT_PAGE_NAME,
+    PAGE_DESCRIPTION as EARTH_ENGINE_IMPORT_DESCRIPTION,
+} from '../EarthEngineImport/EarthEngineImport.js'
+import {
     PAGE_NAME as EVENT_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as EVENT_EXPORT_DESCRIPTION,
 } from '../EventExport/EventExport.js'
@@ -94,6 +98,12 @@ const importPages = capitalizePages([
         description: EVENT_IMPORT_DESCRIPTION,
         linkText: i18n.t('Import events'),
         to: '/import/event',
+    },
+    {
+        name: EARTH_ENGINE_IMPORT_PAGE_NAME,
+        description: EARTH_ENGINE_IMPORT_DESCRIPTION,
+        linkText: i18n.t('Import Earth Engine'),
+        to: '/import/earthengine',
     },
     {
         name: GEOMETRY_IMPORT_PAGE_NAME,

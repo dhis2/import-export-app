@@ -1,7 +1,14 @@
+import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import { NO_ASSOCIATED_GEOMETRY } from './components/AssociatedGeometry.js'
 import { EarthEngineImportForm } from './EarthEngineImportForm.js'
 import { CachedDataQueryProvider } from './util/CachedQueryProvider.js'
+
+// PAGE INFO
+export const PAGE_NAME = i18n.t('Earth Engine import')
+export const PAGE_DESCRIPTION = i18n.t(
+    'Import WorldPop population data from Google Earth Engine to a DHIS2 data element'
+)
 
 const query = {
     rootOrgUnits: {

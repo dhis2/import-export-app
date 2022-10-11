@@ -974,6 +974,9 @@ msgstr "The app could not retrieve required data."
 msgid "Network error"
 msgstr "Network error"
 
+msgid "Cannot get authorization token for Google Earth Engine."
+msgstr "Cannot get authorization token for Google Earth Engine."
+
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
@@ -1160,6 +1163,9 @@ msgstr "Import data"
 
 msgid "Import events"
 msgstr "Import events"
+
+msgid "Import Earth Engine"
+msgstr "Import Earth Engine"
 
 msgid "Import GeoJSON"
 msgstr "Import GeoJSON"
