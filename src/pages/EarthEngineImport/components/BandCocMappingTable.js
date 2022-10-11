@@ -16,6 +16,7 @@ import { FieldArray } from 'react-final-form-arrays'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import { getEarthEngineBands } from '../util/earthEngines.js'
 import { BAND_COCS } from '../util/formFieldConstants.js'
+import styles from './styles/BandCocMappingTable.module.css'
 
 const { Field, useFormState, useForm } = ReactFinalForm
 
@@ -71,14 +72,18 @@ const BandCocMappingTable = () => {
     const catComboOptions = getCatComboOptions()
 
     return (
-        <>
-            <NoticeBox
-                title={i18n.t('Import groups to category option combinations')}
-            >
-                {i18n.t(
-                    'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.'
-                )}
-            </NoticeBox>
+        <div className={styles.container}>
+            <div className={styles.noticeBox}>
+                <NoticeBox
+                    title={i18n.t(
+                        'Import groups to category option combinations'
+                    )}
+                >
+                    {i18n.t(
+                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.'
+                    )}
+                </NoticeBox>
+            </div>
             <Table dense>
                 <TableHead>
                     <TableRowHead>
@@ -131,7 +136,7 @@ const BandCocMappingTable = () => {
                     </FieldArray>
                 </TableBody>
             </Table>
-        </>
+        </div>
     )
 }
 
