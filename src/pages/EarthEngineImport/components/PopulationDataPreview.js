@@ -13,18 +13,21 @@ import {
     AlertBar,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
-const DEFAULT_ROWS_PER_PAGE = 10
+const NO_ROWS = []
 
-const PopulationDataPreview = ({ eeData, pointOuRows }) => {
+const PopulationDataPreview = ({
+    eeData,
+    pointOuRows,
+    rowsPerPage,
+    onRowsPerPageChanged,
+}) => {
     const [tableData, setTableData] = useState([])
+    const [page, setPage] = useState(1)
     const { currentValues, error } = useFetchCurrentValues()
-    const [pageNo, setPageNo] = useState(1)
-    const [visibleRows, setVisibleRows] = useState([])
-    const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
 
     useEffect(() => {
@@ -38,8 +41,9 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                     return { current: current?.value, ...d }
                 })
                 .concat(
-                    pointOuRows.map(({ id, name }) => ({
+                    pointOuRows.map(({ id, parentName, name }) => ({
                         ouId: id,
+                        ouParentName: parentName,
                         ouName: name,
                         value: i18n.t('Point org. unit - no value'),
                         isNoValue: true,
@@ -47,33 +51,37 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                 )
 
             setTableData(newArr)
-            tableRef?.current?.scrollIntoView({
-                behavior: 'smooth',
-            })
         }
     }, [currentValues, eeData, pointOuRows])
 
     useEffect(() => {
-        if (tableData.length) {
-            const start = (pageNo - 1) * rowsPerPage
-            const end = start + rowsPerPage
+        tableRef?.current?.scrollIntoView({
+            behavior: 'smooth',
+        })
+    }, [tableData, tableRef])
 
-            const crows = tableData.slice(start, end)
-            setVisibleRows(crows)
+    const visibleRows = useMemo(() => {
+        if (!tableData.length) {
+            return NO_ROWS
         }
-    }, [tableData, rowsPerPage, pageNo])
+        const start = (page - 1) * rowsPerPage
+        const end = start + rowsPerPage
+
+        return tableData.slice(start, end)
+    }, [tableData, rowsPerPage, page])
 
     if (!tableData.length) {
         return null
     }
-    const updateTable = (newRowsPerPage) => {
-        setPageNo(1)
-        setRowsPerPage(newRowsPerPage)
-    }
 
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
-    const isLastPage = () => pageNo === getNumPages()
+    const isLastPage = () => page === getNumPages()
     const getLastPageLength = () => tableData.length % rowsPerPage
+
+    const updateTablePaging = (rows) => {
+        setPage(1)
+        onRowsPerPageChanged(rows)
+    }
 
     return (
         <div ref={tableRef}>
@@ -81,23 +89,41 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                 <DataTableHead>
                     <DataTableRow>
                         <DataTableColumnHeader dense>
-                            {i18n.t('Org Unit')}
+                            {i18n.t('Organisation Unit')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense className={styles.right}>
+                        <DataTableColumnHeader dense>
                             {i18n.t('Current value')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense className={styles.right}>
+                        <DataTableColumnHeader dense>
                             {i18n.t('New value')}
                         </DataTableColumnHeader>
                     </DataTableRow>
                 </DataTableHead>
                 <DataTableBody>
                     {visibleRows.map(
-                        ({ ouId, ouName, value, current, isNoValue }) => {
+                        ({
+                            ouId,
+                            ouParentName,
+                            ouName,
+                            value,
+                            current,
+                            isNoValue,
+                        }) => {
                             return (
                                 <DataTableRow key={ouId}>
                                     <DataTableCell dense>
-                                        {ouName}
+                                        <>
+                                            {ouParentName && (
+                                                <span
+                                                    className={
+                                                        styles.parentOuName
+                                                    }
+                                                >
+                                                    {`${ouParentName} / `}
+                                                </span>
+                                            )}
+                                            <span>{ouName}</span>
+                                        </>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         <span className={styles.current}>
@@ -121,14 +147,12 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                         <DataTableCell staticStyle colSpan={'3'}>
                             <div>
                                 <Pagination
-                                    page={pageNo}
+                                    page={page}
                                     isLastPage={isLastPage()}
-                                    onPageChange={setPageNo}
-                                    onPageSizeChange={updateTable}
+                                    onPageChange={setPage}
+                                    onPageSizeChange={updateTablePaging}
                                     pageSize={rowsPerPage}
-                                    pageSizeSelectText={i18n.t(
-                                        'Select rows per page'
-                                    )}
+                                    pageSizeSelectText={i18n.t('Rows per page')}
                                     total={tableData.length}
                                     pageLength={
                                         isLastPage()
@@ -136,6 +160,24 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
                                             : null
                                     }
                                     pageCount={getNumPages()}
+                                    pageSummaryText={({
+                                        firstItem,
+                                        lastItem,
+                                        page,
+                                        pageCount,
+                                        total,
+                                    }) =>
+                                        i18n.t(
+                                            'Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}',
+                                            {
+                                                firstItem,
+                                                lastItem,
+                                                page,
+                                                pageCount,
+                                                total,
+                                            }
+                                        )
+                                    }
                                 />
                             </div>
                         </DataTableCell>
@@ -156,6 +198,8 @@ const PopulationDataPreview = ({ eeData, pointOuRows }) => {
 PopulationDataPreview.propTypes = {
     eeData: PropTypes.array,
     pointOuRows: PropTypes.array,
+    rowsPerPage: PropTypes.number,
+    onRowsPerPageChanged: PropTypes.func,
 }
 
 export { PopulationDataPreview }

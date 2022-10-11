@@ -1,8 +1,9 @@
-.indent {
-    padding-top: var(--spacers-dp16);
-}
 .table th {
     white-space: nowrap;
+}
+
+.parentOuName {
+    color: var(--colors-grey600);
 }
 
 .current {

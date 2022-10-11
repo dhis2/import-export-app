@@ -19,25 +19,28 @@ import { useCachedDataQuery } from '../util/CachedQueryProvider.js'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
-const DEFAULT_ROWS_PER_PAGE = 10
+const NO_ROWS = []
 
 const { useFormState } = ReactFinalForm
 
-const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
+const PopulationAgegroupsDataPreview = ({
+    eeData,
+    pointOuRows,
+    rowsPerPage,
+    onRowsPerPageChanged,
+}) => {
     const { values } = useFormState()
     const { dataElementId, bandCocs } = values
     const { dataElements } = useCachedDataQuery()
 
     const [tableData, setTableData] = useState([])
+    const [page, setPage] = useState(1)
     const { currentValues, error } = useFetchCurrentValues()
-    const [pageNo, setPageNo] = useState(1)
-    const [visibleRows, setVisibleRows] = useState([])
-    const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_ROWS_PER_PAGE)
     const tableRef = useRef(null)
 
     const bandCocMap = useMemo(() => {
         return bandCocs.reduce((acc, curr) => {
-            acc[curr.bandId] = curr
+            acc[curr.id] = curr
             return acc
         }, {})
     }, [bandCocs])
@@ -57,7 +60,7 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
         if (eeData) {
             const newArr = eeData
                 .map((d) => {
-                    const cocId = bandCocMap[d.bandId]?.coc
+                    const cocId = bandCocMap[d.id]?.coc
 
                     const current = currentValues
                         .filter((v) => v.orgUnit === d.ouId)
@@ -70,8 +73,9 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                     }
                 })
                 .concat(
-                    pointOuRows.map(({ id, name }) => ({
+                    pointOuRows.map(({ id, parentName, name }) => ({
                         ouId: id,
+                        ouParentName: parentName,
                         ouName: name,
                         value: i18n.t('Point org. unit - no value'),
                         isNoValue: true,
@@ -88,28 +92,28 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
         })
     }, [tableData, tableRef])
 
-    useEffect(() => {
-        if (tableData.length) {
-            const start = (pageNo - 1) * rowsPerPage
-            const end = start + rowsPerPage
-
-            const crows = tableData.slice(start, end)
-            setVisibleRows(crows)
+    const visibleRows = useMemo(() => {
+        if (!tableData.length) {
+            return NO_ROWS
         }
-    }, [tableData, rowsPerPage, pageNo])
+        const start = (page - 1) * rowsPerPage
+        const end = start + rowsPerPage
+
+        return tableData.slice(start, end)
+    }, [tableData, rowsPerPage, page])
 
     if (!tableData.length) {
         return null
     }
 
-    const updateTable = (newRowsPerPage) => {
-        setPageNo(1)
-        setRowsPerPage(newRowsPerPage)
-    }
-
     const getNumPages = () => Math.ceil(tableData.length / rowsPerPage)
-    const isLastPage = () => pageNo === getNumPages()
+    const isLastPage = () => page === getNumPages()
     const getLastPageLength = () => tableData.length % rowsPerPage
+
+    const updateTablePaging = (rows) => {
+        setPage(1)
+        onRowsPerPageChanged(rows)
+    }
 
     return (
         <div ref={tableRef}>
@@ -117,15 +121,15 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                 <DataTableHead>
                     <DataTableRow>
                         <DataTableColumnHeader dense>
-                            {i18n.t('Org Unit')}
+                            {i18n.t('Organisation Unit')}
                         </DataTableColumnHeader>
                         <DataTableColumnHeader dense>
                             {i18n.t('Category option combo')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense className={styles.right}>
+                        <DataTableColumnHeader dense>
                             {i18n.t('Current value')}
                         </DataTableColumnHeader>
-                        <DataTableColumnHeader dense className={styles.right}>
+                        <DataTableColumnHeader dense>
                             {i18n.t('New value')}
                         </DataTableColumnHeader>
                     </DataTableRow>
@@ -135,6 +139,7 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                         (
                             {
                                 ouId,
+                                ouParentName,
                                 ouName,
                                 categoryOptionCombo,
                                 value,
@@ -146,7 +151,18 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                             return (
                                 <DataTableRow key={`${ouId}-${i}`}>
                                     <DataTableCell dense>
-                                        {ouName}
+                                        <>
+                                            {ouParentName && (
+                                                <span
+                                                    className={
+                                                        styles.parentOuName
+                                                    }
+                                                >
+                                                    {`${ouParentName} / `}
+                                                </span>
+                                            )}
+                                            <span>{ouName}</span>
+                                        </>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         {categoryOptionCombo}
@@ -156,10 +172,7 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                                             {current || ''}
                                         </span>
                                     </DataTableCell>
-                                    <DataTableCell
-                                        dense
-                                        className={styles.right}
-                                    >
+                                    <DataTableCell dense>
                                         {isNoValue ? (
                                             <Tag negative>{value}</Tag>
                                         ) : (
@@ -176,14 +189,12 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                         <DataTableCell staticStyle colSpan={'4'}>
                             <div>
                                 <Pagination
-                                    page={pageNo}
+                                    page={page}
                                     isLastPage={isLastPage()}
-                                    onPageChange={setPageNo}
-                                    onPageSizeChange={updateTable}
+                                    onPageChange={setPage}
+                                    onPageSizeChange={updateTablePaging}
                                     pageSize={rowsPerPage}
-                                    pageSizeSelectText={i18n.t(
-                                        'Select rows per page'
-                                    )}
+                                    pageSizeSelectText={i18n.t('Rows per page')}
                                     total={tableData.length}
                                     pageLength={
                                         isLastPage()
@@ -191,6 +202,24 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
                                             : null
                                     }
                                     pageCount={getNumPages()}
+                                    pageSummaryText={({
+                                        firstItem,
+                                        lastItem,
+                                        page,
+                                        pageCount,
+                                        total,
+                                    }) =>
+                                        i18n.t(
+                                            'Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}',
+                                            {
+                                                firstItem,
+                                                lastItem,
+                                                page,
+                                                pageCount,
+                                                total,
+                                            }
+                                        )
+                                    }
                                 />
                             </div>
                         </DataTableCell>
@@ -211,6 +240,8 @@ const PopulationAgegroupsDataPreview = ({ eeData, pointOuRows }) => {
 PopulationAgegroupsDataPreview.propTypes = {
     eeData: PropTypes.array,
     pointOuRows: PropTypes.array,
+    rowsPerPage: PropTypes.number,
+    onRowsPerPageChanged: PropTypes.func,
 }
 
 export { PopulationAgegroupsDataPreview }

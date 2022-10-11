@@ -803,19 +803,6 @@ msgstr "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Supported file types: JSON, CSV, XML, ADX and PDF."
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr "An error occurred while trying to fetch Earth Engine data"
-
-msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups "
-"or organisation units"
-msgstr ""
-"The Earth Engine data set is too large. Try reducing the number of groups "
-"or organisation units"
-
-msgid "The organisation units selection is invalid"
-msgstr "The organisation units selection is invalid"
-
 msgid ""
 "Import WorldPop population data from Google Earth Engine to a DHIS2 data "
 "element"
@@ -832,6 +819,9 @@ msgstr "Organisation units"
 msgid "Import setup"
 msgstr "Import setup"
 
+msgid "Data preview"
+msgstr "Data preview"
+
 msgid "Some required fields are missing"
 msgstr "Some required fields are missing"
 
@@ -843,18 +833,6 @@ msgstr "Use associated geometry"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr "Select associated geometry for selected organisation units"
-
-msgid "Data element"
-msgstr "Data element"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr "The data element where Earth Engine data will be added"
-
-msgid "Earth Engine data set"
-msgstr "Earth Engine data set"
-
-msgid "Select earth engine data set"
-msgstr "Select earth engine data set"
 
 msgid "Import groups to category option combinations"
 msgstr "Import groups to category option combinations"
@@ -881,6 +859,21 @@ msgstr "No match found"
 msgid "Choose category option combo"
 msgstr "Choose category option combo"
 
+msgid "Data element"
+msgstr "Data element"
+
+msgid "Select data element"
+msgstr "Select data element"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "The data element where Earth Engine data will be added"
+
+msgid "Earth Engine data set"
+msgstr "Earth Engine data set"
+
+msgid "Select earth engine data set"
+msgstr "Select earth engine data set"
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 
@@ -895,6 +888,9 @@ msgstr "Deselect all"
 
 msgid "Organisation unit(s) to import data to"
 msgstr "Organisation unit(s) to import data to"
+
+msgid "You must select an Earth Engine data set before selecting a period"
+msgstr "You must select an Earth Engine data set before selecting a period"
 
 msgid "Period"
 msgstr "Period"
@@ -914,8 +910,8 @@ msgstr "No periods found"
 msgid "Point org. unit - no value"
 msgstr "Point org. unit - no value"
 
-msgid "Org Unit"
-msgstr "Org Unit"
+msgid "Organisation Unit"
+msgstr "Organisation Unit"
 
 msgid "Category option combo"
 msgstr "Category option combo"
@@ -926,8 +922,11 @@ msgstr "Current value"
 msgid "New value"
 msgstr "New value"
 
-msgid "Select rows per page"
-msgstr "Select rows per page"
+msgid "Rows per page"
+msgstr "Rows per page"
+
+msgid "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 
 msgid "Don't round source values"
 msgstr "Don't round source values"
@@ -956,14 +955,24 @@ msgstr "Round to 6 decimal places"
 msgid "Value rounding"
 msgstr "Value rounding"
 
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr "An error occurred while trying to fetch Earth Engine data"
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+msgstr ""
+"The Earth Engine data set is too large. Try reducing the number of groups "
+"or organisation units"
+
+msgid "The organisation units selection is invalid"
+msgstr "The organisation units selection is invalid"
+
 msgid "The app could not retrieve required data."
 msgstr "The app could not retrieve required data."
 
 msgid "Network error"
 msgstr "Network error"
-
-msgid "Cannot get authorization token for Google Earth Engine."
-msgstr "Cannot get authorization token for Google Earth Engine."
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
@@ -1089,8 +1098,14 @@ msgstr "Women 80 years and above"
 msgid "No organisation units have been selected"
 msgstr "No organisation units have been selected"
 
-msgid "No geofeatures found for selected organisation units"
-msgstr "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
+msgstr ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 
 msgid "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr "Export event data for programs, stages and tracked entities in DXF 2 format."

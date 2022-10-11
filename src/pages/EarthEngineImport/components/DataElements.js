@@ -14,6 +14,7 @@ const DataElements = () => {
                 component={SingleSelectFieldFF}
                 name={DATA_ELEMENT_ID}
                 label={i18n.t('Data element')}
+                placeholder={i18n.t('Select data element')}
                 options={dataElements}
                 dataTest="input-data-elements"
                 helpText={i18n.t(

@@ -15,7 +15,7 @@ const query = {
     dataElements: {
         resource: 'dataElements',
         params: {
-            fields: 'id,displayName~rename(name),categoryCombo[categoryOptionCombos[id,code,displayName~rename(name)]],dataElementGroups',
+            fields: 'id,displayName~rename(name),categoryCombo[categoryOptionCombos[id,code,displayName~rename(name)]]',
             filter: 'domainType:eq:AGGREGATE',
             paging: false,
         },
@@ -59,17 +59,13 @@ const providerDataTransformation = ({
     }
 }
 
-const EarthEngineImport = () => {
-    return (
-        <div>
-            <CachedDataQueryProvider
-                query={query}
-                dataTransformation={providerDataTransformation}
-            >
-                <EarthEngineImportForm />
-            </CachedDataQueryProvider>
-        </div>
-    )
-}
+const EarthEngineImport = () => (
+    <CachedDataQueryProvider
+        query={query}
+        dataTransformation={providerDataTransformation}
+    >
+        <EarthEngineImportForm />
+    </CachedDataQueryProvider>
+)
 
 export { EarthEngineImport }

@@ -14,7 +14,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
       >
         Job summary
       </h3>
-      <span
+      <div
         class="taskDetails"
       >
         <span
@@ -29,7 +29,7 @@ exports[`summary for a GML job matches snapshot 1`] = `
           2020-02-12 13:00:32
  
         </span>
-      </span>
+      </div>
     </div>
     <div
       class="tags"
@@ -527,7 +527,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
       >
         Job summary
       </h3>
-      <span
+      <div
         class="taskDetails"
       >
         <span
@@ -542,7 +542,7 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
           2020-02-12 13:00:59
  
         </span>
-      </span>
+      </div>
     </div>
     <div
       class="tags"
