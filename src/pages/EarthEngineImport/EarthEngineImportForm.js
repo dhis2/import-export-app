@@ -189,9 +189,6 @@ const EarthEngineImportForm = () => {
                                                     )}
                                                 >
                                                     <Button
-                                                        className={
-                                                            styles.buttonWrapper
-                                                        }
                                                         primary
                                                         type="submit"
                                                         disabled={
