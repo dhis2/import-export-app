@@ -171,13 +171,16 @@ const EarthEngineImportForm = () => {
                                             return !modifiedSinceLastSubmit &&
                                                 !loading &&
                                                 eeData?.length ? (
-                                                <h2
-                                                    className={
-                                                        styles.sectionHeader
-                                                    }
-                                                >
-                                                    {i18n.t('Data preview')}
-                                                </h2>
+                                                <>
+                                                    <h2
+                                                        className={
+                                                            styles.sectionHeader
+                                                        }
+                                                    >
+                                                        {i18n.t('Data preview')}
+                                                    </h2>
+                                                    <Divider />
+                                                </>
                                             ) : (
                                                 <Tooltip
                                                     disabled={!valid}
@@ -186,9 +189,6 @@ const EarthEngineImportForm = () => {
                                                     )}
                                                 >
                                                     <Button
-                                                        className={
-                                                            styles.buttonWrapper
-                                                        }
                                                         primary
                                                         type="submit"
                                                         disabled={
