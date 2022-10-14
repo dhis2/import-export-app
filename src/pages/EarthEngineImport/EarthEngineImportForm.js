@@ -105,7 +105,7 @@ const EarthEngineImportForm = () => {
             <Page
                 title={i18n.t('Earth Engine import')}
                 desc={i18n.t(
-                    'Import WorldPop population data from Google Earth Engine to a DHIS2 data element'
+                    'Import high resolution population data from WorldPop using Google Earth Engine'
                 )}
                 icon={<DataIcon />}
                 loading={progress}
