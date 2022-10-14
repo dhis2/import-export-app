@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/dhis2/import-export-app/compare/v1.5.4...v1.5.5) (2022-10-14)
+
+
+### Bug Fixes
+
+* keep the scroll from happening on preview table unnecessarily ([#1539](https://github.com/dhis2/import-export-app/issues/1539)) ([56e9085](https://github.com/dhis2/import-export-app/commit/56e90857f9933e608308cd362f337084c9d13fbf))
+
 ## [1.5.4](https://github.com/dhis2/import-export-app/compare/v1.5.3...v1.5.4) (2022-10-14)
 
 
