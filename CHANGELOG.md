@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/dhis2/import-export-app/compare/v1.5.3...v1.5.4) (2022-10-14)
+
+
+### Bug Fixes
+
+* add earth engine card to home page ([#1541](https://github.com/dhis2/import-export-app/issues/1541)) ([12a6b18](https://github.com/dhis2/import-export-app/commit/12a6b180a2818ed8e75610da7d858904ef3c1c70))
+
 ## [1.5.3](https://github.com/dhis2/import-export-app/compare/v1.5.2...v1.5.3) (2022-10-11)
 
 
