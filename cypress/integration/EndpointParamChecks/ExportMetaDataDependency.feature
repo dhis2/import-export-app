@@ -26,11 +26,6 @@ Feature: The user should be able to meta data dependency events
         When the export form is submitted
         Then the download request is sent with the right parameters
 
-    Scenario: The user selects a different format
-        Given the "format" input is set to "xml"
-        When the export form is submitted
-        Then the download request is sent with the right parameters
-
     Scenario: The user selects a no compression
         Given the "compression" input is set to ""
         When the export form is submitted
