@@ -1,3 +1,27 @@
+## [1.5.4](https://github.com/dhis2/import-export-app/compare/v1.5.3...v1.5.4) (2022-10-14)
+
+
+### Bug Fixes
+
+* add earth engine card to home page ([#1541](https://github.com/dhis2/import-export-app/issues/1541)) ([12a6b18](https://github.com/dhis2/import-export-app/commit/12a6b180a2818ed8e75610da7d858904ef3c1c70))
+
+## [1.5.3](https://github.com/dhis2/import-export-app/compare/v1.5.2...v1.5.3) (2022-10-11)
+
+
+### Bug Fixes
+
+* add tooltip and disabled Period component when no EE has been selected ([#1500](https://github.com/dhis2/import-export-app/issues/1500)) ([7313280](https://github.com/dhis2/import-export-app/commit/7313280de66d2ce74455097d5ae934e38e97923d))
+* adjust margins and add divider for Data preview section ([#1510](https://github.com/dhis2/import-export-app/issues/1510)) ([8716bf9](https://github.com/dhis2/import-export-app/commit/8716bf9640f4458c0c2cdd6f166951f8d4c0ca28))
+* adjust spacing so Job summary header and tags look better ([#1509](https://github.com/dhis2/import-export-app/issues/1509)) ([c24763e](https://github.com/dhis2/import-export-app/commit/c24763e1f91ff955bb5aab9d5d7f6012c98bad27))
+* dataElementGroup no longer needed to fetch current data values ([#1503](https://github.com/dhis2/import-export-app/issues/1503)) ([9a9602f](https://github.com/dhis2/import-export-app/commit/9a9602fae09c4a02e46508b8d964ceec4b2b4522))
+* display ou parent name in preview with grey color ([#1507](https://github.com/dhis2/import-export-app/issues/1507)) ([d711133](https://github.com/dhis2/import-export-app/commit/d711133d53333ff35316ee11f5133d0cb3777cf2))
+* earth engine import - pre-fill cocs for ee bands if coc code matches band name ([#1501](https://github.com/dhis2/import-export-app/issues/1501)) ([22470ee](https://github.com/dhis2/import-export-app/commit/22470eea9a7b1903b467d93d455fae278949b577))
+* earth engine import string fixes ([#1499](https://github.com/dhis2/import-export-app/issues/1499)) ([c91d434](https://github.com/dhis2/import-export-app/commit/c91d434bbe95e2e11944ee6ed1f1916411ca3ba0))
+* ee import - refactor to make sure all useEffect dependencies are listed ([#1506](https://github.com/dhis2/import-export-app/issues/1506)) ([e14ff2f](https://github.com/dhis2/import-export-app/commit/e14ff2f0eba6115be1fdf99a918cf18a078fdfcc))
+* page number needs to be reset to 1 when new preview generated ([#1508](https://github.com/dhis2/import-export-app/issues/1508)) ([295de97](https://github.com/dhis2/import-export-app/commit/295de97db42196d8ff13edffa2d01a5b7035f973))
+* preserve users preferred rows per page for data preview ([#1504](https://github.com/dhis2/import-export-app/issues/1504)) ([742889a](https://github.com/dhis2/import-export-app/commit/742889ac0476c3092717bc6df001de27d46ef406))
+* use convention for page summary text ([#1502](https://github.com/dhis2/import-export-app/issues/1502)) ([34e40d5](https://github.com/dhis2/import-export-app/commit/34e40d581ac6f1314e48f29e119ef389d31750a2))
+
 ## [1.5.2](https://github.com/dhis2/import-export-app/compare/v1.5.1...v1.5.2) (2022-10-08)
 
 
