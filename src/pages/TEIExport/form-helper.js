@@ -87,7 +87,7 @@ const valuesToParams = (
     }
 
     if (teiTypeFilter == 'TE') {
-        minParams.trackedEntity = selectedTETypes
+        minParams.trackedEntityType = selectedTETypes
     }
 
     if (lastUpdatedFilter == 'DATE') {
