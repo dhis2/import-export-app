@@ -114,9 +114,9 @@ Feature: The user should be able to export tracked entity instances
         When the export form is submitted
         Then the download request is sent with the right parameters
 
-    Scenario: The user filters by a tracked entity
+    Scenario: The user filters by a tracked entity type
         Given the "teiTypeFilter" input is set to "TE"
-        And the "trackedEntity" input is set to "Person"
+        And the "trackedEntityType" input is set to "Person"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
