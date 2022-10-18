@@ -36,7 +36,7 @@ export const nameToDataTest = name => {
         case 'objectList':
             return 'input-object-select'
 
-        case 'trackedEntity':
+        case 'trackedEntityType':
             return 'input-te-type-picker'
 
         default:
