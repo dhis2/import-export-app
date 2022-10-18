@@ -1,3 +1,10 @@
+## [1.5.6](https://github.com/dhis2/import-export-app/compare/v1.5.5...v1.5.6) (2022-10-18)
+
+
+### Bug Fixes
+
+* **tei-export:** use correct param name for teiTypeFilter ([#1546](https://github.com/dhis2/import-export-app/issues/1546)) ([fedd637](https://github.com/dhis2/import-export-app/commit/fedd63775f288f40755475505a2cc0f69ef60364))
+
 ## [1.5.5](https://github.com/dhis2/import-export-app/compare/v1.5.4...v1.5.5) (2022-10-14)
 
 
