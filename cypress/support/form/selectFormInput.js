@@ -48,7 +48,7 @@ const selectInputs = [
     'programStages',
     'objectType',
     'objectList',
-    'trackedEntity',
+    'trackedEntityType',
 ]
 
 const dateInputs = [
