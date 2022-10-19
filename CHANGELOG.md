@@ -1,3 +1,10 @@
+## [1.5.7](https://github.com/dhis2/import-export-app/compare/v1.5.6...v1.5.7) (2022-10-19)
+
+
+### Reverts
+
+* "fix: address issue via workaround" ([9728104](https://github.com/dhis2/import-export-app/commit/9728104f8a15f495cd9fe5637cb40eea19a32d3d))
+
 ## [1.5.6](https://github.com/dhis2/import-export-app/compare/v1.5.5...v1.5.6) (2022-10-18)
 
 
