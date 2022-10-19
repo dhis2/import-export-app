@@ -93,7 +93,7 @@ const ResourcePicker = ({
         return null
     }
 
-    const showList = called && !fetching && !error
+    const showList = called && !fetching && !error && list.length > 0
 
     return (
         <FormField label={label} dataTest={dataTest}>
