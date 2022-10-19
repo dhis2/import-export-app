@@ -37,6 +37,28 @@ const resourceToQuery = (resourceType) => {
     return { error: `Unkown resource type: ${resourceType}` }
 }
 
+const SingleSelectFieldFFNoValueWhenNoList = (props) => {
+    const resolvedProps = {
+        ...props,
+        input: {
+            ...props.input,
+            /*
+             * When the ResourcePicker fetches a new list of options,
+             * the list briefly becomes an empty array. If an option had
+             * already been selected previously, then the list is an empty
+             * array and the value is already populated, which the SingleSelect
+             * sees as a problem and causes it to throw an error.
+             * This workaround prevents this error and is not very pretty.
+             * A more solid solution would probably be to ensure the list
+             * doesn't need to be refeteched in the first place, since it was
+             * already fetched before. However, this does work....
+             */
+            value: props.options.length === 0 ? '' : props.input.value,
+        },
+    }
+    return <SingleSelectFieldFF {...resolvedProps} />
+}
+
 const ResourcePicker = ({
     label,
     resourceType,
@@ -67,7 +89,10 @@ const ResourcePicker = ({
             }))
             setList(list)
 
-            if (autoSelectFirst && list.length) {
+            const isNothingSelected =
+                (Array.isArray(selected) && selected.length === 0) || !selected
+
+            if (isNothingSelected && autoSelectFirst && list.length) {
                 setSelected({
                     selected: multiSelect ? [list[0].value] : list[0].value,
                 })
@@ -91,7 +116,7 @@ const ResourcePicker = ({
         return null
     }
 
-    const showList = called && !fetching && !error && list.length > 0
+    const showList = called && !fetching && !error
 
     return (
         <FormField label={label} dataTest={dataTest}>
@@ -122,7 +147,7 @@ const ResourcePicker = ({
                     />
                 ) : (
                     <Field
-                        component={SingleSelectFieldFF}
+                        component={SingleSelectFieldFFNoValueWhenNoList}
                         name={listName}
                         options={list}
                         filterable={withFilter}
