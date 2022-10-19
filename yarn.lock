@@ -2216,10 +2216,10 @@
     react-select "^2.0.0"
     rxjs "^5.5.7"
 
-"@dhis2/maps-gl@^3.5.1":
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/maps-gl/-/maps-gl-3.5.1.tgz#76d929659973df7635a8df70811005d8230feae3"
-  integrity sha512-6fyvJd7qEosfrf6bLh8d7eiSi509fJ5Y5sk/NxWgxJC2FcIgcu4xDBE43/N+Yw6WKSGaWsKkgI3kQiYElqoUAA==
+"@dhis2/maps-gl@^3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/maps-gl/-/maps-gl-3.5.2.tgz#e174490847b25baf077906c996ddb06483c81762"
+  integrity sha512-PAGok+JC9pmT71Odp0oQqEdvdPFkBKO4xolY+pJ8hVzqXuOc3tke01i2giGJUB58vt2jyXpm7pszGpEdUZHP/Q==
   dependencies:
     "@mapbox/sphericalmercator" "^1.2.0"
     "@turf/area" "^6.5.0"
@@ -2229,12 +2229,12 @@
     "@turf/circle" "^6.5.0"
     "@turf/length" "^6.5.0"
     comlink "^4.3.1"
-    fetch-jsonp "^1.2.1"
+    fetch-jsonp "^1.2.2"
     lodash.throttle "^4.1.1"
-    maplibre-gl "^2.1.9"
+    maplibre-gl "^2.4.0"
     polylabel "^1.1.0"
     suggestions "^1.7.1"
-    uuid "^8.3.2"
+    uuid "^9.0.0"
 
 "@dhis2/prop-types@^3.1.2":
   version "3.1.2"
@@ -8097,10 +8097,10 @@ fd-slicer@~1.1.0:
   dependencies:
     pend "~1.2.0"
 
-fetch-jsonp@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/fetch-jsonp/-/fetch-jsonp-1.2.1.tgz#a3ea630a992ae594cfbf5676e7f5fe4d2f8f03aa"
-  integrity sha512-5UwejksxssYwlwl/9OhEQU+OrVaxdChOQntpJO/GUw6NpfPS6fd08fPvbNOq0Ym6hxfLWD6cGN0Ln/V/hWcluw==
+fetch-jsonp@^1.2.2:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/fetch-jsonp/-/fetch-jsonp-1.2.3.tgz#ae99a867095cb1ce5c39fac601d70d1084db122f"
+  integrity sha512-C13k1o7R9JTN1wmhKkrW5bU/00LwixXnkufQUR6Rbf4KCS0i8mycQaovt4WVbHnA2NKgi7Ryp9Whpy/CGcij6Q==
 
 figures@2.0.0, figures@^2.0.0:
   version "2.0.0"
@@ -11229,10 +11229,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-maplibre-gl@^2.1.9:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/maplibre-gl/-/maplibre-gl-2.3.0.tgz#f98a56473c400bc040b12176a0d90c0f50cd9204"
-  integrity sha512-91vc5Quu9UDw0S90pJMDuE24XvXUjIYGaD5DTlhNs3egVmX0QwCpWl1R2tots3slHbZRJcQdRGUNxW7hKpi0Ow==
+maplibre-gl@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/maplibre-gl/-/maplibre-gl-2.4.0.tgz#2b53dbf526626bf4ee92ad4f33f13ef09e5af182"
+  integrity sha512-csNFylzntPmHWidczfgCZpvbTSmhaWvLRj9e1ezUDBEPizGgshgm3ea1T5TCNEEBq0roauu7BPuRZjA3wO4KqA==
   dependencies:
     "@mapbox/geojson-rewind" "^0.5.2"
     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
@@ -11250,6 +11250,7 @@ maplibre-gl@^2.1.9:
     earcut "^2.2.4"
     geojson-vt "^3.2.1"
     gl-matrix "^3.4.3"
+    global-prefix "^3.0.0"
     murmurhash-js "^1.0.0"
     pbf "^3.2.1"
     potpack "^1.0.2"
@@ -16081,6 +16082,11 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"
