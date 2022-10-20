@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-06T10:50:48.052Z\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -743,7 +743,7 @@ msgid "Event import"
 msgstr "Import událostí"
 
 msgid "Earth Engine import"
-msgstr ""
+msgstr "Earth Engine import"
 
 msgid "Org unit geometry import"
 msgstr "Import geometrie organizační jednotky"
@@ -816,68 +816,53 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Podporované typy souborů: JSON, CSV, XML, ADX a PDF."
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
 msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
-msgstr ""
+"Importujte údaje o obyvatelstvu ve vysokém rozlišení z WorldPop pomocí "
+"Google Earth Engine"
 
 msgid "Earth Engine source"
-msgstr ""
+msgstr "Zdroj Earth Engine"
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
 
 msgid "Import setup"
-msgstr ""
+msgstr "Nastavení importu"
+
+msgid "Data preview"
+msgstr "Náhled dat"
 
 msgid "Some required fields are missing"
-msgstr ""
+msgstr "Některá povinná pole chybí"
 
 msgid "Preview before import"
-msgstr ""
+msgstr "Náhled před importem"
 
 msgid "Use associated geometry"
 msgstr "Použít přidruženou geometrii"
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "Datový prvek"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
-msgstr ""
+msgstr "Vyberte přidruženou geometrii pro vybrané organizační jednotky"
 
 msgid "Import groups to category option combinations"
-msgstr ""
+msgstr "Importujte skupiny do kombinací možností kategorií"
 
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. "
 "Choose the category option combinations to import each group into."
 msgstr ""
+"Datový soubor Earth Engine „Věkové skupiny populace“ obsahuje skupiny "
+"rozčlenění. Vyberte kombinace možností kategorií, do kterých chcete "
+"importovat jednotlivé skupiny."
 
 msgid "Group name"
 msgstr "Název Skupiny"
 
 msgid "Group description"
-msgstr ""
+msgstr "Popis skupiny"
 
 msgid "Category option combination"
 msgstr "Kombinace možností kategorie"
@@ -886,7 +871,22 @@ msgid "No match found"
 msgstr "Žádná shoda nenalezena"
 
 msgid "Choose category option combo"
-msgstr ""
+msgstr "Vyberte kombinaci možností kategorie"
+
+msgid "Data element"
+msgstr "Datový prvek"
+
+msgid "Select data element"
+msgstr "Vybrat datový prvek"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "Datový prvek, do kterého budou přidána data Earth Engine"
+
+msgid "Earth Engine data set"
+msgstr "Datová sada Earth Engine"
+
+msgid "Select earth engine data set"
+msgstr "Vyberte datovou sadu Earth Engine"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Vybráno: {{commaSeparatedListOfOfOrganisationUnits}}"
@@ -901,13 +901,16 @@ msgid "Deselect all"
 msgstr "Odznačit vše"
 
 msgid "Organisation unit(s) to import data to"
-msgstr ""
+msgstr "Organizační jednotka(y), do kterých chcete importovat data"
+
+msgid "You must select an Earth Engine data set before selecting a period"
+msgstr "Před výběrem období musíte vybrat datovou sadu Earth Engine"
 
 msgid "Period"
 msgstr "Období"
 
 msgid "Data from Earth Engine will be imported for this period."
-msgstr ""
+msgstr "Pro toto období budou importována data z Earth Engine."
 
 msgid "Select period"
 msgstr "Vybrat období"
@@ -916,55 +919,74 @@ msgid "Loading periods"
 msgstr "Načítání období"
 
 msgid "No periods found"
-msgstr ""
+msgstr "Nebyla nalezena žádná období"
 
 msgid "Point org. unit - no value"
-msgstr ""
+msgstr "Bodová org. jednotka - žádná hodnota"
 
-msgid "Org Unit"
-msgstr ""
+msgid "Organisation Unit"
+msgstr "Organizační jednotka"
 
 msgid "Category option combo"
 msgstr "Kombinace možnosti kategorie"
 
 msgid "Current value"
-msgstr ""
+msgstr "Aktuální hodnota"
 
 msgid "New value"
-msgstr ""
+msgstr "Nová hodnota"
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr "Řádků na stránku"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
+"Stránka {{page}} z {{pageCount}}, řádek {{firstItem}}-{{lastItem}} z "
+"{{total}}"
 
 msgid "Don't round source values"
-msgstr ""
+msgstr "Nezaokrouhlujte zdrojové hodnoty"
 
 msgid "Round to 0 decimal places"
-msgstr ""
+msgstr "Zaokrouhlete na 0 desetinných míst"
 
 msgid "Round to 1 decimal place"
-msgstr ""
+msgstr "Zaokrouhlete na 1 desetinné místo"
 
 msgid "Round to 2 decimal places"
-msgstr ""
+msgstr "Zaokrouhlete na 2 desetinná místa"
 
 msgid "Round to 3 decimal places"
-msgstr ""
+msgstr "Zaokrouhlete na 3 desetinná místa"
 
 msgid "Round to 4 decimal places"
-msgstr ""
+msgstr "Zaokrouhlete na 4 desetinná místa"
 
 msgid "Round to 5 decimal places"
-msgstr ""
+msgstr "Zaokrouhlete na 5 desetinných míst"
 
 msgid "Round to 6 decimal places"
-msgstr ""
+msgstr "Zaokrouhlete na 6 desetinných míst"
 
 msgid "Value rounding"
+msgstr "Zaokrouhlení hodnoty"
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr "Při pokusu o načtení dat Earth Engine došlo k chybě"
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
 msgstr ""
+"Datová sada Earth Engine je příliš velká. Zkuste snížit počet skupin nebo "
+"organizačních jednotek"
+
+msgid "The organisation units selection is invalid"
+msgstr "Výběr organizačních jednotek je neplatný"
 
 msgid "The app could not retrieve required data."
-msgstr ""
+msgstr "Aplikace nemohla načíst požadovaná data."
 
 msgid "Network error"
 msgstr "Chyba sítě"
@@ -976,6 +998,8 @@ msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
 msgstr ""
+"Vyžaduje účet Google Earth Engine. Další informace naleznete v dokumentaci "
+"DHIS2."
 
 msgid "Population"
 msgstr "Obyvatelstvo"
@@ -1092,10 +1116,16 @@ msgid "Women 80 years and above"
 msgstr "Ženy starší 80 let"
 
 msgid "No organisation units have been selected"
-msgstr ""
+msgstr "Nebyly vybrány žádné organizační jednotky"
 
-msgid "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 msgstr ""
+"Není možné získat data z Earth Engine pro bodová zařízení. Vyberte "
+"organizační jednotky polygonu nebo použijte povodí jako přidruženou "
+"geometrii."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -1154,6 +1184,9 @@ msgstr "Import dat"
 msgid "Import events"
 msgstr "Import události"
 
+msgid "Import Earth Engine"
+msgstr "Importujte Earth Engine"
+
 msgid "Import GeoJSON"
 msgstr "Import GeoJSON"
 
@@ -1170,19 +1203,25 @@ msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in JSON format."
 msgstr ""
+"Exportujte závislosti metadat, jako jsou datové sady a programy, včetně "
+"souvisejících objektů metadat, ve formátu JSON."
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
+"Exportujte metadata, jako jsou datové prvky a organizační jednotky, ve "
+"formátu JSON."
 
 msgid ""
 "Import metadata like data elements and organisation units using the JSON and"
 " CSV format."
 msgstr ""
+"Importujte metadata, jako jsou datové prvky a organizační jednotky, pomocí "
+"formátu JSON a CSV."
 
 msgid "Supported file types: JSON and CSV."
-msgstr ""
+msgstr "Podporované typy souborů: JSON a CSV."
 
 msgid "A class key must be selected"
 msgstr "Musí být vybrán klíč třídy"
