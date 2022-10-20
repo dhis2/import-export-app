@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2022
 # 晓东 林 <13981924470@126.com>, 2022
+# phil_dhis2, 2022
 # easylin <lin_xd@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-06T10:50:48.052Z\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -802,21 +802,10 @@ msgstr "从ADX XML、DFX2 XML、json或csv格式导入数据"
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "支持的文件类型：JSON，CSV，XML，ADX和PDF。"
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr "尝试获取 Earth Engine 数据时出错"
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr "Earth Engine 数据集太大。尝试减少组或组织单位的数量"
-
-msgid "The organisation units selection is invalid"
-msgstr "组织单位选择无效"
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
-msgstr "将 WorldPop 人口数据从 Google 地球引擎导入 DHIS2 数据元素"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
+msgstr ""
 
 msgid "Earth Engine source"
 msgstr "地球引擎源"
@@ -826,6 +815,9 @@ msgstr "组织机构"
 
 msgid "Import setup"
 msgstr "导入设置"
+
+msgid "Data preview"
+msgstr "数据预览"
 
 msgid "Some required fields are missing"
 msgstr "缺少一些必填字段"
@@ -838,18 +830,6 @@ msgstr "使用相关的几何坐标"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr "为选定的组织单位选择关联的几何图形"
-
-msgid "Data element"
-msgstr "数据元"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr "将添加 Earth Engine 数据的数据元素"
-
-msgid "Earth Engine data set"
-msgstr "地球引擎数据集"
-
-msgid "Select earth engine data set"
-msgstr "选择地球引擎数据集"
 
 msgid "Import groups to category option combinations"
 msgstr "将组导入类别选项组合"
@@ -874,6 +854,21 @@ msgstr "未找到匹配项"
 msgid "Choose category option combo"
 msgstr "选择类别选项组合"
 
+msgid "Data element"
+msgstr "数据元"
+
+msgid "Select data element"
+msgstr "选择数据元"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "将添加 Earth Engine 数据的数据元素"
+
+msgid "Earth Engine data set"
+msgstr "地球引擎数据集"
+
+msgid "Select earth engine data set"
+msgstr "选择地球引擎数据集"
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
 
@@ -888,6 +883,9 @@ msgstr "取消全选"
 
 msgid "Organisation unit(s) to import data to"
 msgstr "将数据导入到的组织机构"
+
+msgid "You must select an Earth Engine data set before selecting a period"
+msgstr "您必须先选择一个 Earth Engine 数据集，然后再选择一个时间周期"
 
 msgid "Period"
 msgstr "期间"
@@ -907,7 +905,7 @@ msgstr "未找到经期"
 msgid "Point org. unit - no value"
 msgstr "组织机构点- 无值"
 
-msgid "Org Unit"
+msgid "Organisation Unit"
 msgstr "组织机构"
 
 msgid "Category option combo"
@@ -919,8 +917,13 @@ msgstr "当前值"
 msgid "New value"
 msgstr "新价值"
 
-msgid "Select rows per page"
-msgstr "每页选择行"
+msgid "Rows per page"
+msgstr "行每页"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+"第 {{page}} 页，共 {{pageCount}} 页，第 {{firstItem}}-{{lastItem}} 行，共 {{total}}"
 
 msgid "Don't round source values"
 msgstr "不要四舍五入源值"
@@ -948,6 +951,17 @@ msgstr "四舍五入到小数点后 6 位"
 
 msgid "Value rounding"
 msgstr "值四舍五入"
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr "尝试获取 Earth Engine 数据时出错"
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr "Earth Engine 数据集太大。尝试减少组或组织单位的数量"
+
+msgid "The organisation units selection is invalid"
+msgstr "组织单位选择无效"
 
 msgid "The app could not retrieve required data."
 msgstr "该应用程序无法检索所需的数据。"
@@ -1080,8 +1094,11 @@ msgstr "80岁及以上的女性"
 msgid "No organisation units have been selected"
 msgstr "未选择任何组织单位"
 
-msgid "No geofeatures found for selected organisation units"
-msgstr "未找到所选组织单位的地理特征"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
+msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织机构或使用缓冲区作为关联几何图形。"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -1131,6 +1148,9 @@ msgstr "导入数据"
 
 msgid "Import events"
 msgstr "导入事件"
+
+msgid "Import Earth Engine"
+msgstr ""
 
 msgid "Import GeoJSON"
 msgstr "导入 GeoJSON"
