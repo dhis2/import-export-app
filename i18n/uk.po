@@ -671,7 +671,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr ""
+msgstr "Необхідно вибрати принаймні один організаційний підрозділ"
 
 msgid "One organisation unit must be selected"
 msgstr ""
