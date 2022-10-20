@@ -1,21 +1,22 @@
 # 
 # Translators:
-# Marta Vila <marta@dhis2.org>, 2020
-# ericbp <ericbarredap@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
-# Alison Andrade <aandrade@ippfwhr.org>, 2021
+# ericbp <ericbarredap@gmail.com>, 2022
 # Carlos Tejo Alonso, 2022
-# Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2022
+# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2022
+# Pablo Pajuelo Cabezas <ppajuelo@quadram.mobi>, 2022
+# Alison Andrade <aandrade@ippfwhr.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2022
 # phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Marta Vila <marta@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"PO-Revision-Date: 2022-10-15 22:34+0000\n"
+"Last-Translator: Marta Vila <marta@dhis2.org>, 2022\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -302,7 +303,7 @@ msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Eliminar"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -427,7 +428,7 @@ msgid "Programs"
 msgstr "Programas"
 
 msgid "Category combination"
-msgstr "Combinacion de categoria"
+msgstr "Combinación de categorias"
 
 msgid "Dashboard"
 msgstr "Tablero"
@@ -770,7 +771,7 @@ msgid "Overview"
 msgstr "General"
 
 msgid "Yes"
-msgstr "Si"
+msgstr "Sí"
 
 msgid "No"
 msgstr "No"
@@ -807,20 +808,9 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr ""
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
 msgstr ""
 
 msgid "Earth Engine source"
@@ -830,6 +820,9 @@ msgid "Organisation units"
 msgstr "Unidades organizativas"
 
 msgid "Import setup"
+msgstr ""
+
+msgid "Data preview"
 msgstr ""
 
 msgid "Some required fields are missing"
@@ -842,18 +835,6 @@ msgid "Use associated geometry"
 msgstr ""
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "Elemento de datos"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Import groups to category option combinations"
@@ -879,6 +860,21 @@ msgstr ""
 msgid "Choose category option combo"
 msgstr ""
 
+msgid "Data element"
+msgstr "Elemento de datos"
+
+msgid "Select data element"
+msgstr "Seleccionar elementos de datos"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr ""
+
+msgid "Earth Engine data set"
+msgstr ""
+
+msgid "Select earth engine data set"
+msgstr ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -892,6 +888,9 @@ msgid "Deselect all"
 msgstr "Deseleccionar todo"
 
 msgid "Organisation unit(s) to import data to"
+msgstr ""
+
+msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
@@ -912,8 +911,8 @@ msgstr ""
 msgid "Point org. unit - no value"
 msgstr ""
 
-msgid "Org Unit"
-msgstr ""
+msgid "Organisation Unit"
+msgstr "Unidad Organizativa"
 
 msgid "Category option combo"
 msgstr ""
@@ -924,7 +923,11 @@ msgstr ""
 msgid "New value"
 msgstr ""
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr "Filas por página"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Don't round source values"
@@ -952,6 +955,17 @@ msgid "Round to 6 decimal places"
 msgstr ""
 
 msgid "Value rounding"
+msgstr ""
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr ""
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr ""
+
+msgid "The organisation units selection is invalid"
 msgstr ""
 
 msgid "The app could not retrieve required data."
@@ -1085,7 +1099,10 @@ msgstr ""
 msgid "No organisation units have been selected"
 msgstr ""
 
-msgid "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 msgstr ""
 
 msgid ""
@@ -1137,6 +1154,9 @@ msgstr "Importar datos"
 msgid "Import events"
 msgstr ""
 
+msgid "Import Earth Engine"
+msgstr ""
+
 msgid "Import GeoJSON"
 msgstr ""
 
@@ -1151,17 +1171,20 @@ msgstr ""
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
+"related metadata objects, in JSON format."
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
+"Export metadata, such as data elements and organisation units, in JSON "
 "format."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
+msgstr ""
+
+msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "A class key must be selected"

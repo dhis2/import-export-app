@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"PO-Revision-Date: 2022-10-15 22:34+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
@@ -592,7 +592,7 @@ msgid "Strategy"
 msgstr "Стратегия"
 
 msgid "Program"
-msgstr "Программа"
+msgstr "Дастур"
 
 msgid "Tracked entity type"
 msgstr "Кузатувдаги объект тури"
@@ -655,7 +655,7 @@ msgid "Job summary"
 msgstr "Фаолият ҳақида қисқача маълумот"
 
 msgid "Error"
-msgstr "Хато"
+msgstr "Хатолик"
 
 msgid "Conflicts"
 msgstr "Можаролар"
@@ -697,7 +697,7 @@ msgid "Summary"
 msgstr "Хулоса"
 
 msgid "Created"
-msgstr "Яратилди"
+msgstr "Яратилган"
 
 msgid "Deleted"
 msgstr "Ўчириб ташланган"
@@ -828,20 +828,9 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Қўллаб-қувватланадиган файл турлари: JSON, CSV, XML, ADX ва PDF"
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
 msgstr ""
 
 msgid "Earth Engine source"
@@ -851,6 +840,9 @@ msgid "Organisation units"
 msgstr "Ташкилий бўлимлар"
 
 msgid "Import setup"
+msgstr ""
+
+msgid "Data preview"
 msgstr ""
 
 msgid "Some required fields are missing"
@@ -863,18 +855,6 @@ msgid "Use associated geometry"
 msgstr ""
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "Маълумотлар элементи"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Import groups to category option combinations"
@@ -900,6 +880,21 @@ msgstr ""
 msgid "Choose category option combo"
 msgstr ""
 
+msgid "Data element"
+msgstr "Маълумотлар элементи"
+
+msgid "Select data element"
+msgstr "Маълумотлар элементини танлаш"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr ""
+
+msgid "Earth Engine data set"
+msgstr ""
+
+msgid "Select earth engine data set"
+msgstr ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -913,6 +908,9 @@ msgid "Deselect all"
 msgstr "Барча танланганни бекор қилиш"
 
 msgid "Organisation unit(s) to import data to"
+msgstr ""
+
+msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
@@ -933,8 +931,8 @@ msgstr ""
 msgid "Point org. unit - no value"
 msgstr ""
 
-msgid "Org Unit"
-msgstr ""
+msgid "Organisation Unit"
+msgstr "Ташкилий Бўлим"
 
 msgid "Category option combo"
 msgstr "Категория варианти комбинацияси"
@@ -945,7 +943,11 @@ msgstr ""
 msgid "New value"
 msgstr ""
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr "Саҳифада қаторлар"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Don't round source values"
@@ -973,6 +975,17 @@ msgid "Round to 6 decimal places"
 msgstr ""
 
 msgid "Value rounding"
+msgstr ""
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr ""
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr ""
+
+msgid "The organisation units selection is invalid"
 msgstr ""
 
 msgid "The app could not retrieve required data."
@@ -1106,7 +1119,10 @@ msgstr ""
 msgid "No organisation units have been selected"
 msgstr ""
 
-msgid "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 msgstr ""
 
 msgid ""
@@ -1162,11 +1178,14 @@ msgstr "Маълумотларни импорт қилиш"
 msgid "Import events"
 msgstr "Ҳодиса/Тадбирларни импорт қилиш"
 
+msgid "Import Earth Engine"
+msgstr ""
+
 msgid "Import GeoJSON"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "МатаМаълумотни импорт қилиш"
+msgstr "МетаМаълумотни импорт қилиш"
 
 msgid "Import tracked entity instances"
 msgstr "Кузатувдаги шахс нусхаларини импорт қилиш"
@@ -1178,25 +1197,21 @@ msgstr ""
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
+"related metadata objects, in JSON format."
 msgstr ""
-"Маълумотлар тўпламлари ва дастурлари, шу билан боғлиқ метамаълумотлар "
-"объектларини ўз ичига олган МетаМаълумотларни ўзаро боғлиқ XML ёки JSON "
-"форматида экспорт қилиш"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
-msgstr ""
-"Маълумот элементлари ва ташкилот ва ташкилот бирликлари каби маълумотларни "
-"XML, JSON ёки CSV форматида экспорт қилиш."
-
-msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
+"Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
-"DXF 2форматидан фойдаланган ҳолда маълумотлар элементлари ва ташкилий "
-"бўлимлар каби МетаМаълумотларни импорт қилиш."
+
+msgid ""
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
+msgstr ""
+
+msgid "Supported file types: JSON and CSV."
+msgstr ""
 
 msgid "A class key must be selected"
 msgstr "Синф калити тайинланиши керак"

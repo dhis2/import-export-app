@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # phil_dhis2, 2022
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"PO-Revision-Date: 2022-10-15 22:34+0000\n"
+"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,7 +147,7 @@ msgid "Code"
 msgstr "Mã"
 
 msgid "Name"
-msgstr "Tên tài khoản"
+msgstr "Tên"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -329,7 +329,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Đã chọn"
+msgstr "Danh sách đã chọn"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -416,7 +416,7 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Biểu nhập"
+msgstr "Data sets"
 
 msgid "Programs"
 msgstr "Chương trình"
@@ -458,7 +458,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Ghi"
+msgstr "Lấy tọa độ"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -521,7 +521,7 @@ msgid "Active"
 msgstr "Hoạt động"
 
 msgid "Completed"
-msgstr "Hoàn tất"
+msgstr "Đã hoàn tất"
 
 msgid "Cancelled"
 msgstr "Đã hủy"
@@ -666,10 +666,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Tình trạng"
+msgstr "Trạng thái"
 
 msgid "Description"
-msgstr "Miêu tả"
+msgstr "Mô tả"
 
 msgid "Summary"
 msgstr ""
@@ -768,7 +768,7 @@ msgid "Yes"
 msgstr "Có"
 
 msgid "No"
-msgstr "Sai"
+msgstr "Không"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -802,20 +802,9 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr ""
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
 msgstr ""
 
 msgid "Earth Engine source"
@@ -825,6 +814,9 @@ msgid "Organisation units"
 msgstr "Đơn vị"
 
 msgid "Import setup"
+msgstr ""
+
+msgid "Data preview"
 msgstr ""
 
 msgid "Some required fields are missing"
@@ -837,18 +829,6 @@ msgid "Use associated geometry"
 msgstr ""
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "Phần tử dữ liệu"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Import groups to category option combinations"
@@ -874,6 +854,21 @@ msgstr ""
 msgid "Choose category option combo"
 msgstr ""
 
+msgid "Data element"
+msgstr "Phần tử dữ liệu"
+
+msgid "Select data element"
+msgstr "Chọn phần tử dữ liệu"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr ""
+
+msgid "Earth Engine data set"
+msgstr ""
+
+msgid "Select earth engine data set"
+msgstr ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -887,6 +882,9 @@ msgid "Deselect all"
 msgstr "Bỏ chọn tất cả"
 
 msgid "Organisation unit(s) to import data to"
+msgstr ""
+
+msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
@@ -907,8 +905,8 @@ msgstr ""
 msgid "Point org. unit - no value"
 msgstr ""
 
-msgid "Org Unit"
-msgstr ""
+msgid "Organisation Unit"
+msgstr "Đơn vị"
 
 msgid "Category option combo"
 msgstr "Tổ hợp tùy chọn phân loại"
@@ -919,7 +917,11 @@ msgstr ""
 msgid "New value"
 msgstr ""
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr "Dòng mỗi trang"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Don't round source values"
@@ -947,6 +949,17 @@ msgid "Round to 6 decimal places"
 msgstr ""
 
 msgid "Value rounding"
+msgstr ""
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr ""
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr ""
+
+msgid "The organisation units selection is invalid"
 msgstr ""
 
 msgid "The app could not retrieve required data."
@@ -1080,7 +1093,10 @@ msgstr ""
 msgid "No organisation units have been selected"
 msgstr ""
 
-msgid "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 msgstr ""
 
 msgid ""
@@ -1132,6 +1148,9 @@ msgstr "Nhập dữ liệu"
 msgid "Import events"
 msgstr "Nhập sự kiện"
 
+msgid "Import Earth Engine"
+msgstr ""
+
 msgid "Import GeoJSON"
 msgstr ""
 
@@ -1146,17 +1165,20 @@ msgstr ""
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
+"related metadata objects, in JSON format."
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
+"Export metadata, such as data elements and organisation units, in JSON "
 "format."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
+msgstr ""
+
+msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "A class key must be selected"
@@ -1196,7 +1218,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Lấy dữ liệu"
+msgstr "Dữ liệu"
 
 msgid "Event"
 msgstr "Sự Kiện"
@@ -1211,4 +1233,4 @@ msgid "Metadata"
 msgstr "Siêu dữ liệu"
 
 msgid "TEI"
-msgstr "THỰC THỂ THEO DÕI"
+msgstr "ĐỐI TƯỢNG THEO DÕI"

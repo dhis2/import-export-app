@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Hamza Assada <7amza.it@gmail.com>, 2022
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Hamza Assada <7amza.it@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"PO-Revision-Date: 2022-10-15 22:34+0000\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -144,10 +144,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "الرمز"
+msgstr "الكود"
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "الإسم"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -255,7 +255,7 @@ msgid "Only include reports for objects that have errors"
 msgstr "قم فقط بتضمين تقارير الكائنات التي بها أخطاء"
 
 msgid "Errors"
-msgstr "اخطاء"
+msgstr "أخطاء"
 
 msgid "Reports for all objects imported"
 msgstr "تقارير جميع الكائنات التي تم استيرادها"
@@ -524,13 +524,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "فعال"
+msgstr "نشط"
 
 msgid "Completed"
-msgstr "اكتمل"
+msgstr "مكتمل"
 
 msgid "Cancelled"
-msgstr "تم الإلغاء"
+msgstr "ملغي"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -661,7 +661,7 @@ msgid "Message"
 msgstr "الرسالة"
 
 msgid "ID"
-msgstr "المعرف"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "الرسائل"
@@ -815,20 +815,9 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "أنواع الملفات المدعومة: JSON و CSV و XML و ADX و PDF."
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
 msgstr ""
 
 msgid "Earth Engine source"
@@ -838,6 +827,9 @@ msgid "Organisation units"
 msgstr "الوحدات التنظيمية"
 
 msgid "Import setup"
+msgstr ""
+
+msgid "Data preview"
 msgstr ""
 
 msgid "Some required fields are missing"
@@ -850,18 +842,6 @@ msgid "Use associated geometry"
 msgstr ""
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "عنصر البيانات"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Import groups to category option combinations"
@@ -887,6 +867,21 @@ msgstr ""
 msgid "Choose category option combo"
 msgstr ""
 
+msgid "Data element"
+msgstr "عنصر البيانات"
+
+msgid "Select data element"
+msgstr "تحديد عنصر البيانات"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr ""
+
+msgid "Earth Engine data set"
+msgstr ""
+
+msgid "Select earth engine data set"
+msgstr ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -900,6 +895,9 @@ msgid "Deselect all"
 msgstr "إلغاء تحديد الكل"
 
 msgid "Organisation unit(s) to import data to"
+msgstr ""
+
+msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
@@ -920,8 +918,8 @@ msgstr ""
 msgid "Point org. unit - no value"
 msgstr ""
 
-msgid "Org Unit"
-msgstr ""
+msgid "Organisation Unit"
+msgstr "الوحدة التنظيمية"
 
 msgid "Category option combo"
 msgstr "مزيج خيارات الفئة"
@@ -932,7 +930,11 @@ msgstr ""
 msgid "New value"
 msgstr ""
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr "عدد الصفوف لكل صفحة"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Don't round source values"
@@ -960,6 +962,17 @@ msgid "Round to 6 decimal places"
 msgstr ""
 
 msgid "Value rounding"
+msgstr ""
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr ""
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr ""
+
+msgid "The organisation units selection is invalid"
 msgstr ""
 
 msgid "The app could not retrieve required data."
@@ -1093,7 +1106,10 @@ msgstr ""
 msgid "No organisation units have been selected"
 msgstr ""
 
-msgid "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 msgstr ""
 
 msgid ""
@@ -1146,6 +1162,9 @@ msgstr "استيراد بيانات"
 msgid "Import events"
 msgstr "استيراد احداث"
 
+msgid "Import Earth Engine"
+msgstr ""
+
 msgid "Import GeoJSON"
 msgstr ""
 
@@ -1160,19 +1179,21 @@ msgstr "نظرة عامة على جميع مهام الاستيراد التي �
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
+"related metadata objects, in JSON format."
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
+"Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
-"تصدير البيانات التعريفية مثل عناصر البيانات والوحدات التنظيمية بتنسيق DFX 2."
+
+msgid ""
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
+msgstr ""
+
+msgid "Supported file types: JSON and CSV."
+msgstr ""
 
 msgid "A class key must be selected"
 msgstr "يجب تحديد class key"
