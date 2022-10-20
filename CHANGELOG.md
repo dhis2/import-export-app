@@ -1,3 +1,10 @@
+## [1.5.9](https://github.com/dhis2/import-export-app/compare/v1.5.8...v1.5.9) (2022-10-20)
+
+
+### Bug Fixes
+
+* don't show list when empty ([#1551](https://github.com/dhis2/import-export-app/issues/1551)) ([b739049](https://github.com/dhis2/import-export-app/commit/b7390497758114e5901c2cbf403d5fd8f8441f56))
+
 ## [1.5.8](https://github.com/dhis2/import-export-app/compare/v1.5.7...v1.5.8) (2022-10-20)
 
 
