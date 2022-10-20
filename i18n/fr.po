@@ -1,21 +1,20 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
-# Djibril Dione <dione.djibril@gmail.com>, 2019
-# Bram Piot <bram.piot@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Yao Selom Saka <ysaka@hispwca.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Djibril Dione <dione.djibril@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # phil_dhis2, 2022
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Bram Piot <bram.piot@gmail.com>, 2022
 # Yayra Gomado <ygomado@hispwca.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"PO-Revision-Date: 2022-10-15 22:34+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -412,7 +411,7 @@ msgid "Do not filter by last updated date"
 msgstr "Ne pas filtrer par date de dernière mise à jour"
 
 msgid "Start/end dates"
-msgstr "Dates début-fin"
+msgstr "Dates de début/fin"
 
 msgid "Time since last updated"
 msgstr "Temps depuis la dernière mise à jour"
@@ -449,13 +448,13 @@ msgid "Programs"
 msgstr "Programmes"
 
 msgid "Category combination"
-msgstr "Combinaison de Catégories"
+msgstr "Combinaison de catégories"
 
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
 msgid "Data element groups"
-msgstr "Groupes d'éléments de données"
+msgstr "Groupes d'élément de données"
 
 msgid "Option sets"
 msgstr "Ensembles d'options"
@@ -487,7 +486,7 @@ msgstr ""
 "Capture de données d'unités d'organisation associées à l'utilisateur actuel"
 
 msgid "Capture"
-msgstr "Saisie"
+msgstr "Saisir"
 
 msgid "All organisation units in the system"
 msgstr "Toutes les unités d'organisation du système"
@@ -694,7 +693,7 @@ msgid "Message"
 msgstr "Message"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "Messages"
@@ -849,20 +848,9 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Types de fichiers supportés: JSON, CSV, XML, ADX et PDF."
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
 msgstr ""
 
 msgid "Earth Engine source"
@@ -872,6 +860,9 @@ msgid "Organisation units"
 msgstr "Unités d'organisation"
 
 msgid "Import setup"
+msgstr ""
+
+msgid "Data preview"
 msgstr ""
 
 msgid "Some required fields are missing"
@@ -884,18 +875,6 @@ msgid "Use associated geometry"
 msgstr ""
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "Élément de donnée"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Import groups to category option combinations"
@@ -921,6 +900,21 @@ msgstr "Pas de résultat trouvé"
 msgid "Choose category option combo"
 msgstr ""
 
+msgid "Data element"
+msgstr "Élément de donnée"
+
+msgid "Select data element"
+msgstr "Choisir élément de donnée"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr ""
+
+msgid "Earth Engine data set"
+msgstr ""
+
+msgid "Select earth engine data set"
+msgstr ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -934,6 +928,9 @@ msgid "Deselect all"
 msgstr "Desélectionner tout"
 
 msgid "Organisation unit(s) to import data to"
+msgstr ""
+
+msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
@@ -954,8 +951,8 @@ msgstr ""
 msgid "Point org. unit - no value"
 msgstr ""
 
-msgid "Org Unit"
-msgstr ""
+msgid "Organisation Unit"
+msgstr "Unité d'organisation"
 
 msgid "Category option combo"
 msgstr "Combo d'options de catégorie"
@@ -966,7 +963,11 @@ msgstr ""
 msgid "New value"
 msgstr ""
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr "Lignes par page"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Don't round source values"
@@ -994,6 +995,17 @@ msgid "Round to 6 decimal places"
 msgstr ""
 
 msgid "Value rounding"
+msgstr ""
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr ""
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr ""
+
+msgid "The organisation units selection is invalid"
 msgstr ""
 
 msgid "The app could not retrieve required data."
@@ -1127,7 +1139,10 @@ msgstr ""
 msgid "No organisation units have been selected"
 msgstr ""
 
-msgid "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 msgstr ""
 
 msgid ""
@@ -1183,6 +1198,9 @@ msgstr "Importer données"
 msgid "Import events"
 msgstr "Importer évènements"
 
+msgid "Import Earth Engine"
+msgstr ""
+
 msgid "Import GeoJSON"
 msgstr ""
 
@@ -1197,25 +1215,21 @@ msgstr "Un aperçu de toutes les tâches d'importation a démarré cette session
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
+"related metadata objects, in JSON format."
 msgstr ""
-"Exportez les dépendances de métadonnées, telles que les ensembles de données"
-" et les programmes, y compris les objets de métadonnées associés, au format "
-"XML ou JSON."
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
-msgstr ""
-"Exportez les métadonnées, telles que les éléments de données et les unités "
-"d'organisation, au format XML, JSON ou CSV."
-
-msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
+"Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
-"Importer des métadonnées telles que des éléments de données et des unités "
-"d'organisation en utilisant le format DXF 2."
+
+msgid ""
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
+msgstr ""
+
+msgid "Supported file types: JSON and CSV."
+msgstr ""
 
 msgid "A class key must be selected"
 msgstr "Une clé de classe doit être sélectionnée"
@@ -1259,7 +1273,7 @@ msgid "Data"
 msgstr "Données"
 
 msgid "Event"
-msgstr "Evènement"
+msgstr "Événements"
 
 msgid "GeoJSON"
 msgstr ""
@@ -1268,7 +1282,7 @@ msgid "GML"
 msgstr "GML"
 
 msgid "Metadata"
-msgstr "Méta-données"
+msgstr "Métadonnées"
 
 msgid "TEI"
 msgstr "TEI"

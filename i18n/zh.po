@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
 # phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 晓东 林 <13981924470@126.com>, 2022
 # easylin <lin_xd@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
+"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"PO-Revision-Date: 2022-10-15 22:34+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
@@ -422,10 +422,10 @@ msgid "Programs"
 msgstr "项目"
 
 msgid "Category combination"
-msgstr "值域组合"
+msgstr "分类组合"
 
 msgid "Dashboard"
-msgstr "状态面板"
+msgstr "仪表盘"
 
 msgid "Data element groups"
 msgstr "数据元组"
@@ -458,7 +458,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr "当前用户的机构数据采集"
 
 msgid "Capture"
-msgstr "捕获"
+msgstr "采集"
 
 msgid "All organisation units in the system"
 msgstr "系统所有机构"
@@ -485,7 +485,7 @@ msgid "Intelligent scan (reference)"
 msgstr "智能扫描（引用）"
 
 msgid "None"
-msgstr "无"
+msgstr "没有"
 
 msgid "Preheat mode"
 msgstr "预热模式"
@@ -651,7 +651,7 @@ msgid "Message"
 msgstr "消息"
 
 msgid "ID"
-msgstr "ID"
+msgstr "Id"
 
 msgid "Messages"
 msgstr "消息"
@@ -732,7 +732,7 @@ msgid "Event import"
 msgstr "事件导入"
 
 msgid "Earth Engine import"
-msgstr ""
+msgstr "地图引擎导入"
 
 msgid "Org unit geometry import"
 msgstr "组织机构空间几何形状导入"
@@ -802,83 +802,78 @@ msgstr "从ADX XML、DFX2 XML、json或csv格式导入数据"
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "支持的文件类型：JSON，CSV，XML，ADX和PDF。"
 
-msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
-
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine"
 msgstr ""
 
 msgid "Earth Engine source"
-msgstr ""
+msgstr "地球引擎源"
 
 msgid "Organisation units"
 msgstr "组织机构"
 
 msgid "Import setup"
-msgstr ""
+msgstr "导入设置"
+
+msgid "Data preview"
+msgstr "数据预览"
 
 msgid "Some required fields are missing"
-msgstr ""
+msgstr "缺少一些必填字段"
 
 msgid "Preview before import"
-msgstr ""
+msgstr "导入前预览"
 
 msgid "Use associated geometry"
 msgstr "使用相关的几何坐标"
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "数据元"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
-msgstr ""
+msgstr "为选定的组织单位选择关联的几何图形"
 
 msgid "Import groups to category option combinations"
-msgstr ""
+msgstr "将组导入类别选项组合"
 
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. "
 "Choose the category option combinations to import each group into."
-msgstr ""
+msgstr "Earth Engine 数据集“人口年龄组”具有分解组。选择要导入每个组的类别选项组合。"
 
 msgid "Group name"
 msgstr "组名"
 
 msgid "Group description"
-msgstr ""
+msgstr "小组说明"
 
 msgid "Category option combination"
-msgstr "分类选项组合"
+msgstr "分类组合选项"
 
 msgid "No match found"
-msgstr ""
+msgstr "未找到匹配项"
 
 msgid "Choose category option combo"
-msgstr ""
+msgstr "选择类别选项组合"
+
+msgid "Data element"
+msgstr "数据元"
+
+msgid "Select data element"
+msgstr "选择数据元"
+
+msgid "The data element where Earth Engine data will be added"
+msgstr "将添加 Earth Engine 数据的数据元素"
+
+msgid "Earth Engine data set"
+msgstr "地球引擎数据集"
+
+msgid "Select earth engine data set"
+msgstr "选择地球引擎数据集"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "未选择任何内容"
 
 msgid "Select a level"
 msgstr "选择一个等级"
@@ -887,13 +882,16 @@ msgid "Deselect all"
 msgstr "取消全选"
 
 msgid "Organisation unit(s) to import data to"
-msgstr ""
+msgstr "将数据导入到的组织机构"
+
+msgid "You must select an Earth Engine data set before selecting a period"
+msgstr "您必须先选择一个 Earth Engine 数据集，然后再选择一个时间周期"
 
 msgid "Period"
 msgstr "期间"
 
 msgid "Data from Earth Engine will be imported for this period."
-msgstr ""
+msgstr "在此期间将导入来自 Earth Engine 的数据。"
 
 msgid "Select period"
 msgstr "选择周期"
@@ -902,186 +900,205 @@ msgid "Loading periods"
 msgstr "载入期间"
 
 msgid "No periods found"
-msgstr ""
+msgstr "未找到经期"
 
 msgid "Point org. unit - no value"
-msgstr ""
+msgstr "组织机构点- 无值"
 
-msgid "Org Unit"
-msgstr ""
+msgid "Organisation Unit"
+msgstr "组织机构"
 
 msgid "Category option combo"
 msgstr "类别选项组合"
 
 msgid "Current value"
-msgstr ""
+msgstr "当前值"
 
 msgid "New value"
-msgstr ""
+msgstr "新价值"
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr "行每页"
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
+"第 {{page}} 页，共 {{pageCount}} 页，第 {{firstItem}}-{{lastItem}} 行，共 {{total}}"
 
 msgid "Don't round source values"
-msgstr ""
+msgstr "不要四舍五入源值"
 
 msgid "Round to 0 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 0"
 
 msgid "Round to 1 decimal place"
-msgstr ""
+msgstr "四舍五入到小数点后一位"
 
 msgid "Round to 2 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后两位"
 
 msgid "Round to 3 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 3 位"
 
 msgid "Round to 4 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 4 位"
 
 msgid "Round to 5 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 5 位"
 
 msgid "Round to 6 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 6 位"
 
 msgid "Value rounding"
-msgstr ""
+msgstr "值四舍五入"
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr "尝试获取 Earth Engine 数据时出错"
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr "Earth Engine 数据集太大。尝试减少组或组织单位的数量"
+
+msgid "The organisation units selection is invalid"
+msgstr "组织单位选择无效"
 
 msgid "The app could not retrieve required data."
-msgstr ""
+msgstr "该应用程序无法检索所需的数据。"
 
 msgid "Network error"
 msgstr "网络错误"
 
 msgid "Cannot get authorization token for Google Earth Engine."
-msgstr ""
+msgstr "无法获取 Google 地球引擎的授权令牌。"
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
-msgstr ""
+msgstr "需要 Google 地球引擎帐户。查看 DHIS2 文档以获取更多信息。"
 
 msgid "Population"
-msgstr ""
+msgstr "人口"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "人口年龄组"
 
 msgid "Men 0 - 1 years"
-msgstr ""
+msgstr "男性 0 - 1 岁"
 
 msgid "Men 1 - 4 years"
-msgstr ""
+msgstr "男性 1 - 4 岁"
 
 msgid "Men 5 - 9 years"
-msgstr ""
+msgstr "男性 5 - 9 岁"
 
 msgid "Men 10 - 14 years"
-msgstr ""
+msgstr "男性 10 - 14 岁"
 
 msgid "Men 15 - 19 years"
-msgstr ""
+msgstr "15 - 19 岁男性"
 
 msgid "Men 20 - 24 years"
-msgstr ""
+msgstr "男性 20 - 24 岁"
 
 msgid "Men 25 - 29 years"
-msgstr ""
+msgstr "男性 25 - 29 岁"
 
 msgid "Men 30 - 34 years"
-msgstr ""
+msgstr "男性 30 - 34 岁"
 
 msgid "Men 35 - 39 years"
-msgstr ""
+msgstr "男性 35 - 39 岁"
 
 msgid "Men 40 - 44 years"
-msgstr ""
+msgstr "男性 40 - 44 岁"
 
 msgid "Men 45 - 49 years"
-msgstr ""
+msgstr "男性 45 - 49 岁"
 
 msgid "Men 50 - 54 years"
-msgstr ""
+msgstr "男性 50 - 54 岁"
 
 msgid "Men 55 - 59 years"
-msgstr ""
+msgstr "男性 55 - 59 岁"
 
 msgid "Men 60 - 64 years"
-msgstr ""
+msgstr "男性 60 - 64 岁"
 
 msgid "Men 65 - 69 years"
-msgstr ""
+msgstr "男性 65 - 69 岁"
 
 msgid "Men 70 - 74 years"
-msgstr ""
+msgstr "男性 70 - 74 岁"
 
 msgid "Men 75 - 79 years"
-msgstr ""
+msgstr "男性 75 - 79 岁"
 
 msgid "Men 80 years and above"
-msgstr ""
+msgstr "80岁及以上男性"
 
 msgid "Women 0 - 1 years"
-msgstr ""
+msgstr "女性 0 - 1 岁"
 
 msgid "Women 1 - 4 years"
-msgstr ""
+msgstr "女性 1 - 4 岁"
 
 msgid "Women 5 - 9 years"
-msgstr ""
+msgstr "女性 5 - 9 岁"
 
 msgid "Women 10 - 14 years"
-msgstr ""
+msgstr "10 - 14 岁女性"
 
 msgid "Women 15 - 19 years"
-msgstr ""
+msgstr "15 - 19 岁女性"
 
 msgid "Women 20 - 24 years"
-msgstr ""
+msgstr "20 - 24 岁的女性"
 
 msgid "Women 25 - 29 years"
-msgstr ""
+msgstr "女性 25 - 29 岁"
 
 msgid "Women 30 - 34 years"
-msgstr ""
+msgstr "30 - 34 岁的女性"
 
 msgid "Women 35 - 39 years"
-msgstr ""
+msgstr "35 - 39 岁的女性"
 
 msgid "Women 40 - 44 years"
-msgstr ""
+msgstr "40 - 44 岁的女性"
 
 msgid "Women 45 - 49 years"
-msgstr ""
+msgstr "女性 45 - 49 岁"
 
 msgid "Women 50 - 54 years"
-msgstr ""
+msgstr "50 至 54 岁的女性"
 
 msgid "Women 55 - 59 years"
-msgstr ""
+msgstr "55 - 59 岁的女性"
 
 msgid "Women 60 - 64 years"
-msgstr ""
+msgstr "60 - 64 岁的女性"
 
 msgid "Women 65 - 69 years"
-msgstr ""
+msgstr "65 - 69 岁的女性"
 
 msgid "Women 70 - 74 years"
-msgstr ""
+msgstr "70 - 74 岁的女性"
 
 msgid "Women 75 - 79 years"
-msgstr ""
+msgstr "75 - 79 岁的女性"
 
 msgid "Women 80 years and above"
-msgstr ""
+msgstr "80岁及以上的女性"
 
 msgid "No organisation units have been selected"
-msgstr ""
+msgstr "未选择任何组织单位"
 
-msgid "No geofeatures found for selected organisation units"
-msgstr ""
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
+msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织机构或使用缓冲区作为关联几何图形。"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -1132,6 +1149,9 @@ msgstr "导入数据"
 msgid "Import events"
 msgstr "导入事件"
 
+msgid "Import Earth Engine"
+msgstr ""
+
 msgid "Import GeoJSON"
 msgstr "导入 GeoJSON"
 
@@ -1146,18 +1166,21 @@ msgstr "该会话开始的所有导入作业概要"
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
-msgstr "以XML或JSON格式导出元数据依赖性，例如数据集和程序，包括相关的元数据对象。"
+"related metadata objects, in JSON format."
+msgstr "以 JSON 格式导出元数据依赖项，例如数据集和项目，包括相关元数据对象。"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
-msgstr "以XML，JSON或CSV格式导出元数据，例如数据元素和组织单位。"
-
-msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
+"Export metadata, such as data elements and organisation units, in JSON "
 "format."
-msgstr "从DXF2格式导入数据元、机构等元数据"
+msgstr "以 JSON 格式导出元数据，例如数据元素和组织机构。"
+
+msgid ""
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
+msgstr "使用 JSON 和 CSV 格式导入元数据，例如数据元素和组织单位。"
+
+msgid "Supported file types: JSON and CSV."
+msgstr "支持的文件类型：JSON 和 CSV。"
 
 msgid "A class key must be selected"
 msgstr "必须选择应该类键值"
