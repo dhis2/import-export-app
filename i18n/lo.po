@@ -730,7 +730,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "ພາບລວມ"
 
 msgid "Yes"
 msgstr "Yes"
