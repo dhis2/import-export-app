@@ -805,7 +805,7 @@ msgstr "支持的文件类型：JSON，CSV，XML，ADX和PDF。"
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
 "Engine"
-msgstr ""
+msgstr "使用 Google 地球引擎从 WorldPop 导入高分辨率人口数据"
 
 msgid "Earth Engine source"
 msgstr "地球引擎源"
@@ -1150,7 +1150,7 @@ msgid "Import events"
 msgstr "导入事件"
 
 msgid "Import Earth Engine"
-msgstr ""
+msgstr "导入地球引擎"
 
 msgid "Import GeoJSON"
 msgstr "导入 GeoJSON"
