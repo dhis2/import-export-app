@@ -1,27 +1,28 @@
 .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.status {
-    min-width: 120px;
+    flex-direction: column;
+    gap: var(--spacers-dp8);
 }
 
 .filename {
-    display: inline-block;
-    width: 300px;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+.subtitle {
+    display: flex;
+    gap: var(--spacers-dp8);
+    align-items: center;
+}
+
 .date {
-    margin-left: 20px;
+    font-size: 13px;
+    color: var(--colors-grey700);
+    margin: 0;
 }
 
 @media (min-width: 1200px) {
     .filename {
-        width: 120px;
+        max-width: 290px;
     }
 }
