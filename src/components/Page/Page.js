@@ -20,6 +20,7 @@ const Page = ({
     children,
     loading = false,
     dataTest,
+    transparent = false,
 }) => {
     const loadingEl =
         typeof loading == 'number' ? (
@@ -32,6 +33,7 @@ const Page = ({
         <div
             className={cx(styles.container, {
                 [styles.limitedWidth]: limitWidth,
+                [styles.transparent]: transparent,
             })}
             data-test={dataTest}
         >
@@ -78,6 +80,7 @@ Page.propTypes = {
     loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
     showFullSummaryTask: PropTypes.bool,
     summaryTask: PropTypes.object,
+    transparent: PropTypes.bool,
 }
 
 export { Page }
