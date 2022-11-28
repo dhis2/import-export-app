@@ -8,7 +8,7 @@ const SchemaGroup = ({ label, schemas, toggleSchema, dataTest }) => (
         <span className={styles.formLabel}>{label}</span>
         <div className={styles.schema}>
             {schemas.map((schema, ind) => (
-                <div key={schema.name}>
+                <div className={styles.control} key={schema.name}>
                     <Checkbox
                         label={schema.label}
                         name={`schemas.${schema.name}`}
