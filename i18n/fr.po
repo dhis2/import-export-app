@@ -1023,10 +1023,10 @@ msgid ""
 msgstr ""
 
 msgid "Population"
-msgstr ""
+msgstr "Population"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "Groupes d'âge de la population"
 
 msgid "Men 0 - 1 years"
 msgstr ""
