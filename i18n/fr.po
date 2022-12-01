@@ -67,33 +67,39 @@ msgid "Please select a file"
 msgstr "Veuillez sélectionner un fichier"
 
 msgid "Import as associated geometry"
-msgstr ""
+msgstr "Importer en tant que géométrie associée"
 
 msgid "Store geometry as value of attribute"
-msgstr ""
+msgstr "Stocker la géométrie comme valeur de l'attribut"
 
 msgid "Selected programs"
 msgstr "Programmes sélectionnés"
 
 msgid "Something went wrong when loading the attributes!"
-msgstr ""
+msgstr "Un problème est survenu lors du chargement des attributs !"
 
 msgid "One attribute must be selected"
-msgstr ""
+msgstr "Un attribut doit être sélectionné"
 
 msgid ""
 "Associated geometry import requires an attribute of type \"GeoJSON\" applied"
 " to \"Organisation unit\". It can be defined in the Maintenance app."
 msgstr ""
+"L'importation de la géométrie associée nécessite un attribut de type "
+"\"GeoJSON\" appliqué à \"l'unité d'organisation\". Il peut être défini dans "
+"l'application Maintenance."
 
 msgid "Match GeoJSON property to organisation unit scheme"
 msgstr ""
+"Faire correspondre une propriété GeoJSON à un schéma d'unité d'organisation"
 
 msgid "GeoJSON property name"
-msgstr ""
+msgstr "Nom de propriété GeoJSON"
 
 msgid "GeoJSON feature property that holds the organisation unit identifier"
 msgstr ""
+"Propriété GeoJSON de la fonctionnalité contenant l'identifiant de l'unité "
+"d'organisation."
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -338,7 +344,7 @@ msgid "Include first level units"
 msgstr "Inclure les unités de premier niveau"
 
 msgid "Include descendants of selected organisation units"
-msgstr ""
+msgstr "Inclure les descendants des unités d'organisation sélectionnées"
 
 msgid "Include deleted"
 msgstr "Inclure supprimé"
@@ -733,7 +739,7 @@ msgid "Total"
 msgstr "Total"
 
 msgid "Indexes"
-msgstr ""
+msgstr "Index"
 
 msgid "Details by type"
 msgstr "Détails par type"
@@ -775,10 +781,10 @@ msgid "Event import"
 msgstr "Importation d'événements"
 
 msgid "Earth Engine import"
-msgstr ""
+msgstr "Importation de Earth Engine"
 
 msgid "Org unit geometry import"
-msgstr ""
+msgstr "Importation de la géométrie des unités d'organisation"
 
 msgid "Metadata import"
 msgstr "Importation de métadonnées"
@@ -853,44 +859,51 @@ msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
 "Engine"
 msgstr ""
+"Importer des données démographiques à haute résolution de WorldPop avec "
+"Google Earth Engine"
 
 msgid "Earth Engine source"
-msgstr ""
+msgstr "Source Earth Engine"
 
 msgid "Organisation units"
 msgstr "Unités d'organisation"
 
 msgid "Import setup"
-msgstr ""
+msgstr "Configuration de l'importation"
 
 msgid "Data preview"
-msgstr ""
+msgstr "Prévisualisation des données"
 
 msgid "Some required fields are missing"
-msgstr ""
+msgstr "Certains champs obligatoires sont manquants"
 
 msgid "Preview before import"
-msgstr ""
+msgstr "Aperçu avant l'importation"
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "Utiliser la géométrie associée"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr ""
+"Sélectionner la géométrie associée pour les unités d'organisation "
+"sélectionnées"
 
 msgid "Import groups to category option combinations"
-msgstr ""
+msgstr "Importer des groupes vers des combinaisons d'options de catégories"
 
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. "
 "Choose the category option combinations to import each group into."
 msgstr ""
+"L'ensemble de données de Earth Engine \"Groupes d'âge de la population\" "
+"comporte des groupes de désagrégation. Choisissez les combinaisons d'options"
+" de catégories dans lesquelles vous souhaitez importer chaque groupe."
 
 msgid "Group name"
 msgstr "Nom de groupe"
 
 msgid "Group description"
-msgstr ""
+msgstr "Description du groupe"
 
 msgid "Category option combination"
 msgstr "Combinaison d'option de catégorie"
@@ -899,7 +912,7 @@ msgid "No match found"
 msgstr "Pas de résultat trouvé"
 
 msgid "Choose category option combo"
-msgstr ""
+msgstr "Choisir une combinaison d'options de catégories"
 
 msgid "Data element"
 msgstr "Élément de donnée"
@@ -908,19 +921,19 @@ msgid "Select data element"
 msgstr "Choisir élément de donnée"
 
 msgid "The data element where Earth Engine data will be added"
-msgstr ""
+msgstr "L'élément de données où les données de Earth Engine seront ajoutées"
 
 msgid "Earth Engine data set"
-msgstr ""
+msgstr "Ensemble de données de Earth Engine"
 
 msgid "Select earth engine data set"
-msgstr ""
+msgstr "Sélectionner l'ensemble des données du Earth Engine"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "Sélectionné : {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Rien n'a été sélectionné"
 
 msgid "Select a level"
 msgstr "Sélectionnez un niveau"
@@ -929,28 +942,30 @@ msgid "Deselect all"
 msgstr "Desélectionner tout"
 
 msgid "Organisation unit(s) to import data to"
-msgstr ""
+msgstr "Unité(s) d'organisation vers laquelle/lesquelles importer des données"
 
 msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
+"Vous devez sélectionner un ensemble de données Earth Engine avant de "
+"sélectionner une période"
 
 msgid "Period"
 msgstr "Période"
 
 msgid "Data from Earth Engine will be imported for this period."
-msgstr ""
+msgstr "Les données de Earth Engine seront importées pour cette période."
 
 msgid "Select period"
 msgstr "Sélectionner une période "
 
 msgid "Loading periods"
-msgstr ""
+msgstr "Chargement des périodes"
 
 msgid "No periods found"
-msgstr ""
+msgstr "Aucune période trouvée"
 
 msgid "Point org. unit - no value"
-msgstr ""
+msgstr "Point org. unit - aucune valeur"
 
 msgid "Organisation Unit"
 msgstr "Unité d'organisation"
@@ -959,10 +974,10 @@ msgid "Category option combo"
 msgstr "Combo d'options de catégorie"
 
 msgid "Current value"
-msgstr ""
+msgstr "Valeur actuelle"
 
 msgid "New value"
-msgstr ""
+msgstr "Nouvelle valeur"
 
 msgid "Rows per page"
 msgstr "Lignes par page"
@@ -970,58 +985,67 @@ msgstr "Lignes par page"
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
+"Page {{page}} sur {{pageCount}}, ligne {{firstItem}}-{{lastItem}} de "
+"{{total}}"
 
 msgid "Don't round source values"
-msgstr ""
+msgstr "N'arrondissez pas les valeurs sources"
 
 msgid "Round to 0 decimal places"
-msgstr ""
+msgstr "Arrondir à 0 décimale"
 
 msgid "Round to 1 decimal place"
-msgstr ""
+msgstr "Arrondir à la première décimale"
 
 msgid "Round to 2 decimal places"
-msgstr ""
+msgstr "Arrondir à 2 décimales"
 
 msgid "Round to 3 decimal places"
-msgstr ""
+msgstr "Arrondir à 3 décimales"
 
 msgid "Round to 4 decimal places"
-msgstr ""
+msgstr "Arrondir à 4 décimales"
 
 msgid "Round to 5 decimal places"
-msgstr ""
+msgstr "Arrondir à 5 décimales"
 
 msgid "Round to 6 decimal places"
-msgstr ""
+msgstr "Arrondir à 6 décimales"
 
 msgid "Value rounding"
-msgstr ""
+msgstr "Arrondissement des valeurs"
 
 msgid "An error occurred while trying to fetch Earth Engine data"
 msgstr ""
+"Une erreur s'est produite lors de la tentative de récupération des données "
+"de Earth Engine"
 
 msgid ""
 "The Earth Engine data set is too large. Try reducing the number of groups or"
 " organisation units"
 msgstr ""
+"L'ensemble de données de Earth Engine est trop important. Essayez de réduire"
+" le nombre de groupes ou d'unités d'organisation"
 
 msgid "The organisation units selection is invalid"
-msgstr ""
+msgstr "La sélection des unités d'organisation n'est pas valide"
 
 msgid "The app could not retrieve required data."
-msgstr ""
+msgstr "L'application n'a pas pu récupérer les données requises."
 
 msgid "Network error"
-msgstr ""
+msgstr "Erreur réseau"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr ""
+"Impossible d'obtenir le token d'autorisation pour Google Earth Engine."
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
 msgstr ""
+"Il est nécessaire d'avoir un compte Google Earth Engine. Consultez la "
+"documentation du DHIS2 pour plus d'informations."
 
 msgid "Population"
 msgstr "Population"
@@ -1030,121 +1054,124 @@ msgid "Population age groups"
 msgstr "Groupes d'âge de la population"
 
 msgid "Men 0 - 1 years"
-msgstr ""
+msgstr "Masculin 0 - 1 an"
 
 msgid "Men 1 - 4 years"
-msgstr ""
+msgstr "Masculin 1 - 4 ans"
 
 msgid "Men 5 - 9 years"
-msgstr ""
+msgstr "Masculin 5 - 9 ans"
 
 msgid "Men 10 - 14 years"
-msgstr ""
+msgstr "Masculin 10 - 14 ans"
 
 msgid "Men 15 - 19 years"
-msgstr ""
+msgstr "Masculin 15 - 19 ans"
 
 msgid "Men 20 - 24 years"
-msgstr ""
+msgstr "Masculin 20 - 24 ans"
 
 msgid "Men 25 - 29 years"
-msgstr ""
+msgstr "Masculin 25 - 29 ans"
 
 msgid "Men 30 - 34 years"
-msgstr ""
+msgstr "Masculin 30 - 34 ans"
 
 msgid "Men 35 - 39 years"
-msgstr ""
+msgstr "Masculin 35 - 39 ans"
 
 msgid "Men 40 - 44 years"
-msgstr ""
+msgstr "Masculin 40 - 44 ans"
 
 msgid "Men 45 - 49 years"
-msgstr ""
+msgstr "Masculin 45 - 49 ans"
 
 msgid "Men 50 - 54 years"
-msgstr ""
+msgstr "Masculin 50 - 54 ans"
 
 msgid "Men 55 - 59 years"
-msgstr ""
+msgstr "Masculin 55 - 59 ans"
 
 msgid "Men 60 - 64 years"
-msgstr ""
+msgstr "Masculin 60 - 64 ans"
 
 msgid "Men 65 - 69 years"
-msgstr ""
+msgstr "Masculin 65 - 69 ans"
 
 msgid "Men 70 - 74 years"
-msgstr ""
+msgstr "Masculin 70 - 74 ans"
 
 msgid "Men 75 - 79 years"
-msgstr ""
+msgstr "Masculin 75 - 79 ans"
 
 msgid "Men 80 years and above"
-msgstr ""
+msgstr "Masculin 80 ans et plus"
 
 msgid "Women 0 - 1 years"
-msgstr ""
+msgstr "Féminin 0 - 1 an"
 
 msgid "Women 1 - 4 years"
-msgstr ""
+msgstr "Féminin 1 - 4 ans"
 
 msgid "Women 5 - 9 years"
-msgstr ""
+msgstr "Féminin 5 - 9 ans"
 
 msgid "Women 10 - 14 years"
-msgstr ""
+msgstr "Féminin 10 - 14 ans"
 
 msgid "Women 15 - 19 years"
-msgstr ""
+msgstr "Féminin 15 - 19 ans"
 
 msgid "Women 20 - 24 years"
-msgstr ""
+msgstr "Féminin 20 - 24 ans"
 
 msgid "Women 25 - 29 years"
-msgstr ""
+msgstr "Féminin 25 - 29 ans"
 
 msgid "Women 30 - 34 years"
-msgstr ""
+msgstr "Féminin 30 - 34 ans"
 
 msgid "Women 35 - 39 years"
-msgstr ""
+msgstr "Féminin 35 - 39 ans"
 
 msgid "Women 40 - 44 years"
-msgstr ""
+msgstr "Féminin 40 - 44 ans"
 
 msgid "Women 45 - 49 years"
-msgstr ""
+msgstr "Féminin 45 - 49 ans"
 
 msgid "Women 50 - 54 years"
-msgstr ""
+msgstr "Féminin 50 - 54 ans"
 
 msgid "Women 55 - 59 years"
-msgstr ""
+msgstr "Féminin 55 - 59 ans"
 
 msgid "Women 60 - 64 years"
-msgstr ""
+msgstr "Féminin 60 - 64 ans"
 
 msgid "Women 65 - 69 years"
-msgstr ""
+msgstr "Féminin 65 - 69 ans"
 
 msgid "Women 70 - 74 years"
-msgstr ""
+msgstr "Féminin 70 - 74 ans"
 
 msgid "Women 75 - 79 years"
-msgstr ""
+msgstr "Féminin 75 - 79 ans"
 
 msgid "Women 80 years and above"
-msgstr ""
+msgstr "Féminin 80 ans et plus"
 
 msgid "No organisation units have been selected"
-msgstr ""
+msgstr "Aucune unité d'organisation n'a été sélectionnée"
 
 msgid ""
 "It is not possible to get data from Earth Engine for point facilities. "
 "Select polygon organisation units or use a catchment area as associated "
 "geometry."
 msgstr ""
+"Il est impossible d'obtenir des données de Earth Engine pour des "
+"établissements ponctuels. Sélectionnez des unités d'organisation polygonales"
+" ou utilisez une zone de captage comme géométrie associée."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -1166,17 +1193,23 @@ msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Types de fichiers supportés: JSON, CSV et XML. "
 
 msgid "Organisation unit geometry import"
-msgstr ""
+msgstr "Importation de la géométrie des unités d'organisation"
 
 msgid ""
 "Import geographic data for organisation units. GeoJSON is the recommend "
 "format and can also be used for associated geometries or catchment areas."
 msgstr ""
+"Importez des données géographiques pour les unités d'organisation. GeoJSON "
+"est le format recommandé et peut également être utilisé pour les géométries "
+"associées ou les zones de chalandise."
 
 msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
 "feature property below."
 msgstr ""
+"L'identifiant de la fonctionnalité GeoJSON doit correspondre à l'identifiant"
+" de l'unité d'organisation, ou à une propriété de la fonctionnalité ci-"
+"dessous."
 
 msgid "Overview: Import/Export"
 msgstr "Vue d'ensemble: importation / exportation"
@@ -1200,10 +1233,10 @@ msgid "Import events"
 msgstr "Importer évènements"
 
 msgid "Import Earth Engine"
-msgstr ""
+msgstr "Importation Earth Engine"
 
 msgid "Import GeoJSON"
-msgstr ""
+msgstr "Importation GeoJSON"
 
 msgid "Import metadata"
 msgstr "Importer Méta-Données"
@@ -1218,19 +1251,26 @@ msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in JSON format."
 msgstr ""
+"Exportez les dépendances de métadonnées, telles que les ensembles de données"
+" et les programmes, y compris les objets de métadonnées associés, au format "
+"JSON."
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
+"Exportez les métadonnées, telles que les éléments de données et les unités "
+"d'organisation, au format JSON ."
 
 msgid ""
 "Import metadata like data elements and organisation units using the JSON and"
 " CSV format."
 msgstr ""
+"Importez les métadonnées, telles que les éléments de données et les unités "
+"d'organisation, aux formats JSON et CSV."
 
 msgid "Supported file types: JSON and CSV."
-msgstr ""
+msgstr "Types de fichiers pris en charge : JSON et CSV."
 
 msgid "A class key must be selected"
 msgstr "Une clé de classe doit être sélectionnée"
