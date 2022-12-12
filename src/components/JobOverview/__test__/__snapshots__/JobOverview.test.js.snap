@@ -7,23 +7,31 @@ exports[`MenuLabel matches snapshot 1`] = `
     data-test="job-overview-menu-label-EcJpZjEcMfI"
   >
     <div
-      class="status"
+      class="filename"
     >
-      <span
-        class="filename"
-      >
-        data1.json
-      </span>
-      <br />
-      <span>
-        Completed 
-      </span>
+      data1.json
     </div>
     <div
-      class="date"
+      class="subtitle"
     >
-      2020-02-12 13:00:23
+      <div
+        class="jsx-72316749 positive"
+        data-test="dhis2-uicore-tag"
+      >
+        <span
+          class="jsx-1110058759"
+          data-test="dhis2-uicore-tag-text"
+        >
+          Completed
+        </span>
+      </div>
+       
+      <p
+        class="date"
+      >
+        2020-02-12 13:00:23
 
+      </p>
     </div>
   </div>
 </DocumentFragment>
