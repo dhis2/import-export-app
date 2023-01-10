@@ -16,11 +16,12 @@
 
 .prefix {
     font-family: monospace;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--colors-grey800);
     background: var(--colors-grey300);
-    padding: 1px 4px;
-    margin-right: 4px;
+    padding: 2px var(--spacers-dp4);
+    margin-right: var(--spacers-dp4);
+    border-radius: 3px;
 }
 
 .prefixCritical {

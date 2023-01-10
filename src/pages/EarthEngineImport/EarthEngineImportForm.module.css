@@ -6,7 +6,9 @@
 .sectionHeader {
     margin: 0;
     font-size: 18px;
-    padding: 0;
+    font-weight: 500;
+    color: var(--colors-grey900);
+    margin: 0 0 var(--spacers-dp4) 0;
 }
 
 .wrapper {

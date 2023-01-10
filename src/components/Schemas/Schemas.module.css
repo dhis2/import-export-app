@@ -1,36 +1,40 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-.container > div:nth-child(1) > div {
-    margin-right: 15px;
+    margin-bottom: var(--spacers-dp32);
+    max-width: 1200px;
 }
 
 .group {
-    width: 30%;
-    margin-bottom: 10px;
+    padding: var(--spacers-dp4) var(--spacers-dp8) var(--spacers-dp8);
+    border: 1px solid var(--colors-grey300);
+    margin: 0 var(--spacers-dp16) var(--spacers-dp12) 0;
+    background: var(--colors-white);
 }
 
 .group .schema {
-    margin-top: 5px;
+    margin-top: var(--spacers-dp4);
+}
+
+.control {
+    margin: 0 0 0 var(--spacers-dp4);
+}
+.control:hover,
+.control:focus-within {
+    background: var(--colors-grey200);
+    border-radius: 3px;
 }
 
 .formLabel {
-    margin-bottom: 5px;
-    width: 100%;
-    user-select: none;
-    font-size: 14px;
+    margin-bottom: var(--spacers-dp4);
+    font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--colors-grey800);
+    color: var(--colors-grey900);
 }
 
 .formControl {
-    margin-top: 10px;
+    margin-top: var(--spacers-dp12);
     display: flex;
     flex-direction: column;
-    max-height: 1100px;
+    max-height: 800px;
     flex-wrap: wrap;
 }

@@ -1,13 +1,14 @@
 .container {
     display: grid;
-    grid-gap: 20px;
     grid-template-rows: auto;
     grid-template-columns: 1fr;
     height: 100%;
+    border: 1px solid var(--colors-grey400);
+    background: var(--colors-white);
 }
 
 .chips {
-    margin-bottom: var(--spacers-dp4);
+    margin: var(--spacers-dp4);
 }
 
 .Menu {
@@ -17,9 +18,17 @@
     overflow: auto;
 }
 
+.items {
+    border-right: 1px solid var(--colors-grey400);
+}
+
+.summary {
+    padding: var(--spacers-dp16);
+}
+
 @media (min-width: 1200px) {
     .container {
-        grid-template-columns: [items] 350px [summary] minmax(0, 1fr);
+        grid-template-columns: [items] 320px [summary] minmax(0, 1fr);
     }
 
     .items {

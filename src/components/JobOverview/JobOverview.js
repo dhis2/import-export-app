@@ -7,7 +7,7 @@ import { TaskContext } from '../../contexts/index.js'
 import { categoryTypes } from '../../utils/tasks.js'
 import { JobSummary } from '../index.js'
 import { ChipContainer } from './ChipContainer.js'
-import { categoryTypesObj, jobToPath } from './helper.js'
+import { jobToPath } from './helper.js'
 import styles from './JobOverview.module.css'
 import { MenuLabel } from './MenuLabel/MenuLabel.js'
 
@@ -65,6 +65,7 @@ const JobOverview = ({
                     <ChipContainer>
                         {categoryTypes.map(({ key, importType, label }) => (
                             <Chip
+                                dense
                                 onClick={() => onChipClick(importType)}
                                 selected={activeTypes.includes(importType)}
                                 key={key}
@@ -80,7 +81,6 @@ const JobOverview = ({
                             active={selectedJob && selectedJob.id === t.id}
                             label={<MenuLabel task={t} />}
                             onClick={() => setSelectedJob(t)}
-                            icon={categoryTypesObj[t.importType].icon}
                         />
                     ))}
                 </Menu>
