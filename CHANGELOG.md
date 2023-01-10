@@ -1,3 +1,18 @@
+## [1.5.18](https://github.com/dhis2/import-export-app/compare/v1.5.17...v1.5.18) (2023-01-10)
+
+
+### Bug Fixes
+
+* adjust advanced options control ([3a91a7c](https://github.com/dhis2/import-export-app/commit/3a91a7c74cdf0f36b90b1171e871ade06bb863e7))
+* adjust job overview and summary design ([fa7dd12](https://github.com/dhis2/import-export-app/commit/fa7dd120e5031141ca512f815fe58d0e3f013aca))
+* adjust org unit tree component ([b36292e](https://github.com/dhis2/import-export-app/commit/b36292e3b91ca865d624b9a081816ff4916d74a3))
+* adjust overview card design and interaction ([4ad0e09](https://github.com/dhis2/import-export-app/commit/4ad0e0937533ddb910da134cf21df6fed76a01a3))
+* adjust page appearance, add transparent prop ([39793a7](https://github.com/dhis2/import-export-app/commit/39793a772b32d912e5d228fa7bc4a242a132acb9))
+* adjust radio prefix ([05fc24c](https://github.com/dhis2/import-export-app/commit/05fc24c7551d8c27150dde63117ff57173c88393))
+* adjust schemas layout, typography ([69101f7](https://github.com/dhis2/import-export-app/commit/69101f7406ec05ac3be72a95ef88e279a19d8d58))
+* adjust sidebar style ([4fa5948](https://github.com/dhis2/import-export-app/commit/4fa5948f1fce50a267aebe9713eccefd4d4c7585))
+* standardize typography ([a27d92e](https://github.com/dhis2/import-export-app/commit/a27d92e09f067f40d65e2c2a981183c8b7485d16))
+
 ## [1.5.17](https://github.com/dhis2/import-export-app/compare/v1.5.16...v1.5.17) (2022-12-01)
 
 
