@@ -16,7 +16,7 @@ const importStrategyOptions = [
         prefix: i18n.t('Append'),
     },
     {
-        value: 'UPDATES',
+        value: 'UPDATE',
         label: i18n.t('Only update existing values, ignore new values'),
         prefix: i18n.t('Update'),
     },
