@@ -1,3 +1,10 @@
+## [1.5.19](https://github.com/dhis2/import-export-app/compare/v1.5.18...v1.5.19) (2023-02-08)
+
+
+### Bug Fixes
+
+* use correct update strategy for metadata import [DHIS-12479] ([d620949](https://github.com/dhis2/import-export-app/commit/d6209494bc7f40a718d0964fc3a5d6fa74981ad9))
+
 ## [1.5.18](https://github.com/dhis2/import-export-app/compare/v1.5.17...v1.5.18) (2023-01-10)
 
 
