@@ -1,3 +1,10 @@
+## [1.5.20](https://github.com/dhis2/import-export-app/compare/v1.5.19...v1.5.20) (2023-03-06)
+
+
+### Bug Fixes
+
+* label text [DHIS2-11265] ([#1677](https://github.com/dhis2/import-export-app/issues/1677)) ([444d99b](https://github.com/dhis2/import-export-app/commit/444d99bf94827aa6d8d5d52e39ec10e3f8d4e792))
+
 ## [1.5.19](https://github.com/dhis2/import-export-app/compare/v1.5.18...v1.5.19) (2023-02-08)
 
 
