@@ -39,7 +39,7 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/maps-gl": "^3.5.1",
         "@dhis2/prop-types": "^3.1.2",
-        "@dhis2/ui": "^8.7.2",
+        "@dhis2/ui": "^8.12.1",
         "classnames": "^2.2.6",
         "final-form-arrays": "^3.0.2",
         "react-final-form-arrays": "^3.1.3",
