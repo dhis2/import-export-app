@@ -24,6 +24,7 @@ import {
     PreheatCache,
     defaultPreheatCacheOption,
     SkipAudit,
+    SpecifyDataSet,
     defaultSkipAuditOption,
     SkipExistingCheck,
     defaultSkipExistingCheckOption,
@@ -145,6 +146,7 @@ const DataImport = () => {
                                 <IdScheme />
                             </SchemeContainer>
                             <SkipExistingCheck />
+                            <SpecifyDataSet multiSelect={false} />
                         </MoreOptions>
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />

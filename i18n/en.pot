@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
-"PO-Revision-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2023-03-21T09:00:57.019Z\n"
+"PO-Revision-Date: 2023-03-21T09:00:57.019Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -564,6 +564,12 @@ msgstr "Skip validation"
 
 msgid "Skip validation for import (not recommended)"
 msgstr "Skip validation for import (not recommended)"
+
+msgid "Specify data set for data import"
+msgstr "Specify data set for data import"
+
+msgid "Specify the data set that imported data must belong to"
+msgstr "Specify the data set that imported data must belong to"
 
 msgid "Strategy"
 msgstr "Strategy"

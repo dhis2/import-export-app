@@ -51,6 +51,7 @@ const ResourcePicker = ({
     filterLabel,
     selectedLabel,
     errorMessage,
+    prefix,
 }) => {
     const [list, setList] = useState([])
     const [error, setError] = useState(undefined)
@@ -130,6 +131,7 @@ const ResourcePicker = ({
                         filterable={withFilter}
                         dataTest={`${dataTest}-select`}
                         loading={fetching}
+                        prefix={prefix}
                     />
                 ))}
             {(meta.touched || !meta.pristine) && meta.error && (
@@ -155,6 +157,7 @@ ResourcePicker.propTypes = {
     setSelected: PropTypes.func.isRequired,
     autoSelectFirst: PropTypes.bool,
     multiSelect: PropTypes.bool,
+    prefix: PropTypes.string,
     withFilter: PropTypes.bool,
 }
 

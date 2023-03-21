@@ -6,12 +6,14 @@ const isAsync = true
 const onImport =
     ({ baseUrl, setProgress, addTask, setShowFullSummaryTask }) =>
     async (values) => {
+        console.log(values)
         const {
             dryRun,
             files,
             strategy,
             preheatCache,
             skipAudit,
+            specifiedDataSet,
             dataElementIdScheme,
             orgUnitIdScheme,
             idScheme,
@@ -29,6 +31,7 @@ const onImport =
             `strategy=${strategy}`,
             `preheatCache=${preheatCache}`,
             `skipAudit=${skipAudit}`,
+            `dataSet=${specifiedDataSet}`,
             `dataElementIdScheme=${dataElementIdScheme}`,
             `orgUnitIdScheme=${orgUnitIdScheme}`,
             `idScheme=${idScheme}`,

@@ -21,6 +21,7 @@ export { ClassKey } from './ClassKey.js'
 export { Strategy, defaultStrategyOption } from './Strategy.js'
 export { PreheatCache, defaultPreheatCacheOption } from './PreheatCache.js'
 export { SkipAudit, defaultSkipAuditOption } from './SkipAudit.js'
+export { SpecifyDataSet } from './SpecifyDataSet.js'
 export {
     SkipExistingCheck,
     defaultSkipExistingCheckOption,
