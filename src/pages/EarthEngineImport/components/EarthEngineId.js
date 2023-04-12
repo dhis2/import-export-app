@@ -5,9 +5,9 @@ import { StyledField } from '../../../components/index.js'
 import { earthEngines } from '../util/earthEngines.js'
 import { EARTH_ENGINE_ID } from '../util/formFieldConstants.js'
 
-const eeList = Object.values(earthEngines).map(({ name, datasetId }) => ({
+const options = Object.values(earthEngines).map(({ name, earthEngineId }) => ({
     label: name,
-    value: datasetId,
+    value: earthEngineId,
 }))
 
 const EarthEngineId = () => (
@@ -16,7 +16,7 @@ const EarthEngineId = () => (
             component={SingleSelectFieldFF}
             name={EARTH_ENGINE_ID}
             label={i18n.t('Earth Engine data set')}
-            options={eeList}
+            options={options}
             dataTest="input-earthengine-id"
             placeholder={i18n.t('Select earth engine data set')}
             filled
