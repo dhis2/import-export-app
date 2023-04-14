@@ -1,20 +1,26 @@
 import i18n from '@dhis2/d2-i18n'
 
-const POPULATION_DATASET_ID = 'WorldPop/GP/100m/pop'
+const POPULATION_TOTAL_EE_ID = 'WorldPop/GP/100m/pop_age_sex_cons_unadj_TOTAL'
+const POPULATION_AGE_GROUPS_EE_ID =
+    'WorldPop/GP/100m/pop_age_sex_cons_unadj_AGE_GROUPS'
 const POPULATION_AGE_GROUPS_DATASET_ID =
     'WorldPop/GP/100m/pop_age_sex_cons_unadj'
+const SOURCE_NAME = 'WorldPop / Google Earth Engine'
+const SOURCE_URL =
+    'https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop_age_sex_cons_unadj'
 
 export const earthEngines = {
-    [POPULATION_DATASET_ID]: {
-        datasetId: POPULATION_DATASET_ID,
+    [POPULATION_TOTAL_EE_ID]: {
+        earthEngineId: POPULATION_TOTAL_EE_ID,
+        datasetId: POPULATION_AGE_GROUPS_DATASET_ID,
         name: i18n.t('Population'),
-        source: 'WorldPop / Google Earth Engine',
-        sourceUrl:
-            'https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop',
+        source: SOURCE_NAME,
+        sourceUrl: SOURCE_URL,
         img: 'images/population.png',
         defaultAggregations: ['sum', 'mean'],
         periodType: 'Yearly',
         bandReducer: 'sum',
+        band: 'population',
         filters: ({ id, name, year }) => [
             {
                 id,
@@ -26,16 +32,16 @@ export const earthEngines = {
         mosaic: true,
         params: {
             min: 0,
-            max: 10,
+            max: 25,
             palette: '#fee5d9,#fcbba1,#fc9272,#fb6a4a,#de2d26,#a50f15', // Reds
         },
     },
-    [POPULATION_AGE_GROUPS_DATASET_ID]: {
+    [POPULATION_AGE_GROUPS_EE_ID]: {
+        earthEngineId: POPULATION_AGE_GROUPS_EE_ID,
         datasetId: POPULATION_AGE_GROUPS_DATASET_ID,
         name: i18n.t('Population age groups'),
-        source: 'WorldPop / Google Earth Engine',
-        sourceUrl:
-            'https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop_age_sex_cons_unadj',
+        source: SOURCE_NAME,
+        sourceUrl: SOURCE_URL,
         img: 'images/population.png',
         periodType: 'Yearly',
         bandReducer: 'sum',
