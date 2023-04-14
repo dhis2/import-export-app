@@ -1,3 +1,10 @@
+## [1.5.21](https://github.com/dhis2/import-export-app/compare/v1.5.20...v1.5.21) (2023-04-14)
+
+
+### Bug Fixes
+
+* use same dataset for total population ([#1683](https://github.com/dhis2/import-export-app/issues/1683)) ([aeb2e5b](https://github.com/dhis2/import-export-app/commit/aeb2e5b94e77f24835b6be5715ab78fb8cd57a03))
+
 ## [1.5.20](https://github.com/dhis2/import-export-app/compare/v1.5.19...v1.5.20) (2023-03-06)
 
 
