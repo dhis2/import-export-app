@@ -1,23 +1,23 @@
 .container {
-    margin-bottom: 15px;
+    margin-bottom: var(--spacers-dp16);
 }
 
 .title {
-    font-family: Roboto;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
     margin: 0px;
 }
 
 .taskDetails {
-    margin: 6px 0px 0px;
-    font-size: 12px;
+    margin: var(--spacers-dp8) 0px var(--spacers-dp4);
+    font-size: 13px;
     line-height: 14px;
-    color: rgb(74, 87, 104);
+    color: var(--colors-grey700);
 }
 
 .tags {
-    margin-top: 6px;
-}
-
-.tags > * {
-    margin-right: 6px;
+    display: flex;
+    gap: var(--spacers-dp4);
+    margin: var(--spacers-dp8) 0 0;
 }

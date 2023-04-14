@@ -1,59 +1,55 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2022
+# Jaime Bosque <jaime.bosque@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
-"Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
+"Last-Translator: Jaime Bosque <jaime.bosque@dhis2.org>, 2022\n"
+"Language-Team: Spanish (Latin America) (https://www.transifex.com/hisp-uio/teams/100509/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uz@Latn\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: es_419\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr "Joriy foydalanuvchini yuklashda koʼzda tutilmagan xatolik yuz berdi"
+msgstr ""
 
 msgid "Basic options"
-msgstr "Аsosiy variantlar"
+msgstr ""
 
 msgid "Invalid date"
-msgstr "Sana xato"
+msgstr ""
 
 msgid "Start date must be before end date"
-msgstr "Boshlanish sanasi yakunlanish sanasidan oldinda boʼlishi lozim"
+msgstr ""
 
 msgid "End date must be after start date"
-msgstr "Yakunlanish sanasi boshlanish sanasidan keyinda boʼlishi lozim"
+msgstr ""
 
 msgid "Invalid duration"
-msgstr "Davomiyligi notoʼgʼri"
+msgstr ""
 
 msgid "Format"
-msgstr "Formatlash"
+msgstr ""
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
-"Maʼlumotlar elementlari identifikatorining qoʼshimcha sxemalarini yuklashda "
-"xatolik yuz berdi"
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr "Qoʼshimcha sxemalar identifikatorini yuklashda xatolik yuz berdi"
+msgstr ""
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
-"Qoʼshimcha tashkiliy boʼlimlar identifikatorining sxemalarini yuklashda "
-"xatolik yuz berdi"
 
 msgid "Please select a file"
-msgstr "Iltimos, faylni tanlang"
+msgstr ""
 
 msgid "Import as associated geometry"
 msgstr ""
@@ -62,7 +58,7 @@ msgid "Store geometry as value of attribute"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Tanlangan dasturlar"
+msgstr ""
 
 msgid "Something went wrong when loading the attributes!"
 msgstr ""
@@ -86,681 +82,651 @@ msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
-"Sinov testi hech qanday maʼlumotni import qilmasdan import parametrlarini "
-"sinab koʼradi"
 
 msgid "Start dry run"
-msgstr "Sinovni boshlash"
+msgstr ""
 
 msgid "Start import"
-msgstr "Importni boshlash"
+msgstr ""
 
 msgid "Any user"
-msgstr "Istalgan foydalanuvchi"
+msgstr ""
 
 msgid "Current user"
-msgstr "Joriy foydalanuvchi"
+msgstr ""
 
 msgid "No user/unassigned"
-msgstr "Foydalanuvchi yoʼq/tayinlanmagan"
+msgstr ""
 
 msgid "Selected users"
-msgstr "Tanlangan foydalanuvchilar"
+msgstr ""
 
 msgid "Filter by assigned user"
-msgstr "Tayinlangan foydalanuvchi boʼyicha filtrlash"
+msgstr ""
 
 msgid "Export only instances with events assigned to specific users"
 msgstr ""
-"Faqat maʼlum foydalanuvchilarga tayinlangan hodisa/tadbirlar bilan eksport "
-"qilish"
 
 msgid "Assigned user(s)"
-msgstr "Tayinlangan foydalanuvchi(lar)"
+msgstr ""
 
 msgid "Do not import"
-msgstr "Import qilinmasin"
+msgstr ""
 
 msgid "Import"
-msgstr "Import"
+msgstr ""
 
 msgid "Atomic mode"
-msgstr "Аtomar rejim"
+msgstr ""
 
 msgid "Whether to import objects even if some references do not exist"
 msgstr ""
-"Havolalarni baʼzi birlari yetishmasada, obʼektni import qilmoqchimisiz"
 
 msgid "Class key"
-msgstr "Sinf kaliti"
+msgstr ""
 
 msgid "Zip"
-msgstr "Pochta indeksi"
+msgstr ""
 
 msgid "GZip"
-msgstr "G-pochta indeksi"
+msgstr ""
 
 msgid "Uncompressed"
-msgstr "Siqilmagan arxiv"
+msgstr ""
 
 msgid "Compression mode"
-msgstr "Аrxivni siqish rejimi"
+msgstr ""
 
 msgid "Uid"
-msgstr "Uid"
+msgstr ""
 
 msgid "Code"
-msgstr "Kod"
+msgstr ""
 
 msgid "Name"
-msgstr "Исми"
+msgstr "Nombre"
 
 msgid "Data element ID scheme"
-msgstr "Maʼlumotlar elementi identifikatori sxemasi"
+msgstr ""
 
 msgid "Which data sets should be included in export?"
-msgstr "Eksport uchun qaysi maʼlumotlar toʼplamini kiritish kerak?"
+msgstr ""
 
 msgid "Filter data sets"
-msgstr "Maʼlumotlar toʼplamini filtrlash"
+msgstr ""
 
 msgid "Selected data sets"
-msgstr "Tanlangan maʼlumotlar toʼplamlari"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
-"Maʼlumotlar toʼplamlarini yuklashda koʼzda tutilmagan xatolik yuz berdi!"
 
 msgid "At least one data set must be selected"
-msgstr "Kamida bitta maʼlumotlar toʼplami tanlangan boʼlishi lozim"
+msgstr ""
 
 msgid "One data set must be selected"
-msgstr "Birta maʼlumotlar toʼplami tanlangan boʼlishi lozim"
+msgstr ""
 
 msgid "End date"
-msgstr "Yakunlanish sanasi"
+msgstr ""
 
 msgid "Event ID scheme"
-msgstr "Tadbir ID sxemasi"
+msgstr ""
 
 msgid "Loading export..."
-msgstr "Eksport yuklanmoqda ..."
+msgstr ""
 
 msgid "Select a file to import values from"
-msgstr "...dan qiymatlar importini saqlash uchun faylni tanlang"
+msgstr ""
 
 msgid "Is the first row a header row?"
-msgstr "Birinchi qator Sarlavha qatorimi?"
+msgstr ""
 
 msgid "First row is header"
-msgstr "Birinchi qator-Sarlavha"
+msgstr ""
 
 msgid "A header row will be ignored during import"
-msgstr "Import jarayonida birinchi qator istisno qilinadi"
+msgstr ""
 
 msgid "Auto (recommended)"
-msgstr "Аvto (tavsiya etiladi)"
+msgstr ""
 
 msgid "Object (debugging purposes)"
-msgstr "Obʼekt (sozlash uchun)"
+msgstr ""
 
 msgid "Flush mode"
-msgstr "Tozalash rejimi"
+msgstr ""
 
 msgid "Controls when to flush the internal cache"
-msgstr "Ichki buferni tozalashga ketgan vaqtni nazorat qiladi"
+msgstr ""
 
 msgid "All"
-msgstr "Barchasi"
+msgstr "Todos"
 
 msgid "Marked for follow-up"
-msgstr "Kuzatuv uchun belgilangan"
+msgstr ""
 
 msgid "Not marked for follow-up"
-msgstr "Kuzatuv uchun belgilanmagan"
+msgstr ""
 
 msgid "Include only entities with follow-up status"
-msgstr "Faqat kuzatuv maqomiga ega boʼlgan shaxslarni kiritish"
+msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "ADX"
-msgstr "ADX"
+msgstr ""
 
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 msgid "JSONP"
-msgstr "JSONP"
+msgstr ""
 
 msgid "What format is the data to import?"
-msgstr "Import qilinadigan maʼlumotlar qanday formatda boʼlishi lozim?"
+msgstr ""
 
 msgid "What format should the data be exported as?"
 msgstr ""
-"Eksport qilinadigan maʼlumotlar qanday format sifatida boʼlishi lozim?"
 
 msgid "ID scheme"
-msgstr "Identifikator sxemasi"
+msgstr ""
 
 msgid "UID"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identifikator"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
-"Maʼlumotlarni moslashtirish uchun foydalaniladigan identifikator sxemasi"
 
 msgid "Only include reports for objects that have errors"
-msgstr "Faqatgina xatosi boʼlgan obʼektlar uchun hisobotlarni qoʼshing"
+msgstr ""
 
 msgid "Errors"
-msgstr "Xatoliklar"
+msgstr "Errores"
 
 msgid "Reports for all objects imported"
-msgstr "Import qilinadigan barcha obʼektlar uchun hisobotlar"
+msgstr ""
 
 msgid "Full"
-msgstr "Toʼliq"
+msgstr ""
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
-"Import qilingan barcha obʼektlar uchun hisobotlar, ularning nomlari bilan "
-"birga (agar mavjud boʼlsa)"
 
 msgid "Debug"
-msgstr "Nosozliklarni tuzatish"
+msgstr ""
 
 msgid "Import report mode"
-msgstr "Hisobot rejimini import qilish"
+msgstr ""
 
 msgid "Controls what should be reported after the import is done"
 msgstr ""
-"Import qilinganidan keyin xabar qilinishi kerak boʼlgan axborotni boshqarish"
 
 msgid "Import new values and update existing"
-msgstr "Yangi qadriyatlarni import qiling va mavjudlarini yangilang"
+msgstr ""
 
 msgid "Merge"
-msgstr "Birlashtirish"
+msgstr ""
 
 msgid "Import new values only"
-msgstr "Faqat yangi qiymatlarni import qilish"
+msgstr ""
 
 msgid "Append"
-msgstr "Qoʼshish"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
-"Faqat mavjud qiymatlarni yangilang, yangi qiymatlarni oʼzgarishsiz qoldiring"
 
 msgid "Update"
-msgstr "Янгилаш"
+msgstr "Actualizar"
 
 msgid "Remove values included in uploaded file"
-msgstr "Yuklangan fayldan qoʼshimcha kiritilgan qiymatlarni olib tashlash"
+msgstr ""
 
 msgid "Delete"
-msgstr "Oʼchirib tashlash"
+msgstr "Borrar"
 
 msgid "Data will be deleted"
-msgstr "Maʼlumotlar oʼchirib tashlanadi"
+msgstr ""
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
 msgstr ""
-"Yuklangan fayldagi qiymatlar maʼlumotlar bazasidan oʼchirib tashlanadi. Bu "
-"toʼgʼri harakat ekanligiga ishonch hosil qiling; amalga oshgach maʼlumotni "
-"qaytarib boʼlmaydi"
 
 msgid "Import strategy"
-msgstr "Import strategiyasi"
+msgstr ""
 
 msgid "Include all attributes"
-msgstr "Barcha atributlarni qoʼshing"
+msgstr ""
 
 msgid "Include first level units"
-msgstr "Birinchi darajali boʼlimlarni qoʼshing"
+msgstr ""
 
 msgid "Include descendants of selected organisation units"
 msgstr ""
 
 msgid "Include deleted"
-msgstr "Qoʼshimchalar oʼchirildi"
+msgstr ""
 
 msgid "Include deleted data in export"
-msgstr "Oʼchirilgan maʼlumotlarni eksportga qoʼshish"
+msgstr ""
 
 msgid "Only include selected organisation unit"
-msgstr "Faqatgina tanlangan tashkiliy boʼlimlarni kiriting"
+msgstr ""
 
 msgid "Selected"
-msgstr "Tanlangan"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
-msgstr "Tanlovlar ichidagi boʼlimlarni birinchi darajasini qoʼshing"
+msgstr ""
 
 msgid "Directly below"
-msgstr "Toʼgʼridan-toʼgʼri quyida"
+msgstr ""
 
 msgid "Include all units inside selections"
-msgstr "Tanlov ichidagi barcha boʼlimlarni qoʼshing"
+msgstr ""
 
 msgid "All below"
-msgstr "Quyidagilarning barchasi"
+msgstr ""
 
 msgid "How should organisation units inside the selections be included?"
-msgstr "Tashkiliy boʼlimlarni tanlanganlar qatoriga qanday qoʼshib mumkin?"
+msgstr ""
 
 msgid "Includes properties which are not null"
-msgstr "Nolga teng boʼlmagan xususiyatlilarni qatorga qoʼshadi"
+msgstr ""
 
 msgid "Non null"
-msgstr "Nolga teng emas"
+msgstr ""
 
 msgid "Include all properties"
-msgstr "Barcha xususiyatlarni qoʼshish"
+msgstr ""
 
 msgid "Always"
-msgstr "Doimo"
+msgstr ""
 
 msgid "Include non-empty properties"
-msgstr "Xususiyati boʼsh boʼlmaganlarni qoʼshish"
+msgstr ""
 
 msgid "Non empty"
-msgstr "Boʼsh emas"
+msgstr ""
 
 msgid "Inclusion strategy"
-msgstr "Qoʼshish strategiyasi"
+msgstr ""
 
 msgid "Controls which properties to include"
-msgstr "Qanday xususiyatlilarni qoʼshishni boshqaradi"
+msgstr ""
 
 msgid "Async"
-msgstr "Аsinxron"
+msgstr ""
 
 msgid "Asynchronous import"
-msgstr "Аsinxron import"
+msgstr ""
 
 msgid "Controls whether the import is done asynchronously"
-msgstr "Аsinxron importning bajarilishini aniqlashtirib turadi"
+msgstr ""
 
 msgid "Last updated duration"
-msgstr "Oxirgi yangilanish davomiyligi"
+msgstr ""
 
 msgid "Last updated end date"
-msgstr "Oxirgi yangilanish tugash sanasi"
+msgstr ""
 
 msgid "Do not filter by last updated date"
-msgstr "Oxirgi yangilanish sanasi boʼyicha filtrlanmasin"
+msgstr ""
 
 msgid "Start/end dates"
-msgstr "Boshlanish/Tugash vaqtlari"
+msgstr ""
 
 msgid "Time since last updated"
-msgstr "Oxirgi yangilanishdan oʼtgan vaqt"
+msgstr ""
 
 msgid "Filter by last updated date"
-msgstr "Oxirgi yangilanish sanasi boʼyicha filtrlash"
+msgstr ""
 
 msgid "Last updated start date"
-msgstr "Oxirgi yangilanish boshlanish sanasi"
+msgstr ""
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
-"Faqatgina yangi qiymat nolga teng boʼlmagan taqdirda, eski qaydni qayta "
-"yozish"
 
 msgid "Overwrite regardless of whether the new property value is null"
-msgstr "Yangi qiymat nolga teng boʼlgan taqdirda ham, qaydni qayta yozish"
+msgstr ""
 
 msgid "Replace"
-msgstr "Аlmashtiring"
+msgstr ""
 
 msgid "Merge mode"
-msgstr "Birlashish rejimi"
+msgstr ""
 
 msgid "Strategy to take when merging two objects"
-msgstr "Ikki obʼektni birlashtirish strategiyasi"
+msgstr ""
 
 msgid "Data sets"
-msgstr "Maʼlumotlar toʼplami"
+msgstr "Sets de datos"
 
 msgid "Programs"
-msgstr "Dasturlar"
+msgstr "Programas"
 
 msgid "Category combination"
-msgstr "Kategoriyalar kombinatsiyasi"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Boshqaruv paneli"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Maʼlumotlar elementi guruhlari"
+msgstr ""
 
 msgid "Option sets"
-msgstr "Variantlar toʼplami"
+msgstr ""
 
 msgid "Object type"
-msgstr "Obʼekt turi"
+msgstr ""
 
 msgid "One object must be selected"
-msgstr "Bir obʼektni tanlash talab qilinadi"
+msgstr ""
 
 msgid "Object"
-msgstr "Obʼekt"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
-msgstr "Tashkiliy boʼlimni identifikatsiyalash sxemasi"
+msgstr ""
 
 msgid "Id"
 msgstr ""
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
-"Joriy foydalanuvchi bilan bogʼliq tashkiliy boʼlimlar maʼlumotlarini koʼzdan"
-" kechirish"
 
 msgid "Accessible"
-msgstr "Kirish mumkin"
+msgstr ""
 
 msgid "Data capture organisation units associated with the current user"
 msgstr ""
-"Joriy foydalanuvchi bilan bogʼliq tashkiliy boʼlimlar maʼlumotlarini yigʼish"
 
 msgid "Capture"
-msgstr "Nazoratga olish"
+msgstr ""
 
 msgid "All organisation units in the system"
-msgstr "Barcha tashkiliy boʼlimlar tizimda"
+msgstr ""
 
 msgid "Manually select organisation units from list"
-msgstr "Tashkiliy boʼlimlarni roʼyxatdan tanlab chiqish"
+msgstr ""
 
 msgid "Which organisation units should be included?"
-msgstr "Qaysi tashkiliy boʼlimlar kiritilishi lozim?"
+msgstr ""
 
 msgid "Organisation unit(s) to export data from"
-msgstr "...dan tashkiliy boʼlimlar maʼlumotlarini eksport qilish"
+msgstr ""
 
 msgid "Preheat cache"
-msgstr "Keshni tezlashtirish"
+msgstr ""
 
 msgid "Preheat cache to make large imports faster"
-msgstr "Katta hajmdagi importni tezroq qilish uchun keshni tezlashtirish"
+msgstr ""
 
 msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
-"Katta hajmdagi import tezroq ishlashi uchun koʼproq resurslarni isteʼmol "
-"qiladi"
 
 msgid "Intelligent scan (reference)"
-msgstr "Аqlli skaner (maʼlumotnoma)"
+msgstr ""
 
 msgid "None"
-msgstr "Йўқ"
+msgstr "Ninguno"
 
 msgid "Preheat mode"
-msgstr "Tezlashtirish rejimi"
+msgstr ""
 
 msgid "Controls the level of preheating that should be done"
 msgstr ""
-"Аmalga oshirilishi mumkin boʼlgan tezlashish darajasini nazorat qiladi"
 
 msgid "Program to export events from"
-msgstr "Tadbirlarni eksport qilish dasturi"
+msgstr ""
 
 msgid "Filter programs"
-msgstr "Dasturlarni filtrlash"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
-msgstr "Dasturlarni yuklashda xatolik yuz berdi!"
+msgstr ""
 
 msgid "At least one program must be selected"
-msgstr "Kamida bitta dastur tanlanishi kerak"
+msgstr ""
 
 msgid "One program must be selected"
-msgstr "Bitta dastur tanlanishi kerak"
+msgstr ""
 
 msgid "Which program stage should be included?"
-msgstr "Dasturning qaysi bosqichi kiritilishi kerak?"
+msgstr ""
 
 msgid "Start date"
-msgstr "Boshlanish sanasi"
+msgstr ""
 
 msgid "All statuses"
-msgstr "Barcha holatlar"
+msgstr ""
 
 msgid "Active"
-msgstr "Faol"
+msgstr "Activo"
 
 msgid "Completed"
-msgstr "bajarildi"
+msgstr "Completado"
 
 msgid "Cancelled"
-msgstr "Bekor qilindi"
+msgstr "Cancelar"
 
 msgid "Include only entities with status"
-msgstr "Faqatgina maqomga ega boʼlgan shaxslarni kiritish"
+msgstr ""
 
 msgid "Skip audit"
-msgstr "Аuditni oʼtkazib yuborish"
+msgstr ""
 
 msgid "Skip audit, meaning audit values will not be generated"
-msgstr "Аuditni oʼtkazib yuboring, yaʼni audit qiymatlari hosil boʼlmaydi"
+msgstr ""
 
 msgid "Improves performance at the cost of ability to audit changes"
 msgstr ""
-"Oʼzgarishlarni tekshirish qobiliyati evaziga ish faoliyatini yaxshilaydi"
 
 msgid "Skip exisiting check"
-msgstr "Mavjud tahlilni oʼtkazib yuborish"
+msgstr ""
 
 msgid "Skip checks for existing data values"
-msgstr "Mavjud maʼlumotlar qiymati tahlilini oʼtkazib yuborish"
+msgstr ""
 
 msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
 msgstr ""
-"Ish samaradorligini oshiradi va faqat boʼsh maʼlumotlar bazalarida yoki "
-"import qilinadigan maʼlumotlar qiymatlari mavjud boʼlmaganda ishlatilishi "
-"kerak"
 
 msgid "Skip sharing"
-msgstr "Ulashishni oʼtkazib yuborish"
+msgstr ""
 
 msgid "Skip sharing and access settings"
-msgstr "Ulashish va kirish sozlamalarini oʼtkazib yuborish"
+msgstr ""
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
 msgstr ""
-"Umumiy xususiyatlarni oʼtkazib yuboring, hamjihat ishlatiladigan obʼektlarni"
-" birlashtirmang va yangi obʼektlar yaratishda foydalanuvchi guruhiga "
-"kirishni qoʼshmang"
 
 msgid "Skip validation"
-msgstr "Tahlilni oʼtkazib yuborish"
+msgstr ""
 
 msgid "Skip validation for import (not recommended)"
-msgstr "Import uchun tahlilni oʼtkazib yuborish (tavsiya etilmaydi)"
+msgstr ""
 
 msgid "Strategy"
-msgstr "Strategiya"
+msgstr ""
 
 msgid "Program"
-msgstr "Dastur"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Kuzatuvdagi obʼekt turi"
+msgstr ""
 
 msgid "Filter by"
-msgstr "Boʼyicha filtr"
+msgstr ""
 
 msgid "Tracked entity types"
-msgstr "Kuzatuvdagi obʼekt turlari"
+msgstr ""
 
 msgid "Filter tracked entity types by name"
-msgstr "Kuzatilayotgan shaxs turlarini nomlari boʼyicha filtrlang"
+msgstr ""
 
 msgid "Selected tracked entity types"
-msgstr "Tanlangan kuzatuvdagi obʼekt turlari"
+msgstr ""
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr "Kuzatilayotgan obʼekt turlarini yuklashda xatolik yuz berdi!"
+msgstr ""
 
 msgid "At least one tracked entity type must be selected"
-msgstr "Kamida bitta kuzatuvdagi obʼekt turi tanlanishi kerak"
+msgstr ""
 
 msgid "One tracked entity type must be selected"
-msgstr "Bitta kuzatuvdagi obʼekt turi tanlanishi kerak"
+msgstr ""
 
 msgid "Which users should be used?"
-msgstr "Qaysi foydalanuvchilardan foydalanish kerak?"
+msgstr ""
 
 msgid "Filter users"
-msgstr "Foydalanuvchilarni filtrlash"
+msgstr ""
 
 msgid "Something went wrong when loading the users!"
-msgstr "Foydalanuvchilarni yuklashda xatolik yuz berdi!"
+msgstr ""
 
 msgid "At least one user must be selected"
-msgstr "Kamida bitta foydalanuvchi tanlanishi kerak"
+msgstr ""
 
 msgid "One user must be selected"
-msgstr "Bitta foydalanuvchi tanlanishi kerak"
+msgstr ""
 
 msgid "No jobs started yet."
-msgstr "Hali ham ish boshlangani yoʼq."
+msgstr ""
 
 msgid "Recreate job"
-msgstr "Faoliyatni qayta tiklash"
+msgstr ""
 
 msgid "In progress"
-msgstr "Jarayonda"
+msgstr "En proceso"
 
 msgid "Job details"
-msgstr "Faoliyat tafsilotlari"
+msgstr ""
 
 msgid "Key"
-msgstr "Kalit"
+msgstr ""
 
 msgid "Value"
-msgstr "Қиймат"
+msgstr "Valor"
 
 msgid "Job summary"
-msgstr "Faoliyat haqida qisqacha maʼlumot"
+msgstr ""
 
 msgid "Error"
-msgstr "Xatolik"
+msgstr "Error"
 
 msgid "Conflicts"
-msgstr "Mojarolar"
+msgstr ""
 
 msgid "Dry run"
-msgstr "Sinovdan oʼtkazish"
+msgstr ""
 
 msgid "Log"
-msgstr "Kirish"
+msgstr ""
 
 msgid "Time"
-msgstr "Vaqt"
+msgstr ""
 
 msgid "Message"
-msgstr "Xabar"
+msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Messages"
-msgstr "Xabarlar"
+msgstr ""
 
 msgid "Type"
-msgstr "Turi"
+msgstr ""
 
 msgid "Property"
-msgstr "Xususiyat"
+msgstr ""
 
 msgid "View summary of recently started import job"
-msgstr "Yaqinda boshlangan import faoliyatining xulosasini koʼrib chiqish"
+msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr "Estado"
 
 msgid "Description"
-msgstr "Tavsif"
+msgstr ""
 
 msgid "Summary"
-msgstr "Xulosa"
+msgstr ""
 
 msgid "Created"
-msgstr "Yaratilgan"
+msgstr ""
 
 msgid "Deleted"
-msgstr "Oʼchirib tashlangan"
+msgstr ""
 
 msgid "Ignored"
-msgstr "Eʼtiborsiz qoldirildi"
+msgstr ""
 
 msgid "Updated"
-msgstr "Yangilandi"
+msgstr ""
 
 msgid "Total"
-msgstr "Jami"
+msgstr "Total"
 
 msgid "Indexes"
 msgstr ""
 
 msgid "Details by type"
-msgstr "Turi boʼyicha tafsilotlar"
+msgstr ""
 
 msgid "Advanced options"
-msgstr "Murakkab variantlar"
+msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Kamida bitta tashkiliy boʼlim tanlanishi kerak"
+msgstr "Debe seleccionar al menos una unidad organizativa."
 
 msgid "One organisation unit must be selected"
-msgstr "Bitta tashkiliy boʼlim tanlanishi kerak"
+msgstr ""
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr "Tashkiliy boʼlimlarni yuklashda xatolik yuz berdi!"
+msgstr ""
 
 msgid "One program stage must be selected"
-msgstr "Dasturni bitta bosqichi tanlanishi kerak"
+msgstr ""
 
 msgid "Something went wrong when loading the schemas!"
-msgstr "Sxemalarni yuklashda xatolik yuz berdi!"
+msgstr ""
 
 msgid "Select All"
-msgstr "Barchasini tanlash"
+msgstr ""
 
 msgid "Select None"
-msgstr "Tanlov yoʼq"
+msgstr ""
 
 msgid "At least one schema must be selected"
-msgstr "Kamida bitta sxema tanlanishi kerak"
+msgstr ""
 
 msgid "Export"
-msgstr "Eksport"
+msgstr ""
 
 msgid "Data import"
-msgstr "Maʼlumotlar importi"
+msgstr ""
 
 msgid "Event import"
-msgstr "Tadbir importi"
+msgstr ""
 
 msgid "Earth Engine import"
 msgstr ""
@@ -769,73 +735,69 @@ msgid "Org unit geometry import"
 msgstr ""
 
 msgid "Metadata import"
-msgstr "MetaMaʼlumot importi"
+msgstr ""
 
 msgid "TEI import"
-msgstr "YeUSh importi"
+msgstr ""
 
 msgid "Data export"
-msgstr "Maʼlumotlar eksporti"
+msgstr ""
 
 msgid "Event export"
-msgstr "Tadbir eksporti"
+msgstr ""
 
 msgid "Metadata dependency export"
-msgstr "MetaMaʼlumotlar oʼzaro bogʼliqligi eksporti"
+msgstr ""
 
 msgid "Metadata export"
-msgstr "MetaMaʼlumotlar eksporti"
+msgstr ""
 
 msgid "TEI export"
-msgstr "TEI eksporti"
+msgstr ""
 
 msgid "Job overview"
-msgstr "Boʼsh oʼrinlar maʼlumoti"
+msgstr ""
 
 msgid "Overview"
-msgstr "Qisqacha koʼzdan kechirish"
+msgstr "General"
 
 msgid "Yes"
-msgstr "Ҳа"
+msgstr "Sí"
 
 msgid "No"
-msgstr "Йўқ"
+msgstr "No"
 
 msgid "There are errors on this page"
-msgstr "Ushbu sahifada xatolik mavjud"
+msgstr ""
 
 msgid "Something went wrong when loading the class keys"
-msgstr "Sinf kalitlarini yuklashda xatolik yuz berdi"
+msgstr ""
 
 msgid "Something went wrong when loading the objects"
-msgstr "Obʼektlarni yuklashda xatolik yuz berdi"
+msgstr ""
 
 msgid "All program stages"
-msgstr "Dastur barcha bosqichlari"
+msgstr ""
 
 msgid "Something went wrong when loading the program stages"
-msgstr "Dastur bosqichlarini yuklashda xatolik yuz berdi"
+msgstr ""
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
 msgstr ""
-"Maʼlumotlar elementlari va tashkiliy boʼlimlar kabi MetaMaʼlumotlarni DXF 2 "
-"formatida eksport qiling."
 
 msgid "Date range to export data for"
-msgstr "Maʼlumotlarni eksport qilish uchun davr oraligʼidagi sanalar"
+msgstr ""
 
 msgid "Export data"
-msgstr "Maʼlumotlarni eksport qilish"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
-"DX XML, DXF 2 XML, JSON, CSV yoki PDF fayllaridan maʼlumotlar qiymatlarini "
-"import qilish."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr "Qoʼllab-quvvatlanadigan fayl turlari: JSON, CSV, XML, ADX va PDF"
+msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
@@ -846,7 +808,7 @@ msgid "Earth Engine source"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "Tashkiliy birliklar"
+msgstr ""
 
 msgid "Import setup"
 msgstr ""
@@ -875,13 +837,13 @@ msgid ""
 msgstr ""
 
 msgid "Group name"
-msgstr "Guruh nomi"
+msgstr ""
 
 msgid "Group description"
 msgstr ""
 
 msgid "Category option combination"
-msgstr "Kategoriya variantlari kombinatsiyasi"
+msgstr ""
 
 msgid "No match found"
 msgstr ""
@@ -890,10 +852,10 @@ msgid "Choose category option combo"
 msgstr ""
 
 msgid "Data element"
-msgstr "Maʼlumotlar elementi"
+msgstr ""
 
 msgid "Select data element"
-msgstr "Maʼlumotlar elementini tanlash"
+msgstr ""
 
 msgid "The data element where Earth Engine data will be added"
 msgstr ""
@@ -911,10 +873,10 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "Select a level"
-msgstr "Pogʼonani tanlang"
+msgstr ""
 
 msgid "Deselect all"
-msgstr "Barcha tanlanganni bekor qilish"
+msgstr ""
 
 msgid "Organisation unit(s) to import data to"
 msgstr ""
@@ -923,13 +885,13 @@ msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
-msgstr "davr"
+msgstr "Periodo"
 
 msgid "Data from Earth Engine will be imported for this period."
 msgstr ""
 
 msgid "Select period"
-msgstr "Davr tanlang"
+msgstr ""
 
 msgid "Loading periods"
 msgstr ""
@@ -941,7 +903,7 @@ msgid "Point org. unit - no value"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Tashkiliy birlik"
+msgstr ""
 
 msgid "Category option combo"
 msgstr ""
@@ -953,7 +915,7 @@ msgid "New value"
 msgstr ""
 
 msgid "Rows per page"
-msgstr "Sahifada qatorlar"
+msgstr ""
 
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
@@ -1137,21 +1099,17 @@ msgstr ""
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
-"Dasturlar, bosqichlar va kuzatuvdagi obʼekt maʼlumotlarini DXF 2 formatida "
-"eksport qilish"
 
 msgid "Export events"
-msgstr "Tadbirni eksport qilish"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
-"Dasturlar, bosqichlar va kuzatuvdagi obʼekt maʼlumotlarini DXF 2 formatida "
-"import qilish"
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr "Qoʼllab-quvvatlanadigan fayl turlari: JSON, CSV, va XML."
+msgstr ""
 
 msgid "Organisation unit geometry import"
 msgstr ""
@@ -1167,25 +1125,25 @@ msgid ""
 msgstr ""
 
 msgid "Overview: Import/Export"
-msgstr "Qisqacha koʼrib chiqish: Import / Eksport"
+msgstr ""
 
 msgid "Import or export DHIS2 data."
-msgstr "DHIS2 maʼlumotlarini import yoki eksport qilish."
+msgstr ""
 
 msgid "Export metadata dependencies"
-msgstr "Oʼzaro bogʼliq MetaMaʼlumotlarni eksport qilish"
+msgstr ""
 
 msgid "Export metadata"
-msgstr "MetaMaʼlumotlarni eksport qilish"
+msgstr ""
 
 msgid "Export tracked entity instances"
-msgstr "Kuzatuvdagi shaxs nusxalarini eksport qilish"
+msgstr ""
 
 msgid "Import data"
-msgstr "Maʼlumotlarni import qilish"
+msgstr ""
 
 msgid "Import events"
-msgstr "Hodisa/Tadbirlarni import qilish"
+msgstr ""
 
 msgid "Import Earth Engine"
 msgstr ""
@@ -1194,15 +1152,13 @@ msgid "Import GeoJSON"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "MetaMaʼlumotni import qilish"
+msgstr ""
 
 msgid "Import tracked entity instances"
-msgstr "Kuzatuvdagi shaxs nusxalarini import qilish"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
-"Ushbu sessiyaning barcha import faoliyati haqida umumiy maʼlumot berilishi "
-"boshladi."
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
@@ -1223,58 +1179,55 @@ msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "A class key must be selected"
-msgstr "Sinf kaliti tayinlanishi kerak"
+msgstr ""
 
 msgid "Tracked entity instances export"
-msgstr "Kuzatuvdagi shaxs nusxalarini eksport qilish"
+msgstr ""
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
 msgstr ""
-"XML, JSON yoki CSV formatida kuzatuvdagi obʼekt nusxalarini eksport qilish."
 
 msgid "Program to export from"
-msgstr "Eksport qilish dasturi"
+msgstr ""
 
 msgid "Enrollment date range"
-msgstr "Roʼyxatdan oʼtkazilgan davr oraliq sanalari"
+msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
-"Oxirgi yangilangan sana maydonlaridan kamida bittasi koʼrsatilishi kerak"
 
 msgid "Tracked entity instances import"
-msgstr "shaxs nusxalarini import qilish"
+msgstr ""
 
 msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
-"Kuzatuvdagi shaxs nusxalarini JSON yoki XML fayllaridan import qilish."
 
 msgid "Supported file types: JSON and XML."
-msgstr "Qoʼllab-quvvatlanadigan fayl turlari: JSON va XML"
+msgstr ""
 
 msgid "Job started."
-msgstr "Faoliyat boshlandi."
+msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr "Nomaʼlum xatolik yuz berdi. Iltimos, keyinroq qayta urinib koʼring."
+msgstr ""
 
 msgid "Loading exported data"
-msgstr "Eksport qilingan maʼlumotlar yuklanmoqda"
+msgstr ""
 
 msgid "Data"
-msgstr "Маълумот"
+msgstr "Datos"
 
 msgid "Event"
-msgstr "Hodisa/Tadbir"
+msgstr "Evento"
 
 msgid "GeoJSON"
 msgstr ""
 
 msgid "GML"
-msgstr "GML"
+msgstr ""
 
 msgid "Metadata"
-msgstr "Metadata"
+msgstr "Metadatos"
 
 msgid "TEI"
 msgstr "TEI"

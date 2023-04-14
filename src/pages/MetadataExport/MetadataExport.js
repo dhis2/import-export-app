@@ -45,6 +45,7 @@ const MetadataExport = () => {
             title={PAGE_NAME}
             desc={PAGE_DESCRIPTION}
             icon={PAGE_ICON}
+            limitWidth={false}
             loading={!exportEnabled}
             dataTest="page-export-metadata"
         >

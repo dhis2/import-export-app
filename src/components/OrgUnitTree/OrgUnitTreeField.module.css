@@ -1,7 +1,12 @@
 .wrapper {
-    background-color: white;
-    max-height: var(--spacers-dp512);
+    background-color: var(--colors-white);
+    border: 1px solid var(--colors-grey400);
+    border-radius: 3px;
+    height: 320px;
+    min-width: 640px;
+    resize: both;
     overflow: auto;
     display: inline-block;
-    padding: 0 var(--spacers-dp48) 0 0;
+    padding: var(--spacers-dp8) var(--spacers-dp48) var(--spacers-dp16)
+        var(--spacers-dp8);
 }

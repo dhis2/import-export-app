@@ -6,6 +6,6 @@
     display: block;
     font-size: 14px;
     font-weight: 500;
-    color: var(--colors-grey800);
-    margin: 0 0 10px;
+    color: var(--colors-grey900);
+    margin: 0 0 var(--spacers-dp8);
 }

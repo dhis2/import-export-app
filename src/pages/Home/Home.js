@@ -12,7 +12,12 @@ const PAGE_NAME = i18n.t('Overview: Import/Export', {
 const PAGE_DESCRIPTION = i18n.t('Import or export DHIS2 data.')
 
 const Home = () => (
-    <Page title={PAGE_NAME} desc={PAGE_DESCRIPTION} dataTest="page-overview">
+    <Page
+        title={PAGE_NAME}
+        desc={PAGE_DESCRIPTION}
+        dataTest="page-overview"
+        transparent
+    >
         <h2 className={styles.categoryTitle}>{i18n.t('Import')}</h2>
         <div className={styles.grid}>
             {importPages.map(({ name, description, linkText, to }, i) => (

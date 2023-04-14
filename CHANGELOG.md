@@ -1,3 +1,116 @@
+## [1.5.20](https://github.com/dhis2/import-export-app/compare/v1.5.19...v1.5.20) (2023-03-06)
+
+
+### Bug Fixes
+
+* label text [DHIS2-11265] ([#1677](https://github.com/dhis2/import-export-app/issues/1677)) ([444d99b](https://github.com/dhis2/import-export-app/commit/444d99bf94827aa6d8d5d52e39ec10e3f8d4e792))
+
+## [1.5.19](https://github.com/dhis2/import-export-app/compare/v1.5.18...v1.5.19) (2023-02-08)
+
+
+### Bug Fixes
+
+* use correct update strategy for metadata import [DHIS-12479] ([d620949](https://github.com/dhis2/import-export-app/commit/d6209494bc7f40a718d0964fc3a5d6fa74981ad9))
+
+## [1.5.18](https://github.com/dhis2/import-export-app/compare/v1.5.17...v1.5.18) (2023-01-10)
+
+
+### Bug Fixes
+
+* adjust advanced options control ([3a91a7c](https://github.com/dhis2/import-export-app/commit/3a91a7c74cdf0f36b90b1171e871ade06bb863e7))
+* adjust job overview and summary design ([fa7dd12](https://github.com/dhis2/import-export-app/commit/fa7dd120e5031141ca512f815fe58d0e3f013aca))
+* adjust org unit tree component ([b36292e](https://github.com/dhis2/import-export-app/commit/b36292e3b91ca865d624b9a081816ff4916d74a3))
+* adjust overview card design and interaction ([4ad0e09](https://github.com/dhis2/import-export-app/commit/4ad0e0937533ddb910da134cf21df6fed76a01a3))
+* adjust page appearance, add transparent prop ([39793a7](https://github.com/dhis2/import-export-app/commit/39793a772b32d912e5d228fa7bc4a242a132acb9))
+* adjust radio prefix ([05fc24c](https://github.com/dhis2/import-export-app/commit/05fc24c7551d8c27150dde63117ff57173c88393))
+* adjust schemas layout, typography ([69101f7](https://github.com/dhis2/import-export-app/commit/69101f7406ec05ac3be72a95ef88e279a19d8d58))
+* adjust sidebar style ([4fa5948](https://github.com/dhis2/import-export-app/commit/4fa5948f1fce50a267aebe9713eccefd4d4c7585))
+* standardize typography ([a27d92e](https://github.com/dhis2/import-export-app/commit/a27d92e09f067f40d65e2c2a981183c8b7485d16))
+
+## [1.5.17](https://github.com/dhis2/import-export-app/compare/v1.5.16...v1.5.17) (2022-12-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([90192ef](https://github.com/dhis2/import-export-app/commit/90192efd717aa3d7e65dbf341b0892c50d103161))
+
+## [1.5.16](https://github.com/dhis2/import-export-app/compare/v1.5.15...v1.5.16) (2022-11-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0929f4d](https://github.com/dhis2/import-export-app/commit/0929f4d0995fdf915e5999753f5457c07510efee))
+
+## [1.5.15](https://github.com/dhis2/import-export-app/compare/v1.5.14...v1.5.15) (2022-11-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2f9a4b7](https://github.com/dhis2/import-export-app/commit/2f9a4b782fe35948b21ea9753cf1e9d4635b85b9))
+
+## [1.5.14](https://github.com/dhis2/import-export-app/compare/v1.5.13...v1.5.14) (2022-11-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([853bbb8](https://github.com/dhis2/import-export-app/commit/853bbb824a28d2a658e17f2cd44e22aa31b8d771))
+
+## [1.5.13](https://github.com/dhis2/import-export-app/compare/v1.5.12...v1.5.13) (2022-11-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([39b29bc](https://github.com/dhis2/import-export-app/commit/39b29bc0ae6f14da99a66c81d7dd565408055844))
+
+## [1.5.12](https://github.com/dhis2/import-export-app/compare/v1.5.11...v1.5.12) (2022-10-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0441874](https://github.com/dhis2/import-export-app/commit/04418747412361e837b175cb8000c35fa0a0593a))
+
+## [1.5.11](https://github.com/dhis2/import-export-app/compare/v1.5.10...v1.5.11) (2022-10-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([19660f0](https://github.com/dhis2/import-export-app/commit/19660f08f5b976eb7fe2825c500efcfefcd13c88))
+
+## [1.5.10](https://github.com/dhis2/import-export-app/compare/v1.5.9...v1.5.10) (2022-10-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a770f5b](https://github.com/dhis2/import-export-app/commit/a770f5b2b2caab3e2b6a5de43610f5c6e38b8074))
+
+## [1.5.9](https://github.com/dhis2/import-export-app/compare/v1.5.8...v1.5.9) (2022-10-20)
+
+
+### Bug Fixes
+
+* don't show list when empty ([#1551](https://github.com/dhis2/import-export-app/issues/1551)) ([b739049](https://github.com/dhis2/import-export-app/commit/b7390497758114e5901c2cbf403d5fd8f8441f56))
+
+## [1.5.8](https://github.com/dhis2/import-export-app/compare/v1.5.7...v1.5.8) (2022-10-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1db882d](https://github.com/dhis2/import-export-app/commit/1db882dc21b97559beda6f5e0a33f1899ebc95bb))
+
+## [1.5.7](https://github.com/dhis2/import-export-app/compare/v1.5.6...v1.5.7) (2022-10-19)
+
+
+### Reverts
+
+* "fix: address issue via workaround" ([9728104](https://github.com/dhis2/import-export-app/commit/9728104f8a15f495cd9fe5637cb40eea19a32d3d))
+
+## [1.5.6](https://github.com/dhis2/import-export-app/compare/v1.5.5...v1.5.6) (2022-10-18)
+
+
+### Bug Fixes
+
+* **tei-export:** use correct param name for teiTypeFilter ([#1546](https://github.com/dhis2/import-export-app/issues/1546)) ([fedd637](https://github.com/dhis2/import-export-app/commit/fedd63775f288f40755475505a2cc0f69ef60364))
+
 ## [1.5.5](https://github.com/dhis2/import-export-app/compare/v1.5.4...v1.5.5) (2022-10-14)
 
 

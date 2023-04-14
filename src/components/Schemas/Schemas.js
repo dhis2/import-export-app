@@ -117,12 +117,16 @@ const Schemas = ({
                 <>
                     <ButtonStrip>
                         <Button
+                            secondary
+                            small
                             onClick={onSelectGeneric(true)}
                             dataTest={`${dataTest}-select-all`}
                         >
                             {i18n.t('Select All')}
                         </Button>
                         <Button
+                            secondary
+                            small
                             onClick={onSelectGeneric(false)}
                             dataTest={`${dataTest}-select-none`}
                         >

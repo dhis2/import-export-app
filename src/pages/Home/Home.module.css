@@ -6,10 +6,10 @@
 }
 
 .categoryTitle {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
-    color: var(--colors-grey800);
-    margin: var(--spacers-dp16) 0;
+    color: var(--colors-grey900);
+    margin: var(--spacers-dp12) 0;
 }
 
 @media (min-width: 800px) {

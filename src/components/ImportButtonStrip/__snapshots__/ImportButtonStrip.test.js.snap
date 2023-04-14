@@ -34,7 +34,7 @@ exports[`matches snapshot 1`] = `
       </div>
     </div>
     <p
-      class="jsx-4256586228 "
+      class="jsx-4265152438 "
       data-test="import-strip-help"
     >
       A dry run tests the import settings without importing any data

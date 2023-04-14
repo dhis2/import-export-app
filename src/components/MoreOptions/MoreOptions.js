@@ -38,7 +38,7 @@ const MoreOptions = ({
                 </div>
                 <h2 className={styles.label}>{label}</h2>
             </header>
-            <Divider />
+            {!hidden && <Divider />}
             <div className={styles.children} data-test={`${dataTest}-children`}>
                 {!hidden && children}
             </div>

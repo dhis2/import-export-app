@@ -7,7 +7,15 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    margin: var(--spacers-dp8) 0;
+    gap: var(--spacers-dp4);
+    margin: 0;
+    padding: var(--spacers-dp4) var(--spacers-dp8);
+    border-radius: 3px;
+    background: transparent;
+}
+
+.header:hover {
+    background: var(--colors-grey200);
 }
 
 .label {
@@ -19,11 +27,6 @@
 
 .children {
     margin-top: var(--spacers-dp4);
-}
-
-.header svg {
-    margin-left: -3px;
-    margin-right: 5px;
 }
 
 .chevronHidden svg {

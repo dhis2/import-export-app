@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { Tag } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { jsDateToString } from '../../../utils/helper.js'
@@ -10,18 +11,17 @@ const MenuLabel = ({ task }) => {
             className={styles.container}
             data-test={`job-overview-menu-label-${task.id}`}
         >
-            <div className={styles.status}>
-                <span className={styles.filename}>
-                    {task.jobDetails.files[0].name}
-                </span>
-                <br />
-                <span>
-                    {task.completed
-                        ? i18n.t('Completed')
-                        : i18n.t('In progress')}{' '}
-                </span>
+            <div className={styles.filename}>
+                {task.jobDetails.files[0].name}
             </div>
-            <div className={styles.date}>{jsDateToString(task.created)}</div>
+            <div className={styles.subtitle}>
+                {task.completed ? (
+                    <Tag positive>{i18n.t('Completed')}</Tag>
+                ) : (
+                    <Tag>{i18n.t('In progress')}</Tag>
+                )}{' '}
+                <p className={styles.date}>{jsDateToString(task.created)}</p>
+            </div>
         </div>
     )
 }
