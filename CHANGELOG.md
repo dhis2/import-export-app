@@ -1,3 +1,10 @@
+## [1.5.22](https://github.com/dhis2/import-export-app/compare/v1.5.21...v1.5.22) (2023-04-19)
+
+
+### Bug Fixes
+
+* padding fixes for Earth Engine import ([#1544](https://github.com/dhis2/import-export-app/issues/1544)) ([36ce867](https://github.com/dhis2/import-export-app/commit/36ce8671593a52bc6a97159a9ef26b23b5c356aa))
+
 ## [1.5.21](https://github.com/dhis2/import-export-app/compare/v1.5.20...v1.5.21) (2023-04-14)
 
 
