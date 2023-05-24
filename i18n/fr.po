@@ -9,14 +9,15 @@
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Yayra Gomado <ygomado@hispwca.org>, 2022
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
 "PO-Revision-Date: 2022-10-15 22:34+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"Last-Translator: Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -339,8 +340,8 @@ msgstr "Stratégie d'importation"
 msgid "Include all attributes"
 msgstr "Inclure tous les attributs"
 
-msgid "Include first level units"
-msgstr "Inclure les unités de premier niveau"
+msgid "Include descendants"
+msgstr "Inclure les descendants"
 
 msgid "Include descendants of selected organisation units"
 msgstr "Inclure les descendants des unités d'organisation sélectionnées"
