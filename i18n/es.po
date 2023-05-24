@@ -1,22 +1,23 @@
 # 
 # Translators:
-# Marta Vila <marta@dhis2.org>, 2020
-# ericbp <ericbarredap@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
-# Carlos Tejo Alonso, 2022
-# Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2022
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Alison Andrade <aandrade@ippfwhr.org>, 2022
-# phil_dhis2, 2022
+# Carlos Tejo Alonso, 2023
+# ericbp <ericbarredap@gmail.com>, 2023
+# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
+# Alison Andrade <aandrade@ippfwhr.org>, 2023
+# Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2023
+# Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# Marta Vila <marta@dhis2.org>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -302,7 +303,7 @@ msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Eliminar"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -318,7 +319,7 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -427,7 +428,7 @@ msgid "Programs"
 msgstr "Programas"
 
 msgid "Category combination"
-msgstr "Combinacion de categoria"
+msgstr "Combinación de categorias"
 
 msgid "Dashboard"
 msgstr "Tablero"
@@ -770,7 +771,7 @@ msgid "Overview"
 msgstr "General"
 
 msgid "Yes"
-msgstr "Si"
+msgstr "Sí"
 
 msgid "No"
 msgstr "No"

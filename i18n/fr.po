@@ -1,23 +1,23 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
-# Djibril Dione <dione.djibril@gmail.com>, 2019
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Edem Kossi <ekossi@hispwca.org>, 2022
-# Karoline Tufte Lien <karoline@dhis2.org>, 2022
-# Yayra Gomado <ygomado@hispwca.org>, 2022
-# Bram Piot <bram.piot@gmail.com>, 2022
-# phil_dhis2, 2022
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Edem Kossi <ekossi@hispwca.org>, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# phil_dhis2, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# Bram Piot <bram.piot@gmail.com>, 2023
+# Djibril Dione <dione.djibril@gmail.com>, 2023
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
+# Karoline Tufte Lien <karoline@dhis2.org>, 2023
+# Yayra Gomado <ygomado@hispwca.org>, 2023
+# Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -340,8 +340,8 @@ msgstr "Stratégie d'importation"
 msgid "Include all attributes"
 msgstr "Inclure tous les attributs"
 
-msgid "Include first level units"
-msgstr "Inclure les unités de premier niveau"
+msgid "Include descendants"
+msgstr "Inclure les descendants"
 
 msgid "Include descendants of selected organisation units"
 msgstr "Inclure les descendants des unités d'organisation sélectionnées"
@@ -418,7 +418,7 @@ msgid "Do not filter by last updated date"
 msgstr "Ne pas filtrer par date de dernière mise à jour"
 
 msgid "Start/end dates"
-msgstr "Dates début-fin"
+msgstr "Dates de début/fin"
 
 msgid "Time since last updated"
 msgstr "Temps depuis la dernière mise à jour"
@@ -455,13 +455,13 @@ msgid "Programs"
 msgstr "Programmes"
 
 msgid "Category combination"
-msgstr "Combinaison de Catégories"
+msgstr "Combinaison de catégories"
 
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
 msgid "Data element groups"
-msgstr "Groupes d'éléments de données"
+msgstr "Groupes d'élément de données"
 
 msgid "Option sets"
 msgstr "Ensembles d'options"
@@ -493,7 +493,7 @@ msgstr ""
 "Capture de données d'unités d'organisation associées à l'utilisateur actuel"
 
 msgid "Capture"
-msgstr "Saisie"
+msgstr "Saisir"
 
 msgid "All organisation units in the system"
 msgstr "Toutes les unités d'organisation du système"
@@ -700,7 +700,7 @@ msgid "Message"
 msgstr "Message"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "Messages"
@@ -912,7 +912,7 @@ msgid "No match found"
 msgstr "Pas de résultat trouvé"
 
 msgid "Choose category option combo"
-msgstr "Choisir une combinaison d'options de catégories"
+msgstr "Choisir une combo d'options de catégorie"
 
 msgid "Data element"
 msgstr "Élément de donnée"
@@ -927,7 +927,7 @@ msgid "Earth Engine data set"
 msgstr "Ensemble de données de Earth Engine"
 
 msgid "Select earth engine data set"
-msgstr "Sélectionner l'ensemble des données du Earth Engine"
+msgstr "Sélectionner l'ensemble de données du Earth Engine"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Sélectionné : {{commaSeparatedListOfOrganisationUnits}}"
@@ -995,7 +995,7 @@ msgid "Round to 0 decimal places"
 msgstr "Arrondir à 0 décimale"
 
 msgid "Round to 1 decimal place"
-msgstr "Arrondir à la première décimale"
+msgstr "Arrondir à 1 décimale"
 
 msgid "Round to 2 decimal places"
 msgstr "Arrondir à 2 décimales"
@@ -1171,7 +1171,7 @@ msgid ""
 msgstr ""
 "Il est impossible d'obtenir des données de Earth Engine pour des "
 "établissements ponctuels. Sélectionnez des unités d'organisation polygonales"
-" ou utilisez une zone de captage comme géométrie associée."
+" ou utilisez une zone de chalandise comme géométrie associée."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -1314,7 +1314,7 @@ msgid "Data"
 msgstr "Données"
 
 msgid "Event"
-msgstr "Evènement"
+msgstr "Événements"
 
 msgid "GeoJSON"
 msgstr "GeoJSON"
@@ -1323,7 +1323,7 @@ msgid "GML"
 msgstr "GML"
 
 msgid "Metadata"
-msgstr "Méta-données"
+msgstr "Métadonnées"
 
 msgid "TEI"
 msgstr "TEI"

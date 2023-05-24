@@ -1,17 +1,17 @@
 # 
 # Translators:
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2022
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2023
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -147,7 +147,7 @@ msgid "Code"
 msgstr "Mã"
 
 msgid "Name"
-msgstr "Tên tài khoản"
+msgstr "Tên"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -313,7 +313,7 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -329,7 +329,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Đã chọn"
+msgstr "Danh sách đã chọn"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -416,7 +416,7 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Biểu nhập"
+msgstr "Data sets"
 
 msgid "Programs"
 msgstr "Chương trình"
@@ -458,7 +458,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Ghi"
+msgstr "Lấy tọa độ"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -521,7 +521,7 @@ msgid "Active"
 msgstr "Hoạt động"
 
 msgid "Completed"
-msgstr "Hoàn tất"
+msgstr "Đã hoàn tất"
 
 msgid "Cancelled"
 msgstr "Đã hủy"
@@ -666,10 +666,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Tình trạng"
+msgstr "Trạng thái"
 
 msgid "Description"
-msgstr "Miêu tả"
+msgstr "Mô tả"
 
 msgid "Summary"
 msgstr ""
@@ -768,7 +768,7 @@ msgid "Yes"
 msgstr "Có"
 
 msgid "No"
-msgstr "Sai"
+msgstr "Không"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -1218,7 +1218,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Lấy dữ liệu"
+msgstr "Dữ liệu"
 
 msgid "Event"
 msgstr "Sự Kiện"
@@ -1233,4 +1233,4 @@ msgid "Metadata"
 msgstr "Siêu dữ liệu"
 
 msgid "TEI"
-msgstr "THỰC THỂ THEO DÕI"
+msgstr "ĐỐI TƯỢNG THEO DÕI"

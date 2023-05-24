@@ -1,15 +1,15 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2022
-# 晓东 林 <13981924470@126.com>, 2022
+# 晓东 林 <13981924470@126.com>, 2023
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -253,7 +253,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "错误"
+msgstr "失误"
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -311,7 +311,7 @@ msgstr "导入策略"
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -423,7 +423,7 @@ msgid "Category combination"
 msgstr "值域组合"
 
 msgid "Dashboard"
-msgstr "仪表盘"
+msgstr "状态面板"
 
 msgid "Data element groups"
 msgstr "数据元组"
@@ -456,7 +456,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "捕获"
+msgstr "采集"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -483,7 +483,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "没有"
+msgstr "无"
 
 msgid "Preheat mode"
 msgstr "预热模式"
@@ -510,19 +510,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "开始日期"
+msgstr "起始日期"
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "活跃的"
+msgstr "活动的"
 
 msgid "Completed"
-msgstr "已完成"
+msgstr "完成"
 
 msgid "Cancelled"
-msgstr "取消"
+msgstr "已取消"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -673,7 +673,7 @@ msgid "Summary"
 msgstr "摘要"
 
 msgid "Created"
-msgstr "创建"
+msgstr "已创建"
 
 msgid "Deleted"
 msgstr "删除的"
@@ -763,10 +763,10 @@ msgid "Overview"
 msgstr "概要"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "是"
 
 msgid "No"
-msgstr "No"
+msgstr "否"
 
 msgid "There are errors on this page"
 msgstr ""

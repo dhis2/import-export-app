@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2022
+# Ibatov <ibatovk@who.int>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
-"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -325,8 +325,8 @@ msgstr "Импорт стратегияси"
 msgid "Include all attributes"
 msgstr "Барча атрибутларни қўшинг"
 
-msgid "Include first level units"
-msgstr "Биринчи даражали бўлимларни қўшинг"
+msgid "Include descendants"
+msgstr ""
 
 msgid "Include descendants of selected organisation units"
 msgstr ""
@@ -592,7 +592,7 @@ msgid "Strategy"
 msgstr "Стратегия"
 
 msgid "Program"
-msgstr "Программа"
+msgstr "Дастур"
 
 msgid "Tracked entity type"
 msgstr "Кузатувдаги объект тури"
@@ -655,7 +655,7 @@ msgid "Job summary"
 msgstr "Фаолият ҳақида қисқача маълумот"
 
 msgid "Error"
-msgstr "Хато"
+msgstr "Хатолик"
 
 msgid "Conflicts"
 msgstr "Можаролар"
@@ -697,7 +697,7 @@ msgid "Summary"
 msgstr "Хулоса"
 
 msgid "Created"
-msgstr "Яратилди"
+msgstr "Яратилган"
 
 msgid "Deleted"
 msgstr "Ўчириб ташланган"
@@ -1185,7 +1185,7 @@ msgid "Import GeoJSON"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "МатаМаълумотни импорт қилиш"
+msgstr "МетаМаълумотни импорт қилиш"
 
 msgid "Import tracked entity instances"
 msgstr "Кузатувдаги шахс нусхаларини импорт қилиш"
@@ -1257,7 +1257,7 @@ msgid "Event"
 msgstr "Ҳодиса/Тадбир"
 
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 msgid "GML"
 msgstr "GML"
