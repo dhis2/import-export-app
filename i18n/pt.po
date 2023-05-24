@@ -1,17 +1,19 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Ge Joao <gsimango@saudigitus.org>, 2022
-# phil_dhis2, 2022
+# Sheila André <sandre@saudigitus.org>, 2023
+# David Júnior <davidjr.mondlane@gmail.com>, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
+# Ge Joao <gsimango@saudigitus.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2023\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -301,13 +303,13 @@ msgid "Only update existing values, ignore new values"
 msgstr "Actualizar apenas valores existentes, ignorar novos valores"
 
 msgid "Update"
-msgstr "Actualizar"
+msgstr "Atualizar"
 
 msgid "Remove values included in uploaded file"
 msgstr "Remova os valores incluídos no arquivo enviado"
 
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Suprimir"
 
 msgid "Data will be deleted"
 msgstr "Os dados serão apagados "
@@ -325,8 +327,8 @@ msgstr "Estrategia de importação "
 msgid "Include all attributes"
 msgstr "Incluir todos os atributos "
 
-msgid "Include first level units"
-msgstr "Incluir unidades de primeiro nível"
+msgid "Include descendants"
+msgstr ""
 
 msgid "Include descendants of selected organisation units"
 msgstr ""
@@ -341,7 +343,7 @@ msgid "Only include selected organisation unit"
 msgstr "Incluir apenas unidades organizacionais selecionadas"
 
 msgid "Selected"
-msgstr "Seleccionado"
+msgstr "Selecionado"
 
 msgid "Include the first level of units inside selections"
 msgstr "Inclui o primeiro nível de unidades dentro das seleções"
@@ -440,7 +442,7 @@ msgid "Category combination"
 msgstr "Combinações de categoria"
 
 msgid "Dashboard"
-msgstr "Gráficos"
+msgstr "Painel de Instrumentos"
 
 msgid "Data element groups"
 msgstr "Grupos de Elementos de Dados"
@@ -537,10 +539,10 @@ msgid "All statuses"
 msgstr "Todos os status"
 
 msgid "Active"
-msgstr "Activo"
+msgstr "Ativo"
 
 msgid "Completed"
-msgstr "Completo"
+msgstr "Concluído"
 
 msgid "Cancelled"
 msgstr "Cancelado"
@@ -671,13 +673,13 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Tempo "
+msgstr "Tempo"
 
 msgid "Message"
 msgstr "Mensagem"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "Mensagens"
@@ -692,7 +694,7 @@ msgid "View summary of recently started import job"
 msgstr "Ver o resumo do trabalho de importação iniciado recentemente"
 
 msgid "Status"
-msgstr "Estado"
+msgstr "Status"
 
 msgid "Description"
 msgstr "Descrição"
@@ -791,7 +793,7 @@ msgid "Overview"
 msgstr "Visão global"
 
 msgid "Yes"
-msgstr "Sim"
+msgstr "sim"
 
 msgid "No"
 msgstr "Não"

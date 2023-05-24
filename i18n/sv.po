@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
-"Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -295,7 +295,7 @@ msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Ta bort"
+msgstr "Radera"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -414,7 +414,7 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Dataset"
+msgstr "dataset"
 
 msgid "Programs"
 msgstr "program"
@@ -423,7 +423,7 @@ msgid "Category combination"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "Instrumentbräda"
+msgstr "instrumentbräda"
 
 msgid "Data element groups"
 msgstr "Dataelementgrupper"
@@ -652,7 +652,7 @@ msgid "ID"
 msgstr "id"
 
 msgid "Messages"
-msgstr "Meddelanden"
+msgstr "meddelanden"
 
 msgid "Type"
 msgstr "Typ"

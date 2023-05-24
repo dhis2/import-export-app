@@ -1,17 +1,18 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Somkhit Bouavong <bouavongk@gmail.com>, 2022
-# phil_dhis2, 2022
-# Saysamone Sibounma, 2022
+# Saysamone Sibounma, 2023
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
+# Somkhit Bouavong <bouavongk@gmail.com>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Saysamone Sibounma, 2022\n"
-"Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -313,7 +314,7 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -425,7 +426,7 @@ msgid "Category combination"
 msgstr "Category Combination"
 
 msgid "Dashboard"
-msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
+msgstr "ກະດານຂ່າວ"
 
 msgid "Data element groups"
 msgstr "Data Element Groups"
@@ -485,7 +486,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "ບໍ່ມີ"
+msgstr "ບໍ່ແມນ"
 
 msgid "Preheat mode"
 msgstr ""
@@ -657,7 +658,7 @@ msgid "Messages"
 msgstr "ຂໍ້ຄວາມ"
 
 msgid "Type"
-msgstr "ປະເພດ"
+msgstr "Type"
 
 msgid "Property"
 msgstr ""
@@ -768,7 +769,7 @@ msgid "Yes"
 msgstr "ແມ່ນ"
 
 msgid "No"
-msgstr "ບໍ່"
+msgstr "ບໍ່ແມນ"
 
 msgid "There are errors on this page"
 msgstr ""

@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Aung Kyi Min <AungKyi.Min@savethechildren.org>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2022
+# Aung Kyi Min <AungKyi.Min@savethechildren.org>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
-"PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"PO-Revision-Date: 2023-05-22 21:15+0000\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Burmese (https://app.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -170,7 +170,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "ပြီးဆုံးသည့်ရက်စွဲ"
+msgstr "End date"
 
 msgid "Event ID scheme"
 msgstr ""
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -511,7 +511,7 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "စတင်သည့်ရက်စွဲ"
+msgstr "Start date"
 
 msgid "All statuses"
 msgstr ""
@@ -764,10 +764,10 @@ msgid "Overview"
 msgstr "အကျဥ်း"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "မှန်"
 
 msgid "No"
-msgstr "Nr"
+msgstr "No"
 
 msgid "There are errors on this page"
 msgstr ""
