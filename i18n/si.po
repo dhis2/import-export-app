@@ -115,7 +115,7 @@ msgid "Code"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "නම"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -616,7 +616,7 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "පණිවිඩය"
 
 msgid "ID"
 msgstr ""
@@ -655,7 +655,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "එකතුව"
 
 msgid "Details by type"
 msgstr ""
@@ -869,7 +869,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr ""
+msgstr "දත්ත"
 
 msgid "Event"
 msgstr ""
