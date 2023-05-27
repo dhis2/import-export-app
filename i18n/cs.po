@@ -320,7 +320,7 @@ msgid "Include all attributes"
 msgstr "Zahrnout všechny atributy"
 
 msgid "Include descendants"
-msgstr ""
+msgstr "Zahrnout potomky"
 
 msgid "Include descendants of selected organisation units"
 msgstr "Zahrnout potomky vybraných organizačních jednotek"
