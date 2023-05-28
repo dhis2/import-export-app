@@ -141,7 +141,7 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr ""
+msgstr "කේත කරන්න"
 
 msgid "Name"
 msgstr "නම"
