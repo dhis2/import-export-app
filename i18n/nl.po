@@ -2,14 +2,15 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2022
 # Rica Zamora Duchateau, 2022
+# Charel van den Elsen, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2022-04-20 10:18+0000\n"
-"Last-Translator: Rica Zamora Duchateau, 2022\n"
-"Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
+"Last-Translator: Charel van den Elsen, 2023\n"
+"Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,19 +18,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "Er is iets misgegaan bij het laden van de huidige gebruiker!"
 
 msgid "Basic options"
-msgstr ""
+msgstr "Basis opties"
 
 msgid "Invalid date"
 msgstr "Ongeldige datum"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "De startdatum moet vóór de einddatum"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "De einddatum moet na de startdatum"
 
 msgid "Invalid duration"
 msgstr ""
@@ -50,7 +51,7 @@ msgid ""
 msgstr ""
 
 msgid "Please select a file"
-msgstr ""
+msgstr "Selecteer een bestand"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -466,7 +467,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr ""
+msgstr "Geselecteerde programma's"
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
