@@ -624,7 +624,7 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Messages"
-msgstr ""
+msgstr "Berichten"
 
 msgid "Type"
 msgstr "Soort"
