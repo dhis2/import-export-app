@@ -328,7 +328,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "Geselecteerd"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -424,7 +424,7 @@ msgid "Category combination"
 msgstr ""
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 msgid "Data element groups"
 msgstr ""
@@ -617,7 +617,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr ""
+msgstr "Bezig"
 
 msgid "Job details"
 msgstr ""
@@ -665,7 +665,7 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "status"
 
 msgid "Description"
 msgstr "Beschrijving"
@@ -686,7 +686,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Totaal"
 
 msgid "Indexes"
 msgstr ""
@@ -722,7 +722,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr ""
+msgstr "Exporteren"
 
 msgid "Data import"
 msgstr ""
