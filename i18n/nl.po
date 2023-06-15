@@ -228,7 +228,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "Fouten"
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -428,7 +428,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "Vastlegging"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -621,7 +621,7 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "Bericht"
 
 msgid "ID"
 msgstr "ID"
@@ -648,7 +648,7 @@ msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Gemaakt"
 
 msgid "Deleted"
 msgstr ""
