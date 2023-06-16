@@ -1,24 +1,15 @@
 import { InputField } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { jsDateToISO8601 } from '../../utils/helper.js'
 
 const DatePicker = ({ name, error, label, date, onChange, dataTest }) => {
-    const onChangeHelper = ({ value }) => {
-        if (!value) {
-            onChange(value)
-        } else {
-            onChange(new Date(value))
-        }
-    }
-
-    const value = date && jsDateToISO8601(date)
+    const onChangeHelper = ({ value }) => onChange(value)
 
     return (
         <InputField
             type="date"
             name={name}
-            value={value}
+            value={date}
             label={label}
             onChange={onChangeHelper}
             inputWidth="200px"
