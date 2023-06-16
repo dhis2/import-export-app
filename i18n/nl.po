@@ -875,7 +875,7 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "Select a level"
-msgstr ""
+msgstr "Selecteer een niveau"
 
 msgid "Deselect all"
 msgstr ""
