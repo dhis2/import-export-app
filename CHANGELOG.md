@@ -1,3 +1,10 @@
+## [1.5.34](https://github.com/dhis2/import-export-app/compare/v1.5.33...v1.5.34) (2023-06-19)
+
+
+### Bug Fixes
+
+* use string for date inputs [DHIS2-12489] ([#1750](https://github.com/dhis2/import-export-app/issues/1750)) ([2c1d98b](https://github.com/dhis2/import-export-app/commit/2c1d98bbf82081be0aa3cd0dcf94d1b3596a136a))
+
 ## [1.5.33](https://github.com/dhis2/import-export-app/compare/v1.5.32...v1.5.33) (2023-06-17)
 
 
