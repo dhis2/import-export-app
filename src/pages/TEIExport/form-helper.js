@@ -4,8 +4,7 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField'
 import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index'
-import { locationAssign } from '../../utils/helper'
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
+import { locationAssign, pathToId } from '../../utils/helper'
 
 // calculate minimum set of parameters based on given filters
 const valuesToParams = (
@@ -75,11 +74,11 @@ const valuesToParams = (
         minParams.followUpStatus = followUpStatus
 
         if (programStartDate) {
-            minParams.programStartDate = jsDateToISO8601(programStartDate)
+            minParams.programStartDate = programStartDate
         }
 
         if (programEndDate) {
-            minParams.programEndDate = jsDateToISO8601(programEndDate)
+            minParams.programEndDate = programEndDate
         }
     }
 
@@ -89,13 +88,11 @@ const valuesToParams = (
 
     if (lastUpdatedFilter == 'DATE') {
         if (lastUpdatedStartDate) {
-            minParams.lastUpdatedStartDate = jsDateToISO8601(
-                lastUpdatedStartDate
-            )
+            minParams.lastUpdatedStartDate = lastUpdatedStartDate
         }
 
         if (lastUpdatedEndDate) {
-            minParams.lastUpdatedEndDate = jsDateToISO8601(lastUpdatedEndDate)
+            minParams.lastUpdatedEndDate = lastUpdatedEndDate
         }
     }
 

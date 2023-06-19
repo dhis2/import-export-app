@@ -31,10 +31,7 @@ const Wrapper = ({
 
 Wrapper.propTypes = {
     input: PropTypes.shape({
-        value: PropTypes.oneOfType([
-            PropTypes.instanceOf(Date),
-            PropTypes.string,
-        ]),
+        value: PropTypes.string,
         onChange: PropTypes.func,
     }).isRequired,
     inputName: PropTypes.string.isRequired,
@@ -45,17 +42,15 @@ Wrapper.propTypes = {
     }).isRequired,
 }
 
-const DatePickerField = ({ name, validator, ...rest }) => {
-    return (
-        <Field
-            component={Wrapper}
-            name={name}
-            validate={validator}
-            inputName={name}
-            {...rest}
-        />
-    )
-}
+const DatePickerField = ({ name, validator, ...rest }) => (
+    <Field
+        component={Wrapper}
+        name={name}
+        validate={validator}
+        inputName={name}
+        {...rest}
+    />
+)
 
 DatePickerField.propTypes = {
     name: PropTypes.string.isRequired,

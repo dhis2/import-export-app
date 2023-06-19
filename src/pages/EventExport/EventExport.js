@@ -33,6 +33,7 @@ import {
     IdScheme,
     defaultIdSchemeOption,
 } from '../../components/Inputs/index'
+import { jsDateToISO8601 } from '../../utils/helper'
 import { onExport, validate } from './form-helper'
 
 const { Form } = ReactFinalForm
@@ -45,18 +46,20 @@ export const PAGE_DESCRIPTION = i18n.t(
 const PAGE_ICON = <EventIcon />
 
 const today = new Date()
+const threeMonthsBeforeToday = new Date(
+    today.getFullYear(),
+    today.getMonth() - 3,
+    today.getDate()
+)
+
 const initialValues = {
     selectedOrgUnits: [],
     selectedPrograms: '',
     programStage: undefined,
     format: defaultFormatOption,
     compression: defaultCompressionOption,
-    startDate: new Date(
-        today.getFullYear(),
-        today.getMonth() - 3,
-        today.getDate()
-    ),
-    endDate: today,
+    startDate: jsDateToISO8601(threeMonthsBeforeToday),
+    endDate: jsDateToISO8601(today),
     includeDeleted: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
