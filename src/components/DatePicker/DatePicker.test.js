@@ -8,7 +8,7 @@ const props = {
     dataTest: 'date-picker',
     name: 'file',
     label: 'Start date',
-    date: new Date('10 Feb 2020 00:00:00 GMT'),
+    date: '2020-02-10',
     onChange: () => 1,
 }
 
