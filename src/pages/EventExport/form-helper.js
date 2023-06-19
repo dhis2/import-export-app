@@ -3,11 +3,7 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField.js'
 import { ALL_VALUE } from '../../hooks/useProgramStages.js'
-import {
-    jsDateToISO8601,
-    locationAssign,
-    pathToId,
-} from '../../utils/helper.js'
+import { locationAssign, pathToId } from '../../utils/helper.js'
 
 const onExport = (baseUrl, setExportEnabled) => (values) => {
     setExportEnabled(false)
@@ -42,8 +38,8 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         `orgUnitIdScheme=${orgUnitIdScheme}`,
         `idScheme=${idScheme}`,
         `attachment=${filename}`,
-        `startDate=${jsDateToISO8601(startDate)}`,
-        `endDate=${jsDateToISO8601(endDate)}`,
+        `startDate=${startDate}`,
+        `endDate=${endDate}`,
         `ouMode=${inclusion}`,
         `format=${format}`,
         programStage != ALL_VALUE ? `programStage=${programStage}` : '',

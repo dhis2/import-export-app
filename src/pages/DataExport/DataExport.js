@@ -32,6 +32,7 @@ import {
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs/index.js'
+import { jsDateToISO8601 } from '../../utils/helper.js'
 import { onExport, validate } from './form-helper.js'
 
 const { Form } = ReactFinalForm
@@ -44,18 +45,20 @@ export const PAGE_DESCRIPTION = i18n.t(
 const PAGE_ICON = <DataIcon />
 
 const today = new Date()
+const threeMonthsBeforeToday = new Date(
+    today.getFullYear(),
+    today.getMonth() - 3,
+    today.getDate()
+)
+
 const initialValues = {
     selectedOrgUnits: [],
     includeChildren: true,
     selectedDataSets: [],
     format: defaultFormatOption,
     compression: defaultCompressionOption,
-    startDate: new Date(
-        today.getFullYear(),
-        today.getMonth() - 3,
-        today.getDate()
-    ),
-    endDate: today,
+    startDate: jsDateToISO8601(threeMonthsBeforeToday),
+    endDate: jsDateToISO8601(today),
     includeDeleted: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
