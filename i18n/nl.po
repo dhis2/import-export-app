@@ -206,7 +206,7 @@ msgid "All"
 msgstr "Alle"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Gemarkeerd voor vervolg"
 
 msgid "Not marked for follow-up"
 msgstr ""
