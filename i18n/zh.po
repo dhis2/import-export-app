@@ -314,7 +314,7 @@ msgid "Include all attributes"
 msgstr "包括所有属性"
 
 msgid "Include descendants"
-msgstr ""
+msgstr "包括下属"
 
 msgid "Include descendants of selected organisation units"
 msgstr "包括所选机构的下属"
