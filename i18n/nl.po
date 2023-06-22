@@ -543,7 +543,7 @@ msgid "Program"
 msgstr "Programma"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "Bijgehouden entiteitstype"
 
 msgid "Filter by"
 msgstr ""
@@ -615,7 +615,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "Tijd"
 
 msgid "Message"
 msgstr "Bericht"
