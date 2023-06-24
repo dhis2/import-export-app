@@ -1,3 +1,10 @@
+## [1.5.38](https://github.com/dhis2/import-export-app/compare/v1.5.37...v1.5.38) (2023-06-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([17175cb](https://github.com/dhis2/import-export-app/commit/17175cb9e3dd974c8418d6f267f277409a4e03f7))
+
 ## [1.5.37](https://github.com/dhis2/import-export-app/compare/v1.5.36...v1.5.37) (2023-06-22)
 
 
