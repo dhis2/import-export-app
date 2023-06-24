@@ -415,10 +415,10 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Gegevensreeksen"
 
 msgid "Programs"
-msgstr ""
+msgstr "Programma's"
 
 msgid "Category combination"
 msgstr ""
@@ -1232,4 +1232,4 @@ msgid "Metadata"
 msgstr "Metagegevens"
 
 msgid "TEI"
-msgstr ""
+msgstr "TEI"
