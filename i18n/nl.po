@@ -669,7 +669,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr ""
+msgstr "Er moet ten minste één organisatie-eenheid worden geselecteerd"
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -729,7 +729,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Overzicht"
 
 msgid "Yes"
 msgstr "Ja"
