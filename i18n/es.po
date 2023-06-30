@@ -992,112 +992,112 @@ msgid "Population age groups"
 msgstr ""
 
 msgid "Men 0 - 1 years"
-msgstr ""
+msgstr "Hombres 0 - 1 años"
 
 msgid "Men 1 - 4 years"
-msgstr ""
+msgstr "Hombres 1 - 4 años"
 
 msgid "Men 5 - 9 years"
-msgstr ""
+msgstr "Hombres 5 - 9 años"
 
 msgid "Men 10 - 14 years"
-msgstr ""
+msgstr "Hombres 10 - 14 años"
 
 msgid "Men 15 - 19 years"
-msgstr ""
+msgstr "Hombres 15 - 19 años"
 
 msgid "Men 20 - 24 years"
-msgstr ""
+msgstr "Hombres 20 - 24 años"
 
 msgid "Men 25 - 29 years"
-msgstr ""
+msgstr "Hombres 25 - 29 años"
 
 msgid "Men 30 - 34 years"
-msgstr ""
+msgstr "Hombres 30 - 34 años"
 
 msgid "Men 35 - 39 years"
 msgstr ""
 
 msgid "Men 40 - 44 years"
-msgstr ""
+msgstr "Hombres 40 - 44 años"
 
 msgid "Men 45 - 49 years"
-msgstr ""
+msgstr "Hombres 45 - 49 años"
 
 msgid "Men 50 - 54 years"
-msgstr ""
+msgstr "Hombres 50 - 54 años"
 
 msgid "Men 55 - 59 years"
-msgstr ""
+msgstr "Hombres 55 - 59 años"
 
 msgid "Men 60 - 64 years"
-msgstr ""
+msgstr "Hombres 60 - 64 años"
 
 msgid "Men 65 - 69 years"
-msgstr ""
+msgstr "Hombres 65 - 69 años"
 
 msgid "Men 70 - 74 years"
-msgstr ""
+msgstr "Hombres 70 - 74 años"
 
 msgid "Men 75 - 79 years"
-msgstr ""
+msgstr "Hombres 75 - 79 años"
 
 msgid "Men 80 years and above"
-msgstr ""
+msgstr "Hombres 80 años y más"
 
 msgid "Women 0 - 1 years"
-msgstr ""
+msgstr "Mujeres 0 - 1 años"
 
 msgid "Women 1 - 4 years"
-msgstr ""
+msgstr "Mujeres 1 - 4 años"
 
 msgid "Women 5 - 9 years"
-msgstr ""
+msgstr "Mujeres 5 - 9 años"
 
 msgid "Women 10 - 14 years"
-msgstr ""
+msgstr "Mujeres 10 - 14 años"
 
 msgid "Women 15 - 19 years"
-msgstr ""
+msgstr "Mujeres 15 - 19 años"
 
 msgid "Women 20 - 24 years"
-msgstr ""
+msgstr "Mujeres 20 - 24 años"
 
 msgid "Women 25 - 29 years"
-msgstr ""
+msgstr "Mujeres 25 - 29 años"
 
 msgid "Women 30 - 34 years"
-msgstr ""
+msgstr "Mujeres 30 - 34 años"
 
 msgid "Women 35 - 39 years"
-msgstr ""
+msgstr "Mujeres 35 - 39 años"
 
 msgid "Women 40 - 44 years"
-msgstr ""
+msgstr "Mujeres 40 - 44 años"
 
 msgid "Women 45 - 49 years"
 msgstr "Mujeres 45 - 49 años"
 
 msgid "Women 50 - 54 years"
-msgstr ""
+msgstr "Mujeres 50 - 54 años"
 
 msgid "Women 55 - 59 years"
 msgstr "Mujeres 55 - 59 años"
 
 msgid "Women 60 - 64 years"
-msgstr ""
+msgstr "Mujeres 60 - 64 años"
 
 msgid "Women 65 - 69 years"
-msgstr ""
+msgstr "Mujeres 65 - 69 años"
 
 msgid "Women 70 - 74 years"
-msgstr ""
+msgstr "Mujeres 70 - 74 años"
 
 msgid "Women 75 - 79 years"
-msgstr ""
+msgstr "Mujeres 75 - 79 años"
 
 msgid "Women 80 years and above"
-msgstr ""
+msgstr "Mujeres 80 años y más"
 
 msgid "No organisation units have been selected"
 msgstr ""
