@@ -365,7 +365,7 @@ msgid "Include all properties"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Siempre"
 
 msgid "Include non-empty properties"
 msgstr ""
