@@ -364,7 +364,7 @@ msgid "Include all properties"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Siempre"
 
 msgid "Include non-empty properties"
 msgstr ""
@@ -988,7 +988,7 @@ msgid "Population"
 msgstr "Población"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "Grupos de edad de la población"
 
 msgid "Men 0 - 1 years"
 msgstr "Hombres 0 - 1 años"
