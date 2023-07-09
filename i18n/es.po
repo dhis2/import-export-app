@@ -45,7 +45,7 @@ msgid "Invalid duration"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -101,7 +101,7 @@ msgid "Start import"
 msgstr ""
 
 msgid "Any user"
-msgstr ""
+msgstr "Cualquier usuario"
 
 msgid "Current user"
 msgstr "Usuario actual"
@@ -137,7 +137,7 @@ msgid "Class key"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
 msgstr ""
@@ -269,7 +269,7 @@ msgid "Reports for all objects imported"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "Completo"
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
@@ -328,7 +328,7 @@ msgid "Include descendants of selected organisation units"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Incluir eliminados"
 
 msgid "Include deleted data in export"
 msgstr ""
@@ -364,7 +364,7 @@ msgid "Include all properties"
 msgstr ""
 
 msgid "Always"
-msgstr ""
+msgstr "Siempre"
 
 msgid "Include non-empty properties"
 msgstr ""
@@ -448,7 +448,7 @@ msgid "One object must be selected"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "Objeto"
 
 msgid "Organisation unit ID scheme"
 msgstr ""
@@ -575,7 +575,7 @@ msgid "Skip validation for import (not recommended)"
 msgstr ""
 
 msgid "Strategy"
-msgstr ""
+msgstr "Estrategia"
 
 msgid "Program"
 msgstr "Programa"
@@ -644,7 +644,7 @@ msgid "Error"
 msgstr "Error"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Conflictos"
 
 msgid "Dry run"
 msgstr ""
@@ -686,13 +686,13 @@ msgid "Created"
 msgstr "Creado"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Eliminar"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorado"
 
 msgid "Updated"
-msgstr ""
+msgstr "Actualizar"
 
 msgid "Total"
 msgstr "Total"
@@ -722,7 +722,7 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "Seleccionar todos"
 
 msgid "Select None"
 msgstr ""
@@ -988,7 +988,7 @@ msgid "Population"
 msgstr "Población"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "Grupos de edad de la población"
 
 msgid "Men 0 - 1 years"
 msgstr "Hombres 0 - 1 años"
