@@ -43,7 +43,7 @@ msgid "Invalid duration"
 msgstr ""
 
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -70,7 +70,7 @@ msgid "Start import"
 msgstr ""
 
 msgid "Any user"
-msgstr ""
+msgstr "Cualquier usuario"
 
 msgid "Current user"
 msgstr "Usuario actual"
@@ -106,10 +106,10 @@ msgid "Class key"
 msgstr ""
 
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
 msgstr ""
@@ -133,13 +133,13 @@ msgid "Which data sets should be included in export?"
 msgstr ""
 
 msgid "Filter data sets"
-msgstr ""
+msgstr "Filtrar Set de Datos"
 
 msgid "Selected data sets"
 msgstr "Conjuntos de datos seleccionados"
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "Algo salió mal al cargar los sets de datos"
 
 msgid "At least one data set must be selected"
 msgstr ""
@@ -205,7 +205,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "JSONP"
 msgstr ""
@@ -238,7 +238,7 @@ msgid "Reports for all objects imported"
 msgstr ""
 
 msgid "Full"
-msgstr ""
+msgstr "Completo"
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
@@ -297,7 +297,7 @@ msgid "Include the first level of organisation units inside selections"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Incluir eliminados"
 
 msgid "Include deleted data in export"
 msgstr ""
@@ -342,13 +342,13 @@ msgid "Non empty"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Estrategia de inclusión"
 
 msgid "Controls which properties to include"
 msgstr ""
 
 msgid "Async"
-msgstr ""
+msgstr "Asíncrono"
 
 msgid "Asynchronous import"
 msgstr ""
@@ -408,7 +408,7 @@ msgid "Data element groups"
 msgstr "Grupos de elementos de datos"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Set de opciones"
 
 msgid "Object type"
 msgstr "Tipo de objeto"
@@ -417,7 +417,7 @@ msgid "One object must be selected"
 msgstr ""
 
 msgid "Object"
-msgstr ""
+msgstr "Objeto"
 
 msgid "Organisation unit ID scheme"
 msgstr ""
@@ -471,13 +471,13 @@ msgid "Program to export events from"
 msgstr ""
 
 msgid "Filter programs"
-msgstr ""
+msgstr "Filtrar Programas"
 
 msgid "Selected programs"
 msgstr "Programas seleccionados"
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "Algo salió mal al cargar los programas"
 
 msgid "At least one program must be selected"
 msgstr ""
@@ -544,7 +544,7 @@ msgid "Skip validation for import (not recommended)"
 msgstr ""
 
 msgid "Strategy"
-msgstr ""
+msgstr "Estrategia"
 
 msgid "Program"
 msgstr "Programa"
@@ -553,7 +553,7 @@ msgid "Tracked entity type"
 msgstr "Tipo de entidad registrada"
 
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrar por"
 
 msgid "Tracked entity types"
 msgstr ""
@@ -577,7 +577,7 @@ msgid "Which users should be used?"
 msgstr ""
 
 msgid "Filter users"
-msgstr ""
+msgstr "Filtrar usuarios"
 
 msgid "Something went wrong when loading the users!"
 msgstr ""
@@ -586,7 +586,7 @@ msgid "At least one user must be selected"
 msgstr ""
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "Un usuario debe ser seleccionado"
 
 msgid "No jobs started yet."
 msgstr ""
@@ -613,7 +613,7 @@ msgid "Error"
 msgstr "Error"
 
 msgid "Conflicts"
-msgstr ""
+msgstr "Conflictos"
 
 msgid "Dry run"
 msgstr ""
@@ -649,19 +649,19 @@ msgid "Description"
 msgstr "Descripción"
 
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 msgid "Created"
 msgstr "Creado"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Eliminar"
 
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorado"
 
 msgid "Updated"
-msgstr ""
+msgstr "Actualizar"
 
 msgid "Total"
 msgstr "Total"
@@ -688,7 +688,7 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr ""
+msgstr "Seleccionar todos"
 
 msgid "Select None"
 msgstr ""
@@ -703,7 +703,7 @@ msgid "Data import"
 msgstr ""
 
 msgid "Event import"
-msgstr ""
+msgstr "Importación de eventos"
 
 msgid "GML import"
 msgstr ""
@@ -751,7 +751,7 @@ msgid "Something went wrong when loading the objects"
 msgstr ""
 
 msgid "All program stages"
-msgstr ""
+msgstr "Todas las etapas del programa"
 
 msgid "Something went wrong when loading the program stages"
 msgstr ""
