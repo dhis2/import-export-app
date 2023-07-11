@@ -786,7 +786,7 @@ msgid "Something went wrong when loading the class keys"
 msgstr ""
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "Algo salió mal al cargar los objetos"
 
 msgid "All program stages"
 msgstr "Todas las etapas del programa"
