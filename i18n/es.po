@@ -140,7 +140,7 @@ msgid "Zip"
 msgstr "Zip"
 
 msgid "GZip"
-msgstr ""
+msgstr "GZip"
 
 msgid "Uncompressed"
 msgstr ""
@@ -164,13 +164,13 @@ msgid "Which data sets should be included in export?"
 msgstr ""
 
 msgid "Filter data sets"
-msgstr ""
+msgstr "Filtrar Set de Datos"
 
 msgid "Selected data sets"
 msgstr "Conjuntos de datos seleccionados"
 
 msgid "Something went wrong when loading the data sets!"
-msgstr ""
+msgstr "Algo salió mal al cargar los sets de datos"
 
 msgid "At least one data set must be selected"
 msgstr ""
@@ -236,7 +236,7 @@ msgid "ADX"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "JSONP"
 msgstr ""
@@ -373,13 +373,13 @@ msgid "Non empty"
 msgstr ""
 
 msgid "Inclusion strategy"
-msgstr ""
+msgstr "Estrategia de inclusión"
 
 msgid "Controls which properties to include"
 msgstr ""
 
 msgid "Async"
-msgstr ""
+msgstr "Asíncrono"
 
 msgid "Asynchronous import"
 msgstr ""
@@ -439,7 +439,7 @@ msgid "Data element groups"
 msgstr "Grupos de elementos de datos"
 
 msgid "Option sets"
-msgstr ""
+msgstr "Set de opciones"
 
 msgid "Object type"
 msgstr "Tipo de objeto"
@@ -505,10 +505,10 @@ msgid "Program to export events from"
 msgstr ""
 
 msgid "Filter programs"
-msgstr ""
+msgstr "Filtrar Programas"
 
 msgid "Something went wrong when loading the programs!"
-msgstr ""
+msgstr "Algo salió mal al cargar los programas"
 
 msgid "At least one program must be selected"
 msgstr ""
@@ -584,7 +584,7 @@ msgid "Tracked entity type"
 msgstr "Tipo de entidad registrada"
 
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrar por"
 
 msgid "Tracked entity types"
 msgstr ""
@@ -608,7 +608,7 @@ msgid "Which users should be used?"
 msgstr ""
 
 msgid "Filter users"
-msgstr ""
+msgstr "Filtrar usuarios"
 
 msgid "Something went wrong when loading the users!"
 msgstr ""
@@ -617,7 +617,7 @@ msgid "At least one user must be selected"
 msgstr ""
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "Un usuario debe ser seleccionado"
 
 msgid "No jobs started yet."
 msgstr ""
@@ -680,7 +680,7 @@ msgid "Description"
 msgstr "Descripción"
 
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 msgid "Created"
 msgstr "Creado"
@@ -737,7 +737,7 @@ msgid "Data import"
 msgstr ""
 
 msgid "Event import"
-msgstr ""
+msgstr "Importación de eventos"
 
 msgid "Earth Engine import"
 msgstr ""
@@ -788,7 +788,7 @@ msgid "Something went wrong when loading the objects"
 msgstr ""
 
 msgid "All program stages"
-msgstr ""
+msgstr "Todas las etapas del programa"
 
 msgid "Something went wrong when loading the program stages"
 msgstr ""
@@ -825,7 +825,7 @@ msgid "Import setup"
 msgstr ""
 
 msgid "Data preview"
-msgstr ""
+msgstr "Vista previa de datos"
 
 msgid "Some required fields are missing"
 msgstr ""
@@ -857,7 +857,7 @@ msgid "Category option combination"
 msgstr "Category option combination"
 
 msgid "No match found"
-msgstr ""
+msgstr "No se encontraron coincidencias"
 
 msgid "Choose category option combo"
 msgstr ""
@@ -920,10 +920,10 @@ msgid "Category option combo"
 msgstr ""
 
 msgid "Current value"
-msgstr ""
+msgstr "Valor actual"
 
 msgid "New value"
-msgstr ""
+msgstr "Nuevo valor"
 
 msgid "Rows per page"
 msgstr "Filas por página"
