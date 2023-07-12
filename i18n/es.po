@@ -28,10 +28,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "Algo salió mal al cargar el usuario actual"
 
 msgid "Basic options"
-msgstr ""
+msgstr "Opciones básicas"
 
 msgid "Invalid date"
 msgstr "Fecha no válida"
@@ -59,9 +59,11 @@ msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
+"Algo salió mal al cargar los esquemas de ID de unidades organizativas "
+"adicionales"
 
 msgid "Please select a file"
-msgstr ""
+msgstr "Por favor, seleccione un archivo"
 
 msgid "Import as associated geometry"
 msgstr ""
@@ -99,7 +101,7 @@ msgid "Start dry run"
 msgstr ""
 
 msgid "Start import"
-msgstr ""
+msgstr "Iniciar importación"
 
 msgid "Any user"
 msgstr "Cualquier usuario"
@@ -111,7 +113,7 @@ msgid "No user/unassigned"
 msgstr ""
 
 msgid "Selected users"
-msgstr ""
+msgstr "Usuarios seleccionados"
 
 msgid "Filter by assigned user"
 msgstr ""
@@ -174,10 +176,10 @@ msgid "Something went wrong when loading the data sets!"
 msgstr "Algo salió mal al cargar los sets de datos"
 
 msgid "At least one data set must be selected"
-msgstr ""
+msgstr "Al menos un set de datos debe ser seleccionado"
 
 msgid "One data set must be selected"
-msgstr ""
+msgstr "Un set de datos debe ser seleccionado"
 
 msgid "End date"
 msgstr "Fecha final"
@@ -186,7 +188,7 @@ msgid "Event ID scheme"
 msgstr ""
 
 msgid "Loading export..."
-msgstr ""
+msgstr "Cargando exportación..."
 
 msgid "Select a file to import values from"
 msgstr ""
@@ -320,10 +322,10 @@ msgid "Import strategy"
 msgstr ""
 
 msgid "Include all attributes"
-msgstr ""
+msgstr "Incluir todos los atributos"
 
 msgid "Include descendants"
-msgstr ""
+msgstr "Incluir descendientes"
 
 msgid "Include descendants of selected organisation units"
 msgstr ""
@@ -359,10 +361,10 @@ msgid "Includes properties which are not null"
 msgstr ""
 
 msgid "Non null"
-msgstr ""
+msgstr "No nulo"
 
 msgid "Include all properties"
-msgstr ""
+msgstr "Incluir todas las propiedades"
 
 msgid "Always"
 msgstr "Siempre"
@@ -371,7 +373,7 @@ msgid "Include non-empty properties"
 msgstr ""
 
 msgid "Non empty"
-msgstr ""
+msgstr "No vacío"
 
 msgid "Inclusion strategy"
 msgstr "Estrategia de inclusión"
@@ -401,7 +403,7 @@ msgid "Start/end dates"
 msgstr "Fechas de inicio y fin"
 
 msgid "Time since last updated"
-msgstr ""
+msgstr "Tiempo desde la última actualización"
 
 msgid "Filter by last updated date"
 msgstr ""
@@ -446,7 +448,7 @@ msgid "Object type"
 msgstr "Tipo de objeto"
 
 msgid "One object must be selected"
-msgstr ""
+msgstr "Un objeto debe ser seleccionado"
 
 msgid "Object"
 msgstr "Objeto"
@@ -461,7 +463,7 @@ msgid "Data view organisation units associated with the current user"
 msgstr ""
 
 msgid "Accessible"
-msgstr ""
+msgstr "Accesible"
 
 msgid "Data capture organisation units associated with the current user"
 msgstr ""
@@ -470,7 +472,7 @@ msgid "Capture"
 msgstr "Capturar"
 
 msgid "All organisation units in the system"
-msgstr ""
+msgstr "Todas las unidades organizativas del sistema"
 
 msgid "Manually select organisation units from list"
 msgstr ""
@@ -512,10 +514,10 @@ msgid "Something went wrong when loading the programs!"
 msgstr "Algo salió mal al cargar los programas"
 
 msgid "At least one program must be selected"
-msgstr ""
+msgstr "Al menos un programa debe ser seleccionado"
 
 msgid "One program must be selected"
-msgstr ""
+msgstr "Un programa debe ser seleccionado"
 
 msgid "Which program stage should be included?"
 msgstr ""
@@ -570,7 +572,7 @@ msgid ""
 msgstr ""
 
 msgid "Skip validation"
-msgstr ""
+msgstr "Saltar validación"
 
 msgid "Skip validation for import (not recommended)"
 msgstr ""
@@ -612,19 +614,19 @@ msgid "Filter users"
 msgstr "Filtrar usuarios"
 
 msgid "Something went wrong when loading the users!"
-msgstr ""
+msgstr "Algo salió mal al cargar los usuarios"
 
 msgid "At least one user must be selected"
-msgstr ""
+msgstr "Al menos un usuario debe ser seleccionado"
 
 msgid "One user must be selected"
 msgstr "Un usuario debe ser seleccionado"
 
 msgid "No jobs started yet."
-msgstr ""
+msgstr "Aún no hay tareas iniciadas"
 
 msgid "Recreate job"
-msgstr ""
+msgstr "Recrear trabajo"
 
 msgid "In progress"
 msgstr "En proceso"
@@ -669,7 +671,7 @@ msgid "Type"
 msgstr "Tipo"
 
 msgid "Property"
-msgstr ""
+msgstr "Propiedad"
 
 msgid "View summary of recently started import job"
 msgstr ""
@@ -702,22 +704,22 @@ msgid "Indexes"
 msgstr ""
 
 msgid "Details by type"
-msgstr ""
+msgstr "Detalles por tipo"
 
 msgid "Advanced options"
-msgstr ""
+msgstr "Opciones avanzadas"
 
 msgid "At least one organisation unit must be selected"
 msgstr "Debe seleccionar al menos una unidad organizativa."
 
 msgid "One organisation unit must be selected"
-msgstr ""
+msgstr "Una unidad organizativa debe ser seleccionada"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr ""
+msgstr "Algo salió mal al cargar las unidades organizativas"
 
 msgid "One program stage must be selected"
-msgstr ""
+msgstr "Una etapa de programa debe ser seleccionada"
 
 msgid "Something went wrong when loading the schemas!"
 msgstr ""
@@ -747,7 +749,7 @@ msgid "Org unit geometry import"
 msgstr ""
 
 msgid "Metadata import"
-msgstr ""
+msgstr "Importar metadatos"
 
 msgid "TEI import"
 msgstr ""
@@ -756,13 +758,13 @@ msgid "Data export"
 msgstr ""
 
 msgid "Event export"
-msgstr ""
+msgstr "Exportación de eventos"
 
 msgid "Metadata dependency export"
 msgstr ""
 
 msgid "Metadata export"
-msgstr ""
+msgstr "Exportar metadatos"
 
 msgid "TEI export"
 msgstr ""
@@ -783,16 +785,16 @@ msgid "There are errors on this page"
 msgstr ""
 
 msgid "Something went wrong when loading the class keys"
-msgstr ""
+msgstr "Algo salió mal al cargar las claves de clase"
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "Algo salió mal al cargar los objetos"
 
 msgid "All program stages"
 msgstr "Todas las etapas del programa"
 
 msgid "Something went wrong when loading the program stages"
-msgstr ""
+msgstr "Algo salió mal al cargar las etapas del programa"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
@@ -852,7 +854,7 @@ msgid "Group name"
 msgstr "Nombre de grupo"
 
 msgid "Group description"
-msgstr ""
+msgstr "Descripción del grupo"
 
 msgid "Category option combination"
 msgstr "Category option combination"
@@ -909,7 +911,7 @@ msgid "Loading periods"
 msgstr "Cargando períodos"
 
 msgid "No periods found"
-msgstr ""
+msgstr "No se encontraron períodos"
 
 msgid "Point org. unit - no value"
 msgstr ""
@@ -1016,7 +1018,7 @@ msgid "Men 30 - 34 years"
 msgstr "Hombres 30 - 34 años"
 
 msgid "Men 35 - 39 years"
-msgstr ""
+msgstr "Hombres 35 - 39 años"
 
 msgid "Men 40 - 44 years"
 msgstr "Hombres 40 - 44 años"
@@ -1113,7 +1115,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr ""
+msgstr "Exportar eventos"
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -1155,7 +1157,7 @@ msgid "Import data"
 msgstr "Importar datos"
 
 msgid "Import events"
-msgstr ""
+msgstr "Importar eventos"
 
 msgid "Import Earth Engine"
 msgstr ""
@@ -1191,7 +1193,7 @@ msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "A class key must be selected"
-msgstr ""
+msgstr "Una clave de clase debe ser seleccionada"
 
 msgid "Tracked entity instances export"
 msgstr ""
@@ -1200,7 +1202,7 @@ msgid "Export tracked entity instances in XML, JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
-msgstr ""
+msgstr "Programa a exportar desde"
 
 msgid "Enrollment date range"
 msgstr ""
