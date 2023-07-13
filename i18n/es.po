@@ -35,13 +35,13 @@ msgid "Invalid date"
 msgstr "Fecha no válida"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "La fecha de inicio debe ser anterior a la fecha de finalización"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "La fecha final debe ser posterior a la fecha inicial"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "Duración no válida"
 
 msgid "Format"
 msgstr "Formato"
@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr ""
+msgstr "Algo salió mal al cargar los esquemas de ID adicionales"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
@@ -166,7 +166,7 @@ msgid "Is the first row a header row?"
 msgstr ""
 
 msgid "First row is header"
-msgstr ""
+msgstr "La primera línea es la cabecera"
 
 msgid "A header row will be ignored during import"
 msgstr ""
@@ -220,7 +220,7 @@ msgid "What format should the data be exported as?"
 msgstr ""
 
 msgid "ID scheme"
-msgstr ""
+msgstr "ID esquema"
 
 msgid "UID"
 msgstr ""
@@ -241,7 +241,7 @@ msgid "Errors"
 msgstr "Errores"
 
 msgid "Reports for all objects imported"
-msgstr ""
+msgstr "Informes de todos los objetos importados"
 
 msgid "Full"
 msgstr "Completo"
@@ -253,7 +253,7 @@ msgid "Debug"
 msgstr ""
 
 msgid "Import report mode"
-msgstr ""
+msgstr "Modo de importación de informes"
 
 msgid "Controls what should be reported after the import is done"
 msgstr ""
@@ -265,7 +265,7 @@ msgid "Merge"
 msgstr "Mezclar"
 
 msgid "Import new values only"
-msgstr ""
+msgstr "Importar solo valores nuevos"
 
 msgid "Append"
 msgstr "Añadido"
@@ -283,7 +283,7 @@ msgid "Delete"
 msgstr "Eliminar"
 
 msgid "Data will be deleted"
-msgstr ""
+msgstr "Los datos serán eliminados"
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
@@ -306,10 +306,10 @@ msgid "Include deleted"
 msgstr "Incluir eliminados"
 
 msgid "Include deleted data in export"
-msgstr ""
+msgstr "Incluir datos eliminados en la exportación"
 
 msgid "Only include selected organisation unit"
-msgstr ""
+msgstr "Incluir sólo la unidad organizativa seleccionada"
 
 msgid "Selected"
 msgstr "Seleccionado"
@@ -321,7 +321,7 @@ msgid "Directly below"
 msgstr ""
 
 msgid "Include all units inside selections"
-msgstr ""
+msgstr "Incluir todas las unidades en la selección"
 
 msgid "All below"
 msgstr ""
@@ -363,10 +363,10 @@ msgid "Controls whether the import is done asynchronously"
 msgstr ""
 
 msgid "Last updated duration"
-msgstr ""
+msgstr "Duración de la última actualización"
 
 msgid "Last updated end date"
-msgstr ""
+msgstr "Fecha final de la última actualización"
 
 msgid "Do not filter by last updated date"
 msgstr ""
@@ -381,7 +381,7 @@ msgid "Filter by last updated date"
 msgstr ""
 
 msgid "Last updated start date"
-msgstr ""
+msgstr "Fecha de inicio de la última actualización"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
@@ -426,7 +426,7 @@ msgid "Object"
 msgstr "Objeto"
 
 msgid "Organisation unit ID scheme"
-msgstr ""
+msgstr "Esquema ID de la unidad organizativa"
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
@@ -513,7 +513,7 @@ msgid "Include only entities with status"
 msgstr ""
 
 msgid "Skip audit"
-msgstr ""
+msgstr "Omitir auditoría"
 
 msgid "Skip audit, meaning audit values will not be generated"
 msgstr ""
@@ -533,7 +533,7 @@ msgid ""
 msgstr ""
 
 msgid "Skip sharing"
-msgstr ""
+msgstr "Omitir compartir"
 
 msgid "Skip sharing and access settings"
 msgstr ""
@@ -604,7 +604,7 @@ msgid "In progress"
 msgstr "En proceso"
 
 msgid "Job details"
-msgstr ""
+msgstr "Detalles del trabajo"
 
 msgid "Key"
 msgstr ""
@@ -613,7 +613,7 @@ msgid "Value"
 msgstr "Valor"
 
 msgid "Job summary"
-msgstr ""
+msgstr "Resumen del trabajo"
 
 msgid "Error"
 msgstr "Error"
@@ -646,7 +646,7 @@ msgid "Property"
 msgstr "Propiedad"
 
 msgid "View summary of recently started import job"
-msgstr ""
+msgstr "Ver resumen del trabajo de importación iniciado recientemente"
 
 msgid "Status"
 msgstr "Estado"
@@ -691,7 +691,7 @@ msgid "One program stage must be selected"
 msgstr "Una etapa de programa debe ser seleccionada"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr ""
+msgstr "Algo salió mal al cargar los esquemas"
 
 msgid "Select All"
 msgstr "Seleccionar todos"
@@ -700,13 +700,13 @@ msgid "Select None"
 msgstr ""
 
 msgid "At least one schema must be selected"
-msgstr ""
+msgstr "Al menos un esquema debe ser seleccionado"
 
 msgid "Export"
 msgstr "Exportar"
 
 msgid "Data import"
-msgstr ""
+msgstr "Importación de datos"
 
 msgid "Event import"
 msgstr "Importación de eventos"
@@ -718,10 +718,10 @@ msgid "Metadata import"
 msgstr "Importar metadatos"
 
 msgid "TEI import"
-msgstr ""
+msgstr "Importación TEI"
 
 msgid "Data export"
-msgstr ""
+msgstr "Exportación de datos"
 
 msgid "Event export"
 msgstr "Exportación de eventos"
@@ -733,10 +733,10 @@ msgid "Metadata export"
 msgstr "Exportar metadatos"
 
 msgid "TEI export"
-msgstr ""
+msgstr "Exportación TEI"
 
 msgid "Job overview"
-msgstr ""
+msgstr "Resumen de tareas"
 
 msgid "Overview"
 msgstr "General"
@@ -748,7 +748,7 @@ msgid "No"
 msgstr "No"
 
 msgid "There are errors on this page"
-msgstr ""
+msgstr "Hay errores en esta página"
 
 msgid "Something went wrong when loading the class keys"
 msgstr "Algo salió mal al cargar las claves de clase"
@@ -806,7 +806,7 @@ msgid "Import or export DHIS2 data."
 msgstr ""
 
 msgid "Export metadata dependencies"
-msgstr ""
+msgstr "Exportar dependencias de metadatos"
 
 msgid "Export metadata"
 msgstr "Exportar Meta-Datos"
@@ -831,6 +831,7 @@ msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
+"Un resumen de todos los trabajos de importación iniciados en esta sesión."
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
@@ -881,7 +882,7 @@ msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
 msgid "Loading exported data"
-msgstr ""
+msgstr "Cargar datos exportados"
 
 msgid "Data"
 msgstr "Datos"
