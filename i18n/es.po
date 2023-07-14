@@ -11,6 +11,7 @@
 # phil_dhis2, 2022
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Pablo Del Médico, 2023
+# Alejandra Avila <alejandra@dhis2.org>, 2023
 # Janeth Cruz, 2023
 # 
 msgid ""
@@ -160,7 +161,7 @@ msgid "Name"
 msgstr "Nombre"
 
 msgid "Data element ID scheme"
-msgstr ""
+msgstr "Esquema ID del elementos de datos"
 
 msgid "Which data sets should be included in export?"
 msgstr ""
@@ -184,13 +185,13 @@ msgid "End date"
 msgstr "Fecha final"
 
 msgid "Event ID scheme"
-msgstr ""
+msgstr "Esquema ID del evento"
 
 msgid "Loading export..."
 msgstr "Cargando exportación..."
 
 msgid "Select a file to import values from"
-msgstr ""
+msgstr "Seleccione un archivo para importar valores desde"
 
 msgid "Is the first row a header row?"
 msgstr ""
@@ -304,7 +305,7 @@ msgid "Update"
 msgstr "Actualizar"
 
 msgid "Remove values included in uploaded file"
-msgstr ""
+msgstr "Eliminar valores incluidos en el archivo cargado"
 
 msgid "Delete"
 msgstr "Borrar"
@@ -384,7 +385,7 @@ msgid "Async"
 msgstr "Asíncrono"
 
 msgid "Asynchronous import"
-msgstr ""
+msgstr "Importación asíncrona"
 
 msgid "Controls whether the import is done asynchronously"
 msgstr ""
@@ -456,7 +457,7 @@ msgid "Organisation unit ID scheme"
 msgstr "Esquema ID de la unidad organizativa"
 
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
@@ -537,7 +538,7 @@ msgid "Cancelled"
 msgstr "Cancelar"
 
 msgid "Include only entities with status"
-msgstr ""
+msgstr "Incluir solo entidades con estado"
 
 msgid "Skip audit"
 msgstr "Omitir auditoría"
@@ -607,7 +608,7 @@ msgid "One tracked entity type must be selected"
 msgstr ""
 
 msgid "Which users should be used?"
-msgstr ""
+msgstr "¿Qué usuarios se deben utilizar?"
 
 msgid "Filter users"
 msgstr "Filtrar usuarios"
@@ -1122,7 +1123,7 @@ msgid ""
 msgstr ""
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr ""
+msgstr "Tipos de archivo soportados: JSON, CSV, y XML."
 
 msgid "Organisation unit geometry import"
 msgstr ""
@@ -1224,6 +1225,7 @@ msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
+"Se produjo un error desconocido. Por favor, inténtelo de nuevo más tarde"
 
 msgid "Loading exported data"
 msgstr "Cargar datos exportados"
