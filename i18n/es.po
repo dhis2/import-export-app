@@ -118,7 +118,7 @@ msgid "Uncompressed"
 msgstr ""
 
 msgid "Compression mode"
-msgstr ""
+msgstr "Modo de compresión"
 
 msgid "Uid"
 msgstr ""
@@ -169,7 +169,7 @@ msgid "First row is header"
 msgstr "La primera línea es la cabecera"
 
 msgid "A header row will be ignored during import"
-msgstr ""
+msgstr "La fila de cabecera se ignorará durante la importación"
 
 msgid "Auto (recommended)"
 msgstr ""
@@ -271,7 +271,7 @@ msgid "Append"
 msgstr "Añadido"
 
 msgid "Only update existing values, ignore new values"
-msgstr ""
+msgstr "Actualizar sólo los valores existentes, ignorar los nuevos valores"
 
 msgid "Update"
 msgstr "Actualizar"
@@ -315,10 +315,10 @@ msgid "Selected"
 msgstr "Seleccionado"
 
 msgid "Include the first level of units inside selections"
-msgstr ""
+msgstr "Incluir el primer nivel de unidades dentro de las selecciones"
 
 msgid "Directly below"
-msgstr ""
+msgstr "Directamente debajo"
 
 msgid "Include all units inside selections"
 msgstr "Incluir todas las unidades en la selección"
@@ -351,7 +351,7 @@ msgid "Inclusion strategy"
 msgstr "Estrategia de inclusión"
 
 msgid "Controls which properties to include"
-msgstr ""
+msgstr "Controla qué propiedades incluir"
 
 msgid "Async"
 msgstr "Asíncrono"
@@ -450,7 +450,7 @@ msgid "Which organisation units should be included?"
 msgstr ""
 
 msgid "Organisation unit(s) to export data from"
-msgstr ""
+msgstr "Unidades organizativas desde las que desea exportar datos"
 
 msgid "Preheat cache"
 msgstr ""
@@ -462,7 +462,7 @@ msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
 
 msgid "Intelligent scan (reference)"
-msgstr ""
+msgstr "Escaneo inteligente (referencia)"
 
 msgid "None"
 msgstr "Ninguno"
@@ -775,9 +775,10 @@ msgstr "Exportar datos"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
+"Importe valores de datos desde archivos ADX XML, DXF 2 XML, JSON, CSV o PDF."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr ""
+msgstr "Tipos de archivo soportados: JSON, CSV, XML, ADX y PDF."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -803,7 +804,7 @@ msgid "Overview: Import/Export"
 msgstr ""
 
 msgid "Import or export DHIS2 data."
-msgstr ""
+msgstr "Importar o exportar datos de DHIS2."
 
 msgid "Export metadata dependencies"
 msgstr "Exportar dependencias de metadatos"
