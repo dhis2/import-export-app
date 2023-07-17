@@ -79,7 +79,7 @@ msgid "Something went wrong when loading the attributes!"
 msgstr ""
 
 msgid "One attribute must be selected"
-msgstr ""
+msgstr "Un atributo debe ser seleccionado"
 
 msgid ""
 "Associated geometry import requires an attribute of type \"GeoJSON\" applied"
@@ -111,13 +111,13 @@ msgid "Current user"
 msgstr "Usuario actual"
 
 msgid "No user/unassigned"
-msgstr ""
+msgstr "Sin usuario/no asignado"
 
 msgid "Selected users"
 msgstr "Usuarios seleccionados"
 
 msgid "Filter by assigned user"
-msgstr ""
+msgstr "Filtro por usuario asignado"
 
 msgid "Export only instances with events assigned to specific users"
 msgstr ""
@@ -126,7 +126,7 @@ msgid "Assigned user(s)"
 msgstr ""
 
 msgid "Do not import"
-msgstr ""
+msgstr "No importar"
 
 msgid "Import"
 msgstr "Importar"
@@ -195,7 +195,7 @@ msgid "Select a file to import values from"
 msgstr "Seleccione un archivo para importar valores desde"
 
 msgid "Is the first row a header row?"
-msgstr ""
+msgstr "¿La primera fila es de cabecera?"
 
 msgid "First row is header"
 msgstr "La primera línea es la cabecera"
@@ -359,7 +359,7 @@ msgid "How should organisation units inside the selections be included?"
 msgstr ""
 
 msgid "Includes properties which are not null"
-msgstr ""
+msgstr "Incluir propiedades que no son nulas"
 
 msgid "Non null"
 msgstr "No nulo"
@@ -407,7 +407,7 @@ msgid "Time since last updated"
 msgstr "Tiempo desde la última actualización"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "Filtrar por fecha de última actualización"
 
 msgid "Last updated start date"
 msgstr "Fecha de inicio de la última actualización"
@@ -479,7 +479,7 @@ msgid "Manually select organisation units from list"
 msgstr ""
 
 msgid "Which organisation units should be included?"
-msgstr ""
+msgstr "¿Qué unidades organizativas deben incluirse?"
 
 msgid "Organisation unit(s) to export data from"
 msgstr "Unidades organizativas desde las que desea exportar datos"
@@ -827,7 +827,7 @@ msgid "Organisation units"
 msgstr "Unidades organizativas"
 
 msgid "Import setup"
-msgstr ""
+msgstr "Configuración de importación"
 
 msgid "Data preview"
 msgstr "Vista previa de datos"
