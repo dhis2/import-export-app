@@ -407,7 +407,7 @@ msgid "Time since last updated"
 msgstr "Tiempo desde la última actualización"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "Filtrar por fecha de última actualización"
 
 msgid "Last updated start date"
 msgstr "Fecha de inicio de la última actualización"
