@@ -132,7 +132,7 @@ msgid "Data element ID scheme"
 msgstr "Esquema ID del elementos de datos"
 
 msgid "Which data sets should be included in export?"
-msgstr ""
+msgstr "¿Qué sets de datos deben incluirse en la exportación?"
 
 msgid "Filter data sets"
 msgstr "Filtrar Set de Datos"
@@ -213,7 +213,7 @@ msgid "JSONP"
 msgstr ""
 
 msgid "What format is the data to import?"
-msgstr ""
+msgstr "¿Cuál es el formato de los datos a importar?"
 
 msgid "What format should the data be exported as?"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "Identifier scheme to use for reference matching"
 msgstr ""
 
 msgid "Only include reports for objects that have errors"
-msgstr ""
+msgstr "Incluir solo informes para objetos que contengan errores"
 
 msgid "Errors"
 msgstr "Errores"
@@ -365,7 +365,7 @@ msgid "Last updated end date"
 msgstr "Fecha final de la última actualización"
 
 msgid "Do not filter by last updated date"
-msgstr ""
+msgstr "No filtrar por fecha de última actualización"
 
 msgid "Start/end dates"
 msgstr "Fechas de inicio y fin"
@@ -374,7 +374,7 @@ msgid "Time since last updated"
 msgstr "Tiempo desde la última actualización"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "Filtrar por fecha de última actualización"
 
 msgid "Last updated start date"
 msgstr "Fecha de inicio de la última actualización"
@@ -440,7 +440,7 @@ msgid "All organisation units in the system"
 msgstr "Todas las unidades organizativas del sistema"
 
 msgid "Manually select organisation units from list"
-msgstr ""
+msgstr "Seleccionar manualmente unidades organizativas de la lista"
 
 msgid "Which organisation units should be included?"
 msgstr "¿Qué unidades organizativas deben incluirse?"
@@ -573,7 +573,7 @@ msgid "At least one tracked entity type must be selected"
 msgstr ""
 
 msgid "One tracked entity type must be selected"
-msgstr ""
+msgstr "Un tipo de entidad tracked debe ser seleccionado"
 
 msgid "Which users should be used?"
 msgstr "¿Qué usuarios se deben utilizar?"
@@ -809,7 +809,7 @@ msgid "Export metadata"
 msgstr "Exportar Meta-Datos"
 
 msgid "Export tracked entity instances"
-msgstr ""
+msgstr "Exportar instancias de entidad tracked"
 
 msgid "Import data"
 msgstr "Importar datos"
@@ -852,7 +852,7 @@ msgid "Tracked entity instances export"
 msgstr ""
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr ""
+msgstr "Exportar instancias de entidad  tracked en formato XML, JSON o CSV."
 
 msgid "Program to export from"
 msgstr "Programa a exportar desde"
@@ -862,6 +862,8 @@ msgstr ""
 
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
+"Se debe especificar al menos uno de los campos de fecha de \"última "
+"actualización\""
 
 msgid "Tracked entity instances import"
 msgstr ""
