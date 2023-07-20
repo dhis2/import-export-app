@@ -119,7 +119,7 @@ msgid "Filter by assigned user"
 msgstr "Filtro por usuario asignado"
 
 msgid "Export only instances with events assigned to specific users"
-msgstr ""
+msgstr "Exportar solo instancias con eventos asignados a usuarios específicos"
 
 msgid "Assigned user(s)"
 msgstr "Usuario(s) asignado(s)"
@@ -146,7 +146,7 @@ msgid "GZip"
 msgstr "GZip"
 
 msgid "Uncompressed"
-msgstr ""
+msgstr "Sin comprimir"
 
 msgid "Compression mode"
 msgstr "Modo de compresión"
@@ -356,6 +356,8 @@ msgstr ""
 
 msgid "How should organisation units inside the selections be included?"
 msgstr ""
+"¿Cómo las unidades organizativas deben ser incluidas dentro de las "
+"selecciones?"
 
 msgid "Includes properties which are not null"
 msgstr "Incluir propiedades que no son nulas"
@@ -413,9 +415,12 @@ msgstr "Fecha de inicio de la última actualización"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
+"Sólo sobrescribir la propiedad antigua si el valor de la nueva propiedad no "
+"es nulo"
 
 msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
+"Sobrescribir independientemente de si el valor de la nueva propiedad es nulo"
 
 msgid "Replace"
 msgstr "Reemplazar"
@@ -466,7 +471,7 @@ msgid "Accessible"
 msgstr "Accesible"
 
 msgid "Data capture organisation units associated with the current user"
-msgstr ""
+msgstr "Capturar datos de unidades organizativas asociadas al usuario actual"
 
 msgid "Capture"
 msgstr "Capturar"
@@ -803,7 +808,7 @@ msgid ""
 msgstr ""
 
 msgid "Date range to export data for"
-msgstr ""
+msgstr "Rango de fechas para exportar los datos"
 
 msgid "Export data"
 msgstr "Exportar datos"
