@@ -122,7 +122,7 @@ msgid "Compression mode"
 msgstr "Modo de compresión"
 
 msgid "Uid"
-msgstr ""
+msgstr "Uid"
 
 msgid "Code"
 msgstr "Código"
@@ -206,7 +206,7 @@ msgid "XML"
 msgstr "XML"
 
 msgid "ADX"
-msgstr ""
+msgstr "ADX"
 
 msgid "PDF"
 msgstr "PDF"
@@ -248,7 +248,7 @@ msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
 
 msgid "Debug"
-msgstr ""
+msgstr "Depurar"
 
 msgid "Import report mode"
 msgstr "Modo de importación de informes"
@@ -433,7 +433,7 @@ msgid "Organisation unit ID scheme"
 msgstr "Esquema ID de la unidad organizativa"
 
 msgid "Data view organisation units associated with the current user"
-msgstr ""
+msgstr "Ver datos de unidades organizativas asociadas al usuario actual"
 
 msgid "Accessible"
 msgstr "Accesible"
@@ -464,6 +464,8 @@ msgstr ""
 
 msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
+"Las grandes importaciones se procesarán más rápido pero consumirán más "
+"recursos"
 
 msgid "Intelligent scan (reference)"
 msgstr "Escaneo inteligente (referencia)"
@@ -567,7 +569,7 @@ msgid "Filter by"
 msgstr "Filtrar por"
 
 msgid "Tracked entity types"
-msgstr ""
+msgstr "Tipos de entidad Tracked"
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -579,7 +581,7 @@ msgid "Something went wrong when loading the tracked entity types!"
 msgstr ""
 
 msgid "At least one tracked entity type must be selected"
-msgstr ""
+msgstr "Al menos un tipo de entidad tracked debe ser seleccionado"
 
 msgid "One tracked entity type must be selected"
 msgstr "Un tipo de entidad tracked debe ser seleccionado"
@@ -771,6 +773,8 @@ msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
 msgstr ""
+"Exportar metadatos, como elementos de datos y unidades organizativas en "
+"formato DXF 2."
 
 msgid "Date range to export data for"
 msgstr "Rango de fechas para exportar los datos"
@@ -788,6 +792,8 @@ msgstr "Tipos de archivo soportados: JSON, CSV, XML, ADX y PDF."
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
+"Exportar datos de eventos para programas, etapas y entidades tracked en "
+"formato DXF 2."
 
 msgid "Export events"
 msgstr "Exportar eventos"
@@ -796,6 +802,8 @@ msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
+"Importar eventos para programas, etapas y entidades tracked utilizando el "
+"formato DXF 2."
 
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Tipos de archivo soportados: JSON, CSV, y XML."
@@ -806,7 +814,7 @@ msgid ""
 msgstr ""
 
 msgid "Overview: Import/Export"
-msgstr ""
+msgstr "Resumen: Importación/Exportación"
 
 msgid "Import or export DHIS2 data."
 msgstr "Importar o exportar datos de DHIS2."
@@ -886,7 +894,7 @@ msgid "Supported file types: JSON and XML."
 msgstr "Tipos de archivo soportados: JSON y XML."
 
 msgid "Job started."
-msgstr ""
+msgstr "Trabajo iniciado."
 
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
@@ -902,7 +910,7 @@ msgid "Event"
 msgstr "Evento"
 
 msgid "GML"
-msgstr ""
+msgstr "GML"
 
 msgid "Metadata"
 msgstr "Metadatos"
