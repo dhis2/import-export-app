@@ -295,7 +295,7 @@ msgid "Include all attributes"
 msgstr "Incluir todos los atributos"
 
 msgid "Include first level units"
-msgstr ""
+msgstr "Incluir unidades de primer nivel"
 
 msgid "Include the first level of organisation units inside selections"
 msgstr ""
@@ -719,7 +719,7 @@ msgid "Event import"
 msgstr "Importación de eventos"
 
 msgid "GML import"
-msgstr ""
+msgstr "Importación GML"
 
 msgid "Metadata import"
 msgstr "Importar metadatos"
