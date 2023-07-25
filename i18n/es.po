@@ -75,7 +75,7 @@ msgid "Selected programs"
 msgstr "Programas seleccionados"
 
 msgid "Something went wrong when loading the attributes!"
-msgstr ""
+msgstr "Algo salió mal al cargar los atributos"
 
 msgid "One attribute must be selected"
 msgstr "Un atributo debe ser seleccionado"
@@ -203,7 +203,7 @@ msgid "A header row will be ignored during import"
 msgstr "La fila de cabecera se ignorará durante la importación"
 
 msgid "Auto (recommended)"
-msgstr ""
+msgstr "Auto (recomendado)"
 
 msgid "Object (debugging purposes)"
 msgstr "Objeto (con fines de depuración)"
@@ -276,6 +276,8 @@ msgstr "Completo"
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
+"Informes de todos los objetos importados junto con sus nombres (si están "
+"disponibles)"
 
 msgid "Debug"
 msgstr "Depurar"
@@ -285,6 +287,7 @@ msgstr "Modo de importación de informes"
 
 msgid "Controls what should be reported after the import is done"
 msgstr ""
+"Controla lo que debe informarse después de que la importación es realizada"
 
 msgid "Import new values and update existing"
 msgstr "Importar nuevos valores y actualizar los existentes"
@@ -328,7 +331,7 @@ msgid "Include descendants"
 msgstr "Incluir descendientes"
 
 msgid "Include descendants of selected organisation units"
-msgstr ""
+msgstr "Incluir descendientes de unidades organizativas seleccionadas"
 
 msgid "Include deleted"
 msgstr "Incluir eliminados"
@@ -736,7 +739,7 @@ msgid "Select All"
 msgstr "Seleccionar todos"
 
 msgid "Select None"
-msgstr ""
+msgstr "Seleccionar ninguno"
 
 msgid "At least one schema must be selected"
 msgstr "Al menos un esquema debe ser seleccionado"
@@ -819,7 +822,8 @@ msgstr "Exportar datos"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
-"Importe valores de datos desde archivos ADX XML, DXF 2 XML, JSON, CSV o PDF."
+"Importar valores de datos desde archivos ADX XML, DXF 2 XML, JSON, CSV o "
+"PDF."
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr "Tipos de archivo soportados: JSON, CSV, XML, ADX y PDF."
@@ -842,7 +846,7 @@ msgid "Data preview"
 msgstr "Vista previa de datos"
 
 msgid "Some required fields are missing"
-msgstr ""
+msgstr "Faltan algunos campos obligatorios"
 
 msgid "Preview before import"
 msgstr "Previsualización antes de la importación"
@@ -904,7 +908,7 @@ msgid "Deselect all"
 msgstr "Deseleccionar todo"
 
 msgid "Organisation unit(s) to import data to"
-msgstr ""
+msgstr "Unidad(es) organizativa(s) a la(s) que importar los datos"
 
 msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
@@ -945,30 +949,32 @@ msgstr "Filas por página"
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
+"Página {{page}} de {{pageCount}}, fila {{firstItem}}-{{lastItem}} de "
+"{{total}}"
 
 msgid "Don't round source values"
 msgstr ""
 
 msgid "Round to 0 decimal places"
-msgstr ""
+msgstr "Redondear a 0 decimales"
 
 msgid "Round to 1 decimal place"
-msgstr ""
+msgstr "Redondear a 1 decimal"
 
 msgid "Round to 2 decimal places"
-msgstr ""
+msgstr "Redondear a 2 decimales"
 
 msgid "Round to 3 decimal places"
-msgstr ""
+msgstr "Redondear a 3 decimales"
 
 msgid "Round to 4 decimal places"
-msgstr ""
+msgstr "Redondear a 4 decimales"
 
 msgid "Round to 5 decimal places"
-msgstr ""
+msgstr "Redondear a 5 decimales"
 
 msgid "Round to 6 decimal places"
-msgstr ""
+msgstr "Redondear a 6 decimales"
 
 msgid "Value rounding"
 msgstr ""
@@ -1113,7 +1119,7 @@ msgid "Women 80 years and above"
 msgstr "Mujeres 80 años y más"
 
 msgid "No organisation units have been selected"
-msgstr ""
+msgstr "No se ha seleccionado ninguna unidad organizativa"
 
 msgid ""
 "It is not possible to get data from Earth Engine for point facilities. "
@@ -1221,7 +1227,7 @@ msgid "Program to export from"
 msgstr "Programa para exportar desde"
 
 msgid "Enrollment date range"
-msgstr ""
+msgstr "Rango de fechas de inscripción"
 
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
@@ -1232,7 +1238,7 @@ msgid "Tracked entity instances import"
 msgstr ""
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr ""
+msgstr "Importar instancias de entidad tracked desde archivos JSON o XML."
 
 msgid "Supported file types: JSON and XML."
 msgstr "Tipos de archivo soportados: JSON y XML."
