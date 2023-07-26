@@ -228,7 +228,7 @@ msgid "Identifier"
 msgstr "Identificador"
 
 msgid "Identifier scheme to use for reference matching"
-msgstr ""
+msgstr "Esquema identificador a utilizar para coincidencia de referencias"
 
 msgid "Only include reports for objects that have errors"
 msgstr "Incluir solo informes para objetos que contengan errores"
@@ -544,7 +544,7 @@ msgid "Skip sharing"
 msgstr "Omitir compartir"
 
 msgid "Skip sharing and access settings"
-msgstr ""
+msgstr "Omitir compartir y ajustes de acceso"
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
