@@ -67,10 +67,10 @@ msgid "Please select a file"
 msgstr "Por favor, seleccione un archivo"
 
 msgid "Import as associated geometry"
-msgstr ""
+msgstr "Importar como geometría asociada"
 
 msgid "Store geometry as value of attribute"
-msgstr ""
+msgstr "Almacenar geometría como valor de atributo"
 
 msgid "Selected programs"
 msgstr "Programas seleccionados"
@@ -85,15 +85,21 @@ msgid ""
 "Associated geometry import requires an attribute of type \"GeoJSON\" applied"
 " to \"Organisation unit\". It can be defined in the Maintenance app."
 msgstr ""
+"La importación de geometría asociada requiere un atributo de tipo "
+"\"GeoJSON\" aplicado a \"Unidad organizativa\". Puede definirse en la "
+"aplicación Mantenimiento."
 
 msgid "Match GeoJSON property to organisation unit scheme"
 msgstr ""
+"Hacer coincidir la propiedad GeoJSON con el esquema de la unidad "
+"organizativa"
 
 msgid "GeoJSON property name"
-msgstr ""
+msgstr "Nombre de la propiedad GeoJSON"
 
 msgid "GeoJSON feature property that holds the organisation unit identifier"
 msgstr ""
+"Propiedad GeoJSON que contiene el identificador de la unidad organizativa"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -135,7 +141,7 @@ msgid "Atomic mode"
 msgstr ""
 
 msgid "Whether to import objects even if some references do not exist"
-msgstr ""
+msgstr "Importar objetos incluso si algunas referencias no existen"
 
 msgid "Class key"
 msgstr ""
@@ -222,10 +228,10 @@ msgid "Marked for follow-up"
 msgstr "Marcado para hacer seguimiento"
 
 msgid "Not marked for follow-up"
-msgstr ""
+msgstr "No marcado para seguimiento"
 
 msgid "Include only entities with follow-up status"
-msgstr ""
+msgstr "Incluir solo entidades con estado de seguimiento"
 
 msgid "JSON"
 msgstr "JSON"
@@ -243,7 +249,7 @@ msgid "PDF"
 msgstr "PDF"
 
 msgid "JSONP"
-msgstr ""
+msgstr "JSONP"
 
 msgid "What format is the data to import?"
 msgstr "¿Cuál es el formato de los datos a importar?"
@@ -321,6 +327,8 @@ msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
 msgstr ""
+"Los valores del archivo cargado se eliminarán de la base de datos. Asegúrese"
+" que esta sea la acción correcta; no se puede deshacer."
 
 msgid "Import strategy"
 msgstr "Estrategia de importación"
@@ -376,7 +384,7 @@ msgid "Always"
 msgstr "Siempre"
 
 msgid "Include non-empty properties"
-msgstr ""
+msgstr "Incluir propiedades no vacías"
 
 msgid "Non empty"
 msgstr "No vacío"
@@ -433,7 +441,7 @@ msgid "Merge mode"
 msgstr ""
 
 msgid "Strategy to take when merging two objects"
-msgstr ""
+msgstr "Estrategia a seguir al fusionar dos objetos"
 
 msgid "Data sets"
 msgstr "Sets de datos"
@@ -537,7 +545,7 @@ msgid "Start date"
 msgstr "Fecha inicial"
 
 msgid "All statuses"
-msgstr ""
+msgstr "Todos los estados"
 
 msgid "Active"
 msgstr "Activo"
@@ -559,7 +567,7 @@ msgstr ""
 "Omitir auditoría, significa que los valores de auditoría no serán generados"
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr ""
+msgstr "Mejorar el rendimiento a costa de la capacidad de auditar los cambios"
 
 msgid "Skip exisiting check"
 msgstr "Omitir comprobación existente"
@@ -571,6 +579,8 @@ msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
 msgstr ""
+"Mejora el rendimiento y sólo debe utilizarse para bases de datos vacías o "
+"cuando los valores de los datos a importar no existan."
 
 msgid "Skip sharing"
 msgstr "Omitir compartir"
@@ -582,6 +592,9 @@ msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
 msgstr ""
+"Omitir propiedades de compartición, no fusionar comparticiones al realizar "
+"actualizaciones y no añadir acceso a grupos de usuarios al crear nuevos "
+"objetos."
 
 msgid "Skip validation"
 msgstr "Saltar validación"
@@ -713,7 +726,7 @@ msgid "Total"
 msgstr "Total"
 
 msgid "Indexes"
-msgstr ""
+msgstr "índices"
 
 msgid "Details by type"
 msgstr "Detalles por tipo"
@@ -758,7 +771,7 @@ msgid "Earth Engine import"
 msgstr ""
 
 msgid "Org unit geometry import"
-msgstr ""
+msgstr "Importar geometría de la unidad organizativa"
 
 msgid "Metadata import"
 msgstr "Importar metadatos"
@@ -773,7 +786,7 @@ msgid "Event export"
 msgstr "Exportación de eventos"
 
 msgid "Metadata dependency export"
-msgstr ""
+msgstr "Exportación de dependencias de metadatos"
 
 msgid "Metadata export"
 msgstr "Exportar metadatos"
@@ -853,13 +866,15 @@ msgid "Preview before import"
 msgstr "Previsualización antes de la importación"
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "Utilizar geometría asociada"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr ""
+"Seleccionar la geometría asociada para las unidades organizativas "
+"seleccionadas"
 
 msgid "Import groups to category option combinations"
-msgstr ""
+msgstr "Importar grupos a combinaciones de opciones de categoría"
 
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. "
@@ -879,7 +894,7 @@ msgid "No match found"
 msgstr "No se encontraron coincidencias"
 
 msgid "Choose category option combo"
-msgstr ""
+msgstr "Seleccionar una combinación de opciones de categoría"
 
 msgid "Data element"
 msgstr "Elemento de datos"
@@ -936,7 +951,7 @@ msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
 
 msgid "Category option combo"
-msgstr ""
+msgstr "Combinación de opciones de categoría"
 
 msgid "Current value"
 msgstr "Valor actual"
@@ -954,7 +969,7 @@ msgstr ""
 "{{total}}"
 
 msgid "Don't round source values"
-msgstr ""
+msgstr "No redondear los valores fuente"
 
 msgid "Round to 0 decimal places"
 msgstr "Redondear a 0 decimales"
@@ -978,7 +993,7 @@ msgid "Round to 6 decimal places"
 msgstr "Redondear a 6 decimales"
 
 msgid "Value rounding"
-msgstr ""
+msgstr "Redondear el valor"
 
 msgid "An error occurred while trying to fetch Earth Engine data"
 msgstr ""
@@ -992,7 +1007,7 @@ msgid "The organisation units selection is invalid"
 msgstr "La selección de unidades organizativas no es válida"
 
 msgid "The app could not retrieve required data."
-msgstr ""
+msgstr "La aplicación no pudo recuperar los datos requeridos."
 
 msgid "Network error"
 msgstr "Error de red"
@@ -1148,7 +1163,7 @@ msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Tipos de archivo soportados: JSON, CSV, y XML."
 
 msgid "Organisation unit geometry import"
-msgstr ""
+msgstr "Importar geometría de la unidad organizativa"
 
 msgid ""
 "Import geographic data for organisation units. GeoJSON is the recommend "
@@ -1185,7 +1200,7 @@ msgid "Import Earth Engine"
 msgstr ""
 
 msgid "Import GeoJSON"
-msgstr ""
+msgstr "Importar GeoJSON"
 
 msgid "Import metadata"
 msgstr "Importar Meta-Datos"
@@ -1201,16 +1216,22 @@ msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in JSON format."
 msgstr ""
+"Exportar dependencias de metadatos, como sets de datos y programas, "
+"incluidos los objetos de metadatos relacionados, en formato JSON."
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
+"Exportar metadatos, como elementos de datos y unidades organizativas en "
+"formato JSON."
 
 msgid ""
 "Import metadata like data elements and organisation units using the JSON and"
 " CSV format."
 msgstr ""
+"Importar metadatos como elementos de datos y unidades organizativas "
+"utilizando los formatos JSON y CSV."
 
 msgid "Supported file types: JSON and CSV."
 msgstr "Tipos de archivo soportados: JSON y CSV."
@@ -1261,7 +1282,7 @@ msgid "Event"
 msgstr "Evento"
 
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 msgid "GML"
 msgstr "GML"
