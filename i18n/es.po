@@ -48,6 +48,8 @@ msgstr "Formato"
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
+"Algo salió mal al cargar los esquemas de ID de elementos de datos "
+"adicionales"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "Algo salió mal al cargar los esquemas de ID adicionales"
@@ -222,7 +224,7 @@ msgid "ID scheme"
 msgstr "ID esquema"
 
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 msgid "Identifier"
 msgstr "Identificador"
