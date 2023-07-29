@@ -403,7 +403,7 @@ msgid "Asynchronous import"
 msgstr "Importación asíncrona"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr ""
+msgstr "Controla si la importación se realiza de forma asíncrona"
 
 msgid "Last updated duration"
 msgstr "Duración de la última actualización"
@@ -622,7 +622,7 @@ msgid "Filter tracked entity types by name"
 msgstr ""
 
 msgid "Selected tracked entity types"
-msgstr ""
+msgstr "Tipos de entidades tracked seleccionados"
 
 msgid "Something went wrong when loading the tracked entity types!"
 msgstr ""
@@ -849,7 +849,7 @@ msgid ""
 msgstr ""
 
 msgid "Earth Engine source"
-msgstr ""
+msgstr "Fuente Earth Engine"
 
 msgid "Organisation units"
 msgstr "Unidades organizativas"
@@ -904,7 +904,7 @@ msgid "Select data element"
 msgstr "Seleccionar elementos de datos"
 
 msgid "The data element where Earth Engine data will be added"
-msgstr ""
+msgstr "El elemento de datos donde se agregarán los datos de Earth Engine"
 
 msgid "Earth Engine data set"
 msgstr ""
@@ -934,7 +934,7 @@ msgid "Period"
 msgstr "Periodo"
 
 msgid "Data from Earth Engine will be imported for this period."
-msgstr ""
+msgstr "Los datos de Earth Engine se importarán para este período."
 
 msgid "Select period"
 msgstr "Seleccione un periodo"
@@ -997,7 +997,7 @@ msgid "Value rounding"
 msgstr "Redondear el valor"
 
 msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
+msgstr "Ocurrió un error al intentar obtener datos de Earth Engine"
 
 msgid ""
 "The Earth Engine data set is too large. Try reducing the number of groups or"
@@ -1015,6 +1015,7 @@ msgstr "Error de red"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr ""
+"No se puede obtener el token de autorización para Google Earth Engine."
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
@@ -1175,6 +1176,8 @@ msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
 "feature property below."
 msgstr ""
+"El id de la función GeoJSON debe coincidir con el id de la unidad "
+"organizativa o con una propiedad de la función a continuación."
 
 msgid "Overview: Import/Export"
 msgstr "Resumen: Importación/Exportación"
@@ -1241,7 +1244,7 @@ msgid "A class key must be selected"
 msgstr "Una clave de clase debe ser seleccionada"
 
 msgid "Tracked entity instances export"
-msgstr ""
+msgstr "Exportación de instancias de entidades tracked"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
 msgstr "Exportar instancias de entidad  tracked en formato XML, JSON o CSV."
