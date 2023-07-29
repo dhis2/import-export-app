@@ -366,7 +366,7 @@ msgid "Asynchronous import"
 msgstr "Importación asíncrona"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr ""
+msgstr "Controla si la importación se realiza de forma asíncrona"
 
 msgid "Last updated duration"
 msgstr "Duración de la última actualización"
@@ -585,7 +585,7 @@ msgid "Filter tracked entity types by name"
 msgstr ""
 
 msgid "Selected tracked entity types"
-msgstr ""
+msgstr "Tipos de entidades tracked seleccionados"
 
 msgid "Something went wrong when loading the tracked entity types!"
 msgstr ""
@@ -823,6 +823,8 @@ msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
 msgstr ""
+"Importar datos geográficos para unidades organizativas utilizando el formato"
+" GML. GML es una gramática XML para expresar características geográficas."
 
 msgid "Overview: Import/Export"
 msgstr "Resumen: Importación/Exportación"
@@ -883,7 +885,7 @@ msgid "A class key must be selected"
 msgstr "Una clave de clase debe ser seleccionada"
 
 msgid "Tracked entity instances export"
-msgstr ""
+msgstr "Exportación de instancias de entidades tracked"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
 msgstr "Exportar instancias de entidad  tracked en formato XML, JSON o CSV."
