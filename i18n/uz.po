@@ -583,7 +583,7 @@ msgstr ""
 "қўшманг"
 
 msgid "Skip validation"
-msgstr "Таҳлилни ўтказиб юбориш"
+msgstr "Таҳлил ўтказиб юборилсин"
 
 msgid "Skip validation for import (not recommended)"
 msgstr "Импорт учун таҳлилни ўтказиб юбориш (тавсия этилмайди)"
