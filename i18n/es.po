@@ -101,7 +101,7 @@ msgid "Import"
 msgstr "Importar"
 
 msgid "Atomic mode"
-msgstr ""
+msgstr "Modo atómico"
 
 msgid "Whether to import objects even if some references do not exist"
 msgstr "Importar objetos incluso si algunas referencias no existen"
@@ -402,7 +402,7 @@ msgid "Replace"
 msgstr "Reemplazar"
 
 msgid "Merge mode"
-msgstr ""
+msgstr "Modo de fusión"
 
 msgid "Strategy to take when merging two objects"
 msgstr "Estrategia a seguir al fusionar dos objetos"
@@ -579,19 +579,19 @@ msgid "Filter by"
 msgstr "Filtrar por"
 
 msgid "Tracked entity types"
-msgstr "Tipos de entidad Tracked"
+msgstr "Tipos de entidad de Tracked"
 
 msgid "Filter tracked entity types by name"
-msgstr ""
+msgstr "Filtrar tipos de entidad de tracked por nombre"
 
 msgid "Selected tracked entity types"
-msgstr "Tipos de entidades tracked seleccionados"
+msgstr "Tipos de entidad de tracked seleccionados"
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr ""
+msgstr "Algo salió mal al cargar los tipos de entidad de tracked"
 
 msgid "At least one tracked entity type must be selected"
-msgstr "Al menos un tipo de entidad tracked debe ser seleccionado"
+msgstr "Al menos un tipo de entidad de tracked debe ser seleccionado"
 
 msgid "One tracked entity type must be selected"
 msgstr "Un tipo de entidad tracked debe ser seleccionado"
@@ -803,7 +803,7 @@ msgstr "Tipos de archivo soportados: JSON, CSV, XML, ADX y PDF."
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
-"Exportar datos de eventos para programas, etapas y entidades tracked en "
+"Exportar datos de eventos para programas, etapas y entidades de tracked en "
 "formato DXF 2."
 
 msgid "Export events"
@@ -813,8 +813,8 @@ msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
-"Importar eventos para programas, etapas y entidades tracked utilizando el "
-"formato DXF 2."
+"Importar eventos para programas, etapas y entidades de tracked utilizando el"
+" formato DXF 2."
 
 msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Tipos de archivo soportados: JSON, CSV, y XML."
@@ -839,7 +839,7 @@ msgid "Export metadata"
 msgstr "Exportar Meta-Datos"
 
 msgid "Export tracked entity instances"
-msgstr "Exportar instancias de entidad tracked"
+msgstr "Exportar instancias de entidad de tracked"
 
 msgid "Import data"
 msgstr "Importar datos"
@@ -854,7 +854,7 @@ msgid "Import metadata"
 msgstr "Importar Meta-Datos"
 
 msgid "Import tracked entity instances"
-msgstr ""
+msgstr "Importar instancias de entidad de tracked"
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
@@ -885,10 +885,10 @@ msgid "A class key must be selected"
 msgstr "Una clave de clase debe ser seleccionada"
 
 msgid "Tracked entity instances export"
-msgstr "Exportación de instancias de entidades tracked"
+msgstr "Exportación de instancias de entidad de tracked"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr "Exportar instancias de entidad  tracked en formato XML, JSON o CSV."
+msgstr "Exportar instancias de entidad de tracked en formato XML, JSON o CSV."
 
 msgid "Program to export from"
 msgstr "Programa para exportar desde"
@@ -902,10 +902,10 @@ msgstr ""
 "actualización\""
 
 msgid "Tracked entity instances import"
-msgstr ""
+msgstr "Importación de instancias de entidad de tracked"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr "Importar instancias de entidad tracked desde archivos JSON o XML."
+msgstr "Importar instancias de entidad de tracked desde archivos JSON o XML."
 
 msgid "Supported file types: JSON and XML."
 msgstr "Tipos de archivo soportados: JSON y XML."
