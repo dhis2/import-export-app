@@ -34,7 +34,7 @@
         "query-string": "^6.12.1"
     },
     "dependencies": {
-        "@dhis2/analytics": "^21.7.0",
+        "@dhis2/analytics": "^24.9.0",
         "@dhis2/app-runtime": "^3.4.4",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/maps-gl": "^3.5.1",
