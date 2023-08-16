@@ -30,7 +30,7 @@
         "@dhis2/cypress-plugins": "^7.0.0",
         "@testing-library/jest-dom": "^5.8.0",
         "@testing-library/react": "^9.4.0",
-        "patch-package": "^6.4.7",
+        "patch-package": "^6.5.1",
         "query-string": "^6.12.1"
     },
     "dependencies": {
