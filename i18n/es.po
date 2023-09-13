@@ -5,7 +5,7 @@
 # ericbp <ericbarredap@gmail.com>, 2020
 # Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Alison Andrade <aandrade@ippfwhr.org>, 2021
 # Carlos Tejo Alonso, 2022
@@ -183,7 +183,7 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "Controls when to flush the internal cache"
-msgstr ""
+msgstr "Controla cuándo borrar la caché interna"
 
 msgid "All"
 msgstr "Todos"
@@ -332,7 +332,7 @@ msgid "Include all units inside selections"
 msgstr "Incluir todas las unidades en la selección"
 
 msgid "All below"
-msgstr ""
+msgstr "Todo por debajo"
 
 msgid "How should organisation units inside the selections be included?"
 msgstr ""
@@ -583,22 +583,22 @@ msgid "Filter by"
 msgstr "Filtrar por"
 
 msgid "Tracked entity types"
-msgstr "Tipos de entidad de Tracked"
+msgstr "Tipos de entidad de Tracker"
 
 msgid "Filter tracked entity types by name"
-msgstr "Filtrar tipos de entidad de tracked por nombre"
+msgstr "Filtrar tipos de entidad de tracker por nombre"
 
 msgid "Selected tracked entity types"
-msgstr "Tipos de entidades de tracked seleccionados"
+msgstr "Tipos de entidades de tracker seleccionados"
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr "Algo salió mal al cargar los tipos de entidad de tracked"
+msgstr "Algo salió mal al cargar los tipos de entidad de tracker"
 
 msgid "At least one tracked entity type must be selected"
-msgstr "Al menos un tipo de entidad de tracked debe ser seleccionado"
+msgstr "Al menos un tipo de entidad de tracker debe ser seleccionado"
 
 msgid "One tracked entity type must be selected"
-msgstr "Un tipo de entidad tracked debe ser seleccionado"
+msgstr "Un tipo de entidad tracker debe ser seleccionado"
 
 msgid "Which users should be used?"
 msgstr "¿Qué usuarios se deben utilizar?"
@@ -628,7 +628,7 @@ msgid "Job details"
 msgstr "Detalles del trabajo"
 
 msgid "Key"
-msgstr ""
+msgstr "Clave"
 
 msgid "Value"
 msgstr "Valor"
@@ -646,7 +646,7 @@ msgid "Dry run"
 msgstr ""
 
 msgid "Log"
-msgstr ""
+msgstr "Log"
 
 msgid "Time"
 msgstr "Hora"
@@ -807,7 +807,7 @@ msgstr "Tipos de archivo soportados: JSON, CSV, XML, ADX y PDF."
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
-"Exportar datos de eventos para programas, etapas y entidades de tracked en "
+"Exportar datos de eventos para programas, etapas y entidades de tracker en "
 "formato DXF 2."
 
 msgid "Export events"
@@ -817,7 +817,7 @@ msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
-"Importar eventos para programas, etapas y entidades de tracked utilizando el"
+"Importar eventos para programas, etapas y entidades de tracker utilizando el"
 " formato DXF 2."
 
 msgid "Supported file types: JSON, CSV, and XML."
@@ -843,7 +843,7 @@ msgid "Export metadata"
 msgstr "Exportar Meta-Datos"
 
 msgid "Export tracked entity instances"
-msgstr "Exportar instancias de entidad de tracked"
+msgstr "Exportar instancias de entidad de tracker"
 
 msgid "Import data"
 msgstr "Importar datos"
@@ -858,7 +858,7 @@ msgid "Import metadata"
 msgstr "Importar Meta-Datos"
 
 msgid "Import tracked entity instances"
-msgstr "Importar instancias de entidad de tracked"
+msgstr "Importar instancias de entidad de tracker"
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
@@ -889,10 +889,10 @@ msgid "A class key must be selected"
 msgstr "Una clave de clase debe ser seleccionada"
 
 msgid "Tracked entity instances export"
-msgstr "Exportación de instancias de entidades de tracked"
+msgstr "Exportación de instancias de entidades de tracker"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr "Exportar instancias de entidad de tracked en formato XML, JSON o CSV."
+msgstr "Exportar instancias de entidad de tracker en formato XML, JSON o CSV."
 
 msgid "Program to export from"
 msgstr "Programa para exportar desde"
@@ -906,10 +906,10 @@ msgstr ""
 "actualización\""
 
 msgid "Tracked entity instances import"
-msgstr "Importación de instancias de entidad de tracked"
+msgstr "Importación de instancias de entidad de tracker"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr "Importar instancias de entidad de tracked desde archivos JSON o XML."
+msgstr "Importar instancias de entidad de tracker desde archivos JSON o XML."
 
 msgid "Supported file types: JSON and XML."
 msgstr "Tipos de archivo soportados: JSON y XML."
