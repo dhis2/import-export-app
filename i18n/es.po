@@ -9,7 +9,7 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
 # Marta Vila <marta@dhis2.org>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Pablo Del Médico, 2023
 # Alejandra Avila <alejandra@dhis2.org>, 2023
@@ -221,7 +221,7 @@ msgid "Flush mode"
 msgstr ""
 
 msgid "Controls when to flush the internal cache"
-msgstr ""
+msgstr "Controla cuándo borrar la caché interna"
 
 msgid "All"
 msgstr "Todos"
@@ -366,7 +366,7 @@ msgid "Include all units inside selections"
 msgstr "Incluir todas las unidades en la selección"
 
 msgid "All below"
-msgstr ""
+msgstr "Todo por debajo"
 
 msgid "How should organisation units inside the selections be included?"
 msgstr ""
@@ -617,22 +617,22 @@ msgid "Filter by"
 msgstr "Filtrar por"
 
 msgid "Tracked entity types"
-msgstr "Tipos de entidad de Tracked"
+msgstr "Tipos de entidad de Tracker"
 
 msgid "Filter tracked entity types by name"
-msgstr "Filtrar tipos de entidad de tracked por nombre"
+msgstr "Filtrar tipos de entidad de tracker por nombre"
 
 msgid "Selected tracked entity types"
-msgstr "Tipos de entidad de tracked seleccionados"
+msgstr "Tipos de entidad de tracker seleccionados"
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr "Algo salió mal al cargar los tipos de entidad de tracked"
+msgstr "Algo salió mal al cargar los tipos de entidad de tracker"
 
 msgid "At least one tracked entity type must be selected"
-msgstr "Al menos un tipo de entidad de tracked debe ser seleccionado"
+msgstr "Al menos un tipo de entidad de tracker debe ser seleccionado"
 
 msgid "One tracked entity type must be selected"
-msgstr "Un tipo de entidad tracked debe ser seleccionado"
+msgstr "Un tipo de entidad tracker debe ser seleccionado"
 
 msgid "Which users should be used?"
 msgstr "¿Qué usuarios se deben utilizar?"
@@ -662,7 +662,7 @@ msgid "Job details"
 msgstr "Detalles del trabajo"
 
 msgid "Key"
-msgstr ""
+msgstr "Clave"
 
 msgid "Value"
 msgstr "Valor"
@@ -680,7 +680,7 @@ msgid "Dry run"
 msgstr ""
 
 msgid "Log"
-msgstr ""
+msgstr "Log"
 
 msgid "Time"
 msgstr "Hora"
@@ -848,6 +848,8 @@ msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
 "Engine"
 msgstr ""
+"Importar datos de población de alta resolución de WorldPop utilizando Google"
+" Earth Engine"
 
 msgid "Earth Engine source"
 msgstr "Fuente Earth Engine"
@@ -933,6 +935,8 @@ msgstr "Unidad(es) organizativa(s) a la(s) que importar los datos"
 
 msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
+"Debe seleccionar un set de datos de Earth Engine antes de seleccionar un "
+"período"
 
 msgid "Period"
 msgstr "Periodo"
@@ -950,7 +954,7 @@ msgid "No periods found"
 msgstr "No se encontraron períodos"
 
 msgid "Point org. unit - no value"
-msgstr ""
+msgstr "Punto unidad org. - sin valor"
 
 msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
@@ -1007,6 +1011,8 @@ msgid ""
 "The Earth Engine data set is too large. Try reducing the number of groups or"
 " organisation units"
 msgstr ""
+"El set de datos de Earth Engine es demasiado grande. Intente reducir el "
+"número de grupos o unidades organizativas."
 
 msgid "The organisation units selection is invalid"
 msgstr "La selección de unidades organizativas no es válida"
@@ -1025,6 +1031,8 @@ msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
 msgstr ""
+"Requiere una cuenta de Google Earth Engine. Consulte la documentación de "
+"DHIS2 para obtener más información."
 
 msgid "Population"
 msgstr "Población"
@@ -1148,11 +1156,14 @@ msgid ""
 "Select polygon organisation units or use a catchment area as associated "
 "geometry."
 msgstr ""
+"No es posible obtener datos de Earth Engine para establecimientos puntuales."
+" Seleccione unidades organizativas poligonales o utilice una área de "
+"captación como geometría asociada."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
-"Exportar datos de eventos para programas, etapas y entidades de tracked en "
+"Exportar datos de eventos para programas, etapas y entidades de tracker en "
 "formato DXF 2."
 
 msgid "Export events"
@@ -1162,7 +1173,7 @@ msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
 msgstr ""
-"Importar eventos para programas, etapas y entidades de tracked utilizando el"
+"Importar eventos para programas, etapas y entidades de tracker utilizando el"
 " formato DXF 2."
 
 msgid "Supported file types: JSON, CSV, and XML."
@@ -1175,6 +1186,9 @@ msgid ""
 "Import geographic data for organisation units. GeoJSON is the recommend "
 "format and can also be used for associated geometries or catchment areas."
 msgstr ""
+"Importar datos geográficos para unidades organizativas. GeoJSON es el "
+"formato recomendado y también puede utilizarse para geometrías asociadas o "
+"áreas de captación."
 
 msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
@@ -1196,7 +1210,7 @@ msgid "Export metadata"
 msgstr "Exportar Meta-Datos"
 
 msgid "Export tracked entity instances"
-msgstr "Exportar instancias de entidad de tracked"
+msgstr "Exportar instancias de entidad de tracker"
 
 msgid "Import data"
 msgstr "Importar datos"
@@ -1214,7 +1228,7 @@ msgid "Import metadata"
 msgstr "Importar Meta-Datos"
 
 msgid "Import tracked entity instances"
-msgstr "Importar instancias de entidad de tracked"
+msgstr "Importar instancias de entidad de tracker"
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
@@ -1248,11 +1262,11 @@ msgid "A class key must be selected"
 msgstr "Una clave de clase debe ser seleccionada"
 
 msgid "Tracked entity instances export"
-msgstr "Exportación de instancias de entidad de tracked"
+msgstr "Exportación de instancias de entidad de tracker"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
 msgstr ""
-"Exportar instancias de entidad  de tracked en formato XML, JSON o CSV."
+"Exportar instancias de entidad  de tracker en formato XML, JSON o CSV."
 
 msgid "Program to export from"
 msgstr "Programa para exportar desde"
@@ -1266,10 +1280,10 @@ msgstr ""
 "actualización\""
 
 msgid "Tracked entity instances import"
-msgstr "Importación de instancias de entidad de tracked"
+msgstr "Importación de instancias de entidad de tracker"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr "Importar instancias de entidad de tracked desde archivos JSON o XML."
+msgstr "Importar instancias de entidad de tracker desde archivos JSON o XML."
 
 msgid "Supported file types: JSON and XML."
 msgstr "Tipos de archivo soportados: JSON y XML."
