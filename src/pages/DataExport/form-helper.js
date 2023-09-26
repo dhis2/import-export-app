@@ -6,8 +6,8 @@ import {
     locationAssign,
     compressionToName,
     fileFormatToFileExtension,
+    pathToId,
 } from '../../utils/helper'
-import { jsDateToISO8601, pathToId } from '../../utils/helper'
 
 const valuesToParams = (
     {
@@ -31,8 +31,8 @@ const valuesToParams = (
         `idScheme=${idScheme}`,
         `includeDeleted=${includeDeleted}`,
         `children=${includeChildren}`,
-        `startDate=${jsDateToISO8601(startDate)}`,
-        `endDate=${jsDateToISO8601(endDate)}`,
+        `startDate=${startDate}`,
+        `endDate=${endDate}`,
         `orgUnit=${selectedOrgUnits.map(o => pathToId(o))}`,
         `dataSet=${selectedDataSets}`,
         `format=${encodeURIComponent(format)}`,
