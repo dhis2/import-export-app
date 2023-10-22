@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2022
+# Karoline Tufte Lien <karoline@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2022\n"
-"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
+"Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -311,7 +311,7 @@ msgstr "Importer strategi"
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -848,7 +848,7 @@ msgid "Category option combination"
 msgstr "Kategorialternativkombinasjon"
 
 msgid "No match found"
-msgstr ""
+msgstr "Ingen treff funnet"
 
 msgid "Choose category option combo"
 msgstr ""
