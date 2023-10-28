@@ -17,111 +17,111 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "载入当前用户发生错误"
 
 msgid "Basic options"
-msgstr ""
+msgstr "基本选项"
 
 msgid "Invalid date"
 msgstr "无效的的日期"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "起始日期必须早于结束日期"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "结束日期必须晚于起始日期"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "无效的持续时间"
 
 msgid "Format"
 msgstr "格式"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
-msgstr ""
+msgstr "载入额外的数据元ID方案出错"
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr ""
+msgstr "载入额外的ID方案出错"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
-msgstr ""
+msgstr "载入额外的机构ID方案出错"
 
 msgid "Please select a file"
-msgstr ""
+msgstr "请选择一个文件"
 
 msgid "Import as associated geometry"
-msgstr ""
+msgstr "导入为相关的空间几何形状"
 
 msgid "Store geometry as value of attribute"
-msgstr ""
+msgstr "将空间几何形状存储为属性值"
 
 msgid "Selected programs"
 msgstr "已选项目组"
 
 msgid "Something went wrong when loading the attributes!"
-msgstr ""
+msgstr "加载属性时出现问题！"
 
 msgid "One attribute must be selected"
-msgstr ""
+msgstr "必须选择一个属性"
 
 msgid ""
 "Associated geometry import requires an attribute of type \"GeoJSON\" applied"
 " to \"Organisation unit\". It can be defined in the Maintenance app."
-msgstr ""
+msgstr "关联的空间几何形状导入需要应用于“组织机构”的“GeoJSON”类型的属性。它可以在维护应用中定义。"
 
 msgid "Match GeoJSON property to organisation unit scheme"
-msgstr ""
+msgstr "将 GeoJSON 属性与组织单位方案匹配"
 
 msgid "GeoJSON property name"
-msgstr ""
+msgstr "GeoJSON 属性名称"
 
 msgid "GeoJSON feature property that holds the organisation unit identifier"
-msgstr ""
+msgstr "持有组织机构标识符的 GeoJSON 特征属性"
 
 msgid "A dry run tests the import settings without importing any data"
-msgstr ""
+msgstr "试运行测试导入设置，而不导入任何数据"
 
 msgid "Start dry run"
-msgstr ""
+msgstr "开始空运行"
 
 msgid "Start import"
-msgstr ""
+msgstr "开始导入"
 
 msgid "Any user"
-msgstr ""
+msgstr "任何使用者"
 
 msgid "Current user"
 msgstr "当前用户"
 
 msgid "No user/unassigned"
-msgstr ""
+msgstr "没有用户/未分配"
 
 msgid "Selected users"
-msgstr ""
+msgstr "选定的用户"
 
 msgid "Filter by assigned user"
-msgstr ""
+msgstr "按分配的用户筛选"
 
 msgid "Export only instances with events assigned to specific users"
-msgstr ""
+msgstr "仅导出将事件分配给特定用户的实例"
 
 msgid "Assigned user(s)"
-msgstr ""
+msgstr "分配的用户"
 
 msgid "Do not import"
-msgstr ""
+msgstr "不导入"
 
 msgid "Import"
 msgstr "导入"
 
 msgid "Atomic mode"
-msgstr "原子化模式"
+msgstr "原子模式"
 
 msgid "Whether to import objects even if some references do not exist"
-msgstr ""
+msgstr "是否导入对象，即使某些引用不存在"
 
 msgid "Class key"
 msgstr "分类键值"
@@ -136,7 +136,7 @@ msgid "Uncompressed"
 msgstr "无压缩"
 
 msgid "Compression mode"
-msgstr ""
+msgstr "压缩方式"
 
 msgid "Uid"
 msgstr "Uid"
@@ -151,10 +151,10 @@ msgid "Data element ID scheme"
 msgstr "数据元ID方案"
 
 msgid "Which data sets should be included in export?"
-msgstr ""
+msgstr "导出中应包含哪些数据集？"
 
 msgid "Filter data sets"
-msgstr ""
+msgstr "过滤数据集"
 
 msgid "Selected data sets"
 msgstr "选择的数据集"
@@ -163,55 +163,55 @@ msgid "Something went wrong when loading the data sets!"
 msgstr "载入当前数据集发生错误"
 
 msgid "At least one data set must be selected"
-msgstr ""
+msgstr "至少必须选择一个数据集"
 
 msgid "One data set must be selected"
-msgstr ""
+msgstr "必须选择一个数据集"
 
 msgid "End date"
 msgstr "结束日期"
 
 msgid "Event ID scheme"
-msgstr ""
+msgstr "事件ID方案"
 
 msgid "Loading export..."
-msgstr ""
+msgstr "正在加载导出..."
 
 msgid "Select a file to import values from"
-msgstr ""
+msgstr "选择一个文件以从中导入值"
 
 msgid "Is the first row a header row?"
-msgstr ""
+msgstr "第一行是标题行吗？"
 
 msgid "First row is header"
 msgstr "第一行是表头"
 
 msgid "A header row will be ignored during import"
-msgstr ""
+msgstr "导入期间标题行将被忽略"
 
 msgid "Auto (recommended)"
-msgstr ""
+msgstr "自动（推荐）"
 
 msgid "Object (debugging purposes)"
-msgstr ""
+msgstr "对象（调试目的）"
 
 msgid "Flush mode"
 msgstr "缓存刷新模式"
 
 msgid "Controls when to flush the internal cache"
-msgstr ""
+msgstr "控制何时刷新内部缓存"
 
 msgid "All"
 msgstr "全部"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "标记为后续"
 
 msgid "Not marked for follow-up"
-msgstr ""
+msgstr "未标记为可追踪"
 
 msgid "Include only entities with follow-up status"
-msgstr ""
+msgstr "仅包括具有后续状态的实体"
 
 msgid "JSON"
 msgstr "JSON"
@@ -229,13 +229,13 @@ msgid "PDF"
 msgstr "PDF"
 
 msgid "JSONP"
-msgstr ""
+msgstr "JSONP"
 
 msgid "What format is the data to import?"
-msgstr ""
+msgstr "导入数据的格式是什么？"
 
 msgid "What format should the data be exported as?"
-msgstr ""
+msgstr "数据应以什么格式导出？"
 
 msgid "ID scheme"
 msgstr "ID方案"
@@ -247,22 +247,22 @@ msgid "Identifier"
 msgstr "标识"
 
 msgid "Identifier scheme to use for reference matching"
-msgstr ""
+msgstr "用于参考匹配的标识符方案"
 
 msgid "Only include reports for objects that have errors"
-msgstr ""
+msgstr "仅包含有错误的对象的报告"
 
 msgid "Errors"
-msgstr "失误"
+msgstr "错误"
 
 msgid "Reports for all objects imported"
-msgstr ""
+msgstr "报告所有导入的对象"
 
 msgid "Full"
 msgstr "全部"
 
 msgid "Reports for all objects imported along with their names (if available)"
-msgstr ""
+msgstr "报告所有导入的对象及其名称（如果有）"
 
 msgid "Debug"
 msgstr "调试"
@@ -271,138 +271,138 @@ msgid "Import report mode"
 msgstr "导入报表模式"
 
 msgid "Controls what should be reported after the import is done"
-msgstr ""
+msgstr "控制导入完成后应报告的内容"
 
 msgid "Import new values and update existing"
-msgstr ""
+msgstr "导入新值并更新现有值"
 
 msgid "Merge"
 msgstr "合并"
 
 msgid "Import new values only"
-msgstr ""
+msgstr "仅导入新值"
 
 msgid "Append"
 msgstr "附加"
 
 msgid "Only update existing values, ignore new values"
-msgstr ""
+msgstr "仅更新现有值，忽略新值"
 
 msgid "Update"
 msgstr "更新"
 
 msgid "Remove values included in uploaded file"
-msgstr ""
+msgstr "删除上传文件中包含的值"
 
 msgid "Delete"
 msgstr "删除"
 
 msgid "Data will be deleted"
-msgstr ""
+msgstr "数据将被删除"
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
-msgstr ""
+msgstr "上传文件中的值将从数据库中删除。确保这是正确的操作；它无法撤消。"
 
 msgid "Import strategy"
 msgstr "导入策略"
 
 msgid "Include all attributes"
-msgstr ""
+msgstr "包括所有属性"
 
 msgid "Include descendants"
-msgstr ""
+msgstr "包括下属"
 
 msgid "Include descendants of selected organisation units"
-msgstr ""
+msgstr "包括所选机构的下属"
 
 msgid "Include deleted"
 msgstr "包括删除的"
 
 msgid "Include deleted data in export"
-msgstr ""
+msgstr "在导出中包括已删除的数据"
 
 msgid "Only include selected organisation unit"
-msgstr ""
+msgstr "仅包括选定的组织单位"
 
 msgid "Selected"
 msgstr "选择的"
 
 msgid "Include the first level of units inside selections"
-msgstr ""
+msgstr "包括选择机构的直属机构"
 
 msgid "Directly below"
-msgstr ""
+msgstr "直属"
 
 msgid "Include all units inside selections"
-msgstr ""
+msgstr "包括在选择的所有单位"
 
 msgid "All below"
-msgstr ""
+msgstr "所有下面"
 
 msgid "How should organisation units inside the selections be included?"
-msgstr ""
+msgstr "选择中应如何包括组织单位？"
 
 msgid "Includes properties which are not null"
-msgstr ""
+msgstr "包括不为空的属性"
 
 msgid "Non null"
-msgstr ""
+msgstr "非空"
 
 msgid "Include all properties"
-msgstr ""
+msgstr "包括所有属性"
 
 msgid "Always"
 msgstr "总是"
 
 msgid "Include non-empty properties"
-msgstr ""
+msgstr "包含非空属性"
 
 msgid "Non empty"
-msgstr ""
+msgstr "非空"
 
 msgid "Inclusion strategy"
 msgstr "包括策略"
 
 msgid "Controls which properties to include"
-msgstr ""
+msgstr "控制要包括的属性"
 
 msgid "Async"
 msgstr "异步"
 
 msgid "Asynchronous import"
-msgstr ""
+msgstr "异步导入"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr ""
+msgstr "控制是否以异步方式完成导入"
 
 msgid "Last updated duration"
-msgstr ""
+msgstr "最近更新的期间"
 
 msgid "Last updated end date"
-msgstr ""
+msgstr "最近更新的结束日期"
 
 msgid "Do not filter by last updated date"
-msgstr ""
+msgstr "不要按上次更新日期过滤"
 
 msgid "Start/end dates"
 msgstr "开始-结束日期"
 
 msgid "Time since last updated"
-msgstr ""
+msgstr "自上次更新以来的时间"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "按上次更新日期筛选"
 
 msgid "Last updated start date"
-msgstr ""
+msgstr "上次更新的起始日期"
 
 msgid "Only overwrite the old property if the new property value is not-null"
-msgstr ""
+msgstr "仅当新属性值不为空时才覆盖旧属性"
 
 msgid "Overwrite regardless of whether the new property value is null"
-msgstr ""
+msgstr "覆盖，无论新属性值是否为null"
 
 msgid "Replace"
 msgstr "替换"
@@ -411,7 +411,7 @@ msgid "Merge mode"
 msgstr "合并模式"
 
 msgid "Strategy to take when merging two objects"
-msgstr ""
+msgstr "合并两个对象时采取的策略"
 
 msgid "Data sets"
 msgstr "数据集"
@@ -420,10 +420,10 @@ msgid "Programs"
 msgstr "项目"
 
 msgid "Category combination"
-msgstr "值域组合"
+msgstr "分类组合"
 
 msgid "Dashboard"
-msgstr "状态面板"
+msgstr "仪表盘"
 
 msgid "Data element groups"
 msgstr "数据元组"
@@ -435,88 +435,88 @@ msgid "Object type"
 msgstr "对象类型"
 
 msgid "One object must be selected"
-msgstr ""
+msgstr "必须选择一个对象"
 
 msgid "Object"
 msgstr "对象"
 
 msgid "Organisation unit ID scheme"
-msgstr ""
+msgstr "机构ID方案"
 
 msgid "Id"
 msgstr "Id"
 
 msgid "Data view organisation units associated with the current user"
-msgstr ""
+msgstr "当前用户的机构数据查看"
 
 msgid "Accessible"
-msgstr ""
+msgstr "可访问"
 
 msgid "Data capture organisation units associated with the current user"
-msgstr ""
+msgstr "当前用户的机构数据采集"
 
 msgid "Capture"
 msgstr "采集"
 
 msgid "All organisation units in the system"
-msgstr ""
+msgstr "系统所有机构"
 
 msgid "Manually select organisation units from list"
-msgstr ""
+msgstr "从列表中手动选择组织单位"
 
 msgid "Which organisation units should be included?"
-msgstr ""
+msgstr "应该包括哪些组织机构？"
 
 msgid "Organisation unit(s) to export data from"
-msgstr ""
+msgstr "从中导出数据的组织机构"
 
 msgid "Preheat cache"
 msgstr "缓存预热"
 
 msgid "Preheat cache to make large imports faster"
-msgstr ""
+msgstr "预热缓存，以使大量导入更快"
 
 msgid "Large imports will be processed faster but will consume more resources"
-msgstr ""
+msgstr "大量导入将得到更快处理，但会消耗更多资源"
 
 msgid "Intelligent scan (reference)"
-msgstr ""
+msgstr "智能扫描（引用）"
 
 msgid "None"
-msgstr "无"
+msgstr "没有"
 
 msgid "Preheat mode"
 msgstr "预热模式"
 
 msgid "Controls the level of preheating that should be done"
-msgstr ""
+msgstr "控制应进行预热的等级"
 
 msgid "Program to export events from"
-msgstr ""
+msgstr "从中导出事件的项目"
 
 msgid "Filter programs"
-msgstr ""
+msgstr "筛选项目"
 
 msgid "Something went wrong when loading the programs!"
 msgstr "载入项目发生错误"
 
 msgid "At least one program must be selected"
-msgstr ""
+msgstr "至少需要选择一个项目"
 
 msgid "One program must be selected"
-msgstr ""
+msgstr "必须选择一个项目"
 
 msgid "Which program stage should be included?"
-msgstr ""
+msgstr "应该包括哪个项目阶段？"
 
 msgid "Start date"
-msgstr "起始日期"
+msgstr "开始日期"
 
 msgid "All statuses"
-msgstr ""
+msgstr "所有状态"
 
 msgid "Active"
-msgstr "活动的"
+msgstr "活跃的"
 
 msgid "Completed"
 msgstr "完成"
@@ -525,44 +525,44 @@ msgid "Cancelled"
 msgstr "已取消"
 
 msgid "Include only entities with status"
-msgstr ""
+msgstr "仅包括具有状态的实体"
 
 msgid "Skip audit"
 msgstr "跳过审计"
 
 msgid "Skip audit, meaning audit values will not be generated"
-msgstr ""
+msgstr "跳过审核，这意味着将不会生成审核值"
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr ""
+msgstr "改变审计成本提升性能"
 
 msgid "Skip exisiting check"
-msgstr ""
+msgstr "跳过已经存在检查"
 
 msgid "Skip checks for existing data values"
-msgstr ""
+msgstr "跳过检查现有数据值"
 
 msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
-msgstr ""
+msgstr "提高性能，仅应用于空数据库或在不存在要导入的数据值时使用"
 
 msgid "Skip sharing"
 msgstr "跳过共享"
 
 msgid "Skip sharing and access settings"
-msgstr ""
+msgstr "跳过共享和访问设置"
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
-msgstr ""
+msgstr "跳过共享属性，执行更新时不合并共享，在创建新对象时不添加用户组访问权限"
 
 msgid "Skip validation"
 msgstr "跳过验证"
 
 msgid "Skip validation for import (not recommended)"
-msgstr ""
+msgstr "跳过导入验证（不推荐）"
 
 msgid "Strategy"
 msgstr "策略"
@@ -574,52 +574,52 @@ msgid "Tracked entity type"
 msgstr "跟踪实体类型"
 
 msgid "Filter by"
-msgstr ""
+msgstr "过滤"
 
 msgid "Tracked entity types"
 msgstr "跟踪实体类型"
 
 msgid "Filter tracked entity types by name"
-msgstr ""
+msgstr "按名称过滤跟踪实体类型"
 
 msgid "Selected tracked entity types"
-msgstr ""
+msgstr "选定的跟踪实体类型"
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr ""
+msgstr "载入实体类型发生错误"
 
 msgid "At least one tracked entity type must be selected"
-msgstr ""
+msgstr "至少选择一个跟踪实体类型"
 
 msgid "One tracked entity type must be selected"
-msgstr ""
+msgstr "至少选择一个跟踪实体类型"
 
 msgid "Which users should be used?"
-msgstr ""
+msgstr "应该使用哪些用户？"
 
 msgid "Filter users"
-msgstr ""
+msgstr "过滤用户"
 
 msgid "Something went wrong when loading the users!"
-msgstr ""
+msgstr "载入用户发生错误"
 
 msgid "At least one user must be selected"
-msgstr ""
+msgstr "必须选择一个用户"
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "必须选择一个用户"
 
 msgid "No jobs started yet."
-msgstr ""
+msgstr "还没有已启动的任务"
 
 msgid "Recreate job"
-msgstr ""
+msgstr "重新创建作业"
 
 msgid "In progress"
 msgstr "进行中"
 
 msgid "Job details"
-msgstr ""
+msgstr "作业详情"
 
 msgid "Key"
 msgstr "键值"
@@ -628,7 +628,7 @@ msgid "Value"
 msgstr "值"
 
 msgid "Job summary"
-msgstr ""
+msgstr "作业摘要"
 
 msgid "Error"
 msgstr "错误"
@@ -640,7 +640,7 @@ msgid "Dry run"
 msgstr "空运行"
 
 msgid "Log"
-msgstr ""
+msgstr "日志记录"
 
 msgid "Time"
 msgstr "时间"
@@ -658,10 +658,10 @@ msgid "Type"
 msgstr "类型"
 
 msgid "Property"
-msgstr ""
+msgstr "属性"
 
 msgid "View summary of recently started import job"
-msgstr ""
+msgstr "查看最近开始的导入作业的摘要"
 
 msgid "Status"
 msgstr "状态"
@@ -688,28 +688,28 @@ msgid "Total"
 msgstr "总共"
 
 msgid "Indexes"
-msgstr ""
+msgstr "索引"
 
 msgid "Details by type"
-msgstr ""
+msgstr "按类型的详细信息"
 
 msgid "Advanced options"
-msgstr ""
+msgstr "高级选项"
 
 msgid "At least one organisation unit must be selected"
 msgstr "至少得选择一个机构"
 
 msgid "One organisation unit must be selected"
-msgstr ""
+msgstr "必须选择一个机构"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr ""
+msgstr "载入机构发生错误"
 
 msgid "One program stage must be selected"
-msgstr ""
+msgstr "必须选择一个项目阶段"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr ""
+msgstr "载入方案发生错误"
 
 msgid "Select All"
 msgstr "全选"
@@ -718,46 +718,46 @@ msgid "Select None"
 msgstr "不选"
 
 msgid "At least one schema must be selected"
-msgstr ""
+msgstr "必须选择一个方案"
 
 msgid "Export"
 msgstr "导出"
 
 msgid "Data import"
-msgstr ""
+msgstr "数据导入"
 
 msgid "Event import"
-msgstr ""
+msgstr "事件导入"
 
 msgid "Earth Engine import"
-msgstr ""
+msgstr "地图引擎导入"
 
 msgid "Org unit geometry import"
-msgstr ""
+msgstr "组织机构空间几何形状导入"
 
 msgid "Metadata import"
-msgstr ""
+msgstr "元数据导入"
 
 msgid "TEI import"
-msgstr ""
+msgstr "实体导入"
 
 msgid "Data export"
-msgstr ""
+msgstr "数据导出"
 
 msgid "Event export"
-msgstr ""
+msgstr "事件导出"
 
 msgid "Metadata dependency export"
-msgstr ""
+msgstr "元数据依赖导出"
 
 msgid "Metadata export"
-msgstr ""
+msgstr "元数据导出"
 
 msgid "TEI export"
-msgstr ""
+msgstr "实体导出"
 
 msgid "Job overview"
-msgstr ""
+msgstr "作业概要"
 
 msgid "Overview"
 msgstr "概要"
@@ -769,151 +769,151 @@ msgid "No"
 msgstr "否"
 
 msgid "There are errors on this page"
-msgstr ""
+msgstr "此页面上有错误"
 
 msgid "Something went wrong when loading the class keys"
-msgstr ""
+msgstr "载入类键值发生错误"
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "载入对象发生错误"
 
 msgid "All program stages"
-msgstr ""
+msgstr "所有项目阶段"
 
 msgid "Something went wrong when loading the program stages"
-msgstr ""
+msgstr "载入项目阶段发生错误"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
-msgstr ""
+msgstr "以DXF 2格式导出元数据，例如数据元和机构。"
 
 msgid "Date range to export data for"
-msgstr ""
+msgstr "导出数据的日期范围"
 
 msgid "Export data"
 msgstr "导出数据"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
-msgstr ""
+msgstr "从ADX XML、DFX2 XML、json或csv格式导入数据"
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr ""
+msgstr "支持的文件类型：JSON，CSV，XML，ADX和PDF。"
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
 "Engine"
-msgstr ""
+msgstr "使用 Google 地球引擎从 WorldPop 导入高分辨率人口数据"
 
 msgid "Earth Engine source"
-msgstr ""
+msgstr "地球引擎源"
 
 msgid "Organisation units"
 msgstr "组织机构"
 
 msgid "Import setup"
-msgstr ""
+msgstr "导入设置"
 
 msgid "Data preview"
-msgstr ""
+msgstr "数据预览"
 
 msgid "Some required fields are missing"
-msgstr ""
+msgstr "缺少一些必填字段"
 
 msgid "Preview before import"
-msgstr ""
+msgstr "导入前预览"
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "使用相关的几何坐标"
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
+msgstr "为选定的组织单位选择关联的几何图形"
 
 msgid "Import groups to category option combinations"
-msgstr ""
+msgstr "将组导入类别选项组合"
 
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. "
 "Choose the category option combinations to import each group into."
-msgstr ""
+msgstr "Earth Engine 数据集“人口年龄组”具有分解组。选择要导入每个组的类别选项组合。"
 
 msgid "Group name"
 msgstr "组名"
 
 msgid "Group description"
-msgstr ""
+msgstr "小组说明"
 
 msgid "Category option combination"
 msgstr "分类组合选项"
 
 msgid "No match found"
-msgstr ""
+msgstr "未找到匹配项"
 
 msgid "Choose category option combo"
-msgstr ""
+msgstr "选择类别选项组合"
 
 msgid "Data element"
 msgstr "数据元"
 
 msgid "Select data element"
-msgstr ""
+msgstr "选择数据元"
 
 msgid "The data element where Earth Engine data will be added"
-msgstr ""
+msgstr "将添加 Earth Engine 数据的数据元素"
 
 msgid "Earth Engine data set"
-msgstr ""
+msgstr "地球引擎数据集"
 
 msgid "Select earth engine data set"
-msgstr ""
+msgstr "选择地球引擎数据集"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "未选择任何内容"
 
 msgid "Select a level"
-msgstr ""
+msgstr "选择一个等级"
 
 msgid "Deselect all"
-msgstr "去全选"
+msgstr "取消全选"
 
 msgid "Organisation unit(s) to import data to"
-msgstr ""
+msgstr "将数据导入到的组织机构"
 
 msgid "You must select an Earth Engine data set before selecting a period"
-msgstr ""
+msgstr "您必须先选择一个 Earth Engine 数据集，然后再选择一个时间周期"
 
 msgid "Period"
-msgstr "周期"
+msgstr "期间"
 
 msgid "Data from Earth Engine will be imported for this period."
-msgstr ""
+msgstr "在此期间将导入来自 Earth Engine 的数据。"
 
 msgid "Select period"
 msgstr "选择周期"
 
 msgid "Loading periods"
-msgstr ""
+msgstr "载入期间"
 
 msgid "No periods found"
-msgstr ""
+msgstr "未找到经期"
 
 msgid "Point org. unit - no value"
-msgstr ""
+msgstr "组织机构点- 无值"
 
 msgid "Organisation Unit"
 msgstr "组织机构"
 
 msgid "Category option combo"
-msgstr "分类选项 combo"
+msgstr "类别选项组合"
 
 msgid "Current value"
-msgstr ""
+msgstr "当前值"
 
 msgid "New value"
-msgstr ""
+msgstr "新价值"
 
 msgid "Rows per page"
 msgstr "行每页"
@@ -921,185 +921,186 @@ msgstr "行每页"
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
+"第 {{page}} 页，共 {{pageCount}} 页，第 {{firstItem}}-{{lastItem}} 行，共 {{total}}"
 
 msgid "Don't round source values"
-msgstr ""
+msgstr "不要四舍五入源值"
 
 msgid "Round to 0 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 0"
 
 msgid "Round to 1 decimal place"
-msgstr ""
+msgstr "四舍五入到小数点后一位"
 
 msgid "Round to 2 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后两位"
 
 msgid "Round to 3 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 3 位"
 
 msgid "Round to 4 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 4 位"
 
 msgid "Round to 5 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 5 位"
 
 msgid "Round to 6 decimal places"
-msgstr ""
+msgstr "四舍五入到小数点后 6 位"
 
 msgid "Value rounding"
-msgstr ""
+msgstr "值四舍五入"
 
 msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
+msgstr "尝试获取 Earth Engine 数据时出错"
 
 msgid ""
 "The Earth Engine data set is too large. Try reducing the number of groups or"
 " organisation units"
-msgstr ""
+msgstr "Earth Engine 数据集太大。尝试减少组或组织单位的数量"
 
 msgid "The organisation units selection is invalid"
-msgstr ""
+msgstr "组织单位选择无效"
 
 msgid "The app could not retrieve required data."
-msgstr ""
+msgstr "该应用程序无法检索所需的数据。"
 
 msgid "Network error"
-msgstr ""
+msgstr "网络错误"
 
 msgid "Cannot get authorization token for Google Earth Engine."
-msgstr ""
+msgstr "无法获取 Google 地球引擎的授权令牌。"
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
-msgstr ""
+msgstr "需要 Google 地球引擎帐户。查看 DHIS2 文档以获取更多信息。"
 
 msgid "Population"
-msgstr ""
+msgstr "人口"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "人口年龄组"
 
 msgid "Men 0 - 1 years"
-msgstr ""
+msgstr "男性 0 - 1 岁"
 
 msgid "Men 1 - 4 years"
-msgstr ""
+msgstr "男性 1 - 4 岁"
 
 msgid "Men 5 - 9 years"
-msgstr ""
+msgstr "男性 5 - 9 岁"
 
 msgid "Men 10 - 14 years"
-msgstr ""
+msgstr "男性 10 - 14 岁"
 
 msgid "Men 15 - 19 years"
-msgstr ""
+msgstr "15 - 19 岁男性"
 
 msgid "Men 20 - 24 years"
-msgstr ""
+msgstr "男性 20 - 24 岁"
 
 msgid "Men 25 - 29 years"
-msgstr ""
+msgstr "男性 25 - 29 岁"
 
 msgid "Men 30 - 34 years"
-msgstr ""
+msgstr "男性 30 - 34 岁"
 
 msgid "Men 35 - 39 years"
-msgstr ""
+msgstr "男性 35 - 39 岁"
 
 msgid "Men 40 - 44 years"
-msgstr ""
+msgstr "男性 40 - 44 岁"
 
 msgid "Men 45 - 49 years"
-msgstr ""
+msgstr "男性 45 - 49 岁"
 
 msgid "Men 50 - 54 years"
-msgstr ""
+msgstr "男性 50 - 54 岁"
 
 msgid "Men 55 - 59 years"
-msgstr ""
+msgstr "男性 55 - 59 岁"
 
 msgid "Men 60 - 64 years"
-msgstr ""
+msgstr "男性 60 - 64 岁"
 
 msgid "Men 65 - 69 years"
-msgstr ""
+msgstr "男性 65 - 69 岁"
 
 msgid "Men 70 - 74 years"
-msgstr ""
+msgstr "男性 70 - 74 岁"
 
 msgid "Men 75 - 79 years"
-msgstr ""
+msgstr "男性 75 - 79 岁"
 
 msgid "Men 80 years and above"
-msgstr ""
+msgstr "80岁及以上男性"
 
 msgid "Women 0 - 1 years"
-msgstr ""
+msgstr "女性 0 - 1 岁"
 
 msgid "Women 1 - 4 years"
-msgstr ""
+msgstr "女性 1 - 4 岁"
 
 msgid "Women 5 - 9 years"
-msgstr ""
+msgstr "女性 5 - 9 岁"
 
 msgid "Women 10 - 14 years"
-msgstr ""
+msgstr "10 - 14 岁女性"
 
 msgid "Women 15 - 19 years"
-msgstr ""
+msgstr "15 - 19 岁女性"
 
 msgid "Women 20 - 24 years"
-msgstr ""
+msgstr "20 - 24 岁的女性"
 
 msgid "Women 25 - 29 years"
-msgstr ""
+msgstr "女性 25 - 29 岁"
 
 msgid "Women 30 - 34 years"
-msgstr ""
+msgstr "30 - 34 岁的女性"
 
 msgid "Women 35 - 39 years"
-msgstr ""
+msgstr "35 - 39 岁的女性"
 
 msgid "Women 40 - 44 years"
-msgstr ""
+msgstr "40 - 44 岁的女性"
 
 msgid "Women 45 - 49 years"
-msgstr ""
+msgstr "女性 45 - 49 岁"
 
 msgid "Women 50 - 54 years"
-msgstr ""
+msgstr "50 至 54 岁的女性"
 
 msgid "Women 55 - 59 years"
-msgstr ""
+msgstr "55 - 59 岁的女性"
 
 msgid "Women 60 - 64 years"
-msgstr ""
+msgstr "60 - 64 岁的女性"
 
 msgid "Women 65 - 69 years"
-msgstr ""
+msgstr "65 - 69 岁的女性"
 
 msgid "Women 70 - 74 years"
-msgstr ""
+msgstr "70 - 74 岁的女性"
 
 msgid "Women 75 - 79 years"
-msgstr ""
+msgstr "75 - 79 岁的女性"
 
 msgid "Women 80 years and above"
-msgstr ""
+msgstr "80岁及以上的女性"
 
 msgid "No organisation units have been selected"
-msgstr ""
+msgstr "未选择任何组织单位"
 
 msgid ""
 "It is not possible to get data from Earth Engine for point facilities. "
 "Select polygon organisation units or use a catchment area as associated "
 "geometry."
-msgstr ""
+msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织机构或使用缓冲区作为关联几何图形。"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
-msgstr ""
+msgstr "以DXF 2格式导出程序，阶段和被跟踪实体的事件数据。"
 
 msgid "Export events"
 msgstr "导出事件"
@@ -1107,38 +1108,38 @@ msgstr "导出事件"
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
-msgstr ""
+msgstr "从DXF2格式导入项目、阶段和跟踪实体事件数据"
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr ""
+msgstr "支持的文件类型：JSON，CSV和XML。"
 
 msgid "Organisation unit geometry import"
-msgstr ""
+msgstr "组织机构空间几何形状导入"
 
 msgid ""
 "Import geographic data for organisation units. GeoJSON is the recommend "
 "format and can also be used for associated geometries or catchment areas."
-msgstr ""
+msgstr "导入组织机构的地理数据。 GeoJSON 是推荐的格式，也可用于相关的几何图形或流域。"
 
 msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
 "feature property below."
-msgstr ""
+msgstr "GeoJSON 特征 id 应与组织机构id 匹配，或通过下面的特征属性匹配。"
 
 msgid "Overview: Import/Export"
-msgstr ""
+msgstr "概述：导入/导出"
 
 msgid "Import or export DHIS2 data."
-msgstr ""
+msgstr "导入或导出DHIS2数据。"
 
 msgid "Export metadata dependencies"
-msgstr ""
+msgstr "导出元数据依赖性"
 
 msgid "Export metadata"
 msgstr "导出元数据"
 
 msgid "Export tracked entity instances"
-msgstr ""
+msgstr "导出跟踪随访的实体实例"
 
 msgid "Import data"
 msgstr "导入数据"
@@ -1147,73 +1148,73 @@ msgid "Import events"
 msgstr "导入事件"
 
 msgid "Import Earth Engine"
-msgstr ""
+msgstr "导入地球引擎"
 
 msgid "Import GeoJSON"
-msgstr ""
+msgstr "导入 GeoJSON"
 
 msgid "Import metadata"
 msgstr "导入元数据"
 
 msgid "Import tracked entity instances"
-msgstr ""
+msgstr "导入跟踪的实体实例"
 
 msgid "An overview of all import jobs started this session."
-msgstr ""
+msgstr "该会话开始的所有导入作业概要"
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in JSON format."
-msgstr ""
+msgstr "以 JSON 格式导出元数据依赖项，例如数据集和项目，包括相关元数据对象。"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in JSON "
 "format."
-msgstr ""
+msgstr "以 JSON 格式导出元数据，例如数据元素和组织机构。"
 
 msgid ""
 "Import metadata like data elements and organisation units using the JSON and"
 " CSV format."
-msgstr ""
+msgstr "使用 JSON 和 CSV 格式导入元数据，例如数据元素和组织单位。"
 
 msgid "Supported file types: JSON and CSV."
-msgstr ""
+msgstr "支持的文件类型：JSON 和 CSV。"
 
 msgid "A class key must be selected"
-msgstr ""
+msgstr "必须选择应该类键值"
 
 msgid "Tracked entity instances export"
-msgstr ""
+msgstr "跟踪实体导出"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr ""
+msgstr "以XML，JSON或CSV格式导出跟踪的实体实例。"
 
 msgid "Program to export from"
-msgstr ""
+msgstr "从项目中导出"
 
 msgid "Enrollment date range"
-msgstr ""
+msgstr "注册日期范围"
 
 msgid "At least one of the 'last updated' date fields must be specified"
-msgstr ""
+msgstr "至少选择一个最近更新的日期字段"
 
 msgid "Tracked entity instances import"
-msgstr ""
+msgstr "跟踪实体实例导入"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr ""
+msgstr "从JSON或XML文件导入跟踪实体实例"
 
 msgid "Supported file types: JSON and XML."
-msgstr ""
+msgstr "支持的文件类型：JSON和XML。"
 
 msgid "Job started."
-msgstr ""
+msgstr "工作开始了。"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "发生未知错误，请稍后再试"
 
 msgid "Loading exported data"
-msgstr ""
+msgstr "加载导出的数据"
 
 msgid "Data"
 msgstr "数据"
@@ -1222,10 +1223,10 @@ msgid "Event"
 msgstr "事件"
 
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 msgid "GML"
-msgstr ""
+msgstr "GML"
 
 msgid "Metadata"
 msgstr "元数据"
