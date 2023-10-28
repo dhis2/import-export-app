@@ -1,15 +1,15 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2021-09-04 00:01+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,73 +17,73 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "载入当前用户发生错误"
 
 msgid "Basic options"
-msgstr ""
+msgstr "基本选项"
 
 msgid "Invalid date"
 msgstr "无效的的日期"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "起始日期必须早于结束日期"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "结束日期必须晚于起始日期"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "无效的持续时间"
 
 msgid "Format"
 msgstr "格式"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
-msgstr ""
+msgstr "载入额外的数据元ID方案出错"
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr ""
+msgstr "载入额外的ID方案出错"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
-msgstr ""
+msgstr "载入额外的机构ID方案出错"
 
 msgid "Please select a file"
-msgstr ""
+msgstr "请选择一个文件"
 
 msgid "A dry run tests the import settings without importing any data"
-msgstr ""
+msgstr "试运行测试导入设置，而不导入任何数据"
 
 msgid "Start dry run"
-msgstr ""
+msgstr "开始空运行"
 
 msgid "Start import"
-msgstr ""
+msgstr "开始导入"
 
 msgid "Any user"
-msgstr ""
+msgstr "任何使用者"
 
 msgid "Current user"
 msgstr "当前用户"
 
 msgid "No user/unassigned"
-msgstr ""
+msgstr "没有用户/未分配"
 
 msgid "Selected users"
-msgstr ""
+msgstr "选定的用户"
 
 msgid "Filter by assigned user"
-msgstr ""
+msgstr "按分配的用户筛选"
 
 msgid "Export only instances with events assigned to specific users"
-msgstr ""
+msgstr "仅导出将事件分配给特定用户的实例"
 
 msgid "Assigned user(s)"
-msgstr ""
+msgstr "分配的用户"
 
 msgid "Do not import"
-msgstr ""
+msgstr "不导入"
 
 msgid "Import"
 msgstr "导入"
@@ -92,7 +92,7 @@ msgid "Atomic mode"
 msgstr "原子化模式"
 
 msgid "Whether to import objects even if some references do not exist"
-msgstr ""
+msgstr "是否导入对象，即使某些引用不存在"
 
 msgid "Class key"
 msgstr "分类键值"
@@ -107,7 +107,7 @@ msgid "Uncompressed"
 msgstr "无压缩"
 
 msgid "Compression mode"
-msgstr ""
+msgstr "压缩方式"
 
 msgid "Uid"
 msgstr "Uid"
@@ -122,10 +122,10 @@ msgid "Data element ID scheme"
 msgstr "数据元ID方案"
 
 msgid "Which data sets should be included in export?"
-msgstr ""
+msgstr "导出中应包含哪些数据集？"
 
 msgid "Filter data sets"
-msgstr ""
+msgstr "过滤数据集"
 
 msgid "Selected data sets"
 msgstr "选择的数据集"
@@ -134,55 +134,55 @@ msgid "Something went wrong when loading the data sets!"
 msgstr "载入当前数据集发生错误"
 
 msgid "At least one data set must be selected"
-msgstr ""
+msgstr "至少必须选择一个数据集"
 
 msgid "One data set must be selected"
-msgstr ""
+msgstr "必须选择一个数据集"
 
 msgid "End date"
 msgstr "结束日期"
 
 msgid "Event ID scheme"
-msgstr ""
+msgstr "事件ID方案"
 
 msgid "Loading export..."
-msgstr ""
+msgstr "正在加载导出..."
 
 msgid "Select a file to import values from"
-msgstr ""
+msgstr "选择一个文件以从中导入值"
 
 msgid "Is the first row a header row?"
-msgstr ""
+msgstr "第一行是标题行吗？"
 
 msgid "First row is header"
 msgstr "第一行是表头"
 
 msgid "A header row will be ignored during import"
-msgstr ""
+msgstr "导入期间标题行将被忽略"
 
 msgid "Auto (recommended)"
-msgstr ""
+msgstr "自动（推荐）"
 
 msgid "Object (debugging purposes)"
-msgstr ""
+msgstr "对象（调试目的）"
 
 msgid "Flush mode"
 msgstr "缓存刷新模式"
 
 msgid "Controls when to flush the internal cache"
-msgstr ""
+msgstr "控制何时刷新内部缓存"
 
 msgid "All"
 msgstr "全部"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "标记为后续"
 
 msgid "Not marked for follow-up"
-msgstr ""
+msgstr "未标记为可追踪"
 
 msgid "Include only entities with follow-up status"
-msgstr ""
+msgstr "仅包括具有后续状态的实体"
 
 msgid "JSON"
 msgstr "JSON"
@@ -200,13 +200,13 @@ msgid "PDF"
 msgstr "PDF"
 
 msgid "JSONP"
-msgstr ""
+msgstr "JSONP"
 
 msgid "What format is the data to import?"
-msgstr ""
+msgstr "导入数据的格式是什么？"
 
 msgid "What format should the data be exported as?"
-msgstr ""
+msgstr "数据应以什么格式导出？"
 
 msgid "ID scheme"
 msgstr "ID方案"
@@ -218,22 +218,22 @@ msgid "Identifier"
 msgstr "标识"
 
 msgid "Identifier scheme to use for reference matching"
-msgstr ""
+msgstr "用于参考匹配的标识符方案"
 
 msgid "Only include reports for objects that have errors"
-msgstr ""
+msgstr "仅包含有错误的对象的报告"
 
 msgid "Errors"
 msgstr "失误"
 
 msgid "Reports for all objects imported"
-msgstr ""
+msgstr "报告所有导入的对象"
 
 msgid "Full"
 msgstr "全部"
 
 msgid "Reports for all objects imported along with their names (if available)"
-msgstr ""
+msgstr "报告所有导入的对象及其名称（如果有）"
 
 msgid "Debug"
 msgstr "调试"
@@ -242,45 +242,45 @@ msgid "Import report mode"
 msgstr "导入报表模式"
 
 msgid "Controls what should be reported after the import is done"
-msgstr ""
+msgstr "控制导入完成后应报告的内容"
 
 msgid "Import new values and update existing"
-msgstr ""
+msgstr "导入新值并更新现有值"
 
 msgid "Merge"
 msgstr "合并"
 
 msgid "Import new values only"
-msgstr ""
+msgstr "仅导入新值"
 
 msgid "Append"
 msgstr "附加"
 
 msgid "Only update existing values, ignore new values"
-msgstr ""
+msgstr "仅更新现有值，忽略新值"
 
 msgid "Update"
 msgstr "更新"
 
 msgid "Remove values included in uploaded file"
-msgstr ""
+msgstr "删除上传文件中包含的值"
 
 msgid "Delete"
 msgstr "删除"
 
 msgid "Data will be deleted"
-msgstr ""
+msgstr "数据将被删除"
 
 msgid ""
 "Values in the uploaded file will be deleted from the database. Make sure "
 "this is the correct action; it cannot be undone."
-msgstr ""
+msgstr "上传文件中的值将从数据库中删除。确保这是正确的操作；它无法撤消。"
 
 msgid "Import strategy"
 msgstr "导入策略"
 
 msgid "Include all attributes"
-msgstr ""
+msgstr "包括所有属性"
 
 msgid "Include first level units"
 msgstr ""
@@ -292,88 +292,88 @@ msgid "Include deleted"
 msgstr "包括删除的"
 
 msgid "Include deleted data in export"
-msgstr ""
+msgstr "在导出中包括已删除的数据"
 
 msgid "Only include selected organisation unit"
-msgstr ""
+msgstr "仅包括选定的组织单位"
 
 msgid "Selected"
 msgstr "已选择"
 
 msgid "Include the first level of units inside selections"
-msgstr ""
+msgstr "包括选择机构的直属机构"
 
 msgid "Directly below"
-msgstr ""
+msgstr "直属"
 
 msgid "Include all units inside selections"
-msgstr ""
+msgstr "包括在选择的所有单位"
 
 msgid "All below"
-msgstr ""
+msgstr "所有下面"
 
 msgid "How should organisation units inside the selections be included?"
-msgstr ""
+msgstr "选择中应如何包括组织单位？"
 
 msgid "Includes properties which are not null"
-msgstr ""
+msgstr "包括不为空的属性"
 
 msgid "Non null"
-msgstr ""
+msgstr "非空"
 
 msgid "Include all properties"
-msgstr ""
+msgstr "包括所有属性"
 
 msgid "Always"
 msgstr "总是"
 
 msgid "Include non-empty properties"
-msgstr ""
+msgstr "包含非空属性"
 
 msgid "Non empty"
-msgstr ""
+msgstr "非空"
 
 msgid "Inclusion strategy"
 msgstr "包括策略"
 
 msgid "Controls which properties to include"
-msgstr ""
+msgstr "控制要包括的属性"
 
 msgid "Async"
 msgstr "异步"
 
 msgid "Asynchronous import"
-msgstr ""
+msgstr "异步导入"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr ""
+msgstr "控制是否以异步方式完成导入"
 
 msgid "Last updated duration"
-msgstr ""
+msgstr "最近更新的期间"
 
 msgid "Last updated end date"
-msgstr ""
+msgstr "最近更新的结束日期"
 
 msgid "Do not filter by last updated date"
-msgstr ""
+msgstr "不要按上次更新日期过滤"
 
 msgid "Start/end dates"
 msgstr "开始-结束日期"
 
 msgid "Time since last updated"
-msgstr ""
+msgstr "自上次更新以来的时间"
 
 msgid "Filter by last updated date"
-msgstr ""
+msgstr "按上次更新日期筛选"
 
 msgid "Last updated start date"
-msgstr ""
+msgstr "上次更新的起始日期"
 
 msgid "Only overwrite the old property if the new property value is not-null"
-msgstr ""
+msgstr "仅当新属性值不为空时才覆盖旧属性"
 
 msgid "Overwrite regardless of whether the new property value is null"
-msgstr ""
+msgstr "覆盖，无论新属性值是否为null"
 
 msgid "Replace"
 msgstr "替换"
@@ -382,7 +382,7 @@ msgid "Merge mode"
 msgstr "合并模式"
 
 msgid "Strategy to take when merging two objects"
-msgstr ""
+msgstr "合并两个对象时采取的策略"
 
 msgid "Data sets"
 msgstr "数据集"
@@ -406,49 +406,49 @@ msgid "Object type"
 msgstr "对象类型"
 
 msgid "One object must be selected"
-msgstr ""
+msgstr "必须选择一个对象"
 
 msgid "Object"
 msgstr "对象"
 
 msgid "Organisation unit ID scheme"
-msgstr ""
+msgstr "机构ID方案"
 
 msgid "Data view organisation units associated with the current user"
-msgstr ""
+msgstr "当前用户的机构数据查看"
 
 msgid "Accessible"
-msgstr ""
+msgstr "可访问"
 
 msgid "Data capture organisation units associated with the current user"
-msgstr ""
+msgstr "当前用户的机构数据采集"
 
 msgid "Capture"
 msgstr "采集"
 
 msgid "All organisation units in the system"
-msgstr ""
+msgstr "系统所有机构"
 
 msgid "Manually select organisation units from list"
-msgstr ""
+msgstr "从列表中手动选择组织单位"
 
 msgid "Which organisation units should be included?"
-msgstr ""
+msgstr "应该包括哪些组织机构？"
 
 msgid "Organisation unit(s) to export data from"
-msgstr ""
+msgstr "从中导出数据的组织机构"
 
 msgid "Preheat cache"
 msgstr "缓存预热"
 
 msgid "Preheat cache to make large imports faster"
-msgstr ""
+msgstr "预热缓存，以使大量导入更快"
 
 msgid "Large imports will be processed faster but will consume more resources"
-msgstr ""
+msgstr "大量导入将得到更快处理，但会消耗更多资源"
 
 msgid "Intelligent scan (reference)"
-msgstr ""
+msgstr "智能扫描（引用）"
 
 msgid "None"
 msgstr "无"
@@ -457,13 +457,13 @@ msgid "Preheat mode"
 msgstr "预热模式"
 
 msgid "Controls the level of preheating that should be done"
-msgstr ""
+msgstr "控制应进行预热的等级"
 
 msgid "Program to export events from"
-msgstr ""
+msgstr "从中导出事件的项目"
 
 msgid "Filter programs"
-msgstr ""
+msgstr "筛选项目"
 
 msgid "Selected programs"
 msgstr "已选项目组"
@@ -472,19 +472,19 @@ msgid "Something went wrong when loading the programs!"
 msgstr "载入项目发生错误"
 
 msgid "At least one program must be selected"
-msgstr ""
+msgstr "至少需要选择一个项目"
 
 msgid "One program must be selected"
-msgstr ""
+msgstr "必须选择一个项目"
 
 msgid "Which program stage should be included?"
-msgstr ""
+msgstr "应该包括哪个项目阶段？"
 
 msgid "Start date"
 msgstr "起始日期"
 
 msgid "All statuses"
-msgstr ""
+msgstr "所有状态"
 
 msgid "Active"
 msgstr "活动的"
@@ -496,44 +496,44 @@ msgid "Cancelled"
 msgstr "已取消"
 
 msgid "Include only entities with status"
-msgstr ""
+msgstr "仅包括具有状态的实体"
 
 msgid "Skip audit"
 msgstr "跳过审计"
 
 msgid "Skip audit, meaning audit values will not be generated"
-msgstr ""
+msgstr "跳过审核，这意味着将不会生成审核值"
 
 msgid "Improves performance at the cost of ability to audit changes"
-msgstr ""
+msgstr "改变审计成本提升性能"
 
 msgid "Skip exisiting check"
-msgstr ""
+msgstr "跳过已经存在检查"
 
 msgid "Skip checks for existing data values"
-msgstr ""
+msgstr "跳过检查现有数据值"
 
 msgid ""
 "Improves performance and should only be used for empty databases or when the"
 " data values to import do not exist already"
-msgstr ""
+msgstr "提高性能，仅应用于空数据库或在不存在要导入的数据值时使用"
 
 msgid "Skip sharing"
 msgstr "跳过共享"
 
 msgid "Skip sharing and access settings"
-msgstr ""
+msgstr "跳过共享和访问设置"
 
 msgid ""
 "Skip sharing properties, do not merge sharing when doing updates, and do not"
 " add user group access when creating new objects"
-msgstr ""
+msgstr "跳过共享属性，执行更新时不合并共享，在创建新对象时不添加用户组访问权限"
 
 msgid "Skip validation"
 msgstr "跳过验证"
 
 msgid "Skip validation for import (not recommended)"
-msgstr ""
+msgstr "跳过导入验证（不推荐）"
 
 msgid "Strategy"
 msgstr "策略"
@@ -545,52 +545,52 @@ msgid "Tracked entity type"
 msgstr "跟踪实体类型"
 
 msgid "Filter by"
-msgstr ""
+msgstr "过滤"
 
 msgid "Tracked entity types"
 msgstr "跟踪实体类型"
 
 msgid "Filter tracked entity types by name"
-msgstr ""
+msgstr "按名称过滤跟踪实体类型"
 
 msgid "Selected tracked entity types"
-msgstr ""
+msgstr "选定的跟踪实体类型"
 
 msgid "Something went wrong when loading the tracked entity types!"
-msgstr ""
+msgstr "载入实体类型发生错误"
 
 msgid "At least one tracked entity type must be selected"
-msgstr ""
+msgstr "至少选择一个跟踪实体类型"
 
 msgid "One tracked entity type must be selected"
-msgstr ""
+msgstr "至少选择一个跟踪实体类型"
 
 msgid "Which users should be used?"
-msgstr ""
+msgstr "应该使用哪些用户？"
 
 msgid "Filter users"
-msgstr ""
+msgstr "过滤用户"
 
 msgid "Something went wrong when loading the users!"
-msgstr ""
+msgstr "载入用户发生错误"
 
 msgid "At least one user must be selected"
-msgstr ""
+msgstr "必须选择一个用户"
 
 msgid "One user must be selected"
-msgstr ""
+msgstr "必须选择一个用户"
 
 msgid "No jobs started yet."
-msgstr ""
+msgstr "还没有已启动的任务"
 
 msgid "Recreate job"
-msgstr ""
+msgstr "重新创建作业"
 
 msgid "In progress"
 msgstr "进行中"
 
 msgid "Job details"
-msgstr ""
+msgstr "作业详情"
 
 msgid "Key"
 msgstr "键值"
@@ -599,7 +599,7 @@ msgid "Value"
 msgstr "值"
 
 msgid "Job summary"
-msgstr ""
+msgstr "作业摘要"
 
 msgid "Error"
 msgstr "错误"
@@ -611,7 +611,7 @@ msgid "Dry run"
 msgstr "空运行"
 
 msgid "Log"
-msgstr ""
+msgstr "日志记录"
 
 msgid "Time"
 msgstr "时间"
@@ -629,10 +629,10 @@ msgid "Type"
 msgstr "类型"
 
 msgid "Property"
-msgstr ""
+msgstr "属性"
 
 msgid "View summary of recently started import job"
-msgstr ""
+msgstr "查看最近开始的导入作业的摘要"
 
 msgid "Status"
 msgstr "状态"
@@ -659,25 +659,25 @@ msgid "Total"
 msgstr "总共"
 
 msgid "Details by type"
-msgstr ""
+msgstr "按类型的详细信息"
 
 msgid "Advanced options"
-msgstr ""
+msgstr "高级选项"
 
 msgid "At least one organisation unit must be selected"
 msgstr "至少得选择一个机构"
 
 msgid "One organisation unit must be selected"
-msgstr ""
+msgstr "必须选择一个机构"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr ""
+msgstr "载入机构发生错误"
 
 msgid "One program stage must be selected"
-msgstr ""
+msgstr "必须选择一个项目阶段"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr ""
+msgstr "载入方案发生错误"
 
 msgid "Select All"
 msgstr "全选"
@@ -686,43 +686,43 @@ msgid "Select None"
 msgstr "不选"
 
 msgid "At least one schema must be selected"
-msgstr ""
+msgstr "必须选择一个方案"
 
 msgid "Export"
 msgstr "导出"
 
 msgid "Data import"
-msgstr ""
+msgstr "数据导入"
 
 msgid "Event import"
-msgstr ""
+msgstr "事件导入"
 
 msgid "GML import"
 msgstr ""
 
 msgid "Metadata import"
-msgstr ""
+msgstr "元数据导入"
 
 msgid "TEI import"
-msgstr ""
+msgstr "实体导入"
 
 msgid "Data export"
-msgstr ""
+msgstr "数据导出"
 
 msgid "Event export"
-msgstr ""
+msgstr "事件导出"
 
 msgid "Metadata dependency export"
-msgstr ""
+msgstr "元数据依赖导出"
 
 msgid "Metadata export"
-msgstr ""
+msgstr "元数据导出"
 
 msgid "TEI export"
-msgstr ""
+msgstr "实体导出"
 
 msgid "Job overview"
-msgstr ""
+msgstr "作业概要"
 
 msgid "Overview"
 msgstr "概要"
@@ -734,40 +734,40 @@ msgid "No"
 msgstr "否"
 
 msgid "There are errors on this page"
-msgstr ""
+msgstr "此页面上有错误"
 
 msgid "Something went wrong when loading the class keys"
-msgstr ""
+msgstr "载入类键值发生错误"
 
 msgid "Something went wrong when loading the objects"
-msgstr ""
+msgstr "载入对象发生错误"
 
 msgid "All program stages"
-msgstr ""
+msgstr "所有项目阶段"
 
 msgid "Something went wrong when loading the program stages"
-msgstr ""
+msgstr "载入项目阶段发生错误"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in DXF 2 "
 "format."
-msgstr ""
+msgstr "以DXF 2格式导出元数据，例如数据元和机构。"
 
 msgid "Date range to export data for"
-msgstr ""
+msgstr "导出数据的日期范围"
 
 msgid "Export data"
 msgstr "导出数据"
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
-msgstr ""
+msgstr "从ADX XML、DFX2 XML、json或csv格式导入数据"
 
 msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr ""
+msgstr "支持的文件类型：JSON，CSV，XML，ADX和PDF。"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
-msgstr ""
+msgstr "以DXF 2格式导出程序，阶段和被跟踪实体的事件数据。"
 
 msgid "Export events"
 msgstr "导出事件"
@@ -775,10 +775,10 @@ msgstr "导出事件"
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
 "format."
-msgstr ""
+msgstr "从DXF2格式导入项目、阶段和跟踪实体事件数据"
 
 msgid "Supported file types: JSON, CSV, and XML."
-msgstr ""
+msgstr "支持的文件类型：JSON，CSV和XML。"
 
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
@@ -786,19 +786,19 @@ msgid ""
 msgstr ""
 
 msgid "Overview: Import/Export"
-msgstr ""
+msgstr "概述：导入/导出"
 
 msgid "Import or export DHIS2 data."
-msgstr ""
+msgstr "导入或导出DHIS2数据。"
 
 msgid "Export metadata dependencies"
-msgstr ""
+msgstr "导出元数据依赖性"
 
 msgid "Export metadata"
 msgstr "导出元数据"
 
 msgid "Export tracked entity instances"
-msgstr ""
+msgstr "导出跟踪随访的实体实例"
 
 msgid "Import data"
 msgstr "导入数据"
@@ -813,10 +813,10 @@ msgid "Import metadata"
 msgstr "导入元数据"
 
 msgid "Import tracked entity instances"
-msgstr ""
+msgstr "导入跟踪的实体实例"
 
 msgid "An overview of all import jobs started this session."
-msgstr ""
+msgstr "该会话开始的所有导入作业概要"
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
@@ -834,40 +834,40 @@ msgid ""
 msgstr ""
 
 msgid "A class key must be selected"
-msgstr ""
+msgstr "必须选择应该类键值"
 
 msgid "Tracked entity instances export"
-msgstr ""
+msgstr "跟踪实体导出"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr ""
+msgstr "以XML，JSON或CSV格式导出跟踪的实体实例。"
 
 msgid "Program to export from"
-msgstr ""
+msgstr "从项目中导出"
 
 msgid "Enrollment date range"
-msgstr ""
+msgstr "注册日期范围"
 
 msgid "At least one of the 'last updated' date fields must be specified"
-msgstr ""
+msgstr "至少选择一个最近更新的日期字段"
 
 msgid "Tracked entity instances import"
-msgstr ""
+msgstr "跟踪实体实例导入"
 
 msgid "Import tracked entity instances from JSON or XML files."
-msgstr ""
+msgstr "从JSON或XML文件导入跟踪实体实例"
 
 msgid "Supported file types: JSON and XML."
-msgstr ""
+msgstr "支持的文件类型：JSON和XML。"
 
 msgid "Job started."
-msgstr ""
+msgstr "工作开始了。"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "发生未知错误，请稍后再试"
 
 msgid "Loading exported data"
-msgstr ""
+msgstr "加载导出的数据"
 
 msgid "Data"
 msgstr "数据"
@@ -876,7 +876,7 @@ msgid "Event"
 msgstr "事件"
 
 msgid "GML"
-msgstr ""
+msgstr "GML"
 
 msgid "Metadata"
 msgstr "元数据"
