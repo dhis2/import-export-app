@@ -17,7 +17,6 @@ const valuesToParams = (
         inclusion,
         format,
         includeDeleted,
-        includeAllAttributes,
         dataElementIdScheme,
         eventIdScheme,
         orgUnitIdScheme,
@@ -40,7 +39,6 @@ const valuesToParams = (
         ouMode: ouMode,
         format: format,
         includeDeleted: includeDeleted.toString(),
-        includeAllAttributes: includeAllAttributes.toString(),
         dataElementIdScheme: dataElementIdScheme,
         eventIdScheme: eventIdScheme,
         orgUnitIdScheme: orgUnitIdScheme,
@@ -51,7 +49,7 @@ const valuesToParams = (
     // include selected org.units only when manual selection is selected
     // ouMode is then stored in the `inclusion` field
     if (ouMode === OU_MODE_MANUAL_VALUE) {
-        minParams.ou = selectedOrgUnits.map((o) => pathToId(o)).join(';')
+        minParams.orgUnit = selectedOrgUnits.map((o) => pathToId(o)).join(';')
         minParams.ouMode = inclusion
     }
 
@@ -111,8 +109,8 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     const { format } = values
 
     // generate URL and redirect
-    const apiBaseUrl = `${baseUrl}/api/`
-    const endpoint = `trackedEntityInstances`
+    const apiBaseUrl = `${baseUrl}/api/tracker/`
+    const endpoint = `trackedEntities`
     const filename = `${endpoint}.${format}`
     const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`

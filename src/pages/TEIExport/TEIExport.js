@@ -12,7 +12,6 @@ import {
 } from '../../components/index.js'
 import {
     Format,
-    formatOptions,
     defaultFormatOption,
     OrgUnitMode,
     defaultOrgUnitSelectionModeOption,
@@ -36,7 +35,6 @@ import {
     AssignedUserMode,
     defaultAssignedUserModeOption,
     IncludeDeleted,
-    IncludeAllAttributes,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
     EventIdScheme,
@@ -47,6 +45,7 @@ import {
     defaultOrgUnitIdSchemeOption,
     ExportButton,
     FormAlerts,
+    formatNoXmlOptions,
 } from '../../components/Inputs/index.js'
 import { onExport, validate } from './form-helper.js'
 
@@ -80,7 +79,6 @@ const initialValues = {
     assignedUserModeFilter: false,
     assignedUserMode: defaultAssignedUserModeOption,
     includeDeleted: false,
-    includeAllAttributes: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     eventIdScheme: defaultEventIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
@@ -136,7 +134,7 @@ const TEIExport = () => {
                                     <ProgramEndDate show={showProgramFilters} />
                                 </Dates>
                                 <TETypePicker show={showTEFilters} />
-                                <Format availableFormats={formatOptions} />
+                                <Format availableFormats={formatNoXmlOptions} />
                             </BasicOptions>
                             <MoreOptions>
                                 <LastUpdatedFilter />
@@ -147,7 +145,6 @@ const TEIExport = () => {
                                 <LastUpdatedDuration show={showLUDuration} />
                                 <AssignedUserMode />
                                 <IncludeDeleted />
-                                <IncludeAllAttributes />
                                 <SchemeContainer>
                                     <DataElementIdScheme />
                                     <EventIdScheme />

@@ -24,7 +24,7 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     } = values
 
     // generate URL and redirect
-    const apiBaseUrl = `${baseUrl}/api/`
+    const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `events`
     const endpointExtension = compression ? `${format}.${compression}` : format
     const filename = `${endpoint}.${endpointExtension}`

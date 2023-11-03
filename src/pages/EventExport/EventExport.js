@@ -14,7 +14,6 @@ import {
     OrgUnitTree,
     ProgramPicker,
     Format,
-    formatOptions,
     defaultFormatOption,
     Compression,
     defaultCompressionOption,
@@ -32,6 +31,7 @@ import {
     defaultOrgUnitIdSchemeOption,
     IdScheme,
     defaultIdSchemeOption,
+    formatNoXmlOptions,
 } from '../../components/Inputs/index.js'
 import { jsDateToISO8601 } from '../../utils/helper.js'
 import { onExport, validate } from './form-helper.js'
@@ -103,7 +103,7 @@ const EventExport = () => {
                                 <StartDate />
                                 <EndDate />
                             </Dates>
-                            <Format availableFormats={formatOptions} />
+                            <Format availableFormats={formatNoXmlOptions} />
                             <Compression />
                         </BasicOptions>
                         <MoreOptions>
