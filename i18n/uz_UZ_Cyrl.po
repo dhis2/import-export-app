@@ -56,33 +56,36 @@ msgid "Please select a file"
 msgstr "Илтимос, файлни танланг"
 
 msgid "Import as associated geometry"
-msgstr ""
+msgstr "Геометрик боғлиқлик асосида импорт қилиш"
 
 msgid "Store geometry as value of attribute"
-msgstr ""
+msgstr "Атрибут қийматида геометрияни сақлаш"
 
 msgid "Selected programs"
 msgstr "Танланган дастурлар"
 
 msgid "Something went wrong when loading the attributes!"
-msgstr ""
+msgstr "Атрибутларни юклашда кўзда тутилмаган хатолик юз берди!"
 
 msgid "One attribute must be selected"
-msgstr ""
+msgstr "Камида битта атрибут танланган бўлиши лозим"
 
 msgid ""
 "Associated geometry import requires an attribute of type \"GeoJSON\" applied"
 " to \"Organisation unit\". It can be defined in the Maintenance app."
 msgstr ""
+"Боғланган геометрияни импорт қилиш учун \"Ташкилот бирлиги\"га "
+"қўлланиладиган “GeoJSON” атрибути талаб қилинади. Уни ўзига хизмат иловасида"
+" аниқлаштириш мумкин."
 
 msgid "Match GeoJSON property to organisation unit scheme"
-msgstr ""
+msgstr "GeoJSON хусусиятини ташкилот бирлиги схемасига мосланг"
 
 msgid "GeoJSON property name"
-msgstr ""
+msgstr "GeoJSON хусусиятлари номи"
 
 msgid "GeoJSON feature property that holds the organisation unit identifier"
-msgstr ""
+msgstr "Ташкилот бирлиги идентификаторига эга GeoJSON объекти хусусиятлари"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
@@ -326,10 +329,10 @@ msgid "Include all attributes"
 msgstr "Барча атрибутларни қўшинг"
 
 msgid "Include descendants"
-msgstr ""
+msgstr "Авлодларни қўшмоқ"
 
 msgid "Include descendants of selected organisation units"
-msgstr ""
+msgstr "Танланган ташкилий бирлик авлодларини қўшинг"
 
 msgid "Include deleted"
 msgstr "Қўшимчалар ўчирилди"
@@ -712,7 +715,7 @@ msgid "Total"
 msgstr "Жами"
 
 msgid "Indexes"
-msgstr ""
+msgstr "Индекслар"
 
 msgid "Details by type"
 msgstr "Тури бўйича тафсилотлар"
@@ -754,10 +757,10 @@ msgid "Event import"
 msgstr "Тадбир импорти"
 
 msgid "Earth Engine import"
-msgstr ""
+msgstr "Earth Engine Импорти"
 
 msgid "Org unit geometry import"
-msgstr ""
+msgstr "Ташкилий бирлик геометрияси импорти"
 
 msgid "Metadata import"
 msgstr "МетаМаълумот импорти"
@@ -832,30 +835,32 @@ msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
 "Engine"
 msgstr ""
+"Google Earth Engine ёрдамида WorldPop-дан юқори аниқлик билан аҳоли "
+"маълумотларини импорт қилинг"
 
 msgid "Earth Engine source"
-msgstr ""
+msgstr "Earth Engine Манбаи"
 
 msgid "Organisation units"
 msgstr "Ташкилий бўлимлар"
 
 msgid "Import setup"
-msgstr ""
+msgstr "Созламалар Импорти"
 
 msgid "Data preview"
-msgstr ""
+msgstr "Маълумотларни олдиндан кўриш"
 
 msgid "Some required fields are missing"
-msgstr ""
+msgstr "Айри сўров майдонлар қолдириб кетилган"
 
 msgid "Preview before import"
-msgstr ""
+msgstr "Импорт қилишдан олдин кўриб чиқиш"
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "Ассоцирланган геометриядан фойдаланиш"
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
+msgstr "Танланган ташкилий бирлик учун ассоцирланган геометрияни танланг"
 
 msgid "Import groups to category option combinations"
 msgstr ""
@@ -869,16 +874,16 @@ msgid "Group name"
 msgstr "Гуруҳ номи"
 
 msgid "Group description"
-msgstr ""
+msgstr "Гуруҳ тавсифи"
 
 msgid "Category option combination"
 msgstr "Категория вариантлари комбинацияси"
 
 msgid "No match found"
-msgstr ""
+msgstr "Ҳеч нима топилмади"
 
 msgid "Choose category option combo"
-msgstr ""
+msgstr "Категория вариантлари комбосини танланг"
 
 msgid "Data element"
 msgstr "Маълумотлар элементи"
@@ -890,16 +895,16 @@ msgid "The data element where Earth Engine data will be added"
 msgstr ""
 
 msgid "Earth Engine data set"
-msgstr ""
+msgstr "Earth Engine маълумотлар тўплами"
 
 msgid "Select earth engine data set"
-msgstr ""
+msgstr "Earth Engine маълумотлар тўплами ни танланг"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "Танланган: {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Ҳеч нима танланмаган"
 
 msgid "Select a level"
 msgstr "Поғонани танланг"
@@ -908,7 +913,7 @@ msgid "Deselect all"
 msgstr "Барча танланганни бекор қилиш"
 
 msgid "Organisation unit(s) to import data to"
-msgstr ""
+msgstr "...дан ташкилий бўлимлар маълумотларини импорт қилиш"
 
 msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
@@ -923,13 +928,13 @@ msgid "Select period"
 msgstr "Давр танланг"
 
 msgid "Loading periods"
-msgstr ""
+msgstr "Даврлар юкланмоқда"
 
 msgid "No periods found"
-msgstr ""
+msgstr "Даврлар топилмади"
 
 msgid "Point org. unit - no value"
-msgstr ""
+msgstr "Ташкилий бирлик нуқтаси - қиймат мавжуд эмас"
 
 msgid "Organisation Unit"
 msgstr "Ташкилий Бўлим"
@@ -938,10 +943,10 @@ msgid "Category option combo"
 msgstr "Категория варианти комбинацияси"
 
 msgid "Current value"
-msgstr ""
+msgstr "Ҳозирги қиймат"
 
 msgid "New value"
-msgstr ""
+msgstr "Янги қиймат"
 
 msgid "Rows per page"
 msgstr "Саҳифада қаторлар"
@@ -949,30 +954,32 @@ msgstr "Саҳифада қаторлар"
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
+"Бет {{page}} дан {{pageCount}}, қатор{{firstItem}}-{{lastItem}} дан "
+"{{total}}"
 
 msgid "Don't round source values"
-msgstr ""
+msgstr "Манба қийматини яхлитламанг"
 
 msgid "Round to 0 decimal places"
-msgstr ""
+msgstr "0 касргача яхлитлаш"
 
 msgid "Round to 1 decimal place"
-msgstr ""
+msgstr "10 (0.1) бирлик бўйича яхлитлаш"
 
 msgid "Round to 2 decimal places"
-msgstr ""
+msgstr "100 (0.01) бирлик бўйича яхлитлаш"
 
 msgid "Round to 3 decimal places"
-msgstr ""
+msgstr "1000 (0.001) бирлик бўйича яхлитлаш"
 
 msgid "Round to 4 decimal places"
-msgstr ""
+msgstr "10000 (0.0001) бирлик бўйича яхлитлаш"
 
 msgid "Round to 5 decimal places"
-msgstr ""
+msgstr "100000 (0.00001) бирлик бўйича яхлитлаш"
 
 msgid "Round to 6 decimal places"
-msgstr ""
+msgstr "1000000 (0.000001) бирлик бўйича яхлитлаш"
 
 msgid "Value rounding"
 msgstr ""
@@ -1003,118 +1010,118 @@ msgid ""
 msgstr ""
 
 msgid "Population"
-msgstr ""
+msgstr "Аҳоли"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "Аҳоли ёш гуруҳлари"
 
 msgid "Men 0 - 1 years"
-msgstr ""
+msgstr "Эркак 0 - 1 ёш"
 
 msgid "Men 1 - 4 years"
-msgstr ""
+msgstr "Эркак 1 - 4 ёш"
 
 msgid "Men 5 - 9 years"
-msgstr ""
+msgstr "Эркак 5 - 9 ёш"
 
 msgid "Men 10 - 14 years"
-msgstr ""
+msgstr "Эркак 10 - 14 ёш"
 
 msgid "Men 15 - 19 years"
-msgstr ""
+msgstr "Эркак 15 - 19 ёш"
 
 msgid "Men 20 - 24 years"
-msgstr ""
+msgstr "Эркак 20 - 24 ёш"
 
 msgid "Men 25 - 29 years"
-msgstr ""
+msgstr "Эркак 25 - 29 ёш"
 
 msgid "Men 30 - 34 years"
-msgstr ""
+msgstr "Эркак 30 - 34 ёш"
 
 msgid "Men 35 - 39 years"
-msgstr ""
+msgstr "Эркак 35 - 39 ёш"
 
 msgid "Men 40 - 44 years"
-msgstr ""
+msgstr "Эркак 40 - 44 ёш"
 
 msgid "Men 45 - 49 years"
-msgstr ""
+msgstr "Эркак 45 - 49 ёш"
 
 msgid "Men 50 - 54 years"
-msgstr ""
+msgstr "Эркак 50 - 54 ёш"
 
 msgid "Men 55 - 59 years"
-msgstr ""
+msgstr "Эркак 55 - 59 ёш"
 
 msgid "Men 60 - 64 years"
-msgstr ""
+msgstr "Эркак 60 - 64 ёш"
 
 msgid "Men 65 - 69 years"
-msgstr ""
+msgstr "Эркак 65 - 69 ёш"
 
 msgid "Men 70 - 74 years"
-msgstr ""
+msgstr "Эркак 70 - 74 ёш"
 
 msgid "Men 75 - 79 years"
-msgstr ""
+msgstr "Эркак 75 - 79 ёш"
 
 msgid "Men 80 years and above"
-msgstr ""
+msgstr "Эркак 80 ёш ва ундан катта"
 
 msgid "Women 0 - 1 years"
-msgstr ""
+msgstr "Аёл 0 - 1 ёш"
 
 msgid "Women 1 - 4 years"
-msgstr ""
+msgstr "Аёл 1 - 4 ёш"
 
 msgid "Women 5 - 9 years"
-msgstr ""
+msgstr "Аёл 5 - 9 ёш"
 
 msgid "Women 10 - 14 years"
-msgstr ""
+msgstr "Аёл 10 - 14 ёш"
 
 msgid "Women 15 - 19 years"
-msgstr ""
+msgstr "Аёл 15 - 19 ёш"
 
 msgid "Women 20 - 24 years"
-msgstr ""
+msgstr "Аёл 20 - 24 ёш"
 
 msgid "Women 25 - 29 years"
-msgstr ""
+msgstr "Аёл 25 - 29 ёш"
 
 msgid "Women 30 - 34 years"
-msgstr ""
+msgstr "Аёл 30 - 34 ёш"
 
 msgid "Women 35 - 39 years"
-msgstr ""
+msgstr "Аёл 35 - 39 ёш"
 
 msgid "Women 40 - 44 years"
-msgstr ""
+msgstr "Аёл 40 - 44 ёш"
 
 msgid "Women 45 - 49 years"
-msgstr ""
+msgstr "Аёл 45 - 49 ёш"
 
 msgid "Women 50 - 54 years"
-msgstr ""
+msgstr "Аёл 50 - 54 ёш"
 
 msgid "Women 55 - 59 years"
-msgstr ""
+msgstr "Аёл 55 - 59 ёш"
 
 msgid "Women 60 - 64 years"
-msgstr ""
+msgstr "Аёл 60 - 64 ёш"
 
 msgid "Women 65 - 69 years"
-msgstr ""
+msgstr "Аёл 65 - 69 ёш"
 
 msgid "Women 70 - 74 years"
-msgstr ""
+msgstr "Аёл 70 - 74 ёш"
 
 msgid "Women 75 - 79 years"
-msgstr ""
+msgstr "Аёл 75 - 79 ёш"
 
 msgid "Women 80 years and above"
-msgstr ""
+msgstr "Аёл 80 ёш ва ундан катта"
 
 msgid "No organisation units have been selected"
 msgstr ""
@@ -1182,7 +1189,7 @@ msgid "Import Earth Engine"
 msgstr ""
 
 msgid "Import GeoJSON"
-msgstr ""
+msgstr "GeoJSON импорт"
 
 msgid "Import metadata"
 msgstr "МетаМаълумотни импорт қилиш"
@@ -1211,7 +1218,7 @@ msgid ""
 msgstr ""
 
 msgid "Supported file types: JSON and CSV."
-msgstr ""
+msgstr "Қўллаб қувватланадиган файл турлари: JSON ва CSV."
 
 msgid "A class key must be selected"
 msgstr "Синф калити тайинланиши керак"
