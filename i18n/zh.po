@@ -1,17 +1,17 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2020
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:29:38.750Z\n"
 "PO-Revision-Date: 2020-12-22 22:18+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -772,7 +772,7 @@ msgstr "支持的文件类型：JSON，CSV，XML，ADX和PDF。"
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
-msgstr "以DXF 2格式导出程序，阶段和被跟踪实体的事件数据。"
+msgstr "以DXF 2格式导出项目，阶段和被跟踪实体的事件数据。"
 
 msgid "Export events"
 msgstr "导出事件"
@@ -826,7 +826,7 @@ msgstr "该会话开始的所有导入作业概要"
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in XML or JSON format."
-msgstr "以XML或JSON格式导出元数据依赖性，例如数据集和程序，包括相关的元数据对象。"
+msgstr "以XML或JSON格式导出元数据依赖性，例如数据集和项目，包括相关的元数据对象。"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
