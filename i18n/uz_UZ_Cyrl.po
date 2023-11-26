@@ -863,12 +863,15 @@ msgid "Select associated geometry for selected organisation units"
 msgstr "Танланган ташкилий бирлик учун ассоцирланган геометрияни танланг"
 
 msgid "Import groups to category option combinations"
-msgstr ""
+msgstr "Категориялар вариантлари комбосига гуруҳларни импорт килиш"
 
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. "
 "Choose the category option combinations to import each group into."
 msgstr ""
+"Earth Engine маълумотлар тўплами “Aholining yosh guruhlari” бўлиниш "
+"гуруҳларига эга. Ҳар бир гуруҳга импорт қилиш учун категория вариантлари "
+"комбосини танланг."
 
 msgid "Group name"
 msgstr "Гуруҳ номи"
@@ -892,7 +895,7 @@ msgid "Select data element"
 msgstr "Маълумотлар элементини танлаш"
 
 msgid "The data element where Earth Engine data will be added"
-msgstr ""
+msgstr "Earth Engine маълумотлари қўшиладиган маълумотлар элементи"
 
 msgid "Earth Engine data set"
 msgstr "Earth Engine маълумотлар тўплами"
@@ -917,12 +920,13 @@ msgstr "...дан ташкилий бўлимлар маълумотларини
 
 msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
+"Вақтни танлашдан олдин Earth Engine маълумотлар тўпламини танлашингиз керак"
 
 msgid "Period"
 msgstr "Давр"
 
 msgid "Data from Earth Engine will be imported for this period."
-msgstr ""
+msgstr "Earth Engine маълумотлари маълум давр асосида импорт қилинади"
 
 msgid "Select period"
 msgstr "Давр танланг"
@@ -982,32 +986,36 @@ msgid "Round to 6 decimal places"
 msgstr "1 000 000 дан 1 гача яхлитлаш"
 
 msgid "Value rounding"
-msgstr ""
+msgstr "Қийматни яхлитлаш"
 
 msgid "An error occurred while trying to fetch Earth Engine data"
-msgstr ""
+msgstr "Earth Engine маълумотларини олишда хатолик юз берди"
 
 msgid ""
 "The Earth Engine data set is too large. Try reducing the number of groups or"
 " organisation units"
 msgstr ""
+"Earth Engine маълумотлар тўплами жуда катта. Гуруҳлар ёки ташкилот "
+"бирликлари сонини камайтиришда ҳаракат қилинг"
 
 msgid "The organisation units selection is invalid"
-msgstr ""
+msgstr "Ташкилий бирлик танлашда хатолик юз берди"
 
 msgid "The app could not retrieve required data."
-msgstr ""
+msgstr "Илова керакли маълумотларни ола олмади"
 
 msgid "Network error"
-msgstr ""
+msgstr "Тармоқда хатолик"
 
 msgid "Cannot get authorization token for Google Earth Engine."
-msgstr ""
+msgstr "Google Earth Engine учун авторизация токенини олиш имконсиз"
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
 msgstr ""
+"Google Earth Engine аккаунти талаб қилинади. Қўшимча маълумот олиш учун "
+"DHIS2 ҳужжатларини кўриб чиқинг."
 
 msgid "Population"
 msgstr "Аҳоли"
@@ -1124,13 +1132,15 @@ msgid "Women 80 years and above"
 msgstr "Аёл 80 ёш ва ундан катта"
 
 msgid "No organisation units have been selected"
-msgstr ""
+msgstr "Ташкилот бирлиги танланмаган эди"
 
 msgid ""
 "It is not possible to get data from Earth Engine for point facilities. "
 "Select polygon organisation units or use a catchment area as associated "
 "geometry."
 msgstr ""
+"Айни объект учун Earth Engine дан маълумот олиш имконсиз. Боғлиқлиқларга эга"
+" ташкилий бирликларни танланг ёки геометрик йиғиш майдонидан фойдаланинг."
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
@@ -1152,17 +1162,22 @@ msgid "Supported file types: JSON, CSV, and XML."
 msgstr "Қўллаб-қувватланадиган файл турлари: JSON, CSV, ва XML."
 
 msgid "Organisation unit geometry import"
-msgstr ""
+msgstr "Ташкилий бирлик геометриясини импорт қилиш"
 
 msgid ""
 "Import geographic data for organisation units. GeoJSON is the recommend "
 "format and can also be used for associated geometries or catchment areas."
 msgstr ""
+"Ташкилий бирликлар учун географик маълумотларни импорт қилиш, GeoJSON тавсия"
+" этилган формат бўлиб, у билан боғлиқ геометриялар ассоциациялар ёки "
+"йиғилмалар ҳам ишлатиш мумкин."
 
 msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
 "feature property below."
 msgstr ""
+"GeoJSON функция идентификатори ташкилот идентификаторига мос келиши ёки "
+"қуйидаги хусусиятларга мос келиши лозим."
 
 msgid "Overview: Import/Export"
 msgstr "Қисқача кўриб чиқиш: Импорт / Экспорт"
@@ -1186,7 +1201,7 @@ msgid "Import events"
 msgstr "Ҳодиса/Тадбирларни импорт қилиш"
 
 msgid "Import Earth Engine"
-msgstr ""
+msgstr "Earth Engine импорт қилмоқ"
 
 msgid "Import GeoJSON"
 msgstr "GeoJSON импорт"
@@ -1206,16 +1221,22 @@ msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in JSON format."
 msgstr ""
+"JSON форматида маълумотлар тўплами ва дастурлари, жумладан тегишли "
+"метамаълумотларга боғлиқликларни экспорт қилинг."
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
+"Маълумотлар элементлари ва ташкилот бирликлари каби метамаълумотларни JSON "
+"форматида экспорт қилинг."
 
 msgid ""
 "Import metadata like data elements and organisation units using the JSON and"
 " CSV format."
 msgstr ""
+"JSON ва CSV форматидан фойдаланган ҳолда маълумотлар элементлари ва ташкилий"
+" бўлимлар каби МетаМаълумотларни импорт қилиш."
 
 msgid "Supported file types: JSON and CSV."
 msgstr "Қўллаб қувватланадиган файл турлари: JSON ва CSV."
