@@ -2,7 +2,7 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
@@ -1102,7 +1102,7 @@ msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织�
 
 msgid ""
 "Export event data for programs, stages and tracked entities in DXF 2 format."
-msgstr "以DXF 2格式导出程序，阶段和被跟踪实体的事件数据。"
+msgstr "以DXF 2格式导出项目，阶段和被跟踪实体的事件数据。"
 
 msgid "Export events"
 msgstr "导出事件"
