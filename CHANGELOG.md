@@ -1,3 +1,10 @@
+## [1.5.66](https://github.com/dhis2/import-export-app/compare/v1.5.65...v1.5.66) (2023-12-15)
+
+
+### Bug Fixes
+
+* avoid breaking selects [DHIS2-16264] ([#1963](https://github.com/dhis2/import-export-app/issues/1963)) ([4300ef2](https://github.com/dhis2/import-export-app/commit/4300ef2e10809f072e59391f182df71bad8944d5))
+
 ## [1.5.65](https://github.com/dhis2/import-export-app/compare/v1.5.64...v1.5.65) (2023-11-26)
 
 
