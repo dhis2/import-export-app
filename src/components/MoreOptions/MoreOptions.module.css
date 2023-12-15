@@ -21,6 +21,10 @@
     margin-top: var(--spacers-dp4);
 }
 
+.hidden {
+    display: none;
+}
+
 .header svg {
     margin-left: -3px;
     margin-right: 5px;
