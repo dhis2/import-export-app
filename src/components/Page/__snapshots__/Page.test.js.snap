@@ -563,7 +563,7 @@ exports[`matches snapshot when not loading and a mini summary task 1`] = `
             </h2>
           </header>
           <div
-            class="children"
+            class="children hidden"
             data-test="mini-job-summary-container-MoreOptions-children"
           />
         </section>
