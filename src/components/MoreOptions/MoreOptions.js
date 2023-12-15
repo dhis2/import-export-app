@@ -5,6 +5,11 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './MoreOptions.module.css'
 
+/**
+ * If not initially visible, doesn't render children. After opening the first
+ * time, however, children are instead hidden by CSS on toggle to preserve
+ * state
+ */
 const MoreOptions = ({
     children,
     initiallyVisible,
@@ -13,8 +18,12 @@ const MoreOptions = ({
     dataTest = 'interaction-more-options',
 }) => {
     const [hidden, setHidden] = useState(!initiallyVisible)
+    const [hasOpened, setHasOpened] = useState(initiallyVisible)
 
     const onToggle = () => {
+        if (!hasOpened) {
+            setHasOpened(true)
+        }
         setHidden(!hidden)
     }
 
@@ -39,8 +48,11 @@ const MoreOptions = ({
                 <h2 className={styles.label}>{label}</h2>
             </header>
             {!hidden && <Divider />}
-            <div className={styles.children} data-test={`${dataTest}-children`}>
-                {!hidden && children}
+            <div
+                className={cx(styles.children, { [styles.hidden]: hidden })}
+                data-test={`${dataTest}-children`}
+            >
+                {hasOpened && children}
             </div>
         </section>
     )
