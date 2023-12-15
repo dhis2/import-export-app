@@ -29,6 +29,10 @@
     margin-top: var(--spacers-dp4);
 }
 
+.hidden {
+    display: none;
+}
+
 .chevronHidden svg {
     transform: rotate(90deg);
 }
