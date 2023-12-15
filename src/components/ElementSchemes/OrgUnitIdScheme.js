@@ -17,7 +17,7 @@ const OrgUnitIdScheme = ({ name, label, orgUnitIdSchemeOptions, dataTest }) => {
         fetchAttributes(`${baseUrl}/api/`, 'organisationUnitAttribute')
             .then((attributes) => setSchemes(attributes))
             .catch((error) => setError(error))
-        setLoading(false)
+            .finally(() => setLoading(false))
     }, [])
 
     const validationText =
