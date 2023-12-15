@@ -22,7 +22,7 @@ const DataElementIdScheme = ({
         fetchAttributes(`${baseUrl}/api/`, 'dataElementAttribute')
             .then((attributes) => setSchemes(attributes))
             .catch((error) => setError(error))
-        setLoading(false)
+            .finally(() => setLoading(false))
     }, [])
 
     const validationText =
