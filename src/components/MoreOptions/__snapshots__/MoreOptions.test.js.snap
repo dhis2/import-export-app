@@ -32,11 +32,7 @@ exports[`matches snapshot when not toggled 1`] = `
       </h2>
     </header>
     <div
-      class="jsx-1555285825 jsx-876534464 "
-      data-test="dhis2-uicore-divider"
-    />
-    <div
-      class="children"
+      class="children hidden"
       data-test="more-options-children"
     />
   </section>
