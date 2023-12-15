@@ -48,7 +48,10 @@ const MoreOptions = ({
                 <h2 className={styles.label}>{label}</h2>
             </header>
             {!hidden && <Divider />}
-            <div className={cx(styles.children, { [styles.hidden]: hidden })} data-test={`${dataTest}-children`}>
+            <div
+                className={cx(styles.children, { [styles.hidden]: hidden })}
+                data-test={`${dataTest}-children`}
+            >
                 {hasOpened && children}
             </div>
         </section>
