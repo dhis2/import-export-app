@@ -41,7 +41,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Event export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export event data for programs, stages and tracked entities in DXF 2 format.'
+    'Export event data for programs, stages and tracked entities to JSON, CSV, or DXF 2 XML format.'
 )
 const PAGE_ICON = <EventIcon />
 

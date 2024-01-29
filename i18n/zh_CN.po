@@ -784,8 +784,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr "载入项目阶段发生错误"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, "
+"CSV, DXF 2 XML, or ADX XML format."
 msgstr "以DXF 2格式导出元数据，例如数据元和机构。"
 
 msgid "Date range to export data for"
@@ -802,7 +802,7 @@ msgstr "支持的文件类型：JSON，CSV，XML，ADX和PDF。"
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr "使用 Google 地球引擎从 WorldPop 导入高分辨率人口数据"
 
 msgid "Earth Engine source"
@@ -1099,15 +1099,16 @@ msgid ""
 msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织机构或使用缓冲区作为关联几何图形。"
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, "
+"CSV, or DXF 2 XML format."
 msgstr "以DXF 2格式导出程序，阶段和被跟踪实体的事件数据。"
 
 msgid "Export events"
 msgstr "导出事件"
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import events for programs, stages and tracked entities to JSON, CSV, or "
+"DXF 2 XML format."
 msgstr "从DXF2格式导入项目、阶段和跟踪实体事件数据"
 
 msgid "Supported file types: JSON, CSV, and XML."
@@ -1173,8 +1174,8 @@ msgid ""
 msgstr "以 JSON 格式导出元数据，例如数据元素和组织机构。"
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
-" CSV format."
+"Import metadata, such as data elements and organisation units, using JSON or "
+"CSV format."
 msgstr "使用 JSON 和 CSV 格式导入元数据，例如数据元素和组织单位。"
 
 msgid "Supported file types: JSON and CSV."
@@ -1201,7 +1202,7 @@ msgstr "至少选择一个最近更新的日期字段"
 msgid "Tracked entity instances import"
 msgstr "跟踪实体实例导入"
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entity instances using JSON or XML format."
 msgstr "从JSON或XML文件导入跟踪实体实例"
 
 msgid "Supported file types: JSON and XML."

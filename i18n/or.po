@@ -780,8 +780,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, "
+"CSV, DXF 2 XML, or ADX XML format."
 msgstr ""
 
 msgid "Date range to export data for"
@@ -797,15 +797,16 @@ msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, "
+"CSV, or DXF 2 XML format."
 msgstr ""
 
 msgid "Export events"
 msgstr ""
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import events for programs, stages and tracked entities to JSON, CSV, or "
+"DXF 2 XML format."
 msgstr ""
 
 msgid "Supported file types: JSON, CSV, and XML."
@@ -893,7 +894,7 @@ msgstr ""
 msgid "Tracked entity instances import"
 msgstr ""
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entity instances using JSON or XML format."
 msgstr ""
 
 msgid "Supported file types: JSON and XML."

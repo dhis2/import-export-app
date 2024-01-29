@@ -34,7 +34,7 @@ import { onImport } from './form-helper.js'
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Event import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import events for programs, stages and tracked entities using the DXF 2 format.'
+    'Import event data for programs, stages and tracked entities to JSON, CSV, or DXF 2 XML format.'
 )
 const PAGE_ICON = <EventIcon />
 

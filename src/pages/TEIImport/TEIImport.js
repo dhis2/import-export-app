@@ -56,7 +56,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Tracked entity instances import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import tracked entity instances from JSON or XML files.'
+    'Import tracked entity instances using JSON or XML format.'
 )
 const PAGE_ICON = <TEIIcon />
 

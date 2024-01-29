@@ -796,8 +796,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr "حدث خطأ ما أثناء تحميل مراحل البرنامج"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, "
+"CSV, DXF 2 XML, or ADX XML format."
 msgstr ""
 "تصدير البيانات الوصفية ، مثل عناصر البيانات والوحدات التنظيمية ، بتنسيق DXF "
 "2."
@@ -817,7 +817,7 @@ msgstr "أنواع الملفات المدعومة: JSON و CSV و XML و ADX و
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
@@ -1113,15 +1113,16 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, "
+"CSV, or DXF 2 XML format."
 msgstr ""
 
 msgid "Export events"
 msgstr "تصدير أحداث"
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import events for programs, stages and tracked entities to JSON, CSV, or "
+"DXF 2 XML format."
 msgstr ""
 "استيراد الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
@@ -1188,8 +1189,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
-" CSV format."
+"Import metadata, such as data elements and organisation units, using JSON or "
+"CSV format."
 msgstr ""
 
 msgid "Supported file types: JSON and CSV."
@@ -1216,7 +1217,7 @@ msgstr "يجب تحديد حقل تاريخ واحد على الأقل من حق
 msgid "Tracked entity instances import"
 msgstr "استيراد نسخ الكيان المتعقبة"
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entity instances using JSON or XML format."
 msgstr "استيراد نسخ الكيانات المتعقبة من ملفات JSON أو XML."
 
 msgid "Supported file types: JSON and XML."
