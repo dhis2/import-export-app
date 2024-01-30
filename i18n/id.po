@@ -791,8 +791,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, to JSON, "
-"CSV, DXF 2 XML, or ADX XML format."
+"Export metadata, such as data elements and organisation units, in DXF 2 "
+"format."
 msgstr ""
 
 msgid "Date range to export data for"
@@ -809,7 +809,7 @@ msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+"Engine"
 msgstr ""
 
 msgid "Earth Engine source"
@@ -1105,16 +1105,15 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, "
-"CSV, or DXF 2 XML format."
+"Export event data for programs, stages and tracked entities in DXF 2 format."
 msgstr ""
 
 msgid "Export events"
 msgstr ""
 
 msgid ""
-"Import events for programs, stages and tracked entities to JSON, CSV, or "
-"DXF 2 XML format."
+"Import events for programs, stages and tracked entities using the DXF 2 "
+"format."
 msgstr ""
 
 msgid "Supported file types: JSON, CSV, and XML."
@@ -1180,8 +1179,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Import metadata, such as data elements and organisation units, using JSON or "
-"CSV format."
+"Import metadata like data elements and organisation units using the JSON and"
+" CSV format."
 msgstr ""
 
 msgid "Supported file types: JSON and CSV."
@@ -1208,7 +1207,7 @@ msgstr ""
 msgid "Tracked entity instances import"
 msgstr ""
 
-msgid "Import tracked entity instances using JSON or XML format."
+msgid "Import tracked entity instances from JSON or XML files."
 msgstr ""
 
 msgid "Supported file types: JSON and XML."
