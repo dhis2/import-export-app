@@ -46,7 +46,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Data import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files.'
+    'Import data values using ADX XML, DXF 2 XML, JSON, CSV or PDF format.'
 )
 const PAGE_ICON = <DataIcon />
 
