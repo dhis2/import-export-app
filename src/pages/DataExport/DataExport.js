@@ -40,7 +40,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Data export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export metadata, such as data elements and organisation units, to JSON, CSV, DXF 2 XML, or ADX XML format.'
+    'Export metadata, such as data elements and organisation units, to JSON, CSV, DXF2, or ADX format.'
 )
 const PAGE_ICON = <DataIcon />
 

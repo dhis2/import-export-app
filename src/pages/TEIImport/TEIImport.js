@@ -56,7 +56,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Tracked entity instances import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import tracked entity instances using JSON or XML format.'
+    'Import tracked entity instances using JSON or DXF2 format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -136,7 +136,7 @@ const TEIImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON and XML.',
+                                    'Supported file types: JSON and DXF2.',
                                     {
                                         nsSeparator: '>',
                                     }

@@ -46,7 +46,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Data import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import data values using ADX XML, DXF 2 XML, JSON, CSV or PDF format.'
+    'Import data values using JSON, CSV, DXF2, ADX, or PDF format.'
 )
 const PAGE_ICON = <DataIcon />
 
@@ -121,7 +121,7 @@ const DataImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON, CSV, XML, ADX and PDF.',
+                                    'Supported file types: JSON, CSV, DXF2, ADX, and PDF.',
                                     {
                                         nsSeparator: '>',
                                     }
