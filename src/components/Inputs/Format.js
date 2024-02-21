@@ -7,7 +7,7 @@ import { RadioGroupField } from '../index.js'
 const formatOptions = [
     { value: 'json', label: i18n.t('JSON') },
     { value: 'csv', label: i18n.t('CSV') },
-    { value: 'xml', label: i18n.t('XML') },
+    { value: 'xml', label: i18n.t('DXF2 (XML)') },
 ]
 
 const formatNoCsvOptions = formatOptions.filter((f) => f.value != 'csv')
@@ -18,11 +18,11 @@ const formatNoXmlNoCsvOptions = formatOptions.filter(
 
 const formatAdxOptions = [
     ...formatOptions,
-    { value: 'adx', label: i18n.t('ADX') },
+    { value: 'adx', label: i18n.t('ADX (XML)') },
 ]
 const formatAdxXMLOptions = [
     ...formatOptions,
-    { value: 'adx+xml', label: i18n.t('ADX') },
+    { value: 'adx+xml', label: i18n.t('ADX (XML)') },
 ]
 const formatAdxPdfOptions = [
     ...formatAdxOptions,
