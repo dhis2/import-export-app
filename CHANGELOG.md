@@ -1,3 +1,10 @@
+## [1.5.69](https://github.com/dhis2/import-export-app/compare/v1.5.68...v1.5.69) (2024-02-21)
+
+
+### Bug Fixes
+
+* update captions and options to reflect the menus below [DHIS2-12655] ([#1977](https://github.com/dhis2/import-export-app/issues/1977)) ([a12296d](https://github.com/dhis2/import-export-app/commit/a12296d2ace4cfcb6139e65ee9a2d4c9aa1456a2))
+
 ## [1.5.68](https://github.com/dhis2/import-export-app/compare/v1.5.67...v1.5.68) (2024-01-21)
 
 
