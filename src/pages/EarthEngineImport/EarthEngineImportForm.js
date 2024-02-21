@@ -105,7 +105,7 @@ const EarthEngineImportForm = () => {
             <Page
                 title={i18n.t('Earth Engine import')}
                 desc={i18n.t(
-                    'Import high resolution population data from WorldPop using Google Earth Engine'
+                    'Import high resolution population data from WorldPop using Google Earth Engine.'
                 )}
                 icon={<DataIcon />}
                 loading={progress}
