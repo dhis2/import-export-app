@@ -81,9 +81,7 @@ const createInitialValues = (prevJobDetails) => ({
         prevJobDetails.skipValidation,
         defaultSkipValidationOption
     ),
-    // disable async until it is fully implemented for this resource
-    // (expected 2.36)
-    isAsync: false,
+    isAsync: true,
     dataElementIdScheme:
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:

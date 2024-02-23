@@ -60,7 +60,7 @@ const SingleSummary = ({
                 </Table>
             </>
         </FormField>
-        {validationReport?.errorReports && (
+        {!!validationReport?.errorReports?.length && (
             <FormField
                 label={`${i18n.t('Reports')}`}
                 dataTest="tracker-summary-reports"

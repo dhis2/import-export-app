@@ -17,7 +17,6 @@ const onImport =
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/tracker`
-        const endpoint = ''
         const params = [
             `async=${isAsync}`,
             `importMode=${dryRun ? 'validate' : 'commit'}`,
@@ -25,7 +24,7 @@ const onImport =
             `orgUnitIdScheme=${orgUnitIdScheme}`,
             `idScheme=${idScheme}`,
         ].join('&')
-        const url = `${apiBaseUrl}${endpoint}?${params}`
+        const url = `${apiBaseUrl}?${params}`
 
         try {
             await uploadFile({

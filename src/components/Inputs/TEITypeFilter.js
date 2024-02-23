@@ -3,7 +3,6 @@ import React from 'react'
 import { RadioGroupField } from '../index.js'
 
 const teiTypeFilterOptions = [
-    { value: 'NONE', label: i18n.t('None') },
     { value: 'PROGRAM', label: i18n.t('Program') },
     { value: 'TE', label: i18n.t('Tracked entity type') },
 ]
