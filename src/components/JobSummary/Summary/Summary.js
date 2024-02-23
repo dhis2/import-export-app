@@ -49,6 +49,7 @@ const Summary = ({ summary, importType }) => {
             importCount={importCount}
             status={summary.status}
             description={summary.description}
+            validationReport={summary.validationReport}
             conflicts={
                 summary.conflicts &&
                 (summary.conflicts.length || null) &&

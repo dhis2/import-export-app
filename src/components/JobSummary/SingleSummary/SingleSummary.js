@@ -20,6 +20,7 @@ const SingleSummary = ({
     status,
     description,
     conflicts,
+    validationReport,
     id,
 }) => (
     <div>
@@ -29,7 +30,7 @@ const SingleSummary = ({
             name="summary"
         >
             <>
-                {status && (
+                {status && description && (
                     <SingleStatusTable
                         description={description}
                         status={status}
@@ -47,16 +48,61 @@ const SingleSummary = ({
                     </TableHead>
                     <TableBody>
                         <TableRow>
-                            <TableCell>{importCount.imported}</TableCell>
-                            <TableCell>{importCount.deleted}</TableCell>
-                            <TableCell>{importCount.ignored}</TableCell>
-                            <TableCell>{importCount.updated}</TableCell>
-                            <TableCell>{importCount.total}</TableCell>
+                            <TableCell>
+                                {importCount?.imported ?? '0'}
+                            </TableCell>
+                            <TableCell>{importCount?.deleted}</TableCell>
+                            <TableCell>{importCount?.ignored}</TableCell>
+                            <TableCell>{importCount?.updated}</TableCell>
+                            <TableCell>{importCount?.total}</TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>
             </>
         </FormField>
+        {validationReport?.errorReports && (
+            <FormField
+                label={`${i18n.t('Reports')}`}
+                dataTest="tracker-summary-reports"
+                name="tracker-reports"
+            >
+                <Table>
+                    <TableHead>
+                        <TableRowHead>
+                            <TableCellHead>{i18n.t('UID')}</TableCellHead>
+                            <TableCellHead>
+                                {i18n.t('Error Code')}
+                            </TableCellHead>
+                            <TableCellHead>{i18n.t('Message')}</TableCellHead>
+                            <TableCellHead>
+                                {i18n.t('Tracker Type')}
+                            </TableCellHead>
+                            {/* <TableCellHead>{i18n.t('')}</TableCellHead> */}
+                        </TableRowHead>
+                    </TableHead>
+                    <TableBody>
+                        {validationReport.errorReports.map((c, i) => (
+                            <TableRow
+                                key={`job-summary-report-${c.object}-${i}`}
+                            >
+                                <TableCell>{c.uid}</TableCell>
+                                <TableCell>
+                                    <a
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        href="https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_nti_error_codes"
+                                    >
+                                        {c.warningCode ?? c.errorCode}
+                                    </a>
+                                </TableCell>
+                                <TableCell>{c.message}</TableCell>
+                                <TableCell>{c.trackerType}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </FormField>
+        )}
         {conflicts && (
             <FormField
                 label={`${i18n.t('Conflicts')}`}
@@ -107,6 +153,24 @@ SingleSummary.propTypes = {
     id: PropTypes.string,
     importType: PropTypes.string,
     status: PropTypes.string,
+    validationReport: PropTypes.shape({
+        errorReports: PropTypes.arrayOf(
+            PropTypes.shape({
+                errorCode: PropTypes.string,
+                message: PropTypes.string,
+                trackerType: PropTypes.string,
+                uid: PropTypes.string,
+            })
+        ),
+        warningReports: PropTypes.arrayOf(
+            PropTypes.shape({
+                errorCode: PropTypes.string,
+                message: PropTypes.string,
+                trackerType: PropTypes.string,
+                uid: PropTypes.string,
+            })
+        ),
+    }),
 }
 
 export { SingleSummary }

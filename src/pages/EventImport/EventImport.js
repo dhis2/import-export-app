@@ -14,7 +14,6 @@ import {
 import {
     FileUpload,
     Format,
-    formatOptions,
     defaultFormatOption,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
@@ -26,6 +25,7 @@ import {
     defaultOrgUnitIdSchemeOption,
     ImportButtonStrip,
     FormAlerts,
+    formatNoXmlOptions,
 } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { getPrevJobDetails } from '../../utils/helper.js'
@@ -102,7 +102,7 @@ const EventImport = () => {
                                 )}
                             />
                             <Format
-                                availableFormats={formatOptions}
+                                availableFormats={formatNoXmlOptions}
                                 type="import"
                             />
                         </BasicOptions>
