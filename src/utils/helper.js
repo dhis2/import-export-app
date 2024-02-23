@@ -193,7 +193,7 @@ const downloadWindowHtml = `
 `
 
 // call stub function if available
-const locationAssign = (url, setExportEnabled) => {
+const locationAssign = (url) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
@@ -201,11 +201,6 @@ const locationAssign = (url, setExportEnabled) => {
 
         downloadWindow.document.title = downloadWindowTitle
         downloadWindow.document.body.innerHTML = downloadWindowHtml // does not work in Chrome
-
-        const enableExport = () => setExportEnabled(true)
-        downloadWindow.onbeforeunload = enableExport
-        downloadWindow.onabort = enableExport
-        downloadWindow.onerror = enableExport
     }
 }
 
