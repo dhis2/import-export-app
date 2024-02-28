@@ -159,6 +159,18 @@ jobs:
               with:
                   token: ${{env.GH_TOKEN}}
 
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 16.x
+
+            - uses: actions/download-artifact@v2
+              with:
+                  name: app-build
+
+            # ensure that d2-app-scripts is available
+            - uses: c-hive/gha-yarn-cache@v1
+            - run: yarn install --frozen-lockfile
+
             - uses: dhis2/action-semantic-release@master
               with:
                   publish-apphub: true
