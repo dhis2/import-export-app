@@ -1,3 +1,10 @@
+## [99.9.10](https://github.com/dhis2/import-export-app/compare/v99.9.9...v99.9.10) (2024-02-28)
+
+
+### Bug Fixes
+
+* force trigger a release ([87f4003](https://github.com/dhis2/import-export-app/commit/87f400305f1a75c8bbe66d4018f84853ed390f8d))
+
 ## [1.6.1](https://github.com/dhis2/import-export-app/compare/v1.6.0...v1.6.1) (2024-02-28)
 
 
