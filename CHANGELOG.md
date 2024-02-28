@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/dhis2/import-export-app/compare/v1.5.69...v1.6.0) (2024-02-28)
+
+
+### Features
+
+* publish first version under continuous release ([39b58cb](https://github.com/dhis2/import-export-app/commit/39b58cb08e035adaadfbb302138b680491da22ac))
+
 ## [1.5.69](https://github.com/dhis2/import-export-app/compare/v1.5.68...v1.5.69) (2024-02-21)
 
 
