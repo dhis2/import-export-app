@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/dhis2/import-export-app/compare/v1.6.0...v1.6.1) (2024-02-28)
+
+
+### Bug Fixes
+
+* update github action to ensure yarn install is run before releasing ([e58a204](https://github.com/dhis2/import-export-app/commit/e58a204ee708094bb5006d182eaf10f7691c3482))
+
 # [1.6.0](https://github.com/dhis2/import-export-app/compare/v1.5.69...v1.6.0) (2024-02-28)
 
 
