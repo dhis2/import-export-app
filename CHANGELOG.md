@@ -1,3 +1,10 @@
+# [99.10.0](https://github.com/dhis2/import-export-app/compare/v99.9.10...v99.10.0) (2024-02-28)
+
+
+### Features
+
+* force trigger a release ([faea011](https://github.com/dhis2/import-export-app/commit/faea0117561976dd19f91f55dc9b7260962cfcbd))
+
 ## [99.9.10](https://github.com/dhis2/import-export-app/compare/v99.9.9...v99.9.10) (2024-02-28)
 
 
