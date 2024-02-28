@@ -1,3 +1,15 @@
+# [100.0.0](https://github.com/dhis2/import-export-app/compare/v99.10.0...v100.0.0) (2024-02-28)
+
+
+### Features
+
+* force trigger a release ([1951397](https://github.com/dhis2/import-export-app/commit/19513979f1558c9ccbdf9ea3e2a06d0766136120))
+
+
+### BREAKING CHANGES
+
+* bump to v100 for continuous release
+
 # [99.10.0](https://github.com/dhis2/import-export-app/compare/v99.9.10...v99.10.0) (2024-02-28)
 
 
