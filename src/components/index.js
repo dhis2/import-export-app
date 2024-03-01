@@ -47,3 +47,7 @@ export { BasicOptions } from './BasicOptions/BasicOptions'
 export { SchemeContainer } from './ElementSchemes/SchemeContainer'
 export { StyledField } from './StyledField/StyledField'
 export { ValidationSummary } from './ValidationSummary/ValidationSummary'
+export {
+    mergeOperation,
+    MergeOperationNotice,
+} from './MergeOperation/MergeOperation'
