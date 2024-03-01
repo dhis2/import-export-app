@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
-"PO-Revision-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"PO-Revision-Date: 2024-03-01T15:50:32.586Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -693,6 +693,12 @@ msgstr "Indexes"
 
 msgid "Details by type"
 msgstr "Details by type"
+
+msgid "All existing property values will be replaced"
+msgstr "All existing property values will be replaced"
+
+msgid "Values will be overwritten, even if the new value is null"
+msgstr "Values will be overwritten, even if the new value is null"
 
 msgid "Advanced options"
 msgstr "Advanced options"

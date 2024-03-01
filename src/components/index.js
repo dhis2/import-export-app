@@ -48,3 +48,7 @@ export { SchemeContainer } from './ElementSchemes/SchemeContainer.js'
 export { StyledField } from './StyledField/StyledField.js'
 export { Tooltip } from './Tooltip/Tooltip.js'
 export { ValidationSummary } from './ValidationSummary/ValidationSummary.js'
+export {
+    mergeOperation,
+    MergeOperationNotice,
+} from './MergeOperation/MergeOperation.js'
