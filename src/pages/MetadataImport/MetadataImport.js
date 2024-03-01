@@ -9,6 +9,8 @@ import {
     MoreOptions,
     BasicOptions,
     ValidationSummary,
+    mergeOperation,
+    MergeOperationNotice,
 } from '../../components/index'
 import {
     FileUpload,
@@ -26,8 +28,6 @@ import {
     defaultImportStrategyOption,
     AtomicMode,
     defaultAtomicModeOption,
-    MergeMode,
-    defaultMergeModeOption,
     FlushMode,
     defaultFlushModeOption,
     SkipSharing,
@@ -67,7 +67,7 @@ const createInitialValues = prevJobDetails => ({
         defaultFirstRowIsHeaderOption
     ),
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
-    mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
+    mergeMode: prevJobDetails.mergeMode || mergeOperation,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
     inclusionStrategy:
         prevJobDetails.inclusionStrategy || defaultInclusionStrategyOption,
@@ -146,7 +146,7 @@ const MetadataImport = () => {
                             <ImportReportMode />
                             <ImportStrategy value={values.importStrategy} />
                             <AtomicMode />
-                            <MergeMode />
+                            <MergeOperationNotice />
                         </BasicOptions>
                         <MoreOptions>
                             <FlushMode />
