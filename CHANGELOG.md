@@ -1,3 +1,10 @@
+## [100.0.1](https://github.com/dhis2/import-export-app/compare/v100.0.0...v100.0.1) (2024-03-01)
+
+
+### Bug Fixes
+
+* remove merge mode from metadata import UI ([2862267](https://github.com/dhis2/import-export-app/commit/2862267815e86793c4ec7bd4d54e5463afef4b48))
+
 # [100.0.0](https://github.com/dhis2/import-export-app/compare/v99.10.0...v100.0.0) (2024-02-28)
 
 
