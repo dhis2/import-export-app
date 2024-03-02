@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -219,11 +219,11 @@ msgstr "JSON"
 msgid "CSV"
 msgstr "CSV"
 
-msgid "XML"
-msgstr "XML"
+msgid "DXF2 (XML)"
+msgstr ""
 
-msgid "ADX"
-msgstr "ADX"
+msgid "ADX (XML)"
+msgstr ""
 
 msgid "PDF"
 msgstr "PDF"
@@ -693,6 +693,12 @@ msgstr ""
 msgid "Details by type"
 msgstr ""
 
+msgid "All existing property values will be replaced"
+msgstr ""
+
+msgid "Values will be overwritten, even if the new value is null"
+msgstr ""
+
 msgid "Advanced options"
 msgstr ""
 
@@ -784,8 +790,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr "Noe gikk galt ved lasting av programfasene"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, CSV,"
+" DXF2, or ADX format."
 msgstr ""
 
 msgid "Date range to export data for"
@@ -794,16 +800,15 @@ msgstr ""
 msgid "Export data"
 msgstr "Eksporter data"
 
-msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
-"Importer dataverdier fra ADX XML, DXF 2 XML, JSON, CSV eller PDF filer."
 
-msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
+msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
@@ -1099,20 +1104,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
 
 msgid "Export events"
 msgstr "Eksporter hendelser"
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
-"Importer hendelsesdata for programmer, faser og sporede enheter i DXF 2 "
-"format."
 
-msgid "Supported file types: JSON, CSV, and XML."
+msgid "Supported file types: JSON, CSV, and DXF2."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1175,7 +1179,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
+"Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
 
@@ -1188,7 +1192,7 @@ msgstr "En klassetast må merkes"
 msgid "Tracked entity instances export"
 msgstr ""
 
-msgid "Export tracked entity instances in XML, JSON or CSV format."
+msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1203,10 +1207,10 @@ msgstr ""
 msgid "Tracked entity instances import"
 msgstr ""
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entity instances using JSON or DXF2 format."
 msgstr ""
 
-msgid "Supported file types: JSON and XML."
+msgid "Supported file types: JSON and DXF2."
 msgstr ""
 
 msgid "Job started."
