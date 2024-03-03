@@ -1,16 +1,17 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # Oscar Mesones Lapouble <oscar.lapouble@gmail.com>, 2021
+# Thiago Rocha, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Oscar Mesones Lapouble <oscar.lapouble@gmail.com>, 2021\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
+"Last-Translator: Thiago Rocha, 2024\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +25,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Data inválida"
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -186,13 +187,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 msgid "ADX"
 msgstr ""
@@ -425,7 +426,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "Captura"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -491,10 +492,10 @@ msgid "Active"
 msgstr "Activo"
 
 msgid "Completed"
-msgstr ""
+msgstr "Concluído"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancelado"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -543,7 +544,7 @@ msgid "Program"
 msgstr "Programa"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "Tipo de entidade rastreada"
 
 msgid "Filter by"
 msgstr ""
@@ -588,7 +589,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr ""
+msgstr "Em andamento"
 
 msgid "Job details"
 msgstr ""
@@ -615,7 +616,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "Tempo"
 
 msgid "Message"
 msgstr "Mensagem"
@@ -645,7 +646,7 @@ msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Criado"
 
 msgid "Deleted"
 msgstr ""
@@ -657,7 +658,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 msgid "Details by type"
 msgstr ""
@@ -726,7 +727,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Visão geral"
 
 msgid "Yes"
 msgstr "Sim"
@@ -874,13 +875,13 @@ msgid "Data"
 msgstr "Dados"
 
 msgid "Event"
-msgstr ""
+msgstr "Evento"
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr ""
+msgstr "Metadados"
 
 msgid "TEI"
 msgstr ""
