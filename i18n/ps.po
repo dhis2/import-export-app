@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-06T13:23:03.852Z\n"
+"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
-"Language-Team: Pashto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
+"Language-Team: Pashto (https://app.transifex.com/hisp-uio/teams/100509/ps/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -219,10 +219,10 @@ msgstr "JSON"
 msgid "CSV"
 msgstr "CSV"
 
-msgid "XML"
-msgstr "XML"
+msgid "DXF2 (XML)"
+msgstr ""
 
-msgid "ADX"
+msgid "ADX (XML)"
 msgstr ""
 
 msgid "PDF"
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -693,6 +693,12 @@ msgstr ""
 msgid "Details by type"
 msgstr ""
 
+msgid "All existing property values will be replaced"
+msgstr ""
+
+msgid "Values will be overwritten, even if the new value is null"
+msgstr ""
+
 msgid "Advanced options"
 msgstr ""
 
@@ -784,8 +790,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, CSV,"
+" DXF2, or ADX format."
 msgstr ""
 
 msgid "Date range to export data for"
@@ -794,26 +800,15 @@ msgstr ""
 msgid "Export data"
 msgstr "مالومات (ډاټا) صادره کړئ"
 
-msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr ""
-
-msgid "An error occurred while trying to fetch Earth Engine data"
+msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
 msgid ""
-"The Earth Engine data set is too large. Try reducing the number of groups or"
-" organisation units"
-msgstr ""
-
-msgid "The organisation units selection is invalid"
-msgstr ""
-
-msgid ""
-"Import WorldPop population data from Google Earth Engine to a DHIS2 data "
-"element"
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
@@ -823,6 +818,9 @@ msgid "Organisation units"
 msgstr "د سازمان واحدونه"
 
 msgid "Import setup"
+msgstr ""
+
+msgid "Data preview"
 msgstr ""
 
 msgid "Some required fields are missing"
@@ -835,18 +833,6 @@ msgid "Use associated geometry"
 msgstr ""
 
 msgid "Select associated geometry for selected organisation units"
-msgstr ""
-
-msgid "Data element"
-msgstr "د مالوماتو (ډاټا) برخه"
-
-msgid "The data element where Earth Engine data will be added"
-msgstr ""
-
-msgid "Earth Engine data set"
-msgstr ""
-
-msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Import groups to category option combinations"
@@ -872,6 +858,21 @@ msgstr ""
 msgid "Choose category option combo"
 msgstr ""
 
+msgid "Data element"
+msgstr "د مالوماتو (ډاټا) برخه"
+
+msgid "Select data element"
+msgstr ""
+
+msgid "The data element where Earth Engine data will be added"
+msgstr ""
+
+msgid "Earth Engine data set"
+msgstr ""
+
+msgid "Select earth engine data set"
+msgstr ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -885,6 +886,9 @@ msgid "Deselect all"
 msgstr ""
 
 msgid "Organisation unit(s) to import data to"
+msgstr ""
+
+msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
@@ -905,7 +909,7 @@ msgstr ""
 msgid "Point org. unit - no value"
 msgstr ""
 
-msgid "Org Unit"
+msgid "Organisation Unit"
 msgstr ""
 
 msgid "Category option combo"
@@ -917,7 +921,11 @@ msgstr ""
 msgid "New value"
 msgstr ""
 
-msgid "Select rows per page"
+msgid "Rows per page"
+msgstr ""
+
+msgid ""
+"Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Don't round source values"
@@ -945,6 +953,17 @@ msgid "Round to 6 decimal places"
 msgstr ""
 
 msgid "Value rounding"
+msgstr ""
+
+msgid "An error occurred while trying to fetch Earth Engine data"
+msgstr ""
+
+msgid ""
+"The Earth Engine data set is too large. Try reducing the number of groups or"
+" organisation units"
+msgstr ""
+
+msgid "The organisation units selection is invalid"
 msgstr ""
 
 msgid "The app could not retrieve required data."
@@ -1078,22 +1097,26 @@ msgstr ""
 msgid "No organisation units have been selected"
 msgstr ""
 
-msgid "No geofeatures found for selected organisation units"
+msgid ""
+"It is not possible to get data from Earth Engine for point facilities. "
+"Select polygon organisation units or use a catchment area as associated "
+"geometry."
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
 
 msgid "Export events"
 msgstr "د پېښو صادرول"
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and XML."
+msgid "Supported file types: JSON, CSV, and DXF2."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1130,6 +1153,9 @@ msgstr "مالومات (ډاټا) وارد کړئ"
 msgid "Import events"
 msgstr "پېښې واردې کړئ"
 
+msgid "Import Earth Engine"
+msgstr ""
+
 msgid "Import GeoJSON"
 msgstr ""
 
@@ -1144,17 +1170,20 @@ msgstr ""
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
-"related metadata objects, in XML or JSON format."
+"related metadata objects, in JSON format."
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in XML, JSON "
-"or CSV format."
-msgstr ""
-
-msgid ""
-"Import metadata like data elements and organisation units using the DXF 2 "
+"Export metadata, such as data elements and organisation units, in JSON "
 "format."
+msgstr ""
+
+msgid ""
+"Import metadata, such as data elements and organisation units, using JSON or"
+" CSV format."
+msgstr ""
+
+msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "A class key must be selected"
@@ -1163,7 +1192,7 @@ msgstr ""
 msgid "Tracked entity instances export"
 msgstr ""
 
-msgid "Export tracked entity instances in XML, JSON or CSV format."
+msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1178,10 +1207,10 @@ msgstr ""
 msgid "Tracked entity instances import"
 msgstr ""
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entity instances using JSON or DXF2 format."
 msgstr ""
 
-msgid "Supported file types: JSON and XML."
+msgid "Supported file types: JSON and DXF2."
 msgstr ""
 
 msgid "Job started."

@@ -2,15 +2,16 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Oscar Mesones Lapouble <oscar.lapouble@gmail.com>, 2021
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
+# Thiago Rocha, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-10-07T09:57:52.907Z\n"
+"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
+"Last-Translator: Thiago Rocha, 2024\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +25,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Data inválida"
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -215,15 +216,15 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 msgid "CSV"
+msgstr "CSV"
+
+msgid "DXF2 (XML)"
 msgstr ""
 
-msgid "XML"
-msgstr ""
-
-msgid "ADX"
+msgid "ADX (XML)"
 msgstr ""
 
 msgid "PDF"
@@ -312,7 +313,7 @@ msgstr ""
 msgid "Include all attributes"
 msgstr ""
 
-msgid "Include first level units"
+msgid "Include descendants"
 msgstr ""
 
 msgid "Include descendants of selected organisation units"
@@ -457,7 +458,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr ""
+msgstr "Captura"
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -520,10 +521,10 @@ msgid "Active"
 msgstr "Activo"
 
 msgid "Completed"
-msgstr ""
+msgstr "Concluído"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancelado"
 
 msgid "Include only entities with status"
 msgstr ""
@@ -572,7 +573,7 @@ msgid "Program"
 msgstr "Programa"
 
 msgid "Tracked entity type"
-msgstr ""
+msgstr "Tipo de entidade rastreada"
 
 msgid "Filter by"
 msgstr ""
@@ -617,7 +618,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr ""
+msgstr "Em andamento"
 
 msgid "Job details"
 msgstr ""
@@ -644,7 +645,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "Tempo"
 
 msgid "Message"
 msgstr "Mensagem"
@@ -674,7 +675,7 @@ msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Criado"
 
 msgid "Deleted"
 msgstr ""
@@ -686,12 +687,18 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 msgid "Indexes"
 msgstr ""
 
 msgid "Details by type"
+msgstr ""
+
+msgid "All existing property values will be replaced"
+msgstr ""
+
+msgid "Values will be overwritten, even if the new value is null"
 msgstr ""
 
 msgid "Advanced options"
@@ -761,7 +768,7 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Visão geral"
 
 msgid "Yes"
 msgstr "Sim"
@@ -785,8 +792,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, CSV,"
+" DXF2, or ADX format."
 msgstr ""
 
 msgid "Date range to export data for"
@@ -795,15 +802,15 @@ msgstr ""
 msgid "Export data"
 msgstr "Exportar valores"
 
-msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
+msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
@@ -845,7 +852,7 @@ msgid "Group description"
 msgstr ""
 
 msgid "Category option combination"
-msgstr ""
+msgstr "Combinação de opções de categoria"
 
 msgid "No match found"
 msgstr ""
@@ -878,7 +885,7 @@ msgid "Select a level"
 msgstr ""
 
 msgid "Deselect all"
-msgstr ""
+msgstr "Desmarcar todos"
 
 msgid "Organisation unit(s) to import data to"
 msgstr ""
@@ -965,7 +972,7 @@ msgid "The app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Erro de rede"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr ""
@@ -1099,18 +1106,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
 
 msgid "Export events"
 msgstr ""
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and XML."
+msgid "Supported file types: JSON, CSV, and DXF2."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1173,7 +1181,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
+"Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
 
@@ -1186,7 +1194,7 @@ msgstr ""
 msgid "Tracked entity instances export"
 msgstr ""
 
-msgid "Export tracked entity instances in XML, JSON or CSV format."
+msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1201,10 +1209,10 @@ msgstr ""
 msgid "Tracked entity instances import"
 msgstr ""
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entity instances using JSON or DXF2 format."
 msgstr ""
 
-msgid "Supported file types: JSON and XML."
+msgid "Supported file types: JSON and DXF2."
 msgstr ""
 
 msgid "Job started."
@@ -1220,7 +1228,7 @@ msgid "Data"
 msgstr "Dados"
 
 msgid "Event"
-msgstr ""
+msgstr "Evento"
 
 msgid "GeoJSON"
 msgstr ""
@@ -1229,7 +1237,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr ""
+msgstr "Metadados"
 
 msgid "TEI"
 msgstr ""
