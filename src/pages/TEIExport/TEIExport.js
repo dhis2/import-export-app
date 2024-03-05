@@ -68,7 +68,7 @@ const initialValues = {
     inclusion: defaultInclusionOption,
     teiTypeFilter: defaultTEITypeFilterOption,
     programStatus: defaultProgramStatusOption,
-    followUpStatus: defaultFollowUpStatusOption,
+    followup: defaultFollowUpStatusOption,
     enrollmentEnrolledAfter: '',
     enrollmentEnrolledBefore: '',
     compression: '', // disable compression until it is properly implemented in the backend

@@ -25,7 +25,7 @@ const valuesToParams = (
         assignedUserMode,
         teiTypeFilter,
         programStatus,
-        followUpStatus,
+        followup,
         enrollmentEnrolledAfter,
         enrollmentEnrolledBefore,
         lastUpdatedFilter,
@@ -70,7 +70,11 @@ const valuesToParams = (
             minParams.programStatus = programStatus
         }
 
-        minParams.followUpStatus = followUpStatus
+        console.log('>>>>>', followup, minParams.followup)
+
+        if(followup !== 'ALL') {
+            minParams.followup = followup
+        }
 
         if (enrollmentEnrolledAfter) {
             minParams.enrollmentEnrolledAfter = enrollmentEnrolledAfter
