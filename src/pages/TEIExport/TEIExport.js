@@ -52,9 +52,9 @@ import { onExport, validate } from './form-helper.js'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-export const PAGE_NAME = i18n.t('Tracked entity instances export')
+export const PAGE_NAME = i18n.t('Tracked entities export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export tracked entity instances in JSON, CSV, or DXF2 format.'
+    'Export tracked entities in JSON, CSV, or DXF2 format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -155,7 +155,7 @@ const TEIExport = () => {
                             <ValidationSummary />
                             <ExportButton
                                 label={i18n.t(
-                                    'Export tracked entity instances'
+                                    'Export tracked entities'
                                 )}
                                 disabled={!exportEnabled}
                             />

@@ -43,7 +43,7 @@ const categoryTypes = [
         key: 'tei',
         importType: 'TEI_IMPORT',
         icon: <TEIIcon />,
-        label: i18n.t('TEI'),
+        label: i18n.t('Tracked entity'),
     },
 ]
 
