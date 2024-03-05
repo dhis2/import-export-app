@@ -58,8 +58,8 @@ const initialValues = {
     programStage: undefined,
     format: defaultFormatOption,
     compression: defaultCompressionOption,
-    startDate: jsDateToISO8601(threeMonthsBeforeToday),
-    endDate: jsDateToISO8601(today),
+    occurredAfter: jsDateToISO8601(threeMonthsBeforeToday),
+    occurredBefore: jsDateToISO8601(today),
     includeDeleted: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
@@ -101,8 +101,8 @@ const EventExport = () => {
                             <Dates
                                 label={i18n.t('Date range to export data for')}
                             >
-                                <StartDate />
-                                <EndDate />
+                                <StartDate name="occurredAfter" />
+                                <EndDate name="occurredBefore" />
                             </Dates>
                             <Format availableFormats={formatNoXmlOptions} />
                             <Compression />
