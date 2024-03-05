@@ -5,13 +5,12 @@ import React from 'react'
 import { DATE_VALIDATOR } from '../DatePicker/DatePickerField.js'
 import { DatePickerField } from '../index.js'
 
-
 const NAME = 'startDate'
 const DATATEST = 'input-start-date'
 const LABEL = i18n.t('Start date')
 const VALIDATOR = composeValidators(hasValue, DATE_VALIDATOR)
 
-const StartDate = ({name, label}) => (
+const StartDate = ({ name, label }) => (
     <DatePickerField
         name={name ?? NAME}
         validator={VALIDATOR}
@@ -22,6 +21,6 @@ const StartDate = ({name, label}) => (
 
 StartDate.propTypes = {
     label: PropTypes.string,
-    name:  PropTypes.string
+    name: PropTypes.string,
 }
 export { StartDate }

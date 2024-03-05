@@ -154,9 +154,7 @@ const TEIExport = () => {
                             </MoreOptions>
                             <ValidationSummary />
                             <ExportButton
-                                label={i18n.t(
-                                    'Export tracked entities'
-                                )}
+                                label={i18n.t('Export tracked entities')}
                                 disabled={!exportEnabled}
                             />
                             <FormAlerts alerts={submitError} />

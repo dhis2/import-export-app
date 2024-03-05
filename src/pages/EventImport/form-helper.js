@@ -34,7 +34,8 @@ const onImport =
                 type: 'TRACKER_IMPORT_JOB',
                 isAsync,
                 setProgress,
-                addEntry: (id, entry) => addTask('event', id, { ...entry, jobDetails: values })
+                addEntry: (id, entry) =>
+                    addTask('event', id, { ...entry, jobDetails: values }),
             })
             return jobStartedMessage
         } catch (e) {

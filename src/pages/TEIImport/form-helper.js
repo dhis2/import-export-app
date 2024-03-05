@@ -59,9 +59,8 @@ const onImport =
                 isAsync: isAsync,
                 setProgress,
                 addEntry: (id, entry) => {
-                    addTask('tei', id, { ...entry, jobDetails: values });
-                }
-                    
+                    addTask('tei', id, { ...entry, jobDetails: values })
+                },
             })
             return jobStartedMessage
         } catch (e) {

@@ -10,7 +10,7 @@ const DATATEST = 'input-end-date'
 const LABEL = i18n.t('End date')
 const VALIDATOR = composeValidators(hasValue, DATE_VALIDATOR)
 
-const EndDate = ({name, label}) => (
+const EndDate = ({ name, label }) => (
     <DatePickerField
         name={name ?? NAME}
         validator={VALIDATOR}
@@ -21,7 +21,7 @@ const EndDate = ({name, label}) => (
 
 EndDate.propTypes = {
     label: PropTypes.string,
-    name:  PropTypes.string
+    name: PropTypes.string,
 }
 
 export { EndDate }

@@ -65,7 +65,7 @@ const initialValues = {
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
     idScheme: defaultIdSchemeOption,
     inclusion: defaultInclusionOption,
-    skipPaging: true
+    skipPaging: true,
 }
 
 const EventExport = () => {
