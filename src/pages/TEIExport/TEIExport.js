@@ -73,9 +73,9 @@ const initialValues = {
     programEndDate: '',
     compression: '', // disable compression until it is properly implemented in the backend
     lastUpdatedFilter: defaultLastUpdatedFilterOption,
-    lastUpdatedStartDate: '',
-    lastUpdatedEndDate: '',
-    lastUpdatedDuration: '',
+    updatedAfter: '',
+    updatedBefore: '',
+    updatedWithin: '',
     assignedUserModeFilter: false,
     assignedUserMode: defaultAssignedUserModeOption,
     includeDeleted: false,

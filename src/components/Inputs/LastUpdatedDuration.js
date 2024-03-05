@@ -5,7 +5,7 @@ import React from 'react'
 import { DURATION_VALIDATOR } from '../Duration/DurationField.js'
 import { DurationField } from '../index.js'
 
-const NAME = 'lastUpdatedDuration'
+const NAME = 'updatedWithin'
 const DATATEST = 'input-last-updated-duration'
 const LABEL = i18n.t('Last updated duration')
 const VALIDATOR = composeValidators(hasValue, DURATION_VALIDATOR)

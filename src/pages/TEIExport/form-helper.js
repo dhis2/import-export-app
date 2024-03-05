@@ -29,9 +29,9 @@ const valuesToParams = (
         programStartDate,
         programEndDate,
         lastUpdatedFilter,
-        lastUpdatedStartDate,
-        lastUpdatedEndDate,
-        lastUpdatedDuration,
+        updatedAfter,
+        updatedBefore,
+        updatedWithin,
     },
     filename
 ) => {
@@ -86,17 +86,17 @@ const valuesToParams = (
     }
 
     if (lastUpdatedFilter == 'DATE') {
-        if (lastUpdatedStartDate) {
-            minParams.lastUpdatedStartDate = lastUpdatedStartDate
+        if (updatedAfter) {
+            minParams.updatedAfter = updatedAfter
         }
 
-        if (lastUpdatedEndDate) {
-            minParams.lastUpdatedEndDate = lastUpdatedEndDate
+        if (updatedBefore) {
+            minParams.updatedBefore = updatedBefore
         }
     }
 
     if (lastUpdatedFilter == 'DURATION') {
-        minParams.lastUpdatedDuration = lastUpdatedDuration
+        minParams.updatedWithin = updatedWithin
     }
 
     return Object.keys(minParams)
@@ -142,25 +142,25 @@ const validate = (values) => {
 
     if (
         values.lastUpdatedFilter == 'DATE' &&
-        values.lastUpdatedStartDate &&
-        values.lastUpdatedEndDate
+        values.updatedAfter &&
+        values.updatedBefore
     ) {
-        errors.lastUpdatedStartDate = DATE_BEFORE_VALIDATOR(
-            values.lastUpdatedStartDate,
-            values.lastUpdatedEndDate
+        errors.updatedAfter = DATE_BEFORE_VALIDATOR(
+            values.updatedAfter,
+            values.updatedBefore
         )
-        errors.lastUpdatedEndDate = DATE_AFTER_VALIDATOR(
-            values.lastUpdatedEndDate,
-            values.lastUpdatedStartDate
+        errors.updatedBefore = DATE_AFTER_VALIDATOR(
+            values.updatedBefore,
+            values.updatedAfter
         )
     }
 
     if (
         values.lastUpdatedFilter == 'DATE' &&
-        !values.lastUpdatedStartDate &&
-        !values.lastUpdatedEndDate
+        !values.updatedAfter &&
+        !values.updatedBefore
     ) {
-        errors.lastUpdatedEndDate = i18n.t(
+        errors.updatedBefore = i18n.t(
             "At least one of the 'last updated' date fields must be specified"
         )
     }
