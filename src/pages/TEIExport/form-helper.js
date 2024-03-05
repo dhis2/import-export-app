@@ -26,8 +26,8 @@ const valuesToParams = (
         teiTypeFilter,
         programStatus,
         followUpStatus,
-        programStartDate,
-        programEndDate,
+        enrollmentEnrolledAfter,
+        enrollmentEnrolledBefore,
         lastUpdatedFilter,
         updatedAfter,
         updatedBefore,
@@ -72,12 +72,12 @@ const valuesToParams = (
 
         minParams.followUpStatus = followUpStatus
 
-        if (programStartDate) {
-            minParams.programStartDate = programStartDate
+        if (enrollmentEnrolledAfter) {
+            minParams.enrollmentEnrolledAfter = enrollmentEnrolledAfter
         }
 
-        if (programEndDate) {
-            minParams.programEndDate = programEndDate
+        if (enrollmentEnrolledBefore) {
+            minParams.enrollmentEnrolledBefore = enrollmentEnrolledBefore
         }
     }
 
@@ -127,16 +127,16 @@ const validate = (values) => {
 
     if (
         values.teiTypeFilter == 'PROGRAM' &&
-        values.programStartDate &&
-        values.programEndDate
+        values.enrollmentEnrolledAfter &&
+        values.enrollmentEnrolledBefore
     ) {
-        errors.programStartDate = DATE_BEFORE_VALIDATOR(
-            values.programStartDate,
-            values.programEndDate
+        errors.enrollmentEnrolledAfter = DATE_BEFORE_VALIDATOR(
+            values.enrollmentEnrolledAfter,
+            values.enrollmentEnrolledBefore
         )
-        errors.programEndDate = DATE_AFTER_VALIDATOR(
-            values.programEndDate,
-            values.programStartDate
+        errors.enrollmentEnrolledBefore = DATE_AFTER_VALIDATOR(
+            values.enrollmentEnrolledBefore,
+            values.enrollmentEnrolledAfter
         )
     }
 

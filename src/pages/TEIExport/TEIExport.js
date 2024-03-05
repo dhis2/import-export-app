@@ -69,8 +69,8 @@ const initialValues = {
     teiTypeFilter: defaultTEITypeFilterOption,
     programStatus: defaultProgramStatusOption,
     followUpStatus: defaultFollowUpStatusOption,
-    programStartDate: '',
-    programEndDate: '',
+    enrollmentEnrolledAfter: '',
+    enrollmentEnrolledBefore: '',
     compression: '', // disable compression until it is properly implemented in the backend
     lastUpdatedFilter: defaultLastUpdatedFilterOption,
     updatedAfter: '',
