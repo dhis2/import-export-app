@@ -45,13 +45,13 @@ const valuesToParams = (
         idScheme: idScheme,
         attachment: filename,
         paging: false,
-        totalPages: false
+        totalPages: false,
     }
 
     // include selected org.units only when manual selection is selected
     // ouMode is then stored in the `inclusion` field
     if (ouMode === OU_MODE_MANUAL_VALUE) {
-        minParams.orgUnit = selectedOrgUnits.map((o) => pathToId(o)).join(';')
+        minParams.orgUnits = selectedOrgUnits.map((o) => pathToId(o)).join(',')
         minParams.ouMode = inclusion
     }
 
@@ -59,7 +59,7 @@ const valuesToParams = (
         minParams.assignedUserMode = assignedUserMode
 
         if (assignedUserMode == 'PROVIDED') {
-            minParams.assignedUser = selectedUsers.join(';')
+            minParams.assignedUsers = selectedUsers.join(',')
         }
     }
 
