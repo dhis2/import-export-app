@@ -14,7 +14,6 @@ import {
 import {
     FileUpload,
     Format,
-    formatNoCsvOptions,
     defaultFormatOption,
     Identifier,
     defaultIdentifierOption,
@@ -46,6 +45,7 @@ import {
     defaultIdSchemeOption,
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
+    formatNoXmlNoCsvOptions,
 } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper.js'
@@ -56,7 +56,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Tracked entities import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import tracked entities using JSON or DXF2 format.'
+    'Import tracked entities using JSON format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -134,14 +134,14 @@ const TEIImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON and DXF2.',
+                                    'Supported file types: JSON.',
                                     {
                                         nsSeparator: '>',
                                     }
                                 )}
                             />
                             <Format
-                                availableFormats={formatNoCsvOptions}
+                                availableFormats={formatNoXmlNoCsvOptions}
                                 type="import"
                             />
                             <Identifier />

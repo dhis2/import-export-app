@@ -49,7 +49,7 @@ const onImport =
             .filter((s) => s != '')
             .join('&')
         const url = `${apiBaseUrl}?${params}`
-        console.debug('[TEI import url]', url)
+
         try {
             await uploadFile({
                 url,

@@ -70,8 +70,6 @@ const valuesToParams = (
             minParams.programStatus = programStatus
         }
 
-        console.log('>>>>>', followup, minParams.followup)
-
         if (followup !== 'ALL') {
             minParams.followup = followup
         }

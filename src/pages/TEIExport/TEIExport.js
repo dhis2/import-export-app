@@ -54,7 +54,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Tracked entities export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export tracked entities in JSON, CSV, or DXF2 format.'
+    'Export tracked entities in JSON or CSV format.'
 )
 const PAGE_ICON = <TEIIcon />
 

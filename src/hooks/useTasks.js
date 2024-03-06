@@ -48,7 +48,6 @@ const defaultRefetchPeriod = 2000
 const createFetchEvents =
     (engine, setTasks, fetchSummary) => (type, id, task) => {
         const fetchEvents = async () => {
-            console.debug('[fetch event]', type, id, task)
             if (task.completed) {
                 return
             }
