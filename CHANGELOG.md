@@ -1,3 +1,12 @@
+## [101.0.1](https://github.com/dhis2/import-export-app/compare/v101.0.0...v101.0.1) (2024-03-06)
+
+
+### Bug Fixes
+
+* **tracker-api-migration:** change separator for array from semicolon to comma ([9620d4d](https://github.com/dhis2/import-export-app/commit/9620d4d2a5f03d5761bfa7147435025cbe9d9e69))
+* **tracker-api-migration:** remove skipPaging parameter ([47687ba](https://github.com/dhis2/import-export-app/commit/47687bab0aa8ae34df082ae2015d07f041ca10c5))
+* **tracker-api-migration:** update the casing of followup parameter ([bef8c21](https://github.com/dhis2/import-export-app/commit/bef8c213b45a2c689133317e68abbbfcb6ab4eb5))
+
 # [101.0.0](https://github.com/dhis2/import-export-app/compare/v100.0.2...v101.0.0) (2024-03-06)
 
 
