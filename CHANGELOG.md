@@ -1,3 +1,50 @@
+# [101.0.0](https://github.com/dhis2/import-export-app/compare/v100.0.2...v101.0.0) (2024-03-06)
+
+
+### Features
+
+* **DHIS2-16133:** migrate events and tracker entities to new tracker API ([#1951](https://github.com/dhis2/import-export-app/issues/1951)) ([da9fbad](https://github.com/dhis2/import-export-app/commit/da9fbadbbfdfa571a07ba4a8ad1fbede6d99544d))
+
+
+### BREAKING CHANGES
+
+* **DHIS2-16133:** migrate to new API for tracker import/export. This expects a format incompatible with previous versions. 
+
+* fix: loader keeps showing when opening export in new page
+
+we were assigning setting the state to an event in the new window.
+That reference doesn't work one outside the React app in the new window,
+so the loader never hides. Not sure if this pattern worked at some point,
+but even if it did, it was propbably disabled as a security issue
+
+* feat: migrate TEI and Event export to new tracker API
+
+* feat: move Event import to new tracker endpoints
+
+* feat: move TEI import to new tracker endpoints
+
+* refactor: change TEI references to Tracked entity
+
+* fix(migration-events): change start and endDate to occuuredBefore and occuredAfter
+
+* fix(migration-trackedentity): change lastUpdateStartDate to updatedAfter
+
+also change lastUpdateEndDate to updatedBefore, and lastUpdatedDuration to updatedWithin
+
+* fix(migration-trackedentity): change programStateDate to enrollmentEnrolledAfter
+
+and same for endDate to enrollmentEnrolledBefore
+
+* fix(migration-trackedentity): change followupStatus to followup
+
+and ensure that the parameter is not selected if ALL is chosen
+
+* fix: lint issues
+
+* fix: update tests snapshots
+
+* refactor: apply code review comments
+
 ## [100.0.2](https://github.com/dhis2/import-export-app/compare/v100.0.1...v100.0.2) (2024-03-03)
 
 
