@@ -12,32 +12,27 @@ const onImport =
             format,
             dataElementIdScheme,
             orgUnitIdScheme,
-            eventIdScheme,
             idScheme,
         } = values
 
         // send xhr
-        const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = 'events.json'
+        const apiBaseUrl = `${baseUrl}/api/tracker`
         const params = [
-            'skipFirst=true',
             `async=${isAsync}`,
-            `dryRun=${dryRun}`,
+            `importMode=${dryRun ? 'validate' : 'commit'}`,
             `dataElementIdScheme=${dataElementIdScheme}`,
             `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `eventIdScheme=${eventIdScheme}`,
             `idScheme=${idScheme}`,
-            `payloadFormat=${format}`,
         ].join('&')
-        const url = `${apiBaseUrl}${endpoint}?${params}`
+        const url = `${apiBaseUrl}?${params}`
 
         try {
             await uploadFile({
                 url,
                 file: files[0],
                 format: format,
-                type: 'EVENT_IMPORT',
-                isAsync: isAsync,
+                type: 'TRACKER_IMPORT_JOB',
+                isAsync,
                 setProgress,
                 addEntry: (id, entry) =>
                     addTask('event', id, { ...entry, jobDetails: values }),

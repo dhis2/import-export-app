@@ -5,7 +5,7 @@ import React from 'react'
 import { OPTIONAL_DATE_VALIDATOR } from '../DatePicker/DatePickerField.js'
 import { DatePickerField } from '../index.js'
 
-const NAME = 'programStartDate'
+const NAME = 'enrollmentEnrolledAfter'
 const DATATEST = 'input-program-start-date'
 const LABEL = i18n.t('Start date')
 const VALIDATOR = composeValidators(OPTIONAL_DATE_VALIDATOR)

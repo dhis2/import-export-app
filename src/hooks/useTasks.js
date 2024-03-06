@@ -16,6 +16,20 @@ const jobSummaryQuery = {
     },
 }
 
+const trackerEventQuery = {
+    events: {
+        resource: 'tracker/jobs/',
+        id: ({ taskId }) => `${taskId}`,
+    },
+}
+
+const trackerSummaryQuery = {
+    summary: {
+        resource: 'tracker/jobs/',
+        id: ({ taskId }) => `${taskId}/report`,
+    },
+}
+
 const defaultTasks = {
     data: {},
     event: {},
@@ -39,12 +53,19 @@ const createFetchEvents =
             }
 
             const newTask = { ...task }
-            const { events, error } = await engine.query(jobEventQuery, {
+            const query =
+                task.importType === 'TRACKER_IMPORT_JOB'
+                    ? trackerEventQuery
+                    : jobEventQuery
+
+            const response = await engine.query(query, {
                 variables: {
                     type: task.importType,
                     taskId: task.id,
                 },
             })
+
+            const { events, error } = response
 
             if (error) {
                 console.error('fetchEvents error: ', error)
@@ -90,12 +111,23 @@ const createFetchEvents =
 const createFetchSummary = (engine, setTasks) => async (type, id, task) => {
     const newTask = { ...task }
 
-    const { summary, error } = await engine.query(jobSummaryQuery, {
+    // we could still keep one query here (the jobs query), but tracker provides a facade to these
+    // and even though this branches the logic unnecessarily, we should stick to
+    // trackers' endpoint for tracker imports and they could abstract some job-related details
+    // more details here: https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_nti_import_summary
+    const query =
+        task.importType === 'TRACKER_IMPORT_JOB'
+            ? trackerSummaryQuery
+            : jobSummaryQuery
+
+    const response = await engine.query(query, {
         variables: {
             type: task.importType,
             taskId: task.id,
         },
     })
+
+    const { summary, error } = response
 
     if (error) {
         console.error('fetchSummary error: ', error)

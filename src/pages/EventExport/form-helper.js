@@ -14,8 +14,8 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         programStage,
         format,
         compression,
-        startDate,
-        endDate,
+        occurredAfter,
+        occurredBefore,
         includeDeleted,
         dataElementIdScheme,
         orgUnitIdScheme,
@@ -24,7 +24,7 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     } = values
 
     // generate URL and redirect
-    const apiBaseUrl = `${baseUrl}/api/`
+    const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `events`
     const endpointExtension = compression ? `${format}.${compression}` : format
     const filename = `${endpoint}.${endpointExtension}`
@@ -38,8 +38,8 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         `orgUnitIdScheme=${orgUnitIdScheme}`,
         `idScheme=${idScheme}`,
         `attachment=${filename}`,
-        `startDate=${startDate}`,
-        `endDate=${endDate}`,
+        `occurredAfter=${occurredAfter}`,
+        `occurredBefore=${occurredBefore}`,
         `ouMode=${inclusion}`,
         `format=${format}`,
         programStage != ALL_VALUE ? `programStage=${programStage}` : '',
@@ -47,7 +47,8 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         .filter((s) => s != '')
         .join('&')
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-    locationAssign(url, setExportEnabled)
+    locationAssign(url)
+    setExportEnabled(true)
 
     // log for debugging purposes
     console.log('event-export:', { url, params: downloadUrlParams })

@@ -53,7 +53,7 @@ const metadataImportPage = {
     icon: <MetadataImportIcon />,
 }
 const teiImportPage = {
-    name: i18n.t('TEI import'),
+    name: i18n.t('Tracked entity import'),
     code: 'tei-import',
     path: '/import/tei',
     icon: <TEIIcon />,
@@ -88,7 +88,7 @@ const metadataExportPage = {
 }
 
 const teiExportPage = {
-    name: i18n.t('TEI export'),
+    name: i18n.t('Tracked entity export'),
     code: 'tei-export',
     path: '/export/tei',
     icon: <TEIIcon />,

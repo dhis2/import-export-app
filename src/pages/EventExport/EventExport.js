@@ -14,7 +14,6 @@ import {
     OrgUnitTree,
     ProgramPicker,
     Format,
-    formatOptions,
     defaultFormatOption,
     Compression,
     defaultCompressionOption,
@@ -32,6 +31,7 @@ import {
     defaultOrgUnitIdSchemeOption,
     IdScheme,
     defaultIdSchemeOption,
+    formatNoXmlOptions,
 } from '../../components/Inputs/index.js'
 import { jsDateToISO8601 } from '../../utils/helper.js'
 import { onExport, validate } from './form-helper.js'
@@ -41,7 +41,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Event export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export event data for programs, stages and tracked entities to JSON, CSV, or DXF2 format.'
+    'Export event data for programs, stages and tracked entities to JSON or CSV format.'
 )
 const PAGE_ICON = <EventIcon />
 
@@ -58,13 +58,14 @@ const initialValues = {
     programStage: undefined,
     format: defaultFormatOption,
     compression: defaultCompressionOption,
-    startDate: jsDateToISO8601(threeMonthsBeforeToday),
-    endDate: jsDateToISO8601(today),
+    occurredAfter: jsDateToISO8601(threeMonthsBeforeToday),
+    occurredBefore: jsDateToISO8601(today),
     includeDeleted: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
     idScheme: defaultIdSchemeOption,
     inclusion: defaultInclusionOption,
+    skipPaging: true,
 }
 
 const EventExport = () => {
@@ -100,10 +101,10 @@ const EventExport = () => {
                             <Dates
                                 label={i18n.t('Date range to export data for')}
                             >
-                                <StartDate />
-                                <EndDate />
+                                <StartDate name="occurredAfter" />
+                                <EndDate name="occurredBefore" />
                             </Dates>
-                            <Format availableFormats={formatOptions} />
+                            <Format availableFormats={formatNoXmlOptions} />
                             <Compression />
                         </BasicOptions>
                         <MoreOptions>

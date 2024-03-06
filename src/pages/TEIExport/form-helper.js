@@ -17,7 +17,6 @@ const valuesToParams = (
         inclusion,
         format,
         includeDeleted,
-        includeAllAttributes,
         dataElementIdScheme,
         eventIdScheme,
         orgUnitIdScheme,
@@ -26,13 +25,13 @@ const valuesToParams = (
         assignedUserMode,
         teiTypeFilter,
         programStatus,
-        followUpStatus,
-        programStartDate,
-        programEndDate,
+        followup,
+        enrollmentEnrolledAfter,
+        enrollmentEnrolledBefore,
         lastUpdatedFilter,
-        lastUpdatedStartDate,
-        lastUpdatedEndDate,
-        lastUpdatedDuration,
+        updatedAfter,
+        updatedBefore,
+        updatedWithin,
     },
     filename
 ) => {
@@ -40,18 +39,18 @@ const valuesToParams = (
         ouMode: ouMode,
         format: format,
         includeDeleted: includeDeleted.toString(),
-        includeAllAttributes: includeAllAttributes.toString(),
         dataElementIdScheme: dataElementIdScheme,
         eventIdScheme: eventIdScheme,
         orgUnitIdScheme: orgUnitIdScheme,
         idScheme: idScheme,
         attachment: filename,
+        skipPaging: true,
     }
 
     // include selected org.units only when manual selection is selected
     // ouMode is then stored in the `inclusion` field
     if (ouMode === OU_MODE_MANUAL_VALUE) {
-        minParams.ou = selectedOrgUnits.map((o) => pathToId(o)).join(';')
+        minParams.orgUnit = selectedOrgUnits.map((o) => pathToId(o)).join(';')
         minParams.ouMode = inclusion
     }
 
@@ -71,14 +70,16 @@ const valuesToParams = (
             minParams.programStatus = programStatus
         }
 
-        minParams.followUpStatus = followUpStatus
-
-        if (programStartDate) {
-            minParams.programStartDate = programStartDate
+        if (followup !== 'ALL') {
+            minParams.followup = followup
         }
 
-        if (programEndDate) {
-            minParams.programEndDate = programEndDate
+        if (enrollmentEnrolledAfter) {
+            minParams.enrollmentEnrolledAfter = enrollmentEnrolledAfter
+        }
+
+        if (enrollmentEnrolledBefore) {
+            minParams.enrollmentEnrolledBefore = enrollmentEnrolledBefore
         }
     }
 
@@ -87,17 +88,17 @@ const valuesToParams = (
     }
 
     if (lastUpdatedFilter == 'DATE') {
-        if (lastUpdatedStartDate) {
-            minParams.lastUpdatedStartDate = lastUpdatedStartDate
+        if (updatedAfter) {
+            minParams.updatedAfter = updatedAfter
         }
 
-        if (lastUpdatedEndDate) {
-            minParams.lastUpdatedEndDate = lastUpdatedEndDate
+        if (updatedBefore) {
+            minParams.updatedBefore = updatedBefore
         }
     }
 
     if (lastUpdatedFilter == 'DURATION') {
-        minParams.lastUpdatedDuration = lastUpdatedDuration
+        minParams.updatedWithin = updatedWithin
     }
 
     return Object.keys(minParams)
@@ -111,12 +112,13 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     const { format } = values
 
     // generate URL and redirect
-    const apiBaseUrl = `${baseUrl}/api/`
-    const endpoint = `trackedEntityInstances`
+    const apiBaseUrl = `${baseUrl}/api/tracker/`
+    const endpoint = `trackedEntities`
     const filename = `${endpoint}.${format}`
     const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`
-    locationAssign(url, setExportEnabled)
+    locationAssign(url)
+    setExportEnabled(true)
 
     // log for debugging purposes
     console.log('tei-export:', { url, params: downloadUrlParams })
@@ -127,40 +129,40 @@ const validate = (values) => {
 
     if (
         values.teiTypeFilter == 'PROGRAM' &&
-        values.programStartDate &&
-        values.programEndDate
+        values.enrollmentEnrolledAfter &&
+        values.enrollmentEnrolledBefore
     ) {
-        errors.programStartDate = DATE_BEFORE_VALIDATOR(
-            values.programStartDate,
-            values.programEndDate
+        errors.enrollmentEnrolledAfter = DATE_BEFORE_VALIDATOR(
+            values.enrollmentEnrolledAfter,
+            values.enrollmentEnrolledBefore
         )
-        errors.programEndDate = DATE_AFTER_VALIDATOR(
-            values.programEndDate,
-            values.programStartDate
+        errors.enrollmentEnrolledBefore = DATE_AFTER_VALIDATOR(
+            values.enrollmentEnrolledBefore,
+            values.enrollmentEnrolledAfter
         )
     }
 
     if (
         values.lastUpdatedFilter == 'DATE' &&
-        values.lastUpdatedStartDate &&
-        values.lastUpdatedEndDate
+        values.updatedAfter &&
+        values.updatedBefore
     ) {
-        errors.lastUpdatedStartDate = DATE_BEFORE_VALIDATOR(
-            values.lastUpdatedStartDate,
-            values.lastUpdatedEndDate
+        errors.updatedAfter = DATE_BEFORE_VALIDATOR(
+            values.updatedAfter,
+            values.updatedBefore
         )
-        errors.lastUpdatedEndDate = DATE_AFTER_VALIDATOR(
-            values.lastUpdatedEndDate,
-            values.lastUpdatedStartDate
+        errors.updatedBefore = DATE_AFTER_VALIDATOR(
+            values.updatedBefore,
+            values.updatedAfter
         )
     }
 
     if (
         values.lastUpdatedFilter == 'DATE' &&
-        !values.lastUpdatedStartDate &&
-        !values.lastUpdatedEndDate
+        !values.updatedAfter &&
+        !values.updatedBefore
     ) {
-        errors.lastUpdatedEndDate = i18n.t(
+        errors.updatedBefore = i18n.t(
             "At least one of the 'last updated' date fields must be specified"
         )
     }

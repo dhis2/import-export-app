@@ -5,7 +5,7 @@ import React from 'react'
 import { OPTIONAL_DATE_VALIDATOR } from '../DatePicker/DatePickerField.js'
 import { DatePickerField } from '../index.js'
 
-const NAME = 'lastUpdatedStartDate'
+const NAME = 'updatedAfter'
 const DATATEST = 'input-last-updated-start-date'
 const LABEL = i18n.t('Last updated start date')
 const VALIDATOR = composeValidators(OPTIONAL_DATE_VALIDATOR)

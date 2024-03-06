@@ -56,7 +56,8 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     const filename = `${endpoint}.${fileExtension}`
     const downloadUrlParams = valuesToParams(values, filename)
     const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
-    locationAssign(url, setExportEnabled)
+    locationAssign(url)
+    setExportEnabled(true)
 
     // log for debugging purposes
     console.log('data-export:', { url, params: downloadUrlParams })

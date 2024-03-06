@@ -5,12 +5,12 @@ import { RadioGroupField } from '../index.js'
 
 const followUpStatusOptions = [
     { value: 'ALL', label: i18n.t('All') },
-    { value: 'TRUE', label: i18n.t('Marked for follow-up') },
-    { value: 'FALSE', label: i18n.t('Not marked for follow-up') },
+    { value: 'true', label: i18n.t('Marked for follow-up') },
+    { value: 'false', label: i18n.t('Not marked for follow-up') },
 ]
 const defaultFollowUpStatusOption = followUpStatusOptions[0].value
 
-const NAME = 'followUpStatus'
+const NAME = 'followup'
 const DATATEST = 'input-follow-up-status'
 const LABEL = i18n.t('Include only entities with follow-up status')
 

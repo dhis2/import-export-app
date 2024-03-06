@@ -26,8 +26,7 @@ const onImport =
         } = values
 
         // send xhr
-        const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = 'trackedEntityInstances.json'
+        const apiBaseUrl = `${baseUrl}/api/tracker/`
         const params = [
             `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,
             `identifier=${identifier}`,
@@ -49,18 +48,19 @@ const onImport =
         ]
             .filter((s) => s != '')
             .join('&')
-        const url = `${apiBaseUrl}${endpoint}?${params}`
+        const url = `${apiBaseUrl}?${params}`
 
         try {
             await uploadFile({
                 url,
                 file: files[0],
                 format: format,
-                type: 'TEI_IMPORT',
+                type: 'TRACKER_IMPORT_JOB',
                 isAsync: isAsync,
                 setProgress,
-                addEntry: (id, entry) =>
-                    addTask('tei', id, { ...entry, jobDetails: values }),
+                addEntry: (id, entry) => {
+                    addTask('tei', id, { ...entry, jobDetails: values })
+                },
             })
             return jobStartedMessage
         } catch (e) {

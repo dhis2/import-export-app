@@ -187,51 +187,6 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
                 class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
-                Status
-              </th>
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Description
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            data-test="dhis2-uicore-tablebody"
-          >
-            <tr
-              class="jsx-3124144591 zebraStriping"
-              data-test="dhis2-uicore-tablerow"
-            >
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              >
-                ERROR
-              </td>
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              />
-            </tr>
-          </tbody>
-        </table>
-        <table
-          class="jsx-2430604489 "
-          data-test="dhis2-uicore-table"
-        >
-          <thead
-            data-test="dhis2-uicore-tablehead"
-          >
-            <tr
-              class="jsx-3124144591 zebraStriping"
-              data-test="dhis2-uicore-tablerowhead"
-            >
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
                 Created
               </th>
               <th
@@ -773,51 +728,6 @@ exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
                 class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
-                Status
-              </th>
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
-                Description
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            data-test="dhis2-uicore-tablebody"
-          >
-            <tr
-              class="jsx-3124144591 zebraStriping"
-              data-test="dhis2-uicore-tablerow"
-            >
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              >
-                OK
-              </td>
-              <td
-                class="jsx-996330601 "
-                data-test="dhis2-uicore-tablecell"
-              />
-            </tr>
-          </tbody>
-        </table>
-        <table
-          class="jsx-2430604489 "
-          data-test="dhis2-uicore-table"
-        >
-          <thead
-            data-test="dhis2-uicore-tablehead"
-          >
-            <tr
-              class="jsx-3124144591 zebraStriping"
-              data-test="dhis2-uicore-tablerowhead"
-            >
-              <th
-                class="jsx-1796049005 "
-                data-test="dhis2-uicore-tablecellhead"
-              >
                 Created
               </th>
               <th
@@ -856,7 +766,9 @@ exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
               <td
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
-              />
+              >
+                0
+              </td>
               <td
                 class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"

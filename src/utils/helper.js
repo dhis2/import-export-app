@@ -101,7 +101,8 @@ const uploadFile = ({
                 url,
                 upload: file,
                 type,
-                onResponse: ({ error, id, msg, typeReports }) => {
+                onResponse: (response) => {
+                    const { error, id, msg, typeReports } = response
                     let entry
                     if (!isAsync) {
                         // we are done
@@ -149,12 +150,14 @@ const uploadFile = ({
                             created: new Date(),
                             lastUpdated: new Date(),
                             completed: false,
-                            events: [msg],
+                            events: [{ ...msg, date: new Date() }], // this is a workaround for the initial message date coming as invalid
+
                             summary: undefined,
                             error: false,
                             importType: type,
                         }
                     }
+
                     addEntry(entry.id, entry)
 
                     if (error) {
@@ -169,7 +172,7 @@ const uploadFile = ({
                         const response = JSON.parse(ev.target.response)
                         message = response.message
                     } catch (e2) {
-                        message = genericErrorMessage
+                        message = ev
                     }
                     console.error('sendFile error', message)
                     reject(errF(message))
@@ -193,7 +196,7 @@ const downloadWindowHtml = `
 `
 
 // call stub function if available
-const locationAssign = (url, setExportEnabled) => {
+const locationAssign = (url) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
@@ -201,11 +204,6 @@ const locationAssign = (url, setExportEnabled) => {
 
         downloadWindow.document.title = downloadWindowTitle
         downloadWindow.document.body.innerHTML = downloadWindowHtml // does not work in Chrome
-
-        const enableExport = () => setExportEnabled(true)
-        downloadWindow.onbeforeunload = enableExport
-        downloadWindow.onabort = enableExport
-        downloadWindow.onerror = enableExport
     }
 }
 

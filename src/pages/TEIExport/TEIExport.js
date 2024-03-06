@@ -12,7 +12,6 @@ import {
 } from '../../components/index.js'
 import {
     Format,
-    formatOptions,
     defaultFormatOption,
     OrgUnitMode,
     defaultOrgUnitSelectionModeOption,
@@ -36,7 +35,6 @@ import {
     AssignedUserMode,
     defaultAssignedUserModeOption,
     IncludeDeleted,
-    IncludeAllAttributes,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
     EventIdScheme,
@@ -47,15 +45,16 @@ import {
     defaultOrgUnitIdSchemeOption,
     ExportButton,
     FormAlerts,
+    formatNoXmlOptions,
 } from '../../components/Inputs/index.js'
 import { onExport, validate } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-export const PAGE_NAME = i18n.t('Tracked entity instances export')
+export const PAGE_NAME = i18n.t('Tracked entities export')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Export tracked entity instances in JSON, CSV, or DXF2 format.'
+    'Export tracked entities in JSON or CSV format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -69,18 +68,17 @@ const initialValues = {
     inclusion: defaultInclusionOption,
     teiTypeFilter: defaultTEITypeFilterOption,
     programStatus: defaultProgramStatusOption,
-    followUpStatus: defaultFollowUpStatusOption,
-    programStartDate: '',
-    programEndDate: '',
+    followup: defaultFollowUpStatusOption,
+    enrollmentEnrolledAfter: '',
+    enrollmentEnrolledBefore: '',
     compression: '', // disable compression until it is properly implemented in the backend
     lastUpdatedFilter: defaultLastUpdatedFilterOption,
-    lastUpdatedStartDate: '',
-    lastUpdatedEndDate: '',
-    lastUpdatedDuration: '',
+    updatedAfter: '',
+    updatedBefore: '',
+    updatedWithin: '',
     assignedUserModeFilter: false,
     assignedUserMode: defaultAssignedUserModeOption,
     includeDeleted: false,
-    includeAllAttributes: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     eventIdScheme: defaultEventIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
@@ -136,7 +134,7 @@ const TEIExport = () => {
                                     <ProgramEndDate show={showProgramFilters} />
                                 </Dates>
                                 <TETypePicker show={showTEFilters} />
-                                <Format availableFormats={formatOptions} />
+                                <Format availableFormats={formatNoXmlOptions} />
                             </BasicOptions>
                             <MoreOptions>
                                 <LastUpdatedFilter />
@@ -147,7 +145,6 @@ const TEIExport = () => {
                                 <LastUpdatedDuration show={showLUDuration} />
                                 <AssignedUserMode />
                                 <IncludeDeleted />
-                                <IncludeAllAttributes />
                                 <SchemeContainer>
                                     <DataElementIdScheme />
                                     <EventIdScheme />
@@ -157,9 +154,7 @@ const TEIExport = () => {
                             </MoreOptions>
                             <ValidationSummary />
                             <ExportButton
-                                label={i18n.t(
-                                    'Export tracked entity instances'
-                                )}
+                                label={i18n.t('Export tracked entities')}
                                 disabled={!exportEnabled}
                             />
                             <FormAlerts alerts={submitError} />

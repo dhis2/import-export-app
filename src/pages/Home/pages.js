@@ -81,7 +81,7 @@ const exportPages = capitalizePages([
     {
         name: TEI_EXPORT_PAGE_NAME,
         description: TEI_EXPORT_DESCRIPTION,
-        linkText: i18n.t('Export tracked entity instances'),
+        linkText: i18n.t('Export tracked entities'),
         to: '/export/tei',
     },
 ])
@@ -120,7 +120,7 @@ const importPages = capitalizePages([
     {
         name: TEI_IMPORT_PAGE_NAME,
         description: TEI_IMPORT_DESCRIPTION,
-        linkText: i18n.t('Import tracked entity instances'),
+        linkText: i18n.t('Import tracked entities'),
         to: '/import/tei',
     },
 ])

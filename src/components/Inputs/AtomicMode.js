@@ -4,7 +4,7 @@ import { RadioGroupField } from '../index.js'
 
 const atomicModeOptions = [
     { value: 'ALL', label: i18n.t('Do not import') },
-    { value: 'NONE', label: i18n.t('Import') },
+    { value: 'OBJECT', label: i18n.t('Import') },
 ]
 const defaultAtomicModeOption = atomicModeOptions[0].value
 

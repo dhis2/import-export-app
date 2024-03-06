@@ -14,7 +14,6 @@ import {
 import {
     FileUpload,
     Format,
-    formatNoCsvOptions,
     defaultFormatOption,
     Identifier,
     defaultIdentifierOption,
@@ -46,6 +45,7 @@ import {
     defaultIdSchemeOption,
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
+    formatNoXmlNoCsvOptions,
 } from '../../components/Inputs/index.js'
 import { TaskContext, getNewestTask } from '../../contexts/index.js'
 import { getPrevJobDetails, getInitialBoolValue } from '../../utils/helper.js'
@@ -54,9 +54,9 @@ import { onImport } from './form-helper.js'
 const { Form } = ReactFinalForm
 
 // PAGE INFO
-export const PAGE_NAME = i18n.t('Tracked entity instances import')
+export const PAGE_NAME = i18n.t('Tracked entities import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import tracked entity instances using JSON or DXF2 format.'
+    'Import tracked entities using JSON format.'
 )
 const PAGE_ICON = <TEIIcon />
 
@@ -81,9 +81,7 @@ const createInitialValues = (prevJobDetails) => ({
         prevJobDetails.skipValidation,
         defaultSkipValidationOption
     ),
-    // disable async until it is fully implemented for this resource
-    // (expected 2.36)
-    isAsync: false,
+    isAsync: true,
     dataElementIdScheme:
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
@@ -136,14 +134,14 @@ const TEIImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON and DXF2.',
+                                    'Supported file types: JSON.',
                                     {
                                         nsSeparator: '>',
                                     }
                                 )}
                             />
                             <Format
-                                availableFormats={formatNoCsvOptions}
+                                availableFormats={formatNoXmlNoCsvOptions}
                                 type="import"
                             />
                             <Identifier />
