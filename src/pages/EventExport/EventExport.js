@@ -66,7 +66,7 @@ const initialValues = {
     idScheme: defaultIdSchemeOption,
     inclusion: defaultInclusionOption,
     paging: false,
-    totalPages: false
+    totalPages: false,
 }
 
 const EventExport = () => {
