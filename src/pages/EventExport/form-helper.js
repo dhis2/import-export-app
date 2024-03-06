@@ -30,7 +30,8 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     const filename = `${endpoint}.${endpointExtension}`
     const downloadUrlParams = [
         'links=false',
-        'skipPaging=true',
+        'paging=false',
+        'totalPages=false',
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,
         `program=${selectedPrograms}`,
         `includeDeleted=${includeDeleted}`,

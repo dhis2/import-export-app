@@ -44,7 +44,8 @@ const valuesToParams = (
         orgUnitIdScheme: orgUnitIdScheme,
         idScheme: idScheme,
         attachment: filename,
-        skipPaging: true,
+        paging: false,
+        totalPages: false
     }
 
     // include selected org.units only when manual selection is selected
