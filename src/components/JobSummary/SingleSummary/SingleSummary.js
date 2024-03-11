@@ -49,7 +49,9 @@ const SingleSummary = ({
                     <TableBody>
                         <TableRow>
                             <TableCell>
-                                {importCount?.imported ?? '0'}
+                                {importCount?.imported ??
+                                    importCount?.created ??
+                                    '0'}
                             </TableCell>
                             <TableCell>{importCount?.deleted}</TableCell>
                             <TableCell>{importCount?.ignored}</TableCell>

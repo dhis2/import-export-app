@@ -14,8 +14,7 @@ const extractStats = (summary) => {
         const total = imported + deleted + ignored + updated
         return { imported, deleted, ignored, updated, total }
     } else if (summary.stats) {
-        const { imported, deleted, ignored, updated, total } = summary.stats
-        return { imported, deleted, ignored, updated, total }
+        return summary.stats
     }
 }
 
