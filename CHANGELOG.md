@@ -1,3 +1,10 @@
+## [101.0.3](https://github.com/dhis2/import-export-app/compare/v101.0.2...v101.0.3) (2024-03-11)
+
+
+### Bug Fixes
+
+* **tracker-api-migration:** fix 'created' value not displaying in the job summary ([35e7df7](https://github.com/dhis2/import-export-app/commit/35e7df72bcd979d7963e309dcc9b824de701fdb1))
+
 ## [101.0.2](https://github.com/dhis2/import-export-app/compare/v101.0.1...v101.0.2) (2024-03-10)
 
 
