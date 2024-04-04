@@ -27,9 +27,6 @@ const VALIDATOR = (selectedAttributes = []) =>
         ? i18n.t('One attribute must be selected')
         : undefined
 
-const getValidator = (useAttribute) =>
-    useAttribute ? VALIDATOR : Function.prototype
-
 const HELPTEXT = i18n.t(
     'Associated geometry import requires an attribute of type "GeoJSON" applied to "Organisation unit". It can be defined in the Maintenance app.'
 )
@@ -69,7 +66,7 @@ const GeometryAttributePicker = ({
                     selectedLabel={SELECTEDLABEL}
                     dataTest={DATATEST}
                     multiSelect={multiSelect}
-                    validator={getValidator(useAttribute)}
+                    validator={useAttribute ? VALIDATOR : Function.prototype}
                     autoSelectFirst
                     {...rest}
                 />
