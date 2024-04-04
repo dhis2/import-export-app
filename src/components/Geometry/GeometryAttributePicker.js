@@ -66,7 +66,7 @@ const GeometryAttributePicker = ({
                     selectedLabel={SELECTEDLABEL}
                     dataTest={DATATEST}
                     multiSelect={multiSelect}
-                    validator={VALIDATOR}
+                    validator={useAttribute ? VALIDATOR : Function.prototype}
                     autoSelectFirst
                     {...rest}
                 />
