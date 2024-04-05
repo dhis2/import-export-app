@@ -1,3 +1,10 @@
+## [101.0.4](https://github.com/dhis2/import-export-app/compare/v101.0.3...v101.0.4) (2024-04-05)
+
+
+### Bug Fixes
+
+* **geojson-import:** only run validator when the use geometry option is selected ([#2003](https://github.com/dhis2/import-export-app/issues/2003)) ([77b25f8](https://github.com/dhis2/import-export-app/commit/77b25f84b80f489da7220bd66ad54d3aae3c33c5))
+
 ## [101.0.3](https://github.com/dhis2/import-export-app/compare/v101.0.2...v101.0.3) (2024-03-11)
 
 
