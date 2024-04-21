@@ -6,7 +6,7 @@ const categoryTypesObj = categoryTypes.reduce((acc, cur) => {
 }, {})
 
 const jobToPath = (job) => ({
-    pathname: `/import/${categoryTypesObj[job.importType].key}`,
+    pathname: `/import/${categoryTypesObj[job?.importType]?.key}`,
     query: { id: job.id },
 })
 
