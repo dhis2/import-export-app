@@ -13,6 +13,7 @@ const programQuery = {
         resource: 'programs',
         params: {
             fields: 'id,displayName',
+            filter: 'programType:eq:WITH_REGISTRATION',
             paging: 'false',
         },
     },
