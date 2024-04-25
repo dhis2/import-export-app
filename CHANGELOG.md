@@ -1,3 +1,10 @@
+# [101.1.0](https://github.com/dhis2/import-export-app/compare/v101.0.5...v101.1.0) (2024-04-25)
+
+
+### Features
+
+* update the query to filter programs by program type ([8f95800](https://github.com/dhis2/import-export-app/commit/8f95800f9bb356a451b23ab237cbd1873238b054))
+
 ## [101.0.5](https://github.com/dhis2/import-export-app/compare/v101.0.4...v101.0.5) (2024-04-21)
 
 
