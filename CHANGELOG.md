@@ -1,3 +1,10 @@
+## [101.1.1](https://github.com/dhis2/import-export-app/compare/v101.1.0...v101.1.1) (2024-04-25)
+
+
+### Bug Fixes
+
+* fix typeError that crashes app when job overview is clicked ([6f335fa](https://github.com/dhis2/import-export-app/commit/6f335faa9e959532bc1d942ae796b0870d8e6540))
+
 # [101.1.0](https://github.com/dhis2/import-export-app/compare/v101.0.5...v101.1.0) (2024-04-25)
 
 
