@@ -1,14 +1,14 @@
 # 
 # Translators:
 # 晓东 林 <13981924470@126.com>, 2023
-# easylin <lin_xd@126.com>, 2023
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -692,6 +692,12 @@ msgstr "索引"
 
 msgid "Details by type"
 msgstr "按类型的详细信息"
+
+msgid "All existing property values will be replaced"
+msgstr "所有现有的属性值将被替换"
+
+msgid "Values will be overwritten, even if the new value is null"
+msgstr "即使新值为 null，值也会被覆盖"
 
 msgid "Advanced options"
 msgstr "高级选项"
