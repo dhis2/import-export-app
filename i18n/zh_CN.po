@@ -1,14 +1,14 @@
 # 
 # Translators:
 # 晓东 林 <13981924470@126.com>, 2022
-# easylin <lin_xd@126.com>, 2023
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -118,7 +118,7 @@ msgid "Import"
 msgstr "导入"
 
 msgid "Atomic mode"
-msgstr "原子化模式"
+msgstr "原子模式"
 
 msgid "Whether to import objects even if some references do not exist"
 msgstr "是否导入对象，即使某些引用不存在"
@@ -220,10 +220,10 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "DXF2 (XML)"
-msgstr ""
+msgstr "DXF2 (XML)"
 
 msgid "ADX (XML)"
-msgstr ""
+msgstr "ADX (XML)"
 
 msgid "PDF"
 msgstr "PDF"
@@ -423,7 +423,7 @@ msgid "Category combination"
 msgstr "值域组合"
 
 msgid "Dashboard"
-msgstr "仪表盘"
+msgstr "状态面板"
 
 msgid "Data element groups"
 msgstr "数据元组"
@@ -483,7 +483,7 @@ msgid "Intelligent scan (reference)"
 msgstr "智能扫描（引用）"
 
 msgid "None"
-msgstr "没有"
+msgstr "无"
 
 msgid "Preheat mode"
 msgstr "预热模式"
@@ -519,10 +519,10 @@ msgid "Active"
 msgstr "活跃的"
 
 msgid "Completed"
-msgstr "已完成"
+msgstr "完成"
 
 msgid "Cancelled"
-msgstr "取消"
+msgstr "已取消"
 
 msgid "Include only entities with status"
 msgstr "仅包括具有状态的实体"
@@ -649,7 +649,7 @@ msgid "Message"
 msgstr "消息"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "消息"
@@ -673,7 +673,7 @@ msgid "Summary"
 msgstr "摘要"
 
 msgid "Created"
-msgstr "创建"
+msgstr "已创建"
 
 msgid "Deleted"
 msgstr "删除的"
@@ -694,10 +694,10 @@ msgid "Details by type"
 msgstr "按类型的详细信息"
 
 msgid "All existing property values will be replaced"
-msgstr ""
+msgstr "所有现有的属性值将被替换"
 
 msgid "Values will be overwritten, even if the new value is null"
-msgstr ""
+msgstr "即使新值为 null，值也会被覆盖"
 
 msgid "Advanced options"
 msgstr "高级选项"
@@ -769,10 +769,10 @@ msgid "Overview"
 msgstr "概要"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "是"
 
 msgid "No"
-msgstr "No"
+msgstr "否"
 
 msgid "There are errors on this page"
 msgstr "此页面上有错误"
@@ -792,7 +792,7 @@ msgstr "载入项目阶段发生错误"
 msgid ""
 "Export metadata, such as data elements and organisation units, to JSON, CSV,"
 " DXF2, or ADX format."
-msgstr ""
+msgstr "将元数据（例如数据元素和组织单位）导出为 JSON、CSV、DXF2 或 ADX 格式。"
 
 msgid "Date range to export data for"
 msgstr "导出数据的日期范围"
@@ -801,15 +801,15 @@ msgid "Export data"
 msgstr "导出数据"
 
 msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
-msgstr ""
+msgstr "使用 JSON、CSV、DXF2、ADX 或 PDF 格式导入数据值。"
 
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
-msgstr ""
+msgstr "支持的文件类型：JSON、CSV、DXF2、ADX 和 PDF。"
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
 "Engine."
-msgstr ""
+msgstr "使用 Google Earth Engine 从 WorldPop 导入高分辨率人口数据。"
 
 msgid "Earth Engine source"
 msgstr "地球引擎源"
@@ -850,7 +850,7 @@ msgid "Group description"
 msgstr "小组说明"
 
 msgid "Category option combination"
-msgstr "分类组合选项"
+msgstr "分类选项组合"
 
 msgid "No match found"
 msgstr "未找到匹配项"
@@ -883,7 +883,7 @@ msgid "Select a level"
 msgstr "选择一个等级"
 
 msgid "Deselect all"
-msgstr "去全选"
+msgstr "取消全选"
 
 msgid "Organisation unit(s) to import data to"
 msgstr "将数据导入到的组织机构"
@@ -892,7 +892,7 @@ msgid "You must select an Earth Engine data set before selecting a period"
 msgstr "您必须先选择一个 Earth Engine 数据集，然后再选择一个时间周期"
 
 msgid "Period"
-msgstr "周期"
+msgstr "期间"
 
 msgid "Data from Earth Engine will be imported for this period."
 msgstr "在此期间将导入来自 Earth Engine 的数据。"
@@ -913,7 +913,7 @@ msgid "Organisation Unit"
 msgstr "组织机构"
 
 msgid "Category option combo"
-msgstr "分类选项 combo"
+msgstr "类别选项组合"
 
 msgid "Current value"
 msgstr "当前值"
@@ -1107,7 +1107,7 @@ msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织�
 msgid ""
 "Export event data for programs, stages and tracked entities to JSON, CSV, or"
 " DXF2 format."
-msgstr ""
+msgstr "将计划、阶段和跟踪实体的事件数据导出为 JSON、CSV 或 DXF2 格式。"
 
 msgid "Export events"
 msgstr "导出事件"
@@ -1115,10 +1115,10 @@ msgstr "导出事件"
 msgid ""
 "Import event data for programs, stages and tracked entities to JSON, CSV, or"
 " DXF2 format."
-msgstr ""
+msgstr "将节目、阶段和跟踪实体的事件数据导入为 JSON、CSV 或 DXF2 格式。"
 
 msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr ""
+msgstr "支持的文件类型：JSON、CSV 和 DXF2。"
 
 msgid "Organisation unit geometry import"
 msgstr "组织机构空间几何形状导入"
@@ -1182,7 +1182,7 @@ msgstr "以 JSON 格式导出元数据，例如数据元素和组织机构。"
 msgid ""
 "Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
-msgstr ""
+msgstr "使用 JSON 或 CSV 格式导入元数据，例如数据元素和组织单位。"
 
 msgid "Supported file types: JSON and CSV."
 msgstr "支持的文件类型：JSON 和 CSV。"
@@ -1194,7 +1194,7 @@ msgid "Tracked entity instances export"
 msgstr "跟踪实体导出"
 
 msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
-msgstr ""
+msgstr "以 JSON、CSV 或 DXF2 格式导出跟踪的实体实例。"
 
 msgid "Program to export from"
 msgstr "从项目中导出"
@@ -1209,10 +1209,10 @@ msgid "Tracked entity instances import"
 msgstr "跟踪实体实例导入"
 
 msgid "Import tracked entity instances using JSON or DXF2 format."
-msgstr ""
+msgstr "使用 JSON 或 DXF2 格式导入跟踪的实体实例。"
 
 msgid "Supported file types: JSON and DXF2."
-msgstr ""
+msgstr "支持的文件类型：JSON 和 DXF2。"
 
 msgid "Job started."
 msgstr "工作开始了。"
