@@ -856,7 +856,7 @@ msgid "Category option combination"
 msgstr ""
 
 msgid "No match found"
-msgstr ""
+msgstr "ບໍ່ພົບຂໍ້ມູນທີ່ກົງກັນ"
 
 msgid "Choose category option combo"
 msgstr ""
@@ -925,7 +925,7 @@ msgid "New value"
 msgstr ""
 
 msgid "Rows per page"
-msgstr ""
+msgstr "ແຖວຕໍ່ຫນ້າເຈ້ຍ"
 
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
