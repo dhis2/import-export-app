@@ -50,7 +50,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Metadata import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import metadata like data elements and organisation units using the JSON and CSV format.'
+    'Import metadata, such as data elements and organisation units, using JSON or CSV format.'
 )
 const PAGE_ICON = <MetadataImportIcon />
 
@@ -67,7 +67,7 @@ const createInitialValues = (prevJobDetails) => ({
         defaultFirstRowIsHeaderOption
     ),
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
-    mergeMode: prevJobDetails.mergeMode || mergeOperation,
+    mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
     inclusionStrategy:
         prevJobDetails.inclusionStrategy || defaultInclusionStrategyOption,
@@ -146,7 +146,7 @@ const MetadataImport = () => {
                             <ImportReportMode />
                             <ImportStrategy value={values.importStrategy} />
                             <AtomicMode />
-                            <MergeOperationNotice />
+                            <MergeMode />
                         </BasicOptions>
                         <MoreOptions>
                             <FlushMode />
