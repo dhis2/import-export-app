@@ -67,7 +67,7 @@ const createInitialValues = (prevJobDetails) => ({
         defaultFirstRowIsHeaderOption
     ),
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
-    mergeMode: prevJobDetails.mergeMode || defaultMergeModeOption,
+    mergeMode: prevJobDetails.mergeMode || mergeOperation,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
     inclusionStrategy:
         prevJobDetails.inclusionStrategy || defaultInclusionStrategyOption,
