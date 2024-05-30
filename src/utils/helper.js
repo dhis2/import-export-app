@@ -188,22 +188,32 @@ const uploadFile = ({
     })
 }
 
-const downloadWindowTitle = i18n.t('Loading exported data')
-const downloadWindowHtml = `
-<div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; color: rgb(33, 41, 52)">
-    <p>${downloadWindowTitle}</p>
-</div>
-`
-
 // call stub function if available
-const locationAssign = (url) => {
+const locationAssign = (relativeUrl) => {
     if (window.locationAssign) {
-        window.locationAssign(url)
+        window.locationAssign(relativeUrl)
     } else {
-        const downloadWindow = window.open(url, '_blank')
+        try {
+            const url = relativeUrl.startsWith('..')
+                ? new URL(relativeUrl, document.baseURI).href
+                : relativeUrl
 
-        downloadWindow.document.title = downloadWindowTitle
-        downloadWindow.document.body.innerHTML = downloadWindowHtml // does not work in Chrome
+            const urlFilePart = new URL(url).pathname.split('/').pop()
+            const [, file, extension] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+
+            const downloadedFileName = `${file}${extension}`
+
+            const link = document.createElement('a')
+            link.href = url
+            link.download = downloadedFileName
+            link.target = '_blank'
+            link.click()
+
+            return link
+        } catch (err) {
+            console.error(err)
+            window.open(relativeUrl, '_blank')
+        }
     }
 }
 
