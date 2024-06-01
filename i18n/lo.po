@@ -679,7 +679,7 @@ msgid "Created"
 msgstr "ສ້າງແລ້ວ"
 
 msgid "Deleted"
-msgstr ""
+msgstr "ລົບ"
 
 msgid "Ignored"
 msgstr ""
