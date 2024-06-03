@@ -1,3 +1,10 @@
+## [101.1.5](https://github.com/dhis2/import-export-app/compare/v101.1.4...v101.1.5) (2024-06-03)
+
+
+### Bug Fixes
+
+* **DHIS2-16988:** download uncompressed json rather than open inline ([#2037](https://github.com/dhis2/import-export-app/issues/2037)) ([b7732b5](https://github.com/dhis2/import-export-app/commit/b7732b548cb941d05df12dc7a7989b0ff67f7846))
+
 ## [101.1.4](https://github.com/dhis2/import-export-app/compare/v101.1.3...v101.1.4) (2024-06-02)
 
 
