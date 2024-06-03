@@ -189,30 +189,28 @@ const uploadFile = ({
 }
 
 // call stub function if available
-const locationAssign = (relativeUrl) => {
+const locationAssign = (url) => {
     if (window.locationAssign) {
-        window.locationAssign(relativeUrl)
+        window.locationAssign(url)
     } else {
         try {
-            const url = relativeUrl.startsWith('..')
-                ? new URL(relativeUrl, document.baseURI).href
-                : relativeUrl
+            const downloadUrl = url.startsWith('..')
+                ? new URL(url, document.baseURI).href
+                : url
 
-            const urlFilePart = new URL(url).pathname.split('/').pop()
-            const [, file, extension] = urlFilePart.match(/(^[^.]+)(\..+$)/)
-
-            const downloadedFileName = `${file}${extension}`
+            const urlFilePart = new URL(downloadUrl).pathname.split('/').pop()
+            const [, filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
 
             const link = document.createElement('a')
-            link.href = url
-            link.download = downloadedFileName
+            link.href = downloadUrl
+            link.download = filename
             link.target = '_blank'
             link.click()
 
             return link
         } catch (err) {
             console.error(err)
-            window.open(relativeUrl, '_blank')
+            window.open(url, '_blank')
         }
     }
 }
