@@ -50,7 +50,7 @@ const { Form } = ReactFinalForm
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Metadata import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import metadata like data elements and organisation units using the JSON and CSV format.'
+    'Import metadata, such as data elements and organisation units, using JSON or CSV format.'
 )
 const PAGE_ICON = <MetadataImportIcon />
 

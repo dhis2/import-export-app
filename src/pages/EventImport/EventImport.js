@@ -34,7 +34,7 @@ import { onImport } from './form-helper.js'
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Event import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import events for programs, stages and tracked entities using the DXF 2 format.'
+    'Import event data for programs, stages and tracked entities to JSON, CSV, or DXF2 format.'
 )
 const PAGE_ICON = <EventIcon />
 
@@ -95,7 +95,7 @@ const EventImport = () => {
                         <BasicOptions>
                             <FileUpload
                                 helpText={i18n.t(
-                                    'Supported file types: JSON, CSV, and XML.',
+                                    'Supported file types: JSON, CSV, and DXF2.',
                                     {
                                         nsSeparator: '>',
                                     }

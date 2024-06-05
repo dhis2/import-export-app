@@ -7,7 +7,7 @@ import { CachedDataQueryProvider } from './util/CachedQueryProvider.js'
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Earth Engine import')
 export const PAGE_DESCRIPTION = i18n.t(
-    'Import high resolution population data from WorldPop using Google Earth Engine'
+    'Import high resolution population data from WorldPop using Google Earth Engine.'
 )
 
 const query = {
