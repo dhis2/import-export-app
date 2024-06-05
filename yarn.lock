@@ -2240,10 +2240,10 @@
     react-select "^2.0.0"
     rxjs "^5.5.7"
 
-"@dhis2/maps-gl@^3.5.1":
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/maps-gl/-/maps-gl-3.5.3.tgz#58060cb0f611804eeb5205e0ffa2056e7d21fa37"
-  integrity sha512-npaPv3CDLUl6sXB966a21zVfu1b3+sICYopPSPtcxIKHACSmCsjIYpkMpzBdXAy/+x9HkjOqGezLfr7pMQoS9Q==
+"@dhis2/maps-gl@^3.9.1":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/maps-gl/-/maps-gl-3.9.1.tgz#c3550b9014074a8d5676c073e6275163d0ba941d"
+  integrity sha512-ayMXeXbCSfmocAsA00jz13h0QW7R/S3M7F/JN5BlYx63+utNi4Ru+ZAIWRcPeksuEXIIu/nnLU55vDtUnS4X3A==
   dependencies:
     "@mapbox/sphericalmercator" "^1.2.0"
     "@turf/area" "^6.5.0"
@@ -2252,8 +2252,8 @@
     "@turf/center-of-mass" "^6.5.0"
     "@turf/circle" "^6.5.0"
     "@turf/length" "^6.5.0"
-    comlink "^4.3.1"
-    fetch-jsonp "^1.2.2"
+    comlink "^4.4.1"
+    fetch-jsonp "^1.2.3"
     lodash.throttle "^4.1.1"
     maplibre-gl "^2.4.0"
     polylabel "^1.1.0"
@@ -5939,10 +5939,10 @@ combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-comlink@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/comlink/-/comlink-4.3.1.tgz#0c6b9d69bcd293715c907c33fe8fc45aecad13c5"
-  integrity sha512-+YbhUdNrpBZggBAHWcgQMLPLH1KDF3wJpeqrCKieWQ8RL7atmgsgTQko1XEBK6PsecfopWNntopJ+ByYG1lRaA==
+comlink@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/comlink/-/comlink-4.4.1.tgz#e568b8e86410b809e8600eb2cf40c189371ef981"
+  integrity sha512-+1dlx0aY5Jo1vHy/tSsIGpSkN4tS9rZSW8FIhG0JH/crs9wwweswIo/POr451r7bZww3hFbPAKnTpimzL/mm4Q==
 
 commander@^2.19.0, commander@^2.20.0, commander@^2.9.0:
   version "2.20.3"
@@ -8205,10 +8205,10 @@ fd-slicer@~1.1.0:
   dependencies:
     pend "~1.2.0"
 
-fetch-jsonp@^1.2.2:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/fetch-jsonp/-/fetch-jsonp-1.2.3.tgz#ae99a867095cb1ce5c39fac601d70d1084db122f"
-  integrity sha512-C13k1o7R9JTN1wmhKkrW5bU/00LwixXnkufQUR6Rbf4KCS0i8mycQaovt4WVbHnA2NKgi7Ryp9Whpy/CGcij6Q==
+fetch-jsonp@^1.2.3:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/fetch-jsonp/-/fetch-jsonp-1.3.0.tgz#99b8c25bd100938d7a7a6b5db9d6b81f32a10809"
+  integrity sha512-hxCYGvmANEmpkHpeWY8Kawfa5Z1t2csTpIClIDG/0S92eALWHRU1RnGaj86Tf5Cc0QF+afSa4SQ4pFB2rFM5QA==
 
 figures@2.0.0, figures@^2.0.0:
   version "2.0.0"
