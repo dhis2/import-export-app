@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # Sheila André <sandre@saudigitus.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2022-10-15 22:34+0000\n"
 "Last-Translator: David Júnior <davidjr.mondlane@gmail.com>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -230,11 +230,11 @@ msgstr "JSON"
 msgid "CSV"
 msgstr "CSV"
 
-msgid "XML"
-msgstr "XML"
+msgid "DXF2 (XML)"
+msgstr ""
 
-msgid "ADX"
-msgstr "ADX"
+msgid "ADX (XML)"
+msgstr ""
 
 msgid "PDF"
 msgstr "PDF"
@@ -723,6 +723,12 @@ msgstr ""
 msgid "Details by type"
 msgstr ""
 
+msgid "All existing property values will be replaced"
+msgstr ""
+
+msgid "Values will be overwritten, even if the new value is null"
+msgstr ""
+
 msgid "Advanced options"
 msgstr "Opções avançadas "
 
@@ -814,11 +820,9 @@ msgid "Something went wrong when loading the program stages"
 msgstr "Algo deu errado ao carregar as etapas do programa"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, CSV,"
+" DXF2, or ADX format."
 msgstr ""
-"Exporte metadados, como elementos de dados e unidades de organização, no "
-"formato DXF 2."
 
 msgid "Date range to export data for"
 msgstr "Intervalo de datas para exportar dados para"
@@ -826,16 +830,15 @@ msgstr "Intervalo de datas para exportar dados para"
 msgid "Export data"
 msgstr "Exportar valores"
 
-msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
-"Importe valores de dados de ficheiros ADX XML, DXF 2 XML, JSON, CSV ou PDF."
 
-msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr "Ficheiros suportados: JSON, CSV, XML, ADX and PDF."
+msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
+msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
@@ -1131,23 +1134,20 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
-"Exporte dados de eventos para programas, etapas e entidades rastreadas no "
-"formato DXF 2."
 
 msgid "Export events"
 msgstr "Exportar eventos"
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
-"Importe eventos para programas, fases e entidades rastreadas usando o "
-"formato DXF 2."
 
-msgid "Supported file types: JSON, CSV, and XML."
-msgstr "Tipos de ficheiro suportado: JSON, CSV, and XML."
+msgid "Supported file types: JSON, CSV, and DXF2."
+msgstr ""
 
 msgid "Organisation unit geometry import"
 msgstr ""
@@ -1210,7 +1210,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
+"Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
 
@@ -1223,9 +1223,8 @@ msgstr "Uma chave de classe deve ser selecionada"
 msgid "Tracked entity instances export"
 msgstr "Exportação de instâncias de entidade rastreadas"
 
-msgid "Export tracked entity instances in XML, JSON or CSV format."
+msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
 msgstr ""
-"Exporte instâncias de entidades rastreadas em formato XML, JSON ou CSV."
 
 msgid "Program to export from"
 msgstr "Programa para exportar de"
@@ -1241,11 +1240,11 @@ msgstr ""
 msgid "Tracked entity instances import"
 msgstr "Importação de instâncias de entidades rastreadas"
 
-msgid "Import tracked entity instances from JSON or XML files."
-msgstr "Importe instâncias de entidades rastreadas de arquivos JSON ou XML."
+msgid "Import tracked entity instances using JSON or DXF2 format."
+msgstr ""
 
-msgid "Supported file types: JSON and XML."
-msgstr "Tipos de ficjeiros suportados: JSON and XML."
+msgid "Supported file types: JSON and DXF2."
+msgstr ""
 
 msgid "Job started."
 msgstr "Trabalho iniciado "
