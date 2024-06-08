@@ -1,22 +1,20 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Ulanbek Abakirov <ulans@mail.ru>, 2022
-# Philip Larsen Donnelly, 2022
-# Yury Rogachev <yury@dhis2.org>, 2024
+# Saroj Dhakal <lotusnagarkot@gmail.com>, 2024
+# Prabesh Guragain, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
-"Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"Last-Translator: Prabesh Guragain, 2024\n"
+"Language-Team: Nepali (https://app.transifex.com/hisp-uio/teams/100509/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ne\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -37,7 +35,7 @@ msgid "Invalid duration"
 msgstr ""
 
 msgid "Format"
-msgstr "Форматировать"
+msgstr ""
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
@@ -61,7 +59,7 @@ msgid "Store geometry as value of attribute"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Выбранные программы"
+msgstr ""
 
 msgid "Something went wrong when loading the attributes!"
 msgstr ""
@@ -96,7 +94,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Текущий пользователь"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -117,7 +115,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "Импорт"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
@@ -135,7 +133,7 @@ msgid "GZip"
 msgstr ""
 
 msgid "Uncompressed"
-msgstr "Несжато"
+msgstr ""
 
 msgid "Compression mode"
 msgstr ""
@@ -144,13 +142,13 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Код"
+msgstr ""
 
 msgid "Name"
-msgstr "Имя"
+msgstr ""
 
 msgid "Data element ID scheme"
-msgstr "ID схема элемента данных"
+msgstr ""
 
 msgid "Which data sets should be included in export?"
 msgstr ""
@@ -159,7 +157,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Выбранные наборы данных"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -171,7 +169,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "Дата окончания"
+msgstr ""
 
 msgid "Event ID scheme"
 msgstr ""
@@ -204,7 +202,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "Все"
+msgstr ""
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -216,10 +214,10 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "DXF2 (XML)"
 msgstr ""
@@ -228,7 +226,7 @@ msgid "ADX (XML)"
 msgstr ""
 
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 msgid "JSONP"
 msgstr ""
@@ -240,13 +238,13 @@ msgid "What format should the data be exported as?"
 msgstr ""
 
 msgid "ID scheme"
-msgstr "Схема ID"
+msgstr ""
 
 msgid "UID"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Идентификатор"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
@@ -255,19 +253,19 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "Ошибки"
+msgstr ""
 
 msgid "Reports for all objects imported"
 msgstr ""
 
 msgid "Full"
-msgstr "Полный"
+msgstr ""
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
 
 msgid "Debug"
-msgstr "Отладка"
+msgstr ""
 
 msgid "Import report mode"
 msgstr ""
@@ -279,25 +277,25 @@ msgid "Import new values and update existing"
 msgstr ""
 
 msgid "Merge"
-msgstr "Объединить"
+msgstr ""
 
 msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Добавить"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "Обновить"
+msgstr ""
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Удалить"
+msgstr ""
 
 msgid "Data will be deleted"
 msgstr ""
@@ -320,7 +318,7 @@ msgid "Include descendants of selected organisation units"
 msgstr ""
 
 msgid "Include deleted"
-msgstr "Включить удаленное"
+msgstr ""
 
 msgid "Include deleted data in export"
 msgstr ""
@@ -329,7 +327,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Выбранный"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -356,7 +354,7 @@ msgid "Include all properties"
 msgstr ""
 
 msgid "Always"
-msgstr "Всегда"
+msgstr ""
 
 msgid "Include non-empty properties"
 msgstr ""
@@ -371,7 +369,7 @@ msgid "Controls which properties to include"
 msgstr ""
 
 msgid "Async"
-msgstr "Асинхронный"
+msgstr ""
 
 msgid "Asynchronous import"
 msgstr ""
@@ -389,7 +387,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Дата начала / окончания"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -407,7 +405,7 @@ msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Replace"
-msgstr "Заменить"
+msgstr ""
 
 msgid "Merge mode"
 msgstr ""
@@ -416,37 +414,37 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Наборы данных"
+msgstr ""
 
 msgid "Programs"
-msgstr "Программы"
+msgstr ""
 
 msgid "Category combination"
-msgstr "Комбинация категории"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Информационная панель"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Группы элементов данных"
+msgstr ""
 
 msgid "Option sets"
-msgstr "Наборы опций"
+msgstr ""
 
 msgid "Object type"
-msgstr "Тип объекта"
+msgstr ""
 
 msgid "One object must be selected"
 msgstr ""
 
 msgid "Object"
-msgstr "Объект"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Id"
-msgstr "ID"
+msgstr ""
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
@@ -458,7 +456,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Сбор"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -473,7 +471,7 @@ msgid "Organisation unit(s) to export data from"
 msgstr ""
 
 msgid "Preheat cache"
-msgstr "Подогрев кеша"
+msgstr ""
 
 msgid "Preheat cache to make large imports faster"
 msgstr ""
@@ -485,7 +483,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "Не известное значение"
+msgstr ""
 
 msgid "Preheat mode"
 msgstr ""
@@ -512,19 +510,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "Дата начала"
+msgstr ""
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Действующий"
+msgstr ""
 
 msgid "Completed"
-msgstr "Завершенный"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Отмененный"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -567,19 +565,19 @@ msgid "Skip validation for import (not recommended)"
 msgstr ""
 
 msgid "Strategy"
-msgstr "Стратегия"
+msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Тип отслеживаемого объекта"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
 
 msgid "Tracked entity types"
-msgstr "Типы отслеживаемых объектов"
+msgstr ""
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -618,7 +616,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "Выполняется"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -627,37 +625,37 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Значение"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Ошибка"
+msgstr ""
 
 msgid "Conflicts"
-msgstr "Конфликты"
+msgstr ""
 
 msgid "Dry run"
-msgstr "Пробный прогон программы"
+msgstr ""
 
 msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Время"
+msgstr ""
 
 msgid "Message"
-msgstr "Сообщение"
+msgstr "सन्देश"
 
 msgid "ID"
-msgstr "Ид"
+msgstr ""
 
 msgid "Messages"
-msgstr "Сообщения"
+msgstr ""
 
 msgid "Type"
-msgstr "Тип"
+msgstr ""
 
 msgid "Property"
 msgstr ""
@@ -666,28 +664,28 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Статус"
+msgstr "स्थिती"
 
 msgid "Description"
-msgstr "Описание"
+msgstr ""
 
 msgid "Summary"
-msgstr "Сводная информация"
+msgstr ""
 
 msgid "Created"
-msgstr "Создано"
+msgstr ""
 
 msgid "Deleted"
-msgstr "Удалено"
+msgstr ""
 
 msgid "Ignored"
-msgstr "Пропущено/Игнорируется"
+msgstr ""
 
 msgid "Updated"
-msgstr "Обновлено"
+msgstr ""
 
 msgid "Total"
-msgstr "Итог"
+msgstr ""
 
 msgid "Indexes"
 msgstr ""
@@ -720,16 +718,16 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr "Выбрать все"
+msgstr ""
 
 msgid "Select None"
-msgstr "Выберите Неизвестное значение"
+msgstr ""
 
 msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "Экспорт"
+msgstr ""
 
 msgid "Data import"
 msgstr ""
@@ -771,10 +769,10 @@ msgid "Overview"
 msgstr ""
 
 msgid "Yes"
-msgstr "Да"
+msgstr ""
 
 msgid "No"
-msgstr "Нет"
+msgstr ""
 
 msgid "There are errors on this page"
 msgstr ""
@@ -800,7 +798,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Экспортировать данные"
+msgstr ""
 
 msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
@@ -817,7 +815,7 @@ msgid "Earth Engine source"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "Организационные единицы"
+msgstr ""
 
 msgid "Import setup"
 msgstr ""
@@ -846,25 +844,25 @@ msgid ""
 msgstr ""
 
 msgid "Group name"
-msgstr "Названиеп группы"
+msgstr ""
 
 msgid "Group description"
 msgstr ""
 
 msgid "Category option combination"
-msgstr "Комбинации опций категории"
+msgstr ""
 
 msgid "No match found"
-msgstr "Совпадения не найдены"
+msgstr ""
 
 msgid "Choose category option combo"
 msgstr ""
 
 msgid "Data element"
-msgstr "Элемент данных"
+msgstr ""
 
 msgid "Select data element"
-msgstr "Выбрать элемент данных"
+msgstr ""
 
 msgid "The data element where Earth Engine data will be added"
 msgstr ""
@@ -882,10 +880,10 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "Select a level"
-msgstr "Выбрать уровень"
+msgstr ""
 
 msgid "Deselect all"
-msgstr "Отменить выбор всего"
+msgstr "सबै चयन उल्टाउनुहोस्"
 
 msgid "Organisation unit(s) to import data to"
 msgstr ""
@@ -894,13 +892,13 @@ msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
-msgstr "Период"
+msgstr "अबधि"
 
 msgid "Data from Earth Engine will be imported for this period."
 msgstr ""
 
 msgid "Select period"
-msgstr "Пожалуйста выберите период"
+msgstr ""
 
 msgid "Loading periods"
 msgstr ""
@@ -912,10 +910,10 @@ msgid "Point org. unit - no value"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Организация"
+msgstr ""
 
 msgid "Category option combo"
-msgstr "Комбинированная опция категории"
+msgstr ""
 
 msgid "Current value"
 msgstr ""
@@ -924,7 +922,7 @@ msgid "New value"
 msgstr ""
 
 msgid "Rows per page"
-msgstr "Строк в странице"
+msgstr ""
 
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
@@ -1111,7 +1109,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "Экспорт событий"
+msgstr ""
 
 msgid ""
 "Import event data for programs, stages and tracked entities to JSON, CSV, or"
@@ -1144,16 +1142,16 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Экспортировать мета данные"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Импортировать данные"
+msgstr ""
 
 msgid "Import events"
-msgstr "Импорт событий"
+msgstr ""
 
 msgid "Import Earth Engine"
 msgstr ""
@@ -1162,7 +1160,7 @@ msgid "Import GeoJSON"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Импортировать мета данные"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -1225,10 +1223,10 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Данные"
+msgstr ""
 
 msgid "Event"
-msgstr "Событие"
+msgstr ""
 
 msgid "GeoJSON"
 msgstr ""
@@ -1237,7 +1235,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Метаданные"
+msgstr ""
 
 msgid "TEI"
 msgstr ""
