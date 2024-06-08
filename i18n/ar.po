@@ -1,13 +1,13 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Hamza Assada <7amza.it@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -221,11 +221,11 @@ msgstr "JSON"
 msgid "CSV"
 msgstr "CSV"
 
-msgid "XML"
-msgstr "XML"
+msgid "DXF2 (XML)"
+msgstr ""
 
-msgid "ADX"
-msgstr "ADX"
+msgid "ADX (XML)"
+msgstr ""
 
 msgid "PDF"
 msgstr "بي دي إف PDF"
@@ -705,6 +705,12 @@ msgstr ""
 msgid "Details by type"
 msgstr "التفاصيل حسب النوع"
 
+msgid "All existing property values will be replaced"
+msgstr ""
+
+msgid "Values will be overwritten, even if the new value is null"
+msgstr ""
+
 msgid "Advanced options"
 msgstr "خيارات متقدمة"
 
@@ -796,11 +802,9 @@ msgid "Something went wrong when loading the program stages"
 msgstr "حدث خطأ ما أثناء تحميل مراحل البرنامج"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, CSV,"
+" DXF2, or ADX format."
 msgstr ""
-"تصدير البيانات الوصفية ، مثل عناصر البيانات والوحدات التنظيمية ، بتنسيق DXF "
-"2."
 
 msgid "Date range to export data for"
 msgstr "النطاق الزمني لتصدير البيانات فيه"
@@ -808,16 +812,15 @@ msgstr "النطاق الزمني لتصدير البيانات فيه"
 msgid "Export data"
 msgstr "تصدير بيانات"
 
-msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
-"استيراد قيم البيانات من ملفات ADX XML أو DXF 2 XML أو JSON أو CSV أو PDF."
 
-msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr "أنواع الملفات المدعومة: JSON و CSV و XML و ADX و PDF."
+msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
+msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
@@ -1113,20 +1116,20 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
 
 msgid "Export events"
 msgstr "تصدير أحداث"
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
-"استيراد الأحداث للبرامج والمراحل والكيانات المتعقبة باستخدام تنسيق DXF 2."
 
-msgid "Supported file types: JSON, CSV, and XML."
-msgstr "أنواع الملفات المدعومة: JSON و CSV و XML."
+msgid "Supported file types: JSON, CSV, and DXF2."
+msgstr ""
 
 msgid "Organisation unit geometry import"
 msgstr ""
@@ -1188,7 +1191,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
+"Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
 
@@ -1201,7 +1204,7 @@ msgstr "يجب تحديد class key"
 msgid "Tracked entity instances export"
 msgstr ""
 
-msgid "Export tracked entity instances in XML, JSON or CSV format."
+msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1216,11 +1219,11 @@ msgstr "يجب تحديد حقل تاريخ واحد على الأقل من حق
 msgid "Tracked entity instances import"
 msgstr "استيراد نسخ الكيان المتعقبة"
 
-msgid "Import tracked entity instances from JSON or XML files."
-msgstr "استيراد نسخ الكيانات المتعقبة من ملفات JSON أو XML."
+msgid "Import tracked entity instances using JSON or DXF2 format."
+msgstr ""
 
-msgid "Supported file types: JSON and XML."
-msgstr "أنواع الملفات المدعومة: JSON و XML."
+msgid "Supported file types: JSON and DXF2."
+msgstr ""
 
 msgid "Job started."
 msgstr ""
