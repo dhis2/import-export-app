@@ -1,24 +1,20 @@
 # 
 # Translators:
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
-# Philip Larsen Donnelly, 2022
-# Somkhit Bouavong <bouavongk@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Saysamone Sibounma, 2023
-# Namwan Chanthavisouk, 2024
+# Saroj Dhakal <lotusnagarkot@gmail.com>, 2024
+# Prabesh Guragain, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2022-10-15 22:34+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2024\n"
-"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: Prabesh Guragain, 2024\n"
+"Language-Team: Nepali (https://app.transifex.com/hisp-uio/teams/100509/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ne\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -63,7 +59,7 @@ msgid "Store geometry as value of attribute"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Selected programs"
+msgstr ""
 
 msgid "Something went wrong when loading the attributes!"
 msgstr ""
@@ -98,7 +94,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "ຜູ້ໃຊ້ປະຈຸບັນ"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -119,7 +115,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "Import"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
@@ -146,10 +142,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "ລະຫັດ"
+msgstr ""
 
 msgid "Name"
-msgstr "ຊື່"
+msgstr ""
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -161,7 +157,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Selected data sets"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -173,7 +169,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "ວັນທີສຸດທ້າຍ"
+msgstr ""
 
 msgid "Event ID scheme"
 msgstr ""
@@ -206,10 +202,10 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "ທັງໝົດ"
+msgstr ""
 
 msgid "Marked for follow-up"
-msgstr "ໝາຍໄວ້ເພື່ອຕິດຕາມ"
+msgstr ""
 
 msgid "Not marked for follow-up"
 msgstr ""
@@ -218,10 +214,10 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "DXF2 (XML)"
 msgstr ""
@@ -248,7 +244,7 @@ msgid "UID"
 msgstr ""
 
 msgid "Identifier"
-msgstr "Identifier"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
@@ -257,7 +253,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "ຜິດພາດ"
+msgstr ""
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -281,25 +277,25 @@ msgid "Import new values and update existing"
 msgstr ""
 
 msgid "Merge"
-msgstr "Merge"
+msgstr ""
 
 msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Append"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "ປັບປຸງ"
+msgstr ""
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "ລົບ"
+msgstr ""
 
 msgid "Data will be deleted"
 msgstr ""
@@ -331,7 +327,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "ເລືອກ"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -391,7 +387,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "ວັນເລີ້ມຕົ້ນ/ວັນສິ້ນສຸດ"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -409,7 +405,7 @@ msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Replace"
-msgstr "ແທນທີ່"
+msgstr ""
 
 msgid "Merge mode"
 msgstr ""
@@ -418,25 +414,25 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "ແບບຟອມ"
+msgstr ""
 
 msgid "Programs"
-msgstr "ສາຍງານ"
+msgstr ""
 
 msgid "Category combination"
-msgstr "Category Combination"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "ກະດານຂ່າວ"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Data Element Groups"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "Object type"
+msgstr ""
 
 msgid "One object must be selected"
 msgstr ""
@@ -448,7 +444,7 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Id"
-msgstr "Id"
+msgstr ""
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
@@ -460,7 +456,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "ເລືອກແລ້ວ"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -487,7 +483,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "ບໍ່ແມນ"
+msgstr ""
 
 msgid "Preheat mode"
 msgstr ""
@@ -514,19 +510,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "ວັນທີເລີ່ມຕົ້ນ"
+msgstr ""
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "ທີ່ຍັງນໍາໃຊ້ຢູ່"
+msgstr ""
 
 msgid "Completed"
-msgstr "ສໍາເລັດແລ້ວ"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "ຍົກເລີກແລ້ວ"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -572,7 +568,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
@@ -620,7 +616,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "ກໍາລັງດໍາເນີນການ"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -629,13 +625,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Value"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "ເກີດການຜິດພາດ"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -650,16 +646,16 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "ຂໍ້ຄວາມ"
+msgstr "सन्देश"
 
 msgid "ID"
-msgstr "ລະຫັດ"
+msgstr ""
 
 msgid "Messages"
-msgstr "ຂໍ້ຄວາມ"
+msgstr ""
 
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 msgid "Property"
 msgstr ""
@@ -668,19 +664,19 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "ສະຖານະ"
+msgstr "स्थिती"
 
 msgid "Description"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "ສ້າງແລ້ວ"
+msgstr ""
 
 msgid "Deleted"
-msgstr "ລົບ"
+msgstr ""
 
 msgid "Ignored"
 msgstr ""
@@ -689,7 +685,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "ລວມ"
+msgstr ""
 
 msgid "Indexes"
 msgstr ""
@@ -707,7 +703,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "ຕ້ອງເລືອກຢ່າງຫນ້ອຍໜື່ງໂຄງຮ່າງການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -731,7 +727,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "ໂອນຂໍ້ມູນອອກ"
+msgstr ""
 
 msgid "Data import"
 msgstr ""
@@ -770,13 +766,13 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "ພາບລວມ"
+msgstr ""
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr ""
 
 msgid "No"
-msgstr "ບໍ່ແມນ"
+msgstr ""
 
 msgid "There are errors on this page"
 msgstr ""
@@ -819,7 +815,7 @@ msgid "Earth Engine source"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "ໂຄງຮ່າງການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Import setup"
 msgstr ""
@@ -857,16 +853,16 @@ msgid "Category option combination"
 msgstr ""
 
 msgid "No match found"
-msgstr "ບໍ່ພົບຂໍ້ມູນທີ່ກົງກັນ"
+msgstr ""
 
 msgid "Choose category option combo"
 msgstr ""
 
 msgid "Data element"
-msgstr "Data Element"
+msgstr ""
 
 msgid "Select data element"
-msgstr "ກະລຸນາເລືອກອົງປະກອບຂໍ້ມູນ (data element)"
+msgstr ""
 
 msgid "The data element where Earth Engine data will be added"
 msgstr ""
@@ -878,16 +874,16 @@ msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr "ເລືອກ {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
 
 msgid "Nothing selected"
-msgstr "ບໍ່ມີຫຍັງເລືອກ"
+msgstr ""
 
 msgid "Select a level"
-msgstr "ເລືອກຂັ້ນ"
+msgstr ""
 
 msgid "Deselect all"
-msgstr "ຍົກເລີກການເລືອກທັງໝົດ"
+msgstr "सबै चयन उल्टाउनुहोस्"
 
 msgid "Organisation unit(s) to import data to"
 msgstr ""
@@ -896,13 +892,13 @@ msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
-msgstr "ຊ່ວງເວລາ"
+msgstr "अबधि"
 
 msgid "Data from Earth Engine will be imported for this period."
 msgstr ""
 
 msgid "Select period"
-msgstr "ເລືອກຊ່ວງເວລາ"
+msgstr ""
 
 msgid "Loading periods"
 msgstr ""
@@ -914,7 +910,7 @@ msgid "Point org. unit - no value"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Category option combo"
 msgstr ""
@@ -926,7 +922,7 @@ msgid "New value"
 msgstr ""
 
 msgid "Rows per page"
-msgstr "ແຖວຕໍ່ຫນ້າເຈ້ຍ"
+msgstr ""
 
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
@@ -974,7 +970,7 @@ msgid "The app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr "ຂໍ້ຜິດພາດທາງເຄື່ອຂ່າຍ"
+msgstr ""
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr ""
@@ -1227,10 +1223,10 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "ຂໍ້ມູນ"
+msgstr ""
 
 msgid "Event"
-msgstr "ເຫດການ"
+msgstr ""
 
 msgid "GeoJSON"
 msgstr ""
@@ -1239,7 +1235,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "ໂຄງຮ່າງຖານຂໍ້ມູນ"
+msgstr ""
 
 msgid "TEI"
-msgstr "ຈໍານວນກໍລະນີທີ່ປ້ອນເຂົ້າ"
+msgstr ""
