@@ -2,7 +2,7 @@
 # Translators:
 # Edem Kossi <ekossi@hispwca.org>, 2023
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Bram Piot <bram.piot@gmail.com>, 2023
 # Djibril Dione <dione.djibril@gmail.com>, 2023
@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
 "Last-Translator: Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -243,11 +243,11 @@ msgstr "JSON"
 msgid "CSV"
 msgstr "CSV"
 
-msgid "XML"
-msgstr "XML"
+msgid "DXF2 (XML)"
+msgstr ""
 
-msgid "ADX"
-msgstr "ADX"
+msgid "ADX (XML)"
+msgstr ""
 
 msgid "PDF"
 msgstr "PDF"
@@ -744,6 +744,12 @@ msgstr "Index"
 msgid "Details by type"
 msgstr "Détails par type"
 
+msgid "All existing property values will be replaced"
+msgstr ""
+
+msgid "Values will be overwritten, even if the new value is null"
+msgstr ""
+
 msgid "Advanced options"
 msgstr "Options avancées"
 
@@ -835,11 +841,9 @@ msgid "Something went wrong when loading the program stages"
 msgstr "Une erreur s'est produite lors du chargement des étapes du programme"
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, CSV,"
+" DXF2, or ADX format."
 msgstr ""
-"Exportez les métadonnées, telles que les éléments de données et les unités "
-"d'organisation, au format DXF 2."
 
 msgid "Date range to export data for"
 msgstr "Plage de dates pour laquelle exporter les données"
@@ -847,20 +851,16 @@ msgstr "Plage de dates pour laquelle exporter les données"
 msgid "Export data"
 msgstr "Exporter données"
 
-msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
-"Importer des valeurs de données à partir de fichiers ADX XML, DXF 2 XML, "
-"JSON, CSV ou PDF."
 
-msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
-msgstr "Types de fichiers supportés: JSON, CSV, XML, ADX et PDF."
+msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
+msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr ""
-"Importer des données démographiques à haute résolution de WorldPop avec "
-"Google Earth Engine"
 
 msgid "Earth Engine source"
 msgstr "Source Earth Engine"
@@ -1174,23 +1174,20 @@ msgstr ""
 " ou utilisez une zone de chalandise comme géométrie associée."
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
-"Exportez les données d'événements pour les programmes, les étapes et les "
-"entités suivies au format DXF 2."
 
 msgid "Export events"
 msgstr "Exporter évènements"
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import event data for programs, stages and tracked entities to JSON, CSV, or"
+" DXF2 format."
 msgstr ""
-"Importez des événements pour des programmes, des étapes et des entités "
-"suivies en utilisant le format DXF 2."
 
-msgid "Supported file types: JSON, CSV, and XML."
-msgstr "Types de fichiers supportés: JSON, CSV et XML. "
+msgid "Supported file types: JSON, CSV, and DXF2."
+msgstr ""
 
 msgid "Organisation unit geometry import"
 msgstr "Importation de la géométrie des unités d'organisation"
@@ -1263,11 +1260,9 @@ msgstr ""
 "d'organisation, au format JSON ."
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
+"Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
-"Importez les métadonnées, telles que les éléments de données et les unités "
-"d'organisation, aux formats JSON et CSV."
 
 msgid "Supported file types: JSON and CSV."
 msgstr "Types de fichiers pris en charge : JSON et CSV."
@@ -1278,8 +1273,8 @@ msgstr "Une clé de classe doit être sélectionnée"
 msgid "Tracked entity instances export"
 msgstr "Exportation d'instances d'entités suivies"
 
-msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr "Exportez les instances d'entités suivies au format XML, JSON ou CSV."
+msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgstr ""
 
 msgid "Program to export from"
 msgstr "Programme à exporter depuis"
@@ -1294,12 +1289,11 @@ msgstr ""
 msgid "Tracked entity instances import"
 msgstr "Importation d'instances d'entités suivies"
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entity instances using JSON or DXF2 format."
 msgstr ""
-"Importer des instances d'entités suivies à partir de fichiers JSON ou XML."
 
-msgid "Supported file types: JSON and XML."
-msgstr "Types de fichiers supportés: JSON et XML."
+msgid "Supported file types: JSON and DXF2."
+msgstr ""
 
 msgid "Job started."
 msgstr "La tâche a commencé."
