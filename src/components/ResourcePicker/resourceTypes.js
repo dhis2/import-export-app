@@ -4,6 +4,7 @@ const resourceTypes = {
     TETYPE: 3,
     USER: 4,
     GEOJSON_ATTRIBUTE: 5,
+    PROGRAM_WITH_EVENTS: 6,
 }
 
 export { resourceTypes }
