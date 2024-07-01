@@ -19,6 +19,16 @@ const programQuery = {
     },
 }
 
+const programWithEventsQuery = {
+    programs: {
+        resource: 'programs',
+        params: {
+            fields: 'id,displayName',
+            paging: 'false',
+        },
+    },
+}
+
 const TETypeQuery = {
     trackedEntityTypes: {
         resource: 'trackedEntityTypes',
@@ -56,6 +66,7 @@ const geojsonAttributesQuery = {
 export {
     dataSetQuery,
     programQuery,
+    programWithEventsQuery,
     TETypeQuery,
     userQuery,
     geojsonAttributesQuery,
