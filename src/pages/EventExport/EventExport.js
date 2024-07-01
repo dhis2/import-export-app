@@ -94,7 +94,7 @@ const EventExport = () => {
                         <BasicOptions>
                             <OrgUnitTree multiSelect={false} />
                             <Inclusion />
-                            <ProgramPicker autoSelectFirst />
+                            <ProgramPicker autoSelectFirst includeEvents />
                             <ProgramStages
                                 selectedProgram={values.selectedPrograms}
                                 form={form}

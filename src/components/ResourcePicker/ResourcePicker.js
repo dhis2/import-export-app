@@ -15,6 +15,7 @@ import {
     TETypeQuery,
     userQuery,
     geojsonAttributesQuery,
+    programWithEventsQuery,
 } from './queries.js'
 import styles from './ResourcePicker.module.css'
 import { resourceTypes } from './resourceTypes.js'
@@ -26,6 +27,8 @@ const resourceToQuery = (resourceType) => {
         return { resourceName: 'dataSets', query: dataSetQuery }
     } else if (resourceType == resourceTypes.PROGRAM) {
         return { resourceName: 'programs', query: programQuery }
+    } else if (resourceType == resourceTypes.PROGRAM_WITH_EVENTS) {
+        return { resourceName: 'programs', query: programWithEventsQuery }
     } else if (resourceType == resourceTypes.TETYPE) {
         return { resourceName: 'trackedEntityTypes', query: TETypeQuery }
     } else if (resourceType == resourceTypes.USER) {
