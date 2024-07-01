@@ -12,7 +12,8 @@ const LISTNAME = 'selectedPrograms'
 const FILTERLABEL = i18n.t('Filter programs')
 const SELECTEDLABEL = i18n.t('Selected programs')
 const ERRORMESSAGE = i18n.t('Something went wrong when loading the programs!')
-const RESOURCETYPE = resourceTypes.PROGRAM
+const PROGRAM_RESOURCE_TYPE = resourceTypes.PROGRAM
+const PROGRAM_WITH_EVENTS_RESOURCE_TYPE = resourceTypes.PROGRAM_WITH_EVENTS
 
 const SINGLE_PROGRAM_VALIDATOR = (selectedPrograms) =>
     selectedPrograms.length == 0
@@ -22,18 +23,27 @@ const SINGLE_PROGRAM_VALIDATOR = (selectedPrograms) =>
 const SINGLE_EXACT_PROGRAM_VALIDATOR = (selectedPrograms) =>
     !selectedPrograms ? i18n.t('One program must be selected') : undefined
 
-const ProgramPicker = ({ multiSelect, label, show, ...rest }) => {
+const ProgramPicker = ({
+    multiSelect,
+    label,
+    show,
+    includeEvents,
+    ...rest
+}) => {
     const programValidator = multiSelect
         ? SINGLE_PROGRAM_VALIDATOR
         : SINGLE_EXACT_PROGRAM_VALIDATOR
     const validator = composeValidators(hasValue, programValidator)
+    const resourceType = includeEvents
+        ? PROGRAM_WITH_EVENTS_RESOURCE_TYPE
+        : PROGRAM_RESOURCE_TYPE
 
     return (
         show && (
             <div style={{ maxWidth: '480px' }}>
                 <ResourcePickerField
                     name={NAME}
-                    resourceType={RESOURCETYPE}
+                    resourceType={resourceType}
                     errorMessage={ERRORMESSAGE}
                     listName={LISTNAME}
                     label={label}
@@ -54,9 +64,11 @@ ProgramPicker.defaultProps = {
     label: LABEL,
     multiSelect: false,
     show: true,
+    includeEvents: false,
 }
 
 ProgramPicker.propTypes = {
+    includeEvents: PropTypes.bool,
     label: PropTypes.string,
     multiSelect: PropTypes.bool,
     show: PropTypes.bool,
