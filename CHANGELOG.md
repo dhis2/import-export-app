@@ -1,3 +1,10 @@
+## [101.1.7](https://github.com/dhis2/import-export-app/compare/v101.1.6...v101.1.7) (2024-07-01)
+
+
+### Bug Fixes
+
+* include event programs for export [DHIS2-17672] ([#2058](https://github.com/dhis2/import-export-app/issues/2058)) ([230b77e](https://github.com/dhis2/import-export-app/commit/230b77e1e9e42fcb9e2541b97809045b70537dae))
+
 ## [101.1.6](https://github.com/dhis2/import-export-app/compare/v101.1.5...v101.1.6) (2024-06-09)
 
 
