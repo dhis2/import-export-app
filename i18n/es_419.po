@@ -254,7 +254,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr ""
+msgstr "Añadir"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -289,7 +289,7 @@ msgid "Include the first level of organisation units inside selections"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Incluir borrados"
 
 msgid "Include deleted data in export"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "Seleccionado"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -391,7 +391,7 @@ msgid "Programs"
 msgstr "Programas"
 
 msgid "Category combination"
-msgstr ""
+msgstr "Combinación de categorías"
 
 msgid "Dashboard"
 msgstr ""
@@ -608,7 +608,7 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "Proceso de prueba (Dry run)"
 
 msgid "Log"
 msgstr ""
