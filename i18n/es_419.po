@@ -17,43 +17,49 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr ""
+msgstr "Algo ha ido mal al cargar el usuario actual."
 
 msgid "Basic options"
-msgstr ""
+msgstr "Opciones básicas"
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Fecha no válida"
 
 msgid "Start date must be before end date"
-msgstr ""
+msgstr "La fecha de inicio debe ser anterior a la fecha de finalización"
 
 msgid "End date must be after start date"
-msgstr ""
+msgstr "La fecha final debe ser posterior a la fecha de inicio"
 
 msgid "Invalid duration"
-msgstr ""
+msgstr "Duración no válida"
 
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
+"Algo ha ido mal al cargar los esquemas de ID de elementos de datos "
+"adicionales"
 
 msgid "Something went wrong when loading the additional ID schemes"
-msgstr ""
+msgstr "Algo ha ido mal al cargar los esquemas de ID adicionales"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
+"Algo ha fallado al cargar los esquemas de ID de unidad de organización "
+"adicional"
 
 msgid "Please select a file"
-msgstr ""
+msgstr "Seleccione un archivo"
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
+"Una ejecución en seco prueba la configuración de importación sin importar "
+"ningún dato"
 
 msgid "Start dry run"
 msgstr ""
@@ -257,7 +263,7 @@ msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr ""
+msgstr "Añadir"
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
@@ -292,7 +298,7 @@ msgid "Include the first level of organisation units inside selections"
 msgstr ""
 
 msgid "Include deleted"
-msgstr ""
+msgstr "Incluir borrados"
 
 msgid "Include deleted data in export"
 msgstr ""
@@ -301,7 +307,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "Seleccionado"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -394,7 +400,7 @@ msgid "Programs"
 msgstr "Programas"
 
 msgid "Category combination"
-msgstr ""
+msgstr "Combinación de categorías"
 
 msgid "Dashboard"
 msgstr ""
@@ -611,7 +617,7 @@ msgid "Conflicts"
 msgstr ""
 
 msgid "Dry run"
-msgstr ""
+msgstr "Proceso de prueba (Dry run)"
 
 msgid "Log"
 msgstr ""
