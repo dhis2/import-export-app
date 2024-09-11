@@ -3,7 +3,6 @@ import { createMemoryHistory } from 'history'
 import React from 'react'
 import { Router } from 'react-router-dom'
 import { render, fireEvent, cleanup } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect.js'
 
 import { TaskContext } from '../../../contexts/index.js'
 import { JobOverview } from '../../index.js'

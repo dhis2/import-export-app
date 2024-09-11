@@ -1,7 +1,7 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { render } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect.js'
+
 import { useDataQuery } from '@dhis2/app-runtime'
 import { ProgramPicker } from '../ProgramPicker.jsx'
 import {
