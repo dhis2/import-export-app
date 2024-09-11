@@ -23,13 +23,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerowhead"
         >
           <th
-            class="jsx-1796049005 "
+            class="jsx-3181834369 "
             data-test="dhis2-uicore-tablecellhead"
           >
             Key
           </th>
           <th
-            class="jsx-1796049005 "
+            class="jsx-3181834369 "
             data-test="dhis2-uicore-tablecellhead"
           >
             Value
@@ -44,13 +44,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             files
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             data1.json
@@ -61,13 +61,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             format
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             JSON
@@ -78,13 +78,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             dryRun
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             true
@@ -95,13 +95,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             strategy
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             New and updates
@@ -112,13 +112,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             preheatCache
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             true
@@ -129,13 +129,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             skipAudit
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             false
@@ -146,13 +146,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             dataElementIdScheme
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             Uid
@@ -163,13 +163,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             orgUnitIdScheme
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             Uid
@@ -180,13 +180,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             idScheme
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             Uid
@@ -197,13 +197,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             skipExistingCheck
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             false
@@ -214,13 +214,13 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             firstRowIsHeader
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             false

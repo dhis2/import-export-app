@@ -25,31 +25,31 @@ exports[`matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-1796049005 "
+                class="jsx-3181834369 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Created
               </th>
               <th
-                class="jsx-1796049005 "
+                class="jsx-3181834369 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Deleted
               </th>
               <th
-                class="jsx-1796049005 "
+                class="jsx-3181834369 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Ignored
               </th>
               <th
-                class="jsx-1796049005 "
+                class="jsx-3181834369 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Updated
               </th>
               <th
-                class="jsx-1796049005 "
+                class="jsx-3181834369 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Total
@@ -64,31 +64,31 @@ exports[`matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-996330601 "
+                class="jsx-2229340108 "
                 data-test="dhis2-uicore-tablecell"
               >
                 1
               </td>
               <td
-                class="jsx-996330601 "
+                class="jsx-2229340108 "
                 data-test="dhis2-uicore-tablecell"
               >
                 2
               </td>
               <td
-                class="jsx-996330601 "
+                class="jsx-2229340108 "
                 data-test="dhis2-uicore-tablecell"
               >
                 3
               </td>
               <td
-                class="jsx-996330601 "
+                class="jsx-2229340108 "
                 data-test="dhis2-uicore-tablecell"
               >
                 4
               </td>
               <td
-                class="jsx-996330601 "
+                class="jsx-2229340108 "
                 data-test="dhis2-uicore-tablecell"
               >
                 10
@@ -119,37 +119,37 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerowhead"
           >
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Type
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Created
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Deleted
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Ignored
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Updated
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Total
@@ -164,37 +164,37 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               DefaultGmlImportService
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               1
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               2
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               3
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               4
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               10
@@ -205,37 +205,37 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               SndGmlImportService
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               1
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               2
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               3
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               4
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               10
@@ -265,25 +265,25 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerowhead"
           >
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               UID
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Type
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Property
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Message
@@ -298,25 +298,25 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               abc
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               DefaultGmlImportService
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               def
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               message one
@@ -327,25 +327,25 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               xyz
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               SndGmlImportService
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               def
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               message one

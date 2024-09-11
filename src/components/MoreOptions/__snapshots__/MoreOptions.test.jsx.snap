@@ -71,8 +71,9 @@ exports[`matches snapshot when toggled 1`] = `
       </h2>
     </header>
     <div
-      class="jsx-1555285825 jsx-876534464 "
+      class="jsx-742385706 jsx-3656744930 "
       data-test="dhis2-uicore-divider"
+      role="separator"
     />
     <div
       class="children"
@@ -118,8 +119,9 @@ exports[`matches snapshot when toggled and different label 1`] = `
       </h2>
     </header>
     <div
-      class="jsx-1555285825 jsx-876534464 "
+      class="jsx-742385706 jsx-3656744930 "
       data-test="dhis2-uicore-divider"
+      role="separator"
     />
     <div
       class="children"

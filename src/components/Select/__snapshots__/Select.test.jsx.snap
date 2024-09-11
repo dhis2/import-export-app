@@ -38,19 +38,19 @@ exports[`matches snapshot 1`] = `
                   data-test="dhis2-uicore-select"
                 >
                   <div
-                    class="jsx-1462515063 root"
+                    class="jsx-3974936783 root"
                     data-test="dhis2-uicore-select-input"
                     tabindex="0"
                   >
                     <div
-                      class="jsx-1462515063 root-children"
+                      class="jsx-3974936783 root-children"
                     >
                       <div
-                        class="jsx-2240447017 jsx-4123978364 root"
+                        class="jsx-2256910823 jsx-4123978364 root"
                       />
                     </div>
                     <div
-                      class="jsx-1462515063 root-right"
+                      class="jsx-3974936783 root-right"
                     >
                       <svg
                         height="16"

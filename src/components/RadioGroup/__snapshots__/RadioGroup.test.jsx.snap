@@ -16,18 +16,18 @@ exports[`matches snapshot 1`] = `
     >
       <div>
         <label
-          class="jsx-3878022568 "
+          class="jsx-2199927085 "
           data-test="radio-group-format-a"
         >
           <input
             checked=""
-            class="jsx-3878022568"
+            class="jsx-2199927085"
             name="format"
             type="radio"
             value="a"
           />
           <div
-            class="jsx-3878022568 icon"
+            class="jsx-2199927085 icon"
           >
             <svg
               class="jsx-1260643562 jsx-1120332023 checked"
@@ -61,17 +61,17 @@ exports[`matches snapshot 1`] = `
       </div>
       <div>
         <label
-          class="jsx-3878022568 "
+          class="jsx-2199927085 "
           data-test="radio-group-format-b"
         >
           <input
-            class="jsx-3878022568"
+            class="jsx-2199927085"
             name="format"
             type="radio"
             value="b"
           />
           <div
-            class="jsx-3878022568 icon"
+            class="jsx-2199927085 icon"
           >
             <svg
               class="jsx-1260643562 jsx-1120332023 "
@@ -105,17 +105,17 @@ exports[`matches snapshot 1`] = `
       </div>
       <div>
         <label
-          class="jsx-3878022568 "
+          class="jsx-2199927085 "
           data-test="radio-group-format-c"
         >
           <input
-            class="jsx-3878022568"
+            class="jsx-2199927085"
             name="format"
             type="radio"
             value="c"
           />
           <div
-            class="jsx-3878022568 icon"
+            class="jsx-2199927085 icon"
           >
             <svg
               class="jsx-1260643562 jsx-1120332023 "
