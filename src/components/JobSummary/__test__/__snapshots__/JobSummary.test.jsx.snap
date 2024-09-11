@@ -70,9 +70,8 @@ exports[`summary for a GML job matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="jsx-742385706 jsx-3656744930 "
+      class="jsx-1555285825 jsx-876534464 "
       data-test="dhis2-uicore-divider"
-      role="separator"
     />
     <div
       class="typeReportSummary"
@@ -101,31 +100,31 @@ exports[`summary for a GML job matches snapshot 1`] = `
                   data-test="dhis2-uicore-tablerowhead"
                 >
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     Created
                   </th>
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     Deleted
                   </th>
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     Ignored
                   </th>
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     Updated
                   </th>
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     Total
@@ -140,31 +139,31 @@ exports[`summary for a GML job matches snapshot 1`] = `
                   data-test="dhis2-uicore-tablerow"
                 >
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     0
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     0
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     0
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     0
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     0
@@ -195,37 +194,37 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Type
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Created
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Deleted
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Ignored
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Updated
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Total
@@ -240,37 +239,37 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   DefaultGmlImportService
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
@@ -300,25 +299,25 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   UID
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Type
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Property
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Message
@@ -333,21 +332,21 @@ exports[`summary for a GML job matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 />
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   DefaultGmlImportService
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 />
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Failed to validate job runtime - \`GML import failed: Content is not allowed in prolog. On line 1 column 1.\`
@@ -382,19 +381,19 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Time
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Message
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 ID
@@ -409,20 +408,20 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 2020-02-12 13:00:32
 
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Failed to validate job runtime - \`GML import failed: Content is not allowed in prolog. On line 1 column 1.\`
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 init
@@ -456,13 +455,13 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Key
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Value
@@ -477,13 +476,13 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 files
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 gml1.gml
@@ -494,13 +493,13 @@ exports[`summary for a GML job matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 dryRun
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 true
@@ -584,9 +583,8 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="jsx-742385706 jsx-3656744930 "
+      class="jsx-1555285825 jsx-876534464 "
       data-test="dhis2-uicore-divider"
-      role="separator"
     />
     <div
       class="container"
@@ -614,13 +612,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Status
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Description
@@ -635,13 +633,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   WARNING
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Import process completed successfully
@@ -661,31 +659,31 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Created
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Deleted
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Ignored
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Updated
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Total
@@ -700,31 +698,31 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   173
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   173
@@ -754,13 +752,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Object
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Value
@@ -775,13 +773,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   V6L425pT3A0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Category option combo not found or not accessible for writing data
@@ -792,13 +790,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Prlt0C1RF0s
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Category option combo not found or not accessible for writing data
@@ -809,13 +807,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   hEFKSsPV5et
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Category option combo not found or not accessible for writing data
@@ -826,13 +824,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   psbwp3CQEhs
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Category option combo not found or not accessible for writing data
@@ -871,19 +869,19 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Time
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Message
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 ID
@@ -898,20 +896,20 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 2020-02-12 12:00:58
 
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Initiated dataValueImport
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 init
@@ -922,20 +920,20 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 2020-02-12 12:00:59
 
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Process started
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 oE17j9gw54i
@@ -946,20 +944,20 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 2020-02-12 12:00:59
 
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Importing data values
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 SKEyN7hdwyd
@@ -970,20 +968,20 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 2020-02-12 12:00:59
 
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Import done
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 CO2RDYqaGde
@@ -1017,13 +1015,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Key
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Value
@@ -1038,13 +1036,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 files
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 data2.json
@@ -1055,13 +1053,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 format
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 JSON
@@ -1072,13 +1070,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 dryRun
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 true
@@ -1089,13 +1087,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 strategy
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Updates only
@@ -1106,13 +1104,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 preheatCache
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 false
@@ -1123,13 +1121,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 skipAudit
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 false
@@ -1140,13 +1138,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 dataElementIdScheme
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Uid
@@ -1157,13 +1155,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 orgUnitIdScheme
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Uid
@@ -1174,13 +1172,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 idScheme
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Uid
@@ -1191,13 +1189,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 skipExistingCheck
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 true
@@ -1208,13 +1206,13 @@ exports[`summary for a data import job with conflicts matches snapshot 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 firstRowIsHeader
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 false

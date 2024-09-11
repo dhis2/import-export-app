@@ -28,13 +28,13 @@ exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = 
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Status
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Description
@@ -49,13 +49,13 @@ exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = 
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 SUCCESS
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Import process completed successfully
@@ -75,31 +75,31 @@ exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = 
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Created
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Deleted
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Ignored
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Updated
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Total
@@ -114,31 +114,31 @@ exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = 
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
@@ -184,31 +184,31 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Created
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Deleted
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Ignored
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Updated
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Total
@@ -223,31 +223,31 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 1
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 1
@@ -283,13 +283,13 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Status
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Description
@@ -304,13 +304,13 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   ERROR
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   Event date is required. 
@@ -330,31 +330,31 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Created
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Deleted
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Ignored
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Updated
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Total
@@ -369,31 +369,31 @@ exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   1
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   1
@@ -437,31 +437,31 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
                 data-test="dhis2-uicore-tablerowhead"
               >
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Created
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Deleted
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Ignored
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Updated
                 </th>
                 <th
-                  class="jsx-3181834369 "
+                  class="jsx-1796049005 "
                   data-test="dhis2-uicore-tablecellhead"
                 >
                   Total
@@ -476,31 +476,31 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
                 data-test="dhis2-uicore-tablerow"
               >
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
                 </td>
                 <td
-                  class="jsx-2229340108 "
+                  class="jsx-996330601 "
                   data-test="dhis2-uicore-tablecell"
                 >
                   0
@@ -531,37 +531,37 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Type
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Created
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Deleted
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Ignored
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Updated
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Total
@@ -576,37 +576,37 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 DefaultGmlImportService
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
@@ -636,25 +636,25 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 UID
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Type
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Property
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Message
@@ -669,21 +669,21 @@ exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               />
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 DefaultGmlImportService
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               />
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 Failed to validate job runtime - \`GML import failed: Content is not allowed in prolog. On line 1 column 1.\`
@@ -725,31 +725,31 @@ exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerowhead"
             >
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Created
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Deleted
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Ignored
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Updated
               </th>
               <th
-                class="jsx-3181834369 "
+                class="jsx-1796049005 "
                 data-test="dhis2-uicore-tablecellhead"
               >
                 Total
@@ -764,31 +764,31 @@ exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
               data-test="dhis2-uicore-tablerow"
             >
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0
               </td>
               <td
-                class="jsx-2229340108 "
+                class="jsx-996330601 "
                 data-test="dhis2-uicore-tablecell"
               >
                 0

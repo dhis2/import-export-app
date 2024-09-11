@@ -92,7 +92,6 @@ exports[`matches snapshot when loading(number) and no summary task 1`] = `
               class="jsx-498096601 center-inner-content"
             >
               <div
-                aria-valuenow="50"
                 class="jsx-3127531794 jsx-1918124637 "
                 data-test="dhis2-uicore-linearloader"
                 role="progressbar"
@@ -194,9 +193,8 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
           </div>
         </div>
         <div
-          class="jsx-742385706 jsx-3656744930 "
+          class="jsx-1555285825 jsx-876534464 "
           data-test="dhis2-uicore-divider"
-          role="separator"
         />
         <div
           class="container"
@@ -224,13 +222,13 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                     data-test="dhis2-uicore-tablerowhead"
                   >
                     <th
-                      class="jsx-3181834369 "
+                      class="jsx-1796049005 "
                       data-test="dhis2-uicore-tablecellhead"
                     >
                       Status
                     </th>
                     <th
-                      class="jsx-3181834369 "
+                      class="jsx-1796049005 "
                       data-test="dhis2-uicore-tablecellhead"
                     >
                       Description
@@ -245,13 +243,13 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                     data-test="dhis2-uicore-tablerow"
                   >
                     <td
-                      class="jsx-2229340108 "
+                      class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
                       SUCCESS
                     </td>
                     <td
-                      class="jsx-2229340108 "
+                      class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
                       Import process completed successfully
@@ -271,31 +269,31 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                     data-test="dhis2-uicore-tablerowhead"
                   >
                     <th
-                      class="jsx-3181834369 "
+                      class="jsx-1796049005 "
                       data-test="dhis2-uicore-tablecellhead"
                     >
                       Created
                     </th>
                     <th
-                      class="jsx-3181834369 "
+                      class="jsx-1796049005 "
                       data-test="dhis2-uicore-tablecellhead"
                     >
                       Deleted
                     </th>
                     <th
-                      class="jsx-3181834369 "
+                      class="jsx-1796049005 "
                       data-test="dhis2-uicore-tablecellhead"
                     >
                       Ignored
                     </th>
                     <th
-                      class="jsx-3181834369 "
+                      class="jsx-1796049005 "
                       data-test="dhis2-uicore-tablecellhead"
                     >
                       Updated
                     </th>
                     <th
-                      class="jsx-3181834369 "
+                      class="jsx-1796049005 "
                       data-test="dhis2-uicore-tablecellhead"
                     >
                       Total
@@ -310,31 +308,31 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                     data-test="dhis2-uicore-tablerow"
                   >
                     <td
-                      class="jsx-2229340108 "
+                      class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
                       0
                     </td>
                     <td
-                      class="jsx-2229340108 "
+                      class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
                       0
                     </td>
                     <td
-                      class="jsx-2229340108 "
+                      class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
                       0
                     </td>
                     <td
-                      class="jsx-2229340108 "
+                      class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
                       0
                     </td>
                     <td
-                      class="jsx-2229340108 "
+                      class="jsx-996330601 "
                       data-test="dhis2-uicore-tablecell"
                     >
                       0
@@ -373,19 +371,19 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                   data-test="dhis2-uicore-tablerowhead"
                 >
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     Time
                   </th>
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     Message
                   </th>
                   <th
-                    class="jsx-3181834369 "
+                    class="jsx-1796049005 "
                     data-test="dhis2-uicore-tablecellhead"
                   >
                     ID
@@ -400,20 +398,20 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                   data-test="dhis2-uicore-tablerow"
                 >
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     2020-02-12 12:00:23
 
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     Initiated dataValueImport
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     init
@@ -424,20 +422,20 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                   data-test="dhis2-uicore-tablerow"
                 >
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     2020-02-12 12:00:23
 
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     Process started
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     LPCnEwppbqy
@@ -448,20 +446,20 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                   data-test="dhis2-uicore-tablerow"
                 >
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     2020-02-12 12:00:23
 
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     Importing data values
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     quL1PHwVPg1
@@ -472,20 +470,20 @@ exports[`matches snapshot when not loading and a full summary task 1`] = `
                   data-test="dhis2-uicore-tablerow"
                 >
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     2020-02-12 12:00:23
 
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     Import done
                   </td>
                   <td
-                    class="jsx-2229340108 "
+                    class="jsx-996330601 "
                     data-test="dhis2-uicore-tablecell"
                   >
                     fn5gnxqYk1J
