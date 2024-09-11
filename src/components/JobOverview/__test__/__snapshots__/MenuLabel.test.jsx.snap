@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="job-overview-menu-label-EcJpZjEcMfI"
+  >
+    <div
+      class="filename"
+    >
+      data1.json
+    </div>
+    <div
+      class="subtitle"
+    >
+      <div
+        class="jsx-72316749 positive"
+        data-test="dhis2-uicore-tag"
+      >
+        <span
+          class="jsx-1110058759"
+          data-test="dhis2-uicore-tag-text"
+        >
+          Completed
+        </span>
+      </div>
+       
+      <p
+        class="date"
+      >
+        2020-02-12 13:00:23
+
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
