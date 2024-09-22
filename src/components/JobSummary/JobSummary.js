@@ -82,7 +82,11 @@ const JobSummary = ({
             <Tags jobDetails={jobDetails} task={task} />
             <Divider />
             {task.completed && task.summary && (
-                <Summary summary={task.summary} importType={task.importType} />
+                <Summary
+                    summary={task.summary}
+                    importType={task.importType}
+                    isDryRun={jobDetails.dryRun}
+                />
             )}
             <div className={styles.events}>
                 <Log events={task.events} />
