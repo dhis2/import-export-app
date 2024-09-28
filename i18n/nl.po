@@ -1,16 +1,16 @@
 # 
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2023
-# Rica Zamora Duchateau, 2023
 # Charel van den Elsen, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Rica, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
+"Last-Translator: Rica, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -832,7 +832,7 @@ msgid "Preview before import"
 msgstr ""
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "Gebruik geassocieerde geometrie"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr ""
