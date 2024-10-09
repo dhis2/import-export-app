@@ -1,4 +1,4 @@
-import { categoryTypes } from '../../utils/tasks.js'
+import { categoryTypes } from '../../utils/tasks.jsx'
 
 const categoryTypesObj = categoryTypes.reduce((acc, cur) => {
     acc[cur.importType] = cur
