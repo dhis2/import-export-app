@@ -904,7 +904,7 @@ msgid "Select period"
 msgstr "ເລືອກຊ່ວງເວລາ"
 
 msgid "Loading periods"
-msgstr ""
+msgstr "ກຳລັງໂຫຼດຊ່ວງເວລາ"
 
 msgid "No periods found"
 msgstr ""
