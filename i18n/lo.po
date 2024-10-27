@@ -984,7 +984,7 @@ msgid ""
 msgstr ""
 
 msgid "Population"
-msgstr ""
+msgstr "ປະຊາກອນ"
 
 msgid "Population age groups"
 msgstr ""
