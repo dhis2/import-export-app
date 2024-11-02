@@ -883,7 +883,7 @@ msgid "Category option combination"
 msgstr "Combinação de opções de categoria"
 
 msgid "No match found"
-msgstr ""
+msgstr "Nenhuma correspondência encontrada"
 
 msgid "Choose category option combo"
 msgstr ""
