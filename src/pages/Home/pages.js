@@ -3,48 +3,48 @@ import i18n from '@dhis2/d2-i18n'
 import {
     PAGE_NAME as DATA_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as DATA_EXPORT_DESCRIPTION,
-} from '../DataExport/DataExport.js'
+} from '../DataExport/DataExport.jsx'
 import {
     PAGE_NAME as DATA_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as DATA_IMPORT_DESCRIPTION,
-} from '../DataImport/DataImport.js'
+} from '../DataImport/DataImport.jsx'
 import {
     PAGE_NAME as EARTH_ENGINE_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as EARTH_ENGINE_IMPORT_DESCRIPTION,
-} from '../EarthEngineImport/EarthEngineImport.js'
+} from '../EarthEngineImport/EarthEngineImport.jsx'
 import {
     PAGE_NAME as EVENT_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as EVENT_EXPORT_DESCRIPTION,
-} from '../EventExport/EventExport.js'
+} from '../EventExport/EventExport.jsx'
 import {
     PAGE_NAME as EVENT_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as EVENT_IMPORT_DESCRIPTION,
-} from '../EventImport/EventImport.js'
+} from '../EventImport/EventImport.jsx'
 import {
     PAGE_NAME as GEOMETRY_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as GEOMETRY_IMPORT_DESCRIPTION,
-} from '../GeometryImport/GeometryImport.js'
+} from '../GeometryImport/GeometryImport.jsx'
 import {
     PAGE_NAME as METADATA_DEPENDENCY_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_DEPENDENCY_EXPORT_DESCRIPTION,
-} from '../MetadataDependencyExport/MetadataDependencyExport.js'
+} from '../MetadataDependencyExport/MetadataDependencyExport.jsx'
 import {
     PAGE_NAME as METADATA_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_EXPORT_DESCRIPTION,
-} from '../MetadataExport/MetadataExport.js'
+} from '../MetadataExport/MetadataExport.jsx'
 import {
     PAGE_NAME as METADATA_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as METADATA_IMPORT_DESCRIPTION,
-} from '../MetadataImport/MetadataImport.js'
+} from '../MetadataImport/MetadataImport.jsx'
 import {
     PAGE_NAME as TEI_EXPORT_PAGE_NAME,
     PAGE_DESCRIPTION as TEI_EXPORT_DESCRIPTION,
-} from '../TEIExport/TEIExport.js'
+} from '../TEIExport/TEIExport.jsx'
 // import pages
 import {
     PAGE_NAME as TEI_IMPORT_PAGE_NAME,
     PAGE_DESCRIPTION as TEI_IMPORT_DESCRIPTION,
-} from '../TEIImport/TEIImport.js'
+} from '../TEIImport/TEIImport.jsx'
 
 const capitalizeFirstLetter = (string) =>
     string.charAt(0).toUpperCase() + string.slice(1)
