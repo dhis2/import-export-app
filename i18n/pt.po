@@ -7,13 +7,14 @@
 # Ge Joao <gsimango@saudigitus.org>, 2023
 # David Júnior <davidjr.mondlane@gmail.com>, 2023
 # Shelsea Chumaio, 2024
+# Helton Dias, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
-"Last-Translator: Shelsea Chumaio, 2024\n"
+"Last-Translator: Helton Dias, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -932,7 +933,7 @@ msgid "Select period"
 msgstr "Seleccione o período"
 
 msgid "Loading periods"
-msgstr ""
+msgstr "Períodos de carregamento"
 
 msgid "No periods found"
 msgstr ""
