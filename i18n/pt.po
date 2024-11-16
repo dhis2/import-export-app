@@ -861,7 +861,7 @@ msgid "Preview before import"
 msgstr ""
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "Utilizar a geometria associada"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr ""
@@ -1005,6 +1005,7 @@ msgstr " Erro de rede"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr ""
+"Não é possível obter o token de autorização para o Google Earth Engine."
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
@@ -1012,118 +1013,118 @@ msgid ""
 msgstr ""
 
 msgid "Population"
-msgstr ""
+msgstr "População"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "Population age groups"
 
 msgid "Men 0 - 1 years"
-msgstr ""
+msgstr "Homens 0 - 1 anos"
 
 msgid "Men 1 - 4 years"
-msgstr ""
+msgstr "Homens 1 - 4 anos"
 
 msgid "Men 5 - 9 years"
-msgstr ""
+msgstr "Homens 5 - 9 anos"
 
 msgid "Men 10 - 14 years"
-msgstr ""
+msgstr "Homens  10 - 14 anos"
 
 msgid "Men 15 - 19 years"
-msgstr ""
+msgstr "Homens 15 - 19 anos"
 
 msgid "Men 20 - 24 years"
-msgstr ""
+msgstr "Homens 20 - 24 anos"
 
 msgid "Men 25 - 29 years"
-msgstr ""
+msgstr "Homens 25 - 29 anos"
 
 msgid "Men 30 - 34 years"
-msgstr ""
+msgstr "Homens 30 - 34 anos"
 
 msgid "Men 35 - 39 years"
-msgstr ""
+msgstr "Homens 35 - 39 anos"
 
 msgid "Men 40 - 44 years"
-msgstr ""
+msgstr "Homens 40 - 44 anos"
 
 msgid "Men 45 - 49 years"
-msgstr ""
+msgstr "Homens 45 - 49 anos"
 
 msgid "Men 50 - 54 years"
-msgstr ""
+msgstr "Homens 50 - 54 anos"
 
 msgid "Men 55 - 59 years"
-msgstr ""
+msgstr "Homens 55 - 59 anos"
 
 msgid "Men 60 - 64 years"
-msgstr ""
+msgstr "Homens 60 - 64 anos"
 
 msgid "Men 65 - 69 years"
-msgstr ""
+msgstr "Homens 65 - 69 anos"
 
 msgid "Men 70 - 74 years"
-msgstr ""
+msgstr "Homens 70 - 74 anos"
 
 msgid "Men 75 - 79 years"
-msgstr ""
+msgstr "Homens 75 - 79 anos"
 
 msgid "Men 80 years and above"
-msgstr ""
+msgstr "Homens com 80 anos ou mais"
 
 msgid "Women 0 - 1 years"
-msgstr ""
+msgstr "Women 0 - 1 years"
 
 msgid "Women 1 - 4 years"
-msgstr ""
+msgstr "Mulheres 1 - 4 anos"
 
 msgid "Women 5 - 9 years"
-msgstr ""
+msgstr "Mulheres 5 - 9 anos"
 
 msgid "Women 10 - 14 years"
-msgstr ""
+msgstr "Mulheres 10 - 14 anos"
 
 msgid "Women 15 - 19 years"
-msgstr ""
+msgstr "Mulheres 15 - 19 anos"
 
 msgid "Women 20 - 24 years"
-msgstr ""
+msgstr "Mulheres 20 - 24 anos"
 
 msgid "Women 25 - 29 years"
-msgstr ""
+msgstr "Mulheres 25 - 29 anos"
 
 msgid "Women 30 - 34 years"
-msgstr ""
+msgstr "Mulheres 30 - 34 anos"
 
 msgid "Women 35 - 39 years"
-msgstr ""
+msgstr "Mulheres 35 - 39 anos"
 
 msgid "Women 40 - 44 years"
-msgstr ""
+msgstr "Mulheres 40 - 44 anos"
 
 msgid "Women 45 - 49 years"
-msgstr ""
+msgstr "Mulheres 45 - 49 anos"
 
 msgid "Women 50 - 54 years"
-msgstr ""
+msgstr "Mulheres 50 - 54 anos"
 
 msgid "Women 55 - 59 years"
-msgstr ""
+msgstr "Mulheres 55 - 59 anos"
 
 msgid "Women 60 - 64 years"
-msgstr ""
+msgstr "Mulheres 60 - 64 anos"
 
 msgid "Women 65 - 69 years"
-msgstr ""
+msgstr "Mulheres 65 - 69 anos"
 
 msgid "Women 70 - 74 years"
-msgstr ""
+msgstr "Mulheres 70 - 74 anos"
 
 msgid "Women 75 - 79 years"
-msgstr ""
+msgstr "Mulheres 75 - 79 anos"
 
 msgid "Women 80 years and above"
-msgstr ""
+msgstr "Mulheres com 80 anos ou mais"
 
 msgid "No organisation units have been selected"
 msgstr ""
