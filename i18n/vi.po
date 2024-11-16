@@ -178,7 +178,7 @@ msgid "All"
 msgstr "Tất cả"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Đã đánh dấu để theo dõi"
 
 msgid "Not marked for follow-up"
 msgstr ""
