@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+import { NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { typeReportParse } from '../helper.js'
@@ -6,7 +8,7 @@ import { TypeReportSummary } from '../TypeReportSummary/TypeReportSummary.js'
 import styles from './Summary.module.css'
 
 const extractStats = (summary) => {
-    if (summary.responseType == 'ImportSummaries') {
+    if (summary.responseType === 'ImportSummaries') {
         const { imported, deleted, ignored, updated, total } = summary
         return { imported, deleted, ignored, updated, total }
     } else if (summary.importCount) {
@@ -18,8 +20,25 @@ const extractStats = (summary) => {
     }
 }
 
-const Summary = ({ summary, importType }) => {
-    // gml import type object return
+const Summary = ({ summary, importType, isDryRun }) => {
+    if (isDryRun && importType === 'TRACKER_IMPORT_JOB') {
+        const { ignored, total } = extractStats(summary)
+        return (
+            <div data-test="job-summary-summary" className={styles.container}>
+                <div
+                    className={styles.rest}
+                    data-test="job-summary-summary-rest"
+                >
+                    <NoticeBox title="Summary">
+                        {i18n.t(
+                            `${ignored} entities will be ignored out of ${total} entities⁠`
+                        )}
+                    </NoticeBox>
+                </div>
+            </div>
+        )
+    }
+
     if (summary.typeReports) {
         const overviewStats = {
             ...summary.stats,
@@ -56,8 +75,9 @@ const Summary = ({ summary, importType }) => {
             }
         />
     )
+
     const allSummaries =
-        summary.responseType == 'ImportSummaries' && summary.importSummaries
+        summary.responseType === 'ImportSummaries' && summary.importSummaries
             ? summary.importSummaries.map((s, i) => {
                   const importCount = extractStats(s)
                   return (
@@ -87,6 +107,7 @@ const Summary = ({ summary, importType }) => {
 Summary.propTypes = {
     summary: PropTypes.object.isRequired,
     importType: PropTypes.string,
+    isDryRun: PropTypes.bool,
 }
 
 export { Summary }
