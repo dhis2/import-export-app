@@ -1,3 +1,10 @@
+## [101.1.19](https://github.com/dhis2/import-export-app/compare/v101.1.18...v101.1.19) (2024-12-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([880cf53](https://github.com/dhis2/import-export-app/commit/880cf533618b4f65987a1608e1d8dd1b06db3385))
+
 ## [101.1.18](https://github.com/dhis2/import-export-app/compare/v101.1.17...v101.1.18) (2024-11-17)
 
 
