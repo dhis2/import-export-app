@@ -5,3 +5,4 @@ src/locales
 build
 coverage/
 cypress.env.json
+.yalc/

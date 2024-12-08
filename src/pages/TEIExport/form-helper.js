@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker/DatePickerField.js'
+} from '../../components/DatePicker/DatePickerField.jsx'
 import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
 import { locationAssign, pathToId } from '../../utils/helper.js'
 

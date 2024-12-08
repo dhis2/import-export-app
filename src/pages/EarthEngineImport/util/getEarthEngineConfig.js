@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { NO_ASSOCIATED_GEOMETRY } from '../components/AssociatedGeometry.js'
+import { NO_ASSOCIATED_GEOMETRY } from '../components/AssociatedGeometry.jsx'
 import { earthEngines, getEarthEngineBands } from './earthEngines.js'
 import { toGeoJson } from './toGeoJson.js'
 

@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div
+        class="container"
+        data-test="job-summary-single-summary"
+      >
+        <span
+          class="label"
+        >
+          Summary
+        </span>
+        <table
+          class="jsx-2430604489 "
+          data-test="dhis2-uicore-table"
+        >
+          <thead
+            data-test="dhis2-uicore-tablehead"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerowhead"
+            >
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Created
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Deleted
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Ignored
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Updated
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-test="dhis2-uicore-tablebody"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerow"
+            >
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                1
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                2
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                3
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                4
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                10
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="container"
+      data-test="job-summary-type-count"
+    >
+      <span
+        class="label"
+      >
+        Details by type
+      </span>
+      <table
+        class="jsx-2430604489 "
+        data-test="dhis2-uicore-table"
+      >
+        <thead
+          data-test="dhis2-uicore-tablehead"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerowhead"
+          >
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Type
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Created
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Deleted
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Ignored
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Updated
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Total
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          data-test="dhis2-uicore-tablebody"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              DefaultGmlImportService
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              1
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              2
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              3
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              4
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              10
+            </td>
+          </tr>
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              SndGmlImportService
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              1
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              2
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              3
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              4
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              10
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="container"
+      data-test="job-summary-messages"
+    >
+      <span
+        class="label"
+      >
+        Messages
+      </span>
+      <table
+        class="jsx-2430604489 "
+        data-test="dhis2-uicore-table"
+      >
+        <thead
+          data-test="dhis2-uicore-tablehead"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerowhead"
+          >
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              UID
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Type
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Property
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Message
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          data-test="dhis2-uicore-tablebody"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              abc
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              DefaultGmlImportService
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              def
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              message one
+            </td>
+          </tr>
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              xyz
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              SndGmlImportService
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              def
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              message one
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
