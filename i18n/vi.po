@@ -679,13 +679,13 @@ msgid "Created"
 msgstr "Đã tạo"
 
 msgid "Deleted"
-msgstr ""
+msgstr "Đã xóa"
 
 msgid "Ignored"
 msgstr ""
 
 msgid "Updated"
-msgstr ""
+msgstr "Đã cập nhật"
 
 msgid "Total"
 msgstr "Tổng số"
@@ -833,7 +833,7 @@ msgid "Preview before import"
 msgstr ""
 
 msgid "Use associated geometry"
-msgstr ""
+msgstr "Sử dụng hình học liên quan"
 
 msgid "Select associated geometry for selected organisation units"
 msgstr ""
@@ -904,7 +904,7 @@ msgid "Select period"
 msgstr "Chọn thời điểm"
 
 msgid "Loading periods"
-msgstr ""
+msgstr "Đang tải thời điểm"
 
 msgid "No periods found"
 msgstr ""
