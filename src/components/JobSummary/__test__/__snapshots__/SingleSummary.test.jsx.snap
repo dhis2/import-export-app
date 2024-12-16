@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="container"
+      data-test="job-summary-single-summary"
+    >
+      <span
+        class="label"
+      >
+        Summary #1
+      </span>
+      <table
+        class="jsx-2430604489 "
+        data-test="dhis2-uicore-table"
+      >
+        <thead
+          data-test="dhis2-uicore-tablehead"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerowhead"
+          >
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Status
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          data-test="dhis2-uicore-tablebody"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              WARNING
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              Import process completed successfully
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table
+        class="jsx-2430604489 "
+        data-test="dhis2-uicore-table"
+      >
+        <thead
+          data-test="dhis2-uicore-tablehead"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerowhead"
+          >
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Created
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Deleted
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Ignored
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Updated
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Total
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          data-test="dhis2-uicore-tablebody"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              1
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              2
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              3
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              4
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              10
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="container"
+      data-test="job-summary-conflicts"
+    >
+      <span
+        class="label"
+      >
+        Conflicts
+      </span>
+      <table
+        class="jsx-2430604489 "
+        data-test="dhis2-uicore-table"
+      >
+        <thead
+          data-test="dhis2-uicore-tablehead"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerowhead"
+          >
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Object
+            </th>
+            <th
+              class="jsx-3181834369 "
+              data-test="dhis2-uicore-tablecellhead"
+            >
+              Value
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          data-test="dhis2-uicore-tablebody"
+        >
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              a
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              conflict a value
+            </td>
+          </tr>
+          <tr
+            class="jsx-3124144591 zebraStriping"
+            data-test="dhis2-uicore-tablerow"
+          >
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              b
+            </td>
+            <td
+              class="jsx-2229340108 "
+              data-test="dhis2-uicore-tablecell"
+            >
+              conflict b value
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,7 +1,7 @@
 import {
     DATE_BEFORE_VALIDATOR,
     DATE_AFTER_VALIDATOR,
-} from '../../components/DatePicker/DatePickerField.js'
+} from '../../components/DatePicker/DatePickerField.jsx'
 import {
     locationAssign,
     compressionToName,
