@@ -229,7 +229,7 @@ msgid "ADX (XML)"
 msgstr ""
 
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 msgid "JSONP"
 msgstr ""
@@ -577,7 +577,7 @@ msgid "Tracked entity type"
 msgstr "Tracked entity type"
 
 msgid "Filter by"
-msgstr ""
+msgstr "Lọc bởi"
 
 msgid "Tracked entity types"
 msgstr ""
@@ -877,10 +877,10 @@ msgid "Select earth engine data set"
 msgstr ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "Đã chọn: {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Không có gì được chọn"
 
 msgid "Select a level"
 msgstr "Chọn mức"
@@ -976,7 +976,7 @@ msgid "Network error"
 msgstr "Lỗi mạng"
 
 msgid "Cannot get authorization token for Google Earth Engine."
-msgstr ""
+msgstr "Không thể nhận được mã thông báo xác thực cho Google Earth Engine."
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
@@ -984,10 +984,10 @@ msgid ""
 msgstr ""
 
 msgid "Population"
-msgstr ""
+msgstr "Dân số"
 
 msgid "Population age groups"
-msgstr ""
+msgstr "Nhóm tuổi dân số"
 
 msgid "Men 0 - 1 years"
 msgstr ""
