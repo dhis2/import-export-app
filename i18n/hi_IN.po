@@ -1,0 +1,884 @@
+# 
+# Translators:
+# Siddharth Agarwal, 2025
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
+"PO-Revision-Date: 2021-09-04 00:01+0000\n"
+"Last-Translator: Siddharth Agarwal, 2025\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Something went wrong when loading the current user!"
+msgstr ""
+
+msgid "Basic options"
+msgstr ""
+
+msgid "Invalid date"
+msgstr ""
+
+msgid "Start date must be before end date"
+msgstr ""
+
+msgid "End date must be after start date"
+msgstr ""
+
+msgid "Invalid duration"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid ""
+"Something went wrong when loading the additional data element ID schemes"
+msgstr ""
+
+msgid "Something went wrong when loading the additional ID schemes"
+msgstr ""
+
+msgid ""
+"Something went wrong when loading the additional organisation unit ID "
+"schemes"
+msgstr ""
+
+msgid "Please select a file"
+msgstr ""
+
+msgid "A dry run tests the import settings without importing any data"
+msgstr ""
+
+msgid "Start dry run"
+msgstr ""
+
+msgid "Start import"
+msgstr ""
+
+msgid "Any user"
+msgstr ""
+
+msgid "Current user"
+msgstr ""
+
+msgid "No user/unassigned"
+msgstr ""
+
+msgid "Selected users"
+msgstr ""
+
+msgid "Filter by assigned user"
+msgstr ""
+
+msgid "Export only instances with events assigned to specific users"
+msgstr ""
+
+msgid "Assigned user(s)"
+msgstr ""
+
+msgid "Do not import"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Atomic mode"
+msgstr ""
+
+msgid "Whether to import objects even if some references do not exist"
+msgstr ""
+
+msgid "Class key"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid "GZip"
+msgstr ""
+
+msgid "Uncompressed"
+msgstr ""
+
+msgid "Compression mode"
+msgstr ""
+
+msgid "Uid"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Name"
+msgstr "नाम"
+
+msgid "Data element ID scheme"
+msgstr ""
+
+msgid "Which data sets should be included in export?"
+msgstr ""
+
+msgid "Filter data sets"
+msgstr ""
+
+msgid "Selected data sets"
+msgstr ""
+
+msgid "Something went wrong when loading the data sets!"
+msgstr ""
+
+msgid "At least one data set must be selected"
+msgstr ""
+
+msgid "One data set must be selected"
+msgstr ""
+
+msgid "End date"
+msgstr ""
+
+msgid "Event ID scheme"
+msgstr ""
+
+msgid "Loading export..."
+msgstr ""
+
+msgid "Select a file to import values from"
+msgstr ""
+
+msgid "Is the first row a header row?"
+msgstr ""
+
+msgid "First row is header"
+msgstr ""
+
+msgid "A header row will be ignored during import"
+msgstr ""
+
+msgid "Auto (recommended)"
+msgstr ""
+
+msgid "Object (debugging purposes)"
+msgstr ""
+
+msgid "Flush mode"
+msgstr ""
+
+msgid "Controls when to flush the internal cache"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Not marked for follow-up"
+msgstr ""
+
+msgid "Include only entities with follow-up status"
+msgstr ""
+
+msgid "JSON"
+msgstr ""
+
+msgid "CSV"
+msgstr ""
+
+msgid "XML"
+msgstr ""
+
+msgid "ADX"
+msgstr ""
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "JSONP"
+msgstr ""
+
+msgid "What format is the data to import?"
+msgstr ""
+
+msgid "What format should the data be exported as?"
+msgstr ""
+
+msgid "ID scheme"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Identifier scheme to use for reference matching"
+msgstr ""
+
+msgid "Only include reports for objects that have errors"
+msgstr ""
+
+msgid "Errors"
+msgstr ""
+
+msgid "Reports for all objects imported"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Reports for all objects imported along with their names (if available)"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Import report mode"
+msgstr ""
+
+msgid "Controls what should be reported after the import is done"
+msgstr ""
+
+msgid "Import new values and update existing"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Import new values only"
+msgstr ""
+
+msgid "Append"
+msgstr ""
+
+msgid "Only update existing values, ignore new values"
+msgstr ""
+
+msgid "Update"
+msgstr "अपडेट करें"
+
+msgid "Remove values included in uploaded file"
+msgstr ""
+
+msgid "Delete"
+msgstr "हटाएं"
+
+msgid "Data will be deleted"
+msgstr ""
+
+msgid ""
+"Values in the uploaded file will be deleted from the database. Make sure "
+"this is the correct action; it cannot be undone."
+msgstr ""
+
+msgid "Import strategy"
+msgstr ""
+
+msgid "Include all attributes"
+msgstr ""
+
+msgid "Include first level units"
+msgstr ""
+
+msgid "Include the first level of organisation units inside selections"
+msgstr ""
+
+msgid "Include deleted"
+msgstr ""
+
+msgid "Include deleted data in export"
+msgstr ""
+
+msgid "Only include selected organisation unit"
+msgstr ""
+
+msgid "Selected"
+msgstr ""
+
+msgid "Include the first level of units inside selections"
+msgstr ""
+
+msgid "Directly below"
+msgstr ""
+
+msgid "Include all units inside selections"
+msgstr ""
+
+msgid "All below"
+msgstr ""
+
+msgid "How should organisation units inside the selections be included?"
+msgstr ""
+
+msgid "Includes properties which are not null"
+msgstr ""
+
+msgid "Non null"
+msgstr ""
+
+msgid "Include all properties"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Include non-empty properties"
+msgstr ""
+
+msgid "Non empty"
+msgstr ""
+
+msgid "Inclusion strategy"
+msgstr ""
+
+msgid "Controls which properties to include"
+msgstr ""
+
+msgid "Async"
+msgstr ""
+
+msgid "Asynchronous import"
+msgstr ""
+
+msgid "Controls whether the import is done asynchronously"
+msgstr ""
+
+msgid "Last updated duration"
+msgstr ""
+
+msgid "Last updated end date"
+msgstr ""
+
+msgid "Do not filter by last updated date"
+msgstr ""
+
+msgid "Start/end dates"
+msgstr ""
+
+msgid "Time since last updated"
+msgstr ""
+
+msgid "Filter by last updated date"
+msgstr ""
+
+msgid "Last updated start date"
+msgstr ""
+
+msgid "Only overwrite the old property if the new property value is not-null"
+msgstr ""
+
+msgid "Overwrite regardless of whether the new property value is null"
+msgstr ""
+
+msgid "Replace"
+msgstr ""
+
+msgid "Merge mode"
+msgstr ""
+
+msgid "Strategy to take when merging two objects"
+msgstr ""
+
+msgid "Data sets"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Category combination"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Option sets"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "One object must be selected"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Organisation unit ID scheme"
+msgstr ""
+
+msgid "Data view organisation units associated with the current user"
+msgstr ""
+
+msgid "Accessible"
+msgstr ""
+
+msgid "Data capture organisation units associated with the current user"
+msgstr ""
+
+msgid "Capture"
+msgstr ""
+
+msgid "All organisation units in the system"
+msgstr ""
+
+msgid "Manually select organisation units from list"
+msgstr ""
+
+msgid "Which organisation units should be included?"
+msgstr ""
+
+msgid "Organisation unit(s) to export data from"
+msgstr ""
+
+msgid "Preheat cache"
+msgstr ""
+
+msgid "Preheat cache to make large imports faster"
+msgstr ""
+
+msgid "Large imports will be processed faster but will consume more resources"
+msgstr ""
+
+msgid "Intelligent scan (reference)"
+msgstr ""
+
+msgid "None"
+msgstr "कोई नहीं"
+
+msgid "Preheat mode"
+msgstr ""
+
+msgid "Controls the level of preheating that should be done"
+msgstr ""
+
+msgid "Program to export events from"
+msgstr ""
+
+msgid "Filter programs"
+msgstr ""
+
+msgid "Selected programs"
+msgstr ""
+
+msgid "Something went wrong when loading the programs!"
+msgstr ""
+
+msgid "At least one program must be selected"
+msgstr ""
+
+msgid "One program must be selected"
+msgstr ""
+
+msgid "Which program stage should be included?"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "All statuses"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "Include only entities with status"
+msgstr ""
+
+msgid "Skip audit"
+msgstr ""
+
+msgid "Skip audit, meaning audit values will not be generated"
+msgstr ""
+
+msgid "Improves performance at the cost of ability to audit changes"
+msgstr ""
+
+msgid "Skip exisiting check"
+msgstr ""
+
+msgid "Skip checks for existing data values"
+msgstr ""
+
+msgid ""
+"Improves performance and should only be used for empty databases or when the"
+" data values to import do not exist already"
+msgstr ""
+
+msgid "Skip sharing"
+msgstr ""
+
+msgid "Skip sharing and access settings"
+msgstr ""
+
+msgid ""
+"Skip sharing properties, do not merge sharing when doing updates, and do not"
+" add user group access when creating new objects"
+msgstr ""
+
+msgid "Skip validation"
+msgstr ""
+
+msgid "Skip validation for import (not recommended)"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Program"
+msgstr ""
+
+msgid "Tracked entity type"
+msgstr ""
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Tracked entity types"
+msgstr ""
+
+msgid "Filter tracked entity types by name"
+msgstr ""
+
+msgid "Selected tracked entity types"
+msgstr ""
+
+msgid "Something went wrong when loading the tracked entity types!"
+msgstr ""
+
+msgid "At least one tracked entity type must be selected"
+msgstr ""
+
+msgid "One tracked entity type must be selected"
+msgstr ""
+
+msgid "Which users should be used?"
+msgstr ""
+
+msgid "Filter users"
+msgstr ""
+
+msgid "Something went wrong when loading the users!"
+msgstr ""
+
+msgid "At least one user must be selected"
+msgstr ""
+
+msgid "One user must be selected"
+msgstr ""
+
+msgid "No jobs started yet."
+msgstr ""
+
+msgid "Recreate job"
+msgstr ""
+
+msgid "In progress"
+msgstr ""
+
+msgid "Job details"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Job summary"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Conflicts"
+msgstr ""
+
+msgid "Dry run"
+msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr "संदेश"
+
+msgid "ID"
+msgstr "आईडी"
+
+msgid "Messages"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Property"
+msgstr ""
+
+msgid "View summary of recently started import job"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Ignored"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Details by type"
+msgstr ""
+
+msgid "Advanced options"
+msgstr ""
+
+msgid "At least one organisation unit must be selected"
+msgstr ""
+
+msgid "One organisation unit must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the organisation units!"
+msgstr ""
+
+msgid "One program stage must be selected"
+msgstr ""
+
+msgid "Something went wrong when loading the schemas!"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Select None"
+msgstr ""
+
+msgid "At least one schema must be selected"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Data import"
+msgstr ""
+
+msgid "Event import"
+msgstr ""
+
+msgid "GML import"
+msgstr ""
+
+msgid "Metadata import"
+msgstr ""
+
+msgid "TEI import"
+msgstr ""
+
+msgid "Data export"
+msgstr ""
+
+msgid "Event export"
+msgstr ""
+
+msgid "Metadata dependency export"
+msgstr ""
+
+msgid "Metadata export"
+msgstr ""
+
+msgid "TEI export"
+msgstr ""
+
+msgid "Job overview"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Yes"
+msgstr "हाँ"
+
+msgid "No"
+msgstr "नहीं"
+
+msgid "There are errors on this page"
+msgstr ""
+
+msgid "Something went wrong when loading the class keys"
+msgstr ""
+
+msgid "Something went wrong when loading the objects"
+msgstr ""
+
+msgid "All program stages"
+msgstr ""
+
+msgid "Something went wrong when loading the program stages"
+msgstr ""
+
+msgid ""
+"Export metadata, such as data elements and organisation units, in DXF 2 "
+"format."
+msgstr ""
+
+msgid "Date range to export data for"
+msgstr ""
+
+msgid "Export data"
+msgstr ""
+
+msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgstr ""
+
+msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
+msgstr ""
+
+msgid ""
+"Export event data for programs, stages and tracked entities in DXF 2 format."
+msgstr ""
+
+msgid "Export events"
+msgstr ""
+
+msgid ""
+"Import events for programs, stages and tracked entities using the DXF 2 "
+"format."
+msgstr ""
+
+msgid "Supported file types: JSON, CSV, and XML."
+msgstr ""
+
+msgid ""
+"Import geographic data for organisation units using the GML format. GML is "
+"an XML grammar for expressing geographical features."
+msgstr ""
+
+msgid "Overview: Import/Export"
+msgstr ""
+
+msgid "Import or export DHIS2 data."
+msgstr ""
+
+msgid "Export metadata dependencies"
+msgstr ""
+
+msgid "Export metadata"
+msgstr ""
+
+msgid "Export tracked entity instances"
+msgstr ""
+
+msgid "Import data"
+msgstr ""
+
+msgid "Import events"
+msgstr ""
+
+msgid "Import GML"
+msgstr ""
+
+msgid "Import metadata"
+msgstr ""
+
+msgid "Import tracked entity instances"
+msgstr ""
+
+msgid "An overview of all import jobs started this session."
+msgstr ""
+
+msgid ""
+"Export metadata dependencies, such as data sets and programs, including "
+"related metadata objects, in XML or JSON format."
+msgstr ""
+
+msgid ""
+"Export metadata, such as data elements and organisation units, in XML, JSON "
+"or CSV format."
+msgstr ""
+
+msgid ""
+"Import metadata like data elements and organisation units using the DXF 2 "
+"format."
+msgstr ""
+
+msgid "A class key must be selected"
+msgstr ""
+
+msgid "Tracked entity instances export"
+msgstr ""
+
+msgid "Export tracked entity instances in XML, JSON or CSV format."
+msgstr ""
+
+msgid "Program to export from"
+msgstr ""
+
+msgid "Enrollment date range"
+msgstr ""
+
+msgid "At least one of the 'last updated' date fields must be specified"
+msgstr ""
+
+msgid "Tracked entity instances import"
+msgstr ""
+
+msgid "Import tracked entity instances from JSON or XML files."
+msgstr ""
+
+msgid "Supported file types: JSON and XML."
+msgstr ""
+
+msgid "Job started."
+msgstr ""
+
+msgid "An unknown error occurred. Please try again later"
+msgstr ""
+
+msgid "Loading exported data"
+msgstr ""
+
+msgid "Data"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "GML"
+msgstr ""
+
+msgid "Metadata"
+msgstr ""
+
+msgid "TEI"
+msgstr ""
