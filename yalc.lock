@@ -1,0 +1,11 @@
+{
+  "version": "v1",
+  "packages": {
+    "@dhis2/cli-app-scripts": {
+      "version": "12.0.0-alpha.11",
+      "signature": "dc9fe308b9f47d9c85f734d1f0c2baf1",
+      "file": true,
+      "replaced": "^12.0.0-alpha.13"
+    }
+  }
+}

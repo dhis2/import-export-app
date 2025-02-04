@@ -1,0 +1,807 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`different job type summaries matches snapshot - DATAVALUE_IMPORT 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="job-summary-summary"
+  >
+    <div>
+      <div
+        class="container"
+        data-test="job-summary-single-summary"
+      >
+        <span
+          class="label"
+        >
+          Summary
+        </span>
+        <table
+          class="jsx-2430604489 "
+          data-test="dhis2-uicore-table"
+        >
+          <thead
+            data-test="dhis2-uicore-tablehead"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerowhead"
+            >
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Status
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Description
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-test="dhis2-uicore-tablebody"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerow"
+            >
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                SUCCESS
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                Import process completed successfully
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          class="jsx-2430604489 "
+          data-test="dhis2-uicore-table"
+        >
+          <thead
+            data-test="dhis2-uicore-tablehead"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerowhead"
+            >
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Created
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Deleted
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Ignored
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Updated
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-test="dhis2-uicore-tablebody"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerow"
+            >
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="rest"
+      data-test="job-summary-summary-rest"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`different job type summaries matches snapshot - EVENT_IMPORT 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="job-summary-summary"
+  >
+    <div>
+      <div
+        class="container"
+        data-test="job-summary-single-summary"
+      >
+        <span
+          class="label"
+        >
+          Summary
+        </span>
+        <table
+          class="jsx-2430604489 "
+          data-test="dhis2-uicore-table"
+        >
+          <thead
+            data-test="dhis2-uicore-tablehead"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerowhead"
+            >
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Created
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Deleted
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Ignored
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Updated
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-test="dhis2-uicore-tablebody"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerow"
+            >
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                1
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                1
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="rest"
+      data-test="job-summary-summary-rest"
+    >
+      <div>
+        <div
+          class="container"
+          data-test="job-summary-single-summary"
+        >
+          <span
+            class="label"
+          >
+            Summary #1
+          </span>
+          <table
+            class="jsx-2430604489 "
+            data-test="dhis2-uicore-table"
+          >
+            <thead
+              data-test="dhis2-uicore-tablehead"
+            >
+              <tr
+                class="jsx-3124144591 zebraStriping"
+                data-test="dhis2-uicore-tablerowhead"
+              >
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Status
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              data-test="dhis2-uicore-tablebody"
+            >
+              <tr
+                class="jsx-3124144591 zebraStriping"
+                data-test="dhis2-uicore-tablerow"
+              >
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  ERROR
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  Event date is required. 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table
+            class="jsx-2430604489 "
+            data-test="dhis2-uicore-table"
+          >
+            <thead
+              data-test="dhis2-uicore-tablehead"
+            >
+              <tr
+                class="jsx-3124144591 zebraStriping"
+                data-test="dhis2-uicore-tablerowhead"
+              >
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Created
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Deleted
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Ignored
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Updated
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              data-test="dhis2-uicore-tablebody"
+            >
+              <tr
+                class="jsx-3124144591 zebraStriping"
+                data-test="dhis2-uicore-tablerow"
+              >
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  1
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  1
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`different job type summaries matches snapshot - GML_IMPORT 1`] = `
+<DocumentFragment>
+  <div
+    class="typeReportSummary"
+    data-test="job-summary-summary"
+  >
+    <div>
+      <div>
+        <div
+          class="container"
+          data-test="job-summary-single-summary"
+        >
+          <span
+            class="label"
+          >
+            Summary
+          </span>
+          <table
+            class="jsx-2430604489 "
+            data-test="dhis2-uicore-table"
+          >
+            <thead
+              data-test="dhis2-uicore-tablehead"
+            >
+              <tr
+                class="jsx-3124144591 zebraStriping"
+                data-test="dhis2-uicore-tablerowhead"
+              >
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Created
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Deleted
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Ignored
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Updated
+                </th>
+                <th
+                  class="jsx-3181834369 "
+                  data-test="dhis2-uicore-tablecellhead"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              data-test="dhis2-uicore-tablebody"
+            >
+              <tr
+                class="jsx-3124144591 zebraStriping"
+                data-test="dhis2-uicore-tablerow"
+              >
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+                <td
+                  class="jsx-2229340108 "
+                  data-test="dhis2-uicore-tablecell"
+                >
+                  0
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="container"
+        data-test="job-summary-type-count"
+      >
+        <span
+          class="label"
+        >
+          Details by type
+        </span>
+        <table
+          class="jsx-2430604489 "
+          data-test="dhis2-uicore-table"
+        >
+          <thead
+            data-test="dhis2-uicore-tablehead"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerowhead"
+            >
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Type
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Created
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Deleted
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Ignored
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Updated
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-test="dhis2-uicore-tablebody"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerow"
+            >
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                DefaultGmlImportService
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="container"
+        data-test="job-summary-messages"
+      >
+        <span
+          class="label"
+        >
+          Messages
+        </span>
+        <table
+          class="jsx-2430604489 "
+          data-test="dhis2-uicore-table"
+        >
+          <thead
+            data-test="dhis2-uicore-tablehead"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerowhead"
+            >
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                UID
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Type
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Property
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Message
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-test="dhis2-uicore-tablebody"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerow"
+            >
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              />
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                DefaultGmlImportService
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              />
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                Failed to validate job runtime - \`GML import failed: Content is not allowed in prolog. On line 1 column 1.\`
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`different job type summaries matches snapshot - METADATA_IMPORT 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="job-summary-summary"
+  >
+    <div>
+      <div
+        class="container"
+        data-test="job-summary-single-summary"
+      >
+        <span
+          class="label"
+        >
+          Summary
+        </span>
+        <table
+          class="jsx-2430604489 "
+          data-test="dhis2-uicore-table"
+        >
+          <thead
+            data-test="dhis2-uicore-tablehead"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerowhead"
+            >
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Created
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Deleted
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Ignored
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Updated
+              </th>
+              <th
+                class="jsx-3181834369 "
+                data-test="dhis2-uicore-tablecellhead"
+              >
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-test="dhis2-uicore-tablebody"
+          >
+            <tr
+              class="jsx-3124144591 zebraStriping"
+              data-test="dhis2-uicore-tablerow"
+            >
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+              <td
+                class="jsx-2229340108 "
+                data-test="dhis2-uicore-tablecell"
+              >
+                0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="rest"
+      data-test="job-summary-summary-rest"
+    />
+  </div>
+</DocumentFragment>
+`;
