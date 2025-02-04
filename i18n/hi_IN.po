@@ -1,23 +1,19 @@
 # 
 # Translators:
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
-# Philip Larsen Donnelly, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
-# Em Le <em.hispvietnam@gmail.com>, 2024
+# Siddharth Agarwal, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
-"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"Last-Translator: Siddharth Agarwal, 2025\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -26,7 +22,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr "Ngày không hợp lệ"
+msgstr ""
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -68,7 +64,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Người dùng hiện tại"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -89,7 +85,7 @@ msgid "Do not import"
 msgstr ""
 
 msgid "Import"
-msgstr "Nhập"
+msgstr ""
 
 msgid "Atomic mode"
 msgstr ""
@@ -116,10 +112,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Mã"
+msgstr ""
 
 msgid "Name"
-msgstr "Tên tài khoản"
+msgstr "नाम"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -131,7 +127,7 @@ msgid "Filter data sets"
 msgstr ""
 
 msgid "Selected data sets"
-msgstr "Tập Dữ Liệu đã chọn"
+msgstr ""
 
 msgid "Something went wrong when loading the data sets!"
 msgstr ""
@@ -143,7 +139,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "Ngày kết thúc"
+msgstr ""
 
 msgid "Event ID scheme"
 msgstr ""
@@ -176,10 +172,10 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "Tất cả"
+msgstr ""
 
 msgid "Marked for follow-up"
-msgstr "Đã đánh dấu để theo dõi"
+msgstr ""
 
 msgid "Not marked for follow-up"
 msgstr ""
@@ -188,13 +184,13 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "XML"
-msgstr "XML"
+msgstr ""
 
 msgid "ADX"
 msgstr ""
@@ -215,10 +211,10 @@ msgid "ID scheme"
 msgstr ""
 
 msgid "UID"
-msgstr "UID"
+msgstr ""
 
 msgid "Identifier"
-msgstr "Ký hiệu nhận dạng (ID)"
+msgstr ""
 
 msgid "Identifier scheme to use for reference matching"
 msgstr ""
@@ -227,7 +223,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "Lỗi"
+msgstr ""
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -251,25 +247,25 @@ msgid "Import new values and update existing"
 msgstr ""
 
 msgid "Merge"
-msgstr "Sáp nhập"
+msgstr ""
 
 msgid "Import new values only"
 msgstr ""
 
 msgid "Append"
-msgstr "Thêm vào"
+msgstr ""
 
 msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "Cập nhật"
+msgstr "अपडेट करें"
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Xóa"
+msgstr "हटाएं"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -301,7 +297,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Đã chọn"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -361,7 +357,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Ngày bắt đầu/kết thúc"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -379,7 +375,7 @@ msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
 
 msgid "Replace"
-msgstr "Thay thế"
+msgstr ""
 
 msgid "Merge mode"
 msgstr ""
@@ -388,31 +384,31 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Biểu nhập"
+msgstr ""
 
 msgid "Programs"
-msgstr "Chương trình"
+msgstr ""
 
 msgid "Category combination"
-msgstr "Phân loại kết hợp"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Bảng điều khiển"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Nhóm phần tử dữ liệu"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
 
 msgid "Object type"
-msgstr "Kiểu đối tượng"
+msgstr ""
 
 msgid "One object must be selected"
 msgstr ""
 
 msgid "Object"
-msgstr "Đối tượng"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
 msgstr ""
@@ -427,7 +423,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Ghi"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -454,7 +450,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "Không"
+msgstr "कोई नहीं"
 
 msgid "Preheat mode"
 msgstr ""
@@ -469,7 +465,7 @@ msgid "Filter programs"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Chương trình đã chọn"
+msgstr ""
 
 msgid "Something went wrong when loading the programs!"
 msgstr ""
@@ -484,19 +480,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "Ngày bắt đầu"
+msgstr ""
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Hoạt động"
+msgstr ""
 
 msgid "Completed"
-msgstr "Hoàn tất"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Đã hủy"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -542,13 +538,13 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Chương trình"
+msgstr ""
 
 msgid "Tracked entity type"
-msgstr "Tracked entity type"
+msgstr ""
 
 msgid "Filter by"
-msgstr "Lọc bởi"
+msgstr ""
 
 msgid "Tracked entity types"
 msgstr ""
@@ -590,7 +586,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "Đang tiến hành"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -599,13 +595,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Giá trị"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Lỗi"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -617,19 +613,19 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Thời gian"
+msgstr ""
 
 msgid "Message"
-msgstr "Tin nhẳn"
+msgstr "संदेश"
 
 msgid "ID"
-msgstr "Định danh"
+msgstr "आईडी"
 
 msgid "Messages"
-msgstr "Tin nhắn"
+msgstr ""
 
 msgid "Type"
-msgstr "Loại"
+msgstr ""
 
 msgid "Property"
 msgstr ""
@@ -638,28 +634,28 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Tình trạng"
+msgstr ""
 
 msgid "Description"
-msgstr "Miêu tả"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "Đã tạo"
+msgstr ""
 
 msgid "Deleted"
-msgstr "Đã xóa"
+msgstr ""
 
 msgid "Ignored"
 msgstr ""
 
 msgid "Updated"
-msgstr "Đã cập nhật"
+msgstr ""
 
 msgid "Total"
-msgstr "Tổng số"
+msgstr ""
 
 msgid "Details by type"
 msgstr ""
@@ -668,7 +664,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Phải chọn ít nhất một đơn vị"
+msgstr ""
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -683,7 +679,7 @@ msgid "Something went wrong when loading the schemas!"
 msgstr ""
 
 msgid "Select All"
-msgstr "Chọn tất cả"
+msgstr ""
 
 msgid "Select None"
 msgstr ""
@@ -692,7 +688,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "Xuất"
+msgstr ""
 
 msgid "Data import"
 msgstr ""
@@ -728,13 +724,13 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "Tổng quan"
+msgstr ""
 
 msgid "Yes"
-msgstr "Có"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "Sai"
+msgstr "नहीं"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -760,7 +756,7 @@ msgid "Date range to export data for"
 msgstr ""
 
 msgid "Export data"
-msgstr "Xuất dữ liệu"
+msgstr ""
 
 msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
 msgstr ""
@@ -773,7 +769,7 @@ msgid ""
 msgstr ""
 
 msgid "Export events"
-msgstr "Xuất sự kiện"
+msgstr ""
 
 msgid ""
 "Import events for programs, stages and tracked entities using the DXF 2 "
@@ -798,22 +794,22 @@ msgid "Export metadata dependencies"
 msgstr ""
 
 msgid "Export metadata"
-msgstr "Xuất dữ liệu mô tả"
+msgstr ""
 
 msgid "Export tracked entity instances"
 msgstr ""
 
 msgid "Import data"
-msgstr "Nhập dữ liệu"
+msgstr ""
 
 msgid "Import events"
-msgstr "Nhập sự kiện"
+msgstr ""
 
 msgid "Import GML"
 msgstr ""
 
 msgid "Import metadata"
-msgstr "Nhập dữ liệu mô tả"
+msgstr ""
 
 msgid "Import tracked entity instances"
 msgstr ""
@@ -873,16 +869,16 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Dữ liệu"
+msgstr ""
 
 msgid "Event"
-msgstr "Sự Kiện"
+msgstr ""
 
 msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Siêu dữ liệu"
+msgstr ""
 
 msgid "TEI"
-msgstr "THỰC THỂ THEO DÕI"
+msgstr ""
