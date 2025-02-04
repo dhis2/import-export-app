@@ -101,7 +101,7 @@ Then('the download request is sent with the right parameters', () => {
                         ...expected,
                         links: 'false',
                         skipPaging: 'true',
-                        ouMode: inclusion.toUpperCase(),
+                        orgUnitMode: inclusion.toUpperCase(),
                         programStage: programStages,
                         attachment,
                         format,

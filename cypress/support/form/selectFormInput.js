@@ -29,7 +29,7 @@ const radioInputs = [
     'inclusionStrategy',
     'lastUpdatedFilter',
     'mergeMode',
-    'ouMode',
+    'orgUnitMode',
     'preheatMode',
     'programStatus',
     'sharing',

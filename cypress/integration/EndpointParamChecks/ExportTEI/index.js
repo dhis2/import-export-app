@@ -99,15 +99,17 @@ Then('the download request is sent with the right parameters', () => {
 
                 const expected = {
                     ...rest,
-                    ...(rest.ouMode === ':MANUAL:'
+                    ...(rest.orgUnitMode === ':MANUAL:'
                         ? { ou: orgUnit.replace(',', ';') }
                         : {}),
                     ...(programStatus !== '' ? { programStatus } : {}),
                     ...(assignedUser
                         ? { assignedUser: assignedUser.join(';') }
                         : {}),
-                    ouMode:
-                        rest.ouMode === ':MANUAL:' ? 'SELECTED' : rest.ouMode,
+                    orgUnitMode:
+                        rest.orgUnitMode === ':MANUAL:'
+                            ? 'SELECTED'
+                            : rest.orgUnitMode,
                 }
 
                 const expectedEntries = Object.entries(expected)

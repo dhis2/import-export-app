@@ -13,7 +13,7 @@ const valuesToParams = (
         selectedUsers,
         selectedPrograms,
         selectedTETypes,
-        ouMode,
+        orgUnitMode,
         inclusion,
         format,
         includeDeleted,
@@ -36,7 +36,7 @@ const valuesToParams = (
     filename
 ) => {
     const minParams = {
-        ouMode: ouMode,
+        orgUnitMode: orgUnitMode,
         format: format,
         includeDeleted: includeDeleted.toString(),
         dataElementIdScheme: dataElementIdScheme,
@@ -49,10 +49,10 @@ const valuesToParams = (
     }
 
     // include selected org.units only when manual selection is selected
-    // ouMode is then stored in the `inclusion` field
-    if (ouMode === OU_MODE_MANUAL_VALUE) {
+    // orgUnitMode is then stored in the `inclusion` field
+    if (orgUnitMode === OU_MODE_MANUAL_VALUE) {
         minParams.orgUnits = selectedOrgUnits.map((o) => pathToId(o)).join(',')
-        minParams.ouMode = inclusion
+        minParams.orgUnitMode = inclusion
     }
 
     if (assignedUserModeFilter) {

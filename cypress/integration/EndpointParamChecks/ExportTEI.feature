@@ -6,7 +6,7 @@ Feature: The user should be able to export tracked entity instances
         And the more options are visible
         And the following options are set
             | name                   | value      | label |
-            | ouMode                 | :MANUAL:   |       |
+            | orgUnitMode            | :MANUAL:   |       |
             | teiTypeFilter          | NONE       |       |
             | format                 | json       |       |
             | lastUpdatedFilter      | NONE       |       |
@@ -32,7 +32,7 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user selects "Include children of selected organisation units"
               as organisation unit selection mode
-        Given the "ouMode" input is set to "CAPTURE"
+        Given the "orgUnitMode" input is set to "CAPTURE"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

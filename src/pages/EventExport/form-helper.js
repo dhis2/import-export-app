@@ -41,7 +41,7 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         `attachment=${filename}`,
         `occurredAfter=${occurredAfter}`,
         `occurredBefore=${occurredBefore}`,
-        `ouMode=${inclusion}`,
+        `orgUnitMode=${inclusion}`,
         `format=${format}`,
         programStage != ALL_VALUE ? `programStage=${programStage}` : '',
     ]
