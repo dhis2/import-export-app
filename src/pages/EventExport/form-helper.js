@@ -28,7 +28,6 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     const endpoint = `events`
     const endpointExtension = compression ? `${format}.${compression}` : format
     const downloadUrlParams = [
-        'links=false',
         'paging=false',
         'totalPages=false',
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,

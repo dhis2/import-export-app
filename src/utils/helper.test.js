@@ -28,14 +28,14 @@ describe('locationAssign', () => {
 
     it('should create url with events zip', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/events.json.zip?links=false&paging=false&totalPages=false&orgUnit=fwH9ipvXde9&program=VBqh0ynB2wv&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=CHILDREN&format=json'
+            'https://debug.dhis2.org/dev/api/tracker/events.json.zip?paging=false&totalPages=false&orgUnit=fwH9ipvXde9&program=VBqh0ynB2wv&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=CHILDREN&format=json'
         const link = locationAssign(url)
         expect(link.download).toEqual('events')
     })
 
     it('should create url with events gzip', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/events.json.gz?links=false&paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
+            'https://debug.dhis2.org/dev/api/tracker/events.json.gz?paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
         const link = locationAssign(url)
         expect(link.download).toEqual('events')
     })
@@ -53,7 +53,7 @@ describe('locationAssign', () => {
             value: 'http://localhost:8080/dhis-web-import-export/index.html#/export/tei',
         })
         const url =
-            '../api/tracker/events.json.zip?links=false&paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
+            '../api/tracker/events.json.zip?paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
         const link = locationAssign(url)
         expect(link.download).toEqual('events')
     })

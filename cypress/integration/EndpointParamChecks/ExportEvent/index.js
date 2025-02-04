@@ -98,7 +98,6 @@ Then('the download request is sent with the right parameters', () => {
                      */
                     const updatedExpected = {
                         ...expected,
-                        links: 'false',
                         skipPaging: 'true',
                         orgUnitMode: inclusion.toUpperCase(),
                         programStage: programStages,
