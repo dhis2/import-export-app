@@ -27,7 +27,6 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `events`
     const endpointExtension = compression ? `${format}.${compression}` : format
-    const filename = `${endpoint}.${endpointExtension}`
     const downloadUrlParams = [
         'links=false',
         'paging=false',
@@ -38,7 +37,6 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         `dataElementIdScheme=${dataElementIdScheme}`,
         `orgUnitIdScheme=${orgUnitIdScheme}`,
         `idScheme=${idScheme}`,
-        `attachment=${filename}`,
         `occurredAfter=${occurredAfter}`,
         `occurredBefore=${occurredBefore}`,
         `orgUnitMode=${inclusion}`,

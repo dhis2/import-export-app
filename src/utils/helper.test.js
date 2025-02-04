@@ -3,39 +3,39 @@ import { locationAssign } from './helper.js'
 describe('locationAssign', () => {
     it('should create a file name based on the params', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?ouMode=CAPTURE&format=json&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=trackedEntities.json&paging=false&totalPages=false&program=lxAQ7Zs9VYR'
+            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?ouMode=CAPTURE&format=json&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&paging=false&totalPages=false&program=lxAQ7Zs9VYR'
         const link = locationAssign(url)
         expect(link.download).toEqual('trackedEntities')
     })
     it('should create url with orgUnits', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=trackedEntities.json&paging=false&totalPages=false&orgUnits=O6uvpzGd5pu,fdc6uOvgoji&program=kla3mAPgvCH'
+            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&paging=false&totalPages=false&orgUnits=O6uvpzGd5pu,fdc6uOvgoji&program=kla3mAPgvCH'
         const link = locationAssign(url)
         expect(link.download).toEqual('trackedEntities')
     })
     it('should create url with tracked entities', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=trackedEntities.json&paging=false&totalPages=false&orgUnits=ImspTQPwCqd&trackedEntityType=bVkFYAvoUCP'
+            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&paging=false&totalPages=false&orgUnits=ImspTQPwCqd&trackedEntityType=bVkFYAvoUCP'
         const link = locationAssign(url)
         expect(link.download).toEqual('trackedEntities')
     })
     it('should create url with CSV', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.csv?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=trackedEntities.csv&paging=false&totalPages=false&orgUnits=ImspTQPwCqd&program=lxAQ7Zs9VYR'
+            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.csv?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&paging=false&totalPages=false&orgUnits=ImspTQPwCqd&program=lxAQ7Zs9VYR'
         const link = locationAssign(url)
         expect(link.download).toEqual('trackedEntities')
     })
 
     it('should create url with events zip', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/events.json.zip?links=false&paging=false&totalPages=false&orgUnit=fwH9ipvXde9&program=VBqh0ynB2wv&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=events.json.zip&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=CHILDREN&format=json'
+            'https://debug.dhis2.org/dev/api/tracker/events.json.zip?links=false&paging=false&totalPages=false&orgUnit=fwH9ipvXde9&program=VBqh0ynB2wv&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=CHILDREN&format=json'
         const link = locationAssign(url)
         expect(link.download).toEqual('events')
     })
 
     it('should create url with events gzip', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/events.json.gz?links=false&paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=events.json.gz&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
+            'https://debug.dhis2.org/dev/api/tracker/events.json.gz?links=false&paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
         const link = locationAssign(url)
         expect(link.download).toEqual('events')
     })
@@ -44,7 +44,7 @@ describe('locationAssign', () => {
             value: 'http://localhost:8080/dhis-web-import-export/index.html#/export/tei',
         })
         const url =
-            '../api/tracker/trackedEntities.json?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=trackedEntities.json&paging=false&totalPages=false&orgUnits=ImspTQPwCqd&program=lxAQ7Zs9VYR'
+            '../api/tracker/trackedEntities.json?orgUnitMode=SELECTED&includeDeleted=false&dataElementIdScheme=UID&eventIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&paging=false&totalPages=false&orgUnits=ImspTQPwCqd&program=lxAQ7Zs9VYR'
         const link = locationAssign(url)
         expect(link.download).toEqual('trackedEntities')
     })
@@ -53,7 +53,7 @@ describe('locationAssign', () => {
             value: 'http://localhost:8080/dhis-web-import-export/index.html#/export/tei',
         })
         const url =
-            '../api/tracker/events.json.zip?links=false&paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&attachment=events.json.zip&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
+            '../api/tracker/events.json.zip?links=false&paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED&format=json'
         const link = locationAssign(url)
         expect(link.download).toEqual('events')
     })

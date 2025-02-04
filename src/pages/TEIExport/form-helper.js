@@ -7,34 +7,31 @@ import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
 import { locationAssign, pathToId } from '../../utils/helper.js'
 
 // calculate minimum set of parameters based on given filters
-const valuesToParams = (
-    {
-        selectedOrgUnits,
-        selectedUsers,
-        selectedPrograms,
-        selectedTETypes,
-        orgUnitMode,
-        inclusion,
-        format,
-        includeDeleted,
-        dataElementIdScheme,
-        eventIdScheme,
-        orgUnitIdScheme,
-        idScheme,
-        assignedUserModeFilter,
-        assignedUserMode,
-        teiTypeFilter,
-        programStatus,
-        followUp,
-        enrollmentEnrolledAfter,
-        enrollmentEnrolledBefore,
-        lastUpdatedFilter,
-        updatedAfter,
-        updatedBefore,
-        updatedWithin,
-    },
-    filename
-) => {
+const valuesToParams = ({
+    selectedOrgUnits,
+    selectedUsers,
+    selectedPrograms,
+    selectedTETypes,
+    orgUnitMode,
+    inclusion,
+    format,
+    includeDeleted,
+    dataElementIdScheme,
+    eventIdScheme,
+    orgUnitIdScheme,
+    idScheme,
+    assignedUserModeFilter,
+    assignedUserMode,
+    teiTypeFilter,
+    programStatus,
+    followUp,
+    enrollmentEnrolledAfter,
+    enrollmentEnrolledBefore,
+    lastUpdatedFilter,
+    updatedAfter,
+    updatedBefore,
+    updatedWithin,
+}) => {
     const minParams = {
         orgUnitMode: orgUnitMode,
         format: format,
@@ -43,7 +40,6 @@ const valuesToParams = (
         eventIdScheme: eventIdScheme,
         orgUnitIdScheme: orgUnitIdScheme,
         idScheme: idScheme,
-        attachment: filename,
         paging: false,
         totalPages: false,
     }
@@ -115,8 +111,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `trackedEntities`
-    const filename = `${endpoint}.${format}`
-    const downloadUrlParams = valuesToParams(values, filename)
+    const downloadUrlParams = valuesToParams(values)
     const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`
     locationAssign(url)
     setExportEnabled(true)
