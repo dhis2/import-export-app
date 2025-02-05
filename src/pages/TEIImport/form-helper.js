@@ -21,7 +21,6 @@ const onImport =
             isAsync,
             dataElementIdScheme,
             orgUnitIdScheme,
-            eventIdScheme,
             idScheme,
         } = values
 
@@ -43,7 +42,6 @@ const onImport =
             `format=${format}`,
             `dataElementIdScheme=${dataElementIdScheme}`,
             `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `eventIdScheme=${eventIdScheme}`,
             `idScheme=${idScheme}`,
         ]
             .filter((s) => s != '')

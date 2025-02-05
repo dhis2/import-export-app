@@ -276,10 +276,6 @@ export const tasksState = {
                     label: 'JSON',
                 },
                 dryRun: false,
-                eventIdScheme: {
-                    value: 'UID',
-                    label: 'Uid',
-                },
                 orgUnitIdScheme: {
                     value: 'UID',
                     label: 'Uid',

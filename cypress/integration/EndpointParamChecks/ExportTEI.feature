@@ -15,7 +15,6 @@ Feature: The user should be able to export tracked entity instances
             | includeDeleted         | false      |       |
             | includeAllAttributes   | false      |       |
             | dataElementIdScheme    | UID        | Uid   |
-            | eventIdScheme          | UID        | Uid   |
             | orgUnitIdScheme        | UID        | Uid   |
             | idScheme               | UID        | Uid   |
         And the Sierra Leone org unit has been selected
@@ -53,11 +52,6 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user selects a different data element id scheme
         Given the "dataElementIdScheme" input is set to "Code"
-        When the export form is submitted
-        Then the download request is sent with the right parameters
-
-    Scenario: The user selects a different event id scheme
-        Given the "eventIdScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

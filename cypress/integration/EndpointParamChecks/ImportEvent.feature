@@ -10,7 +10,6 @@ Feature: The user should be able to import events
             | format              | json  |       |
             | dryRun              | false |       |
             | dataElementIdScheme | UID   | Uid   |
-            | eventIdScheme       | UID   | Uid   |
             | idScheme            | UID   | Uid   |
             | orgUnitIdScheme     | UID   | Uid   |
 
@@ -30,11 +29,6 @@ Feature: The user should be able to import events
 
     Scenario: The user selects a different data element id scheme
         Given the "dataElementIdScheme" input is set to "Code"
-        When the import form is submitted
-        Then the upload request is sent with the right parameters
-
-    Scenario: The user selects a different event id scheme
-        Given the "eventIdScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 

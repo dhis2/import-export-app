@@ -15,9 +15,6 @@ export const nameToDataTest = (name) => {
         case 'dataElementIdScheme':
             return 'input-data-element-id-scheme'
 
-        case 'eventIdScheme':
-            return 'input-event-id-scheme'
-
         case 'orgUnitIdScheme':
             return 'input-org-unit-id-scheme'
 

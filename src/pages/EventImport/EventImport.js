@@ -17,8 +17,6 @@ import {
     defaultFormatOption,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
-    EventIdScheme,
-    defaultEventIdSchemeOption,
     IdScheme,
     defaultIdSchemeOption,
     OrgUnitIdScheme,
@@ -47,7 +45,6 @@ const createInitialValues = (prevJobDetails) => ({
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
-    eventIdScheme: prevJobDetails.eventIdScheme || defaultEventIdSchemeOption,
     idScheme: prevJobDetails.idScheme || defaultIdSchemeOption,
 })
 
@@ -108,7 +105,6 @@ const EventImport = () => {
                         </BasicOptions>
                         <MoreOptions>
                             <SchemeContainer>
-                                <EventIdScheme />
                                 <DataElementIdScheme />
                                 <OrgUnitIdScheme />
                                 <IdScheme />

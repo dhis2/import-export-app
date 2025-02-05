@@ -41,7 +41,6 @@ const ignoreInputs = ['dryRun', 'importMode']
 
 const selectInputs = [
     'dataElementIdScheme',
-    'eventIdScheme',
     'orgUnitIdScheme',
     'idScheme',
     'program',

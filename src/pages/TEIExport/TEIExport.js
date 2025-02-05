@@ -37,8 +37,6 @@ import {
     IncludeDeleted,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
-    EventIdScheme,
-    defaultEventIdSchemeOption,
     IdScheme,
     defaultIdSchemeOption,
     OrgUnitIdScheme,
@@ -80,7 +78,6 @@ const initialValues = {
     assignedUserMode: defaultAssignedUserModeOption,
     includeDeleted: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
-    eventIdScheme: defaultEventIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
     idScheme: defaultIdSchemeOption,
 }
@@ -147,7 +144,6 @@ const TEIExport = () => {
                                 <IncludeDeleted />
                                 <SchemeContainer>
                                     <DataElementIdScheme />
-                                    <EventIdScheme />
                                     <OrgUnitIdScheme />
                                     <IdScheme />
                                 </SchemeContainer>

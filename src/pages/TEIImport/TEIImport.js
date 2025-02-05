@@ -39,8 +39,6 @@ import {
     FormAlerts,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
-    EventIdScheme,
-    defaultEventIdSchemeOption,
     IdScheme,
     defaultIdSchemeOption,
     OrgUnitIdScheme,
@@ -86,7 +84,6 @@ const createInitialValues = (prevJobDetails) => ({
         prevJobDetails.dataElementIdScheme || defaultDataElementIdSchemeOption,
     orgUnitIdScheme:
         prevJobDetails.orgUnitIdScheme || defaultOrgUnitIdSchemeOption,
-    eventIdScheme: prevJobDetails.eventIdScheme || defaultEventIdSchemeOption,
     idScheme: prevJobDetails.idScheme || defaultIdSchemeOption,
 })
 
@@ -158,7 +155,6 @@ const TEIImport = () => {
                             <InclusionStrategy />
                             <SchemeContainer>
                                 <DataElementIdScheme />
-                                <EventIdScheme />
                                 <OrgUnitIdScheme />
                                 <IdScheme />
                             </SchemeContainer>
