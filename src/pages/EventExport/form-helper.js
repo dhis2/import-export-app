@@ -39,7 +39,6 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         `occurredAfter=${occurredAfter}`,
         `occurredBefore=${occurredBefore}`,
         `orgUnitMode=${inclusion}`,
-        `format=${format}`,
         programStage != ALL_VALUE ? `programStage=${programStage}` : '',
     ]
         .filter((s) => s != '')

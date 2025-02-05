@@ -12,7 +12,6 @@ const valuesToParams = ({
     selectedOrgUnits,
     includeChildren,
     selectedDataSets,
-    format,
     compression,
     startDate,
     endDate,
@@ -31,7 +30,6 @@ const valuesToParams = ({
         `endDate=${endDate}`,
         `orgUnit=${selectedOrgUnits.map((o) => pathToId(o))}`,
         `dataSet=${selectedDataSets}`,
-        `format=${encodeURIComponent(format)}`,
         compression ? `compression=${compressionToName(compression)}` : '',
     ]
         .filter((s) => s != '')
@@ -44,7 +42,8 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `dataValueSets`
     const downloadUrlParams = valuesToParams(values)
-    const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
+    const endpointExtension = values.format
+    const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
     locationAssign(url)
     setExportEnabled(true)
 

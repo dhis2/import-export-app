@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-07-04T10:45:17.913Z\n"
-"PO-Revision-Date: 2024-07-04T10:45:17.913Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"PO-Revision-Date: 2025-02-05T10:14:36.386Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -165,9 +165,6 @@ msgstr "One data set must be selected"
 
 msgid "End date"
 msgstr "End date"
-
-msgid "Event ID scheme"
-msgstr "Event ID scheme"
 
 msgid "Loading export..."
 msgstr "Loading export..."

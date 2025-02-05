@@ -39,7 +39,6 @@ const onImport =
             `skipValidation=${skipValidation}`,
             `inclusionStrategy=${inclusionStrategy}`,
             `async=${isAsync}`,
-            `format=${format}`,
             `dataElementIdScheme=${dataElementIdScheme}`,
             `orgUnitIdScheme=${orgUnitIdScheme}`,
             `idScheme=${idScheme}`,
