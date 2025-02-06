@@ -1,6 +1,5 @@
 import React from 'react'
 import { render } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect.js'
 
 import { allJobs } from '../../JobOverview/__test__/data.js'
 import { Summary } from '../Summary/Summary.jsx'
