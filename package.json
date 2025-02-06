@@ -28,8 +28,9 @@
         "@dhis2/cli-utils-cypress": "^7.0.0",
         "@dhis2/cypress-commands": "^7.0.0",
         "@dhis2/cypress-plugins": "^7.0.0",
-        "@testing-library/jest-dom": "^5.8.0",
-        "@testing-library/react": "^9.4.0",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.2.0",
         "patch-package": "^6.4.7",
         "query-string": "^6.12.1"
     },
