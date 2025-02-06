@@ -3,7 +3,10 @@ import React from 'react'
 import { statsPropType, messagesPropType } from '../helper.js'
 import { Messages } from '../Messages/Messages.jsx'
 import { SingleSummary } from '../SingleSummary/SingleSummary.jsx'
-import { TypeCount, typeCountStatsPropTypeObj } from '../TypeCount/TypeCount.jsx'
+import {
+    TypeCount,
+    typeCountStatsPropTypeObj,
+} from '../TypeCount/TypeCount.jsx'
 
 const TypeReportSummary = ({ overviewStats, stats, messages }) => {
     return (
