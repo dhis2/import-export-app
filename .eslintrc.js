@@ -4,7 +4,7 @@ module.exports = {
     extends: [config.eslintReact],
     overrides: [
         {
-            files: ['*.test.js'],
+            files: ['*.test.jsx', '*.test.js'],
             rules: {
                 'import/no-unresolved': 0,
                 'import/order': 0,
