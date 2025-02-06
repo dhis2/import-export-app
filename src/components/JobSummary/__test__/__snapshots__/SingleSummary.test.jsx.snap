@@ -24,13 +24,13 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerowhead"
           >
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Status
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Description
@@ -45,13 +45,13 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               WARNING
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               Import process completed successfully
@@ -71,31 +71,31 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerowhead"
           >
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Created
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Deleted
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Ignored
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Updated
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Total
@@ -110,31 +110,31 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               1
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               2
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               3
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               4
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               10
@@ -164,13 +164,13 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerowhead"
           >
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Object
             </th>
             <th
-              class="jsx-1796049005 "
+              class="jsx-3181834369 "
               data-test="dhis2-uicore-tablecellhead"
             >
               Value
@@ -185,13 +185,13 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               a
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               conflict a value
@@ -202,13 +202,13 @@ exports[`matches snapshot 1`] = `
             data-test="dhis2-uicore-tablerow"
           >
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               b
             </td>
             <td
-              class="jsx-996330601 "
+              class="jsx-2229340108 "
               data-test="dhis2-uicore-tablecell"
             >
               conflict b value

@@ -23,25 +23,25 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerowhead"
         >
           <th
-            class="jsx-1796049005 "
+            class="jsx-3181834369 "
             data-test="dhis2-uicore-tablecellhead"
           >
             UID
           </th>
           <th
-            class="jsx-1796049005 "
+            class="jsx-3181834369 "
             data-test="dhis2-uicore-tablecellhead"
           >
             Type
           </th>
           <th
-            class="jsx-1796049005 "
+            class="jsx-3181834369 "
             data-test="dhis2-uicore-tablecellhead"
           >
             Property
           </th>
           <th
-            class="jsx-1796049005 "
+            class="jsx-3181834369 "
             data-test="dhis2-uicore-tablecellhead"
           >
             Message
@@ -56,25 +56,25 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             abc
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             DefaultGmlImportService
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             def
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             message one
@@ -85,25 +85,25 @@ exports[`matches snapshot 1`] = `
           data-test="dhis2-uicore-tablerow"
         >
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             xyz
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             SndGmlImportService
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             def
           </td>
           <td
-            class="jsx-996330601 "
+            class="jsx-2229340108 "
             data-test="dhis2-uicore-tablecell"
           >
             message one

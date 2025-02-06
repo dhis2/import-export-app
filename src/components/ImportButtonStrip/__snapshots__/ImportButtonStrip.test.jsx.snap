@@ -7,14 +7,14 @@ exports[`matches snapshot 1`] = `
     data-test="import-strip"
   >
     <div
-      class="jsx-1994200789 start"
+      class="jsx-34417531 start"
       data-test="import-strip-button-strip"
     >
       <div
-        class="jsx-1994200789 box"
+        class="jsx-34417531 box"
       >
         <button
-          class="jsx-441677069 dryRun primary"
+          class="jsx-3146657073 dryRun primary"
           data-test="import-strip-dry-run-btn"
           type="submit"
         >
@@ -22,10 +22,10 @@ exports[`matches snapshot 1`] = `
         </button>
       </div>
       <div
-        class="jsx-1994200789 box"
+        class="jsx-34417531 box"
       >
         <button
-          class="jsx-441677069 secondary"
+          class="jsx-3146657073 secondary"
           data-test="import-strip-import-btn"
           type="submit"
         >
