@@ -1,3 +1,5 @@
+![React 18](https://img.shields.io/badge/react-18-blue)
+
 # Import / Export
 
 [![Build Status](https://travis-ci.com/dhis2/import-export-app.svg?branch=master)](https://travis-ci.com/dhis2/import-export-app)

@@ -7,7 +7,9 @@ const selectSelect = (dataTest, label) => {
     cy.get(curValueSelector).then(($curValueElement) => {
         const curValue = $curValueElement.text()
 
-        if (label === curValue) return
+        if (label === curValue) {
+            return
+        }
 
         cy.get(inputSelector).click()
         cy.get(valSelector).click()

@@ -3,7 +3,7 @@
     pointer-events: all;
 }
 
-.span> :global(button:disabled) {
+.span > :global(button:disabled) {
     pointer-events: none;
 }
 

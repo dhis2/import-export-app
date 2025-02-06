@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom'
+
 // These modules are unfortunately pulled in on nearly all
 // of the component tests.
 

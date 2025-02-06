@@ -1,0 +1,614 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot when loading(bool) and no summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container limitedWidth"
+    data-test="page"
+  >
+    <header
+      class="header"
+    >
+      <h1
+        class="title"
+      >
+        Title
+      </h1>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </header>
+    <div
+      class="content"
+    >
+      <div
+        class="loading"
+      >
+        <div
+          class="jsx-3042342945 translucent"
+          data-test="dhis2-uicore-componentcover"
+        >
+          <div
+            class="jsx-498096601 center middle"
+            data-test="dhis2-uicore-centeredcontent"
+          >
+            <div
+              class="jsx-498096601 center-inner-content"
+            >
+              <div
+                class="jsx-1838964138 "
+                data-test="dhis2-uicore-circularloader"
+                role="progressbar"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>
+        Child paragraph
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when loading(number) and no summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container limitedWidth"
+    data-test="page"
+  >
+    <header
+      class="header"
+    >
+      <h1
+        class="title"
+      >
+        Title
+      </h1>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </header>
+    <div
+      class="content"
+    >
+      <div
+        class="loading"
+      >
+        <div
+          class="jsx-3042342945 translucent"
+          data-test="dhis2-uicore-componentcover"
+        >
+          <div
+            class="jsx-498096601 center middle"
+            data-test="dhis2-uicore-centeredcontent"
+          >
+            <div
+              class="jsx-498096601 center-inner-content"
+            >
+              <div
+                aria-valuenow="50"
+                class="jsx-3127531794 jsx-1918124637 "
+                data-test="dhis2-uicore-linearloader"
+                role="progressbar"
+              >
+                <div
+                  class="jsx-1191682544 jsx-3620677350 "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>
+        Child paragraph
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when not loading and a full summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container limitedWidth"
+    data-test="page"
+  >
+    <header
+      class="header"
+    >
+      <h1
+        class="title"
+      >
+        Title
+      </h1>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </header>
+    <div
+      class="jsx-574779348 preBody"
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        class="container"
+        data-test="job-summary-container"
+      >
+        <div
+          class="header"
+        >
+          <h3
+            class="title"
+          >
+            Job summary
+          </h3>
+          <div
+            class="taskDetails"
+          >
+            <span
+              data-test="job-summary-filename"
+            >
+              data1.json
+            </span>
+             - 
+            <span
+              data-test="job-summary-date"
+            >
+              2020-02-12 13:00:23
+ 
+            </span>
+          </div>
+        </div>
+        <div
+          class="tags"
+          data-test="job-summary-tags"
+        >
+          <div
+            class="jsx-72316749 positive"
+            data-test="dhis2-uicore-tag"
+          >
+            <span
+              class="jsx-1110058759"
+              data-test="dhis2-uicore-tag-text"
+            >
+              Completed
+            </span>
+          </div>
+          <div
+            class="jsx-72316749 neutral bold"
+            data-test="dhis2-uicore-tag"
+          >
+            <span
+              class="jsx-1110058759"
+              data-test="dhis2-uicore-tag-text"
+            >
+              Dry run
+            </span>
+          </div>
+        </div>
+        <div
+          class="jsx-742385706 jsx-3656744930 "
+          data-test="dhis2-uicore-divider"
+          role="separator"
+        />
+        <div
+          class="container"
+          data-test="job-summary-summary"
+        >
+          <div>
+            <div
+              class="container"
+              data-test="job-summary-single-summary"
+            >
+              <span
+                class="label"
+              >
+                Summary
+              </span>
+              <table
+                class="jsx-2430604489 "
+                data-test="dhis2-uicore-table"
+              >
+                <thead
+                  data-test="dhis2-uicore-tablehead"
+                >
+                  <tr
+                    class="jsx-3124144591 zebraStriping"
+                    data-test="dhis2-uicore-tablerowhead"
+                  >
+                    <th
+                      class="jsx-3181834369 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="jsx-3181834369 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  data-test="dhis2-uicore-tablebody"
+                >
+                  <tr
+                    class="jsx-3124144591 zebraStriping"
+                    data-test="dhis2-uicore-tablerow"
+                  >
+                    <td
+                      class="jsx-2229340108 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      SUCCESS
+                    </td>
+                    <td
+                      class="jsx-2229340108 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      Import process completed successfully
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                class="jsx-2430604489 "
+                data-test="dhis2-uicore-table"
+              >
+                <thead
+                  data-test="dhis2-uicore-tablehead"
+                >
+                  <tr
+                    class="jsx-3124144591 zebraStriping"
+                    data-test="dhis2-uicore-tablerowhead"
+                  >
+                    <th
+                      class="jsx-3181834369 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Created
+                    </th>
+                    <th
+                      class="jsx-3181834369 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Deleted
+                    </th>
+                    <th
+                      class="jsx-3181834369 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Ignored
+                    </th>
+                    <th
+                      class="jsx-3181834369 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Updated
+                    </th>
+                    <th
+                      class="jsx-3181834369 "
+                      data-test="dhis2-uicore-tablecellhead"
+                    >
+                      Total
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  data-test="dhis2-uicore-tablebody"
+                >
+                  <tr
+                    class="jsx-3124144591 zebraStriping"
+                    data-test="dhis2-uicore-tablerow"
+                  >
+                    <td
+                      class="jsx-2229340108 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      0
+                    </td>
+                    <td
+                      class="jsx-2229340108 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      0
+                    </td>
+                    <td
+                      class="jsx-2229340108 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      0
+                    </td>
+                    <td
+                      class="jsx-2229340108 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      0
+                    </td>
+                    <td
+                      class="jsx-2229340108 "
+                      data-test="dhis2-uicore-tablecell"
+                    >
+                      0
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div
+            class="rest"
+            data-test="job-summary-summary-rest"
+          />
+        </div>
+        <div
+          class="events"
+        >
+          <div
+            class="container"
+            data-test="job-summary-log"
+          >
+            <span
+              class="label"
+            >
+              Log
+            </span>
+            <table
+              class="jsx-2430604489 "
+              data-test="dhis2-uicore-table"
+            >
+              <thead
+                data-test="dhis2-uicore-tablehead"
+              >
+                <tr
+                  class="jsx-3124144591 zebraStriping"
+                  data-test="dhis2-uicore-tablerowhead"
+                >
+                  <th
+                    class="jsx-3181834369 "
+                    data-test="dhis2-uicore-tablecellhead"
+                  >
+                    Time
+                  </th>
+                  <th
+                    class="jsx-3181834369 "
+                    data-test="dhis2-uicore-tablecellhead"
+                  >
+                    Message
+                  </th>
+                  <th
+                    class="jsx-3181834369 "
+                    data-test="dhis2-uicore-tablecellhead"
+                  >
+                    ID
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                data-test="dhis2-uicore-tablebody"
+              >
+                <tr
+                  class="jsx-3124144591 zebraStriping"
+                  data-test="dhis2-uicore-tablerow"
+                >
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    2020-02-12 12:00:23
+
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    Initiated dataValueImport
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    init
+                  </td>
+                </tr>
+                <tr
+                  class="jsx-3124144591 zebraStriping"
+                  data-test="dhis2-uicore-tablerow"
+                >
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    2020-02-12 12:00:23
+
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    Process started
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    LPCnEwppbqy
+                  </td>
+                </tr>
+                <tr
+                  class="jsx-3124144591 zebraStriping"
+                  data-test="dhis2-uicore-tablerow"
+                >
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    2020-02-12 12:00:23
+
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    Importing data values
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    quL1PHwVPg1
+                  </td>
+                </tr>
+                <tr
+                  class="jsx-3124144591 zebraStriping"
+                  data-test="dhis2-uicore-tablerow"
+                >
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    2020-02-12 12:00:23
+
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    Import done
+                  </td>
+                  <td
+                    class="jsx-2229340108 "
+                    data-test="dhis2-uicore-tablecell"
+                  >
+                    fn5gnxqYk1J
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        Child paragraph
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when not loading and a mini summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container limitedWidth"
+    data-test="page"
+  >
+    <header
+      class="header"
+    >
+      <h1
+        class="title"
+      >
+        Title
+      </h1>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </header>
+    <div
+      class="jsx-574779348 preBody"
+      data-test="dhis2-uicore-card"
+    >
+      <div
+        data-test="mini-job-summary-container"
+      >
+        <section
+          class=""
+          data-test="mini-job-summary-container-MoreOptions"
+        >
+          <header
+            class="header"
+            data-test="mini-job-summary-container-MoreOptions-header"
+          >
+            <div
+              class="chevronHidden"
+            >
+              <svg
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.293 6.293a1 1 0 011.32-.083l.094.083 5 5a1 1 0 01.083 1.32l-.083.094-5 5a1 1 0 01-1.497-1.32l.083-.094L13.585 12 9.293 7.707a1 1 0 01-.083-1.32z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <h2
+              class="label"
+            >
+              View summary of recently started import job
+            </h2>
+          </header>
+          <div
+            class="children hidden"
+            data-test="mini-job-summary-container-MoreOptions-children"
+          />
+        </section>
+      </div>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        Child paragraph
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when not loading and no summary task 1`] = `
+<DocumentFragment>
+  <div
+    class="container limitedWidth"
+    data-test="page"
+  >
+    <header
+      class="header"
+    >
+      <h1
+        class="title"
+      >
+        Title
+      </h1>
+      <p
+        class="desc"
+      >
+        Description
+      </p>
+    </header>
+    <div
+      class="content"
+    >
+      <p>
+        Child paragraph
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

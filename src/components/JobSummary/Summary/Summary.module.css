@@ -4,7 +4,8 @@
     margin-bottom: 15px;
 }
 
-.rest, .typeReportSummary {
+.rest,
+.typeReportSummary {
     max-height: 440px;
     overflow: auto;
     margin-bottom: 15px;
