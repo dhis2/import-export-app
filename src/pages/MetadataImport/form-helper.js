@@ -25,7 +25,7 @@ const onImport =
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = 'metadata.json'
+        const endpoint = 'metadata'
         const params = [
             `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,
             `identifier=${identifier}`,
@@ -38,7 +38,6 @@ const onImport =
             `skipValidation=${skipValidation}`,
             `inclusionStrategy=${inclusionStrategy}`,
             `async=${isAsync}`,
-            `format=${format}`,
             format == 'csv'
                 ? `firstRowIsHeader=${firstRowIsHeader}&classKey=${classKey}`
                 : '',

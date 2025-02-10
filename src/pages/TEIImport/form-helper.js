@@ -21,7 +21,6 @@ const onImport =
             isAsync,
             dataElementIdScheme,
             orgUnitIdScheme,
-            eventIdScheme,
             idScheme,
         } = values
 
@@ -40,10 +39,8 @@ const onImport =
             `skipValidation=${skipValidation}`,
             `inclusionStrategy=${inclusionStrategy}`,
             `async=${isAsync}`,
-            `format=${format}`,
             `dataElementIdScheme=${dataElementIdScheme}`,
             `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `eventIdScheme=${eventIdScheme}`,
             `idScheme=${idScheme}`,
         ]
             .filter((s) => s != '')

@@ -16,7 +16,6 @@ export {
 export { DataElementIdScheme } from './ElementSchemes/DataElementIdScheme.js'
 export { DatePicker } from './DatePicker/DatePicker.js'
 export { DatePickerField } from './DatePicker/DatePickerField.js'
-export { EventIdScheme } from './ElementSchemes/EventIdScheme.js'
 export { FileUpload } from './FileUpload/FileUpload.js'
 export { FormAlerts } from './FormAlerts/FormAlerts.js'
 export { FormField } from './FormField/FormField.js'

@@ -66,7 +66,6 @@ export {
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
 } from './DataElementIdScheme.js'
-export { EventIdScheme, defaultEventIdSchemeOption } from './EventIdScheme.js'
 export { IdScheme, defaultIdSchemeOption } from './IdScheme.js'
 export {
     OrgUnitIdScheme,

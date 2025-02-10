@@ -7,52 +7,46 @@ import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
 import { locationAssign, pathToId } from '../../utils/helper.js'
 
 // calculate minimum set of parameters based on given filters
-const valuesToParams = (
-    {
-        selectedOrgUnits,
-        selectedUsers,
-        selectedPrograms,
-        selectedTETypes,
-        ouMode,
-        inclusion,
-        format,
-        includeDeleted,
-        dataElementIdScheme,
-        eventIdScheme,
-        orgUnitIdScheme,
-        idScheme,
-        assignedUserModeFilter,
-        assignedUserMode,
-        teiTypeFilter,
-        programStatus,
-        followUp,
-        enrollmentEnrolledAfter,
-        enrollmentEnrolledBefore,
-        lastUpdatedFilter,
-        updatedAfter,
-        updatedBefore,
-        updatedWithin,
-    },
-    filename
-) => {
+const valuesToParams = ({
+    selectedOrgUnits,
+    selectedUsers,
+    selectedPrograms,
+    selectedTETypes,
+    orgUnitMode,
+    inclusion,
+    format,
+    includeDeleted,
+    dataElementIdScheme,
+    orgUnitIdScheme,
+    idScheme,
+    assignedUserModeFilter,
+    assignedUserMode,
+    teiTypeFilter,
+    programStatus,
+    followUp,
+    enrollmentEnrolledAfter,
+    enrollmentEnrolledBefore,
+    lastUpdatedFilter,
+    updatedAfter,
+    updatedBefore,
+    updatedWithin,
+}) => {
     const minParams = {
-        ouMode: ouMode,
+        orgUnitMode: orgUnitMode,
         format: format,
         includeDeleted: includeDeleted.toString(),
         dataElementIdScheme: dataElementIdScheme,
-        eventIdScheme: eventIdScheme,
         orgUnitIdScheme: orgUnitIdScheme,
         idScheme: idScheme,
-        attachment: filename,
         paging: false,
         totalPages: false,
     }
 
     // include selected org.units only when manual selection is selected
-    // ouMode is then stored in the `inclusion` field
-    if (ouMode === OU_MODE_MANUAL_VALUE) {
+    // orgUnitMode is then stored in the `inclusion` field
+    if (orgUnitMode === OU_MODE_MANUAL_VALUE) {
         minParams.orgUnits = selectedOrgUnits.map((o) => pathToId(o)).join(',')
-        minParams.ouMode = inclusion
+        minParams.orgUnitMode = inclusion
     }
 
     if (assignedUserModeFilter) {
@@ -115,8 +109,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `trackedEntities`
-    const filename = `${endpoint}.${format}`
-    const downloadUrlParams = valuesToParams(values, filename)
+    const downloadUrlParams = valuesToParams(values)
     const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`
     locationAssign(url)
     setExportEnabled(true)

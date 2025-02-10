@@ -5,26 +5,21 @@ import {
 import {
     locationAssign,
     compressionToName,
-    fileFormatToFileExtension,
     pathToId,
 } from '../../utils/helper.js'
 
-const valuesToParams = (
-    {
-        selectedOrgUnits,
-        includeChildren,
-        selectedDataSets,
-        format,
-        compression,
-        startDate,
-        endDate,
-        includeDeleted,
-        dataElementIdScheme,
-        orgUnitIdScheme,
-        idScheme,
-    },
-    filename
-) =>
+const valuesToParams = ({
+    selectedOrgUnits,
+    includeChildren,
+    selectedDataSets,
+    compression,
+    startDate,
+    endDate,
+    includeDeleted,
+    dataElementIdScheme,
+    orgUnitIdScheme,
+    idScheme,
+}) =>
     [
         `dataElementIdScheme=${dataElementIdScheme}`,
         `orgUnitIdScheme=${orgUnitIdScheme}`,
@@ -35,9 +30,7 @@ const valuesToParams = (
         `endDate=${endDate}`,
         `orgUnit=${selectedOrgUnits.map((o) => pathToId(o))}`,
         `dataSet=${selectedDataSets}`,
-        `format=${encodeURIComponent(format)}`,
         compression ? `compression=${compressionToName(compression)}` : '',
-        `attachment=${filename}`,
     ]
         .filter((s) => s != '')
         .join('&')
@@ -45,17 +38,12 @@ const valuesToParams = (
 const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
 
-    const { format, compression } = values
-
     // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `dataValueSets`
-    const fileExtension = compression
-        ? `${fileFormatToFileExtension(format)}.${compression}`
-        : fileFormatToFileExtension(format)
-    const filename = `${endpoint}.${fileExtension}`
-    const downloadUrlParams = valuesToParams(values, filename)
-    const url = `${apiBaseUrl}${endpoint}?${downloadUrlParams}`
+    const downloadUrlParams = valuesToParams(values)
+    const endpointExtension = values.format
+    const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
     locationAssign(url)
     setExportEnabled(true)
 

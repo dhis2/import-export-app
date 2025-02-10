@@ -20,7 +20,6 @@ Feature: The user should be able to import tracked entity instances
             | skipValidation      | false             |       |
             | inclusionStrategy   | NON_NULL          |       |
             | dataElementIdScheme | UID               | Uid   |
-            | eventIdScheme       | UID               | Uid   |
             | idScheme            | UID               | Uid   |
             | orgUnitIdScheme     | UID               | Uid   |
 
@@ -90,11 +89,6 @@ Feature: The user should be able to import tracked entity instances
 
     Scenario: The user selects a different data element id scheme
         Given the "dataElementIdScheme" input is set to "Code"
-        When the import form is submitted
-        Then the upload request is sent with the right parameters
-
-    Scenario: The user selects a different event id scheme
-        Given the "eventIdScheme" input is set to "Code"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 

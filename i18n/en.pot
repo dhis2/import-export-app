@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
-"PO-Revision-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"PO-Revision-Date: 2025-02-05T10:14:36.386Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -165,9 +165,6 @@ msgstr "One data set must be selected"
 
 msgid "End date"
 msgstr "End date"
-
-msgid "Event ID scheme"
-msgstr "Event ID scheme"
 
 msgid "Loading export..."
 msgstr "Loading export..."
@@ -688,6 +685,15 @@ msgstr "Updated"
 msgid "Total"
 msgstr "Total"
 
+msgid "Reports"
+msgstr "Reports"
+
+msgid "Error Code"
+msgstr "Error Code"
+
+msgid "Tracker Type"
+msgstr "Tracker Type"
+
 msgid "Indexes"
 msgstr "Indexes"
 
@@ -745,8 +751,8 @@ msgstr "Org unit geometry import"
 msgid "Metadata import"
 msgstr "Metadata import"
 
-msgid "TEI import"
-msgstr "TEI import"
+msgid "Tracked entity import"
+msgstr "Tracked entity import"
 
 msgid "Data export"
 msgstr "Data export"
@@ -760,8 +766,8 @@ msgstr "Metadata dependency export"
 msgid "Metadata export"
 msgstr "Metadata export"
 
-msgid "TEI export"
-msgstr "TEI export"
+msgid "Tracked entity export"
+msgstr "Tracked entity export"
 
 msgid "Job overview"
 msgstr "Job overview"
@@ -1117,24 +1123,24 @@ msgstr ""
 "geometry."
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, "
-"or DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, "
-"or DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 
 msgid "Export events"
 msgstr "Export events"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, "
-"or DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or "
+"CSV format."
 msgstr ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, "
-"or DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or "
+"CSV format."
 
-msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr "Supported file types: JSON, CSV, and DXF2."
+msgid "Supported file types: JSON and CSV."
+msgstr "Supported file types: JSON and CSV."
 
 msgid "Organisation unit geometry import"
 msgstr "Organisation unit geometry import"
@@ -1165,8 +1171,8 @@ msgstr "Export metadata dependencies"
 msgid "Export metadata"
 msgstr "Export metadata"
 
-msgid "Export tracked entity instances"
-msgstr "Export tracked entity instances"
+msgid "Export tracked entities"
+msgstr "Export tracked entities"
 
 msgid "Import data"
 msgstr "Import data"
@@ -1183,8 +1189,8 @@ msgstr "Import GeoJSON"
 msgid "Import metadata"
 msgstr "Import metadata"
 
-msgid "Import tracked entity instances"
-msgstr "Import tracked entity instances"
+msgid "Import tracked entities"
+msgstr "Import tracked entities"
 
 msgid "An overview of all import jobs started this session."
 msgstr "An overview of all import jobs started this session."
@@ -1210,17 +1216,14 @@ msgstr ""
 "Import metadata, such as data elements and organisation units, using JSON "
 "or CSV format."
 
-msgid "Supported file types: JSON and CSV."
-msgstr "Supported file types: JSON and CSV."
-
 msgid "A class key must be selected"
 msgstr "A class key must be selected"
 
-msgid "Tracked entity instances export"
-msgstr "Tracked entity instances export"
+msgid "Tracked entities export"
+msgstr "Tracked entities export"
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
-msgstr "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
+msgstr "Export tracked entities in JSON or CSV format."
 
 msgid "Program to export from"
 msgstr "Program to export from"
@@ -1231,23 +1234,20 @@ msgstr "Enrollment date range"
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "At least one of the 'last updated' date fields must be specified"
 
-msgid "Tracked entity instances import"
-msgstr "Tracked entity instances import"
+msgid "Tracked entities import"
+msgstr "Tracked entities import"
 
-msgid "Import tracked entity instances using JSON or DXF2 format."
-msgstr "Import tracked entity instances using JSON or DXF2 format."
+msgid "Import tracked entities using JSON format."
+msgstr "Import tracked entities using JSON format."
 
-msgid "Supported file types: JSON and DXF2."
-msgstr "Supported file types: JSON and DXF2."
+msgid "Supported file types: JSON."
+msgstr "Supported file types: JSON."
 
 msgid "Job started."
 msgstr "Job started."
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "An unknown error occurred. Please try again later"
-
-msgid "Loading exported data"
-msgstr "Loading exported data"
 
 msgid "Data"
 msgstr "Data"
@@ -1264,5 +1264,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "Metadata"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr "Tracked entity"
