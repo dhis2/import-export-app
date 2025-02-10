@@ -3,7 +3,7 @@ import { locationAssign } from './helper.js'
 describe('locationAssign', () => {
     it('should create a file name based on the params', () => {
         const url =
-            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?ouMode=CAPTURE&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&paging=false&totalPages=false&program=lxAQ7Zs9VYR'
+            'https://debug.dhis2.org/dev/api/tracker/trackedEntities.json?orgUnitMode=CAPTURE&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&paging=false&totalPages=false&program=lxAQ7Zs9VYR'
         const link = locationAssign(url)
         expect(link.download).toEqual('trackedEntities')
     })
