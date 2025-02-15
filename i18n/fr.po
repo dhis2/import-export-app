@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -195,9 +195,6 @@ msgstr "Un ensemble de données doit être sélectionné"
 
 msgid "End date"
 msgstr "Date de fin"
-
-msgid "Event ID scheme"
-msgstr "Schéma d'ID d'événement"
 
 msgid "Loading export..."
 msgstr "Chargement de l'exportation ..."
@@ -739,6 +736,15 @@ msgstr "Mise à jour"
 msgid "Total"
 msgstr "Total"
 
+msgid "Reports"
+msgstr ""
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr "Index"
 
@@ -796,8 +802,8 @@ msgstr "Importation de la géométrie des unités d'organisation"
 msgid "Metadata import"
 msgstr "Importation de métadonnées"
 
-msgid "TEI import"
-msgstr "Importation TEI"
+msgid "Tracked entity import"
+msgstr ""
 
 msgid "Data export"
 msgstr "Exportation de données"
@@ -811,8 +817,8 @@ msgstr "Exportation des dépendances de métadonnées"
 msgid "Metadata export"
 msgstr "Exportation de métadonnées"
 
-msgid "TEI export"
-msgstr "Exportation TEI"
+msgid "Tracked entity export"
+msgstr ""
 
 msgid "Job overview"
 msgstr "Aperçu de tâche"
@@ -1175,20 +1181,20 @@ msgstr ""
 " ou utilisez une zone de captage comme géométrie associée."
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr "Exporter évènements"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr ""
+msgid "Supported file types: JSON and CSV."
+msgstr "Types de fichiers pris en charge : JSON et CSV."
 
 msgid "Organisation unit geometry import"
 msgstr "Importation de la géométrie des unités d'organisation"
@@ -1221,8 +1227,8 @@ msgstr "Exporter les dépendances de métadonnées"
 msgid "Export metadata"
 msgstr "Exporter Méta-Données"
 
-msgid "Export tracked entity instances"
-msgstr "Exporter les instances d'entités suivies"
+msgid "Export tracked entities"
+msgstr ""
 
 msgid "Import data"
 msgstr "Importer données"
@@ -1239,8 +1245,8 @@ msgstr "Importation GeoJSON"
 msgid "Import metadata"
 msgstr "Importer Méta-Données"
 
-msgid "Import tracked entity instances"
-msgstr "Importer les instances d'entités suivies"
+msgid "Import tracked entities"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr "Un aperçu de toutes les tâches d'importation a démarré cette session."
@@ -1265,16 +1271,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr "Types de fichiers pris en charge : JSON et CSV."
-
 msgid "A class key must be selected"
 msgstr "Une clé de classe doit être sélectionnée"
 
-msgid "Tracked entity instances export"
-msgstr "Exportation d'instances d'entités suivies"
+msgid "Tracked entities export"
+msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1287,13 +1290,13 @@ msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
 "Au moins un des champs de date de 'dernière mise à jour' doit être spécifié"
 
-msgid "Tracked entity instances import"
-msgstr "Importation d'instances d'entités suivies"
-
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Import tracked entities using JSON format."
+msgstr ""
+
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
@@ -1301,9 +1304,6 @@ msgstr "La tâche a commencé."
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "Une erreur inconnue est survenue. Veuillez réessayer plus tard"
-
-msgid "Loading exported data"
-msgstr "Chargement des données exportées"
 
 msgid "Data"
 msgstr "Données"
@@ -1320,5 +1320,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "Méta-données"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr ""

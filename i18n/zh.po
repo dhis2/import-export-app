@@ -1,16 +1,16 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
-# 晓东 林 <13981924470@126.com>, 2022
 # Philip Larsen Donnelly, 2022
 # easylin <lin_xd@126.com>, 2024
+# 晓东 林 <13981924470@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -172,9 +172,6 @@ msgstr "必须选择一个数据集"
 
 msgid "End date"
 msgstr "结束日期"
-
-msgid "Event ID scheme"
-msgstr "事件ID方案"
 
 msgid "Loading export..."
 msgstr "正在加载导出..."
@@ -689,6 +686,15 @@ msgstr "更新的"
 msgid "Total"
 msgstr "总共"
 
+msgid "Reports"
+msgstr "报表"
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr "索引"
 
@@ -746,8 +752,8 @@ msgstr "组织机构空间几何形状导入"
 msgid "Metadata import"
 msgstr "元数据导入"
 
-msgid "TEI import"
-msgstr "实体导入"
+msgid "Tracked entity import"
+msgstr ""
 
 msgid "Data export"
 msgstr "数据导出"
@@ -761,8 +767,8 @@ msgstr "元数据依赖导出"
 msgid "Metadata export"
 msgstr "元数据导出"
 
-msgid "TEI export"
-msgstr "实体导出"
+msgid "Tracked entity export"
+msgstr ""
 
 msgid "Job overview"
 msgstr "作业概要"
@@ -1107,20 +1113,20 @@ msgid ""
 msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织机构或使用缓冲区作为关联几何图形。"
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
-msgstr "将计划、阶段和跟踪实体的事件数据导出为 JSON、CSV 或 DXF2 格式。"
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
+msgstr ""
 
 msgid "Export events"
 msgstr "导出事件"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
-msgstr "将节目、阶段和跟踪实体的事件数据导入为 JSON、CSV 或 DXF2 格式。"
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
+msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr "支持的文件类型：JSON、CSV 和 DXF2。"
+msgid "Supported file types: JSON and CSV."
+msgstr "支持的文件类型：JSON 和 CSV。"
 
 msgid "Organisation unit geometry import"
 msgstr "组织机构空间几何形状导入"
@@ -1147,8 +1153,8 @@ msgstr "导出元数据依赖性"
 msgid "Export metadata"
 msgstr "导出元数据"
 
-msgid "Export tracked entity instances"
-msgstr "导出跟踪随访的实体实例"
+msgid "Export tracked entities"
+msgstr ""
 
 msgid "Import data"
 msgstr "导入数据"
@@ -1165,8 +1171,8 @@ msgstr "导入 GeoJSON"
 msgid "Import metadata"
 msgstr "导入元数据"
 
-msgid "Import tracked entity instances"
-msgstr "导入跟踪的实体实例"
+msgid "Import tracked entities"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr "该会话开始的所有导入作业概要"
@@ -1186,17 +1192,14 @@ msgid ""
 " CSV format."
 msgstr "使用 JSON 或 CSV 格式导入元数据，例如数据元素和组织单位。"
 
-msgid "Supported file types: JSON and CSV."
-msgstr "支持的文件类型：JSON 和 CSV。"
-
 msgid "A class key must be selected"
 msgstr "必须选择应该类键值"
 
-msgid "Tracked entity instances export"
-msgstr "跟踪实体导出"
+msgid "Tracked entities export"
+msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
-msgstr "以 JSON、CSV 或 DXF2 格式导出跟踪的实体实例。"
+msgid "Export tracked entities in JSON or CSV format."
+msgstr ""
 
 msgid "Program to export from"
 msgstr "从项目中导出"
@@ -1207,23 +1210,20 @@ msgstr "注册日期范围"
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "至少选择一个最近更新的日期字段"
 
-msgid "Tracked entity instances import"
-msgstr "跟踪实体实例导入"
+msgid "Tracked entities import"
+msgstr ""
 
-msgid "Import tracked entity instances using JSON or DXF2 format."
-msgstr "使用 JSON 或 DXF2 格式导入跟踪的实体实例。"
+msgid "Import tracked entities using JSON format."
+msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
-msgstr "支持的文件类型：JSON 和 DXF2。"
+msgid "Supported file types: JSON."
+msgstr ""
 
 msgid "Job started."
 msgstr "工作开始了。"
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "发生未知错误，请稍后再试"
-
-msgid "Loading exported data"
-msgstr "加载导出的数据"
 
 msgid "Data"
 msgstr "数据"
@@ -1240,5 +1240,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "元数据"
 
-msgid "TEI"
-msgstr "跟踪实体"
+msgid "Tracked entity"
+msgstr "跟踪的实体"

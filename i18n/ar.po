@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2022\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -172,9 +172,6 @@ msgstr "يجب تحديد مجموعة بيانات واحدة"
 
 msgid "End date"
 msgstr "تاريخ النهاية"
-
-msgid "Event ID scheme"
-msgstr ""
 
 msgid "Loading export..."
 msgstr "جارٍ تحميل التصدير ..."
@@ -699,6 +696,15 @@ msgstr "تم تحديثه"
 msgid "Total"
 msgstr "الإجمالي"
 
+msgid "Reports"
+msgstr ""
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr ""
 
@@ -756,7 +762,7 @@ msgstr ""
 msgid "Metadata import"
 msgstr "استيراد البيانات الوصفية"
 
-msgid "TEI import"
+msgid "Tracked entity import"
 msgstr ""
 
 msgid "Data export"
@@ -771,7 +777,7 @@ msgstr ""
 msgid "Metadata export"
 msgstr "تصدير البيانات الوصفية"
 
-msgid "TEI export"
+msgid "Tracked entity export"
 msgstr ""
 
 msgid "Job overview"
@@ -1116,19 +1122,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr "تصدير أحداث"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
+msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1156,8 +1162,8 @@ msgstr ""
 msgid "Export metadata"
 msgstr "تصدير بيانات وصفية"
 
-msgid "Export tracked entity instances"
-msgstr "تصدير نسخ الكيانات المتعقبة"
+msgid "Export tracked entities"
+msgstr ""
 
 msgid "Import data"
 msgstr "استيراد بيانات"
@@ -1174,8 +1180,8 @@ msgstr ""
 msgid "Import metadata"
 msgstr "استيراد بيانات وصفية"
 
-msgid "Import tracked entity instances"
-msgstr "استيراد نسخ الكيانات المتعقبة"
+msgid "Import tracked entities"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr "نظرة عامة على جميع مهام الاستيراد التي بدأت في هذه الجلسة."
@@ -1195,16 +1201,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr ""
-
 msgid "A class key must be selected"
 msgstr "يجب تحديد class key"
 
-msgid "Tracked entity instances export"
+msgid "Tracked entities export"
 msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1216,13 +1219,13 @@ msgstr ""
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "يجب تحديد حقل تاريخ واحد على الأقل من حقول \"آخر تحديث\""
 
-msgid "Tracked entity instances import"
-msgstr "استيراد نسخ الكيان المتعقبة"
-
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Import tracked entities using JSON format."
+msgstr ""
+
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
@@ -1230,9 +1233,6 @@ msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "حدث خطأ غير معروف. الرجاء إعادة المحاولة في وقت لاحق"
-
-msgid "Loading exported data"
-msgstr "تحميل البيانات المصدرة"
 
 msgid "Data"
 msgstr "بيانات"
@@ -1249,5 +1249,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "البيانات الوصفية"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr ""
