@@ -1,12 +1,12 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2023
+# Jiří Podhorecký <jirka.p@volny.cz>, 2023
 # Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -175,9 +175,6 @@ msgstr "Musí být vybrána jedna sada dat"
 
 msgid "End date"
 msgstr "Datum ukončení"
-
-msgid "Event ID scheme"
-msgstr "Schéma ID události"
 
 msgid "Loading export..."
 msgstr "Načítání exportu ..."
@@ -701,6 +698,15 @@ msgstr "Aktualizováno"
 msgid "Total"
 msgstr "Celkem"
 
+msgid "Reports"
+msgstr ""
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr "Indexy"
 
@@ -758,8 +764,8 @@ msgstr "Import geometrie organizační jednotky"
 msgid "Metadata import"
 msgstr "Import metadat"
 
-msgid "TEI import"
-msgstr "TEI import"
+msgid "Tracked entity import"
+msgstr ""
 
 msgid "Data export"
 msgstr "Export dat"
@@ -773,8 +779,8 @@ msgstr "Export závislosti metadat"
 msgid "Metadata export"
 msgstr "Export metadat"
 
-msgid "TEI export"
-msgstr "Export TEI"
+msgid "Tracked entity export"
+msgstr ""
 
 msgid "Job overview"
 msgstr "Přehled úloh"
@@ -1130,20 +1136,20 @@ msgstr ""
 "geometrii."
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr "Exportovat události"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr ""
+msgid "Supported file types: JSON and CSV."
+msgstr "Podporované typy souborů: JSON a CSV."
 
 msgid "Organisation unit geometry import"
 msgstr "Import geometrie organizační jednotky"
@@ -1174,8 +1180,8 @@ msgstr "Exportovat závislosti metadat"
 msgid "Export metadata"
 msgstr "Exportovat metadata"
 
-msgid "Export tracked entity instances"
-msgstr "Exportujte instance sledovaných entit"
+msgid "Export tracked entities"
+msgstr ""
 
 msgid "Import data"
 msgstr "Import dat"
@@ -1192,8 +1198,8 @@ msgstr "Import GeoJSON"
 msgid "Import metadata"
 msgstr "Import metadat"
 
-msgid "Import tracked entity instances"
-msgstr "Import instance trasovaných entit"
+msgid "Import tracked entities"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr "Tuto relaci zahájil přehled všech úloh importu."
@@ -1217,16 +1223,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr "Podporované typy souborů: JSON a CSV."
-
 msgid "A class key must be selected"
 msgstr "Musí být vybrán klíč třídy"
 
-msgid "Tracked entity instances export"
-msgstr "Export instancí trasovaných entit"
+msgid "Tracked entities export"
+msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1238,13 +1241,13 @@ msgstr "Časový rozsah období zápisu"
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "Musí být zadáno alespoň jedno z polí s datem „poslední aktualizace“"
 
-msgid "Tracked entity instances import"
-msgstr "Import instance trasovaných entit"
-
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Import tracked entities using JSON format."
+msgstr ""
+
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
@@ -1252,9 +1255,6 @@ msgstr "Úloha začala."
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "Nastala neznámá chyba. Prosím zkuste to znovu později"
-
-msgid "Loading exported data"
-msgstr "Načítání exportovaných dat"
 
 msgid "Data"
 msgstr "Data"
@@ -1271,5 +1271,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "Metadata"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr ""

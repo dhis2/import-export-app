@@ -17,7 +17,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -191,9 +191,6 @@ msgstr "Un set de datos debe ser seleccionado"
 
 msgid "End date"
 msgstr "Fecha final"
-
-msgid "Event ID scheme"
-msgstr "Esquema ID del evento"
 
 msgid "Loading export..."
 msgstr "Cargando exportación..."
@@ -726,6 +723,15 @@ msgstr "Actualizar"
 msgid "Total"
 msgstr "Total"
 
+msgid "Reports"
+msgstr ""
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr "índices"
 
@@ -783,8 +789,8 @@ msgstr "Importar geometría de la unidad organizativa"
 msgid "Metadata import"
 msgstr "Importar metadatos"
 
-msgid "TEI import"
-msgstr "Importación TEI"
+msgid "Tracked entity import"
+msgstr ""
 
 msgid "Data export"
 msgstr "Exportación de datos"
@@ -798,8 +804,8 @@ msgstr "Exportación de dependencias de metadatos"
 msgid "Metadata export"
 msgstr "Exportar metadatos"
 
-msgid "TEI export"
-msgstr "Exportación TEI"
+msgid "Tracked entity export"
+msgstr ""
 
 msgid "Job overview"
 msgstr "Resumen de tareas"
@@ -1160,20 +1166,20 @@ msgstr ""
 "captación como geometría asociada."
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr "Exportar eventos"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr ""
+msgid "Supported file types: JSON and CSV."
+msgstr "Tipos de archivo soportados: JSON y CSV."
 
 msgid "Organisation unit geometry import"
 msgstr "Importar geometría de la unidad organizativa"
@@ -1205,8 +1211,8 @@ msgstr "Exportar dependencias de metadatos"
 msgid "Export metadata"
 msgstr "Exportar Meta-Datos"
 
-msgid "Export tracked entity instances"
-msgstr "Exportar instancias de entidad de tracker"
+msgid "Export tracked entities"
+msgstr ""
 
 msgid "Import data"
 msgstr "Importar datos"
@@ -1223,8 +1229,8 @@ msgstr "Importar GeoJSON"
 msgid "Import metadata"
 msgstr "Importar Meta-Datos"
 
-msgid "Import tracked entity instances"
-msgstr "Importar instancias de entidad de tracker"
+msgid "Import tracked entities"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
@@ -1249,16 +1255,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr "Tipos de archivo soportados: JSON y CSV."
-
 msgid "A class key must be selected"
 msgstr "Una clave de clase debe ser seleccionada"
 
-msgid "Tracked entity instances export"
-msgstr "Exportación de instancias de entidad de tracker"
+msgid "Tracked entities export"
+msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1272,13 +1275,13 @@ msgstr ""
 "Se debe especificar al menos uno de los campos de fecha de \"última "
 "actualización\""
 
-msgid "Tracked entity instances import"
-msgstr "Importación de instancias de entidad de tracker"
-
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Import tracked entities using JSON format."
+msgstr ""
+
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
@@ -1287,9 +1290,6 @@ msgstr "Trabajo iniciado."
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 "Se produjo un error desconocido. Por favor, inténtelo de nuevo más tarde"
-
-msgid "Loading exported data"
-msgstr "Cargar datos exportados"
 
 msgid "Data"
 msgstr "Datos"
@@ -1306,5 +1306,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "Metadatos"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr ""
