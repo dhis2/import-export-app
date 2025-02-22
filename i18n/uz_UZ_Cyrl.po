@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2023
+# Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Last-Translator: Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -180,9 +180,6 @@ msgstr "Бирта маълумотлар тўплами танланган бў
 
 msgid "End date"
 msgstr "Якунланиш санаси"
-
-msgid "Event ID scheme"
-msgstr "Тадбир ID схемаси"
 
 msgid "Loading export..."
 msgstr "Экспорт юкланмоқда ..."
@@ -714,6 +711,15 @@ msgstr "Янгиланди"
 msgid "Total"
 msgstr "Жами"
 
+msgid "Reports"
+msgstr "Ҳисоботлар"
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr "Индекслар"
 
@@ -771,8 +777,8 @@ msgstr "Ташкилий бирлик геометрияси импорти"
 msgid "Metadata import"
 msgstr "МетаМаълумот импорти"
 
-msgid "TEI import"
-msgstr "ЕУШ импорти"
+msgid "Tracked entity import"
+msgstr ""
 
 msgid "Data export"
 msgstr "Маълумотлар экспорти"
@@ -786,8 +792,8 @@ msgstr "МетаМаълумотлар ўзаро боғлиқлиги эксп�
 msgid "Metadata export"
 msgstr "МетаМаълумотлар экспорти"
 
-msgid "TEI export"
-msgstr "TEI экспорти"
+msgid "Tracked entity export"
+msgstr ""
 
 msgid "Job overview"
 msgstr "Бўш ўринлар маълумоти"
@@ -1143,20 +1149,20 @@ msgstr ""
 " ташкилий бирликларни танланг ёки геометрик йиғиш майдонидан фойдаланинг."
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr "Тадбирни экспорт қилиш"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr ""
+msgid "Supported file types: JSON and CSV."
+msgstr "Қўллаб қувватланадиган файл турлари: JSON ва CSV."
 
 msgid "Organisation unit geometry import"
 msgstr "Ташкилий бирлик геометриясини импорт қилиш"
@@ -1188,8 +1194,8 @@ msgstr "Ўзаро боғлиқ МетаМаълумотларни экспор�
 msgid "Export metadata"
 msgstr "МетаМаълумотларни экспорт қилиш"
 
-msgid "Export tracked entity instances"
-msgstr "Кузатувдаги шахс нусхаларини экспорт қилиш"
+msgid "Export tracked entities"
+msgstr ""
 
 msgid "Import data"
 msgstr "Маълумотларни импорт қилиш"
@@ -1206,8 +1212,8 @@ msgstr "GeoJSON импорт"
 msgid "Import metadata"
 msgstr "МатаМаълумотни импорт қилиш"
 
-msgid "Import tracked entity instances"
-msgstr "Кузатувдаги шахс нусхаларини импорт қилиш"
+msgid "Import tracked entities"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
@@ -1233,16 +1239,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr "Қўллаб қувватланадиган файл турлари: JSON ва CSV."
-
 msgid "A class key must be selected"
 msgstr "Синф калити тайинланиши керак"
 
-msgid "Tracked entity instances export"
-msgstr "Кузатувдаги шахс нусхаларини экспорт қилиш"
+msgid "Tracked entities export"
+msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1254,13 +1257,13 @@ msgstr "Рўйхатдан ўтказилган давр оралиқ санал
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "\"Охирги янгиланган\" сана майдонларидан камида биттаси кўрсатилиши керак"
 
-msgid "Tracked entity instances import"
-msgstr "шахс нусхаларини импорт қилиш"
-
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Import tracked entities using JSON format."
+msgstr ""
+
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
@@ -1268,9 +1271,6 @@ msgstr "Фаолият бошланди."
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "Номаълум хатолик юз берди. Илтимос, кейинроқ қайта уриниб кўринг."
-
-msgid "Loading exported data"
-msgstr "Экспорт қилинган маълумотлар юкланмоқда"
 
 msgid "Data"
 msgstr "Маълумот"
@@ -1287,5 +1287,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "МетаМаълумот"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr "Кузатув объекти"
