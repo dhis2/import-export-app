@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2022
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2022\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -169,9 +169,6 @@ msgstr ""
 
 msgid "End date"
 msgstr "تاریخ اتمام"
-
-msgid "Event ID scheme"
-msgstr ""
 
 msgid "Loading export..."
 msgstr ""
@@ -686,6 +683,15 @@ msgstr ""
 msgid "Total"
 msgstr "مجموع"
 
+msgid "Reports"
+msgstr "گزارش ها"
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr ""
 
@@ -743,7 +749,7 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
-msgid "TEI import"
+msgid "Tracked entity import"
 msgstr ""
 
 msgid "Data export"
@@ -758,7 +764,7 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
-msgid "TEI export"
+msgid "Tracked entity export"
 msgstr ""
 
 msgid "Job overview"
@@ -1103,19 +1109,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr "صادر نمودن رویداد ها"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
+msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1143,7 +1149,7 @@ msgstr ""
 msgid "Export metadata"
 msgstr "صادر نمودن فرا اطلاعات"
 
-msgid "Export tracked entity instances"
+msgid "Export tracked entities"
 msgstr ""
 
 msgid "Import data"
@@ -1161,7 +1167,7 @@ msgstr ""
 msgid "Import metadata"
 msgstr "وارد نمودن فرا اطلاعات"
 
-msgid "Import tracked entity instances"
+msgid "Import tracked entities"
 msgstr ""
 
 msgid "An overview of all import jobs started this session."
@@ -1182,16 +1188,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr ""
-
 msgid "A class key must be selected"
 msgstr ""
 
-msgid "Tracked entity instances export"
+msgid "Tracked entities export"
 msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1203,22 +1206,19 @@ msgstr ""
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
 
-msgid "Tracked entity instances import"
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Import tracked entities using JSON format."
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
-
-msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
@@ -1236,5 +1236,5 @@ msgstr ""
 msgid "Metadata"
 msgstr ""
 
-msgid "TEI"
-msgstr ""
+msgid "Tracked entity"
+msgstr "ردیابی هویت"
