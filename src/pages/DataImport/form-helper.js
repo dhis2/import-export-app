@@ -22,7 +22,7 @@ const onImport =
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
-        const endpoint = 'dataValueSets.json'
+        const endpoint = 'dataValueSets'
         const params = [
             `async=${isAsync}`,
             `dryRun=${dryRun}`,
@@ -33,7 +33,6 @@ const onImport =
             `orgUnitIdScheme=${orgUnitIdScheme}`,
             `idScheme=${idScheme}`,
             `skipExistingCheck=${skipExistingCheck}`,
-            `format=${format}`,
             format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
         ]
             .filter((s) => s != '')

@@ -29,7 +29,7 @@ const radioInputs = [
     'inclusionStrategy',
     'lastUpdatedFilter',
     'mergeMode',
-    'ouMode',
+    'orgUnitMode',
     'preheatMode',
     'programStatus',
     'sharing',
@@ -41,7 +41,6 @@ const ignoreInputs = ['dryRun', 'importMode']
 
 const selectInputs = [
     'dataElementIdScheme',
-    'eventIdScheme',
     'orgUnitIdScheme',
     'idScheme',
     'program',

@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2022
 # channara rin, 2023
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:48:45.764Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: channara rin, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -172,9 +172,6 @@ msgstr ""
 msgid "End date"
 msgstr "កាល​បរិច្ឆេទ​បញ្ចប់​"
 
-msgid "Event ID scheme"
-msgstr ""
-
 msgid "Loading export..."
 msgstr ""
 
@@ -220,10 +217,10 @@ msgstr ""
 msgid "CSV"
 msgstr ""
 
-msgid "XML"
+msgid "DXF2 (XML)"
 msgstr ""
 
-msgid "ADX"
+msgid "ADX (XML)"
 msgstr ""
 
 msgid "PDF"
@@ -688,10 +685,25 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
+msgid "Reports"
+msgstr "របាយ​ការណ៍"
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr ""
 
 msgid "Details by type"
+msgstr ""
+
+msgid "All existing property values will be replaced"
+msgstr ""
+
+msgid "Values will be overwritten, even if the new value is null"
 msgstr ""
 
 msgid "Advanced options"
@@ -739,7 +751,7 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
-msgid "TEI import"
+msgid "Tracked entity import"
 msgstr ""
 
 msgid "Data export"
@@ -754,7 +766,7 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
-msgid "TEI export"
+msgid "Tracked entity export"
 msgstr ""
 
 msgid "Job overview"
@@ -785,8 +797,8 @@ msgid "Something went wrong when loading the program stages"
 msgstr ""
 
 msgid ""
-"Export metadata, such as data elements and organisation units, in DXF 2 "
-"format."
+"Export metadata, such as data elements and organisation units, to JSON, CSV,"
+" DXF2, or ADX format."
 msgstr ""
 
 msgid "Date range to export data for"
@@ -795,15 +807,15 @@ msgstr ""
 msgid "Export data"
 msgstr ""
 
-msgid "Import data values from ADX XML, DXF 2 XML, JSON, CSV or PDF files."
+msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, XML, ADX and PDF."
+msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
-"Engine"
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
@@ -1099,18 +1111,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities in DXF 2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr ""
 
 msgid ""
-"Import events for programs, stages and tracked entities using the DXF 2 "
-"format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and XML."
+msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1138,7 +1151,7 @@ msgstr ""
 msgid "Export metadata"
 msgstr ""
 
-msgid "Export tracked entity instances"
+msgid "Export tracked entities"
 msgstr ""
 
 msgid "Import data"
@@ -1156,7 +1169,7 @@ msgstr ""
 msgid "Import metadata"
 msgstr ""
 
-msgid "Import tracked entity instances"
+msgid "Import tracked entities"
 msgstr ""
 
 msgid "An overview of all import jobs started this session."
@@ -1173,20 +1186,17 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Import metadata like data elements and organisation units using the JSON and"
+"Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
-msgstr ""
-
-msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "A class key must be selected"
 msgstr ""
 
-msgid "Tracked entity instances export"
+msgid "Tracked entities export"
 msgstr ""
 
-msgid "Export tracked entity instances in XML, JSON or CSV format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1198,22 +1208,19 @@ msgstr ""
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
 
-msgid "Tracked entity instances import"
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Import tracked entity instances from JSON or XML files."
+msgid "Import tracked entities using JSON format."
 msgstr ""
 
-msgid "Supported file types: JSON and XML."
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
-
-msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
@@ -1231,5 +1238,5 @@ msgstr ""
 msgid "Metadata"
 msgstr "ទិន្នន័យ"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr ""

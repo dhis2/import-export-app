@@ -89,13 +89,7 @@ const SingleSummary = ({
                             >
                                 <TableCell>{c.uid}</TableCell>
                                 <TableCell>
-                                    <a
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        href="https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_nti_error_codes"
-                                    >
-                                        {c.warningCode ?? c.errorCode}
-                                    </a>
+                                    {c.warningCode ?? c.errorCode}
                                 </TableCell>
                                 <TableCell>{c.message}</TableCell>
                                 <TableCell>{c.trackerType}</TableCell>

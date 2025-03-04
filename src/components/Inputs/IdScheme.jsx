@@ -5,6 +5,7 @@ import { IdScheme as IdSchemeGeneric } from '../index.js'
 const idSchemeOptions = [
     { value: 'UID', label: i18n.t('Uid') },
     { value: 'CODE', label: i18n.t('Code') },
+    { value: 'NAME', label: i18n.t('Name') },
 ]
 const defaultIdSchemeOption = idSchemeOptions[0].value
 

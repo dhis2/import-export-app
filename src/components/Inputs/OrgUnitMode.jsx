@@ -34,8 +34,8 @@ const orgUnitSelectionModeOptions = [
 ]
 const defaultOrgUnitSelectionModeOption = orgUnitSelectionModeOptions[3].value
 
-const NAME = 'ouMode'
-const DATATEST = 'input-ouMode'
+const NAME = 'orgUnitMode'
+const DATATEST = 'input-orgUnitMode'
 const LABEL = i18n.t('Which organisation units should be included?')
 
 const OrgUnitMode = ({ value }) => {

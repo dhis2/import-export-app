@@ -37,8 +37,6 @@ import {
     IncludeDeleted,
     DataElementIdScheme,
     defaultDataElementIdSchemeOption,
-    EventIdScheme,
-    defaultEventIdSchemeOption,
     IdScheme,
     defaultIdSchemeOption,
     OrgUnitIdScheme,
@@ -64,7 +62,7 @@ const initialValues = {
     selectedTETypes: [],
     selectedUsers: [],
     format: defaultFormatOption,
-    ouMode: defaultOrgUnitSelectionModeOption,
+    orgUnitMode: defaultOrgUnitSelectionModeOption,
     inclusion: defaultInclusionOption,
     teiTypeFilter: defaultTEITypeFilterOption,
     programStatus: defaultProgramStatusOption,
@@ -80,7 +78,6 @@ const initialValues = {
     assignedUserMode: defaultAssignedUserModeOption,
     includeDeleted: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
-    eventIdScheme: defaultEventIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
     idScheme: defaultIdSchemeOption,
 }
@@ -116,7 +113,7 @@ const TEIExport = () => {
                     return (
                         <form onSubmit={handleSubmit}>
                             <BasicOptions>
-                                <OrgUnitMode value={values.ouMode} />
+                                <OrgUnitMode value={values.orgUnitMode} />
                                 <TEITypeFilter />
                                 <ProgramPicker
                                     label={i18n.t('Program to export from')}
@@ -147,7 +144,6 @@ const TEIExport = () => {
                                 <IncludeDeleted />
                                 <SchemeContainer>
                                     <DataElementIdScheme />
-                                    <EventIdScheme />
                                     <OrgUnitIdScheme />
                                     <IdScheme />
                                 </SchemeContainer>

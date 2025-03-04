@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2022
+# Yury Rogachev <yury@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2025\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -179,9 +179,6 @@ msgstr "Birta maʼlumotlar toʼplami tanlangan boʼlishi lozim"
 
 msgid "End date"
 msgstr "Yakunlanish sanasi"
-
-msgid "Event ID scheme"
-msgstr "Tadbir ID sxemasi"
 
 msgid "Loading export..."
 msgstr "Eksport yuklanmoqda ..."
@@ -720,6 +717,15 @@ msgstr "Yangilandi"
 msgid "Total"
 msgstr "Jami"
 
+msgid "Reports"
+msgstr "Hisobotlar"
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
+msgstr ""
+
 msgid "Indexes"
 msgstr ""
 
@@ -777,8 +783,8 @@ msgstr ""
 msgid "Metadata import"
 msgstr "MetaMaʼlumot importi"
 
-msgid "TEI import"
-msgstr "YeUSh importi"
+msgid "Tracked entity import"
+msgstr ""
 
 msgid "Data export"
 msgstr "Maʼlumotlar eksporti"
@@ -792,8 +798,8 @@ msgstr "MetaMaʼlumotlar oʼzaro bogʼliqligi eksporti"
 msgid "Metadata export"
 msgstr "MetaMaʼlumotlar eksporti"
 
-msgid "TEI export"
-msgstr "TEI eksporti"
+msgid "Tracked entity export"
+msgstr ""
 
 msgid "Job overview"
 msgstr "Boʼsh oʼrinlar maʼlumoti"
@@ -1137,19 +1143,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr "Tadbirni eksport qilish"
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
+msgid "Supported file types: JSON and CSV."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1177,8 +1183,8 @@ msgstr "Oʼzaro bogʼliq MetaMaʼlumotlarni eksport qilish"
 msgid "Export metadata"
 msgstr "MetaMaʼlumotlarni eksport qilish"
 
-msgid "Export tracked entity instances"
-msgstr "Kuzatuvdagi shaxs nusxalarini eksport qilish"
+msgid "Export tracked entities"
+msgstr ""
 
 msgid "Import data"
 msgstr "Maʼlumotlarni import qilish"
@@ -1195,8 +1201,8 @@ msgstr ""
 msgid "Import metadata"
 msgstr "MetaMaʼlumotni import qilish"
 
-msgid "Import tracked entity instances"
-msgstr "Kuzatuvdagi shaxs nusxalarini import qilish"
+msgid "Import tracked entities"
+msgstr ""
 
 msgid "An overview of all import jobs started this session."
 msgstr ""
@@ -1218,16 +1224,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr ""
-
 msgid "A class key must be selected"
 msgstr "Sinf kaliti tayinlanishi kerak"
 
-msgid "Tracked entity instances export"
-msgstr "Kuzatuvdagi shaxs nusxalarini eksport qilish"
+msgid "Tracked entities export"
+msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1240,13 +1243,13 @@ msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
 "Oxirgi yangilangan sana maydonlaridan kamida bittasi koʼrsatilishi kerak"
 
-msgid "Tracked entity instances import"
-msgstr "shaxs nusxalarini import qilish"
-
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Import tracked entities using JSON format."
+msgstr ""
+
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
@@ -1254,9 +1257,6 @@ msgstr "Faoliyat boshlandi."
 
 msgid "An unknown error occurred. Please try again later"
 msgstr "Nomaʼlum xatolik yuz berdi. Iltimos, keyinroq qayta urinib koʼring."
-
-msgid "Loading exported data"
-msgstr "Eksport qilingan maʼlumotlar yuklanmoqda"
 
 msgid "Data"
 msgstr "Маълумот"
@@ -1273,5 +1273,5 @@ msgstr "GML"
 msgid "Metadata"
 msgstr "Metadata"
 
-msgid "TEI"
-msgstr "TEI"
+msgid "Tracked entity"
+msgstr "Kuzatuv obʼekti"

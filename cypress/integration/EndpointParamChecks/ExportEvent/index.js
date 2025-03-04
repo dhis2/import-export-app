@@ -91,7 +91,6 @@ Then('the download request is sent with the right parameters', () => {
                         ...expected
                     } = allExpected
                     const extension = compression ? `.${compression}` : ''
-                    const attachment = `events.${format}${extension}`
 
                     /**
                      * The Event page has some (WTF) customizations.
@@ -99,11 +98,9 @@ Then('the download request is sent with the right parameters', () => {
                      */
                     const updatedExpected = {
                         ...expected,
-                        links: 'false',
                         skipPaging: 'true',
-                        ouMode: inclusion.toUpperCase(),
+                        orgUnitMode: inclusion.toUpperCase(),
                         programStage: programStages,
-                        attachment,
                         format,
                     }
 
