@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-test="import-strip"
+  >
+    <div
+      class="jsx-34417531 start"
+      data-test="import-strip-button-strip"
+    >
+      <div
+        class="jsx-34417531 box"
+      >
+        <button
+          class="jsx-3146657073 dryRun primary"
+          data-test="import-strip-dry-run-btn"
+          type="submit"
+        >
+          Start dry run
+        </button>
+      </div>
+      <div
+        class="jsx-34417531 box"
+      >
+        <button
+          class="jsx-3146657073 secondary"
+          data-test="import-strip-import-btn"
+          type="submit"
+        >
+          Start import
+        </button>
+      </div>
+    </div>
+    <p
+      class="jsx-4265152438 "
+      data-test="import-strip-help"
+    >
+      A dry run tests the import settings without importing any data
+    </p>
+  </div>
+</DocumentFragment>
+`;

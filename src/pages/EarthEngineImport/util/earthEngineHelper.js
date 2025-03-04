@@ -5,7 +5,7 @@ import { earthEngines } from './earthEngines.js'
 const DEFAULT_LOCALE = 'en'
 const fallbackDateFormat = (dateString) => dateString.substr(0, 10)
 
-const hasIntlSupport = typeof global.Intl !== 'undefined' && Intl.DateTimeFormat
+const hasIntlSupport = typeof window.Intl !== 'undefined' && Intl.DateTimeFormat
 const dateLocale = (locale) =>
     locale && locale.includes('_') ? locale.replace('_', '-') : locale
 const toDate = (date) => {

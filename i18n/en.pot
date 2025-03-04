@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
-"PO-Revision-Date: 2025-02-05T10:14:36.386Z\n"
+"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
+"PO-Revision-Date: 2025-03-04T14:17:07.908Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -885,6 +885,16 @@ msgstr "Earth Engine data set"
 
 msgid "Select earth engine data set"
 msgstr "Select earth engine data set"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} org unit"
+msgstr[1] "{{count}} org units"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} level"
+msgstr[1] "{{count}} levels"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
