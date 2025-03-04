@@ -1,3 +1,11 @@
+## [101.1.26](https://github.com/dhis2/import-export-app/compare/v101.1.25...v101.1.26) (2025-03-04)
+
+
+### Bug Fixes
+
+* use `window` as global var ([8440d1b](https://github.com/dhis2/import-export-app/commit/8440d1b4564b3c51642fea829dfe190f050fc433))
+* **app-platform:** upgrade platform tools to use vite and react 18 ([49ab8ea](https://github.com/dhis2/import-export-app/commit/49ab8eaac4d712fb30e91e5f1c9a1c8e0f5c62d6))
+
 ## [101.1.25](https://github.com/dhis2/import-export-app/compare/v101.1.24...v101.1.25) (2025-02-23)
 
 
