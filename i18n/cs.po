@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Jiří Podhorecký <jirka.p@volny.cz>, 2023
 # Philip Larsen Donnelly, 2024
+# Jiří Podhorecký <jirka.p@volny.cz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -699,7 +699,7 @@ msgid "Total"
 msgstr "Celkem"
 
 msgid "Reports"
-msgstr ""
+msgstr "Zprávy"
 
 msgid "Error Code"
 msgstr ""
@@ -895,6 +895,20 @@ msgstr "Datová sada Earth Engine"
 
 msgid "Select earth engine data set"
 msgstr "Vyberte datovou sadu Earth Engine"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} organizační jednotka"
+msgstr[1] "{{count}} organizační jednotky"
+msgstr[2] "{{count}} organizačních jednotek"
+msgstr[3] "{{count}} organizačních jednotek"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} úroveň"
+msgstr[1] "{{count}} úrovně"
+msgstr[2] "{{count}} úrovní"
+msgstr[3] "{{count}} úrovní"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Vybráno: {{commaSeparatedListOfOrganisationUnits}}"
@@ -1272,4 +1286,4 @@ msgid "Metadata"
 msgstr "Metadata"
 
 msgid "Tracked entity"
-msgstr ""
+msgstr "Trasovaná entita"

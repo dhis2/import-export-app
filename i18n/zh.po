@@ -2,15 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Philip Larsen Donnelly, 2022
-# easylin <lin_xd@126.com>, 2024
 # 晓东 林 <13981924470@126.com>, 2025
+# easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2025\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -690,10 +690,10 @@ msgid "Reports"
 msgstr "报表"
 
 msgid "Error Code"
-msgstr ""
+msgstr "错误代码"
 
 msgid "Tracker Type"
-msgstr ""
+msgstr "跟踪器类型"
 
 msgid "Indexes"
 msgstr "索引"
@@ -753,7 +753,7 @@ msgid "Metadata import"
 msgstr "元数据导入"
 
 msgid "Tracked entity import"
-msgstr ""
+msgstr "跟踪实体导入"
 
 msgid "Data export"
 msgstr "数据导出"
@@ -768,7 +768,7 @@ msgid "Metadata export"
 msgstr "元数据导出"
 
 msgid "Tracked entity export"
-msgstr ""
+msgstr "跟踪实体导出"
 
 msgid "Job overview"
 msgstr "作业概要"
@@ -880,6 +880,14 @@ msgstr "地球引擎数据集"
 
 msgid "Select earth engine data set"
 msgstr "选择地球引擎数据集"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} 个组织单位"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} 级"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
@@ -1115,7 +1123,7 @@ msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织�
 msgid ""
 "Export event data for programs, stages and tracked entities to JSON or CSV "
 "format."
-msgstr ""
+msgstr "将程序、阶段和跟踪实体的事件数据导出为 JSON 或 CSV 格式。"
 
 msgid "Export events"
 msgstr "导出事件"
@@ -1123,7 +1131,7 @@ msgstr "导出事件"
 msgid ""
 "Import event data for programs, stages and tracked entities from JSON or CSV"
 " format."
-msgstr ""
+msgstr "从 JSON 或 CSV 格式导入程序、阶段和跟踪实体的事件数据。"
 
 msgid "Supported file types: JSON and CSV."
 msgstr "支持的文件类型：JSON 和 CSV。"
@@ -1154,7 +1162,7 @@ msgid "Export metadata"
 msgstr "导出元数据"
 
 msgid "Export tracked entities"
-msgstr ""
+msgstr "导出跟踪实体"
 
 msgid "Import data"
 msgstr "导入数据"
@@ -1172,7 +1180,7 @@ msgid "Import metadata"
 msgstr "导入元数据"
 
 msgid "Import tracked entities"
-msgstr ""
+msgstr "导入跟踪实体"
 
 msgid "An overview of all import jobs started this session."
 msgstr "该会话开始的所有导入作业概要"
@@ -1196,10 +1204,10 @@ msgid "A class key must be selected"
 msgstr "必须选择应该类键值"
 
 msgid "Tracked entities export"
-msgstr ""
+msgstr "跟踪实体导出"
 
 msgid "Export tracked entities in JSON or CSV format."
-msgstr ""
+msgstr "以 JSON 或 CSV 格式导出跟踪的实体。"
 
 msgid "Program to export from"
 msgstr "从项目中导出"
@@ -1211,13 +1219,13 @@ msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "至少选择一个最近更新的日期字段"
 
 msgid "Tracked entities import"
-msgstr ""
+msgstr "跟踪实体导入"
 
 msgid "Import tracked entities using JSON format."
-msgstr ""
+msgstr "使用 JSON 格式导入跟踪实体。"
 
 msgid "Supported file types: JSON."
-msgstr ""
+msgstr "支持的文件类型：JSON"
 
 msgid "Job started."
 msgstr "工作开始了。"
