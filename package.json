@@ -33,7 +33,7 @@
         "@testing-library/react": "^16.2.0",
         "identity-obj-proxy": "^3.0.0",
         "patch-package": "^6.4.7",
-        "query-string": "^6.12.1"
+        "query-string": "^8.1.0"
     },
     "dependencies": {
         "@dhis2/analytics": "^21.7.0",
