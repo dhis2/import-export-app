@@ -177,7 +177,7 @@ msgid "All"
 msgstr "Все"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Отмечено для последующего наблюдения"
 
 msgid "Not marked for follow-up"
 msgstr ""
