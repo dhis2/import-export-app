@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Yury Rogachev <yury@dhis2.org>, 2025
+# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2025\n"
+"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -912,6 +913,14 @@ msgstr ""
 msgid "Select earth engine data set"
 msgstr ""
 
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -1009,7 +1018,7 @@ msgid "The app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Тармоқда хатолик"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr ""
