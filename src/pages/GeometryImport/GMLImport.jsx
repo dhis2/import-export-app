@@ -1,4 +1,5 @@
 import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
