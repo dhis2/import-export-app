@@ -58,10 +58,10 @@ const GMLImport = () => {
                 initialValues={initialValues}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload 
+                        <FileUpload
                             helpText={i18n.t(
                                 'Supported version: GML 2.0 only.'
-                            )}    
+                            )}
                         />
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />
