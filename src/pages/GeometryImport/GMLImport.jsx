@@ -61,7 +61,8 @@ const GMLImport = () => {
                     <form onSubmit={handleSubmit}>
                         <FileUpload
                             helpText={i18n.t(
-                                'Supported version: GML 2.0 only.'
+                                'Supported version: GML 2.0 only.',
+                                { nsSeparator: '>' }
                             )}
                         />
                         <ValidationSummary />
