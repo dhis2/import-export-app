@@ -1,3 +1,10 @@
+## [101.1.30](https://github.com/dhis2/import-export-app/compare/v101.1.29...v101.1.30) (2025-09-12)
+
+
+### Bug Fixes
+
+* indicate supported version for GML import [DHIS2-18232] ([#2196](https://github.com/dhis2/import-export-app/issues/2196)) ([5fde9dc](https://github.com/dhis2/import-export-app/commit/5fde9dc7d6d0bd26ff0dc39a837f53bf6897ddd4))
+
 ## [101.1.29](https://github.com/dhis2/import-export-app/compare/v101.1.28...v101.1.29) (2025-03-30)
 
 

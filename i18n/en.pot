@@ -1152,6 +1152,9 @@ msgstr ""
 msgid "Supported file types: JSON and CSV."
 msgstr "Supported file types: JSON and CSV."
 
+msgid "Supported version: GML 2.0 only."
+msgstr "Supported version: GML 2.0 only."
+
 msgid "Organisation unit geometry import"
 msgstr "Organisation unit geometry import"
 

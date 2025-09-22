@@ -1,4 +1,5 @@
 import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -58,7 +59,12 @@ const GMLImport = () => {
                 initialValues={initialValues}
                 render={({ handleSubmit, form, submitError }) => (
                     <form onSubmit={handleSubmit}>
-                        <FileUpload />
+                        <FileUpload
+                            helpText={i18n.t(
+                                'Supported version: GML 2.0 only.',
+                                { nsSeparator: '>' }
+                            )}
+                        />
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />
                         <FormAlerts alerts={submitError} />
