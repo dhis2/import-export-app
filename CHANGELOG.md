@@ -1,3 +1,10 @@
+# [101.2.0](https://github.com/dhis2/import-export-app/compare/v101.1.30...v101.2.0) (2025-09-22)
+
+
+### Features
+
+* add shortcuts to command palette ([#2197](https://github.com/dhis2/import-export-app/issues/2197)) ([c4a26c5](https://github.com/dhis2/import-export-app/commit/c4a26c52f1578e4532a511ae6c030a34a560ee63))
+
 ## [101.1.30](https://github.com/dhis2/import-export-app/compare/v101.1.29...v101.1.30) (2025-09-12)
 
 
