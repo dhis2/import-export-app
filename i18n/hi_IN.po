@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Siddharth Agarwal, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Siddharth Agarwal, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -168,9 +169,6 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr ""
-
-msgid "Event ID scheme"
 msgstr ""
 
 msgid "Loading export..."
@@ -630,7 +628,7 @@ msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "त्रुटि"
 
 msgid "Conflicts"
 msgstr ""
@@ -684,6 +682,15 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
+msgstr ""
+
+msgid "Reports"
+msgstr ""
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
 msgstr ""
 
 msgid "Indexes"
@@ -743,7 +750,7 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
-msgid "TEI import"
+msgid "Tracked entity import"
 msgstr ""
 
 msgid "Data export"
@@ -758,7 +765,7 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
-msgid "TEI export"
+msgid "Tracked entity export"
 msgstr ""
 
 msgid "Job overview"
@@ -871,6 +878,16 @@ msgstr ""
 
 msgid "Select earth engine data set"
 msgstr ""
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -1103,19 +1120,22 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr ""
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
+msgid "Supported file types: JSON and CSV."
+msgstr ""
+
+msgid "Supported version: GML 2.0 only."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1143,7 +1163,7 @@ msgstr ""
 msgid "Export metadata"
 msgstr ""
 
-msgid "Export tracked entity instances"
+msgid "Export tracked entities"
 msgstr ""
 
 msgid "Import data"
@@ -1161,7 +1181,7 @@ msgstr ""
 msgid "Import metadata"
 msgstr ""
 
-msgid "Import tracked entity instances"
+msgid "Import tracked entities"
 msgstr ""
 
 msgid "An overview of all import jobs started this session."
@@ -1182,16 +1202,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr ""
-
 msgid "A class key must be selected"
 msgstr ""
 
-msgid "Tracked entity instances export"
+msgid "Tracked entities export"
 msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1203,22 +1220,19 @@ msgstr ""
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
 
-msgid "Tracked entity instances import"
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Import tracked entities using JSON format."
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
 msgstr ""
 
 msgid "An unknown error occurred. Please try again later"
-msgstr ""
-
-msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
@@ -1236,5 +1250,29 @@ msgstr ""
 msgid "Metadata"
 msgstr ""
 
-msgid "TEI"
+msgid "Tracked entity"
+msgstr ""
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr ""
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data export"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata import"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata export\t"
 msgstr ""
