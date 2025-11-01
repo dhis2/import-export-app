@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Hamza <7amza.it@gmail.com>, 2022
-# Philip Larsen Donnelly, 2025
 # Nadiia <semchuk@aph.org.ua>, 2025
 # Mozafar Haider, 2025
+# Philip Larsen Donnelly, 2025
+# Hamza <7amza.it@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
+"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Mozafar Haider, 2025\n"
+"Last-Translator: Hamza <7amza.it@gmail.com>, 2025\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1157,6 +1157,9 @@ msgstr ""
 msgid "Supported file types: JSON and CSV."
 msgstr ""
 
+msgid "Supported version: GML 2.0 only."
+msgstr ""
+
 msgid "Organisation unit geometry import"
 msgstr ""
 
@@ -1271,3 +1274,27 @@ msgstr "البيانات الوصفية"
 
 msgid "Tracked entity"
 msgstr "الكيان المتتبع"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "استيراد-تصدير"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import"
+msgstr "استيراد البيانات"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data export"
+msgstr "تصدير البيانات"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata import"
+msgstr "استيراد البيانات الوصفية"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata export\t"
+msgstr ""

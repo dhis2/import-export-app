@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
-# Philip Larsen Donnelly, 2022
+# Philip Larsen Donnelly, 2025
 # 晓东 林 <13981924470@126.com>, 2025
 # easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
+"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -1136,6 +1136,9 @@ msgstr "从 JSON 或 CSV 格式导入程序、阶段和跟踪实体的事件数�
 msgid "Supported file types: JSON and CSV."
 msgstr "支持的文件类型：JSON 和 CSV。"
 
+msgid "Supported version: GML 2.0 only."
+msgstr "支持的版本：仅限 GML 2.0。"
+
 msgid "Organisation unit geometry import"
 msgstr "组织机构空间几何形状导入"
 
@@ -1250,3 +1253,27 @@ msgstr "元数据"
 
 msgid "Tracked entity"
 msgstr "跟踪的实体"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "数据导入导出"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr "核心应用程序，用于将数据导入和导出 DHIS2。"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import"
+msgstr "数据导入"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data export"
+msgstr "数据导出"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata import"
+msgstr "元数据导入"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata export\t"
+msgstr "元数据导出"

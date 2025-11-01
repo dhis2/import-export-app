@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
+"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -1165,6 +1165,9 @@ msgstr ""
 msgid "Supported file types: JSON and CSV."
 msgstr "Podporované typy souborů: JSON a CSV."
 
+msgid "Supported version: GML 2.0 only."
+msgstr ""
+
 msgid "Organisation unit geometry import"
 msgstr "Import geometrie organizační jednotky"
 
@@ -1287,3 +1290,27 @@ msgstr "Metadata"
 
 msgid "Tracked entity"
 msgstr "Trasovaná entita"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "Import/Export"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import"
+msgstr "Import dat"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data export"
+msgstr "Export dat"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata import"
+msgstr "Import metadat"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata export\t"
+msgstr ""
