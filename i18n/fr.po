@@ -7,17 +7,17 @@
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
-# Esther Tokouli, 2025
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
-# Cyrille Kabrane, 2025
+# Esther Tokouli, 2025
 # Yayra Gomado <ygomado@hispwca.org>, 2025
+# Cyrille Kabrane, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2025\n"
+"Last-Translator: Cyrille Kabrane, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1225,7 +1225,7 @@ msgid "Supported file types: JSON and CSV."
 msgstr "Types de fichiers pris en charge : JSON et CSV."
 
 msgid "Supported version: GML 2.0 only."
-msgstr ""
+msgstr "Version prise en charge : GML 2.0 uniquement."
 
 msgid "Organisation unit geometry import"
 msgstr "Importation de la géométrie des unités d'organisation"
@@ -1359,24 +1359,26 @@ msgstr "Entité suivie"
 
 msgctxt "Application title"
 msgid "__MANIFEST_APP_TITLE"
-msgstr ""
+msgstr "Import/Export"
 
 msgctxt "Application description"
 msgid "__MANIFEST_APP_DESCRIPTION"
 msgstr ""
+"Application principale pour l'importation et l'exportation de données vers "
+"et depuis DHIS2."
 
 msgctxt "Title for shortcut used by command palette"
 msgid "__MANIFEST_SHORTCUT_Data import"
-msgstr ""
+msgstr "Importation de données"
 
 msgctxt "Title for shortcut used by command palette"
 msgid "__MANIFEST_SHORTCUT_Data export"
-msgstr ""
+msgstr "Exportation de données"
 
 msgctxt "Title for shortcut used by command palette"
 msgid "__MANIFEST_SHORTCUT_Metadata import"
-msgstr ""
+msgstr "Importation de métadonnées"
 
 msgctxt "Title for shortcut used by command palette"
 msgid "__MANIFEST_SHORTCUT_Metadata export\t"
-msgstr ""
+msgstr "Exportation de métadonnées\t"

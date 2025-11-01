@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -879,6 +879,14 @@ msgstr "地球引擎数据集"
 msgid "Select earth engine data set"
 msgstr "选择地球引擎数据集"
 
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
 
@@ -1126,6 +1134,9 @@ msgstr ""
 msgid "Supported file types: JSON and CSV."
 msgstr "支持的文件类型：JSON 和 CSV。"
 
+msgid "Supported version: GML 2.0 only."
+msgstr ""
+
 msgid "Organisation unit geometry import"
 msgstr "组织机构空间几何形状导入"
 
@@ -1240,3 +1251,27 @@ msgstr "元数据"
 
 msgid "Tracked entity"
 msgstr "跟踪实体"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "数据导入导出"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import"
+msgstr "数据导入"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data export"
+msgstr "数据导出"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata import"
+msgstr "元数据导入"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata export\t"
+msgstr ""
