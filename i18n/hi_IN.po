@@ -224,7 +224,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "एरर्स"
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -539,7 +539,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Tracked entity type"
 msgstr ""
@@ -614,7 +614,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "समय"
 
 msgid "Message"
 msgstr "संदेश"
