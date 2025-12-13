@@ -625,7 +625,7 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "वैल्यू"
 
 msgid "Job summary"
 msgstr ""
@@ -1223,7 +1223,7 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr ""
+msgstr "डेटा"
 
 msgid "Event"
 msgstr ""
