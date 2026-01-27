@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
-"PO-Revision-Date: 2025-09-12T12:43:22.432Z\n"
+"POT-Creation-Date: 2026-01-27T10:58:02.796Z\n"
+"PO-Revision-Date: 2026-01-27T10:58:02.796Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -1009,6 +1009,9 @@ msgstr ""
 msgid "Population"
 msgstr "Population"
 
+msgid "Population v2"
+msgstr "Population v2"
+
 msgid "Population age groups"
 msgstr "Population age groups"
 
@@ -1119,6 +1122,27 @@ msgstr "Women 75 - 79 years"
 
 msgid "Women 80 years and above"
 msgstr "Women 80 years and above"
+
+msgid "Population age groups v2"
+msgstr "Population age groups v2"
+
+msgid "Men 80 - 84 years"
+msgstr "Men 80 - 84 years"
+
+msgid "Men 85 - 89 years"
+msgstr "Men 85 - 89 years"
+
+msgid "Men 90 years and above"
+msgstr "Men 90 years and above"
+
+msgid "Women 80 - 84 years"
+msgstr "Women 80 - 84 years"
+
+msgid "Women 85 - 89 years"
+msgstr "Women 85 - 89 years"
+
+msgid "Women 90 years and above"
+msgstr "Women 90 years and above"
 
 msgid "No organisation units have been selected"
 msgstr "No organisation units have been selected"
@@ -1279,27 +1303,3 @@ msgstr "Metadata"
 
 msgid "Tracked entity"
 msgstr "Tracked entity"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "Import/Export"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr "Core app for importing and exporting data to and from DHIS2."
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data import"
-msgstr "Data import"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data export"
-msgstr "Data export"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata import"
-msgstr "Metadata import"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata export\t"
-msgstr "Metadata export\t"
