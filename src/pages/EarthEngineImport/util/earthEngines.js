@@ -1,8 +1,11 @@
 import i18n from '@dhis2/d2-i18n'
 
 const POPULATION_TOTAL_EE_ID = 'WorldPop/GP/100m/pop_age_sex_cons_unadj_TOTAL'
+const POPULATION_TOTAL_EE_ID_V2 = 'projects/sat-io/open-datasets/WORLDPOP/pop'
 const POPULATION_AGE_GROUPS_EE_ID =
     'WorldPop/GP/100m/pop_age_sex_cons_unadj_AGE_GROUPS'
+/* const POPULATION_AGE_GROUPS_EE_ID_V2 =
+    'projects/wpgp-global2/assets/agesex_100m' */
 const POPULATION_AGE_GROUPS_DATASET_ID =
     'WorldPop/GP/100m/pop_age_sex_cons_unadj'
 const SOURCE_NAME = 'WorldPop / Google Earth Engine'
@@ -14,6 +17,32 @@ export const earthEngines = {
         earthEngineId: POPULATION_TOTAL_EE_ID,
         datasetId: POPULATION_AGE_GROUPS_DATASET_ID,
         name: i18n.t('Population'),
+        source: SOURCE_NAME,
+        sourceUrl: SOURCE_URL,
+        img: 'images/population.png',
+        defaultAggregations: ['sum', 'mean'],
+        periodType: 'Yearly',
+        bandReducer: 'sum',
+        band: 'population',
+        filters: ({ id, name, year }) => [
+            {
+                id,
+                name,
+                type: 'eq',
+                arguments: ['year', year],
+            },
+        ],
+        mosaic: true,
+        params: {
+            min: 0,
+            max: 25,
+            palette: '#fee5d9,#fcbba1,#fc9272,#fb6a4a,#de2d26,#a50f15', // Reds
+        },
+    },
+    [POPULATION_TOTAL_EE_ID_V2]: {
+        earthEngineId: POPULATION_TOTAL_EE_ID_V2,
+        datasetId: POPULATION_AGE_GROUPS_DATASET_ID,
+        name: i18n.t('Population v2'),
         source: SOURCE_NAME,
         sourceUrl: SOURCE_URL,
         img: 'images/population.png',
