@@ -10,16 +10,17 @@
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Cyrille Kabrane, 2025
+# Esther Tokouli, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2019-09-02 07:17+0000\n"
-"Last-Translator: Cyrille Kabrane, 2025\n"
+"Last-Translator: Esther Tokouli, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -722,7 +723,8 @@ msgid "One organisation unit must be selected"
 msgstr "Une unité d'organisation doit être sélectionnée"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr "Une erreur s'est produite lors du chargement des unités organisation!"
+msgstr ""
+"Une erreur s'est produite lors du chargement des unités organisation !"
 
 msgid "One program stage must be selected"
 msgstr "Un stade de programme doit être sélectionné"
@@ -878,13 +880,14 @@ msgid "Import tracked entity instances"
 msgstr "Importer les instances d'entités suivies"
 
 msgid "An overview of all import jobs started this session."
-msgstr "Un aperçu de toutes les tâches d'importation a démarré cette session."
+msgstr ""
+"Cette session commence par un aperçu de toutes les tâches d'importation."
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in XML or JSON format."
 msgstr ""
-"Exportez les dépendances de métadonnées, telles que les ensembles de données"
+"Exporter les dépendances de métadonnées, telles que les ensembles de données"
 " et les programmes, y compris les objets de métadonnées associés, au format "
 "XML ou JSON."
 
@@ -892,7 +895,7 @@ msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
 msgstr ""
-"Exportez les métadonnées, telles que les éléments de données et les unités "
+"Exporter les métadonnées, telles que les éléments de données et les unités "
 "d'organisation, au format XML, JSON ou CSV."
 
 msgid ""
@@ -909,7 +912,7 @@ msgid "Tracked entity instances export"
 msgstr "Exportation d'instances d'entités suivies"
 
 msgid "Export tracked entity instances in XML, JSON or CSV format."
-msgstr "Exportez les instances d'entités suivies au format XML, JSON ou CSV."
+msgstr "Exporter les instances d'entités suivies au format XML, JSON ou CSV."
 
 msgid "Program to export from"
 msgstr "Programme à exporter depuis"
