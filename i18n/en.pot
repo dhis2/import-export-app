@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-01-27T10:58:02.796Z\n"
-"PO-Revision-Date: 2026-01-27T10:58:02.796Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"PO-Revision-Date: 2026-02-09T16:33:31.275Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -815,15 +815,30 @@ msgstr "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
-msgstr ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid "Import high resolution population data from "
+msgstr "Import high resolution population data from "
+
+msgid " using Google Earth Engine."
+msgstr " using Google Earth Engine."
 
 msgid "Earth Engine source"
 msgstr "Earth Engine source"
+
+msgid "About WorldPop dataset versions"
+msgstr "About WorldPop dataset versions"
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require "
+"a fresh import. To track which data is used, consider creating separate "
+"data elements for each release and including the version in the name or "
+"description."
+msgstr ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require "
+"a fresh import. To track which data is used, consider creating separate "
+"data elements for each release and including the version in the name or "
+"description."
 
 msgid "Organisation units"
 msgstr "Organisation units"
@@ -848,13 +863,6 @@ msgstr "Select associated geometry for selected organisation units"
 
 msgid "Import groups to category option combinations"
 msgstr "Import groups to category option combinations"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
 
 msgid "Group name"
 msgstr "Group name"
@@ -1006,14 +1014,11 @@ msgstr ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
 "more information."
 
-msgid "Population"
-msgstr "Population"
+msgid "Population WorldPop Global2"
+msgstr "Population WorldPop Global2"
 
-msgid "Population v2"
-msgstr "Population v2"
-
-msgid "Population age groups"
-msgstr "Population age groups"
+msgid "Population age groups WorldPop Global2"
+msgstr "Population age groups WorldPop Global2"
 
 msgid "Men 0 - 1 years"
 msgstr "Men 0 - 1 years"
@@ -1066,8 +1071,14 @@ msgstr "Men 70 - 74 years"
 msgid "Men 75 - 79 years"
 msgstr "Men 75 - 79 years"
 
-msgid "Men 80 years and above"
-msgstr "Men 80 years and above"
+msgid "Men 80 - 84 years"
+msgstr "Men 80 - 84 years"
+
+msgid "Men 85 - 89 years"
+msgstr "Men 85 - 89 years"
+
+msgid "Men 90 years and above"
+msgstr "Men 90 years and above"
 
 msgid "Women 0 - 1 years"
 msgstr "Women 0 - 1 years"
@@ -1119,21 +1130,6 @@ msgstr "Women 70 - 74 years"
 
 msgid "Women 75 - 79 years"
 msgstr "Women 75 - 79 years"
-
-msgid "Women 80 years and above"
-msgstr "Women 80 years and above"
-
-msgid "Population age groups v2"
-msgstr "Population age groups v2"
-
-msgid "Men 80 - 84 years"
-msgstr "Men 80 - 84 years"
-
-msgid "Men 85 - 89 years"
-msgstr "Men 85 - 89 years"
-
-msgid "Men 90 years and above"
-msgstr "Men 90 years and above"
 
 msgid "Women 80 - 84 years"
 msgstr "Women 80 - 84 years"
@@ -1303,3 +1299,14 @@ msgstr "Metadata"
 
 msgid "Tracked entity"
 msgstr "Tracked entity"
+
+msgctxt "01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. "
+"Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
+msgstr ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. "
+"Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m_01\"...) are available, the combinations will "
+"be matched automatically."
