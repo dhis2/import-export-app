@@ -63,9 +63,23 @@ const BandCocMappingTable = () => {
         })
     }
 
-    const getProbableCocMatch = (bandId) => {
-        const probableCoc = cocs.find((coc) => coc.code === bandId)
+    const normalizeCode = (code) => {
+        if (typeof code !== 'string') {
+            return ''
+        }
+        let c = code.toLowerCase()
+        c = c.replace(/^([mf])_(\d)$/, (_, gender, num) => `${gender}_0${num}`)
+        return c
+    }
 
+    const getProbableCocMatch = (bandId) => {
+        let probableCoc = cocs.find((coc) => coc.code === bandId)
+        if (!probableCoc) {
+            const normalizedBandId = normalizeCode(bandId)
+            probableCoc = cocs.find(
+                (coc) => normalizeCode(coc.code) === normalizedBandId
+            )
+        }
         return probableCoc?.id || null
     }
 
@@ -80,7 +94,7 @@ const BandCocMappingTable = () => {
                     )}
                 >
                     {i18n.t(
-                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.'
+                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.\nIf the codes ("m_00", "m_01"...) are available, the combinations will be matched automatically.'
                     )}
                 </NoticeBox>
             </div>
