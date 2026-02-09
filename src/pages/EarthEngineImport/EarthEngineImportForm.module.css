@@ -18,3 +18,8 @@
 .buttonWrapper {
     margin-top: var(--spacers-dp16);
 }
+
+.noticeBox {
+    margin-bottom: var(--spacers-dp16);
+    white-space: pre-wrap;
+}
