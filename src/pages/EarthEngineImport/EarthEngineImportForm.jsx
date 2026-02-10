@@ -1,6 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { ReactFinalForm, Divider, Button } from '@dhis2/ui'
+import { ReactFinalForm, Divider, Button, NoticeBox } from '@dhis2/ui'
 import arrayMutators from 'final-form-arrays'
 import React, { useState, useContext, useRef } from 'react'
 import { Page, DataIcon, Tooltip } from '../../components/index.js'
@@ -15,6 +15,7 @@ import { OrganisationUnits } from './components/OrganisationUnits.jsx'
 import { Periods } from './components/Periods.jsx'
 import { Rounding, defaultRoundingOption } from './components/Rounding.jsx'
 import { useEeData } from './components/useEeData.js'
+import { PAGE_NAME, PAGE_DESCRIPTION } from './EarthEngineImport.jsx'
 import styles from './EarthEngineImportForm.module.css'
 import { onImport } from './form-helper.js'
 import { getEarthEngineBands } from './util/earthEngines.js'
@@ -103,10 +104,8 @@ const EarthEngineImportForm = () => {
         <>
             <div ref={hiddenTopElRef} className={styles.hiddenTopElement}></div>
             <Page
-                title={i18n.t('Earth Engine import')}
-                desc={i18n.t(
-                    'Import high resolution population data from WorldPop using Google Earth Engine.'
-                )}
+                title={PAGE_NAME}
+                desc={PAGE_DESCRIPTION}
                 icon={<DataIcon />}
                 loading={progress}
                 dataTest="page-import-earthengine"
@@ -129,6 +128,17 @@ const EarthEngineImportForm = () => {
                                     </h2>
                                     <Divider />
                                     <EarthEngineId />
+                                    <div className={styles.noticeBox}>
+                                        <NoticeBox
+                                            title={i18n.t(
+                                                'About WorldPop dataset versions'
+                                            )}
+                                        >
+                                            {i18n.t(
+                                                'WorldPop global data is currently at v2 (released 2025-2026).\nPopulation figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description.'
+                                            )}
+                                        </NoticeBox>
+                                    </div>
                                     <Periods />
                                     <Rounding />
                                     <h2 className={styles.sectionHeader}>

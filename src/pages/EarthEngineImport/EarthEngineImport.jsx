@@ -3,11 +3,18 @@ import React from 'react'
 import { NO_ASSOCIATED_GEOMETRY } from './components/AssociatedGeometry.jsx'
 import { EarthEngineImportForm } from './EarthEngineImportForm.jsx'
 import { CachedDataQueryProvider } from './util/CachedQueryProvider.jsx'
+import { SOURCE_URL } from './util/earthEngines.js'
 
 // PAGE INFO
 export const PAGE_NAME = i18n.t('Earth Engine import')
-export const PAGE_DESCRIPTION = i18n.t(
-    'Import high resolution population data from WorldPop using Google Earth Engine.'
+export const PAGE_DESCRIPTION = (
+    <>
+        {i18n.t('Import high resolution population data from ')}
+        <a href={SOURCE_URL} target="_blank" rel="noopener noreferrer">
+            WorldPop
+        </a>
+        {i18n.t(' using Google Earth Engine.')}
+    </>
 )
 
 const query = {
