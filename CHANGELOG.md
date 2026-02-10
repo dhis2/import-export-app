@@ -1,3 +1,10 @@
+# [101.3.0](https://github.com/dhis2/import-export-app/compare/v101.2.0...v101.3.0) (2026-02-10)
+
+
+### Features
+
+* new worldpop global2 layer sources [DHIS2-20774] ([#2199](https://github.com/dhis2/import-export-app/issues/2199)) ([f4f306d](https://github.com/dhis2/import-export-app/commit/f4f306db5ae01c8d7f023ecf59d96ce0ae0a781a))
+
 # [101.2.0](https://github.com/dhis2/import-export-app/compare/v101.1.30...v101.2.0) (2025-09-22)
 
 
