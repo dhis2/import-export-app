@@ -10,16 +10,17 @@
 # Yayra Gomado <ygomado@hispwca.org>, 2023
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Cyrille Kabrane, 2025
+# Esther Tokouli, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
-"Last-Translator: Cyrille Kabrane, 2025\n"
+"Last-Translator: Esther Tokouli, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -216,7 +217,7 @@ msgid "A header row will be ignored during import"
 msgstr "Une ligne d'en-tête sera ignorée lors de l'importation"
 
 msgid "Auto (recommended)"
-msgstr "Auto (recommandé)"
+msgstr "Automatique (recommandé)"
 
 msgid "Object (debugging purposes)"
 msgstr "Objet (à des fins de débogage)"
@@ -435,7 +436,7 @@ msgstr "Date de début de la dernière mise à jour"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
-"Remplacer l'ancienne propriété seulement si la valeur de la nouvelle "
+"Remplacer l'ancienne propriété uniquement si la valeur de la nouvelle "
 "propriété n'est pas nulle"
 
 msgid "Overwrite regardless of whether the new property value is null"
@@ -498,7 +499,7 @@ msgstr ""
 "Unités d'organisation de saisie de données associées à l'utilisateur actuel"
 
 msgid "Capture"
-msgstr "Saisir"
+msgstr "Saisie"
 
 msgid "All organisation units in the system"
 msgstr "Toutes les unités d'organisation du système"
@@ -697,7 +698,7 @@ msgid "Dry run"
 msgstr "Exécution littérale"
 
 msgid "Log"
-msgstr "Log"
+msgstr "connexion"
 
 msgid "Time"
 msgstr "Heure"
