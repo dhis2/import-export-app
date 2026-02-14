@@ -173,7 +173,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "सभी"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -298,7 +298,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "चुनें"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -490,7 +490,7 @@ msgid "Active"
 msgstr ""
 
 msgid "Completed"
-msgstr ""
+msgstr "पूरा हुआ"
 
 msgid "Cancelled"
 msgstr ""
@@ -623,7 +623,7 @@ msgid "ID"
 msgstr "आईडी"
 
 msgid "Messages"
-msgstr ""
+msgstr "मैसेजेस"
 
 msgid "Type"
 msgstr ""
