@@ -7,20 +7,20 @@
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Esther Tokouli, 2025
 # Yayra Gomado <ygomado@hispwca.org>, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Cyrille Kabrane, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Cyrille Kabrane, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -874,15 +874,22 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr "Types de fichiers pris en charge : JSON, CSV, DXF2, ADX et PDF."
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid "Import high resolution population data from "
 msgstr ""
-"Importer les données de population à haute résolution de WorldPop à l'aide "
-"de Google Earth Engine."
+
+msgid " using Google Earth Engine."
+msgstr ""
 
 msgid "Earth Engine source"
 msgstr "Source Earth Engine"
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
+msgstr ""
 
 msgid "Organisation units"
 msgstr "Unités d'organisation"
@@ -909,14 +916,6 @@ msgstr ""
 
 msgid "Import groups to category option combinations"
 msgstr "Importer des groupes vers des combinaisons d'options de catégorie"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr ""
-"L'ensemble de données de Earth Engine \"Groupes d'âge de la population\" "
-"comporte des groupes de désagrégation. Choisissez les combinaisons d'options"
-" de catégorie dans lesquelles vous souhaitez importer chaque groupe."
 
 msgid "Group name"
 msgstr "Nom du groupe shhlli7dhùd hdg"
@@ -1078,11 +1077,11 @@ msgstr ""
 "Il est nécessaire d'avoir un compte Google Earth Engine. Consultez la "
 "documentation de DHIS2 pour plus d'informations."
 
-msgid "Population"
-msgstr "Population"
+msgid "Population WorldPop Global2"
+msgstr ""
 
-msgid "Population age groups"
-msgstr "Groupes d'âge de la population"
+msgid "Population age groups WorldPop Global2"
+msgstr ""
 
 msgid "Men 0 - 1 years"
 msgstr "Masculin 0 - 1 an"
@@ -1135,8 +1134,14 @@ msgstr "Masculin 70 - 74 ans"
 msgid "Men 75 - 79 years"
 msgstr "Masculin 75 - 79 ans"
 
-msgid "Men 80 years and above"
-msgstr "Masculin 80 ans et plus"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
+msgstr ""
 
 msgid "Women 0 - 1 years"
 msgstr "Féminin 0 - 1 an"
@@ -1189,8 +1194,14 @@ msgstr "Féminin 70 - 74 ans"
 msgid "Women 75 - 79 years"
 msgstr "Féminin 75 - 79 ans"
 
-msgid "Women 80 years and above"
-msgstr "Féminin 80 ans et plus"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
+msgstr ""
 
 msgid "No organisation units have been selected"
 msgstr "Aucune unité d'organisation n'a été sélectionnée"
@@ -1357,28 +1368,9 @@ msgstr "Méta-données"
 msgid "Tracked entity"
 msgstr "Entité suivie"
 
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "Import/Export"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
 msgstr ""
-"Application principale pour l'importation et l'exportation de données vers "
-"et depuis DHIS2."
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data import"
-msgstr "Importation de données"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data export"
-msgstr "Exportation de données"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata import"
-msgstr "Importation de métadonnées"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata export\t"
-msgstr "Exportation de métadonnées\t"

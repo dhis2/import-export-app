@@ -5,12 +5,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -839,13 +839,22 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid "Import high resolution population data from "
+msgstr ""
+
+msgid " using Google Earth Engine."
 msgstr ""
 
 msgid "Earth Engine source"
 msgstr "Earth Engine Манбаи"
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
+msgstr ""
 
 msgid "Organisation units"
 msgstr "Ташкилий бўлимлар"
@@ -870,14 +879,6 @@ msgstr "Танланган ташкилий бирлик учун ассоцир
 
 msgid "Import groups to category option combinations"
 msgstr "Категориялар вариантлари комбосига гуруҳларни импорт килиш"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr ""
-"Earth Engine маълумотлар тўплами “Aholining yosh guruhlari” бўлиниш "
-"гуруҳларига эга. Ҳар бир гуруҳга импорт қилиш учун категория вариантлари "
-"комбосини танланг."
 
 msgid "Group name"
 msgstr "Гуруҳ номи"
@@ -1031,11 +1032,11 @@ msgstr ""
 "Google Earth Engine аккаунти талаб қилинади. Қўшимча маълумот олиш учун "
 "DHIS2 ҳужжатларини кўриб чиқинг."
 
-msgid "Population"
-msgstr "Аҳоли"
+msgid "Population WorldPop Global2"
+msgstr ""
 
-msgid "Population age groups"
-msgstr "Аҳоли ёш гуруҳлари"
+msgid "Population age groups WorldPop Global2"
+msgstr ""
 
 msgid "Men 0 - 1 years"
 msgstr "Эркак 0 - 1 ёш"
@@ -1088,8 +1089,14 @@ msgstr "Эркак 70 - 74 ёш"
 msgid "Men 75 - 79 years"
 msgstr "Эркак 75 - 79 ёш"
 
-msgid "Men 80 years and above"
-msgstr "Эркак 80 ёш ва ундан катта"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
+msgstr ""
 
 msgid "Women 0 - 1 years"
 msgstr "Аёл 0 - 1 ёш"
@@ -1142,8 +1149,14 @@ msgstr "Аёл 70 - 74 ёш"
 msgid "Women 75 - 79 years"
 msgstr "Аёл 75 - 79 ёш"
 
-msgid "Women 80 years and above"
-msgstr "Аёл 80 ёш ва ундан катта"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
+msgstr ""
 
 msgid "No organisation units have been selected"
 msgstr "Ташкилот бирлиги танланмаган эди"
@@ -1301,26 +1314,9 @@ msgstr "МетаМаълумот"
 msgid "Tracked entity"
 msgstr "Кузатув объекти"
 
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "Импорт/Экспорт"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data import"
-msgstr "Маълумотлар импорти"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data export"
-msgstr "Маълумотлар экспорти"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata import"
-msgstr "МетаМаълумот импорти"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata export\t"
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
 msgstr ""

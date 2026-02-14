@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -828,15 +828,22 @@ msgstr "Import hodnot dat pomocí formátů JSON, CSV, DXF2, ADX nebo PDF."
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr "Podporované typy souborů: JSON, CSV, DXF2, ADX a PDF."
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid "Import high resolution population data from "
 msgstr ""
-"Import dat o obyvatelstvu ve vysokém rozlišení z WorldPop pomocí Google "
-"Earth Engine."
+
+msgid " using Google Earth Engine."
+msgstr ""
 
 msgid "Earth Engine source"
 msgstr "Zdroj Earth Engine"
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
+msgstr ""
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
@@ -861,14 +868,6 @@ msgstr "Vyberte přidruženou geometrii pro vybrané organizační jednotky"
 
 msgid "Import groups to category option combinations"
 msgstr "Importujte skupiny do kombinací možností kategorií"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr ""
-"Datový soubor Earth Engine „Věkové skupiny populace“ obsahuje skupiny "
-"rozčlenění. Vyberte kombinace možností kategorií, do kterých chcete "
-"importovat jednotlivé skupiny."
 
 msgid "Group name"
 msgstr "Název Skupiny"
@@ -1027,11 +1026,11 @@ msgstr ""
 "Vyžaduje účet Google Earth Engine. Další informace naleznete v dokumentaci "
 "DHIS2."
 
-msgid "Population"
-msgstr "Obyvatelstvo"
+msgid "Population WorldPop Global2"
+msgstr ""
 
-msgid "Population age groups"
-msgstr "Populační věkové skupiny"
+msgid "Population age groups WorldPop Global2"
+msgstr ""
 
 msgid "Men 0 - 1 years"
 msgstr "Muži 0 - 1 rok"
@@ -1084,8 +1083,14 @@ msgstr "Muži 70 - 74 let"
 msgid "Men 75 - 79 years"
 msgstr "Muži 75 - 79 let"
 
-msgid "Men 80 years and above"
-msgstr "Muži od 80 let"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
+msgstr ""
 
 msgid "Women 0 - 1 years"
 msgstr "Ženy 0 - 1 rok"
@@ -1138,8 +1143,14 @@ msgstr "Ženy 70 - 74 let"
 msgid "Women 75 - 79 years"
 msgstr "Ženy 75 - 79 let"
 
-msgid "Women 80 years and above"
-msgstr "Ženy starší 80 let"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
+msgstr ""
 
 msgid "No organisation units have been selected"
 msgstr "Nebyly vybrány žádné organizační jednotky"
@@ -1301,26 +1312,9 @@ msgstr "Metadata"
 msgid "Tracked entity"
 msgstr "Trasovaná entita"
 
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "Import/Export"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr "Základní aplikace pro import a export dat do a z DHIS2."
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data import"
-msgstr "Import dat"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data export"
-msgstr "Export dat"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata import"
-msgstr "Import metadat"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Metadata export\t"
-msgstr "Export metadat"
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
+msgstr ""
