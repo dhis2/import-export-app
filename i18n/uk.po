@@ -4,13 +4,14 @@
 # Nadiia <semchuk@aph.org.ua>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Philip Larsen Donnelly, 2023
+# Mykhailo Siusko <m.siusko@redcross.org.ua>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2023\n"
+"Last-Translator: Mykhailo Siusko <m.siusko@redcross.org.ua>, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -924,7 +925,7 @@ msgid "New value"
 msgstr ""
 
 msgid "Rows per page"
-msgstr ""
+msgstr "Рядків на сторінку"
 
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
