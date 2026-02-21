@@ -1,17 +1,17 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2023
 # Philip Larsen Donnelly, 2024
+# Jiří Podhorecký <jirka.p@volny.cz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2022-10-15 22:34+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
@@ -225,10 +225,10 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "DXF2 (XML)"
-msgstr ""
+msgstr "DXF2 (XML)"
 
 msgid "ADX (XML)"
-msgstr ""
+msgstr "ADX (XML)"
 
 msgid "PDF"
 msgstr "PDF"
@@ -708,10 +708,10 @@ msgid "Details by type"
 msgstr "Podrobnosti podle typu"
 
 msgid "All existing property values will be replaced"
-msgstr ""
+msgstr "Všechny stávající majetkové hodnoty budou nahrazeny"
 
 msgid "Values will be overwritten, even if the new value is null"
-msgstr ""
+msgstr "Hodnoty budou přepsány, i když je nová hodnota nulová."
 
 msgid "Advanced options"
 msgstr "Pokročilé možnosti"
@@ -807,6 +807,8 @@ msgid ""
 "Export metadata, such as data elements and organisation units, to JSON, CSV,"
 " DXF2, or ADX format."
 msgstr ""
+"Exportovat metadata, jako jsou datové prvky a organizační jednotky, do "
+"formátu JSON, CSV, DXF2 nebo ADX."
 
 msgid "Date range to export data for"
 msgstr "Časové období, pro které chcete exportovat data"
@@ -815,15 +817,17 @@ msgid "Export data"
 msgstr "Exportovat data"
 
 msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
-msgstr ""
+msgstr "Import hodnot dat pomocí formátů JSON, CSV, DXF2, ADX nebo PDF."
 
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
-msgstr ""
+msgstr "Podporované typy souborů: JSON, CSV, DXF2, ADX a PDF."
 
 msgid ""
 "Import high resolution population data from WorldPop using Google Earth "
 "Engine."
 msgstr ""
+"Import dat o obyvatelstvu ve vysokém rozlišení z WorldPop pomocí Google "
+"Earth Engine."
 
 msgid "Earth Engine source"
 msgstr "Zdroj Earth Engine"
@@ -1133,6 +1137,8 @@ msgid ""
 "Export event data for programs, stages and tracked entities to JSON, CSV, or"
 " DXF2 format."
 msgstr ""
+"Export dat událostí pro programy, etapy a trasované entity do formátu JSON, "
+"CSV nebo DXF2."
 
 msgid "Export events"
 msgstr "Exportovat události"
@@ -1141,9 +1147,11 @@ msgid ""
 "Import event data for programs, stages and tracked entities to JSON, CSV, or"
 " DXF2 format."
 msgstr ""
+"Import dat událostí pro programy, etapy a trasované entity do formátu JSON, "
+"CSV nebo DXF2."
 
 msgid "Supported file types: JSON, CSV, and DXF2."
-msgstr ""
+msgstr "Podporované typy souborů: JSON, CSV a DXF2."
 
 msgid "Organisation unit geometry import"
 msgstr "Import geometrie organizační jednotky"
@@ -1216,6 +1224,8 @@ msgid ""
 "Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
+"Import metadat, jako jsou datové prvky a organizační jednotky, pomocí "
+"formátu JSON nebo CSV."
 
 msgid "Supported file types: JSON and CSV."
 msgstr "Podporované typy souborů: JSON a CSV."
@@ -1227,7 +1237,7 @@ msgid "Tracked entity instances export"
 msgstr "Export instancí trasovaných entit"
 
 msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
-msgstr ""
+msgstr "Export instancí trasovaných entit do formátu JSON, CSV nebo DXF2."
 
 msgid "Program to export from"
 msgstr "Program pro export z"
@@ -1242,10 +1252,10 @@ msgid "Tracked entity instances import"
 msgstr "Import instance trasovaných entit"
 
 msgid "Import tracked entity instances using JSON or DXF2 format."
-msgstr ""
+msgstr "Import instancí trasovaných entit pomocí formátu JSON nebo DXF2."
 
 msgid "Supported file types: JSON and DXF2."
-msgstr ""
+msgstr "Podporované typy souborů: JSON a DXF2."
 
 msgid "Job started."
 msgstr "Úloha začala."

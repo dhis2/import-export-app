@@ -1,37 +1,34 @@
 # 
 # Translators:
-# Cherise Beek <cherise.beek@gmail.com>, 2022
-# Charel van den Elsen <zobeadzorg@gmail.com>, 2023
-# Rica, 2024
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2022-10-15 22:34+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2025\n"
-"Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr "Er is iets misgegaan bij het laden van de huidige gebruiker!"
+msgstr ""
 
 msgid "Basic options"
-msgstr "Basis opties"
+msgstr ""
 
 msgid "Invalid date"
-msgstr "Ongeldige datum"
+msgstr ""
 
 msgid "Start date must be before end date"
-msgstr "De startdatum moet vóór de einddatum"
+msgstr ""
 
 msgid "End date must be after start date"
-msgstr "De einddatum moet na de startdatum"
+msgstr ""
 
 msgid "Invalid duration"
 msgstr ""
@@ -52,7 +49,7 @@ msgid ""
 msgstr ""
 
 msgid "Please select a file"
-msgstr "Selecteer een bestand"
+msgstr ""
 
 msgid "Import as associated geometry"
 msgstr ""
@@ -61,7 +58,7 @@ msgid "Store geometry as value of attribute"
 msgstr ""
 
 msgid "Selected programs"
-msgstr "Geselecteerde programma's"
+msgstr ""
 
 msgid "Something went wrong when loading the attributes!"
 msgstr ""
@@ -96,7 +93,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr "Huidige gebruiker"
+msgstr ""
 
 msgid "No user/unassigned"
 msgstr ""
@@ -144,10 +141,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 msgid "Name"
-msgstr "Naam"
+msgstr ""
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -171,7 +168,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "Einddatum"
+msgstr ""
 
 msgid "Event ID scheme"
 msgstr ""
@@ -204,10 +201,10 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "Alle"
+msgstr ""
 
 msgid "Marked for follow-up"
-msgstr "Gemarkeerd voor vervolg"
+msgstr ""
 
 msgid "Not marked for follow-up"
 msgstr ""
@@ -216,10 +213,10 @@ msgid "Include only entities with follow-up status"
 msgstr ""
 
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 msgid "CSV"
-msgstr "CSV"
+msgstr ""
 
 msgid "DXF2 (XML)"
 msgstr ""
@@ -255,7 +252,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "Fouten"
+msgstr ""
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -291,13 +288,13 @@ msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "Bijwerken"
+msgstr ""
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Verwijder"
+msgstr "डिलीट"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -329,7 +326,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "Geselecteerd"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -389,7 +386,7 @@ msgid "Do not filter by last updated date"
 msgstr ""
 
 msgid "Start/end dates"
-msgstr "Start-/einddatums"
+msgstr ""
 
 msgid "Time since last updated"
 msgstr ""
@@ -416,16 +413,16 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Gegevensreeksen"
+msgstr ""
 
 msgid "Programs"
-msgstr "Programma's"
+msgstr ""
 
 msgid "Category combination"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr ""
 
 msgid "Data element groups"
 msgstr ""
@@ -446,7 +443,7 @@ msgid "Organisation unit ID scheme"
 msgstr ""
 
 msgid "Id"
-msgstr "ID"
+msgstr ""
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
@@ -458,7 +455,7 @@ msgid "Data capture organisation units associated with the current user"
 msgstr ""
 
 msgid "Capture"
-msgstr "Vastlegging"
+msgstr ""
 
 msgid "All organisation units in the system"
 msgstr ""
@@ -485,7 +482,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "Geen"
+msgstr "कोई नहीं"
 
 msgid "Preheat mode"
 msgstr ""
@@ -512,19 +509,19 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "Startdatum"
+msgstr ""
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Actief"
+msgstr ""
 
 msgid "Completed"
-msgstr "Voltooid"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "Geannuleerd"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -570,10 +567,10 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "Programma"
+msgstr "प्रोग्राम"
 
 msgid "Tracked entity type"
-msgstr "Bijgehouden entiteitstype"
+msgstr ""
 
 msgid "Filter by"
 msgstr ""
@@ -618,7 +615,7 @@ msgid "Recreate job"
 msgstr ""
 
 msgid "In progress"
-msgstr "Bezig"
+msgstr ""
 
 msgid "Job details"
 msgstr ""
@@ -627,13 +624,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "Waarde"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "Fout"
+msgstr "Error"
 
 msgid "Conflicts"
 msgstr ""
@@ -645,19 +642,19 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "Tijd"
+msgstr ""
 
 msgid "Message"
-msgstr "Bericht"
+msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Messages"
-msgstr "Berichten"
+msgstr ""
 
 msgid "Type"
-msgstr "Soort"
+msgstr ""
 
 msgid "Property"
 msgstr ""
@@ -666,16 +663,16 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "status"
+msgstr ""
 
 msgid "Description"
-msgstr "Beschrijving"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "Gemaakt"
+msgstr ""
 
 msgid "Deleted"
 msgstr ""
@@ -687,7 +684,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
-msgstr "Totaal"
+msgstr ""
 
 msgid "Indexes"
 msgstr ""
@@ -705,7 +702,7 @@ msgid "Advanced options"
 msgstr ""
 
 msgid "At least one organisation unit must be selected"
-msgstr "Er moet ten minste één organisatie-eenheid worden geselecteerd"
+msgstr ""
 
 msgid "One organisation unit must be selected"
 msgstr ""
@@ -729,7 +726,7 @@ msgid "At least one schema must be selected"
 msgstr ""
 
 msgid "Export"
-msgstr "Exporteren"
+msgstr ""
 
 msgid "Data import"
 msgstr ""
@@ -768,13 +765,13 @@ msgid "Job overview"
 msgstr ""
 
 msgid "Overview"
-msgstr "Overzicht"
+msgstr ""
 
 msgid "Yes"
-msgstr "Ja"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "Nee"
+msgstr "नहीं"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -817,7 +814,7 @@ msgid "Earth Engine source"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "Organisatieëenheden"
+msgstr ""
 
 msgid "Import setup"
 msgstr ""
@@ -832,7 +829,7 @@ msgid "Preview before import"
 msgstr ""
 
 msgid "Use associated geometry"
-msgstr "Gebruik geassocieerde geometrie"
+msgstr ""
 
 msgid "Select associated geometry for selected organisation units"
 msgstr ""
@@ -855,13 +852,13 @@ msgid "Category option combination"
 msgstr ""
 
 msgid "No match found"
-msgstr ""
+msgstr "कोई मिलान नहीं मिला"
 
 msgid "Choose category option combo"
 msgstr ""
 
 msgid "Data element"
-msgstr "Informatieonderdeel"
+msgstr ""
 
 msgid "Select data element"
 msgstr ""
@@ -882,10 +879,10 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "Select a level"
-msgstr "Selecteer een niveau"
+msgstr ""
 
 msgid "Deselect all"
-msgstr "Deselecteer alles"
+msgstr ""
 
 msgid "Organisation unit(s) to import data to"
 msgstr ""
@@ -894,7 +891,7 @@ msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
-msgstr "Periode"
+msgstr ""
 
 msgid "Data from Earth Engine will be imported for this period."
 msgstr ""
@@ -903,7 +900,7 @@ msgid "Select period"
 msgstr ""
 
 msgid "Loading periods"
-msgstr "Laadperiodes"
+msgstr ""
 
 msgid "No periods found"
 msgstr ""
@@ -912,7 +909,7 @@ msgid "Point org. unit - no value"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Organisatieëenheid"
+msgstr ""
 
 msgid "Category option combo"
 msgstr ""
@@ -924,7 +921,7 @@ msgid "New value"
 msgstr ""
 
 msgid "Rows per page"
-msgstr "Rijen per pagina"
+msgstr ""
 
 msgid ""
 "Page {{page}} of {{pageCount}}, row {{firstItem}}-{{lastItem}} of {{total}}"
@@ -972,10 +969,10 @@ msgid "The app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr "Netwerkfout"
+msgstr ""
 
 msgid "Cannot get authorization token for Google Earth Engine."
-msgstr "Kan geen authorisatietoken verkrijgen voor Google Earth Engine."
+msgstr ""
 
 msgid ""
 "Requires a Google Earth Engine account. Check the DHIS2 documentation for "
@@ -983,118 +980,118 @@ msgid ""
 msgstr ""
 
 msgid "Population"
-msgstr "Bevolking"
+msgstr ""
 
 msgid "Population age groups"
-msgstr "Bevolkingsleeftijdsgroepen"
+msgstr ""
 
 msgid "Men 0 - 1 years"
-msgstr "Mannen 0 - 1 jaar"
+msgstr ""
 
 msgid "Men 1 - 4 years"
-msgstr "Mannen 1 - 4 jaar"
+msgstr ""
 
 msgid "Men 5 - 9 years"
-msgstr "Mannen 5 - 9 jaar"
+msgstr ""
 
 msgid "Men 10 - 14 years"
-msgstr "Mannen 10 - 14 jaar"
+msgstr ""
 
 msgid "Men 15 - 19 years"
-msgstr "Mannen 15 - 19 jaar"
+msgstr ""
 
 msgid "Men 20 - 24 years"
-msgstr "Mannen 20 - 24 jaar"
+msgstr ""
 
 msgid "Men 25 - 29 years"
-msgstr "Mannen 25 - 29 jaar"
+msgstr ""
 
 msgid "Men 30 - 34 years"
-msgstr "Mannen 30 - 34 jaar"
+msgstr ""
 
 msgid "Men 35 - 39 years"
-msgstr "Mannen 35 - 39 jaar"
+msgstr ""
 
 msgid "Men 40 - 44 years"
-msgstr "Mannen 40 - 44 jaar"
+msgstr ""
 
 msgid "Men 45 - 49 years"
-msgstr "Mannen 45 - 49 jaar"
+msgstr ""
 
 msgid "Men 50 - 54 years"
-msgstr "Mannen 50 - 54 jaar"
+msgstr ""
 
 msgid "Men 55 - 59 years"
-msgstr "Mannen 55 - 59 jaar"
+msgstr ""
 
 msgid "Men 60 - 64 years"
-msgstr "Mannen 60 - 64 jaar"
+msgstr ""
 
 msgid "Men 65 - 69 years"
-msgstr "Mannen 65 - 69 jaar"
+msgstr ""
 
 msgid "Men 70 - 74 years"
-msgstr "Mannen 70 - 74 jaar"
+msgstr ""
 
 msgid "Men 75 - 79 years"
-msgstr "Mannen 75 - 79 jaar"
+msgstr ""
 
 msgid "Men 80 years and above"
-msgstr "Mannen 80 jaar en ouder"
+msgstr ""
 
 msgid "Women 0 - 1 years"
-msgstr "Vrouwen 0 - 1 jaar"
+msgstr ""
 
 msgid "Women 1 - 4 years"
-msgstr "Vrouwen 1 - 4 jaar"
+msgstr ""
 
 msgid "Women 5 - 9 years"
-msgstr "Vrouwen 5 - 9 jaar"
+msgstr ""
 
 msgid "Women 10 - 14 years"
-msgstr "Vrouwen 10 - 14 jaar"
+msgstr ""
 
 msgid "Women 15 - 19 years"
-msgstr "Vrouwen 15 - 19 jaar"
+msgstr ""
 
 msgid "Women 20 - 24 years"
-msgstr "Vrouwen 20 - 24 jaar"
+msgstr ""
 
 msgid "Women 25 - 29 years"
-msgstr "Vrouwen 25 - 29 jaar"
+msgstr ""
 
 msgid "Women 30 - 34 years"
-msgstr "Vrouwen 30 - 34 jaar"
+msgstr ""
 
 msgid "Women 35 - 39 years"
-msgstr "Vrouwen 35 - 39 jaar"
+msgstr ""
 
 msgid "Women 40 - 44 years"
-msgstr "Vrouwen 40 - 44 jaar"
+msgstr ""
 
 msgid "Women 45 - 49 years"
-msgstr "Vrouwen 45 - 49 jaar"
+msgstr ""
 
 msgid "Women 50 - 54 years"
-msgstr "Vrouwen 50 - 54 jaar"
+msgstr ""
 
 msgid "Women 55 - 59 years"
-msgstr "Vrouwen 55 - 59 jaar"
+msgstr ""
 
 msgid "Women 60 - 64 years"
-msgstr "Vrouwen 60 - 64 jaar"
+msgstr ""
 
 msgid "Women 65 - 69 years"
-msgstr "Vrouwen 65 - 69 jaar"
+msgstr ""
 
 msgid "Women 70 - 74 years"
-msgstr "Vrouwen 70 - 74 jaar"
+msgstr ""
 
 msgid "Women 75 - 79 years"
-msgstr "Vrouwen 75 - 79 jaar"
+msgstr ""
 
 msgid "Women 80 years and above"
-msgstr "Vrouwen 80 jaar en ouder"
+msgstr ""
 
 msgid "No organisation units have been selected"
 msgstr ""
@@ -1225,10 +1222,10 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "Gegevens"
+msgstr ""
 
 msgid "Event"
-msgstr "Gebeurtenis"
+msgstr ""
 
 msgid "GeoJSON"
 msgstr ""
@@ -1237,7 +1234,7 @@ msgid "GML"
 msgstr ""
 
 msgid "Metadata"
-msgstr "Metagegevens"
+msgstr ""
 
 msgid "TEI"
-msgstr "TEI"
+msgstr ""
