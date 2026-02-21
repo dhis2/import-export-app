@@ -1,16 +1,15 @@
-# 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Philip Larsen Donnelly, 2022
 # 晓东 林 <13981924470@126.com>, 2025
-# easylin <lin_xd@126.com>, 2025
+# easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -815,21 +814,23 @@ msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr "支持的文件类型：JSON、CSV、DXF2、ADX 和 PDF。"
 
 msgid "Import high resolution population data from "
-msgstr ""
+msgstr "从以下网址导入高分辨率人口数据 "
 
 msgid " using Google Earth Engine."
-msgstr ""
+msgstr "使用谷歌地球引擎。"
 
 msgid "Earth Engine source"
 msgstr "地球引擎源"
 
 msgid "About WorldPop dataset versions"
-msgstr ""
+msgstr "关于 WorldPop 数据集版本"
 
 msgid ""
 "WorldPop global data is currently at v2 (released 2025-2026).\n"
 "Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
 msgstr ""
+"WorldPop 全球数据 目前为第 2 版（2025-2026 年发布）。\n"
+"随着时间的推移，人口数字可能会略有变化，新版本需要重新导入。要追踪使用的数据 ，可考虑为每个版本创建单独的数据 元素，并在名称或描述中包含版本。"
 
 msgid "Organisation units"
 msgstr "组织机构"
@@ -1002,10 +1003,10 @@ msgid ""
 msgstr "需要 Google 地球引擎帐户。查看 DHIS2 文档以获取更多信息。"
 
 msgid "Population WorldPop Global2"
-msgstr ""
+msgstr "人口 WorldPop Global2"
 
 msgid "Population age groups WorldPop Global2"
-msgstr ""
+msgstr "人口年龄组 WorldPop Global2"
 
 msgid "Men 0 - 1 years"
 msgstr "男性 0 - 1 岁"
@@ -1059,13 +1060,13 @@ msgid "Men 75 - 79 years"
 msgstr "男性 75 - 79 岁"
 
 msgid "Men 80 - 84 years"
-msgstr ""
+msgstr "男性 80 - 84 岁"
 
 msgid "Men 85 - 89 years"
-msgstr ""
+msgstr "男性 85 - 89 岁"
 
 msgid "Men 90 years and above"
-msgstr ""
+msgstr "90 岁及以上男性"
 
 msgid "Women 0 - 1 years"
 msgstr "女性 0 - 1 岁"
@@ -1119,13 +1120,13 @@ msgid "Women 75 - 79 years"
 msgstr "75 - 79 岁的女性"
 
 msgid "Women 80 - 84 years"
-msgstr ""
+msgstr "80 - 84 岁女性"
 
 msgid "Women 85 - 89 years"
-msgstr ""
+msgstr "85 - 89 岁女性"
 
 msgid "Women 90 years and above"
-msgstr ""
+msgstr "90 岁及以上妇女"
 
 msgid "No organisation units have been selected"
 msgstr "未选择任何组织单位"
@@ -1276,3 +1277,5 @@ msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
 "If the codes (\"m_00\", \"m"
 msgstr ""
+"地球引擎数据集 \"人口年龄组 \"有分类组。选择要导入各组的类别选项组合。\n"
+"如果有代码（\"m_00\"、\"m_01\"......），组合将自动匹配。"
