@@ -2,34 +2,35 @@
 # Translators:
 # Matthieu Pinard <matthieu@dhis2.org>, 2019
 # Djibril Dione <dione.djibril@gmail.com>, 2019
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
-# Yayra Gomado <ygomado@hispwca.org>, 2022
 # Bram Piot <bram.piot@gmail.com>, 2022
-# Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
+# Esther Tokouli, 2025
+# Yayra Gomado <ygomado@hispwca.org>, 2025
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
+# Cyrille Kabrane, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025\n"
+"Last-Translator: Cyrille Kabrane, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Something went wrong when loading the current user!"
-msgstr "Une erreur s'est produite lors du chargement de l'utilisateur actuel!"
+msgstr ""
+"Une erreur s'est produite lors du chargement de l'utilisateur actuel !"
 
 msgid "Basic options"
-msgstr "Infos de base"
+msgstr "Informations de base"
 
 msgid "Invalid date"
 msgstr "Date invalide"
@@ -49,20 +50,20 @@ msgstr "Format"
 msgid ""
 "Something went wrong when loading the additional data element ID schemes"
 msgstr ""
-"Une erreur s'est produite lors du chargement des schémas de l'ID de "
-"l'élément de données supplémentaire"
+"Une erreur s'est produite lors du chargement des schémas d'identification "
+"supplémentaires pour élément de données"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr ""
-"Une erreur s'est produite lors du chargement des schémas d'ID "
+"Une erreur s'est produite lors du chargement des schémas d'identification "
 "supplémentaires"
 
 msgid ""
 "Something went wrong when loading the additional organisation unit ID "
 "schemes"
 msgstr ""
-"Une erreur s'est produite lors du chargement des schémas d'ID d'unité "
-"organisation supplémentaires"
+"Une erreur s'est produite lors du chargement des schémas d'identification "
+"supplémentaires pour unité d'organisation"
 
 msgid "Please select a file"
 msgstr "Veuillez sélectionner un fichier"
@@ -71,13 +72,13 @@ msgid "Import as associated geometry"
 msgstr "Importer en tant que géométrie associée"
 
 msgid "Store geometry as value of attribute"
-msgstr "Stocker la géométrie comme valeur de l'attribut"
+msgstr "Stocker la géométrie comme valeur d'attribut"
 
 msgid "Selected programs"
 msgstr "Programmes sélectionnés"
 
 msgid "Something went wrong when loading the attributes!"
-msgstr "Un problème est survenu lors du chargement des attributs !"
+msgstr "Une erreur s'est produite lors du chargement des attributs !"
 
 msgid "One attribute must be selected"
 msgstr "Un attribut doit être sélectionné"
@@ -104,7 +105,7 @@ msgstr ""
 
 msgid "A dry run tests the import settings without importing any data"
 msgstr ""
-"Une Exécution sans effet teste les paramètres d'importation sans importer de"
+"Une exécution sans effet teste les paramètres d'importation sans importer de"
 " données"
 
 msgid "Start dry run"
@@ -134,7 +135,7 @@ msgstr ""
 "utilisateurs spécifiques"
 
 msgid "Assigned user(s)"
-msgstr "Utilisateur(s) affecté(s)"
+msgstr "Utilisateur(s) assigné(s)"
 
 msgid "Do not import"
 msgstr "Ne pas importer"
@@ -146,7 +147,8 @@ msgid "Atomic mode"
 msgstr "Mode atomique"
 
 msgid "Whether to import objects even if some references do not exist"
-msgstr "Soit importer des objets même si certaines références n'existent pas"
+msgstr ""
+"Importer ou non des objets même si certaines références n'existent pas"
 
 msgid "Class key"
 msgstr "Clé de classe"
@@ -173,10 +175,10 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Data element ID scheme"
-msgstr "Schéma d'ID des éléments de données"
+msgstr "Schéma d'identification pour élément de données"
 
 msgid "Which data sets should be included in export?"
-msgstr "Quels ensembles de données doivent être inclus dans l'exportation?"
+msgstr "Quels ensembles de données doivent être inclus dans l'exportation ?"
 
 msgid "Filter data sets"
 msgstr "Filtrer les ensembles de données"
@@ -203,10 +205,10 @@ msgid "Select a file to import values from"
 msgstr "Sélectionnez un fichier à partir duquel importer les valeurs"
 
 msgid "Is the first row a header row?"
-msgstr "La première ligne est-elle une ligne d'en-tête?"
+msgstr "La première ligne est-elle une ligne d'en-tête ?"
 
 msgid "First row is header"
-msgstr "La première ligne est l'en-tête"
+msgstr "La première ligne est un en-tête"
 
 msgid "A header row will be ignored during import"
 msgstr "Une ligne d'en-tête sera ignorée lors de l'importation"
@@ -221,16 +223,16 @@ msgid "Flush mode"
 msgstr "Mode flusher"
 
 msgid "Controls when to flush the internal cache"
-msgstr "Contrôle quand vider le cache interne"
+msgstr "Détermine quand vider le cache interne"
 
 msgid "All"
 msgstr "Tout"
 
 msgid "Marked for follow-up"
-msgstr "Marqué pour suivi"
+msgstr "Marqué pour le suivi"
 
 msgid "Not marked for follow-up"
-msgstr "Non marqué pour suivi"
+msgstr "Non marqué pour le suivi"
 
 msgid "Include only entities with follow-up status"
 msgstr "Inclure uniquement les entités avec un statut de suivi"
@@ -254,13 +256,13 @@ msgid "JSONP"
 msgstr "JSONP"
 
 msgid "What format is the data to import?"
-msgstr "Quel est le format des données à importer?"
+msgstr "Quel est le format des données à importer ?"
 
 msgid "What format should the data be exported as?"
-msgstr "En quel format les données doivent-elles être exportées?"
+msgstr "Dans quel format les données doivent-elles être exportées ?"
 
 msgid "ID scheme"
-msgstr "Schéma d'ID"
+msgstr "Schéma d'identification "
 
 msgid "UID"
 msgstr "UID"
@@ -269,23 +271,25 @@ msgid "Identifier"
 msgstr "Identifiant"
 
 msgid "Identifier scheme to use for reference matching"
-msgstr "Schéma d'identifiant à utiliser pour la correspondance des références"
+msgstr ""
+"Schéma d'identification à utiliser pour la correspondance des références"
 
 msgid "Only include reports for objects that have errors"
-msgstr "N'incluez que les rapports pour les objets comportant des erreurs"
+msgstr ""
+"Inclure les rapports uniquement pour les objets comportant des erreurs"
 
 msgid "Errors"
 msgstr "Erreurs"
 
 msgid "Reports for all objects imported"
-msgstr "Rapports tous les objets importés"
+msgstr "Rapports pour tous les objets importés"
 
 msgid "Full"
 msgstr "Plein"
 
 msgid "Reports for all objects imported along with their names (if available)"
 msgstr ""
-"Rapports pour tous les objets importés avec leurs noms (si disponible)"
+"Rapports pour tous les objets importés avec leurs noms (si disponibles)"
 
 msgid "Debug"
 msgstr "Déboguer"
@@ -294,10 +298,10 @@ msgid "Import report mode"
 msgstr "Importer le mode de rapport"
 
 msgid "Controls what should be reported after the import is done"
-msgstr "Contrôle ce qui doit être rapporté une fois l'importation terminée"
+msgstr "Détermine ce qui doit être rapporté une fois l'importation terminée"
 
 msgid "Import new values and update existing"
-msgstr "Importez de nouvelles valeurs et mettez à jour les valeurs existantes"
+msgstr "Importer de nouvelles valeurs et mettre à jour les valeurs existantes"
 
 msgid "Merge"
 msgstr "Fusionner"
@@ -330,7 +334,7 @@ msgid ""
 "this is the correct action; it cannot be undone."
 msgstr ""
 "Les valeurs du fichier téléchargé seront supprimées de la base de données. "
-"Assurez-vous que c'est la bonne action; elle ne peut pas être annulé."
+"Assurez-vous que l'action est correcte ; elle ne peut pas être annulée."
 
 msgid "Import strategy"
 msgstr "Stratégie d'importation"
@@ -339,19 +343,19 @@ msgid "Include all attributes"
 msgstr "Inclure tous les attributs"
 
 msgid "Include descendants"
-msgstr "Inclure les descendants"
+msgstr "Inclure les subordonnées"
 
 msgid "Include descendants of selected organisation units"
-msgstr "Inclure les descendants des unités d'organisation sélectionnées"
+msgstr "Inclure les subordonnées des unités d'organisation sélectionnées"
 
 msgid "Include deleted"
-msgstr "Inclure supprimé"
+msgstr "Inclure ce qui est supprimé"
 
 msgid "Include deleted data in export"
 msgstr "Inclure les données supprimées dans l'exportation"
 
 msgid "Only include selected organisation unit"
-msgstr "Inclure uniquement l'unité organisationnelle sélectionnée"
+msgstr "Inclure uniquement l'unité d'organisation sélectionnée"
 
 msgid "Selected"
 msgstr "Sélectionné"
@@ -370,11 +374,11 @@ msgstr "Tout en dessous"
 
 msgid "How should organisation units inside the selections be included?"
 msgstr ""
-"Comment les unités organisationnelles doivent-elles être incluses dans les "
-"sélections?"
+"Comment les unités d'organisation doivent-elles être incluses dans les "
+"sélections ?"
 
 msgid "Includes properties which are not null"
-msgstr "Inclut les propriétés qui ne sont pas nulles"
+msgstr "Inclut les propriétés non nulles"
 
 msgid "Non null"
 msgstr "Non nul"
@@ -395,7 +399,7 @@ msgid "Inclusion strategy"
 msgstr "Stratégie d'inclusion"
 
 msgid "Controls which properties to include"
-msgstr "Contrôle les propriétés à inclure"
+msgstr "Détermine les propriétés à inclure"
 
 msgid "Async"
 msgstr "Asynchrone"
@@ -404,7 +408,7 @@ msgid "Asynchronous import"
 msgstr "Importation asynchrone"
 
 msgid "Controls whether the import is done asynchronously"
-msgstr "Contrôle si l'importation est effectuée de manière asynchrone"
+msgstr "Détermine si l'importation est effectuée de manière asynchrone"
 
 msgid "Last updated duration"
 msgstr "Durée de la dernière mise à jour"
@@ -416,10 +420,10 @@ msgid "Do not filter by last updated date"
 msgstr "Ne pas filtrer par date de dernière mise à jour"
 
 msgid "Start/end dates"
-msgstr "Dates début-fin"
+msgstr "Dates de début/fin"
 
 msgid "Time since last updated"
-msgstr "Temps depuis la dernière mise à jour"
+msgstr "Temps écoulé depuis la dernière mise à jour"
 
 msgid "Filter by last updated date"
 msgstr "Filtrer par date de dernière mise à jour"
@@ -429,8 +433,8 @@ msgstr "Date de début de la dernière mise à jour"
 
 msgid "Only overwrite the old property if the new property value is not-null"
 msgstr ""
-"Ne remplace l'ancienne propriété que si la valeur de la nouvelle propriété "
-"n'est pas nulle"
+"Remplacer l'ancienne propriété seulement si la valeur de la nouvelle "
+"propriété n'est pas nulle"
 
 msgid "Overwrite regardless of whether the new property value is null"
 msgstr ""
@@ -474,21 +478,22 @@ msgid "Object"
 msgstr "Objet"
 
 msgid "Organisation unit ID scheme"
-msgstr "Schéma d'ID d'unité organisation"
+msgstr "Schéma d'identification pour unité d'organisation"
 
 msgid "Id"
 msgstr "Id"
 
 msgid "Data view organisation units associated with the current user"
 msgstr ""
-"Vue des données d'unités d'organisation associés à l'utilisateur actuel"
+"Unités d'organisation de visualisation des données associées à l'utilisateur"
+" actuel"
 
 msgid "Accessible"
 msgstr "Accessible"
 
 msgid "Data capture organisation units associated with the current user"
 msgstr ""
-"Capture de données d'unités d'organisation associées à l'utilisateur actuel"
+"Unités d'organisation de saisie de données associées à l'utilisateur actuel"
 
 msgid "Capture"
 msgstr "Saisie"
@@ -500,21 +505,22 @@ msgid "Manually select organisation units from list"
 msgstr "Sélectionner manuellement les unités d'organisation dans la liste"
 
 msgid "Which organisation units should be included?"
-msgstr "Quelles unités organisationnelles devraient être incluses?"
+msgstr "Quelles unités d'organisation doivent être incluses ?"
 
 msgid "Organisation unit(s) to export data from"
 msgstr ""
-"Unité(s) organisationnelle(s) à partir de laquelle exporter les données"
+"Unité(s) d'organisation à partir de laquelle ou desquelles exporter les "
+"données"
 
 msgid "Preheat cache"
 msgstr "Préchauffer le cache"
 
 msgid "Preheat cache to make large imports faster"
-msgstr "Préchauffez le cache pour accélérer les grandes importations"
+msgstr "Préchauffer le cache pour accélérer les grandes importations"
 
 msgid "Large imports will be processed faster but will consume more resources"
 msgstr ""
-"Les grandes importations seront exécutées plus rapidement mais consommeront "
+"Les grandes importations seront traitées plus rapidement mais consommeront "
 "plus de ressources"
 
 msgid "Intelligent scan (reference)"
@@ -524,10 +530,10 @@ msgid "None"
 msgstr "Aucun"
 
 msgid "Preheat mode"
-msgstr "Mode préchauffage"
+msgstr "Mode de préchauffage"
 
 msgid "Controls the level of preheating that should be done"
-msgstr "Contrôle le niveau de préchauffage à effectuer"
+msgstr "Détermine le niveau de préchauffage à effectuer"
 
 msgid "Program to export events from"
 msgstr "Programme pour exporter des événements à partir de"
@@ -536,7 +542,7 @@ msgid "Filter programs"
 msgstr "Filtrer les programmes"
 
 msgid "Something went wrong when loading the programs!"
-msgstr "Une erreur s'est produite lors du chargement des programmes!"
+msgstr "Une erreur s'est produite lors du chargement des programmes !"
 
 msgid "At least one program must be selected"
 msgstr "Au moins un programme doit être sélectionné"
@@ -545,7 +551,7 @@ msgid "One program must be selected"
 msgstr "Un programme doit être sélectionné"
 
 msgid "Which program stage should be included?"
-msgstr "Quelle étape du programme devrait être incluse?"
+msgstr "Quel stade de programme doit être inclus ?"
 
 msgid "Start date"
 msgstr "Date de début"
@@ -579,7 +585,7 @@ msgstr ""
 "changements"
 
 msgid "Skip exisiting check"
-msgstr "Ignorer la vérification existant"
+msgstr "Ignorer la vérification existante"
 
 msgid "Skip checks for existing data values"
 msgstr "Ignorer les vérifications des valeurs de données existantes"
@@ -603,8 +609,8 @@ msgid ""
 " add user group access when creating new objects"
 msgstr ""
 "Ignorer les propriétés de partage, ne pas fusionner le partage lors des "
-"mises à jour, et n'ajouter aucun accès aux groupes d'utilisateurs lors de la"
-" création de nouveaux objets"
+"mises à jour, et ne pas ajouter d'accès aux groupes d'utilisateurs lors de "
+"la création de nouveaux objets"
 
 msgid "Skip validation"
 msgstr "Ignorer la validation"
@@ -635,7 +641,7 @@ msgstr "Types d'entité suivie sélectionnés"
 
 msgid "Something went wrong when loading the tracked entity types!"
 msgstr ""
-"Une erreur s'est produite lors du chargement des types d'entité suivie!"
+"Une erreur s'est produite lors du chargement des types d'entité suivie !"
 
 msgid "At least one tracked entity type must be selected"
 msgstr "Au moins un type d'entité suivie doit être sélectionné"
@@ -644,13 +650,13 @@ msgid "One tracked entity type must be selected"
 msgstr "Un type d'entité suivie doit être sélectionné"
 
 msgid "Which users should be used?"
-msgstr "Quels utilisateurs doivent être utilisés?"
+msgstr "Quels utilisateurs doivent être utilisés ?"
 
 msgid "Filter users"
 msgstr "Filtrer les utilisateurs"
 
 msgid "Something went wrong when loading the users!"
-msgstr "Une erreur s'est produite lors du chargement des utilisateurs!"
+msgstr "Une erreur s'est produite lors du chargement des utilisateurs !"
 
 msgid "At least one user must be selected"
 msgstr "Au moins un utilisateur doit être sélectionné"
@@ -686,7 +692,7 @@ msgid "Conflicts"
 msgstr "Conflits"
 
 msgid "Dry run"
-msgstr "Exécution littérale"
+msgstr "Exécution sans effet"
 
 msgid "Log"
 msgstr "Log"
@@ -698,7 +704,7 @@ msgid "Message"
 msgstr "Message"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Messages"
 msgstr "Messages"
@@ -731,7 +737,7 @@ msgid "Ignored"
 msgstr "Ignoré"
 
 msgid "Updated"
-msgstr "Mise à jour"
+msgstr "Mis à jour"
 
 msgid "Total"
 msgstr "Total"
@@ -752,10 +758,10 @@ msgid "Details by type"
 msgstr "Détails par type"
 
 msgid "All existing property values will be replaced"
-msgstr ""
+msgstr "Toutes les valeurs de propriété existantes seront remplacées"
 
 msgid "Values will be overwritten, even if the new value is null"
-msgstr ""
+msgstr "Les valeurs seront remplacées, même si la nouvelle valeur est nulle"
 
 msgid "Advanced options"
 msgstr "Options avancées"
@@ -767,13 +773,14 @@ msgid "One organisation unit must be selected"
 msgstr "Une unité d'organisation doit être sélectionnée"
 
 msgid "Something went wrong when loading the organisation units!"
-msgstr "Une erreur s'est produite lors du chargement des unités organisation!"
+msgstr ""
+"Une erreur s'est produite lors du chargement des unités organisation !"
 
 msgid "One program stage must be selected"
-msgstr "Une étape du programme doit être sélectionnée"
+msgstr "Un stade de programme doit être sélectionné"
 
 msgid "Something went wrong when loading the schemas!"
-msgstr "Une erreur s'est produite lors du chargement des schémas!"
+msgstr "Une erreur s'est produite lors du chargement des schémas !"
 
 msgid "Select All"
 msgstr "Sélectionner Tout"
@@ -803,7 +810,7 @@ msgid "Metadata import"
 msgstr "Importation de métadonnées"
 
 msgid "Tracked entity import"
-msgstr ""
+msgstr "Importation de l'entité suivie"
 
 msgid "Data export"
 msgstr "Exportation de données"
@@ -818,13 +825,13 @@ msgid "Metadata export"
 msgstr "Exportation de métadonnées"
 
 msgid "Tracked entity export"
-msgstr ""
+msgstr "Exportation d'entités suivies"
 
 msgid "Job overview"
-msgstr "Aperçu de tâche"
+msgstr "Aperçu de la tâche"
 
 msgid "Overview"
-msgstr "Général"
+msgstr "Aperçu"
 
 msgid "Yes"
 msgstr "Oui"
@@ -842,35 +849,47 @@ msgid "Something went wrong when loading the objects"
 msgstr "Une erreur s'est produite lors du chargement des objets"
 
 msgid "All program stages"
-msgstr "Toutes les étapes du programme"
+msgstr "Tous les stades du programme"
 
 msgid "Something went wrong when loading the program stages"
-msgstr "Une erreur s'est produite lors du chargement des étapes du programme"
+msgstr "Une erreur s'est produite lors du chargement des stades du programme"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, to JSON, CSV,"
 " DXF2, or ADX format."
 msgstr ""
+"Exporter les métadonnées, telles que les éléments de données et les unités "
+"d'organisation, au format JSON, CSV, DXF2 ou ADX."
 
 msgid "Date range to export data for"
 msgstr "Plage de dates pour laquelle exporter les données"
 
 msgid "Export data"
-msgstr "Exporter données"
+msgstr "Exporter les données"
 
 msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
 msgstr ""
+"Importer les valeurs de données au format JSON, CSV, DXF2, ADX ou PDF."
 
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
+msgstr "Types de fichiers pris en charge : JSON, CSV, DXF2, ADX et PDF."
+
+msgid "Import high resolution population data from "
 msgstr ""
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid " using Google Earth Engine."
 msgstr ""
 
 msgid "Earth Engine source"
 msgstr "Source Earth Engine"
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
+msgstr ""
 
 msgid "Organisation units"
 msgstr "Unités d'organisation"
@@ -885,7 +904,7 @@ msgid "Some required fields are missing"
 msgstr "Certains champs obligatoires sont manquants"
 
 msgid "Preview before import"
-msgstr "Aperçu avant l'importation"
+msgstr "Aperçu avant importation"
 
 msgid "Use associated geometry"
 msgstr "Utiliser la géométrie associée"
@@ -896,36 +915,28 @@ msgstr ""
 "sélectionnées"
 
 msgid "Import groups to category option combinations"
-msgstr "Importer des groupes vers des combinaisons d'options de catégories"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr ""
-"L'ensemble de données de Earth Engine \"Groupes d'âge de la population\" "
-"comporte des groupes de désagrégation. Choisissez les combinaisons d'options"
-" de catégories dans lesquelles vous souhaitez importer chaque groupe."
+msgstr "Importer des groupes vers des combinaisons d'options de catégorie"
 
 msgid "Group name"
-msgstr "Nom de groupe"
+msgstr "Nom du groupe shhlli7dhùd hdg"
 
 msgid "Group description"
 msgstr "Description du groupe"
 
 msgid "Category option combination"
-msgstr "Combinaison d'option de catégorie"
+msgstr "Combinaison d'options de catégorie"
 
 msgid "No match found"
-msgstr "Pas de résultat trouvé"
+msgstr "Aucune correspondance trouvée"
 
 msgid "Choose category option combo"
-msgstr "Choisir une combinaison d'options de catégories"
+msgstr "Choisir une combinaison d'options de catégorie"
 
 msgid "Data element"
-msgstr "Élément de donnée"
+msgstr "Élément de données"
 
 msgid "Select data element"
-msgstr "Choisir élément de donnée"
+msgstr "Sélectionner un élément de données"
 
 msgid "The data element where Earth Engine data will be added"
 msgstr "L'élément de données où les données de Earth Engine seront ajoutées"
@@ -934,19 +945,19 @@ msgid "Earth Engine data set"
 msgstr "Ensemble de données de Earth Engine"
 
 msgid "Select earth engine data set"
-msgstr "Sélectionner l'ensemble des données du Earth Engine"
+msgstr "Sélectionner l'ensemble de données de Earth Engine"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} unité d'org"
+msgstr[1] "{{count}} unités d'org"
+msgstr[2] "{{count}} unités d'organisation"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} niveau"
+msgstr[1] "{{count}} niveaux"
+msgstr[2] "{{count}} niveaux"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Sélectionné : {{commaSeparatedListOfOrganisationUnits}}"
@@ -955,17 +966,17 @@ msgid "Nothing selected"
 msgstr "Rien n'a été sélectionné"
 
 msgid "Select a level"
-msgstr "Sélectionnez un niveau"
+msgstr "Sélectionner un niveau"
 
 msgid "Deselect all"
 msgstr "Desélectionner tout"
 
 msgid "Organisation unit(s) to import data to"
-msgstr "Unité(s) d'organisation vers laquelle/lesquelles importer des données"
+msgstr "Unité(s) d'organisation vers laquelle/lesquelles importer les données"
 
 msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
-"Vous devez sélectionner un ensemble de données Earth Engine avant de "
+"Vous devez sélectionner un ensemble de données de Earth Engine avant de "
 "sélectionner une période"
 
 msgid "Period"
@@ -990,7 +1001,7 @@ msgid "Organisation Unit"
 msgstr "Unité d'organisation"
 
 msgid "Category option combo"
-msgstr "Combo d'options de catégorie"
+msgstr "Combinaison d'options de catégorie"
 
 msgid "Current value"
 msgstr "Valeur actuelle"
@@ -1008,7 +1019,7 @@ msgstr ""
 "{{total}}"
 
 msgid "Don't round source values"
-msgstr "N'arrondissez pas les valeurs sources"
+msgstr "Ne pas arrondir les valeurs sources"
 
 msgid "Round to 0 decimal places"
 msgstr "Arrondir à 0 décimale"
@@ -1043,8 +1054,8 @@ msgid ""
 "The Earth Engine data set is too large. Try reducing the number of groups or"
 " organisation units"
 msgstr ""
-"L'ensemble de données de Earth Engine est trop important. Essayez de réduire"
-" le nombre de groupes ou d'unités d'organisation"
+"L'ensemble de données de Earth Engine est trop volumineux. Essayez de "
+"réduire le nombre de groupes ou d'unités d'organisation."
 
 msgid "The organisation units selection is invalid"
 msgstr "La sélection des unités d'organisation n'est pas valide"
@@ -1064,13 +1075,13 @@ msgid ""
 "more information."
 msgstr ""
 "Il est nécessaire d'avoir un compte Google Earth Engine. Consultez la "
-"documentation du DHIS2 pour plus d'informations."
+"documentation de DHIS2 pour plus d'informations."
 
-msgid "Population"
-msgstr "Population"
+msgid "Population WorldPop Global2"
+msgstr ""
 
-msgid "Population age groups"
-msgstr "Groupes d'âge de la population"
+msgid "Population age groups WorldPop Global2"
+msgstr ""
 
 msgid "Men 0 - 1 years"
 msgstr "Masculin 0 - 1 an"
@@ -1123,8 +1134,14 @@ msgstr "Masculin 70 - 74 ans"
 msgid "Men 75 - 79 years"
 msgstr "Masculin 75 - 79 ans"
 
-msgid "Men 80 years and above"
-msgstr "Masculin 80 ans et plus"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
+msgstr ""
 
 msgid "Women 0 - 1 years"
 msgstr "Féminin 0 - 1 an"
@@ -1177,8 +1194,14 @@ msgstr "Féminin 70 - 74 ans"
 msgid "Women 75 - 79 years"
 msgstr "Féminin 75 - 79 ans"
 
-msgid "Women 80 years and above"
-msgstr "Féminin 80 ans et plus"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
+msgstr ""
 
 msgid "No organisation units have been selected"
 msgstr "Aucune unité d'organisation n'a été sélectionnée"
@@ -1196,17 +1219,24 @@ msgid ""
 "Export event data for programs, stages and tracked entities to JSON or CSV "
 "format."
 msgstr ""
+"Exporter les données d'événement pour les programmes, les stades et les "
+"entités suivies au format JSON ou CSV. "
 
 msgid "Export events"
-msgstr "Exporter évènements"
+msgstr "Exporter les événements"
 
 msgid ""
 "Import event data for programs, stages and tracked entities from JSON or CSV"
 " format."
 msgstr ""
+"Importer les données d'événement pour les programmes, les stades et les "
+"entités suivies à partir du format JSON ou CSV. "
 
 msgid "Supported file types: JSON and CSV."
 msgstr "Types de fichiers pris en charge : JSON et CSV."
+
+msgid "Supported version: GML 2.0 only."
+msgstr "Version prise en charge : GML 2.0 uniquement."
 
 msgid "Organisation unit geometry import"
 msgstr "Importation de la géométrie des unités d'organisation"
@@ -1215,9 +1245,9 @@ msgid ""
 "Import geographic data for organisation units. GeoJSON is the recommend "
 "format and can also be used for associated geometries or catchment areas."
 msgstr ""
-"Importez des données géographiques pour les unités d'organisation. GeoJSON "
+"Importer des données géographiques pour les unités d'organisation. GeoJSON "
 "est le format recommandé et peut également être utilisé pour les géométries "
-"associées ou les zones de chalandise."
+"associées ou les zones de captage."
 
 msgid ""
 "GeoJSON feature id should match the organsation unit id, or match by a "
@@ -1228,7 +1258,7 @@ msgstr ""
 "dessous."
 
 msgid "Overview: Import/Export"
-msgstr "Vue d'ensemble: importation / exportation"
+msgstr "Aperçu : importation / exportation"
 
 msgid "Import or export DHIS2 data."
 msgstr "Importer ou exporter des données DHIS2."
@@ -1237,16 +1267,16 @@ msgid "Export metadata dependencies"
 msgstr "Exporter les dépendances de métadonnées"
 
 msgid "Export metadata"
-msgstr "Exporter Méta-Données"
+msgstr "Exporter les métadonnées"
 
 msgid "Export tracked entities"
-msgstr ""
+msgstr "Exporter les entités suivies"
 
 msgid "Import data"
-msgstr "Importer données"
+msgstr "Importer les données"
 
 msgid "Import events"
-msgstr "Importer évènements"
+msgstr "Importer les événements"
 
 msgid "Import Earth Engine"
 msgstr "Importation Earth Engine"
@@ -1255,19 +1285,20 @@ msgid "Import GeoJSON"
 msgstr "Importation GeoJSON"
 
 msgid "Import metadata"
-msgstr "Importer Méta-Données"
+msgstr "Importer les métadonnées"
 
 msgid "Import tracked entities"
-msgstr ""
+msgstr "Importer les entités suivies"
 
 msgid "An overview of all import jobs started this session."
-msgstr "Un aperçu de toutes les tâches d'importation a démarré cette session."
+msgstr ""
+"Cette session commence par un aperçu de toutes les tâches d'importation."
 
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in JSON format."
 msgstr ""
-"Exportez les dépendances de métadonnées, telles que les ensembles de données"
+"Exporter les dépendances de métadonnées, telles que les ensembles de données"
 " et les programmes, y compris les objets de métadonnées associés, au format "
 "JSON."
 
@@ -1275,22 +1306,24 @@ msgid ""
 "Export metadata, such as data elements and organisation units, in JSON "
 "format."
 msgstr ""
-"Exportez les métadonnées, telles que les éléments de données et les unités "
-"d'organisation, au format JSON ."
+"Exporter les métadonnées, telles que les éléments de données et les unités "
+"d'organisation, au format JSON."
 
 msgid ""
 "Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
+"Importer les métadonnées, telles que les éléments de données et les unités "
+"d'organisation, au format JSON ou CSV."
 
 msgid "A class key must be selected"
 msgstr "Une clé de classe doit être sélectionnée"
 
 msgid "Tracked entities export"
-msgstr ""
+msgstr "Exportation d'entités suivies"
 
 msgid "Export tracked entities in JSON or CSV format."
-msgstr ""
+msgstr "Exporter les entités suivies au format JSON ou CSV."
 
 msgid "Program to export from"
 msgstr "Programme à exporter depuis"
@@ -1303,13 +1336,13 @@ msgstr ""
 "Au moins un des champs de date de 'dernière mise à jour' doit être spécifié"
 
 msgid "Tracked entities import"
-msgstr ""
+msgstr "Importation d'entités suivies"
 
 msgid "Import tracked entities using JSON format."
-msgstr ""
+msgstr "Importer les entités suivies au format JSON."
 
 msgid "Supported file types: JSON."
-msgstr ""
+msgstr "Types de fichiers pris en charge : JSON."
 
 msgid "Job started."
 msgstr "La tâche a commencé."
@@ -1334,3 +1367,10 @@ msgstr "Méta-données"
 
 msgid "Tracked entity"
 msgstr "Entité suivie"
+
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
+msgstr ""

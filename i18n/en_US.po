@@ -1,18 +1,18 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"POT-Creation-Date: 2025-09-12T12:43:22.431Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
-"Language-Team: Danish (https://app.transifex.com/hisp-uio/teams/100509/da/)\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
@@ -141,10 +141,10 @@ msgid "Uid"
 msgstr ""
 
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -168,7 +168,7 @@ msgid "One data set must be selected"
 msgstr ""
 
 msgid "End date"
-msgstr "End date"
+msgstr ""
 
 msgid "Loading export..."
 msgstr ""
@@ -198,7 +198,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "All"
+msgstr ""
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -285,13 +285,13 @@ msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "Update"
+msgstr ""
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "Delete"
+msgstr "डिलीट"
 
 msgid "Data will be deleted"
 msgstr ""
@@ -410,19 +410,19 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Data sets"
+msgstr ""
 
 msgid "Programs"
-msgstr "Programs"
+msgstr ""
 
 msgid "Category combination"
-msgstr "Category combination"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Data element groups"
+msgstr ""
 
 msgid "Option sets"
 msgstr ""
@@ -479,7 +479,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "None"
+msgstr "कोई नहीं"
 
 msgid "Preheat mode"
 msgstr ""
@@ -506,13 +506,13 @@ msgid "Which program stage should be included?"
 msgstr ""
 
 msgid "Start date"
-msgstr "Start date"
+msgstr ""
 
 msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "Active"
+msgstr ""
 
 msgid "Completed"
 msgstr ""
@@ -564,7 +564,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Tracked entity type"
 msgstr ""
@@ -642,13 +642,13 @@ msgid "Time"
 msgstr ""
 
 msgid "Message"
-msgstr "Message"
+msgstr ""
 
 msgid "ID"
 msgstr ""
 
 msgid "Messages"
-msgstr "Messages"
+msgstr ""
 
 msgid "Type"
 msgstr ""
@@ -660,10 +660,10 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
@@ -684,7 +684,7 @@ msgid "Total"
 msgstr ""
 
 msgid "Reports"
-msgstr "NRHM Reports"
+msgstr ""
 
 msgid "Error Code"
 msgstr ""
@@ -774,10 +774,10 @@ msgid "Overview"
 msgstr ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "No"
+msgstr "नहीं"
 
 msgid "There are errors on this page"
 msgstr ""
@@ -811,25 +811,16 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
-msgid "Import high resolution population data from "
-msgstr ""
-
-msgid " using Google Earth Engine."
+msgid ""
+"Import high resolution population data from WorldPop using Google Earth "
+"Engine."
 msgstr ""
 
 msgid "Earth Engine source"
 msgstr ""
 
-msgid "About WorldPop dataset versions"
-msgstr ""
-
-msgid ""
-"WorldPop global data is currently at v2 (released 2025-2026).\n"
-"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
-msgstr ""
-
 msgid "Organisation units"
-msgstr "Organisation units"
+msgstr ""
 
 msgid "Import setup"
 msgstr ""
@@ -852,6 +843,11 @@ msgstr ""
 msgid "Import groups to category option combinations"
 msgstr ""
 
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. "
+"Choose the category option combinations to import each group into."
+msgstr ""
+
 msgid "Group name"
 msgstr ""
 
@@ -859,16 +855,16 @@ msgid "Group description"
 msgstr ""
 
 msgid "Category option combination"
-msgstr "Category option combination"
+msgstr ""
 
 msgid "No match found"
-msgstr ""
+msgstr "कोई मिलान नहीं मिला"
 
 msgid "Choose category option combo"
 msgstr ""
 
 msgid "Data element"
-msgstr "Data element"
+msgstr ""
 
 msgid "Select data element"
 msgstr ""
@@ -999,10 +995,10 @@ msgid ""
 "more information."
 msgstr ""
 
-msgid "Population WorldPop Global2"
+msgid "Population"
 msgstr ""
 
-msgid "Population age groups WorldPop Global2"
+msgid "Population age groups"
 msgstr ""
 
 msgid "Men 0 - 1 years"
@@ -1056,13 +1052,7 @@ msgstr ""
 msgid "Men 75 - 79 years"
 msgstr ""
 
-msgid "Men 80 - 84 years"
-msgstr ""
-
-msgid "Men 85 - 89 years"
-msgstr ""
-
-msgid "Men 90 years and above"
+msgid "Men 80 years and above"
 msgstr ""
 
 msgid "Women 0 - 1 years"
@@ -1116,13 +1106,7 @@ msgstr ""
 msgid "Women 75 - 79 years"
 msgstr ""
 
-msgid "Women 80 - 84 years"
-msgstr ""
-
-msgid "Women 85 - 89 years"
-msgstr ""
-
-msgid "Women 90 years and above"
+msgid "Women 80 years and above"
 msgstr ""
 
 msgid "No organisation units have been selected"
@@ -1266,11 +1250,28 @@ msgid "Metadata"
 msgstr ""
 
 msgid "Tracked entity"
-msgstr "Tracked entity"
+msgstr ""
 
-msgctxt ""
-"01\"...) are available, the combinations will be matched automatically."
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
-"If the codes (\"m_00\", \"m"
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr ""
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data export"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata import"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Metadata export\t"
 msgstr ""
