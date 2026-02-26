@@ -69,7 +69,7 @@ const BandCocMappingTable = () => {
         }
         const c = code.toLowerCase()
 
-        const match = c.match(/([mf])_(\d{1,2})/)
+        const match = /([mf])_(\d{1,2})/.exec(c)
         if (!match) {
             return ''
         }
