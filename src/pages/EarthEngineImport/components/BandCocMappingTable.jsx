@@ -67,9 +67,16 @@ const BandCocMappingTable = () => {
         if (typeof code !== 'string') {
             return ''
         }
-        let c = code.toLowerCase()
-        c = c.replace(/^([mf])_(\d)$/, (_, gender, num) => `${gender}_0${num}`)
-        return c
+        const c = code.toLowerCase()
+
+        const match = c.match(/([mf])_(\d{1,2})/)
+        if (!match) {
+            return ''
+        }
+
+        const [, gender, num] = match
+        const paddedNum = num.length === 1 ? '0' + num : num
+        return `${gender}_${paddedNum}`
     }
 
     const getProbableCocMatch = (bandId) => {
