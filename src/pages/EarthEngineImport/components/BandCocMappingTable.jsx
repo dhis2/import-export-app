@@ -101,7 +101,7 @@ const BandCocMappingTable = () => {
                     )}
                 >
                     {i18n.t(
-                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.\nCodes are matched automatically—case doesn’t matter, and prefixes or suffixes are allowed (e.g., "m_00", "M_05", "WP_F_20").'
+                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.\nCodes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., "m_00", "M_05", "WP_F_20").'
                     )}
                 </NoticeBox>
             </div>
