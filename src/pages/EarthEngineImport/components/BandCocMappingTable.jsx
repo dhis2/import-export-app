@@ -67,9 +67,16 @@ const BandCocMappingTable = () => {
         if (typeof code !== 'string') {
             return ''
         }
-        let c = code.toLowerCase()
-        c = c.replace(/^([mf])_(\d)$/, (_, gender, num) => `${gender}_0${num}`)
-        return c
+        const c = code.toLowerCase()
+
+        const match = /([mf])_(\d{1,2})/.exec(c)
+        if (!match) {
+            return ''
+        }
+
+        const [, gender, num] = match
+        const paddedNum = num.length === 1 ? '0' + num : num
+        return `${gender}_${paddedNum}`
     }
 
     const getProbableCocMatch = (bandId) => {
@@ -94,7 +101,7 @@ const BandCocMappingTable = () => {
                     )}
                 >
                     {i18n.t(
-                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.\nIf the codes ("m_00", "m_01"...) are available, the combinations will be matched automatically.'
+                        'Earth Engine data set "Population age groups" has disaggregation groups. Choose the category option combinations to import each group into.\nCodes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., "m_00", "M_05", "WP_F_20").'
                     )}
                 </NoticeBox>
             </div>
