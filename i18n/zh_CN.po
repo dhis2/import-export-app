@@ -6,12 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -812,13 +812,22 @@ msgstr "使用 JSON、CSV、DXF2、ADX 或 PDF 格式导入数据值。"
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr "支持的文件类型：JSON、CSV、DXF2、ADX 和 PDF。"
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
-msgstr "使用 Google Earth Engine 从 WorldPop 导入高分辨率人口数据。"
+msgid "Import high resolution population data from "
+msgstr ""
+
+msgid " using Google Earth Engine."
+msgstr ""
 
 msgid "Earth Engine source"
 msgstr "地球引擎源"
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
+msgstr ""
 
 msgid "Organisation units"
 msgstr "组织机构"
@@ -843,11 +852,6 @@ msgstr "为选定的组织单位选择关联的几何图形"
 
 msgid "Import groups to category option combinations"
 msgstr "将组导入类别选项组合"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr "Earth Engine 数据集“人口年龄组”具有分解组。选择要导入每个组的类别选项组合。"
 
 msgid "Group name"
 msgstr "组名"
@@ -878,6 +882,14 @@ msgstr "地球引擎数据集"
 
 msgid "Select earth engine data set"
 msgstr "选择地球引擎数据集"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
@@ -987,11 +999,11 @@ msgid ""
 "more information."
 msgstr "需要 Google 地球引擎帐户。查看 DHIS2 文档以获取更多信息。"
 
-msgid "Population"
-msgstr "人口"
+msgid "Population WorldPop Global2"
+msgstr ""
 
-msgid "Population age groups"
-msgstr "人口年龄组"
+msgid "Population age groups WorldPop Global2"
+msgstr ""
 
 msgid "Men 0 - 1 years"
 msgstr "男性 0 - 1 岁"
@@ -1044,8 +1056,14 @@ msgstr "男性 70 - 74 岁"
 msgid "Men 75 - 79 years"
 msgstr "男性 75 - 79 岁"
 
-msgid "Men 80 years and above"
-msgstr "80岁及以上男性"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
+msgstr ""
 
 msgid "Women 0 - 1 years"
 msgstr "女性 0 - 1 岁"
@@ -1098,8 +1116,14 @@ msgstr "70 - 74 岁的女性"
 msgid "Women 75 - 79 years"
 msgstr "75 - 79 岁的女性"
 
-msgid "Women 80 years and above"
-msgstr "80岁及以上的女性"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
+msgstr ""
 
 msgid "No organisation units have been selected"
 msgstr "未选择任何组织单位"
@@ -1125,6 +1149,9 @@ msgstr ""
 
 msgid "Supported file types: JSON and CSV."
 msgstr "支持的文件类型：JSON 和 CSV。"
+
+msgid "Supported version: GML 2.0 only."
+msgstr ""
 
 msgid "Organisation unit geometry import"
 msgstr "组织机构空间几何形状导入"
@@ -1240,3 +1267,10 @@ msgstr "元数据"
 
 msgid "Tracked entity"
 msgstr "跟踪实体"
+
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
+msgstr ""
