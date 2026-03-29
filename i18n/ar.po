@@ -1,18 +1,19 @@
-# 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Philip Larsen Donnelly, 2023
-# Hamza Assada <7amza.it@gmail.com>, 2023
+# Hamza <7amza.it@gmail.com>, 2023
+# Nadiia <semchuk@aph.org.ua>, 2025
+# Mozafar Haider, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-31T13:35:35.188Z\n"
 "PO-Revision-Date: 2023-05-22 21:15+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2023\n"
+"Last-Translator: Mozafar Haider, 2025\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
@@ -435,7 +436,7 @@ msgid "Data element groups"
 msgstr "مجموعات عناصر البيانات"
 
 msgid "Option sets"
-msgstr ""
+msgstr "أحزمة الخيارات"
 
 msgid "Object type"
 msgstr "نوع العنصر"
@@ -982,7 +983,7 @@ msgid "The app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "خطأ في الشبكة"
 
 msgid "Cannot get authorization token for Google Earth Engine."
 msgstr ""
