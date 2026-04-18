@@ -1,15 +1,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Philip Larsen Donnelly, 2022
-# 晓东 林 <13981924470@126.com>, 2025
 # easylin <lin_xd@126.com>, 2026
+# 晓东 林 <13981924470@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2026-03-02T15:49:32.567Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1276,3 +1276,5 @@ msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
 "Codes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., \"m_00\", \"M_05\", \"WP_F"
 msgstr ""
+"地球引擎数据集 \"人口年龄组 \"有分类组。选择要导入各组的类别选项组合。\n"
+"代码会自动匹配（大小写无关，允许使用前缀或后缀，如 \"m_00\"、\"M_05\"、\"WP_F_20\"）。"
