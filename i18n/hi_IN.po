@@ -1,16 +1,17 @@
 # 
 # Translators:
 # Siddharth Agarwal, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-01T15:50:32.586Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Siddharth Agarwal, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -170,9 +171,6 @@ msgstr ""
 msgid "End date"
 msgstr ""
 
-msgid "Event ID scheme"
-msgstr ""
-
 msgid "Loading export..."
 msgstr ""
 
@@ -201,7 +199,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "सभी"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -252,7 +250,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr ""
+msgstr "एरर्स"
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -326,7 +324,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr ""
+msgstr "चुनें"
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -413,7 +411,7 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "डेटा सेट्स"
 
 msgid "Programs"
 msgstr ""
@@ -518,7 +516,7 @@ msgid "Active"
 msgstr ""
 
 msgid "Completed"
-msgstr ""
+msgstr "पूरा हुआ"
 
 msgid "Cancelled"
 msgstr ""
@@ -567,7 +565,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Tracked entity type"
 msgstr ""
@@ -624,13 +622,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "वैल्यू"
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "त्रुटि"
 
 msgid "Conflicts"
 msgstr ""
@@ -642,7 +640,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "समय"
 
 msgid "Message"
 msgstr "संदेश"
@@ -651,7 +649,7 @@ msgid "ID"
 msgstr "आईडी"
 
 msgid "Messages"
-msgstr ""
+msgstr "मैसेजेस"
 
 msgid "Type"
 msgstr ""
@@ -666,13 +664,13 @@ msgid "Status"
 msgstr ""
 
 msgid "Description"
-msgstr ""
+msgstr "विवरण"
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "बनाया गया"
 
 msgid "Deleted"
 msgstr ""
@@ -684,6 +682,15 @@ msgid "Updated"
 msgstr ""
 
 msgid "Total"
+msgstr ""
+
+msgid "Reports"
+msgstr ""
+
+msgid "Error Code"
+msgstr ""
+
+msgid "Tracker Type"
 msgstr ""
 
 msgid "Indexes"
@@ -743,7 +750,7 @@ msgstr ""
 msgid "Metadata import"
 msgstr ""
 
-msgid "TEI import"
+msgid "Tracked entity import"
 msgstr ""
 
 msgid "Data export"
@@ -758,7 +765,7 @@ msgstr ""
 msgid "Metadata export"
 msgstr ""
 
-msgid "TEI export"
+msgid "Tracked entity export"
 msgstr ""
 
 msgid "Job overview"
@@ -805,12 +812,21 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid "Import high resolution population data from "
+msgstr ""
+
+msgid " using Google Earth Engine."
 msgstr ""
 
 msgid "Earth Engine source"
+msgstr ""
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
 msgstr ""
 
 msgid "Organisation units"
@@ -837,11 +853,6 @@ msgstr ""
 msgid "Import groups to category option combinations"
 msgstr ""
 
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr ""
-
 msgid "Group name"
 msgstr ""
 
@@ -858,7 +869,7 @@ msgid "Choose category option combo"
 msgstr ""
 
 msgid "Data element"
-msgstr ""
+msgstr "डेटा एलिमेंट"
 
 msgid "Select data element"
 msgstr ""
@@ -871,6 +882,16 @@ msgstr ""
 
 msgid "Select earth engine data set"
 msgstr ""
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -979,10 +1000,10 @@ msgid ""
 "more information."
 msgstr ""
 
-msgid "Population"
+msgid "Population WorldPop Global2"
 msgstr ""
 
-msgid "Population age groups"
+msgid "Population age groups WorldPop Global2"
 msgstr ""
 
 msgid "Men 0 - 1 years"
@@ -1036,7 +1057,13 @@ msgstr ""
 msgid "Men 75 - 79 years"
 msgstr ""
 
-msgid "Men 80 years and above"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
 msgstr ""
 
 msgid "Women 0 - 1 years"
@@ -1090,7 +1117,13 @@ msgstr ""
 msgid "Women 75 - 79 years"
 msgstr ""
 
-msgid "Women 80 years and above"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
 msgstr ""
 
 msgid "No organisation units have been selected"
@@ -1103,19 +1136,22 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Export event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Export event data for programs, stages and tracked entities to JSON or CSV "
+"format."
 msgstr ""
 
 msgid "Export events"
 msgstr ""
 
 msgid ""
-"Import event data for programs, stages and tracked entities to JSON, CSV, or"
-" DXF2 format."
+"Import event data for programs, stages and tracked entities from JSON or CSV"
+" format."
 msgstr ""
 
-msgid "Supported file types: JSON, CSV, and DXF2."
+msgid "Supported file types: JSON and CSV."
+msgstr ""
+
+msgid "Supported version: GML 2.0 only."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1143,7 +1179,7 @@ msgstr ""
 msgid "Export metadata"
 msgstr ""
 
-msgid "Export tracked entity instances"
+msgid "Export tracked entities"
 msgstr ""
 
 msgid "Import data"
@@ -1161,7 +1197,7 @@ msgstr ""
 msgid "Import metadata"
 msgstr ""
 
-msgid "Import tracked entity instances"
+msgid "Import tracked entities"
 msgstr ""
 
 msgid "An overview of all import jobs started this session."
@@ -1182,16 +1218,13 @@ msgid ""
 " CSV format."
 msgstr ""
 
-msgid "Supported file types: JSON and CSV."
-msgstr ""
-
 msgid "A class key must be selected"
 msgstr ""
 
-msgid "Tracked entity instances export"
+msgid "Tracked entities export"
 msgstr ""
 
-msgid "Export tracked entity instances in JSON, CSV, or DXF2 format."
+msgid "Export tracked entities in JSON or CSV format."
 msgstr ""
 
 msgid "Program to export from"
@@ -1203,13 +1236,13 @@ msgstr ""
 msgid "At least one of the 'last updated' date fields must be specified"
 msgstr ""
 
-msgid "Tracked entity instances import"
+msgid "Tracked entities import"
 msgstr ""
 
-msgid "Import tracked entity instances using JSON or DXF2 format."
+msgid "Import tracked entities using JSON format."
 msgstr ""
 
-msgid "Supported file types: JSON and DXF2."
+msgid "Supported file types: JSON."
 msgstr ""
 
 msgid "Job started."
@@ -1218,11 +1251,8 @@ msgstr ""
 msgid "An unknown error occurred. Please try again later"
 msgstr ""
 
-msgid "Loading exported data"
-msgstr ""
-
 msgid "Data"
-msgstr ""
+msgstr "डेटा"
 
 msgid "Event"
 msgstr ""
@@ -1236,5 +1266,12 @@ msgstr ""
 msgid "Metadata"
 msgstr ""
 
-msgid "TEI"
+msgid "Tracked entity"
+msgstr ""
+
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
 msgstr ""

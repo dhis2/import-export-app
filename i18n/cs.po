@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Philip Larsen Donnelly, 2024
-# Jiří Podhorecký <jirka.p@volny.cz>, 2025
+# Jiří Podhorecký <jirka.p@volny.cz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-04T14:17:07.908Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
@@ -222,10 +222,10 @@ msgid "CSV"
 msgstr "CSV"
 
 msgid "DXF2 (XML)"
-msgstr ""
+msgstr "DXF2 (XML)"
 
 msgid "ADX (XML)"
-msgstr ""
+msgstr "ADX (XML)"
 
 msgid "PDF"
 msgstr "PDF"
@@ -702,10 +702,10 @@ msgid "Reports"
 msgstr "Zprávy"
 
 msgid "Error Code"
-msgstr ""
+msgstr "Kód chyby"
 
 msgid "Tracker Type"
-msgstr ""
+msgstr "Typ trackeru"
 
 msgid "Indexes"
 msgstr "Indexy"
@@ -714,10 +714,10 @@ msgid "Details by type"
 msgstr "Podrobnosti podle typu"
 
 msgid "All existing property values will be replaced"
-msgstr ""
+msgstr "Všechny stávající majetkové hodnoty budou nahrazeny"
 
 msgid "Values will be overwritten, even if the new value is null"
-msgstr ""
+msgstr "Hodnoty budou přepsány, i když je nová hodnota nulová."
 
 msgid "Advanced options"
 msgstr "Pokročilé možnosti"
@@ -765,7 +765,7 @@ msgid "Metadata import"
 msgstr "Import metadat"
 
 msgid "Tracked entity import"
-msgstr ""
+msgstr "Import trasovaných entit"
 
 msgid "Data export"
 msgstr "Export dat"
@@ -780,7 +780,7 @@ msgid "Metadata export"
 msgstr "Export metadat"
 
 msgid "Tracked entity export"
-msgstr ""
+msgstr "Export trasovaných entit"
 
 msgid "Job overview"
 msgstr "Přehled úloh"
@@ -813,6 +813,8 @@ msgid ""
 "Export metadata, such as data elements and organisation units, to JSON, CSV,"
 " DXF2, or ADX format."
 msgstr ""
+"Exportovat metadata, jako jsou datové prvky a organizační jednotky, do "
+"formátu JSON, CSV, DXF2 nebo ADX."
 
 msgid "Date range to export data for"
 msgstr "Časové období, pro které chcete exportovat data"
@@ -821,18 +823,27 @@ msgid "Export data"
 msgstr "Exportovat data"
 
 msgid "Import data values using JSON, CSV, DXF2, ADX, or PDF format."
-msgstr ""
+msgstr "Import hodnot dat pomocí formátů JSON, CSV, DXF2, ADX nebo PDF."
 
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
+msgstr "Podporované typy souborů: JSON, CSV, DXF2, ADX a PDF."
+
+msgid "Import high resolution population data from "
 msgstr ""
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid " using Google Earth Engine."
 msgstr ""
 
 msgid "Earth Engine source"
 msgstr "Zdroj Earth Engine"
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
+msgstr ""
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
@@ -857,14 +868,6 @@ msgstr "Vyberte přidruženou geometrii pro vybrané organizační jednotky"
 
 msgid "Import groups to category option combinations"
 msgstr "Importujte skupiny do kombinací možností kategorií"
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
-msgstr ""
-"Datový soubor Earth Engine „Věkové skupiny populace“ obsahuje skupiny "
-"rozčlenění. Vyberte kombinace možností kategorií, do kterých chcete "
-"importovat jednotlivé skupiny."
 
 msgid "Group name"
 msgstr "Název Skupiny"
@@ -1023,11 +1026,11 @@ msgstr ""
 "Vyžaduje účet Google Earth Engine. Další informace naleznete v dokumentaci "
 "DHIS2."
 
-msgid "Population"
-msgstr "Obyvatelstvo"
+msgid "Population WorldPop Global2"
+msgstr ""
 
-msgid "Population age groups"
-msgstr "Populační věkové skupiny"
+msgid "Population age groups WorldPop Global2"
+msgstr ""
 
 msgid "Men 0 - 1 years"
 msgstr "Muži 0 - 1 rok"
@@ -1080,8 +1083,14 @@ msgstr "Muži 70 - 74 let"
 msgid "Men 75 - 79 years"
 msgstr "Muži 75 - 79 let"
 
-msgid "Men 80 years and above"
-msgstr "Muži od 80 let"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
+msgstr ""
 
 msgid "Women 0 - 1 years"
 msgstr "Ženy 0 - 1 rok"
@@ -1134,8 +1143,14 @@ msgstr "Ženy 70 - 74 let"
 msgid "Women 75 - 79 years"
 msgstr "Ženy 75 - 79 let"
 
-msgid "Women 80 years and above"
-msgstr "Ženy starší 80 let"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
+msgstr ""
 
 msgid "No organisation units have been selected"
 msgstr "Nebyly vybrány žádné organizační jednotky"
@@ -1153,6 +1168,8 @@ msgid ""
 "Export event data for programs, stages and tracked entities to JSON or CSV "
 "format."
 msgstr ""
+"Export dat událostí pro programy, fáze a trasované entity do formátu JSON "
+"nebo CSV."
 
 msgid "Export events"
 msgstr "Exportovat události"
@@ -1161,9 +1178,14 @@ msgid ""
 "Import event data for programs, stages and tracked entities from JSON or CSV"
 " format."
 msgstr ""
+"Import dat událostí pro programy, fáze a trasované entity z formátu JSON "
+"nebo CSV."
 
 msgid "Supported file types: JSON and CSV."
 msgstr "Podporované typy souborů: JSON a CSV."
+
+msgid "Supported version: GML 2.0 only."
+msgstr "Podporovaná verze: Pouze GML 2.0."
 
 msgid "Organisation unit geometry import"
 msgstr "Import geometrie organizační jednotky"
@@ -1195,7 +1217,7 @@ msgid "Export metadata"
 msgstr "Exportovat metadata"
 
 msgid "Export tracked entities"
-msgstr ""
+msgstr "Export trasovaných entit"
 
 msgid "Import data"
 msgstr "Import dat"
@@ -1213,7 +1235,7 @@ msgid "Import metadata"
 msgstr "Import metadat"
 
 msgid "Import tracked entities"
-msgstr ""
+msgstr "Import trasovaných entit"
 
 msgid "An overview of all import jobs started this session."
 msgstr "Tuto relaci zahájil přehled všech úloh importu."
@@ -1236,15 +1258,17 @@ msgid ""
 "Import metadata, such as data elements and organisation units, using JSON or"
 " CSV format."
 msgstr ""
+"Import metadat, jako jsou datové prvky a organizační jednotky, pomocí "
+"formátu JSON nebo CSV."
 
 msgid "A class key must be selected"
 msgstr "Musí být vybrán klíč třídy"
 
 msgid "Tracked entities export"
-msgstr ""
+msgstr "Export trasovaných entit"
 
 msgid "Export tracked entities in JSON or CSV format."
-msgstr ""
+msgstr "Export trasovaných entit do formátu JSON nebo CSV."
 
 msgid "Program to export from"
 msgstr "Program pro export z"
@@ -1256,13 +1280,13 @@ msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "Musí být zadáno alespoň jedno z polí s datem „poslední aktualizace“"
 
 msgid "Tracked entities import"
-msgstr ""
+msgstr "Import trasovaných entit"
 
 msgid "Import tracked entities using JSON format."
-msgstr ""
+msgstr "Import trasovaných entit pomocí formátu JSON."
 
 msgid "Supported file types: JSON."
-msgstr ""
+msgstr "Podporované typy souborů: JSON."
 
 msgid "Job started."
 msgstr "Úloha začala."
@@ -1287,3 +1311,10 @@ msgstr "Metadata"
 
 msgid "Tracked entity"
 msgstr "Trasovaná entita"
+
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
+msgstr ""
