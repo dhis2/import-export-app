@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Siddharth Agarwal, 2025
 # Rohit Wadhwani, 2026
@@ -6,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"POT-Creation-Date: 2026-03-02T15:49:32.567Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
@@ -912,7 +911,7 @@ msgid "You must select an Earth Engine data set before selecting a period"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "पीरियड"
 
 msgid "Data from Earth Engine will be imported for this period."
 msgstr ""
@@ -1269,9 +1268,8 @@ msgstr ""
 msgid "Tracked entity"
 msgstr ""
 
-msgctxt ""
-"01\"...) are available, the combinations will be matched automatically."
+msgctxt "20\")."
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
-"If the codes (\"m_00\", \"m"
+"Codes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., \"m_00\", \"M_05\", \"WP_F"
 msgstr ""
