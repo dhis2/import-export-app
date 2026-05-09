@@ -5,12 +5,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-05T10:14:36.386Z\n"
+"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fa_AF\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -811,12 +811,21 @@ msgstr ""
 msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr ""
 
-msgid ""
-"Import high resolution population data from WorldPop using Google Earth "
-"Engine."
+msgid "Import high resolution population data from "
+msgstr ""
+
+msgid " using Google Earth Engine."
 msgstr ""
 
 msgid "Earth Engine source"
+msgstr ""
+
+msgid "About WorldPop dataset versions"
+msgstr ""
+
+msgid ""
+"WorldPop global data is currently at v2 (released 2025-2026).\n"
+"Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
 msgstr ""
 
 msgid "Organisation units"
@@ -841,11 +850,6 @@ msgid "Select associated geometry for selected organisation units"
 msgstr ""
 
 msgid "Import groups to category option combinations"
-msgstr ""
-
-msgid ""
-"Earth Engine data set \"Population age groups\" has disaggregation groups. "
-"Choose the category option combinations to import each group into."
 msgstr ""
 
 msgid "Group name"
@@ -877,6 +881,16 @@ msgstr ""
 
 msgid "Select earth engine data set"
 msgstr ""
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -985,10 +999,10 @@ msgid ""
 "more information."
 msgstr ""
 
-msgid "Population"
+msgid "Population WorldPop Global2"
 msgstr ""
 
-msgid "Population age groups"
+msgid "Population age groups WorldPop Global2"
 msgstr ""
 
 msgid "Men 0 - 1 years"
@@ -1042,7 +1056,13 @@ msgstr ""
 msgid "Men 75 - 79 years"
 msgstr ""
 
-msgid "Men 80 years and above"
+msgid "Men 80 - 84 years"
+msgstr ""
+
+msgid "Men 85 - 89 years"
+msgstr ""
+
+msgid "Men 90 years and above"
 msgstr ""
 
 msgid "Women 0 - 1 years"
@@ -1096,7 +1116,13 @@ msgstr ""
 msgid "Women 75 - 79 years"
 msgstr ""
 
-msgid "Women 80 years and above"
+msgid "Women 80 - 84 years"
+msgstr ""
+
+msgid "Women 85 - 89 years"
+msgstr ""
+
+msgid "Women 90 years and above"
 msgstr ""
 
 msgid "No organisation units have been selected"
@@ -1122,6 +1148,9 @@ msgid ""
 msgstr ""
 
 msgid "Supported file types: JSON and CSV."
+msgstr ""
+
+msgid "Supported version: GML 2.0 only."
 msgstr ""
 
 msgid "Organisation unit geometry import"
@@ -1238,3 +1267,10 @@ msgstr ""
 
 msgid "Tracked entity"
 msgstr "ردیابی هویت"
+
+msgctxt ""
+"01\"...) are available, the combinations will be matched automatically."
+msgid ""
+"Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
+"If the codes (\"m_00\", \"m"
+msgstr ""
