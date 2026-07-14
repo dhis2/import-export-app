@@ -30,6 +30,14 @@ const trackerSummaryQuery = {
     },
 }
 
+// The GML geometry import (POST /api/metadata/gml) is executed by the backend as a
+// METADATA_IMPORT job, so its progress events and summary are published under the
+// METADATA_IMPORT notifier category rather than GML_IMPORT. Translate the UI import
+// category to the backend notifier category when polling, while keeping GML_IMPORT as
+// the UI category used for grouping, filtering and job recreation. [DHIS2-21758]
+const toNotifierCategory = (importType) =>
+    importType === 'GML_IMPORT' ? 'METADATA_IMPORT' : importType
+
 const defaultTasks = {
     data: {},
     event: {},
@@ -60,7 +68,7 @@ const createFetchEvents =
 
             const response = await engine.query(query, {
                 variables: {
-                    type: task.importType,
+                    type: toNotifierCategory(task.importType),
                     taskId: task.id,
                 },
             })
@@ -122,7 +130,7 @@ const createFetchSummary = (engine, setTasks) => async (type, id, task) => {
 
     const response = await engine.query(query, {
         variables: {
-            type: task.importType,
+            type: toNotifierCategory(task.importType),
             taskId: task.id,
         },
     })
