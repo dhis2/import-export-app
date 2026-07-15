@@ -11,7 +11,7 @@ const onImport =
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
         const endpoint = 'metadata/gml.json'
-        const params = `dryRun=${dryRun}`
+        const params = `dryRun=${dryRun}&async=${isAsync}`
         const url = `${apiBaseUrl}${endpoint}?${params}`
 
         try {
