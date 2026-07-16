@@ -49,4 +49,12 @@ const categoryTypes = [
 
 const allCategories = categoryTypes.map(({ importType }) => importType)
 
-export { categoryTypes, allCategories }
+// The GML geometry import (POST /api/metadata/gml) is executed by the backend as a
+// METADATA_IMPORT job, so its progress events and summary are published under the
+// METADATA_IMPORT notifier category rather than GML_IMPORT. Translate the UI import
+// category to the backend notifier category when polling, while keeping GML_IMPORT as
+// the UI category used for grouping, filtering and job recreation. [DHIS2-21758]
+const toNotifierCategory = (importType) =>
+    importType === 'GML_IMPORT' ? 'METADATA_IMPORT' : importType
+
+export { categoryTypes, allCategories, toNotifierCategory }

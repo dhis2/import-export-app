@@ -1,6 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import { useState } from 'react'
-import { allCategories } from '../utils/tasks.jsx'
+import { allCategories, toNotifierCategory } from '../utils/tasks.jsx'
 
 const jobEventQuery = {
     events: {
@@ -29,14 +29,6 @@ const trackerSummaryQuery = {
         id: ({ taskId }) => `${taskId}/report`,
     },
 }
-
-// The GML geometry import (POST /api/metadata/gml) is executed by the backend as a
-// METADATA_IMPORT job, so its progress events and summary are published under the
-// METADATA_IMPORT notifier category rather than GML_IMPORT. Translate the UI import
-// category to the backend notifier category when polling, while keeping GML_IMPORT as
-// the UI category used for grouping, filtering and job recreation. [DHIS2-21758]
-const toNotifierCategory = (importType) =>
-    importType === 'GML_IMPORT' ? 'METADATA_IMPORT' : importType
 
 const defaultTasks = {
     data: {},
