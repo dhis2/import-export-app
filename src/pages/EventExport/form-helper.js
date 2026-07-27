@@ -13,7 +13,7 @@ import {
 const exportErrorAlert = (message) => ({
     [FORM_ERROR]: [
         {
-            id: `event-export-error-${new Date().getTime()}`,
+            id: `event-export-error-${Date.now()}`,
             warning: true,
             message,
         },
@@ -70,6 +70,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
                 message = body.message || message
             } catch (e) {
                 // response body wasn't JSON, fall back to the generic message
+                console.error('event-export: failed to parse error response', e)
             }
             return exportErrorAlert(message)
         }
@@ -79,6 +80,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
         // log for debugging purposes
         console.log('event-export:', { url, params: downloadUrlParams })
     } catch (e) {
+        console.error('event-export: request failed', e)
         return exportErrorAlert(genericErrorMessage)
     } finally {
         setExportEnabled(true)
