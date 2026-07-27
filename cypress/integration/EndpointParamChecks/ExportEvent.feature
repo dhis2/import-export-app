@@ -84,3 +84,8 @@ Feature: The user should be able to export events
         Given the "inclusion" input is set to "CHILDREN"
         When the export form is submitted
         Then the download request is sent with the right parameters
+
+    Scenario: The export request fails
+        Given the event export request will fail
+        When the export form is submitted
+        Then a warning alert is shown with the error message
