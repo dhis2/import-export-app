@@ -150,7 +150,9 @@ const getGroupOrder = (schemas) => {
 const filterOutExcludedSchemas = (excludedSchemas, schemas) =>
     schemas.filter(
         (schema) =>
-            schema.metadata && !excludedSchemas.has(schema.collectionName)
+            schema.metadata &&
+            !schema.embeddedObject &&
+            !excludedSchemas.has(schema.collectionName)
     )
 
 const groupName = (klass) => {
