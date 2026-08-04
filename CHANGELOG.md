@@ -1,3 +1,10 @@
+## [101.3.3](https://github.com/dhis2/import-export-app/compare/v101.3.2...v101.3.3) (2026-08-04)
+
+
+### Bug Fixes
+
+* filter out objects with embeddedObject true ([f58c7f4](https://github.com/dhis2/import-export-app/commit/f58c7f42cc8e7c733f953ee617e00c314c8975e5))
+
 ## [101.3.2](https://github.com/dhis2/import-export-app/compare/v101.3.1...v101.3.2) (2026-05-28)
 
 
