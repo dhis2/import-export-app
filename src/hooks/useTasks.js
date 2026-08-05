@@ -1,4 +1,4 @@
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import { useState } from 'react'
 import { allCategories, toNotifierCategory } from '../utils/tasks.jsx'
 
@@ -46,7 +46,8 @@ const defaultJobOverview = {
 const defaultRefetchPeriod = 2000
 
 const createFetchEvents =
-    (engine, setTasks, fetchSummary) => (type, id, task) => {
+    ({ engine, setTasks, fetchSummary, apiVersion }) =>
+    (type, id, task) => {
         const fetchEvents = async () => {
             if (task.completed) {
                 return
@@ -60,7 +61,7 @@ const createFetchEvents =
 
             const response = await engine.query(query, {
                 variables: {
-                    type: toNotifierCategory(task.importType),
+                    type: toNotifierCategory(task.importType, apiVersion),
                     taskId: task.id,
                 },
             })
@@ -108,42 +109,43 @@ const createFetchEvents =
         fetchEvents()
     }
 
-const createFetchSummary = (engine, setTasks) => async (type, id, task) => {
-    const newTask = { ...task }
+const createFetchSummary =
+    (engine, setTasks, apiVersion) => async (type, id, task) => {
+        const newTask = { ...task }
 
-    // we could still keep one query here (the jobs query), but tracker provides a facade to these
-    // and even though this branches the logic unnecessarily, we should stick to
-    // trackers' endpoint for tracker imports and they could abstract some job-related details
-    // more details here: https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_nti_import_summary
-    const query =
-        task.importType === 'TRACKER_IMPORT_JOB'
-            ? trackerSummaryQuery
-            : jobSummaryQuery
+        // we could still keep one query here (the jobs query), but tracker provides a facade to these
+        // and even though this branches the logic unnecessarily, we should stick to
+        // trackers' endpoint for tracker imports and they could abstract some job-related details
+        // more details here: https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_nti_import_summary
+        const query =
+            task.importType === 'TRACKER_IMPORT_JOB'
+                ? trackerSummaryQuery
+                : jobSummaryQuery
 
-    const response = await engine.query(query, {
-        variables: {
-            type: toNotifierCategory(task.importType),
-            taskId: task.id,
-        },
-    })
+        const response = await engine.query(query, {
+            variables: {
+                type: toNotifierCategory(task.importType, apiVersion),
+                taskId: task.id,
+            },
+        })
 
-    const { summary, error } = response
+        const { summary, error } = response
 
-    if (error) {
-        console.error('fetchSummary error: ', error)
-        return
+        if (error) {
+            console.error('fetchSummary error: ', error)
+            return
+        }
+
+        if (summary && summary.status == 'ERROR' && !newTask.error) {
+            newTask.error = true
+        }
+
+        newTask.summary = summary
+        setTasks((tasks) => ({
+            ...tasks,
+            [type]: { ...tasks[type], [id]: newTask },
+        }))
     }
-
-    if (summary && summary.status == 'ERROR' && !newTask.error) {
-        newTask.error = true
-    }
-
-    newTask.summary = summary
-    setTasks((tasks) => ({
-        ...tasks,
-        [type]: { ...tasks[type], [id]: newTask },
-    }))
-}
 
 const createAddTask = (setTasks, fetchEvents) => (type, id, entry) => {
     setTasks((tasks) => ({
@@ -162,11 +164,18 @@ const createUpdateJobOverview = (setJobOverview) => (val) => {
 
 const useTasks = () => {
     const engine = useDataEngine()
+    const { serverVersion } = useConfig()
+    const { minor } = serverVersion ?? {}
     const [tasks, setTasks] = useState(defaultTasks)
     const [jobOverview, setJobOverview] = useState(defaultJobOverview)
 
-    const fetchSummary = createFetchSummary(engine, setTasks)
-    const fetchEvents = createFetchEvents(engine, setTasks, fetchSummary)
+    const fetchSummary = createFetchSummary(engine, setTasks, minor)
+    const fetchEvents = createFetchEvents({
+        engine,
+        setTasks,
+        fetchSummary,
+        apiVersion: minor,
+    })
     const addTask = createAddTask(setTasks, fetchEvents)
     const updateJobOverview = createUpdateJobOverview(setJobOverview)
 
