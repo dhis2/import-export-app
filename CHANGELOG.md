@@ -1,3 +1,10 @@
+## [101.3.5](https://github.com/dhis2/import-export-app/compare/v101.3.4...v101.3.5) (2026-08-05)
+
+
+### Bug Fixes
+
+* release GML import bug fix ([#2260](https://github.com/dhis2/import-export-app/issues/2260)) ([4faf67f](https://github.com/dhis2/import-export-app/commit/4faf67f03da5252ab20f32e8a5b8345c8389ecda))
+
 ## [101.3.4](https://github.com/dhis2/import-export-app/compare/v101.3.3...v101.3.4) (2026-08-05)
 
 
