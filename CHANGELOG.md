@@ -1,3 +1,10 @@
+## [101.3.4](https://github.com/dhis2/import-export-app/compare/v101.3.3...v101.3.4) (2026-08-05)
+
+
+### Bug Fixes
+
+* run GML import async and track it under the METADATA_IMPORT job [DHIS2-21758] ([#2250](https://github.com/dhis2/import-export-app/issues/2250)) ([d6c1c64](https://github.com/dhis2/import-export-app/commit/d6c1c64ce5970853c0f816eb9c70567a56ffca02))
+
 ## [101.3.3](https://github.com/dhis2/import-export-app/compare/v101.3.2...v101.3.3) (2026-08-04)
 
 
