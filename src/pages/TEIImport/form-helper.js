@@ -21,17 +21,9 @@ const unsupportedFileFormatMessage = {
     ],
 }
 
-const readFileAsText = (file) =>
-    new Promise((resolve, reject) => {
-        const reader = new FileReader()
-        reader.onload = () => resolve(reader.result)
-        reader.onerror = () => reject(reader.error)
-        reader.readAsText(file)
-    })
-
 const isLegacyTrackerPayload = async (file) => {
     try {
-        const data = JSON.parse(await readFileAsText(file))
+        const data = JSON.parse(await file.text())
         return (
             'trackedEntityInstances' in data &&
             !NEW_TRACKER_PAYLOAD_KEYS.some((key) => key in data)
