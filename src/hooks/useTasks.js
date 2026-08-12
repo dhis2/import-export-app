@@ -1,6 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import { useState } from 'react'
-import { allCategories } from '../utils/tasks.jsx'
+import { allCategories, toNotifierCategory } from '../utils/tasks.jsx'
 
 const jobEventQuery = {
     events: {
@@ -60,7 +60,7 @@ const createFetchEvents =
 
             const response = await engine.query(query, {
                 variables: {
-                    type: task.importType,
+                    type: toNotifierCategory(task.importType),
                     taskId: task.id,
                 },
             })
@@ -122,7 +122,7 @@ const createFetchSummary = (engine, setTasks) => async (type, id, task) => {
 
     const response = await engine.query(query, {
         variables: {
-            type: task.importType,
+            type: toNotifierCategory(task.importType),
             taskId: task.id,
         },
     })

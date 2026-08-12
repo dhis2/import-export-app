@@ -17,7 +17,13 @@ const schemaQuery = {
     schemas: {
         resource: 'schemas',
         params: {
-            fields: ['metadata', 'collectionName', 'displayName', 'klass'],
+            fields: [
+                'metadata',
+                'collectionName',
+                'displayName',
+                'klass',
+                'embeddedObject',
+            ],
         },
     },
 }

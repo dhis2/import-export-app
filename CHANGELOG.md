@@ -1,3 +1,24 @@
+## [101.3.5](https://github.com/dhis2/import-export-app/compare/v101.3.4...v101.3.5) (2026-08-05)
+
+
+### Bug Fixes
+
+* release GML import bug fix ([#2260](https://github.com/dhis2/import-export-app/issues/2260)) ([4faf67f](https://github.com/dhis2/import-export-app/commit/4faf67f03da5252ab20f32e8a5b8345c8389ecda))
+
+## [101.3.4](https://github.com/dhis2/import-export-app/compare/v101.3.3...v101.3.4) (2026-08-05)
+
+
+### Bug Fixes
+
+* run GML import async and track it under the METADATA_IMPORT job [DHIS2-21758] ([#2250](https://github.com/dhis2/import-export-app/issues/2250)) ([d6c1c64](https://github.com/dhis2/import-export-app/commit/d6c1c64ce5970853c0f816eb9c70567a56ffca02))
+
+## [101.3.3](https://github.com/dhis2/import-export-app/compare/v101.3.2...v101.3.3) (2026-08-04)
+
+
+### Bug Fixes
+
+* filter out objects with embeddedObject true ([f58c7f4](https://github.com/dhis2/import-export-app/commit/f58c7f42cc8e7c733f953ee617e00c314c8975e5))
+
 ## [101.3.2](https://github.com/dhis2/import-export-app/compare/v101.3.1...v101.3.2) (2026-05-28)
 
 
