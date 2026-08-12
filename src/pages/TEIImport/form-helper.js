@@ -1,5 +1,46 @@
+import i18n from '@dhis2/d2-i18n'
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { uploadFile } from '../../utils/helper.js'
+
+const NEW_TRACKER_PAYLOAD_KEYS = [
+    'trackedEntities',
+    'enrollments',
+    'events',
+    'relationships',
+]
+
+const unsupportedFileFormatMessage = {
+    [FORM_ERROR]: [
+        {
+            id: 'tei-import-unsupported-format',
+            critical: true,
+            message: i18n.t(
+                'This file is not in a supported format. Files exported from DHIS2 2.40 or earlier are no longer supported by this app — please re-export the data using DHIS2 2.41 or later.'
+            ),
+        },
+    ],
+}
+
+const readFileAsText = (file) =>
+    new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(reader.result)
+        reader.onerror = () => reject(reader.error)
+        reader.readAsText(file)
+    })
+
+const isLegacyTrackerPayload = async (file) => {
+    try {
+        const data = JSON.parse(await readFileAsText(file))
+        return (
+            'trackedEntityInstances' in data &&
+            !NEW_TRACKER_PAYLOAD_KEYS.some((key) => key in data)
+        )
+    } catch (e) {
+        console.error('tei-import: failed to pre-check file contents', e)
+        return false
+    }
+}
 
 const onImport =
     ({ baseUrl, setProgress, addTask, setShowFullSummaryTask }) =>
@@ -23,6 +64,10 @@ const onImport =
             orgUnitIdScheme,
             idScheme,
         } = values
+
+        if (await isLegacyTrackerPayload(files[0])) {
+            return unsupportedFileFormatMessage
+        }
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/tracker/`

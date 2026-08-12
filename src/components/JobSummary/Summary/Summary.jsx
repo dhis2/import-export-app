@@ -23,7 +23,7 @@ const Summary = ({ summary, importType }) => {
     if (summary.typeReports) {
         const overviewStats = {
             ...summary.stats,
-            imported: summary.stats.created,
+            imported: summary.stats?.created,
         }
         const { stats, messages } = typeReportParse(summary.typeReports)
         return (
