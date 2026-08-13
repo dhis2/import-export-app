@@ -26,12 +26,12 @@ const isLegacyEventCsv = async (file) => {
         const newlineIndex = prefix.search(/\r?\n/)
         const headerLine =
             newlineIndex === -1 ? prefix : prefix.slice(0, newlineIndex)
-        const columns = headerLine.split(',').map((column) => column.trim())
+        const columns = new Set(
+            headerLine.split(',').map((column) => column.trim())
+        )
         return (
-            LEGACY_EVENT_CSV_COLUMNS.some((column) =>
-                columns.includes(column)
-            ) &&
-            !NEW_EVENT_CSV_COLUMNS.some((column) => columns.includes(column))
+            LEGACY_EVENT_CSV_COLUMNS.some((column) => columns.has(column)) &&
+            !NEW_EVENT_CSV_COLUMNS.some((column) => columns.has(column))
         )
     } catch (e) {
         console.error('event-import: failed to pre-check file contents', e)
