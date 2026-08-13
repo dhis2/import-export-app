@@ -36,6 +36,9 @@ const Objects = ({ objectType, form }) => {
                 validationText={objectsValidationText}
                 error={!!objectsError}
                 filterable
+                empty={i18n.t(
+                    'There are no objects of the selected object type, or you do not have permission to view them'
+                )}
             />
         </div>
     )
