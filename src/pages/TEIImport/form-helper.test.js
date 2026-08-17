@@ -68,7 +68,7 @@ it('uploads a new-format tracker payload as usual', async () => {
     expect(result).toEqual(jobStartedMessage)
 })
 
-it('does not block a legacy-shaped payload that also has new tracker keys', async () => {
+it('rejects a payload that has both the legacy and new tracker keys', async () => {
     const values = {
         ...baseValues,
         files: [jsonFile({ trackedEntityInstances: [], trackedEntities: [] })],
@@ -76,6 +76,6 @@ it('does not block a legacy-shaped payload that also has new tracker keys', asyn
 
     const result = await submit(values)
 
-    expect(uploadFile).toHaveBeenCalledTimes(1)
-    expect(result).toEqual(jobStartedMessage)
+    expect(uploadFile).not.toHaveBeenCalled()
+    expect(result[FORM_ERROR]).toHaveLength(1)
 })

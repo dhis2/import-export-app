@@ -2,13 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { uploadFile } from '../../utils/helper.js'
 
-const NEW_TRACKER_PAYLOAD_KEYS = [
-    'trackedEntities',
-    'enrollments',
-    'events',
-    'relationships',
-]
-
 const unsupportedFileFormatMessage = {
     [FORM_ERROR]: [
         {
@@ -24,10 +17,7 @@ const unsupportedFileFormatMessage = {
 const isLegacyTrackerPayload = async (file) => {
     try {
         const data = JSON.parse(await file.text())
-        return (
-            'trackedEntityInstances' in data &&
-            !NEW_TRACKER_PAYLOAD_KEYS.some((key) => key in data)
-        )
+        return 'trackedEntityInstances' in data
     } catch (e) {
         console.error('tei-import: failed to pre-check file contents', e)
         return false
