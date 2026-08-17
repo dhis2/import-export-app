@@ -1,3 +1,10 @@
+## [101.3.6](https://github.com/dhis2/import-export-app/compare/v101.3.5...v101.3.6) (2026-08-13)
+
+
+### Bug Fixes
+
+* handle empty objects [DHIS2-19761] ([#2265](https://github.com/dhis2/import-export-app/issues/2265)) ([98c089c](https://github.com/dhis2/import-export-app/commit/98c089c175f561bd3d30da69668e3ee66dc2b3d1))
+
 ## [101.3.5](https://github.com/dhis2/import-export-app/compare/v101.3.4...v101.3.5) (2026-08-05)
 
 
