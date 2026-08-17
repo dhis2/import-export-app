@@ -5,7 +5,6 @@ import { uploadFile } from '../../utils/helper.js'
 const isAsync = true
 
 const LEGACY_EVENT_CSV_COLUMNS = ['eventDate', 'dueDate', 'completedDate']
-const NEW_EVENT_CSV_COLUMNS = ['occurredAt', 'scheduledAt']
 const CSV_HEADER_PREFIX_BYTES = 8192
 
 const unsupportedFileFormatMessage = {
@@ -14,7 +13,7 @@ const unsupportedFileFormatMessage = {
             id: 'event-import-unsupported-format',
             critical: true,
             message: i18n.t(
-                'This file is not in a supported format. Files exported from DHIS2 2.40 or earlier are no longer supported by this app — please re-export the data using DHIS2 2.41 or later.'
+                'This file is not in a supported format. Files exported from DHIS2 2.40 or earlier are no longer supported by this app. Please re-export the data using DHIS2 2.41 or later.'
             ),
         },
     ],
@@ -29,10 +28,7 @@ const isLegacyEventCsv = async (file) => {
         const columns = new Set(
             headerLine.split(',').map((column) => column.trim())
         )
-        return (
-            LEGACY_EVENT_CSV_COLUMNS.some((column) => columns.has(column)) &&
-            !NEW_EVENT_CSV_COLUMNS.some((column) => columns.has(column))
-        )
+        return LEGACY_EVENT_CSV_COLUMNS.some((column) => columns.has(column))
     } catch (e) {
         console.error('event-import: failed to pre-check file contents', e)
         return false

@@ -73,6 +73,18 @@ it('uploads a new-format event CSV as usual', async () => {
     expect(result).toEqual(jobStartedMessage)
 })
 
+it('rejects a header that has both legacy and new tracker columns', async () => {
+    const values = {
+        ...baseValues,
+        files: [csvFile(`${legacyHeader},occurredAt,scheduledAt\n`)],
+    }
+
+    const result = await submit(values)
+
+    expect(uploadFile).not.toHaveBeenCalled()
+    expect(result[FORM_ERROR]).toHaveLength(1)
+})
+
 it('does not check the file contents for non-CSV formats', async () => {
     const values = {
         ...baseValues,
