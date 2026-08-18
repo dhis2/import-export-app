@@ -75,7 +75,8 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
             return exportErrorAlert(message)
         }
 
-        locationAssign(url)
+        const blob = await response.blob()
+        locationAssign(url, blob)
 
         // log for debugging purposes
         console.log('event-export:', { url, params: downloadUrlParams })
