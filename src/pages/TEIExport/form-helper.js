@@ -32,6 +32,7 @@ const valuesToParams = ({
     updatedWithin,
 }) => {
     const minParams = {
+        fields: '*,enrollments[*,events[*]]',
         orgUnitMode: orgUnitMode,
         format: format,
         includeDeleted: includeDeleted.toString(),
