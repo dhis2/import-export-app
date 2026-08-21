@@ -53,6 +53,10 @@ const selectInputs = [
 const dateInputs = [
     'startDate',
     'endDate',
+    // EventExport uses the tracker API's own param names for its date range
+    // instead of the generic startDate/endDate used elsewhere
+    'occurredAfter',
+    'occurredBefore',
     'programStartDate',
     'programEndDate',
     'lastUpdatedStartDate',
