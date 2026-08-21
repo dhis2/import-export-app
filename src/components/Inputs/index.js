@@ -35,7 +35,11 @@ export {
     ImportStrategy,
     defaultImportStrategyOption,
 } from './ImportStrategy.jsx'
-export { AtomicMode, defaultAtomicModeOption } from './AtomicMode.jsx'
+export {
+    AtomicMode,
+    atomicModeMetadataOptions,
+    defaultAtomicModeOption,
+} from './AtomicMode.jsx'
 export { MergeMode, defaultMergeModeOption } from './MergeMode.jsx'
 export { FlushMode, defaultFlushModeOption } from './FlushMode.jsx'
 export {

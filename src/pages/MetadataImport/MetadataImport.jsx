@@ -27,6 +27,7 @@ import {
     ImportStrategy,
     defaultImportStrategyOption,
     AtomicMode,
+    atomicModeMetadataOptions,
     defaultAtomicModeOption,
     FlushMode,
     defaultFlushModeOption,
@@ -145,7 +146,7 @@ const MetadataImport = () => {
                             <Identifier />
                             <ImportReportMode />
                             <ImportStrategy value={values.importStrategy} />
-                            <AtomicMode />
+                            <AtomicMode options={atomicModeMetadataOptions} />
                             <MergeOperationNotice />
                         </BasicOptions>
                         <MoreOptions>
