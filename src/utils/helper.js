@@ -228,10 +228,20 @@ const getInitialBoolValue = (prevValue, defaultValue) => {
     return prevValue
 }
 
+// adds a digit group separator matching the user's locale
+const formatNumber = (value) => {
+    if (value === undefined || value === null || value === '') {
+        return value
+    }
+    const number = Number(value)
+    return Number.isNaN(number) ? value : number.toLocaleString()
+}
+
 export {
     fetchAttributes,
     getPrevJobDetails,
     getInitialBoolValue,
+    formatNumber,
     locationAssign,
     jsDateToISO8601,
     jsDateToString,
