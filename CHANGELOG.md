@@ -1,3 +1,10 @@
+## [101.3.9](https://github.com/dhis2/import-export-app/compare/v101.3.8...v101.3.9) (2026-08-24)
+
+
+### Bug Fixes
+
+* correct AtomicMode help text and metadata import options [DHIS2-9997] ([7e0bcde](https://github.com/dhis2/import-export-app/commit/7e0bcdeda3cdf1b581597b8d8f9035cfc9adaab5))
+
 ## [101.3.8](https://github.com/dhis2/import-export-app/compare/v101.3.7...v101.3.8) (2026-08-24)
 
 
