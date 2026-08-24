@@ -1,3 +1,10 @@
+## [101.3.8](https://github.com/dhis2/import-export-app/compare/v101.3.7...v101.3.8) (2026-08-24)
+
+
+### Bug Fixes
+
+* move inclusion strategy to export ([c772035](https://github.com/dhis2/import-export-app/commit/c772035d60d18a98ad4a1ad5fe761a5986668d44))
+
 ## [101.3.7](https://github.com/dhis2/import-export-app/compare/v101.3.6...v101.3.7) (2026-08-19)
 
 
