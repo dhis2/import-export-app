@@ -37,8 +37,6 @@ import {
     defaultSkipValidationOption,
     IsAsync,
     defaultIsAsyncOption,
-    InclusionStrategy,
-    defaultInclusionStrategyOption,
     ImportButtonStrip,
     FormAlerts,
 } from '../../components/Inputs/index.js'
@@ -70,8 +68,6 @@ const createInitialValues = (prevJobDetails) => ({
     atomicMode: prevJobDetails.atomicMode || defaultAtomicModeOption,
     mergeMode: prevJobDetails.mergeMode || mergeOperation,
     flushMode: prevJobDetails.flushMode || defaultFlushModeOption,
-    inclusionStrategy:
-        prevJobDetails.inclusionStrategy || defaultInclusionStrategyOption,
     skipSharing: getInitialBoolValue(
         prevJobDetails.skipSharing,
         defaultSkipSharingOption
@@ -154,7 +150,6 @@ const MetadataImport = () => {
                             <SkipSharing />
                             <SkipValidation />
                             <IsAsync />
-                            <InclusionStrategy />
                         </MoreOptions>
                         <ValidationSummary />
                         <ImportButtonStrip form={form} />

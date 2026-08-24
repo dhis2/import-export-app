@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import {
     Page,
     MetadataExportIcon,
+    MoreOptions,
     ValidationSummary,
 } from '../../components/index.js'
 import {
@@ -15,6 +16,8 @@ import {
     Compression,
     defaultCompressionOption,
     SkipSharing,
+    InclusionStrategy,
+    defaultInclusionStrategyOption,
     ExportButton,
 } from '../../components/Inputs/index.js'
 import { onExport } from './form-helper.js'
@@ -33,6 +36,7 @@ const initialValues = {
     format: defaultFormatOption,
     compression: defaultCompressionOption,
     skipSharing: false,
+    inclusionStrategy: defaultInclusionStrategyOption,
 }
 
 const MetadataExport = () => {
@@ -58,6 +62,9 @@ const MetadataExport = () => {
                         <Format availableFormats={formatNoXmlNoCsvOptions} />
                         <Compression />
                         <SkipSharing />
+                        <MoreOptions>
+                            <InclusionStrategy />
+                        </MoreOptions>
                         <ValidationSummary />
                         <ExportButton
                             label={i18n.t('Export metadata')}

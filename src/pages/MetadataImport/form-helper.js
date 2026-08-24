@@ -17,7 +17,6 @@ const onImport =
             flushMode,
             skipSharing,
             skipValidation,
-            inclusionStrategy,
             isAsync,
             firstRowIsHeader,
             classKey,
@@ -36,7 +35,6 @@ const onImport =
             `flushMode=${flushMode}`,
             `skipSharing=${skipSharing}`,
             `skipValidation=${skipValidation}`,
-            `inclusionStrategy=${inclusionStrategy}`,
             `async=${isAsync}`,
             format == 'csv'
                 ? `firstRowIsHeader=${firstRowIsHeader}&classKey=${classKey}`
