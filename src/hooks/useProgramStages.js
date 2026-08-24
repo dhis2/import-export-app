@@ -69,7 +69,13 @@ const useProgramStages = (program, setSelected) => {
             error.message
         }`
 
-    return { loading, error, validationText, programStages: stages, programType }
+    return {
+        loading,
+        error,
+        validationText,
+        programStages: stages,
+        programType,
+    }
 }
 
 export { useProgramStages, ALL_VALUE }
