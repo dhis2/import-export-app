@@ -1,3 +1,10 @@
+## [101.3.7](https://github.com/dhis2/import-export-app/compare/v101.3.6...v101.3.7) (2026-08-19)
+
+
+### Bug Fixes
+
+* include enrollments, events in tei export [DHIS2-21901] ([#2271](https://github.com/dhis2/import-export-app/issues/2271)) ([e158047](https://github.com/dhis2/import-export-app/commit/e1580470c9ee6bd974445b09ff0795c3e74aaaed))
+
 ## [101.3.6](https://github.com/dhis2/import-export-app/compare/v101.3.5...v101.3.6) (2026-08-13)
 
 
