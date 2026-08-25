@@ -18,12 +18,28 @@ const valuesToParams = ({
     includeDeleted,
     dataElementIdScheme,
     orgUnitIdScheme,
+    dataSetIdScheme,
+    categoryIdScheme,
+    categoryOptionIdScheme,
+    categoryOptionComboIdScheme,
+    attributeOptionComboIdScheme,
     idScheme,
 }) =>
     [
-        `dataElementIdScheme=${dataElementIdScheme}`,
-        `orgUnitIdScheme=${orgUnitIdScheme}`,
-        `idScheme=${idScheme}`,
+        dataElementIdScheme ? `dataElementIdScheme=${dataElementIdScheme}` : '',
+        orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
+        dataSetIdScheme ? `dataSetIdScheme=${dataSetIdScheme}` : '',
+        categoryIdScheme ? `categoryIdScheme=${categoryIdScheme}` : '',
+        categoryOptionIdScheme
+            ? `categoryOptionIdScheme=${categoryOptionIdScheme}`
+            : '',
+        categoryOptionComboIdScheme
+            ? `categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`
+            : '',
+        attributeOptionComboIdScheme
+            ? `attributeOptionComboIdScheme=${attributeOptionComboIdScheme}`
+            : '',
+        idScheme ? `idScheme=${idScheme}` : '',
         `includeDeleted=${includeDeleted}`,
         `children=${includeChildren}`,
         `startDate=${startDate}`,

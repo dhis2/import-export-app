@@ -3,6 +3,7 @@ import React from 'react'
 import { DataElementIdScheme as DataElementIdSchemeGeneric } from '../index.js'
 
 const dataElementIdSchemeOptions = [
+    { value: '', label: i18n.t('(Default)') },
     { value: 'UID', label: i18n.t('Uid') },
     { value: 'CODE', label: i18n.t('Code') },
     { value: 'NAME', label: i18n.t('Name') },

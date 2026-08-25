@@ -14,6 +14,11 @@ export {
     TEIIcon,
 } from './Icon/Icon.jsx'
 export { DataElementIdScheme } from './ElementSchemes/DataElementIdScheme.jsx'
+export { DataSetIdScheme } from './ElementSchemes/DataSetIdScheme.jsx'
+export { CategoryIdScheme } from './ElementSchemes/CategoryIdScheme.jsx'
+export { CategoryOptionIdScheme } from './ElementSchemes/CategoryOptionIdScheme.jsx'
+export { CategoryOptionComboIdScheme } from './ElementSchemes/CategoryOptionComboIdScheme.jsx'
+export { AttributeOptionComboIdScheme } from './ElementSchemes/AttributeOptionComboIdScheme.jsx'
 export { DatePicker } from './DatePicker/DatePicker.jsx'
 export { DatePickerField } from './DatePicker/DatePickerField.jsx'
 export { FileUpload } from './FileUpload/FileUpload.jsx'

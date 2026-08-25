@@ -29,6 +29,16 @@ import {
     defaultIdSchemeOption,
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
+    DataSetIdScheme,
+    defaultDataSetIdSchemeOption,
+    CategoryIdScheme,
+    defaultCategoryIdSchemeOption,
+    CategoryOptionIdScheme,
+    defaultCategoryOptionIdSchemeOption,
+    CategoryOptionComboIdScheme,
+    defaultCategoryOptionComboIdSchemeOption,
+    AttributeOptionComboIdScheme,
+    defaultAttributeOptionComboIdSchemeOption,
     ExportButton,
     FormAlerts,
 } from '../../components/Inputs/index.js'
@@ -62,6 +72,11 @@ const initialValues = {
     includeDeleted: false,
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
+    dataSetIdScheme: defaultDataSetIdSchemeOption,
+    categoryIdScheme: defaultCategoryIdSchemeOption,
+    categoryOptionIdScheme: defaultCategoryOptionIdSchemeOption,
+    categoryOptionComboIdScheme: defaultCategoryOptionComboIdSchemeOption,
+    attributeOptionComboIdScheme: defaultAttributeOptionComboIdSchemeOption,
     idScheme: defaultIdSchemeOption,
 }
 
@@ -106,6 +121,11 @@ const DataExport = () => {
                             <SchemeContainer>
                                 <DataElementIdScheme />
                                 <OrgUnitIdScheme />
+                                <DataSetIdScheme />
+                                <CategoryIdScheme />
+                                <CategoryOptionIdScheme />
+                                <CategoryOptionComboIdScheme />
+                                <AttributeOptionComboIdScheme />
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>
