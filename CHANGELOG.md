@@ -1,3 +1,10 @@
+## [101.3.10](https://github.com/dhis2/import-export-app/compare/v101.3.9...v101.3.10) (2026-08-25)
+
+
+### Bug Fixes
+
+* hide program stage control for event programs [DHIS2-11507] ([480b51e](https://github.com/dhis2/import-export-app/commit/480b51e5cdb78c707d99b6b97aac5e3cc2b2e88c))
+
 ## [101.3.9](https://github.com/dhis2/import-export-app/compare/v101.3.8...v101.3.9) (2026-08-24)
 
 
