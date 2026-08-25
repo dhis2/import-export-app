@@ -14,6 +14,11 @@ Before(() => {
         url: schemasApi,
         fixture: 'schemas',
     }).as('schemasXHR')
+
+    cy.intercept(dataApi, {
+        statusCode: 404,
+        body: '',
+    }).as('downloadXHR')
 })
 
 Given('the user is on the meta data export page', () => {
@@ -70,37 +75,37 @@ Given('the category option schema is selected', () => {
 })
 
 When('the export form is submitted', () => {
+    // The app checks for window.locationAssign as a test hook (see
+    // src/utils/helper.js) and calls it with the download URL instead of
+    // triggering a real navigation/download when it's stubbed. It doesn't
+    // exist on window by default, so it must be defined before cy.stub can
+    // wrap it.
     cy.window().then((win) => {
-        const locationAssignStub = cy.stub().as('locationAssign')
-        win.locationAssign = locationAssignStub
-        cy.get('[data-test="input-export-submit"]').click()
+        win.locationAssign = () => {}
+        cy.stub(win, 'locationAssign').as('locationAssignStub')
     })
+
+    cy.get('[data-test="input-export-submit"]').click()
 })
 
 Then('the download request is not sent', () => {
-    cy.window().then((win) => {
-        cy.get('@locationAssign').then((locationAssignStub) => {
-            expect(locationAssignStub).not.to.be.called
-        })
-    })
+    cy.get('@locationAssignStub').should('not.have.been.called')
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.window().then((win) => {
-        cy.get('@locationAssign').then((locationAssignStub) => {
-            expect(locationAssignStub).to.be.calledOnce
-            const call = locationAssignStub.getCall(0)
-            const url = call.args[0]
+    cy.get('@locationAssignStub').should('have.been.calledOnce')
 
-            cy.getComparisonData(url).then(
-                ({ actual, expected: allExpected }) => {
-                    const { format, compression, ...expected } = allExpected
-                    expect(actual).to.deep.equal({
-                        ...expected,
-                        download: 'true',
-                    })
-                }
-            )
-        })
+    cy.window().then((win) => {
+        const requestUrl = win.locationAssign.getCall(0).args[0]
+
+        cy.getComparisonData(requestUrl).then(
+            ({ actual, expected: allExpected }) => {
+                const { format, compression, ...expected } = allExpected
+                expect(actual).to.deep.equal({
+                    ...expected,
+                    download: 'true',
+                })
+            }
+        )
     })
 })

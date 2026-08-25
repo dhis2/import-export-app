@@ -18,7 +18,7 @@ Feature: The user should be able to import events
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different format
-        Given the "format" input is set to "xml"
+        Given the "format" input is set to "csv"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 

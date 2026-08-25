@@ -66,7 +66,7 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different format
-        Given the "format" input is set to "xml"
+        Given the "format" input is set to "csv"
         When the export form is submitted
         Then the download request is sent with the right parameters
 

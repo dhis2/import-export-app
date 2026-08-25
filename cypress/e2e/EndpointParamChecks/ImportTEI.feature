@@ -58,7 +58,7 @@ Feature: The user should be able to import tracked entity instances
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different atomic mode
-        Given the "atomicMode" input is set to "NONE"
+        Given the "atomicMode" input is set to "OBJECT"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
