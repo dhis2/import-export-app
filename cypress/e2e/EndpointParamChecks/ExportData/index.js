@@ -92,39 +92,37 @@ Given('all data sets have been selected', () => {
 })
 
 When('the export form is submitted', () => {
-    const winOpenResponse = {
-        document: {
-            title: '',
-            body: {
-                innerHTML: '',
-            },
-        },
-        onbeforeunload: cy.stub(),
-        onabort: undefined,
-        onerror: undefined,
-    }
-
-    cy.wrap(winOpenResponse).as('winOpenResponse')
+    // The app checks for window.locationAssign as a test hook (see
+    // src/utils/helper.js) and calls it with the download URL instead of
+    // triggering a real navigation/download when it's stubbed. It doesn't
+    // exist on window by default, so it must be defined before cy.stub can
+    // wrap it.
     cy.window().then((win) => {
-        cy.stub(win, 'open', () => winOpenResponse).as('winOpenStub')
+        win.locationAssign = () => {}
+        cy.stub(win, 'locationAssign').as('locationAssignStub')
     })
 
     cy.get('[data-test="input-export-submit"]').click()
-    cy.get('@winOpenResponse').then((response) => {
-        response.onbeforeunload()
-    })
 })
 
 Then('the download request is sent with the right parameters', () => {
+    cy.get('@locationAssignStub').should('have.been.calledOnce')
+
     cy.window().then((win) => {
-        expect(win.open).to.be.calledOnce
-        const requestUrl = win.open.getCall(0).args[0]
+        const requestUrl = win.locationAssign.getCall(0).args[0]
+
+        // `format` isn't a query param - it's the download URL's file
+        // extension (.../dataValueSets.<format>?...) - so it's checked
+        // separately rather than via the parsed query string below.
+        const [pathPart] = requestUrl.split('?')
 
         cy.getComparisonData(requestUrl).then(
             ({ actual, expected: allExpected }) => {
-                const { compression, ...expected } = allExpected
+                const { compression, format, ...expected } = allExpected
                 console.log('actual', actual)
                 console.log('expected', expected)
+
+                expect(pathPart).to.match(new RegExp(`\\.${format}$`))
 
                 const expectedEntries = Object.entries(expected)
                 for (const [name, value] of expectedEntries) {

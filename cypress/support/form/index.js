@@ -1,7 +1,6 @@
 import './attachFile'
 import './deselectAllDataSets'
 import './deselectAllSchemas'
-import './getValueOfSelect'
 import './getValuesOfTransfer'
 import './selectAllDataSets'
 import './selectAllSchemas'

@@ -20,7 +20,7 @@ const radioInputs = [
     'atomicMode',
     'compression',
     'flushMode',
-    'followUpStatus',
+    'followUp',
     'format',
     'identifier',
     'importReportMode',
@@ -57,13 +57,13 @@ const dateInputs = [
     // instead of the generic startDate/endDate used elsewhere
     'occurredAfter',
     'occurredBefore',
-    'programStartDate',
-    'programEndDate',
-    'lastUpdatedStartDate',
-    'lastUpdatedEndDate',
+    'enrollmentEnrolledAfter',
+    'enrollmentEnrolledBefore',
+    'updatedAfter',
+    'updatedBefore',
 ]
 
-const textInputs = ['lastUpdatedDuration']
+const textInputs = ['updatedWithin']
 
 /**
  * @param {Object} args
@@ -90,8 +90,7 @@ const selectFormInput = ({ name, value, label }) => {
     }
 
     if (selectInputs.includes(name)) {
-        cy.selectSelect(dataTest, label)
-        return cy.getValueOfSelect(dataTest)
+        return cy.selectSelect(dataTest, label)
     }
 
     if (dateInputs.includes(name)) {

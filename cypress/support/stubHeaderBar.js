@@ -1,4 +1,11 @@
 Cypress.Commands.add('stubHeaderBar', () => {
+    // Only stub the header bar chrome in `stub` mode. In `live` (and
+    // `capture`) mode these requests should hit the real server so that
+    // NetworkShim can capture them, e.g. api/me.
+    if (Cypress.env('networkMode') !== 'stub') {
+        return
+    }
+
     cy.intercept(/api\/\d{2}\/system\/info/, {
         fixture: 'HeaderBar/systemInfo',
     }).as('systemInfo')

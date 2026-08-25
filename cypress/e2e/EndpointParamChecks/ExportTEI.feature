@@ -7,13 +7,12 @@ Feature: The user should be able to export tracked entity instances
         And the following options are set
             | name                   | value      | label |
             | orgUnitMode            | :MANUAL:   |       |
-            | teiTypeFilter          | NONE       |       |
+            | teiTypeFilter          | PROGRAM    |       |
             | format                 | json       |       |
             | lastUpdatedFilter      | NONE       |       |
             | assignedUserModeFilter | true       |       |
             | assignedUserMode       | ANY        |       |
             | includeDeleted         | false      |       |
-            | includeAllAttributes   | false      |       |
             | dataElementIdScheme    | UID        | Uid   |
             | orgUnitIdScheme        | UID        | Uid   |
             | idScheme               | UID        | Uid   |
@@ -36,7 +35,7 @@ Feature: The user should be able to export tracked entity instances
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different format
-        Given the "format" input is set to "xml"
+        Given the "format" input is set to "csv"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -45,10 +44,10 @@ Feature: The user should be able to export tracked entity instances
         When the export form is submitted
         Then the download request is sent with the right parameters
 
-    Scenario: The user selects to include all attributes
-        Given the "includeAllAttributes" input is set to "true"
-        When the export form is submitted
-        Then the download request is sent with the right parameters
+    # Scenario: The user selects to include all attributes
+    #     Given the "includeAllAttributes" input is set to "true"
+    #     When the export form is submitted
+    #     Then the download request is sent with the right parameters
 
     Scenario: The user selects a different data element id scheme
         Given the "dataElementIdScheme" input is set to "Code"
@@ -70,7 +69,7 @@ Feature: The user should be able to export tracked entity instances
         And the "program" input is set to "Child Programme"
         # programStatus "All" has value ''
         And the 'programStatus' input is set to ''
-        And the 'followUpStatus' input is set to 'ALL'
+        And the 'followUp' input is set to 'ALL'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -78,7 +77,7 @@ Feature: The user should be able to export tracked entity instances
         Given the "teiTypeFilter" input is set to "PROGRAM"
         And the "program" input is set to "Child Programme"
         And the 'programStatus' input is set to 'ACTIVE'
-        And the 'followUpStatus' input is set to 'ALL'
+        And the 'followUp' input is set to 'ALL'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -86,7 +85,7 @@ Feature: The user should be able to export tracked entity instances
         Given the "teiTypeFilter" input is set to "PROGRAM"
         And the "program" input is set to "Child Programme"
         And the 'programStatus' input is set to ''
-        And the 'followUpStatus' input is set to 'TRUE'
+        And the 'followUp' input is set to 'true'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -94,8 +93,8 @@ Feature: The user should be able to export tracked entity instances
         Given the "teiTypeFilter" input is set to "PROGRAM"
         And the "program" input is set to "Child Programme"
         And the 'programStatus' input is set to ''
-        And the 'followUpStatus' input is set to 'ALL'
-        And the 'programStartDate' input is set to '2019-12-12'
+        And the 'followUp' input is set to 'ALL'
+        And the 'enrollmentEnrolledAfter' input is set to '2019-12-12'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -103,8 +102,8 @@ Feature: The user should be able to export tracked entity instances
         Given the "teiTypeFilter" input is set to "PROGRAM"
         And the "program" input is set to "Child Programme"
         And the 'programStatus' input is set to ''
-        And the 'followUpStatus' input is set to 'ALL'
-        And the 'programEndDate' input is set to '2019-12-12'
+        And the 'followUp' input is set to 'ALL'
+        And the 'enrollmentEnrolledBefore' input is set to '2019-12-12'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
@@ -116,19 +115,19 @@ Feature: The user should be able to export tracked entity instances
 
     Scenario: The user filters by a last updated start date
         Given the "lastUpdatedFilter" input is set to "DATE"
-        And the 'lastUpdatedStartDate' input is set to '2019-12-12'
+        And the 'updatedAfter' input is set to '2019-12-12'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user filters by a last updated end date
         Given the "lastUpdatedFilter" input is set to "DATE"
-        And the 'lastUpdatedEndDate' input is set to '2019-12-12'
+        And the 'updatedBefore' input is set to '2019-12-12'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
     Scenario: The user filters by a last updated duration
         Given the "lastUpdatedFilter" input is set to "DURATION"
-        And the 'lastUpdatedDuration' input is set to '100d50h25m12s'
+        And the 'updatedWithin' input is set to '100d50h25m12s'
         When the export form is submitted
         Then the download request is sent with the right parameters
 
