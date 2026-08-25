@@ -141,7 +141,7 @@ const MetadataImport = () => {
                             <Identifier />
                             <ImportReportMode />
                             <ImportStrategy value={values.importStrategy} />
-                            <AtomicMode />
+                            <AtomicMode isMetadataImport />
                             <MergeOperationNotice />
                         </BasicOptions>
                         <MoreOptions>
