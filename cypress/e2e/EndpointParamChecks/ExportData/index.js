@@ -132,7 +132,7 @@ Then('the download request is sent with the right parameters', () => {
                 console.log('actual', actual)
                 console.log('expected', expected)
 
-                expect(pathPart).to.match(new RegExp(`\\.${format}$`))
+                expect(pathPart).to.match(new RegExp(String.raw`\.${format}$`))
 
                 const expectedEntries = Object.entries(expected)
                 for (const [name, value] of expectedEntries) {
