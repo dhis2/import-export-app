@@ -7,13 +7,16 @@ const { defineConfig } = require('cypress')
 
 async function setupNodeEvents(on, config) {
     await cucumberPreprocessor(on, config)
-    // networkShim's own default (config.env.dhis2BaseUrl, camelCase) is
-    // never set in this app - cypress.env.json / --env only ever provide
+    // networkShim's own default (config.env.dhis2BaseUrl, camelCase) isn't
+    // always set: local dev's cypress.env.json / --env only ever provide
     // the snake_case `dhis2_base_url` (see cypress/support/e2e.js's
-    // matching bridge for enableNetworkShim/enableAutoLogin). Pass `hosts`
-    // explicitly so capture/stub mode actually intercepts the real host
-    // instead of matching nothing (`^undefined`).
-    networkShim(on, { hosts: [config.env.dhis2_base_url] })
+    // matching bridge for enableNetworkShim/enableAutoLogin), while CI
+    // (see .github/workflows/*.yml) sets `CYPRESS_dhis2BaseUrl` directly,
+    // which Cypress maps straight onto `config.env.dhis2BaseUrl`. Prefer
+    // whichever is actually set instead of assuming one convention, so
+    // `hosts` is never accidentally `[undefined]` in either environment.
+    const dhis2BaseUrl = config.env.dhis2BaseUrl || config.env.dhis2_base_url
+    networkShim(on, { hosts: [dhis2BaseUrl] })
     chromeAllowXSiteCookies(on, config)
     return config
 }
@@ -38,4 +41,3 @@ module.exports = defineConfig({
         ],
     },
 })
-

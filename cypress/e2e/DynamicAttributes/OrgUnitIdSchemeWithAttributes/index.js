@@ -1,6 +1,9 @@
 import { Given, Then } from '@badeball/cypress-cucumber-preprocessor'
 
-const loginUrl = Cypress.env('dhis2_base_url')
+// Read the camelCase key (bridged from the snake_case local-dev env
+// var, or set directly by CI - see cypress/support/e2e.js) rather than
+// the snake_case one directly, so this resolves in both environments.
+const loginUrl = Cypress.env('dhis2BaseUrl')
 
 Given('a unique attribute is associated with organisation units', () => {
     cy.stubWithFixture({

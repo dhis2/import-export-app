@@ -8,20 +8,28 @@ import './visitPage'
 import './visitWhenStubbed'
 
 // @dhis2/cypress-commands v10 reads dhis2BaseUrl/dhis2Username/dhis2Password
-// (camelCase) from Cypress.env() by default, but this app's env vars have
-// always used the snake_case keys below. Pass them through explicitly so
-// enableAutoLogin() doesn't silently fall back to undefined credentials.
-enableAutoLogin({
-    username: Cypress.env('dhis2_username'),
-    password: Cypress.env('dhis2_password'),
-    baseUrl: Cypress.env('dhis2_base_url'),
-})
+// (camelCase) from Cypress.env() by default. Local dev's cypress.env.json
+// only ever provides the snake_case keys below; CI (see
+// .github/workflows/*.yml) instead sets CYPRESS_dhis2BaseUrl etc. directly,
+// which Cypress maps straight onto Cypress.env() in camelCase already.
+// Only fall back to the snake_case value when the camelCase one isn't
+// already set, so this never clobbers a value CI (or anyone using the
+// camelCase env vars directly) has already provided with `undefined`.
+const bridgeEnvFromSnakeCase = (camelKey, snakeKey) => {
+    if (Cypress.env(camelKey) === undefined) {
+        Cypress.env(camelKey, Cypress.env(snakeKey))
+    }
+}
 
-// enableNetworkShim() (and cypress.config.js's matching networkShim(on, ...)
-// plugin registration) also expect the camelCase `dhis2BaseUrl` - bridge it
-// from the same snake_case env var for the same reason as enableAutoLogin
-// above, before enableNetworkShim() reads it.
-Cypress.env('dhis2BaseUrl', Cypress.env('dhis2_base_url'))
+bridgeEnvFromSnakeCase('dhis2BaseUrl', 'dhis2_base_url')
+bridgeEnvFromSnakeCase('dhis2Username', 'dhis2_username')
+bridgeEnvFromSnakeCase('dhis2Password', 'dhis2_password')
+
+// Both enableAutoLogin() and enableNetworkShim() (and cypress.config.js's
+// matching networkShim(on, ...) plugin registration) read the camelCase
+// keys from Cypress.env() themselves once bridged above, so no explicit
+// options need passing here any more.
+enableAutoLogin()
 
 // Records every request/response to the DHIS2 instance under
 // cypress/fixtures/network/<apiVersion>/ in `networkMode=capture`, and

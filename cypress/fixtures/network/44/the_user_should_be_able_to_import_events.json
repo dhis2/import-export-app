@@ -127,10 +127,7 @@
             "content-type": "application/json",
             "connection": "close"
         },
-        "responseLookup": [
-            0,
-            1
-        ]
+        "responseLookup": [0, 1]
     },
     {
         "path": "/api/tracker?async=true&importMode=validate&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID",
