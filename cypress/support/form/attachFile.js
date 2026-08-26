@@ -4,7 +4,7 @@ function hexStringToByte(str) {
     }
 
     const a = []
-    for (const i = 0, len = str.length; i < len; i += 2) {
+    for (let i = 0, len = str.length; i < len; i += 2) {
         a.push(Number.parseInt(str.substr(i, 2), 16))
     }
 
