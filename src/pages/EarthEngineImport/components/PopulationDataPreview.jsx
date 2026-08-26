@@ -14,6 +14,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useMemo, useRef } from 'react'
+import { formatNumber } from '../../../utils/helper.js'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
 
@@ -127,14 +128,22 @@ const PopulationDataPreview = ({
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         <span className={styles.current}>
-                                            {current || ''}
+                                            {formatNumber(
+                                                current,
+                                                i18n.language
+                                            )}
                                         </span>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         {isNoValue ? (
                                             <Tag negative>{value}</Tag>
                                         ) : (
-                                            <span>{value}</span>
+                                            <span>
+                                                {formatNumber(
+                                                    value,
+                                                    i18n.language
+                                                )}
+                                            </span>
                                         )}
                                     </DataTableCell>
                                 </DataTableRow>

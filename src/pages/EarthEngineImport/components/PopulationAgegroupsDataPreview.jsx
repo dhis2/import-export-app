@@ -15,6 +15,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef, useMemo } from 'react'
+import { formatNumber } from '../../../utils/helper.js'
 import { useCachedDataQuery } from '../util/CachedQueryProvider.jsx'
 import styles from './styles/DataPreview.module.css'
 import { useFetchCurrentValues } from './useFetchCurrentValues.js'
@@ -178,14 +179,22 @@ const PopulationAgegroupsDataPreview = ({
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         <span className={styles.current}>
-                                            {current || ''}
+                                            {formatNumber(
+                                                current,
+                                                i18n.language
+                                            )}
                                         </span>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         {isNoValue ? (
                                             <Tag negative>{value}</Tag>
                                         ) : (
-                                            <span>{value}</span>
+                                            <span>
+                                                {formatNumber(
+                                                    value,
+                                                    i18n.language
+                                                )}
+                                            </span>
                                         )}
                                     </DataTableCell>
                                 </DataTableRow>
