@@ -51,7 +51,17 @@ Then('the upload request is sent with the right parameters', () => {
                 // excluded from the comparison.
                 const { format, ...expected } = allExpected
 
-                expect(actual).to.deep.equal(expected)
+                // `mergeMode` is no longer an editable field on this page -
+                // it's always sent as "REPLACE" (see
+                // src/components/MergeOperation/MergeOperation.jsx's
+                // `mergeOperation` constant, used as the fixed value in
+                // src/pages/MetadataImport/MetadataImport.jsx). There is no
+                // UI control for it any more, so it's never set via the
+                // feature file's tables and must be added here instead.
+                expect(actual).to.deep.equal({
+                    ...expected,
+                    mergeMode: 'REPLACE',
+                })
             }
         )
     })

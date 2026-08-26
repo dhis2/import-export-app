@@ -13,7 +13,6 @@ Feature: The user should be able to import meta data
             | importReportMode  | ERRORS            |
             | importStrategy    | CREATE_AND_UPDATE |
             | atomicMode        | ALL               |
-            | mergeMode         | MERGE             |
             | flushMode         | AUTO              |
             | skipSharing       | false             |
             | skipValidation    | false             |
@@ -49,10 +48,15 @@ Feature: The user should be able to import meta data
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
-    Scenario: The user selects a different merge mode
-        Given the "mergeMode" input is set to "REPLACE"
-        When the import form is submitted
-        Then the upload request is sent with the right parameters
+    # Merge mode is no longer user-selectable on this page - it is always
+    # sent as REPLACE (see src/components/MergeOperation/MergeOperation.jsx
+    # and src/pages/MetadataImport/MetadataImport.jsx, which renders
+    # <MergeOperationNotice /> instead of the interactive <MergeMode />
+    # radio group), so there is no way to select a different one.
+    # Scenario: The user selects a different merge mode
+    #     Given the "mergeMode" input is set to "REPLACE"
+    #     When the import form is submitted
+    #     Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different flush mode
         Given the "flushMode" input is set to "OBJECT"

@@ -17,7 +17,6 @@ module.exports = defineConfig({
     projectId: 'kfq27m',
 
     env: {
-        // dhis2DataTestPrefix: 'dhis2-dataexchange',
         networkMode: 'live',
         dhis2ApiVersion: '44',
     },
@@ -34,27 +33,3 @@ module.exports = defineConfig({
     },
 })
 
-// const { defineConfig } = require('cypress')
-
-// module.exports = defineConfig({
-//     projectId: 'kfq27m',
-//     e2e: {
-//         baseUrl: 'http://localhost:3000',
-//         specPattern: '**/*.feature',
-//         video: false,
-//         async setupNodeEvents(on, config) {
-//             // @dhis2/cypress-plugins must be wired up first, otherwise the
-//             // cucumber preprocessor plugin won't work correctly.
-//             const {
-//                 cucumberPreprocessor,
-//                 chromeAllowXSiteCookies,
-//             } = require('@dhis2/cypress-plugins')
-
-//             await cucumberPreprocessor(on, config)
-//             chromeAllowXSiteCookies(on, config)
-
-//             return config
-//         },
-
-//     },
-// })

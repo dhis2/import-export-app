@@ -10,13 +10,18 @@ import { Before, Given, Then } from '@badeball/cypress-cucumber-preprocessor'
 // doesn't also match other /api/tracker/... resources (e.g. the TEI/Event
 // export endpoints).
 const dataApi = /api\/tracker(\?|$)/
-// Scoped to the real API resource path (see useTasks.js's `system/tasks/`
-// and `system/taskSummaries/`) - unanchored /tasks/ and /taskSummaries/
-// also match the app's own source module URLs (e.g. src/utils/tasks.jsx),
-// which Cypress would then serve the fixture for instead of real JS,
-// breaking the app's own dynamic import of D2App/App.jsx.
-const tasksApi = /api\/system\/tasks\//
-const summaryApi = /api\/system\/taskSummaries\//
+// EventImport always calls uploadFile with type: 'TRACKER_IMPORT_JOB' (see
+// form-helper.js), and useTasks.js's createFetchEvents/createFetchSummary
+// branch on `task.importType === 'TRACKER_IMPORT_JOB'` to poll the tracker
+// job facade (`tracker/jobs/`) instead of the generic `system/tasks/` /
+// `system/taskSummaries/` queries - the generic ones are never reached for
+// Event import, so stubbing them leaves the real tracker/jobs/ polling
+// request unstubbed (and unhandled network errors from that fail the
+// test). Anchor the events pattern right after the job id (`?` or
+// end-of-string) so it doesn't also match the report sub-resource matched
+// by summaryApi below.
+const tasksApi = /api\/tracker\/jobs\/[a-zA-Z0-9]+(\?|$)/
+const summaryApi = /api\/tracker\/jobs\/[a-zA-Z0-9]+\/report/
 
 Before(() => {
     cy.stubWithFixture({
@@ -33,7 +38,7 @@ Before(() => {
     cy.stubWithFixture({
         url: summaryApi,
         fixture: 'eventImportSummaries',
-    }).as('tasksXHR')
+    }).as('summaryXHR')
 })
 
 Given('the user is on the event page', () => {
