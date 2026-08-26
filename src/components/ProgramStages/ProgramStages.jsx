@@ -24,7 +24,12 @@ const ProgramStages = ({
         error: programStagesError,
         validationText: programStagesValidationText,
         programStages,
+        programType,
     } = useProgramStages(selectedProgram, setProgramStage)
+
+    if (programType === 'WITHOUT_REGISTRATION') {
+        return null
+    }
 
     return (
         <div className={styles.container}>
