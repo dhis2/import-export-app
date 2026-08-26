@@ -1,0 +1,653 @@
+[
+    {
+        "path": "/api/44/systemSettings/helpPageLink",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 12,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"helpPageLink\":\"https://dhis2.github.io/dhis2-docs/master/en/user/html/dhis2_user_manual_en.html\"}",
+        "responseSize": 99,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits?filter=level%3Aeq%3A1&fields=id&paging=false",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 12,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"organisationUnits\":[{\"id\":\"ImspTQPwCqd\"}]}",
+        "responseSize": 44,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/dataSets?fields=id%2CdisplayName&paging=false",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 12,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"dataSets\":[{\"displayName\":\"ART monthly summary\",\"id\":\"lyLU2wR22tC\"},{\"displayName\":\"Child Health\",\"id\":\"BfMAe6Itzgt\"},{\"displayName\":\"Clinical Monitoring Checklist \",\"id\":\"VTdjfLXXmoi\"},{\"displayName\":\"Emergency Response\",\"id\":\"Lpw6GcnTrmS\"},{\"displayName\":\"EPI Stock\",\"id\":\"TuL8IOPzpHh\"},{\"displayName\":\"Expenditures\",\"id\":\"rsyjyJmYD4J\"},{\"displayName\":\"Facility Assessment\",\"id\":\"V8MHeZHIrcP\"},{\"displayName\":\"HIV Care Monthly\",\"id\":\"vc6nF5yZsPR\"},{\"displayName\":\"HIV Peadiatric monthly summary\",\"id\":\"EDzMBk0RRji\"},{\"displayName\":\"IDSR Weekly\",\"id\":\"Nyh6laLdBEJ\"},{\"displayName\":\"IDSR Weekly (Start Wednesday)\",\"id\":\"j38YW1Am7he\"},{\"displayName\":\"Inpatient Morbidity/Mortality Summary\",\"id\":\"PLq9sJluXvc\"},{\"displayName\":\"Life-Saving Commodities\",\"id\":\"ULowA8V3ucd\"},{\"displayName\":\"MNCH Quarterly Report\",\"id\":\"EKWVBc5C0ms\"},{\"displayName\":\"Morbidity\",\"id\":\"eZDhcZi6FLP\"},{\"displayName\":\"Mortality < 5 years\",\"id\":\"pBOMPrpg1QX\"},{\"displayName\":\"Mortality < 5 years by age group\",\"id\":\"ce7DSxx5H2I\"},{\"displayName\":\"Mortality < 5 years by gender\",\"id\":\"YFTk3VdO9av\"},{\"displayName\":\"Mortality < 5 years Narratives\",\"id\":\"YZhd4nu3mzY\"},{\"displayName\":\"PMTCT monthly summary\",\"id\":\"Rl58JxmKJo2\"},{\"displayName\":\"Population\",\"id\":\"aLpVgfXiz0f\"},{\"displayName\":\"Project Management\",\"id\":\"Y8gAn9DfAGU\"},{\"displayName\":\"Reproductive Health\",\"id\":\"QX4ZTUbOt3a\"},{\"displayName\":\"Staffing\",\"id\":\"N4fIX1HL3TQ\"},{\"displayName\":\"TB Facility Reporting Form\",\"id\":\"SF8FDSqw30D\"},{\"displayName\":\"TB/HIV (VCCT) monthly summary\",\"id\":\"OsPTWNqq26W\"}]}",
+        "responseSize": 1538,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 24,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[]}",
+        "responseSize": 17,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 24,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[{\"displayName\":\"HR identifier\",\"id\":\"UKNKz1H10EE\"},{\"displayName\":\"KE code\",\"id\":\"l1VmqIHKk6t\"},{\"displayName\":\"TZ code\",\"id\":\"xqWyz9jNCA5\"}]}",
+        "responseSize": 157,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/ImspTQPwCqd?fields=displayName,path,id",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 12,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\",\"id\":\"ImspTQPwCqd\"}",
+        "responseSize": 71,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/ImspTQPwCqd?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 12,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":13,\"path\":\"/ImspTQPwCqd\"}",
+        "responseSize": 37,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/ImspTQPwCqd?fields=children%5Bid%2Cpath%2CdisplayName%5D",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":[{\"path\":\"/ImspTQPwCqd/at6UHUQatSo\",\"displayName\":\"Western Area\",\"id\":\"at6UHUQatSo\"},{\"path\":\"/ImspTQPwCqd/TEQlaapDQoK\",\"displayName\":\"Port Loko\",\"id\":\"TEQlaapDQoK\"},{\"path\":\"/ImspTQPwCqd/PMa2VCrupOd\",\"displayName\":\"Kambia\",\"id\":\"PMa2VCrupOd\"},{\"path\":\"/ImspTQPwCqd/qhqAxPSTUXp\",\"displayName\":\"Koinadugu\",\"id\":\"qhqAxPSTUXp\"},{\"path\":\"/ImspTQPwCqd/kJq2mPyFEHo\",\"displayName\":\"Kenema\",\"id\":\"kJq2mPyFEHo\"},{\"path\":\"/ImspTQPwCqd/jmIPBj66vD6\",\"displayName\":\"Moyamba\",\"id\":\"jmIPBj66vD6\"},{\"path\":\"/ImspTQPwCqd/Vth0fbpFcsO\",\"displayName\":\"Kono\",\"id\":\"Vth0fbpFcsO\"},{\"path\":\"/ImspTQPwCqd/jUb8gELQApl\",\"displayName\":\"Kailahun\",\"id\":\"jUb8gELQApl\"},{\"path\":\"/ImspTQPwCqd/fdc6uOvgoji\",\"displayName\":\"Bombali\",\"id\":\"fdc6uOvgoji\"},{\"path\":\"/ImspTQPwCqd/eIQbndfxQMb\",\"displayName\":\"Tonkolili\",\"id\":\"eIQbndfxQMb\"},{\"path\":\"/ImspTQPwCqd/lc3eMKXaEfw\",\"displayName\":\"Bonthe\",\"id\":\"lc3eMKXaEfw\"},{\"path\":\"/ImspTQPwCqd/O6uvpzGd5pu\",\"displayName\":\"Bo\",\"id\":\"O6uvpzGd5pu\"},{\"path\":\"/ImspTQPwCqd/bL4ooGhyHRQ\",\"displayName\":\"Pujehun\",\"id\":\"bL4ooGhyHRQ\"}]}",
+        "responseSize": 1042,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/jUb8gELQApl?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":14,\"path\":\"/ImspTQPwCqd/jUb8gELQApl\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/PMa2VCrupOd?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":8,\"path\":\"/ImspTQPwCqd/PMa2VCrupOd\"}",
+        "responseSize": 48,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/fdc6uOvgoji?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":14,\"path\":\"/ImspTQPwCqd/fdc6uOvgoji\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/O6uvpzGd5pu?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":15,\"path\":\"/ImspTQPwCqd/O6uvpzGd5pu\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/kJq2mPyFEHo?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":16,\"path\":\"/ImspTQPwCqd/kJq2mPyFEHo\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/lc3eMKXaEfw?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":11,\"path\":\"/ImspTQPwCqd/lc3eMKXaEfw\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/Vth0fbpFcsO?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":14,\"path\":\"/ImspTQPwCqd/Vth0fbpFcsO\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/qhqAxPSTUXp?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":11,\"path\":\"/ImspTQPwCqd/qhqAxPSTUXp\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/jmIPBj66vD6?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":14,\"path\":\"/ImspTQPwCqd/jmIPBj66vD6\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/bL4ooGhyHRQ?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":12,\"path\":\"/ImspTQPwCqd/bL4ooGhyHRQ\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/TEQlaapDQoK?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":11,\"path\":\"/ImspTQPwCqd/TEQlaapDQoK\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/eIQbndfxQMb?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":11,\"path\":\"/ImspTQPwCqd/eIQbndfxQMb\"}",
+        "responseSize": 49,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/organisationUnits/at6UHUQatSo?fields=path,children%3A%3Asize",
+        "featureName": "The user should be able to export data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"children\":2,\"path\":\"/ImspTQPwCqd/at6UHUQatSo\"}",
+        "responseSize": 48,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    }
+]

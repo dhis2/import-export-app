@@ -1,8 +1,4 @@
-import { Before, Given, When } from '@badeball/cypress-cucumber-preprocessor'
-
-Before(() => {
-    cy.stubHeaderBar()
-})
+import { Given, When } from '@badeball/cypress-cucumber-preprocessor'
 
 Given('the more options are visible', () => {
     cy.showMoreOptions()

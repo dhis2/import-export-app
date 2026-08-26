@@ -1,0 +1,223 @@
+[
+    {
+        "path": "/api/44/systemSettings/helpPageLink",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"helpPageLink\":\"https://dhis2.github.io/dhis2-docs/master/en/user/html/dhis2_user_manual_en.html\"}",
+        "responseSize": 99,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 4,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[]}",
+        "responseSize": 17,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 4,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[{\"displayName\":\"HR identifier\",\"id\":\"UKNKz1H10EE\"},{\"displayName\":\"KE code\",\"id\":\"l1VmqIHKk6t\"},{\"displayName\":\"TZ code\",\"id\":\"xqWyz9jNCA5\"}]}",
+        "responseSize": 157,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/dataValueSets?async=true&dryRun=true&strategy=NEW_AND_UPDATES&preheatCache=false&skipAudit=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&skipExistingCheck=false",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "POST",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "content-length": "0",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787747076748)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787747076748)\",\"id\":\"eCnqzZpkyjj\",\"created\":\"2026-08-26T14:24:36.749\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":true,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/eCnqzZpkyjj\",\"responseType\":\"JobConfiguration\"}}",
+        "responseSize": 1247,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/eCnqzZpkyjj",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "[]",
+        "responseSize": 2,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-store",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/dataValueSets?async=true&dryRun=false&strategy=NEW&preheatCache=false&skipAudit=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&skipExistingCheck=false",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "POST",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "content-length": "0",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787747079283)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787747079283)\",\"id\":\"c5hDN6yX0nE\",\"created\":\"2026-08-26T14:24:39.283\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/c5hDN6yX0nE\",\"responseType\":\"JobConfiguration\"}}",
+        "responseSize": 1236,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/c5hDN6yX0nE",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "[]",
+        "responseSize": 2,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-store",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    }
+]

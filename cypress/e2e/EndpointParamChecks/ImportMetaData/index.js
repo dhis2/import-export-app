@@ -4,36 +4,21 @@ import { Before, Given, Then } from '@badeball/cypress-cucumber-preprocessor'
 // The upload URL is `${baseUrl}/api/metadata?<params>` (see
 // src/pages/MetadataImport/form-helper.js) - `format` only controls the
 // upload's Content-Type header (src/utils/xhr.js), it's never appended as a
-// `.json`/etc extension or query param. The previous `/api\/metadata.json/`
-// pattern (besides the unescaped `.` matching any character) required a
-// literal "json" substring somewhere after "metadata", which never appears
-// in the real request URL, so it never matched and `cy.wait('@uploadXHR')`
-// would hang.
+// `.json`/etc extension or query param.
+//
+// The upload response and the task/summary polling that follows it now all
+// come from the real server via enableNetworkShim() (see
+// cypress/support/e2e.js) - it records every request in
+// `networkMode=capture` and replays the recorded responses in
+// `networkMode=stub`. `metadataApi` is kept as a pass-through
+// cy.intercept() observer only because the Then block below explicitly
+// cy.wait()s on it - enableNetworkShim() answers the actual
+// request/response, this just gives the test something to alias and
+// cy.wait() on.
 const metadataApi = /\/api\/metadata(\?|$)/
-// Scoped to the real API resource path (see useTasks.js's `system/tasks/`
-// and `system/taskSummaries/`) - unanchored /tasks/ and /taskSummaries/
-// also match the app's own source module URLs (e.g. src/utils/tasks.jsx),
-// which Cypress would then serve the fixture for instead of real JS,
-// breaking the app's own dynamic import of D2App/App.jsx.
-const tasksApi = /api\/system\/tasks\//
-const summaryApi = /api\/system\/taskSummaries\//
 
 Before(() => {
-    cy.stubWithFixture({
-        method: 'POST',
-        url: metadataApi,
-        fixture: 'metadataImportUpload',
-    }).as('uploadXHR')
-
-    cy.stubWithFixture({
-        url: tasksApi,
-        fixture: 'metadataImportTasks',
-    }).as('tasksXHR')
-
-    cy.stubWithFixture({
-        url: summaryApi,
-        fixture: 'metadataImportSummaries',
-    }).as('tasksXHR')
+    cy.intercept('POST', metadataApi).as('uploadXHR')
 })
 
 Given('the user is on the meta data import page', () => {

@@ -1,14 +1,17 @@
 import '../common/settingFormValues'
 import { Before, Given, Then } from '@badeball/cypress-cucumber-preprocessor'
 
+// The upload response now comes from the real server via
+// enableNetworkShim() (see cypress/support/e2e.js) - it records the request
+// in `networkMode=capture` and replays the recorded response in
+// `networkMode=stub`. `dataApi` is kept as a pass-through cy.intercept()
+// observer only because the Then block below explicitly cy.wait()s on it -
+// enableNetworkShim() answers the actual request/response, this just gives
+// the test something to alias and cy.wait() on.
 const dataApi = /api\/metadata\/gml/
 
 Before(() => {
-    cy.stubWithFixture({
-        method: 'POST',
-        url: dataApi,
-        fixture: 'gmlImportUpload',
-    }).as('uploadXHR')
+    cy.intercept('POST', dataApi).as('uploadXHR')
 })
 
 Given('the user is on the gml page', () => {

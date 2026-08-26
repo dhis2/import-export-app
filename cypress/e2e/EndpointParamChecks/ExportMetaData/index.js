@@ -1,25 +1,14 @@
 import '../common/settingFormValues'
-import {
-    Before,
-    Given,
-    Then,
-    When,
-} from '@badeball/cypress-cucumber-preprocessor'
+import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
 
-const schemasApi = /\/schemas\?fields=metadata,collectionName,displayName,klass/
-const dataApi = /\/metadata\.(json|csv)(\.(zip|gzip))?/
-
-Before(() => {
-    cy.stubWithFixture({
-        url: schemasApi,
-        fixture: 'schemas',
-    }).as('schemasXHR')
-
-    cy.intercept(dataApi, {
-        statusCode: 404,
-        body: '',
-    }).as('downloadXHR')
-})
+// Schema data now comes from the real server via enableNetworkShim() (see
+// cypress/support/e2e.js) - it records every request in
+// `networkMode=capture` and replays the recorded responses in
+// `networkMode=stub`, so this spec no longer needs its own
+// cy.stubWithFixture() for it. The download endpoint (metadata.<format>)
+// never actually gets hit either way, live or stubbed - "the export form
+// is submitted" below fully replaces window.locationAssign before
+// clicking submit, so the browser never issues that request at all.
 
 Given('the user is on the meta data export page', () => {
     cy.visitPage('export', 'Metadata')

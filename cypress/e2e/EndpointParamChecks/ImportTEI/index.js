@@ -3,40 +3,23 @@ import { Before, Given, Then } from '@badeball/cypress-cucumber-preprocessor'
 
 // TEIImport's onImport (see src/pages/TEIImport/form-helper.js) posts to
 // `${baseUrl}/api/tracker/?...` - there is no `trackedEntityInstances.json`
-// segment (that's the pre-tracker API), so the old regex never matched the
-// real upload request. Anchor to the literal `tracker/` segment, requiring
-// `?` or end-of-string right after it so this doesn't also match the
-// TEI/Event export endpoints (.../api/tracker/trackedEntities.json?...).
+// segment (that's the pre-tracker API). Anchor to the literal `tracker/`
+// segment, requiring `?` or end-of-string right after it so this doesn't
+// also match the TEI/Event export endpoints
+// (.../api/tracker/trackedEntities.json?...).
+//
+// The upload response and the tracker/jobs polling that follows it now all
+// come from the real server via enableNetworkShim() (see
+// cypress/support/e2e.js) - it records every request in
+// `networkMode=capture` and replays the recorded responses in
+// `networkMode=stub`. `teiApi` is kept as a pass-through cy.intercept()
+// observer only because the Then block below explicitly cy.wait()s on it -
+// enableNetworkShim() answers the actual request/response, this just gives
+// the test something to alias and cy.wait() on.
 const teiApi = /api\/tracker\/(\?|$)/
-// TEIImport always calls uploadFile with type: 'TRACKER_IMPORT_JOB' (see
-// form-helper.js), and useTasks.js's createFetchEvents/createFetchSummary
-// branch on `task.importType === 'TRACKER_IMPORT_JOB'` to poll the tracker
-// job facade (`tracker/jobs/`) instead of the generic `system/tasks/` /
-// `system/taskSummaries/` queries (see ImportEvent/index.js, which shares
-// this exact code path) - the generic ones are never reached for TEI
-// import, so stubbing them leaves the real tracker/jobs/ polling request
-// unstubbed (and unhandled network errors from that fail the test). Anchor
-// the events pattern right after the job id (`?` or end-of-string) so it
-// doesn't also match the report sub-resource matched by summaryApi below.
-const tasksApi = /api\/tracker\/jobs\/[a-zA-Z0-9]+(\?|$)/
-const summaryApi = /api\/tracker\/jobs\/[a-zA-Z0-9]+\/report/
 
 Before(() => {
-    cy.stubWithFixture({
-        method: 'POST',
-        url: teiApi,
-        fixture: 'teiImportUpload',
-    }).as('uploadXHR')
-
-    cy.stubWithFixture({
-        url: tasksApi,
-        fixture: 'teiImportTasks',
-    }).as('tasksXHR')
-
-    cy.stubWithFixture({
-        url: summaryApi,
-        fixture: 'teiImportSummaries',
-    }).as('summaryXHR')
+    cy.intercept('POST', teiApi).as('uploadXHR')
 })
 
 Given('the user is on the tracked entity instances import page', () => {

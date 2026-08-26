@@ -7,7 +7,13 @@ const { defineConfig } = require('cypress')
 
 async function setupNodeEvents(on, config) {
     await cucumberPreprocessor(on, config)
-    networkShim(on, config)
+    // networkShim's own default (config.env.dhis2BaseUrl, camelCase) is
+    // never set in this app - cypress.env.json / --env only ever provide
+    // the snake_case `dhis2_base_url` (see cypress/support/e2e.js's
+    // matching bridge for enableNetworkShim/enableAutoLogin). Pass `hosts`
+    // explicitly so capture/stub mode actually intercepts the real host
+    // instead of matching nothing (`^undefined`).
+    networkShim(on, { hosts: [config.env.dhis2_base_url] })
     chromeAllowXSiteCookies(on, config)
     return config
 }

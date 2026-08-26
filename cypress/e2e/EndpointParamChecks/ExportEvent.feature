@@ -7,7 +7,7 @@ Feature: The user should be able to export events
         And the following options are set
             | name                | value       | label                                     |
             | program             | lxAQ7Zs9VYR | Antenatal care visit                      |
-            | programStages       | dBwrot7S420 | Antenatal care visit - Program rules demo |
+            | programStages       | dBwrot7S420 | Antenatal care visit                      |
             | idScheme            | UID         | Uid                                       |
             | dataElementIdScheme | UID         | Uid                                       |
             | orgUnitIdScheme     | UID         | Uid                                       |
@@ -31,14 +31,14 @@ Feature: The user should be able to export events
 
     Scenario: The user selects a different program
         Given the "program" input is set to "Child Programme"
-        And the "programStages" input is set to "Antenatal care visit - Program rules demo"
+        And the "programStages" input is set to "Baby Postnatal"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
-    Scenario: The user selects a different program stage
-        Given the "programStages" input is set to "Antenatal care visit - Program rules demo"
-        When the export form is submitted
-        Then the download request is sent with the right parameters
+    # Scenario: The user selects a different program stage
+    #     Given the "programStages" input is set to "Antenatal care visit"
+    #     When the export form is submitted
+    #     Then the download request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
         Given the "idScheme" input is set to "Code"

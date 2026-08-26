@@ -1,0 +1,95 @@
+[
+    {
+        "path": "/api/44/systemSettings/helpPageLink",
+        "featureName": "The user should be able to meta data dependency events",
+        "static": false,
+        "count": 5,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"helpPageLink\":\"https://dhis2.github.io/dhis2-docs/master/en/user/html/dhis2_user_manual_en.html\"}",
+        "responseSize": 99,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/dataSets?paging=false",
+        "featureName": "The user should be able to meta data dependency events",
+        "static": false,
+        "count": 5,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"dataSets\":[{\"displayName\":\"ART monthly summary\",\"id\":\"lyLU2wR22tC\"},{\"displayName\":\"Child Health\",\"id\":\"BfMAe6Itzgt\"},{\"displayName\":\"Clinical Monitoring Checklist \",\"id\":\"VTdjfLXXmoi\"},{\"displayName\":\"Emergency Response\",\"id\":\"Lpw6GcnTrmS\"},{\"displayName\":\"EPI Stock\",\"id\":\"TuL8IOPzpHh\"},{\"displayName\":\"Expenditures\",\"id\":\"rsyjyJmYD4J\"},{\"displayName\":\"Facility Assessment\",\"id\":\"V8MHeZHIrcP\"},{\"displayName\":\"HIV Care Monthly\",\"id\":\"vc6nF5yZsPR\"},{\"displayName\":\"HIV Peadiatric monthly summary\",\"id\":\"EDzMBk0RRji\"},{\"displayName\":\"IDSR Weekly\",\"id\":\"Nyh6laLdBEJ\"},{\"displayName\":\"IDSR Weekly (Start Wednesday)\",\"id\":\"j38YW1Am7he\"},{\"displayName\":\"Inpatient Morbidity/Mortality Summary\",\"id\":\"PLq9sJluXvc\"},{\"displayName\":\"Life-Saving Commodities\",\"id\":\"ULowA8V3ucd\"},{\"displayName\":\"MNCH Quarterly Report\",\"id\":\"EKWVBc5C0ms\"},{\"displayName\":\"Morbidity\",\"id\":\"eZDhcZi6FLP\"},{\"displayName\":\"Mortality < 5 years\",\"id\":\"pBOMPrpg1QX\"},{\"displayName\":\"Mortality < 5 years by age group\",\"id\":\"ce7DSxx5H2I\"},{\"displayName\":\"Mortality < 5 years by gender\",\"id\":\"YFTk3VdO9av\"},{\"displayName\":\"Mortality < 5 years Narratives\",\"id\":\"YZhd4nu3mzY\"},{\"displayName\":\"PMTCT monthly summary\",\"id\":\"Rl58JxmKJo2\"},{\"displayName\":\"Population\",\"id\":\"aLpVgfXiz0f\"},{\"displayName\":\"Project Management\",\"id\":\"Y8gAn9DfAGU\"},{\"displayName\":\"Reproductive Health\",\"id\":\"QX4ZTUbOt3a\"},{\"displayName\":\"Staffing\",\"id\":\"N4fIX1HL3TQ\"},{\"displayName\":\"TB Facility Reporting Form\",\"id\":\"SF8FDSqw30D\"},{\"displayName\":\"TB/HIV (VCCT) monthly summary\",\"id\":\"OsPTWNqq26W\"}]}",
+        "responseSize": 1538,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/programs?paging=false",
+        "featureName": "The user should be able to meta data dependency events",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"programs\":[{\"displayName\":\"000 _TEST\",\"id\":\"zceN3eB5h0F\"},{\"displayName\":\"000 whatever\",\"id\":\"gZjBqDsY4Vd\"},{\"displayName\":\"222 event\",\"id\":\"qUfrjON5HHJ\"},{\"displayName\":\"333 whatever\",\"id\":\"cIiyHyraDvr\"},{\"displayName\":\"Antenatal care visit\",\"id\":\"lxAQ7Zs9VYR\"},{\"displayName\":\"cats\",\"id\":\"d5EmbcR1K7d\"},{\"displayName\":\"Child Programme\",\"id\":\"IpHINAT79UW\"},{\"displayName\":\"Contraceptives Voucher Program\",\"id\":\"kla3mAPgvCH\"},{\"displayName\":\"dogs\",\"id\":\"ZhcBdUmZiIh\"},{\"displayName\":\"GMB Antenatal Care\",\"id\":\"Cfi9zVUyERM\"},{\"displayName\":\"Information Campaign\",\"id\":\"q04UBOqq3rp\"},{\"displayName\":\"Inpatient morbidity and mortality\",\"id\":\"eBAyeGv0exc\"},{\"displayName\":\"Malaria case diagnosis, treatment and investigation\",\"id\":\"qDkgAbB5Jlk\"},{\"displayName\":\"Malaria case registration\",\"id\":\"VBqh0ynB2wv\"},{\"displayName\":\"Malaria focus investigation\",\"id\":\"M3xtLkYBlKI\"},{\"displayName\":\"Malaria testing and surveillance\",\"id\":\"bMcwwoVnbSR\"},{\"displayName\":\"MNCH / PNC (Adult Woman)\",\"id\":\"uy2gU8kT1jF\"},{\"displayName\":\"Provider Follow-up and Support Tool\",\"id\":\"fDd25txQckK\"},{\"displayName\":\"somethign\",\"id\":\"Yes60xnrVCY\"},{\"displayName\":\"TB program\",\"id\":\"ur1Edk5Oe2n\"},{\"displayName\":\"WHO RMNCH Tracker\",\"id\":\"WSGAb5XwJ3Y\"},{\"displayName\":\"XX MAL RDT - Case Registration\",\"id\":\"MoUd5BTQ3lY\"}]}",
+        "responseSize": 1296,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    }
+]

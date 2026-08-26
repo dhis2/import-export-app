@@ -17,6 +17,7 @@ Feature: The user should be able to meta data dependency events
 
     Scenario: The user selects a different object type
         Given the "objectType" input is set to "Programs"
+        And the programs list has loaded
         And the "objectList" input is set to "Antenatal care visit"
         When the export form is submitted
         Then the download request is sent with the right parameters
