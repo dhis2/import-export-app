@@ -228,13 +228,13 @@ const getInitialBoolValue = (prevValue, defaultValue) => {
     return prevValue
 }
 
-// adds a digit group separator matching the user's locale
-const formatNumber = (value) => {
+// adds a digit group separator matching the given locale
+const formatNumber = (value, locale) => {
     if (value === undefined || value === null || value === '') {
         return value
     }
     const number = Number(value)
-    return Number.isNaN(number) ? value : number.toLocaleString()
+    return Number.isNaN(number) ? value : number.toLocaleString(locale)
 }
 
 export {

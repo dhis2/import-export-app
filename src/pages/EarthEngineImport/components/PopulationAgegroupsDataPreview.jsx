@@ -179,14 +179,22 @@ const PopulationAgegroupsDataPreview = ({
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         <span className={styles.current}>
-                                            {formatNumber(current) ?? ''}
+                                            {formatNumber(
+                                                current,
+                                                i18n.language
+                                            )}
                                         </span>
                                     </DataTableCell>
                                     <DataTableCell dense>
                                         {isNoValue ? (
                                             <Tag negative>{value}</Tag>
                                         ) : (
-                                            <span>{formatNumber(value)}</span>
+                                            <span>
+                                                {formatNumber(
+                                                    value,
+                                                    i18n.language
+                                                )}
+                                            </span>
                                         )}
                                     </DataTableCell>
                                 </DataTableRow>
