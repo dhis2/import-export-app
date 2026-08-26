@@ -1,4 +1,25 @@
-import { locationAssign } from './helper.js'
+import { formatNumber, locationAssign } from './helper.js'
+
+describe('formatNumber', () => {
+    it('adds digit group separators to numbers', () => {
+        expect(formatNumber(1234567, 'en')).toEqual('1,234,567')
+    })
+    it('handles numeric strings', () => {
+        expect(formatNumber('1234567.5', 'en')).toEqual('1,234,567.5')
+    })
+    it('handles zero', () => {
+        expect(formatNumber(0, 'en')).toEqual('0')
+    })
+    it('returns non-numeric strings unchanged', () => {
+        expect(formatNumber('Point org. unit - no value', 'en')).toEqual(
+            'Point org. unit - no value'
+        )
+    })
+    it('returns undefined and null unchanged', () => {
+        expect(formatNumber(undefined, 'en')).toBeUndefined()
+        expect(formatNumber(null, 'en')).toBeNull()
+    })
+})
 
 describe('locationAssign', () => {
     it('should create a file name based on the params', () => {
