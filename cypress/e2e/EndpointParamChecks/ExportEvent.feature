@@ -6,8 +6,8 @@ Feature: The user should be able to export events
         And the more options are visible
         And the following options are set
             | name                | value       | label                                     |
-            | program             | lxAQ7Zs9VYR | Antenatal care visit                      |
-            | programStages       | dBwrot7S420 | Antenatal care visit                      |
+            | program             | IpHINAT79UW | Child Programme                      |
+            | programStages       | A03MvHHogjR | Birth                      |
             | idScheme            | UID         | Uid                                       |
             | dataElementIdScheme | UID         | Uid                                       |
             | orgUnitIdScheme     | UID         | Uid                                       |

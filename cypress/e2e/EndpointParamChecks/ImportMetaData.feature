@@ -17,7 +17,6 @@ Feature: The user should be able to import meta data
             | skipSharing       | false             |
             | skipValidation    | false             |
             | async             | true              |
-            | inclusionStrategy | NON_NULL          |
 
     Scenario: The user submits the form with the default values
         When the import form is submitted
@@ -44,7 +43,7 @@ Feature: The user should be able to import meta data
         Then the upload request is sent with the right parameters
 
     Scenario: The user selects a different atomic mode
-        Given the "atomicMode" input is set to "OBJECT"
+        Given the "atomicMode" input is set to "NONE"
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
@@ -78,7 +77,16 @@ Feature: The user should be able to import meta data
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
-    Scenario: The user selects a different inclusion strategy
-        Given the "inclusionStrategy" input is set to "ALWAYS"
-        When the import form is submitted
-        Then the upload request is sent with the right parameters
+    # Inclusion strategy moved from this page to the metadata export page
+    # (see src/pages/MetadataImport/MetadataImport.jsx and
+    # src/pages/MetadataExport/MetadataExport.jsx, commit
+    # c772035d60d18a98ad4a1ad5fe761a5986668d44 "fix: move inclusion
+    # strategy to export") - there is no <InclusionStrategy /> control on
+    # this page any more and the upload request no longer includes an
+    # inclusionStrategy param, so this scenario has no equivalent here.
+    # See ExportMetaData.feature's "The user selects a different inclusion
+    # strategy" scenario for the migrated version of this test.
+    # Scenario: The user selects a different inclusion strategy
+    #     Given the "inclusionStrategy" input is set to "ALWAYS"
+    #     When the import form is submitted
+    #     Then the upload request is sent with the right parameters
