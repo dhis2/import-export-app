@@ -1,3 +1,46 @@
+# [101.4.0](https://github.com/dhis2/import-export-app/compare/v101.3.11...v101.4.0) (2026-08-27)
+
+
+### Features
+
+* add new shortcuts ([#2279](https://github.com/dhis2/import-export-app/issues/2279)) ([eb56417](https://github.com/dhis2/import-export-app/commit/eb56417e8f60e146377bd4b51969b17838237739))
+
+## [101.3.11](https://github.com/dhis2/import-export-app/compare/v101.3.10...v101.3.11) (2026-08-26)
+
+
+### Bug Fixes
+
+* add digit group separator to EE import preview numbers [DHIS2-14239] ([bc89ff9](https://github.com/dhis2/import-export-app/commit/bc89ff9d29bfc2d84721553cd3fe4da68bc06fe1))
+* address review feedback on digit group separator [DHIS2-14239] ([fd45aac](https://github.com/dhis2/import-export-app/commit/fd45aace1e0ce3ff45543d76b0cc6751c3096c7e))
+
+## [101.3.10](https://github.com/dhis2/import-export-app/compare/v101.3.9...v101.3.10) (2026-08-25)
+
+
+### Bug Fixes
+
+* hide program stage control for event programs [DHIS2-11507] ([480b51e](https://github.com/dhis2/import-export-app/commit/480b51e5cdb78c707d99b6b97aac5e3cc2b2e88c))
+
+## [101.3.9](https://github.com/dhis2/import-export-app/compare/v101.3.8...v101.3.9) (2026-08-24)
+
+
+### Bug Fixes
+
+* correct AtomicMode help text and metadata import options [DHIS2-9997] ([7e0bcde](https://github.com/dhis2/import-export-app/commit/7e0bcdeda3cdf1b581597b8d8f9035cfc9adaab5))
+
+## [101.3.8](https://github.com/dhis2/import-export-app/compare/v101.3.7...v101.3.8) (2026-08-24)
+
+
+### Bug Fixes
+
+* move inclusion strategy to export ([c772035](https://github.com/dhis2/import-export-app/commit/c772035d60d18a98ad4a1ad5fe761a5986668d44))
+
+## [101.3.7](https://github.com/dhis2/import-export-app/compare/v101.3.6...v101.3.7) (2026-08-19)
+
+
+### Bug Fixes
+
+* include enrollments, events in tei export [DHIS2-21901] ([#2271](https://github.com/dhis2/import-export-app/issues/2271)) ([e158047](https://github.com/dhis2/import-export-app/commit/e1580470c9ee6bd974445b09ff0795c3e74aaaed))
+
 ## [101.3.6](https://github.com/dhis2/import-export-app/compare/v101.3.5...v101.3.6) (2026-08-13)
 
 
