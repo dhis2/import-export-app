@@ -29,7 +29,7 @@ const useObjects = (type, setSelected) => {
                     label: e.displayName,
                 }))
                 setObjects(formattedList)
-                setSelected(formattedList[0].value)
+                setSelected(formattedList?.[0]?.value)
                 setLoading(false)
             },
             onError: (error) => {
