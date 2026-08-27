@@ -8,7 +8,7 @@ const programStageQuery = {
         fields: 'id,displayName',
         id: ({ id }) => `${id}`,
         params: {
-            fields: 'programStages[id,displayName]',
+            fields: 'programType,programStages[id,displayName]',
             paging: 'false',
         },
     },
@@ -22,11 +22,13 @@ const useProgramStages = (program, setSelected) => {
     const [error, setError] = useState(undefined)
     const [loading, setLoading] = useState(true)
     const [stages, setStages] = useState([])
+    const [programType, setProgramType] = useState(undefined)
 
     useEffect(() => {
         if (program) {
             setLoading(true)
             setSelected(undefined)
+            setProgramType(undefined)
         } else {
             setLoading(false)
         }
@@ -49,6 +51,7 @@ const useProgramStages = (program, setSelected) => {
                         },
                         ...formattedList,
                     ])
+                    setProgramType(data.data.programType)
                     setSelected(ALL_VALUE)
                     setLoading(false)
                 },
@@ -66,7 +69,13 @@ const useProgramStages = (program, setSelected) => {
             error.message
         }`
 
-    return { loading, error, validationText, programStages: stages }
+    return {
+        loading,
+        error,
+        validationText,
+        programStages: stages,
+        programType,
+    }
 }
 
 export { useProgramStages, ALL_VALUE }

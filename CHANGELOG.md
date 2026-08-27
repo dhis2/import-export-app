@@ -1,3 +1,18 @@
+## [101.3.11](https://github.com/dhis2/import-export-app/compare/v101.3.10...v101.3.11) (2026-08-26)
+
+
+### Bug Fixes
+
+* add digit group separator to EE import preview numbers [DHIS2-14239] ([bc89ff9](https://github.com/dhis2/import-export-app/commit/bc89ff9d29bfc2d84721553cd3fe4da68bc06fe1))
+* address review feedback on digit group separator [DHIS2-14239] ([fd45aac](https://github.com/dhis2/import-export-app/commit/fd45aace1e0ce3ff45543d76b0cc6751c3096c7e))
+
+## [101.3.10](https://github.com/dhis2/import-export-app/compare/v101.3.9...v101.3.10) (2026-08-25)
+
+
+### Bug Fixes
+
+* hide program stage control for event programs [DHIS2-11507] ([480b51e](https://github.com/dhis2/import-export-app/commit/480b51e5cdb78c707d99b6b97aac5e3cc2b2e88c))
+
 ## [101.3.9](https://github.com/dhis2/import-export-app/compare/v101.3.8...v101.3.9) (2026-08-24)
 
 
