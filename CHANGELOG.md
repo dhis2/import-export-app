@@ -1,3 +1,10 @@
+# [101.4.0](https://github.com/dhis2/import-export-app/compare/v101.3.11...v101.4.0) (2026-08-27)
+
+
+### Features
+
+* add new shortcuts ([#2279](https://github.com/dhis2/import-export-app/issues/2279)) ([eb56417](https://github.com/dhis2/import-export-app/commit/eb56417e8f60e146377bd4b51969b17838237739))
+
 ## [101.3.11](https://github.com/dhis2/import-export-app/compare/v101.3.10...v101.3.11) (2026-08-26)
 
 
