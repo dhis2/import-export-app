@@ -80,7 +80,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753386482)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753386482)\",\"id\":\"ora88skhSgJ\",\"created\":\"2026-08-26T16:09:46.482\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/ora88skhSgJ\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837219958)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837219958)\",\"id\":\"qC3gXY9C7oL\",\"created\":\"2026-08-27T15:26:59.958\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/qC3gXY9C7oL\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 699,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -94,7 +94,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/ora88skhSgJ",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/qC3gXY9C7oL",
         "featureName": "The user should be able to import GML",
         "static": false,
         "count": 1,
@@ -143,7 +143,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753388384)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753388384)\",\"id\":\"h0B9QrJfQM7\",\"created\":\"2026-08-26T16:09:48.384\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/h0B9QrJfQM7\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837221772)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837221772)\",\"id\":\"T55uyl7g4yF\",\"created\":\"2026-08-27T15:27:01.772\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/T55uyl7g4yF\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 699,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -157,7 +157,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/h0B9QrJfQM7",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/T55uyl7g4yF",
         "featureName": "The user should be able to import GML",
         "static": false,
         "count": 1,
@@ -173,8 +173,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"Z0jC1wQ8oO0\",\"time\":\"2026-08-26T16:09:48.452\",\"uid\":\"Z0jC1wQ8oO0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"aE9pD8gEF3v\",\"time\":\"2026-08-26T16:09:48.449\",\"uid\":\"aE9pD8gEF3v\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"Z0nC1wQ8oO6\",\"time\":\"2026-08-26T16:09:48.448\",\"uid\":\"Z0nC1wQ8oO6\"}]",
-        "responseSize": 896,
+        "responseBody": "[]",
+        "responseSize": 2,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",

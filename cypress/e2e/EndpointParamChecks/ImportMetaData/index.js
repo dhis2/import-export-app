@@ -17,6 +17,18 @@ import { Before, Given, Then } from '@badeball/cypress-cucumber-preprocessor'
 // cy.wait() on.
 const metadataApi = /\/api\/metadata(\?|$)/
 
+// Mirrors src/utils/mime.js's mapping, limited to the two formats this
+// page's <Format availableFormats={formatNoXmlOptions} /> actually offers
+// (see src/components/Inputs/Format.jsx) - `format` is only used to set
+// the upload's Content-Type header (see uploadFile()/getUploadXHR() in
+// src/utils/xhr.js and src/pages/MetadataImport/form-helper.js), it's
+// never sent as a query param, so it has to be checked against the raw
+// request header below instead of the parsed query string.
+const mimeTypes = {
+    json: 'application/json',
+    csv: 'application/csv',
+}
+
 Before(() => {
     cy.intercept('POST', metadataApi).as('uploadXHR')
 })
@@ -33,8 +45,18 @@ Then('the upload request is sent with the right parameters', () => {
                 // header (see uploadFile()/getUploadXHR() in
                 // src/utils/xhr.js and src/pages/MetadataImport/form-helper.js)
                 // - it's never sent as a query param, so it must be
-                // excluded from the comparison.
+                // excluded from the comparison and checked against the raw
+                // request header instead (this used to be dropped without
+                // being checked anywhere - the Background only ever sets
+                // format to "json" and no scenario in this feature changes
+                // it, so this wasn't caught by a failing scenario the way
+                // it was for ImportData/ImportEvent, but the Content-Type
+                // was still never actually verified).
                 const { format, ...expected } = allExpected
+
+                expect(interception.request.headers['content-type']).to.equal(
+                    mimeTypes[format]
+                )
 
                 // `mergeMode` is no longer an editable field on this page -
                 // it's always sent as "REPLACE" (see

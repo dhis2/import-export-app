@@ -47,16 +47,6 @@ Feature: The user should be able to import meta data
         When the import form is submitted
         Then the upload request is sent with the right parameters
 
-    # Merge mode is no longer user-selectable on this page - it is always
-    # sent as REPLACE (see src/components/MergeOperation/MergeOperation.jsx
-    # and src/pages/MetadataImport/MetadataImport.jsx, which renders
-    # <MergeOperationNotice /> instead of the interactive <MergeMode />
-    # radio group), so there is no way to select a different one.
-    # Scenario: The user selects a different merge mode
-    #     Given the "mergeMode" input is set to "REPLACE"
-    #     When the import form is submitted
-    #     Then the upload request is sent with the right parameters
-
     Scenario: The user selects a different flush mode
         Given the "flushMode" input is set to "OBJECT"
         When the import form is submitted
@@ -76,17 +66,3 @@ Feature: The user should be able to import meta data
         Given the "async" input is set to "false"
         When the import form is submitted
         Then the upload request is sent with the right parameters
-
-    # Inclusion strategy moved from this page to the metadata export page
-    # (see src/pages/MetadataImport/MetadataImport.jsx and
-    # src/pages/MetadataExport/MetadataExport.jsx, commit
-    # c772035d60d18a98ad4a1ad5fe761a5986668d44 "fix: move inclusion
-    # strategy to export") - there is no <InclusionStrategy /> control on
-    # this page any more and the upload request no longer includes an
-    # inclusionStrategy param, so this scenario has no equivalent here.
-    # See ExportMetaData.feature's "The user selects a different inclusion
-    # strategy" scenario for the migrated version of this test.
-    # Scenario: The user selects a different inclusion strategy
-    #     Given the "inclusionStrategy" input is set to "ALWAYS"
-    #     When the import form is submitted
-    #     Then the upload request is sent with the right parameters

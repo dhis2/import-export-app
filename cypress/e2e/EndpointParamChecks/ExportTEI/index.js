@@ -60,6 +60,28 @@ Then('the download request is sent with the right parameters', () => {
     cy.window().then((win) => {
         const requestUrl = win.locationAssign.getCall(0).args[0]
 
+        // The TEI export always downloads from the tracker API's single
+        // trackedEntities endpoint (see src/pages/TEIExport/form-helper.js's
+        // onExport - `endpoint` is hardcoded to `trackedEntities`; only the
+        // file extension varies, with `format`). Filtering by program or by
+        // tracked entity type (teiTypeFilter) never changes which endpoint
+        // gets hit - it only adds `program=<uid>` / `trackedEntityType=<uid>`
+        // query params, which the query-string comparison below already
+        // covers. So unlike e.g. ExportMetaDataDependency (where the object
+        // type genuinely picks a different endpoint segment, such as
+        // api/programs/<id>/metadata), there's no per-filter path to assert
+        // here - but the path itself was never checked at all before, so a
+        // regression that hit the wrong endpoint (e.g. a stale pre-tracker
+        // API URL) would have gone uncaught.
+        const pathMatch = requestUrl.match(
+            /\/api\/tracker\/trackedEntities\.([^?]+)\?/
+        )
+        expect(
+            pathMatch,
+            `Expected the download URL to hit api/tracker/trackedEntities.<format>, but got: ${requestUrl}`
+        ).to.not.be.null
+        const [, urlFormat] = pathMatch
+
         cy.getComparisonData(requestUrl).then(
             ({ actual, expected: allExpected }) => {
                 const {
@@ -77,6 +99,19 @@ Then('the download request is sent with the right parameters', () => {
 
                     // values that need a different key
                     orgUnit,
+
+                    // when orgUnitMode is ':MANUAL:', form-helper.js
+                    // overwrites the `orgUnitMode` param with this field's
+                    // value instead (see the "include selected org.units
+                    // only when manual selection is selected" comment in
+                    // src/pages/TEIExport/form-helper.js) - it's not sent
+                    // as its own `inclusion` param, so it must be omitted
+                    // from `rest` here and folded into `orgUnitMode` below
+                    // instead. It isn't set in the Background's options
+                    // table, so default to 'SELECTED' - the same default
+                    // src/components/Inputs/Inclusion.jsx's radio group
+                    // itself uses - when a scenario hasn't overridden it.
+                    inclusion,
                     ...rest
                 } = allExpected
 
@@ -92,9 +127,25 @@ Then('the download request is sent with the right parameters', () => {
                         : {}),
                     orgUnitMode:
                         rest.orgUnitMode === ':MANUAL:'
-                            ? 'SELECTED'
+                            ? inclusion || 'SELECTED'
                             : rest.orgUnitMode,
                 }
+
+                // The URL's file extension is expected to always match the
+                // `format` field/query param (see onExport's
+                // `${endpoint}.${format}?...` template above).
+                expect(urlFormat).to.equal(expected.format)
+
+                // `fields` is a hardcoded constant added to every request
+                // (see valuesToParams's
+                // `fields: '*,enrollments[*,events[*]]'` in
+                // src/pages/TEIExport/form-helper.js - added by commit
+                // e1580470c9ee6bd974445b09ff0795c3e74aaaed "fix: include
+                // enrollments, events in tei export"). It isn't derived
+                // from any form value, so it's never present in
+                // defaultData/changedData and would otherwise go
+                // completely unchecked by the loop below.
+                expect(actual.fields).to.equal('*,enrollments[*,events[*]]')
 
                 const expectedEntries = Object.entries(expected)
 

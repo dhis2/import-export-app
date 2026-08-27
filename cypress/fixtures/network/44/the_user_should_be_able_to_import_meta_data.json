@@ -79,7 +79,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753392760)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753392760)\",\"id\":\"OYRMgpvB3wq\",\"created\":\"2026-08-26T16:09:52.760\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/OYRMgpvB3wq\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837229253)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837229253)\",\"id\":\"cb48ri1yBy2\",\"created\":\"2026-08-27T15:27:09.253\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/cb48ri1yBy2\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 699,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -93,7 +93,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/OYRMgpvB3wq",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/cb48ri1yBy2",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -109,7 +109,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Creating bundle\",\"completed\":false,\"id\":\"lF8cP8gEF3v\",\"time\":\"2026-08-26T16:09:52.825\",\"uid\":\"lF8cP8gEF3v\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Running preCreateBundle\",\"completed\":false,\"id\":\"K1mK5lJ7xX5\",\"time\":\"2026-08-26T16:09:52.824\",\"uid\":\"K1mK5lJ7xX5\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"K3kC7dB9pR5\",\"time\":\"2026-08-26T16:09:52.822\",\"uid\":\"K3kC7dB9pR5\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"lF8oT8gEF3v\",\"time\":\"2026-08-26T16:09:52.817\",\"uid\":\"lF8oT8gEF3v\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"K1mC7dB9pP7\",\"time\":\"2026-08-26T16:09:52.816\",\"uid\":\"K1mC7dB9pP7\"}]",
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Creating bundle\",\"completed\":false,\"id\":\"J7iO4wQ0aC0\",\"time\":\"2026-08-27T15:27:09.354\",\"uid\":\"J7iO4wQ0aC0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Running preCreateBundle\",\"completed\":false,\"id\":\"kZ5bE8gGB0a\",\"time\":\"2026-08-27T15:27:09.353\",\"uid\":\"kZ5bE8gGB0a\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"J5sG4wQ0aA4\",\"time\":\"2026-08-27T15:27:09.348\",\"uid\":\"J5sG4wQ0aA4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"kZ5bU6aAB0a\",\"time\":\"2026-08-27T15:27:09.337\",\"uid\":\"kZ5bU6aAB0a\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"J5wO0aG0aA0\",\"time\":\"2026-08-27T15:27:09.336\",\"uid\":\"J5wO0aG0aA0\"}]",
         "responseSize": 1232,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -142,7 +142,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753395078)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753395078)\",\"id\":\"nk3EeaagPgL\",\"created\":\"2026-08-26T16:09:55.079\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"VALIDATE\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/nk3EeaagPgL\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837231570)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837231570)\",\"id\":\"EQMgDsOtxQj\",\"created\":\"2026-08-27T15:27:11.570\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"VALIDATE\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/EQMgDsOtxQj\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 701,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -156,7 +156,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/nk3EeaagPgL",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/EQMgDsOtxQj",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -172,8 +172,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"uH6aJ6mKL3v\",\"time\":\"2026-08-26T16:09:55.167\",\"uid\":\"uH6aJ6mKL3v\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"uF4qD6mKL5f\",\"time\":\"2026-08-26T16:09:55.165\",\"uid\":\"uF4qD6mKL5f\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"VALIDATE\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"T1iK5fP9dD1\",\"time\":\"2026-08-26T16:09:55.164\",\"uid\":\"T1iK5fP9dD1\"}]",
-        "responseSize": 898,
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Creating bundle\",\"completed\":false,\"id\":\"tZ5jU6aAB0a\",\"time\":\"2026-08-27T15:27:11.633\",\"uid\":\"tZ5jU6aAB0a\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Running preCreateBundle\",\"completed\":false,\"id\":\"S5wG0aG0aA0\",\"time\":\"2026-08-27T15:27:11.632\",\"uid\":\"S5wG0aG0aA0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"S5sO4qG0aA4\",\"time\":\"2026-08-27T15:27:11.628\",\"uid\":\"S5sO4qG0aA4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"tB8uE6aAB2e\",\"time\":\"2026-08-27T15:27:11.623\",\"uid\":\"tB8uE6aAB2e\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"VALIDATE\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"S7mG4qG0aC4\",\"time\":\"2026-08-27T15:27:11.622\",\"uid\":\"S7mG4qG0aC4\"}]",
+        "responseSize": 1234,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -205,7 +205,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753397451)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753397451)\",\"id\":\"iA0Hw7E7j92\",\"created\":\"2026-08-26T16:09:57.452\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"CODE\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/iA0Hw7E7j92\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837233689)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837233689)\",\"id\":\"XlgNsAm5Omn\",\"created\":\"2026-08-27T15:27:13.689\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"CODE\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/XlgNsAm5Omn\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 700,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -219,7 +219,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/iA0Hw7E7j92",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/XlgNsAm5Omn",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -235,8 +235,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"D8pK9qG0aA4\",\"time\":\"2026-08-26T16:09:57.516\",\"uid\":\"D8pK9qG0aA4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"D8lK9qG0aA0\",\"time\":\"2026-08-26T16:09:57.512\",\"uid\":\"D8lK9qG0aA0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"CODE\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"eL2qD6aAB2e\",\"time\":\"2026-08-26T16:09:57.511\",\"uid\":\"eL2qD6aAB2e\"}]",
-        "responseSize": 897,
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"A5sO4qS4iI4\",\"time\":\"2026-08-27T15:27:13.740\",\"uid\":\"A5sO4qS4iI4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"CODE\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"bA5bE6mMN2a\",\"time\":\"2026-08-27T15:27:13.739\",\"uid\":\"bA5bE6mMN2a\"}]",
+        "responseSize": 728,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -268,7 +268,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753399580)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753399580)\",\"id\":\"N09ZrYLrIB7\",\"created\":\"2026-08-26T16:09:59.580\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"FULL\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/N09ZrYLrIB7\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837235840)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837235840)\",\"id\":\"u6tXI4v2Lpj\",\"created\":\"2026-08-27T15:27:15.841\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"FULL\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/u6tXI4v2Lpj\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 697,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -282,7 +282,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/N09ZrYLrIB7",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/u6tXI4v2Lpj",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -298,8 +298,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Creating bundle\",\"completed\":false,\"id\":\"gA6aJ6mMN0a\",\"time\":\"2026-08-26T16:09:59.641\",\"uid\":\"gA6aJ6mMN0a\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Running preCreateBundle\",\"completed\":false,\"id\":\"F0aK5fP1fF0\",\"time\":\"2026-08-26T16:09:59.640\",\"uid\":\"F0aK5fP1fF0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"F2eY9zS4iK4\",\"time\":\"2026-08-26T16:09:59.638\",\"uid\":\"F2eY9zS4iK4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"F0eY9zS4iI4\",\"time\":\"2026-08-26T16:09:59.636\",\"uid\":\"F0eY9zS4iI4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"FULL\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"gC6mT6mMN2a\",\"time\":\"2026-08-26T16:09:59.635\",\"uid\":\"gC6mT6mMN2a\"}]",
-        "responseSize": 1230,
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"dC7xU8gEF1t\",\"time\":\"2026-08-27T15:27:15.891\",\"uid\":\"dC7xU8gEF1t\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"dA5jU8gEF3v\",\"time\":\"2026-08-27T15:27:15.889\",\"uid\":\"dA5jU8gEF3v\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"FULL\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"C6jG0gM0aA8\",\"time\":\"2026-08-27T15:27:15.888\",\"uid\":\"C6jG0gM0aA8\"}]",
+        "responseSize": 894,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -331,7 +331,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753401953)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753401953)\",\"id\":\"ZFjlEo70EOX\",\"created\":\"2026-08-26T16:10:01.953\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/ZFjlEo70EOX\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837237920)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837237920)\",\"id\":\"xAt1FXtNNtv\",\"created\":\"2026-08-27T15:27:17.920\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/xAt1FXtNNtv\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 688,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -345,7 +345,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/ZFjlEo70EOX",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/xAt1FXtNNtv",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -361,7 +361,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Creating bundle\",\"completed\":false,\"id\":\"O0eY3wQ8oO0\",\"time\":\"2026-08-26T16:10:02.020\",\"uid\":\"O0eY3wQ8oO0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Running preCreateBundle\",\"completed\":false,\"id\":\"pC6mD8gEF1t\",\"time\":\"2026-08-26T16:10:02.019\",\"uid\":\"pC6mD8gEF1t\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"O2aC1wQ8oQ8\",\"time\":\"2026-08-26T16:10:02.018\",\"uid\":\"O2aC1wQ8oQ8\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"pA0wF6aYZ7t\",\"time\":\"2026-08-26T16:10:02.013\",\"uid\":\"pA0wF6aYZ7t\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"O0eG1bH8oO0\",\"time\":\"2026-08-26T16:10:02.012\",\"uid\":\"O0eG1bH8oO0\"}]",
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Creating bundle\",\"completed\":false,\"id\":\"lA9vU6mKL5f\",\"time\":\"2026-08-27T15:27:17.973\",\"uid\":\"lA9vU6mKL5f\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Running preCreateBundle\",\"completed\":false,\"id\":\"K6nG0aS2gG6\",\"time\":\"2026-08-27T15:27:17.972\",\"uid\":\"K6nG0aS2gG6\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"K8lG0aS2gI2\",\"time\":\"2026-08-27T15:27:17.970\",\"uid\":\"K8lG0aS2gI2\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"K6jG0aS2gG0\",\"time\":\"2026-08-27T15:27:17.968\",\"uid\":\"K6jG0aS2gG0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"lC1bF6mKL3v\",\"time\":\"2026-08-27T15:27:17.967\",\"uid\":\"lC1bF6mKL3v\"}]",
         "responseSize": 1221,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -394,7 +394,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753404125)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753404125)\",\"id\":\"yAotsPfEE7N\",\"created\":\"2026-08-26T16:10:04.125\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"NONE\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/yAotsPfEE7N\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837240060)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837240060)\",\"id\":\"nU47kZ7XewB\",\"created\":\"2026-08-27T15:27:20.060\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"NONE\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/nU47kZ7XewB\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 700,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -408,7 +408,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/yAotsPfEE7N",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/nU47kZ7XewB",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -424,8 +424,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[]",
-        "responseSize": 2,
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"NONE\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"uA9vU8gGB0e\",\"time\":\"2026-08-27T15:27:20.117\",\"uid\":\"uA9vU8gGB0e\"}]",
+        "responseSize": 558,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -457,7 +457,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753406374)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753406374)\",\"id\":\"Mq7Kv3btnXg\",\"created\":\"2026-08-26T16:10:06.374\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"OBJECT\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/Mq7Kv3btnXg\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837242149)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837242149)\",\"id\":\"DGlLGUKi36P\",\"created\":\"2026-08-27T15:27:22.149\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"OBJECT\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/DGlLGUKi36P\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 701,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -471,7 +471,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/Mq7Kv3btnXg",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/DGlLGUKi36P",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -487,8 +487,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[]",
-        "responseSize": 2,
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"B7mG4wC4sS4\",\"time\":\"2026-08-27T15:27:22.212\",\"uid\":\"B7mG4wC4sS4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"cE9vE8sST7h\",\"time\":\"2026-08-27T15:27:22.211\",\"uid\":\"cE9vE8sST7h\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"OBJECT\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"B9kG4wC4sQ0\",\"time\":\"2026-08-27T15:27:22.210\",\"uid\":\"B9kG4wC4sQ0\"}]",
+        "responseSize": 898,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -520,7 +520,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753408444)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753408444)\",\"id\":\"KehkmKkaQ42\",\"created\":\"2026-08-26T16:10:08.445\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":true,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/KehkmKkaQ42\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837244128)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837244128)\",\"id\":\"xZbTtz8GZIg\",\"created\":\"2026-08-27T15:27:24.128\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":true,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/xZbTtz8GZIg\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 698,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -534,7 +534,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/KehkmKkaQ42",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/xZbTtz8GZIg",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -550,8 +550,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"iD0wF8sQR5b\",\"time\":\"2026-08-26T16:10:08.511\",\"uid\":\"iD0wF8sQR5b\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"H3eG1hZ5nP9\",\"time\":\"2026-08-26T16:10:08.510\",\"uid\":\"H3eG1hZ5nP9\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":true,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"iB0wF8sQR7l\",\"time\":\"2026-08-26T16:10:08.509\",\"uid\":\"iB0wF8sQR7l\"}]",
-        "responseSize": 895,
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":true,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"D9kG0aG0aC0\",\"time\":\"2026-08-27T15:27:24.178\",\"uid\":\"D9kG0aG0aC0\"}]",
+        "responseSize": 556,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -583,7 +583,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787753410614)\",\"response\":{\"name\":\"METADATA_IMPORT (1787753410614)\",\"id\":\"z0Qz5YE9CKR\",\"created\":\"2026-08-26T16:10:10.614\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":true,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/z0Qz5YE9CKR\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837246191)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837246191)\",\"id\":\"ur8nANkfSaG\",\"created\":\"2026-08-27T15:27:26.191\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":true,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/ur8nANkfSaG\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 698,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -597,7 +597,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/z0Qz5YE9CKR",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/ur8nANkfSaG",
         "featureName": "The user should be able to import meta data",
         "static": false,
         "count": 1,
@@ -613,8 +613,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"rD6mT8sST7h\",\"time\":\"2026-08-26T16:10:10.675\",\"uid\":\"rD6mT8sST7h\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":true,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"Q3aC7dN5dF5\",\"time\":\"2026-08-26T16:10:10.674\",\"uid\":\"Q3aC7dN5dF5\"}]",
-        "responseSize": 726,
+        "responseBody": "[{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Creating bundle\",\"completed\":false,\"id\":\"mB8uE8gGB0e\",\"time\":\"2026-08-27T15:27:26.245\",\"uid\":\"mB8uE8gGB0e\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Running preCreateBundle\",\"completed\":false,\"id\":\"L7mG4wQ0aA4\",\"time\":\"2026-08-27T15:27:26.244\",\"uid\":\"L7mG4wQ0aA4\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"mD6wE8gGB2a\",\"time\":\"2026-08-27T15:27:26.243\",\"uid\":\"mD6wE8gGB2a\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"L9kG4wQ0aC0\",\"time\":\"2026-08-27T15:27:26.242\",\"uid\":\"L9kG4wQ0aC0\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":true,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"mB4iE8gGB0a\",\"time\":\"2026-08-27T15:27:26.241\",\"uid\":\"mB4iE8gGB0a\"}]",
+        "responseSize": 1231,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",

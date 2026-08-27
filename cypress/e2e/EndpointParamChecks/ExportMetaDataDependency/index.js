@@ -61,7 +61,18 @@ Then('the download request is sent with the right parameters', () => {
                 )
                 .slice(1)
 
-            cy.getComparisonData(url).then(({ actual, expected, allData }) => {
+            cy.getComparisonData(url).then(({ actual, expected }) => {
+                // objectType/objectList come straight off the URL's own
+                // path segments (.../api/<objectType>/<objectId>/metadata...
+                // - see src/pages/MetadataDependencyExport/form-helper.js's
+                // `endpoint`), not off the query string, so they need their
+                // own assertions here - the query-string comparison below
+                // never sees them. Without this, a bug that downloaded the
+                // wrong object type/id (e.g. still pointing at the
+                // previously-selected data set after switching to
+                // Programs) would go uncaught.
+                expect(objectType).to.equal(expected.objectType)
+                expect(objectList).to.equal(expected.objectList)
                 expect(expected.format).to.equal(format)
                 expect(expected.compression).to.equal(compression || '')
 

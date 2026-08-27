@@ -39,6 +39,8 @@ Then('the upload request is sent with the right parameters', () => {
                 // (see src/pages/TEIImport/form-helper.js and
                 // src/utils/xhr.js).
                 const { format, ...expected } = allExpected
+                console.log('actual', actual)
+                console.log('expected', expected)
 
                 expect(actual).to.deep.equal({
                     ...expected,

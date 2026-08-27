@@ -18,6 +18,16 @@ import { Before, Given, Then } from '@badeball/cypress-cucumber-preprocessor'
 // the test something to alias and cy.wait() on.
 const dataApi = /api\/tracker(\?|$)/
 
+// Mirrors src/utils/mime.js's mapping - `format` is never sent as a query
+// param, it only sets the request's Content-Type header (see
+// src/pages/EventImport/form-helper.js -> src/utils/xhr.js's
+// getUploadXHR/getMimeType), so it has to be checked against the raw
+// request header below instead of the parsed query string.
+const mimeTypes = {
+    json: 'application/json',
+    csv: 'application/csv',
+}
+
 Before(() => {
     cy.intercept('POST', dataApi).as('uploadXHR')
 })
@@ -31,10 +41,19 @@ Then('the upload request is sent with the right parameters', () => {
         cy.getComparisonData(interception.request.url).then(
             ({ actual, expected: allExpected }) => {
                 // `format` is never sent as a query param - onImport only
-                // uses it to set the request's Content-Type header. `dryRun`
+                // uses it to set the request's Content-Type header, so it's
+                // excluded from the parsed-query-string comparison below and
+                // checked against the raw request header instead (this used
+                // to be dropped without being checked anywhere, so the
+                // "different format" scenario passed regardless of whether
+                // the Content-Type header was actually correct). `dryRun`
                 // isn't sent verbatim either - it's translated into the
                 // `importMode` param (see src/pages/EventImport/form-helper.js).
                 const { format, dryRun, ...expected } = allExpected
+
+                expect(interception.request.headers['content-type']).to.equal(
+                    mimeTypes[format]
+                )
 
                 expect(actual).to.deep.equal({
                     ...expected,

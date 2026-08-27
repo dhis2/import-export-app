@@ -25,21 +25,6 @@ bridgeEnvFromSnakeCase('dhis2BaseUrl', 'dhis2_base_url')
 bridgeEnvFromSnakeCase('dhis2Username', 'dhis2_username')
 bridgeEnvFromSnakeCase('dhis2Password', 'dhis2_password')
 
-// Both enableAutoLogin() and enableNetworkShim() (and cypress.config.js's
-// matching networkShim(on, ...) plugin registration) read the camelCase
-// keys from Cypress.env() themselves once bridged above, so no explicit
-// options need passing here any more.
 enableAutoLogin()
 
-// Records every request/response to the DHIS2 instance under
-// cypress/fixtures/network/<apiVersion>/ in `networkMode=capture`, and
-// replays those recorded responses (including the header bar's own
-// api/me, me/dashboard, getModules, etc. - see
-// @dhis2/cypress-plugins's networkShim getDefaultStaticResources()) in
-// `networkMode=stub`. No-ops entirely in `networkMode=live` (the default),
-// so requests hit the real server as normal. This replaces the old
-// hand-rolled per-page cy.stubWithFixture/cy.intercept calls and the
-// removed cypress/support/stubHeaderBar.js - run `yarn cypress:run:capture`
-// once against a real instance before `yarn cypress:run:stub` will have
-// anything to replay.
 enableNetworkShim()

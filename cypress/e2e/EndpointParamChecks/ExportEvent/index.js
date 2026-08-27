@@ -38,6 +38,20 @@ Given('the user expands the root level of the org unit tree', () => {
     cy.get('[data-test="input-org-unit-tree-node-toggle"]').first().click()
 })
 
+Given('the program stages have finished loading', () => {
+    cy.wait('@programStagesXHR')
+})
+
+Given('the program stage selection is cleared', () => {
+    cy.getAliases('@defaultData', '@changedData').then(([, changedData]) => {
+        cy.wrap({ ...changedData, programStages: '' }).as('changedData')
+    })
+})
+
+Then('the program stage input is hidden', () => {
+    cy.get('[data-test="input-program-stage-select"]').should('not.exist')
+})
+
 const boId = 'O6uvpzGd5pu'
 When('the user selects the "Bo" org unit', () => {
     cy.get(

@@ -30,15 +30,22 @@ Feature: The user should be able to export events
         Then the download request is sent with the right parameters
 
     Scenario: The user selects a different program
-        Given the "program" input is set to "Child Programme"
-        And the "programStages" input is set to "Baby Postnatal"
+        Given the "program" input is set to "MNCH / PNC (Adult Woman)"
+        And the "programStages" input is set to "PNC Visit"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
-    # Scenario: The user selects a different program stage
-    #     Given the "programStages" input is set to "Antenatal care visit"
-    #     When the export form is submitted
-    #     Then the download request is sent with the right parameters
+    Scenario: The user selects an event program
+        Given the "program" input is set to "Antenatal care visit"
+        And the program stages have finished loading
+        Then the program stage input is hidden
+
+    Scenario: The user submits an event program
+        Given the "program" input is set to "Antenatal care visit"
+        And the program stages have finished loading
+        And the program stage selection is cleared
+        When the export form is submitted
+        Then the download request is sent with the right parameters
 
     Scenario: The user selects a different id scheme
         Given the "idScheme" input is set to "Code"

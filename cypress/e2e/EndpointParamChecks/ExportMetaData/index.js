@@ -90,6 +90,8 @@ Then('the download request is sent with the right parameters', () => {
         cy.getComparisonData(requestUrl).then(
             ({ actual, expected: allExpected }) => {
                 const { format, compression, ...expected } = allExpected
+                console.log('actual', JSON.stringify(actual))
+                console.log('expected', JSON.stringify(expected))
                 expect(actual).to.deep.equal({
                     ...expected,
                     download: 'true',

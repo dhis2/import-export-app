@@ -28,9 +28,14 @@ Feature: The user should be able to export tracked entity instances
         And the export form is submitted
         Then the download request is sent with the right parameters
 
-    Scenario: The user selects "Include children of selected organisation units"
+    Scenario: The user selects "Capture" mode for organisation units
               as organisation unit selection mode
         Given the "orgUnitMode" input is set to "CAPTURE"
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The user selects "All below" as the organisation unit inclusion mode
+        Given the "inclusion" input is set to "DESCENDANTS"
         When the export form is submitted
         Then the download request is sent with the right parameters
 
