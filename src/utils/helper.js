@@ -192,7 +192,7 @@ const locationAssign = (url, blob) => {
                 : url
 
             const urlFilePart = new URL(downloadUrl).pathname.split('/').pop()
-            const [, filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+            const [filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
 
             const objectUrl = blob ? URL.createObjectURL(blob) : undefined
 
