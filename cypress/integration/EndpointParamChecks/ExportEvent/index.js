@@ -7,6 +7,7 @@ const orgUnitsRootApi =
     /\/organisationUnits\?filter=level:eq:1&fields=id,path,displayName,children::isNotEmpty&paging=false/
 const programsApi = /\/programs\?/
 const programStagesApi = /\/programs\/[a-zA-Z0-9]+/
+const eventsApi = /\/api\/tracker\/events/
 
 Before(() => {
     cy.server()
@@ -30,6 +31,11 @@ Before(() => {
         url: programStagesApi,
         fixture: 'programStages',
     }).as('programStagesXHR')
+
+    cy.intercept(eventsApi, {
+        statusCode: 200,
+        body: '{}',
+    }).as('downloadXHR')
 })
 
 Given('the user is on the event export page', () => {
@@ -72,6 +78,26 @@ When('the export form is submitted', () => {
         win.locationAssign = locationAssignStub
         cy.get('[data-test="input-export-submit"]').click()
     })
+    cy.wait('@downloadXHR')
+})
+
+Given('the event export request will fail', () => {
+    cy.intercept(eventsApi, {
+        statusCode: 409,
+        body: {
+            httpStatus: 'Conflict',
+            httpStatusCode: 409,
+            status: 'ERROR',
+            message: 'Could not find an id for CODE on Data Element.',
+        },
+    }).as('downloadXHR')
+})
+
+Then('a warning alert is shown with the error message', () => {
+    cy.get('[data-test="input-form-alerts"]').should(
+        'contain',
+        'Could not find an id for CODE on Data Element.'
+    )
 })
 
 Then('the download request is sent with the right parameters', () => {

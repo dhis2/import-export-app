@@ -182,7 +182,7 @@ const uploadFile = ({
 }
 
 // call stub function if available
-const locationAssign = (url) => {
+const locationAssign = (url, blob) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
@@ -192,13 +192,19 @@ const locationAssign = (url) => {
                 : url
 
             const urlFilePart = new URL(downloadUrl).pathname.split('/').pop()
-            const [, filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+            const [filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+
+            const objectUrl = blob ? URL.createObjectURL(blob) : undefined
 
             const link = document.createElement('a')
-            link.href = downloadUrl
+            link.href = objectUrl || downloadUrl
             link.download = filename
             link.target = '_blank'
             link.click()
+
+            if (objectUrl) {
+                setTimeout(() => URL.revokeObjectURL(objectUrl), 0)
+            }
 
             return link
         } catch (err) {
