@@ -20,10 +20,15 @@ const onImport =
         const params = [
             `async=${isAsync}`,
             `importMode=${dryRun ? 'validate' : 'commit'}`,
-            `dataElementIdScheme=${dataElementIdScheme}`,
-            `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `idScheme=${idScheme}`,
-        ].join('&')
+            // an empty value means "(Default)" was picked - omit the param
+            dataElementIdScheme
+                ? `dataElementIdScheme=${dataElementIdScheme}`
+                : '',
+            orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
+            idScheme ? `idScheme=${idScheme}` : '',
+        ]
+            .filter((s) => s != '')
+            .join('&')
         const url = `${apiBaseUrl}?${params}`
 
         try {

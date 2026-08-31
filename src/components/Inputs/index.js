@@ -71,6 +71,26 @@ export {
     OrgUnitIdScheme,
     defaultOrgUnitIdSchemeOption,
 } from './OrgUnitIdScheme.jsx'
+export {
+    CategoryIdScheme,
+    defaultCategoryIdSchemeOption,
+} from './CategoryIdScheme.jsx'
+export {
+    CategoryOptionIdScheme,
+    defaultCategoryOptionIdSchemeOption,
+} from './CategoryOptionIdScheme.jsx'
+export {
+    CategoryOptionComboIdScheme,
+    defaultCategoryOptionComboIdSchemeOption,
+} from './CategoryOptionComboIdScheme.jsx'
+export {
+    DataSetIdScheme,
+    defaultDataSetIdSchemeOption,
+} from './DataSetIdScheme.jsx'
+export {
+    AttributeOptionComboIdScheme,
+    defaultAttributeOptionComboIdSchemeOption,
+} from './AttributeOptionComboIdScheme.jsx'
 export { OrgUnitIdSchemeCore } from './OrgUnitIdSchemeCore.jsx'
 export {
     OrgUnitMode,

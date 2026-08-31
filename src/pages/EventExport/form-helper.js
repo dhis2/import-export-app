@@ -33,9 +33,11 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,
         `program=${selectedPrograms}`,
         `includeDeleted=${includeDeleted}`,
-        `dataElementIdScheme=${dataElementIdScheme}`,
-        `orgUnitIdScheme=${orgUnitIdScheme}`,
-        `idScheme=${idScheme}`,
+        // an empty ID scheme value means "(Default)" was picked - omit the
+        // param so the server applies its own default for that object type
+        dataElementIdScheme ? `dataElementIdScheme=${dataElementIdScheme}` : '',
+        orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
+        idScheme ? `idScheme=${idScheme}` : '',
         `occurredAfter=${occurredAfter}`,
         `occurredBefore=${occurredBefore}`,
         `orgUnitMode=${inclusion}`,

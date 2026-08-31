@@ -36,12 +36,18 @@ const valuesToParams = ({
         orgUnitMode: orgUnitMode,
         format: format,
         includeDeleted: includeDeleted.toString(),
-        dataElementIdScheme: dataElementIdScheme,
-        orgUnitIdScheme: orgUnitIdScheme,
-        idScheme: idScheme,
         paging: false,
         totalPages: false,
     }
+
+    // an empty ID scheme value means "(Default)" was picked - omit the param
+    // so the server applies its own default for that object type
+    const idSchemes = { dataElementIdScheme, orgUnitIdScheme, idScheme }
+    Object.entries(idSchemes).forEach(([param, value]) => {
+        if (value) {
+            minParams[param] = value
+        }
+    })
 
     // include selected org.units only when manual selection is selected
     // orgUnitMode is then stored in the `inclusion` field
