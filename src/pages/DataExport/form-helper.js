@@ -19,11 +19,29 @@ const valuesToParams = ({
     dataElementIdScheme,
     orgUnitIdScheme,
     idScheme,
+    categoryIdScheme,
+    categoryOptionIdScheme,
+    categoryOptionComboIdScheme,
+    dataSetIdScheme,
+    attributeOptionComboIdScheme,
 }) =>
     [
-        `dataElementIdScheme=${dataElementIdScheme}`,
-        `orgUnitIdScheme=${orgUnitIdScheme}`,
-        `idScheme=${idScheme}`,
+        // an empty ID scheme value means "(Default)" was picked - omit the
+        // param so the server applies its own default for that object type
+        dataElementIdScheme ? `dataElementIdScheme=${dataElementIdScheme}` : '',
+        orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
+        idScheme ? `idScheme=${idScheme}` : '',
+        categoryIdScheme ? `categoryIdScheme=${categoryIdScheme}` : '',
+        categoryOptionIdScheme
+            ? `categoryOptionIdScheme=${categoryOptionIdScheme}`
+            : '',
+        categoryOptionComboIdScheme
+            ? `categoryOptionComboIdScheme=${categoryOptionComboIdScheme}`
+            : '',
+        dataSetIdScheme ? `dataSetIdScheme=${dataSetIdScheme}` : '',
+        attributeOptionComboIdScheme
+            ? `attributeOptionComboIdScheme=${attributeOptionComboIdScheme}`
+            : '',
         `includeDeleted=${includeDeleted}`,
         `children=${includeChildren}`,
         `startDate=${startDate}`,
