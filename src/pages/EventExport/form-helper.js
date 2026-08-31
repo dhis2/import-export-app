@@ -3,22 +3,7 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { ALL_VALUE } from '../../hooks/useProgramStages.js'
-import { FORM_ERROR } from '../../utils/final-form.js'
-import {
-    genericErrorMessage,
-    locationAssign,
-    pathToId,
-} from '../../utils/helper.js'
-
-const exportErrorAlert = (message) => ({
-    [FORM_ERROR]: [
-        {
-            id: `event-export-error-${Date.now()}`,
-            warning: true,
-            message,
-        },
-    ],
-})
+import { fetchAndDownload, pathToId } from '../../utils/helper.js'
 
 const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
@@ -61,30 +46,12 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
 
     try {
-        const response = await fetch(url, { credentials: 'include' })
-
-        if (!response.ok) {
-            let message = genericErrorMessage
-            try {
-                const body = await response.json()
-                message = body.message || message
-            } catch (e) {
-                // response body wasn't JSON, fall back to the generic message
-                console.error('event-export: failed to parse error response', e)
-            }
-            return exportErrorAlert(message)
-        }
-
-        const blob = await response.blob()
-        locationAssign(url, blob)
+        return await fetchAndDownload(url, 'event')
+    } finally {
+        setExportEnabled(true)
 
         // log for debugging purposes
         console.log('event-export:', { url, params: downloadUrlParams })
-    } catch (e) {
-        console.error('event-export: request failed', e)
-        return exportErrorAlert(genericErrorMessage)
-    } finally {
-        setExportEnabled(true)
     }
 }
 

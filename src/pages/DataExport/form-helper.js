@@ -3,7 +3,7 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField.jsx'
 import {
-    locationAssign,
+    fetchAndDownload,
     compressionToName,
     pathToId,
 } from '../../utils/helper.js'
@@ -44,11 +44,15 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     const downloadUrlParams = valuesToParams(values)
     const endpointExtension = values.format
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-    locationAssign(url)
-    setExportEnabled(true)
 
-    // log for debugging purposes
-    console.log('data-export:', { url, params: downloadUrlParams })
+    try {
+        return await fetchAndDownload(url, 'data')
+    } finally {
+        setExportEnabled(true)
+
+        // log for debugging purposes
+        console.log('data-export:', { url, params: downloadUrlParams })
+    }
 }
 
 const validate = (values) => ({
