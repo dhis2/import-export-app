@@ -1,3 +1,21 @@
+## [101.4.1](https://github.com/dhis2/import-export-app/compare/v101.4.0...v101.4.1) (2026-08-28)
+
+
+### Bug Fixes
+
+* add alert when call fails for event export ([8949eb5](https://github.com/dhis2/import-export-app/commit/8949eb52ce0969790df84e5856f56477a6e4ed4c))
+* event export duplicate fetch request ([4160236](https://github.com/dhis2/import-export-app/commit/4160236dd6feb3a5e7fcc61c54ce31a406fba091))
+* full filename with extension ([94025f7](https://github.com/dhis2/import-export-app/commit/94025f71bd13342210feecb946f642fbda204827))
+* sonar ([b90c138](https://github.com/dhis2/import-export-app/commit/b90c138a3a5983750a5b24a32c13f31c5e0c1b4d))
+* update filename test ([7801306](https://github.com/dhis2/import-export-app/commit/7801306924d64b5d4c1f58e56978620850816b8e))
+
+# [101.4.0](https://github.com/dhis2/import-export-app/compare/v101.3.11...v101.4.0) (2026-08-27)
+
+
+### Features
+
+* add new shortcuts ([#2279](https://github.com/dhis2/import-export-app/issues/2279)) ([eb56417](https://github.com/dhis2/import-export-app/commit/eb56417e8f60e146377bd4b51969b17838237739))
+
 ## [101.3.11](https://github.com/dhis2/import-export-app/compare/v101.3.10...v101.3.11) (2026-08-26)
 
 

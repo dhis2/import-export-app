@@ -27,6 +27,18 @@ const config = {
             name: 'Metadata export	',
             url: '#/export/metadata',
         },
+        {
+            name: 'Event import',
+            url: '#/import/event',
+        },
+        {
+            name: 'Event export',
+            url: '#/export/event',
+        },
+        {
+            name: 'Metadata dependency export',
+            url: '#/export/metadata-dependency',
+        },
     ],
 }
 

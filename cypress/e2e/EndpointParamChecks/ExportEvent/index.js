@@ -14,6 +14,15 @@ import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
 // the test something to alias and cy.wait() on.
 const programsApi = /\/programs\?/
 const programStagesApi = /\/programs\/[a-zA-Z0-9]+/
+// The actual download request built by onExport (see
+// src/pages/EventExport/form-helper.js's `${apiBaseUrl}${endpoint}.${endpointExtension}?...`,
+// where endpoint is the literal "events") - matches e.g.
+// /api/tracker/events.json.zip?... Unlike the plain locationAssign(url)
+// pages (ExportData/ExportTEI/ExportMetaData/...), this page's onExport
+// actually awaits a real `fetch(url)` for the download *before* calling
+// locationAssign, so this can be intercepted and forced to fail to test
+// the error-alert path.
+const eventsApi = /\/api\/tracker\/events\.[^?]+\?/
 
 Given('the user is on the event export page', () => {
     cy.intercept(programsApi).as('programsXHR')
@@ -75,9 +84,20 @@ When('the export form is submitted', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
+    // Unlike the other export pages (ExportData/ExportTEI/ExportMetaData/...),
+    // which call locationAssign(url) synchronously from a plain onSubmit,
+    // EventExport's onExport is async and does `await fetch(url)` and
+    // `await response.blob()` *before* calling locationAssign (see
+    // src/pages/EventExport/form-helper.js) - clicking submit resolves as
+    // soon as the click event is dispatched, not once that async chain has
+    // actually finished. A bare synchronous `expect(...).to.be.calledOnce`
+    // right after the click can therefore run before locationAssign has
+    // been called yet, so this needs a retrying `cy.should()` instead to
+    // actually wait for it - not just any resolved `cy.get('@alias').then()`.
+    cy.get('@locationAssign').should('have.been.calledOnce')
+
     cy.window().then((win) => {
         cy.get('@locationAssign').then((locationAssignStub) => {
-            expect(locationAssignStub).to.be.calledOnce
             const call = locationAssignStub.getCall(0)
             const url = call.args[0]
 
@@ -120,4 +140,38 @@ Then('the download request is sent with the right parameters', () => {
             )
         })
     })
+})
+
+Given('the event export request will fail', () => {
+    cy.intercept(eventsApi, {
+        statusCode: 409,
+        body: {
+            httpStatus: 'Conflict',
+            httpStatusCode: 409,
+            status: 'ERROR',
+            message: 'Could not find an id for CODE on Data Element.',
+        },
+    }).as('downloadXHR')
+})
+
+Then('a warning alert is shown with the error message', () => {
+    cy.wait('@downloadXHR')
+
+    // src/components/Inputs/FormAlerts.jsx sets DATATEST to
+    // "input-form-alerts" and passes it down as the `dataTest` prop -
+    // src/components/FormAlerts/FormAlerts.jsx now forwards that correctly
+    // to @dhis2-ui's AlertStack as `dataTest={dataTest}` (previously a
+    // kebab-case `data-test={dataTest}` typo there meant AlertStack always
+    // fell back to its own default "dhis2-uicore-alertstack" instead -
+    // fixed directly in src/).
+    cy.get('[data-test="input-form-alerts"]').should(
+        'contain',
+        'Could not find an id for CODE on Data Element.'
+    )
+
+    // onExport only calls locationAssign(url, blob) after a successful
+    // fetch (see form-helper.js's `if (!response.ok) { ...return
+    // exportErrorAlert(message) }`) - on a failed request it should bail
+    // out with the alert above instead of still triggering a download.
+    cy.get('@locationAssign').should('not.have.been.called')
 })

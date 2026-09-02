@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const FormAlerts = ({ alerts, dataTest }) => (
-    <AlertStack data-test={dataTest}>
+    <AlertStack dataTest={dataTest}>
         {alerts &&
             alerts.map((a) => (
                 <AlertBar

@@ -3,9 +3,24 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { ALL_VALUE } from '../../hooks/useProgramStages.js'
-import { locationAssign, pathToId } from '../../utils/helper.js'
+import { FORM_ERROR } from '../../utils/final-form.js'
+import {
+    genericErrorMessage,
+    locationAssign,
+    pathToId,
+} from '../../utils/helper.js'
 
-const onExport = (baseUrl, setExportEnabled) => (values) => {
+const exportErrorAlert = (message) => ({
+    [FORM_ERROR]: [
+        {
+            id: `event-export-error-${Date.now()}`,
+            warning: true,
+            message,
+        },
+    ],
+})
+
+const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
 
     const {
@@ -44,11 +59,33 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
         .filter((s) => s != '')
         .join('&')
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-    locationAssign(url)
-    setExportEnabled(true)
 
-    // log for debugging purposes
-    console.log('event-export:', { url, params: downloadUrlParams })
+    try {
+        const response = await fetch(url, { credentials: 'include' })
+
+        if (!response.ok) {
+            let message = genericErrorMessage
+            try {
+                const body = await response.json()
+                message = body.message || message
+            } catch (e) {
+                // response body wasn't JSON, fall back to the generic message
+                console.error('event-export: failed to parse error response', e)
+            }
+            return exportErrorAlert(message)
+        }
+
+        const blob = await response.blob()
+        locationAssign(url, blob)
+
+        // log for debugging purposes
+        console.log('event-export:', { url, params: downloadUrlParams })
+    } catch (e) {
+        console.error('event-export: request failed', e)
+        return exportErrorAlert(genericErrorMessage)
+    } finally {
+        setExportEnabled(true)
+    }
 }
 
 const validate = (values) => ({
