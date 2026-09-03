@@ -1,0 +1,48 @@
+Feature: The user should be able to export meta data
+
+    # Use defaults explicitly
+    Background:
+        Given the user is on the meta data export page
+        And the more options are visible
+        And the following options are set
+            | name              | value    |
+            | format            | json     |
+            | compression       | zip      |
+            | skipSharing       | false    |
+            | inclusionStrategy | NON_NULL |
+        And all schemas have been selected
+
+    Scenario: The user submits the form with the default values
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The user deselects all schemas
+        Given the schemas are all deselected
+        When the export form is submitted
+        Then the download request is not sent
+
+    Scenario: The user selects only the first schema
+        Given the schemas are all deselected
+        And the category option schema is selected
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The user selects a no compression
+        Given the "compression" input is set to ""
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The user selects a different sharing option
+        Given the "skipSharing" input is set to "true"
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The user selects a different inclusion strategy
+        Given the "inclusionStrategy" input is set to "ALWAYS"
+        When the export form is submitted
+        Then the download request is sent with the right parameters
+
+    Scenario: The export request fails
+        Given the meta data export request will fail
+        When the export form is submitted
+        Then a warning alert is shown with the error message

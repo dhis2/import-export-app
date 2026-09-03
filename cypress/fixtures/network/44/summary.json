@@ -1,0 +1,23 @@
+{
+    "count": 1899,
+    "totalResponseSize": 13602771,
+    "duplicates": 1670,
+    "nonDeterministicResponses": 129,
+    "apiVersion": "44",
+    "fixtureFiles": [
+        "static_resources.json",
+        "offer_attributes_as_options_in_data_element_id_scheme_input.json",
+        "offer_common_attributes_as_options_in_id_scheme_input.json",
+        "offer_attributes_as_options_in_organisation_unit_id_scheme_input.json",
+        "the_user_should_be_able_to_export_data.json",
+        "the_user_should_be_able_to_export_events.json",
+        "the_user_should_be_able_to_export_meta_data.json",
+        "the_user_should_be_able_to_meta_data_dependency_events.json",
+        "the_user_should_be_able_to_export_tracked_entity_instances.json",
+        "the_user_should_be_able_to_import_data_data.json",
+        "the_user_should_be_able_to_import_events.json",
+        "the_user_should_be_able_to_import_gml.json",
+        "the_user_should_be_able_to_import_meta_data.json",
+        "the_user_should_be_able_to_import_tracked_entity_instances.json"
+    ]
+}

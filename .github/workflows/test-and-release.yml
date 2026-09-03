@@ -14,6 +14,13 @@ jobs:
         uses: dhis2/workflows-platform/.github/workflows/lint.yml@v1
     test:
         uses: dhis2/workflows-platform/.github/workflows/test.yml@v1
+    e2e:
+        uses: dhis2/workflows-platform/.github/workflows/legacy-e2e.yml@v1
+        # Skips forks and dependabot PRs
+        if: '!github.event.push.repository.fork'
+        secrets: inherit
+        with:
+            api_version: 44
     release:
         needs: [lint-commits, lint, test]
         uses: dhis2/workflows-platform/.github/workflows/release.yml@v1
