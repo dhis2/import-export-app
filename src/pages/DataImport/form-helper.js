@@ -29,9 +29,12 @@ const onImport =
             `strategy=${strategy}`,
             `preheatCache=${preheatCache}`,
             `skipAudit=${skipAudit}`,
-            `dataElementIdScheme=${dataElementIdScheme}`,
-            `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `idScheme=${idScheme}`,
+            // an empty value means "(Default)" was picked - omit the param
+            dataElementIdScheme
+                ? `dataElementIdScheme=${dataElementIdScheme}`
+                : '',
+            orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
+            idScheme ? `idScheme=${idScheme}` : '',
             `skipExistingCheck=${skipExistingCheck}`,
             format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
         ]
