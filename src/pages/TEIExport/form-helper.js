@@ -4,7 +4,7 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
-import { locationAssign, pathToId } from '../../utils/helper.js'
+import { fetchAndDownload, pathToId } from '../../utils/helper.js'
 
 // calculate minimum set of parameters based on given filters
 const valuesToParams = ({
@@ -112,11 +112,15 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     const endpoint = `trackedEntities`
     const downloadUrlParams = valuesToParams(values)
     const url = `${apiBaseUrl}${endpoint}.${format}?${downloadUrlParams}`
-    locationAssign(url)
-    setExportEnabled(true)
 
-    // log for debugging purposes
-    console.log('tei-export:', { url, params: downloadUrlParams })
+    try {
+        return await fetchAndDownload(url, 'tei')
+    } finally {
+        setExportEnabled(true)
+
+        // log for debugging purposes
+        console.log('tei-export:', { url, params: downloadUrlParams })
+    }
 }
 
 const validate = (values) => {

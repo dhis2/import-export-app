@@ -1,4 +1,5 @@
-import { formatNumber, locationAssign } from './helper.js'
+import { FORM_ERROR } from './final-form.js'
+import { fetchAndDownload, formatNumber, locationAssign } from './helper.js'
 
 describe('formatNumber', () => {
     it('adds digit group separators to numbers', () => {
@@ -77,5 +78,66 @@ describe('locationAssign', () => {
             '../api/tracker/events.json.zip?paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED'
         const link = locationAssign(url)
         expect(link.download).toEqual('events.json.zip')
+    })
+})
+
+describe('fetchAndDownload', () => {
+    const url = 'https://debug.dhis2.org/dev/api/metadata.json'
+
+    afterEach(() => {
+        global.fetch.mockRestore?.()
+        delete global.fetch
+    })
+
+    it('downloads the file and returns no error when the response is ok', async () => {
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            blob: () => Promise.resolve(new Blob(['{}'])),
+        })
+
+        const result = await fetchAndDownload(url, 'metadata')
+
+        expect(global.fetch).toHaveBeenCalledWith(url, {
+            credentials: 'include',
+        })
+        expect(result).toBeUndefined()
+    })
+
+    it('returns a form error with the server message when the response is not ok', async () => {
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: false,
+            json: () => Promise.resolve({ message: 'Conflict occurred' }),
+        })
+
+        const result = await fetchAndDownload(url, 'metadata')
+
+        expect(result[FORM_ERROR]).toHaveLength(1)
+        expect(result[FORM_ERROR][0]).toMatchObject({
+            warning: true,
+            message: 'Conflict occurred',
+        })
+    })
+
+    it('falls back to a generic message when the error response has no JSON body', async () => {
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: false,
+            json: () => Promise.reject(new Error('not json')),
+        })
+
+        const result = await fetchAndDownload(url, 'metadata')
+
+        expect(result[FORM_ERROR][0].message).toEqual(
+            'An unknown error occurred. Please try again later'
+        )
+    })
+
+    it('returns a form error when the request itself fails', async () => {
+        global.fetch = jest.fn().mockRejectedValue(new Error('network down'))
+
+        const result = await fetchAndDownload(url, 'metadata')
+
+        expect(result[FORM_ERROR][0].message).toEqual(
+            'An unknown error occurred. Please try again later'
+        )
     })
 })

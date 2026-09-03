@@ -19,6 +19,7 @@ import {
     InclusionStrategy,
     defaultInclusionStrategyOption,
     ExportButton,
+    FormAlerts,
 } from '../../components/Inputs/index.js'
 import { onExport } from './form-helper.js'
 
@@ -56,7 +57,11 @@ const MetadataExport = () => {
             <Form
                 onSubmit={onSubmit}
                 initialValues={initialValues}
-                render={({ handleSubmit }) => (
+                subscription={{
+                    values: true,
+                    submitError: true,
+                }}
+                render={({ handleSubmit, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <Schemas />
                         <Format availableFormats={formatNoXmlNoCsvOptions} />
@@ -70,6 +75,7 @@ const MetadataExport = () => {
                             label={i18n.t('Export metadata')}
                             disabled={!exportEnabled}
                         />
+                        <FormAlerts alerts={submitError} />
                     </form>
                 )}
             />

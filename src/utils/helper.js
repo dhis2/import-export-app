@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { FORM_ERROR } from './final-form.js'
 import { getUploadXHR } from './xhr.js'
 
 const trimString = (length, string) =>
@@ -214,6 +215,46 @@ const locationAssign = (url, blob) => {
     }
 }
 
+const exportErrorAlert = (source, message) => ({
+    [FORM_ERROR]: [
+        {
+            id: `${source}-export-error-${Date.now()}`,
+            warning: true,
+            message,
+        },
+    ],
+})
+
+// fetches the export URL, and only triggers the download if the server
+// responded with a success status otherwise returns an error alert
+const fetchAndDownload = async (url, source) => {
+    try {
+        const response = await fetch(url, { credentials: 'include' })
+
+        if (!response.ok) {
+            let message = genericErrorMessage
+            try {
+                const body = await response.json()
+                message = body.message || message
+            } catch (e) {
+                // response body wasn't JSON, fall back to the generic message
+                console.error(
+                    `${source}-export: failed to parse error response`,
+                    e
+                )
+            }
+            return exportErrorAlert(source, message)
+        }
+
+        const blob = await response.blob()
+        locationAssign(url, blob)
+        return undefined
+    } catch (e) {
+        console.error(`${source}-export: request failed`, e)
+        return exportErrorAlert(source, genericErrorMessage)
+    }
+}
+
 const getPrevJobDetails = (query, tasks) => {
     if (!query || !query.id) {
         return {}
@@ -245,6 +286,7 @@ const formatNumber = (value, locale) => {
 
 export {
     fetchAttributes,
+    fetchAndDownload,
     getPrevJobDetails,
     getInitialBoolValue,
     formatNumber,

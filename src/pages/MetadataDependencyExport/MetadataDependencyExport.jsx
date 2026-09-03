@@ -18,6 +18,7 @@ import {
     Objects,
     SkipSharing,
     ExportButton,
+    FormAlerts,
 } from '../../components/Inputs/index.js'
 import { onExport } from './form-helper.js'
 
@@ -56,8 +57,9 @@ const MetadataDependencyExport = () => {
                 initialValues={initialValues}
                 subscription={{
                     values: true,
+                    submitError: true,
                 }}
-                render={({ handleSubmit, form, values }) => (
+                render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <ObjectType />
                         <Objects objectType={values.objectType} form={form} />
@@ -69,6 +71,7 @@ const MetadataDependencyExport = () => {
                             label={i18n.t('Export metadata dependencies')}
                             disabled={!exportEnabled}
                         />
+                        <FormAlerts alerts={submitError} />
                     </form>
                 )}
             />
