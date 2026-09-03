@@ -41,3 +41,8 @@ Feature: The user should be able to export meta data
         Given the "inclusionStrategy" input is set to "ALWAYS"
         When the export form is submitted
         Then the download request is sent with the right parameters
+
+    Scenario: The export request fails
+        Given the meta data export request will fail
+        When the export form is submitted
+        Then a warning alert is shown with the error message

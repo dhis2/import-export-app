@@ -1,8 +1,8 @@
 {
-    "count": 1783,
-    "totalResponseSize": 133684,
-    "duplicates": 1609,
-    "nonDeterministicResponses": 118,
+    "count": 1899,
+    "totalResponseSize": 13602771,
+    "duplicates": 1670,
+    "nonDeterministicResponses": 129,
     "apiVersion": "44",
     "fixtureFiles": [
         "static_resources.json",

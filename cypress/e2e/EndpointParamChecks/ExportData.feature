@@ -77,3 +77,8 @@ Feature: The user should be able to export data
         Given the "idScheme" input is set to "Code"
         When the export form is submitted
         Then the download request is sent with the right parameters
+
+    Scenario: The export request fails
+        Given the data export request will fail
+        When the export form is submitted
+        Then a warning alert is shown with the error message

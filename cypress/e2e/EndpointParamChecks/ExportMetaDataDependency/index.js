@@ -29,6 +29,20 @@ const dataSetsApi = /\/dataSets\?/
 // "different object type" scenario has an alias to wait on.
 const programsApi = /\/programs\?/
 
+// The actual download request built by onExport (see
+// src/pages/MetadataDependencyExport/form-helper.js's
+// `${apiBaseUrl}${endpoint}.${endpointExtension}?...`, where endpoint is
+// `${objectType}/${object}/metadata`) - matches e.g.
+// /api/dataSets/<id>/metadata.json.zip?... . Since commit
+// 9661c61877496d991a29e5403cc331b4429bf73d ("feat: fetch download or error
+// alert function") and 0a1d6de5615d8cdac1185b2befc98a1ee4e7e87e ("feat: add
+// form error alert export pages"), onExport now awaits a real fetch(url)
+// for the download (via fetchAndDownload, see src/utils/helper.js) and
+// only calls locationAssign(url, blob) once that succeeds - previously the
+// comment above claimed this endpoint never actually got hit, but it now
+// is, so this can be intercepted below to force it to fail.
+const metadataDependencyApi = /\/api\/[^/]+\/[^/]+\/metadata\.[^?]+\?/
+
 Given('the user is on the meta data dependency export page', () => {
     cy.intercept(dataSetsApi).as('dataSetsXHR')
     cy.intercept(programsApi).as('programsXHR')
@@ -50,9 +64,10 @@ When('the export form is submitted', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
+    cy.get('@locationAssign').should('have.been.calledOnce')
+
     cy.window().then((win) => {
         cy.get('@locationAssign').then((locationAssignStub) => {
-            expect(locationAssignStub).to.be.calledOnce
             const call = locationAssignStub.getCall(0)
             const url = call.args[0]
             const [objectType, objectList, format, _, compression] = url
@@ -85,4 +100,27 @@ Then('the download request is sent with the right parameters', () => {
             })
         })
     })
+})
+
+Given('the metadata dependency export request will fail', () => {
+    cy.intercept(metadataDependencyApi, {
+        statusCode: 409,
+        body: {
+            httpStatus: 'Conflict',
+            httpStatusCode: 409,
+            status: 'ERROR',
+            message: 'Could not export metadata dependencies.',
+        },
+    }).as('downloadXHR')
+})
+
+Then('a warning alert is shown with the error message', () => {
+    cy.wait('@downloadXHR')
+
+    cy.get('[data-test="input-form-alerts"]').should(
+        'contain',
+        'Could not export metadata dependencies.'
+    )
+
+    cy.get('@locationAssign').should('not.have.been.called')
 })

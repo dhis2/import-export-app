@@ -5,13 +5,45 @@ import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
 // from the real server via enableNetworkShim() (see cypress/support/e2e.js)
 // - it records every request in `networkMode=capture` and replays the
 // recorded responses in `networkMode=stub`, so this spec no longer needs
-// its own cy.stubWithFixture()s for them. The download endpoint
-// (trackedEntities) never actually gets hit either way, live or stubbed -
-// "the export form is submitted" below fully replaces window.locationAssign
-// before clicking submit, so the browser never issues that request at all.
+// its own cy.stubWithFixture()s for them.
+//
+// The download endpoint (trackedEntities) previously never actually got
+// hit, live or stubbed - "the export form is submitted" below replaces
+// window.locationAssign before clicking submit, so no navigation was ever
+// triggered. Since commit 9661c61877496d991a29e5403cc331b4429bf73d
+// ("feat: fetch download or error alert function") and
+// 0a1d6de5615d8cdac1185b2befc98a1ee4e7e87e ("feat: add form error alert
+// export pages"), onExport now awaits a real fetch(url) for the download
+// (via fetchAndDownload, see src/utils/helper.js) and only calls
+// locationAssign(url, blob) once that succeeds - so this request is
+// actually sent, and can be intercepted below to force it to fail.
+const trackedEntitiesApi = /\/api\/tracker\/trackedEntities\.[^?]+\?/
+
+// Registered as a pass-through observer from page load (same pattern as
+// dataSetsApi/programsApi in ExportMetaDataDependency/index.js) so
+// "the tracked entity types list has loaded" below has something to wait
+// on - enableNetworkShim() answers the actual request/response, this just
+// gives the test an alias to cy.wait() on.
+const trackedEntityTypesApi = /\/trackedEntityTypes\?/
 
 Given('the user is on the tracked entity instances export page', () => {
+    cy.intercept(trackedEntityTypesApi).as('trackedEntityTypesXHR')
     cy.visitPage('export', 'Tracked entity')
+})
+
+// Setting "teiTypeFilter" to "TE" lazily triggers a GET to
+// /api/44/trackedEntityTypes to populate the TETypePicker (see
+// src/components/Inputs/TETypePicker.jsx / ResourcePicker.jsx). Nothing
+// waited on that fetch before, which is fast enough not to matter in
+// live/stub mode, but in `networkMode=capture` captureRequests.js's async
+// per-request bookkeeping (buffering + scrubbing the response body,
+// scanning existing stubs for duplicates before releasing the reply) adds
+// just enough latency to occasionally lose the race against selecting
+// "Person" from a still-populating dropdown (same class of flake as the
+// "different object type" scenario note in
+// ExportMetaDataDependency/index.js).
+Given('the tracked entity types list has loaded', () => {
+    cy.wait('@trackedEntityTypesXHR')
 })
 
 const sierraId = 'ImspTQPwCqd'
@@ -155,4 +187,27 @@ Then('the download request is sent with the right parameters', () => {
             }
         )
     })
+})
+
+Given('the tracked entity instances export request will fail', () => {
+    cy.intercept(trackedEntitiesApi, {
+        statusCode: 409,
+        body: {
+            httpStatus: 'Conflict',
+            httpStatusCode: 409,
+            status: 'ERROR',
+            message: 'Could not find an id for CODE on Tracked Entity.',
+        },
+    }).as('downloadXHR')
+})
+
+Then('a warning alert is shown with the error message', () => {
+    cy.wait('@downloadXHR')
+
+    cy.get('[data-test="input-form-alerts"]').should(
+        'contain',
+        'Could not find an id for CODE on Tracked Entity.'
+    )
+
+    cy.get('@locationAssignStub').should('not.have.been.called')
 })

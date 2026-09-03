@@ -80,7 +80,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837219958)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837219958)\",\"id\":\"qC3gXY9C7oL\",\"created\":\"2026-08-27T15:26:59.958\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/qC3gXY9C7oL\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1788443396405)\",\"response\":{\"name\":\"METADATA_IMPORT (1788443396405)\",\"id\":\"F7lLj2zai56\",\"created\":\"2026-09-03T15:49:56.405\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/F7lLj2zai56\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 699,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -94,7 +94,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/qC3gXY9C7oL",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/F7lLj2zai56",
         "featureName": "The user should be able to import GML",
         "static": false,
         "count": 1,
@@ -143,7 +143,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1787837221772)\",\"response\":{\"name\":\"METADATA_IMPORT (1787837221772)\",\"id\":\"T55uyl7g4yF\",\"created\":\"2026-08-27T15:27:01.772\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/T55uyl7g4yF\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated METADATA_IMPORT (1788443403677)\",\"response\":{\"name\":\"METADATA_IMPORT (1788443403677)\",\"id\":\"pK5fJzY2iOW\",\"created\":\"2026-09-03T15:50:03.677\",\"jobType\":\"METADATA_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"firstRowIsHeader\":true},\"relativeNotifierEndpoint\":\"/api/system/tasks/METADATA_IMPORT/pK5fJzY2iOW\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 699,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -157,7 +157,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/METADATA_IMPORT/T55uyl7g4yF",
+        "path": "/api/44/system/tasks/METADATA_IMPORT/pK5fJzY2iOW",
         "featureName": "The user should be able to import GML",
         "static": false,
         "count": 1,
@@ -173,8 +173,39 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "[]",
-        "responseSize": 2,
+        "responseBody": "[{\"level\":\"ERROR\",\"category\":\"METADATA_IMPORT\",\"message\":\"Import complete with status ERROR, 0 created, 0 updated, 0 deleted, 0 ignored\",\"completed\":true,\"id\":\"F7gP2iW2kI2\",\"time\":\"2026-09-03T15:50:03.766\",\"uid\":\"F7gP2iW2kI2\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file content\",\"completed\":false,\"id\":\"gH2xG8sQR5f\",\"time\":\"2026-09-03T15:50:03.755\",\"uid\":\"gH2xG8sQR5f\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Loading file resource\",\"completed\":false,\"id\":\"gF6pG8sQR7l\",\"time\":\"2026-09-03T15:50:03.749\",\"uid\":\"gF6pG8sQR7l\"},{\"level\":\"INFO\",\"category\":\"METADATA_IMPORT\",\"message\":\"Metadata import started\",\"completed\":false,\"dataType\":\"PARAMETERS\",\"data\":{\"user\":null,\"importMode\":\"COMMIT\",\"identifier\":\"UID\",\"preheatMode\":\"REFERENCE\",\"importStrategy\":\"CREATE_AND_UPDATE\",\"atomicMode\":\"ALL\",\"flushMode\":\"AUTO\",\"importReportMode\":\"ERRORS\",\"skipSharing\":false,\"skipTranslation\":false,\"skipValidation\":false,\"metadataSyncImport\":false,\"async\":true,\"filename\":null,\"csvImportClass\":null,\"firstRowIsHeader\":true},\"id\":\"F5gP6wC2qQ4\",\"time\":\"2026-09-03T15:50:03.748\",\"uid\":\"F5gP6wC2qQ4\"}]",
+        "responseSize": 1122,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-store",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/44/system/taskSummaries/METADATA_IMPORT/pK5fJzY2iOW",
+        "featureName": "The user should be able to import GML",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"status\":\"ERROR\",\"stats\":{\"created\":0,\"updated\":0,\"deleted\":0,\"ignored\":0,\"total\":0},\"typeReports\":[{\"klass\":\"org.hisp.dhis.dxf2.gml.DefaultGmlImportService\",\"stats\":{\"created\":0,\"updated\":0,\"deleted\":0,\"ignored\":0,\"total\":0},\"objectReports\":[{\"klass\":\"org.hisp.dhis.dxf2.gml.DefaultGmlImportService\",\"index\":0,\"errorReports\":[{\"message\":\"Failed to validate job runtime: `GML import failed: Premature end of file.`\",\"args\":[\"GML import failed: Premature end of file.\"],\"mainKlass\":\"org.hisp.dhis.dxf2.gml.DefaultGmlImportService\",\"errorCode\":\"E7010\",\"errorProperties\":[\"GML import failed: Premature end of file.\"]}]}]}]}",
+        "responseSize": 621,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",

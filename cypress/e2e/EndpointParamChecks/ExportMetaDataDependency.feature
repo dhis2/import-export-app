@@ -36,3 +36,8 @@ Feature: The user should be able to meta data dependency events
         Given the "skipSharing" input is set to "true"
         When the export form is submitted
         Then the download request is sent with the right parameters
+
+    Scenario: The export request fails
+        Given the metadata dependency export request will fail
+        When the export form is submitted
+        Then a warning alert is shown with the error message

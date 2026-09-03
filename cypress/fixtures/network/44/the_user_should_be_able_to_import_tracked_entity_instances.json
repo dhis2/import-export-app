@@ -31,37 +31,6 @@
         }
     },
     {
-        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true",
-        "featureName": "The user should be able to import tracked entity instances",
-        "static": false,
-        "count": 30,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:9090",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "{\"attributes\":[{\"displayName\":\"HR identifier\",\"id\":\"UKNKz1H10EE\"},{\"displayName\":\"KE code\",\"id\":\"l1VmqIHKk6t\"},{\"displayName\":\"NGO ID\",\"id\":\"n2xYlNbsfko\"},{\"displayName\":\"TZ code\",\"id\":\"xqWyz9jNCA5\"}]}",
-        "responseSize": 201,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "cache-control": "no-cache, private",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "0",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
         "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true",
         "featureName": "The user should be able to import tracked entity instances",
         "static": false,
@@ -80,6 +49,37 @@
         "statusCode": 200,
         "responseBody": "{\"attributes\":[{\"displayName\":\"Classification\",\"id\":\"Z4X3J7jMLYV\"},{\"displayName\":\"NGO ID\",\"id\":\"n2xYlNbsfko\"}]}",
         "responseSize": 112,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true",
+        "featureName": "The user should be able to import tracked entity instances",
+        "static": false,
+        "count": 30,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[{\"displayName\":\"HR identifier\",\"id\":\"UKNKz1H10EE\"},{\"displayName\":\"KE code\",\"id\":\"l1VmqIHKk6t\"},{\"displayName\":\"NGO ID\",\"id\":\"n2xYlNbsfko\"},{\"displayName\":\"TZ code\",\"id\":\"xqWyz9jNCA5\"}]}",
+        "responseSize": 201,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",

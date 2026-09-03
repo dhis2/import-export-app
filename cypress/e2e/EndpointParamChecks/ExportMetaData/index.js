@@ -5,10 +5,19 @@ import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
 // cypress/support/e2e.js) - it records every request in
 // `networkMode=capture` and replays the recorded responses in
 // `networkMode=stub`, so this spec no longer needs its own
-// cy.stubWithFixture() for it. The download endpoint (metadata.<format>)
-// never actually gets hit either way, live or stubbed - "the export form
-// is submitted" below fully replaces window.locationAssign before
-// clicking submit, so the browser never issues that request at all.
+// cy.stubWithFixture() for it.
+//
+// The download endpoint (metadata.<format>) previously never actually got
+// hit, live or stubbed - "the export form is submitted" below replaces
+// window.locationAssign before clicking submit, so no navigation was ever
+// triggered. Since commit 9661c61877496d991a29e5403cc331b4429bf73d
+// ("feat: fetch download or error alert function") and
+// 0a1d6de5615d8cdac1185b2befc98a1ee4e7e87e ("feat: add form error alert
+// export pages"), onExport now awaits a real fetch(url) for the download
+// (via fetchAndDownload, see src/utils/helper.js) and only calls
+// locationAssign(url, blob) once that succeeds - so this request is
+// actually sent, and can be intercepted below to force it to fail.
+const metadataApi = /\/api\/metadata\.[^?]+\?/
 
 Given('the user is on the meta data export page', () => {
     cy.visitPage('export', 'Metadata')
@@ -82,7 +91,19 @@ Then('the download request is not sent', () => {
 })
 
 Then('the download request is sent with the right parameters', () => {
-    cy.get('@locationAssignStub').should('have.been.calledOnce')
+    // onExport now awaits a real fetch(url) for the download (via
+    // fetchAndDownload, see src/utils/helper.js) before calling
+    // locationAssign - and with the Background's "all schemas have been
+    // selected" step, this request asks the real server to generate and
+    // zip a full metadata export (59 schemas), which can comfortably take
+    // longer than the default 4000ms command timeout. The XHR log from a
+    // timed-out run shows this request still pending (no status code
+    // logged yet) rather than any error response, confirming this is a
+    // slow response, not a bad request - so the fix is a longer retry
+    // window here, not a code change.
+    cy.get('@locationAssignStub', { timeout: 30000 }).should(
+        'have.been.calledOnce'
+    )
 
     cy.window().then((win) => {
         const requestUrl = win.locationAssign.getCall(0).args[0]
@@ -99,4 +120,27 @@ Then('the download request is sent with the right parameters', () => {
             }
         )
     })
+})
+
+Given('the meta data export request will fail', () => {
+    cy.intercept(metadataApi, {
+        statusCode: 409,
+        body: {
+            httpStatus: 'Conflict',
+            httpStatusCode: 409,
+            status: 'ERROR',
+            message: 'Could not find an id for CODE on Data Element.',
+        },
+    }).as('downloadXHR')
+})
+
+Then('a warning alert is shown with the error message', () => {
+    cy.wait('@downloadXHR')
+
+    cy.get('[data-test="input-form-alerts"]').should(
+        'contain',
+        'Could not find an id for CODE on Data Element.'
+    )
+
+    cy.get('@locationAssignStub').should('not.have.been.called')
 })

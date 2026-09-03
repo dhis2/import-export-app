@@ -5,10 +5,19 @@ import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
 // server via enableNetworkShim() (see cypress/support/e2e.js) - it records
 // every request in `networkMode=capture` and replays the recorded
 // responses in `networkMode=stub`, so this spec no longer needs its own
-// cy.stubWithFixture()s for them. The download endpoint (dataValueSets)
-// never actually gets hit either way, live or stubbed - "the export form
-// is submitted" below fully replaces window.locationAssign before
-// clicking submit, so the browser never issues that request at all.
+// cy.stubWithFixture()s for them.
+//
+// The download endpoint (dataValueSets) previously never actually got hit,
+// live or stubbed - "the export form is submitted" below replaces
+// window.locationAssign before clicking submit, so no navigation was ever
+// triggered. Since commit 9661c61877496d991a29e5403cc331b4429bf73d
+// ("feat: fetch download or error alert function") and
+// 0a1d6de5615d8cdac1185b2befc98a1ee4e7e87e ("feat: add form error alert
+// export pages"), onExport now awaits a real fetch(url) for the download
+// (via fetchAndDownload, see src/utils/helper.js) and only calls
+// locationAssign(url, blob) once that succeeds - so this request is
+// actually sent, and can be intercepted below to force it to fail.
+const dataValueSetsApi = /\/api\/dataValueSets\.[^?]+\?/
 
 Given('the user is on the data export page', () => {
     cy.visitPage('export', 'Data')
@@ -141,4 +150,35 @@ Then('the download request is sent with the right parameters', () => {
             }
         )
     })
+})
+
+Given('the data export request will fail', () => {
+    cy.intercept(dataValueSetsApi, {
+        statusCode: 409,
+        body: {
+            httpStatus: 'Conflict',
+            httpStatusCode: 409,
+            status: 'ERROR',
+            message: 'Could not find an id for CODE on Data Element.',
+        },
+    }).as('downloadXHR')
+})
+
+Then('a warning alert is shown with the error message', () => {
+    cy.wait('@downloadXHR')
+
+    // src/components/Inputs/FormAlerts.jsx sets DATATEST to
+    // "input-form-alerts" and passes it down as the `dataTest` prop to
+    // src/components/FormAlerts/FormAlerts.jsx, which forwards it to
+    // @dhis2-ui's AlertStack as `dataTest={dataTest}`.
+    cy.get('[data-test="input-form-alerts"]').should(
+        'contain',
+        'Could not find an id for CODE on Data Element.'
+    )
+
+    // fetchAndDownload (src/utils/helper.js) only calls
+    // locationAssign(url, blob) after a successful fetch - on a failed
+    // request it should bail out with the alert above instead of still
+    // triggering a download.
+    cy.get('@locationAssignStub').should('not.have.been.called')
 })

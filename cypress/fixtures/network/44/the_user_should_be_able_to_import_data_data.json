@@ -31,37 +31,6 @@
         }
     },
     {
-        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true",
-        "featureName": "The user should be able to import data data",
-        "static": false,
-        "count": 20,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:9090",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "{\"attributes\":[{\"displayName\":\"Classification\",\"id\":\"Z4X3J7jMLYV\"},{\"displayName\":\"NGO ID\",\"id\":\"n2xYlNbsfko\"}]}",
-        "responseSize": 112,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "cache-control": "no-cache, private",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "0",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
         "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=organisationUnitAttribute:eq:true",
         "featureName": "The user should be able to import data data",
         "static": false,
@@ -80,6 +49,37 @@
         "statusCode": 200,
         "responseBody": "{\"attributes\":[{\"displayName\":\"HR identifier\",\"id\":\"UKNKz1H10EE\"},{\"displayName\":\"KE code\",\"id\":\"l1VmqIHKk6t\"},{\"displayName\":\"NGO ID\",\"id\":\"n2xYlNbsfko\"},{\"displayName\":\"TZ code\",\"id\":\"xqWyz9jNCA5\"}]}",
         "responseSize": 201,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/attributes.json?paging=false&fields=id,displayName&filter=unique:eq:true&filter=dataElementAttribute:eq:true",
+        "featureName": "The user should be able to import data data",
+        "static": false,
+        "count": 20,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:9090",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[{\"displayName\":\"Classification\",\"id\":\"Z4X3J7jMLYV\"},{\"displayName\":\"NGO ID\",\"id\":\"n2xYlNbsfko\"}]}",
+        "responseSize": 112,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -112,8 +112,8 @@
         },
         "statusCode": 200,
         "responseBody": [
-            "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837179871)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837179871)\",\"id\":\"gQqb1QgRGFt\",\"created\":\"2026-08-27T15:26:19.872\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/gQqb1QgRGFt\",\"responseType\":\"JobConfiguration\"}}",
-            "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837182386)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837182386)\",\"id\":\"zobaKlVFo8t\",\"created\":\"2026-08-27T15:26:22.386\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/zobaKlVFo8t\",\"responseType\":\"JobConfiguration\"}}"
+            "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443258245)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443258245)\",\"id\":\"AH3kG4P0baO\",\"created\":\"2026-09-03T15:47:38.246\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/AH3kG4P0baO\",\"responseType\":\"JobConfiguration\"}}",
+            "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443266269)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443266269)\",\"id\":\"jEK20qr3XsV\",\"created\":\"2026-09-03T15:47:46.269\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/jEK20qr3XsV\",\"responseType\":\"JobConfiguration\"}}"
         ],
         "responseSize": 1248,
         "responseHeaders": {
@@ -130,7 +130,7 @@
         "responseLookup": [0, 1]
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/gQqb1QgRGFt",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/AH3kG4P0baO",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -161,7 +161,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/zobaKlVFo8t",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/jEK20qr3XsV",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -210,7 +210,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837184599)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837184599)\",\"id\":\"fumnqgK50Uq\",\"created\":\"2026-08-27T15:26:24.599\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":true,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/fumnqgK50Uq\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443274533)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443274533)\",\"id\":\"AJhJqqKyetP\",\"created\":\"2026-09-03T15:47:54.533\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":true,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/AJhJqqKyetP\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1247,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -225,7 +225,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/fumnqgK50Uq",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/AJhJqqKyetP",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -274,7 +274,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837186848)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837186848)\",\"id\":\"x5WJRGdDYPZ\",\"created\":\"2026-08-27T15:26:26.848\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/x5WJRGdDYPZ\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443282389)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443282389)\",\"id\":\"PhAAjHWSCIY\",\"created\":\"2026-09-03T15:48:02.389\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/PhAAjHWSCIY\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1236,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -289,7 +289,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/x5WJRGdDYPZ",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/PhAAjHWSCIY",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -338,7 +338,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837189065)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837189065)\",\"id\":\"LXC8VIse1Ry\",\"created\":\"2026-08-27T15:26:29.065\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":true,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/LXC8VIse1Ry\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443290392)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443290392)\",\"id\":\"Yrs2Bu2Xm3t\",\"created\":\"2026-09-03T15:48:10.392\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":true,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/Yrs2Bu2Xm3t\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1247,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -353,7 +353,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/LXC8VIse1Ry",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/Yrs2Bu2Xm3t",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -402,7 +402,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837191246)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837191246)\",\"id\":\"Mrv0ttWC9d2\",\"created\":\"2026-08-27T15:26:31.246\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":true,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/Mrv0ttWC9d2\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443298140)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443298140)\",\"id\":\"F0pvl3BYoZP\",\"created\":\"2026-09-03T15:48:18.140\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":true,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/F0pvl3BYoZP\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1247,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -417,7 +417,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/Mrv0ttWC9d2",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/F0pvl3BYoZP",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -466,7 +466,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837193562)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837193562)\",\"id\":\"H8Djtm1v1jN\",\"created\":\"2026-08-27T15:26:33.562\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"CODE\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/H8Djtm1v1jN\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443307932)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443307932)\",\"id\":\"NyiQdpdNlxk\",\"created\":\"2026-09-03T15:48:27.932\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"CODE\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/NyiQdpdNlxk\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1249,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -481,7 +481,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/H8Djtm1v1jN",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/NyiQdpdNlxk",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -530,7 +530,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837195871)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837195871)\",\"id\":\"TNrsatDzu8a\",\"created\":\"2026-08-27T15:26:35.871\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"CODE\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/TNrsatDzu8a\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443317167)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443317167)\",\"id\":\"l7nt9rG8yvu\",\"created\":\"2026-09-03T15:48:37.169\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"CODE\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/l7nt9rG8yvu\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1249,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -545,7 +545,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/TNrsatDzu8a",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/l7nt9rG8yvu",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -594,7 +594,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837198205)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837198205)\",\"id\":\"ipZ4pkwMlEN\",\"created\":\"2026-08-27T15:26:38.205\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"CODE\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/ipZ4pkwMlEN\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443327328)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443327328)\",\"id\":\"jnABmRJFfTT\",\"created\":\"2026-09-03T15:48:47.328\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"CODE\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":false,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/jnABmRJFfTT\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1249,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -609,7 +609,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/ipZ4pkwMlEN",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/jnABmRJFfTT",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
@@ -658,7 +658,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1787837200449)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1787837200449)\",\"id\":\"EZqpdmBmOC8\",\"created\":\"2026-08-27T15:26:40.449\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":true,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/EZqpdmBmOC8\",\"responseType\":\"JobConfiguration\"}}",
+        "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Initiated DATAVALUE_IMPORT (1788443335870)\",\"response\":{\"name\":\"DATAVALUE_IMPORT (1788443335870)\",\"id\":\"GqUQUIGz0ID\",\"created\":\"2026-09-03T15:48:55.870\",\"jobType\":\"DATAVALUE_IMPORT\",\"jobStatus\":\"NOT_STARTED\",\"jobParameters\":{\"idSchemes\":{\"idScheme\":{\"type\":\"UID\"},\"dataElementIdScheme\":{\"type\":\"UID\"},\"orgUnitIdScheme\":{\"type\":\"UID\"}},\"atomic\":false,\"dryRun\":false,\"preheatCache\":false,\"async\":true,\"importStrategy\":\"NEW_AND_UPDATES\",\"mergeMode\":\"REPLACE\",\"reportMode\":\"FULL\",\"skipExistingCheck\":true,\"sharing\":false,\"skipNotifications\":false,\"skipAudit\":false,\"datasetAllowsPeriods\":false,\"strictPeriods\":false,\"strictDataElements\":false,\"strictCategoryOptionCombos\":false,\"strictAttributeOptionCombos\":false,\"strictOrganisationUnits\":false,\"strictDataSetApproval\":false,\"strictDataSetLocking\":false,\"strictDataSetInputPeriods\":false,\"requireCategoryOptionCombo\":false,\"requireAttributeOptionCombo\":false,\"skipPatternValidation\":false,\"ignoreEmptyCollection\":false,\"force\":false,\"firstRowIsHeader\":true,\"skipLastUpdated\":false,\"mergeDataValues\":false,\"skipCache\":false},\"relativeNotifierEndpoint\":\"/api/system/tasks/DATAVALUE_IMPORT/GqUQUIGz0ID\",\"responseType\":\"JobConfiguration\"}}",
         "responseSize": 1247,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -673,7 +673,7 @@
         }
     },
     {
-        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/EZqpdmBmOC8",
+        "path": "/api/44/system/tasks/DATAVALUE_IMPORT/GqUQUIGz0ID",
         "featureName": "The user should be able to import data data",
         "static": false,
         "count": 1,
