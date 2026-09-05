@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2024
 # Jiří Podhorecký <jirka.p@volny.cz>, 2026
@@ -6,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"POT-Creation-Date: 2026-09-02T14:17:13.038Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -125,8 +124,11 @@ msgstr "Import"
 msgid "Atomic mode"
 msgstr "Atomický režim"
 
-msgid "Whether to import objects even if some references do not exist"
-msgstr "Zda importovat objekty, i když některé odkazy neexistují"
+msgid ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
+msgstr ""
 
 msgid "Class key"
 msgstr "Klíč třídy"
@@ -446,6 +448,11 @@ msgstr "Musí být vybrán jeden objekt"
 
 msgid "Object"
 msgstr "Objekt"
+
+msgid ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
 msgstr "Schéma ID organizační jednotky"
@@ -1312,9 +1319,8 @@ msgstr "Metadata"
 msgid "Tracked entity"
 msgstr "Trasovaná entita"
 
-msgctxt ""
-"01\"...) are available, the combinations will be matched automatically."
+msgctxt "20\")."
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
-"If the codes (\"m_00\", \"m"
+"Codes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., \"m_00\", \"M_05\", \"WP_F"
 msgstr ""
