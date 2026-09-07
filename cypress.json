@@ -1,6 +1,0 @@
-{
-    "baseUrl": "http://localhost:3000",
-    "testFiles": "**/*.feature",
-    "video": false,
-    "projectId": "kfq27m"
-}

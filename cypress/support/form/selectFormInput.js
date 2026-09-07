@@ -20,7 +20,7 @@ const radioInputs = [
     'atomicMode',
     'compression',
     'flushMode',
-    'followUpStatus',
+    'followUp',
     'format',
     'identifier',
     'importReportMode',
@@ -53,13 +53,17 @@ const selectInputs = [
 const dateInputs = [
     'startDate',
     'endDate',
-    'programStartDate',
-    'programEndDate',
-    'lastUpdatedStartDate',
-    'lastUpdatedEndDate',
+    // EventExport uses the tracker API's own param names for its date range
+    // instead of the generic startDate/endDate used elsewhere
+    'occurredAfter',
+    'occurredBefore',
+    'enrollmentEnrolledAfter',
+    'enrollmentEnrolledBefore',
+    'updatedAfter',
+    'updatedBefore',
 ]
 
-const textInputs = ['lastUpdatedDuration']
+const textInputs = ['updatedWithin']
 
 /**
  * @param {Object} args
@@ -86,8 +90,7 @@ const selectFormInput = ({ name, value, label }) => {
     }
 
     if (selectInputs.includes(name)) {
-        cy.selectSelect(dataTest, label)
-        return cy.getValueOfSelect(dataTest)
+        return cy.selectSelect(dataTest, label)
     }
 
     if (dateInputs.includes(name)) {

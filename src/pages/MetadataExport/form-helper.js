@@ -1,6 +1,6 @@
-import { locationAssign } from '../../utils/helper.js'
+import { fetchAndDownload } from '../../utils/helper.js'
 
-const onExport = (baseUrl, setExportEnabled) => (values) => {
+const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
 
     const {
@@ -18,11 +18,15 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     const schemaParams = checkedSchemas.map((name) => `${name}=true`).join('&')
     const downloadUrlParams = `skipSharing=${skipSharing}&inclusionStrategy=${inclusionStrategy}&download=true&${schemaParams}`
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-    locationAssign(url)
-    setExportEnabled(true)
 
-    // log for debugging purposes
-    console.log('metadata-export:', { url, params: downloadUrlParams })
+    try {
+        return await fetchAndDownload(url, 'metadata')
+    } finally {
+        setExportEnabled(true)
+
+        // log for debugging purposes
+        console.log('metadata-export:', { url, params: downloadUrlParams })
+    }
 }
 
 export { onExport }

@@ -32,6 +32,7 @@ import {
     IdScheme,
     defaultIdSchemeOption,
     formatNoXmlOptions,
+    FormAlerts,
 } from '../../components/Inputs/index.js'
 import { jsDateToISO8601 } from '../../utils/helper.js'
 import { onExport, validate } from './form-helper.js'
@@ -88,8 +89,9 @@ const EventExport = () => {
                 validate={validate}
                 subscription={{
                     values: true,
+                    submitError: true,
                 }}
-                render={({ handleSubmit, form, values }) => (
+                render={({ handleSubmit, form, values, submitError }) => (
                     <form onSubmit={handleSubmit}>
                         <BasicOptions>
                             <OrgUnitTree multiSelect={false} />
@@ -121,6 +123,7 @@ const EventExport = () => {
                             label={i18n.t('Export events')}
                             disabled={!exportEnabled}
                         />
+                        <FormAlerts alerts={submitError} />
                     </form>
                 )}
             />

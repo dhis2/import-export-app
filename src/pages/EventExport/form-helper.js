@@ -3,7 +3,7 @@ import {
     DATE_AFTER_VALIDATOR,
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { ALL_VALUE } from '../../hooks/useProgramStages.js'
-import { locationAssign, pathToId } from '../../utils/helper.js'
+import { fetchAndDownload, pathToId } from '../../utils/helper.js'
 import { idSchemeParams } from '../../utils/idSchemeParams.js'
 
 const valuesToParams = (values) => {
@@ -33,7 +33,7 @@ const valuesToParams = (values) => {
         .join('&')
 }
 
-const onExport = (baseUrl, setExportEnabled) => (values) => {
+const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
 
     const { format, compression } = values
@@ -44,11 +44,15 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     const endpointExtension = compression ? `${format}.${compression}` : format
     const downloadUrlParams = valuesToParams(values)
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
-    locationAssign(url)
-    setExportEnabled(true)
 
-    // log for debugging purposes
-    console.log('event-export:', { url, params: downloadUrlParams })
+    try {
+        return await fetchAndDownload(url, 'event')
+    } finally {
+        setExportEnabled(true)
+
+        // log for debugging purposes
+        console.log('event-export:', { url, params: downloadUrlParams })
+    }
 }
 
 const validate = (values) => ({

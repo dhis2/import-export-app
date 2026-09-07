@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { FORM_ERROR } from './final-form.js'
 import { getUploadXHR } from './xhr.js'
 
 const trimString = (length, string) =>
@@ -182,7 +183,7 @@ const uploadFile = ({
 }
 
 // call stub function if available
-const locationAssign = (url) => {
+const locationAssign = (url, blob) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
@@ -192,19 +193,65 @@ const locationAssign = (url) => {
                 : url
 
             const urlFilePart = new URL(downloadUrl).pathname.split('/').pop()
-            const [, filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+            const [filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+
+            const objectUrl = blob ? URL.createObjectURL(blob) : undefined
 
             const link = document.createElement('a')
-            link.href = downloadUrl
+            link.href = objectUrl || downloadUrl
             link.download = filename
             link.target = '_blank'
             link.click()
+
+            if (objectUrl) {
+                setTimeout(() => URL.revokeObjectURL(objectUrl), 0)
+            }
 
             return link
         } catch (err) {
             console.error(err)
             window.open(url, '_blank')
         }
+    }
+}
+
+const exportErrorAlert = (source, message) => ({
+    [FORM_ERROR]: [
+        {
+            id: `${source}-export-error-${Date.now()}`,
+            warning: true,
+            message,
+        },
+    ],
+})
+
+// fetches the export URL, and only triggers the download if the server
+// responded with a success status otherwise returns an error alert
+const fetchAndDownload = async (url, source) => {
+    try {
+        const response = await fetch(url, { credentials: 'include' })
+
+        if (!response.ok) {
+            let message = genericErrorMessage
+            try {
+                const body = await response.json()
+                message = body.message || message
+            } catch (e) {
+                // response body wasn't JSON, fall back to the generic message
+                console.error(
+                    `${source}-export: failed to parse error response`,
+                    e
+                )
+            }
+            return exportErrorAlert(source, message)
+        }
+
+        const blob = await response.blob()
+        locationAssign(url, blob)
+        return undefined
+    } catch (e) {
+        console.error(`${source}-export: request failed`, e)
+        return exportErrorAlert(source, genericErrorMessage)
     }
 }
 
@@ -228,10 +275,21 @@ const getInitialBoolValue = (prevValue, defaultValue) => {
     return prevValue
 }
 
+// adds a digit group separator matching the given locale
+const formatNumber = (value, locale) => {
+    if (value === undefined || value === null || value === '') {
+        return value
+    }
+    const number = Number(value)
+    return Number.isNaN(number) ? value : number.toLocaleString(locale)
+}
+
 export {
     fetchAttributes,
+    fetchAndDownload,
     getPrevJobDetails,
     getInitialBoolValue,
+    formatNumber,
     locationAssign,
     jsDateToISO8601,
     jsDateToString,
