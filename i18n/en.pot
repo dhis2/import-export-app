@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-08-12T13:19:46.896Z\n"
-"PO-Revision-Date: 2026-08-12T13:19:46.896Z\n"
+"POT-Creation-Date: 2026-09-07T21:43:24.002Z\n"
+"PO-Revision-Date: 2026-09-07T21:43:24.003Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -29,18 +29,20 @@ msgstr "Invalid duration"
 msgid "Format"
 msgstr "Format"
 
-msgid "Something went wrong when loading the additional data element ID schemes"
-msgstr "Something went wrong when loading the additional data element ID schemes"
+msgid "(Default)"
+msgstr "(Default)"
+
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Name"
+msgstr "Name"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "Something went wrong when loading the additional ID schemes"
-
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
-msgstr ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
 
 msgid "Please select a file"
 msgstr "Please select a file"
@@ -115,8 +117,26 @@ msgstr "Import"
 msgid "Atomic mode"
 msgstr "Atomic mode"
 
-msgid "Whether to import objects even if some references do not exist"
-msgstr "Whether to import objects even if some references do not exist"
+msgid ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
+msgstr ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
+
+msgid "Attribute option combo ID scheme"
+msgstr "Attribute option combo ID scheme"
+
+msgid "Category ID scheme"
+msgstr "Category ID scheme"
+
+msgid "Category option combo ID scheme"
+msgstr "Category option combo ID scheme"
+
+msgid "Category option ID scheme"
+msgstr "Category option ID scheme"
 
 msgid "Class key"
 msgstr "Class key"
@@ -133,17 +153,11 @@ msgstr "Uncompressed"
 msgid "Compression mode"
 msgstr "Compression mode"
 
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Code"
-
-msgid "Name"
-msgstr "Name"
-
 msgid "Data element ID scheme"
 msgstr "Data element ID scheme"
+
+msgid "Data set ID scheme"
+msgstr "Data set ID scheme"
 
 msgid "Which data sets should be included in export?"
 msgstr "Which data sets should be included in export?"
@@ -433,6 +447,13 @@ msgstr "One object must be selected"
 
 msgid "Object"
 msgstr "Object"
+
+msgid ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
+msgstr ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
 
 msgid "Organisation unit ID scheme"
 msgstr "Organisation unit ID scheme"

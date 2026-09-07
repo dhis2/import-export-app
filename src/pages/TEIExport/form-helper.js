@@ -5,32 +5,32 @@ import {
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
 import { locationAssign, pathToId } from '../../utils/helper.js'
+import { idSchemeEntries } from '../../utils/idSchemeParams.js'
 
 // calculate minimum set of parameters based on given filters
-const valuesToParams = ({
-    selectedOrgUnits,
-    selectedUsers,
-    selectedPrograms,
-    selectedTETypes,
-    orgUnitMode,
-    inclusion,
-    format,
-    includeDeleted,
-    dataElementIdScheme,
-    orgUnitIdScheme,
-    idScheme,
-    assignedUserModeFilter,
-    assignedUserMode,
-    teiTypeFilter,
-    programStatus,
-    followUp,
-    enrollmentEnrolledAfter,
-    enrollmentEnrolledBefore,
-    lastUpdatedFilter,
-    updatedAfter,
-    updatedBefore,
-    updatedWithin,
-}) => {
+const valuesToParams = (values) => {
+    const {
+        selectedOrgUnits,
+        selectedUsers,
+        selectedPrograms,
+        selectedTETypes,
+        orgUnitMode,
+        inclusion,
+        format,
+        includeDeleted,
+        assignedUserModeFilter,
+        assignedUserMode,
+        teiTypeFilter,
+        programStatus,
+        followUp,
+        enrollmentEnrolledAfter,
+        enrollmentEnrolledBefore,
+        lastUpdatedFilter,
+        updatedAfter,
+        updatedBefore,
+        updatedWithin,
+    } = values
+
     const minParams = {
         fields: '*,enrollments[*,events[*]]',
         orgUnitMode: orgUnitMode,
@@ -38,16 +38,8 @@ const valuesToParams = ({
         includeDeleted: includeDeleted.toString(),
         paging: false,
         totalPages: false,
+        ...Object.fromEntries(idSchemeEntries(values, 'tracker')),
     }
-
-    // an empty ID scheme value means "(Default)" was picked - omit the param
-    // so the server applies its own default for that object type
-    const idSchemes = { dataElementIdScheme, orgUnitIdScheme, idScheme }
-    Object.entries(idSchemes).forEach(([param, value]) => {
-        if (value) {
-            minParams[param] = value
-        }
-    })
 
     // include selected org.units only when manual selection is selected
     // orgUnitMode is then stored in the `inclusion` field
@@ -171,4 +163,4 @@ const validate = (values) => {
     return errors
 }
 
-export { onExport, validate }
+export { onExport, validate, valuesToParams }

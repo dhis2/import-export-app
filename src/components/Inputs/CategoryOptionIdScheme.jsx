@@ -7,9 +7,15 @@ const defaultCategoryOptionIdSchemeOption = ''
 const NAME = 'categoryOptionIdScheme'
 const DATATEST = 'input-category-option-id-scheme'
 const LABEL = i18n.t('Category option ID scheme')
+const ATTRIBUTE_TYPES = ['categoryOptionAttribute']
 
 const CategoryOptionIdScheme = () => (
-    <IdSchemeSelect name={NAME} label={LABEL} dataTest={DATATEST} />
+    <IdSchemeSelect
+        name={NAME}
+        label={LABEL}
+        dataTest={DATATEST}
+        attributeTypes={ATTRIBUTE_TYPES}
+    />
 )
 
 export { CategoryOptionIdScheme, defaultCategoryOptionIdSchemeOption }

@@ -1,5 +1,6 @@
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { uploadFile } from '../../utils/helper.js'
+import { idSchemeParams } from '../../utils/idSchemeParams.js'
 
 const onImport =
     ({ baseUrl, setProgress, addTask, setShowFullSummaryTask }) =>
@@ -19,9 +20,6 @@ const onImport =
             skipValidation,
             inclusionStrategy,
             isAsync,
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
         } = values
 
         // send xhr
@@ -39,12 +37,7 @@ const onImport =
             `skipValidation=${skipValidation}`,
             `inclusionStrategy=${inclusionStrategy}`,
             `async=${isAsync}`,
-            // an empty value means "(Default)" was picked - omit the param
-            dataElementIdScheme
-                ? `dataElementIdScheme=${dataElementIdScheme}`
-                : '',
-            orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
-            idScheme ? `idScheme=${idScheme}` : '',
+            ...idSchemeParams(values, 'tracker'),
         ]
             .filter((s) => s != '')
             .join('&')

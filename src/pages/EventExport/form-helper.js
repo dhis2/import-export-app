@@ -4,40 +4,26 @@ import {
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { ALL_VALUE } from '../../hooks/useProgramStages.js'
 import { locationAssign, pathToId } from '../../utils/helper.js'
+import { idSchemeParams } from '../../utils/idSchemeParams.js'
 
-const onExport = (baseUrl, setExportEnabled) => (values) => {
-    setExportEnabled(false)
-
+const valuesToParams = (values) => {
     const {
         selectedOrgUnits,
         selectedPrograms,
         programStage,
-        format,
-        compression,
         occurredAfter,
         occurredBefore,
         includeDeleted,
-        dataElementIdScheme,
-        orgUnitIdScheme,
-        idScheme,
         inclusion,
     } = values
 
-    // generate URL and redirect
-    const apiBaseUrl = `${baseUrl}/api/tracker/`
-    const endpoint = `events`
-    const endpointExtension = compression ? `${format}.${compression}` : format
-    const downloadUrlParams = [
+    return [
         'paging=false',
         'totalPages=false',
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,
         `program=${selectedPrograms}`,
         `includeDeleted=${includeDeleted}`,
-        // an empty ID scheme value means "(Default)" was picked - omit the
-        // param so the server applies its own default for that object type
-        dataElementIdScheme ? `dataElementIdScheme=${dataElementIdScheme}` : '',
-        orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
-        idScheme ? `idScheme=${idScheme}` : '',
+        ...idSchemeParams(values, 'tracker'),
         `occurredAfter=${occurredAfter}`,
         `occurredBefore=${occurredBefore}`,
         `orgUnitMode=${inclusion}`,
@@ -45,6 +31,18 @@ const onExport = (baseUrl, setExportEnabled) => (values) => {
     ]
         .filter((s) => s != '')
         .join('&')
+}
+
+const onExport = (baseUrl, setExportEnabled) => (values) => {
+    setExportEnabled(false)
+
+    const { format, compression } = values
+
+    // generate URL and redirect
+    const apiBaseUrl = `${baseUrl}/api/tracker/`
+    const endpoint = `events`
+    const endpointExtension = compression ? `${format}.${compression}` : format
+    const downloadUrlParams = valuesToParams(values)
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
     locationAssign(url)
     setExportEnabled(true)
@@ -58,4 +56,4 @@ const validate = (values) => ({
     endDate: DATE_AFTER_VALIDATOR(values.endDate, values.startDate),
 })
 
-export { onExport, validate }
+export { onExport, validate, valuesToParams }

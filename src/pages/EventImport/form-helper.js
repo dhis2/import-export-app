@@ -1,31 +1,20 @@
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { uploadFile } from '../../utils/helper.js'
+import { idSchemeParams } from '../../utils/idSchemeParams.js'
 
 const isAsync = true
 
 const onImport =
     ({ baseUrl, setProgress, addTask, setShowFullSummaryTask }) =>
     async (values) => {
-        const {
-            dryRun,
-            files,
-            format,
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
-        } = values
+        const { dryRun, files, format } = values
 
         // send xhr
         const apiBaseUrl = `${baseUrl}/api/tracker`
         const params = [
             `async=${isAsync}`,
             `importMode=${dryRun ? 'validate' : 'commit'}`,
-            // an empty value means "(Default)" was picked - omit the param
-            dataElementIdScheme
-                ? `dataElementIdScheme=${dataElementIdScheme}`
-                : '',
-            orgUnitIdScheme ? `orgUnitIdScheme=${orgUnitIdScheme}` : '',
-            idScheme ? `idScheme=${idScheme}` : '',
+            ...idSchemeParams(values, 'tracker'),
         ]
             .filter((s) => s != '')
             .join('&')

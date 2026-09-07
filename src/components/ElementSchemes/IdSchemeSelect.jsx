@@ -6,10 +6,8 @@ import React, { useEffect, useState } from 'react'
 import { fetchAttributes } from '../../utils/helper.js'
 import { StyledField } from '../index.js'
 
-// The "(Default)" option maps to an empty value. When it is selected the
-// matching `*IdScheme` URL parameter is left out entirely, so the server
-// applies its own default (usually UID, occasionally CODE) for that object
-// type. Picking "UID" instead sends the scheme explicitly, e.g. idScheme=UID.
+// "(Default)" is an empty value: the *IdScheme param is then omitted and the
+// server applies its own default (usually UID, sometimes CODE) for that type.
 const ID_SCHEME_OPTIONS = [
     { value: '', label: i18n.t('(Default)') },
     { value: 'UID', label: i18n.t('Uid') },
@@ -17,16 +15,20 @@ const ID_SCHEME_OPTIONS = [
     { value: 'NAME', label: i18n.t('Name') },
 ]
 
-const hasScheme = (schemes, scheme) =>
-    schemes.some(({ value }) => value === scheme.value)
+// stable reference so the effect below doesn't re-run on every render
+const NO_ATTRIBUTE_TYPES = []
 
-// A single ID scheme dropdown. Pass `attributeTypes` (e.g.
-// ['dataElementAttribute']) to also offer unique metadata attributes as
-// schemes. When more than one type is given, only the attributes shared by all
-// of them are offered, which mirrors how the generic `idScheme` param behaves
-// server-side. Object types without an `attributeTypes` prop just get the
-// static UID / CODE / NAME / (Default) options.
-const IdSchemeSelect = ({ name, label, dataTest, attributeTypes = [] }) => {
+const intersectByValue = (a, b) =>
+    a.filter((item) => b.some((other) => other.value === item.value))
+
+// Pass `attributeTypes` to also offer unique metadata attributes as schemes;
+// with several types, only the attributes shared by all of them are offered.
+const IdSchemeSelect = ({
+    name,
+    label,
+    dataTest,
+    attributeTypes = NO_ATTRIBUTE_TYPES,
+}) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(attributeTypes.length > 0)
     const [attributeOptions, setAttributeOptions] = useState([])
@@ -34,41 +36,46 @@ const IdSchemeSelect = ({ name, label, dataTest, attributeTypes = [] }) => {
 
     useEffect(() => {
         if (attributeTypes.length === 0) {
-            return
+            return undefined
         }
+
+        let cancelled = false
 
         const loadAttributeSchemes = async () => {
             let err
 
             const schemesByType = await Promise.all(
                 attributeTypes.map((type) =>
-                    fetchAttributes(`${baseUrl}/api/`, type).catch((error) => {
-                        err = error
+                    fetchAttributes(`${baseUrl}/api/`, type).catch((e) => {
+                        err = e
                         return []
                     })
                 )
             )
 
-            setError(err)
-
-            if (!err) {
-                const [baseSchemes = [], ...otherSchemes] = schemesByType
-                const sharedSchemes = otherSchemes.reduce(
-                    (shared, schemes) =>
-                        shared.filter((attribute) =>
-                            hasScheme(schemes, attribute)
-                        ),
-                    baseSchemes
-                )
-                setAttributeOptions(sharedSchemes)
+            if (cancelled) {
+                return
             }
 
+            setError(err)
+            if (!err) {
+                const [first, ...rest] = schemesByType
+                setAttributeOptions(
+                    rest.reduce(
+                        (shared, schemes) => intersectByValue(shared, schemes),
+                        first
+                    )
+                )
+            }
             setLoading(false)
         }
 
         loadAttributeSchemes()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+
+        return () => {
+            cancelled = true
+        }
+    }, [baseUrl, attributeTypes])
 
     const validationText =
         error &&
