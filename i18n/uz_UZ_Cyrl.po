@@ -1,11 +1,10 @@
-# 
 # Translators:
 # Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"POT-Creation-Date: 2026-09-02T14:17:13.038Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -130,8 +129,11 @@ msgstr "Импорт"
 msgid "Atomic mode"
 msgstr "Атомар режим"
 
-msgid "Whether to import objects even if some references do not exist"
-msgstr "Ҳаволаларни баъзи бирлари етишмасада, объектни импорт қилмоқчимисиз"
+msgid ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
+msgstr ""
 
 msgid "Class key"
 msgstr "Синф калити"
@@ -454,6 +456,11 @@ msgstr "Бир объектни танлаш талаб қилинади"
 
 msgid "Object"
 msgstr "Объект"
+
+msgid ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
 msgstr "Ташкилий бўлимни идентификациялаш схемаси"
@@ -1314,9 +1321,8 @@ msgstr "МетаМаълумот"
 msgid "Tracked entity"
 msgstr "Кузатув объекти"
 
-msgctxt ""
-"01\"...) are available, the combinations will be matched automatically."
+msgctxt "20\")."
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
-"If the codes (\"m_00\", \"m"
+"Codes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., \"m_00\", \"M_05\", \"WP_F"
 msgstr ""
