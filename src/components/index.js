@@ -19,6 +19,11 @@ export { FileUpload } from './FileUpload/FileUpload.jsx'
 export { FormAlerts } from './FormAlerts/FormAlerts.jsx'
 export { FormField } from './FormField/FormField.jsx'
 export { IdSchemeSelect } from './ElementSchemes/IdSchemeSelect.jsx'
+export {
+    CATEGORY_ATTRIBUTE_TYPES,
+    CATEGORY_OPTION_ATTRIBUTE_TYPES,
+    DATA_SET_ATTRIBUTE_TYPES,
+} from './ElementSchemes/idSchemeAttributeTypes.js'
 export { ImportButtonStrip } from './ImportButtonStrip/ImportButtonStrip.jsx'
 export { JobOverview } from './JobOverview/JobOverview.jsx'
 export { JobSummary } from './JobSummary/JobSummary.jsx'
