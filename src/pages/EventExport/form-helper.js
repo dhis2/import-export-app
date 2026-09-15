@@ -38,7 +38,6 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
 
     const { format, compression } = values
 
-    // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `events`
     const endpointExtension = compression ? `${format}.${compression}` : format
@@ -50,7 +49,6 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     } finally {
         setExportEnabled(true)
 
-        // log for debugging purposes
         console.log('event-export:', { url, params: downloadUrlParams })
     }
 }

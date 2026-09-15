@@ -51,4 +51,11 @@ describe('idSchemeParams', () => {
             ['orgUnitIdScheme', 'CODE'],
         ])
     })
+
+    it('returns an empty array for an unknown endpoint instead of throwing', () => {
+        const values = { orgUnitIdScheme: 'CODE' }
+
+        expect(idSchemeParams(values, 'notAnEndpoint')).toEqual([])
+        expect(idSchemeEntries(values, 'notAnEndpoint')).toEqual([])
+    })
 })

@@ -1,4 +1,3 @@
-// ID scheme URL parameters each endpoint accepts, in query-string order.
 const ID_SCHEME_PARAMS_BY_ENDPOINT = {
     dataValueSets: [
         'dataElementIdScheme',
@@ -13,10 +12,8 @@ const ID_SCHEME_PARAMS_BY_ENDPOINT = {
     tracker: ['dataElementIdScheme', 'orgUnitIdScheme', 'idScheme'],
 }
 
-// `[key, value]` pairs for the given endpoint, skipping schemes left at
-// "(Default)" (empty value) so the server applies its own default.
 const idSchemeEntries = (values, endpoint) =>
-    ID_SCHEME_PARAMS_BY_ENDPOINT[endpoint]
+    (ID_SCHEME_PARAMS_BY_ENDPOINT[endpoint] || [])
         .filter((key) => values[key])
         .map((key) => [key, values[key]])
 

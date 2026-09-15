@@ -7,12 +7,9 @@ import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
 import { fetchAndDownload, pathToId } from '../../utils/helper.js'
 import { idSchemeEntries } from '../../utils/idSchemeParams.js'
 
-// keep only the entries whose value is truthy
 const compact = (obj) =>
     Object.fromEntries(Object.entries(obj).filter(([, value]) => value))
 
-// selected org units are sent only for manual selection; the mode then comes
-// from the `inclusion` field
 const orgUnitParams = ({ orgUnitMode, inclusion, selectedOrgUnits }) =>
     orgUnitMode === OU_MODE_MANUAL_VALUE
         ? {
@@ -50,7 +47,6 @@ const programFilterParams = (values) => {
     } = values
     return {
         program: selectedPrograms,
-        // programStatus/followUp = ALL means "omit the param"
         ...compact({
             programStatus,
             followUp: followUp === 'ALL' ? '' : followUp,
@@ -75,7 +71,6 @@ const lastUpdatedParams = ({
     return {}
 }
 
-// calculate minimum set of parameters based on given filters
 const valuesToParams = (values) => {
     const {
         orgUnitMode,
@@ -90,9 +85,9 @@ const valuesToParams = (values) => {
         orgUnitMode,
         format,
         includeDeleted: includeDeleted.toString(),
+        ...Object.fromEntries(idSchemeEntries(values, 'tracker')),
         paging: false,
         totalPages: false,
-        ...Object.fromEntries(idSchemeEntries(values, 'tracker')),
         ...orgUnitParams(values),
         ...assignedUserParams(values),
         ...programFilterParams(values),
@@ -112,7 +107,6 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
 
     const { format } = values
 
-    // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `trackedEntities`
     const downloadUrlParams = valuesToParams(values)
@@ -123,7 +117,6 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     } finally {
         setExportEnabled(true)
 
-        // log for debugging purposes
         console.log('tei-export:', { url, params: downloadUrlParams })
     }
 }

@@ -11,7 +11,6 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
         inclusionStrategy,
     } = values
 
-    // generate download url
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `metadata`
     const endpointExtension = compression ? `${format}.${compression}` : format
@@ -24,7 +23,6 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     } finally {
         setExportEnabled(true)
 
-        // log for debugging purposes
         console.log('metadata-export:', { url, params: downloadUrlParams })
     }
 }

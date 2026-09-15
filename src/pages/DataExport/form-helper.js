@@ -37,7 +37,6 @@ const valuesToParams = (values) => {
 const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
 
-    // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `dataValueSets`
     const downloadUrlParams = valuesToParams(values)
@@ -49,7 +48,6 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     } finally {
         setExportEnabled(true)
 
-        // log for debugging purposes
         console.log('data-export:', { url, params: downloadUrlParams })
     }
 }

@@ -6,8 +6,6 @@ import React, { useEffect, useState } from 'react'
 import { fetchAttributes } from '../../utils/helper.js'
 import { StyledField } from '../index.js'
 
-// "(Default)" is an empty value: the *IdScheme param is then omitted and the
-// server applies its own default (usually UID, sometimes CODE) for that type.
 const ID_SCHEME_OPTIONS = [
     { value: '', label: i18n.t('(Default)') },
     { value: 'UID', label: i18n.t('Uid') },
@@ -15,14 +13,11 @@ const ID_SCHEME_OPTIONS = [
     { value: 'NAME', label: i18n.t('Name') },
 ]
 
-// stable reference so the effect below doesn't re-run on every render
 const NO_ATTRIBUTE_TYPES = []
 
 const intersectByValue = (a, b) =>
     a.filter((item) => b.some((other) => other.value === item.value))
 
-// Pass `attributeTypes` to also offer unique metadata attributes as schemes;
-// with several types, only the attributes shared by all of them are offered.
 const IdSchemeSelect = ({
     name,
     label,

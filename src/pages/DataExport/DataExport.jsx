@@ -47,7 +47,6 @@ import { onExport, validate } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 
-// PAGE INFO
 export const PAGE_NAME = i18n.t('Data export')
 export const PAGE_DESCRIPTION = i18n.t(
     'Export metadata, such as data elements and organisation units, to JSON, CSV, DXF2, or ADX format.'

@@ -25,7 +25,6 @@ const jsDateToString = (date) =>
         .toString()
         .padStart(2, 0)}
 `
-// some parameters take the long version of the compression type
 const compressionToName = (compression) => {
     if (compression === 'gz') {
         return 'gzip'
@@ -99,7 +98,6 @@ const uploadFile = ({
                     const { error, id, msg, typeReports } = response
                     let entry
                     if (!isAsync) {
-                        // we are done
                         entry = {
                             id: new Date().getTime(),
                             level: 'INFO',
@@ -112,7 +110,6 @@ const uploadFile = ({
                             importType: type,
                         }
                     } else if (error && msg) {
-                        // error but we have a message
                         entry = {
                             id: new Date().getTime(),
                             level: 'ERROR',
@@ -125,7 +122,6 @@ const uploadFile = ({
                             importType: type,
                         }
                     } else if (error) {
-                        // error with no message
                         entry = {
                             id: new Date().getTime(),
                             level: 'ERROR',
@@ -137,14 +133,13 @@ const uploadFile = ({
                             importType: type,
                         }
                     } else {
-                        // success
                         entry = {
                             id: id,
                             level: 'INFO',
                             created: new Date(),
                             lastUpdated: new Date(),
                             completed: false,
-                            events: [{ ...msg, date: new Date() }], // this is a workaround for the initial message date coming as invalid
+                            events: [{ ...msg, date: new Date() }],
 
                             summary: undefined,
                             error: false,
@@ -176,13 +171,11 @@ const uploadFile = ({
             })
             xhr.send(file)
         } catch (e) {
-            // xhr.send can throw an exception
             reject(errorGenerator(e))
         }
     })
 }
 
-// call stub function if available
 const locationAssign = (url, blob) => {
     if (window.locationAssign) {
         window.locationAssign(url)
@@ -225,8 +218,6 @@ const exportErrorAlert = (source, message) => ({
     ],
 })
 
-// fetches the export URL, and only triggers the download if the server
-// responded with a success status otherwise returns an error alert
 const fetchAndDownload = async (url, source) => {
     try {
         const response = await fetch(url, { credentials: 'include' })
@@ -237,7 +228,6 @@ const fetchAndDownload = async (url, source) => {
                 const body = await response.json()
                 message = body.message || message
             } catch (e) {
-                // response body wasn't JSON, fall back to the generic message
                 console.error(
                     `${source}-export: failed to parse error response`,
                     e
@@ -275,7 +265,6 @@ const getInitialBoolValue = (prevValue, defaultValue) => {
     return prevValue
 }
 
-// adds a digit group separator matching the given locale
 const formatNumber = (value, locale) => {
     if (value === undefined || value === null || value === '') {
         return value
