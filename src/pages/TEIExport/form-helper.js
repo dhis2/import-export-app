@@ -10,6 +10,8 @@ import { idSchemeEntries } from '../../utils/idSchemeParams.js'
 const compact = (obj) =>
     Object.fromEntries(Object.entries(obj).filter(([, value]) => value))
 
+// include selected org.units only when manual selection is selected
+// orgUnitMode is then stored in the `inclusion` field
 const orgUnitParams = ({ orgUnitMode, inclusion, selectedOrgUnits }) =>
     orgUnitMode === OU_MODE_MANUAL_VALUE
         ? {
@@ -47,6 +49,8 @@ const programFilterParams = (values) => {
     } = values
     return {
         program: selectedPrograms,
+        // programStatus = ALL is now the same
+        // as not providing a value for this param at all
         ...compact({
             programStatus,
             followUp: followUp === 'ALL' ? '' : followUp,
@@ -71,6 +75,7 @@ const lastUpdatedParams = ({
     return {}
 }
 
+// calculate minimum set of parameters based on given filters
 const valuesToParams = (values) => {
     const {
         orgUnitMode,
@@ -107,6 +112,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
 
     const { format } = values
 
+    // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/tracker/`
     const endpoint = `trackedEntities`
     const downloadUrlParams = valuesToParams(values)
@@ -117,6 +123,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     } finally {
         setExportEnabled(true)
 
+        // log for debugging purposes
         console.log('tei-export:', { url, params: downloadUrlParams })
     }
 }

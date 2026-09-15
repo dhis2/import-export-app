@@ -18,6 +18,7 @@ const onImport =
             firstRowIsHeader,
         } = values
 
+        // send xhr
         const apiBaseUrl = `${baseUrl}/api/`
         const endpoint = 'dataValueSets'
         const params = [

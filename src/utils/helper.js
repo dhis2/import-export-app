@@ -25,6 +25,7 @@ const jsDateToString = (date) =>
         .toString()
         .padStart(2, 0)}
 `
+// some parameters take the long version of the compression type
 const compressionToName = (compression) => {
     if (compression === 'gz') {
         return 'gzip'
@@ -98,6 +99,7 @@ const uploadFile = ({
                     const { error, id, msg, typeReports } = response
                     let entry
                     if (!isAsync) {
+                        // we are done
                         entry = {
                             id: new Date().getTime(),
                             level: 'INFO',
@@ -110,6 +112,7 @@ const uploadFile = ({
                             importType: type,
                         }
                     } else if (error && msg) {
+                        // error but we have a message
                         entry = {
                             id: new Date().getTime(),
                             level: 'ERROR',
@@ -122,6 +125,7 @@ const uploadFile = ({
                             importType: type,
                         }
                     } else if (error) {
+                        // error with no message
                         entry = {
                             id: new Date().getTime(),
                             level: 'ERROR',
@@ -133,13 +137,14 @@ const uploadFile = ({
                             importType: type,
                         }
                     } else {
+                        // success
                         entry = {
                             id: id,
                             level: 'INFO',
                             created: new Date(),
                             lastUpdated: new Date(),
                             completed: false,
-                            events: [{ ...msg, date: new Date() }],
+                            events: [{ ...msg, date: new Date() }], // this is a workaround for the initial message date coming as invalid
 
                             summary: undefined,
                             error: false,
@@ -171,11 +176,13 @@ const uploadFile = ({
             })
             xhr.send(file)
         } catch (e) {
+            // xhr.send can throw an exception
             reject(errorGenerator(e))
         }
     })
 }
 
+// call stub function if available
 const locationAssign = (url, blob) => {
     if (window.locationAssign) {
         window.locationAssign(url)

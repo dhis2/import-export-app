@@ -9,6 +9,7 @@ const onImport =
     async (values) => {
         const { dryRun, files, format } = values
 
+        // send xhr
         const apiBaseUrl = `${baseUrl}/api/tracker`
         const params = [
             `async=${isAsync}`,

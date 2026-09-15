@@ -41,6 +41,11 @@ const PopulationAgegroupsDataPreview = ({
     const [bandCocMap, setBandCocMap] = useState({})
 
     useEffect(() => {
+        // Unfortunately bandCocs from react-final-form-array does
+        // not preserve referential equality even though the values
+        // in the array are the same. Since this component
+        // will be unmounted if bandCocs actually changes, it is safe
+        // to only set the bandCocMap once when being initialized
         if (!Object.keys(bandCocMap).length) {
             const bcocMap = bandCocs.reduce((acc, curr) => {
                 acc[curr.id] = curr

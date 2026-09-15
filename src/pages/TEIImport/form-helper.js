@@ -22,6 +22,7 @@ const onImport =
             isAsync,
         } = values
 
+        // send xhr
         const apiBaseUrl = `${baseUrl}/api/tracker/`
         const params = [
             `importMode=${dryRun ? 'VALIDATE' : 'COMMIT'}`,

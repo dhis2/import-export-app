@@ -5,6 +5,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
 
     const { objectType, object, format, compression, skipSharing } = values
 
+    // generate URL and redirect
     const apiBaseUrl = `${baseUrl}/api/`
     const endpoint = `${objectType}/${object}/metadata`
     const endpointExtension = compression ? `${format}.${compression}` : format
@@ -16,6 +17,7 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     } finally {
         setExportEnabled(true)
 
+        // log for debugging purposes
         console.log('metadata-dependency-export:', {
             url,
             params: downloadUrlParams,

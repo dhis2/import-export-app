@@ -39,6 +39,7 @@ import { onExport, validate } from './form-helper.js'
 
 const { Form } = ReactFinalForm
 
+// PAGE INFO
 export const PAGE_NAME = i18n.t('Event export')
 export const PAGE_DESCRIPTION = i18n.t(
     'Export event data for programs, stages and tracked entities to JSON or CSV format.'
