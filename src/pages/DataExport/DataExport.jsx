@@ -123,9 +123,7 @@ const DataExport = () => {
                                 />
                                 <IdSchemeSelect
                                     name="categoryOptionIdScheme"
-                                    label={i18n.t(
-                                        'Category option ID scheme'
-                                    )}
+                                    label={i18n.t('Category option ID scheme')}
                                     dataTest="input-category-option-id-scheme"
                                     attributeTypes={
                                         CATEGORY_OPTION_ATTRIBUTE_TYPES
