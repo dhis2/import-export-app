@@ -23,7 +23,7 @@ const baseValues = {
 }
 
 describe('DataExport valuesToParams', () => {
-    it('emits the explicitly chosen schemes and omits the "(Default)" ones', () => {
+    it('emits the explicitly chosen schemes and omits the "(Undefined)" ones', () => {
         const params = paramMap(valuesToParams(baseValues))
 
         expect(params.idScheme).toBe('UID')

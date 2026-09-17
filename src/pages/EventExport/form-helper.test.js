@@ -28,7 +28,7 @@ describe('EventExport valuesToParams', () => {
         expect(params.orgUnitIdScheme).toBe('UID')
     })
 
-    it('drops a scheme left at "(Default)"', () => {
+    it('drops a scheme left at "(Undefined)"', () => {
         const keys = paramKeys(
             valuesToParams({ ...baseValues, dataElementIdScheme: '' })
         )
