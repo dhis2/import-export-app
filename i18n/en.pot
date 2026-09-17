@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-02T14:17:13.038Z\n"
-"PO-Revision-Date: 2026-09-02T14:17:13.038Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
+"PO-Revision-Date: 2026-09-17T11:35:01.754Z\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr "Something went wrong when loading the current user!"
@@ -29,18 +29,23 @@ msgstr "Invalid duration"
 msgid "Format"
 msgstr "Format"
 
-msgid "Something went wrong when loading the additional data element ID schemes"
-msgstr "Something went wrong when loading the additional data element ID schemes"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Name"
+msgstr "Name"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "Something went wrong when loading the additional ID schemes"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
-msgstr ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
+msgid "(Default)"
+msgstr "(Default)"
+
+msgid "(Undefined)"
+msgstr "(Undefined)"
 
 msgid "Please select a file"
 msgstr "Please select a file"
@@ -138,15 +143,6 @@ msgstr "Uncompressed"
 
 msgid "Compression mode"
 msgstr "Compression mode"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Code"
-
-msgid "Name"
-msgstr "Name"
 
 msgid "Data element ID scheme"
 msgstr "Data element ID scheme"
@@ -818,6 +814,21 @@ msgstr ""
 
 msgid "Date range to export data for"
 msgstr "Date range to export data for"
+
+msgid "Category ID scheme"
+msgstr "Category ID scheme"
+
+msgid "Category option ID scheme"
+msgstr "Category option ID scheme"
+
+msgid "Category option combo ID scheme"
+msgstr "Category option combo ID scheme"
+
+msgid "Data set ID scheme"
+msgstr "Data set ID scheme"
+
+msgid "Attribute option combo ID scheme"
+msgstr "Attribute option combo ID scheme"
 
 msgid "Export data"
 msgstr "Export data"

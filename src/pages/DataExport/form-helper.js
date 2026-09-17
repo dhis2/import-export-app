@@ -7,23 +7,21 @@ import {
     compressionToName,
     pathToId,
 } from '../../utils/helper.js'
+import { idSchemeParams } from '../../utils/idSchemeParams.js'
 
-const valuesToParams = ({
-    selectedOrgUnits,
-    includeChildren,
-    selectedDataSets,
-    compression,
-    startDate,
-    endDate,
-    includeDeleted,
-    dataElementIdScheme,
-    orgUnitIdScheme,
-    idScheme,
-}) =>
-    [
-        `dataElementIdScheme=${dataElementIdScheme}`,
-        `orgUnitIdScheme=${orgUnitIdScheme}`,
-        `idScheme=${idScheme}`,
+const valuesToParams = (values) => {
+    const {
+        selectedOrgUnits,
+        includeChildren,
+        selectedDataSets,
+        compression,
+        startDate,
+        endDate,
+        includeDeleted,
+    } = values
+
+    return [
+        ...idSchemeParams(values, 'dataValueSets'),
         `includeDeleted=${includeDeleted}`,
         `children=${includeChildren}`,
         `startDate=${startDate}`,
@@ -34,6 +32,7 @@ const valuesToParams = ({
     ]
         .filter((s) => s != '')
         .join('&')
+}
 
 const onExport = (baseUrl, setExportEnabled) => async (values) => {
     setExportEnabled(false)
@@ -60,4 +59,4 @@ const validate = (values) => ({
     endDate: DATE_AFTER_VALIDATOR(values.endDate, values.startDate),
 })
 
-export { onExport, validate }
+export { onExport, validate, valuesToParams }

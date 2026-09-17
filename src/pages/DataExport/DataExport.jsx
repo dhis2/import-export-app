@@ -9,6 +9,10 @@ import {
     SchemeContainer,
     DataIcon,
     ValidationSummary,
+    IdSchemeSelect,
+    CATEGORY_ATTRIBUTE_TYPES,
+    CATEGORY_OPTION_ATTRIBUTE_TYPES,
+    DATA_SET_ATTRIBUTE_TYPES,
 } from '../../components/index.js'
 import {
     OrgUnitTree,
@@ -63,6 +67,11 @@ const initialValues = {
     dataElementIdScheme: defaultDataElementIdSchemeOption,
     orgUnitIdScheme: defaultOrgUnitIdSchemeOption,
     idScheme: defaultIdSchemeOption,
+    categoryIdScheme: '',
+    categoryOptionIdScheme: '',
+    categoryOptionComboIdScheme: '',
+    dataSetIdScheme: '',
+    attributeOptionComboIdScheme: '',
 }
 
 const DataExport = () => {
@@ -106,6 +115,40 @@ const DataExport = () => {
                             <SchemeContainer>
                                 <DataElementIdScheme />
                                 <OrgUnitIdScheme />
+                                <IdSchemeSelect
+                                    name="categoryIdScheme"
+                                    label={i18n.t('Category ID scheme')}
+                                    dataTest="input-category-id-scheme"
+                                    attributeTypes={CATEGORY_ATTRIBUTE_TYPES}
+                                />
+                                <IdSchemeSelect
+                                    name="categoryOptionIdScheme"
+                                    label={i18n.t('Category option ID scheme')}
+                                    dataTest="input-category-option-id-scheme"
+                                    attributeTypes={
+                                        CATEGORY_OPTION_ATTRIBUTE_TYPES
+                                    }
+                                />
+                                <IdSchemeSelect
+                                    name="categoryOptionComboIdScheme"
+                                    label={i18n.t(
+                                        'Category option combo ID scheme'
+                                    )}
+                                    dataTest="input-category-option-combo-id-scheme"
+                                />
+                                <IdSchemeSelect
+                                    name="dataSetIdScheme"
+                                    label={i18n.t('Data set ID scheme')}
+                                    dataTest="input-data-set-id-scheme"
+                                    attributeTypes={DATA_SET_ATTRIBUTE_TYPES}
+                                />
+                                <IdSchemeSelect
+                                    name="attributeOptionComboIdScheme"
+                                    label={i18n.t(
+                                        'Attribute option combo ID scheme'
+                                    )}
+                                    dataTest="input-attribute-option-combo-id-scheme"
+                                />
                                 <IdScheme />
                             </SchemeContainer>
                         </MoreOptions>

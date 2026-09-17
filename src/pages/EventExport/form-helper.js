@@ -4,38 +4,26 @@ import {
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { ALL_VALUE } from '../../hooks/useProgramStages.js'
 import { fetchAndDownload, pathToId } from '../../utils/helper.js'
+import { idSchemeParams } from '../../utils/idSchemeParams.js'
 
-const onExport = (baseUrl, setExportEnabled) => async (values) => {
-    setExportEnabled(false)
-
+const valuesToParams = (values) => {
     const {
         selectedOrgUnits,
         selectedPrograms,
         programStage,
-        format,
-        compression,
         occurredAfter,
         occurredBefore,
         includeDeleted,
-        dataElementIdScheme,
-        orgUnitIdScheme,
-        idScheme,
         inclusion,
     } = values
 
-    // generate URL and redirect
-    const apiBaseUrl = `${baseUrl}/api/tracker/`
-    const endpoint = `events`
-    const endpointExtension = compression ? `${format}.${compression}` : format
-    const downloadUrlParams = [
+    return [
         'paging=false',
         'totalPages=false',
         `orgUnit=${pathToId(selectedOrgUnits[0])}`,
         `program=${selectedPrograms}`,
         `includeDeleted=${includeDeleted}`,
-        `dataElementIdScheme=${dataElementIdScheme}`,
-        `orgUnitIdScheme=${orgUnitIdScheme}`,
-        `idScheme=${idScheme}`,
+        ...idSchemeParams(values, 'tracker'),
         `occurredAfter=${occurredAfter}`,
         `occurredBefore=${occurredBefore}`,
         `orgUnitMode=${inclusion}`,
@@ -43,6 +31,18 @@ const onExport = (baseUrl, setExportEnabled) => async (values) => {
     ]
         .filter((s) => s != '')
         .join('&')
+}
+
+const onExport = (baseUrl, setExportEnabled) => async (values) => {
+    setExportEnabled(false)
+
+    const { format, compression } = values
+
+    // generate URL and redirect
+    const apiBaseUrl = `${baseUrl}/api/tracker/`
+    const endpoint = `events`
+    const endpointExtension = compression ? `${format}.${compression}` : format
+    const downloadUrlParams = valuesToParams(values)
     const url = `${apiBaseUrl}${endpoint}.${endpointExtension}?${downloadUrlParams}`
 
     try {
@@ -60,4 +60,4 @@ const validate = (values) => ({
     endDate: DATE_AFTER_VALIDATOR(values.endDate, values.startDate),
 })
 
-export { onExport, validate }
+export { onExport, validate, valuesToParams }

@@ -1,5 +1,6 @@
 import { FORM_ERROR, jobStartedMessage } from '../../utils/final-form.js'
 import { uploadFile } from '../../utils/helper.js'
+import { idSchemeParams } from '../../utils/idSchemeParams.js'
 
 const isAsync = true
 
@@ -12,9 +13,6 @@ const onImport =
             strategy,
             preheatCache,
             skipAudit,
-            dataElementIdScheme,
-            orgUnitIdScheme,
-            idScheme,
             skipExistingCheck,
             format,
             firstRowIsHeader,
@@ -29,9 +27,7 @@ const onImport =
             `strategy=${strategy}`,
             `preheatCache=${preheatCache}`,
             `skipAudit=${skipAudit}`,
-            `dataElementIdScheme=${dataElementIdScheme}`,
-            `orgUnitIdScheme=${orgUnitIdScheme}`,
-            `idScheme=${idScheme}`,
+            ...idSchemeParams(values, 'dataValueSets'),
             `skipExistingCheck=${skipExistingCheck}`,
             format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
         ]

@@ -1,0 +1,9 @@
+const CATEGORY_ATTRIBUTE_TYPES = ['categoryAttribute']
+const CATEGORY_OPTION_ATTRIBUTE_TYPES = ['categoryOptionAttribute']
+const DATA_SET_ATTRIBUTE_TYPES = ['dataSetAttribute']
+
+export {
+    CATEGORY_ATTRIBUTE_TYPES,
+    CATEGORY_OPTION_ATTRIBUTE_TYPES,
+    DATA_SET_ATTRIBUTE_TYPES,
+}

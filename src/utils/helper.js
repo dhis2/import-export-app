@@ -225,8 +225,6 @@ const exportErrorAlert = (source, message) => ({
     ],
 })
 
-// fetches the export URL, and only triggers the download if the server
-// responded with a success status otherwise returns an error alert
 const fetchAndDownload = async (url, source) => {
     try {
         const response = await fetch(url, { credentials: 'include' })
@@ -237,7 +235,6 @@ const fetchAndDownload = async (url, source) => {
                 const body = await response.json()
                 message = body.message || message
             } catch (e) {
-                // response body wasn't JSON, fall back to the generic message
                 console.error(
                     `${source}-export: failed to parse error response`,
                     e
@@ -275,7 +272,6 @@ const getInitialBoolValue = (prevValue, defaultValue) => {
     return prevValue
 }
 
-// adds a digit group separator matching the given locale
 const formatNumber = (value, locale) => {
     if (value === undefined || value === null || value === '') {
         return value

@@ -5,100 +5,105 @@ import {
 } from '../../components/DatePicker/DatePickerField.jsx'
 import { OU_MODE_MANUAL_VALUE } from '../../components/Inputs/index.js'
 import { fetchAndDownload, pathToId } from '../../utils/helper.js'
+import { idSchemeEntries } from '../../utils/idSchemeParams.js'
 
-// calculate minimum set of parameters based on given filters
-const valuesToParams = ({
-    selectedOrgUnits,
-    selectedUsers,
-    selectedPrograms,
-    selectedTETypes,
-    orgUnitMode,
-    inclusion,
-    format,
-    includeDeleted,
-    dataElementIdScheme,
-    orgUnitIdScheme,
-    idScheme,
+const compact = (obj) =>
+    Object.fromEntries(Object.entries(obj).filter(([, value]) => value))
+
+// include selected org.units only when manual selection is selected
+// orgUnitMode is then stored in the `inclusion` field
+const orgUnitParams = ({ orgUnitMode, inclusion, selectedOrgUnits }) =>
+    orgUnitMode === OU_MODE_MANUAL_VALUE
+        ? {
+              orgUnits: selectedOrgUnits.map((o) => pathToId(o)).join(','),
+              orgUnitMode: inclusion,
+          }
+        : {}
+
+const assignedUserParams = ({
     assignedUserModeFilter,
     assignedUserMode,
-    teiTypeFilter,
-    programStatus,
-    followUp,
-    enrollmentEnrolledAfter,
-    enrollmentEnrolledBefore,
+    selectedUsers,
+}) => {
+    if (!assignedUserModeFilter) {
+        return {}
+    }
+    return {
+        assignedUserMode,
+        ...(assignedUserMode === 'PROVIDED'
+            ? { assignedUsers: selectedUsers.join(',') }
+            : {}),
+    }
+}
+
+const programFilterParams = (values) => {
+    if (values.teiTypeFilter !== 'PROGRAM') {
+        return {}
+    }
+    const {
+        selectedPrograms,
+        programStatus,
+        followUp,
+        enrollmentEnrolledAfter,
+        enrollmentEnrolledBefore,
+    } = values
+    return {
+        program: selectedPrograms,
+        // programStatus = ALL is now the same
+        // as not providing a value for this param at all
+        ...compact({
+            programStatus,
+            followUp: followUp === 'ALL' ? '' : followUp,
+            enrollmentEnrolledAfter,
+            enrollmentEnrolledBefore,
+        }),
+    }
+}
+
+const lastUpdatedParams = ({
     lastUpdatedFilter,
     updatedAfter,
     updatedBefore,
     updatedWithin,
 }) => {
+    if (lastUpdatedFilter === 'DATE') {
+        return compact({ updatedAfter, updatedBefore })
+    }
+    if (lastUpdatedFilter === 'DURATION') {
+        return { updatedWithin }
+    }
+    return {}
+}
+
+// calculate minimum set of parameters based on given filters
+const valuesToParams = (values) => {
+    const {
+        orgUnitMode,
+        format,
+        includeDeleted,
+        teiTypeFilter,
+        selectedTETypes,
+    } = values
+
     const minParams = {
         fields: '*,enrollments[*,events[*]]',
-        orgUnitMode: orgUnitMode,
-        format: format,
+        orgUnitMode,
+        format,
         includeDeleted: includeDeleted.toString(),
-        dataElementIdScheme: dataElementIdScheme,
-        orgUnitIdScheme: orgUnitIdScheme,
-        idScheme: idScheme,
+        ...Object.fromEntries(idSchemeEntries(values, 'tracker')),
         paging: false,
         totalPages: false,
+        ...orgUnitParams(values),
+        ...assignedUserParams(values),
+        ...programFilterParams(values),
+        ...(teiTypeFilter === 'TE'
+            ? { trackedEntityType: selectedTETypes }
+            : {}),
+        ...lastUpdatedParams(values),
     }
 
-    // include selected org.units only when manual selection is selected
-    // orgUnitMode is then stored in the `inclusion` field
-    if (orgUnitMode === OU_MODE_MANUAL_VALUE) {
-        minParams.orgUnits = selectedOrgUnits.map((o) => pathToId(o)).join(',')
-        minParams.orgUnitMode = inclusion
-    }
-
-    if (assignedUserModeFilter) {
-        minParams.assignedUserMode = assignedUserMode
-
-        if (assignedUserMode == 'PROVIDED') {
-            minParams.assignedUsers = selectedUsers.join(',')
-        }
-    }
-
-    if (teiTypeFilter == 'PROGRAM') {
-        minParams.program = selectedPrograms
-        if (programStatus) {
-            // programStatus = ALL is now the same
-            // as not providing a value for this param at all
-            minParams.programStatus = programStatus
-        }
-
-        if (followUp !== 'ALL') {
-            minParams.followUp = followUp
-        }
-
-        if (enrollmentEnrolledAfter) {
-            minParams.enrollmentEnrolledAfter = enrollmentEnrolledAfter
-        }
-
-        if (enrollmentEnrolledBefore) {
-            minParams.enrollmentEnrolledBefore = enrollmentEnrolledBefore
-        }
-    }
-
-    if (teiTypeFilter == 'TE') {
-        minParams.trackedEntityType = selectedTETypes
-    }
-
-    if (lastUpdatedFilter == 'DATE') {
-        if (updatedAfter) {
-            minParams.updatedAfter = updatedAfter
-        }
-
-        if (updatedBefore) {
-            minParams.updatedBefore = updatedBefore
-        }
-    }
-
-    if (lastUpdatedFilter == 'DURATION') {
-        minParams.updatedWithin = updatedWithin
-    }
-
-    return Object.keys(minParams)
-        .map((param) => `${param}=${minParams[param]}`)
+    return Object.entries(minParams)
+        .map(([param, value]) => `${param}=${value}`)
         .join('&')
 }
 
@@ -169,4 +174,4 @@ const validate = (values) => {
     return errors
 }
 
-export { onExport, validate }
+export { onExport, validate, valuesToParams }

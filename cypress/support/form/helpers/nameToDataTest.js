@@ -21,6 +21,21 @@ export const nameToDataTest = (name) => {
         case 'idScheme':
             return 'input-id-scheme'
 
+        case 'categoryIdScheme':
+            return 'input-category-id-scheme'
+
+        case 'categoryOptionIdScheme':
+            return 'input-category-option-id-scheme'
+
+        case 'categoryOptionComboIdScheme':
+            return 'input-category-option-combo-id-scheme'
+
+        case 'dataSetIdScheme':
+            return 'input-data-set-id-scheme'
+
+        case 'attributeOptionComboIdScheme':
+            return 'input-attribute-option-combo-id-scheme'
+
         case 'program':
             return 'input-program-picker'
 
