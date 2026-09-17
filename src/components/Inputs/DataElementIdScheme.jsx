@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import { IdSchemeSelect } from '../index.js'
 
-const defaultDataElementIdSchemeOption = 'UID'
+const defaultDataElementIdSchemeOption = ''
 
 const NAME = 'dataElementIdScheme'
 const DATATEST = 'input-data-element-id-scheme'

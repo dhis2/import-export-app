@@ -6,8 +6,8 @@ import React, { useEffect, useState } from 'react'
 import { fetchAttributes } from '../../utils/helper.js'
 import { StyledField } from '../index.js'
 
-const ID_SCHEME_OPTIONS = [
-    { value: '', label: i18n.t('(Default)') },
+const ID_SCHEME_OPTIONS = (emptyOptionLabel) => [
+    { value: '', label: emptyOptionLabel },
     { value: 'UID', label: i18n.t('Uid') },
     { value: 'CODE', label: i18n.t('Code') },
     { value: 'NAME', label: i18n.t('Name') },
@@ -23,6 +23,7 @@ const IdSchemeSelect = ({
     label,
     dataTest,
     attributeTypes = NO_ATTRIBUTE_TYPES,
+    isFallback = false,
 }) => {
     const { baseUrl } = useConfig()
     const [loading, setLoading] = useState(attributeTypes.length > 0)
@@ -78,12 +79,24 @@ const IdSchemeSelect = ({
             'Something went wrong when loading the additional ID schemes'
         )} : ${error.message}`
 
+    // The fallback (common) ID scheme dropdown omits its parameter to defer
+    // to the server's own default, so "(Default)" fits there. The other,
+    // per-object-type dropdowns omit theirs to defer to the fallback
+    // dropdown instead - labeling that choice "(Default)" too would imply
+    // it means the same thing in both places, so it's called "(Undefined)".
+    const emptyOptionLabel = isFallback
+        ? i18n.t('(Default)')
+        : i18n.t('(Undefined)')
+
     return (
         <StyledField
             component={SingleSelectFieldFF}
             name={name}
             label={label}
-            options={[...ID_SCHEME_OPTIONS, ...attributeOptions]}
+            options={[
+                ...ID_SCHEME_OPTIONS(emptyOptionLabel),
+                ...attributeOptions,
+            ]}
             dataTest={dataTest}
             loading={loading}
             validationText={validationText}
@@ -97,6 +110,7 @@ IdSchemeSelect.propTypes = {
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     attributeTypes: PropTypes.arrayOf(PropTypes.string),
+    isFallback: PropTypes.bool,
 }
 
 export { IdSchemeSelect }
