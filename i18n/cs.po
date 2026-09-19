@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-09-02T14:17:13.038Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -36,18 +36,23 @@ msgstr "Neplatné trvání"
 msgid "Format"
 msgstr "Formát"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
-msgstr "Při načítání dalších schémat ID datových prvků se něco pokazilo"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Kód"
+
+msgid "Name"
+msgstr "Název"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "Při načítání dalších schémat ID se něco pokazilo"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
+msgid "(Default)"
 msgstr ""
-"Při načítání dalších schémat ID další organizační jednotky se něco pokazilo"
+
+msgid "(Undefined)"
+msgstr ""
 
 msgid "Please select a file"
 msgstr "Vyberte soubor"
@@ -144,15 +149,6 @@ msgstr "Nekomprimovaný"
 
 msgid "Compression mode"
 msgstr "Režim komprese"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Kód"
-
-msgid "Name"
-msgstr "Název"
 
 msgid "Data element ID scheme"
 msgstr "Schéma ID datového prvku"
@@ -825,6 +821,21 @@ msgstr ""
 
 msgid "Date range to export data for"
 msgstr "Časové období, pro které chcete exportovat data"
+
+msgid "Category ID scheme"
+msgstr "Schéma ID kategorie"
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
+msgstr ""
 
 msgid "Export data"
 msgstr "Exportovat data"

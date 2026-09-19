@@ -6,17 +6,17 @@
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
-# Yayra Gomado <ygomado@hispwca.org>, 2025
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Esther Tokouli, 2026
 # Cyrille Kabrane, 2026
+# Yayra Gomado <ygomado@hispwca.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-09-02T14:17:13.038Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Cyrille Kabrane, 2026\n"
+"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -46,23 +46,25 @@ msgstr "Durée invalide"
 msgid "Format"
 msgstr "Format"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
-msgstr ""
-"Une erreur s'est produite lors du chargement des schémas d'identification "
-"supplémentaires pour élément de données"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Name"
+msgstr "Nom"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr ""
 "Une erreur s'est produite lors du chargement des schémas d'identification "
 "supplémentaires"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
+msgid "(Default)"
 msgstr ""
-"Une erreur s'est produite lors du chargement des schémas d'identification "
-"supplémentaires pour unité d'organisation"
+
+msgid "(Undefined)"
+msgstr ""
 
 msgid "Please select a file"
 msgstr "Veuillez sélectionner un fichier"
@@ -165,15 +167,6 @@ msgstr "Non compressé"
 
 msgid "Compression mode"
 msgstr "Mode de compression"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Code"
-
-msgid "Name"
-msgstr "Nom"
 
 msgid "Data element ID scheme"
 msgstr "Schéma d'identification pour élément de données"
@@ -869,6 +862,21 @@ msgstr ""
 
 msgid "Date range to export data for"
 msgstr "Plage de dates pour laquelle exporter les données"
+
+msgid "Category ID scheme"
+msgstr "Schéma d'ID de catégorie"
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
+msgstr ""
 
 msgid "Export data"
 msgstr "Exporter les données"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-09-02T14:17:13.038Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -36,21 +36,23 @@ msgstr "Davomiyligi notoʼgʼri"
 msgid "Format"
 msgstr "Formatlash"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
-msgstr ""
-"Maʼlumotlar elementlari identifikatorining qoʼshimcha sxemalarini yuklashda "
-"xatolik yuz berdi"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Kod"
+
+msgid "Name"
+msgstr "Исми"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "Qoʼshimcha sxemalar identifikatorini yuklashda xatolik yuz berdi"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
+msgid "(Default)"
 msgstr ""
-"Qoʼshimcha tashkiliy boʼlimlar identifikatorining sxemalarini yuklashda "
-"xatolik yuz berdi"
+
+msgid "(Undefined)"
+msgstr ""
 
 msgid "Please select a file"
 msgstr "Iltimos, faylni tanlang"
@@ -147,15 +149,6 @@ msgstr "Siqilmagan arxiv"
 
 msgid "Compression mode"
 msgstr "Аrxivni siqish rejimi"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Kod"
-
-msgid "Name"
-msgstr "Исми"
 
 msgid "Data element ID scheme"
 msgstr "Maʼlumotlar elementi identifikatori sxemasi"
@@ -842,6 +835,21 @@ msgstr ""
 
 msgid "Date range to export data for"
 msgstr "Maʼlumotlarni eksport qilish uchun davr oraligʼidagi sanalar"
+
+msgid "Category ID scheme"
+msgstr ""
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
+msgstr ""
 
 msgid "Export data"
 msgstr "Maʼlumotlarni eksport qilish"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-09-02T14:17:13.038Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
@@ -36,21 +36,23 @@ msgstr "Duración no válida"
 msgid "Format"
 msgstr "Formato"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
-msgstr ""
-"Algo ha ido mal al cargar los esquemas de ID de elementos de datos "
-"adicionales"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Name"
+msgstr "Nombre"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "Algo ha ido mal al cargar los esquemas de ID adicionales"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
+msgid "(Default)"
 msgstr ""
-"Algo ha fallado al cargar los esquemas de ID de unidad de organización "
-"adicional"
+
+msgid "(Undefined)"
+msgstr ""
 
 msgid "Please select a file"
 msgstr "Seleccione un archivo"
@@ -151,15 +153,6 @@ msgstr "Sin comprimir"
 
 msgid "Compression mode"
 msgstr "Modo de compresión"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Código"
-
-msgid "Name"
-msgstr "Nombre"
 
 msgid "Data element ID scheme"
 msgstr "Esquema de identificación del elemento de datos"
@@ -844,6 +837,21 @@ msgstr ""
 
 msgid "Date range to export data for"
 msgstr "Intervalo de fechas para exportar los datos"
+
+msgid "Category ID scheme"
+msgstr ""
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
+msgstr ""
 
 msgid "Export data"
 msgstr "Exportar datos"
