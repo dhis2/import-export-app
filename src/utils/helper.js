@@ -188,7 +188,7 @@ const getFilenameFromContentDisposition = (header) => {
     if (!header) {
         return undefined
     }
-    const encoded = header.match(/filename\*\s*=\s*UTF-8''([^;]+)/i)
+    const encoded = /filename\*\s*=\s*UTF-8''([^;]+)/i.exec(header)
     if (encoded) {
         try {
             return decodeURIComponent(encoded[1].trim())
@@ -196,8 +196,8 @@ const getFilenameFromContentDisposition = (header) => {
             // malformed encoding, fall back to the plain file name
         }
     }
-    const plain = header.match(
-        /filename\s*=\s*"([^"]+)"|filename\s*=\s*([^;]+)/i
+    const plain = /filename\s*=\s*"([^"]+)"|filename\s*=\s*([^;]+)/i.exec(
+        header
     )
     if (plain) {
         return (plain[1] || plain[2]).trim()
@@ -216,7 +216,7 @@ const locationAssign = (url, blob, filename) => {
                 : url
 
             const urlFilePart = new URL(downloadUrl).pathname.split('/').pop()
-            const [urlFilename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+            const [urlFilename] = /(^[^.]+)(\..+$)/.exec(urlFilePart)
 
             const objectUrl = blob ? URL.createObjectURL(blob) : undefined
 
