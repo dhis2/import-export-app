@@ -182,8 +182,31 @@ const uploadFile = ({
     })
 }
 
+// returns the file name from a Content-Disposition header, preferring the
+// RFC 5987 encoded form (filename*=UTF-8''...), or undefined if there is none
+const getFilenameFromContentDisposition = (header) => {
+    if (!header) {
+        return undefined
+    }
+    const encoded = header.match(/filename\*\s*=\s*UTF-8''([^;]+)/i)
+    if (encoded) {
+        try {
+            return decodeURIComponent(encoded[1].trim())
+        } catch (e) {
+            // malformed encoding, fall back to the plain file name
+        }
+    }
+    const plain = header.match(
+        /filename\s*=\s*"([^"]+)"|filename\s*=\s*([^;]+)/i
+    )
+    if (plain) {
+        return (plain[1] || plain[2]).trim()
+    }
+    return undefined
+}
+
 // call stub function if available
-const locationAssign = (url, blob) => {
+const locationAssign = (url, blob, filename) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
@@ -193,13 +216,15 @@ const locationAssign = (url, blob) => {
                 : url
 
             const urlFilePart = new URL(downloadUrl).pathname.split('/').pop()
-            const [filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
+            const [urlFilename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
 
             const objectUrl = blob ? URL.createObjectURL(blob) : undefined
 
             const link = document.createElement('a')
             link.href = objectUrl || downloadUrl
-            link.download = filename
+            // a blob URL carries no Content-Disposition, so the server's file
+            // name has to be passed on explicitly
+            link.download = filename || urlFilename
             link.target = '_blank'
             link.click()
 
@@ -244,7 +269,10 @@ const fetchAndDownload = async (url, source) => {
         }
 
         const blob = await response.blob()
-        locationAssign(url, blob)
+        const filename = getFilenameFromContentDisposition(
+            response.headers?.get('Content-Disposition')
+        )
+        locationAssign(url, blob, filename)
         return undefined
     } catch (e) {
         console.error(`${source}-export: request failed`, e)
@@ -283,6 +311,7 @@ const formatNumber = (value, locale) => {
 export {
     fetchAttributes,
     fetchAndDownload,
+    getFilenameFromContentDisposition,
     getPrevJobDetails,
     getInitialBoolValue,
     formatNumber,

@@ -1,5 +1,10 @@
 import { FORM_ERROR } from './final-form.js'
-import { fetchAndDownload, formatNumber, locationAssign } from './helper.js'
+import {
+    fetchAndDownload,
+    formatNumber,
+    getFilenameFromContentDisposition,
+    locationAssign,
+} from './helper.js'
 
 describe('formatNumber', () => {
     it('adds digit group separators to numbers', () => {
@@ -61,6 +66,12 @@ describe('locationAssign', () => {
         const link = locationAssign(url)
         expect(link.download).toEqual('events.json.gz')
     })
+    it('should use the given file name instead of the one from the url', () => {
+        const url =
+            'https://debug.dhis2.org/dev/api/dataValueSets.json?dataSet=pBOMPrpg1QX&compression=zip'
+        const link = locationAssign(url, undefined, 'dataValues.json.zip')
+        expect(link.download).toEqual('dataValues.json.zip')
+    })
     it('should work with relative URLs when bundled in DHIS2', () => {
         Object.defineProperty(global.document, 'baseURI', {
             value: 'http://localhost:8080/dhis-web-import-export/index.html#/export/tei',
@@ -78,6 +89,41 @@ describe('locationAssign', () => {
             '../api/tracker/events.json.zip?paging=false&totalPages=false&orgUnit=ImspTQPwCqd&program=lxAQ7Zs9VYR&includeDeleted=false&dataElementIdScheme=UID&orgUnitIdScheme=UID&idScheme=UID&occurredAfter=2023-12-12&occurredBefore=2024-03-12&orgUnitMode=SELECTED'
         const link = locationAssign(url)
         expect(link.download).toEqual('events.json.zip')
+    })
+})
+
+describe('getFilenameFromContentDisposition', () => {
+    it('reads a quoted file name', () => {
+        expect(
+            getFilenameFromContentDisposition(
+                'attachment; filename="dataValues_2026-07-02_2026-10-02.json.zip"'
+            )
+        ).toEqual('dataValues_2026-07-02_2026-10-02.json.zip')
+    })
+    it('reads an unquoted file name', () => {
+        expect(
+            getFilenameFromContentDisposition(
+                'attachment; filename=metadata.json.gz'
+            )
+        ).toEqual('metadata.json.gz')
+    })
+    it('prefers the encoded file name', () => {
+        expect(
+            getFilenameFromContentDisposition(
+                'attachment; filename="export.json"; filename*=UTF-8\'\'donn%C3%A9es.json.zip'
+            )
+        ).toEqual('données.json.zip')
+    })
+    it('falls back to the plain file name when the encoded one is malformed', () => {
+        expect(
+            getFilenameFromContentDisposition(
+                'attachment; filename*=UTF-8\'\'bad%E0%A4%A; filename="export.json.zip"'
+            )
+        ).toEqual('export.json.zip')
+    })
+    it('returns undefined without a file name', () => {
+        expect(getFilenameFromContentDisposition(null)).toBeUndefined()
+        expect(getFilenameFromContentDisposition('inline')).toBeUndefined()
     })
 })
 
@@ -101,6 +147,43 @@ describe('fetchAndDownload', () => {
             credentials: 'include',
         })
         expect(result).toBeUndefined()
+    })
+
+    it('saves the download under the file name sent by the server', async () => {
+        const downloads = []
+        const clickSpy = jest
+            .spyOn(HTMLAnchorElement.prototype, 'click')
+            .mockImplementation(function () {
+                downloads.push(this.download)
+            })
+        const createObjectURL = URL.createObjectURL
+        const revokeObjectURL = URL.revokeObjectURL
+        URL.createObjectURL = jest.fn(() => 'blob:export')
+        URL.revokeObjectURL = jest.fn()
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            headers: {
+                get: (name) =>
+                    name.toLowerCase() === 'content-disposition'
+                        ? 'attachment; filename="dataValues.json.zip"'
+                        : null,
+            },
+            blob: () => Promise.resolve(new Blob(['PK'])),
+        })
+
+        try {
+            const result = await fetchAndDownload(
+                'https://debug.dhis2.org/dev/api/dataValueSets.json?compression=zip',
+                'data'
+            )
+
+            expect(result).toBeUndefined()
+            expect(downloads).toEqual(['dataValues.json.zip'])
+        } finally {
+            clickSpy.mockRestore()
+            URL.createObjectURL = createObjectURL
+            URL.revokeObjectURL = revokeObjectURL
+        }
     })
 
     it('returns a form error with the server message when the response is not ok', async () => {
