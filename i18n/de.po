@@ -1,19 +1,18 @@
 # Translators:
-# KRG HIS <antonia.bezenchek@informa.pro>, 2022
-# Mozafar Haider, 2025
+# Brar Piening, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2022-04-20 10:18+0000\n"
-"Last-Translator: Mozafar Haider, 2025\n"
-"Language-Team: Arabic (Iraq) (https://app.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
+"Last-Translator: Brar Piening, 2026\n"
+"Language-Team: German (https://app.transifex.com/hisp-uio/teams/100509/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar_IQ\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Something went wrong when loading the current user!"
 msgstr ""
@@ -22,7 +21,7 @@ msgid "Basic options"
 msgstr ""
 
 msgid "Invalid date"
-msgstr ""
+msgstr "Ungültiges Datum"
 
 msgid "Start date must be before end date"
 msgstr ""
@@ -64,7 +63,7 @@ msgid "Any user"
 msgstr ""
 
 msgid "Current user"
-msgstr ""
+msgstr "Aktueller Benutzer"
 
 msgid "No user/unassigned"
 msgstr ""
@@ -115,7 +114,7 @@ msgid "Code"
 msgstr ""
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "Name"
 
 msgid "Data element ID scheme"
 msgstr ""
@@ -172,7 +171,7 @@ msgid "Controls when to flush the internal cache"
 msgstr ""
 
 msgid "All"
-msgstr "الجميع"
+msgstr ""
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -223,7 +222,7 @@ msgid "Only include reports for objects that have errors"
 msgstr ""
 
 msgid "Errors"
-msgstr "اخطاء"
+msgstr ""
 
 msgid "Reports for all objects imported"
 msgstr ""
@@ -259,13 +258,13 @@ msgid "Only update existing values, ignore new values"
 msgstr ""
 
 msgid "Update"
-msgstr "تحديث"
+msgstr ""
 
 msgid "Remove values included in uploaded file"
 msgstr ""
 
 msgid "Delete"
-msgstr "حذف"
+msgstr ""
 
 msgid "Data will be deleted"
 msgstr ""
@@ -297,7 +296,7 @@ msgid "Only include selected organisation unit"
 msgstr ""
 
 msgid "Selected"
-msgstr "محدد"
+msgstr ""
 
 msgid "Include the first level of units inside selections"
 msgstr ""
@@ -384,22 +383,22 @@ msgid "Strategy to take when merging two objects"
 msgstr ""
 
 msgid "Data sets"
-msgstr "حزم البيانات"
+msgstr ""
 
 msgid "Programs"
-msgstr "البرامج"
+msgstr ""
 
 msgid "Category combination"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "لوحة المعلومات"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "مجموعات عناصر البيانات"
+msgstr ""
 
 msgid "Option sets"
-msgstr "أحزمة الخيارات"
+msgstr ""
 
 msgid "Object type"
 msgstr ""
@@ -450,7 +449,7 @@ msgid "Intelligent scan (reference)"
 msgstr ""
 
 msgid "None"
-msgstr "لا شيء"
+msgstr ""
 
 msgid "Preheat mode"
 msgstr ""
@@ -486,13 +485,13 @@ msgid "All statuses"
 msgstr ""
 
 msgid "Active"
-msgstr "فعال"
+msgstr ""
 
 msgid "Completed"
-msgstr "مكتمل"
+msgstr ""
 
 msgid "Cancelled"
-msgstr "تم الإلغاء"
+msgstr ""
 
 msgid "Include only entities with status"
 msgstr ""
@@ -538,7 +537,7 @@ msgid "Strategy"
 msgstr ""
 
 msgid "Program"
-msgstr "البرنامج"
+msgstr ""
 
 msgid "Tracked entity type"
 msgstr ""
@@ -547,7 +546,7 @@ msgid "Filter by"
 msgstr ""
 
 msgid "Tracked entity types"
-msgstr "أنواع الكيانات المتعقبة"
+msgstr ""
 
 msgid "Filter tracked entity types by name"
 msgstr ""
@@ -595,13 +594,13 @@ msgid "Key"
 msgstr ""
 
 msgid "Value"
-msgstr "القيمة"
+msgstr ""
 
 msgid "Job summary"
 msgstr ""
 
 msgid "Error"
-msgstr "خطأ"
+msgstr ""
 
 msgid "Conflicts"
 msgstr ""
@@ -613,7 +612,7 @@ msgid "Log"
 msgstr ""
 
 msgid "Time"
-msgstr "الوقت"
+msgstr ""
 
 msgid "Message"
 msgstr ""
@@ -622,7 +621,7 @@ msgid "ID"
 msgstr ""
 
 msgid "Messages"
-msgstr "الرسائل"
+msgstr ""
 
 msgid "Type"
 msgstr ""
@@ -634,16 +633,16 @@ msgid "View summary of recently started import job"
 msgstr ""
 
 msgid "Status"
-msgstr "الحالة"
+msgstr ""
 
 msgid "Description"
-msgstr "الوصف"
+msgstr ""
 
 msgid "Summary"
 msgstr ""
 
 msgid "Created"
-msgstr "تم الإنشاء"
+msgstr ""
 
 msgid "Deleted"
 msgstr ""
@@ -727,10 +726,10 @@ msgid "Overview"
 msgstr ""
 
 msgid "Yes"
-msgstr "نعم"
+msgstr ""
 
 msgid "No"
-msgstr "لا"
+msgstr ""
 
 msgid "There are errors on this page"
 msgstr ""
@@ -869,10 +868,10 @@ msgid "Loading exported data"
 msgstr ""
 
 msgid "Data"
-msgstr "البيانات"
+msgstr ""
 
 msgid "Event"
-msgstr "الحدث"
+msgstr ""
 
 msgid "GML"
 msgstr ""
