@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-03-02T15:49:32.567Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -38,17 +38,23 @@ msgstr "无效的持续时间"
 msgid "Format"
 msgstr "格式"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
-msgstr "载入额外的数据元ID方案出错"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "Name"
+msgstr "名称"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "载入额外的ID方案出错"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
-msgstr "载入额外的机构ID方案出错"
+msgid "(Default)"
+msgstr ""
+
+msgid "(Undefined)"
+msgstr ""
 
 msgid "Please select a file"
 msgstr "请选择一个文件"
@@ -121,8 +127,11 @@ msgstr "导入"
 msgid "Atomic mode"
 msgstr "原子模式"
 
-msgid "Whether to import objects even if some references do not exist"
-msgstr "是否导入对象，即使某些引用不存在"
+msgid ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
+msgstr "控制当导入中的某些对象无效时应如何处理。既可以拒绝整个导入，也可以导入有效的对象并跳过无效的对象。"
 
 msgid "Class key"
 msgstr "分类键值"
@@ -138,15 +147,6 @@ msgstr "无压缩"
 
 msgid "Compression mode"
 msgstr "压缩方式"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "代码"
-
-msgid "Name"
-msgstr "名称"
 
 msgid "Data element ID scheme"
 msgstr "数据元ID方案"
@@ -437,6 +437,11 @@ msgstr "必须选择一个对象"
 
 msgid "Object"
 msgstr "对象"
+
+msgid ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
+msgstr "不存在所选对象类型的对象，或者您无权查看这些对象"
 
 msgid "Organisation unit ID scheme"
 msgstr "机构ID方案"
@@ -803,6 +808,21 @@ msgstr "将元数据（例如数据元素和组织单位）导出为 JSON、CSV�
 
 msgid "Date range to export data for"
 msgstr "导出数据的日期范围"
+
+msgid "Category ID scheme"
+msgstr "分类ID方案"
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
+msgstr ""
 
 msgid "Export data"
 msgstr "导出数据"
