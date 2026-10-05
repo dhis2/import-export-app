@@ -182,8 +182,47 @@ const uploadFile = ({
     })
 }
 
+// extract the file name from a Content-Disposition header
+const getFilenameFromContentDisposition = (header) => {
+    if (!header) {
+        return undefined
+    }
+
+    const extendedMatch = header.match(/filename\*\s*=\s*([^;]+)/i)
+    if (extendedMatch) {
+        const value = extendedMatch[1].trim().replace(/^"(.*)"$/, '$1')
+        const encoded = value.replace(/^[^']*'[^']*'/, '')
+        try {
+            return decodeURIComponent(encoded)
+        } catch (e) {
+            return encoded
+        }
+    }
+
+    const match = header.match(/filename\s*=\s*("([^"]*)"|[^;]+)/i)
+    if (match) {
+        return (match[2] ?? match[1]).trim() || undefined
+    }
+
+    return undefined
+}
+
+const compressionSuffixes = { zip: '.zip', gzip: '.gz', gz: '.gz' }
+
+// build a file name from the url path, add compression suffix when compression is passed as query param
+const getFilenameFromUrl = (downloadUrl) => {
+    const { pathname, searchParams } = new URL(downloadUrl)
+    const filename = pathname.split('/').pop()
+    const suffix = compressionSuffixes[searchParams.get('compression')]
+
+    if (suffix && !filename.endsWith(suffix)) {
+        return `${filename}${suffix}`
+    }
+    return filename
+}
+
 // call stub function if available
-const locationAssign = (url, blob) => {
+const locationAssign = (url, blob, filename) => {
     if (window.locationAssign) {
         window.locationAssign(url)
     } else {
@@ -192,14 +231,11 @@ const locationAssign = (url, blob) => {
                 ? new URL(url, document.baseURI).href
                 : url
 
-            const urlFilePart = new URL(downloadUrl).pathname.split('/').pop()
-            const [filename] = urlFilePart.match(/(^[^.]+)(\..+$)/)
-
             const objectUrl = blob ? URL.createObjectURL(blob) : undefined
 
             const link = document.createElement('a')
             link.href = objectUrl || downloadUrl
-            link.download = filename
+            link.download = filename || getFilenameFromUrl(downloadUrl)
             link.target = '_blank'
             link.click()
 
@@ -244,7 +280,10 @@ const fetchAndDownload = async (url, source) => {
         }
 
         const blob = await response.blob()
-        locationAssign(url, blob)
+        const filename = getFilenameFromContentDisposition(
+            response.headers?.get('Content-Disposition')
+        )
+        locationAssign(url, blob, filename)
         return undefined
     } catch (e) {
         console.error(`${source}-export: request failed`, e)
@@ -286,6 +325,7 @@ export {
     getPrevJobDetails,
     getInitialBoolValue,
     formatNumber,
+    getFilenameFromContentDisposition,
     locationAssign,
     jsDateToISO8601,
     jsDateToString,
