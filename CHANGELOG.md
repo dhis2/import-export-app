@@ -1,3 +1,18 @@
+# [101.6.0](https://github.com/dhis2/import-export-app/compare/v101.5.0...v101.6.0) (2026-10-05)
+
+
+### Bug Fixes
+
+* compressed data export with uncompressed filename ([d845ac6](https://github.com/dhis2/import-export-app/commit/d845ac643ae22718a44cfc0f1006559a9b301b95))
+* **id schemes:** address PR review feedback on labeling and defaults ([edbaf5d](https://github.com/dhis2/import-export-app/commit/edbaf5d00916358c677056a44c8cd0966a8cf4c0))
+* **id schemes:** address PR review feedback on labeling and defaults ([5ddc337](https://github.com/dhis2/import-export-app/commit/5ddc337fe21ddefddbe95006499e90f9e0e19fff))
+* **tei export:** match query param order to stubbed network fixtures ([85b9b23](https://github.com/dhis2/import-export-app/commit/85b9b236329e85e55d99e680f1f70a03d231cfd6))
+
+
+### Features
+
+* **data export:** add "(Default)" and per-type ID scheme options ([13d4c59](https://github.com/dhis2/import-export-app/commit/13d4c593d820b033942af3f9a31659ef7fb27bf6))
+
 # [101.5.0](https://github.com/dhis2/import-export-app/compare/v101.4.1...v101.5.0) (2026-09-03)
 
 
