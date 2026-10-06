@@ -1,3 +1,10 @@
+## [101.6.1](https://github.com/dhis2/import-export-app/compare/v101.6.0...v101.6.1) (2026-10-06)
+
+
+### Bug Fixes
+
+* remove first row header UI on data import ([#2299](https://github.com/dhis2/import-export-app/issues/2299)) ([d1d05c7](https://github.com/dhis2/import-export-app/commit/d1d05c74d1e3bf992f00ab9c75916a25972c9d48))
+
 # [101.6.0](https://github.com/dhis2/import-export-app/compare/v101.5.0...v101.6.0) (2026-10-05)
 
 
