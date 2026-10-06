@@ -15,7 +15,6 @@ const onImport =
             skipAudit,
             skipExistingCheck,
             format,
-            firstRowIsHeader,
         } = values
 
         // send xhr
@@ -29,7 +28,7 @@ const onImport =
             `skipAudit=${skipAudit}`,
             ...idSchemeParams(values, 'dataValueSets'),
             `skipExistingCheck=${skipExistingCheck}`,
-            format == 'csv' ? `firstRowIsHeader=${firstRowIsHeader}` : '',
+            format == 'csv' ? `firstRowIsHeader=true` : '',
         ]
             .filter((s) => s != '')
             .join('&')
