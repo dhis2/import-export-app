@@ -25,7 +25,7 @@ bar. The app offers several services, described in the following sections.
 
 ### Import progress logger { #import_progress_logger }
 
-No matter what you import ("Data", "Events", "Org unit geometry", "Metadata" or "Tracked entity" data), you can always see the progress of the import in the "Job summary" at the top of the page.
+No matter what you import (**Data**, **Events**, **Org unit geometry**, **Metadata** or **Tracked entity** data), you can always see the progress of the import in the **Job summary** at the top of the page.
 
 ### Import summaries { #metadata_import_summaries }
 
