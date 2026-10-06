@@ -43,16 +43,16 @@ In the sidebar, click **Metadata import**.
 
 1.  Choose a file to upload.
 
-2.  Select a format: _JSON_ or _CSV_.
+2.  Choose a format: **JSON** or **CSV**.
 
-3.  Select the appropriate settings for:
+3.  Choose the appropriate settings for:
 
     -   Identifier (whether to match existing metadata on UID or code)
     -   Import report mode (level of detail reported after import has finished)
     -   Import strategy (how values should be imported)
     -   Atomic mode (controls what happens when some objects in the import are invalid)
 
-    If you select _CSV_, two more settings appear: _First row is header_ (a header row is ignored during import) and _Class key_ (the type of metadata object in the CSV file).
+    If you choose **CSV**, two more settings appear: **First row is header** (a header row is ignored during import) and **Class key** (the type of metadata object in the CSV file).
 
 4.  Click **Advanced options** if you want to adjust one or more of
     the following settings before importing:
@@ -97,9 +97,9 @@ In the sidebar, click **Data import**.
 
 1.  Choose a file to upload.
 
-2.  Select a format: _JSON_, _CSV_, _DXF2 (XML)_, _ADX (XML)_, or _PDF_.
+2.  Choose a format: **JSON**, **CSV**, **DXF2 (XML)**, **ADX (XML)**, or **PDF**.
 
-3.  Select the appropriate settings for:
+3.  Choose the appropriate settings for:
 
     -   Strategy (how values should be imported)
     -   Preheat cache (speed up import by using a temporary cache map)
@@ -128,7 +128,7 @@ import data produced by offline PDF data entry forms. For details on how to
 produce a PDF form for offline data entry, see the section **Data set
 management**.
 
-To import a PDF data file, open _Data import_ from the sidebar, select _PDF_ as the format, upload the completed PDF file and click **Start import**.
+To import a PDF data file, open **Data import** from the sidebar, choose **PDF** as the format, upload the completed PDF file and click **Start import**.
 
 ### Event import { #event_import }
 
@@ -136,7 +136,7 @@ In the sidebar, click **Event import**.
 
 ![](resources/images/import_export/event_import.png)
 
-1.  Select a format: _JSON_ or _CSV_.
+1.  Choose a format: **JSON** or **CSV**.
 
 2.  Click **Advanced options** if you want to adjust one or more of
     the following settings before importing:
@@ -149,7 +149,7 @@ In the sidebar, click **Event import**.
 
 #### Version 2.40 and earlier
 
-The format also included _XML_.
+The format also included **XML**.
 
 ### Earth Engine import { #ee_import }
 
@@ -160,23 +160,23 @@ Earth Engine account](https://docs.dhis2.org/en/topics/tutorials/google-earth-en
 
 ![](resources/images/import_export/ee_import.png)
 
-#### Select which Earth Engine data should be imported
+#### Choose which Earth Engine data should be imported
 
 The first section of the form is used to configure the Earth Engine data to import.
 
-1. Select which Earth Engine dataset should be imported. The choices are _Population WorldPop Global2_ and _Population age groups WorldPop Global2_.
+1. Choose which Earth Engine dataset should be imported. The choices are **Population WorldPop Global2** and **Population age groups WorldPop Global2**.
 
-2. After you select a dataset, you must select a period. You can import only one period at a time.
+2. After you choose a dataset, you must choose a period. You can import only one period at a time.
 
 3. Choose how to round the data. By default, DHIS2 does not round the data.
 
-4. Select which organisation units to import data to. If you select facility-level organisation units, you must choose an associated geometry for the facilities. Without an associated geometry for facilities, Earth Engine cannot determine the population.
+4. Choose which organisation units to import data to. If you choose facility-level organisation units, you must choose an associated geometry for the facilities. Without an associated geometry for facilities, Earth Engine cannot determine the population.
 
 ![](resources/images/import_export/ee_ou_associated_geometry.png)
 
-#### Select the data elements to import the Earth Engine data into
+#### Choose the data elements to import the Earth Engine data into
 
-After you configure the Earth Engine dataset, select the data element to import the data to. For datasets with disaggregation groups, such as "Population age groups", the DHIS2 data element must have disaggregations in the form of category option combos that match the Earth Engine dataset disaggregation groups.
+After you configure the Earth Engine dataset, choose the data element to import the data to. For datasets with disaggregation groups, such as "Population age groups", the DHIS2 data element must have disaggregations in the form of category option combos that match the Earth Engine dataset disaggregation groups.
 
 ![](resources/images/import_export/ee_group_coc_mapping.png)
 
@@ -192,7 +192,7 @@ After you configure the Earth Engine dataset, select the data element to import 
 
 #### Run the import
 
-After you select the data element and category option combos, the **Preview before import** button is enabled. After you review the data you want to import, you can do a dry run first, or continue with the actual import.
+After you choose the data element and category option combos, the **Preview before import** button is enabled. After you review the data you want to import, you can do a dry run first, or continue with the actual import.
 
 ![](resources/images/import_export/ee_data_preview.png)
 
@@ -218,9 +218,9 @@ See also the [Maps configuration guide](https://docs.dhis2.org/en/use/user-guide
 
 These settings change how the import behaves, and can be combined with the steps above as needed:
 
--   **Match by a different property:** By default, matching is done on the organisation unit ID, using the GeoJSON feature's top-level `id` member (not a property inside `"properties"`). To match on a different property instead, check **Match GeoJSON property to organisation unit scheme**. Enter the GeoJSON property name and select the organisation unit ID scheme to match against (**ID**, **Code**, or **Name**).
+-   **Match by a different property:** By default, matching is done on the organisation unit ID, using the GeoJSON feature's top-level `id` member (not a property inside `"properties"`). To match on a different property instead, check **Match GeoJSON property to organisation unit scheme**. Enter the GeoJSON property name and choose the organisation unit ID scheme to match against (**ID**, **Code**, or **Name**).
 
--   **Import as associated geometry:** To import the GeoJSON features as associated geometries (for example, catchment areas) rather than the organisation unit's main geometry, check **Import as associated geometry** and select the geometry attribute to import the data into. This requires an attribute of type **GeoJSON** assigned to the Organisation unit type. You can create it in the **Metadata management app**, the newer app that is taking over the Maintenance app's configuration screens. Until the Maintenance app is retired in v44, you can use either app to create it.
+-   **Import as associated geometry:** To import the GeoJSON features as associated geometries (for example, catchment areas) rather than the organisation unit's main geometry, check **Import as associated geometry** and choose the geometry attribute to import the data into. This requires an attribute of type **GeoJSON** assigned to the Organisation unit type. You can create it in the **Metadata management app**, the newer app that is taking over the Maintenance app's configuration screens. Until the Maintenance app is retired in v44, you can use either app to create it.
 
 ##### GeoJSON structure examples
 
@@ -274,7 +274,7 @@ In the sidebar, click **Tracked entity import**.
 
 1.  Choose a JSON file to upload.
 
-1.  Select the appropriate settings for:
+1.  Choose the appropriate settings for:
 
     -   Identifier (whether to match existing metadata on UID or code)
     -   Import report mode (level of detail reported after import has finished)
@@ -298,7 +298,7 @@ In the sidebar, click **Tracked entity import**.
 
 #### Version 2.40 and earlier
 
-Format required a separate selection step before upload: _JSON_ or _XML_. From 2.41 the app only accepts JSON, so this step was removed entirely.
+Format required a separate selection step before upload: **JSON** or **XML**. From 2.41 the app only accepts JSON, so this step was removed entirely.
 
 > **Tip**
 >
@@ -315,11 +315,11 @@ In the sidebar, click **Metadata export**.
 
 1.  Choose the list of objects you want to export.
 
-2.  Select a format: _JSON_.
+2.  Choose a format: **JSON**.
 
-3.  Select a compression type: _zip_, _gzip_ or _uncompressed_.
+3.  Choose a compression type: **zip**, **gzip** or **uncompressed**.
 
-4.  Decide whether to check _Skip sharing and access settings_.
+4.  Decide whether to check **Skip sharing and access settings**.
 
 5.  Under advanced options, you can change the Inclusion strategy (controls which properties are included).
 
@@ -348,14 +348,14 @@ Table: Object types and their dependencies
 
 ![](resources/images/import_export/metadata_dependency_export_object_types.png)
 
-1.  Select an object type: _Data sets_, _Programs_, _Category combination_,
-    _Dashboard_, _Data element groups_ or _Option sets_.
+1.  Choose an object type: **Data sets**, **Programs**, **Category combination**,
+    **Dashboard**, **Data element groups** or **Option sets**.
 
-2.  Select an object.
+2.  Choose an object.
 
-3.  Select a format: _JSON_.
+3.  Choose a format: **JSON**.
 
-4.  Select a compression type: _Zip_, _GZip_ or _Uncompressed_.
+4.  Choose a compression type: **Zip**, **GZip** or **Uncompressed**.
 
 5.  Click **Export metadata dependencies**. A new browser window opens with a file to download to your
     computer.
@@ -366,19 +366,19 @@ In the sidebar, click **Data export**.
 
 ![](resources/images/import_export/data_export.png)
 
-1.  Select which organisation units to export from.
+1.  Choose which organisation units to export from.
 
-2.  Select whether to include descendants of the organisation
+2.  Choose whether to include descendants of the organisation
     units selected in step 1, or only the manually selected
     organisation units.
 
-3.  Select which data sets to export.
+3.  Choose which data sets to export.
 
 4.  Set the start and end date.
 
-5.  Select a format: _JSON_, _CSV_, _DXF2 (XML)_, or _ADX (XML)_.
+5.  Choose a format: **JSON**, **CSV**, **DXF2 (XML)**, or **ADX (XML)**.
 
-6.  Select a compression mode: **Zip**, **GZip** or **Uncompressed**.
+6.  Choose a compression mode: **Zip**, **GZip** or **Uncompressed**.
 
 7.  Click **Advanced options** if you want to adjust one or more of
     the following settings before exporting:
@@ -399,28 +399,28 @@ In the sidebar, click **Event export**.
 
 You can export event or tracker data in JSON or CSV.
 
-1.  Select an organisation unit.
+1.  Choose an organisation unit.
 
-1.  Select the inclusion:
+1.  Choose the inclusion:
 
-    -   _Selected_: Export event data only for the selected
+    -   **Selected**: Export event data only for the selected
         organisation unit
 
-    -   _Directly below_: Export event data including the first
+    -   **Directly below**: Export event data including the first
         level of the organisation units inside the selections as well
         as the selected organisation unit itself.
 
-    -   _All below_: Export event data for all organisation units
+    -   **All below**: Export event data for all organisation units
         inside the selections as well as the selected organisation
         unit itself.
 
-1.  Select a program and a program stage (if applicable).
+1.  Choose a program and a program stage (if applicable).
 
 1.  Set the start date and end date.
 
-1.  Select a format: _JSON_ or _CSV_.
+1.  Choose a format: **JSON** or **CSV**.
 
-1.  Select a compression mode: _Zip_, _GZip_ or _Uncompressed_.
+1.  Choose a compression mode: **Zip**, **GZip** or **Uncompressed**.
 
 1.  Click **Advanced options** if you want to adjust one or more of
     the following settings before exporting:
@@ -435,7 +435,7 @@ You can export event or tracker data in JSON or CSV.
 
 #### Version 2.40 and earlier
 
-The format also included _XML_.
+The format also included **XML**.
 
 ### Tracked entities export { #tei_export }
 
@@ -445,34 +445,34 @@ In the sidebar, click **Tracked entity export**.
 
 You can export tracked entities in JSON or CSV format.
 
-1.  Select the organisation units that should be included. There are three modes for selecting organisation units:
+1.  Choose the organisation units that should be included. There are three modes for choosing organisation units:
 
-    -   _Accessible_: to select data view organisation units associated with the current user
+    -   **Accessible**: to choose data view organisation units associated with the current user
 
-    -   _Capture_: to select data capture organisation units associated with the current user.
+    -   **Capture**: to choose data capture organisation units associated with the current user.
 
-    -   _Manually select organisation units_: to manually select the organisation units.
+    -   **Manually select organisation units**: to manually choose the organisation units.
 
-1.  If you choose _manually select organisation units_, further options appear:
+1.  If you choose **manually select organisation units**, further options appear:
 
-    -   _Selected_: Export data only for the selected
+    -   **Selected**: Export data only for the selected
         organisation unit
 
-    -   _Directly below_: Export data including the first
+    -   **Directly below**: Export data including the first
         level of the organisation units inside the selections as well
         as the selected organisation unit itself.
 
-    -   _All below_: Export data for all organisation units
+    -   **All below**: Export data for all organisation units
         inside the selections as well as the selected organisation
         unit itself.
 
-1.  Decide whether you want to filter by _program_ or _tracked entity type_.
+1.  Decide whether you want to filter by **program** or **tracked entity type**.
 
 1.  Decide what statuses to include in the export.
 
 1.  Decide which follow-up statuses to include in the export.
 
-1.  Select a format: _JSON_ or _CSV_.
+1.  Choose a format: **JSON** or **CSV**.
 
 1.  Click **Advanced options** if you want to adjust one or more of
     the following settings before exporting:
@@ -489,7 +489,7 @@ You can export tracked entities in JSON or CSV format.
 
 #### Version 2.40 and earlier
 
-The format also included _XML_.
+The format also included **XML**.
 
 ## Differences in version 2.41 and later { #v41_tracker_changes }
 
@@ -521,7 +521,7 @@ type filters above it.
 
 ![](resources/images/import_export/job_overview_recreate.png)
 
-To recreate a previous import job, select the job in the list and click
+To recreate a previous import job, choose the job in the list and click
 **Recreate job** at the bottom of the page. The app opens the correct import
 page and fills in all the form details exactly as in the job you chose to
 recreate.
@@ -539,8 +539,8 @@ Table: Available values
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ID, UID      | Match on the DHIS2 stable identifier. This is the default ID scheme.                                                                                                                                                                                                                                                                                                    |
 | CODE         | Match on the DHIS2 code. This is mainly used to exchange data with an external system.                                                                                                                                                                                                                                                                                          |
-| NAME         | Match on the DHIS2 name. This uses what is available as _object.name_, not the translated name. Names are not always unique, and you cannot use a name that is not unique.                                                                                                                                                                |
-| ATTRIBUTE:ID | Match on a metadata attribute. The attribute must be assigned to the type you are matching on, and its unique property must be set to _true_. This is also mainly used to exchange data with external systems. It has an advantage over _CODE_: you can add multiple attributes, so you can synchronize with more than one system. |
+| NAME         | Match on the DHIS2 name. This uses what is available as `object.name`, not the translated name. Names are not always unique, and you cannot use a name that is not unique.                                                                                                                                                                |
+| ATTRIBUTE:ID | Match on a metadata attribute. The attribute must be assigned to the type you are matching on, and its unique property must be set to `true`. This is also mainly used to exchange data with external systems. It has an advantage over **CODE**: you can add multiple attributes, so you can synchronize with more than one system. |
 
 ### ID scheme
 
