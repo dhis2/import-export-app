@@ -1,14 +1,13 @@
-# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Philip Larsen Donnelly, 2025
+# Viktor Varland <viktor@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -37,16 +36,22 @@ msgstr ""
 msgid "Format"
 msgstr "فارمیٹ"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
+msgid "Uid"
 msgstr ""
+
+msgid "Code"
+msgstr "کوڈ"
+
+msgid "Name"
+msgstr "نام"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr ""
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
+msgid "(Default)"
+msgstr ""
+
+msgid "(Undefined)"
 msgstr ""
 
 msgid "Please select a file"
@@ -120,7 +125,10 @@ msgstr "اِیمپورٹ"
 msgid "Atomic mode"
 msgstr ""
 
-msgid "Whether to import objects even if some references do not exist"
+msgid ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
 msgstr ""
 
 msgid "Class key"
@@ -137,15 +145,6 @@ msgstr "ان کمپریس"
 
 msgid "Compression mode"
 msgstr ""
-
-msgid "Uid"
-msgstr ""
-
-msgid "Code"
-msgstr "کوڈ"
-
-msgid "Name"
-msgstr "نام"
 
 msgid "Data element ID scheme"
 msgstr "ڈیٹا ائ۔ڈی سکیم"
@@ -436,6 +435,11 @@ msgstr ""
 
 msgid "Object"
 msgstr "اؤبجیکٹ"
+
+msgid ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
 msgstr ""
@@ -801,6 +805,21 @@ msgid ""
 msgstr ""
 
 msgid "Date range to export data for"
+msgstr ""
+
+msgid "Category ID scheme"
+msgstr "قسم ائ۔ڈی سکیم"
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
 msgstr ""
 
 msgid "Export data"
@@ -1269,9 +1288,8 @@ msgstr "میٹا ڈیٹا"
 msgid "Tracked entity"
 msgstr "ٹریک شدہ ادارے"
 
-msgctxt ""
-"01\"...) are available, the combinations will be matched automatically."
+msgctxt "20\")."
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
-"If the codes (\"m_00\", \"m"
+"Codes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., \"m_00\", \"M_05\", \"WP_F"
 msgstr ""

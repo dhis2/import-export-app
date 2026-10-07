@@ -1,19 +1,18 @@
-# 
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Ge Joao <gsimango@saudigitus.org>, 2022
 # David Júnior <davidjr.mondlane@gmail.com>, 2023
 # Helton Dias, 2024
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
 # Shelsea Chumaio, 2025
+# Ge Joao <gsimango@saudigitus.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: Shelsea Chumaio, 2025\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2026\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -42,21 +41,23 @@ msgstr "Duração inválida"
 msgid "Format"
 msgstr "Formato"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
-msgstr ""
-"Algo deu errado ao carregar os esquemas de ID de elemento de dados "
-"adicionais"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Name"
+msgstr "Nome"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "Algo deu errado ao carregar os esquemas de ID adicionais"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
+msgid "(Default)"
 msgstr ""
-"Algo deu errado ao carregar os esquemas de ID de unidade organizacional "
-"adicionais"
+
+msgid "(Undefined)"
+msgstr ""
 
 msgid "Please select a file"
 msgstr "Selecione um arquivo"
@@ -132,8 +133,11 @@ msgstr "Importar"
 msgid "Atomic mode"
 msgstr "Modelo atômico"
 
-msgid "Whether to import objects even if some references do not exist"
-msgstr "Importar objetos mesmo que algumas referências não existam"
+msgid ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
+msgstr ""
 
 msgid "Class key"
 msgstr "Chave de classe"
@@ -149,15 +153,6 @@ msgstr "Descomprimido"
 
 msgid "Compression mode"
 msgstr "Modo de compressão"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "Código"
-
-msgid "Name"
-msgstr "Nome"
 
 msgid "Data element ID scheme"
 msgstr "ID do esquema do elemento de dado"
@@ -456,6 +451,11 @@ msgstr "Um objeto deve ser selecionado"
 
 msgid "Object"
 msgstr "Objecto"
+
+msgid ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
+msgstr ""
 
 msgid "Organisation unit ID scheme"
 msgstr "Esquema de ID de unidade organizacional"
@@ -833,6 +833,21 @@ msgstr ""
 
 msgid "Date range to export data for"
 msgstr "Intervalo de datas para exportar dados para"
+
+msgid "Category ID scheme"
+msgstr " ID da ategoria do esquema "
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
+msgstr ""
 
 msgid "Export data"
 msgstr "Exportar valores"
@@ -1306,9 +1321,8 @@ msgstr "Metadados"
 msgid "Tracked entity"
 msgstr "Entidade Rastreada"
 
-msgctxt ""
-"01\"...) are available, the combinations will be matched automatically."
+msgctxt "20\")."
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
-"If the codes (\"m_00\", \"m"
+"Codes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., \"m_00\", \"M_05\", \"WP_F"
 msgstr ""
