@@ -21,8 +21,6 @@ import {
     Format,
     formatAdxPdfOptions,
     defaultFormatOption,
-    FirstRowIsHeader,
-    defaultFirstRowIsHeaderOption,
     Strategy,
     defaultStrategyOption,
     PreheatCache,
@@ -58,10 +56,6 @@ const createInitialValues = (prevJobDetails) => ({
     files: prevJobDetails.files,
     format: prevJobDetails.format || defaultFormatOption,
     strategy: prevJobDetails.strategy || defaultStrategyOption,
-    firstRowIsHeader: getInitialBoolValue(
-        prevJobDetails.firstRowIsHeader,
-        defaultFirstRowIsHeaderOption
-    ),
     preheatCache: getInitialBoolValue(
         prevJobDetails.preheatCache,
         defaultPreheatCacheOption
@@ -141,8 +135,14 @@ const DataImport = () => {
                             <Format
                                 availableFormats={formatAdxPdfOptions}
                                 type="import"
+                                helpText={
+                                    values.format == 'csv'
+                                        ? i18n.t(
+                                              'CSV files require a header row'
+                                          )
+                                        : undefined
+                                }
                             />
-                            <FirstRowIsHeader show={values.format == 'csv'} />
                             <Strategy value={values.strategy} />
                             <PreheatCache />
                             <WithAuthority pred={hasAuthorityToSkipAudit}>

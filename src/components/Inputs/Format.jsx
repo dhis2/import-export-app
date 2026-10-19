@@ -41,17 +41,19 @@ const EXPORT_LABEL = i18n.t('What format should the data be exported as?')
 
 const typeToLabel = (type) => (type === 'import' ? IMPORT_LABEL : EXPORT_LABEL)
 
-const Format = ({ availableFormats, type }) => (
+const Format = ({ availableFormats, type, helpText }) => (
     <RadioGroupField
         name={NAME}
         label={typeToLabel(type)}
         options={availableFormats}
         dataTest={DATATEST}
+        helpText={helpText}
     />
 )
 
 Format.propTypes = {
     availableFormats: optionsPropType.isRequired,
+    helpText: PropTypes.string,
     type: PropTypes.oneOf(['import', 'export']),
 }
 

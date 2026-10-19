@@ -1,5 +1,10 @@
 import { FORM_ERROR } from './final-form.js'
-import { fetchAndDownload, formatNumber, locationAssign } from './helper.js'
+import {
+    fetchAndDownload,
+    formatNumber,
+    getFilenameFromContentDisposition,
+    locationAssign,
+} from './helper.js'
 
 describe('formatNumber', () => {
     it('adds digit group separators to numbers', () => {
@@ -79,6 +84,55 @@ describe('locationAssign', () => {
         const link = locationAssign(url)
         expect(link.download).toEqual('events.json.zip')
     })
+    it('should add the zip suffix when compression is a query param', () => {
+        const url =
+            'https://debug.dhis2.org/dev/api/dataValueSets.json?dataSet=lyLU2wR22tC&orgUnit=ImspTQPwCqd&compression=zip'
+        const link = locationAssign(url)
+        expect(link.download).toEqual('dataValueSets.json.zip')
+    })
+    it('should add the gz suffix when compression is a gzip query param', () => {
+        const url =
+            'https://debug.dhis2.org/dev/api/dataValueSets.csv?dataSet=lyLU2wR22tC&orgUnit=ImspTQPwCqd&compression=gzip'
+        const link = locationAssign(url)
+        expect(link.download).toEqual('dataValueSets.csv.gz')
+    })
+    it('should prefer the provided file name over the url', () => {
+        const url =
+            'https://debug.dhis2.org/dev/api/dataValueSets.json?compression=zip'
+        const link = locationAssign(url, undefined, 'dataValues.json.zip')
+        expect(link.download).toEqual('dataValues.json.zip')
+    })
+})
+
+describe('getFilenameFromContentDisposition', () => {
+    it('returns undefined when there is no header', () => {
+        expect(getFilenameFromContentDisposition(null)).toBeUndefined()
+        expect(getFilenameFromContentDisposition('')).toBeUndefined()
+    })
+    it('returns undefined when the header has no file name', () => {
+        expect(getFilenameFromContentDisposition('inline')).toBeUndefined()
+    })
+    it('reads a quoted file name', () => {
+        expect(
+            getFilenameFromContentDisposition(
+                'attachment; filename="dataValues.json.zip"'
+            )
+        ).toEqual('dataValues.json.zip')
+    })
+    it('reads an unquoted file name', () => {
+        expect(
+            getFilenameFromContentDisposition(
+                'attachment; filename=dataValues.csv.gz'
+            )
+        ).toEqual('dataValues.csv.gz')
+    })
+    it('prefers the extended file name', () => {
+        expect(
+            getFilenameFromContentDisposition(
+                'attachment; filename="fallback.json"; filename*=UTF-8\'\'data%20values.json.zip'
+            )
+        ).toEqual('data values.json.zip')
+    })
 })
 
 describe('fetchAndDownload', () => {
@@ -87,6 +141,37 @@ describe('fetchAndDownload', () => {
     afterEach(() => {
         global.fetch.mockRestore?.()
         delete global.fetch
+        jest.restoreAllMocks()
+    })
+
+    it('saves the file with the name from Content-Disposition', async () => {
+        URL.createObjectURL = jest.fn(() => 'blob:mock')
+        URL.revokeObjectURL = jest.fn()
+        const clickSpy = jest
+            .spyOn(HTMLAnchorElement.prototype, 'click')
+            .mockImplementation(() => {})
+        const createElementSpy = jest.spyOn(document, 'createElement')
+
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            headers: new Headers({
+                'Content-Disposition':
+                    'attachment; filename="dataValues.json.zip"',
+            }),
+            blob: () => Promise.resolve(new Blob(['zip'])),
+        })
+
+        await fetchAndDownload(
+            'https://debug.dhis2.org/dev/api/dataValueSets.json?compression=zip',
+            'data'
+        )
+
+        const link = createElementSpy.mock.results.find(
+            (r) => r.value instanceof HTMLAnchorElement
+        ).value
+        expect(clickSpy).toHaveBeenCalled()
+        expect(link.download).toEqual('dataValues.json.zip')
+        expect(link.href).toEqual('blob:mock')
     })
 
     it('downloads the file and returns no error when the response is ok', async () => {
