@@ -1,14 +1,13 @@
-# 
 # Translators:
 # 晓东 林 <13981924470@126.com>, 2022
-# easylin <lin_xd@126.com>, 2025
+# easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T16:33:31.275Z\n"
+"POT-Creation-Date: 2026-09-17T11:35:01.753Z\n"
 "PO-Revision-Date: 2019-06-04 17:24+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -37,17 +36,23 @@ msgstr "无效的持续时间"
 msgid "Format"
 msgstr "格式"
 
-msgid ""
-"Something went wrong when loading the additional data element ID schemes"
-msgstr "载入额外的数据元ID方案出错"
+msgid "Uid"
+msgstr "Uid"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "Name"
+msgstr "名称"
 
 msgid "Something went wrong when loading the additional ID schemes"
 msgstr "载入额外的ID方案出错"
 
-msgid ""
-"Something went wrong when loading the additional organisation unit ID "
-"schemes"
-msgstr "载入额外的机构ID方案出错"
+msgid "(Default)"
+msgstr ""
+
+msgid "(Undefined)"
+msgstr ""
 
 msgid "Please select a file"
 msgstr "请选择一个文件"
@@ -120,8 +125,11 @@ msgstr "导入"
 msgid "Atomic mode"
 msgstr "原子模式"
 
-msgid "Whether to import objects even if some references do not exist"
-msgstr "是否导入对象，即使某些引用不存在"
+msgid ""
+"Controls what happens when some objects in the import are invalid. Either "
+"reject the entire import, or import the valid objects and skip the invalid "
+"ones."
+msgstr "控制当导入中的某些对象无效时应如何处理。既可以拒绝整个导入，也可以导入有效的对象并跳过无效的对象。"
 
 msgid "Class key"
 msgstr "分类键值"
@@ -137,15 +145,6 @@ msgstr "无压缩"
 
 msgid "Compression mode"
 msgstr "压缩方式"
-
-msgid "Uid"
-msgstr "Uid"
-
-msgid "Code"
-msgstr "代码"
-
-msgid "Name"
-msgstr "名称"
 
 msgid "Data element ID scheme"
 msgstr "数据元ID方案"
@@ -437,6 +436,11 @@ msgstr "必须选择一个对象"
 msgid "Object"
 msgstr "对象"
 
+msgid ""
+"There are no objects of the selected object type, or you do not have "
+"permission to view them"
+msgstr "不存在所选对象类型的对象，或者您无权查看这些对象"
+
 msgid "Organisation unit ID scheme"
 msgstr "机构ID方案"
 
@@ -688,10 +692,10 @@ msgid "Reports"
 msgstr "报表管理"
 
 msgid "Error Code"
-msgstr ""
+msgstr "错误代码"
 
 msgid "Tracker Type"
-msgstr ""
+msgstr "追踪器类型"
 
 msgid "Indexes"
 msgstr "索引"
@@ -751,7 +755,7 @@ msgid "Metadata import"
 msgstr "元数据导入"
 
 msgid "Tracked entity import"
-msgstr ""
+msgstr "跟踪实体 import"
 
 msgid "Data export"
 msgstr "数据导出"
@@ -766,7 +770,7 @@ msgid "Metadata export"
 msgstr "元数据导出"
 
 msgid "Tracked entity export"
-msgstr ""
+msgstr "跟踪实体 导出"
 
 msgid "Job overview"
 msgstr "作业概要"
@@ -803,6 +807,21 @@ msgstr "将元数据（例如数据元素和组织单位）导出为 JSON、CSV�
 msgid "Date range to export data for"
 msgstr "导出数据的日期范围"
 
+msgid "Category ID scheme"
+msgstr "分类ID方案"
+
+msgid "Category option ID scheme"
+msgstr ""
+
+msgid "Category option combo ID scheme"
+msgstr ""
+
+msgid "Data set ID scheme"
+msgstr ""
+
+msgid "Attribute option combo ID scheme"
+msgstr ""
+
 msgid "Export data"
 msgstr "导出数据"
 
@@ -813,21 +832,23 @@ msgid "Supported file types: JSON, CSV, DXF2, ADX, and PDF."
 msgstr "支持的文件类型：JSON、CSV、DXF2、ADX 和 PDF。"
 
 msgid "Import high resolution population data from "
-msgstr ""
+msgstr "从以下位置导入高分辨率人口数据：数据 "
 
 msgid " using Google Earth Engine."
-msgstr ""
+msgstr " 使用 Google Earth Engine。"
 
 msgid "Earth Engine source"
 msgstr "地球引擎源"
 
 msgid "About WorldPop dataset versions"
-msgstr ""
+msgstr "关于 WorldPop 数据集的版本"
 
 msgid ""
 "WorldPop global data is currently at v2 (released 2025-2026).\n"
 "Population figures may change slightly over time, and new releases require a fresh import. To track which data is used, consider creating separate data elements for each release and including the version in the name or description."
 msgstr ""
+"WorldPop 全球人口数据集（数据 ）当前版本为 v2（发布于 2025-2026 年）。\n"
+"人口数据可能会随时间略有变化，且新版本发布时需要重新导入。为追踪所使用的具体版本（数据 ），建议为每个版本创建独立的数据 元素，并在名称或描述中注明版本号。"
 
 msgid "Organisation units"
 msgstr "组织机构"
@@ -885,11 +906,11 @@ msgstr "选择地球引擎数据集"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
+msgstr[0] "{{count}} 组织单位"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
+msgstr[0] "{{count}} 级别"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
@@ -1000,10 +1021,10 @@ msgid ""
 msgstr "需要 Google 地球引擎帐户。查看 DHIS2 文档以获取更多信息。"
 
 msgid "Population WorldPop Global2"
-msgstr ""
+msgstr "人口WorldPop Global2"
 
 msgid "Population age groups WorldPop Global2"
-msgstr ""
+msgstr "人口年龄组 WorldPop Global2"
 
 msgid "Men 0 - 1 years"
 msgstr "男性 0 - 1 岁"
@@ -1057,13 +1078,13 @@ msgid "Men 75 - 79 years"
 msgstr "男性 75 - 79 岁"
 
 msgid "Men 80 - 84 years"
-msgstr ""
+msgstr "80至84岁的男性"
 
 msgid "Men 85 - 89 years"
-msgstr ""
+msgstr "85至89岁的男性"
 
 msgid "Men 90 years and above"
-msgstr ""
+msgstr "90岁及以上男性"
 
 msgid "Women 0 - 1 years"
 msgstr "女性 0 - 1 岁"
@@ -1117,13 +1138,13 @@ msgid "Women 75 - 79 years"
 msgstr "75 - 79 岁的女性"
 
 msgid "Women 80 - 84 years"
-msgstr ""
+msgstr "80至84岁的女性"
 
 msgid "Women 85 - 89 years"
-msgstr ""
+msgstr "85至89岁的女性"
 
 msgid "Women 90 years and above"
-msgstr ""
+msgstr "90岁及以上女性"
 
 msgid "No organisation units have been selected"
 msgstr "未选择任何组织单位"
@@ -1137,7 +1158,7 @@ msgstr "无法从 Earth Engine 获取点设施的数据。选择多边形组织�
 msgid ""
 "Export event data for programs, stages and tracked entities to JSON or CSV "
 "format."
-msgstr ""
+msgstr "将事件 数据 中的项目、阶段和受监控实体导出为JSON或CSV格式。"
 
 msgid "Export events"
 msgstr "导出事件"
@@ -1145,13 +1166,13 @@ msgstr "导出事件"
 msgid ""
 "Import event data for programs, stages and tracked entities from JSON or CSV"
 " format."
-msgstr ""
+msgstr "导入事件 数据 ，以从 JSON 或 CSV 格式导入节目、舞台和被追踪实体。"
 
 msgid "Supported file types: JSON and CSV."
 msgstr "支持的文件类型：JSON 和 CSV。"
 
 msgid "Supported version: GML 2.0 only."
-msgstr ""
+msgstr "支持的版本：仅限 GML 2.0。"
 
 msgid "Organisation unit geometry import"
 msgstr "组织机构空间几何形状导入"
@@ -1179,7 +1200,7 @@ msgid "Export metadata"
 msgstr "导出元数据"
 
 msgid "Export tracked entities"
-msgstr ""
+msgstr "导出受监控实体"
 
 msgid "Import data"
 msgstr "导入数据"
@@ -1197,7 +1218,7 @@ msgid "Import metadata"
 msgstr "导入元数据"
 
 msgid "Import tracked entities"
-msgstr ""
+msgstr "导入被跟踪实体"
 
 msgid "An overview of all import jobs started this session."
 msgstr "该会话开始的所有导入作业概要"
@@ -1221,10 +1242,10 @@ msgid "A class key must be selected"
 msgstr "必须选择应该类键值"
 
 msgid "Tracked entities export"
-msgstr ""
+msgstr "被跟踪实体的导出"
 
 msgid "Export tracked entities in JSON or CSV format."
-msgstr ""
+msgstr "以 JSON 或 CSV 格式导出受监控实体。"
 
 msgid "Program to export from"
 msgstr "从项目中导出"
@@ -1236,13 +1257,13 @@ msgid "At least one of the 'last updated' date fields must be specified"
 msgstr "至少选择一个最近更新的日期字段"
 
 msgid "Tracked entities import"
-msgstr ""
+msgstr "被跟踪实体的导入"
 
 msgid "Import tracked entities using JSON format."
-msgstr ""
+msgstr "使用 JSON 格式导入被跟踪的实体。"
 
 msgid "Supported file types: JSON."
-msgstr ""
+msgstr "支持的文件类型：JSON。"
 
 msgid "Job started."
 msgstr "工作开始了。"
@@ -1268,9 +1289,10 @@ msgstr "元数据"
 msgid "Tracked entity"
 msgstr "跟踪实体"
 
-msgctxt ""
-"01\"...) are available, the combinations will be matched automatically."
+msgctxt "20\")."
 msgid ""
 "Earth Engine data set \"Population age groups\" has disaggregation groups. Choose the category option combinations to import each group into.\n"
-"If the codes (\"m_00\", \"m"
+"Codes are matched automatically (case does not matter, and prefixes or suffixes are allowed e.g., \"m_00\", \"M_05\", \"WP_F"
 msgstr ""
+"Earth Engine数据集 “人口年龄组”包含细分组。请选择类别选项组合，将各组导入相应类别。\n"
+"代码将自动匹配（不区分大小写，允许使用前缀或后缀，例如“m_00”、“M_05”、“WP_F_20”）。"
