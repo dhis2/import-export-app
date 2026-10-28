@@ -70,11 +70,17 @@ In the sidebar, click **Metadata import**.
 > This keeps you in control of any changes to your metadata, and lets you check for
 > problems with out-of-sync data elements or organisation unit names.
 
+> **Warning**
+>
+> When an import updates an object that already exists, using the **Merge** or **Update** strategy, every property is overwritten. Properties missing from the file are cleared or reset to their default value. To change only some properties, export the complete objects, edit them and import them again, or use [partial updates](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_partial_updates) through the API.
+
 > **Note**
+>
+> If an object in your file refers to another object that is neither in the file nor in the existing database, the import summary reports it as an unknown reference.
 >
 > For example, if an organisation unit (`Nduvuibu MCHP`) has an unknown reference to an object with ID `aaaU6Kr7Gtpidn`, it means that the object with ID `aaaU6Kr7Gtpidn` was not present in your imported file. It was also not found in the existing database.
 >
-> You can control this using the **Identifier** option, to indicate whether you want to allow objects with such invalid references to be imported. If you choose to import invalid references, you must correct the reference manually in DHIS2 later.
+> You can control this using the **Atomic mode** option, to indicate whether you want to allow objects with such invalid references to be imported. If you choose to import invalid references, you must correct the reference manually in DHIS2 later.
 
 #### Matching identifiers in DXF2 { #matching_identifiers_in_dxf2 }
 
