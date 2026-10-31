@@ -1,17 +1,16 @@
-# 
 # Translators:
 # 晓东 林 <13981924470@126.com>, 2022
-# easylin <lin_xd@126.com>, 2023
+# easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-16T13:04:21.582Z\n"
 "PO-Revision-Date: 2022-04-20 10:18+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -283,10 +282,10 @@ msgid "Include all attributes"
 msgstr "包括所有属性"
 
 msgid "Include first level units"
-msgstr ""
+msgstr "包含一级机构"
 
 msgid "Include the first level of organisation units inside selections"
-msgstr ""
+msgstr "将第一级组织机构包含在选择范围内"
 
 msgid "Include deleted"
 msgstr "包括删除的"
@@ -698,7 +697,7 @@ msgid "Event import"
 msgstr "事件导入"
 
 msgid "GML import"
-msgstr ""
+msgstr "GML导入"
 
 msgid "Metadata import"
 msgstr "元数据导入"
@@ -783,7 +782,7 @@ msgstr "支持的文件类型：JSON，CSV和XML。"
 msgid ""
 "Import geographic data for organisation units using the GML format. GML is "
 "an XML grammar for expressing geographical features."
-msgstr ""
+msgstr "使用 GML 格式导入组织单元的地理数据 。GML 是一种用于描述地理特征的 XML 语法。"
 
 msgid "Overview: Import/Export"
 msgstr "概述：导入/导出"
@@ -807,7 +806,7 @@ msgid "Import events"
 msgstr "导入事件"
 
 msgid "Import GML"
-msgstr ""
+msgstr "导入 GML"
 
 msgid "Import metadata"
 msgstr "导入元数据"
@@ -821,17 +820,17 @@ msgstr "该会话开始的所有导入作业概要"
 msgid ""
 "Export metadata dependencies, such as data sets and programs, including "
 "related metadata objects, in XML or JSON format."
-msgstr ""
+msgstr "以XML或JSON格式导出元数据依赖关系，例如数据 数据集和程序，以及相关的元数据对象。"
 
 msgid ""
 "Export metadata, such as data elements and organisation units, in XML, JSON "
 "or CSV format."
-msgstr ""
+msgstr "以XML、JSON或CSV格式导出元数据，例如数据 元素和组织机构。"
 
 msgid ""
 "Import metadata like data elements and organisation units using the DXF 2 "
 "format."
-msgstr ""
+msgstr "使用 DXF 2 格式导入元数据，例如数据 元素和组织单位。"
 
 msgid "A class key must be selected"
 msgstr "必须选择应该类键值"
